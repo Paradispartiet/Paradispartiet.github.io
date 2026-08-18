@@ -1,0 +1,33 @@
+name: Retire obsolete central surface
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/retire-central-surface.yml
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  retire:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build inactive page
+        shell: bash
+        run: |
+          mkdir -p _site
+          cat > _site/index.html <<'EOF'
+          <!doctype html><html lang="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ikke i bruk</title></head><body><main><h1>Denne midlertidige deployflaten er ikke lenger i bruk.</h1><p>Prosjektene publiseres igjen direkte fra sine egne repositories.</p></main></body></html>
+          EOF
+          touch _site/.nojekyll
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload retired site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Deploy retired site
+        uses: actions/deploy-pages@v4
