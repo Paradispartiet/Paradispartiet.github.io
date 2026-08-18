@@ -1,0 +1,32 @@
+name: History Go live URL check
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe published History Go runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          paths=(
+            'History-Go/'
+            'History-Go/index.html'
+            'History-Go/profile.html'
+            'History-Go/Civication.html'
+            'History-Go/fagverk.html'
+            'History-Go/data/places/places_index.json'
+          )
+          for path in "${paths[@]}"; do
+            url="https://paradispartiet.github.io/$path"
+            code="$(curl --location --silent --show-error --output /dev/null --write-out '%{http_code}' --max-time 30 "$url" || true)"
+            echo "$code $url"
+            case "$code" in 2*) ;; *) exit 1;; esac
+          done
+          echo HISTORY_GO_LIVE_OK
