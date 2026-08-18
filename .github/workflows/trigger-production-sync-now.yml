@@ -1,0 +1,21 @@
+name: Trigger production sync now
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/trigger-production-sync-now.yml
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger production sync
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run sync-production-sites.yml --ref main
