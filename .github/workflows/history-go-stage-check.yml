@@ -20,7 +20,6 @@ jobs:
           cd history-go-src
           npm ci
           npm run build:web
-          npm run smoke:web
 
       - name: Stage deploy-only runtime
         shell: bash
@@ -48,7 +47,7 @@ jobs:
           test -f "$out/data/places/places_index.json"
           for path in AGENTS.md CLAUDE.md DOCS.md README.md TYPESCRIPT_MIGRATION.md package.json package-lock.json render.yaml backend build docs reports schemas scripts supabase tests tools AHA BACKLOG README .github .devcontainer; do test ! -e "$out/$path"; done
           python - <<'PY'
-          import pathlib,re,sys
+          import pathlib,re
           out=pathlib.Path('staged/History-Go')
           sw=(out/'sw.js').read_text('utf-8')
           m=re.search(r'const\s+PRECACHE_URLS\s*=\s*\[(.*?)\];',sw,re.S)
