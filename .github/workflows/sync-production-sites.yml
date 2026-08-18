@@ -1,0 +1,254 @@
+name: Sync public production sites
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/10 * * * *'
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/sync-production-sites.yml
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: public-production-sync
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    outputs:
+      film_sha: ${{ steps.refs.outputs.film_sha }}
+      football_sha: ${{ steps.refs.outputs.football_sha }}
+      history_sha: ${{ steps.refs.outputs.history_sha }}
+    steps:
+      - name: Checkout production host
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Resolve public source revisions
+        id: refs
+        shell: bash
+        run: |
+          set -euo pipefail
+          film_sha="$(git ls-remote https://github.com/Paradispartiet/HG_Film_Producer.git refs/heads/main | awk '{print $1}')"
+          football_sha="$(git ls-remote https://github.com/Paradispartiet/HistoryGo-FootballManager.git refs/heads/main | awk '{print $1}')"
+          history_sha="$(git ls-remote https://github.com/Paradispartiet/History-Go.git refs/heads/main | awk '{print $1}')"
+          test -n "$film_sha"
+          test -n "$football_sha"
+          test -n "$history_sha"
+          echo "film_sha=$film_sha" >> "$GITHUB_OUTPUT"
+          echo "football_sha=$football_sha" >> "$GITHUB_OUTPUT"
+          echo "history_sha=$history_sha" >> "$GITHUB_OUTPUT"
+
+      - name: Setup Node 20 for Film Producer
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Sync Film Producer when main changed
+        shell: bash
+        env:
+          SOURCE_SHA: ${{ steps.refs.outputs.film_sha }}
+        run: |
+          set -euo pipefail
+          marker='HG_Film_Producer/source-sha.txt'
+          current="$(cat "$marker" 2>/dev/null || true)"
+          if [[ "$current" == "$SOURCE_SHA" ]]; then
+            echo 'Film Producer already current.'
+            exit 0
+          fi
+          src="$RUNNER_TEMP/HG_Film_Producer"
+          rm -rf "$src"
+          git clone --quiet --depth 1 --branch main https://github.com/Paradispartiet/HG_Film_Producer.git "$src"
+          cd "$src"
+          npm ci
+          npm run verify:v0.1
+          test -f dist/index.html
+          cd "$GITHUB_WORKSPACE"
+          rm -rf HG_Film_Producer
+          mkdir -p HG_Film_Producer
+          cp -a "$src/dist/." HG_Film_Producer/
+          find HG_Film_Producer -type f -name '*.map' -delete
+          printf '%s\n' "$SOURCE_SHA" > HG_Film_Producer/source-sha.txt
+          touch HG_Film_Producer/.nojekyll
+
+      - name: Setup Node 22 for Football Manager and History Go
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Sync Football Manager when main changed
+        shell: bash
+        env:
+          SOURCE_SHA: ${{ steps.refs.outputs.football_sha }}
+        run: |
+          set -euo pipefail
+          marker='HistoryGo-FootballManager/source-sha.txt'
+          current="$(cat "$marker" 2>/dev/null || true)"
+          if [[ "$current" == "$SOURCE_SHA" ]]; then
+            echo 'Football Manager already current.'
+            exit 0
+          fi
+          src="$RUNNER_TEMP/HistoryGo-FootballManager"
+          rm -rf "$src"
+          git clone --quiet --depth 1 --branch main https://github.com/Paradispartiet/HistoryGo-FootballManager.git "$src"
+          cd "$src"
+          npm ci
+          npm run typecheck
+          npm run audit:knowledge
+          npm run audit:clubs
+          node scripts/sync-club-affiliations.mjs
+          npm run audit:ci-coverage
+          npm run check:syntax
+          npm run check:dom-ids
+          npm run audit:flow
+          npm run audit:dead-ends
+          npm run audit:historical-opponents
+          npm run audit:tournaments
+          npm run audit:tactics
+          npm run build
+          npm run stage:pages
+          npm run audit:pages-artifact
+          test -f _site/index.html
+          cd "$GITHUB_WORKSPACE"
+          rm -rf HistoryGo-FootballManager
+          mkdir -p HistoryGo-FootballManager
+          cp -a "$src/_site/." HistoryGo-FootballManager/
+          find HistoryGo-FootballManager -type f -name '*.map' -delete
+          printf '%s\n' "$SOURCE_SHA" > HistoryGo-FootballManager/source-sha.txt
+          touch HistoryGo-FootballManager/.nojekyll
+
+      - name: Sync History Go when main changed
+        shell: bash
+        env:
+          SOURCE_SHA: ${{ steps.refs.outputs.history_sha }}
+        run: |
+          set -euo pipefail
+          marker='History-Go/source-sha.txt'
+          current="$(cat "$marker" 2>/dev/null || true)"
+          if [[ "$current" == "$SOURCE_SHA" ]]; then
+            echo 'History Go already current.'
+            exit 0
+          fi
+          src="$RUNNER_TEMP/History-Go"
+          rm -rf "$src"
+          git clone --quiet --depth 1 --branch main https://github.com/Paradispartiet/History-Go.git "$src"
+          cd "$src"
+          npm ci
+          npm run build:web
+          cd "$GITHUB_WORKSPACE"
+          rm -rf History-Go
+          mkdir -p History-Go
+          root_files=(
+            Civication.html emner.html fagverk-forside.html fagverk-sted.html fagverk.html
+            index.html knowledge-profile.html knowledge.html knowledge.js knowledge_by.html
+            manifest.json merke.html notater.html profile.html sw.js
+          )
+          for file in "${root_files[@]}"; do
+            test -f "$src/$file"
+            cp "$src/$file" History-Go/
+          done
+          runtime_dirs=(assets bilder css data dist games js knowledge merker subpages)
+          for dir in "${runtime_dirs[@]}"; do
+            if [[ -d "$src/$dir" ]]; then
+              mkdir -p "History-Go/$dir"
+              cp -a "$src/$dir/." "History-Go/$dir/"
+            fi
+          done
+          find History-Go -type f \( \
+            -name '*.ts' -o -name '*.tsx' -o -name '*.map' -o -name '*.md' -o \
+            -name '*.markdown' -o -name '*.mjs' -o -name '*.cjs' -o -name '*.py' -o -name '*.sh' \
+          \) -delete
+          find History-Go -type d \( -name '__tests__' -o -name tests -o -name test \) -prune -exec rm -rf {} +
+          test -f History-Go/index.html
+          test -f History-Go/sw.js
+          test -f History-Go/data/places/places_index.json
+          printf '%s\n' "$SOURCE_SHA" > History-Go/source-sha.txt
+          touch History-Go/.nojekyll
+
+      - name: Commit refreshed production snapshots
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A HG_Film_Producer HistoryGo-FootballManager History-Go
+          if ! git diff --cached --quiet; then
+            git commit -m "deploy: sync public production sites [skip ci]"
+            git push origin HEAD:main
+          else
+            echo 'No production snapshot changes.'
+          fi
+
+      - name: Prepare Pages root artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site-root
+          mkdir -p _site-root
+          cp -a HG_Film_Producer _site-root/
+          cp -a HistoryGo-FootballManager _site-root/
+          cp -a History-Go _site-root/
+          cat > _site-root/index.html <<'EOF'
+          <!doctype html><html lang="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Paradispartiet</title></head><body><main><h1>Paradispartiet</h1><ul><li><a href="/HG_Film_Producer/">Film Producer</a></li><li><a href="/HistoryGo-FootballManager/">Football Manager</a></li><li><a href="/History-Go/">History Go</a></li></ul></main></body></html>
+          EOF
+          touch _site-root/.nojekyll
+
+      - name: Configure existing Pages site
+        uses: actions/configure-pages@v5
+
+      - name: Upload production Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site-root
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy production sites
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  verify:
+    needs: [build, deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify all production revisions are live
+        shell: bash
+        env:
+          FILM_SHA: ${{ needs.build.outputs.film_sha }}
+          FOOTBALL_SHA: ${{ needs.build.outputs.football_sha }}
+          HISTORY_SHA: ${{ needs.build.outputs.history_sha }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          check() {
+            local url="$1" expected="$2"
+            for attempt in $(seq 1 60); do
+              actual="$(curl --fail --silent --show-error --location --max-time 20 "${url}?sha=${expected}&attempt=${attempt}" 2>/dev/null | tr -d '\r\n' || true)"
+              if [[ "$actual" == "$expected" ]]; then return 0; fi
+              sleep 5
+            done
+            echo "Expected $expected at $url" >&2
+            return 1
+          }
+          check 'https://paradispartiet.github.io/HG_Film_Producer/source-sha.txt' "$FILM_SHA"
+          check 'https://paradispartiet.github.io/HistoryGo-FootballManager/source-sha.txt' "$FOOTBALL_SHA"
+          check 'https://paradispartiet.github.io/History-Go/source-sha.txt' "$HISTORY_SHA"
+          printf 'status=success\nrun_id=%s\nfilm=%s\nfootball=%s\nhistory=%s\n' "$GITHUB_RUN_ID" "$FILM_SHA" "$FOOTBALL_SHA" "$HISTORY_SHA" > /tmp/status
+          encoded="$(base64 -w0 /tmp/status)"
+          current="$(gh api "repos/${GITHUB_REPOSITORY}/contents/.production-sync-status.txt?ref=main" --jq .sha 2>/dev/null || true)"
+          args=(--method PUT "repos/${GITHUB_REPOSITORY}/contents/.production-sync-status.txt" -f message="Record production sync ${GITHUB_RUN_ID}" -f content="$encoded" -f branch=main)
+          if [[ -n "$current" ]]; then args+=(-f sha="$current"); fi
+          gh api "${args[@]}" >/dev/null
