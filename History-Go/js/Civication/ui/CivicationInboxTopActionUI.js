@@ -1,0 +1,666 @@
+// ============================================================
+// CIVICATION INBOX TOP ACTION UI
+// Hensikt:
+// - Toppkortet skal bare vise "Krever svar" når en hendelse faktisk
+//   er pending OG har valg brukeren kan svare på.
+// - Vanlige meldinger uten valg skal vises som melding/status, ikke som krav.
+// - Innkommende vises med tydelig skille mellom jobbmail og personlige meldinger.
+// - Dette er presentasjonslogikk, ikke motor/state-mutasjon.
+// ============================================================
+
+(function () {
+  "use strict";
+  let lastAnswerSummary = null;
+
+  function getInbox() {
+    const fromMailEngine = window.CivicationMailEngine?.getInbox?.();
+    if (Array.isArray(fromMailEngine)) return fromMailEngine;
+
+    const fromState = window.CivicationState?.getInbox?.();
+    if (Array.isArray(fromState)) return fromState;
+
+    try {
+      const stored = JSON.parse(localStorage.getItem("hg_civi_inbox_v1") || "[]");
+      return Array.isArray(stored) ? stored : [];
+    } catch {
+      return [];
+    }
+  }
+
+  function splitInbox() {
+    const inbox = getInbox();
+    const splitter = window.CivicationEventChannels?.splitInbox;
+    if (typeof splitter !== "function") {
+      return { messages: inbox, workday: [], milestones: [], system: [], unknown: [] };
+    }
+    return splitter(inbox);
+  }
+
+  function splitInboxByMessageChannel() {
+    const inbox = getInbox();
+    const classify = window.classifyCiviInboxItem;
+
+    if (typeof classify === "function") {
+      return (Array.isArray(inbox) ? inbox : []).reduce(function (acc, item) {
+        const group = classify(item);
+        if (group === "job") acc.job.push(item);
+        else if (group === "personal") acc.private.push(item);
+        else acc.unknown.push(item);
+        return acc;
+      }, { job: [], private: [], system: [], unknown: [] });
+    }
+
+    const splitter = window.CivicationEventChannels?.splitInboxByMessageChannel;
+    if (typeof splitter === "function") {
+      return splitter(inbox);
+    }
+
+    return (Array.isArray(inbox) ? inbox : []).reduce(function (acc, item) {
+      const ev = eventOf(item);
+      const sourceType = normalize(ev?.source_type);
+      const mailClass = normalize(ev?.mail_class);
+      const mailType = normalize(ev?.mail_type || ev?.type || ev?.kind);
+      const isPrivate = sourceType === "life" || mailClass === "private_message" || mailType === "private" || mailType === "personal";
+      const isSystem = sourceType === "system" || mailClass === "system" || mailType === "status";
+
+      if (isSystem) acc.system.push(item);
+      else if (isPrivate) acc.private.push(item);
+      else acc.job.push(item);
+      return acc;
+    }, { job: [], private: [], system: [], unknown: [] });
+  }
+
+  const inboxFilters = window.CivicationInboxItemFilters || (window.CivicationInboxItemFilters = {
+    eventOf: function (item) { return item?.event || item || null; },
+    normalize: function (value) { return String(value || "").trim().toLowerCase(); },
+    isOpenInboxItem: function (item) {
+      if (!item) return false;
+      if (item.deleted === true || item.archived === true || item.resolved === true) return false;
+      const status = String(item.status || "pending").trim().toLowerCase();
+      return status === "pending" || status === "open";
+    },
+    hasChoices: function (item) {
+      const ev = item?.event || item || null;
+      return Array.isArray(ev?.choices) && ev.choices.length > 0;
+    },
+    isActionableInboxItem: function (item) {
+      if (!this.isOpenInboxItem(item)) return false;
+      const ev = item?.event || item || {};
+      const choices = Array.isArray(ev?.choices) ? ev.choices : [];
+      if (choices.length > 0) return true;
+      const kindText = [ev.mail_type, ev.type, ev.kind, ev.slot, ev.task_id, ev.source_type]
+        .map(String).join(" ").toLowerCase();
+      if (kindText.includes("task_gate")) return true;
+      if (ev.requiresAction === true) return true;
+      if ((ev.required === true || ev.isRequired === true) && choices.length > 0) return true;
+      return false;
+    }
+  });
+
+  function eventOf(item) {
+    return inboxFilters.eventOf(item);
+  }
+
+  function normalize(value) {
+    return inboxFilters.normalize(value);
+  }
+
+  function escapeHtml(value) {
+    return String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  function isPending(item) {
+    return isOpenItem(item);
+  }
+
+  function isOpenItem(item) {
+    return inboxFilters.isOpenInboxItem(item);
+  }
+
+  function hasChoices(item) {
+    return inboxFilters.hasChoices(item);
+  }
+
+  function isActionableInboxItem(item) {
+    return inboxFilters.isActionableInboxItem(item);
+  }
+
+  function titleOf(item) {
+    const ev = eventOf(item);
+    return String(ev?.subject || ev?.title || ev?.kind || ev?.mail_type || "Innkommende").trim();
+  }
+
+  function kindOf(item) {
+    const ev = eventOf(item);
+    return String(ev?.kind || ev?.mail_type || ev?.type || "Innkommende").trim();
+  }
+
+  function fromOf(item) {
+    const ev = eventOf(item);
+    return String(ev?.from || ev?.source || ev?.sender || "Civication").trim();
+  }
+
+  function mailIdOf(item) {
+    const ev = eventOf(item);
+    return String(item?.id || ev?.id || ev?.mail_key || "").trim();
+  }
+
+  function metaOf(item, channelLabel) {
+    const ev = eventOf(item);
+    const parts = [
+      channelLabel,
+      ev?.mail_type,
+      ev?.source_type,
+      ev?.phase || ev?.phase_tag,
+      item?.enqueued_at ? new Date(item.enqueued_at).toLocaleString("no-NO") : null
+    ];
+
+    return parts
+      .map(function (part) { return String(part || "").trim(); })
+      .filter(Boolean)
+      .join(" · ");
+  }
+
+  function bodyLinesOf(item) {
+    const ev = eventOf(item);
+    const raw = Array.isArray(ev?.situation)
+      ? ev.situation
+      : [ev?.summary || ev?.body || item?.body || ""];
+
+    return raw
+      .map(function (line) { return String(line || "").trim(); })
+      .filter(Boolean)
+      .slice(0, 4);
+  }
+
+  function pendingActionItems() {
+    const split = splitInbox();
+    return (split.messages || [])
+      .concat(split.unknown || [], split.workday || [])
+      .filter(isActionableInboxItem);
+  }
+
+  // Ids that are active answerable actions in the current day phase (or the single active
+  // inbox fallback). The active id may render a direct answer surface here; all other
+  // ids stay passive so archived/open threads never borrow choices from another mail.
+  function getNextActionOwnedIds() {
+    const ids = new Set();
+
+    const current = window.CivicationNextActionSelector?.getCurrent?.();
+    if (current && current.id) ids.add(String(current.id).trim());
+
+    const inspection = window.CivicationDayProgression?.inspect?.();
+    const bundle = inspection?.phaseBundle || null;
+    if (bundle) {
+      [bundle.pendingItems, bundle.queuedItems].forEach(function (pool) {
+        if (!Array.isArray(pool)) return;
+        pool.forEach(function (row) {
+          const id = String(row?.id || "").trim();
+          const hasChoices = Array.isArray(row?.choices) ? row.choices.length > 0 : !!row?.hasChoices;
+          const taskGate = String(row?.mail_type || row?.type || row?.slot || "").toLowerCase().includes("task_gate");
+          if (id && (hasChoices || taskGate)) ids.add(id);
+        });
+      });
+    }
+
+    return ids;
+  }
+
+  function buildNextActionLinkHtml() {
+    return `
+      <div class="civi-inbox-card-actions civi-inbox-card-next-action">
+        <span class="civi-inbox-handled-note muted">Håndteres i Neste handling</span>
+        <button class="civi-btn secondary" type="button" data-civi-open-next-action="1">Gå til Neste handling</button>
+      </div>
+    `;
+  }
+
+  function isCurrentNextActionItem(item) {
+    const mailId = mailIdOf(item);
+    if (!mailId) return false;
+    const current = window.CivicationNextActionSelector?.getCurrent?.();
+    return !!current && String(current.id || "").trim() === mailId;
+  }
+
+  function renderDirectChoicesHtml(item) {
+    const mailId = mailIdOf(item);
+    const ev = eventOf(item);
+    const choices = Array.isArray(ev?.choices) ? ev.choices : [];
+    const buttons = choices.map(function (choice) {
+      const choiceId = String(choice?.id || "").trim();
+      if (!choiceId) return "";
+      return `<button class="civi-btn" type="button" data-civi-inbox-answer="1" data-mail-id="${escapeHtml(mailId)}" data-choice-id="${escapeHtml(choiceId)}">${escapeHtml(choice?.label || choice?.text || choiceId)}</button>`;
+    }).join("");
+
+    if (!buttons) return "";
+    return `
+      <div class="civi-inbox-card-actions civi-inbox-card-choices" role="group" aria-label="Svaralternativer">
+        ${buttons}
+      </div>
+    `;
+  }
+
+  function pendingMilestones() {
+    const split = splitInbox();
+    return (split.milestones || []).filter(isOpenItem);
+  }
+
+  function visibleMessages() {
+    const split = splitInbox();
+    return (split.messages || [])
+      .concat(split.unknown || [], split.milestones || [], split.system || [])
+      .filter(isOpenItem);
+  }
+
+  function openInboxPopup() {
+    const section = document.getElementById("civiInboxSection");
+    if (!section || !window.CivicationMiniSectionsUI?.openPopup) return;
+
+    window.CivicationMiniSectionsUI.openPopup(section, {
+      label: "Innkommende",
+      accent: "📨"
+    });
+  }
+
+  function setTopCard(model) {
+    const card = document.getElementById("civiTopActionCard");
+    if (!card) return false;
+
+    const title = card.querySelector(".civi-top-action-title");
+    const summary = card.querySelector(".civi-top-action-summary");
+    const chip = card.querySelector(".civi-top-action-chip");
+    const btn = /** @type {HTMLElement} */ (card.querySelector("[data-civi-top-action]"));
+
+    card.classList.toggle("is-urgent", model.mode === "urgent");
+    card.classList.toggle("is-calm", model.mode !== "urgent");
+    card.classList.toggle("is-milestone", model.tone === "milestone");
+
+    if (title) title.textContent = model.title;
+    if (summary) summary.textContent = model.summary;
+    if (chip) chip.textContent = model.chip;
+    if (btn) btn.textContent = model.action;
+
+    const handler = function () {
+      if (model.openNextAction && typeof window.CivicationNextActionUI?.open === "function") {
+        window.CivicationNextActionUI.open();
+        return;
+      }
+      if (model.openInbox) openInboxPopup();
+    };
+
+    if (btn) btn.onclick = handler;
+    card.onclick = function (event) {
+      const target = /** @type {Element} */ (event.target);
+      if (target && target.closest("button")) return;
+      handler();
+    };
+
+    return true;
+  }
+
+  function buildTopModel() {
+    const milestones = pendingMilestones();
+    if (milestones.length) {
+      const first = milestones[0];
+      return {
+        mode: "urgent",
+        tone: "milestone",
+        title: "Ny milepæl",
+        summary: titleOf(first),
+        chip: "Milepæl",
+        action: "Se milepæl",
+        openInbox: true
+      };
+    }
+
+    // The authoritative "next action" comes from CivicationNextActionSelector, not from
+    // pendingActionItems() — so the top card, Dagens fase and NextAction never point at
+    // different mails. The button opens the NextAction surface (the single answer surface).
+    const current = window.CivicationNextActionSelector?.getCurrent?.();
+    if (current && current.id) {
+      const metaKind = String(current.mail_type || current.phaseLabel || "Melding").trim();
+      const isAdvance = current.canAdvancePhase === true || current.source === "day_phase_advance";
+      return {
+        mode: "urgent",
+        title: isAdvance ? "Neste handling: gå videre" : "Neste handling: svar på melding",
+        summary: metaKind ? `${current.subject} · ${metaKind}` : current.subject,
+        chip: isAdvance ? "Fase klar" : "Krever svar",
+        action: isAdvance ? "Gå videre" : "Svar nå",
+        openNextAction: true
+      };
+    }
+
+    const messages = visibleMessages();
+    if (messages.length) {
+      const first = messages[0];
+      const actionable = isActionableInboxItem(first);
+      return {
+        mode: "info",
+        title: actionable ? "Ny melding" : "Statusmelding i innboksen",
+        summary: `${titleOf(first)} · ${kindOf(first)}`,
+        chip: actionable ? "Melding" : "Status",
+        action: "Åpne innkommende",
+        openInbox: true
+      };
+    }
+
+    return {
+      mode: "calm",
+      title: "Ingen handling krever svar nå",
+      summary: "Innboksen er ajour. Du kan utforske valgt livsområde i roligere tempo.",
+      chip: "Stabilt",
+      action: "Se dashboard",
+      openInbox: false
+    };
+  }
+
+  function normalizeStabilityLabel(value) {
+    const raw = String(value || "").trim();
+    if (!raw) return "";
+    const key = raw.toLowerCase();
+    if (key === "stable") return "Stabil";
+    if (key === "warning") return "Advarsel";
+    if (key === "fired") return "Avsluttet";
+    return raw;
+  }
+
+  function buildAnswerSummaryHtml() {
+    if (!lastAnswerSummary) return "";
+    const parts = [];
+    if (lastAnswerSummary.choiceLabel) parts.push(`Valg: ${escapeHtml(lastAnswerSummary.choiceLabel)}`);
+    if (lastAnswerSummary.effect !== "") parts.push(`Effekt: ${escapeHtml(lastAnswerSummary.effect)}`);
+    if (lastAnswerSummary.stability) parts.push(`Stabilitet: ${escapeHtml(lastAnswerSummary.stability)}`);
+    if (lastAnswerSummary.subject) parts.push(`Sak: ${escapeHtml(lastAnswerSummary.subject)}`);
+
+    return `
+      <section class="civi-inbox-answer-summary">
+        <h3>Siste konsekvens</h3>
+        ${lastAnswerSummary.feedback ? `<p>${escapeHtml(lastAnswerSummary.feedback)}</p>` : ""}
+        <div class="civi-inbox-answer-meta">${parts.map(function (part) { return `<span>${part}</span>`; }).join("")}</div>
+      </section>
+    `;
+  }
+
+  function renderChoiceButtons(item, ownedIds) {
+    const mailId = mailIdOf(item);
+    if (!isOpenItem(item) || !mailId) return "";
+
+    if (hasChoices(item) && isCurrentNextActionItem(item)) {
+      return renderDirectChoicesHtml(item);
+    }
+
+    if (ownedIds?.has?.(mailId)) return buildNextActionLinkHtml();
+
+    return "";
+  }
+
+  function renderInboxCard(item, channelLabel, ownedIds) {
+    const lines = bodyLinesOf(item);
+    const pending = isOpenItem(item);
+    const statusLabel = pending ? "Åpen" : "Avklart";
+    const meta = metaOf(item, channelLabel);
+
+    return `
+      <article class="civi-inbox-card ${pending ? "is-pending" : "is-resolved"}">
+        <div class="civi-inbox-card-head">
+          <div class="civi-inbox-card-title-wrap">
+            <div class="civi-inbox-card-kickers">
+              <span class="civi-inbox-channel-chip">${escapeHtml(channelLabel)}</span>
+              <span class="civi-inbox-status">${escapeHtml(statusLabel)}</span>
+            </div>
+            <h4>${escapeHtml(titleOf(item))}</h4>
+            <p class="civi-inbox-sender">Fra: ${escapeHtml(fromOf(item))}</p>
+          </div>
+        </div>
+        ${meta ? `<div class="civi-inbox-meta muted">${escapeHtml(meta)}</div>` : ""}
+        ${lines.length ? `<div class="civi-inbox-body">${lines.map(function (line) {
+          return `<p>${escapeHtml(line)}</p>`;
+        }).join("")}</div>` : ""}
+        ${renderChoiceButtons(item, ownedIds)}
+      </article>
+    `;
+  }
+
+  function isResolved(item) {
+    const status = normalize(item?.status);
+    return item?.resolved === true || status === "resolved" || status === "answered" || status === "closed";
+  }
+
+  function renderInboxSection(label, intro, items, emptyText, ownedIds) {
+    const visible = (Array.isArray(items) ? items : [])
+      .filter(function (item) { return item && item.deleted !== true && item.archived !== true; });
+
+    const openItems = visible.filter(isOpenItem);
+
+    const resolvedItems = visible.filter(function (item) { return !isOpenItem(item) || isResolved(item); });
+    const pendingCount = openItems.length;
+
+    return `
+      <section class="civi-inbox-channel-section">
+        <div class="civi-inbox-channel-head">
+          <div>
+            <h3>${escapeHtml(label)}</h3>
+            <p class="muted">${escapeHtml(intro)}</p>
+          </div>
+          <strong>${pendingCount} åpne</strong>
+        </div>
+        <div class="civi-inbox-channel-list">
+          ${openItems.length
+            ? openItems.map(function (item) { return renderInboxCard(item, label, ownedIds); }).join("")
+            : `<div class="civi-inbox-empty muted">${escapeHtml(emptyText)}</div>`
+          }
+          ${resolvedItems.length
+            ? `
+              <details class="civi-inbox-history">
+                <summary>Vis gamle meldinger (${resolvedItems.length})</summary>
+                <div class="civi-inbox-history-list">
+                  ${resolvedItems.map(function (item) { return renderInboxCard(item, label, ownedIds); }).join("")}
+                </div>
+              </details>
+            `
+            : ""
+          }
+        </div>
+      </section>
+    `;
+  }
+
+  function answerFromInbox(button) {
+    const mailId = String(button?.getAttribute("data-mail-id") || "").trim();
+    const rawChoiceId = button?.getAttribute("data-choice-id");
+    const choiceId = rawChoiceId == null ? null : String(rawChoiceId).trim();
+    if (!mailId) return;
+
+    button.disabled = true;
+
+    const result = window.CivicationMailEngine?.answerMail
+      ? window.CivicationMailEngine.answerMail(mailId, choiceId)
+      : window.HG_CiviEngine?.answer?.(mailId, choiceId);
+
+    Promise.resolve(result)
+      .then(function (answerResult) {
+        if (answerResult?.ok === false) {
+          lastAnswerSummary = {
+            choiceLabel: "",
+            feedback: answerResult?.reason ? "Kunne ikke svare på mail (" + answerResult.reason + ")." : "Kunne ikke svare på mail.",
+            effect: "",
+            stability: "",
+            subject: ""
+          };
+          button.disabled = false;
+          scheduleRefresh();
+          return answerResult;
+        }
+        const inboxItem = getInbox().find(function (item) { return mailIdOf(item) === mailId; });
+        const eventObj = eventOf(inboxItem) || {};
+        const selectedChoice = Array.isArray(eventObj?.choices)
+          ? eventObj.choices.find(function (row) { return String(row?.id || "").trim() === choiceId; }) || null
+          : null;
+        lastAnswerSummary = {
+          choiceLabel: selectedChoice?.label || "",
+          feedback: selectedChoice?.feedback || answerResult?.feedback || eventObj?.feedback || "",
+          effect: answerResult?.effect ?? selectedChoice?.effect ?? "",
+          stability: normalizeStabilityLabel(answerResult?.stability),
+          subject: eventObj?.subject || eventObj?.title || ""
+        };
+        try { window.dispatchEvent(new Event("updateProfile")); } catch {}
+        scheduleRefresh();
+        scheduleInboxSectionsRefresh();
+      })
+      .catch(function (error) {
+        button.disabled = false;
+        lastAnswerSummary = { choiceLabel: "", feedback: "Kunne ikke svare på mail.", effect: "", stability: "", subject: "" };
+        scheduleRefresh();
+        if (window.DEBUG) console.warn("[CivicationInboxTopActionUI] Kunne ikke svare på mail", error);
+      });
+  }
+
+  function wireInboxResponses(host) {
+    host.querySelectorAll("[data-civi-inbox-answer]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        answerFromInbox(button);
+      });
+    });
+    host.querySelectorAll("[data-civi-open-next-action]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        if (typeof window.CivicationNextActionUI?.open === "function") {
+          window.CivicationNextActionUI.open();
+        }
+      });
+    });
+  }
+
+  function renderInboxSections() {
+    const host = document.getElementById("civiInbox");
+    if (!host) return false;
+
+    const split = splitInboxByMessageChannel();
+    const job = split.job || [];
+    // Uklassifiserte meldinger hører fortsatt til samme underliggende store;
+    // de vises med personlige meldinger slik at ingenting skjules ved usikker klassifisering.
+    const privateMessages = (split.private || []).concat(split.unknown || []);
+    const systemMessages = split.system || [];
+
+    const ownedIds = getNextActionOwnedIds();
+
+    const markup = `
+      <div class="civi-inbox-sections" data-civi-inbox-sections="1">
+        ${buildAnswerSummaryHtml()}
+        ${renderInboxSection(
+          "Jobbmail",
+          "Arbeid, stilling, rolleprogresjon, arbeidsdag, konflikter, forfremmelse, stagnasjon og oppsigelse.",
+          job,
+          "Ingen jobbmail akkurat nå.",
+          ownedIds
+        )}
+        ${renderInboxSection(
+          "Personlige meldinger",
+          "Kveld, fritid, private relasjoner og livshendelser utenfor jobblogikken.",
+          privateMessages,
+          "Ingen personlige meldinger akkurat nå.",
+          ownedIds
+        )}
+        ${systemMessages.length ? renderInboxSection(
+          "System",
+          "Statusmeldinger og tekniske beskjeder.",
+          systemMessages,
+          "Ingen systemmeldinger.",
+          ownedIds
+        ) : ""}
+      </div>
+    `;
+
+    host.innerHTML = markup;
+
+    wireInboxResponses(host);
+    return true;
+  }
+
+  function refreshTopAction() {
+    setTopCard(buildTopModel());
+  }
+
+  function scheduleRefresh() {
+    window.setTimeout(refreshTopAction, 0);
+    window.setTimeout(refreshTopAction, 80);
+    window.setTimeout(refreshTopAction, 260);
+  }
+
+  function scheduleInboxSectionsRefresh() {
+    window.setTimeout(renderInboxSections, 0);
+    window.setTimeout(renderInboxSections, 80);
+    window.setTimeout(renderInboxSections, 260);
+  }
+
+  function wrapMiniRefresh() {
+    const api = window.CivicationMiniSectionsUI;
+    if (!api || api.__civiInboxTopActionWrapped) return;
+
+    const originalRefresh = api.refresh;
+    api.refresh = function wrappedRefresh() {
+      const result = typeof originalRefresh === "function"
+        ? originalRefresh.apply(this, arguments)
+        : undefined;
+      scheduleRefresh();
+      scheduleInboxSectionsRefresh();
+      return result;
+    };
+
+    api.__civiInboxTopActionWrapped = true;
+  }
+
+  function wrapLegacyInboxRenderer() {
+    const originalRender = /** @type {any} */ (window.renderCivicationInbox);
+    if (typeof originalRender !== "function") return;
+    if (originalRender.__civiInboxSectionsWrapped) return;
+
+    const wrappedRender = function wrappedRenderCivicationInbox() {
+      const result = originalRender.apply(this, arguments);
+      scheduleInboxSectionsRefresh();
+      return result;
+    };
+
+    wrappedRender.__civiInboxSectionsWrapped = true;
+    wrappedRender.__civiOriginalRender = originalRender;
+    window.renderCivicationInbox = wrappedRender;
+  }
+
+  function boot() {
+    wrapMiniRefresh();
+    wrapLegacyInboxRenderer();
+    scheduleRefresh();
+    scheduleInboxSectionsRefresh();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot, { once: true });
+  } else {
+    boot();
+  }
+
+  [
+    "civi:inboxChanged",
+    "civi:dataReady",
+    "civi:booted",
+    "updateProfile",
+    "civi:homeChanged"
+  ].forEach(function (eventName) {
+    window.addEventListener(eventName, function () {
+      scheduleRefresh();
+      scheduleInboxSectionsRefresh();
+    });
+  });
+
+  window.CivicationInboxTopActionUI = {
+    refresh: refreshTopAction,
+    renderSections: renderInboxSections,
+    getActionable: pendingActionItems,
+    getMessages: visibleMessages,
+    splitChannels: splitInboxByMessageChannel
+  };
+})();

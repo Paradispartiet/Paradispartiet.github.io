@@ -1,0 +1,192 @@
+/* ============================================================
+   HG Lifestyle v0.2
+   - Leser data/Civication/lifestyles.json
+   - Samler tags over tid (path dependency)
+   - Regner ut "stamp" (dominant lifestyle)
+   ============================================================ */
+
+(() => {
+  const LS_LIFE = "hg_lifestyle_v1";
+  const DEFAULT = {
+    tag_counts: {},
+    lifestyle_scores: {},
+    stamp: null,
+    updated_at: null
+  };
+
+  function safeParse(raw, fb) {
+    try { return JSON.parse(raw); } catch { return fb; }
+  }
+
+  function lsGet(k, fb) {
+    const raw = localStorage.getItem(k);
+    return raw == null ? fb : safeParse(raw, fb);
+  }
+
+  function lsSet(k, v) {
+    try { localStorage.setItem(k, JSON.stringify(v)); } catch {}
+  }
+
+  function normalizeTag(t) {
+    return String(t || "")
+      .toLowerCase()
+      .trim()
+      .replace(/\s+/g, "_")
+      .slice(0, 64);
+  }
+
+  function getState() {
+    const s = lsGet(LS_LIFE, null);
+    return { ...DEFAULT, ...(s || {}) };
+  }
+
+  function saveState(next) {
+    const prevRaw = localStorage.getItem(LS_LIFE);
+    const nextRaw = JSON.stringify(next);
+    if (prevRaw === nextRaw) return next;
+    lsSet(LS_LIFE, next);
+    try { window.dispatchEvent(new Event("updateProfile")); } catch {}
+    return next;
+  }
+
+  let _lifeData = null;
+  let _lifeDataFailed = false;
+
+  async function ensureLifeData(url = "data/Civication/lifestyles.json") {
+    if (_lifeData) return _lifeData;
+    // Negativ cache: uten denne ble en manglende fil re-fetchet på hvert svar.
+    if (_lifeDataFailed) throw new Error("Could not load lifestyles.json");
+
+    const sharedStore = window.CivicationJsonStore;
+    if (sharedStore?.fetchJson) {
+      const json = await sharedStore.fetchJson(url);
+      if (!json) { _lifeDataFailed = true; throw new Error("Could not load lifestyles.json"); }
+      _lifeData = json;
+      return _lifeData;
+    }
+
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) { _lifeDataFailed = true; throw new Error("Could not load lifestyles.json"); }
+
+    const json = await res.json();
+    _lifeData = json;
+    return _lifeData;
+  }
+
+  function scoreLifestyle(life, tagCounts) {
+    // Datafila (data/Civication/lifestyles.json) bruker bonus_tags/anti_tags;
+    // eldre payloads brukte tags/avoid_tags. Godta begge.
+    const core = Array.isArray(life?.core_tags) ? life.core_tags : [];
+    const plus = Array.isArray(life?.bonus_tags) ? life.bonus_tags
+      : (Array.isArray(life?.tags) ? life.tags : []);
+    const avoid = Array.isArray(life?.anti_tags) ? life.anti_tags
+      : (Array.isArray(life?.avoid_tags) ? life.avoid_tags : []);
+
+    let score = 0;
+
+    for (const t of core) {
+      const k = normalizeTag(t);
+      score += 2 * Number(tagCounts[k] || 0);
+    }
+
+    for (const t of plus) {
+      const k = normalizeTag(t);
+      score += 1 * Number(tagCounts[k] || 0);
+    }
+
+    for (const t of avoid) {
+      const k = normalizeTag(t);
+      score -= 1 * Number(tagCounts[k] || 0);
+    }
+
+    return score;
+  }
+
+  function recomputeStamp(lifeData, state) {
+    const lifestyles = Array.isArray(lifeData?.lifestyles) ? lifeData.lifestyles : [];
+    const tagCounts = state.tag_counts || {};
+
+    let best = null;
+    const scores = {};
+
+    for (const life of lifestyles) {
+      const id = String(life?.id || "").trim();
+      if (!id) continue;
+
+      const sc = scoreLifestyle(life, tagCounts);
+      scores[id] = sc;
+
+      if (!best || sc > best.score) {
+        best = { life, score: sc };
+      }
+    }
+
+    const stamp = best
+      ? {
+          id: String(best.life.id),
+          name: String(best.life.name || best.life.id),
+          icon: String(best.life.icon || "🏷️"),
+          score: Number(best.score || 0)
+        }
+      : null;
+
+    return { scores, stamp };
+  }
+
+  async function addTags(tags = [], source = "") {
+    const arr = Array.isArray(tags) ? tags : [];
+    if (!arr.length) return getState();
+
+    const st = getState();
+    const next = { ...st, tag_counts: { ...(st.tag_counts || {}) } };
+
+    for (const raw of arr) {
+      const k = normalizeTag(raw);
+      if (!k) continue;
+      next.tag_counts[k] = Number(next.tag_counts[k] || 0) + 1;
+    }
+
+    next.updated_at = new Date().toISOString();
+
+    try {
+      const lifeData = await ensureLifeData();
+      const { scores, stamp } = recomputeStamp(lifeData, next);
+      next.lifestyle_scores = scores;
+      next.stamp = stamp;
+    } catch {}
+
+    saveState(next);
+    return next;
+  }
+
+  function getStamp() {
+    const st = getState();
+    return st.stamp || null;
+  }
+
+  function getTagCounts() {
+    const st = getState();
+    return st.tag_counts || {};
+  }
+
+  async function forceRecompute() {
+    const st = getState();
+    const lifeData = await ensureLifeData();
+    const { scores, stamp } = recomputeStamp(lifeData, st);
+    const next = { ...st, lifestyle_scores: scores, stamp };
+    saveState(next);
+    return next;
+  }
+
+  window.HG_Lifestyle = {
+    addTags,
+    getStamp,
+    getTagCounts,
+    forceRecompute
+  };
+
+  // Backward compatibility for older Civication code
+  window.getPrimaryLifestyle = function () {
+    return window.HG_Lifestyle?.getStamp?.() || null;
+  };
+})();

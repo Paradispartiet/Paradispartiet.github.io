@@ -1,0 +1,723 @@
+{
+  "schema": "historygo-football-manager.club-inbox-messages.v1",
+  "version": 1,
+  "messages": [
+    {
+      "id": "welcome_from_board",
+      "threadId": "board_direction_and_trust",
+      "senderId": "board",
+      "from": "Styret",
+      "tag": "Sesongmål",
+      "title": "Velkommen til klubben",
+      "body": "Styret forventer en stabil sesong. Bygg en ellever som henger sammen taktisk, og vis at klassespillere kan brukes riktig.",
+      "phases": [
+        "analysis",
+        "training",
+        "inbox",
+        "match_prep",
+        "matchday"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "assistant_training_focus",
+      "threadId": "coaching_training_focus",
+      "senderId": "coaching_team",
+      "from": "Trenerteam",
+      "tag": "Trening",
+      "title": "Ukens treningsvalg",
+      "body": "Når laget har en tydelig svakhet, bør treningsuka brukes til ett konkret prinsipp. Velg en kunnskapsøkt og fullfør den før klubben går videre.",
+      "phases": [
+        "training"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "assistant_training_week_start",
+      "threadId": "assistant_training_culture",
+      "senderId": "assistant_coach",
+      "from": "Assistenttrener",
+      "tag": "Treningsuke",
+      "title": "Vi må velge ett hovedfokus",
+      "body": "Denne uka bør vi ikke prøve å rette alt samtidig. Velg ett tydelig treningsfokus, fullfør økta, og la spillerne møte det samme prinsippet flere ganger med samme språk.",
+      "phases": [
+        "training"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "assistant_no_training_focus_warning",
+      "threadId": "assistant_training_culture",
+      "senderId": "assistant_coach",
+      "from": "Assistenttrener",
+      "tag": "Treningsfokus",
+      "title": "Treningen trenger en rød tråd",
+      "body": "Når treningsuka mangler et klart fokus, blir øktene fort løsrevne. Spillerne må vite hva vi trener på, hvorfor det betyr noe, og hvordan det skal se ut når kampen starter.",
+      "phases": [
+        "training"
+      ],
+      "conditions": {
+        "metric": "tacticalClarity",
+        "operator": "lte",
+        "value": 48
+      }
+    },
+    {
+      "id": "assistant_low_training_culture_practical",
+      "threadId": "assistant_training_culture",
+      "senderId": "assistant_coach",
+      "from": "Assistenttrener",
+      "tag": "Treningskultur",
+      "title": "Vi må heve standarden på feltet",
+      "body": "Treningskulturen er for lav. Det handler ikke bare om å trene hardere, men om presisjon, repetisjon og at hver øvelse har en tydelig kobling til måten vi vil spille på.",
+      "phases": [
+        "analysis",
+        "training",
+        "inbox"
+      ],
+      "conditions": {
+        "metric": "trainingCulture",
+        "operator": "lte",
+        "value": 45
+      }
+    },
+    {
+      "id": "assistant_good_training_culture_momentum",
+      "threadId": "assistant_training_culture",
+      "senderId": "assistant_coach",
+      "from": "Assistenttrener",
+      "tag": "Treningskultur",
+      "title": "Treningsarbeidet begynner å feste seg",
+      "body": "Det er mer sammenheng i treningsarbeidet nå. Når øktene er konkrete, gjentas med samme krav og kobles til kampbildet, begynner spillerne å kjenne igjen laget i seg selv.",
+      "phases": [
+        "analysis",
+        "training",
+        "inbox"
+      ],
+      "conditions": {
+        "metric": "trainingCulture",
+        "operator": "gte",
+        "value": 55
+      }
+    },
+    {
+      "id": "assistant_low_tactical_clarity_roles",
+      "threadId": "coaching_training_focus",
+      "senderId": "assistant_coach",
+      "from": "Assistenttrener",
+      "tag": "Rollebruk",
+      "title": "Rollene må bli enklere å forstå",
+      "body": "Taktisk klarhet er lav. Vi bør gå gjennom én lagdel om gangen og sjekke om spillerne faktisk forstår hvor de skal være, hva de skal true, og hvem de skal støtte.",
+      "phases": [
+        "analysis",
+        "training"
+      ],
+      "conditions": {
+        "metric": "tacticalClarity",
+        "operator": "lte",
+        "value": 45
+      }
+    },
+    {
+      "id": "assistant_training_focus_after_analysis",
+      "threadId": "coaching_training_focus",
+      "senderId": "assistant_coach",
+      "from": "Assistenttrener",
+      "tag": "Analyse",
+      "title": "Analysen må bli til en økt",
+      "body": "Når analysen peker på en svakhet, må vi oversette den til treningsfeltet. Én svakhet, én økt, ett tydelig prinsipp spillerne kan kjenne igjen når de møter press.",
+      "phases": [
+        "analysis"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "assistant_press_structure_training",
+      "threadId": "coaching_training_focus",
+      "senderId": "assistant_coach",
+      "from": "Assistenttrener",
+      "tag": "Press",
+      "title": "Presset må henge sammen",
+      "body": "Hvis førsteforsvarer går alene, blir laget strukket. Vi må trene på når presset starter, hvem som sikrer bak, og hvor resten av laget skal stå når ballen spilles forbi første pressledd.",
+      "phases": [
+        "training",
+        "match_prep"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "assistant_rest_defence_training",
+      "threadId": "coaching_training_focus",
+      "senderId": "assistant_coach",
+      "from": "Assistenttrener",
+      "tag": "Balanse",
+      "title": "Vi må sikre oss mens vi angriper",
+      "body": "Laget kan ikke bare se på hva vi gjør med ball. Restforsvaret må være klart før vi mister den, ellers blir hvert balltap en overgang imot.",
+      "phases": [
+        "training",
+        "match_prep"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "assistant_role_misuse_warning",
+      "threadId": "coaching_training_focus",
+      "senderId": "assistant_coach",
+      "from": "Assistenttrener",
+      "tag": "Rollebruk",
+      "title": "Gode spillere kan fortsatt brukes feil",
+      "body": "Vi har klassespillere, men det er ikke nok. En dribler som alltid mottar feilvendt, en bakromsspiss uten dybdeballer, eller en playmaker uten støtte mister fort det som gjør ham god.",
+      "phases": [
+        "analysis",
+        "training",
+        "match_prep"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "assistant_match_plan_training_link",
+      "threadId": "coaching_training_focus",
+      "senderId": "assistant_coach",
+      "from": "Assistenttrener",
+      "tag": "Kampplan",
+      "title": "Kampplanen må komme fra treningsuka",
+      "body": "Før kamp bør planen ligne på noe vi faktisk har trent på. Spillerne stoler mer på en enkel idé de har repetert enn en perfekt idé de bare har hørt om.",
+      "phases": [
+        "match_prep"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "assistant_match_day_simple_reminder",
+      "threadId": "coaching_training_focus",
+      "senderId": "assistant_coach",
+      "from": "Assistenttrener",
+      "tag": "Kampdag",
+      "title": "Gi spillerne korte beskjeder",
+      "body": "På kampdag bør vi holde beskjedene korte. Én ting med ball, én ting uten ball, og én ting vi må huske når kampen blir stressende.",
+      "phases": [
+        "matchday"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "assistant_club_work_training_structure",
+      "threadId": "assistant_training_culture",
+      "senderId": "assistant_coach",
+      "from": "Assistenttrener",
+      "tag": "Klubbdrift",
+      "title": "Treningshverdagen trenger struktur",
+      "body": "Klubbdrift påvirker treningsfeltet mer enn man tror. Gode rutiner, riktig stab og tydelige øktplaner gjør det lettere å bygge kultur uke etter uke.",
+      "phases": [
+        "inbox"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "assistant_training_detail_repetition",
+      "threadId": "assistant_training_culture",
+      "senderId": "assistant_coach",
+      "from": "Assistenttrener",
+      "tag": "Repetisjon",
+      "title": "Detaljene må gjentas",
+      "body": "Spillerne lærer ikke prinsippene fordi vi sier dem én gang. De lærer når samme detalj dukker opp i oppvarming, øvelse, spilldel og kampplan.",
+      "phases": [
+        "training"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "assistant_high_media_pressure_training_calm",
+      "threadId": "coaching_training_focus",
+      "senderId": "assistant_coach",
+      "from": "Assistenttrener",
+      "tag": "Ro",
+      "title": "Medietrykk må ikke styre treningen",
+      "body": "Medietrykket øker, men treningsfeltet må være rolig. Vi kan ikke la overskriftene bestemme økta. Spillerne trenger klare prinsipper, ikke stress.",
+      "phases": [
+        "analysis",
+        "training",
+        "match_prep"
+      ],
+      "conditions": {
+        "metric": "mediaPressure",
+        "operator": "gte",
+        "value": 55
+      }
+    },
+    {
+      "id": "assistant_morale_training_response",
+      "threadId": "assistant_training_culture",
+      "senderId": "assistant_coach",
+      "from": "Assistenttrener",
+      "tag": "Moral",
+      "title": "Moral bygges gjennom mestring",
+      "body": "Spillermoralen løftes ikke bare av prat. Den løftes når spillerne forstår oppgaven, lykkes oftere på feltet og merker at rollen deres gir mening.",
+      "phases": [
+        "analysis",
+        "training",
+        "inbox"
+      ],
+      "conditions": {
+        "metric": "playerMorale",
+        "operator": "lte",
+        "value": 45
+      }
+    },
+    {
+      "id": "board_analysis_phase",
+      "threadId": "board_direction_and_trust",
+      "senderId": "board",
+      "from": "Styret",
+      "tag": "Analyse",
+      "title": "Analyse før neste grep",
+      "body": "Styret vil se at du leser laget før du handler. Bruk managerinnsikten til å se om problemet ligger i balanse, rollebruk eller taktisk struktur.",
+      "phases": [
+        "analysis"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "club_work_phase_notice",
+      "threadId": "administration_club_work",
+      "senderId": "administration",
+      "from": "Administrasjonen",
+      "tag": "Klubbdrift",
+      "title": "Klubbdrift krever prioritering",
+      "body": "Klubbdriften handler ikke bare om laget på banen. Fasiliteter, økonomi, administrasjon og markedsarbeid må etter hvert trekkes inn i managerrollen.",
+      "phases": [
+        "inbox"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "match_preparation_pressure",
+      "threadId": "press_media_pressure",
+      "senderId": "press_officer",
+      "from": "Presseansvarlig",
+      "tag": "Kampforberedelse",
+      "title": "Kampen nærmer seg",
+      "body": "Når kampdagen nærmer seg, øker oppmerksomheten. Et tydelig laguttak og en forståelig kampplan vil gjøre klubben roligere.",
+      "phases": [
+        "match_prep"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "match_day_board_watch",
+      "threadId": "board_match_expectations",
+      "senderId": "board",
+      "from": "Styret",
+      "tag": "Kampdag",
+      "title": "Styret følger kampen",
+      "body": "Kampdag handler ikke bare om resultatet. Styret følger med på om laget ser organisert ut, og om manageren har bygget en troverdig plan.",
+      "phases": [
+        "matchday"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "low_tactical_clarity_warning",
+      "threadId": "coaching_training_focus",
+      "senderId": "coaching_team",
+      "from": "Trenerteam",
+      "tag": "Taktisk klarhet",
+      "title": "Laget trenger tydeligere prinsipper",
+      "body": "Taktisk klarhet er lav. Spillerne trenger færre ideer, tydeligere roller og en treningsuke som peker mot samme spillmodell.",
+      "phases": [
+        "analysis",
+        "training"
+      ],
+      "conditions": {
+        "metric": "tacticalClarity",
+        "operator": "lte",
+        "value": 45
+      }
+    },
+    {
+      "id": "high_media_pressure_warning",
+      "threadId": "press_media_pressure",
+      "senderId": "press_officer",
+      "from": "Presseansvarlig",
+      "tag": "Medietrykk",
+      "title": "Medietrykket øker",
+      "body": "Medietrykket er høyt. Klubben trenger tydelig kommunikasjon, rolig ledelse og færre uklare signaler før neste kamp.",
+      "phases": [
+        "match_prep",
+        "matchday",
+        "analysis"
+      ],
+      "conditions": {
+        "metric": "mediaPressure",
+        "operator": "gte",
+        "value": 55
+      }
+    },
+    {
+      "id": "low_training_culture_warning",
+      "threadId": "coaching_training_focus",
+      "senderId": "coaching_team",
+      "from": "Trenerteam",
+      "tag": "Treningskultur",
+      "title": "Treningskulturen må løftes",
+      "body": "Treningskulturen faller når økter velges uten å fullføres. Laget trenger en tydeligere ukeplan og bedre oppfølging av treningsfokuset.",
+      "phases": [
+        "analysis",
+        "training"
+      ],
+      "conditions": {
+        "metric": "trainingCulture",
+        "operator": "lte",
+        "value": 45
+      }
+    },
+    {
+      "id": "strong_training_culture_praise",
+      "threadId": "assistant_training_culture",
+      "senderId": "assistant_coach",
+      "from": "Assistenttrener",
+      "tag": "Treningskultur",
+      "title": "Treningsarbeidet begynner å sette seg",
+      "body": "Treningskulturen er god. Spillerne responderer bedre når øktene er konkrete, gjentatte og koblet til lagets faktiske svakheter.",
+      "phases": [
+        "analysis",
+        "training",
+        "inbox"
+      ],
+      "conditions": {
+        "metric": "trainingCulture",
+        "operator": "gte",
+        "value": 55
+      }
+    },
+    {
+      "id": "sports_director_squad_plan",
+      "threadId": "sporting_director_squad_plan",
+      "senderId": "sporting_director",
+      "from": "Sportsdirektør",
+      "tag": "Stallplan",
+      "title": "Stallen må ha en retning",
+      "body": "Når laget bygges, må roller og spillerprofiler henge sammen. Vi bør ikke bare samle gode spillere, men spillere som passer planen.",
+      "phases": [
+        "analysis",
+        "inbox"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "goalkeeper_coach_depth",
+      "threadId": "goalkeeper_coach_depth",
+      "senderId": "goalkeeper_coach",
+      "from": "Keepertrener",
+      "tag": "Keeper",
+      "title": "Keeperrollen må følge forsvarslinjen",
+      "body": "Hvis laget står høyt, må keeperen være klar til å kontrollere bakrommet. Keeperrollen bør vurderes sammen med forsvarshøyden.",
+      "phases": [
+        "training",
+        "match_prep"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "physio_load_warning",
+      "threadId": "physio_load_management",
+      "senderId": "physio",
+      "from": "Fysio",
+      "tag": "Medisinsk",
+      "title": "Belastningen må følges",
+      "body": "Treningskultur er positivt, men høy intensitet uten restitusjon kan gi slitasje. Vi bør følge belastningen når ukene blir tettere.",
+      "phases": [
+        "training",
+        "inbox"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "captain_clarity",
+      "threadId": "captain_dressing_room_clarity",
+      "senderId": "captain",
+      "from": "Kapteinen",
+      "tag": "Garderobe",
+      "title": "Spillerne trenger tydelige beskjeder",
+      "body": "Garderoben responderer best når planen er enkel å forstå. Færre prinsipper, tydeligere roller og korte beskjeder hjelper laget.",
+      "phases": [
+        "analysis",
+        "training"
+      ],
+      "conditions": {
+        "metric": "tacticalClarity",
+        "operator": "lte",
+        "value": 50
+      }
+    },
+    {
+      "id": "supporter_identity",
+      "threadId": "supporter_identity",
+      "senderId": "supporter_group",
+      "from": "Supportergruppe",
+      "tag": "Supportere",
+      "title": "Vi vil kjenne igjen laget",
+      "body": "Supporterne vil se et lag med tydelig identitet. Resultater betyr mye, men laget må også se ut som det tror på noe.",
+      "phases": [
+        "analysis",
+        "matchday"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "groundhopper_unlock_hint",
+      "threadId": "groundhopper_unlocks",
+      "senderId": "groundhopper",
+      "from": "Groundhopper",
+      "tag": "History Go",
+      "title": "Stadionbesøk kan åpne nye muligheter",
+      "body": "Når du besøker klubbsteder i History Go, kan spillere, trenere og staff etter hvert bli tilgjengelige i managerdelen.",
+      "phases": [
+        "inbox",
+        "analysis"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "club_archive_history",
+      "threadId": "club_archive_identity",
+      "senderId": "club_archive",
+      "from": "Klubbarkivet",
+      "tag": "Historie",
+      "title": "Klubbhistorien kan brukes",
+      "body": "Gamle spillere, trenere og kamper kan gi klubben identitet. Historien bør ikke bare være pynt, men en del av hvordan laget bygges.",
+      "phases": [
+        "inbox",
+        "analysis"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "sponsor_visibility",
+      "threadId": "sponsor_visibility",
+      "senderId": "sponsor",
+      "from": "Sponsor",
+      "tag": "Marked",
+      "title": "Synlighet gir verdi",
+      "body": "Et tydelig lag og en tydelig historie gjør klubben mer attraktiv. Sportslig identitet og kommersiell profil bør etter hvert henge sammen.",
+      "phases": [
+        "inbox"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "league_formal_notice",
+      "threadId": "league_formal_notices",
+      "senderId": "league_office",
+      "from": "Ligaen",
+      "tag": "Formelt",
+      "title": "Kampuken følger ligastrukturen",
+      "body": "Ligaen minner om at kampforberedelse, registrering og rapportering etter hvert vil bli en del av klubbhverdagen.",
+      "phases": [
+        "match_prep"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "card_collection_unlock",
+      "threadId": "card_collection_unlocks",
+      "senderId": "card_collection_system",
+      "from": "Samlekortsystemet",
+      "tag": "Samling",
+      "title": "Samlinger blir en del av klubben",
+      "body": "Spillere, trenere, assistenter, fysio og keepertrenere kan etter hvert samles og knyttes til klubber du har oppdaget.",
+      "phases": [
+        "analysis",
+        "inbox"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "board_low_trust_warning",
+      "threadId": "board_direction_and_trust",
+      "senderId": "board",
+      "from": "Styret",
+      "tag": "Styretillit",
+      "title": "Tilliten må bygges opp igjen",
+      "body": "Styretilliten er lav. Klubben trenger tydeligere prioriteringer, færre uklare signaler og en manager som viser at valgene henger sammen.",
+      "phases": [
+        "analysis",
+        "inbox"
+      ],
+      "conditions": {
+        "metric": "boardTrust",
+        "operator": "lte",
+        "value": 45
+      }
+    },
+    {
+      "id": "board_high_trust_support",
+      "threadId": "board_direction_and_trust",
+      "senderId": "board",
+      "from": "Styret",
+      "tag": "Styretillit",
+      "title": "Styret støtter retningen",
+      "body": "Styret opplever at klubben beveger seg i riktig retning. Det viktigste nå er å holde fast ved prinsippene og ikke skifte kurs for raskt.",
+      "phases": [
+        "analysis",
+        "inbox",
+        "match_prep"
+      ],
+      "conditions": {
+        "metric": "boardTrust",
+        "operator": "gte",
+        "value": 60
+      }
+    },
+    {
+      "id": "board_low_tactical_clarity_concern",
+      "threadId": "board_direction_and_trust",
+      "senderId": "board",
+      "from": "Styret",
+      "tag": "Taktisk klarhet",
+      "title": "Planen må bli lettere å forstå",
+      "body": "Laget har kvalitet, men planen fremstår uklar. Styret forventer at manageren tydeliggjør hvordan laget skal angripe, forsvare og reagere etter balltap.",
+      "phases": [
+        "analysis",
+        "training"
+      ],
+      "conditions": {
+        "metric": "tacticalClarity",
+        "operator": "lte",
+        "value": 45
+      }
+    },
+    {
+      "id": "board_training_culture_concern",
+      "threadId": "board_direction_and_trust",
+      "senderId": "board",
+      "from": "Styret",
+      "tag": "Trening",
+      "title": "Treningsarbeidet må få mer retning",
+      "body": "Treningskulturen er for svak. Klubben kan ikke utvikle seg hvis ukene mangler tydelige økter, gjennomføring og sammenheng med kampplanen.",
+      "phases": [
+        "analysis",
+        "training",
+        "inbox"
+      ],
+      "conditions": {
+        "metric": "trainingCulture",
+        "operator": "lte",
+        "value": 45
+      }
+    },
+    {
+      "id": "board_media_pressure_concern",
+      "threadId": "board_direction_and_trust",
+      "senderId": "board",
+      "from": "Styret",
+      "tag": "Omdømme",
+      "title": "Presset rundt klubben øker",
+      "body": "Medietrykket er høyt. Styret ønsker roligere kommunikasjon, tydeligere prioriteringer og færre signaler som kan tolkes som usikkerhet.",
+      "phases": [
+        "analysis",
+        "match_prep",
+        "matchday"
+      ],
+      "conditions": {
+        "metric": "mediaPressure",
+        "operator": "gte",
+        "value": 55
+      }
+    },
+    {
+      "id": "board_analysis_expectation",
+      "threadId": "board_direction_and_trust",
+      "senderId": "board",
+      "from": "Styret",
+      "tag": "Analyse",
+      "title": "Analysefasen må brukes riktig",
+      "body": "Før klubben handler, må manageren forstå hvor laget faktisk svikter. Styret forventer at neste grep bygger på mønstre, ikke enkelthendelser.",
+      "phases": [
+        "analysis"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "board_training_expectation",
+      "threadId": "board_direction_and_trust",
+      "senderId": "board",
+      "from": "Styret",
+      "tag": "Trening",
+      "title": "Treningen må vise retning",
+      "body": "Styret forventer at treningsfasen brukes til ett tydelig hovedfokus. Klubben trenger ikke flere løse ideer, men bedre gjennomføring av det viktigste.",
+      "phases": [
+        "training"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "board_club_work_expectation",
+      "threadId": "board_direction_and_trust",
+      "senderId": "board",
+      "from": "Styret",
+      "tag": "Klubbdrift",
+      "title": "Klubben må bygges utenfor banen også",
+      "body": "Klubbdrift handler om mer enn kampplan. Styret følger med på om administrasjon, fasiliteter, marked og sportslig retning begynner å henge sammen.",
+      "phases": [
+        "inbox"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "board_match_preparation_expectation",
+      "threadId": "board_match_expectations",
+      "senderId": "board",
+      "from": "Styret",
+      "tag": "Kampforberedelse",
+      "title": "Kampplanen må være tydelig",
+      "body": "Før kamp forventer styret at laget har en plan spillerne kan forstå. En enkel, gjennomført idé er bedre enn en komplisert plan ingen klarer å følge.",
+      "phases": [
+        "match_prep"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "board_match_day_expectation",
+      "threadId": "board_match_expectations",
+      "senderId": "board",
+      "from": "Styret",
+      "tag": "Kampdag",
+      "title": "Styret ser etter organisering",
+      "body": "På kampdag ser styret ikke bare på resultatet. De ser etter struktur, rolleforståelse og om laget opptrer som om det vet hva det prøver å gjøre.",
+      "phases": [
+        "matchday"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "board_identity_expectation",
+      "threadId": "board_direction_and_trust",
+      "senderId": "board",
+      "from": "Styret",
+      "tag": "Klubbidentitet",
+      "title": "Klubben trenger en tydelig identitet",
+      "body": "Styret ønsker at laget etter hvert skal være gjenkjennelig. Spillerne kan være ulike, men klubben må ha en retning som binder dem sammen.",
+      "phases": [
+        "analysis",
+        "inbox"
+      ],
+      "conditions": {}
+    },
+    {
+      "id": "board_stability_message",
+      "threadId": "board_direction_and_trust",
+      "senderId": "board",
+      "from": "Styret",
+      "tag": "Stabilitet",
+      "title": "Stabilitet er også utvikling",
+      "body": "Ikke alle problemer løses ved å endre alt. Noen ganger trenger klubben gjentakelse, tydelige krav og nok tid til at prinsippene setter seg.",
+      "phases": [
+        "analysis",
+        "training",
+        "inbox"
+      ],
+      "conditions": {}
+    }
+  ]
+}

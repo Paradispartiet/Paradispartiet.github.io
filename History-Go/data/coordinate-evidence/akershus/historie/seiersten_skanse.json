@@ -1,0 +1,252 @@
+{
+  "schemaVersion": "1.0",
+  "placeId": "seiersten_skanse",
+  "placeFile": "data/places/historie/akershus/places_historie_akershus_batch4/seiersten_skanse.json",
+  "evidenceStatus": "production_applied",
+  "coordinateDecision": "retain_verified_historical_area_anchor_for_seiersten_inventory_1002",
+  "currentCoordinate": {
+    "lat": 59.6726278,
+    "lon": 10.6396722,
+    "r": 260,
+    "locatorType": "historic_site",
+    "sourceProvider": "manual_research",
+    "geocodeAccuracy": "semantic_anchor",
+    "coordStatus": "verified_historical_source",
+    "coordSource": "Lovdata FOR-2014-04-09-1986 inventory 1002; OpenStreetMap node 6463616338; SSR place number 300433; historical cross-checks",
+    "coordType": "named_military_skanse_site_anchor",
+    "coordRole": "area_anchor",
+    "sourceObjectId": "lovdata:seiersten-inventar-1002;osm-node:6463616338;ssr:stedsnr:300433",
+    "coordNote": "The legal inventory identity and the SSR-linked named military point are combined through manual research to anchor the protected infantry redoubt, not an information map or the separate Veisvingbatteriet."
+  },
+  "legacyCoordinate": {
+    "lat": 59.6719,
+    "lon": 10.6471,
+    "r": 260,
+    "distanceToAppliedCoordinateM": 424.8,
+    "reasonReplaced": "The 2026-07-26 production moved the unresolved eastern point approximately 424.8 metres west to the named military skanse point with SSR identity."
+  },
+  "previousProductionCoordinate": {
+    "lat": 59.6726278,
+    "lon": 10.6396722,
+    "r": 260,
+    "retained": true,
+    "distanceToCurrentM": 0,
+    "reasonRetained": "The physical point, SSR identity and legal object match remain correct. This pass changes sourceProvider from osm to manual_research so the historical-site contract reflects the combined legal and physical source chain."
+  },
+  "identity": {
+    "resolvedIdentity": "The protected closed infantry redoubt built at Seiersten in 1898–1900 as inventory 1002 in the landward defence system around Oscarsborg and the Drøbak Sound approach.",
+    "identityStatus": "resolved",
+    "identityProblem": "Map data contains a named military point, a co-located attraction and an information map east of the redoubt. Lovdata separately inventories the redoubt, Veisvingbatteriet and the connecting lines.",
+    "locatorTypeCandidate": "historic_site",
+    "requiresSplit": false,
+    "splitReason": "Seiersten skanse is one identifiable infantry redoubt. Veisvingbatteriet and the southern and northern connecting lines remain separate inventory objects in the same defence system."
+  },
+  "requiredEvidence": [
+    "official legal identity, construction date and protected scope",
+    "official separation from adjacent inventory objects",
+    "named physical military point with national place identity",
+    "historical description of form and use",
+    "explicit rejection of the information map",
+    "valid historical-site source contract",
+    "access and radius limitations"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Lovdata – protection regulation for Oscarsborg Fortress and associated installations",
+      "sourceUrl": "https://lovdata.no/dokument/LF/forskrift/2014-04-09-1986",
+      "sourceObjectId": "lovdata:seiersten-inventar-1002",
+      "sourceQuality": "official_legal_fortification_identity_and_scope",
+      "finding": "The regulation identifies Seiersten skanse as inventory 1002, an infantry redoubt built 1898–1900, and protects the complete installation including the shelters’ exteriors and interiors on gnr./bnr. 70/1.",
+      "canVerifyCoordinate": true,
+      "reason": "Establishes the legal and historical object that the physical point must represent."
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Lovdata – separate Seiersten inventory objects",
+      "sourceUrl": "https://lovdata.no/dokument/LF/forskrift/2014-04-09-1986",
+      "sourceObjectId": "lovdata:seiersten-inventar-31-1004",
+      "sourceQuality": "official_object_separation",
+      "finding": "The regulation separately lists ammunition magazine 31, Veisvingbatteriet 1001, Seiersten skanse 1002 and the southern and northern connecting lines 1003 and 1004.",
+      "canVerifyCoordinate": false,
+      "reason": "Prevents the adjacent defence works from being collapsed into the canonical skanse marker."
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceName": "OpenStreetMap node 6463616338 – Øvre Seiersten skanse",
+      "sourceUrl": "https://www.openstreetmap.org/node/6463616338",
+      "sourceObjectId": "osm-node:6463616338;ssr:stedsnr:300433",
+      "sourceQuality": "named_military_site_with_national_place_reference",
+      "finding": "The node is at 59.6726278, 10.6396722, named Øvre Seiersten skanse, tagged landuse=military and linked to SSR place number 300433.",
+      "canVerifyCoordinate": true,
+      "reason": "Provides the named physical area anchor that is resolved to legal inventory 1002 through manual research."
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Skiforeningen – Seiersten",
+      "sourceUrl": "https://www.skiforeningen.no/utimarka/omrader/follomarka/steder/seiersten/",
+      "sourceObjectId": "skiforeningen:seiersten-skanse",
+      "sourceQuality": "detailed_fortification_form_and_use_history",
+      "finding": "The source describes the closed redoubt, firing line, infantry and field-gun positions, 24 shelters, ammunition storage and mobilization in 1905.",
+      "canVerifyCoordinate": false,
+      "reason": "Confirms the physical and tactical identity of the fortification."
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Lokalhistoriewiki – Seiersten in Frogn",
+      "sourceUrl": "https://lokalhistoriewiki.no/wiki/Seiersten_(Frogn)",
+      "sourceObjectId": "lokalhistoriewiki:seiersten-frogn-skanse",
+      "sourceQuality": "independent_site_and_land_history",
+      "finding": "The source places the redoubt on the former Seiersten estate and distinguishes it from Veisvingbatteriet.",
+      "canVerifyCoordinate": false,
+      "reason": "Independent historical object and site cross-check."
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceName": "OpenStreetMap node 1763395772 – Seiersten Festning",
+      "sourceUrl": "https://www.openstreetmap.org/node/1763395772",
+      "sourceObjectId": "osm-node:1763395772",
+      "sourceQuality": "co_located_tourism_identity_cross_check",
+      "finding": "The attraction point lies approximately 1.7 metres from the applied military point but is tagged fixme=incomplete.",
+      "canVerifyCoordinate": false,
+      "reason": "Visitor-identity cross-check only."
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceName": "OpenStreetMap node 1793750671 – Seiersten skanse information map",
+      "sourceUrl": "https://www.openstreetmap.org/node/1793750671",
+      "sourceObjectId": "osm-node:1793750671",
+      "sourceQuality": "information_map_not_site_anchor",
+      "finding": "The information-map node lies approximately 126.8 metres east of the applied military point.",
+      "canVerifyCoordinate": false,
+      "reason": "Rejected because it represents an information map rather than the fortification."
+    },
+    {
+      "sourceProvider": "legacy_dataset",
+      "sourceName": "Legacy Seiersten point",
+      "sourceObjectId": "legacy:seiersten_skanse",
+      "sourceQuality": "unresolved_eastern_point",
+      "finding": "The former coordinate lies approximately 424.8 metres east of the applied military point and lacked a source contract.",
+      "canVerifyCoordinate": false,
+      "reason": "Already replaced in the 2026-07-26 production."
+    }
+  ],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "lovdata:seiersten-inventar-1002;osm-node:6463616338;ssr:stedsnr:300433",
+      "canApplyToPlace": true,
+      "applied": true
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-node:1763395772",
+      "canApplyToPlace": false,
+      "rejectionReason": "Co-located attraction with incomplete tagging."
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-node:1793750671",
+      "canApplyToPlace": false,
+      "rejectionReason": "Information map east of the redoubt."
+    },
+    {
+      "sourceProvider": "legacy_dataset",
+      "sourceObjectId": "legacy:seiersten_skanse",
+      "canApplyToPlace": false,
+      "rejectionReason": "Unresolved eastern point."
+    }
+  ],
+  "geometryCandidates": [],
+  "anchors": [
+    {
+      "id": "ovre_seiersten_skanse_site",
+      "name": "Øvre Seiersten skanse",
+      "lat": 59.6726278,
+      "lon": 10.6396722,
+      "r": 110,
+      "type": "historical_military_area_anchor",
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "lovdata:seiersten-inventar-1002;osm-node:6463616338;ssr:stedsnr:300433",
+      "canApplyToPlace": true
+    }
+  ],
+  "coordinateCandidates": [
+    {
+      "sourceProvider": "legacy_dataset",
+      "sourceObjectId": "legacy:seiersten_skanse",
+      "lat": 59.6719,
+      "lon": 10.6471,
+      "distanceFromAppliedM": 424.8,
+      "canApplyToPlace": false
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "lovdata:seiersten-inventar-1002;osm-node:6463616338;ssr:stedsnr:300433",
+      "lat": 59.6726278,
+      "lon": 10.6396722,
+      "coordRole": "area_anchor",
+      "distanceFromLegacyM": 424.8,
+      "canApplyToPlace": true,
+      "applied": true,
+      "retainedFromPreviousProduction": true
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-node:1763395772",
+      "lat": 59.672641,
+      "lon": 10.6396868,
+      "coordRole": "co_located_tourist_point_cross_check",
+      "distanceFromAppliedM": 1.7,
+      "canApplyToPlace": false
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-node:1793750671",
+      "lat": 59.6726272,
+      "lon": 10.6419304,
+      "coordRole": "information_map_rejected",
+      "distanceFromAppliedM": 126.8,
+      "canApplyToPlace": false
+    }
+  ],
+  "rawEvidence": [
+    {
+      "path": "reports/akershus-coordinate-seiersten-skanse-source-probe/osm-node-6463616338.xml",
+      "description": "Raw OSM military-point object."
+    },
+    {
+      "path": "reports/akershus-coordinate-seiersten-skanse-source-probe/osm-node-1763395772.xml",
+      "description": "Raw co-located tourism-attraction object."
+    },
+    {
+      "path": "reports/akershus-coordinate-seiersten-skanse-source-probe/osm-node-1793750671.xml",
+      "description": "Raw information-map object rejected as canonical."
+    },
+    {
+      "path": "reports/akershus-coordinate-seiersten-skanse-source-probe/nominatim-seiersten-objects.json",
+      "description": "Nominatim object-identity cross-checks."
+    },
+    {
+      "path": "reports/akershus-coordinate-seiersten-skanse-source-probe/osm-seiersten-bbox.xml",
+      "description": "OSM bounding-box object inventory."
+    },
+    {
+      "path": "reports/akershus-coordinate-seiersten-skanse-source-probe/source-summary.txt",
+      "description": "Distances, object classes, rejected candidates and contract-migration summary."
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "coordinateChangedInThisPass": false,
+    "contractMigrationRequired": true,
+    "nextAction": "Retained the SSR-linked military point, migrated sourceProvider to manual_research and preserved the 260-metre radius. Continue with raelingen_bygdetun."
+  },
+  "notes": [
+    "The 424.8-metre move occurred in the 2026-07-26 production and is preserved.",
+    "This pass changes sourceProvider from osm to manual_research because the historic-site coordinate is a documented synthesis of Lovdata inventory 1002 and the OSM/SSR physical point.",
+    "The information map remains rejected and Veisvingbatteriet remains a separate inventory object.",
+    "The 260-metre radius is not the legal protection polygon, cadastral parcel, firing sector, connecting-line geometry or access boundary."
+  ]
+}

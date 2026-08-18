@@ -1,0 +1,3045 @@
+{
+  "schema": "civication_work_grammar_v1",
+  "version": 1,
+  "category": "sosial_laering",
+  "role_scope": "barnehageassistent",
+  "role_id": "sosial_laering_barnehageassistent",
+  "title": "Barnehageassistent / pedagogisk medarbeider",
+  "badge_binding": {
+    "badge_category": "sosial_laering",
+    "badge_id": "sosial_laering",
+    "badge_name": "Sosial læring",
+    "tier_label": "Observatør / Guide (nærmeste eksisterende omsorgs- og læringsakse)",
+    "tier_threshold": 5,
+    "progression_from": [
+      "Første møte",
+      "Første felles rute",
+      "Observatør"
+    ],
+    "progression_to": [
+      "Guide",
+      "Sirkelbygger",
+      "Barne- og ungdomsarbeider via utdanning"
+    ],
+    "note": "Eksisterende badgefil har sosial læring som kategori; roleModel peker eksplisitt på Observatør/Guide og oppretter ingen ny barnehagekategori."
+  },
+  "fag_bindings": {
+    "primary_subjects": [
+      "sosial læring",
+      "pedagogikk",
+      "psykologi",
+      "språk",
+      "lek",
+      "omsorg",
+      "barns utvikling",
+      "rammeplan",
+      "foreldresamarbeid",
+      "HMS/sikkerhet"
+    ],
+    "category_files": [
+      "data/Civication/roleModels/sosial_laering/barnehageassistent.json",
+      "data/Civication/mailPlans/sosial_laering/barnehageassistent_plan.json",
+      "data/Civication/mailFamilies/sosial_laering/job/barnehageassistent_job.json",
+      "data/Civication/mailFamilies/sosial_laering/people/barnehageassistent_people.json",
+      "data/Civication/mailFamilies/sosial_laering/knowledge/barnehageassistent_knowledge.json"
+    ],
+    "required_concepts": [
+      "tilknytning",
+      "overgangssituasjon",
+      "trygg base",
+      "lek",
+      "frilek",
+      "språkstøtte",
+      "barns medvirkning",
+      "observasjon",
+      "grensesetting",
+      "konfliktdemping",
+      "foreldresamarbeid",
+      "rammeplan",
+      "bemanning",
+      "emosjonelt arbeid",
+      "egenregulering",
+      "gruppeledelse"
+    ],
+    "methods": [
+      "støtte i overgang",
+      "navngi følelser",
+      "regulere før man korrigerer",
+      "observere konkret atferd",
+      "skille observasjon fra tolkning",
+      "støtte lek uten å overstyre",
+      "sette varm grense",
+      "gi språkstøtte i situasjon",
+      "forberede foreldredialog",
+      "melde bekymring eller observasjon tjenestevei"
+    ]
+  },
+  "core_story": {
+    "title": "Den lange dagen på avdelingen",
+    "premise": "Du starter på en barnehageavdeling der bemanningen er stram, ett barn strever med overganger, et annet barn blir ofte oversett, en forelder er misfornøyd, pedagogisk leder er presset, og dagen må likevel bli trygg, varm og pedagogisk meningsfull.",
+    "narrative_core": [
+      "Barnehageassistenten holder barnegruppens dag sammen gjennom små, konkrete voksenhandlinger.",
+      "Arbeidet er lavstatus på papiret, men høyansvar i praksis. En rolig overgang, et blikk i garderoben, en riktig grense eller en observasjon som faktisk skrives ned kan endre hele dagen for et barn.",
+      "Jobben handler ikke bare om å være snill med barn. Den handler om trygghet, rytme, tilknytning, lek, språk, grensesetting, foreldresamarbeid, kollegialt samspill, observasjon og egen regulering under støy og tidspress."
+    ],
+    "narrative_arcs": [
+      "Barnet slipper ikke hånden",
+      "Den frie leken er ikke fri for alle",
+      "Lavstatusjobben med høyansvar",
+      "Forelderen som klager har delvis rett",
+      "Pedagogisk leder trenger observasjon, ikke magefølelse",
+      "Du blir sliten før barna er ferdige med dagen",
+      "Dagslutt: omsorg er ikke en følelse, det er praksis"
+    ]
+  },
+  "story_world": {
+    "simulation_promise": "Du får oppleve hva det vil si å være den voksne som holder en barnegruppes dag trygg gjennom hundre små handlinger ingen legger merke til – helt til en av dem mangler.",
+    "everyday_world": "Avdelingen har stram bemanning og en fast dagsrytme, men barna sender hele tiden små signaler. Du tar imot ved levering, støtter overganger, deltar i lek, regulerer egen stemme under støy, setter varme grenser, observerer uten å synse og gir korte foreldresignaler i døra. Ingen enkelthandling er stor; summen av dem avgjør om dagen ble trygg.",
+    "hidden_complexity": "Utenfra ser jobben ut som å passe barn og være snill. Innenfra er det tilknytningsarbeid, gruppeledelse, språkstøtte, konfliktdemping, observasjon, dokumentasjon og egenregulering – ofte samtidig, alltid under tidspress og med for få voksne.",
+    "recurring_situations": [
+      "levering der ett barn ikke klarer å slippe forelderen",
+      "frilek der de sterke barna tar plassen og et stille barn forsvinner",
+      "garderoben som tetner til og blir konfliktrom",
+      "måltid med så mye uro at språkstøtten ryker",
+      "forelder som spør i døra hvordan dagen egentlig gikk",
+      "pedagogisk leder som ber om konkret observasjon i stedet for magefølelse",
+      "vikar som ikke kjenner barnas signaler",
+      "egen stemme og kropp som blir hardere når støyen stiger"
+    ],
+    "small_story_seeds": [
+      "et barn søker eller unngår den samme voksne dagen etter en overgang",
+      "en kort observasjon skrevet ned endrer hva pedagogisk leder gjør neste dag",
+      "en foreldreklage viser seg å peke på noe avdelingen faktisk overså",
+      "et slag i sandkassa hadde en hel forhistorie ingen voksen så",
+      "et stille barn blir endelig sett, og leken åpner seg for det"
+    ],
+    "relationship_web": [
+      {
+        "who": "pedagogisk_leder",
+        "relation": "din nærmeste faglige sjef",
+        "wants": "trygg avdeling og observasjon hun kan stole på",
+        "creates": "press om dokumentasjon og prioritering",
+        "tension": "magefølelse_vs_konkret_observasjon"
+      },
+      {
+        "who": "erfaren_assistent",
+        "relation": "kollega som holder rytmen",
+        "wants": "flyt i dagen",
+        "creates": "hjelp, men også press om å velge tempo over trygghet",
+        "tension": "trygghet_vs_flyt"
+      },
+      {
+        "who": "ny_vikar",
+        "relation": "uerfaren kollega du må lose inn",
+        "wants": "å mestre og bli sett",
+        "creates": "ekstra ansvar når hun ikke kjenner barnas signaler",
+        "tension": "kollegial_lojalitet_vs_barnets_beste"
+      },
+      {
+        "who": "forelder_som_klager",
+        "relation": "forelder med lav tillit",
+        "wants": "å vite at barnet blir sett",
+        "creates": "konflikt som ofte rommer ett sant poeng",
+        "tension": "foreldrekrav_vs_faglig_vurdering"
+      },
+      {
+        "who": "barn_som_strever_med_overgang",
+        "relation": "barn du bygger trygg base for",
+        "wants": "forutsigbarhet og en kjent voksen",
+        "creates": "daglige overganger som krever tid du ikke alltid har",
+        "tension": "omsorg_vs_tidsklemme"
+      },
+      {
+        "who": "barn_som_ofte_blir_oversett",
+        "relation": "stille barn som lett forsvinner",
+        "wants": "å bli inkludert uten å måtte bråke",
+        "creates": "risiko for usynlig utenforskap",
+        "tension": "frilek_vs_usynlig_utenforskap"
+      }
+    ],
+    "knowledge_in_practice": [
+      {
+        "concept": "tilknytning",
+        "practical_scene": "barnet slipper ikke forelderen ved levering",
+        "what_player_must_notice": "barnets kropp, forelderens uro, gruppas tempo og egen stemmebruk",
+        "bad_misread": "barnet manipulerer eller er bare vanskelig",
+        "good_use": "skape trygg overgang med samme voksen og dele en konkret observasjon"
+      },
+      {
+        "concept": "observasjon",
+        "practical_scene": "pedagogisk leder ber om hva du faktisk så, ikke hva du tror",
+        "what_player_must_notice": "forskjellen på beskrevet atferd og egen tolkning",
+        "bad_misread": "rapportere en diagnose eller et motiv",
+        "good_use": "beskrive konkret situasjon knyttet til overgang, lek eller relasjon"
+      },
+      {
+        "concept": "frilek",
+        "practical_scene": "de sterke barna styrer leken mens et barn står utenfor",
+        "what_player_must_notice": "hvem som aldri slipper inn, og hvor det skjer",
+        "bad_misread": "fri lek er fri for alle og ordner seg selv",
+        "good_use": "støtte lek uten å overta, og åpne en inngang for barnet utenfor"
+      },
+      {
+        "concept": "grensesetting",
+        "practical_scene": "garderoben tetner til og et barn slår",
+        "what_player_must_notice": "hva som skjedde før slaget, og egen aktivering",
+        "bad_misread": "grense betyr å heve stemmen til det blir stille",
+        "good_use": "sette en varm, tydelig grense og regulere før du korrigerer"
+      },
+      {
+        "concept": "språkstøtte",
+        "practical_scene": "måltidet er for hektisk til samtale",
+        "what_player_must_notice": "hvilke barn som mister ordet i støyen",
+        "bad_misread": "språk kommer av seg selv hvis det er mat på bordet",
+        "good_use": "senke tempoet og navngi det som skjer i selve situasjonen"
+      },
+      {
+        "concept": "egenregulering",
+        "practical_scene": "støynivået stiger og din egen stemme blir hard",
+        "what_player_must_notice": "egen puls, skuldre og tonefall før det smitter på gruppa",
+        "bad_misread": "barna roer seg hvis jeg blir strengere",
+        "good_use": "regulere deg selv først, så blir du en trygg base for gruppa"
+      }
+    ],
+    "emotional_costs": [
+      "slitasje av å være regulert voksen i timevis mens egen tålmodighet tømmes",
+      "skam når stemmen ble hard eller et stille barn ble glemt",
+      "usikkerhet om du gjorde nok for barnet som strevde",
+      "stolthet som sjelden blir sett utenfra fordi resultatet er en udramatisk dag",
+      "ansvar som veier tungt nettopp fordi statusen er lav"
+    ],
+    "status_illusions": [
+      "Utenfra: «passer barn og leker litt». Innenfra: bærer trygghet, språk, tilknytning og foreldretillit for en hel gruppe.",
+      "Utenfra: en jobb hvem som helst kan ta. Innenfra: krever finmasket observasjon, regulering og faglig skjønn under press.",
+      "Utenfra: en rolig dag. Innenfra: titalls overganger, konflikter og signaler håndtert før de ble hendelser."
+    ],
+    "player_learning_arc": [
+      "Først tror spilleren jobben er å være snill og holde barna fornøyde.",
+      "Så oppdager spilleren at trygghet er praktisk arbeid: rytme, regulering og samme voksen.",
+      "Så lærer spilleren å skille observasjon fra synsing og å skrive det ned selv når dagen er travel.",
+      "Til slutt forstår spilleren at lavstatusjobben bærer høyt ansvar, og at hvordan dagen avsluttes former neste dag."
+    ]
+  },
+  "practice_stories": [
+    {
+      "id": "barnet_slipper_ikke_handen",
+      "title": "Barnet slipper ikke hånden",
+      "story_type": "everyday",
+      "premise": "Et barn holder fast i forelderen ved levering mens resten av gruppa allerede trekker mot garderoben.",
+      "people": [
+        "barn_som_strever_med_overgang",
+        "forelder_som_trenger_st_tte",
+        "pedagogisk_leder"
+      ],
+      "place_id": "garderobe",
+      "work_knowledge": [
+        "tilknytning",
+        "overgangssituasjon",
+        "trygg base",
+        "egenregulering"
+      ],
+      "conflict_axes": [
+        "omsorg_vs_tidsklemme",
+        "trygghet_vs_flyt"
+      ],
+      "mail_types": [
+        "job",
+        "people",
+        "conflict",
+        "followup",
+        "consequence"
+      ],
+      "thread_potential": true,
+      "possible_choices": [
+        "lage rolig og forutsigbar overgang med samme voksen",
+        "få forelderen raskt ut for å holde flyt",
+        "overlate situasjonen til pedagogisk leder"
+      ],
+      "possible_followups": [
+        "forelder spør hvordan overgangen faktisk gikk",
+        "pedagogisk leder ber om en konkret observasjon",
+        "barnet søker eller unngår samme voksen senere"
+      ],
+      "learning_point": "Overgang er ikke logistikk alene; det er tilknytning, rytme og voksenregulering i praksis."
+    },
+    {
+      "id": "stille_barn_blir_oversett",
+      "title": "Det stille barnet blir oversett",
+      "story_type": "knowledge",
+      "premise": "Et barn som aldri bråker glir gjennom hele formiddagen uten at noen voksen egentlig har vært i kontakt med det.",
+      "people": [
+        "barn_som_ofte_blir_oversett",
+        "erfaren_assistent",
+        "pedagogisk_leder"
+      ],
+      "place_id": "lesekrok",
+      "work_knowledge": [
+        "observasjon",
+        "barns medvirkning",
+        "tilknytning"
+      ],
+      "conflict_axes": [
+        "barns_behov_vs_gruppens_behov",
+        "frilek_vs_usynlig_utenforskap"
+      ],
+      "mail_types": [
+        "job",
+        "knowledge",
+        "people",
+        "followup"
+      ],
+      "thread_potential": true,
+      "possible_choices": [
+        "oppsøke det stille barnet først og se det konkret",
+        "la barnet være siden det ikke krever noe",
+        "be en kollega holde et ekstra øye uten å avtale hva"
+      ],
+      "possible_followups": [
+        "barnet åpner seg i lek når det blir sett",
+        "pedagogisk leder spør om du har observert noe",
+        "forelder forteller at barnet gruer seg til barnehagen"
+      ],
+      "learning_point": "Det som ikke bråker krever like mye blikk; usynlighet er ikke det samme som trygghet."
+    },
+    {
+      "id": "frilek_er_ikke_fri_for_alle",
+      "title": "Frileken er ikke fri for alle",
+      "story_type": "conflict",
+      "premise": "De sterke barna styrer rollelekens regler, og ett barn får aldri slippe inn uten å miste seg selv.",
+      "people": [
+        "barn_som_ofte_blir_oversett",
+        "erfaren_assistent"
+      ],
+      "place_id": "sandkasse",
+      "work_knowledge": [
+        "frilek",
+        "lek",
+        "barns medvirkning",
+        "konfliktdemping"
+      ],
+      "conflict_axes": [
+        "frilek_vs_usynlig_utenforskap",
+        "barns_behov_vs_gruppens_behov"
+      ],
+      "mail_types": [
+        "conflict",
+        "job",
+        "followup"
+      ],
+      "thread_potential": true,
+      "possible_choices": [
+        "støtte leken uten å overta og åpne en inngang for barnet utenfor",
+        "la leken være fordi den ser harmonisk ut",
+        "stoppe leken og fordele roller selv"
+      ],
+      "possible_followups": [
+        "barnet finner en plass i leken neste dag",
+        "de sterke barna tester grensen på nytt",
+        "pedagogisk leder spør hvordan du leste leken"
+      ],
+      "learning_point": "Fri lek er aldri nøytral; voksenblikket avgjør om den blir inkluderende eller ekskluderende."
+    },
+    {
+      "id": "garderoben_blir_konfliktrom",
+      "title": "Garderoben blir konfliktrom",
+      "story_type": "everyday",
+      "premise": "For mange barn, for lite plass og for dårlig tid gjør garderoben til et sted der alt eskalerer samtidig.",
+      "people": [
+        "erfaren_assistent",
+        "barn_som_strever_med_overgang",
+        "ny_vikar"
+      ],
+      "place_id": "garderobe",
+      "work_knowledge": [
+        "overgangssituasjon",
+        "grensesetting",
+        "gruppeledelse",
+        "egenregulering"
+      ],
+      "conflict_axes": [
+        "trygghet_vs_flyt",
+        "grenser_vs_varme"
+      ],
+      "mail_types": [
+        "job",
+        "conflict",
+        "micro",
+        "followup"
+      ],
+      "thread_potential": true,
+      "possible_choices": [
+        "dele gruppa og ta noen barn i bolker",
+        "presse alle gjennom raskest mulig",
+        "be om en ekstra voksen før det sprekker"
+      ],
+      "possible_followups": [
+        "garderoben går roligere når rytmen er forutsigbar",
+        "et barn reagerer på at det gikk for fort",
+        "vikaren spør hvordan du tenkte rundt rekkefølgen"
+      ],
+      "learning_point": "Gruppeledelse i trange rom handler om rytme og forutsigbarhet, ikke om å rope høyere."
+    },
+    {
+      "id": "forelder_klager_men_har_delvis_rett",
+      "title": "Forelderen klager, men har delvis rett",
+      "story_type": "relationship",
+      "premise": "En forelder sender en skarp klage som er urettferdig i tonen, men peker på noe avdelingen faktisk overså.",
+      "people": [
+        "forelder_som_klager",
+        "pedagogisk_leder"
+      ],
+      "place_id": "foreldresamtale_rom",
+      "work_knowledge": [
+        "foreldresamarbeid",
+        "observasjon",
+        "tilknytning"
+      ],
+      "conflict_axes": [
+        "foreldrekrav_vs_faglig_vurdering",
+        "dokumentasjon_vs_tilstedevaerelse"
+      ],
+      "mail_types": [
+        "people",
+        "conflict",
+        "knowledge",
+        "followup"
+      ],
+      "thread_potential": true,
+      "possible_choices": [
+        "oversette klagen til en konkret situasjon og svare på den",
+        "forsvare avdelingen og avvise tonen",
+        "love mer enn dere kan holde for å dempe konflikten"
+      ],
+      "possible_followups": [
+        "forelderen får tillit fordi du tok poenget på alvor",
+        "pedagogisk leder ber om en observasjon å bygge på",
+        "samme tema kommer tilbake hvis det bare ble glattet over"
+      ],
+      "learning_point": "En klage kan ha feil form og likevel rett innhold; oppgaven er å finne det sanne punktet."
+    },
+    {
+      "id": "leder_trenger_observasjon_ikke_magefolelse",
+      "title": "Pedagogisk leder trenger observasjon, ikke magefølelse",
+      "story_type": "knowledge",
+      "premise": "Pedagogisk leder ber deg si hva du faktisk så rundt et barn, mens du helst vil dele en følelse av at «noe er galt».",
+      "people": [
+        "pedagogisk_leder",
+        "spesialpedagog_ppt_kontakt"
+      ],
+      "place_id": "pedagogisk_leder_kontor",
+      "work_knowledge": [
+        "observasjon",
+        "rammeplan",
+        "tilknytning"
+      ],
+      "conflict_axes": [
+        "observasjon_vs_synsing",
+        "dokumentasjon_vs_tilstedevaerelse"
+      ],
+      "mail_types": [
+        "job",
+        "knowledge",
+        "people",
+        "consequence"
+      ],
+      "thread_potential": true,
+      "possible_choices": [
+        "beskrive konkret atferd uten tolkning",
+        "levere en magefølelse uten eksempler",
+        "utsette til du har sett mer"
+      ],
+      "possible_followups": [
+        "observasjonen blir grunnlag for et tiltak som hjelper barnet",
+        "leder ber om mer presise notater neste gang",
+        "uten konkret observasjon stopper saken opp"
+      ],
+      "learning_point": "Faglig tillit bygges på observasjon som kan etterprøves, ikke på synsing."
+    },
+    {
+      "id": "vikar_kjenner_ikke_barnets_signaler",
+      "title": "Vikaren kjenner ikke barnets signaler",
+      "story_type": "relationship",
+      "premise": "En vikar tolker et barns tilbaketrekning som trass og er på vei til å presse fram en konflikt.",
+      "people": [
+        "ny_vikar",
+        "barn_som_strever_med_overgang",
+        "pedagogisk_leder"
+      ],
+      "place_id": "barnehage_avdeling",
+      "work_knowledge": [
+        "tilknytning",
+        "egenregulering",
+        "konfliktdemping",
+        "gruppeledelse"
+      ],
+      "conflict_axes": [
+        "kollegial_lojalitet_vs_barnets_beste",
+        "trygghet_vs_flyt"
+      ],
+      "mail_types": [
+        "people",
+        "job",
+        "followup",
+        "knowledge"
+      ],
+      "thread_potential": true,
+      "possible_choices": [
+        "lose vikaren inn i barnets signaler uten å overkjøre henne",
+        "ta over barnet og la vikaren stå",
+        "la vikaren fortsette for å unngå friksjon"
+      ],
+      "possible_followups": [
+        "vikaren leser barnet bedre neste vakt",
+        "barnet reagerer på at en ukjent voksen presset",
+        "pedagogisk leder spør hvordan dere fordelte barna"
+      ],
+      "learning_point": "Å dele taus kunnskap om barnas signaler er en del av jobben, ikke en ekstraoppgave."
+    },
+    {
+      "id": "barnet_slar_men_situasjonen_startet_for",
+      "title": "Barnet slår, men situasjonen startet før slaget",
+      "story_type": "conflict",
+      "premise": "Et barn slår et annet, men hele forhistorien – ekskludering, støy og en mislykket overgang – skjedde uten at noen voksen så det.",
+      "people": [
+        "barn_som_strever_med_overgang",
+        "barn_som_ofte_blir_oversett",
+        "erfaren_assistent"
+      ],
+      "place_id": "utelekeplass",
+      "work_knowledge": [
+        "konfliktdemping",
+        "observasjon",
+        "grensesetting",
+        "egenregulering"
+      ],
+      "conflict_axes": [
+        "grenser_vs_varme",
+        "observasjon_vs_synsing"
+      ],
+      "mail_types": [
+        "conflict",
+        "job",
+        "followup",
+        "consequence"
+      ],
+      "thread_potential": true,
+      "possible_choices": [
+        "regulere begge barna og lese forhistorien før du korrigerer",
+        "kjeppjage den som slo",
+        "kreve en unnskyldning uten å forstå hva som skjedde"
+      ],
+      "possible_followups": [
+        "barnet får hjelp med det som faktisk utløste slaget",
+        "foreldrene spør hva som skjedde",
+        "samme mønster gjentar seg hvis forhistorien ignoreres"
+      ],
+      "learning_point": "Et slag er slutten på en kjede; faglig arbeid er å se kjeden, ikke bare det siste leddet."
+    },
+    {
+      "id": "maltidet_for_hektisk_for_sprakstotte",
+      "title": "Måltidet blir for hektisk til språkstøtte",
+      "story_type": "everyday",
+      "premise": "Måltidet skulle vært en språkarena, men uro, søl og tidspress gjør at samtalen forsvinner helt.",
+      "people": [
+        "erfaren_assistent",
+        "barn_som_ofte_blir_oversett"
+      ],
+      "place_id": "måltidsbord",
+      "work_knowledge": [
+        "språkstøtte",
+        "lek",
+        "gruppeledelse",
+        "bemanning"
+      ],
+      "conflict_axes": [
+        "omsorg_vs_tidsklemme",
+        "barns_behov_vs_gruppens_behov"
+      ],
+      "mail_types": [
+        "job",
+        "micro",
+        "knowledge",
+        "followup"
+      ],
+      "thread_potential": false,
+      "possible_choices": [
+        "senke tempoet og navngi det som skjer rundt bordet",
+        "prioritere at maten blir ferdig fortest mulig",
+        "dele bordet i mindre grupper"
+      ],
+      "possible_followups": [
+        "et barn får ord på noe det strevde med å si",
+        "språkstøtten ryker hvis tempoet styrer",
+        "pedagogisk leder spør hvordan måltidet fungerte"
+      ],
+      "learning_point": "Språkstøtte skjer i hverdagssituasjonen, ikke i en egen time; tempoet avgjør om den finnes."
+    },
+    {
+      "id": "egen_stemme_blir_hard_under_stoy",
+      "title": "Egen stemme blir hard under støy",
+      "story_type": "identity",
+      "premise": "Støynivået stiger, og du merker at din egen stemme og kropp blir hardere enn barna trenger.",
+      "people": [
+        "erfaren_assistent"
+      ],
+      "place_id": "barnehage_avdeling",
+      "work_knowledge": [
+        "egenregulering",
+        "emosjonelt arbeid",
+        "grensesetting"
+      ],
+      "conflict_axes": [
+        "slitasje_vs_profesjonalitet",
+        "grenser_vs_varme"
+      ],
+      "mail_types": [
+        "story",
+        "job",
+        "consequence",
+        "followup"
+      ],
+      "thread_potential": true,
+      "possible_choices": [
+        "regulere deg selv først og senke eget tempo",
+        "skru opp stemmen for å ta kontroll",
+        "trekke deg ut et øyeblikk og be om avløsning"
+      ],
+      "possible_followups": [
+        "gruppa roer seg når du selv er regulert",
+        "en hard tone smitter over på barna",
+        "du kjenner slitasjen tydeligere mot slutten av dagen"
+      ],
+      "learning_point": "Du er gruppas termostat; egen regulering er et arbeidsverktøy, ikke en privatsak."
+    },
+    {
+      "id": "varme_blir_grenselshet",
+      "title": "Når varme blir grenseløshet",
+      "story_type": "failure",
+      "premise": "Du vil så gjerne være den snille voksne at grensene forsvinner, og et barn mister forutsigbarheten det trenger.",
+      "people": [
+        "barn_som_strever_med_overgang",
+        "pedagogisk_leder"
+      ],
+      "place_id": "hvilerom",
+      "work_knowledge": [
+        "grensesetting",
+        "trygg base",
+        "tilknytning"
+      ],
+      "conflict_axes": [
+        "grenser_vs_varme",
+        "trygghet_vs_flyt"
+      ],
+      "mail_types": [
+        "job",
+        "conflict",
+        "consequence",
+        "followup"
+      ],
+      "thread_potential": false,
+      "possible_choices": [
+        "sette en varm, tydelig grense som gir trygghet",
+        "gi etter for å unngå gråt",
+        "veksle mellom ettergivenhet og brå innstramming"
+      ],
+      "possible_followups": [
+        "barnet roer seg når rammene er forutsigbare",
+        "grenseløshet gjør barnet mer urolig",
+        "pedagogisk leder tar opp behovet for tydeligere rammer"
+      ],
+      "learning_point": "Varme uten grenser blir utrygt; trygghet krever både omsorg og forutsigbare rammer."
+    },
+    {
+      "id": "grense_blir_kjeft",
+      "title": "Når grense blir kjeft",
+      "story_type": "failure",
+      "premise": "Du må sette en grense, men sliten og presset tipper grensen over i kjeft som rammer hele gruppa.",
+      "people": [
+        "barn_som_ofte_blir_oversett",
+        "erfaren_assistent"
+      ],
+      "place_id": "samlingsstund",
+      "work_knowledge": [
+        "grensesetting",
+        "egenregulering",
+        "konfliktdemping"
+      ],
+      "conflict_axes": [
+        "slitasje_vs_profesjonalitet",
+        "grenser_vs_varme"
+      ],
+      "mail_types": [
+        "job",
+        "consequence",
+        "followup",
+        "story"
+      ],
+      "thread_potential": true,
+      "possible_choices": [
+        "regulere deg selv før du setter grensen",
+        "heve stemmen for å få ro nå",
+        "be om avløsning og ta grensen når du er rolig"
+      ],
+      "possible_followups": [
+        "barna får en tydelig, trygg grense uten frykt",
+        "kjeften gjør stemningen utrygg en stund",
+        "du kjenner skam og må reparere relasjonen etterpå"
+      ],
+      "learning_point": "Grense og kjeft er ikke det samme; den ene gir trygghet, den andre gir frykt."
+    },
+    {
+      "id": "dokumentasjon_ofres_i_travelhet",
+      "title": "Dokumentasjonen ofres fordi dagen er travel",
+      "story_type": "consequence",
+      "premise": "Dagen var så hektisk at observasjonen du burde skrevet ned aldri blir notert, og kunnskapen forsvinner med deg når du går hjem.",
+      "people": [
+        "pedagogisk_leder",
+        "spesialpedagog_ppt_kontakt"
+      ],
+      "place_id": "pedagogisk_leder_kontor",
+      "work_knowledge": [
+        "observasjon",
+        "rammeplan",
+        "foreldresamarbeid"
+      ],
+      "conflict_axes": [
+        "dokumentasjon_vs_tilstedevaerelse",
+        "omsorg_vs_tidsklemme"
+      ],
+      "mail_types": [
+        "consequence",
+        "job",
+        "followup",
+        "knowledge"
+      ],
+      "thread_potential": true,
+      "possible_choices": [
+        "skrive en kort, konkret observasjon før du går",
+        "stole på at du husker til neste dag",
+        "be en kollega notere det du så"
+      ],
+      "possible_followups": [
+        "observasjonen blir grunnlag for et tiltak som hjelper",
+        "et barns behov blir usynlig fordi ingenting ble skrevet",
+        "pedagogisk leder mangler grunnlag i en foreldresamtale"
+      ],
+      "learning_point": "Udokumentert observasjon forsvinner; å skrive ned er omsorg satt i system."
+    },
+    {
+      "id": "lavstatusjobben_baerer_hoyansvar",
+      "title": "Lavstatusjobben bærer høyansvar",
+      "story_type": "identity",
+      "premise": "Noen utenfra omtaler jobben som «bare å passe barn», samme dag som du har dempet tre konflikter, sett et oversett barn og holdt en trygg overgang.",
+      "people": [
+        "forelder_som_klager",
+        "styrer",
+        "erfaren_assistent"
+      ],
+      "place_id": "barnehage_avdeling",
+      "work_knowledge": [
+        "emosjonelt arbeid",
+        "tilknytning",
+        "gruppeledelse",
+        "observasjon"
+      ],
+      "conflict_axes": [
+        "lav_status_vs_hoyt_ansvar",
+        "slitasje_vs_profesjonalitet"
+      ],
+      "mail_types": [
+        "story",
+        "people",
+        "knowledge",
+        "consequence"
+      ],
+      "thread_potential": false,
+      "possible_choices": [
+        "eie det faglige ansvaret og sette ord på hva jobben krever",
+        "godta beskrivelsen «bare passing» i stillhet",
+        "bli bitter og gjøre minst mulig"
+      ],
+      "possible_followups": [
+        "en kollega eller forelder ser hva arbeidet faktisk innebar",
+        "lav anerkjennelse tærer på over tid",
+        "du finner stolthet i de udramatiske, trygge dagene"
+      ],
+      "learning_point": "Lav status betyr ikke lavt ansvar; det viktigste arbeidet er ofte det minst synlige."
+    },
+    {
+      "id": "dagslutt_omsorg_er_praksis",
+      "title": "Dagslutt: omsorg er praksis, ikke følelse",
+      "story_type": "identity",
+      "premise": "Dagen er over, barna er hentet, og du må vurdere hva slags voksen du faktisk var – ikke hva du følte, men hva du gjorde.",
+      "people": [
+        "erfaren_assistent",
+        "pedagogisk_leder"
+      ],
+      "place_id": "barnehage_avdeling",
+      "work_knowledge": [
+        "emosjonelt arbeid",
+        "egenregulering",
+        "observasjon",
+        "tilknytning"
+      ],
+      "conflict_axes": [
+        "slitasje_vs_profesjonalitet",
+        "omsorg_vs_tidsklemme"
+      ],
+      "mail_types": [
+        "story",
+        "consequence",
+        "knowledge",
+        "followup"
+      ],
+      "thread_potential": true,
+      "possible_choices": [
+        "gjøre opp status ærlig og notere hva som bør følges opp",
+        "skyve dagen fra deg uten å reflektere",
+        "ta bare med deg det som gikk galt"
+      ],
+      "possible_followups": [
+        "neste dag starter med en klar plan for et barn",
+        "uforløste situasjoner følger med inn i morgendagen",
+        "du kjenner mestring i de små, riktige handlingene"
+      ],
+      "learning_point": "Omsorg måles i handlinger gjennom dagen, ikke i gode hensikter ved slutten."
+    },
+    {
+      "id": "neste_dag_paavirkes_av_avslutning",
+      "title": "Neste dag påvirkes av hvordan du avsluttet denne",
+      "story_type": "consequence",
+      "premise": "Hvordan dagen ble avsluttet – en notert observasjon, en reparert relasjon, en beskjed til neste vakt – avgjør hvordan morgendagen starter for et barn.",
+      "people": [
+        "pedagogisk_leder",
+        "ny_vikar",
+        "barn_som_strever_med_overgang"
+      ],
+      "place_id": "barnehage_avdeling",
+      "work_knowledge": [
+        "tilknytning",
+        "observasjon",
+        "foreldresamarbeid",
+        "gruppeledelse"
+      ],
+      "conflict_axes": [
+        "dokumentasjon_vs_tilstedevaerelse",
+        "trygghet_vs_flyt"
+      ],
+      "mail_types": [
+        "consequence",
+        "followup",
+        "job",
+        "knowledge"
+      ],
+      "thread_potential": true,
+      "possible_choices": [
+        "etterlate en konkret beskjed og en plan for et barn",
+        "gå hjem uten å overlevere noe",
+        "overlate alt til pedagogisk leder uten kontekst"
+      ],
+      "possible_followups": [
+        "morgendagens overgang går tryggere på grunn av overleveringen",
+        "et barn møter en uforberedt voksen og strever på nytt",
+        "vikaren neste dag vet hva hun skal se etter"
+      ],
+      "learning_point": "Avslutningen i dag er åpningen i morgen; god overlevering er en del av omsorgen."
+    }
+  ],
+  "work_identity": {
+    "one_sentence": "Barnehageassistenten gjør trygghet praktisk gjennom små voksenhandlinger hele dagen.",
+    "hidden_responsibility": "Å se barnas behov før de blir store hendelser.",
+    "status_tension": "Lav formell status, men høy praktisk betydning for trygghet, språk, lek og foreldretillit.",
+    "core_pressure": "omsorg_og_tilstedevaerelse_vs_tidsklemme_og_bemanning",
+    "work_rhythm": [
+      "ta imot barn og foreldre",
+      "støtte overganger",
+      "delta i lek",
+      "observere barn uten å synse",
+      "sette varme grenser",
+      "håndtere garderobe, måltid, utelek og hvile",
+      "samarbeide med pedagogisk leder",
+      "gi korte og presise foreldresignaler"
+    ]
+  },
+  "task_grammar": [
+    {
+      "id": "ta_imot_barn_i_levering",
+      "label": "ta imot barn i levering",
+      "task_type": "overgang",
+      "typical_inputs": [
+        "konkret barn",
+        "barnegruppe",
+        "dagsrytme",
+        "bemanning",
+        "foreldresignal"
+      ],
+      "good_work": [
+        "ser barnet konkret",
+        "regulerer før korrigering",
+        "holder varm grense",
+        "deler presis observasjon"
+      ],
+      "bad_work": [
+        "skynder barnet gjennom",
+        "synser om motiv",
+        "lar støy styre stemmen",
+        "overser stille barn"
+      ],
+      "mail_types": [
+        "job",
+        "micro",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "st_tte_barn_som_ikke_slipper_forelder",
+      "label": "støtte barn som ikke slipper forelder",
+      "task_type": "regulering",
+      "typical_inputs": [
+        "konkret barn",
+        "barnegruppe",
+        "dagsrytme",
+        "bemanning",
+        "foreldresignal"
+      ],
+      "good_work": [
+        "ser barnet konkret",
+        "regulerer før korrigering",
+        "holder varm grense",
+        "deler presis observasjon"
+      ],
+      "bad_work": [
+        "skynder barnet gjennom",
+        "synser om motiv",
+        "lar støy styre stemmen",
+        "overser stille barn"
+      ],
+      "mail_types": [
+        "job",
+        "micro",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "fange_opp_barn_som_trekker_seg_unna_lek",
+      "label": "fange opp barn som trekker seg unna lek",
+      "task_type": "lek",
+      "typical_inputs": [
+        "konkret barn",
+        "barnegruppe",
+        "dagsrytme",
+        "bemanning",
+        "foreldresignal"
+      ],
+      "good_work": [
+        "ser barnet konkret",
+        "regulerer før korrigering",
+        "holder varm grense",
+        "deler presis observasjon"
+      ],
+      "bad_work": [
+        "skynder barnet gjennom",
+        "synser om motiv",
+        "lar støy styre stemmen",
+        "overser stille barn"
+      ],
+      "mail_types": [
+        "job",
+        "micro",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "st_tte_sprak_i_konflikt",
+      "label": "støtte språk i konflikt",
+      "task_type": "sprak",
+      "typical_inputs": [
+        "konkret barn",
+        "barnegruppe",
+        "dagsrytme",
+        "bemanning",
+        "foreldresignal"
+      ],
+      "good_work": [
+        "ser barnet konkret",
+        "regulerer før korrigering",
+        "holder varm grense",
+        "deler presis observasjon"
+      ],
+      "bad_work": [
+        "skynder barnet gjennom",
+        "synser om motiv",
+        "lar støy styre stemmen",
+        "overser stille barn"
+      ],
+      "mail_types": [
+        "job",
+        "micro",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "sette_varm_grense_i_garderoben",
+      "label": "sette varm grense i garderoben",
+      "task_type": "grense",
+      "typical_inputs": [
+        "konkret barn",
+        "barnegruppe",
+        "dagsrytme",
+        "bemanning",
+        "foreldresignal"
+      ],
+      "good_work": [
+        "ser barnet konkret",
+        "regulerer før korrigering",
+        "holder varm grense",
+        "deler presis observasjon"
+      ],
+      "bad_work": [
+        "skynder barnet gjennom",
+        "synser om motiv",
+        "lar støy styre stemmen",
+        "overser stille barn"
+      ],
+      "mail_types": [
+        "job",
+        "micro",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "handtere_utelek_uten_a_miste_oversikt",
+      "label": "håndtere utelek uten å miste oversikt",
+      "task_type": "sikkerhet",
+      "typical_inputs": [
+        "konkret barn",
+        "barnegruppe",
+        "dagsrytme",
+        "bemanning",
+        "foreldresignal"
+      ],
+      "good_work": [
+        "ser barnet konkret",
+        "regulerer før korrigering",
+        "holder varm grense",
+        "deler presis observasjon"
+      ],
+      "bad_work": [
+        "skynder barnet gjennom",
+        "synser om motiv",
+        "lar støy styre stemmen",
+        "overser stille barn"
+      ],
+      "mail_types": [
+        "job",
+        "micro",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "gjennomf_re_maltid_med_uro",
+      "label": "gjennomføre måltid med uro",
+      "task_type": "maltid",
+      "typical_inputs": [
+        "konkret barn",
+        "barnegruppe",
+        "dagsrytme",
+        "bemanning",
+        "foreldresignal"
+      ],
+      "good_work": [
+        "ser barnet konkret",
+        "regulerer før korrigering",
+        "holder varm grense",
+        "deler presis observasjon"
+      ],
+      "bad_work": [
+        "skynder barnet gjennom",
+        "synser om motiv",
+        "lar støy styre stemmen",
+        "overser stille barn"
+      ],
+      "mail_types": [
+        "job",
+        "micro",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "skille_observasjon_fra_tolkning",
+      "label": "skille observasjon fra tolkning",
+      "task_type": "observasjon",
+      "typical_inputs": [
+        "konkret barn",
+        "barnegruppe",
+        "dagsrytme",
+        "bemanning",
+        "foreldresignal"
+      ],
+      "good_work": [
+        "ser barnet konkret",
+        "regulerer før korrigering",
+        "holder varm grense",
+        "deler presis observasjon"
+      ],
+      "bad_work": [
+        "skynder barnet gjennom",
+        "synser om motiv",
+        "lar støy styre stemmen",
+        "overser stille barn"
+      ],
+      "mail_types": [
+        "job",
+        "micro",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "skrive_kort_observasjonsnotat",
+      "label": "skrive kort observasjonsnotat",
+      "task_type": "dokumentasjon",
+      "typical_inputs": [
+        "konkret barn",
+        "barnegruppe",
+        "dagsrytme",
+        "bemanning",
+        "foreldresignal"
+      ],
+      "good_work": [
+        "ser barnet konkret",
+        "regulerer før korrigering",
+        "holder varm grense",
+        "deler presis observasjon"
+      ],
+      "bad_work": [
+        "skynder barnet gjennom",
+        "synser om motiv",
+        "lar støy styre stemmen",
+        "overser stille barn"
+      ],
+      "mail_types": [
+        "job",
+        "micro",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "gi_forelder_presis_beskjed_uten_a_eskalere",
+      "label": "gi forelder presis beskjed uten å eskalere",
+      "task_type": "foreldredialog",
+      "typical_inputs": [
+        "konkret barn",
+        "barnegruppe",
+        "dagsrytme",
+        "bemanning",
+        "foreldresignal"
+      ],
+      "good_work": [
+        "ser barnet konkret",
+        "regulerer før korrigering",
+        "holder varm grense",
+        "deler presis observasjon"
+      ],
+      "bad_work": [
+        "skynder barnet gjennom",
+        "synser om motiv",
+        "lar støy styre stemmen",
+        "overser stille barn"
+      ],
+      "mail_types": [
+        "job",
+        "micro",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "hjelpe_ny_vikar_inn_i_rutinen",
+      "label": "hjelpe ny vikar inn i rutinen",
+      "task_type": "kollegial_rutine",
+      "typical_inputs": [
+        "konkret barn",
+        "barnegruppe",
+        "dagsrytme",
+        "bemanning",
+        "foreldresignal"
+      ],
+      "good_work": [
+        "ser barnet konkret",
+        "regulerer før korrigering",
+        "holder varm grense",
+        "deler presis observasjon"
+      ],
+      "bad_work": [
+        "skynder barnet gjennom",
+        "synser om motiv",
+        "lar støy styre stemmen",
+        "overser stille barn"
+      ],
+      "mail_types": [
+        "job",
+        "micro",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "be_om_hjelp_f_r_gruppa_sprekker",
+      "label": "be om hjelp før gruppa sprekker",
+      "task_type": "gruppeledelse",
+      "typical_inputs": [
+        "konkret barn",
+        "barnegruppe",
+        "dagsrytme",
+        "bemanning",
+        "foreldresignal"
+      ],
+      "good_work": [
+        "ser barnet konkret",
+        "regulerer før korrigering",
+        "holder varm grense",
+        "deler presis observasjon"
+      ],
+      "bad_work": [
+        "skynder barnet gjennom",
+        "synser om motiv",
+        "lar støy styre stemmen",
+        "overser stille barn"
+      ],
+      "mail_types": [
+        "job",
+        "micro",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "regulere_egen_stemme_kropp_under_st_y",
+      "label": "regulere egen stemme/kropp under støy",
+      "task_type": "egenregulering",
+      "typical_inputs": [
+        "konkret barn",
+        "barnegruppe",
+        "dagsrytme",
+        "bemanning",
+        "foreldresignal"
+      ],
+      "good_work": [
+        "ser barnet konkret",
+        "regulerer før korrigering",
+        "holder varm grense",
+        "deler presis observasjon"
+      ],
+      "bad_work": [
+        "skynder barnet gjennom",
+        "synser om motiv",
+        "lar støy styre stemmen",
+        "overser stille barn"
+      ],
+      "mail_types": [
+        "job",
+        "micro",
+        "knowledge"
+      ]
+    }
+  ],
+  "problem_grammar": [
+    {
+      "id": "barnet_slipper_ikke_handen_ved_levering",
+      "title": "barnet slipper ikke hånden ved levering",
+      "problem_type": "overgang",
+      "symptom": "barnet slipper ikke hånden ved levering",
+      "underlying_issue": "Små voksenhandlinger mangler presisjon under tidspress.",
+      "typical_sources": [
+        "barn",
+        "forelder",
+        "pedagogisk leder",
+        "kollega"
+      ],
+      "fag_concepts": [
+        "tilknytning",
+        "observasjon",
+        "grensesetting",
+        "egenregulering"
+      ],
+      "possible_mail_types": [
+        "conflict",
+        "event",
+        "followup"
+      ]
+    },
+    {
+      "id": "frileken_er_fri_bare_for_de_sterke_barna",
+      "title": "frileken er fri bare for de sterke barna",
+      "problem_type": "frilek",
+      "symptom": "frileken er fri bare for de sterke barna",
+      "underlying_issue": "Små voksenhandlinger mangler presisjon under tidspress.",
+      "typical_sources": [
+        "barn",
+        "forelder",
+        "pedagogisk leder",
+        "kollega"
+      ],
+      "fag_concepts": [
+        "tilknytning",
+        "observasjon",
+        "grensesetting",
+        "egenregulering"
+      ],
+      "possible_mail_types": [
+        "conflict",
+        "event",
+        "followup"
+      ]
+    },
+    {
+      "id": "ett_barn_blir_oversett_fordi_det_ikke_braker",
+      "title": "ett barn blir oversett fordi det ikke bråker",
+      "problem_type": "usynlighet",
+      "symptom": "ett barn blir oversett fordi det ikke bråker",
+      "underlying_issue": "Små voksenhandlinger mangler presisjon under tidspress.",
+      "typical_sources": [
+        "barn",
+        "forelder",
+        "pedagogisk leder",
+        "kollega"
+      ],
+      "fag_concepts": [
+        "tilknytning",
+        "observasjon",
+        "grensesetting",
+        "egenregulering"
+      ],
+      "possible_mail_types": [
+        "conflict",
+        "event",
+        "followup"
+      ]
+    },
+    {
+      "id": "forelder_klager_men_har_delvis_rett",
+      "title": "forelder klager, men har delvis rett",
+      "problem_type": "foreldresamarbeid",
+      "symptom": "forelder klager, men har delvis rett",
+      "underlying_issue": "Små voksenhandlinger mangler presisjon under tidspress.",
+      "typical_sources": [
+        "barn",
+        "forelder",
+        "pedagogisk leder",
+        "kollega"
+      ],
+      "fag_concepts": [
+        "tilknytning",
+        "observasjon",
+        "grensesetting",
+        "egenregulering"
+      ],
+      "possible_mail_types": [
+        "conflict",
+        "event",
+        "followup"
+      ]
+    },
+    {
+      "id": "vikaren_kjenner_ikke_barnets_signaler",
+      "title": "vikaren kjenner ikke barnets signaler",
+      "problem_type": "vikar",
+      "symptom": "vikaren kjenner ikke barnets signaler",
+      "underlying_issue": "Små voksenhandlinger mangler presisjon under tidspress.",
+      "typical_sources": [
+        "barn",
+        "forelder",
+        "pedagogisk leder",
+        "kollega"
+      ],
+      "fag_concepts": [
+        "tilknytning",
+        "observasjon",
+        "grensesetting",
+        "egenregulering"
+      ],
+      "possible_mail_types": [
+        "conflict",
+        "event",
+        "followup"
+      ]
+    },
+    {
+      "id": "garderoben_blir_konfliktrom",
+      "title": "garderoben blir konfliktrom",
+      "problem_type": "garderobe",
+      "symptom": "garderoben blir konfliktrom",
+      "underlying_issue": "Små voksenhandlinger mangler presisjon under tidspress.",
+      "typical_sources": [
+        "barn",
+        "forelder",
+        "pedagogisk leder",
+        "kollega"
+      ],
+      "fag_concepts": [
+        "tilknytning",
+        "observasjon",
+        "grensesetting",
+        "egenregulering"
+      ],
+      "possible_mail_types": [
+        "conflict",
+        "event",
+        "followup"
+      ]
+    },
+    {
+      "id": "barnet_slar_men_situasjonen_startet_f_r_slaget",
+      "title": "barnet slår, men situasjonen startet før slaget",
+      "problem_type": "konflikt",
+      "symptom": "barnet slår, men situasjonen startet før slaget",
+      "underlying_issue": "Små voksenhandlinger mangler presisjon under tidspress.",
+      "typical_sources": [
+        "barn",
+        "forelder",
+        "pedagogisk leder",
+        "kollega"
+      ],
+      "fag_concepts": [
+        "tilknytning",
+        "observasjon",
+        "grensesetting",
+        "egenregulering"
+      ],
+      "possible_mail_types": [
+        "conflict",
+        "event",
+        "followup"
+      ]
+    },
+    {
+      "id": "maltidet_blir_for_hektisk_til_sprakst_tte",
+      "title": "måltidet blir for hektisk til språkstøtte",
+      "problem_type": "sprakstotte",
+      "symptom": "måltidet blir for hektisk til språkstøtte",
+      "underlying_issue": "Små voksenhandlinger mangler presisjon under tidspress.",
+      "typical_sources": [
+        "barn",
+        "forelder",
+        "pedagogisk leder",
+        "kollega"
+      ],
+      "fag_concepts": [
+        "tilknytning",
+        "observasjon",
+        "grensesetting",
+        "egenregulering"
+      ],
+      "possible_mail_types": [
+        "conflict",
+        "event",
+        "followup"
+      ]
+    },
+    {
+      "id": "pedagogisk_leder_ber_om_observasjon_ikke_magef_lelse",
+      "title": "pedagogisk leder ber om observasjon, ikke magefølelse",
+      "problem_type": "observasjon",
+      "symptom": "pedagogisk leder ber om observasjon, ikke magefølelse",
+      "underlying_issue": "Små voksenhandlinger mangler presisjon under tidspress.",
+      "typical_sources": [
+        "barn",
+        "forelder",
+        "pedagogisk leder",
+        "kollega"
+      ],
+      "fag_concepts": [
+        "tilknytning",
+        "observasjon",
+        "grensesetting",
+        "egenregulering"
+      ],
+      "possible_mail_types": [
+        "conflict",
+        "event",
+        "followup"
+      ]
+    },
+    {
+      "id": "barnets_beste_kolliderer_med_bemanningsrealiteten",
+      "title": "barnets beste kolliderer med bemanningsrealiteten",
+      "problem_type": "bemanning",
+      "symptom": "barnets beste kolliderer med bemanningsrealiteten",
+      "underlying_issue": "Små voksenhandlinger mangler presisjon under tidspress.",
+      "typical_sources": [
+        "barn",
+        "forelder",
+        "pedagogisk leder",
+        "kollega"
+      ],
+      "fag_concepts": [
+        "tilknytning",
+        "observasjon",
+        "grensesetting",
+        "egenregulering"
+      ],
+      "possible_mail_types": [
+        "conflict",
+        "event",
+        "followup"
+      ]
+    },
+    {
+      "id": "den_voksne_blir_sliten_f_r_barna_er_ferdige",
+      "title": "den voksne blir sliten før barna er ferdige",
+      "problem_type": "slitasje",
+      "symptom": "den voksne blir sliten før barna er ferdige",
+      "underlying_issue": "Små voksenhandlinger mangler presisjon under tidspress.",
+      "typical_sources": [
+        "barn",
+        "forelder",
+        "pedagogisk leder",
+        "kollega"
+      ],
+      "fag_concepts": [
+        "tilknytning",
+        "observasjon",
+        "grensesetting",
+        "egenregulering"
+      ],
+      "possible_mail_types": [
+        "conflict",
+        "event",
+        "followup"
+      ]
+    }
+  ],
+  "conflict_grammar": [
+    {
+      "id": "omsorg_vs_tidsklemme",
+      "title": "omsorg vs tidsklemme",
+      "axis": "omsorg_vs_tidsklemme",
+      "side_a": {
+        "label": "omsorg",
+        "values": [
+          "flyt",
+          "tempo",
+          "lojalitet"
+        ]
+      },
+      "side_b": {
+        "label": "tidsklemme",
+        "values": [
+          "trygghet",
+          "barnets beste",
+          "faglighet"
+        ]
+      },
+      "bad_resolution": [
+        "velger rask ro",
+        "skriver ikke ned observasjon",
+        "lar barnet eller gruppen bære risiko"
+      ],
+      "good_resolution": [
+        "gjør risiko konkret",
+        "velger varm og presis voksenhandling",
+        "melder tjenestevei ved behov"
+      ],
+      "mail_families": [
+        "konfliktakser_avdeling",
+        "oppfolging_lang_dag",
+        "konsekvens_lang_dag"
+      ]
+    },
+    {
+      "id": "trygghet_vs_flyt",
+      "title": "trygghet vs flyt",
+      "axis": "trygghet_vs_flyt",
+      "side_a": {
+        "label": "trygghet",
+        "values": [
+          "flyt",
+          "tempo",
+          "lojalitet"
+        ]
+      },
+      "side_b": {
+        "label": "flyt",
+        "values": [
+          "trygghet",
+          "barnets beste",
+          "faglighet"
+        ]
+      },
+      "bad_resolution": [
+        "velger rask ro",
+        "skriver ikke ned observasjon",
+        "lar barnet eller gruppen bære risiko"
+      ],
+      "good_resolution": [
+        "gjør risiko konkret",
+        "velger varm og presis voksenhandling",
+        "melder tjenestevei ved behov"
+      ],
+      "mail_families": [
+        "konfliktakser_avdeling",
+        "oppfolging_lang_dag",
+        "konsekvens_lang_dag"
+      ]
+    },
+    {
+      "id": "barns_behov_vs_gruppens_behov",
+      "title": "barns behov vs gruppens behov",
+      "axis": "barns_behov_vs_gruppens_behov",
+      "side_a": {
+        "label": "barns_behov",
+        "values": [
+          "flyt",
+          "tempo",
+          "lojalitet"
+        ]
+      },
+      "side_b": {
+        "label": "gruppens_behov",
+        "values": [
+          "trygghet",
+          "barnets beste",
+          "faglighet"
+        ]
+      },
+      "bad_resolution": [
+        "velger rask ro",
+        "skriver ikke ned observasjon",
+        "lar barnet eller gruppen bære risiko"
+      ],
+      "good_resolution": [
+        "gjør risiko konkret",
+        "velger varm og presis voksenhandling",
+        "melder tjenestevei ved behov"
+      ],
+      "mail_families": [
+        "konfliktakser_avdeling",
+        "oppfolging_lang_dag",
+        "konsekvens_lang_dag"
+      ]
+    },
+    {
+      "id": "foreldrekrav_vs_faglig_vurdering",
+      "title": "foreldrekrav vs faglig vurdering",
+      "axis": "foreldrekrav_vs_faglig_vurdering",
+      "side_a": {
+        "label": "foreldrekrav",
+        "values": [
+          "flyt",
+          "tempo",
+          "lojalitet"
+        ]
+      },
+      "side_b": {
+        "label": "faglig_vurdering",
+        "values": [
+          "trygghet",
+          "barnets beste",
+          "faglighet"
+        ]
+      },
+      "bad_resolution": [
+        "velger rask ro",
+        "skriver ikke ned observasjon",
+        "lar barnet eller gruppen bære risiko"
+      ],
+      "good_resolution": [
+        "gjør risiko konkret",
+        "velger varm og presis voksenhandling",
+        "melder tjenestevei ved behov"
+      ],
+      "mail_families": [
+        "konfliktakser_avdeling",
+        "oppfolging_lang_dag",
+        "konsekvens_lang_dag"
+      ]
+    },
+    {
+      "id": "lav_status_vs_hoyt_ansvar",
+      "title": "lav status vs hoyt ansvar",
+      "axis": "lav_status_vs_hoyt_ansvar",
+      "side_a": {
+        "label": "lav_status",
+        "values": [
+          "flyt",
+          "tempo",
+          "lojalitet"
+        ]
+      },
+      "side_b": {
+        "label": "hoyt_ansvar",
+        "values": [
+          "trygghet",
+          "barnets beste",
+          "faglighet"
+        ]
+      },
+      "bad_resolution": [
+        "velger rask ro",
+        "skriver ikke ned observasjon",
+        "lar barnet eller gruppen bære risiko"
+      ],
+      "good_resolution": [
+        "gjør risiko konkret",
+        "velger varm og presis voksenhandling",
+        "melder tjenestevei ved behov"
+      ],
+      "mail_families": [
+        "konfliktakser_avdeling",
+        "oppfolging_lang_dag",
+        "konsekvens_lang_dag"
+      ]
+    },
+    {
+      "id": "grenser_vs_varme",
+      "title": "grenser vs varme",
+      "axis": "grenser_vs_varme",
+      "side_a": {
+        "label": "grenser",
+        "values": [
+          "flyt",
+          "tempo",
+          "lojalitet"
+        ]
+      },
+      "side_b": {
+        "label": "varme",
+        "values": [
+          "trygghet",
+          "barnets beste",
+          "faglighet"
+        ]
+      },
+      "bad_resolution": [
+        "velger rask ro",
+        "skriver ikke ned observasjon",
+        "lar barnet eller gruppen bære risiko"
+      ],
+      "good_resolution": [
+        "gjør risiko konkret",
+        "velger varm og presis voksenhandling",
+        "melder tjenestevei ved behov"
+      ],
+      "mail_families": [
+        "konfliktakser_avdeling",
+        "oppfolging_lang_dag",
+        "konsekvens_lang_dag"
+      ]
+    },
+    {
+      "id": "dokumentasjon_vs_tilstedeværelse",
+      "title": "dokumentasjon vs tilstedevaerelse",
+      "axis": "dokumentasjon_vs_tilstedeværelse",
+      "side_a": {
+        "label": "dokumentasjon",
+        "values": [
+          "flyt",
+          "tempo",
+          "lojalitet"
+        ]
+      },
+      "side_b": {
+        "label": "tilstedevaerelse",
+        "values": [
+          "trygghet",
+          "barnets beste",
+          "faglighet"
+        ]
+      },
+      "bad_resolution": [
+        "velger rask ro",
+        "skriver ikke ned observasjon",
+        "lar barnet eller gruppen bære risiko"
+      ],
+      "good_resolution": [
+        "gjør risiko konkret",
+        "velger varm og presis voksenhandling",
+        "melder tjenestevei ved behov"
+      ],
+      "mail_families": [
+        "konfliktakser_avdeling",
+        "oppfolging_lang_dag",
+        "konsekvens_lang_dag"
+      ]
+    },
+    {
+      "id": "kollegial_lojalitet_vs_barnets_beste",
+      "title": "kollegial lojalitet vs barnets beste",
+      "axis": "kollegial_lojalitet_vs_barnets_beste",
+      "side_a": {
+        "label": "kollegial_lojalitet",
+        "values": [
+          "flyt",
+          "tempo",
+          "lojalitet"
+        ]
+      },
+      "side_b": {
+        "label": "barnets_beste",
+        "values": [
+          "trygghet",
+          "barnets beste",
+          "faglighet"
+        ]
+      },
+      "bad_resolution": [
+        "velger rask ro",
+        "skriver ikke ned observasjon",
+        "lar barnet eller gruppen bære risiko"
+      ],
+      "good_resolution": [
+        "gjør risiko konkret",
+        "velger varm og presis voksenhandling",
+        "melder tjenestevei ved behov"
+      ],
+      "mail_families": [
+        "konfliktakser_avdeling",
+        "oppfolging_lang_dag",
+        "konsekvens_lang_dag"
+      ]
+    },
+    {
+      "id": "slitasje_vs_profesjonalitet",
+      "title": "slitasje vs profesjonalitet",
+      "axis": "slitasje_vs_profesjonalitet",
+      "side_a": {
+        "label": "slitasje",
+        "values": [
+          "flyt",
+          "tempo",
+          "lojalitet"
+        ]
+      },
+      "side_b": {
+        "label": "profesjonalitet",
+        "values": [
+          "trygghet",
+          "barnets beste",
+          "faglighet"
+        ]
+      },
+      "bad_resolution": [
+        "velger rask ro",
+        "skriver ikke ned observasjon",
+        "lar barnet eller gruppen bære risiko"
+      ],
+      "good_resolution": [
+        "gjør risiko konkret",
+        "velger varm og presis voksenhandling",
+        "melder tjenestevei ved behov"
+      ],
+      "mail_families": [
+        "konfliktakser_avdeling",
+        "oppfolging_lang_dag",
+        "konsekvens_lang_dag"
+      ]
+    },
+    {
+      "id": "observasjon_vs_synsing",
+      "title": "observasjon vs synsing",
+      "axis": "observasjon_vs_synsing",
+      "side_a": {
+        "label": "observasjon",
+        "values": [
+          "flyt",
+          "tempo",
+          "lojalitet"
+        ]
+      },
+      "side_b": {
+        "label": "synsing",
+        "values": [
+          "trygghet",
+          "barnets beste",
+          "faglighet"
+        ]
+      },
+      "bad_resolution": [
+        "velger rask ro",
+        "skriver ikke ned observasjon",
+        "lar barnet eller gruppen bære risiko"
+      ],
+      "good_resolution": [
+        "gjør risiko konkret",
+        "velger varm og presis voksenhandling",
+        "melder tjenestevei ved behov"
+      ],
+      "mail_families": [
+        "konfliktakser_avdeling",
+        "oppfolging_lang_dag",
+        "konsekvens_lang_dag"
+      ]
+    },
+    {
+      "id": "frilek_vs_usynlig_utenforskap",
+      "title": "frilek vs usynlig utenforskap",
+      "axis": "frilek_vs_usynlig_utenforskap",
+      "side_a": {
+        "label": "frilek",
+        "values": [
+          "flyt",
+          "tempo",
+          "lojalitet"
+        ]
+      },
+      "side_b": {
+        "label": "usynlig_utenforskap",
+        "values": [
+          "trygghet",
+          "barnets beste",
+          "faglighet"
+        ]
+      },
+      "bad_resolution": [
+        "velger rask ro",
+        "skriver ikke ned observasjon",
+        "lar barnet eller gruppen bære risiko"
+      ],
+      "good_resolution": [
+        "gjør risiko konkret",
+        "velger varm og presis voksenhandling",
+        "melder tjenestevei ved behov"
+      ],
+      "mail_families": [
+        "konfliktakser_avdeling",
+        "oppfolging_lang_dag",
+        "konsekvens_lang_dag"
+      ]
+    }
+  ],
+  "solution_patterns": [
+    {
+      "id": "reguler_f_r_du_korrigerer",
+      "title": "reguler før du korrigerer",
+      "works_for": [
+        "omsorg_vs_tidsklemme",
+        "foreldrekrav_vs_faglig_vurdering"
+      ],
+      "steps": [
+        "stopp opp og les situasjonen",
+        "navngi konkret behov eller risiko",
+        "velg liten voksenhandling nå",
+        "del presis observasjon med rett voksen"
+      ],
+      "choice_tags": [
+        "observasjon",
+        "faglig_vurdering",
+        "barnets_beste"
+      ],
+      "effects": {
+        "trust": 1,
+        "professionalism": 1,
+        "tempo": -1,
+        "mislabeling_risk": -1
+      }
+    },
+    {
+      "id": "gj_r_overgang_forutsigbar",
+      "title": "gjør overgang forutsigbar",
+      "works_for": [
+        "trygghet_vs_flyt",
+        "lav_status_vs_hoyt_ansvar"
+      ],
+      "steps": [
+        "stopp opp og les situasjonen",
+        "navngi konkret behov eller risiko",
+        "velg liten voksenhandling nå",
+        "del presis observasjon med rett voksen"
+      ],
+      "choice_tags": [
+        "observasjon",
+        "faglig_vurdering",
+        "barnets_beste"
+      ],
+      "effects": {
+        "trust": 1,
+        "professionalism": 1,
+        "tempo": -1,
+        "mislabeling_risk": -1
+      }
+    },
+    {
+      "id": "se_det_stille_barnet_f_rst",
+      "title": "se det stille barnet først",
+      "works_for": [
+        "barns_behov_vs_gruppens_behov",
+        "grenser_vs_varme"
+      ],
+      "steps": [
+        "stopp opp og les situasjonen",
+        "navngi konkret behov eller risiko",
+        "velg liten voksenhandling nå",
+        "del presis observasjon med rett voksen"
+      ],
+      "choice_tags": [
+        "observasjon",
+        "faglig_vurdering",
+        "barnets_beste"
+      ],
+      "effects": {
+        "trust": 1,
+        "professionalism": 1,
+        "tempo": -1,
+        "mislabeling_risk": -1
+      }
+    },
+    {
+      "id": "st_tt_lek_uten_a_eie_leken",
+      "title": "støtt lek uten å eie leken",
+      "works_for": [
+        "foreldrekrav_vs_faglig_vurdering",
+        "dokumentasjon_vs_tilstedevaerelse"
+      ],
+      "steps": [
+        "stopp opp og les situasjonen",
+        "navngi konkret behov eller risiko",
+        "velg liten voksenhandling nå",
+        "del presis observasjon med rett voksen"
+      ],
+      "choice_tags": [
+        "observasjon",
+        "faglig_vurdering",
+        "barnets_beste"
+      ],
+      "effects": {
+        "trust": 1,
+        "professionalism": 1,
+        "tempo": -1,
+        "mislabeling_risk": -1
+      }
+    },
+    {
+      "id": "sett_varm_grense",
+      "title": "sett varm grense",
+      "works_for": [
+        "lav_status_vs_hoyt_ansvar",
+        "kollegial_lojalitet_vs_barnets_beste"
+      ],
+      "steps": [
+        "stopp opp og les situasjonen",
+        "navngi konkret behov eller risiko",
+        "velg liten voksenhandling nå",
+        "del presis observasjon med rett voksen"
+      ],
+      "choice_tags": [
+        "observasjon",
+        "faglig_vurdering",
+        "barnets_beste"
+      ],
+      "effects": {
+        "trust": 1,
+        "professionalism": 1,
+        "tempo": -1,
+        "mislabeling_risk": -1
+      }
+    },
+    {
+      "id": "skriv_observasjon_ikke_diagnose",
+      "title": "skriv observasjon, ikke diagnose",
+      "works_for": [
+        "grenser_vs_varme",
+        "slitasje_vs_profesjonalitet"
+      ],
+      "steps": [
+        "stopp opp og les situasjonen",
+        "navngi konkret behov eller risiko",
+        "velg liten voksenhandling nå",
+        "del presis observasjon med rett voksen"
+      ],
+      "choice_tags": [
+        "observasjon",
+        "faglig_vurdering",
+        "barnets_beste"
+      ],
+      "effects": {
+        "trust": 1,
+        "professionalism": 1,
+        "tempo": -1,
+        "mislabeling_risk": -1
+      }
+    },
+    {
+      "id": "oversett_foreldreklage_til_konkret_situasjon",
+      "title": "oversett foreldreklage til konkret situasjon",
+      "works_for": [
+        "dokumentasjon_vs_tilstedevaerelse",
+        "observasjon_vs_synsing"
+      ],
+      "steps": [
+        "stopp opp og les situasjonen",
+        "navngi konkret behov eller risiko",
+        "velg liten voksenhandling nå",
+        "del presis observasjon med rett voksen"
+      ],
+      "choice_tags": [
+        "observasjon",
+        "faglig_vurdering",
+        "barnets_beste"
+      ],
+      "effects": {
+        "trust": 1,
+        "professionalism": 1,
+        "tempo": -1,
+        "mislabeling_risk": -1
+      }
+    },
+    {
+      "id": "be_om_voksenfordeling_f_r_gruppa_sprekker",
+      "title": "be om voksenfordeling før gruppa sprekker",
+      "works_for": [
+        "kollegial_lojalitet_vs_barnets_beste",
+        "frilek_vs_usynlig_utenforskap"
+      ],
+      "steps": [
+        "stopp opp og les situasjonen",
+        "navngi konkret behov eller risiko",
+        "velg liten voksenhandling nå",
+        "del presis observasjon med rett voksen"
+      ],
+      "choice_tags": [
+        "observasjon",
+        "faglig_vurdering",
+        "barnets_beste"
+      ],
+      "effects": {
+        "trust": 1,
+        "professionalism": 1,
+        "tempo": -1,
+        "mislabeling_risk": -1
+      }
+    },
+    {
+      "id": "bruk_sprakst_tte_i_selve_konflikten",
+      "title": "bruk språkstøtte i selve konflikten",
+      "works_for": [
+        "slitasje_vs_profesjonalitet",
+        "omsorg_vs_tidsklemme"
+      ],
+      "steps": [
+        "stopp opp og les situasjonen",
+        "navngi konkret behov eller risiko",
+        "velg liten voksenhandling nå",
+        "del presis observasjon med rett voksen"
+      ],
+      "choice_tags": [
+        "observasjon",
+        "faglig_vurdering",
+        "barnets_beste"
+      ],
+      "effects": {
+        "trust": 1,
+        "professionalism": 1,
+        "tempo": -1,
+        "mislabeling_risk": -1
+      }
+    },
+    {
+      "id": "beskytt_egen_regulering_f_r_stemmen_blir_hard",
+      "title": "beskytt egen regulering før stemmen blir hard",
+      "works_for": [
+        "observasjon_vs_synsing",
+        "trygghet_vs_flyt"
+      ],
+      "steps": [
+        "stopp opp og les situasjonen",
+        "navngi konkret behov eller risiko",
+        "velg liten voksenhandling nå",
+        "del presis observasjon med rett voksen"
+      ],
+      "choice_tags": [
+        "observasjon",
+        "faglig_vurdering",
+        "barnets_beste"
+      ],
+      "effects": {
+        "trust": 1,
+        "professionalism": 1,
+        "tempo": -1,
+        "mislabeling_risk": -1
+      }
+    },
+    {
+      "id": "observe_before_interpreting",
+      "title": "Observer før du tolker",
+      "works_for": [
+        "observasjon_vs_synsing",
+        "foreldrekrav_vs_faglig_vurdering"
+      ],
+      "steps": [
+        "beskriv konkret situasjon",
+        "skille hva barnet gjorde fra hva den voksne tror",
+        "knytt observasjon til overgang, lek eller relasjon",
+        "del med pedagogisk leder uten diagnose"
+      ],
+      "choice_tags": [
+        "observasjon",
+        "faglig_vurdering",
+        "barnets_beste"
+      ],
+      "effects": {
+        "trust": 1,
+        "professionalism": 1,
+        "tempo": -1,
+        "mislabeling_risk": -1
+      }
+    }
+  ],
+  "failure_patterns": [
+    {
+      "id": "korrigerer_f_r_barnet_er_regulert",
+      "title": "korrigerer før barnet er regulert",
+      "short_term_gain": [
+        "raskere flyt",
+        "mindre voksenfriksjon"
+      ],
+      "long_term_risk": [
+        "barnets behov blir usynlig",
+        "foreldretillit svekkes",
+        "slitasje normaliseres"
+      ],
+      "followup_hooks": [
+        {
+          "hook": "pedagogisk_leder_spor_etter_observasjon",
+          "fires_family": "oppfolging_lang_dag"
+        },
+        {
+          "hook": "forelder_kommer_tilbake",
+          "fires_family": "konsekvens_lang_dag"
+        },
+        {
+          "hook": "barnet_trekker_seg_mer_unna",
+          "fires_family": "oppfolging_lang_dag"
+        }
+      ]
+    },
+    {
+      "id": "lar_stille_barn_forsvinne_i_gruppa",
+      "title": "lar stille barn forsvinne i gruppa",
+      "short_term_gain": [
+        "raskere flyt",
+        "mindre voksenfriksjon"
+      ],
+      "long_term_risk": [
+        "barnets behov blir usynlig",
+        "foreldretillit svekkes",
+        "slitasje normaliseres"
+      ],
+      "followup_hooks": [
+        {
+          "hook": "pedagogisk_leder_spor_etter_observasjon",
+          "fires_family": "oppfolging_lang_dag"
+        },
+        {
+          "hook": "forelder_kommer_tilbake",
+          "fires_family": "konsekvens_lang_dag"
+        },
+        {
+          "hook": "barnet_trekker_seg_mer_unna",
+          "fires_family": "oppfolging_lang_dag"
+        }
+      ]
+    },
+    {
+      "id": "tolker_barnet_i_stedet_for_a_observere",
+      "title": "tolker barnet i stedet for å observere",
+      "short_term_gain": [
+        "raskere flyt",
+        "mindre voksenfriksjon"
+      ],
+      "long_term_risk": [
+        "barnets behov blir usynlig",
+        "foreldretillit svekkes",
+        "slitasje normaliseres"
+      ],
+      "followup_hooks": [
+        {
+          "hook": "pedagogisk_leder_spor_etter_observasjon",
+          "fires_family": "oppfolging_lang_dag"
+        },
+        {
+          "hook": "forelder_kommer_tilbake",
+          "fires_family": "konsekvens_lang_dag"
+        },
+        {
+          "hook": "barnet_trekker_seg_mer_unna",
+          "fires_family": "oppfolging_lang_dag"
+        }
+      ]
+    },
+    {
+      "id": "gir_forelder_glatt_svar_uten_konkret_innhold",
+      "title": "gir forelder glatt svar uten konkret innhold",
+      "short_term_gain": [
+        "raskere flyt",
+        "mindre voksenfriksjon"
+      ],
+      "long_term_risk": [
+        "barnets behov blir usynlig",
+        "foreldretillit svekkes",
+        "slitasje normaliseres"
+      ],
+      "followup_hooks": [
+        {
+          "hook": "pedagogisk_leder_spor_etter_observasjon",
+          "fires_family": "oppfolging_lang_dag"
+        },
+        {
+          "hook": "forelder_kommer_tilbake",
+          "fires_family": "konsekvens_lang_dag"
+        },
+        {
+          "hook": "barnet_trekker_seg_mer_unna",
+          "fires_family": "oppfolging_lang_dag"
+        }
+      ]
+    },
+    {
+      "id": "tar_kollegaens_side_selv_om_barnet_ikke_ble_sett",
+      "title": "tar kollegaens side selv om barnet ikke ble sett",
+      "short_term_gain": [
+        "raskere flyt",
+        "mindre voksenfriksjon"
+      ],
+      "long_term_risk": [
+        "barnets behov blir usynlig",
+        "foreldretillit svekkes",
+        "slitasje normaliseres"
+      ],
+      "followup_hooks": [
+        {
+          "hook": "pedagogisk_leder_spor_etter_observasjon",
+          "fires_family": "oppfolging_lang_dag"
+        },
+        {
+          "hook": "forelder_kommer_tilbake",
+          "fires_family": "konsekvens_lang_dag"
+        },
+        {
+          "hook": "barnet_trekker_seg_mer_unna",
+          "fires_family": "oppfolging_lang_dag"
+        }
+      ]
+    },
+    {
+      "id": "lar_grense_bli_kjeft",
+      "title": "lar grense bli kjeft",
+      "short_term_gain": [
+        "raskere flyt",
+        "mindre voksenfriksjon"
+      ],
+      "long_term_risk": [
+        "barnets behov blir usynlig",
+        "foreldretillit svekkes",
+        "slitasje normaliseres"
+      ],
+      "followup_hooks": [
+        {
+          "hook": "pedagogisk_leder_spor_etter_observasjon",
+          "fires_family": "oppfolging_lang_dag"
+        },
+        {
+          "hook": "forelder_kommer_tilbake",
+          "fires_family": "konsekvens_lang_dag"
+        },
+        {
+          "hook": "barnet_trekker_seg_mer_unna",
+          "fires_family": "oppfolging_lang_dag"
+        }
+      ]
+    },
+    {
+      "id": "lar_varme_bli_grensel_shet",
+      "title": "lar varme bli grenseløshet",
+      "short_term_gain": [
+        "raskere flyt",
+        "mindre voksenfriksjon"
+      ],
+      "long_term_risk": [
+        "barnets behov blir usynlig",
+        "foreldretillit svekkes",
+        "slitasje normaliseres"
+      ],
+      "followup_hooks": [
+        {
+          "hook": "pedagogisk_leder_spor_etter_observasjon",
+          "fires_family": "oppfolging_lang_dag"
+        },
+        {
+          "hook": "forelder_kommer_tilbake",
+          "fires_family": "konsekvens_lang_dag"
+        },
+        {
+          "hook": "barnet_trekker_seg_mer_unna",
+          "fires_family": "oppfolging_lang_dag"
+        }
+      ]
+    },
+    {
+      "id": "ofrer_dokumentasjon_fordi_dagen_er_travel",
+      "title": "ofrer dokumentasjon fordi dagen er travel",
+      "short_term_gain": [
+        "raskere flyt",
+        "mindre voksenfriksjon"
+      ],
+      "long_term_risk": [
+        "barnets behov blir usynlig",
+        "foreldretillit svekkes",
+        "slitasje normaliseres"
+      ],
+      "followup_hooks": [
+        {
+          "hook": "pedagogisk_leder_spor_etter_observasjon",
+          "fires_family": "oppfolging_lang_dag"
+        },
+        {
+          "hook": "forelder_kommer_tilbake",
+          "fires_family": "konsekvens_lang_dag"
+        },
+        {
+          "hook": "barnet_trekker_seg_mer_unna",
+          "fires_family": "oppfolging_lang_dag"
+        }
+      ]
+    },
+    {
+      "id": "overkompenserer_med_egen_kropp_stemme_til_man_blir_utslitt",
+      "title": "overkompenserer med egen kropp/stemme til man blir utslitt",
+      "short_term_gain": [
+        "raskere flyt",
+        "mindre voksenfriksjon"
+      ],
+      "long_term_risk": [
+        "barnets behov blir usynlig",
+        "foreldretillit svekkes",
+        "slitasje normaliseres"
+      ],
+      "followup_hooks": [
+        {
+          "hook": "pedagogisk_leder_spor_etter_observasjon",
+          "fires_family": "oppfolging_lang_dag"
+        },
+        {
+          "hook": "forelder_kommer_tilbake",
+          "fires_family": "konsekvens_lang_dag"
+        },
+        {
+          "hook": "barnet_trekker_seg_mer_unna",
+          "fires_family": "oppfolging_lang_dag"
+        }
+      ]
+    }
+  ],
+  "actor_grammar": [
+    {
+      "actor_type": "pedagogisk leder",
+      "example_id": "ped_leder_anne",
+      "function": "aktiverer konkrete valg i avdelingens rytme",
+      "wants": "trygghet",
+      "pressure": "bemanning",
+      "activates_conflict": "omsorg_vs_tidsklemme",
+      "can_send_mail_types": [
+        "job",
+        "people",
+        "conflict",
+        "story",
+        "event",
+        "micro",
+        "followup",
+        "knowledge",
+        "consequence"
+      ],
+      "knows_what_others_do_not_see": "små signaler om barn, gruppe eller drift som andre overser"
+    },
+    {
+      "actor_type": "erfaren assistent",
+      "example_id": "erfaren_assistent_kari",
+      "function": "aktiverer konkrete valg i avdelingens rytme",
+      "wants": "flyt",
+      "pressure": "foreldresignal",
+      "activates_conflict": "trygghet_vs_flyt",
+      "can_send_mail_types": [
+        "job",
+        "people",
+        "conflict",
+        "story",
+        "event",
+        "micro",
+        "followup",
+        "knowledge",
+        "consequence"
+      ],
+      "knows_what_others_do_not_see": "små signaler om barn, gruppe eller drift som andre overser"
+    },
+    {
+      "actor_type": "ny vikar",
+      "example_id": "ny_vikar_milo",
+      "function": "aktiverer konkrete valg i avdelingens rytme",
+      "wants": "å bli sett",
+      "pressure": "barnets_beste",
+      "activates_conflict": "barns_behov_vs_gruppens_behov",
+      "can_send_mail_types": [
+        "job",
+        "people",
+        "conflict",
+        "story",
+        "event",
+        "micro",
+        "followup",
+        "knowledge",
+        "consequence"
+      ],
+      "knows_what_others_do_not_see": "små signaler om barn, gruppe eller drift som andre overser"
+    },
+    {
+      "actor_type": "barn som strever med overgang",
+      "example_id": "barn_noah_overgang",
+      "function": "aktiverer konkrete valg i avdelingens rytme",
+      "wants": "trygghet",
+      "pressure": "kollegial_lojalitet",
+      "activates_conflict": "foreldrekrav_vs_faglig_vurdering",
+      "can_send_mail_types": [
+        "job",
+        "people",
+        "conflict",
+        "story",
+        "event",
+        "micro",
+        "followup",
+        "knowledge",
+        "consequence"
+      ],
+      "knows_what_others_do_not_see": "små signaler om barn, gruppe eller drift som andre overser"
+    },
+    {
+      "actor_type": "barn som ofte blir oversett",
+      "example_id": "barn_ema_oversett",
+      "function": "aktiverer konkrete valg i avdelingens rytme",
+      "wants": "flyt",
+      "pressure": "bemanning",
+      "activates_conflict": "lav_status_vs_hoyt_ansvar",
+      "can_send_mail_types": [
+        "job",
+        "people",
+        "conflict",
+        "story",
+        "event",
+        "micro",
+        "followup",
+        "knowledge",
+        "consequence"
+      ],
+      "knows_what_others_do_not_see": "små signaler om barn, gruppe eller drift som andre overser"
+    },
+    {
+      "actor_type": "forelder som klager",
+      "example_id": "forelder_linn_klager",
+      "function": "aktiverer konkrete valg i avdelingens rytme",
+      "wants": "å bli sett",
+      "pressure": "foreldresignal",
+      "activates_conflict": "grenser_vs_varme",
+      "can_send_mail_types": [
+        "job",
+        "people",
+        "conflict",
+        "story",
+        "event",
+        "micro",
+        "followup",
+        "knowledge",
+        "consequence"
+      ],
+      "knows_what_others_do_not_see": "små signaler om barn, gruppe eller drift som andre overser"
+    },
+    {
+      "actor_type": "forelder som trenger støtte",
+      "example_id": "forelder_samir_stotte",
+      "function": "aktiverer konkrete valg i avdelingens rytme",
+      "wants": "trygghet",
+      "pressure": "barnets_beste",
+      "activates_conflict": "dokumentasjon_vs_tilstedevaerelse",
+      "can_send_mail_types": [
+        "job",
+        "people",
+        "conflict",
+        "story",
+        "event",
+        "micro",
+        "followup",
+        "knowledge",
+        "consequence"
+      ],
+      "knows_what_others_do_not_see": "små signaler om barn, gruppe eller drift som andre overser"
+    },
+    {
+      "actor_type": "styrer",
+      "example_id": "styrer_ragnhild",
+      "function": "aktiverer konkrete valg i avdelingens rytme",
+      "wants": "flyt",
+      "pressure": "kollegial_lojalitet",
+      "activates_conflict": "kollegial_lojalitet_vs_barnets_beste",
+      "can_send_mail_types": [
+        "job",
+        "people",
+        "conflict",
+        "story",
+        "event",
+        "micro",
+        "followup",
+        "knowledge",
+        "consequence"
+      ],
+      "knows_what_others_do_not_see": "små signaler om barn, gruppe eller drift som andre overser"
+    },
+    {
+      "actor_type": "spesialpedagog / PPT-kontakt",
+      "example_id": "ppt_solveig",
+      "function": "aktiverer konkrete valg i avdelingens rytme",
+      "wants": "å bli sett",
+      "pressure": "bemanning",
+      "activates_conflict": "slitasje_vs_profesjonalitet",
+      "can_send_mail_types": [
+        "job",
+        "people",
+        "conflict",
+        "story",
+        "event",
+        "micro",
+        "followup",
+        "knowledge",
+        "consequence"
+      ],
+      "knows_what_others_do_not_see": "små signaler om barn, gruppe eller drift som andre overser"
+    },
+    {
+      "actor_type": "renholder/kjøkken/drift som påvirker dagen praktisk",
+      "example_id": "drift_jon",
+      "function": "aktiverer konkrete valg i avdelingens rytme",
+      "wants": "trygghet",
+      "pressure": "foreldresignal",
+      "activates_conflict": "observasjon_vs_synsing",
+      "can_send_mail_types": [
+        "job",
+        "people",
+        "conflict",
+        "story",
+        "event",
+        "micro",
+        "followup",
+        "knowledge",
+        "consequence"
+      ],
+      "knows_what_others_do_not_see": "små signaler om barn, gruppe eller drift som andre overser"
+    }
+  ],
+  "place_grammar": [
+    {
+      "place_type": "barnehage_rom",
+      "place_id": "barnehage_avdeling",
+      "function": "dagsrytme og gruppeledelse",
+      "mail_types": [
+        "job",
+        "micro"
+      ]
+    },
+    {
+      "place_type": "barnehage_rom",
+      "place_id": "garderobe",
+      "function": "overgang og konflikt",
+      "mail_types": [
+        "job",
+        "micro",
+        "people"
+      ]
+    },
+    {
+      "place_type": "barnehage_rom",
+      "place_id": "utelekeplass",
+      "function": "oversikt og sikkerhet",
+      "mail_types": [
+        "job",
+        "micro",
+        "people",
+        "conflict"
+      ]
+    },
+    {
+      "place_type": "barnehage_rom",
+      "place_id": "samlingsstund",
+      "function": "felles oppmerksomhet",
+      "mail_types": [
+        "job",
+        "micro"
+      ]
+    },
+    {
+      "place_type": "barnehage_rom",
+      "place_id": "hvilerom",
+      "function": "regulering og hvile",
+      "mail_types": [
+        "job",
+        "micro",
+        "people",
+        "conflict"
+      ]
+    },
+    {
+      "place_type": "barnehage_rom",
+      "place_id": "foreldresamtale_rom",
+      "function": "foreldredialog",
+      "mail_types": [
+        "job",
+        "micro"
+      ]
+    },
+    {
+      "place_type": "barnehage_rom",
+      "place_id": "pedagogisk_leder_kontor",
+      "function": "observasjon og tjenestevei",
+      "mail_types": [
+        "job",
+        "micro",
+        "people"
+      ]
+    },
+    {
+      "place_type": "barnehage_rom",
+      "place_id": "måltidsbord",
+      "function": "måltidsro, språkstøtte og inkluderende plassering",
+      "mail_types": [
+        "job",
+        "micro",
+        "knowledge"
+      ]
+    },
+    {
+      "place_type": "barnehage_rom",
+      "place_id": "stellerom",
+      "function": "omsorg, grense og diskret sikkerhet i tett voksenkontakt",
+      "mail_types": [
+        "job",
+        "micro",
+        "consequence"
+      ]
+    },
+    {
+      "place_type": "barnehage_rom",
+      "place_id": "hentebenken",
+      "function": "overlevering til forelder og kort handover om barnets dag",
+      "mail_types": [
+        "people",
+        "followup",
+        "consequence"
+      ]
+    }
+  ],
+  "knowledge_dependencies": [
+    {
+      "id": "tilknytning",
+      "requires": [
+        "tilknytning",
+        "konkret voksenhandling",
+        "barnets beste"
+      ],
+      "supports_mail_types": [
+        "knowledge",
+        "job",
+        "consequence"
+      ]
+    },
+    {
+      "id": "overgangssituasjoner",
+      "requires": [
+        "overgangssituasjoner",
+        "konkret voksenhandling",
+        "barnets beste"
+      ],
+      "supports_mail_types": [
+        "knowledge",
+        "job",
+        "consequence"
+      ]
+    },
+    {
+      "id": "lek",
+      "requires": [
+        "lek",
+        "konkret voksenhandling",
+        "barnets beste"
+      ],
+      "supports_mail_types": [
+        "knowledge",
+        "job",
+        "consequence"
+      ]
+    },
+    {
+      "id": "sprakst_tte",
+      "requires": [
+        "språkstøtte",
+        "konkret voksenhandling",
+        "barnets beste"
+      ],
+      "supports_mail_types": [
+        "knowledge",
+        "job",
+        "consequence"
+      ]
+    },
+    {
+      "id": "barns_medvirkning",
+      "requires": [
+        "barns medvirkning",
+        "konkret voksenhandling",
+        "barnets beste"
+      ],
+      "supports_mail_types": [
+        "knowledge",
+        "job",
+        "consequence"
+      ]
+    },
+    {
+      "id": "observasjon",
+      "requires": [
+        "observasjon",
+        "konkret voksenhandling",
+        "barnets beste"
+      ],
+      "supports_mail_types": [
+        "knowledge",
+        "job",
+        "consequence"
+      ]
+    },
+    {
+      "id": "grensesetting",
+      "requires": [
+        "grensesetting",
+        "konkret voksenhandling",
+        "barnets beste"
+      ],
+      "supports_mail_types": [
+        "knowledge",
+        "job",
+        "consequence"
+      ]
+    },
+    {
+      "id": "konfliktdemping",
+      "requires": [
+        "konfliktdemping",
+        "konkret voksenhandling",
+        "barnets beste"
+      ],
+      "supports_mail_types": [
+        "knowledge",
+        "job",
+        "consequence"
+      ]
+    },
+    {
+      "id": "foreldresamarbeid",
+      "requires": [
+        "foreldresamarbeid",
+        "konkret voksenhandling",
+        "barnets beste"
+      ],
+      "supports_mail_types": [
+        "knowledge",
+        "job",
+        "consequence"
+      ]
+    },
+    {
+      "id": "rammeplan",
+      "requires": [
+        "rammeplan",
+        "konkret voksenhandling",
+        "barnets beste"
+      ],
+      "supports_mail_types": [
+        "knowledge",
+        "job",
+        "consequence"
+      ]
+    },
+    {
+      "id": "sikkerhet",
+      "requires": [
+        "sikkerhet",
+        "konkret voksenhandling",
+        "barnets beste"
+      ],
+      "supports_mail_types": [
+        "knowledge",
+        "job",
+        "consequence"
+      ]
+    },
+    {
+      "id": "bemanning",
+      "requires": [
+        "bemanning",
+        "konkret voksenhandling",
+        "barnets beste"
+      ],
+      "supports_mail_types": [
+        "knowledge",
+        "job",
+        "consequence"
+      ]
+    },
+    {
+      "id": "emosjonelt_arbeid",
+      "requires": [
+        "emosjonelt arbeid",
+        "konkret voksenhandling",
+        "barnets beste"
+      ],
+      "supports_mail_types": [
+        "knowledge",
+        "job",
+        "consequence"
+      ]
+    },
+    {
+      "id": "egenregulering",
+      "requires": [
+        "egenregulering",
+        "konkret voksenhandling",
+        "barnets beste"
+      ],
+      "supports_mail_types": [
+        "knowledge",
+        "job",
+        "consequence"
+      ]
+    }
+  ],
+  "mail_generation_contract": {
+    "required_mail_types": [
+      "job",
+      "people",
+      "conflict",
+      "story",
+      "event",
+      "micro",
+      "followup",
+      "knowledge",
+      "consequence"
+    ],
+    "minimum_counts": {
+      "job": 12,
+      "people": 10,
+      "conflict": 8,
+      "story": 6,
+      "event": 4,
+      "micro": 16,
+      "followup": 8,
+      "knowledge": 8,
+      "consequence": 8
+    },
+    "required_fields": [
+      "id",
+      "mail_type",
+      "mail_family",
+      "role_scope",
+      "phase",
+      "priority",
+      "from/sender/person_id",
+      "place_id",
+      "subject",
+      "summary",
+      "purpose",
+      "stakes",
+      "situation",
+      "task_domain",
+      "task_kind",
+      "competency",
+      "pressure",
+      "choice_axis",
+      "consequence_axis",
+      "narrative_arc",
+      "learning_focus",
+      "choices"
+    ],
+    "followup_consequence_fields": [
+      "next_bias",
+      "triggers_on_choice",
+      "branch_flags",
+      "tags"
+    ],
+    "required_axes": [
+      "task_domain",
+      "competency",
+      "pressure",
+      "choice_axis",
+      "consequence_axis",
+      "narrative_arc",
+      "learning_focus"
+    ],
+    "thematic_axes": [
+      "omsorg_vs_tidsklemme",
+      "trygghet_vs_flyt",
+      "barns_behov_vs_gruppens_behov",
+      "foreldrekrav_vs_faglig_vurdering",
+      "lav_status_vs_hoyt_ansvar",
+      "grenser_vs_varme",
+      "dokumentasjon_vs_tilstedeværelse",
+      "kollegial_lojalitet_vs_barnets_beste",
+      "slitasje_vs_profesjonalitet",
+      "observasjon_vs_synsing",
+      "frilek_vs_usynlig_utenforskap"
+    ]
+  },
+  "day_one_contract": {
+    "title": "Den lange dagen på avdelingen",
+    "required_beats": {
+      "morning": "levering og første overgang",
+      "forenoon": "barnet slipper ikke forelder / trenger regulert voksen",
+      "workday": "frilek viser usynlig utenforskap eller konflikt",
+      "lunch": "person eller forelder bryter inn og viser at dagen allerede har konsekvens",
+      "afternoon": "lav bemanning, garderobe/utelek eller slitasje krever faglig prioritering",
+      "evening": "knowledge eller consequence om observasjon, tilknytning, grensesetting eller egenregulering",
+      "day_end": "carryover: hva slags voksen var du i dag?"
+    },
+    "required_phases": [
+      "morning",
+      "forenoon",
+      "workday",
+      "lunch",
+      "afternoon",
+      "dinner",
+      "evening",
+      "day_end"
+    ],
+    "required_themes": [
+      "tilknytning",
+      "overgang",
+      "frilek",
+      "observasjon",
+      "foreldresignal",
+      "kollegialt press",
+      "egenregulering"
+    ]
+  },
+  "test_contract": {
+    "reference_test": "tests/civication-barnehageassistent-mail-plan.test.js",
+    "audit_expectations": [
+      "roleModel finnes",
+      "workGrammar finnes",
+      "mailPlan finnes",
+      "alle mailFamilies finnes",
+      "Day 1 kan bygges uten runtime- eller UI-endring",
+      "ingen broken_mapping for barnehageassistent"
+    ],
+    "required_commands": [
+      "node scripts/audit-civication-role-packs.mjs",
+      "node scripts/audit-civication-fwg-governance.mjs",
+      "npm run test:civication -- --runInBand"
+    ],
+    "must_preserve": [
+      "Arealplanlegger remains complete_reference_v2",
+      "Renholder remains complete_reference_v2",
+      "broken_mapping remains 0",
+      "NextAction QA/playflow remains untouched"
+    ]
+  }
+}

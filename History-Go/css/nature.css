@@ -1,0 +1,548 @@
+/* css/nature.css — Natur: kort-modal og liste-item-stil */
+
+/* ============================================================
+   NATURE CARD MODAL
+============================================================ */
+.nature-card-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 2000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 32px 16px;
+  overflow-y: auto;
+}
+
+.nature-card-inner {
+  position: relative;
+  background: #fff;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #222;
+}
+
+.nature-card-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nature-card-image-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #dfe8d8, #c9dbbe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.nature-card-inner[data-kind="fauna"] .nature-card-image-wrap {
+  background: linear-gradient(135deg, #efe7c8, #d8c88a);
+}
+
+.nature-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.nature-card-icon {
+  font-size: 72px;
+}
+
+.nature-card-body {
+  padding: 18px 20px 22px;
+}
+
+.nature-card-head h2 {
+  margin: 0 0 2px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.nature-card-latin {
+  margin: 0;
+  font-style: italic;
+  color: #5c6b52;
+}
+
+.nature-card-family {
+  margin: 4px 0 0;
+  font-size: 13px;
+}
+
+.nature-card-unlocked-hint {
+  margin: 12px 0 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.nature-card-unlocked-hint.is-unlocked {
+  background: #e2f0d9;
+  color: #2d5a1a;
+}
+
+.nature-card-unlocked-hint.is-locked {
+  background: #f2eedc;
+  color: #7a6a3a;
+}
+
+.nature-card-sections {
+  margin-top: 16px;
+  display: grid;
+  gap: 14px;
+}
+
+.nature-card-section h3 {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #5c6b52;
+}
+
+.nature-card-section ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.nature-card-section li {
+  margin: 2px 0;
+}
+
+.nature-dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  margin: 0;
+}
+
+.nature-dl dt {
+  font-weight: 600;
+  color: #5c6b52;
+  font-size: 13px;
+}
+
+.nature-dl dd {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Koblede steder i natur-kortet */
+.nature-card-places .nature-places-loading {
+  font-size: 13px;
+  color: #7a7a6d;
+}
+
+.nature-places-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.nature-place-item {
+  margin: 0;
+}
+
+.nature-place-btn {
+  width: 100%;
+  text-align: left;
+  background: #f5f4ec;
+  border: 1px solid #e0dfd2;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  transition: background 120ms ease, transform 100ms ease;
+}
+
+.nature-place-btn:hover {
+  background: #ece9d9;
+}
+
+.nature-place-btn:active {
+  transform: scale(0.98);
+}
+
+.nature-place-title {
+  font-weight: 600;
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nature-place-meta {
+  font-size: 12px;
+  color: #5c6b52;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   NATURE LIST — horisontal strip (speiler #nearbyList.nearby-strip)
+============================================================ */
+#nearbyListContainer #leftNatureList[hidden] {
+  display: none;
+}
+
+#leftNatureList.nearby-strip {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+
+  padding: 12px 2px 0;
+}
+#leftNatureList.nearby-strip::-webkit-scrollbar { display: none; }
+
+/* Kort */
+#leftNatureList.nearby-strip .nearby-item {
+  flex: 0 0 auto;
+  width: 220px;
+  height: 150px;
+
+  scroll-snap-align: start;
+
+  position: relative;
+  padding: 0;
+
+  border: 0;
+  border-radius: 20px;
+  background: #e8efe6;
+  overflow: hidden;
+  cursor: pointer;
+}
+#leftNatureList.nearby-strip .nearby-item.is-fauna {
+  background: #f1ead0;
+}
+#leftNatureList.nearby-strip .nearby-item.is-locked {
+  opacity: 0.75;
+}
+
+/* Bilde fyller hele kortet */
+#leftNatureList.nearby-strip .nearby-thumbWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#leftNatureList.nearby-strip .nearby-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Emoji-ikon-fallback i stedet for bilde */
+#leftNatureList.nearby-strip .nearby-thumb-icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 54px;
+  background: transparent;
+}
+
+/* Dempet overlay for tekstlesbarhet */
+#leftNatureList.nearby-strip .nearby-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to bottom, transparent 45%, rgba(0,0,0,0.55) 100%);
+  pointer-events: none;
+  border-radius: 20px;
+}
+
+/* Tekstblokk nederst */
+#leftNatureList.nearby-strip .nearby-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 8px 12px 10px;
+  pointer-events: none;
+}
+
+#leftNatureList.nearby-strip .nearby-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.1;
+}
+
+#leftNatureList.nearby-strip .nearby-meta {
+  font-size: 11px;
+  color: rgba(255,255,255,0.85);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.1;
+  margin-top: 2px;
+}
+
+#leftNatureList.nearby-strip .nearby-meta em {
+  font-style: italic;
+  color: rgba(255,255,255,0.75);
+}
+
+/* Låst-merke øverst til høyre */
+#leftNatureList.nearby-strip .nearby-item.is-locked .nearby-thumbWrap::after {
+  content: "🔒";
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 14px;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+#leftNatureList.nearby-strip .nearby-item.is-unlocked .nearby-thumbWrap::after {
+  content: "✓";
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 14px;
+  background: rgba(60, 130, 40, 0.85);
+  color: #fff;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  font-weight: 700;
+}
+
+/* ============================================================
+   NATURE UNLOCK TOAST — feirende popup når quiz gir unlock
+============================================================ */
+.nature-unlock-stack {
+  position: fixed;
+  left: 50%;
+  bottom: calc(40px + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 16px;
+  z-index: 20001;
+  pointer-events: none;
+  width: min(820px, calc(100vw - 40px));
+}
+
+.nature-unlock-card {
+  pointer-events: auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: 92px 1fr auto;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 24px 24px 22px;
+  border-radius: 28px;
+  background: #fff;
+  color: #1c2016;
+  box-shadow: 0 18px 44px rgba(0,0,0,0.34), 0 3px 10px rgba(0,0,0,0.14);
+  transform: translateY(28px) scale(0.96);
+  opacity: 0;
+  transition: transform 280ms cubic-bezier(0.2, 0.9, 0.25, 1.2),
+              opacity 220ms ease-out;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.nature-unlock-card.is-visible {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.nature-unlock-card.is-leaving {
+  transform: translateY(16px) scale(0.98);
+  opacity: 0;
+}
+
+.nature-unlock-card.is-flora {
+  background: linear-gradient(135deg, #eef5e6 0%, #fff 70%);
+  border-left: 8px solid #6aa63d;
+}
+
+.nature-unlock-card.is-fauna {
+  background: linear-gradient(135deg, #f5eed6 0%, #fff 70%);
+  border-left: 8px solid #c69a2a;
+}
+
+.nature-unlock-card.is-person {
+  background: linear-gradient(135deg, #e6ecf5 0%, #fff 70%);
+  border-left: 8px solid #3d6aa6;
+}
+
+.nature-unlock-card.is-place {
+  background: linear-gradient(135deg, #f5e3e3 0%, #fff 70%);
+  border-left: 8px solid #a64343;
+}
+
+.nature-unlock-card.is-person .nature-unlock-kicker { color: #1e3d72; }
+.nature-unlock-card.is-place .nature-unlock-kicker { color: #7a2a2a; }
+
+.nature-unlock-card.is-badge {
+  background: linear-gradient(135deg, #fff7d9 0%, #fff 70%);
+  border-left: 8px solid #d4a72c;
+  box-shadow: 0 18px 44px rgba(192, 140, 20, 0.38), 0 3px 10px rgba(0,0,0,0.14);
+}
+
+.nature-unlock-card.is-badge .nature-unlock-kicker {
+  color: #7a5a0e;
+  letter-spacing: 0.08em;
+}
+
+.nature-unlock-card.is-badge .nature-unlock-title {
+  font-size: 32px;
+}
+
+.nature-unlock-card.is-badge .nature-unlock-latin {
+  font-style: normal;
+  font-size: 20px;
+  color: #8a6f2c;
+  font-weight: 700;
+}
+
+.nature-unlock-thumb-badge {
+  object-fit: contain !important;
+  background: #f7ecc5;
+  padding: 8px;
+}
+
+.nature-unlock-card.is-more {
+  grid-template-columns: 1fr;
+  background: rgba(34, 38, 30, 0.92);
+  color: #fff;
+  text-align: center;
+  padding: 22px 28px;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.nature-unlock-thumb {
+  width: 92px;
+  height: 92px;
+  border-radius: 18px;
+  object-fit: cover;
+  display: block;
+}
+
+.nature-unlock-thumb-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  background: rgba(0,0,0,0.06);
+}
+
+.nature-unlock-body {
+  min-width: 0;
+}
+
+.nature-unlock-kicker {
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #5c6b52;
+  margin-bottom: 6px;
+}
+
+.nature-unlock-card.is-fauna .nature-unlock-kicker {
+  color: #7b5f16;
+}
+
+.nature-unlock-title {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.12;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nature-unlock-latin {
+  font-size: 20px;
+  font-style: italic;
+  color: #5c6b52;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 6px;
+}
+
+.nature-unlock-close {
+  background: transparent;
+  border: 0;
+  font-size: 24px;
+  color: #7a7a6d;
+  padding: 4px 6px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nature-unlock-close:hover {
+  background: rgba(0,0,0,0.06);
+}

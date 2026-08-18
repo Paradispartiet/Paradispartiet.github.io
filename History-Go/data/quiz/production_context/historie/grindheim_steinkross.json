@@ -1,0 +1,586 @@
+{
+  "schema_version": "1.0",
+  "generator_version": "1.0",
+  "categoryId": "historie",
+  "targetId": "grindheim_steinkross",
+  "profile": "narrow_3x7",
+  "manifest": {
+    "path": "data/fag/fag_manifest.json",
+    "matches": 1,
+    "selection_bytes": 1805,
+    "selection_sha256": "14002d745f02b63a6fbaab2f9d97999cd8fa470db4d7e2a11aa5a2a3a1f35fb7",
+    "category_id": "historie",
+    "target_id": "grindheim_steinkross"
+  },
+  "resolved_files": {
+    "pensum": {
+      "path": "data/fag/historie/historiepensum_canonical_v4_5.json",
+      "bytes": 93945,
+      "sha256": "37abfe99b9f3f1db23bb0cb307b2076407076a405c15868b0524ef5b9e31c72d",
+      "format": "json"
+    },
+    "emner": {
+      "path": "data/fag/historie/emner_historie_canonical_v4_5.json",
+      "bytes": 2142053,
+      "sha256": "bcb20665e0a013c4f57e17719b610224874552b942b9bcd7421a7239463931ec",
+      "format": "json"
+    },
+    "fagkart": {
+      "path": "data/fag/historie/fagkart_historie_canonical_v4_5.json",
+      "bytes": 1127330,
+      "sha256": "6db315c9b911fc04b99dd7609e493e744f919448668cf35fe3c72d3dabff59b1",
+      "format": "json"
+    },
+    "methods": {
+      "path": "data/fag/historie/methods_historie_canonical_v4_5.json",
+      "bytes": 252328,
+      "sha256": "9462f9fc4a07c9c08593abaa75e4ee1bddd6af9e45a87304b52df66bcdb654be",
+      "format": "json"
+    },
+    "supersetQuizMal": {
+      "path": "data/fag/historie/supersetQUIZMAL_historie.json",
+      "bytes": 6935,
+      "sha256": "162f166d3c5be89d77b7529ba9186a552b791e9dbd04a590a01fdaad28944098",
+      "format": "json"
+    },
+    "quizStandard": {
+      "path": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+      "bytes": 16882,
+      "sha256": "60804db1e587faae822930a800cfebac7966fa7e009778d46d94d1f28e02545e",
+      "format": "text"
+    },
+    "quizQuestionSchema": {
+      "path": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+      "bytes": 4197,
+      "sha256": "082640c491511aa4848b924a107831036a1ebaf33be2009cc0ba5d81b635a350",
+      "format": "json"
+    }
+  },
+  "required_inputs_loaded": [
+    "pensum",
+    "emner",
+    "fagkart",
+    "methods",
+    "supersetQuizMal",
+    "quizStandard",
+    "quizQuestionSchema"
+  ],
+  "source_files": {
+    "brief": {
+      "path": "data/quiz/production_briefs/historie/grindheim_steinkross.json",
+      "bytes": 11657,
+      "sha256": "d543a488377f0dfeae26057c650d28e225cd00cc44de26916be522f3200f72f6"
+    },
+    "target": {
+      "path": "data/places/historie/vestland/etne/grindheim_steinkross.json",
+      "bytes": 7889,
+      "sha256": "9ef78927ccc5df88776948942303252074aaeb926ff2d32fe122b03729ae05a6"
+    },
+    "target_index": {
+      "path": "data/places/places_index.json",
+      "matches": 1,
+      "selection_bytes": 1109,
+      "selection_sha256": "9ebbfe61faefe3d2c09c67226c874c12437cb8e5f24ac0ead47d1f1b1489671c"
+    },
+    "relations": [
+      {
+        "path": "data/relations.json",
+        "matches": 1,
+        "selection_bytes": 369,
+        "selection_sha256": "67871ed7cca05823878e03b4b84276fc7fcfaa4ee0869245a897d47425d7132a"
+      }
+    ],
+    "stories": [
+      {
+        "path": "data/stories/stories_etne_historie_rounds_batch3.json",
+        "matches": 1,
+        "selection_bytes": 1873,
+        "selection_sha256": "50083fdae8384167920886ea770a7a384fd181bbb83ec3eb32fa97b1349594ce"
+      }
+    ]
+  },
+  "planned_quiz_file": "data/quiz/historie/grindheim_steinkross_sets.json",
+  "source_registry": {
+    "kringom_grindheim": {
+      "url": "https://www.kringom.no/nb/grindheim-kyrkje",
+      "source_type": "regional_cultural_history",
+      "review_status": "reviewed",
+      "review_note": "Brukt for dagens plassering, murfasen, tradisjonen om Krossbakken, den moglege samlingsfunksjonen og den noverande T-forma."
+    },
+    "norges_kirker_grindheim": {
+      "url": "https://norgeskirker.no/wiki/Grindheim_kyrkje",
+      "source_type": "scholarly_church_inventory",
+      "review_status": "reviewed",
+      "review_note": "Brukt for funnet i 1905, dagens plassering, Paaske-teikninga, tidlegkristen form, armhol og eksakte mål."
+    }
+  },
+  "source_review_status": "reviewed",
+  "considered_curriculum": {
+    "counts": {
+      "pensum_modules": 23,
+      "emner": 230,
+      "topic_hooks": 230,
+      "methods": 105
+    },
+    "candidate_emner": [
+      {
+        "id": "em_his_kildekritikk_arkiv_spor",
+        "title": "Kildekritikk, arkiv og spor",
+        "score": 100
+      },
+      {
+        "id": "em_his_kirke_kloster_middelalder",
+        "title": "Kirke, kloster og middelaldermakt",
+        "score": 100
+      },
+      {
+        "id": "em_his_kulturminner_bevaring",
+        "title": "Kulturminner, utvelgelse og bevaring",
+        "score": 100
+      },
+      {
+        "id": "em_his_minnesteder_historiebruk",
+        "title": "Minnesteder, ritual og offentlig historiebruk",
+        "score": 100
+      },
+      {
+        "id": "em_his_spor_materialitet",
+        "title": "Spor og materialitet",
+        "score": 100
+      }
+    ],
+    "candidate_topic_hooks": [
+      {
+        "id": "his_kildekritikk",
+        "title": "Kildekritikk, opphav og formål",
+        "category_id": "his_kilder_arkiv_spor",
+        "score": 10
+      },
+      {
+        "id": "his_kulturminneutvelgelse_verdi",
+        "title": "Kulturminneutvelgelse og verdi",
+        "category_id": "his_minne_kulturarv_historiebruk",
+        "score": 10
+      },
+      {
+        "id": "his_middelalder_by_kirke",
+        "title": "Middelalderbyen og kirkemakten",
+        "category_id": "his_middelalder_kirke_kongemakt",
+        "score": 10
+      },
+      {
+        "id": "his_minnested_ritual_offentlig_sorg",
+        "title": "Minnested, ritual og offentlig sorg",
+        "category_id": "his_minne_kulturarv_historiebruk",
+        "score": 10
+      },
+      {
+        "id": "his_spor_materialitet",
+        "title": "Materielle spor og sted som kilde",
+        "category_id": "his_kilder_arkiv_spor",
+        "score": 10
+      }
+    ],
+    "note": "Alle autoritative filer er lest i sin helhet. Kandidatlistene viser treff; bare selected_curriculum er valgt for synlig bruk."
+  },
+  "selected_curriculum": {
+    "module_ids": [
+      "his_kilder_arkiv_spor",
+      "his_middelalder_kirke_kongemakt",
+      "his_minne_kulturarv_historiebruk"
+    ],
+    "emne_ids": [
+      "em_his_kirke_kloster_middelalder",
+      "em_his_spor_materialitet",
+      "em_his_kildekritikk_arkiv_spor",
+      "em_his_kulturminner_bevaring",
+      "em_his_minnesteder_historiebruk"
+    ],
+    "topic_hook_ids": [
+      "his_kildekritikk",
+      "his_minnested_ritual_offentlig_sorg"
+    ],
+    "method_ids": [
+      "met_sporlesning",
+      "met_kildekritikk",
+      "met_minneanalyse"
+    ],
+    "thinker_ids": [
+      "marc_bloch",
+      "pierre_nora"
+    ],
+    "works": [
+      "The Historian's Craft",
+      "Realms of Memory"
+    ]
+  },
+  "claim_bank": [
+    {
+      "claim_id": "claim_grindheim_steinkross_01",
+      "order": 1,
+      "planned_phase": "opening",
+      "family": "fact",
+      "statement": "Grindheimkrossen er ein steinkross, ikkje runesteinen som står ved same kyrkje.",
+      "source_ids": [
+        "kringom_grindheim",
+        "norges_kirker_grindheim"
+      ],
+      "source_origin": "external",
+      "emne_id": "em_his_spor_materialitet"
+    },
+    {
+      "claim_id": "claim_grindheim_steinkross_02",
+      "order": 2,
+      "planned_phase": "opening",
+      "family": "fact",
+      "statement": "Steinkrossen står no innanfor kyrkjegardsporten på nordsida ved Grindheim kyrkje.",
+      "source_ids": [
+        "kringom_grindheim",
+        "norges_kirker_grindheim"
+      ],
+      "source_origin": "external",
+      "emne_id": "em_his_spor_materialitet"
+    },
+    {
+      "claim_id": "claim_grindheim_steinkross_03",
+      "order": 3,
+      "planned_phase": "opening",
+      "family": "fact",
+      "statement": "Den øvste krossarmen manglar, slik at monumentet no har T-form.",
+      "source_ids": [
+        "kringom_grindheim",
+        "norges_kirker_grindheim"
+      ],
+      "source_origin": "external",
+      "emne_id": "em_his_kulturminner_bevaring"
+    },
+    {
+      "claim_id": "claim_grindheim_steinkross_04",
+      "order": 4,
+      "planned_phase": "opening",
+      "family": "fact",
+      "statement": "Grindheimkrossen vart funnen i kyrkjegardsmuren i 1905.",
+      "source_ids": [
+        "norges_kirker_grindheim"
+      ],
+      "source_origin": "external",
+      "emne_id": "em_his_kulturminner_bevaring"
+    },
+    {
+      "claim_id": "claim_grindheim_steinkross_05",
+      "order": 5,
+      "planned_phase": "opening",
+      "family": "fact",
+      "statement": "Steinkrossen er 1,96 meter høg over bakkenivå.",
+      "source_ids": [
+        "norges_kirker_grindheim"
+      ],
+      "source_origin": "external",
+      "emne_id": "em_his_spor_materialitet"
+    },
+    {
+      "claim_id": "claim_grindheim_steinkross_06",
+      "order": 6,
+      "planned_phase": "opening",
+      "family": "fact",
+      "statement": "Ved foten er steinkrossen 96 centimeter brei.",
+      "source_ids": [
+        "norges_kirker_grindheim"
+      ],
+      "source_origin": "external",
+      "emne_id": "em_his_spor_materialitet"
+    },
+    {
+      "claim_id": "claim_grindheim_steinkross_07",
+      "order": 7,
+      "planned_phase": "opening",
+      "family": "fact",
+      "statement": "Norges Kirker skildrar Grindheimkrossen som ein stein med tidlegkristen form.",
+      "source_ids": [
+        "norges_kirker_grindheim"
+      ],
+      "source_origin": "external",
+      "emne_id": "em_his_kirke_kloster_middelalder"
+    },
+    {
+      "claim_id": "claim_grindheim_steinkross_08",
+      "order": 8,
+      "planned_phase": "bridge",
+      "family": "fact",
+      "statement": "Før den noverande oppreiste plasseringa låg steinkrossen i sjølve kyrkjegardsmuren.",
+      "source_ids": [
+        "kringom_grindheim",
+        "norges_kirker_grindheim"
+      ],
+      "source_origin": "external",
+      "emne_id": "em_his_kulturminner_bevaring"
+    },
+    {
+      "claim_id": "claim_grindheim_steinkross_09",
+      "order": 9,
+      "planned_phase": "bridge",
+      "family": "fact",
+      "statement": "Kringom oppgir at steinkrossen opphavleg skal ha stått på Krossbakken.",
+      "source_ids": [
+        "kringom_grindheim"
+      ],
+      "source_origin": "external",
+      "emne_id": "em_his_kildekritikk_arkiv_spor"
+    },
+    {
+      "claim_id": "claim_grindheim_steinkross_10",
+      "order": 10,
+      "planned_phase": "bridge",
+      "family": "context",
+      "statement": "Krossbakken-tradisjonen, murfasen og dagens plassering viser at monumentet har skifta stad og bruk.",
+      "source_ids": [
+        "kringom_grindheim",
+        "norges_kirker_grindheim"
+      ],
+      "source_origin": "external",
+      "emne_id": "em_his_kulturminner_bevaring"
+    },
+    {
+      "claim_id": "claim_grindheim_steinkross_11",
+      "order": 11,
+      "planned_phase": "bridge",
+      "family": "context",
+      "statement": "Dagens dokumenterte plassering ved kyrkja kan ikkje i seg sjølv stadfeste eit nøyaktig opphavspunkt på Krossbakken.",
+      "source_ids": [
+        "kringom_grindheim",
+        "norges_kirker_grindheim"
+      ],
+      "source_origin": "external",
+      "emne_id": "em_his_kildekritikk_arkiv_spor"
+    },
+    {
+      "claim_id": "claim_grindheim_steinkross_12",
+      "order": 12,
+      "planned_phase": "bridge",
+      "family": "fact",
+      "statement": "Kvar av dei bevarte tverrarmane er 33 centimeter lang.",
+      "source_ids": [
+        "norges_kirker_grindheim"
+      ],
+      "source_origin": "external",
+      "emne_id": "em_his_spor_materialitet"
+    },
+    {
+      "claim_id": "claim_grindheim_steinkross_13",
+      "order": 13,
+      "planned_phase": "bridge",
+      "family": "fact",
+      "statement": "Den største breidda på steinkrossen er 1,11 meter.",
+      "source_ids": [
+        "norges_kirker_grindheim"
+      ],
+      "source_origin": "external",
+      "emne_id": "em_his_spor_materialitet"
+    },
+    {
+      "claim_id": "claim_grindheim_steinkross_14",
+      "order": 14,
+      "planned_phase": "bridge",
+      "family": "fact",
+      "statement": "Steinen har nærast sirkelrunde hol mellom krossarmane og eit sirkelrundt hol i krossmidten.",
+      "source_ids": [
+        "norges_kirker_grindheim"
+      ],
+      "source_origin": "external",
+      "emne_id": "em_his_spor_materialitet"
+    },
+    {
+      "claim_id": "claim_grindheim_steinkross_15",
+      "order": 15,
+      "planned_phase": "final",
+      "family": "context",
+      "statement": "Kringom omtalar samlingsstader som ein mogleg generell funksjon for steinkrossar, ikkje som eit sikkert bevis for bruken av Grindheimkrossen.",
+      "source_ids": [
+        "kringom_grindheim"
+      ],
+      "source_origin": "external",
+      "emne_id": "em_his_kirke_kloster_middelalder"
+    },
+    {
+      "claim_id": "claim_grindheim_steinkross_16",
+      "order": 16,
+      "planned_phase": "final",
+      "family": "concept_theory",
+      "statement": "Ein tradert opphavsstad er knytt til monumentet gjennom overlevert stadstradisjon og må skiljast frå ei sikkert dokumentert funnplassering.",
+      "source_ids": [
+        "kringom_grindheim",
+        "norges_kirker_grindheim"
+      ],
+      "source_origin": "external",
+      "emne_id": "em_his_kildekritikk_arkiv_spor",
+      "guidance_basis": [
+        "data/fag/historie/methods_historie_canonical_v4_5.json",
+        "data/fag/historie/emner_historie_canonical_v4_5.json"
+      ],
+      "method_id": "met_kildekritikk"
+    },
+    {
+      "claim_id": "claim_grindheim_steinkross_17",
+      "order": 17,
+      "planned_phase": "final",
+      "family": "concept_theory",
+      "statement": "Gjenbruk inneber her at det eldre monumentet vart brukt som del av kyrkjegardsmuren i ein ny samanheng.",
+      "source_ids": [
+        "kringom_grindheim",
+        "norges_kirker_grindheim"
+      ],
+      "source_origin": "external",
+      "emne_id": "em_his_kulturminner_bevaring",
+      "guidance_basis": [
+        "data/fag/historie/methods_historie_canonical_v4_5.json",
+        "data/fag/historie/emner_historie_canonical_v4_5.json"
+      ],
+      "method_id": "met_sporlesning"
+    },
+    {
+      "claim_id": "claim_grindheim_steinkross_18",
+      "order": 18,
+      "planned_phase": "final",
+      "family": "context",
+      "statement": "Paaske-teikninga og den noverande steinen dokumenterer at den øvste armen har gått tapt, men ikkje nøyaktig når det skjedde.",
+      "source_ids": [
+        "norges_kirker_grindheim"
+      ],
+      "source_origin": "external",
+      "emne_id": "em_his_kildekritikk_arkiv_spor"
+    },
+    {
+      "claim_id": "claim_grindheim_steinkross_19",
+      "order": 19,
+      "planned_phase": "final",
+      "family": "context",
+      "statement": "Skildringa av tidlegkristen form plasserer monumentet i ein historisk type, men gir ikkje åleine eit sikkert byggjeår.",
+      "source_ids": [
+        "norges_kirker_grindheim"
+      ],
+      "source_origin": "external",
+      "emne_id": "em_his_kirke_kloster_middelalder"
+    },
+    {
+      "claim_id": "claim_grindheim_steinkross_20",
+      "order": 20,
+      "planned_phase": "final",
+      "family": "concept_theory",
+      "statement": "Paaske-teikninga, den noverande steinen og stadstradisjonen er ulike kjelder som svarar på ulike spørsmål om form, tap og opphav.",
+      "source_ids": [
+        "kringom_grindheim",
+        "norges_kirker_grindheim"
+      ],
+      "source_origin": "external",
+      "emne_id": "em_his_kildekritikk_arkiv_spor",
+      "guidance_basis": [
+        "data/fag/historie/fagkart_historie_canonical_v4_5.json",
+        "data/fag/historie/methods_historie_canonical_v4_5.json",
+        "data/fag/historie/emner_historie_canonical_v4_5.json"
+      ],
+      "method_id": "met_kildekritikk",
+      "topic_hook_id": "his_kildekritikk",
+      "thinker_id": "marc_bloch",
+      "work": "The Historian's Craft"
+    },
+    {
+      "claim_id": "claim_grindheim_steinkross_21",
+      "order": 21,
+      "planned_phase": "final",
+      "family": "concept_theory",
+      "statement": "Oppreisinga etter funnet i 1905 gjorde steinkrossen synleg som monument og offentleg minnestad i staden for murmateriale.",
+      "source_ids": [
+        "kringom_grindheim",
+        "norges_kirker_grindheim"
+      ],
+      "source_origin": "external",
+      "emne_id": "em_his_minnesteder_historiebruk",
+      "guidance_basis": [
+        "data/fag/historie/fagkart_historie_canonical_v4_5.json",
+        "data/fag/historie/methods_historie_canonical_v4_5.json",
+        "data/fag/historie/emner_historie_canonical_v4_5.json"
+      ],
+      "method_id": "met_minneanalyse",
+      "topic_hook_id": "his_minnested_ritual_offentlig_sorg",
+      "thinker_id": "pierre_nora",
+      "work": "Realms of Memory"
+    }
+  ],
+  "story_units": [
+    {
+      "type": "relation",
+      "id": "rel_grindheim_steinkross_samlingsmiljoet",
+      "source_file": "data/relations.json",
+      "summary": "Kjeldene knyter krossen til Krossbakken og opnar for bruk som samlingsmerke, utan å namngje brukarane."
+    },
+    {
+      "type": "story",
+      "id": "st_grindheim_steinkross_tre_stader",
+      "source_file": "data/stories/stories_etne_historie_rounds_batch3.json",
+      "summary": "Krossbakken, kyrkjegardsmuren og dagens plassering er tre kapittel i historia til same stein."
+    }
+  ],
+  "set_plan": [
+    {
+      "set_id": "historie_grindheim_steinkross_set_1",
+      "order": 1,
+      "phase": "opening",
+      "planned_questions": 7,
+      "questions_per_set": 7,
+      "claim_ids": [
+        "claim_grindheim_steinkross_01",
+        "claim_grindheim_steinkross_02",
+        "claim_grindheim_steinkross_03",
+        "claim_grindheim_steinkross_04",
+        "claim_grindheim_steinkross_05",
+        "claim_grindheim_steinkross_06",
+        "claim_grindheim_steinkross_07"
+      ]
+    },
+    {
+      "set_id": "historie_grindheim_steinkross_set_2",
+      "order": 2,
+      "phase": "bridge",
+      "planned_questions": 7,
+      "questions_per_set": 7,
+      "claim_ids": [
+        "claim_grindheim_steinkross_08",
+        "claim_grindheim_steinkross_09",
+        "claim_grindheim_steinkross_10",
+        "claim_grindheim_steinkross_11",
+        "claim_grindheim_steinkross_12",
+        "claim_grindheim_steinkross_13",
+        "claim_grindheim_steinkross_14"
+      ]
+    },
+    {
+      "set_id": "historie_grindheim_steinkross_set_3",
+      "order": 3,
+      "phase": "final",
+      "planned_questions": 7,
+      "questions_per_set": 7,
+      "claim_ids": [
+        "claim_grindheim_steinkross_15",
+        "claim_grindheim_steinkross_16",
+        "claim_grindheim_steinkross_17",
+        "claim_grindheim_steinkross_18",
+        "claim_grindheim_steinkross_19",
+        "claim_grindheim_steinkross_20",
+        "claim_grindheim_steinkross_21"
+      ]
+    }
+  ],
+  "question_balance": {
+    "total": 21,
+    "counts": {
+      "fact": 12,
+      "context": 5,
+      "concept_theory": 4
+    },
+    "ratios": {
+      "fact": 0.571,
+      "context": 0.238,
+      "concept_theory": 0.19
+    }
+  }
+}

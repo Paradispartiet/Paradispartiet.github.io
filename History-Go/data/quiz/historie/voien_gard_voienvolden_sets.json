@@ -1,0 +1,1419 @@
+{
+  "targetId": "voien_gard_voienvolden",
+  "categoryId": "historie",
+  "generator_version": "chatgpt_history_go_source_verified_v2",
+  "generated_from": [
+    "data/places/natur/oslo/places_oslo_natur_akerselvarute/voien_gard_voienvolden.json",
+    "data/leksikon/places/oslo/historie/leksikon_oslo_historie_batch2.json",
+    "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+    "https://snl.no/V%C3%B8yenvollen",
+    "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+    "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+  ],
+  "manual_production_notes": {
+    "quality_direction": "sted → kilde → observasjon → emne → forståelse",
+    "identity_rule": "Vøienvolden gård er løkken Nedre Vøien; ikke bland med Vøyen gård eller Vøyenfallene.",
+    "dynamic_rule": "Åpningstider og arrangementer hentes hos Fortidsminneforeningen og hardkodes ikke.",
+    "species_rule": "Natur-rundingen viser alle åtte aktive fuglearter og ingen oppdiktet flora."
+  },
+  "sets": [
+    {
+      "set_id": "historie_voien_gard_voienvolden_set_1",
+      "level": 1,
+      "order": 1,
+      "xp": 50,
+      "mode": "place_intro_story",
+      "questions": [
+        {
+          "id": "voien_gard_voienvolden_s1_q1",
+          "quiz_id": "historie_voien_gard_voienvolden_set_1_q1",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "place",
+          "question": "Hva er Vøienvolden gård historisk sett?",
+          "options": [
+            "En løkke fra Christianias bymark som utviklet seg til et komplett gårdstun",
+            "Den opprinnelige Vøyen gård",
+            "Et enkelt fossefall"
+          ],
+          "answer": "En løkke fra Christianias bymark som utviklet seg til et komplett gårdstun",
+          "answerIndex": 0,
+          "knowledge": "Stedet er den bevarte løkken Nedre Vøien, ikke Vøyen gård eller Vøyenfallene.",
+          "difficulty": 1,
+          "question_type": "stedsspesifikk",
+          "question_layer": "place_intro_story",
+          "tags": [
+            "voien_gard_voienvolden",
+            "løkkegård",
+            "identitet"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s1_q2",
+          "quiz_id": "historie_voien_gard_voienvolden_set_1_q2",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "place",
+          "question": "Hvilket år fikk Johan Petersen Bergmand overta løkken?",
+          "options": [
+            "1683",
+            "1846",
+            "1954"
+          ],
+          "answer": "1683",
+          "answerIndex": 0,
+          "knowledge": "1683 markerer etableringen av løkken som senere ble Vøienvolden.",
+          "difficulty": 1,
+          "question_type": "stedsspesifikk",
+          "question_layer": "place_intro_story",
+          "tags": [
+            "voien_gard_voienvolden",
+            "1683",
+            "bymarken"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s1_q3",
+          "quiz_id": "historie_voien_gard_voienvolden_set_1_q3",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "place",
+          "question": "Hva var en hovedfunksjon for Christianias bymark?",
+          "options": [
+            "Å skaffe mat, beite, ved og andre ressurser til byen",
+            "Å være flyplass",
+            "Å være ren industrisone"
+          ],
+          "answer": "Å skaffe mat, beite, ved og andre ressurser til byen",
+          "answerIndex": 0,
+          "knowledge": "Bymarken var en del av byens forsyningssystem.",
+          "difficulty": 1,
+          "question_type": "stedsspesifikk",
+          "question_layer": "place_intro_story",
+          "tags": [
+            "voien_gard_voienvolden",
+            "matforsyning",
+            "bymarken"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s1_q4",
+          "quiz_id": "historie_voien_gard_voienvolden_set_1_q4",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "place",
+          "question": "Hva er det viktigste fysiske særtrekket ved Vøienvolden?",
+          "options": [
+            "Det tette firkanttunet",
+            "Et høyt kontortårn",
+            "En jernbanestasjon"
+          ],
+          "answer": "Det tette firkanttunet",
+          "answerIndex": 0,
+          "knowledge": "Hovedhus, drengestue, stall og låve danner et sjeldent komplett gårdstun.",
+          "difficulty": 1,
+          "question_type": "stedsspesifikk",
+          "question_layer": "place_intro_story",
+          "tags": [
+            "voien_gard_voienvolden",
+            "firkanttun",
+            "arkitektur"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s1_q5",
+          "quiz_id": "historie_voien_gard_voienvolden_set_1_q5",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "place",
+          "question": "Hvor ligger Vøienvolden gård?",
+          "options": [
+            "Maridalsveien 120",
+            "Sandakerveien 10A",
+            "Akershusstranda"
+          ],
+          "answer": "Maridalsveien 120",
+          "answerIndex": 0,
+          "knowledge": "Det bevarte tunet ligger i Maridalsveien 120 på Sagene.",
+          "difficulty": 1,
+          "question_type": "stedsspesifikk",
+          "question_layer": "place_intro_story",
+          "tags": [
+            "voien_gard_voienvolden",
+            "adresse",
+            "sagene"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s1_q6",
+          "quiz_id": "historie_voien_gard_voienvolden_set_1_q6",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "place",
+          "question": "Hva bør stedet ikke blandes sammen med?",
+          "options": [
+            "Vøyen gård og Vøyenfallene",
+            "Oslo rådhus",
+            "Hovedøya kloster"
+          ],
+          "answer": "Vøyen gård og Vøyenfallene",
+          "answerIndex": 0,
+          "knowledge": "Den tekniske ID-en er eldre, men visningsidentiteten skal være Vøienvolden gård.",
+          "difficulty": 1,
+          "question_type": "stedsspesifikk",
+          "question_layer": "place_intro_story",
+          "tags": [
+            "voien_gard_voienvolden",
+            "kildekritikk",
+            "identitet"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s1_q7",
+          "quiz_id": "historie_voien_gard_voienvolden_set_1_q7",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "place",
+          "question": "Hva bør spilleren se etter først?",
+          "options": [
+            "Tunformen og forholdet mellom bygningene",
+            "Bare trafikken utenfor",
+            "Kun ett skilt"
+          ],
+          "answer": "Tunformen og forholdet mellom bygningene",
+          "answerIndex": 0,
+          "knowledge": "Stedet forstås best ved å lese hele tunet som en samlet driftsstruktur.",
+          "difficulty": 1,
+          "question_type": "stedsspesifikk",
+          "question_layer": "place_intro_story",
+          "tags": [
+            "voien_gard_voienvolden",
+            "stedlesning",
+            "tun"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        }
+      ]
+    },
+    {
+      "set_id": "historie_voien_gard_voienvolden_set_2",
+      "level": 2,
+      "order": 2,
+      "xp": 60,
+      "mode": "place_life_people_events",
+      "questions": [
+        {
+          "id": "voien_gard_voienvolden_s2_q1",
+          "quiz_id": "historie_voien_gard_voienvolden_set_2_q1",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "place",
+          "question": "Hvem kjøpte Vøienvolden i 1829?",
+          "options": [
+            "Gabriel Johnsen Udnæs",
+            "Knud Graah",
+            "Halvor Schou"
+          ],
+          "answer": "Gabriel Johnsen Udnæs",
+          "answerIndex": 0,
+          "knowledge": "Udnæs-familiens lange tilknytning begynte med kjøpet i 1829.",
+          "difficulty": 1,
+          "question_type": "stedsspesifikk",
+          "question_layer": "place_life_people_events",
+          "tags": [
+            "voien_gard_voienvolden",
+            "udnaes",
+            "1829"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s2_q2",
+          "quiz_id": "historie_voien_gard_voienvolden_set_2_q2",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "place",
+          "question": "Hva slags møter ble gården kjent for?",
+          "options": [
+            "Haugianermøter",
+            "Børshandel",
+            "Militærøvelser"
+          ],
+          "answer": "Haugianermøter",
+          "answerIndex": 0,
+          "knowledge": "Gården fungerte som sosialt og religiøst møtested for haugianere.",
+          "difficulty": 1,
+          "question_type": "stedsspesifikk",
+          "question_layer": "place_life_people_events",
+          "tags": [
+            "voien_gard_voienvolden",
+            "haugianisme",
+            "sosialhistorie"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s2_q3",
+          "quiz_id": "historie_voien_gard_voienvolden_set_2_q3",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "place",
+          "question": "Hvor stort var gårdsbruket omtrent i 1837?",
+          "options": [
+            "117 mål",
+            "7 mål",
+            "7000 mål"
+          ],
+          "answer": "117 mål",
+          "answerIndex": 0,
+          "knowledge": "Vøienvolden var blant de største løkkene i Bymarken.",
+          "difficulty": 1,
+          "question_type": "stedsspesifikk",
+          "question_layer": "place_life_people_events",
+          "tags": [
+            "voien_gard_voienvolden",
+            "117_mål",
+            "jordbruk"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s2_q4",
+          "quiz_id": "historie_voien_gard_voienvolden_set_2_q4",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "place",
+          "question": "Hva viser stabburet og potetkjelleren?",
+          "options": [
+            "Hvordan mat og såvarer ble lagret",
+            "Hvordan vannkraft ble produsert",
+            "Hvordan tog ble reparert"
+          ],
+          "answer": "Hvordan mat og såvarer ble lagret",
+          "answerIndex": 0,
+          "knowledge": "Driftsbygningene gjør gårdens forsyningsfunksjon konkret.",
+          "difficulty": 1,
+          "question_type": "stedsspesifikk",
+          "question_layer": "place_life_people_events",
+          "tags": [
+            "voien_gard_voienvolden",
+            "matlagring",
+            "driftsbygninger"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s2_q5",
+          "quiz_id": "historie_voien_gard_voienvolden_set_2_q5",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "place",
+          "question": "Hva skjedde med mye av jorda rundt 1915?",
+          "options": [
+            "Den ble solgt til kommunen for boligbygging",
+            "Den ble gjort til flyplass",
+            "Den ble oversvømt permanent"
+          ],
+          "answer": "Den ble solgt til kommunen for boligbygging",
+          "answerIndex": 0,
+          "knowledge": "Byveksten reduserte løkkas jordbruksareal og ga plass til boliger.",
+          "difficulty": 1,
+          "question_type": "stedsspesifikk",
+          "question_layer": "place_life_people_events",
+          "tags": [
+            "voien_gard_voienvolden",
+            "byvekst",
+            "1915"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s2_q6",
+          "quiz_id": "historie_voien_gard_voienvolden_set_2_q6",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "place",
+          "question": "Hvem bygde om hovedhuset i 1917?",
+          "options": [
+            "Magnus Poulsson",
+            "Oluf Nicolai Roll",
+            "Christian Heinrich Grosch"
+          ],
+          "answer": "Magnus Poulsson",
+          "answerIndex": 0,
+          "knowledge": "Poulssons ombygging er et viktig lag i gårdens arkitekturhistorie.",
+          "difficulty": 1,
+          "question_type": "stedsspesifikk",
+          "question_layer": "place_life_people_events",
+          "tags": [
+            "voien_gard_voienvolden",
+            "magnus_poulsson",
+            "1917"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s2_q7",
+          "quiz_id": "historie_voien_gard_voienvolden_set_2_q7",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "place",
+          "question": "Hva viser Udnæs-familiens historie?",
+          "options": [
+            "Overgangen fra privat gård til organisert kulturminnevern",
+            "At stedet aldri skiftet funksjon",
+            "At tunet ble revet"
+          ],
+          "answer": "Overgangen fra privat gård til organisert kulturminnevern",
+          "answerIndex": 0,
+          "knowledge": "Familien forvaltet stedet og testamenterte det til Fortidsminneforeningen.",
+          "difficulty": 1,
+          "question_type": "stedsspesifikk",
+          "question_layer": "place_life_people_events",
+          "tags": [
+            "voien_gard_voienvolden",
+            "udnaes",
+            "vern"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        }
+      ]
+    },
+    {
+      "set_id": "historie_voien_gard_voienvolden_set_3",
+      "level": 3,
+      "order": 3,
+      "xp": 70,
+      "mode": "emne_based_foundation",
+      "questions": [
+        {
+          "id": "voien_gard_voienvolden_s3_q1",
+          "quiz_id": "historie_voien_gard_voienvolden_set_3_q1",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "emne",
+          "question": "Hva er en løkke i Christianias byhistorie?",
+          "options": [
+            "Et avgrenset jordstykke i bymarken brukt til drift og forsyning",
+            "Et fossefall",
+            "En fabrikkmaskin"
+          ],
+          "answer": "Et avgrenset jordstykke i bymarken brukt til drift og forsyning",
+          "answerIndex": 0,
+          "knowledge": "Vøienvolden gjør løkkesystemet fysisk forståelig.",
+          "difficulty": 2,
+          "question_type": "stedsspesifikk",
+          "question_layer": "emne_based_foundation",
+          "tags": [
+            "voien_gard_voienvolden",
+            "løkkesystem",
+            "begrep"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s3_q2",
+          "quiz_id": "historie_voien_gard_voienvolden_set_3_q2",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "emne",
+          "question": "Hva betyr firkanttun?",
+          "options": [
+            "Bygninger samlet rundt et avgrenset tunrom",
+            "Fire tilfeldige høyhus",
+            "En rund park"
+          ],
+          "answer": "Bygninger samlet rundt et avgrenset tunrom",
+          "answerIndex": 0,
+          "knowledge": "Tunformen organiserte arbeid, dyr, lagring og ferdsel.",
+          "difficulty": 2,
+          "question_type": "stedsspesifikk",
+          "question_layer": "emne_based_foundation",
+          "tags": [
+            "voien_gard_voienvolden",
+            "firkanttun",
+            "begrep"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s3_q3",
+          "quiz_id": "historie_voien_gard_voienvolden_set_3_q3",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "emne",
+          "question": "Hva er bymark?",
+          "options": [
+            "Felles eller regulert ressursland utenfor den tette byen",
+            "Et butikksenter",
+            "Et skipsverft"
+          ],
+          "answer": "Felles eller regulert ressursland utenfor den tette byen",
+          "answerIndex": 0,
+          "knowledge": "Christianias bymark bandt byen til jordbruk og naturressurser.",
+          "difficulty": 2,
+          "question_type": "stedsspesifikk",
+          "question_layer": "emne_based_foundation",
+          "tags": [
+            "voien_gard_voienvolden",
+            "bymark",
+            "begrep"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s3_q4",
+          "quiz_id": "historie_voien_gard_voienvolden_set_3_q4",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "emne",
+          "question": "Hva betyr haugianisme i denne sammenhengen?",
+          "options": [
+            "Et religiøst og sosialt nettverk som møttes på gården",
+            "En arkitekturstil",
+            "En vannkraftteknikk"
+          ],
+          "answer": "Et religiøst og sosialt nettverk som møttes på gården",
+          "answerIndex": 0,
+          "knowledge": "Vøienvolden var et dokumentert møtested for haugianere.",
+          "difficulty": 2,
+          "question_type": "stedsspesifikk",
+          "question_layer": "emne_based_foundation",
+          "tags": [
+            "voien_gard_voienvolden",
+            "haugianisme",
+            "begrep"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s3_q5",
+          "quiz_id": "historie_voien_gard_voienvolden_set_3_q5",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "emne",
+          "question": "Hva er kulturminnevern?",
+          "options": [
+            "Å sikre historiske bygninger og sammenhenger for framtiden",
+            "Å fjerne alle eldre spor",
+            "Å gjøre alt privat"
+          ],
+          "answer": "Å sikre historiske bygninger og sammenhenger for framtiden",
+          "answerIndex": 0,
+          "knowledge": "Fredningen og Fortidsminneforeningens eierskap har bevart tunet.",
+          "difficulty": 2,
+          "question_type": "stedsspesifikk",
+          "question_layer": "emne_based_foundation",
+          "tags": [
+            "voien_gard_voienvolden",
+            "kulturminnevern",
+            "begrep"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s3_q6",
+          "quiz_id": "historie_voien_gard_voienvolden_set_3_q6",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "emne",
+          "question": "Hva betyr byomforming ved Vøienvolden?",
+          "options": [
+            "At jordbruksmark ble boligby mens tunet ble bevart",
+            "At stedet aldri endret seg",
+            "At elva forsvant"
+          ],
+          "answer": "At jordbruksmark ble boligby mens tunet ble bevart",
+          "answerIndex": 0,
+          "knowledge": "Stedet viser både tap av areal og bevaring av kjerneanlegget.",
+          "difficulty": 2,
+          "question_type": "stedsspesifikk",
+          "question_layer": "emne_based_foundation",
+          "tags": [
+            "voien_gard_voienvolden",
+            "byomforming",
+            "begrep"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s3_q7",
+          "quiz_id": "historie_voien_gard_voienvolden_set_3_q7",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "emne",
+          "question": "Hva er stedlesning her?",
+          "options": [
+            "Å bruke tunform, bygninger og omgivelser til å forstå historien",
+            "Å svare uten å observere",
+            "Å bare pugge årstall"
+          ],
+          "answer": "Å bruke tunform, bygninger og omgivelser til å forstå historien",
+          "answerIndex": 0,
+          "knowledge": "Fysiske forhold på stedet kan kobles til kildene.",
+          "difficulty": 2,
+          "question_type": "stedsspesifikk",
+          "question_layer": "emne_based_foundation",
+          "tags": [
+            "voien_gard_voienvolden",
+            "stedlesning",
+            "begrep"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        }
+      ]
+    },
+    {
+      "set_id": "historie_voien_gard_voienvolden_set_4",
+      "level": 4,
+      "order": 4,
+      "xp": 80,
+      "mode": "place_concrete_advanced",
+      "questions": [
+        {
+          "id": "voien_gard_voienvolden_s4_q1",
+          "quiz_id": "historie_voien_gard_voienvolden_set_4_q1",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "place",
+          "question": "Hvordan kan fotografiet fra 1916 brukes?",
+          "options": [
+            "Til å sammenligne hovedhuset før og etter Poulssons ombygging",
+            "Til å bevise dagens åpningstid",
+            "Til å identifisere fuglearter alene"
+          ],
+          "answer": "Til å sammenligne hovedhuset før og etter Poulssons ombygging",
+          "answerIndex": 0,
+          "knowledge": "Fotografiet dokumenterer bygningen før endringen i 1917.",
+          "difficulty": 2,
+          "question_type": "stedsspesifikk",
+          "question_layer": "place_concrete_advanced",
+          "tags": [
+            "voien_gard_voienvolden",
+            "foto",
+            "kildebruk"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s4_q2",
+          "quiz_id": "historie_voien_gard_voienvolden_set_4_q2",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "place",
+          "question": "Hvorfor må datering av hovedhuset formuleres forsiktig?",
+          "options": [
+            "Tradisjonen sier omkring 1710, mens kildene sikkert plasserer det før 1795",
+            "Fordi huset er nytt",
+            "Fordi ingen bygning finnes"
+          ],
+          "answer": "Tradisjonen sier omkring 1710, mens kildene sikkert plasserer det før 1795",
+          "answerIndex": 0,
+          "knowledge": "Kildekritikk skiller tradisjonell datering fra sikker dokumentasjon.",
+          "difficulty": 2,
+          "question_type": "stedsspesifikk",
+          "question_layer": "place_concrete_advanced",
+          "tags": [
+            "voien_gard_voienvolden",
+            "datering",
+            "kildekritikk"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s4_q3",
+          "quiz_id": "historie_voien_gard_voienvolden_set_4_q3",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "place",
+          "question": "Hva gjør Poulssons arbeid interessant?",
+          "options": [
+            "Han la til en ny sidefløy samtidig som det eldre anlegget ble respektert",
+            "Han rev hele tunet",
+            "Han bygde en fabrikkpipe"
+          ],
+          "answer": "Han la til en ny sidefløy samtidig som det eldre anlegget ble respektert",
+          "answerIndex": 0,
+          "knowledge": "Ombyggingen viser historisk bevisst arkitektur før moderne vernepraksis.",
+          "difficulty": 2,
+          "question_type": "stedsspesifikk",
+          "question_layer": "place_concrete_advanced",
+          "tags": [
+            "voien_gard_voienvolden",
+            "arkitektur",
+            "poulsson"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s4_q4",
+          "quiz_id": "historie_voien_gard_voienvolden_set_4_q4",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "place",
+          "question": "Hvorfor er hele tunet viktigere enn ett enkelt hus?",
+          "options": [
+            "Sammenhengen viser gårdsdriftens organisering",
+            "Bare hovedhuset har historie",
+            "Uthusene er moderne kulisser"
+          ],
+          "answer": "Sammenhengen viser gårdsdriftens organisering",
+          "answerIndex": 0,
+          "knowledge": "Det komplette anlegget er Vøienvoldens viktigste kulturminneverdi.",
+          "difficulty": 2,
+          "question_type": "stedsspesifikk",
+          "question_layer": "place_concrete_advanced",
+          "tags": [
+            "voien_gard_voienvolden",
+            "tunstruktur",
+            "analyse"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s4_q5",
+          "quiz_id": "historie_voien_gard_voienvolden_set_4_q5",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "place",
+          "question": "Hva viser salget av jord til kommunen?",
+          "options": [
+            "At urbanisering kunne omforme et stort gårdsbruk til boligby",
+            "At jordbruket vokste uten grenser",
+            "At kommunen flyttet elva"
+          ],
+          "answer": "At urbanisering kunne omforme et stort gårdsbruk til boligby",
+          "answerIndex": 0,
+          "knowledge": "Byveksten endret arealbruken rundt det bevarte tunet.",
+          "difficulty": 2,
+          "question_type": "stedsspesifikk",
+          "question_layer": "place_concrete_advanced",
+          "tags": [
+            "voien_gard_voienvolden",
+            "urbanisering",
+            "1915"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s4_q6",
+          "quiz_id": "historie_voien_gard_voienvolden_set_4_q6",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "place",
+          "question": "Hvordan bør dagens adgang omtales?",
+          "options": [
+            "Med henvisning til oppdatert informasjon fra Fortidsminneforeningen",
+            "Som alltid fri til alle rom",
+            "Som permanent stengt"
+          ],
+          "answer": "Med henvisning til oppdatert informasjon fra Fortidsminneforeningen",
+          "answerIndex": 0,
+          "knowledge": "Åpningstider og arrangementer kan endres og skal ikke hardkodes.",
+          "difficulty": 2,
+          "question_type": "stedsspesifikk",
+          "question_layer": "place_concrete_advanced",
+          "tags": [
+            "voien_gard_voienvolden",
+            "adgang",
+            "dynamisk_info"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s4_q7",
+          "quiz_id": "historie_voien_gard_voienvolden_set_4_q7",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "place",
+          "question": "Hva skiller Vøienvolden fra Vøyenfallene i ruta?",
+          "options": [
+            "Vøienvolden viser løkkegård og vern; Vøyenfallene viser vannkraft og industri",
+            "De er samme objekt",
+            "Begge er bare parker"
+          ],
+          "answer": "Vøienvolden viser løkkegård og vern; Vøyenfallene viser vannkraft og industri",
+          "answerIndex": 0,
+          "knowledge": "Stedene ligger nær hverandre, men representerer ulike historiske systemer.",
+          "difficulty": 2,
+          "question_type": "stedsspesifikk",
+          "question_layer": "place_concrete_advanced",
+          "tags": [
+            "voien_gard_voienvolden",
+            "sammenligning",
+            "rute"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        }
+      ]
+    },
+    {
+      "set_id": "historie_voien_gard_voienvolden_set_5",
+      "level": 5,
+      "order": 5,
+      "xp": 90,
+      "mode": "emne_based_advanced",
+      "questions": [
+        {
+          "id": "voien_gard_voienvolden_s5_q1",
+          "quiz_id": "historie_voien_gard_voienvolden_set_5_q1",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "emne",
+          "question": "Hva er den dypere historiske læringen ved Vøienvolden?",
+          "options": [
+            "At byen var avhengig av et omliggende forsyningslandskap",
+            "At byen alltid var tettbygd",
+            "At gårdsdrift var uten betydning"
+          ],
+          "answer": "At byen var avhengig av et omliggende forsyningslandskap",
+          "answerIndex": 0,
+          "knowledge": "Løkkene koblet hushold, jord, dyr og ressurser til byen.",
+          "difficulty": 3,
+          "question_type": "emne_avansert",
+          "question_layer": "emne_based_advanced",
+          "tags": [
+            "voien_gard_voienvolden",
+            "forsyningslandskap",
+            "analyse"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s5_q2",
+          "quiz_id": "historie_voien_gard_voienvolden_set_5_q2",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "emne",
+          "question": "Hvordan møtes sosial- og bygningshistorie her?",
+          "options": [
+            "Haugianermøter fant sted i et fysisk gårdsanlegg som fortsatt står",
+            "De har ingen sammenheng",
+            "Bare arkitekturen betyr noe"
+          ],
+          "answer": "Haugianermøter fant sted i et fysisk gårdsanlegg som fortsatt står",
+          "answerIndex": 0,
+          "knowledge": "Bygningene var ramme for arbeid, hjem og sosialt nettverk.",
+          "difficulty": 3,
+          "question_type": "emne_avansert",
+          "question_layer": "emne_based_advanced",
+          "tags": [
+            "voien_gard_voienvolden",
+            "sosialhistorie",
+            "arkitektur"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s5_q3",
+          "quiz_id": "historie_voien_gard_voienvolden_set_5_q3",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "emne",
+          "question": "Hva viser fredningen i 1941?",
+          "options": [
+            "At tunets kulturhistoriske verdi ble anerkjent før etterkrigstidens byvekst",
+            "At gården ble fabrikk",
+            "At bygningene ble revet"
+          ],
+          "answer": "At tunets kulturhistoriske verdi ble anerkjent før etterkrigstidens byvekst",
+          "answerIndex": 0,
+          "knowledge": "Fredningen ga et juridisk vern av anlegget.",
+          "difficulty": 3,
+          "question_type": "emne_avansert",
+          "question_layer": "emne_based_advanced",
+          "tags": [
+            "voien_gard_voienvolden",
+            "fredning",
+            "1941"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s5_q4",
+          "quiz_id": "historie_voien_gard_voienvolden_set_5_q4",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "emne",
+          "question": "Hva endret gaven i 1954?",
+          "options": [
+            "Fortidsminneforeningen overtok ansvar for vern og formidling",
+            "Kommunen rev tunet",
+            "Jordbruket ble større"
+          ],
+          "answer": "Fortidsminneforeningen overtok ansvar for vern og formidling",
+          "answerIndex": 0,
+          "knowledge": "Den testamentariske gaven sikret langsiktig forvaltning.",
+          "difficulty": 3,
+          "question_type": "emne_avansert",
+          "question_layer": "emne_based_advanced",
+          "tags": [
+            "voien_gard_voienvolden",
+            "1954",
+            "fortidsminneforeningen"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s5_q5",
+          "quiz_id": "historie_voien_gard_voienvolden_set_5_q5",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "emne",
+          "question": "Hvorfor er Vøienvolden viktig i Akerselva-ruta selv om tunet ikke er et kraftanlegg?",
+          "options": [
+            "Det viser landskapet og forsyningen som fantes før og ved siden av industrien",
+            "Bare fosser hører hjemme i ruta",
+            "Det ligger langt fra byen"
+          ],
+          "answer": "Det viser landskapet og forsyningen som fantes før og ved siden av industrien",
+          "answerIndex": 0,
+          "knowledge": "Ruten blir historisk bredere når gårdslandskap leses sammen med fabrikkene.",
+          "difficulty": 3,
+          "question_type": "emne_avansert",
+          "question_layer": "emne_based_advanced",
+          "tags": [
+            "voien_gard_voienvolden",
+            "akerselva",
+            "rute"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s5_q6",
+          "quiz_id": "historie_voien_gard_voienvolden_set_5_q6",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "emne",
+          "question": "Hva kan Marie Tannæs' maleri bidra med?",
+          "options": [
+            "Et kunstnerisk blikk på gårdsinteriøret i 1893",
+            "Dagens værmelding",
+            "En full eierliste"
+          ],
+          "answer": "Et kunstnerisk blikk på gårdsinteriøret i 1893",
+          "answerIndex": 0,
+          "knowledge": "Maleriet er en historisk visualisering som kan sammenholdes med andre kilder.",
+          "difficulty": 3,
+          "question_type": "emne_avansert",
+          "question_layer": "emne_based_advanced",
+          "tags": [
+            "voien_gard_voienvolden",
+            "kunst",
+            "1893"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s5_q7",
+          "quiz_id": "historie_voien_gard_voienvolden_set_5_q7",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "emne",
+          "question": "Hva er den viktigste bevaringsgevinsten?",
+          "options": [
+            "At bygningene fortsatt kan leses som ett samlet tun",
+            "At bare en navneplate står igjen",
+            "At området ble gjort til parkeringsplass"
+          ],
+          "answer": "At bygningene fortsatt kan leses som ett samlet tun",
+          "answerIndex": 0,
+          "knowledge": "Helheten gir større kunnskap enn isolerte enkeltbygninger.",
+          "difficulty": 3,
+          "question_type": "emne_avansert",
+          "question_layer": "emne_based_advanced",
+          "tags": [
+            "voien_gard_voienvolden",
+            "bevaring",
+            "helhet"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        }
+      ]
+    },
+    {
+      "set_id": "historie_voien_gard_voienvolden_set_6",
+      "level": 6,
+      "order": 6,
+      "xp": 100,
+      "mode": "concept_based",
+      "questions": [
+        {
+          "id": "voien_gard_voienvolden_s6_q1",
+          "quiz_id": "historie_voien_gard_voienvolden_set_6_q1",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "concept",
+          "question": "Hvilket begrepspar forklarer Vøienvolden best?",
+          "options": [
+            "Løkkedrift og kulturminnevern",
+            "Vannkraft og masovn",
+            "Flyplass og høyfjell"
+          ],
+          "answer": "Løkkedrift og kulturminnevern",
+          "answerIndex": 0,
+          "knowledge": "Stedet binder bymarkens produksjon til dagens bevaringsarbeid.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "question_layer": "concept_based",
+          "tags": [
+            "voien_gard_voienvolden",
+            "løkkedrift",
+            "kulturminnevern"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s6_q2",
+          "quiz_id": "historie_voien_gard_voienvolden_set_6_q2",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "concept",
+          "question": "Hva er et forsyningslandskap?",
+          "options": [
+            "Et landskap som leverer mat og ressurser til en by",
+            "Et rent monumentområde",
+            "Et sted uten arbeid"
+          ],
+          "answer": "Et landskap som leverer mat og ressurser til en by",
+          "answerIndex": 0,
+          "knowledge": "Christianias bymark var et forsyningslandskap.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "question_layer": "concept_based",
+          "tags": [
+            "voien_gard_voienvolden",
+            "forsyningslandskap",
+            "begrep"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s6_q3",
+          "quiz_id": "historie_voien_gard_voienvolden_set_6_q3",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "concept",
+          "question": "Hva betyr materiell kultur?",
+          "options": [
+            "Kunnskap som kan leses i bygninger, redskaper og fysiske omgivelser",
+            "Bare muntlige rykter",
+            "Kun digitale filer"
+          ],
+          "answer": "Kunnskap som kan leses i bygninger, redskaper og fysiske omgivelser",
+          "answerIndex": 0,
+          "knowledge": "Tunet og driftsbygningene er materielle historiske kilder.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "question_layer": "concept_based",
+          "tags": [
+            "voien_gard_voienvolden",
+            "materiell_kultur",
+            "begrep"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s6_q4",
+          "quiz_id": "historie_voien_gard_voienvolden_set_6_q4",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "concept",
+          "question": "Hva er historisk kontinuitet her?",
+          "options": [
+            "At tunstrukturen og flere bygninger overlever selv om bruken endres",
+            "At ingenting noen gang endres",
+            "At all jord fortsatt dyrkes"
+          ],
+          "answer": "At tunstrukturen og flere bygninger overlever selv om bruken endres",
+          "answerIndex": 0,
+          "knowledge": "Vøienvolden har gått fra drift og bolig til vern og formidling.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "question_layer": "concept_based",
+          "tags": [
+            "voien_gard_voienvolden",
+            "kontinuitet",
+            "begrep"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s6_q5",
+          "quiz_id": "historie_voien_gard_voienvolden_set_6_q5",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "concept",
+          "question": "Hva betyr adaptiv gjenbruk?",
+          "options": [
+            "At eldre bygninger får ny bruk uten at hovedverdiene forsvinner",
+            "At alt bygges på nytt",
+            "At stedet stenges for alltid"
+          ],
+          "answer": "At eldre bygninger får ny bruk uten at hovedverdiene forsvinner",
+          "answerIndex": 0,
+          "knowledge": "Formidling og organisasjonsbruk holder anlegget aktivt.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "question_layer": "concept_based",
+          "tags": [
+            "voien_gard_voienvolden",
+            "gjenbruk",
+            "begrep"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s6_q6",
+          "quiz_id": "historie_voien_gard_voienvolden_set_6_q6",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "concept",
+          "question": "Hva er kildekritikk ved et historisk sted?",
+          "options": [
+            "Å skille sikre opplysninger, tradisjonelle dateringer og dynamisk informasjon",
+            "Å velge den mest dramatiske historien",
+            "Å ignorere kilder"
+          ],
+          "answer": "Å skille sikre opplysninger, tradisjonelle dateringer og dynamisk informasjon",
+          "answerIndex": 0,
+          "knowledge": "Vøienvolden krever presisjon om navn, datering og adgang.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "question_layer": "concept_based",
+          "tags": [
+            "voien_gard_voienvolden",
+            "kildekritikk",
+            "begrep"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        },
+        {
+          "id": "voien_gard_voienvolden_s6_q7",
+          "quiz_id": "historie_voien_gard_voienvolden_set_6_q7",
+          "categoryId": "historie",
+          "placeId": "voien_gard_voienvolden",
+          "targetId": "voien_gard_voienvolden",
+          "question_scope": "concept",
+          "question": "Hva viser Vøienvolden om forholdet mellom by og land?",
+          "options": [
+            "At byen vokste fram i samspill med jordbruk og ressursområder",
+            "At by og land var helt adskilt",
+            "At jordbruk ikke påvirket byen"
+          ],
+          "answer": "At byen vokste fram i samspill med jordbruk og ressursområder",
+          "answerIndex": 0,
+          "knowledge": "Løkkegården gjør forbindelsen mellom tettby og omland konkret.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "question_layer": "concept_based",
+          "tags": [
+            "voien_gard_voienvolden",
+            "by_og_land",
+            "begrep"
+          ],
+          "source": [
+            "https://fortidsminneforeningen.no/en/museum/voienvolden/",
+            "https://snl.no/V%C3%B8yenvollen",
+            "https://oslobyleksikon.no/side/V%C3%B8yenvollen",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenvollen"
+          ],
+          "claim_basis": "source_verified"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "schema": "civication_mail_family_catalog_v1",
+  "category": "naeringsliv",
+  "role_scope": "fagarbeider",
+  "mail_type": "event",
+  "families": [
+    {
+      "id": "kritisk_avvik",
+      "mails": [
+        {
+          "id": "fagarbeider_event_avvik_001",
+          "mail_type": "event",
+          "mail_family": "kritisk_avvik",
+          "role_scope": "fagarbeider",
+          "phase": "climax",
+          "priority": 80,
+          "cooldown": 5,
+          "repeatable": false,
+          "stage": "warning",
+          "branch_flags": ["hard_integritet", "faglig_dybde", "respekt_gjennom_motstand"],
+          "subject": "Et avvik blir plutselig kritisk",
+          "situation": [
+            "Noe som lenge har vært håndtert lokalt og praktisk vokser til en situasjon ingen kan bagatellisere.",
+            "Nå trengs ikke bare tempo, men dømmekraft og teknisk presisjon under press.",
+            "Alle ser mot den som faktisk kan lese hva som står på spill."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Stanse og behandle avviket som en faglig nødsituasjon",
+              "effect": 1,
+              "tags": ["craft", "risk"],
+              "feedback": "Du lar alvor styre handlingen, ikke bare produksjonstrykket.",
+              "next_bias": {
+                "prefer_mail_types": ["event", "story"],
+                "prefer_families": ["kritisk_avvik", "industriell_stolthet"],
+                "set_flags": ["krisefaglighet"]
+              }
+            },
+            {
+              "id": "B",
+              "label": "Finne en midlertidig løsning for å holde ting i gang",
+              "effect": 0,
+              "tags": ["shortcut", "visibility"],
+              "feedback": "Du kjøper tid og øker samtidig betydningen av alt som fortsatt er uavklart.",
+              "next_bias": {
+                "prefer_mail_types": ["people", "story"],
+                "prefer_families": ["ansvar_som_glir", "kunnskapens_usynlighet"],
+                "set_flags": ["midlertidig_redning"]
+              }
+            }
+          ]
+        },
+        {
+          "id": "fagarbeider_event_avvik_002",
+          "mail_type": "event",
+          "mail_family": "kritisk_avvik",
+          "role_scope": "fagarbeider",
+          "phase": "climax",
+          "priority": 78,
+          "cooldown": 5,
+          "repeatable": false,
+          "stage": "warning",
+          "branch_flags": ["erkjent_usynlig_kunnskap", "signaturansvar", "verdighetslinje"],
+          "subject": "Du må velge mellom rask kontroll og grundig sannhet",
+          "situation": [
+            "Et alvorlig avvik er under kontroll, men forklaringen på hvorfor det skjedde er fortsatt uklar.",
+            "Rundt deg vokser presset for å lukke saken raskt nok til at driften kan normaliseres.",
+            "Du står mellom å sikre ro og å sikre læring."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Holde igjen konklusjonen til hendelsen er forstått ordentlig",
+              "effect": 1,
+              "tags": ["process", "risk"],
+              "feedback": "Du forsvarer læring mot hastverkets trang til avslutning.",
+              "next_bias": {
+                "prefer_mail_types": ["story", "event"],
+                "prefer_families": ["kunnskapens_usynlighet", "revisjon_av_rutine"],
+                "set_flags": ["laringslinje"]
+              }
+            },
+            {
+              "id": "B",
+              "label": "Lukke bildet raskt og få systemet tilbake i flyt",
+              "effect": 0,
+              "tags": ["legitimacy", "shortcut"],
+              "feedback": "Du gir systemet pusterom og gjør forståelsen grunnere.",
+              "next_bias": {
+                "prefer_mail_types": ["people"],
+                "prefer_families": ["kollega_med_snarveier", "ansvar_som_glir"],
+                "set_flags": ["hurtig_lukking"]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "revisjon_av_rutine",
+      "mails": [
+        {
+          "id": "fagarbeider_event_revisjon_001",
+          "mail_type": "event",
+          "mail_family": "revisjon_av_rutine",
+          "role_scope": "fagarbeider",
+          "phase": "climax",
+          "priority": 77,
+          "cooldown": 5,
+          "repeatable": false,
+          "stage": "stable_warning",
+          "branch_flags": ["forbedringslinje", "styrer_uten_tittel", "historisk_faglinje"],
+          "subject": "Rutinene blir plutselig gransket",
+          "situation": [
+            "En gjennomgang eller revisjon gjør at hverdagslige kompromisser må forklares som om de var bevisste valg.",
+            "Det som til daglig holdes sammen av erfaring og taus justering, må nå oversettes til et språk systemet tåler.",
+            "Du må velge om du skal pynte på praksisen eller vise hvordan den faktisk henger sammen."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Forklare praksisen slik den faktisk fungerer",
+              "effect": 1,
+              "tags": ["process", "visibility"],
+              "feedback": "Du gjør virkeligheten vanskeligere å dekorere og lettere å forstå.",
+              "next_bias": {
+                "prefer_mail_types": ["story", "event"],
+                "prefer_families": ["industriell_stolthet", "revisjon_av_rutine"],
+                "set_flags": ["systemsannhet"]
+              }
+            },
+            {
+              "id": "B",
+              "label": "Tilpasse fortellingen til hvordan systemet helst vil se det",
+              "effect": 0,
+              "tags": ["legitimacy", "avoidance"],
+              "feedback": "Du gjør gjennomgangen smidigere og sannheten mer veloppdragen.",
+              "next_bias": {
+                "prefer_mail_types": ["people", "story"],
+                "prefer_families": ["ansvar_som_glir", "kunnskapens_usynlighet"],
+                "set_flags": ["systemtilpasning"]
+              }
+            }
+          ]
+        },
+        {
+          "id": "fagarbeider_event_revisjon_002",
+          "mail_type": "event",
+          "mail_family": "revisjon_av_rutine",
+          "role_scope": "fagarbeider",
+          "phase": "climax",
+          "priority": 75,
+          "cooldown": 5,
+          "repeatable": false,
+          "stage": "stable_warning",
+          "branch_flags": ["systemsannhet", "laringslinje", "uformell_ledelse"],
+          "subject": "Det som var praksis må plutselig tåle å bli målt som prinsipp",
+          "situation": [
+            "En rutine som til vanlig bæres av lokale vurderinger blir nå vurdert som om den alltid var en klar regel med klar begrunnelse.",
+            "Du vet at skillet mellom praksis og prosedyre er mye større enn granskingen liker å tro.",
+            "Nå må du velge om du vil beskytte bildet eller tydeliggjøre spriket."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Synliggjøre forskjellen mellom levende praksis og formell prosedyre",
+              "effect": 1,
+              "tags": ["visibility", "process"],
+              "feedback": "Du gjør systemet mindre rent og mer sant.",
+              "next_bias": {
+                "prefer_mail_types": ["story"],
+                "prefer_families": ["kunnskapens_usynlighet", "industriell_stolthet"],
+                "set_flags": ["sprik_synliggjort"]
+              }
+            },
+            {
+              "id": "B",
+              "label": "La rutinen framstå mer sammenhengende enn den egentlig er",
+              "effect": 0,
+              "tags": ["avoidance", "legitimacy"],
+              "feedback": "Du gjør overgangen lettere og innsikten fattigere.",
+              "next_bias": {
+                "prefer_mail_types": ["people"],
+                "prefer_families": ["kollega_med_snarveier", "ansvar_som_glir"],
+                "set_flags": ["glattet_fortelling"]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

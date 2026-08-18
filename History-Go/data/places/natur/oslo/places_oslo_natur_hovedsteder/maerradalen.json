@@ -1,0 +1,124 @@
+{
+  "id": "maerradalen",
+  "name": "Mærradalen",
+  "lat": 59.937718080001645,
+  "lon": 10.655018282536306,
+  "r": 700,
+  "category": "natur",
+  "desc": "Fredet bekkekløft og bynær skogdal med frodig vegetasjon, fugleliv, sopp og bekkeløp.",
+  "tags": [
+    "bekkekløft",
+    "skogdal",
+    "fugleliv",
+    "sopp",
+    "fredet"
+  ],
+  "sourceHint": "Bymiljøetatens beskrivelse er gjengitt av lokale aktører: en nesten to kilometer lang bekkekløft med urørt skog av nasjonal verdi. Koordinatet er et områdesenter.",
+  "coordType": "valley_line_anchor",
+  "coordStatus": "verified_geometry",
+  "coordSource": "OpenStreetMap way 844862938 – Mærradalen",
+  "coordVerifiedAt": "2026-07-21",
+  "coordNote": "Eksakt navngitt OSM-dalgeometri way 844862938 (natural=valley) brukes som lineært representasjonsanker for Mærradalen. Punktet er beregnet midt langs den navngitte dalgeometrien; det påstås ikke at OSM-linjen er en offisiell vernegrense.",
+  "anchors": [
+    {
+      "id": "maerradalen_nord",
+      "name": "Mærradalen – nord",
+      "lat": 59.9448,
+      "lon": 10.6615,
+      "r": 200,
+      "type": "area_anchor",
+      "note": "Nordlig dalinngang med skog- og bekkekløft."
+    },
+    {
+      "id": "maerradalen_midt",
+      "name": "Mærradalen – midtre dalrom",
+      "lat": 59.9368,
+      "lon": 10.6612,
+      "r": 200,
+      "type": "midpoint",
+      "note": "Midtre del av den sammenhengende bekkekløften."
+    },
+    {
+      "id": "maerradalen_sor",
+      "name": "Mærradalen – sør",
+      "lat": 59.9293,
+      "lon": 10.6607,
+      "r": 200,
+      "type": "area_anchor",
+      "note": "Sørlig overgang mot bebyggelse og kystnære grøntdrag."
+    }
+  ],
+  "year": 2009,
+  "popupDesc": "Mærradalen er et dalføre med bekk, skog og sammenhengende grønnstruktur på Oslos vestside. Området fungerer som nærnatur for flere bydeler og som korridor mellom høyere skogsområder og lavere bebyggelse.\n\nI History Go er Mærradalen viktig fordi stedet viser hvordan små vassdrag og dalrom kan ha stor verdi i bylandskapet. Spørsmål bør løfte fram bekkedraget, landskapsrommet og balansen mellom vern, bruk og bynær tilgjengelighet.",
+  "emne_ids": [
+    "em_natur_gronnstruktur_korridorer",
+    "em_by_klima_blagronn_klimatilpasning",
+    "em_by_stillhet_vs_aktivitet_i_grontrom"
+  ],
+  "quiz_profile": {
+    "place_type": "dal",
+    "subtype": "bynaert_dalfore_med_bekk",
+    "signature_features": [
+      "sammenhengende dalrom på vestkanten",
+      "bekkedrag med frodig vegetasjon",
+      "viktig korridor for nærtur og naturkontakt"
+    ],
+    "primary_angles": [
+      "landskapsrom",
+      "grønn_korridor",
+      "nærnatur",
+      "vann_i_byen"
+    ],
+    "question_families": [
+      "topografi_og_form",
+      "hverdagsfriluftsliv",
+      "lokal_forvaltning",
+      "kontrast_mellom_by_og_skog"
+    ],
+    "avoid_angles": [
+      "dramatisk_villmarkretorikk",
+      "generiske_parksvar",
+      "usikre_artsdetaljer"
+    ],
+    "must_include": [
+      "rollen som grønn korridor i vestlige bydeler",
+      "bekk og dal som strukturerende elementer"
+    ],
+    "contrast_targets": [
+      "alnaelva",
+      "ljanselva",
+      "slottsparken"
+    ],
+    "notes": "Skal spørres som landskapsrom i byen, ikke som enkeltpark."
+  },
+  "nature_profile": {
+    "type": "fredet bekkekløft / skogdal / grønn korridor",
+    "title": "Den skyggefulle bekkedalen gjennom vestbyen",
+    "summary": "Mærradalen er et langstrakt dalrom der bekken, de bratte sidene og den tette skogen skaper et kjøligere og fuktigere miljø enn boligområdene rundt. Død ved, skygge, fuktig jord og sammenhengende vegetasjon gir leveområder for planter, sopp, fugler og smådyr, mens dalformen leder vann gjennom byen. Natur-rundingen viser hvordan en smal bekkekløft kan fungere både som eget økosystem, overvannsvei og grønn forbindelse mellom større naturområder.",
+    "themes": [
+      "bekk som former dalbunnen",
+      "fuktig og skyggefull skog",
+      "død ved og skoglig kontinuitet",
+      "grønn korridor gjennom boligområder",
+      "dalform og lokal vanntransport",
+      "vern av sammenhengende bynær skog"
+    ],
+    "nearby_place_ids": [
+      "bygdoy_natur",
+      "maridalsvannet"
+    ]
+  },
+  "underbadge_ids": [
+    "bekk",
+    "ravine_og_dal",
+    "skog",
+    "naturvern"
+  ],
+  "locatorType": "natural_area",
+  "sourceProvider": "osm",
+  "sourceObjectId": "osm-way:844862938",
+  "geocodeAccuracy": "semantic_anchor",
+  "coordRole": "line_anchor",
+  "coordSourceId": "osm-way:844862938",
+  "coordSourceUrl": "https://www.openstreetmap.org/way/844862938"
+}

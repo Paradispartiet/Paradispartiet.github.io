@@ -1,0 +1,1313 @@
+{
+  "targetId": "voienfossen",
+  "categoryId": "historie",
+  "generator_version": "chatgpt_history_go_manual_v1",
+  "generated_from": [
+    "data/places/natur/oslo/places_oslo_natur_akerselvarute/voienfossen.json",
+    "data/leksikon/places/oslo/historie/leksikon_oslo_historie_batch2.json",
+    "data/quiz/regler/SET_MAL_README_v3.md"
+  ],
+  "manual_production_notes": {
+    "quality_direction": "sted → observasjon → dokumentert industrisystem → forståelse",
+    "hold_back": [
+      "Ikke framstill Vøyenfallene som ett enkelt fall.",
+      "Ikke oppfordre til ferdsel i private fabrikkgårder eller nær glatte elvekanter.",
+      "Ikke legg inn artsdetaljer uten aktiv artskartkobling."
+    ]
+  },
+  "sets": [
+    {
+      "set_id": "historie_voienfossen_set_1",
+      "level": 1,
+      "order": 1,
+      "xp": 50,
+      "mode": "place_intro_story",
+      "questions": [
+        {
+          "id": "voienfossen_s1_q1",
+          "quiz_id": "historie_voienfossen_set_1_q1",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "place",
+          "question": "Hva er Vøyenfallene?",
+          "options": [
+            "Tre fall i Akerselva mellom Bentsebrua og Sannerbrua",
+            "Ett enkelt fall nord for Bjølsen",
+            "En kunstig fontene"
+          ],
+          "answer": "Tre fall i Akerselva mellom Bentsebrua og Sannerbrua",
+          "answerIndex": 0,
+          "knowledge": "Vøyenfallene er et dokumentert system av tre fall.",
+          "difficulty": 1,
+          "question_type": "scene",
+          "question_layer": "intro_story",
+          "tags": [
+            "voienfossen",
+            "Vøyenfallene",
+            "tre_fall"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s1_q2",
+          "quiz_id": "historie_voienfossen_set_1_q2",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "place",
+          "question": "Hvilke fallhøyder er dokumentert ved Vøyenfallene?",
+          "options": [
+            "16, 22 og 28 fot",
+            "2, 4 og 6 fot",
+            "40, 50 og 60 meter"
+          ],
+          "answer": "16, 22 og 28 fot",
+          "answerIndex": 0,
+          "knowledge": "De tre fallene ble i 1850-årene oppgitt til 16, 22 og 28 fot.",
+          "difficulty": 1,
+          "question_type": "visuell_hook",
+          "question_layer": "intro_story",
+          "tags": [
+            "voienfossen",
+            "fallhøyde"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s1_q3",
+          "quiz_id": "historie_voienfossen_set_1_q3",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "place",
+          "question": "Hvilken virksomhet lå ved det nederste 28-fotsfallet?",
+          "options": [
+            "Vøiens Bomuldsspinderi",
+            "Nedre Vøiens Kornmølle",
+            "Christiania Spigerverk"
+          ],
+          "answer": "Vøiens Bomuldsspinderi",
+          "answerIndex": 0,
+          "knowledge": "Vøiens Bomuldsspinderi utnyttet elvas 17. fall på 28 fot.",
+          "difficulty": 1,
+          "question_type": "rutekobling",
+          "question_layer": "intro_story",
+          "tags": [
+            "voienfossen",
+            "spinneri"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s1_q4",
+          "quiz_id": "historie_voienfossen_set_1_q4",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "place",
+          "question": "Hvem kjøpte fallrettigheter på Nedre Vøyen i 1844?",
+          "options": [
+            "Knud Graah og Niels O. Young",
+            "Halvor Schou og Gerhard Treschow",
+            "Iver Elieson og Fredrik Glad"
+          ],
+          "answer": "Knud Graah og Niels O. Young",
+          "answerIndex": 0,
+          "knowledge": "Graah og Young sikret kraftgrunnlaget for spinneriet i 1844.",
+          "difficulty": 1,
+          "question_type": "saertrekk",
+          "question_layer": "intro_story",
+          "tags": [
+            "voienfossen",
+            "Knud_Graah",
+            "fallrettigheter"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s1_q5",
+          "quiz_id": "historie_voienfossen_set_1_q5",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "place",
+          "question": "Når kom Vøiens Bomuldsspinderi i drift?",
+          "options": [
+            "1846",
+            "1736",
+            "1957"
+          ],
+          "answer": "1846",
+          "answerIndex": 0,
+          "knowledge": "Spinneriet åpnet i 1846 med 70–80 arbeidere.",
+          "difficulty": 1,
+          "question_type": "sansning",
+          "question_layer": "intro_story",
+          "tags": [
+            "voienfossen",
+            "1846"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s1_q6",
+          "quiz_id": "historie_voienfossen_set_1_q6",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "place",
+          "question": "Hva lå ved 22-fotsfallet?",
+          "options": [
+            "Hjula Væverier og Labakken",
+            "Bare en park",
+            "Akershus festning"
+          ],
+          "answer": "Hjula Væverier og Labakken",
+          "answerIndex": 0,
+          "knowledge": "Det 16. fallet forsynte Hjula Væverier og Labakken med kraft.",
+          "difficulty": 1,
+          "question_type": "rutekobling",
+          "question_layer": "intro_story",
+          "tags": [
+            "voienfossen",
+            "Hjula"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s1_q7",
+          "quiz_id": "historie_voienfossen_set_1_q7",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "place",
+          "question": "Hva er den tryggeste stedshandlingen ved fallene?",
+          "options": [
+            "Observer fra offentlig gangvei eller bro",
+            "Gå ned på glatte steiner",
+            "Gå inn gjennom private porter"
+          ],
+          "answer": "Observer fra offentlig gangvei eller bro",
+          "answerIndex": 0,
+          "knowledge": "Fossefallene skal leses fra lovlig og trygg offentlig trasé.",
+          "difficulty": 1,
+          "question_type": "observasjon",
+          "question_layer": "intro_story",
+          "tags": [
+            "voienfossen",
+            "sikkerhet"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        }
+      ]
+    },
+    {
+      "set_id": "historie_voienfossen_set_2",
+      "level": 2,
+      "order": 2,
+      "xp": 60,
+      "mode": "place_life_people_events",
+      "questions": [
+        {
+          "id": "voienfossen_s2_q1",
+          "quiz_id": "historie_voienfossen_set_2_q1",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "place",
+          "question": "Hvor mange arbeidere hadde Vøiens Bomuldsspinderi ved oppstarten?",
+          "options": [
+            "70–80",
+            "5–10",
+            "over 2000"
+          ],
+          "answer": "70–80",
+          "answerIndex": 0,
+          "knowledge": "Spinneriet startet med mellom 70 og 80 arbeidere.",
+          "difficulty": 1,
+          "question_type": "bruk",
+          "question_layer": "place_life",
+          "tags": [
+            "voienfossen",
+            "arbeidsliv"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s2_q2",
+          "quiz_id": "historie_voienfossen_set_2_q2",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "place",
+          "question": "Hva drev jern-overfallshjulet i spinneriet?",
+          "options": [
+            "2372 spindler",
+            "400 damplokomotiver",
+            "En skipskran"
+          ],
+          "answer": "2372 spindler",
+          "answerIndex": 0,
+          "knowledge": "Overfallshjulet overførte vannkraft til 2372 spindler.",
+          "difficulty": 1,
+          "question_type": "fysisk_trekk",
+          "question_layer": "place_life",
+          "tags": [
+            "voienfossen",
+            "spindler",
+            "overfallshjul"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s2_q3",
+          "quiz_id": "historie_voienfossen_set_2_q3",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "place",
+          "question": "Hvilket energianlegg fantes ved Vøiens Bomuldsspinderi?",
+          "options": [
+            "Et lite gassverk, byens første",
+            "Et kjernekraftverk",
+            "En vindpark"
+          ],
+          "answer": "Et lite gassverk, byens første",
+          "answerIndex": 0,
+          "knowledge": "Spinneriet hadde et lite gassverk for belysning.",
+          "difficulty": 1,
+          "question_type": "kildekritikk",
+          "question_layer": "place_life",
+          "tags": [
+            "voienfossen",
+            "gassverk"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s2_q4",
+          "quiz_id": "historie_voienfossen_set_2_q4",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "place",
+          "question": "Hvem grunnla Hjula Væveri ved Hjulafossen?",
+          "options": [
+            "Halvor Schou",
+            "Knud Graah",
+            "Fredrik Glad"
+          ],
+          "answer": "Halvor Schou",
+          "answerIndex": 0,
+          "knowledge": "Halvor Schou kjøpte Hjulafossen og etablerte Hjula Væveri.",
+          "difficulty": 1,
+          "question_type": "stedskobling",
+          "question_layer": "place_life",
+          "tags": [
+            "voienfossen",
+            "Halvor_Schou"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s2_q5",
+          "quiz_id": "historie_voienfossen_set_2_q5",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "place",
+          "question": "Hva kunne Hjulas turbin drive?",
+          "options": [
+            "Et anlegg for opptil 400 vevstoler",
+            "Bare én håndvev",
+            "Et sagbruk i Nydalen"
+          ],
+          "answer": "Et anlegg for opptil 400 vevstoler",
+          "answerIndex": 0,
+          "knowledge": "Turbinen på rundt 65 hestekrefter var dimensjonert for 400 vevstoler.",
+          "difficulty": 1,
+          "question_type": "samfunn",
+          "question_layer": "place_life",
+          "tags": [
+            "voienfossen",
+            "turbin",
+            "vevstoler"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s2_q6",
+          "quiz_id": "historie_voienfossen_set_2_q6",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "place",
+          "question": "Hvem tegnet både Hjula Væveri og den nye spinneribygningen ved Nedre Vøyen?",
+          "options": [
+            "Oluf Nicolai Roll",
+            "Magnus Poulsson",
+            "Christian Norberg-Schulz"
+          ],
+          "answer": "Oluf Nicolai Roll",
+          "answerIndex": 0,
+          "knowledge": "Roll forente fabrikkarkitektur, jernkonstruksjoner og vannkraft.",
+          "difficulty": 1,
+          "question_type": "kildekritikk",
+          "question_layer": "place_life",
+          "tags": [
+            "voienfossen",
+            "Oluf_Roll"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s2_q7",
+          "quiz_id": "historie_voienfossen_set_2_q7",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "place",
+          "question": "Hva overtok Foss Spinderis lokaler fra 1881?",
+          "options": [
+            "Den Norske Hesteskosømfabrik",
+            "Et operahus",
+            "En papirfabrikk"
+          ],
+          "answer": "Den Norske Hesteskosømfabrik",
+          "answerIndex": 0,
+          "knowledge": "Hesteskosømfabrikken viser et bransjeskifte fra tekstil til metall.",
+          "difficulty": 1,
+          "question_type": "bruk_stemning",
+          "question_layer": "place_life",
+          "tags": [
+            "voienfossen",
+            "hesteskosøm"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        }
+      ]
+    },
+    {
+      "set_id": "historie_voienfossen_set_3",
+      "level": 3,
+      "order": 3,
+      "xp": 70,
+      "mode": "emne_based_foundation",
+      "questions": [
+        {
+          "id": "voienfossen_s3_q1",
+          "quiz_id": "historie_voienfossen_set_3_q1",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "emne",
+          "question": "Hva er en fallrettighet?",
+          "options": [
+            "Rett til å utnytte energien i et vannfall",
+            "Rett til å bygge bolig hvor som helst",
+            "Rett til å stenge en offentlig gate"
+          ],
+          "answer": "Rett til å utnytte energien i et vannfall",
+          "answerIndex": 0,
+          "knowledge": "Fallrettigheter bestemte hvem som kunne bruke vannkraften.",
+          "difficulty": 2,
+          "question_type": "definition",
+          "question_layer": "foundation",
+          "tags": [
+            "voienfossen",
+            "fallrettighet"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s3_q2",
+          "quiz_id": "historie_voienfossen_set_3_q2",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "emne",
+          "question": "Hva er et overfallshjul?",
+          "options": [
+            "Et vannhjul der vannet treffer ovenfra",
+            "Et hjul på en hestevogn",
+            "En turbin uten vann"
+          ],
+          "answer": "Et vannhjul der vannet treffer ovenfra",
+          "answerIndex": 0,
+          "knowledge": "Vannet faller over toppen og setter hjulet i bevegelse.",
+          "difficulty": 2,
+          "question_type": "definition",
+          "question_layer": "foundation",
+          "tags": [
+            "voienfossen",
+            "overfallshjul"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s3_q3",
+          "quiz_id": "historie_voienfossen_set_3_q3",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "emne",
+          "question": "Hva er en spindel i tekstilproduksjon?",
+          "options": [
+            "En del som spinner fiber til tråd",
+            "En møllestein",
+            "En brobjelke"
+          ],
+          "answer": "En del som spinner fiber til tråd",
+          "answerIndex": 0,
+          "knowledge": "Spindlene gjorde bomullsfiber om til tråd.",
+          "difficulty": 2,
+          "question_type": "definition",
+          "question_layer": "foundation",
+          "tags": [
+            "voienfossen",
+            "spindel"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s3_q4",
+          "quiz_id": "historie_voienfossen_set_3_q4",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "emne",
+          "question": "Hvorfor var hovedakslingen viktig i Hjula?",
+          "options": [
+            "Den fordelte turbinens kraft til maskinene",
+            "Den fraktet arbeidere over elva",
+            "Den målte vannkvalitet"
+          ],
+          "answer": "Den fordelte turbinens kraft til maskinene",
+          "answerIndex": 0,
+          "knowledge": "Akslinger og remmer førte fossens energi gjennom fabrikken.",
+          "difficulty": 2,
+          "question_type": "begrep",
+          "question_layer": "foundation",
+          "tags": [
+            "voienfossen",
+            "kraftoverføring"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s3_q5",
+          "quiz_id": "historie_voienfossen_set_3_q5",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "emne",
+          "question": "Hva betyr industrielt elvelandskap?",
+          "options": [
+            "Et sted der vann, bygg, kraft og arbeid må leses sammen",
+            "En urørt elv uten mennesker",
+            "Bare en liste over fabrikkmerker"
+          ],
+          "answer": "Et sted der vann, bygg, kraft og arbeid må leses sammen",
+          "answerIndex": 0,
+          "knowledge": "Vøyenfallene er naturform og produksjonssystem samtidig.",
+          "difficulty": 2,
+          "question_type": "definition",
+          "question_layer": "foundation",
+          "tags": [
+            "voienfossen",
+            "industrilandskap"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s3_q6",
+          "quiz_id": "historie_voienfossen_set_3_q6",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "emne",
+          "question": "Hva er fabrikkarkitektur?",
+          "options": [
+            "Bygninger formet av produksjon, maskiner, lys og brannsikkerhet",
+            "Bare pynt på bolighus",
+            "Et annet ord for parkdesign"
+          ],
+          "answer": "Bygninger formet av produksjon, maskiner, lys og brannsikkerhet",
+          "answerIndex": 0,
+          "knowledge": "Rolls bygg viser hvordan produksjonskrav formet arkitekturen.",
+          "difficulty": 2,
+          "question_type": "definition",
+          "question_layer": "foundation",
+          "tags": [
+            "voienfossen",
+            "industriarkitektur"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s3_q7",
+          "quiz_id": "historie_voienfossen_set_3_q7",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "emne",
+          "question": "Hva betyr arbeiderhistorie her?",
+          "options": [
+            "Historien om menneskene, arbeidstiden og miljøene rundt fabrikkene",
+            "Bare eiernes biografier",
+            "Kun fossens geologi"
+          ],
+          "answer": "Historien om menneskene, arbeidstiden og miljøene rundt fabrikkene",
+          "answerIndex": 0,
+          "knowledge": "Industristedet må også forstås som arbeids- og hverdagsmiljø.",
+          "difficulty": 2,
+          "question_type": "definition",
+          "question_layer": "foundation",
+          "tags": [
+            "voienfossen",
+            "arbeiderhistorie"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        }
+      ]
+    },
+    {
+      "set_id": "historie_voienfossen_set_4",
+      "level": 4,
+      "order": 4,
+      "xp": 80,
+      "mode": "place_concrete_advanced",
+      "questions": [
+        {
+          "id": "voienfossen_s4_q1",
+          "quiz_id": "historie_voienfossen_set_4_q1",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "place",
+          "question": "Hva viser tallene 16, 22 og 28 fot samlet?",
+          "options": [
+            "At tre ulike fall fordelte kraften til ulike virksomheter",
+            "At fossen hadde tre navn uten funksjon",
+            "At alle fabrikkene lå ved samme høyde"
+          ],
+          "answer": "At tre ulike fall fordelte kraften til ulike virksomheter",
+          "answerIndex": 0,
+          "knowledge": "Fallrekken fordelte mølle-, veveri- og spinnerikraft langs elva.",
+          "difficulty": 2,
+          "question_type": "analyse",
+          "question_layer": "advanced_place",
+          "tags": [
+            "voienfossen",
+            "analyse"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s4_q2",
+          "quiz_id": "historie_voienfossen_set_4_q2",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "place",
+          "question": "Hvorfor ble Nedre Vøien Spinneri gjenoppført i 1860?",
+          "options": [
+            "Den tidligere bygningen brant i 1859",
+            "Elva tørket ut",
+            "Vøyen gård ble revet"
+          ],
+          "answer": "Den tidligere bygningen brant i 1859",
+          "answerIndex": 0,
+          "knowledge": "Brannen førte til en ny fireetasjes fabrikk tegnet av Roll.",
+          "difficulty": 2,
+          "question_type": "kildekritikk",
+          "question_layer": "advanced_place",
+          "tags": [
+            "voienfossen",
+            "industribrann"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s4_q3",
+          "quiz_id": "historie_voienfossen_set_4_q3",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "place",
+          "question": "Hva viser overgangen fra Foss Spinderi til hesteskosømfabrikk?",
+          "options": [
+            "At samme kraftsted og bygning kunne skifte bransje",
+            "At vannkraft bare kunne brukes til tekstil",
+            "At området sluttet å ha industri i 1880"
+          ],
+          "answer": "At samme kraftsted og bygning kunne skifte bransje",
+          "answerIndex": 0,
+          "knowledge": "Industribygg ble gjenbrukt når markeder og teknologi endret seg.",
+          "difficulty": 2,
+          "question_type": "stedskonkret",
+          "question_layer": "advanced_place",
+          "tags": [
+            "voienfossen",
+            "industriskifte"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s4_q4",
+          "quiz_id": "historie_voienfossen_set_4_q4",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "place",
+          "question": "Hva skiller Glads mølle fra Vøyenfallene?",
+          "options": [
+            "Glads mølle er én bevart papirmøllebygning; Vøyenfallene er et tre-falls industrisystem",
+            "De er samme tekniske ID",
+            "Vøyenfallene ligger i Nydalen"
+          ],
+          "answer": "Glads mølle er én bevart papirmøllebygning; Vøyenfallene er et tre-falls industrisystem",
+          "answerIndex": 0,
+          "knowledge": "De ligger nær hverandre, men representerer ulike fysiske og historiske objekter.",
+          "difficulty": 2,
+          "question_type": "rutekobling",
+          "question_layer": "advanced_place",
+          "tags": [
+            "voienfossen",
+            "sammenligning"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s4_q5",
+          "quiz_id": "historie_voienfossen_set_4_q5",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "place",
+          "question": "Hva skjedde med Hjulas veveribygning etter nedleggelsen?",
+          "options": [
+            "Den brant i 1971 og ble gjenoppbygd i 1974",
+            "Den ble flyttet til Bergen",
+            "Den ble revet i 1855"
+          ],
+          "answer": "Den brant i 1971 og ble gjenoppbygd i 1974",
+          "answerIndex": 0,
+          "knowledge": "Gjenoppbyggingen er et viktig lag i dagens industrimiljø.",
+          "difficulty": 2,
+          "question_type": "kritisk_analyse",
+          "question_layer": "advanced_place",
+          "tags": [
+            "voienfossen",
+            "etterkrigstid"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s4_q6",
+          "quiz_id": "historie_voienfossen_set_4_q6",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "place",
+          "question": "Hva bør spilleren bruke som bevis på stedet?",
+          "options": [
+            "Fallrekken, fabrikkfasadene og dokumenterte kraftspor",
+            "Oppdiktede maskiner",
+            "Private rom uten adgang"
+          ],
+          "answer": "Fallrekken, fabrikkfasadene og dokumenterte kraftspor",
+          "answerIndex": 0,
+          "knowledge": "God stedlesning bygger på synlige spor og kontrollerte kilder.",
+          "difficulty": 2,
+          "question_type": "analyse",
+          "question_layer": "advanced_place",
+          "tags": [
+            "voienfossen",
+            "kildekritikk"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s4_q7",
+          "quiz_id": "historie_voienfossen_set_4_q7",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "place",
+          "question": "Hvorfor er flertallsnavnet Vøyenfallene viktig?",
+          "options": [
+            "Fordi stedet består av flere fall med forskjellige funksjoner",
+            "Fordi det er to byer",
+            "Fordi navnet viser flere elver"
+          ],
+          "answer": "Fordi stedet består av flere fall med forskjellige funksjoner",
+          "answerIndex": 0,
+          "knowledge": "Navnet hindrer at det komplekse fossesystemet reduseres til ett fall.",
+          "difficulty": 2,
+          "question_type": "meta",
+          "question_layer": "advanced_place",
+          "tags": [
+            "voienfossen",
+            "identitet"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        }
+      ]
+    },
+    {
+      "set_id": "historie_voienfossen_set_5",
+      "level": 5,
+      "order": 5,
+      "xp": 90,
+      "mode": "emne_based_advanced",
+      "questions": [
+        {
+          "id": "voienfossen_s5_q1",
+          "quiz_id": "historie_voienfossen_set_5_q1",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "emne",
+          "question": "Hva er hovedforklaringen på industriens tetthet ved Vøyen?",
+          "options": [
+            "Tre fall samlet mye lokal energi på en kort strekning",
+            "Området manglet vann",
+            "Fabrikkene trengte ingen kraft"
+          ],
+          "answer": "Tre fall samlet mye lokal energi på en kort strekning",
+          "answerIndex": 0,
+          "knowledge": "Topografien gjorde strekningen særlig attraktiv for industri.",
+          "difficulty": 3,
+          "question_type": "emne_avansert",
+          "question_layer": "advanced_emne",
+          "tags": [
+            "voienfossen",
+            "syntese"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s5_q2",
+          "quiz_id": "historie_voienfossen_set_5_q2",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "emne",
+          "question": "Hvordan hang internasjonal teknologi og lokal natur sammen?",
+          "options": [
+            "Maskiner og kunnskap kom utenfra, mens kraften kom fra Akerselva",
+            "Alt utstyr ble funnet i elva",
+            "Fabrikkene brukte bare importert strøm"
+          ],
+          "answer": "Maskiner og kunnskap kom utenfra, mens kraften kom fra Akerselva",
+          "answerIndex": 0,
+          "knowledge": "Vøyen koblet britisk tekstilteknologi til norsk vannkraft.",
+          "difficulty": 3,
+          "question_type": "emne_avansert",
+          "question_layer": "advanced_emne",
+          "tags": [
+            "voienfossen",
+            "teknologioverføring"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s5_q3",
+          "quiz_id": "historie_voienfossen_set_5_q3",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "emne",
+          "question": "Hva forteller 2372 spindler og 400 vevstoler om produksjonen?",
+          "options": [
+            "At arbeidet var mekanisert og organisert i stor skala",
+            "At det bare var håndverk i ett rom",
+            "At tallene viser fallhøyden"
+          ],
+          "answer": "At arbeidet var mekanisert og organisert i stor skala",
+          "answerIndex": 0,
+          "knowledge": "Maskinantallet viser spranget fra småproduksjon til fabrikk.",
+          "difficulty": 3,
+          "question_type": "emne_avansert",
+          "question_layer": "advanced_emne",
+          "tags": [
+            "voienfossen",
+            "industrialisering"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s5_q4",
+          "quiz_id": "historie_voienfossen_set_5_q4",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "emne",
+          "question": "Hvorfor er personer-rundingen viktig her?",
+          "options": [
+            "Graah, Schou og Roll viser samspillet mellom kapital, drift og ingeniørkunst",
+            "Fordi fossen er oppkalt etter dem alle",
+            "Fordi de var de eneste arbeiderne"
+          ],
+          "answer": "Graah, Schou og Roll viser samspillet mellom kapital, drift og ingeniørkunst",
+          "answerIndex": 0,
+          "knowledge": "Industrien krevde både eierskap, organisering og teknisk prosjektering.",
+          "difficulty": 3,
+          "question_type": "emne_avansert",
+          "question_layer": "advanced_emne",
+          "tags": [
+            "voienfossen",
+            "personer"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s5_q5",
+          "quiz_id": "historie_voienfossen_set_5_q5",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "emne",
+          "question": "Hva er den viktigste kildekritiske forskjellen?",
+          "options": [
+            "Å skille dokumenterte fall og virksomheter fra generelle påstander om Akerselva",
+            "Å bruke alle gamle bilder som eksakte kart",
+            "Å anta at dagens leietakere er permanente"
+          ],
+          "answer": "Å skille dokumenterte fall og virksomheter fra generelle påstander om Akerselva",
+          "answerIndex": 0,
+          "knowledge": "Stedsspesifikke år, mål og funksjoner må kunne spores til kilder.",
+          "difficulty": 3,
+          "question_type": "kildekritikk",
+          "question_layer": "advanced_emne",
+          "tags": [
+            "voienfossen",
+            "kildekritikk"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s5_q6",
+          "quiz_id": "historie_voienfossen_set_5_q6",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "emne",
+          "question": "Hva viser dagens gjenbruk av fabrikkene?",
+          "options": [
+            "At industribygg kan få nye funksjoner uten at alle historiske spor forsvinner",
+            "At fossene er borte",
+            "At tekstilproduksjonen fortsatt drives av vannhjul"
+          ],
+          "answer": "At industribygg kan få nye funksjoner uten at alle historiske spor forsvinner",
+          "answerIndex": 0,
+          "knowledge": "Omformingen bevarer en lesbar forbindelse mellom elv og industri.",
+          "difficulty": 3,
+          "question_type": "emne_avansert",
+          "question_layer": "advanced_emne",
+          "tags": [
+            "voienfossen",
+            "byomforming"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s5_q7",
+          "quiz_id": "historie_voienfossen_set_5_q7",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "emne",
+          "question": "Hva er den dypeste læringen ved Vøyenfallene?",
+          "options": [
+            "At naturform, teknologi, arbeid og byvekst var ett sammenkoblet system",
+            "At fosser bare er landskapsdekor",
+            "At industrihistorie kan forstås uten sted"
+          ],
+          "answer": "At naturform, teknologi, arbeid og byvekst var ett sammenkoblet system",
+          "answerIndex": 0,
+          "knowledge": "De tre fallene gjør hele industrisystemet fysisk forståelig.",
+          "difficulty": 3,
+          "question_type": "emne_avansert",
+          "question_layer": "advanced_emne",
+          "tags": [
+            "voienfossen",
+            "syntese"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://www.industrimuseum.no/akerselvadigitalt"
+          ],
+          "claim_basis": "verified_sources"
+        }
+      ]
+    },
+    {
+      "set_id": "historie_voienfossen_set_6",
+      "level": 6,
+      "order": 6,
+      "xp": 100,
+      "mode": "concept_based",
+      "questions": [
+        {
+          "id": "voienfossen_s6_q1",
+          "quiz_id": "historie_voienfossen_set_6_q1",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "concept",
+          "question": "Hva består Vøyenfallene av?",
+          "options": [
+            "Tre fossefall mellom Bentsebrua og Sannerbrua",
+            "Ett kunstig basseng uten fall",
+            "Fem fosser ved Maridalsvannet"
+          ],
+          "answer": "Tre fossefall mellom Bentsebrua og Sannerbrua",
+          "answerIndex": 0,
+          "knowledge": "Vøyenfallene er et sammenhengende system av tre fall i Akerselva, ikke én enkelt foss.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "question_layer": "concept",
+          "tags": [
+            "voyenfallene",
+            "tre_fall",
+            "akerselva"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenfallene"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s6_q2",
+          "quiz_id": "historie_voienfossen_set_6_q2",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "concept",
+          "question": "Hvilken virksomhet utnyttet fallet på 16 fot?",
+          "options": [
+            "Nedre Vøiens Kornmølle",
+            "Nydalens Compagnie",
+            "Christiania Spigerverk"
+          ],
+          "answer": "Nedre Vøiens Kornmølle",
+          "answerIndex": 0,
+          "knowledge": "Det øverste av de tre dokumenterte fallene, på 16 fot, var knyttet til Nedre Vøiens Kornmølle.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "question_layer": "concept",
+          "tags": [
+            "kornmolle",
+            "16_fot",
+            "vannkraft"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenfallene"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s6_q3",
+          "quiz_id": "historie_voienfossen_set_6_q3",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "concept",
+          "question": "Hvilken fabrikk brukte 22-fotsfallet på vestsiden?",
+          "options": [
+            "Hjula Væverier",
+            "Bjølsen Valsemølle",
+            "Foss Bryggeri"
+          ],
+          "answer": "Hjula Væverier",
+          "answerIndex": 0,
+          "knowledge": "Hjula Væverier utnyttet det midtre fallet på vestsiden; Labakkenfallet lå på østsiden.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "question_layer": "concept",
+          "tags": [
+            "hjula_vaeverier",
+            "22_fot",
+            "tekstilindustri"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenfallene",
+            "https://oslobyleksikon.no/side/Hjula_V%C3%A6verier",
+            "https://snl.no/Hjula_V%C3%A6veri"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s6_q4",
+          "quiz_id": "historie_voienfossen_set_6_q4",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "concept",
+          "question": "Hvilken fabrikk var knyttet til det nederste fallet på 28 fot?",
+          "options": [
+            "Vøiens Bomuldsspinderi",
+            "Glads mølle",
+            "Sandaker sag"
+          ],
+          "answer": "Vøiens Bomuldsspinderi",
+          "answerIndex": 0,
+          "knowledge": "Det nederste og høyeste av de tre fallene drev Vøiens Bomuldsspinderi.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "question_layer": "concept",
+          "tags": [
+            "voyens_bomuldsspinderi",
+            "28_fot",
+            "spinneri"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenfallene",
+            "https://oslobyleksikon.no/side/V%C3%B8iens_Bomuldsspinderi",
+            "https://nbl.snl.no/Knud_Graah"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s6_q5",
+          "quiz_id": "historie_voienfossen_set_6_q5",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "concept",
+          "question": "Hvem kjøpte fallrettighetene til Vøiens Bomuldsspinderi i 1844?",
+          "options": [
+            "Knud Graah og Niels O. Young",
+            "Halvor Schou og Fredrik Glad",
+            "Gerhard Treschow og Ole Amundsen"
+          ],
+          "answer": "Knud Graah og Niels O. Young",
+          "answerIndex": 0,
+          "knowledge": "Knud Graah og Niels O. Young kjøpte fallrettighetene i 1844; spinneriet kom i drift i 1846.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "question_layer": "concept",
+          "tags": [
+            "knud_graah",
+            "fallrettigheter",
+            "1844"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8iens_Bomuldsspinderi",
+            "https://nbl.snl.no/Knud_Graah"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s6_q6",
+          "quiz_id": "historie_voienfossen_set_6_q6",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "concept",
+          "question": "Hva knytter ingeniøren Oluf Nicolai Roll til Vøyenfallene?",
+          "options": [
+            "Han tegnet Hjula-anlegget og gjenoppbygde Vøiens spinneri etter brann",
+            "Han grunnla Bjølsen Valsemølle",
+            "Han bygde Bentsebrua i middelalderen"
+          ],
+          "answer": "Han tegnet Hjula-anlegget og gjenoppbygde Vøiens spinneri etter brann",
+          "answerIndex": 0,
+          "knowledge": "Roll spesialiserte seg på industribygg og vannkraft og arbeidet på begge sider av Vøyenfallene.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "question_layer": "concept",
+          "tags": [
+            "oluf_nicolai_roll",
+            "industriarkitektur",
+            "1860"
+          ],
+          "source": [
+            "https://nbl.snl.no/Oluf_Roll",
+            "https://snl.no/Oluf_Nicolai_Roll",
+            "https://oslobyleksikon.no/side/Hjula_V%C3%A6verier",
+            "https://snl.no/Hjula_V%C3%A6veri"
+          ],
+          "claim_basis": "verified_sources"
+        },
+        {
+          "id": "voienfossen_s6_q7",
+          "quiz_id": "historie_voienfossen_set_6_q7",
+          "categoryId": "historie",
+          "placeId": "voienfossen",
+          "targetId": "voienfossen",
+          "question_scope": "concept",
+          "question": "Hva viser de tre Vøyenfallene samlet?",
+          "options": [
+            "Hvordan samme korte elvestrekning kunne drive mølle, tekstilindustri og mekanisk produksjon",
+            "At Akerselva aldri ble brukt til arbeid",
+            "At all industri lå langt fra vannet"
+          ],
+          "answer": "Hvordan samme korte elvestrekning kunne drive mølle, tekstilindustri og mekanisk produksjon",
+          "answerIndex": 0,
+          "knowledge": "Kornmølle, spinneri, veveri og hesteskosømfabrikk gjorde fossesystemet til et konsentrert industrilandskap.",
+          "difficulty": 3,
+          "question_type": "concept_pair",
+          "question_layer": "concept",
+          "tags": [
+            "industrilandskap",
+            "vannkraft",
+            "arbeid"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/V%C3%B8yenfallene",
+            "https://lokalhistoriewiki.no/wiki/V%C3%B8yenfallene",
+            "https://oslobyleksikon.no/side/V%C3%B8iens_Bomuldsspinderi",
+            "https://nbl.snl.no/Knud_Graah",
+            "https://oslobyleksikon.no/side/Hjula_V%C3%A6verier",
+            "https://snl.no/Hjula_V%C3%A6veri"
+          ],
+          "claim_basis": "verified_sources"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+(function () {
+  "use strict";
+
+  var TRACE_KEY = "hg_civi_storage_trace_v1";
+  var CRITICAL = {
+    hg_active_position_v1: true,
+    hg_civi_last_active_position_v1: true,
+    hg_civi_state_v1: true,
+    hg_civi_inbox_v1: true,
+    hg_civi_mail_v1: true
+  };
+
+  function isCritical(key) {
+    return !!CRITICAL[String(key || "")];
+  }
+
+  function safeParse(raw, fallback) {
+    if (raw == null || raw === "") return fallback;
+    try {
+      var parsed = JSON.parse(raw);
+      return parsed == null ? fallback : parsed;
+    } catch (e) {
+      return fallback;
+    }
+  }
+
+  function normalizeCivicationStorageBeforeEngines() {
+    try {
+      var legacyRaw = localStorage.getItem("hg_civi_inbox_v1");
+      var legacy = safeParse(legacyRaw, []);
+      if (!Array.isArray(legacy)) {
+        localStorage.setItem("hg_civi_inbox_v1", "[]");
+      }
+    } catch (e) {
+      try { localStorage.setItem("hg_civi_inbox_v1", "[]"); } catch (_) {}
+    }
+
+    try {
+      var mailRaw = localStorage.getItem("hg_civi_mail_v1");
+      if (mailRaw === "null" || mailRaw === "undefined") {
+        localStorage.removeItem("hg_civi_mail_v1");
+        return;
+      }
+
+      if (mailRaw) {
+        var mail = safeParse(mailRaw, null);
+        if (!mail || typeof mail !== "object" || !Array.isArray(mail.items)) {
+          localStorage.removeItem("hg_civi_mail_v1");
+        }
+      }
+    } catch (e) {
+      try { localStorage.removeItem("hg_civi_mail_v1"); } catch (_) {}
+    }
+  }
+
+  function trimValue(v) {
+    var s = String(v || "");
+    return s.length > 500 ? s.slice(0, 500) + "…" : s;
+  }
+
+  function readTrace() {
+    var rows = safeParse(localStorage.getItem(TRACE_KEY), []);
+    return Array.isArray(rows) ? rows : [];
+  }
+
+  function writeTrace(rows) {
+    try {
+      localStorage.setItem(TRACE_KEY, JSON.stringify((Array.isArray(rows) ? rows : []).slice(-80)));
+    } catch (e) {}
+  }
+
+  function addTrace(action, key, value) {
+    if (!isCritical(key)) return;
+
+    var rows = readTrace();
+    rows.push({
+      at: new Date().toISOString(),
+      action: action,
+      key: String(key || ""),
+      value: trimValue(value),
+      stack: String(new Error().stack || "").split("\n").slice(2, 8).join("\n")
+    });
+    writeTrace(rows);
+  }
+
+  function patchStorage() {
+    if (window.__civiStorageTracePatched) return true;
+
+    var originalSetItem = Storage.prototype.setItem;
+    var originalRemoveItem = Storage.prototype.removeItem;
+    var originalClear = Storage.prototype.clear;
+
+    Storage.prototype.setItem = function tracedSetItem(key, value) {
+      addTrace("setItem", key, value);
+      return originalSetItem.call(this, key, value);
+    };
+
+    Storage.prototype.removeItem = function tracedRemoveItem(key) {
+      addTrace("removeItem", key, localStorage.getItem(key));
+      return originalRemoveItem.call(this, key);
+    };
+
+    Storage.prototype.clear = function tracedClear() {
+      Object.keys(CRITICAL).forEach(function (key) {
+        addTrace("clear", key, localStorage.getItem(key));
+      });
+      return originalClear.call(this);
+    };
+
+    window.__civiStorageTracePatched = true;
+    return true;
+  }
+
+  function getTrace() {
+    return readTrace();
+  }
+
+  function clearTrace() {
+    writeTrace([]);
+  }
+
+  normalizeCivicationStorageBeforeEngines();
+  patchStorage();
+
+  window.CivicationStorageTrace = {
+    getTrace: getTrace,
+    clearTrace: clearTrace,
+    patchStorage: patchStorage,
+    normalizeCivicationStorageBeforeEngines: normalizeCivicationStorageBeforeEngines
+  };
+})();

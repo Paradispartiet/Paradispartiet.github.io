@@ -1,0 +1,1170 @@
+{
+  "targetId": "tinghuset",
+  "categoryId": "politikk",
+  "sources": {
+    "domstol_praktisk": "https://www.domstol.no/no/domstoler/tingrett/oslo-tingrett/om-oslo-tingrett/praktisk-informasjon-om-oslo-tinghus/",
+    "grunnloven_95_98": "https://lovdata.no/nav/lov/1814-05-17/kapE",
+    "domstolloven_124": "https://lovdata.no/dokument/NL/lov/1915-08-13-5",
+    "oslo_security_2025": "https://www.domstol.no/no/domstoler/tingrett/oslo-tingrett/publikasjoner2/arsmelding-2025/fokusomrader/sikkerhet/",
+    "oslo_enedommer_2025": "https://www.domstol.no/no/domstoler/tingrett/oslo-tingrett/publikasjoner2/arsmelding-2025/enedommersaker/enedommersaker/",
+    "oslo_forord_2025": "https://www.domstol.no/no/domstoler/tingrett/oslo-tingrett/publikasjoner2/arsmelding-2025/forord/",
+    "oslo_active_case_2025": "https://www.domstol.no/no/domstoler/tingrett/oslo-tingrett/publikasjoner2/arsmelding-2025/fokusomrader/aktiv-saksstyring/"
+  },
+  "production_context": {
+    "manifest_category": "politikk",
+    "profile": "narrow_3x7",
+    "standard_version": "3.0",
+    "source_brief": "data/quiz/production_briefs/politikk/tinghuset.json",
+    "context_artifact": "data/quiz/production_context/politikk/tinghuset.json",
+    "resolved_files": {
+      "pensum": "data/fag/politikk/politikkpensum_canonical_v4_5.json",
+      "emner": "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+      "fagkart": "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+      "methods": "data/fag/politikk/methods_politikk_canonical_v4_5.json",
+      "supersetQuizMal": "data/fag/politikk/supersetQUIZMAL_politikk.json",
+      "quizStandard": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+      "quizQuestionSchema": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json"
+    },
+    "required_inputs_loaded": [
+      "pensum",
+      "emner",
+      "fagkart",
+      "methods",
+      "supersetQuizMal",
+      "quizStandard",
+      "quizQuestionSchema"
+    ],
+    "pensum_module_ids": [
+      "rett_lov_rettssikkerhet"
+    ],
+    "emne_ids": [
+      "em_pol_domstoler_rettspraksis",
+      "em_pol_rettsstat_rettssikkerhet",
+      "em_pol_likeverd_rettssikkerhet",
+      "em_pol_maktbegrensning"
+    ],
+    "topic_hook_ids": [
+      "domstoler",
+      "rettigheter",
+      "rettsstat"
+    ],
+    "method_ids": [
+      "met_pol_rettslig_analyse",
+      "met_pol_institusjonsanalyse",
+      "met_pol_rettighetsanalyse",
+      "met_pol_maktbalanseanalyse",
+      "met_pol_dokumentanalyse"
+    ],
+    "thinker_ids": [
+      "montesquieu"
+    ],
+    "works": [],
+    "source_review_status": "reviewed",
+    "theory_start_phase": "final",
+    "method_start_phase": "final"
+  },
+  "sets": [
+    {
+      "set_id": "politikk_tinghuset_set_1",
+      "level": 1,
+      "order": 1,
+      "phase": "opening",
+      "xp": 50,
+      "title": "Bygget og domstolen",
+      "questions": [
+        {
+          "id": "tinghuset_quiz_1",
+          "quiz_id": "politikk_tinghuset_set_1_q1",
+          "categoryId": "politikk",
+          "placeId": "tinghuset",
+          "targetId": "tinghuset",
+          "question_scope": "place",
+          "question": "Hvor vender hovedinngangen til Oslo tinghus?",
+          "options": [
+            "Mot C. J. Hambros plass",
+            "Mot Slottsplassen",
+            "Mot Youngstorget"
+          ],
+          "answer": "Mot C. J. Hambros plass",
+          "answerIndex": 0,
+          "knowledge": "Hovedinngangen vender mot Hambros plass.",
+          "core_concepts": [
+            "domstolsbygg",
+            "publikumsadgang"
+          ],
+          "difficulty": 1,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_pol_domstoler_rettspraksis",
+          "source": [
+            "domstol_praktisk"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Oslo tinghus har hovedinngang mot C. J. Hambros plass.",
+          "guidance_basis": [
+            "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+            "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+            "data/fag/politikk/methods_politikk_canonical_v4_5.json"
+          ],
+          "claim_id": "claim_tinghuset_quiz_1",
+          "primary_knowledge_unit_id": "ku_politikk_hovedinngangen_vender_mo_8b9759b251",
+          "knowledge_unit_ids": [
+            "ku_politikk_hovedinngangen_vender_mo_8b9759b251"
+          ],
+          "concept_ids": [
+            "co_politikk_domstolsbygg_dcdb6ad9b6",
+            "co_politikk_publikumsadgang_d86aaa42fc"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "tinghuset_quiz_2",
+          "quiz_id": "politikk_tinghuset_set_1_q2",
+          "categoryId": "politikk",
+          "placeId": "tinghuset",
+          "targetId": "tinghuset",
+          "question_scope": "place",
+          "question": "Når ble Oslo tinghus ferdigstilt?",
+          "options": [
+            "1978",
+            "1994",
+            "2012"
+          ],
+          "answer": "1994",
+          "answerIndex": 1,
+          "knowledge": "Bygningen ble ferdigstilt i 1994.",
+          "core_concepts": [
+            "domstolsbygg",
+            "institusjonsarkitektur"
+          ],
+          "difficulty": 1,
+          "question_type": "fact",
+          "year": 1994,
+          "emne_id": "em_pol_domstoler_rettspraksis",
+          "source": [
+            "domstol_praktisk"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Oslo tinghus ble ferdigstilt i 1994.",
+          "guidance_basis": [
+            "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+            "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+            "data/fag/politikk/methods_politikk_canonical_v4_5.json"
+          ],
+          "claim_id": "claim_tinghuset_quiz_2",
+          "primary_knowledge_unit_id": "ku_politikk_bygningen_ble_ferdigstil_48832c023c",
+          "knowledge_unit_ids": [
+            "ku_politikk_bygningen_ble_ferdigstil_48832c023c"
+          ],
+          "concept_ids": [
+            "co_politikk_domstolsbygg_dcdb6ad9b6",
+            "co_politikk_institusjonsarkitektur_381d69f7f9"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "tinghuset_quiz_3",
+          "quiz_id": "politikk_tinghuset_set_1_q3",
+          "categoryId": "politikk",
+          "placeId": "tinghuset",
+          "targetId": "tinghuset",
+          "question_scope": "place",
+          "question": "Omtrent hvor mange rettssaler har Oslo tinghus?",
+          "options": [
+            "Rundt 12",
+            "Rundt 30",
+            "Rundt 60"
+          ],
+          "answer": "Rundt 60",
+          "answerIndex": 2,
+          "knowledge": "Oslo tinghus har rundt 60 rettssaler i ulike størrelser.",
+          "core_concepts": [
+            "rettsinfrastruktur",
+            "domstolskapasitet"
+          ],
+          "difficulty": 1,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_pol_domstoler_rettspraksis",
+          "source": [
+            "domstol_praktisk"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Oslo tinghus har rundt 60 rettssaler i ulike størrelser.",
+          "guidance_basis": [
+            "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+            "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+            "data/fag/politikk/methods_politikk_canonical_v4_5.json"
+          ],
+          "claim_id": "claim_tinghuset_quiz_3",
+          "primary_knowledge_unit_id": "ku_politikk_oslo_tinghus_har_rundt_6_900feb465c",
+          "knowledge_unit_ids": [
+            "ku_politikk_oslo_tinghus_har_rundt_6_900feb465c"
+          ],
+          "concept_ids": [
+            "co_politikk_rettsinfrastruktur_13e651fcfa",
+            "co_politikk_domstolskapasitet_95182a4e7d"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "tinghuset_quiz_4",
+          "quiz_id": "politikk_tinghuset_set_1_q4",
+          "categoryId": "politikk",
+          "placeId": "tinghuset",
+          "targetId": "tinghuset",
+          "question_scope": "place",
+          "question": "Hva må alle besøkende gjøre før de går inn?",
+          "options": [
+            "Levere skriftlig søknad",
+            "Gå gjennom sikkerhetskontroll",
+            "Bestille advokat"
+          ],
+          "answer": "Gå gjennom sikkerhetskontroll",
+          "answerIndex": 1,
+          "knowledge": "Alle besøkende må gjennom sikkerhetskontrollen, og bagasje blir skannet.",
+          "core_concepts": [
+            "sikkerhetskontroll",
+            "publikumsadgang"
+          ],
+          "difficulty": 1,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_pol_domstoler_rettspraksis",
+          "source": [
+            "domstol_praktisk"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Alle besøkende må gjennom sikkerhetskontroll, og bagasje blir skannet.",
+          "guidance_basis": [
+            "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+            "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+            "data/fag/politikk/methods_politikk_canonical_v4_5.json"
+          ],
+          "claim_id": "claim_tinghuset_quiz_4",
+          "primary_knowledge_unit_id": "ku_politikk_alle_bes_kende_ma_gjenno_b8797029a0",
+          "knowledge_unit_ids": [
+            "ku_politikk_alle_bes_kende_ma_gjenno_b8797029a0"
+          ],
+          "concept_ids": [
+            "co_politikk_sikkerhetskontroll_2f21c0d95f",
+            "co_politikk_publikumsadgang_d86aaa42fc"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "tinghuset_quiz_5",
+          "quiz_id": "politikk_tinghuset_set_1_q5",
+          "categoryId": "politikk",
+          "placeId": "tinghuset",
+          "targetId": "tinghuset",
+          "question_scope": "place",
+          "question": "Hva er Lex Portalis ved hovedinngangen?",
+          "options": [
+            "Et kunstverk med lovtekster",
+            "En egen straffedomstol",
+            "Et elektronisk saksregister"
+          ],
+          "answer": "Et kunstverk med lovtekster",
+          "answerIndex": 0,
+          "knowledge": "Lex Portalis er et kunstverk med speilvendte tekster fra sentrale norske lover.",
+          "core_concepts": [
+            "rettssymbolikk",
+            "kunst i offentlig rom"
+          ],
+          "difficulty": 1,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_pol_rettsstat_rettssikkerhet",
+          "source": [
+            "domstol_praktisk"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Lex Portalis ved hovedinngangen viser speilvendte tekster fra sentrale norske lover.",
+          "guidance_basis": [
+            "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+            "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+            "data/fag/politikk/methods_politikk_canonical_v4_5.json"
+          ],
+          "claim_id": "claim_tinghuset_quiz_5",
+          "primary_knowledge_unit_id": "ku_politikk_lex_portalis_er_et_kunst_56a0445387",
+          "knowledge_unit_ids": [
+            "ku_politikk_lex_portalis_er_et_kunst_56a0445387"
+          ],
+          "concept_ids": [
+            "co_politikk_rettssymbolikk_ac20783f9d",
+            "co_politikk_kunst_i_offentlig_rom_6e94b92382"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "tinghuset_quiz_6",
+          "quiz_id": "politikk_tinghuset_set_1_q6",
+          "categoryId": "politikk",
+          "placeId": "tinghuset",
+          "targetId": "tinghuset",
+          "question_scope": "place",
+          "question": "Hvem avgjør en enedommersak?",
+          "options": [
+            "Én fagdommer",
+            "En jury på tolv personer",
+            "Politimesteren"
+          ],
+          "answer": "Én fagdommer",
+          "answerIndex": 0,
+          "knowledge": "Enedommersaker avgjøres av én fagdommer uten meddommere.",
+          "core_concepts": [
+            "enedommersak",
+            "fagdommer",
+            "meddommer"
+          ],
+          "difficulty": 1,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_pol_domstoler_rettspraksis",
+          "source": [
+            "oslo_enedommer_2025"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Enedommersaker avgjøres av én fagdommer uten meddommere.",
+          "guidance_basis": [
+            "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+            "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+            "data/fag/politikk/methods_politikk_canonical_v4_5.json"
+          ],
+          "claim_id": "claim_tinghuset_quiz_6",
+          "primary_knowledge_unit_id": "ku_politikk_enedommersaker_avgj_res__f2fd857635",
+          "knowledge_unit_ids": [
+            "ku_politikk_enedommersaker_avgj_res__f2fd857635"
+          ],
+          "concept_ids": [
+            "co_politikk_enedommersak_d2af094a05",
+            "co_politikk_fagdommer_166605f56a",
+            "co_politikk_meddommer_0e19a37f84"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "tinghuset_quiz_7",
+          "quiz_id": "politikk_tinghuset_set_1_q7",
+          "categoryId": "politikk",
+          "placeId": "tinghuset",
+          "targetId": "tinghuset",
+          "question_scope": "place",
+          "question": "Hva kan en enedommersak blant annet gjelde?",
+          "options": [
+            "Ransaking",
+            "Grunnlovsendring",
+            "Kommunebudsjett"
+          ],
+          "answer": "Ransaking",
+          "answerIndex": 0,
+          "knowledge": "Ransaking er ett av etterforskingsskrittene som kan behandles i enedommersaker.",
+          "core_concepts": [
+            "enedommersak",
+            "rettslig kontroll",
+            "etterforskingsskritt"
+          ],
+          "difficulty": 1,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_pol_domstoler_rettspraksis",
+          "source": [
+            "oslo_enedommer_2025"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Enedommersaker kan blant annet gjelde ransaking, fengsling, besøksforbud og førerkortbeslag.",
+          "guidance_basis": [
+            "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+            "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+            "data/fag/politikk/methods_politikk_canonical_v4_5.json"
+          ],
+          "claim_id": "claim_tinghuset_quiz_7",
+          "primary_knowledge_unit_id": "ku_politikk_ransaking_er_ett_av_ette_f1b4f7ed82",
+          "knowledge_unit_ids": [
+            "ku_politikk_ransaking_er_ett_av_ette_f1b4f7ed82"
+          ],
+          "concept_ids": [
+            "co_politikk_enedommersak_d2af094a05",
+            "co_politikk_rettslig_kontroll_3daa67493f",
+            "co_politikk_etterforskingsskritt_6e83a59d1b"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        }
+      ]
+    },
+    {
+      "set_id": "politikk_tinghuset_set_2",
+      "level": 2,
+      "order": 2,
+      "phase": "bridge",
+      "xp": 75,
+      "title": "Rettighetene og offentligheten",
+      "questions": [
+        {
+          "id": "tinghuset_quiz_8",
+          "quiz_id": "politikk_tinghuset_set_2_q1",
+          "categoryId": "politikk",
+          "placeId": "tinghuset",
+          "targetId": "tinghuset",
+          "question_scope": "place",
+          "question": "Hva krever Grunnloven § 95 av domstolen?",
+          "options": [
+            "At den er uavhengig og upartisk",
+            "At den følger regjeringens instrukser",
+            "At alle saker avgjøres samme dag"
+          ],
+          "answer": "At den er uavhengig og upartisk",
+          "answerIndex": 0,
+          "knowledge": "Grunnloven krever en uavhengig og upartisk domstol.",
+          "core_concepts": [
+            "domstoluavhengighet",
+            "upartiskhet",
+            "rettsstat"
+          ],
+          "difficulty": 2,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_pol_rettsstat_rettssikkerhet",
+          "source": [
+            "grunnloven_95_98"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Grunnloven § 95 gir rett til avgjørelse av en uavhengig og upartisk domstol innen rimelig tid.",
+          "guidance_basis": [
+            "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+            "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+            "data/fag/politikk/methods_politikk_canonical_v4_5.json"
+          ],
+          "claim_id": "claim_tinghuset_quiz_8",
+          "primary_knowledge_unit_id": "ku_politikk_grunnloven_krever_en_uav_b07029282b",
+          "knowledge_unit_ids": [
+            "ku_politikk_grunnloven_krever_en_uav_b07029282b"
+          ],
+          "concept_ids": [
+            "co_politikk_domstoluavhengighet_9c0ebdced6",
+            "co_politikk_upartiskhet_4a74951fed",
+            "co_politikk_rettsstat_eb5f4d850b"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "tinghuset_quiz_9",
+          "quiz_id": "politikk_tinghuset_set_2_q2",
+          "categoryId": "politikk",
+          "placeId": "tinghuset",
+          "targetId": "tinghuset",
+          "question_scope": "place",
+          "question": "Hvordan skal rettergangen være etter Grunnloven § 95?",
+          "options": [
+            "Hemmelig og administrativ",
+            "Rettferdig og offentlig",
+            "Bare skriftlig"
+          ],
+          "answer": "Rettferdig og offentlig",
+          "answerIndex": 1,
+          "knowledge": "Grunnloven sier at rettergangen skal være rettferdig og offentlig.",
+          "core_concepts": [
+            "rettferdig rettergang",
+            "offentlighet",
+            "rettsstat"
+          ],
+          "difficulty": 2,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_pol_rettsstat_rettssikkerhet",
+          "source": [
+            "grunnloven_95_98"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Grunnloven § 95 sier at rettergangen skal være rettferdig og offentlig.",
+          "guidance_basis": [
+            "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+            "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+            "data/fag/politikk/methods_politikk_canonical_v4_5.json"
+          ],
+          "claim_id": "claim_tinghuset_quiz_9",
+          "primary_knowledge_unit_id": "ku_politikk_grunnloven_sier_at_rette_72a81573eb",
+          "knowledge_unit_ids": [
+            "ku_politikk_grunnloven_sier_at_rette_72a81573eb"
+          ],
+          "concept_ids": [
+            "co_politikk_rettferdig_rettergang_0117e3e88d",
+            "co_politikk_offentlighet_53c695a61f",
+            "co_politikk_rettsstat_eb5f4d850b"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "tinghuset_quiz_10",
+          "quiz_id": "politikk_tinghuset_set_2_q3",
+          "categoryId": "politikk",
+          "placeId": "tinghuset",
+          "targetId": "tinghuset",
+          "question_scope": "place",
+          "question": "Når kan et rettsmøte likevel lukkes?",
+          "options": [
+            "Når privatliv eller tungtveiende allmenne interesser gjør det nødvendig",
+            "Når bygningen er full",
+            "Når en part ikke liker presseomtale"
+          ],
+          "answer": "Når privatliv eller tungtveiende allmenne interesser gjør det nødvendig",
+          "answerIndex": 0,
+          "knowledge": "Offentlighet kan begrenses på lovlig grunnlag når blant annet privatliv eller tungtveiende allmenne interesser krever det.",
+          "difficulty": 2,
+          "question_type": "context",
+          "year": null,
+          "emne_id": "em_pol_rettsstat_rettssikkerhet",
+          "source": [
+            "grunnloven_95_98",
+            "domstolloven_124"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Et rettsmøte kan lukkes når privatliv eller tungtveiende allmenne interesser gjør det nødvendig.",
+          "guidance_basis": [
+            "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+            "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+            "data/fag/politikk/methods_politikk_canonical_v4_5.json"
+          ],
+          "claim_id": "claim_tinghuset_quiz_10",
+          "core_concepts": [
+            "rettsstat",
+            "offentlighet",
+            "gjennomføring"
+          ],
+          "concept_focus": [
+            "regel og praksis"
+          ],
+          "primary_knowledge_unit_id": "ku_politikk_offentlighet_kan_begrens_063df253e7",
+          "knowledge_unit_ids": [
+            "ku_politikk_offentlighet_kan_begrens_063df253e7"
+          ],
+          "concept_ids": [
+            "co_politikk_rettsstat_eb5f4d850b",
+            "co_politikk_offentlighet_53c695a61f",
+            "co_politikk_gjennomf_ring_8d859bf4ea",
+            "co_politikk_regel_og_praksis_715cd8e608"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "tinghuset_quiz_11",
+          "quiz_id": "politikk_tinghuset_set_2_q4",
+          "categoryId": "politikk",
+          "placeId": "tinghuset",
+          "targetId": "tinghuset",
+          "question_scope": "place",
+          "question": "Hva sier Grunnloven § 96 om straff?",
+          "options": [
+            "Ingen kan straffes uten etter dom",
+            "Politiet kan fastsette straff alene",
+            "Straff trenger ikke lovgrunnlag"
+          ],
+          "answer": "Ingen kan straffes uten etter dom",
+          "answerIndex": 0,
+          "knowledge": "Ingen kan straffes uten etter dom.",
+          "core_concepts": [
+            "legalitetsprinsippet",
+            "domstolskontroll",
+            "straff"
+          ],
+          "difficulty": 2,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_pol_maktbegrensning",
+          "source": [
+            "grunnloven_95_98"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Grunnloven § 96 sier at ingen kan straffes uten etter dom.",
+          "guidance_basis": [
+            "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+            "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+            "data/fag/politikk/methods_politikk_canonical_v4_5.json"
+          ],
+          "claim_id": "claim_tinghuset_quiz_11",
+          "primary_knowledge_unit_id": "ku_politikk_ingen_kan_straffes_uten__81f304541d",
+          "knowledge_unit_ids": [
+            "ku_politikk_ingen_kan_straffes_uten__81f304541d"
+          ],
+          "concept_ids": [
+            "co_politikk_legalitetsprinsippet_211ce3929f",
+            "co_politikk_domstolskontroll_2c12927b51",
+            "co_politikk_straff_660e450483"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "tinghuset_quiz_12",
+          "quiz_id": "politikk_tinghuset_set_2_q5",
+          "categoryId": "politikk",
+          "placeId": "tinghuset",
+          "targetId": "tinghuset",
+          "question_scope": "place",
+          "question": "Hvordan skal en siktet behandles før skyld er bevist?",
+          "options": [
+            "Som automatisk skyldig",
+            "Som uskyldig",
+            "Som vitne"
+          ],
+          "answer": "Som uskyldig",
+          "answerIndex": 1,
+          "knowledge": "Den siktede skal anses uskyldig inntil skyld er bevist etter loven.",
+          "core_concepts": [
+            "uskyldspresumsjonen",
+            "rettssikkerhet",
+            "beviskrav"
+          ],
+          "difficulty": 2,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_pol_likeverd_rettssikkerhet",
+          "source": [
+            "grunnloven_95_98"
+          ],
+          "source_origin": "external",
+          "claim_basis": "En siktet skal anses uskyldig inntil skyld er bevist etter loven.",
+          "guidance_basis": [
+            "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+            "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+            "data/fag/politikk/methods_politikk_canonical_v4_5.json"
+          ],
+          "claim_id": "claim_tinghuset_quiz_12",
+          "primary_knowledge_unit_id": "ku_politikk_den_siktede_skal_anses_u_38d229c6af",
+          "knowledge_unit_ids": [
+            "ku_politikk_den_siktede_skal_anses_u_38d229c6af"
+          ],
+          "concept_ids": [
+            "co_politikk_uskyldspresumsjonen_d9ea27b607",
+            "co_politikk_rettssikkerhet_ceb8705294",
+            "co_politikk_beviskrav_f00b04c867"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "tinghuset_quiz_13",
+          "quiz_id": "politikk_tinghuset_set_2_q6",
+          "categoryId": "politikk",
+          "placeId": "tinghuset",
+          "targetId": "tinghuset",
+          "question_scope": "place",
+          "question": "Hva er hovedregelen i domstolloven § 124?",
+          "options": [
+            "Rettsmøter er offentlige",
+            "Alle dokumenter er hemmelige",
+            "Bare advokater kan være til stede"
+          ],
+          "answer": "Rettsmøter er offentlige",
+          "answerIndex": 0,
+          "knowledge": "Rettsmøtene er offentlige hvis ikke lovlige begrensninger gjelder.",
+          "difficulty": 2,
+          "question_type": "context",
+          "year": null,
+          "emne_id": "em_pol_rettsstat_rettssikkerhet",
+          "source": [
+            "domstolloven_124"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Domstolloven § 124 har offentlige rettsmøter som hovedregel.",
+          "guidance_basis": [
+            "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+            "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+            "data/fag/politikk/methods_politikk_canonical_v4_5.json"
+          ],
+          "claim_id": "claim_tinghuset_quiz_13",
+          "core_concepts": [
+            "rettsstat",
+            "offentlighet",
+            "gjennomføring"
+          ],
+          "concept_focus": [
+            "regel og praksis"
+          ],
+          "primary_knowledge_unit_id": "ku_politikk_rettsm_tene_er_offentlig_c6016bbbea",
+          "knowledge_unit_ids": [
+            "ku_politikk_rettsm_tene_er_offentlig_c6016bbbea"
+          ],
+          "concept_ids": [
+            "co_politikk_rettsstat_eb5f4d850b",
+            "co_politikk_offentlighet_53c695a61f",
+            "co_politikk_gjennomf_ring_8d859bf4ea",
+            "co_politikk_regel_og_praksis_715cd8e608"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "tinghuset_quiz_14",
+          "quiz_id": "politikk_tinghuset_set_2_q7",
+          "categoryId": "politikk",
+          "placeId": "tinghuset",
+          "targetId": "tinghuset",
+          "question_scope": "place",
+          "question": "Hvor mange personer gikk gjennom metalldetektoren ved Oslo tinghus i 2025?",
+          "options": [
+            "13 742",
+            "137 953",
+            "298"
+          ],
+          "answer": "137 953",
+          "answerIndex": 1,
+          "knowledge": "Årsmeldingen oppgir 137 953 kontrollerte personer.",
+          "core_concepts": [
+            "sikkerhetskontroll",
+            "gjennomføring",
+            "driftsdata"
+          ],
+          "difficulty": 2,
+          "question_type": "fact",
+          "year": 2025,
+          "emne_id": "em_pol_domstoler_rettspraksis",
+          "source": [
+            "oslo_security_2025"
+          ],
+          "source_origin": "external",
+          "claim_basis": "I 2025 ble 137 953 personer kontrollert i metalldetektoren ved Oslo tinghus.",
+          "guidance_basis": [
+            "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+            "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+            "data/fag/politikk/methods_politikk_canonical_v4_5.json"
+          ],
+          "claim_id": "claim_tinghuset_quiz_14",
+          "primary_knowledge_unit_id": "ku_politikk_arsmeldingen_oppgir_137__b6dec0b489",
+          "knowledge_unit_ids": [
+            "ku_politikk_arsmeldingen_oppgir_137__b6dec0b489"
+          ],
+          "concept_ids": [
+            "co_politikk_sikkerhetskontroll_2f21c0d95f",
+            "co_politikk_gjennomf_ring_8d859bf4ea",
+            "co_politikk_driftsdata_54019aafd3"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        }
+      ]
+    },
+    {
+      "set_id": "politikk_tinghuset_set_3",
+      "level": 3,
+      "order": 3,
+      "phase": "final",
+      "xp": 100,
+      "title": "Fra regel til praksis",
+      "questions": [
+        {
+          "id": "tinghuset_quiz_15",
+          "quiz_id": "politikk_tinghuset_set_3_q1",
+          "categoryId": "politikk",
+          "placeId": "tinghuset",
+          "targetId": "tinghuset",
+          "question_scope": "place",
+          "question": "Hva betyr offentlig rettergang i praksis?",
+          "options": [
+            "At alle alltid får tilgang til alt",
+            "At offentlighet er hovedregel, men kan ha lovlige grenser",
+            "At sikkerhetskontroll er forbudt"
+          ],
+          "answer": "At offentlighet er hovedregel, men kan ha lovlige grenser",
+          "answerIndex": 1,
+          "knowledge": "Offentlighet er en hovedregel, men sikkerhet, personvern og lovbestemte hensyn kan begrense tilgang.",
+          "difficulty": 3,
+          "question_type": "context",
+          "year": null,
+          "emne_id": "em_pol_rettsstat_rettssikkerhet",
+          "source": [
+            "domstol_praktisk",
+            "grunnloven_95_98",
+            "domstolloven_124"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Offentlig rettergang betyr ikke ubegrenset adgang til alle rom, dokumenter og opplysninger.",
+          "guidance_basis": [
+            "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+            "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+            "data/fag/politikk/methods_politikk_canonical_v4_5.json"
+          ],
+          "claim_id": "claim_tinghuset_quiz_15",
+          "core_concepts": [
+            "rettsstat",
+            "offentlighet",
+            "gjennomføring"
+          ],
+          "concept_focus": [
+            "regel og praksis"
+          ],
+          "primary_knowledge_unit_id": "ku_politikk_offentlighet_er_en_hoved_743e72bb8c",
+          "knowledge_unit_ids": [
+            "ku_politikk_offentlighet_er_en_hoved_743e72bb8c"
+          ],
+          "concept_ids": [
+            "co_politikk_rettsstat_eb5f4d850b",
+            "co_politikk_offentlighet_53c695a61f",
+            "co_politikk_gjennomf_ring_8d859bf4ea",
+            "co_politikk_regel_og_praksis_715cd8e608"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "tinghuset_quiz_16",
+          "quiz_id": "politikk_tinghuset_set_3_q2",
+          "categoryId": "politikk",
+          "placeId": "tinghuset",
+          "targetId": "tinghuset",
+          "question_scope": "place",
+          "question": "Hva viser det at 90-dagersmålet ikke ble nådd for meddomsrettssaker i 2025?",
+          "options": [
+            "At en formell tidsrett ikke automatisk sikrer at alle mål nås i praksis",
+            "At domstolene ikke lenger er uavhengige",
+            "At alle saker ble henlagt"
+          ],
+          "answer": "At en formell tidsrett ikke automatisk sikrer at alle mål nås i praksis",
+          "answerIndex": 0,
+          "knowledge": "Det viser forskjellen mellom rettslig norm og faktisk kapasitet/gjennomføring.",
+          "difficulty": 3,
+          "question_type": "context",
+          "year": null,
+          "emne_id": "em_pol_rettsstat_rettssikkerhet",
+          "source": [
+            "grunnloven_95_98",
+            "oslo_forord_2025"
+          ],
+          "source_origin": "external",
+          "claim_basis": "En formell rett til behandling innen rimelig tid er ikke det samme som at alle sakstyper faktisk når tidsmålene.",
+          "guidance_basis": [
+            "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+            "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+            "data/fag/politikk/methods_politikk_canonical_v4_5.json"
+          ],
+          "claim_id": "claim_tinghuset_quiz_16",
+          "core_concepts": [
+            "rettsstat",
+            "offentlighet",
+            "gjennomføring"
+          ],
+          "concept_focus": [
+            "regel og praksis"
+          ],
+          "primary_knowledge_unit_id": "ku_politikk_det_viser_forskjellen_me_fa18f0244e",
+          "knowledge_unit_ids": [
+            "ku_politikk_det_viser_forskjellen_me_fa18f0244e"
+          ],
+          "concept_ids": [
+            "co_politikk_rettsstat_eb5f4d850b",
+            "co_politikk_offentlighet_53c695a61f",
+            "co_politikk_gjennomf_ring_8d859bf4ea",
+            "co_politikk_regel_og_praksis_715cd8e608"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "tinghuset_quiz_17",
+          "quiz_id": "politikk_tinghuset_set_3_q3",
+          "categoryId": "politikk",
+          "placeId": "tinghuset",
+          "targetId": "tinghuset",
+          "question_scope": "place",
+          "question": "Hva kan 13 742 enedommersaker og sju dagers gjennomsnitt fortelle?",
+          "options": [
+            "Noe om saksmengde og behandling",
+            "At alle avgjørelser var riktige",
+            "At alle siktede var skyldige"
+          ],
+          "answer": "Noe om saksmengde og behandling",
+          "answerIndex": 0,
+          "knowledge": "Tallene beskriver gjennomføring, men avgjør ikke kvaliteten i hver sak.",
+          "difficulty": 3,
+          "question_type": "context",
+          "year": null,
+          "emne_id": "em_pol_likeverd_rettssikkerhet",
+          "source": [
+            "oslo_enedommer_2025",
+            "grunnloven_95_98"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Saksmengde og behandlingstid beskriver gjennomføring, men beviser ikke alene at alle avgjørelser er materielt riktige eller rettferdige.",
+          "guidance_basis": [
+            "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+            "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+            "data/fag/politikk/methods_politikk_canonical_v4_5.json"
+          ],
+          "claim_id": "claim_tinghuset_quiz_17",
+          "core_concepts": [
+            "rettsstat",
+            "offentlighet",
+            "gjennomføring"
+          ],
+          "concept_focus": [
+            "regel og praksis"
+          ],
+          "primary_knowledge_unit_id": "ku_politikk_tallene_beskriver_gjenno_05bfac290e",
+          "knowledge_unit_ids": [
+            "ku_politikk_tallene_beskriver_gjenno_05bfac290e"
+          ],
+          "concept_ids": [
+            "co_politikk_rettsstat_eb5f4d850b",
+            "co_politikk_offentlighet_53c695a61f",
+            "co_politikk_gjennomf_ring_8d859bf4ea",
+            "co_politikk_regel_og_praksis_715cd8e608"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "tinghuset_quiz_18",
+          "quiz_id": "politikk_tinghuset_set_3_q4",
+          "categoryId": "politikk",
+          "placeId": "tinghuset",
+          "targetId": "tinghuset",
+          "question_scope": "place",
+          "question": "Hva innebærer domstoluavhengighet best?",
+          "options": [
+            "Vern mot usaklig påvirkning innenfor lov og prosess",
+            "At dommere står over loven",
+            "At avgjørelser aldri kan kritiseres"
+          ],
+          "answer": "Vern mot usaklig påvirkning innenfor lov og prosess",
+          "answerIndex": 0,
+          "knowledge": "Uavhengighet skal beskytte avgjørelsen mot usaklig påvirkning, samtidig som domstolen følger lov og prosesskrav.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "year": null,
+          "emne_id": "em_pol_maktbegrensning",
+          "source": [
+            "grunnloven_95_98",
+            "domstolloven_124"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Domstolenes uavhengighet innebærer vern mot usaklig påvirkning, ikke fravær av lovregler, prosesskrav eller begrunnelse.",
+          "guidance_basis": [
+            "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+            "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+            "data/fag/politikk/methods_politikk_canonical_v4_5.json"
+          ],
+          "claim_id": "claim_tinghuset_quiz_18",
+          "method_id": "met_pol_rettslig_analyse",
+          "core_concepts": [
+            "domstoluavhengighet",
+            "maktbegrensning",
+            "rettslig ansvar"
+          ],
+          "concept_focus": [
+            "domstoluavhengighet"
+          ],
+          "topic_hook_id": "rettsstat",
+          "thinker_id": "montesquieu",
+          "theory_ref": {
+            "topic_hook_id": "rettsstat",
+            "why_it_helps": "Maktfordeling presiserer hvorfor domstoluavhengighet begrenser usaklig påvirkning uten å plassere dommere over loven."
+          },
+          "primary_knowledge_unit_id": "ku_politikk_uavhengighet_skal_beskyt_aac9ecf30b",
+          "knowledge_unit_ids": [
+            "ku_politikk_uavhengighet_skal_beskyt_aac9ecf30b"
+          ],
+          "concept_ids": [
+            "co_politikk_domstoluavhengighet_9c0ebdced6",
+            "co_politikk_maktbegrensning_a33b1fee54",
+            "co_politikk_rettslig_ansvar_a3cb8439eb"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "tinghuset_quiz_19",
+          "quiz_id": "politikk_tinghuset_set_3_q5",
+          "categoryId": "politikk",
+          "placeId": "tinghuset",
+          "targetId": "tinghuset",
+          "question_scope": "place",
+          "question": "Hva kan vi konkludere når et prøveprosjekt starter med mål om lavere kostnader og høyere kvalitet?",
+          "options": [
+            "At tiltaket er iverksatt, men effekten må evalueres",
+            "At målene allerede er bevist nådd",
+            "At alle sivile saker blir gratis"
+          ],
+          "answer": "At tiltaket er iverksatt, men effekten må evalueres",
+          "answerIndex": 0,
+          "knowledge": "Tiltak og formål er dokumentert; oppnådd effekt krever senere evaluering.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "year": null,
+          "emne_id": "em_pol_domstoler_rettspraksis",
+          "source": [
+            "oslo_active_case_2025"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Et prøveprosjekt med uttalte mål er dokumentasjon på tiltak og gjennomføring, men ikke på oppnådd effekt før evaluering.",
+          "guidance_basis": [
+            "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+            "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+            "data/fag/politikk/methods_politikk_canonical_v4_5.json"
+          ],
+          "claim_id": "claim_tinghuset_quiz_19",
+          "method_id": "met_pol_institusjonsanalyse",
+          "core_concepts": [
+            "implementering",
+            "evaluering",
+            "effekt"
+          ],
+          "concept_focus": [
+            "implementering"
+          ],
+          "primary_knowledge_unit_id": "ku_politikk_tiltak_og_formal_er_doku_bec5aadf36",
+          "knowledge_unit_ids": [
+            "ku_politikk_tiltak_og_formal_er_doku_bec5aadf36"
+          ],
+          "concept_ids": [
+            "co_politikk_implementering_5ab0397c63",
+            "co_politikk_evaluering_36d12fe0b1",
+            "co_politikk_effekt_1024db14c3"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "tinghuset_quiz_20",
+          "quiz_id": "politikk_tinghuset_set_3_q6",
+          "categoryId": "politikk",
+          "placeId": "tinghuset",
+          "targetId": "tinghuset",
+          "question_scope": "place",
+          "question": "Hva betyr det når én dommer godkjenner et etterforskingsskritt?",
+          "options": [
+            "At inngrepet får rettslig kontroll",
+            "At den mistenkte er domfelt",
+            "At politiet har overtatt domstolen"
+          ],
+          "answer": "At inngrepet får rettslig kontroll",
+          "answerIndex": 0,
+          "knowledge": "Avgjørelsen gjelder inngrepet eller prosesspørsmålet, ikke endelig skyld.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "year": null,
+          "emne_id": "em_pol_maktbegrensning",
+          "source": [
+            "oslo_enedommer_2025",
+            "grunnloven_95_98"
+          ],
+          "source_origin": "external",
+          "claim_basis": "En enedommers avgjørelse om et etterforskingsskritt er rettslig kontroll av et inngrep, ikke en domfellelse for straffesaken.",
+          "guidance_basis": [
+            "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+            "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+            "data/fag/politikk/methods_politikk_canonical_v4_5.json"
+          ],
+          "claim_id": "claim_tinghuset_quiz_20",
+          "method_id": "met_pol_rettighetsanalyse",
+          "core_concepts": [
+            "rettslig kontroll",
+            "inngrep",
+            "domfellelse"
+          ],
+          "concept_focus": [
+            "rettslig kontroll"
+          ],
+          "primary_knowledge_unit_id": "ku_politikk_avgj_relsen_gjelder_inng_0ee2b71278",
+          "knowledge_unit_ids": [
+            "ku_politikk_avgj_relsen_gjelder_inng_0ee2b71278"
+          ],
+          "concept_ids": [
+            "co_politikk_rettslig_kontroll_3daa67493f",
+            "co_politikk_inngrep_5d8c3b5f04",
+            "co_politikk_domfellelse_336d283be5"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "tinghuset_quiz_21",
+          "quiz_id": "politikk_tinghuset_set_3_q7",
+          "categoryId": "politikk",
+          "placeId": "tinghuset",
+          "targetId": "tinghuset",
+          "question_scope": "place",
+          "question": "Hvilken kjede er best for å undersøke rettsstaten ved Oslo tinghus?",
+          "options": [
+            "Regel → kompetanse → ressurser → gjennomføring → dokumentert utfall",
+            "Byggehøyde → fasadefarge → turisttrafikk",
+            "Påstand → antakelse → konklusjon"
+          ],
+          "answer": "Regel → kompetanse → ressurser → gjennomføring → dokumentert utfall",
+          "answerIndex": 0,
+          "knowledge": "Politikk-gaten krever at regel, myndighet, ressurser, gjennomføring og utfall holdes etterprøvbare og atskilte.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "year": null,
+          "emne_id": "em_pol_rettsstat_rettssikkerhet",
+          "source": [
+            "grunnloven_95_98",
+            "oslo_security_2025",
+            "oslo_forord_2025"
+          ],
+          "source_origin": "external",
+          "claim_basis": "En full politisk evidenskjede må skille rettsregel, institusjonell kompetanse, ressurser, faktisk gjennomføring og dokumentert utfall.",
+          "guidance_basis": [
+            "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+            "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+            "data/fag/politikk/methods_politikk_canonical_v4_5.json"
+          ],
+          "claim_id": "claim_tinghuset_quiz_21",
+          "method_id": "met_pol_maktbalanseanalyse",
+          "core_concepts": [
+            "evidenskjede",
+            "kompetanse",
+            "gjennomføring",
+            "utfall"
+          ],
+          "concept_focus": [
+            "evidenskjede"
+          ],
+          "primary_knowledge_unit_id": "ku_politikk_politikk_gaten_krever_at_3b9a2ba2f5",
+          "knowledge_unit_ids": [
+            "ku_politikk_politikk_gaten_krever_at_3b9a2ba2f5"
+          ],
+          "concept_ids": [
+            "co_politikk_evidenskjede_41d66937cc",
+            "co_politikk_kompetanse_d2181017fd",
+            "co_politikk_gjennomf_ring_8d859bf4ea",
+            "co_politikk_utfall_4fa1bdc483"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        }
+      ]
+    }
+  ]
+}

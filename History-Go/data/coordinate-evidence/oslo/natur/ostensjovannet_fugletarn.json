@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "1.0",
+  "placeId": "ostensjovannet_fugletarn",
+  "placeFile": "data/places/natur/oslo/places_oslo_natur_ostensjovannet/ostensjovannet_fugletarn.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.8863482,
+    "lon": 10.8264232,
+    "r": 90,
+    "coordStatus": "verified_geometry",
+    "coordSource": "OpenStreetMap way 533351097 – fugleskjul ved Østensjøvannet",
+    "coordType": "bird_hide_building_center",
+    "coordNote": "Batch 150 retter den tidligere «Østensjøvannet fugletårn»-identiteten til det faktiske fugleskjulet på vestsiden av vannet, mens placeId beholdes for kompatibilitet. En objekt-type-first Overpass-audit fant nøyaktig ett leisure=bird_hide rundt Østensjøvannet: OSM way 533351097, tagget building=hut og leisure=bird_hide. En uavhengig oppdatert fugleguide beskriver tilsvarende ett bird hide på vestsiden med utsyn over de sentrale delene av vannet. Canonical lat/lon er deterministisk polygoncentroid for selve bygningsgeometrien og klassifiseres som building/building_center i coordinate-source-contract v1. Legacy-punktet på østsiden og nearest/first-hit brukes ikke."
+  },
+  "identity": {
+    "currentName": "Fugleskjulet ved Østensjøvannet",
+    "resolvedIdentity": "Det konkrete fugleskjulet på vestsiden av Østensjøvannet",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "building",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [],
+  "evidence": [
+    {
+      "sourceProvider": "osm",
+      "sourceName": "OpenStreetMap – fugleskjul ved Østensjøvannet",
+      "sourceUrl": "https://www.openstreetmap.org/way/533351097",
+      "sourceObjectId": "osm-way:533351097",
+      "sourceQuality": "unique_object_type_exact_bird_hide_building_geometry",
+      "finding": "Way 533351097 er den eneste leisure=bird_hide-geometrien i objekt-type-auditen rundt Østensjøvannet, tagget building=hut. Bygningssenteret er 59.8863482, 10.8264232.",
+      "canVerifyCoordinate": true,
+      "reason": "Entydig fysisk fugleskjul-geometri med riktig objekttype i dokumentert lokal scope."
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Birdingplaces – Østensjøvannet",
+      "sourceUrl": "https://www.birdingplaces.eu/en/birdingplaces/norway/ostensjovannet",
+      "sourceObjectId": "birdingplaces:ostensjovannet:west-side-bird-hide",
+      "sourceQuality": "current_independent_birding_context",
+      "finding": "En oppdatert fugleguide beskriver ett bird hide på vestsiden av Østensjøvannet med utsyn over de sentrale delene av vannet.",
+      "canVerifyCoordinate": false,
+      "reason": "Kryssjekker funksjon og vestside-scope; eksakt bygningsgeometri kommer fra OSM."
+    }
+  ],
+  "addressCandidates": [],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:533351097",
+      "canApplyToPlace": true
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "birdingplaces:ostensjovannet:west-side-bird-hide",
+      "canApplyToPlace": false
+    }
+  ],
+  "geometryCandidates": [
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:533351097",
+      "lat": 59.8863482,
+      "lon": 10.8264232,
+      "coordRole": "building_center",
+      "geometryType": "Polygon",
+      "canApplyToPlace": true
+    }
+  ],
+  "coordinateCandidates": [
+    {
+      "lat": 59.8863482,
+      "lon": 10.8264232,
+      "coordRole": "building_center",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Fugleskjulets eksakte bygningsgeometri er anvendt på canonical place; den feilaktige fugletårn-betegnelsen er korrigert."
+  },
+  "notes": [
+    "Batch 150 retter den tidligere «Østensjøvannet fugletårn»-identiteten til det faktiske fugleskjulet på vestsiden av vannet, mens placeId beholdes for kompatibilitet. En objekt-type-first Overpass-audit fant nøyaktig ett leisure=bird_hide rundt Østensjøvannet: OSM way 533351097, tagget building=hut og leisure=bird_hide. En uavhengig oppdatert fugleguide beskriver tilsvarende ett bird hide på vestsiden med utsyn over de sentrale delene av vannet. Canonical lat/lon er deterministisk polygoncentroid for selve bygningsgeometrien og klassifiseres som building/building_center i coordinate-source-contract v1. Legacy-punktet på østsiden og nearest/first-hit brukes ikke."
+  ]
+}

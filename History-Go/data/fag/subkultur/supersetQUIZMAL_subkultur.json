@@ -1,0 +1,88 @@
+{
+  "version": "3.0-universal-canonical",
+  "status": "canonical_category_profile",
+  "type": "category_quiz_profile",
+  "categoryId": "subkultur",
+  "title": "Subkultur",
+  "governance": {
+    "production_standard": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "question_schema": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+    "template_registry": "data/quiz/regler/QUIZ_TEMPLATE_REGISTRY_V2.json",
+    "authority": "category_content_only",
+    "may_override_global_rules": false
+  },
+  "required_emne_prefix": "em_sub_",
+  "category_definition": "Subkultur omfatter dokumenterte sosiale miljøer og praksiser på siden av eller i friksjon med storsamfunnet. Aktivitet, ungdom, estetikk, sjanger, arena, marginalitet eller kommersiell alternativ profil kvalifiserer ikke alene.",
+  "content_priorities": [
+    "Subkulturteori og feltgrenser",
+    "Fellesskap, scener og egenorganisering",
+    "Stil, symboler, koder og kropp",
+    "Steder, territorier og okkupasjon",
+    "Motstand, avvik og kontroll",
+    "Medier, objekter og praksiser",
+    "Sosiale randsoner, omsorg og skadereduksjon",
+    "Kommersialisering, institusjonalisering og minne"
+  ],
+  "essential_concepts": [
+    "miljø",
+    "sosial praksis",
+    "feltgrense",
+    "egenorganisering",
+    "kode",
+    "territorium",
+    "kontroll",
+    "DIY",
+    "skadereduksjon",
+    "institusjonalisering"
+  ],
+  "preferred_source_types": [
+    "scene- og organisasjonsarkiv",
+    "intervjuer, fanziner og primærmateriale",
+    "lokalhistorie, mediearkiv og dokumentasjon av gate- og rusmiljøer",
+    "kommunale, ideelle og institusjonelle kilder om lavterskeltilbud og marginaliserte møteplasser",
+    "subkultur-, ungdoms-, by-, avviks- og marginaliseringsforskning"
+  ],
+  "category_rules": [
+    "Start med dokumentert stoff fra kategorien, ikke med emneetiketten.",
+    "Subkultur er bredere enn organiserte scener: dokumenterte sosiale randsoner, rusmiljøer, gatefellesskap og lavterskelsteder kan være kjernestoff når stedet har en tydelig egen sosial historie.",
+    "Skating og graffitikultur regnes som subkulturelle praksiser også når arenaen er lovlig, kommunal eller organisert.",
+    "Parker, gater, underganger og andre ordinære byrom kan være subkultursteder når et faktisk miljø over tid har gjort stedet til sitt samlingspunkt, territorium eller uttrykksrom.",
+    "Ikke avvis et sted bare fordi det også er park, idrettsanlegg, sosialt tilbud eller offentlig byrom; vurder hvilken bruk, historie og identitet som faktisk gjør stedet betydningsfullt.",
+    "Ikke godta et sted bare fordi det er urbant, trendy eller ungt. Det må finnes dokumentert miljø, praksis, sosial funksjon eller historisk tilknytning.",
+    "Bevar relevante faguttrykk i spørsmål, knowledge eller metadata.",
+    "Bruk bare emne_id som finnes i kategoriens emnefil.",
+    "Kategori-profilen styrer faglig utvalg, men ikke global quizbalanse eller språk."
+  ],
+  "editorial_test": "Dokumenterer kildene et faktisk miljø, en sosial praksis og en påviselig relasjon til regler, institusjoner, markeder eller dominerende normer, med både miljønær stemme og uavhengig kontroll?",
+  "positive_examples": [
+    "Hausmania og andre okkuperte eller selvorganiserte kulturrom",
+    "Sofienbergparken som dokumentert møteplass for alternative miljøer, musikere, skatere, punk-, rave- og gatekultur",
+    "Plata, Brugata og andre dokumenterte møteplasser for åpne rusmiljøer og gatefellesskap",
+    "Nygårdsparken i Bergen som historisk sted for både parkbruk og marginaliserte rusmiljøer",
+    "skateparker, spots og anlegg med reelt skatemiljø",
+    "graffitivegger, underganger og territorier med dokumentert writermiljø"
+  ],
+  "example_question": {
+    "question": "Hva kalles kunnskap, stil og anerkjennelse som gir status innad i en subkultur?",
+    "options": [
+      "Subkulturell kapital",
+      "Formell myndighet",
+      "Masseproduksjon"
+    ],
+    "answer": "Subkulturell kapital",
+    "question_type": "concept",
+    "knowledge": "Subkulturell kapital beskriver status som oppstår gjennom riktig kunnskap, smak, stil og deltakelse i miljøet.",
+    "emne_id": "em_sub_<velg_gyldig_emne>",
+    "source": [
+      "<konkret_kilde>"
+    ],
+    "note": "Eksempelet viser konkret bruk av et fagbegrep. Det er ikke en ferdig produksjonsquiz."
+  },
+  "canonical_layer": {
+    "domains": 8,
+    "emner": 80,
+    "methods": 43,
+    "hooks": 80,
+    "theory_status": "pending_evidence"
+  }
+}

@@ -1,0 +1,274 @@
+{
+  "schema": "civication_role_model_v1",
+  "version": 1,
+  "source": {
+    "badge_file": "data/badges.json",
+    "badge_id": "by",
+    "badge_name": "By & arkitektur",
+    "tier_label": "Arealplanlegger",
+    "tier_threshold": 90
+  },
+  "category": "by",
+  "role_scope": "arealplanlegger",
+  "role_id": "by_arealplanlegger",
+  "title": "Arealplanlegger",
+  "core_narrative": [
+    "Arealplanleggeren står mellom kartet, lovverket, bydelen, utbyggeren, naboene og politikerne.",
+    "Et område skal utvikles, men ingen er enige om hva byen egentlig trenger.",
+    "En linje på plankartet kan bety flere boliger, mindre sol, tryggere skolevei, høyere tomteverdi, mer trafikk, tapt grøntdrag eller juridisk risiko."
+  ],
+  "work_life": {
+    "daily_work": [
+      "Leser plankart, bestemmelser, ROS-tema, støy-/solstudier og innspill for å finne den faktiske arealkonflikten.",
+      "Skriver fagnotater, reviderer planbestemmelser, forbereder medvirkningsmøter og svarer utbyggere, naboer, politikere og interne fagmiljø.",
+      "Oversetter kart, tall og lokal erfaring til beslutningsgrunnlag før administrativ og politisk behandling."
+    ],
+    "responsibilities": [
+      "Vurdere arealformål, hensynssoner, fortetting, grønnstruktur, skolevei, støy, sol/skygge, overvann, kollektivdekning og parkeringsnorm.",
+      "Sikre juridisk presisjon i plankart, bestemmelser, rekkefølgekrav og saksframlegg.",
+      "Holde profesjonell integritet i dialog med utbygger, beboere, politikere og faginstanser."
+    ],
+    "work_environment": [
+      "Planavdelingen på rådhuset, GIS-flater, befaringer i transformasjonsområder, beboermøter og politiske utvalgsmøter.",
+      "Arbeidet er tverrfaglig og konfliktfylt: vei, vann, skole, miljø, juss og politikk leser samme plan med ulike risikobilder."
+    ],
+    "status_position": [
+      "Rollen får status når den gjør konflikten lesbar uten å late som kartet er nøytralt."
+    ]
+  },
+  "career_path": {
+    "entry_from": [
+      "Rådgiver byutvikling, saksbehandler plan/bygg eller prosjektmedarbeider i planavdeling."
+    ],
+    "progression_to": [
+      "Byplanlegger, seniorrådgiver byutvikling, prosjektleder byutvikling eller fagsjef plan/bygg."
+    ],
+    "possible_promotions": [
+      "Ansvar for større områdereguleringer, kommuneplanens arealdel eller tverrfaglig planprogram."
+    ],
+    "possible_exits": [
+      "Plankonsulent, arkitektkontor, statlig faginstans, politisk sekretariat eller eiendomsutvikling."
+    ],
+    "career_risks": [
+      "Å bli brukt som tempoverktøy for politisk bestilling eller som faglig skjold for uklare avveiinger."
+    ]
+  },
+  "required_knowledge": {
+    "education_basis": [
+      "Plan- og bygningsrett, arealplanlegging, by- og stedsanalyse, GIS/kart og offentlig saksbehandling."
+    ],
+    "skills": [
+      "Kartlesing, fagnotat, bestemmelser, høringsoppsummering, møteledelse, juridisk presisjon og tverrfaglig avveiing."
+    ],
+    "category_knowledge": [
+      "Reguleringsplan, arealformål, hensynssoner, rekkefølgekrav, grønnstruktur, mobilitet, overvann, støy, sol/skygge, parkeringsnorm og medvirkning."
+    ],
+    "history_go_badges": [
+      "by"
+    ],
+    "place_connections": [
+      "radhuset_planavdeling",
+      "oslo_planomrade_indre_by",
+      "grontdrag_lillebekk",
+      "skolevei_lillebekk",
+      "kollektivknutepunkt_bryn",
+      "politisk_utvalg_moterom",
+      "gis_plankart_arbeidsflate"
+    ],
+    "people_connections": [
+      "elin_plansjef",
+      "ivar_utbygger",
+      "hanne_beboer",
+      "signe_byokolog",
+      "tariq_trafikk_skolevei",
+      "maja_utvalgssekretaer",
+      "nora_planjuss",
+      "petter_plankonsulent",
+      "oddvar_vei_vann"
+    ]
+  },
+  "challenges": [
+    {
+      "id": "kart_vs_levd_nabolag",
+      "title": "Kartet ser ryddig ut, nabolaget gjør ikke det",
+      "description": "Plankartet kan løse formelle krav samtidig som skolevei, sol eller grønnstruktur svekkes i praksis.",
+      "pressure": "kartlogikk_vs_levd_erfaring",
+      "affects": [
+        "trust",
+        "risk",
+        "quality"
+      ]
+    },
+    {
+      "id": "utbyggerpress_og_framdrift",
+      "title": "Rask avklaring før saken er faglig moden",
+      "description": "Utbygger og politikk ønsker tempo, mens administrasjonen trenger dokumentasjon som tåler klage og behandling.",
+      "pressure": "politisk_tempo_vs_juridisk_presisjon",
+      "affects": [
+        "autonomy",
+        "status",
+        "legal_risk"
+      ]
+    }
+  ],
+  "dilemmas": [
+    {
+      "id": "grontstruktur_vs_boligbehov",
+      "title": "Grøntdrag eller flere boliger",
+      "setup": "Fortetting gir boliger og kollektivgrunnlag, men grøntdraget er også overvannsløsning, snarvei og lokalt pusterom.",
+      "choice_axis": "boligmaal_vs_langsiktig_bykvalitet",
+      "consequence_axis": "gjennomforing_vs_tap_av_fellesgode",
+      "mail_hooks": [
+        "job",
+        "conflict",
+        "story"
+      ]
+    },
+    {
+      "id": "medvirkning_vs_framdrift",
+      "title": "Innspill som forsinker, men forbedrer",
+      "setup": "Beboerne skriver langt og sint, men peker på en skolevei som ikke finnes i plankartet.",
+      "choice_axis": "prosessro_vs_lokal_kunnskap",
+      "consequence_axis": "tempo_vs_legitimitet",
+      "mail_hooks": [
+        "people",
+        "event"
+      ]
+    }
+  ],
+  "related_people": [
+    {
+      "id": "elin_plansjef",
+      "name": "Elin Vårvik",
+      "role": "Plansjef / enhetsleder"
+    },
+    {
+      "id": "ivar_utbygger",
+      "name": "Ivar Kranstad",
+      "role": "Utbyggerrepresentant"
+    },
+    {
+      "id": "hanne_beboer",
+      "name": "Hanne Mo",
+      "role": "Nabo- og beboerrepresentant"
+    },
+    {
+      "id": "signe_byokolog",
+      "name": "Signe Areal",
+      "role": "Byøkologisk rådgiver"
+    },
+    {
+      "id": "tariq_trafikk_skolevei",
+      "name": "Tariq Nilsen",
+      "role": "Skole- og trafikksikkerhetskontakt"
+    },
+    {
+      "id": "maja_utvalgssekretaer",
+      "name": "Maja Røed",
+      "role": "Utvalgssekretær / politisk rådgiver"
+    },
+    {
+      "id": "nora_planjuss",
+      "name": "Nora Lovik",
+      "role": "Juridisk plansaksrådgiver"
+    },
+    {
+      "id": "petter_plankonsulent",
+      "name": "Petter Linje",
+      "role": "Arkitekt / plankonsulent"
+    },
+    {
+      "id": "oddvar_vei_vann",
+      "name": "Oddvar Bekkelund",
+      "role": "Internkontakt vei, drift og vann"
+    }
+  ],
+  "related_places": [
+    {
+      "id": "radhuset_planavdeling",
+      "name": "Rådhuset planavdeling",
+      "type": "workplace"
+    },
+    {
+      "id": "oslo_planomrade_indre_by",
+      "name": "Transformasjonsområdet Lillebekk kvartal",
+      "type": "nabolag_under_utvikling"
+    },
+    {
+      "id": "grontdrag_lillebekk",
+      "name": "Lillebekk grøntdrag",
+      "type": "grøntdrag"
+    },
+    {
+      "id": "skolevei_lillebekk",
+      "name": "Skoleveien langs undergangen",
+      "type": "skolevei"
+    },
+    {
+      "id": "kollektivknutepunkt_bryn",
+      "name": "Bryn kollektivknutepunkt",
+      "type": "kollektiv"
+    },
+    {
+      "id": "politisk_utvalg_moterom",
+      "name": "Møterom for byutviklingsutvalget",
+      "type": "politisk_utvalg"
+    },
+    {
+      "id": "gis_plankart_arbeidsflate",
+      "name": "GIS-arbeidsflaten for plankartet",
+      "type": "kart"
+    }
+  ],
+  "mail_integration": {
+    "role_scope": "by_radgiver_plan",
+    "mail_profile": "by_arealplanlegger",
+    "can_feed_mail_types": [
+      "job",
+      "people",
+      "conflict",
+      "story",
+      "event",
+      "micro",
+      "followup",
+      "knowledge",
+      "consequence"
+    ],
+    "mail_variables": {
+      "role_title": "Arealplanlegger",
+      "category": "by",
+      "main_pressure": "politisk_tempo_vs_faglig_presisjon",
+      "ethical_axis": "offentlig_integritet_vs_utbyggerdialog",
+      "status_axis": "tillit_vs_juridisk_risiko"
+    },
+    "recommended_mail_families": [
+      "plankart_og_bestemmelser",
+      "aktorer_og_press",
+      "grontdrag_skolevei_stoy",
+      "linjen_pa_kartet",
+      "frist_for_utvalg",
+      "planfag_kunnskap",
+      "driftsavklaringer_lillebekk",
+      "oppfolging_lillebekk"
+    ],
+    "role_model_refs_supported": true
+  },
+  "competence_axes": [
+    "plankartforståelse",
+    "juridisk_presisjon",
+    "arealavveiing",
+    "medvirkning",
+    "tverrfaglig_koordinering",
+    "politisk_lesbarhet"
+  ],
+  "ideal_type_problems": [
+    "Planleggeren som bare tegner pene kompromisser.",
+    "Planleggeren som skjuler politikk i fagord.",
+    "Planleggeren som lar utbyggerens tempo definere offentlig saksbehandling."
+  ],
+  "notes": [
+    "Bygget som full rollepakke for DailyMailBuilder: plan, familier, aktører, steder, oppgaver og dagsrytme.",
+    "Mail Pack v2 utvider rollen med micro-, followup-, knowledge- og consequence-mails innen runtime-scope by_radgiver_plan."
+  ],
+  "role_key": "by_radgiver_plan"
+}

@@ -1,0 +1,172 @@
+// src/engine/createManagerInsight.ts
+import { evaluateTeamSetup } from "./evaluateTeamSetup.js";
+import { createTeamSetupReport } from "./createTeamSetupReport.js";
+import { recommendRoleChanges } from "./recommendRoleChanges.js";
+import { analyzeWeakPoints } from "./analyzeWeakPoints.js";
+import { createTrainingFocus } from "./createTrainingFocus.js";
+import { createFootballKnowledgeRecommendations } from "./createFootballKnowledgeRecommendations.js";
+const MAX_TOP_ACTIONS = 8;
+function priorityValue(priority) {
+    if (priority === "critical")
+        return 4;
+    if (priority === "high")
+        return 3;
+    if (priority === "medium")
+        return 2;
+    return 1;
+}
+function weakPointPriority(severity) {
+    if (severity === "high")
+        return "high";
+    if (severity === "medium")
+        return "medium";
+    return "low";
+}
+function trainingFocusPriority(item) {
+    if (item.priority === 1)
+        return "high";
+    if (item.priority === 2)
+        return "medium";
+    return "low";
+}
+function dedupeActions(actions) {
+    const seen = new Set();
+    const result = [];
+    for (const action of actions) {
+        const key = `${action.source}:${action.code}:${action.label}`;
+        if (seen.has(key)) {
+            continue;
+        }
+        seen.add(key);
+        result.push(action);
+    }
+    return result;
+}
+function sortActions(actions) {
+    return [...actions].sort((a, b) => priorityValue(b.priority) - priorityValue(a.priority));
+}
+function buildWeakPointActions(analysis) {
+    return analysis.weakPoints.map((weakPoint) => ({
+        code: `weak_point_${weakPoint.code}`,
+        priority: weakPoint.category === "completion"
+            ? "critical"
+            : weakPointPriority(weakPoint.severity),
+        source: "weak_point",
+        label: weakPoint.suggestedAction,
+        rationale: weakPoint.rationale,
+        relatedPlayerIds: weakPoint.relatedPlayerIds,
+    }));
+}
+function buildRoleChangeActions(recommendations) {
+    const strongActions = recommendations.strongChanges.map((recommendation) => ({
+        code: `strong_role_change_${recommendation.playerId}_${recommendation.position}`,
+        priority: "high",
+        source: "role_change",
+        label: recommendation.label,
+        rationale: "Rolleendringsmotoren fant et alternativ i samme posisjon med tydelig bedre fit.",
+        relatedPlayerIds: [recommendation.playerId],
+    }));
+    const consideredActions = recommendations.consideredChanges.map((recommendation) => ({
+        code: `consider_role_change_${recommendation.playerId}_${recommendation.position}`,
+        priority: "medium",
+        source: "role_change",
+        label: recommendation.label,
+        rationale: "Rolleendringsmotoren fant et alternativ i samme posisjon med moderat bedre fit.",
+        relatedPlayerIds: [recommendation.playerId],
+    }));
+    return [
+        ...strongActions,
+        ...consideredActions,
+    ];
+}
+function coachAdvicePriority(priority) {
+    if (priority === 1)
+        return "high";
+    if (priority === 2)
+        return "medium";
+    return "low";
+}
+function buildCoachAdviceActions(report) {
+    return report.coachAdvice.map((advice) => ({
+        code: `coach_advice_${advice.code}`,
+        priority: coachAdvicePriority(advice.priority),
+        source: "coach_advice",
+        label: advice.label,
+        rationale: advice.rationale,
+        relatedPlayerIds: [],
+    }));
+}
+function buildTrainingFocusActions(plan) {
+    return plan.weeklyPlan.map((item) => ({
+        code: `training_focus_${item.code}`,
+        priority: trainingFocusPriority(item),
+        source: "training_focus",
+        label: item.label,
+        rationale: `${item.rationale} ${item.suggestedSession}`,
+        relatedPlayerIds: item.relatedPlayerIds,
+    }));
+}
+function buildTopActions(report, weakPointAnalysis, roleChangeRecommendations, trainingFocusPlan) {
+    const actions = [
+        ...buildWeakPointActions(weakPointAnalysis),
+        ...buildRoleChangeActions(roleChangeRecommendations),
+        ...buildCoachAdviceActions(report),
+        ...buildTrainingFocusActions(trainingFocusPlan),
+    ];
+    return sortActions(dedupeActions(actions)).slice(0, MAX_TOP_ACTIONS);
+}
+function buildSummary(setup, report, weakPointAnalysis, roleChangeRecommendations, trainingFocusPlan) {
+    if (!setup.isComplete) {
+        return "Managerinnsikten er foreløpig: startelleveren må fullføres før treneren kan stole på helhetsvurderingen.";
+    }
+    const mainWeakPoint = weakPointAnalysis.mainWeakPoint;
+    const primaryTrainingFocus = trainingFocusPlan.primaryFocus;
+    const strongRoleChanges = roleChangeRecommendations.strongChanges.length;
+    if (mainWeakPoint && primaryTrainingFocus) {
+        return `Managerinnsikten peker først på dette: ${mainWeakPoint.label} Første treningsfokus bør være ${primaryTrainingFocus.area}.`;
+    }
+    if (mainWeakPoint) {
+        return `Managerinnsikten peker først på dette: ${mainWeakPoint.label} ${mainWeakPoint.suggestedAction}`;
+    }
+    if (strongRoleChanges > 0) {
+        return `Managerinnsikten fant ${strongRoleChanges} tydelige rolleendring(er) som bør vurderes før taktikken endres.`;
+    }
+    if (primaryTrainingFocus) {
+        return `Managerinnsikten finner ingen kritiske svakheter, men første treningsfokus bør være ${primaryTrainingFocus.area}.`;
+    }
+    if (report.level === "elite") {
+        return "Managerinnsikten viser et svært sterkt oppsett. Behold grunnstrukturen og gjør bare små justeringer.";
+    }
+    if (report.level === "good") {
+        return "Managerinnsikten viser et godt oppsett. Laget fungerer, men treneren kan hente mer ut gjennom finjusteringer.";
+    }
+    if (report.level === "unstable") {
+        return "Managerinnsikten viser et ustabilt oppsett. Kvaliteten finnes, men rollebruk og balanse bør strammes opp.";
+    }
+    return "Managerinnsikten viser et svakt oppsett. Problemet ligger i trenerens struktur, ikke nødvendigvis i spillerkvaliteten.";
+}
+export function createManagerInsight(input) {
+    const setup = evaluateTeamSetup(input);
+    const report = createTeamSetupReport(setup);
+    const weakPointAnalysis = analyzeWeakPoints(setup);
+    const roleChangeRecommendations = recommendRoleChanges(input.team, input.tactic, input.roles);
+    const trainingFocusPlan = createTrainingFocus(setup);
+    const knowledgeRecommendations = createFootballKnowledgeRecommendations({
+        weakPointAnalysis,
+        trainingFocusPlan,
+        principles: input.knowledgePrinciples ?? [],
+    });
+    const topActions = buildTopActions(report, weakPointAnalysis, roleChangeRecommendations, trainingFocusPlan);
+    return {
+        teamId: input.team.id,
+        tacticId: input.tactic.id,
+        setup,
+        report,
+        weakPointAnalysis,
+        roleChangeRecommendations,
+        trainingFocusPlan,
+        knowledgeRecommendations,
+        topActions,
+        summary: buildSummary(setup, report, weakPointAnalysis, roleChangeRecommendations, trainingFocusPlan),
+    };
+}

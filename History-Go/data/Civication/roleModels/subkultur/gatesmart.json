@@ -1,0 +1,15 @@
+{
+  "schema":"civication_role_model_v1","version":1,
+  "source":{"badge_file":"data/badges/subkultur.json","badge_id":"subkultur","badge_name":"Subkultur","tier_label":"Kulturmedarbeider","tier_threshold":25,"evidence_file":"data/Civication/subcultureCareerEvidence.json"},
+  "category":"subkultur","role_scope":"subkultur_arrangementsdrift","role_id":"subkultur_kulturmedarbeider","title":"Kulturmedarbeider",
+  "professional_description":["Bred praktisk kulturrolle med arrangement, artist-/frivilligkontakt, enkel kommunikasjon og daglig drift."],
+  "core_narrative":["Du oversetter mellom miljøets energi og den hverdagslige driften som gjør at aktiviteten kan gjentas neste uke."],
+  "work_life":{"daily_work":["planlegge mindre aktiviteter","rigg og vertskap","koordinere frivillige","oppdatere informasjon","følge opp lokale samarbeid"],"responsibilities":["forutsigbar drift","inkluderende kommunikasjon","realistiske løfter","sikker eskalering"],"work_environment":["lokal kulturarena","ungdoms- og aktivitetshus","festival"],"status_position":["Bred operativ rolle med kontaktflate på tvers av miljø og organisasjon."]},
+  "required_knowledge":{"education_basis":["Arbeidsgiverkrav varierer og kan bygge på relevant erfaring eller utdanning."],"skills":["arrangementsdrift","frivilligkoordinering","kommunikasjon","praktisk problemløsning"],"category_knowledge":["subkulturelle møteplasser","selvorganisering","frivillighet"],"history_go_badges":["subkultur"],"place_connections":[],"people_connections":[]},
+  "scope_boundaries":{"may_do":["koordinere mindre aktiviteter","kommunisere program","følge opp frivillige"],"must_not_simulate_as_authority":["love finansiering eller booking uten mandat","bruke sceneidentitet som utvelgelseskriterium uten åpen begrunnelse"]},
+  "challenges":[{"id":"apenhet_vs_miljokjerne","title":"Hvem er huset for?","description":"Kjernen vil ha et tydelig miljø; nye deltakere trenger reell inngang.","pressure":"identitet_vs_tilgang","affects":["trust","status"]}],
+  "dilemmas":[{"id":"frivilligvakten","title":"Frivilligvakten","setup":"De samme få menneskene bærer alltid de tunge vaktene fordi de er mest lojale.","choice_axis":"lojalitet_vs_baerekraft","consequence_axis":"kort_sikt_vs_miljotillit","mail_hooks":["job","people","conflict"]}],
+  "mail_integration":{"role_scope":"subkultur_arrangementsdrift","mail_profile":"subkultur_arrangementsdrift","can_feed_mail_types":["job","story","conflict","event","people","followup"],"mail_variables":{"role_title":"Kulturmedarbeider","category":"subkultur","main_pressure":"identitet_vs_tilgang","ethical_axis":"lojalitet_vs_baerekraft","status_axis":"miljotillit_vs_drift"},"recommended_mail_families":["subkultur_arrangementsdrift"],"role_model_refs_supported":true},
+  "competence_axes":[{"id":"drift","label":"Drift"},{"id":"frivillighet","label":"Frivillighet"},{"id":"inkludering","label":"Inkludering"}],"ideal_type_problems":[{"id":"identitet_vs_tilgang","label":"Identitet vs tilgang"}],
+  "notes":["Legacy filename retained for manifest stability; canonical title is Kulturmedarbeider."]
+}

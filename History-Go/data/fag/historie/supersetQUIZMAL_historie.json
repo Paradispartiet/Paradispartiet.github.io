@@ -1,0 +1,171 @@
+{
+  "version": "3.0",
+  "status": "canonical_category_profile",
+  "type": "category_quiz_profile",
+  "categoryId": "historie",
+  "title": "Historie",
+  "governance": {
+    "production_standard": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "question_schema": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+    "package_schema": "data/quiz/regler/QUIZ_PACKAGE_SCHEMA_V1.json",
+    "template_registry": "data/quiz/regler/QUIZ_TEMPLATE_REGISTRY_V2.json",
+    "subject_manifest": "data/fag/fag_manifest.json",
+    "authority": "category_content_and_orchestration",
+    "may_override_global_rules": false
+  },
+  "input_roles": {
+    "pensum": "læringsmål, historiske domene og fagleg progresjon",
+    "emner": "historiske problem, omgrep, konfliktar og teorimoglegheiter",
+    "fagkart": "teorihooks, historikarar, verk og samanlikningsmoglegheiter",
+    "methods": "kjeldekritiske, kronologiske og stadlege analyseoperasjonar",
+    "supersetQuizMal": "adaptiv profil, relativ progresjon og kontrollrekkjefølgje",
+    "quizStandard": "felles produksjons- og innhaldsreglar",
+    "quizQuestionSchema": "teknisk feltkontrakt for spørsmål"
+  },
+  "required_emne_prefix": "em_his_",
+  "content_priorities": [
+    "kronologi og historiske perioder",
+    "personer, grupper og institusjoner",
+    "hendelser, konflikter og beslutninger",
+    "årsaker, konsekvenser og endring over tid",
+    "kilder, spor, minne og historiebruk"
+  ],
+  "essential_concepts": [
+    "kildekritikk",
+    "kontinuitet",
+    "brudd",
+    "årsak",
+    "konsekvens",
+    "aktør",
+    "struktur",
+    "historiebruk"
+  ],
+  "preferred_source_types": [
+    "primærkilder og arkiv",
+    "museer og kulturminneforvaltning",
+    "historiske oppslagsverk og forskning",
+    "lokalhistoriske kilder"
+  ],
+  "category_rules": [
+    "Start med dokumentert stoff fra kategorien, ikke med emneetiketten.",
+    "Les og vurder hele fagpakken før det faglige utvalget låses.",
+    "Registrer vurderte og valgte emner, hooks, metoder og teoretikere separat.",
+    "Bevar relevante faguttrykk i spørsmål, knowledge eller metadata.",
+    "Bruk bare emne_id som finnes i kategoriens emnefil.",
+    "Kategori-profilen kan ikke overstyre globale språk-, kilde- eller balanseregler."
+  ],
+  "adaptive_profiles": {
+    "narrow": {
+      "sets": 3,
+      "questions_per_set": 7,
+      "use_when": "avgrensa stad eller objekt med få uavhengige, sterke historiske påstandar"
+    },
+    "normal": {
+      "sets": 4,
+      "questions_per_set": 7,
+      "use_when": "stad med solid hovudhistorie og minst eitt tydeleg fagleg bruledd"
+    },
+    "rich": {
+      "sets_min": 5,
+      "sets_max": 8,
+      "questions_per_set": 7,
+      "use_when": "stad med fleire kjeldebelagde tidslag, aktørar, metodar eller teorimoglegheiter"
+    },
+    "major": {
+      "sets_min": 8,
+      "sets_max": 10,
+      "questions_per_set": 7,
+      "use_when": "sentral historisk stad med brei og uavhengig dokumentasjon som ber fleire progresjonsløp"
+    }
+  },
+  "profile_selection": {
+    "default": "normal",
+    "evidence_order": [
+      "tal på uavhengige kjeldebelagde påstandar",
+      "tal på relevante kjeldetypar",
+      "kronologisk og historisk breidde",
+      "tal på stadleg forankra emne",
+      "relevante relasjonar og forteljingar",
+      "metode- og teorimoglegheiter med konkret kjeldeanker"
+    ],
+    "never_pad_to_reach_profile": true,
+    "reduce_profile_when_evidence_is_thin": true
+  },
+  "relative_progression": {
+    "phase_sequences": {
+      "3": ["opening", "bridge", "final"],
+      "4": ["opening", "middle", "bridge", "final"],
+      "5": ["opening", "middle", "middle", "bridge", "final"],
+      "6": ["opening", "middle", "middle", "middle", "bridge", "final"],
+      "7": ["opening", "middle", "middle", "middle", "bridge", "bridge", "final"],
+      "8": ["opening", "middle", "middle", "middle", "middle", "bridge", "bridge", "final"],
+      "9": ["opening", "middle", "middle", "middle", "middle", "middle", "bridge", "bridge", "final"],
+      "10": ["opening", "middle", "middle", "middle", "middle", "middle", "middle", "bridge", "bridge", "final"]
+    },
+    "phase_requirements": {
+      "opening": {
+        "focus": ["stad", "hovudhistorie", "konkrete fakta"],
+        "minimum_fact_share": 0.5
+      },
+      "middle": {
+        "focus": ["personar", "hendingar", "institusjonar", "endring", "synlege spor"]
+      },
+      "bridge": {
+        "focus": ["årsak", "samanheng", "kjeldekritikk", "første fagomgrep"],
+        "requires_method_or_context": true
+      },
+      "final": {
+        "focus": ["emne", "metode", "teori", "historikarar", "verk", "samanlikning", "syntese"],
+        "requires_theory_binding": true
+      }
+    },
+    "short_quiz_rule": "Tre og fire sett skal òg nå metode-, emne- og teorilaget i siste del.",
+    "absolute_theory_set_numbers_forbidden": true
+  },
+  "question_families": {
+    "fact": {
+      "role": "dokumentert person, tid, kjelde, hending, funksjon, objekt, innskrift eller synleg spor",
+      "normal_share_min": 0.5,
+      "normal_share_max": 0.6
+    },
+    "context": {
+      "role": "årsak, utvikling, konsekvens, kronologi eller samanheng mellom konkrete opplysningar",
+      "normal_share_min": 0.2,
+      "normal_share_max": 0.3
+    },
+    "concept_theory": {
+      "role": "stadbunde emne, metode, teori, historikar, verk eller fagomgrep",
+      "normal_share_min": 0.15,
+      "normal_share_max": 0.25
+    }
+  },
+  "selection_rules": [
+    "Eksplisitte emne_ids på staden er sterke kandidatar, men må framleis passe dokumenterte påstandar.",
+    "Eit teorihook må dele emne med valt stoff og ha eit konkret stadleg eller historisk anker.",
+    "Ein metode blir berre vald når spelaren faktisk kan lese spor, vurdere kjelder, periodisere, samanlikne eller analysere minnebruk.",
+    "Historikarar blir roterte etter fagkartets over- og underbruksdata når fleire er like relevante.",
+    "Ingen fil blir rekna som synleg brukt berre fordi ho vart lasta."
+  ],
+  "control_order": [
+    "resolver_og_full_innlasting",
+    "kjelde_og_paastandsbank",
+    "pensum_og_emneval",
+    "hook_metode_historikar_verk",
+    "adaptiv_profil",
+    "relativ_settplan",
+    "sporsmaalskvalitet_og_balanse",
+    "produksjonskontekst",
+    "teoribinding",
+    "knowledge_sync"
+  ],
+  "example_question": {
+    "question": "Hva kalles det når en gammel bygning får en ny funksjon, men fortsatt bærer spor av tidligere bruk?",
+    "options": ["Kontinuitet og endring", "Kildetap", "Historisk samtidighet"],
+    "answer": "Kontinuitet og endring",
+    "question_type": "concept",
+    "knowledge": "Historikere undersøker både det som fortsetter og det som endres. Et ombygd sted kan vise flere tidslag samtidig.",
+    "emne_id": "em_his_<velg_gyldig_emne>",
+    "source": ["<konkret_kilde>"],
+    "note": "Eksempelet viser konkret bruk av et fagbegrep. Det er ikke en ferdig produksjonsquiz."
+  }
+}

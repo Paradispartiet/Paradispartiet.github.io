@@ -1,0 +1,54 @@
+{
+  "version": "2.0",
+  "status": "canonical_category_profile",
+  "type": "category_quiz_profile",
+  "categoryId": "kunst",
+  "title": "Kunst",
+  "governance": {
+    "production_standard": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "question_schema": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+    "template_registry": "data/quiz/regler/QUIZ_TEMPLATE_REGISTRY_V2.json",
+    "authority": "category_content_only",
+    "may_override_global_rules": false
+  },
+  "required_emne_prefix": "em_kunst_",
+  "content_priorities": [
+    "kunstner, verk og datering",
+    "materiale, teknikk og form",
+    "motiv, ikonografi og uttrykk",
+    "bestilling, plassering og institusjon",
+    "mottakelse, konflikt og kunsthistorisk sammenheng"
+  ],
+  "essential_concepts": [
+    "materialitet",
+    "komposisjon",
+    "ikonografi",
+    "representasjon",
+    "stil",
+    "medium",
+    "offentlig kunst",
+    "resepsjon"
+  ],
+  "preferred_source_types": [
+    "museum eller samlingskatalog",
+    "kunstner- og institusjonsarkiv",
+    "kunsthistorisk forskning",
+    "dokumentasjon av verket og plasseringen"
+  ],
+  "category_rules": [
+    "Start med dokumentert stoff fra kategorien, ikke med emneetiketten.",
+    "Bevar relevante faguttrykk i spørsmål, knowledge eller metadata.",
+    "Bruk bare emne_id som finnes i kategoriens emnefil.",
+    "Kategori-profilen styrer faglig utvalg, men ikke global quizbalanse eller språk."
+  ],
+  "example_question": {
+    "question": "Hva kalles læren om symbolene og motivene i et kunstverk?",
+    "options": ["Ikonografi", "Prospektlære", "Restaurering"],
+    "answer": "Ikonografi",
+    "question_type": "concept",
+    "knowledge": "Ikonografi brukes til å identifisere og tolke figurer, symboler og fortellinger i kunstverk.",
+    "emne_id": "em_kunst_<velg_gyldig_emne>",
+    "source": ["<konkret_kilde>"],
+    "note": "Eksempelet viser konkret bruk av et fagbegrep. Det er ikke en ferdig produksjonsquiz."
+  }
+}

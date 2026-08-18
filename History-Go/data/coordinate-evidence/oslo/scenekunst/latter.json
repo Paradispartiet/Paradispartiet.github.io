@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "1.0",
+  "placeId": "latter",
+  "placeFile": "data/places/scenekunst/oslo/places_scenekunst/latter.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.91081373400813,
+    "lon": 10.726768537822347,
+    "r": 60,
+    "coordStatus": "verified",
+    "coordSource": "geonorge_adresser_v1",
+    "coordType": "address_point",
+    "coordNote": "Offisiell adressekoordinat fra Geonorge Adresser API for Holmens gate 1, OSLO. Punktet er representasjonspunktet for adressen og brukes som display-marker, ikke som kai-, vei-, vannflate- eller generelt områdeanker."
+  },
+  "identity": {
+    "currentName": "Latter",
+    "resolvedIdentity": "Latter på Aker Brygge som fysisk humorscene",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "current_place",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [
+    "entydig offisielt adressepunkt",
+    "dokumentert at adressen representerer det konkrete canonical stedet"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "official_address",
+      "sourceName": "geonorge_adresser_v1",
+      "sourceUrl": "https://ws.geonorge.no/adresser/v1/sok?sok=Holmens%20gate%201%20Oslo",
+      "sourceObjectId": "geonorge-adresser-v1:0301:20305:1",
+      "sourceQuality": "official_address_plus_documented_identity",
+      "finding": "Geonorge returnerte ett tydelig adressetreff. Latter oppgir Holmens gate 1 som besøksadresse på Aker Brygge.",
+      "canVerifyCoordinate": true,
+      "reason": "Offisiell adressekoordinat fra Geonorge Adresser API for Holmens gate 1, OSLO. Punktet er representasjonspunktet for adressen og brukes som display-marker, ikke som kai-, vei-, vannflate- eller generelt områdeanker."
+    },
+    {
+      "sourceProvider": "official_site",
+      "sourceName": "Latter",
+      "sourceUrl": "https://latter.no/kontakt",
+      "sourceObjectId": "official-site:latter:address",
+      "sourceQuality": "official_venue_address_identity",
+      "finding": "Latter oppgir Holmens gate 1 som besøksadresse på Aker Brygge.",
+      "canVerifyCoordinate": false,
+      "reason": "Primærkilden dokumenterer venue-identiteten og adressen; Geonorge dokumenterer koordinatpunktet."
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceName": "OpenStreetMap – Latter",
+      "sourceUrl": "https://www.openstreetmap.org/way/92649935",
+      "sourceObjectId": "osm-way:92649935",
+      "sourceQuality": "secondary_geometry_qa",
+      "finding": "Eksakt navnetreff med objekttype amenity/theatre og geometri Polygon.",
+      "canVerifyCoordinate": false,
+      "reason": "Sekundær identitets-/geometri-QA; Geonorge er primær koordinatkilde for det konkrete adressebare stedet."
+    }
+  ],
+  "addressCandidates": [
+    {
+      "address": "Holmens gate 1 Oslo",
+      "sourceProvider": "official_address",
+      "sourceObjectId": "geonorge-adresser-v1:0301:20305:1",
+      "canApplyToPlace": true
+    }
+  ],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "official_address",
+      "sourceObjectId": "geonorge-adresser-v1:0301:20305:1",
+      "canApplyToPlace": true
+    }
+  ],
+  "geometryCandidates": [],
+  "coordinateCandidates": [
+    {
+      "lat": 59.91081373400813,
+      "lon": 10.726768537822347,
+      "coordRole": "display_marker",
+      "sourceObjectId": "geonorge-adresser-v1:0301:20305:1",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Kildekontrakt, venue-identitet og representasjonsanker er anvendt på canonical place."
+  },
+  "notes": [
+    "Offisiell adressekoordinat fra Geonorge Adresser API for Holmens gate 1, OSLO. Punktet er representasjonspunktet for adressen og brukes som display-marker, ikke som kai-, vei-, vannflate- eller generelt områdeanker.",
+    "Latter oppgir Holmens gate 1 som besøksadresse på Aker Brygge.",
+    "Batch 119 address-first-korreksjon: OSM beholdes bare som sekundær geometri-QA når Geonorge gir et entydig relevant adressepunkt."
+  ]
+}

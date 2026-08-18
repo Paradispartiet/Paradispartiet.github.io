@@ -1,0 +1,328 @@
+{
+  "id": "hovedoya",
+  "name": "Hovedøya",
+  "lat": 59.895125029296096,
+  "lon": 10.731608215517637,
+  "r": 450,
+  "category": "natur",
+  "desc": "Øy i indre Oslofjord med naturreservat, kalkrik flora, strender og sterke kulturhistoriske spor.",
+  "tags": [
+    "øy",
+    "fjordnatur",
+    "naturreservat",
+    "kalkflora",
+    "kulturminne"
+  ],
+  "sourceHint": "Oslo kommune beskriver Hovedøya som naturreservat med rik geologi og flora.",
+  "year": 1147,
+  "popupDesc": "Hovedøya er et nøkkelsted i indre Oslofjord der natur- og kulturhistorie ligger tett sammen. Øya er kjent for klosterruinene fra middelalderen, samtidig som store deler av landskapet har verneverdier knyttet til kystnatur, geologi og artsmangfold.\n\nI History Go er Hovedøya viktig fordi den gjør det mulig å koble fjordhistorie, friluftsliv og historiske spor i samme område. Spørsmål bør derfor treffe både øylandskapet, ruinmiljøet og hvordan øya brukes i dag.",
+  "emne_ids": [
+    "em_natur_kyst_okosystemer",
+    "em_natur_arter_habitat_mangfold"
+  ],
+  "quiz_profile": {
+    "place_type": "oy",
+    "subtype": "fjordoy_med_klosterruiner",
+    "signature_features": [
+      "øy i indre Oslofjord med naturreservat",
+      "klosterruiner fra middelalderen",
+      "kombinasjon av kystnatur, badeliv og kulturminner",
+      "kalkrik berggrunn med tørrbakker, skogholt og strandsoner"
+    ],
+    "primary_angles": [
+      "øylandskap",
+      "kulturhistorie",
+      "friluftsliv",
+      "fjordforståelse"
+    ],
+    "question_families": [
+      "historiske_lag",
+      "vern_og_bruk",
+      "geografi_og_orientering",
+      "natur_og_kultur_i_samspill"
+    ],
+    "avoid_angles": [
+      "ren_strandguide",
+      "generisk_oslofjord_turisme",
+      "usikre_detaljer_om_arter"
+    ],
+    "must_include": [
+      "klosterruinene som historisk anker",
+      "sammenhengen mellom vernet natur og aktiv bruk"
+    ],
+    "contrast_targets": [
+      "gressholmen",
+      "bygdoy_natur",
+      "akershus_slott"
+    ],
+    "notes": "Knytt spørsmål om flora til de 21 aktive plantekortene i species_inventory. Stokkand er eneste aktive faunakort i denne kartunionen; andre arter skal ikke legges til uten ny dokumentasjon."
+  },
+  "nature_profile": {
+    "type": "kalkrik fjordøy / naturreservat / kystskog og tørrbakke",
+    "title": "Kalkøya med skog, tørrbakker og fjordkanter",
+    "summary": "Hovedøya er en kalkrik øy der grunt jordsmonn, solvarme berg, skogholt, enger og strandsoner ligger tett sammen. Forskjellene mellom tørre høyder, lune søkk og fjordpåvirkede kanter gir mange små leveområder på kort avstand. Naturreservatet beskytter både geologien, vegetasjonen og sammenhengen mellom land og sjø. Natur-rundingen viser hvordan den kalkrike grunnen former øyas planteliv, og hvordan aktiv ferdsel må balanseres mot sårbare tørrbakker og kysthabitater.",
+    "themes": [
+      "kalkrik berggrunn og tynt jordsmonn",
+      "tørrbakker med varmekrevende vegetasjon",
+      "skogholt og åpne enger",
+      "strandsoner mot indre Oslofjord",
+      "naturreservat og ferdselspress",
+      "sammenheng mellom geologi og artsmangfold"
+    ],
+    "nearby_place_ids": [
+      "gressholmen",
+      "bygdoy_natur",
+      "akerselva_utlop_bjorvika"
+    ],
+    "species_inventory": {
+      "source_maps": [
+        "data/natur/nature_place_map.json",
+        "data/natur/nature_bird_place_map.json",
+        "data/natur/nature_oslo_expansion_place_map.json",
+        "data/natur/nature_routes_place_map.json"
+      ],
+      "flora": [
+        {
+          "id": "emne_flora_russesvalerot",
+          "name": "Russesvalerot",
+          "latin": "Vincetoxicum rossicum",
+          "status": "aktiv_kartkobling",
+          "map": "nature_oslo_expansion_place_map.json",
+          "maps": [
+            "nature_oslo_expansion_place_map.json"
+          ]
+        },
+        {
+          "id": "emne_kratt_geitved",
+          "name": "Geitved",
+          "latin": "Lonicera xylosteum",
+          "status": "aktiv_kartkobling",
+          "map": "nature_oslo_expansion_place_map.json",
+          "maps": [
+            "nature_oslo_expansion_place_map.json"
+          ]
+        },
+        {
+          "id": "emne_flora_smor_bukk",
+          "name": "Smørbukk",
+          "latin": "Pimpinella saxifraga",
+          "status": "aktiv_kartkobling",
+          "map": "nature_oslo_expansion_place_map.json",
+          "maps": [
+            "nature_oslo_expansion_place_map.json"
+          ]
+        },
+        {
+          "id": "emne_flora_berberis",
+          "name": "Berberis",
+          "latin": "Berberis spp.",
+          "status": "aktiv_kartkobling",
+          "map": "nature_oslo_expansion_place_map.json",
+          "maps": [
+            "nature_oslo_expansion_place_map.json"
+          ]
+        },
+        {
+          "id": "emne_flora_blodstorkenebb",
+          "name": "Blodstorkenebb",
+          "latin": "Geranium sanguineum",
+          "status": "aktiv_kartkobling",
+          "map": "nature_oslo_expansion_place_map.json",
+          "maps": [
+            "nature_oslo_expansion_place_map.json"
+          ]
+        },
+        {
+          "id": "emne_flora_hvitbergknapp",
+          "name": "Hvit bergknapp",
+          "latin": "Sedum album",
+          "status": "aktiv_kartkobling",
+          "map": "nature_oslo_expansion_place_map.json",
+          "maps": [
+            "nature_oslo_expansion_place_map.json"
+          ]
+        },
+        {
+          "id": "emne_flora_knoppurt",
+          "name": "Knoppurt",
+          "latin": "Centaurea jacea",
+          "status": "aktiv_kartkobling",
+          "map": "nature_oslo_expansion_place_map.json",
+          "maps": [
+            "nature_oslo_expansion_place_map.json"
+          ]
+        },
+        {
+          "id": "emne_flora_russekaal",
+          "name": "Russekål",
+          "latin": "Bunias orientalis",
+          "status": "aktiv_kartkobling",
+          "map": "nature_oslo_expansion_place_map.json",
+          "maps": [
+            "nature_oslo_expansion_place_map.json"
+          ]
+        },
+        {
+          "id": "emne_flora_bergmynte",
+          "name": "Bergmynte",
+          "latin": "Origanum vulgare",
+          "status": "aktiv_kartkobling",
+          "map": "nature_oslo_expansion_place_map.json",
+          "maps": [
+            "nature_oslo_expansion_place_map.json"
+          ]
+        },
+        {
+          "id": "emne_ved_smabladlind",
+          "name": "Småbladlind",
+          "latin": "Tilia cordata",
+          "status": "aktiv_kartkobling",
+          "map": "nature_oslo_expansion_place_map.json",
+          "maps": [
+            "nature_oslo_expansion_place_map.json"
+          ]
+        },
+        {
+          "id": "emne_flora_bitterbergknapp",
+          "name": "Bitter bergknapp",
+          "latin": "Sedum acre",
+          "status": "aktiv_kartkobling",
+          "map": "nature_oslo_expansion_place_map.json",
+          "maps": [
+            "nature_oslo_expansion_place_map.json"
+          ]
+        },
+        {
+          "id": "emne_flora_blaveis",
+          "name": "Blåveis",
+          "latin": "Hepatica nobilis",
+          "status": "aktiv_kartkobling",
+          "map": "nature_oslo_expansion_place_map.json",
+          "maps": [
+            "nature_oslo_expansion_place_map.json"
+          ]
+        },
+        {
+          "id": "emne_ved_einer",
+          "name": "Einer",
+          "latin": "Juniperus communis",
+          "status": "aktiv_kartkobling",
+          "map": "nature_oslo_expansion_place_map.json",
+          "maps": [
+            "nature_oslo_expansion_place_map.json"
+          ]
+        },
+        {
+          "id": "emne_flora_gravbergknapp",
+          "name": "Gravbergknapp",
+          "latin": "Phedimus spurius",
+          "status": "aktiv_kartkobling",
+          "map": "nature_oslo_expansion_place_map.json",
+          "maps": [
+            "nature_oslo_expansion_place_map.json"
+          ]
+        },
+        {
+          "id": "emne_flora_hvitveis",
+          "name": "Hvitveis",
+          "latin": "Anemone nemorosa",
+          "status": "aktiv_kartkobling",
+          "map": "nature_oslo_expansion_place_map.json",
+          "maps": [
+            "nature_oslo_expansion_place_map.json"
+          ]
+        },
+        {
+          "id": "emne_ved_rognasal",
+          "name": "Rognasal",
+          "latin": "Sorbus hybrida / × thuringiaca",
+          "status": "aktiv_kartkobling",
+          "map": "nature_oslo_expansion_place_map.json",
+          "maps": [
+            "nature_oslo_expansion_place_map.json"
+          ]
+        },
+        {
+          "id": "emne_ved_ask",
+          "name": "Ask",
+          "latin": "Fraxinus excelsior",
+          "status": "aktiv_kartkobling",
+          "map": "nature_oslo_expansion_place_map.json",
+          "maps": [
+            "nature_oslo_expansion_place_map.json"
+          ]
+        },
+        {
+          "id": "emne_ved_furu",
+          "name": "Furu",
+          "latin": "Pinus sylvestris",
+          "status": "aktiv_kartkobling",
+          "map": "nature_oslo_expansion_place_map.json",
+          "maps": [
+            "nature_oslo_expansion_place_map.json"
+          ]
+        },
+        {
+          "id": "emne_flora_markjordbaer",
+          "name": "Markjordbær",
+          "latin": "Fragaria vesca",
+          "status": "aktiv_kartkobling",
+          "map": "nature_oslo_expansion_place_map.json",
+          "maps": [
+            "nature_oslo_expansion_place_map.json"
+          ]
+        },
+        {
+          "id": "emne_gress_rorkvein",
+          "name": "Rørkvein",
+          "latin": "Calamagrostis arundinacea",
+          "status": "aktiv_kartkobling",
+          "map": "nature_oslo_expansion_place_map.json",
+          "maps": [
+            "nature_oslo_expansion_place_map.json"
+          ]
+        },
+        {
+          "id": "emne_flora_skogfiol",
+          "name": "Skogfiol",
+          "latin": "Viola riviniana",
+          "status": "aktiv_kartkobling",
+          "map": "nature_oslo_expansion_place_map.json",
+          "maps": [
+            "nature_oslo_expansion_place_map.json"
+          ]
+        }
+      ],
+      "fauna": [
+        {
+          "id": "emne_fauna_stokkand",
+          "name": "Stokkand",
+          "latin": "Anas platyrhynchos",
+          "status": "aktiv_kartkobling",
+          "map": "nature_bird_place_map.json",
+          "maps": [
+            "nature_bird_place_map.json",
+            "nature_oslo_expansion_place_map.json"
+          ]
+        }
+      ],
+      "total_species": 22,
+      "rule": "all_active_mapped_species_for_place"
+    }
+  },
+  "underbadge_ids": [
+    "geologi"
+  ],
+  "locatorType": "natural_area",
+  "sourceProvider": "osm",
+  "sourceObjectId": "osm-relation:20749306",
+  "geocodeAccuracy": "geometric_center",
+  "coordRole": "area_anchor",
+  "coordType": "island_center",
+  "coordStatus": "verified_geometry",
+  "coordSource": "OpenStreetMap relation 20749306 – Hovedøya",
+  "coordSourceId": "osm-relation:20749306",
+  "coordSourceUrl": "https://www.openstreetmap.org/relation/20749306",
+  "coordVerifiedAt": "2026-07-21",
+  "coordNote": "Eksakt navngitt OSM-objekt valgt etter forhåndsdefinert semantisk objekttypefilter, ikke nearest/first-hit. Objekttype: place/island; geometri: Polygon."
+}

@@ -1,0 +1,203 @@
+/* ============================================================
+   PLACE ON-SITE SURFACE
+   Fast hovedrad: Events | Avtal å møtes | Kunnskapsmøte | Mer
+   ============================================================ */
+
+body.hg-app #placeCard .pc-events-quad{
+  max-height:none;
+  min-height:60px;
+  padding:8px;
+  border:2px solid rgba(255,255,255,.28);
+  background:rgba(12,12,10,.88);
+  box-shadow:0 8px 24px rgba(0,0,0,.48), inset 0 1px 0 rgba(255,255,255,.04);
+  display:block;
+  width:100%;
+  min-width:0;
+  overflow:visible;
+}
+
+body.hg-app #placeCard .pc-events-head{
+  display:none !important;
+}
+
+body.hg-app #placeCard .pc-events-add{
+  display:none !important;
+}
+
+body.hg-app #placeCard .pc-onsite-surface{
+  width:100%;
+  min-width:0;
+  padding:0;
+}
+
+body.hg-app #placeCard .pc-onsite-actions{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  align-items:stretch;
+  gap:6px;
+  width:100%;
+  min-width:0;
+}
+
+body.hg-app #placeCard .pc-onsite-action{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  align-items:center;
+  gap:6px;
+  min-width:0;
+  min-height:42px;
+  padding:7px 9px;
+  border:2px solid rgba(255,255,255,.22);
+  border-radius:11px;
+  background:rgba(255,255,255,.075);
+  color:#fff;
+  font:inherit;
+  font-size:12px;
+  line-height:1.1;
+  font-weight:850;
+  text-align:left;
+  cursor:pointer;
+  box-shadow:0 4px 12px rgba(0,0,0,.22);
+  overflow:hidden;
+}
+
+body.hg-app #placeCard .pc-onsite-action:hover,
+body.hg-app #placeCard .pc-onsite-action:focus-visible{
+  border-color:rgba(247,226,163,.62);
+  background:rgba(247,226,163,.13);
+  outline:2px solid rgba(247,226,163,.22);
+  outline-offset:1px;
+}
+
+body.hg-app #placeCard .pc-onsite-action-icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:22px;
+  height:22px;
+  margin:0;
+  font-size:17px;
+  line-height:1;
+}
+
+body.hg-app #placeCard .pc-onsite-action-label{
+  min-width:0;
+  margin:0;
+  color:#fff;
+  font-size:12px;
+  font-weight:850;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+body.hg-app #placeCard .pc-onsite-action-count{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:20px;
+  height:20px;
+  margin:0;
+  padding:0 5px;
+  border-radius:999px;
+  background:rgba(255,255,255,.12);
+  color:rgba(255,255,255,.86);
+  font-size:10px;
+  font-weight:900;
+}
+
+body.hg-app #placeCard .pc-onsite-action-knowledge{
+  border-color:rgba(247,226,163,.40);
+  background:rgba(247,226,163,.10);
+}
+
+body.hg-app #placeCard .pc-onsite-action-more{
+  grid-template-columns:auto minmax(0,1fr);
+}
+
+body.hg-app #placeCard .pc-onsite-more-list{
+  display:grid;
+  gap:8px;
+}
+
+body.hg-app #placeCard .pc-onsite-more-action{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  width:100%;
+  min-height:44px;
+  padding:9px 12px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:10px;
+  background:rgba(255,255,255,.07);
+  color:#fff;
+  font:inherit;
+  text-align:left;
+}
+
+body.hg-app #placeCard .pc-onsite-event-popup{
+  display:grid;
+  gap:8px;
+}
+
+body.hg-app #placeCard .pc-onsite-event{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:10px;
+  align-items:center;
+  min-width:0;
+  padding:10px 12px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:10px;
+  background:rgba(255,255,255,.045);
+}
+
+body.hg-app #placeCard .pc-onsite-event strong{
+  min-width:0;
+  overflow:hidden;
+  color:rgba(255,255,255,.94);
+  font-size:13px;
+  line-height:1.2;
+  font-weight:850;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+body.hg-app #placeCard .pc-onsite-event span{
+  color:rgba(255,255,255,.60);
+  font-size:11px;
+  line-height:1.2;
+}
+
+@media (max-width:700px){
+  body.hg-app #placeCard .pc-events-quad{
+    padding:6px;
+  }
+
+  body.hg-app #placeCard .pc-onsite-actions{
+    gap:4px;
+  }
+
+  body.hg-app #placeCard .pc-onsite-action{
+    min-height:38px;
+    gap:3px;
+    padding:5px;
+  }
+
+  body.hg-app #placeCard .pc-onsite-action-icon{
+    width:16px;
+    height:16px;
+    font-size:14px;
+  }
+
+  body.hg-app #placeCard .pc-onsite-action-label{
+    font-size:9.5px;
+  }
+
+  body.hg-app #placeCard .pc-onsite-action-count{
+    min-width:16px;
+    height:16px;
+    padding:0 3px;
+    font-size:8px;
+  }
+}

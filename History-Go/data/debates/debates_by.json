@@ -1,0 +1,167 @@
+[
+  {
+    "id": "karl_johan_handel_vs_byrom",
+    "title": "Karl Johans gate: handel eller byrom?",
+    "question": "Hva bør Karl Johans gate først og fremst være?",
+    "context": [
+      "Karl Johans gate er Oslos paradegate – både handlegate og byens viktigste møteplass.",
+      "Butikkene vil ha plass til vareutstilling og kunder; byliv-forkjemperne vil ha benker, trær og uteservering."
+    ],
+    "place_id": "karl_johan",
+    "category": "by",
+    "conflict_id": "langsiktig_by_vs_kortsiktig_gevinst",
+    "positions": [
+      {
+        "id": "handel",
+        "label": "Prioriter handelen",
+        "blurb": "Gata lever av butikkene; gi dem plass.",
+        "pole": "kortsiktig_gevinst"
+      },
+      {
+        "id": "byrom",
+        "label": "Prioriter byrommet",
+        "blurb": "Mer benker, grønt og opphold for folk.",
+        "pole": "langsiktig_by"
+      },
+      {
+        "id": "balanse",
+        "label": "Søk balanse",
+        "blurb": "Del gata mellom handel og opphold.",
+        "pole": "midt"
+      }
+    ],
+    "sources": []
+  },
+  {
+    "id": "radhusplassen_bilfri",
+    "title": "Bør Rådhusplassen være bilfri?",
+    "question": "Hvordan skal trafikken på Rådhusplassen håndteres?",
+    "context": [
+      "Rådhusplassen binder sammen sentrum og fjorden, men deles i dag med biltrafikk.",
+      "Et bilfritt torg gir mer plass til folk, men berører fremkommelighet og varelevering."
+    ],
+    "place_id": "radhusplassen",
+    "category": "by",
+    "conflict_id": "bilprioritering_vs_myke_trafikanter",
+    "positions": [
+      {
+        "id": "bilfritt",
+        "label": "Gjør den bilfri",
+        "blurb": "Gi hele plassen til folk og fjordbyen.",
+        "pole": "myke_trafikanter"
+      },
+      {
+        "id": "begrenset",
+        "label": "Begrens trafikken",
+        "blurb": "Kun varelevering og nødvendig ferdsel.",
+        "pole": "midt"
+      },
+      {
+        "id": "som_idag",
+        "label": "La det stå",
+        "blurb": "Behold dagens løsning.",
+        "pole": "bilprioritering"
+      }
+    ],
+    "sources": []
+  },
+  {
+    "id": "torggata_sykkelgate",
+    "title": "Torggata: hvem skal ha gata?",
+    "question": "Hvilken rolle skal Torggata ha?",
+    "context": [
+      "Torggata er allerede en populær sykkel- og folkegate gjennom sentrum.",
+      "Noen vil rendyrke den for myke trafikanter; andre vil sikre adkomst for biler og næring."
+    ],
+    "place_id": "torggata",
+    "category": "by",
+    "conflict_id": "bilprioritering_vs_myke_trafikanter",
+    "positions": [
+      {
+        "id": "sykkelgate",
+        "label": "Ren sykkel-/gågate",
+        "blurb": "Prioriter syklister og gående fullt ut.",
+        "pole": "myke_trafikanter"
+      },
+      {
+        "id": "blandet",
+        "label": "Blandet bruk",
+        "blurb": "Del plassen mellom myke trafikanter og næring.",
+        "pole": "midt"
+      },
+      {
+        "id": "bilgate",
+        "label": "Sikre biladkomst",
+        "blurb": "Behold adkomst for bil og varelevering.",
+        "pole": "bilprioritering"
+      }
+    ],
+    "sources": []
+  },
+  {
+    "id": "bjorvika_hoyhus",
+    "title": "Bjørvika: hvor høyt skal vi bygge?",
+    "question": "Hvilken skala bør prege Bjørvika videre?",
+    "context": [
+      "Barcode-rekka ga Bjørvika en markant skyline, men delte byen i synet på høyder.",
+      "Tette, høye bygg gir plass til mange sentralt; lavere skala gir lys, utsikt og menneskelig målestokk."
+    ],
+    "place_id": "bjorvika",
+    "category": "by",
+    "conflict_id": "fortetting_vs_livskvalitet",
+    "positions": [
+      {
+        "id": "hoyt",
+        "label": "Bygg tett og høyt",
+        "blurb": "Utnytt sentral tomt til boliger og arbeidsplasser.",
+        "pole": "fortetting"
+      },
+      {
+        "id": "lavt",
+        "label": "Hold skalaen lav",
+        "blurb": "Prioriter lys, luft og menneskelig målestokk.",
+        "pole": "livskvalitet"
+      },
+      {
+        "id": "variert",
+        "label": "Variert høyde",
+        "blurb": "Bland høyt og lavt for mangfold.",
+        "pole": "midt"
+      }
+    ],
+    "sources": []
+  },
+  {
+    "id": "ring3_kollektiv",
+    "title": "Ring 3: bil eller kollektiv først?",
+    "question": "Hva bør prioriteres på Ring 3?",
+    "context": [
+      "Ring 3 er en av Oslos viktigste ferdselsårer, ofte tett med kø.",
+      "Egne kollektiv- og sykkelfelt flytter flere folk på mindre plass, men kan gi mindre kapasitet for bil."
+    ],
+    "place_id": "ring_3",
+    "category": "by",
+    "conflict_id": "bilprioritering_vs_myke_trafikanter",
+    "positions": [
+      {
+        "id": "kollektiv",
+        "label": "Prioriter kollektiv",
+        "blurb": "Egne felt for buss og sykkel.",
+        "pole": "myke_trafikanter"
+      },
+      {
+        "id": "bil",
+        "label": "Prioriter framkommelighet",
+        "blurb": "Behold kapasiteten for bil.",
+        "pole": "bilprioritering"
+      },
+      {
+        "id": "balanse",
+        "label": "Del kapasiteten",
+        "blurb": "Balanser bil og kollektiv etter tid på døgnet.",
+        "pole": "midt"
+      }
+    ],
+    "sources": []
+  }
+]

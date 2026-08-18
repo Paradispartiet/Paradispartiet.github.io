@@ -1,0 +1,910 @@
+(function () {
+  "use strict";
+
+  /**
+   * @typedef {Record<string, any>} CiviPsycheRecord
+   * @typedef {CiviPsycheRecord & {
+   *   collapses?: number,
+   *   lastCollapse?: CiviPsycheRecord | null,
+   *   collapseHistory?: CiviPsycheRecord[]
+   * }} CiviPsycheTrustMeta
+   * @typedef {CiviPsycheRecord & {
+   *   trust?: Record<string, number>,
+   *   trustMeta?: Record<string, CiviPsycheTrustMeta>,
+   *   integrity?: number,
+   *   visibility?: number,
+   *   economicRoom?: number,
+   *   autonomyOverride?: number | null,
+   *   burnoutActive?: boolean,
+   *   roleBaseline?: CiviPsycheRecord,
+   *   lastCollapseAt?: number
+   * }} CiviPsycheState
+   * @typedef {CiviPsycheRecord & {
+   *   economy_profile?: CiviPsycheRecord,
+   *   economic_profile?: CiviPsycheRecord,
+   *   autonomy?: number,
+   *   trust?: number
+   * }} CiviPsycheProfile
+   * @typedef {CiviPsycheRecord & {
+   *   player?: CiviPsycheRecord & {
+   *     competence?: CiviPsycheRecord & {
+   *       psychology?: number
+   *     },
+   *     completedPsychologyActivities?: CiviPsycheRecord,
+   *     lastPsycheResilience?: CiviPsycheRecord
+   *   }
+   * }} CivicationPlayerState
+   */
+
+  const KEY = "hg_psyche_v1";
+
+  // -----------------------------
+  // Storage helpers
+  // -----------------------------
+  /**
+   * @returns {CiviPsycheState}
+   */
+  function load() {
+    try {
+      const raw = JSON.parse(localStorage.getItem(KEY) || "{}");
+      return raw && typeof raw === "object" ? raw : {};
+    } catch {
+      return {};
+    }
+  }
+
+  /**
+   * @param {CiviPsycheState | CiviPsycheRecord} state
+   * @returns {void}
+   */
+  function save(state) {
+    try {
+      localStorage.setItem(KEY, JSON.stringify(state || {}));
+    } catch {}
+  }
+
+  function clamp(n, min, max) {
+    const x = Number(n);
+    if (!Number.isFinite(x)) return min;
+    return Math.max(min, Math.min(max, x));
+  }
+
+  /**
+   * @param {CiviPsycheState | CiviPsycheRecord} state
+   * @returns {CiviPsycheState}
+   */
+  function ensure(state) {
+  // --------------------------------------------------
+// TRUST – per career (badge-id)
+// --------------------------------------------------
+state.trust ||= {};      // { [careerId]: number }
+state.trustMeta ||= {};  // { [careerId]: { collapses:number, lastCollapse?, collapseHistory? } }
+    
+  // --------------------------------------------------
+  // Global psyke
+  // --------------------------------------------------
+  if (!Number.isFinite(state.integrity)) state.integrity = 50;
+  if (!Number.isFinite(state.visibility)) state.visibility = 50;
+  if (!Number.isFinite(state.economicRoom)) state.economicRoom = 50;
+
+  // Autonomi override
+  if (!("autonomyOverride" in state)) state.autonomyOverride = null;
+
+// --------------------------------------------------
+// ROLE BASELINE (strukturelt klima)
+// --------------------------------------------------
+if (!state.roleBaseline || typeof state.roleBaseline !== "object") {
+  state.roleBaseline = {
+    role_key: null,
+    integrity: 0,
+    visibility: 0,
+    economicRoom: 0,
+    autonomy: 0
+  };
+}
+    
+  return state;
+}
+
+  /**
+   * @param {(state: CiviPsycheState) => void} patchFn
+   * @returns {CiviPsycheState}
+   */
+  function write(patchFn) {
+    const state = ensure(load());
+    patchFn(state);
+    save(state);
+    return state;
+  }
+
+
+  // -----------------------------
+  // PSYCHOLOGICAL COMPETENCE / RESILIENCE
+  // -----------------------------
+  /**
+   * @returns {CivicationPlayerState}
+   */
+  function loadCivicationPlayerState() {
+    try {
+      return /** @type {CivicationPlayerState} */ (window.CivicationState?.getState?.() || {});
+    } catch {
+      return {};
+    }
+  }
+
+  function getPsychologyCompetence(state = null) {
+    const source = state || loadCivicationPlayerState();
+    const value = source?.player?.competence?.psychology;
+    return clamp(Number(value || 0), 0, 100);
+  }
+
+  function getCompletedPsychologyActivities(state = null) {
+    const source = state || loadCivicationPlayerState();
+    const completed = source?.player?.completedPsychologyActivities;
+    return completed && typeof completed === "object" && !Array.isArray(completed) ? completed : {};
+  }
+
+  function addPsychologyCompetence(activity, rawPoints = 4) {
+    const type = String(activity?.type || "activity").trim() || "activity";
+    const sourceId = String(activity?.sourceId || activity?.source_id || "unknown").trim() || "unknown";
+    const today = new Date().toISOString().slice(0, 10);
+    const key = type === "journal" ? `${type}:${sourceId}:${today}` : `${type}:${sourceId}`;
+    const state = loadCivicationPlayerState();
+    const completed = getCompletedPsychologyActivities(state);
+    if (completed[key]) {
+      return { awarded: false, key, delta: 0, competence: getPsychologyCompetence(state), reason: "already_completed" };
+    }
+
+    const current = getPsychologyCompetence(state);
+    const delta = clamp(Math.ceil(Math.max(1, Number(rawPoints || 1)) / 2), 1, 8);
+    const next = clamp(current + delta, 0, 100);
+    const nextCompleted = {
+      ...completed,
+      [key]: {
+        type,
+        source_id: sourceId,
+        title: String(activity?.title || ""),
+        competence_delta: next - current,
+        completed_at: new Date().toISOString()
+      }
+    };
+
+    window.CivicationState?.setState?.({
+      player: {
+        ...(state.player && typeof state.player === "object" ? state.player : {}),
+        competence: {
+          ...(state.player?.competence && typeof state.player.competence === "object" ? state.player.competence : {}),
+          psychology: next
+        },
+        completedPsychologyActivities: nextCompleted
+      }
+    });
+
+    window.dispatchEvent(new Event("updateProfile"));
+    window.dispatchEvent(new CustomEvent("civi:psychologyCompetence", { detail: { competence: next, delta: next - current, key } }));
+    return { awarded: next > current, key, delta: next - current, competence: next, reason: next > current ? "awarded" : "capped" };
+  }
+
+  const RESILIENCE_METRIC_LABELS = {
+    integrity: "integritet",
+    visibility: "synlighet",
+    economicRoom: "handlingsrom",
+    trust: "tillit",
+    autonomy: "autonomi"
+  };
+
+  function resilienceMetricLabel(metric) {
+    return RESILIENCE_METRIC_LABELS[String(metric || "")] || "psyke";
+  }
+
+  function roundOne(value) {
+    return Math.round(Number(value || 0) * 10) / 10;
+  }
+
+  function applyPsycheResilienceModifier(delta, state = null, context = {}) {
+    const originalDelta = Number(delta || 0);
+    const competence = getPsychologyCompetence(state);
+    if (!Number.isFinite(originalDelta) || originalDelta >= 0) {
+      return { originalDelta, adjustedDelta: originalDelta, reduction: 0, competence, applied: false, message: "", summary: "", context };
+    }
+
+    const reduction = clamp((competence / 100) * 0.45, 0, 0.45);
+    const adjustedDelta = originalDelta * (1 - reduction);
+    const prevented = adjustedDelta - originalDelta;
+    const metricLabel = resilienceMetricLabel(context?.metric);
+    return {
+      originalDelta,
+      adjustedDelta,
+      prevented,
+      reduction,
+      competence,
+      applied: reduction > 0 && prevented > 0,
+      message: reduction > 0 ? "Psykologisk kompetanse dempet belastningen." : "",
+      summary: reduction > 0 ? `Psykologisk kompetanse dempet ${metricLabel}-treffet: ${roundOne(originalDelta)} → ${roundOne(adjustedDelta)}.` : "",
+      context
+    };
+  }
+
+  // Reads the most recent dampening event recorded by recordResilienceMeta and
+  // returns a psyke-kort view-model, or null when competence has not protected
+  // the player yet.
+  function getLastResilienceEvent(state = null) {
+    const source = state || loadCivicationPlayerState();
+    const last = source?.player?.lastPsycheResilience;
+    if (!last || !last.applied) return null;
+    const metric = String(last.context?.metric || "");
+    return {
+      metric,
+      metricLabel: resilienceMetricLabel(metric),
+      originalDelta: roundOne(last.originalDelta),
+      adjustedDelta: roundOne(last.adjustedDelta),
+      prevented: roundOne(last.prevented),
+      reductionPct: Math.round(Number(last.reduction || 0) * 100),
+      at: last.at || null,
+      summary: last.summary || last.message || ""
+    };
+  }
+
+  // View-model for the psyke-kort: how much the current psychology competence
+  // dampens negative psyche hits. Single-sources the reduction from
+  // applyPsycheResilienceModifier so the UI never hardcodes the formula.
+  function getPsychologyResilience(state = null) {
+    const competence = getPsychologyCompetence(state);
+    const probe = applyPsycheResilienceModifier(-100, state, { metric: "resilience_probe", source: "summary" });
+    const reduction = Number(probe?.reduction || 0);
+    return {
+      competence,
+      reduction,
+      reductionPct: Math.round(reduction * 100)
+    };
+  }
+
+  function recordResilienceMeta(meta) {
+    if (!meta?.applied) return;
+    try {
+      const state = /** @type {CivicationPlayerState} */ (window.CivicationState?.getState?.() || {});
+      window.CivicationState?.setState?.({
+        player: {
+          ...(state.player && typeof state.player === "object" ? state.player : {}),
+          lastPsycheResilience: { ...meta, at: new Date().toISOString() }
+        }
+      });
+      window.showToast?.(meta.summary || meta.message);
+    } catch {}
+  }
+
+  // -----------------------------
+  // TRUST (rolle-spesifikk)
+  // Max-regel:
+  // 0 kollaps -> max 80
+  // 1 kollaps -> max 100
+  // 2 kollaps -> max 80
+  // 3+ kollaps -> max 60
+  // -----------------------------
+  function computeMaxTrust(collapses) {
+  const c = Number(collapses || 0);
+
+  if (c === 0) return 80;   // Første karriere – stabil men uprøvd
+  if (c === 1) return 100;  // Lært av krise – høyere tillitspotensial
+  if (c === 2) return 85;   // Merket, men fortsatt robust
+  if (c === 3) return 70;   // Systemet begynner å tvile
+  if (c >= 4) return 60;    // Strukturell slitasje
+
+  return 80;
+}
+
+  function getCareerTrust(careerId) {
+    const id = String(careerId || "").trim();
+    const state = ensure(load());
+
+    const meta = state.trustMeta[id] || { collapses: 0 };
+    const collapses = clamp(meta.collapses ?? 0, 0, 99);
+    const max = computeMaxTrust(collapses);
+
+    const value = clamp(state.trust[id] ?? 50, 0, max);
+
+    return {
+      value,
+      max,
+      collapses,
+      lastCollapse: meta.lastCollapse || null
+    };
+  }
+
+  function setTrust(careerId, value) {
+    const id = String(careerId || "").trim();
+    if (!id) return null;
+
+    const current = getCareerTrust(id);
+
+    write((state) => {
+      state.trust[id] = clamp(value, 0, current.max);
+    });
+
+    return getCareerTrust(id);
+  }
+
+  function updateTrust(careerId, delta) {
+    const id = String(careerId || "").trim();
+    if (!id) return null;
+
+    const current = getCareerTrust(id);
+    let raw = Number(delta || 0);
+    const mod = getLifestyleTrustModifier();
+
+    if (raw < 0) raw *= mod;
+    const resilience = applyPsycheResilienceModifier(raw, loadCivicationPlayerState(), { metric: "trust", careerId: id });
+    raw = resilience.adjustedDelta;
+    recordResilienceMeta(resilience);
+
+    const next = clamp(current.value + raw, 0, current.max);
+
+    write((state) => {
+      state.trust[id] = next;
+    });
+
+    return getCareerTrust(id);
+  }
+
+  function registerCollapse(careerId, type = "fired") {
+    const id = String(careerId || "").trim();
+    if (!id) return null;
+
+    const now = new Date().toISOString();
+
+    write((state) => {
+      const meta = state.trustMeta[id] || { collapses: 0 };
+      meta.collapses = clamp((meta.collapses ?? 0) + 1, 0, 99);
+      meta.collapseHistory ||= [];
+      meta.collapseHistory.push({
+       type: String(type || "fired"),
+       at: now
+     });
+
+     meta.lastCollapse = {
+      type: String(type || "fired"),
+      at: now
+     };
+
+     state.trustMeta[id] = meta;
+      const max = computeMaxTrust(meta.collapses);
+      const cur = Number(state.trust[id] ?? 50);
+      state.trust[id] = clamp(cur, 0, max);
+    });
+
+    return getCareerTrust(id);
+  }
+
+  function getTrustSummary() {
+    const state = ensure(load());
+    const ids = Object.keys(state.trust || {});
+    if (!ids.length) {
+      return {
+        avgPercent: 50,
+        count: 0,
+        byCareer: {}
+      };
+    }
+
+    let sum = 0;
+    let n = 0;
+    const byCareer = {};
+
+    for (const id of ids) {
+      const t = getCareerTrust(id);
+      const pct = t.max ? Math.round((t.value / t.max) * 100) : 0;
+      byCareer[id] = { ...t, percent: pct };
+      sum += pct;
+      n += 1;
+    }
+
+    return {
+      avgPercent: Math.round(sum / Math.max(1, n)),
+      count: n,
+      byCareer
+    };
+  }
+
+  // -----------------------------
+  // INTEGRITY (global 0..100)
+  // -----------------------------
+  function getIntegrity() {
+    const state = ensure(load());
+    return clamp(state.integrity, 0, 100);
+  }
+
+  function setIntegrity(value) {
+    write((state) => {
+      state.integrity = clamp(value, 0, 100);
+    });
+    return getIntegrity();
+  }
+
+  function updateIntegrity(delta) {
+    const resilience = applyPsycheResilienceModifier(Number(delta || 0), loadCivicationPlayerState(), { metric: "integrity" });
+    recordResilienceMeta(resilience);
+    return setIntegrity(getIntegrity() + resilience.adjustedDelta);
+  }
+
+  // -----------------------------
+  // VISIBILITY (global 0..100)
+  // -----------------------------
+  function getVisibility() {
+    const state = ensure(load());
+    return clamp(state.visibility, 0, 100);
+  }
+
+  function setVisibility(value) {
+    write((state) => {
+      state.visibility = clamp(value, 0, 100);
+    });
+    return getVisibility();
+  }
+
+  function updateVisibility(delta) {
+    const resilience = applyPsycheResilienceModifier(Number(delta || 0), loadCivicationPlayerState(), { metric: "visibility" });
+    recordResilienceMeta(resilience);
+    return setVisibility(getVisibility() + resilience.adjustedDelta);
+  }
+
+  // -----------------------------
+  // ECONOMIC ROOM (global 0..100)
+  // (buffer / fleksibilitet, ikke PC-saldo direkte)
+  // -----------------------------
+  function getEconomicRoom() {
+    const state = ensure(load());
+    return clamp(state.economicRoom, 0, 100);
+  }
+
+  function setEconomicRoom(value) {
+    write((state) => {
+      state.economicRoom = clamp(value, 0, 100);
+    });
+    return getEconomicRoom();
+  }
+
+  function updateEconomicRoom(delta) {
+
+  const rawDelta = Number(delta || 0);
+
+  const mod = getLifestyleEconomyModifier?.() || { swing: 1, pressure: 1 };
+
+  let adjusted = rawDelta * mod.swing;
+
+  if (rawDelta < 0) {
+    adjusted = rawDelta * mod.pressure;
+  }
+
+  const resilience = applyPsycheResilienceModifier(adjusted, loadCivicationPlayerState(), { metric: "economicRoom" });
+  recordResilienceMeta(resilience);
+
+  return setEconomicRoom(getEconomicRoom() + resilience.adjustedDelta);
+}
+
+
+    // -----------------------------
+  // ROLE BASELINE (settes av jobb/rolle)
+  // -----------------------------
+  function applyRoleBaseline(baseline) {
+    write((state) => {
+      state.roleBaseline = {
+        integrity: Number(baseline?.integrity || 0),
+        visibility: Number(baseline?.visibility || 0),
+        economicRoom: Number(baseline?.economicRoom || 0)
+      };
+    });
+  }
+
+  function clearRoleBaseline() {
+  write((state) => {
+    state.roleBaseline = {
+      role_key: null,
+      integrity: 0,
+      visibility: 0,
+      economicRoom: 0,
+      autonomy: 0
+    };
+  });
+}
+  // -----------------------------
+  // AUTONOMY (0..100)
+  // Default: beregnes dynamisk av de andre.
+  // Valgfri override hvis du vil "fryse" autonomy midlertidig.
+  // -----------------------------
+function computeAutonomy(careerId = null) {
+  const state = ensure(load());
+
+  const integrity = clamp(
+    state.integrity + (state.roleBaseline?.integrity || 0),
+    0,
+    100
+  );
+
+  const visibility = clamp(
+    state.visibility + (state.roleBaseline?.visibility || 0),
+    0,
+    100
+  );
+
+  const economicRoom = clamp(
+    state.economicRoom + (state.roleBaseline?.economicRoom || 0),
+    0,
+    100
+  );
+
+  let trustPct = 50;
+
+  if (careerId) {
+    const t = getCareerTrust(careerId);
+    trustPct = t.max ? Math.round((t.value / t.max) * 100) : 0;
+  } else {
+    trustPct = getTrustSummary().avgPercent;
+  }
+
+   // Identity influence on perceived trust (svak effekt)
+/** @type {CiviPsycheRecord | null | undefined} */
+const identityMods = window.HG_IdentityCore?.getPsycheModifiers?.();
+let identityAutonomyBoost = 0;
+let identityTrustShift = 0;
+
+if (identityMods) {
+  identityAutonomyBoost = identityMods.autonomy || 0;
+
+  // Svak effekt (maks ±5)
+  identityTrustShift = (identityMods.trust || 0) * 0.1;
+}
+
+trustPct = clamp(trustPct + identityTrustShift, 0, 100);
+  
+  const raw =
+    (economicRoom * 0.4) +
+    (trustPct * 0.3) +
+    (integrity * 0.2) -
+    (visibility * 0.2);
+
+  
+  return clamp(
+  raw +
+  identityAutonomyBoost +
+  (state.roleBaseline?.autonomy || 0),
+  0,
+  100
+);
+}
+
+
+  
+  function getAutonomy(careerId = null) {
+    const state = ensure(load());
+    if (Number.isFinite(state.autonomyOverride)) {
+      return clamp(state.autonomyOverride, 0, 100);
+    }
+    return computeAutonomy(careerId);
+  }
+
+  function setAutonomyOverride(valueOrNull) {
+    write((state) => {
+      if (valueOrNull === null) state.autonomyOverride = null;
+      else state.autonomyOverride = clamp(valueOrNull, 0, 100);
+    });
+    return getAutonomy();
+  }
+
+  function clearAutonomyOverride() {
+    return setAutonomyOverride(null);
+  }
+
+// -----------------------------
+// BURNOUT
+// -----------------------------
+function checkBurnout() {
+  const state = ensure(load());
+
+  const integrity = clamp(
+    state.integrity + (state.roleBaseline?.integrity || 0),
+    0,
+    100
+  );
+
+  const visibility = clamp(
+    state.visibility + (state.roleBaseline?.visibility || 0),
+    0,
+    100
+  );
+
+  if (state.burnoutActive) {
+    return {
+      triggered: false,
+      reason: "already_active"
+    };
+  }
+
+  /** @type {CiviPsycheProfile | null | undefined} */
+  const lifestyle = window.getPrimaryLifestyle?.() || window.HG_Lifestyle?.getStamp?.();
+
+  let burnoutMod = 1;
+
+  if (lifestyle?.economy_profile?.budget_pressure) {
+    const map = {
+      low: 0.9,
+      medium: 1.0,
+      medium_high: 1.15,
+      high: 1.3
+    };
+
+    burnoutMod =
+      map[lifestyle.economy_profile.budget_pressure] || 1;
+  }
+
+  const visibilityThreshold = 85 / burnoutMod;
+  const integrityThreshold  = 45 * burnoutMod;
+
+  if (visibility > visibilityThreshold && integrity < integrityThreshold) {
+    write((s) => {
+      s.burnoutActive = true;
+      s.economicRoom = clamp(s.economicRoom - 15, 0, 100);
+      s.integrity = clamp(s.integrity - 10, 0, 100);
+      s.autonomyOverride = clamp(
+        (s.autonomyOverride ?? computeAutonomy()) - 20,
+        0,
+        100
+      );
+    });
+
+    const active = window.CivicationState?.getActivePosition?.();
+    let careerOutcome = null;
+
+    try {
+      careerOutcome = window.CivicationJobs?.maybeApplyNegativeCareerOutcome?.(active) || null;
+    } catch {}
+
+    return {
+      triggered: true,
+      type: "burnout",
+      careerOutcome
+    };
+  }
+
+  return {
+    triggered: false,
+    reason: "threshold_not_met"
+  };
+}
+
+function isBurnoutActive() {
+  const state = ensure(load());
+  return Boolean(state.burnoutActive);
+}
+
+function clearBurnout() {
+  write((s) => {
+    s.burnoutActive = false;
+    s.autonomyOverride = null;
+  });
+}
+
+// -----------------------------
+// COLLAPSE EVALUATION (dramatic)
+// -----------------------------
+function evaluateCollapse() {
+  const state = ensure(load());
+
+  const integrity = clamp(state.integrity, 0, 100);
+  const visibility = clamp(state.visibility, 0, 100);
+  const economic = clamp(state.economicRoom, 0, 100);
+  const autonomy = computeAutonomy();
+
+  const trust = getTrustSummary().avgPercent;
+
+  // STATUSKOLLAPS
+  if (visibility > 80 && trust < 40 && integrity < 40) {
+    return "status";
+  }
+
+  // KARRIEREKOLLAPS
+  if (economic > 75 && autonomy < 30 && integrity < 40) {
+    return "career";
+  }
+
+  // ISOLASJON
+  if (trust < 35 && visibility > 60) {
+    return "isolation";
+  }
+
+  return null;
+}
+
+function processCollapse() {
+  const state = ensure(load());
+
+  // Ikke kollaps mens burnout er aktiv
+  if (state.burnoutActive) return null;
+
+  // Cooldown: maks én kollaps per 24 timer
+  const last = state.lastCollapseAt || 0;
+  if (Date.now() - last < 1000 * 60 * 60 * 24) {
+    return null;
+  }
+
+  const type = evaluateCollapse();
+  if (!type) return null;
+
+  // Karrierekollaps: registrer + direkte trust-knekk
+  if (type === "career" && state.roleBaseline?.role_key) {
+    const roleId = state.roleBaseline.role_key;
+
+    registerCollapse(roleId, "systemic");
+
+    // Dramatiske konsekvenser
+    updateTrust(roleId, -30);
+  }
+
+  write((s) => {
+    if (type === "status") {
+      s.integrity = clamp(s.integrity - 20, 0, 100);
+    }
+
+    if (type === "career") {
+      s.economicRoom = clamp(s.economicRoom - 30, 0, 100);
+    }
+
+    if (type === "isolation") {
+      s.visibility = clamp(s.visibility - 15, 0, 100);
+    }
+
+    s.lastCollapseAt = Date.now();
+  });
+
+  const active = window.CivicationState?.getActivePosition?.();
+  let careerOutcome = null;
+
+  if (type === "career") {
+    try {
+      careerOutcome = window.CivicationJobs?.maybeApplyNegativeCareerOutcome?.(active) || null;
+    } catch {}
+  }
+
+  window.HG_CivicationPublic?.announceCollapse({
+    type,
+    playerId: "local",
+    district: "sentrum",
+    timestamp: Date.now()
+  });
+
+  return {
+    type,
+    careerOutcome
+  };
+}
+
+  
+  function getLifestyleEconomyModifier() {
+  /** @type {CiviPsycheProfile | null | undefined} */
+  const lifestyle = window.getPrimaryLifestyle?.() || window.HG_Lifestyle?.getStamp?.();
+  if (!lifestyle || !lifestyle.economy_profile) {
+    return { swing: 1, pressure: 1 };
+  }
+
+  const riskMap = {
+    low: 0.8,
+    medium: 1.0,
+    high: 1.3
+  };
+
+  const pressureMap = {
+    low: 0.9,
+    medium: 1.0,
+    medium_high: 1.15,
+    high: 1.3
+  };
+
+  return {
+    swing: riskMap[lifestyle.economy_profile.risk] || 1,
+    pressure: pressureMap[lifestyle.economy_profile.budget_pressure] || 1
+  };
+}
+
+function getLifestyleTrustModifier() {
+  /** @type {CiviPsycheProfile | null | undefined} */
+  const lifestyle = window.HG_Lifestyle?.getPrimary?.();
+  if (!lifestyle) return 1;
+
+  const riskMap = {
+    low: 0.9,
+    medium: 1.0,
+    high: 1.2
+  };
+
+  return riskMap[lifestyle?.economy_profile?.risk] || 1;
+}
+
+  function getLifestyleBurnoutModifier() {
+  /** @type {CiviPsycheProfile | null | undefined} */
+  const lifestyle = window.getPrimaryLifestyle?.() || window.HG_Lifestyle?.getStamp?.();
+  if (!lifestyle) return 1;
+
+  const pressure = lifestyle?.economy_profile?.budget_pressure;
+
+  const map = {
+    low: 0.9,
+    medium: 1.0,
+    medium_high: 1.15,
+    high: 1.3
+  };
+
+  return map[pressure] || 1;
+}
+
+  
+  
+  // -----------------------------
+  // SNAPSHOT (til UI/debug)
+  // -----------------------------
+  function getSnapshot(activeCareerId = null) {
+    const trustSummary = getTrustSummary();
+    const activeTrust = activeCareerId ? getCareerTrust(activeCareerId) : null;
+
+    return {
+      integrity: getIntegrity(),
+      visibility: getVisibility(),
+      economicRoom: getEconomicRoom(),
+      autonomy: getAutonomy(activeCareerId),
+      trust: activeTrust,
+      trustSummary,
+      burnoutActive: isBurnoutActive(),
+      psychologyCompetence: getPsychologyCompetence(),
+      psychologyResilience: getPsychologyResilience()
+    };
+  }
+
+  // -----------------------------
+  // PUBLIC API
+  // -----------------------------
+  /** @type {any} */ (window).CivicationPsyche = {
+    // trust
+    computeMaxTrust,
+    getCareerTrust,
+    setTrust,
+    updateTrust,
+    registerCollapse,
+    getTrustSummary,
+
+    // competence / resilience
+    getPsychologyCompetence,
+    getCompletedPsychologyActivities,
+    addPsychologyCompetence,
+    applyPsycheResilienceModifier,
+    getPsychologyResilience,
+    getLastResilienceEvent,
+
+    // global psyche
+    getIntegrity,
+    setIntegrity,
+    updateIntegrity,
+
+    getVisibility,
+    setVisibility,
+    updateVisibility,
+
+    getEconomicRoom,
+    setEconomicRoom,
+    updateEconomicRoom,
+
+    getAutonomy,
+    setAutonomyOverride,
+    clearAutonomyOverride,
+
+    applyRoleBaseline,
+    clearRoleBaseline,
+
+    checkBurnout,
+    isBurnoutActive,
+    clearBurnout,
+
+    evaluateCollapse,
+    processCollapse,
+
+    // debug/ui
+    getSnapshot
+  };
+})();

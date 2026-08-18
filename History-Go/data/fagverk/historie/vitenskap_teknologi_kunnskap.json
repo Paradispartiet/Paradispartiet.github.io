@@ -1,0 +1,64 @@
+{
+  "schema": "history_go_fagverk_chapter_v1",
+  "version": "1.0.0",
+  "subject": "historie",
+  "id": "vitenskap_teknologi_kunnskap",
+  "title": "Vitenskap-, teknologi- og kunnskapshistorie",
+  "subtitle": "Hvordan kunnskap, ekspertise og tekniske systemer får autoritet",
+  "lead": "Vitenskap og teknologi får historisk kraft gjennom institusjoner, standarder og infrastrukturer som gjør bestemte observasjoner og handlinger mulige. Kapittelet følger kunnskap fra måling og klassifikasjon til profesjon, industri, medisin, militær og digital forvaltning. Meteorologisk institutt, Teknisk museum, Rikshospitalet, Blindern og Kjeller brukes til å undersøke hvordan ekspertise får autoritet, hvem som faller utenfor, og hvordan tekniske systemer fordeler avhengighet og risiko.",
+  "learningObjectives": [
+    "forklare kunnskapsinstitusjoner og ekspertise med avgrenset kronologi, navngitte kilder og en uttrykt kildebegrensning",
+    "forklare profesjoner, standardisering og autoritet med avgrenset kronologi, navngitte kilder og en uttrykt kildebegrensning",
+    "forklare måling, statistikk, kart og klassifikasjon med avgrenset kronologi, navngitte kilder og en uttrykt kildebegrensning",
+    "forklare teknologi, infrastruktur og samfunn med avgrenset kronologi, navngitte kilder og en uttrykt kildebegrensning",
+    "forklare medisin, helsevitenskap og befolkning med avgrenset kronologi, navngitte kilder og en uttrykt kildebegrensning",
+    "forklare kommunikasjon, medier og informasjonsregimer med avgrenset kronologi, navngitte kilder og en uttrykt kildebegrensning",
+    "forklare digitalisering og datamakt med avgrenset kronologi, navngitte kilder og en uttrykt kildebegrensning",
+    "forklare vitenskap, stat, industri og ekskludering med avgrenset kronologi, navngitte kilder og en uttrykt kildebegrensning",
+    "forklare kunnskap, makt, kjønn og ekskludering med avgrenset kronologi, navngitte kilder og en uttrykt kildebegrensning",
+    "forklare vitenskap, stat, industri og militære forbindelser med avgrenset kronologi, navngitte kilder og en uttrykt kildebegrensning"
+  ],
+  "diagnosticQuestions": [
+    {
+      "question": "Hvilke kilder dokumenterer kunnskapsinstitusjoner og ekspertise, og hvem produserte dem?",
+      "answer": "Undersøker kunnskapsinstitusjoner og ekspertise gjennom kunnskapsinstitusjoner, ekspertise, måling, klassifikasjon, standardisering, tekniske systemer og datamakt. Analysen avgrenser aktører, sted og tidsrom, skiller dokumentasjon fra tolkning og viser hvilke historiske konsekvenser som kan underbygges."
+    },
+    {
+      "question": "Hvilke kilder dokumenterer profesjoner, standardisering og autoritet, og hvem produserte dem?",
+      "answer": "Undersøker profesjoner, standardisering og autoritet gjennom kunnskapsinstitusjoner, ekspertise, måling, klassifikasjon, standardisering, tekniske systemer og datamakt. Analysen avgrenser aktører, sted og tidsrom, skiller dokumentasjon fra tolkning og viser hvilke historiske konsekvenser som kan underbygges."
+    },
+    {
+      "question": "Hvilke kilder dokumenterer måling, statistikk, kart og klassifikasjon, og hvem produserte dem?",
+      "answer": "Undersøker måling, statistikk, kart og klassifikasjon gjennom kunnskapsinstitusjoner, ekspertise, måling, klassifikasjon, standardisering, tekniske systemer og datamakt. Analysen avgrenser aktører, sted og tidsrom, skiller dokumentasjon fra tolkning og viser hvilke historiske konsekvenser som kan underbygges."
+    },
+    {
+      "question": "Hvilke kilder dokumenterer teknologi, infrastruktur og samfunn, og hvem produserte dem?",
+      "answer": "Undersøker teknologi, infrastruktur og samfunn gjennom kunnskapsinstitusjoner, ekspertise, måling, klassifikasjon, standardisering, tekniske systemer og datamakt. Analysen avgrenser aktører, sted og tidsrom, skiller dokumentasjon fra tolkning og viser hvilke historiske konsekvenser som kan underbygges."
+    }
+  ],
+  "productionBriefFile": "data/fagverk/historie/vitenskap_teknologi_kunnskap/brief.json",
+  "editorialProfileId": "his_vitenskap_teknologi_kunnskap",
+  "narrativeArchitecture": {
+    "causalFramework": [
+      "Institusjoner samlet personell, instrumenter, arkiver og finansiering og gjorde kunnskap varig og skalerbar.",
+      "Standarder og klassifikasjoner gjorde fenomener sammenlignbare, men definerte samtidig normalitet og avvik.",
+      "Tekniske infrastrukturer omsatte kunnskap i praktisk kapasitet og skapte nye avhengigheter, risikoer og maktposisjoner.",
+      "Stat, industri og militær finansiering styrte forskningsspørsmål og bruk, mens ekskluderte grupper utfordret kunnskapens påståtte universalitet."
+    ],
+    "historiographicalQuestion": "Drives vitenskapelig og teknologisk endring først og fremst av intern kunnskapsutvikling eller av samfunnets institusjoner og interesser?",
+    "historiographyEvidenceSourceIds": [
+      "hist_method_gaddis_2002",
+      "hist_technology_hughes_1983"
+    ],
+    "caseAnchorIds": [
+      "meteorologisk_institutt",
+      "rikshospitalet",
+      "kjeller_flyplass"
+    ]
+  },
+  "moduleFiles": [
+    "data/fagverk/historie/vitenskap_teknologi_kunnskap/01-grunnlag.json",
+    "data/fagverk/historie/vitenskap_teknologi_kunnskap/02-fordypning.json",
+    "data/fagverk/historie/vitenskap_teknologi_kunnskap/03-anvendelse.json"
+  ]
+}

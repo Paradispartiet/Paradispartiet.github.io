@@ -1,0 +1,1768 @@
+{
+  "schema": "history_go_fagverk_claim_registry_v1",
+  "version": "1.6.0",
+  "subject_id": "vitenskap",
+  "chapter_id": "vitenskap-fra-observasjon-til-etterprovbar-kunnskap",
+  "verified_at": "2026-08-18",
+  "sources": [
+    {
+      "id": "vit1-01-oecd-frascati",
+      "label": "OECD – Frascati Manual 2015",
+      "url": "https://www.oecd.org/en/publications/frascati-manual-2015_9789264239012-en.html",
+      "publisher": "OECD",
+      "type": "international-method-standard",
+      "source_location": "Abstract and manual overview describing the internationally recognised methodology, basic concepts, classifications and sector guidance for research and experimental development statistics"
+    },
+    {
+      "id": "vit1-02-oecd-oslo-rd",
+      "label": "OECD – Oslo Manual 2018, section 4.2.1 Research and experimental development activities",
+      "url": "https://www.oecd.org/en/publications/2018/10/oslo-manual-2018_g1g9373b/full-report/component-10.html",
+      "publisher": "OECD",
+      "type": "international-method-standard",
+      "source_location": "Paragraphs 4.10–4.11 summarising the Frascati definition of R&D and the five criteria novel, creative, uncertain, systematic and transferable and/or reproducible"
+    },
+    {
+      "id": "vit1-03-ec-research-infrastructure",
+      "label": "European Commission – Research Infrastructures",
+      "url": "https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe/research-infrastructures_en",
+      "publisher": "European Commission",
+      "type": "institutional-definition",
+      "source_location": "Policy and strategy section defining research infrastructures and listing major equipment, collections/archives/data infrastructures, computing systems and communication networks"
+    },
+    {
+      "id": "vit1-04-nist-traceability-policy",
+      "label": "NIST – Policy on Metrological Traceability",
+      "url": "https://www.nist.gov/calibrations/traceability",
+      "publisher": "National Institute of Standards and Technology",
+      "type": "metrology-policy",
+      "source_location": "Introduction and Policy Statement, especially the definition of metrological traceability as a documented unbroken calibration chain with each link contributing to measurement uncertainty"
+    },
+    {
+      "id": "vit1-05-nist-traceability-faq",
+      "label": "NIST – Metrological Traceability: Frequently Asked Questions and NIST Policy",
+      "url": "https://www.nist.gov/metrology/metrological-traceability",
+      "publisher": "National Institute of Standards and Technology",
+      "type": "metrology-guidance",
+      "source_location": "Sections 3 and 5.1–5.2 explaining that traceability is a property of a measurement result, not an instrument or laboratory, and specifying the documented chain and uncertainty requirements"
+    },
+    {
+      "id": "vit1-06-nasem-reproducibility",
+      "label": "National Academies – Reproducibility and Replicability in Science",
+      "url": "https://nap.nationalacademies.org/catalog/25303/reproducibility-and-replicability-in-science",
+      "publisher": "National Academies of Sciences, Engineering, and Medicine",
+      "type": "consensus-study-report",
+      "source_location": "Executive Summary and chapter 3 definitions: reproducibility uses the same input data, computational steps, methods, code and analysis conditions; replicability uses new data to address the same scientific question"
+    },
+    {
+      "id": "vit1-07-nih-rigor",
+      "label": "NIH – Enhancing Reproducibility through Rigor and Transparency",
+      "url": "https://grants.nih.gov/policy-and-compliance/policy-topics/reproducibility",
+      "publisher": "National Institutes of Health",
+      "type": "research-policy-guidance",
+      "source_location": "Definition of Scientific Rigor and goals for unbiased, well-controlled experimental design, methodology, analysis, interpretation and reporting"
+    },
+    {
+      "id": "vit1-08-nih-peer-review",
+      "label": "NIH Grants Policy Statement – 2.4 The Peer Review Process",
+      "url": "https://grants.nih.gov/grants/policy/nihgps/HTML5/section_2/2.4_the_peer_review_process.htm",
+      "publisher": "National Institutes of Health",
+      "type": "peer-review-policy",
+      "source_location": "Section 2.4 describing peer review of scientific and technical merit, the aim of a fair and objective process and the two sequential review levels for NIH grant applications"
+    },
+    {
+      "id": "vit1-09-unesco-open-science",
+      "label": "UNESCO – Recommendation on Open Science",
+      "url": "https://www.unesco.org/en/legal-affairs/recommendation-open-science",
+      "publisher": "UNESCO",
+      "type": "international-recommendation",
+      "source_location": "Definition, values and guiding principles, especially transparency, scrutiny, critique and reproducibility; also the conditions under which access can legitimately be restricted"
+    },
+    {
+      "id": "vit1-10-nih-replication-2026",
+      "label": "NIH – Strengthening Replication and Reproducibility of NIH-funded Research",
+      "url": "https://www.nih.gov/replicationandreproducibility",
+      "publisher": "National Institutes of Health",
+      "type": "research-policy-programme",
+      "source_location": "2026 programme overview on independent replication, standardising and sharing data, open availability of findings and infrastructure for replication and reproducibility science"
+    },
+    {
+      "id": "vit1-11-nist-stat-handbook",
+      "label": "NIST/SEMATECH – e-Handbook of Statistical Methods",
+      "url": "https://www.itl.nist.gov/div898/handbook/",
+      "publisher": "National Institute of Standards and Technology",
+      "type": "official-statistical-methods-handbook",
+      "source_location": "Handbook index and the Process Modeling and Process Improvement chapters covering exploratory analysis, statistical modelling, experimental design and diagnostics"
+    },
+    {
+      "id": "vit1-12-nist-experimental-design",
+      "label": "NIST/SEMATECH – What is experimental design?",
+      "url": "https://www.itl.nist.gov/div898/handbook/pri/section1/pri11.htm",
+      "publisher": "National Institute of Standards and Technology",
+      "type": "official-experimental-design-guidance",
+      "source_location": "Process Improvement section 5.1.1 defining experimental design through deliberate changes to process factors and observation of response variables for valid and objective conclusions"
+    },
+    {
+      "id": "vit1-13-nist-model-validation",
+      "label": "NIST/SEMATECH – Model Validation",
+      "url": "https://www.itl.nist.gov/div898/handbook/pmd/section4/pmd44.htm",
+      "publisher": "National Institute of Standards and Technology",
+      "type": "official-statistical-model-validation-guidance",
+      "source_location": "Process Modeling section 4.4 on model validation, especially residual analysis and the warning that summary statistics such as R-squared are not sufficient by themselves"
+    },
+    {
+      "id": "vit1-14-nist-model-building",
+      "label": "NIST/SEMATECH – Model Building",
+      "url": "https://www.itl.nist.gov/div898/handbook/pmd/section4/pmd41.htm",
+      "publisher": "National Institute of Standards and Technology",
+      "type": "official-statistical-model-building-guidance",
+      "source_location": "Process Modeling section 4.1 describing iterative model selection, parameter estimation and assessment/validation using data, assumptions and subject-matter knowledge"
+    },
+    {
+      "id": "vit1-15-nist-rdaf",
+      "label": "NIST – Research Data Framework (RDaF), version 2.0",
+      "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/1500-18/NIST.SP.1500-18r2.html",
+      "publisher": "National Institute of Standards and Technology",
+      "type": "official-research-data-framework",
+      "source_location": "Research Data Lifecycle and documentation material covering data provenance and documentation of instruments, software, methods, parameters, calibration and processing context"
+    },
+    {
+      "id": "vit1-16-nist-numerical-reproducibility",
+      "label": "NIST – Numerical Reproducibility",
+      "url": "https://www.nist.gov/programs-projects/numerical-reproducibility",
+      "publisher": "National Institute of Standards and Technology",
+      "type": "official-computational-reproducibility-project",
+      "source_location": "Project overview identifying numerical differences associated with library versions, floating-point precision, compiler choices and CPU/GPU architectures"
+    },
+    {
+      "id": "vit1-17-ncbi-taxonomy-help",
+      "label": "NCBI – Taxonomy Help",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK53758/",
+      "publisher": "National Center for Biotechnology Information",
+      "type": "official-scientific-taxonomy-documentation",
+      "source_location": "NCBI Taxonomy documentation describing curated organism names, classifications/lineages and their use with molecular sequence data"
+    },
+    {
+      "id": "vit1-18-iczn-preamble",
+      "label": "International Code of Zoological Nomenclature – Preamble",
+      "url": "https://code.iczn.org/preamble/",
+      "publisher": "International Commission on Zoological Nomenclature",
+      "type": "international-nomenclature-code",
+      "source_location": "Preamble explaining the objective of stability and universality in scientific animal names while stating that the Code does not restrict freedom of taxonomic thought or actions"
+    },
+    {
+      "id": "vit1-19-nasem-integrity",
+      "label": "National Academies – Fostering Integrity in Research",
+      "url": "https://nap.nationalacademies.org/catalog/21896/fostering-integrity-in-research",
+      "publisher": "National Academies of Sciences, Engineering, and Medicine",
+      "type": "consensus-study-report",
+      "source_location": "Summary, Part One and findings/recommendations describing research integrity as individual and organizational adherence to core values and the central role of research institutions in fostering integrity"
+    },
+    {
+      "id": "vit1-20-rcn-research-infrastructure",
+      "label": "Research Council of Norway – About the INFRASTRUKTUR initiative",
+      "url": "https://www.forskningsradet.no/en/financing/what/infrastructure/about/",
+      "publisher": "Research Council of Norway",
+      "type": "national-research-infrastructure-guidance",
+      "source_location": "Definition and categories of national research infrastructure, including advanced equipment, large facilities, data/e-infrastructure, storage, software, networks, registries, databases and scientific collections"
+    },
+    {
+      "id": "vit1-21-oecd-oslo-innovation",
+      "label": "OECD/Eurostat – Oslo Manual 2018",
+      "url": "https://www.oecd.org/en/publications/oslo-manual-2018_9789264304604-en.html",
+      "publisher": "OECD/Eurostat",
+      "type": "international-innovation-method-standard",
+      "source_location": "Manual overview and innovation concepts distinguishing innovation measurement from R&D and requiring new or improved products/processes to be implemented or made available"
+    },
+    {
+      "id": "vit1-22-nih-clinical-studies",
+      "label": "NIH – Understanding Clinical Studies",
+      "url": "https://www.nih.gov/about-nih/science-health-public-trust/tools/understanding-clinical-studies",
+      "publisher": "National Institutes of Health",
+      "type": "official-clinical-study-guidance",
+      "source_location": "Study-design guidance explaining strengths and weaknesses of different clinical-study designs, randomized controlled trials for intervention causality, and situations where randomized trials cannot be used"
+    },
+    {
+      "id": "vit1-23-nih-clinical-trial-definition",
+      "label": "NIH – Does Your Human Subjects Study Meet the NIH Definition of a Clinical Trial?",
+      "url": "https://grants.nih.gov/policy-and-compliance/policy-topics/clinical-trials/ct-decision",
+      "publisher": "National Institutes of Health",
+      "type": "official-clinical-trial-policy",
+      "source_location": "NIH clinical-trial definition requiring human participants, prospective assignment to intervention, evaluation of intervention effects and health-related biomedical or behavioral outcomes"
+    },
+    {
+      "id": "vit1-24-nb-digital-preservation",
+      "label": "Nasjonalbiblioteket – Digital bevaring",
+      "url": "https://www.nb.no/digital-bevaring/",
+      "publisher": "Nasjonalbiblioteket",
+      "type": "national-digital-preservation-guidance",
+      "source_location": "Digital-preservation principles covering documented/open formats, multiple copies and storage technologies, geographic separation, technical/administrative metadata, provenance and standardized preservation actions"
+    },
+    {
+      "id": "vit1-25-nb-mandate",
+      "label": "Nasjonalbiblioteket – Mandat og strategi",
+      "url": "https://www.nb.no/om-nb/mandat-og-strategi/",
+      "publisher": "Nasjonalbiblioteket",
+      "type": "national-library-mandate",
+      "source_location": "Mandate describing collection, preservation and access for research/documentation and the National Library as a research library, research institution and part of Norwegian research infrastructure"
+    },
+    {
+      "id": "vit1-26-nb-research",
+      "label": "Nasjonalbiblioteket – Forsking og utvikling",
+      "url": "https://www.nb.no/forsking-og-utvikling/",
+      "publisher": "Nasjonalbiblioteket",
+      "type": "research-institution-overview",
+      "source_location": "Overview describing research on the Library collections, collaboration with other research institutions and digital research infrastructure such as DH-LAB and Språkbanken"
+    },
+    {
+      "id": "vit1-27-unesco-open-science-infrastructure",
+      "label": "UNESCO – Open Science",
+      "url": "https://www.unesco.org/en/open-science/about",
+      "publisher": "UNESCO",
+      "type": "international-open-science-recommendation",
+      "source_location": "Recommendation implementation areas covering investment in open-science infrastructures, policy environments, capacity, incentives and cooperation while recognizing legitimate access restrictions"
+    },
+    {
+      "id": "vit1-28-nent-2024",
+      "label": "NENT – Guidelines for Research Ethics in Science and Technology (2024)",
+      "url": "https://www.forskningsetikk.no/en/about-us/our-committees-and-commission/nent/guidelines-nent/guidelines-for-research-ethics-in-science-and-technology/",
+      "publisher": "The Norwegian National Committee for Research Ethics in Science and Technology",
+      "type": "national-research-ethics-guidance",
+      "source_location": "Introduction and overview, especially the role of research in society and scientific integrity/accountability/openness: responsibility for social development and public discourse, and organisational/funder responsibility for conditions that promote integrity"
+    },
+    {
+      "id": "vit1-29-nasem-science-communication",
+      "label": "National Academies – Communicating Science Effectively: A Research Agenda",
+      "url": "https://www.nationalacademies.org/read/23674",
+      "publisher": "National Academies of Sciences, Engineering, and Medicine",
+      "type": "consensus-study-report",
+      "source_location": "Summary and chapters 1–5 on goals, audiences, social/contextual influences, contentious issues, uncertainty and the limits of one-way deficit-model communication"
+    },
+    {
+      "id": "vit1-30-oecd-frascati-funding",
+      "label": "OECD – Frascati Manual 2015: R&D sectors and funding",
+      "url": "https://www.oecd.org/en/publications/frascati-manual-2015_9789264239012-en.html",
+      "publisher": "OECD",
+      "type": "international-rd-statistical-standard",
+      "source_location": "Manual overview and funding/sector guidance classifying R&D performers, sources of funds and public support for R&D for comparable statistics"
+    },
+    {
+      "id": "vit1-31-nih-fcoi",
+      "label": "NIH – Financial Conflict of Interest",
+      "url": "https://grants.nih.gov/policy-and-compliance/policy-topics/fcoi",
+      "publisher": "National Institutes of Health",
+      "type": "research-conflict-of-interest-policy",
+      "source_location": "FCOI policy overview and 42 CFR Part 50 Subpart F purpose: disclosure, management and reporting standards intended to provide reasonable expectation that NIH-funded research is free from bias arising from investigator financial conflicts"
+    },
+    {
+      "id": "vit1-32-ipcc-uncertainty",
+      "label": "IPCC – Guidance note on consistent treatment of uncertainties",
+      "url": "https://www.ipcc.ch/working-group/wg1/501/",
+      "publisher": "Intergovernmental Panel on Climate Change",
+      "type": "international-uncertainty-guidance",
+      "source_location": "IPCC author guidance linked on the Working Group I resource page for consistent assessment and calibrated communication of evidence, agreement, confidence and likelihood"
+    },
+    {
+      "id": "vit1-33-nist-standardization",
+      "label": "NIST – Standardization Coordination",
+      "url": "https://www.nist.gov/standardsgov/standardization-coordination",
+      "publisher": "National Institute of Standards and Technology",
+      "type": "official-standardization-guidance",
+      "source_location": "Standardization Coordination overview on voluntary consensus standards, appropriate use of standards and coordinated standards/conformity-assessment programmes"
+    },
+    {
+      "id": "vit1-34-nist-conformity",
+      "label": "NIST SP 2000-02 – Conformity Assessment Considerations for Federal Agencies",
+      "url": "https://www.nist.gov/publications/conformity-assessment-considerations-federal-agencies",
+      "publisher": "National Institute of Standards and Technology",
+      "type": "official-conformity-assessment-guidance",
+      "source_location": "Abstract and publication on the complexity of developing, operating, using and relying on conformity-assessment programmes to determine fulfilment of specified requirements"
+    },
+    {
+      "id": "vit1-35-who-risk-trust",
+      "label": "WHO – Building trust through risk communication and community engagement",
+      "url": "https://www.who.int/publications/i/item/WHO-2019-nCoV-Policy_Brief-RCCE-2022.1",
+      "publisher": "World Health Organization",
+      "type": "international-risk-communication-guidance",
+      "source_location": "Policy brief key points on credible, trusted, relevant, timely, accessible and actionable information plus community engagement and co-developed solutions as critical to trust and cooperation"
+    },
+    {
+      "id": "vit1-36-unesco-science-researchers",
+      "label": "UNESCO – Recommendation on Science and Scientific Researchers (2017)",
+      "url": "https://www.unesco.org/en/legal-affairs/recommendation-science-and-scientific-researchers?hub=66535",
+      "publisher": "UNESCO",
+      "type": "international-science-policy-recommendation",
+      "source_location": "Recommendation adopted 13 November 2017 addressing scientific freedom and responsibility, social welfare, inclusion, human rights, education and the conditions under which scientific researchers work"
+    },
+    {
+      "id": "vit1-37-norway-general-research-ethics",
+      "label": "Norwegian National Research Ethics Committees – General guidelines",
+      "url": "https://www.forskningsetikk.no/en/guidelines/general-guidelines/",
+      "publisher": "The Norwegian National Research Ethics Committees",
+      "type": "national-general-research-ethics-guidance",
+      "source_location": "Principles and sections on quest for truth, academic freedom, quality, fairness, integrity and commissioned research, including the warning against undue sponsor influence on method, implementation or publication"
+    },
+    {
+      "id": "vit1-38-w3c-prov-o",
+      "label": "W3C – PROV-O: The PROV Ontology",
+      "url": "https://www.w3.org/TR/prov-o/",
+      "publisher": "World Wide Web Consortium",
+      "type": "web-provenance-recommendation",
+      "source_location": "Abstract and ontology overview defining a W3C Recommendation for representing and interchanging provenance information through entities, activities, agents and typed relations"
+    },
+    {
+      "id": "vit1-39-w3c-data-web",
+      "label": "W3C – Data on the Web Best Practices",
+      "url": "https://www.w3.org/TR/dwbp/",
+      "publisher": "World Wide Web Consortium",
+      "type": "data-publication-recommendation",
+      "source_location": "Best Practices summary and sections on metadata, provenance, standardized machine-readable formats, dataset coverage and complementary presentations for comprehension, reuse, trust and interoperability"
+    },
+    {
+      "id": "vit1-40-fair-principles",
+      "label": "Wilkinson et al. – FAIR Guiding Principles for scientific data management and stewardship",
+      "url": "https://www.nature.com/articles/sdata201618",
+      "publisher": "Scientific Data",
+      "type": "open-science-data-principles",
+      "source_location": "Abstract and FAIR Guiding Principles defining Findable, Accessible, Interoperable and Reusable characteristics for data and metadata, with emphasis on machine actionability and stewardship"
+    },
+    {
+      "id": "vit1-41-cdc-principles-epi",
+      "label": "CDC – Principles of Epidemiology, Lesson 1",
+      "url": "https://archive.cdc.gov/www_cdc_gov/csels/dsepd/ss1978/lesson1/section1.html",
+      "publisher": "Centers for Disease Control and Prevention",
+      "type": "official-public-health-training-reference",
+      "source_location": "Lesson 1 definition and methodological framing of epidemiology as systematic, data-driven study of distribution and determinants in specified populations and application of findings to control of health problems."
+    },
+    {
+      "id": "vit1-42-cdc-field-epi",
+      "label": "CDC Field Epidemiology Manual – Analyzing and Interpreting Data",
+      "url": "https://www.cdc.gov/field-epi-manual/php/chapters/analyze-interpret-data.html",
+      "publisher": "Centers for Disease Control and Prevention",
+      "type": "official-public-health-methods-manual",
+      "source_location": "Interpretation guidance covering confounding, chance, selection bias, information bias, statistical versus public-health significance and criteria relevant to causal interpretation."
+    },
+    {
+      "id": "vit1-43-usgs-geologic-time",
+      "label": "USGS – Radiometric Time Scale",
+      "url": "https://pubs.usgs.gov/gip/geotime/radiometric.html",
+      "publisher": "U.S. Geological Survey",
+      "type": "official-geoscience-reference",
+      "source_location": "Radiometric time-scale material on radioactive decay, parent/daughter isotope systems, material suitability, laboratory measurement, relative versus numerical age and cross-checking geologic ages."
+    },
+    {
+      "id": "vit1-44-wmo-imop",
+      "label": "WMO – Instruments and Methods of Observation Programme",
+      "url": "https://wmo.int/activities/instruments-and-methods-of-observation-programme-imop",
+      "publisher": "World Meteorological Organization",
+      "type": "international-observation-standards-programme",
+      "source_location": "Programme overview on technical standards, documentation, intercomparison and quality control for meteorological and environmental observing instruments and methods under differing conditions."
+    },
+    {
+      "id": "vit1-45-wmo-gcos",
+      "label": "WMO – Global Climate Observing System (GCOS)",
+      "url": "https://wmo.int/activities/global-climate-observing-system-gcos",
+      "publisher": "World Meteorological Organization",
+      "type": "international-climate-observing-system",
+      "source_location": "GCOS overview describing systematic long-term observations across atmosphere, land and ocean and the Essential Climate Variables required to characterize the climate system."
+    },
+    {
+      "id": "vit1-46-epa-field-sampling",
+      "label": "EPA – Field Sampling and Measurement Procedures and Procedure Validation",
+      "url": "https://www.epa.gov/quality/field-sampling-and-measurement-procedures-and-procedure-validation",
+      "publisher": "U.S. Environmental Protection Agency",
+      "type": "official-environmental-quality-guidance",
+      "source_location": "EPA quality-system guidance for documented field sampling and measurement procedures, validation and quality-control practices that make field-generated data interpretable and defensible."
+    },
+    {
+      "id": "vit1-47-gbif-occurrence-quality",
+      "label": "GBIF – Handling data quality",
+      "url": "https://docs.gbif.org/course-introduction-to-gbif/en/handling-data-quality.html",
+      "publisher": "Global Biodiversity Information Facility",
+      "type": "official-biodiversity-data-guidance",
+      "source_location": "GBIF training guidance on fitness for use, uneven sampling across geography and taxonomic groups, taxonomic misidentification and the need to assess occurrence-data quality for the intended analysis."
+    },
+    {
+      "id": "vit1-48-epa-ecological-risk",
+      "label": "EPA – Conducting an Ecological Risk Assessment",
+      "url": "https://www.epa.gov/risk/conducting-ecological-risk-assessment",
+      "publisher": "U.S. Environmental Protection Agency",
+      "type": "official-ecological-risk-framework",
+      "source_location": "EPA framework describing planning and problem formulation, assessment endpoints, conceptual models, analysis plans, exposure/effects analysis, risk characterization and explicit treatment of assumptions and uncertainties before risk-management decisions."
+    },
+    {
+      "id": "vit1-49-sep-models-science",
+      "label": "Stanford Encyclopedia of Philosophy – Models in Science",
+      "url": "https://plato.stanford.edu/entries/models-science/",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "type": "scholarly-philosophy-reference",
+      "source_location": "Entry sections on scientific representation, idealized and exploratory models, cognitive functions of models, relations between models and theory, and the limits of carrying model properties to target systems."
+    },
+    {
+      "id": "vit1-50-sep-scientific-explanation",
+      "label": "Stanford Encyclopedia of Philosophy – 20th Century Theories of Scientific Explanation",
+      "url": "https://plato.stanford.edu/entries/scientific-explanation-20th/",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "type": "scholarly-philosophy-reference",
+      "source_location": "Entry survey of major twentieth-century accounts of scientific explanation, including covering-law, statistical and relevance-oriented approaches and their limitations."
+    },
+    {
+      "id": "vit1-51-sep-causation-manipulability",
+      "label": "Stanford Encyclopedia of Philosophy – Causation and Manipulability",
+      "url": "https://plato.stanford.edu/entries/causation-mani/",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "type": "scholarly-philosophy-reference",
+      "source_location": "Sections on interventions, structural equations, counterfactuals, scope conditions and criticisms of interventionist/manipulability approaches to causal claims."
+    },
+    {
+      "id": "vit1-52-sep-scientific-objectivity",
+      "label": "Stanford Encyclopedia of Philosophy – Scientific Objectivity",
+      "url": "https://plato.stanford.edu/entries/scientific-objectivity/",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "type": "scholarly-philosophy-reference",
+      "source_location": "Entry sections distinguishing objectivity as faithfulness to facts, value-related ideals, freedom from personal bias, measurement/statistics practices and community-level practices."
+    },
+    {
+      "id": "vit1-53-sep-theory-observation",
+      "label": "Stanford Encyclopedia of Philosophy – Theory and Observation in Science",
+      "url": "https://plato.stanford.edu/entries/science-theory-observation/",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "type": "scholarly-philosophy-reference",
+      "source_location": "Entry on relations between theory and observation, theory-ladenness, instruments, data and the ways empirical and theoretical commitments interact without making observation arbitrary."
+    },
+    {
+      "id": "vit1-54-sep-thomas-kuhn",
+      "label": "Stanford Encyclopedia of Philosophy – Thomas Kuhn",
+      "url": "https://plato.stanford.edu/entries/thomas-kuhn/",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "type": "scholarly-philosophy-reference",
+      "source_location": "Entry on paradigms, normal science, anomalies, crisis, scientific revolutions, incommensurability, theory choice and later developments in Kuhn’s account."
+    },
+    {
+      "id": "vit1-55-sep-scientific-revolutions",
+      "label": "Stanford Encyclopedia of Philosophy – Scientific Revolutions",
+      "url": "https://plato.stanford.edu/entries/scientific-revolutions/",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "type": "scholarly-history-philosophy-reference",
+      "source_location": "Entry on contested criteria for scientific revolutions, continuity and discontinuity, Kuhnian and alternative accounts, and the historiographical risks of treating every major change as a revolution."
+    },
+    {
+      "id": "vit1-56-sep-social-dimensions",
+      "label": "Stanford Encyclopedia of Philosophy – The Social Dimensions of Scientific Knowledge",
+      "url": "https://plato.stanford.edu/entries/scientific-knowledge-social/",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "type": "scholarly-philosophy-of-science-reference",
+      "source_location": "Entry on social organization of inquiry, epistemic division of labour, institutions, communities, values and how social arrangements can have epistemic consequences without reducing evidential assessment to sociology."
+    },
+    {
+      "id": "vit1-57-sep-scientific-progress",
+      "label": "Stanford Encyclopedia of Philosophy – Scientific Progress",
+      "url": "https://plato.stanford.edu/entries/scientific-progress/",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "type": "scholarly-philosophy-of-science-reference",
+      "source_location": "Entry on competing accounts of scientific progress, including truth-related, problem-solving and other epistemic conceptions, and the relation of progress to realism, instrumentalism and fallibilism."
+    }
+  ],
+  "claims": [
+    {
+      "id": "vit1-01",
+      "claim": "OECDs Frascati-rammeverk er en internasjonalt anerkjent metodikk for å definere, klassifisere og samle sammenlignbare data om forskning og utvikling.",
+      "source_ids": [
+        "vit1-01-oecd-frascati"
+      ],
+      "classification": "institusjonell-metode",
+      "status": "verified",
+      "used_in": [
+        "vit1-grunnlag-1",
+        "vit1-institusjoner-6"
+      ]
+    },
+    {
+      "id": "vit1-02",
+      "claim": "I OECDs operasjonalisering må FoU være ny, kreativ, ha et usikkert utfall, være systematisk og være overførbar og/eller reproducerbar.",
+      "source_ids": [
+        "vit1-02-oecd-oslo-rd"
+      ],
+      "classification": "metodedefinisjon",
+      "status": "verified",
+      "used_in": [
+        "vit1-grunnlag-1"
+      ]
+    },
+    {
+      "id": "vit1-03",
+      "claim": "EU-kommisjonen definerer forskningsinfrastruktur som fasiliteter som tilbyr ressurser og tjenester forskningsmiljøer trenger for å utføre forskning og fremme innovasjon.",
+      "source_ids": [
+        "vit1-03-ec-research-infrastructure"
+      ],
+      "classification": "institusjonell-definisjon",
+      "status": "verified",
+      "used_in": [
+        "vit1-grunnlag-1",
+        "vit1-anvendelse-1"
+      ]
+    },
+    {
+      "id": "vit1-04",
+      "claim": "Forskningsinfrastruktur kan omfatte store instrumenter, samlinger og arkiver, vitenskapelige datainfrastrukturer, datasystemer og kommunikasjonsnettverk; den er derfor mer enn en fysisk laboratoriebygning.",
+      "source_ids": [
+        "vit1-03-ec-research-infrastructure"
+      ],
+      "classification": "institusjonell-definisjon",
+      "status": "verified",
+      "used_in": [
+        "vit1-grunnlag-1",
+        "vit1-anvendelse-1"
+      ]
+    },
+    {
+      "id": "vit1-05",
+      "claim": "NISTs definisjon av metrologisk sporbarhet krever at et måleresultat kan knyttes til en referanse gjennom en dokumentert ubrutt kjede av kalibreringer, der hvert ledd bidrar til måleusikkerheten.",
+      "source_ids": [
+        "vit1-04-nist-traceability-policy",
+        "vit1-05-nist-traceability-faq"
+      ],
+      "classification": "metrologi",
+      "status": "verified",
+      "used_in": [
+        "vit1-grunnlag-2",
+        "vit1-grunnlag-3",
+        "vit1-anvendelse-2",
+        "vit1-institusjoner-2"
+      ]
+    },
+    {
+      "id": "vit1-06",
+      "claim": "Metrologisk sporbarhet er ifølge NIST en egenskap ved måleresultatet, ikke ved instrumentet, laboratoriet eller kalibreringssertifikatet isolert.",
+      "source_ids": [
+        "vit1-05-nist-traceability-faq"
+      ],
+      "classification": "metrologi",
+      "status": "verified",
+      "used_in": [
+        "vit1-grunnlag-2",
+        "vit1-anvendelse-2",
+        "vit1-institusjoner-2"
+      ]
+    },
+    {
+      "id": "vit1-07",
+      "claim": "At et instrument er kalibrert er ikke alene nok til å gjøre senere måleresultater sporbare; selve målekjeden, referansene og usikkerheten må dokumenteres.",
+      "source_ids": [
+        "vit1-04-nist-traceability-policy",
+        "vit1-05-nist-traceability-faq"
+      ],
+      "classification": "metrologi",
+      "status": "verified",
+      "used_in": [
+        "vit1-grunnlag-2",
+        "vit1-grunnlag-3",
+        "vit1-anvendelse-2",
+        "vit1-institusjoner-3"
+      ]
+    },
+    {
+      "id": "vit1-08",
+      "claim": "NIST behandler et måleresultat som en målt verdi sammen med dokumentert måleusikkerhet; usikkerheten er derfor del av resultatet, ikke bare en fotnote til det.",
+      "source_ids": [
+        "vit1-05-nist-traceability-faq"
+      ],
+      "classification": "metrologi",
+      "status": "verified",
+      "used_in": [
+        "vit1-grunnlag-2",
+        "vit1-grunnlag-3",
+        "vit1-anvendelse-2",
+        "vit1-institusjoner-2"
+      ]
+    },
+    {
+      "id": "vit1-09",
+      "claim": "National Academies definerer reproducibility som å oppnå konsistente beregningsresultater med de samme dataene, beregningstrinnene, metodene, koden og analysebetingelsene.",
+      "source_ids": [
+        "vit1-06-nasem-reproducibility"
+      ],
+      "classification": "metodedefinisjon",
+      "status": "verified",
+      "used_in": [
+        "vit1-fordypning-1",
+        "vit1-fordypning-2",
+        "vit1-anvendelse-3",
+        "vit1-institusjoner-5"
+      ]
+    },
+    {
+      "id": "vit1-10",
+      "claim": "National Academies definerer replicability som konsistente resultater på tvers av studier som undersøker samme vitenskapelige spørsmål med egne nye data.",
+      "source_ids": [
+        "vit1-06-nasem-reproducibility"
+      ],
+      "classification": "metodedefinisjon",
+      "status": "verified",
+      "used_in": [
+        "vit1-fordypning-1",
+        "vit1-fordypning-2",
+        "vit1-anvendelse-3"
+      ]
+    },
+    {
+      "id": "vit1-11",
+      "claim": "Uenighet mellom studier betyr ikke automatisk at én studie må forkastes; forskjeller kan skyldes blant annet instrumenter, design, kontekst eller andre forhold som må undersøkes.",
+      "source_ids": [
+        "vit1-06-nasem-reproducibility"
+      ],
+      "classification": "metodebegrensning",
+      "status": "verified",
+      "used_in": [
+        "vit1-fordypning-2",
+        "vit1-anvendelse-3"
+      ]
+    },
+    {
+      "id": "vit1-12",
+      "claim": "NIH definerer vitenskapelig rigor som streng anvendelse av vitenskapelig metode for å sikre robust og minst mulig skjev eksperimentell design, metodikk, analyse, fortolkning og rapportering.",
+      "source_ids": [
+        "vit1-07-nih-rigor"
+      ],
+      "classification": "forskningskvalitet",
+      "status": "verified",
+      "used_in": [
+        "vit1-fordypning-1",
+        "vit1-fordypning-3"
+      ]
+    },
+    {
+      "id": "vit1-13",
+      "claim": "NIHs fagfellevurdering av søknader vurderer vitenskapelig og teknisk kvalitet gjennom en prosess som uttrykkelig skal være rettferdig og objektiv; den er en evaluering av foreslått forskning, ikke en senere replikasjon av resultater.",
+      "source_ids": [
+        "vit1-08-nih-peer-review",
+        "vit1-06-nasem-reproducibility"
+      ],
+      "classification": "synthesis",
+      "status": "verified",
+      "used_in": [
+        "vit1-fordypning-1",
+        "vit1-digital-3"
+      ]
+    },
+    {
+      "id": "vit1-14",
+      "claim": "UNESCOs Recommendation on Open Science løfter transparens, granskning, kritikk og reproducerbarhet fram som prinsipper som skal styrke rigor i vitenskapelige resultater.",
+      "source_ids": [
+        "vit1-09-unesco-open-science"
+      ],
+      "classification": "open-science-policy",
+      "status": "verified",
+      "used_in": [
+        "vit1-fordypning-3",
+        "vit1-anvendelse-1"
+      ]
+    },
+    {
+      "id": "vit1-15",
+      "claim": "UNESCO beskriver åpen vitenskap som så åpen som mulig, men åpner for legitime begrensninger blant annet for personvern, konfidensialitet, immaterielle rettigheter og sensitiv kunnskap.",
+      "source_ids": [
+        "vit1-09-unesco-open-science"
+      ],
+      "classification": "open-science-boundary",
+      "status": "verified",
+      "used_in": [
+        "vit1-fordypning-3",
+        "vit1-anvendelse-1",
+        "vit1-digital-4",
+        "vit1-digital-5"
+      ]
+    },
+    {
+      "id": "vit1-16",
+      "claim": "National Academies framstiller reprodusering og replikasjon som kontrollformer som kan øke tilliten til robustheten i et kunnskapsgrunnlag, uten at vitenskap dermed blir absolutt sikker.",
+      "source_ids": [
+        "vit1-06-nasem-reproducibility"
+      ],
+      "classification": "evidenssyntese",
+      "status": "verified",
+      "used_in": [
+        "vit1-anvendelse-1",
+        "vit1-anvendelse-3"
+      ]
+    },
+    {
+      "id": "vit1-17",
+      "claim": "NIH har i 2026 eksplisitt løftet fram uavhengig replikasjon, standardisering og deling av data og varig infrastruktur for replikasjons- og reproducerbarhetsarbeid som egne tiltak.",
+      "source_ids": [
+        "vit1-10-nih-replication-2026"
+      ],
+      "classification": "current-research-policy",
+      "status": "verified",
+      "used_in": [
+        "vit1-fordypning-2"
+      ]
+    },
+    {
+      "id": "vit1-18",
+      "claim": "For dette kapittelet behandles institusjonell tillit som begrunnet når leseren kan følge den relevante kjeden av metode, måling, usikkerhet, faglig kritikk, dokumentasjon og uavhengig kontroll; institusjonsnavnet alene er ikke tilstrekkelig evidens for en konkret påstand.",
+      "source_ids": [
+        "vit1-04-nist-traceability-policy",
+        "vit1-06-nasem-reproducibility",
+        "vit1-09-unesco-open-science"
+      ],
+      "classification": "editorial-synthesis",
+      "status": "verified",
+      "used_in": [
+        "vit1-grunnlag-1",
+        "vit1-grunnlag-3",
+        "vit1-fordypning-3",
+        "vit1-anvendelse-1"
+      ]
+    },
+    {
+      "id": "vit1-19",
+      "claim": "NIST beskriver eksperimentdesign som planlagt endring av én eller flere faktorer og observasjon av virkningen på responsvariabler for å trekke gyldige og objektive konklusjoner om prosessen eller systemet som studeres.",
+      "source_ids": [
+        "vit1-12-nist-experimental-design"
+      ],
+      "classification": "experimental-design",
+      "status": "verified",
+      "used_in": [
+        "vit1-metoder-1"
+      ]
+    },
+    {
+      "id": "vit1-20",
+      "claim": "Styrken i empirisk evidens avhenger av hvordan design, måling og analyse knytter observerte data til den konkrete påstanden og til relevante alternative forklaringer; rigor krever derfor mer enn at data eksisterer.",
+      "source_ids": [
+        "vit1-12-nist-experimental-design",
+        "vit1-07-nih-rigor"
+      ],
+      "classification": "methodological-synthesis",
+      "status": "verified",
+      "used_in": [
+        "vit1-metoder-1",
+        "vit1-digital-6"
+      ]
+    },
+    {
+      "id": "vit1-21",
+      "claim": "NISTs metrologiveiledning skiller den dokumenterte sporbarheten til et konkret måleresultat fra instrumentets kalibreringsstatus og krever at referansekjede og måleusikkerhet følger resultatet.",
+      "source_ids": [
+        "vit1-04-nist-traceability-policy",
+        "vit1-05-nist-traceability-faq"
+      ],
+      "classification": "metrology-distinction",
+      "status": "verified",
+      "used_in": [
+        "vit1-metoder-2"
+      ]
+    },
+    {
+      "id": "vit1-22",
+      "claim": "Måleusikkerhet og identifiserte feilkilder må vurderes i forhold til størrelsen på effekten eller forskjellen som skal tolkes; flere desimaler alene etablerer ikke sterkere evidens.",
+      "source_ids": [
+        "vit1-05-nist-traceability-faq",
+        "vit1-11-nist-stat-handbook"
+      ],
+      "classification": "measurement-uncertainty",
+      "status": "verified",
+      "used_in": [
+        "vit1-metoder-2"
+      ]
+    },
+    {
+      "id": "vit1-23",
+      "claim": "NISTs statistikkhåndbok organiserer statistisk analyse rundt dataenes struktur, prosessmodellering og eksperimentdesign, slik at estimater og sannsynlighetsutsagn må leses sammen med datagenererende prosess og modellforutsetninger.",
+      "source_ids": [
+        "vit1-11-nist-stat-handbook"
+      ],
+      "classification": "statistical-inference",
+      "status": "verified",
+      "used_in": [
+        "vit1-metoder-3"
+      ]
+    },
+    {
+      "id": "vit1-24",
+      "claim": "NISTs modellvalideringsveiledning understreker at høy R-squared eller andre sammendragsmål ikke alene er tilstrekkelig til å validere en modell; residualer og andre diagnostiske kontroller må undersøkes.",
+      "source_ids": [
+        "vit1-13-nist-model-validation"
+      ],
+      "classification": "model-validation",
+      "status": "verified",
+      "used_in": [
+        "vit1-metoder-3"
+      ]
+    },
+    {
+      "id": "vit1-25",
+      "claim": "NIST beskriver statistisk modellbygging som en iterativ prosess der modellvalg, tilpasning og validering kombinerer data, antakelser og fagkunnskap; modellen må derfor vurderes som en formålsbundet representasjon.",
+      "source_ids": [
+        "vit1-14-nist-model-building",
+        "vit1-13-nist-model-validation"
+      ],
+      "classification": "model-building",
+      "status": "verified",
+      "used_in": [
+        "vit1-metoder-4"
+      ]
+    },
+    {
+      "id": "vit1-26",
+      "claim": "At en beregning eller simulering er numerisk eller implementasjonsmessig konsistent etablerer ikke alene empirisk modelladekvathet; modellens antakelser, validering mot relevante data og følsomhet for implementasjonsvalg må vurderes separat.",
+      "source_ids": [
+        "vit1-13-nist-model-validation",
+        "vit1-16-nist-numerical-reproducibility"
+      ],
+      "classification": "verification-validation-synthesis",
+      "status": "verified",
+      "used_in": [
+        "vit1-metoder-4"
+      ]
+    },
+    {
+      "id": "vit1-27",
+      "claim": "NCBI Taxonomy er et kuratert operasjonelt system der organismenavn og klassifikasjoner brukes til å organisere og koble biologiske sekvensdata, og illustrerer hvordan kategorier fungerer som vitenskapelig datainfrastruktur.",
+      "source_ids": [
+        "vit1-17-ncbi-taxonomy-help"
+      ],
+      "classification": "classification-infrastructure",
+      "status": "verified",
+      "used_in": [
+        "vit1-metoder-5"
+      ]
+    },
+    {
+      "id": "vit1-28",
+      "claim": "ICZN skiller nomenklaturens mål om stabile og universelle zoologiske navn fra selve taksonomiske tenkningen ved uttrykkelig å ikke begrense forskeres frihet til taxonomic thought or actions.",
+      "source_ids": [
+        "vit1-17-ncbi-taxonomy-help",
+        "vit1-18-iczn-preamble"
+      ],
+      "classification": "nomenclature-taxonomy-boundary",
+      "status": "verified",
+      "used_in": [
+        "vit1-metoder-5"
+      ]
+    },
+    {
+      "id": "vit1-29",
+      "claim": "NIST Research Data Framework behandler dokumentasjon av dataenes proveniens sammen med instrumenter, programvare, metoder, parametre, kalibrering og prosesseringskontekst som deler av en granskbar forskningsdata-livssyklus.",
+      "source_ids": [
+        "vit1-15-nist-rdaf"
+      ],
+      "classification": "research-data-provenance",
+      "status": "verified",
+      "used_in": [
+        "vit1-metoder-6"
+      ]
+    },
+    {
+      "id": "vit1-30",
+      "claim": "NISTs Numerical Reproducibility-prosjekt dokumenterer at bibliotekversjoner, flyttallspresisjon, kompilatorvalg og CPU/GPU-arkitektur kan påvirke numerisk reproducerbarhet, slik at kjøremiljøet kan være et materiell metodetrinn.",
+      "source_ids": [
+        "vit1-16-nist-numerical-reproducibility"
+      ],
+      "classification": "numerical-reproducibility",
+      "status": "verified",
+      "used_in": [
+        "vit1-metoder-6"
+      ]
+    },
+    {
+      "id": "vit1-31",
+      "claim": "Uavhengig kontroll, reanalyse og replikasjon kan gi konvergerende støtte til et kunnskapsgrunnlag uten å kreve identiske resultater eller enstemmighet; avvik må lokaliseres i design, data, måling, analyse eller fortolkning.",
+      "source_ids": [
+        "vit1-06-nasem-reproducibility",
+        "vit1-08-nih-peer-review"
+      ],
+      "classification": "consensus-and-critical-control-synthesis",
+      "status": "verified",
+      "used_in": [
+        "vit1-metoder-1",
+        "vit1-metoder-7"
+      ]
+    },
+    {
+      "id": "vit1-32",
+      "claim": "Standardiserte metoder og vitenskapelig rigor skal gjøre arbeid mer sammenlignbart og kontrollert, men gyldigheten av en konkret slutning krever fortsatt kritikk av design, måling, analyse, feilkilder og bruksområde.",
+      "source_ids": [
+        "vit1-11-nist-stat-handbook",
+        "vit1-07-nih-rigor"
+      ],
+      "classification": "standardization-method-critique-synthesis",
+      "status": "verified",
+      "used_in": [
+        "vit1-metoder-7"
+      ]
+    },
+    {
+      "id": "vit1-33",
+      "claim": "National Academies behandler forskningsintegritet som både individuelt og organisatorisk ansvar gjennom hele forskningsprosessen, slik at institusjonelle prosedyrer og ansvarslinjer er en del av betingelsene for pålitelig forskning.",
+      "source_ids": [
+        "vit1-19-nasem-integrity"
+      ],
+      "classification": "research-integrity-institutions",
+      "status": "verified",
+      "used_in": [
+        "vit1-institusjoner-1",
+        "vit1-institusjoner-4",
+        "vit1-institusjoner-6",
+        "vit1-institusjoner-7"
+      ]
+    },
+    {
+      "id": "vit1-34",
+      "claim": "Research institutions play a central role in fostering integrity by maintaining standards, stewardship and environments that support responsible research; institutional status alone does not replace examination of the concrete research process.",
+      "source_ids": [
+        "vit1-19-nasem-integrity"
+      ],
+      "classification": "institutional-authority",
+      "status": "verified",
+      "used_in": [
+        "vit1-institusjoner-1"
+      ]
+    },
+    {
+      "id": "vit1-35",
+      "claim": "Forskningsrådet definerer nasjonal forskningsinfrastruktur bredt nok til å omfatte avansert utstyr, laboratorier, data- og e-infrastruktur, lagring, programvare, nettverk, registre, databaser og vitenskapelige samlinger.",
+      "source_ids": [
+        "vit1-20-rcn-research-infrastructure"
+      ],
+      "classification": "research-infrastructure",
+      "status": "verified",
+      "used_in": [
+        "vit1-institusjoner-2",
+        "vit1-institusjoner-5",
+        "vit1-institusjoner-6",
+        "vit1-institusjoner-7"
+      ]
+    },
+    {
+      "id": "vit1-36",
+      "claim": "NIST Research Data Framework behandler forskningens datalivsløp som et system av planlegging, innsamling, behandling, analyse, deling, gjenbruk, bevaring, styring og dokumentert proveniens, ikke som lagringsplass alene.",
+      "source_ids": [
+        "vit1-15-nist-rdaf"
+      ],
+      "classification": "research-data-infrastructure",
+      "status": "verified",
+      "used_in": [
+        "vit1-institusjoner-5"
+      ]
+    },
+    {
+      "id": "vit1-37",
+      "claim": "Nasjonalbibliotekets prinsipper for digital bevaring krever mer enn å lagre en fil: formatvalg, flere kopier, geografisk separasjon, integritets-/proveniensmetadata og dokumenterte bevaringshandlinger inngår i langtidsbevaringen.",
+      "source_ids": [
+        "vit1-24-nb-digital-preservation"
+      ],
+      "classification": "digital-preservation",
+      "status": "verified",
+      "used_in": [
+        "vit1-institusjoner-4",
+        "vit1-institusjoner-5"
+      ]
+    },
+    {
+      "id": "vit1-38",
+      "claim": "Nasjonalbiblioteket beskriver innsamling, bevaring, tilgjengeliggjøring og forskning på samlingene som del av sitt samfunnsoppdrag og som en ressurs i norsk forskningsinfrastruktur.",
+      "source_ids": [
+        "vit1-25-nb-mandate",
+        "vit1-26-nb-research"
+      ],
+      "classification": "collections-research-infrastructure",
+      "status": "verified",
+      "used_in": [
+        "vit1-institusjoner-4",
+        "vit1-institusjoner-7"
+      ]
+    },
+    {
+      "id": "vit1-39",
+      "claim": "NIH definerer en klinisk trial som forskning der mennesker prospektivt tildeles én eller flere intervensjoner for å evaluere effekter på helserelaterte biomedisinske eller atferdsmessige utfall.",
+      "source_ids": [
+        "vit1-23-nih-clinical-trial-definition"
+      ],
+      "classification": "clinical-trial-definition",
+      "status": "verified",
+      "used_in": [
+        "vit1-institusjoner-3"
+      ]
+    },
+    {
+      "id": "vit1-40",
+      "claim": "NIH fremhever godt designede randomiserte kontrollerte forsøk som sterke for å undersøke årsak–virkning ved medisinske intervensjoner, samtidig som randomiserte design ikke kan brukes for alle kliniske spørsmål eller situasjoner.",
+      "source_ids": [
+        "vit1-22-nih-clinical-studies"
+      ],
+      "classification": "clinical-study-design",
+      "status": "verified",
+      "used_in": [
+        "vit1-institusjoner-3"
+      ]
+    },
+    {
+      "id": "vit1-41",
+      "claim": "OECDs Frascati- og Oslo-rammeverk operasjonaliserer henholdsvis forskning og eksperimentell utvikling og innovasjon som relaterte, men forskjellige målobjekter; FoU og innovasjon skal derfor ikke brukes som synonymer.",
+      "source_ids": [
+        "vit1-01-oecd-frascati",
+        "vit1-21-oecd-oslo-innovation"
+      ],
+      "classification": "rd-innovation-boundary",
+      "status": "verified",
+      "used_in": [
+        "vit1-institusjoner-6"
+      ]
+    },
+    {
+      "id": "vit1-42",
+      "claim": "Oslo Manual knytter innovasjon til en ny eller forbedret løsning som faktisk er implementert eller gjort tilgjengelig, slik at en idé, oppfinnelse eller forskningsaktivitet ikke automatisk er en innovasjon.",
+      "source_ids": [
+        "vit1-21-oecd-oslo-innovation"
+      ],
+      "classification": "innovation-implementation",
+      "status": "verified",
+      "used_in": [
+        "vit1-institusjoner-6"
+      ]
+    },
+    {
+      "id": "vit1-43",
+      "claim": "National Academies beskriver forskningsforetaket som et system som omfatter forskere, institusjoner, sponsorer, publiseringsaktører og faglige organisasjoner, og integritetsanalyse må derfor inkludere organisatoriske insentiver og ansvar uten å anta uredelighet fra finansiering alene.",
+      "source_ids": [
+        "vit1-19-nasem-integrity"
+      ],
+      "classification": "research-environment-governance",
+      "status": "verified",
+      "used_in": [
+        "vit1-institusjoner-1",
+        "vit1-institusjoner-6"
+      ]
+    },
+    {
+      "id": "vit1-44",
+      "claim": "Forskningsrådet beskriver nasjonalt viktig infrastruktur som ressurser som kan være konsentrert på ett eller få steder, men som skal gjøres tilgjengelige for relevante forskere og næringsliv; fysisk lokalisering og faktisk tilgang er derfor ulike analytiske dimensjoner.",
+      "source_ids": [
+        "vit1-20-rcn-research-infrastructure"
+      ],
+      "classification": "knowledge-geography-access",
+      "status": "verified",
+      "used_in": [
+        "vit1-institusjoner-7"
+      ]
+    },
+    {
+      "id": "vit1-45",
+      "claim": "Nasjonalbibliotekets samlinger, privatarkiv, digitalisering og forskningsinfrastruktur viser hvordan bevart og organisert kildemateriale kan brukes til forskning og dokumentasjon, samtidig som hva som er samlet og bevart setter grenser for senere historiske analyser.",
+      "source_ids": [
+        "vit1-25-nb-mandate",
+        "vit1-26-nb-research"
+      ],
+      "classification": "knowledge-heritage",
+      "status": "verified",
+      "used_in": [
+        "vit1-institusjoner-4"
+      ]
+    },
+    {
+      "id": "vit1-46",
+      "claim": "UNESCOs Open Science-anbefaling behandler åpen vitenskap som et institusjonelt økosystem som krever infrastruktur, kompetanse, politikk og insentiver, samtidig som legitime begrensninger på tilgang kan være nødvendige.",
+      "source_ids": [
+        "vit1-27-unesco-open-science-infrastructure"
+      ],
+      "classification": "open-science-infrastructure",
+      "status": "verified",
+      "used_in": [
+        "vit1-institusjoner-5"
+      ]
+    },
+    {
+      "id": "vit1-47",
+      "claim": "NENTs 2024-retningslinjer behandler forskningens samfunnsrolle, offentlig samtale og vitenskapelig integritet som forskningsetiske ansvarsområder, og legger ansvar både på forskere, forskningsorganisasjoner og finansierende aktører for rammevilkår som fremmer god praksis.",
+      "source_ids": [
+        "vit1-28-nent-2024"
+      ],
+      "classification": "research-ethics-social-responsibility",
+      "status": "verified",
+      "used_in": [
+        "vit1-samfunn-1",
+        "vit1-samfunn-3",
+        "vit1-samfunn-7"
+      ]
+    },
+    {
+      "id": "vit1-48",
+      "claim": "National Academies beskriver forskningsintegritet som et systemansvar der individuelle forskere, forskningsinstitusjoner, sponsorer og andre organisasjoner må skape praksiser og insentiver som støtter ærlighet, åpenhet, objektivitet, ansvar og stewardship.",
+      "source_ids": [
+        "vit1-19-nasem-integrity"
+      ],
+      "classification": "research-integrity-system",
+      "status": "verified",
+      "used_in": [
+        "vit1-samfunn-1"
+      ]
+    },
+    {
+      "id": "vit1-49",
+      "claim": "National Academies viser at hvordan vitenskap forstås og hvilke kilder som får tillit påvirkes av psykologiske, sosiale, kulturelle, politiske og kommunikative forhold; offentlig tillit kan derfor ikke reduseres til mengden informasjon som formidles.",
+      "source_ids": [
+        "vit1-29-nasem-science-communication"
+      ],
+      "classification": "science-communication-trust",
+      "status": "verified",
+      "used_in": [
+        "vit1-samfunn-6"
+      ]
+    },
+    {
+      "id": "vit1-50",
+      "claim": "OECDs Frascati Manual gir operative klassifikasjoner for hvem som utfører FoU, hvor finansieringen kommer fra og former for offentlig støtte, slik at finansiering kan analyseres som en rammebetingelse uten å fungere som direkte mål på en konklusjons empiriske gyldighet.",
+      "source_ids": [
+        "vit1-30-oecd-frascati-funding",
+        "vit1-01-oecd-frascati"
+      ],
+      "classification": "research-funding-boundary",
+      "status": "verified",
+      "used_in": [
+        "vit1-samfunn-2"
+      ]
+    },
+    {
+      "id": "vit1-51",
+      "claim": "NIHs FCOI-regelverk krever institusjonell identifikasjon, håndtering og rapportering av relevante økonomiske interessekonflikter for å beskytte forskningens objektivitet; en deklarert konflikt er dermed en risikofaktor som skal håndteres, ikke i seg selv bevis på at bias faktisk har endret resultatet.",
+      "source_ids": [
+        "vit1-31-nih-fcoi"
+      ],
+      "classification": "financial-conflict-of-interest",
+      "status": "verified",
+      "used_in": [
+        "vit1-samfunn-2"
+      ]
+    },
+    {
+      "id": "vit1-52",
+      "claim": "De norske generelle forskningsetiske retningslinjene beskytter akademisk frihet og sier at oppdragsgiver i oppdragsforskning ikke bør søke utilbørlig innflytelse over metodevalg, gjennomføring eller publisering.",
+      "source_ids": [
+        "vit1-37-norway-general-research-ethics"
+      ],
+      "classification": "academic-freedom-commissioned-research",
+      "status": "verified",
+      "used_in": [
+        "vit1-samfunn-2"
+      ]
+    },
+    {
+      "id": "vit1-53",
+      "claim": "NENTs retningslinjer behandler forskningsetikk som verdier, normer og institusjonelle ordninger som regulerer vitenskapelig virksomhet og omfatter ansvar for kvalitet, integritet, mennesker, samfunn og natur gjennom forskningsprosessen.",
+      "source_ids": [
+        "vit1-28-nent-2024"
+      ],
+      "classification": "research-ethics-responsibility",
+      "status": "verified",
+      "used_in": [
+        "vit1-samfunn-3"
+      ]
+    },
+    {
+      "id": "vit1-54",
+      "claim": "UNESCOs Recommendation on Science and Scientific Researchers knytter vitenskapelig virksomhet til menneskelig velferd, inkludering, menneskerettigheter, ansvar og gode vilkår for vitenskapelig arbeid, slik at hvem som får delta og nyte godt av forskning er legitime analyseobjekter.",
+      "source_ids": [
+        "vit1-36-unesco-science-researchers"
+      ],
+      "classification": "science-inclusion-responsibility",
+      "status": "verified",
+      "used_in": [
+        "vit1-samfunn-3"
+      ]
+    },
+    {
+      "id": "vit1-55",
+      "claim": "IPCCs usikkerhetsveiledning bruker et kalibrert rammeverk der evidens og faglig enighet informerer confidence-vurderinger og der sannsynlighet uttrykkes med standardisert likelihood-språk når det er relevant, slik at usikkerhet kommuniseres systematisk uten å late som den forsvinner.",
+      "source_ids": [
+        "vit1-32-ipcc-uncertainty"
+      ],
+      "classification": "uncertainty-communication",
+      "status": "verified",
+      "used_in": [
+        "vit1-samfunn-4"
+      ]
+    },
+    {
+      "id": "vit1-56",
+      "claim": "WHO framhever troverdig, relevant, rettidig, tilgjengelig og handlingsrettet informasjon sammen med community engagement og tilbakemeldingsmekanismer som sentrale elementer i å bygge tillit og samarbeid under risikokommunikasjon.",
+      "source_ids": [
+        "vit1-35-who-risk-trust"
+      ],
+      "classification": "risk-communication-trust",
+      "status": "verified",
+      "used_in": [
+        "vit1-samfunn-4",
+        "vit1-samfunn-6"
+      ]
+    },
+    {
+      "id": "vit1-57",
+      "claim": "NIST skiller standardisering fra conformity assessment: standarder etablerer felles tekniske krav eller språk, mens conformity assessment undersøker om spesifiserte krav er oppfylt; samsvar med en standard er derfor ikke automatisk validering av enhver underliggende vitenskapelig påstand.",
+      "source_ids": [
+        "vit1-33-nist-standardization",
+        "vit1-34-nist-conformity"
+      ],
+      "classification": "standards-conformity-boundary",
+      "status": "verified",
+      "used_in": [
+        "vit1-samfunn-5"
+      ]
+    },
+    {
+      "id": "vit1-58",
+      "claim": "National Academies behandler effektiv vitenskapskommunikasjon som mål-, publikums- og kontekstavhengig og advarer mot å anta at enkel overføring av mer informasjon alene er en tilstrekkelig strategi på tvers av kontroversielle og komplekse saker.",
+      "source_ids": [
+        "vit1-29-nasem-science-communication"
+      ],
+      "classification": "science-communication-context",
+      "status": "verified",
+      "used_in": [
+        "vit1-samfunn-6",
+        "vit1-samfunn-7"
+      ]
+    },
+    {
+      "id": "vit1-59",
+      "claim": "National Academies analyserer science-related controversies som situasjoner der vitenskapelig informasjon møter sosiale, politiske, kulturelle og mediale forhold; offentlig konfliktnivå kan derfor ikke brukes som et direkte mål på graden av faglig evidensusikkerhet.",
+      "source_ids": [
+        "vit1-29-nasem-science-communication"
+      ],
+      "classification": "science-controversy-synthesis",
+      "status": "verified",
+      "used_in": [
+        "vit1-samfunn-6"
+      ]
+    },
+    {
+      "id": "vit1-60",
+      "claim": "NENT og UNESCO behandler vitenskap som en samfunnsinstitusjon med frihet og ansvar for samfunnsmessige konsekvenser, inkludering og offentlig kunnskapsutveksling; slike ansvarsspørsmål må analyseres uten å gjøre dem til direkte sannhetskriterier for empiriske resultater.",
+      "source_ids": [
+        "vit1-28-nent-2024",
+        "vit1-36-unesco-science-researchers"
+      ],
+      "classification": "science-society-responsibility-synthesis",
+      "status": "verified",
+      "used_in": [
+        "vit1-samfunn-1",
+        "vit1-samfunn-3",
+        "vit1-samfunn-5",
+        "vit1-samfunn-7"
+      ]
+    },
+    {
+      "id": "vit1-61",
+      "claim": "De norske forskningsetiske retningslinjene framhever kritisk og systematisk sannhetssøken, kvalitet, integritet og forskningsetisk dømmekraft, mens NENT også legger ansvar på forskningsmiljøene for offentlig samtale; vitenskapelig utdanning bør derfor lære hvordan evidens og kontroll vurderes, ikke bare ferdige konklusjoner.",
+      "source_ids": [
+        "vit1-37-norway-general-research-ethics",
+        "vit1-28-nent-2024"
+      ],
+      "classification": "science-education-critical-literacy",
+      "status": "verified",
+      "used_in": [
+        "vit1-samfunn-7"
+      ]
+    },
+    {
+      "id": "vit1-62",
+      "claim": "National Academies skiller komputasjonell reproducerbarhet, der samme inputdata, beregningssteg, metoder, kode og analysebetingelser brukes på nytt, fra replikasjon der nye data brukes for å undersøke det samme vitenskapelige spørsmålet.",
+      "source_ids": [
+        "vit1-06-nasem-reproducibility"
+      ],
+      "classification": "computational-reproducibility-boundary",
+      "status": "verified",
+      "used_in": [
+        "vit1-digital-1"
+      ]
+    },
+    {
+      "id": "vit1-63",
+      "claim": "NISTs Numerical Reproducibility-prosjekt dokumenterer at bibliotekversjoner, floating-point-presisjon, compiler-valg og CPU/GPU-arkitektur kan skape numeriske forskjeller, slik at utførelsesmiljøet kan være en del av den vitenskapelige reproducerbarhetsbeskrivelsen.",
+      "source_ids": [
+        "vit1-16-nist-numerical-reproducibility"
+      ],
+      "classification": "numerical-environment-sensitivity",
+      "status": "verified",
+      "used_in": [
+        "vit1-digital-1"
+      ]
+    },
+    {
+      "id": "vit1-64",
+      "claim": "Automatisert utførelse kan gjøre de samme beregningsstegene konsekvente, men NIH-rigor og National Academies-reproduksjonsrammer krever fortsatt vurdering av design, metode, analyse og fortolkning; konsistent kjøring validerer derfor ikke automatisk de faglige antakelsene.",
+      "source_ids": [
+        "vit1-07-nih-rigor",
+        "vit1-06-nasem-reproducibility"
+      ],
+      "classification": "automation-validation-boundary",
+      "status": "verified",
+      "used_in": [
+        "vit1-digital-1"
+      ]
+    },
+    {
+      "id": "vit1-65",
+      "claim": "NIST Research Data Framework organiserer forskningsdata gjennom en livssyklus som inkluderer generering eller innhenting, prosessering og analyse, deling og gjenbruk samt bevaring eller kassasjon, og framhever dokumentasjon av programvare, instrumenter, parametre og prosesseringskontekst.",
+      "source_ids": [
+        "vit1-15-nist-rdaf"
+      ],
+      "classification": "research-data-lifecycle",
+      "status": "verified",
+      "used_in": [
+        "vit1-digital-2"
+      ]
+    },
+    {
+      "id": "vit1-66",
+      "claim": "W3C PROV-O representerer provenance gjennom entiteter, aktiviteter og agenter med relasjoner mellom dem, mens NIST RDaF beskriver provenance som en historisk, attribuert og dokumentert oversikt over hvordan data ble generert, innhentet og prosessert.",
+      "source_ids": [
+        "vit1-38-w3c-prov-o",
+        "vit1-15-nist-rdaf"
+      ],
+      "classification": "data-provenance",
+      "status": "verified",
+      "used_in": [
+        "vit1-digital-2"
+      ]
+    },
+    {
+      "id": "vit1-67",
+      "claim": "FAIR-prinsippene beskriver findability, accessibility, interoperability og reusability for data og metadata, og W3C anbefaler metadata, provenance og standardiserte maskinlesbare formater; disse egenskapene forbedrer gjenbruk og gransking, men er ikke i seg selv kriterier for empirisk sannhet eller representativitet.",
+      "source_ids": [
+        "vit1-40-fair-principles",
+        "vit1-39-w3c-data-web"
+      ],
+      "classification": "fair-data-quality-boundary",
+      "status": "verified",
+      "used_in": [
+        "vit1-digital-2"
+      ]
+    },
+    {
+      "id": "vit1-68",
+      "claim": "W3C anbefaler komplementære datapresentasjoner for å støtte menneskelig forståelse, mens NISTs statistiske metodehåndbok bruker grafiske teknikker og residualanalyse som analytiske verktøy; visualisering er dermed en dokumenterbar transformasjon og diagnostisk praksis, ikke et nøytralt vindu mot rådata.",
+      "source_ids": [
+        "vit1-39-w3c-data-web",
+        "vit1-11-nist-stat-handbook",
+        "vit1-13-nist-model-validation"
+      ],
+      "classification": "data-visualization-analysis",
+      "status": "verified",
+      "used_in": [
+        "vit1-digital-3"
+      ]
+    },
+    {
+      "id": "vit1-69",
+      "claim": "NIH scientific rigor omfatter robust design, metodikk, analyse, fortolkning og rapportering, og NIST RDaF framhever dokumentasjon av metoder, instrumenter, programvare og parametre; protokoller styrker etterprøvbarhet når både planlagte trinn, versjoner og faktiske avvik registreres.",
+      "source_ids": [
+        "vit1-07-nih-rigor",
+        "vit1-15-nist-rdaf"
+      ],
+      "classification": "protocol-documentation",
+      "status": "verified",
+      "used_in": [
+        "vit1-digital-4"
+      ]
+    },
+    {
+      "id": "vit1-70",
+      "claim": "NIST definerer metrologisk sporbarhet som en egenskap ved et måleresultat gjennom en dokumentert ubrutt kalibreringskjede der hvert ledd bidrar til måleusikkerheten, og understreker at sporbarhet ikke er en iboende egenskap ved instrumentet eller laboratoriet alene.",
+      "source_ids": [
+        "vit1-04-nist-traceability-policy",
+        "vit1-05-nist-traceability-faq"
+      ],
+      "classification": "sensor-measurement-traceability",
+      "status": "verified",
+      "used_in": [
+        "vit1-digital-5"
+      ]
+    },
+    {
+      "id": "vit1-71",
+      "claim": "NIST viser at software- og hardwarevalg kan påvirke numerisk output, og Forskningsrådet regner blant annet data/e-infrastruktur, lagring, programvare og nettverk som forskningsinfrastruktur; tekniske valg er derfor relevante metodebetingelser når de påvirker hva som kan observeres, beregnes eller rekonstrueres.",
+      "source_ids": [
+        "vit1-16-nist-numerical-reproducibility",
+        "vit1-20-rcn-research-infrastructure"
+      ],
+      "classification": "technical-mediation-of-science",
+      "status": "verified",
+      "used_in": [
+        "vit1-digital-6"
+      ]
+    },
+    {
+      "id": "vit1-72",
+      "claim": "OECD/Eurostat Oslo Manual definerer innovasjon gjennom nye eller forbedrede produkter eller prosesser som er gjort tilgjengelige eller tatt i bruk og skiller innovasjonsmåling fra FoU; innovasjonsstatus er derfor ikke et automatisk mål på vitenskapelig evidenskvalitet.",
+      "source_ids": [
+        "vit1-21-oecd-oslo-innovation",
+        "vit1-02-oecd-oslo-rd"
+      ],
+      "classification": "innovation-rd-boundary",
+      "status": "verified",
+      "used_in": [
+        "vit1-digital-6"
+      ]
+    },
+    {
+      "id": "vit1-73",
+      "claim": "NCBI Taxonomy and zoological nomenclature provide stable identifiers and classification lineages for linking biological records, but nomenclatural stability is not identical to a final hypothesis about species boundaries or phylogeny; GBIF additionally warns that occurrence records can contain taxonomic misidentification and uneven sampling, so classification and occurrence data must be assessed for fitness for the intended inference.",
+      "source_ids": [
+        "vit1-17-ncbi-taxonomy-help",
+        "vit1-18-iczn-preamble",
+        "vit1-47-gbif-occurrence-quality"
+      ],
+      "classification": "classification-occurrence-boundary",
+      "status": "verified",
+      "used_in": [
+        "vit1-natur-1"
+      ]
+    },
+    {
+      "id": "vit1-74",
+      "claim": "CDC defines epidemiology as systematic, data-driven study of distribution and determinants in specified populations and its Field Epidemiology Manual requires interpretation to consider confounding, chance, selection bias and information bias; an observed population association therefore requires design-based evaluation before causal interpretation.",
+      "source_ids": [
+        "vit1-41-cdc-principles-epi",
+        "vit1-42-cdc-field-epi"
+      ],
+      "classification": "epidemiologic-inference-boundary",
+      "status": "verified",
+      "used_in": [
+        "vit1-natur-2"
+      ]
+    },
+    {
+      "id": "vit1-75",
+      "claim": "NIH guidance on clinical studies distinguishes strengths and weaknesses of study designs and notes that randomized trials are powerful for particular intervention questions but are not always possible or sufficient, while NIH scientific-rigor guidance requires unbiased design, methodology, analysis, interpretation and reporting; evidential strength therefore depends on question, population, bias structure and context of use rather than a universal design hierarchy.",
+      "source_ids": [
+        "vit1-22-nih-clinical-studies",
+        "vit1-07-nih-rigor"
+      ],
+      "classification": "medical-evidence-context",
+      "status": "verified",
+      "used_in": [
+        "vit1-natur-2"
+      ]
+    },
+    {
+      "id": "vit1-76",
+      "claim": "EPA field-sampling quality guidance treats documented sampling and measurement procedures, procedure validation and quality controls as part of the evidence chain, so field observations must be interpreted together with where, when and how the observation or sample was generated rather than as context-free values.",
+      "source_ids": [
+        "vit1-46-epa-field-sampling"
+      ],
+      "classification": "fieldwork-design-and-documentation",
+      "status": "verified",
+      "used_in": [
+        "vit1-natur-3"
+      ]
+    },
+    {
+      "id": "vit1-77",
+      "claim": "GBIF identifies uneven sampling and taxonomic misidentification as important limitations of biodiversity occurrence data, while EPA requires documented field procedures; a non-record or sparse record cannot therefore be treated as demonstrated absence unless sampling effort, detection process and identification quality support that inference.",
+      "source_ids": [
+        "vit1-47-gbif-occurrence-quality",
+        "vit1-46-epa-field-sampling"
+      ],
+      "classification": "field-observation-detection-limit",
+      "status": "verified",
+      "used_in": [
+        "vit1-natur-3"
+      ]
+    },
+    {
+      "id": "vit1-78",
+      "claim": "EPA field-sampling guidance and NIST Research Data Framework both make procedure, quality control and provenance relevant to interpretation of samples and derived data; sample identity must therefore include collection context, handling and transformation history, while analytical precision alone cannot establish that a sample represents the intended site or population.",
+      "source_ids": [
+        "vit1-46-epa-field-sampling",
+        "vit1-15-nist-rdaf"
+      ],
+      "classification": "sample-provenance-representativeness",
+      "status": "verified",
+      "used_in": [
+        "vit1-natur-3"
+      ]
+    },
+    {
+      "id": "vit1-79",
+      "claim": "USGS explains geologic time through complementary relative relationships and radiometric dating, where suitable minerals and isotope systems provide numerical ages under material-specific assumptions; a reported age must therefore be tied to the dated material, method and geologic context rather than treated as a direct reading of the event of interest.",
+      "source_ids": [
+        "vit1-43-usgs-geologic-time"
+      ],
+      "classification": "geologic-time-evidence-chain",
+      "status": "verified",
+      "used_in": [
+        "vit1-natur-4"
+      ]
+    },
+    {
+      "id": "vit1-80",
+      "claim": "WMO observation programmes use standards, documented methods and quality control across instruments and observing conditions, GCOS coordinates systematic long-term observations of Essential Climate Variables, and NIST metrological traceability ties measurement results to documented reference chains and uncertainty; climate measurement therefore depends on observation-system continuity and metadata as well as instrument output.",
+      "source_ids": [
+        "vit1-44-wmo-imop",
+        "vit1-45-wmo-gcos",
+        "vit1-04-nist-traceability-policy"
+      ],
+      "classification": "climate-observation-system",
+      "status": "verified",
+      "used_in": [
+        "vit1-natur-5"
+      ]
+    },
+    {
+      "id": "vit1-81",
+      "claim": "WMO climate-observing frameworks require systematic long-term observations and quality-controlled methods, while IPCC uncertainty guidance uses calibrated evidence/confidence language; environmental monitoring must therefore evaluate network design, representativeness, methodological changes and uncertainty rather than equating a precise sensor reading with a validated spatial or temporal trend.",
+      "source_ids": [
+        "vit1-44-wmo-imop",
+        "vit1-45-wmo-gcos",
+        "vit1-32-ipcc-uncertainty"
+      ],
+      "classification": "environmental-monitoring-inference",
+      "status": "verified",
+      "used_in": [
+        "vit1-natur-5"
+      ]
+    },
+    {
+      "id": "vit1-82",
+      "claim": "EPA ecological risk assessment begins with problem formulation that defines assessment endpoints, stressors, exposure pathways and conceptual models before analysis; ecological system analysis therefore requires an explicit system boundary and stated endpoints rather than an unrestricted claim that all components are equally relevant.",
+      "source_ids": [
+        "vit1-48-epa-ecological-risk"
+      ],
+      "classification": "ecological-system-scope",
+      "status": "verified",
+      "used_in": [
+        "vit1-natur-6"
+      ]
+    },
+    {
+      "id": "vit1-83",
+      "claim": "In EPA ecological risk assessment, conceptual models organize hypothesized relationships among sources, stressors, pathways and ecological receptors and guide an analysis plan; system thinking is therefore scientifically useful when it generates explicit, testable relations and data needs, not when complexity itself is treated as evidence.",
+      "source_ids": [
+        "vit1-48-epa-ecological-risk"
+      ],
+      "classification": "system-thinking-conceptual-model",
+      "status": "verified",
+      "used_in": [
+        "vit1-natur-6"
+      ]
+    },
+    {
+      "id": "vit1-84",
+      "claim": "EPA ecological risk assessment requires assessment endpoints and exposure/effects analysis at defined ecological entities and attributes, with uncertainties carried into risk characterization; effects observed at one biological level cannot therefore be transferred automatically to population, community or ecosystem conclusions without an explicit mechanism and appropriate evidence.",
+      "source_ids": [
+        "vit1-48-epa-ecological-risk"
+      ],
+      "classification": "multi-level-ecological-inference",
+      "status": "verified",
+      "used_in": [
+        "vit1-natur-6"
+      ]
+    },
+    {
+      "id": "vit1-85",
+      "claim": "EPA separates scientific ecological risk assessment and risk characterization from subsequent risk-management decisions, while IPCC uncertainty guidance supports calibrated communication of evidential confidence; environmental science can characterize effects, exposure and uncertainty without by itself determining the normative priorities or acceptable-risk rule used for policy.",
+      "source_ids": [
+        "vit1-48-epa-ecological-risk",
+        "vit1-32-ipcc-uncertainty"
+      ],
+      "classification": "environmental-science-policy-boundary",
+      "status": "verified",
+      "used_in": [
+        "vit1-natur-7"
+      ]
+    },
+    {
+      "id": "vit1-86",
+      "claim": "Scientific models are selective representations and epistemic tools that may idealize or deliberately distort aspects of a target system; their adequacy must therefore be assessed relative to target, purpose and the particular inference drawn rather than by asking whether the model is a literal copy of reality.",
+      "source_ids": [
+        "vit1-49-sep-models-science"
+      ],
+      "classification": "model-representation-idealization",
+      "status": "verified",
+      "used_in": [
+        "vit1-paradigme-1"
+      ]
+    },
+    {
+      "id": "vit1-87",
+      "claim": "Model validation can test fit, residual structure and performance in a specified domain, while philosophical analysis of models asks what relation licenses inference from model to target; strong scientific model criticism therefore requires both technical diagnostics and explicit representational scope.",
+      "source_ids": [
+        "vit1-13-nist-model-validation",
+        "vit1-49-sep-models-science"
+      ],
+      "classification": "model-validation-representation-boundary",
+      "status": "verified",
+      "used_in": [
+        "vit1-paradigme-1"
+      ]
+    },
+    {
+      "id": "vit1-88",
+      "claim": "Accounts of scientific explanation distinguish explanatory achievements from mere description or prediction and have proposed different structures for explanatory relevance; the explanatory force of a scientific account must therefore be evaluated against the kind of why-question, laws, mechanisms or relevance relations it purports to supply.",
+      "source_ids": [
+        "vit1-50-sep-scientific-explanation"
+      ],
+      "classification": "scientific-explanation-structure",
+      "status": "verified",
+      "used_in": [
+        "vit1-paradigme-2"
+      ]
+    },
+    {
+      "id": "vit1-89",
+      "claim": "Interventionist approaches clarify many causal claims by asking how an outcome would change under an appropriately defined intervention and by making counterfactual and structural assumptions explicit, while also recognizing scope limits for poorly defined or conceptually unmanipulable candidate causes.",
+      "source_ids": [
+        "vit1-51-sep-causation-manipulability"
+      ],
+      "classification": "causal-intervention-scope",
+      "status": "verified",
+      "used_in": [
+        "vit1-paradigme-2"
+      ]
+    },
+    {
+      "id": "vit1-90",
+      "claim": "Scientific objectivity is not a single perspective-free condition but a family of ideals concerning facts, values, personal bias, measurement, statistical evidence, reproducibility and community practices; a concrete study should therefore specify which objectivity risks its procedures are designed to control.",
+      "source_ids": [
+        "vit1-52-sep-scientific-objectivity"
+      ],
+      "classification": "objectivity-multiple-control-ideals",
+      "status": "verified",
+      "used_in": [
+        "vit1-paradigme-3"
+      ]
+    },
+    {
+      "id": "vit1-91",
+      "claim": "Scientific observation is shaped by concepts, instruments and background commitments, and objectivity can be strengthened through practices that expose and criticize such choices; theory-ladenness and perspectival selection therefore motivate robustness checks and alternative operationalizations rather than the conclusion that observations are arbitrary.",
+      "source_ids": [
+        "vit1-52-sep-scientific-objectivity",
+        "vit1-53-sep-theory-observation"
+      ],
+      "classification": "perspective-theory-ladenness-control",
+      "status": "verified",
+      "used_in": [
+        "vit1-paradigme-3"
+      ]
+    },
+    {
+      "id": "vit1-92",
+      "claim": "Observation and measurement depend on theoretical and practical background assumptions about instruments, classifications and what counts as a relevant signal; because these assumptions can be challenged through calibration, alternative operationalizations and new observations, stable scientific conventions should be treated as revisable working commitments rather than unquestionable truths.",
+      "source_ids": [
+        "vit1-53-sep-theory-observation",
+        "vit1-04-nist-traceability-policy"
+      ],
+      "classification": "measurement-background-assumptions",
+      "status": "verified",
+      "used_in": [
+        "vit1-paradigme-4"
+      ]
+    },
+    {
+      "id": "vit1-93",
+      "claim": "Scientific inquiry often learns about targets through indirect indicators, data models and theoretical interpretation rather than direct unaided observation; indirect observability therefore creates an additional validation problem about how the indicator or representation bears on the target, not an automatic boundary between scientific and unscientific phenomena.",
+      "source_ids": [
+        "vit1-49-sep-models-science",
+        "vit1-53-sep-theory-observation"
+      ],
+      "classification": "indirect-observation-validation",
+      "status": "verified",
+      "used_in": [
+        "vit1-paradigme-4"
+      ]
+    },
+    {
+      "id": "vit1-94",
+      "claim": "Kuhn’s account connects paradigms and normal science with shared exemplars, problems and standards and treats revolutions as deeper changes in scientific frameworks, while later historical and philosophical work disputes how sharp or uniform such breaks are; paradigm or revolution language therefore requires evidence of broad change rather than a single novel result.",
+      "source_ids": [
+        "vit1-54-sep-thomas-kuhn",
+        "vit1-55-sep-scientific-revolutions"
+      ],
+      "classification": "paradigm-revolution-change",
+      "status": "verified",
+      "used_in": [
+        "vit1-paradigme-5"
+      ]
+    },
+    {
+      "id": "vit1-95",
+      "claim": "Scientific disagreement can concern evidence, models, concepts, standards or theory choice, and Kuhnian conflict is only one possible structure of disagreement; analyzing a controversy requires identifying the claims and shared or disputed standards before treating persistent disagreement as evidence of a paradigm crisis.",
+      "source_ids": [
+        "vit1-54-sep-thomas-kuhn",
+        "vit1-55-sep-scientific-revolutions"
+      ],
+      "classification": "scientific-disagreement-structure",
+      "status": "verified",
+      "used_in": [
+        "vit1-paradigme-5"
+      ]
+    },
+    {
+      "id": "vit1-96",
+      "claim": "Philosophy of science distinguishes questions about representation, explanation, causation and objectivity that can function as concrete checks on scientific inference; in Vitenskap these distinctions are used to calibrate what data and models support rather than to replace empirical analysis with an independent philosophy curriculum.",
+      "source_ids": [
+        "vit1-49-sep-models-science",
+        "vit1-50-sep-scientific-explanation",
+        "vit1-52-sep-scientific-objectivity"
+      ],
+      "classification": "philosophy-of-science-practice-boundary",
+      "status": "verified",
+      "used_in": [
+        "vit1-paradigme-6"
+      ]
+    },
+    {
+      "id": "vit1-97",
+      "claim": "Fallible scientific knowledge can remain strongly warranted when evidence converges and the limits of observation, models and extrapolation are specified; scientific progress can be understood through several epistemic dimensions, so acknowledging local knowledge limits does not imply that all alternatives are equally supported.",
+      "source_ids": [
+        "vit1-53-sep-theory-observation",
+        "vit1-57-sep-scientific-progress"
+      ],
+      "classification": "knowledge-limits-fallible-progress",
+      "status": "verified",
+      "used_in": [
+        "vit1-paradigme-6"
+      ]
+    },
+    {
+      "id": "vit1-98",
+      "claim": "Modern scientific knowledge is socially organized through division of cognitive labour, institutions and communities, and these arrangements can affect which problems are pursued and how criticism is distributed; social organization is therefore epistemically relevant without itself deciding whether a particular empirical claim is true.",
+      "source_ids": [
+        "vit1-56-sep-social-dimensions"
+      ],
+      "classification": "social-organization-epistemic-effects",
+      "status": "verified",
+      "used_in": [
+        "vit1-paradigme-7"
+      ]
+    },
+    {
+      "id": "vit1-99",
+      "claim": "Social mechanisms such as critical interaction, access, incentives and institutional roles can strengthen or weaken error detection, while research integrity also depends on organizational conditions; analyzing scientific truth-production should therefore trace how social arrangements affect evidential controls without reducing evidence to authority or power.",
+      "source_ids": [
+        "vit1-56-sep-social-dimensions",
+        "vit1-19-nasem-integrity"
+      ],
+      "classification": "truth-production-social-controls",
+      "status": "verified",
+      "used_in": [
+        "vit1-paradigme-7"
+      ]
+    },
+    {
+      "id": "vit1-100",
+      "claim": "Measurement traceability, model validation and empirical adequacy support different parts of an evidential chain, while philosophical accounts distinguish model usefulness and scientific progress from stronger claims of literal truth; scientific conclusions should therefore state whether evidence establishes a measurement result, local model adequacy, robust explanation or a stronger realist interpretation.",
+      "source_ids": [
+        "vit1-04-nist-traceability-policy",
+        "vit1-13-nist-model-validation",
+        "vit1-49-sep-models-science",
+        "vit1-57-sep-scientific-progress"
+      ],
+      "classification": "truth-measurement-model-progress-levels",
+      "status": "verified",
+      "used_in": [
+        "vit1-paradigme-8"
+      ]
+    }
+  ]
+}

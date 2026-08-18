@@ -1,0 +1,54 @@
+{
+  "version": "2.0",
+  "status": "canonical_category_profile",
+  "type": "category_quiz_profile",
+  "categoryId": "media",
+  "title": "Media",
+  "governance": {
+    "production_standard": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "question_schema": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+    "template_registry": "data/quiz/regler/QUIZ_TEMPLATE_REGISTRY_V2.json",
+    "authority": "category_content_only",
+    "may_override_global_rules": false
+  },
+  "required_emne_prefix": "em_media_",
+  "content_priorities": [
+    "redaksjon, medium, sak og publisering",
+    "kilder, verifisering og journalistisk metode",
+    "presseetikk, ansvar og ytringsfrihet",
+    "eierskap, økonomi og institusjoner",
+    "plattform, algoritme, distribusjon og offentlighet"
+  ],
+  "essential_concepts": [
+    "kildekritikk",
+    "framing",
+    "dagsorden",
+    "redaktøransvar",
+    "offentlighet",
+    "plattformisering",
+    "medieeierskap",
+    "verifisering"
+  ],
+  "preferred_source_types": [
+    "original publisering og redaksjonell dokumentasjon",
+    "presseetiske og regulatoriske kilder",
+    "mediearkiv og pressehistorie",
+    "medieforskning og institusjonskilder"
+  ],
+  "category_rules": [
+    "Start med dokumentert stoff fra kategorien, ikke med emneetiketten.",
+    "Bevar relevante faguttrykk i spørsmål, knowledge eller metadata.",
+    "Bruk bare emne_id som finnes i kategoriens emnefil.",
+    "Kategori-profilen styrer faglig utvalg, men ikke global quizbalanse eller språk."
+  ],
+  "example_question": {
+    "question": "Hva kalles det når en redaksjon velger hvilke sider av en sak som framheves?",
+    "options": ["Framing", "Kildevern", "Tekstarkiv"],
+    "answer": "Framing",
+    "question_type": "concept",
+    "knowledge": "Framing er innrammingen som påvirker hvordan en sak presenteres og forstås, uten nødvendigvis å endre de enkelte faktaene.",
+    "emne_id": "em_media_<velg_gyldig_emne>",
+    "source": ["<konkret_kilde>"],
+    "note": "Eksempelet viser konkret bruk av et fagbegrep. Det er ikke en ferdig produksjonsquiz."
+  }
+}

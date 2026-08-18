@@ -1,0 +1,680 @@
+{
+  "schema": "history_go_fagverk_claims_v1",
+  "version": "1.0.0",
+  "subject_id": "litteratur",
+  "chapter_id": "tekstkritikk_bokhistorie_arkiv",
+  "verified_at": "2026-08-07",
+  "verification_status": "verified",
+  "sources": [
+    {
+      "id": "tb01",
+      "label": "Hamlet: An Introduction to This Text",
+      "url": "https://www.folger.edu/explore/shakespeares-works/hamlet/an-introduction-to-this-text/",
+      "publisher": "Folger Shakespeare Library",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Seksjonene om Q2, First Folio, modernisert tekst, variantvalg og redaksjonelle inngrep"
+    },
+    {
+      "id": "tb02",
+      "label": "The Publication of Shakespeare’s Plays",
+      "url": "https://www.folger.edu/explore/shakespeares-works/the-publication-of-shakespeares-plays-from-the-folger-shakespeare-editions/",
+      "publisher": "Folger Shakespeare Library",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Seksjonene om quarto, folio, trykkforløp, skuespillkompani og publisering"
+    },
+    {
+      "id": "tb03",
+      "label": "TEI P5 Guidelines",
+      "url": "https://tei-c.org/guidelines/p5/",
+      "publisher": "Text Encoding Initiative",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "P5-kapitlene om manuscripts, textcrit, source documents, facsimiles og kritisk apparat"
+    },
+    {
+      "id": "tb04",
+      "label": "Using the Shelley-Godwin Archive",
+      "url": "https://shelleygodwinarchive.org/using-the-archive/",
+      "publisher": "Shelley-Godwin Archive",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Veiledningen om manuskriptbilder, transkripsjoner, kollasjon, metadata og navigasjon"
+    },
+    {
+      "id": "tb05",
+      "label": "Henrik Ibsens skrifter",
+      "url": "https://www.ibsen.uio.no/",
+      "publisher": "Universitetet i Oslo",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Utgaveprinsippene og verkvisningene med grunntekst, manuskripter, varianter og kommentarer"
+    },
+    {
+      "id": "tb06",
+      "label": "The Pickwick Papers",
+      "url": "https://www.gutenberg.org/ebooks/580",
+      "publisher": "Project Gutenberg",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Kapittel 1–57 og føljetongens nummer-, illustrasjons- og publiseringsstruktur"
+    },
+    {
+      "id": "tb07",
+      "label": "The Walt Whitman Archive",
+      "url": "https://whitmanarchive.org/",
+      "publisher": "University of Nebraska–Lincoln",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Seksjonene «Published works», «Manuscripts», «Biography» og redaksjonell dokumentasjon"
+    },
+    {
+      "id": "tb08",
+      "label": "Emily Dickinson Archive",
+      "url": "https://www.edickinson.org/",
+      "publisher": "Harvard University",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Fascikkel- og diktvisningene med bilder, transkripsjoner, varianter og metadata"
+    },
+    {
+      "id": "tb09",
+      "label": "MLA Guidelines for Editors of Scholarly Editions",
+      "url": "https://www.mla.org/Resources/Guidelines-and-Data/Reports-and-Professional-Guidelines/Guidelines-for-Editors-of-Scholarly-Editions",
+      "publisher": "Modern Language Association",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Delene om editorial principles, textual history, apparatus, annotation og digital sustainability"
+    },
+    {
+      "id": "tb10",
+      "label": "Digital Preservation",
+      "url": "https://www.loc.gov/preservation/digital/",
+      "publisher": "Library of Congress",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Seksjonene om filformat, lagringsmedium, metadata, integritet, migrering og tilgang"
+    },
+    {
+      "id": "tb11",
+      "label": "Sámi Archives",
+      "url": "https://arkivverket.no/en/about-us/sami-archives",
+      "publisher": "The National Archives of Norway",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Institusjonspresentasjonen om samisk arkivmateriale, språk, tilgjengeliggjøring og samarbeid"
+    },
+    {
+      "id": "tb12",
+      "label": "Timbuktu Manuscripts Project",
+      "url": "https://tombouctoumanuscripts.org/",
+      "publisher": "Tombouctou Manuscripts Project",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Prosjektbeskrivelsene om samlinger, katalogisering, digitalisering og lokal forvaltning"
+    },
+    {
+      "id": "tb13",
+      "label": "Frankenstein Manuscript",
+      "url": "https://shelleygodwinarchive.org/contents/frankenstein/",
+      "publisher": "Shelley-Godwin Archive",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Frankenstein-visningen med manuskriptbilder, skriverhender, transkripsjoner og revisjoner"
+    },
+    {
+      "id": "tb14",
+      "label": "First Folio",
+      "url": "https://www.folger.edu/explore/shakespeare-in-print/first-folio/",
+      "publisher": "Folger Shakespeare Library",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Seksjonene om First Folios produksjon, eksemplarforskjeller og bevaringshistorie"
+    }
+  ],
+  "claims": [
+    {
+      "id": "tbx-01",
+      "claim": "En faglig analyse av manuskript, utgave og variant må skille og dokumentere tekstvitne, verk og dokument som ulike nivåer.",
+      "source_ids": [
+        "tb01",
+        "tb05",
+        "tb08",
+        "tb13"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-02",
+      "claim": "En faglig analyse av manuskript, utgave og variant må skille og dokumentere variant, feil, revisjon og autorisert forskjell.",
+      "source_ids": [
+        "tb01",
+        "tb05",
+        "tb08",
+        "tb13"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-03",
+      "claim": "En faglig analyse av manuskript, utgave og variant må skille og dokumentere stemma, kontaminasjon og relasjon mellom vitner.",
+      "source_ids": [
+        "tb01",
+        "tb05",
+        "tb08",
+        "tb13"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-04",
+      "claim": "En faglig analyse av manuskript, utgave og variant må skille og dokumentere hovedtekst, diplomatarisk og synoptisk presentasjon.",
+      "source_ids": [
+        "tb01",
+        "tb05",
+        "tb08",
+        "tb13"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-05",
+      "claim": "En faglig analyse av manuskript, utgave og variant må skille og dokumentere forfattergodkjenning, siste vilje og flere legitime tekster.",
+      "source_ids": [
+        "tb01",
+        "tb05",
+        "tb08",
+        "tb13"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-06",
+      "claim": "En faglig analyse av manuskript, utgave og variant må skille og dokumentere oversettelse, framføringsversjon og tekstlig pluralitet.",
+      "source_ids": [
+        "tb01",
+        "tb05",
+        "tb08",
+        "tb13"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-07",
+      "claim": "En faglig analyse av manuskript, utgave og variant må skille og dokumentere tapte vitner, usikkerhet og redaksjonell inferens.",
+      "source_ids": [
+        "tb01",
+        "tb05",
+        "tb08",
+        "tb13"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-08",
+      "claim": "En faglig analyse av bibliografi og materiell tekst må skille og dokumentere analytisk, deskriptiv og historisk bibliografi.",
+      "source_ids": [
+        "tb01",
+        "tb02",
+        "tb14"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-09",
+      "claim": "En faglig analyse av bibliografi og materiell tekst må skille og dokumentere eksemplar, ideal copy og eksemplarvariant.",
+      "source_ids": [
+        "tb01",
+        "tb02",
+        "tb14"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-10",
+      "claim": "En faglig analyse av bibliografi og materiell tekst må skille og dokumentere format, arkfolding, kollasjon og signatur.",
+      "source_ids": [
+        "tb01",
+        "tb02",
+        "tb14"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-11",
+      "claim": "En faglig analyse av bibliografi og materiell tekst må skille og dokumentere papir, vannmerke, sats og trykktilstand.",
+      "source_ids": [
+        "tb01",
+        "tb02",
+        "tb14"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-12",
+      "claim": "En faglig analyse av bibliografi og materiell tekst må skille og dokumentere opplag, utgave, issue og state.",
+      "source_ids": [
+        "tb01",
+        "tb02",
+        "tb14"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-13",
+      "claim": "En faglig analyse av bibliografi og materiell tekst må skille og dokumentere binding, illustrasjon og bruksspor.",
+      "source_ids": [
+        "tb01",
+        "tb02",
+        "tb14"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-14",
+      "claim": "En faglig analyse av bibliografi og materiell tekst må skille og dokumentere digital faksimile og tap av tredimensjonal evidens.",
+      "source_ids": [
+        "tb01",
+        "tb02",
+        "tb14"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-15",
+      "claim": "En faglig analyse av trykk, forlag og distribusjon må skille og dokumentere produksjonskjede fra manus til ferdig eksemplar.",
+      "source_ids": [
+        "tb02",
+        "tb06",
+        "tb14"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-16",
+      "claim": "En faglig analyse av trykk, forlag og distribusjon må skille og dokumentere forlagskontrakt, redaksjon og økonomisk risiko.",
+      "source_ids": [
+        "tb02",
+        "tb06",
+        "tb14"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-17",
+      "claim": "En faglig analyse av trykk, forlag og distribusjon må skille og dokumentere føljetong, tidsskrift, bok og endret komposisjon.",
+      "source_ids": [
+        "tb02",
+        "tb06",
+        "tb14"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-18",
+      "claim": "En faglig analyse av trykk, forlag og distribusjon må skille og dokumentere opplag, pris, format og sosial tilgang.",
+      "source_ids": [
+        "tb02",
+        "tb06",
+        "tb14"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-19",
+      "claim": "En faglig analyse av trykk, forlag og distribusjon må skille og dokumentere sensur, lisens, beslag og selvpublisering.",
+      "source_ids": [
+        "tb02",
+        "tb06",
+        "tb14"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-20",
+      "claim": "En faglig analyse av trykk, forlag og distribusjon må skille og dokumentere bokhandel, bibliotek, abonnement og distribusjonsnett.",
+      "source_ids": [
+        "tb02",
+        "tb06",
+        "tb14"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-21",
+      "claim": "En faglig analyse av trykk, forlag og distribusjon må skille og dokumentere globale rettigheter, oversettelse og ujevn sirkulasjon.",
+      "source_ids": [
+        "tb02",
+        "tb06",
+        "tb14"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-22",
+      "claim": "En faglig analyse av arkiv, proveniens og bevaring må skille og dokumentere proveniens, opprinnelig orden og arkivhistorie.",
+      "source_ids": [
+        "tb05",
+        "tb10",
+        "tb11",
+        "tb12"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-23",
+      "claim": "En faglig analyse av arkiv, proveniens og bevaring må skille og dokumentere accession, katalog, finding aid og metadata.",
+      "source_ids": [
+        "tb05",
+        "tb10",
+        "tb11",
+        "tb12"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-24",
+      "claim": "En faglig analyse av arkiv, proveniens og bevaring må skille og dokumentere bevaring, restaurering og dokumentert inngrep.",
+      "source_ids": [
+        "tb05",
+        "tb10",
+        "tb11",
+        "tb12"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-25",
+      "claim": "En faglig analyse av arkiv, proveniens og bevaring må skille og dokumentere kassasjon, tap, arkivfravær og taushet.",
+      "source_ids": [
+        "tb05",
+        "tb10",
+        "tb11",
+        "tb12"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-26",
+      "claim": "En faglig analyse av arkiv, proveniens og bevaring må skille og dokumentere privat eierskap, offentlig institusjon og tilgang.",
+      "source_ids": [
+        "tb05",
+        "tb10",
+        "tb11",
+        "tb12"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-27",
+      "claim": "En faglig analyse av arkiv, proveniens og bevaring må skille og dokumentere koloniale arkiver, repatriering og kunnskapssuverenitet.",
+      "source_ids": [
+        "tb05",
+        "tb10",
+        "tb11",
+        "tb12"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-28",
+      "claim": "En faglig analyse av arkiv, proveniens og bevaring må skille og dokumentere born-digital bevaring, emulering og teknisk avhengighet.",
+      "source_ids": [
+        "tb05",
+        "tb10",
+        "tb11",
+        "tb12"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-29",
+      "claim": "En faglig analyse av redaksjon, kommentar og apparat må skille og dokumentere redaksjonell policy og valg av tekstgrunnlag.",
+      "source_ids": [
+        "tb05",
+        "tb07",
+        "tb08",
+        "tb09"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-30",
+      "claim": "En faglig analyse av redaksjon, kommentar og apparat må skille og dokumentere emendasjon, konjektur og dokumentert usikkerhet.",
+      "source_ids": [
+        "tb05",
+        "tb07",
+        "tb08",
+        "tb09"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-31",
+      "claim": "En faglig analyse av redaksjon, kommentar og apparat må skille og dokumentere normalisering av ortografi, tegnsetting og layout.",
+      "source_ids": [
+        "tb05",
+        "tb07",
+        "tb08",
+        "tb09"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-32",
+      "claim": "En faglig analyse av redaksjon, kommentar og apparat må skille og dokumentere variantapparat, kommentar og kildehenvisning.",
+      "source_ids": [
+        "tb05",
+        "tb07",
+        "tb08",
+        "tb09"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-33",
+      "claim": "En faglig analyse av redaksjon, kommentar og apparat må skille og dokumentere historisk kommentar og risikoen for overforklaring.",
+      "source_ids": [
+        "tb05",
+        "tb07",
+        "tb08",
+        "tb09"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-34",
+      "claim": "En faglig analyse av redaksjon, kommentar og apparat må skille og dokumentere oversettelse, tilgjengelighet og parallelle visninger.",
+      "source_ids": [
+        "tb05",
+        "tb07",
+        "tb08",
+        "tb09"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-35",
+      "claim": "En faglig analyse av redaksjon, kommentar og apparat må skille og dokumentere brukergrupper, transparens og redaksjonelt ansvar.",
+      "source_ids": [
+        "tb05",
+        "tb07",
+        "tb08",
+        "tb09"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-36",
+      "claim": "En faglig analyse av digital utgave og tekstmodell må skille og dokumentere digital faksimile, transkripsjon og kobling.",
+      "source_ids": [
+        "tb03",
+        "tb04",
+        "tb05",
+        "tb07"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-37",
+      "claim": "En faglig analyse av digital utgave og tekstmodell må skille og dokumentere TEI-element, attributt, schema og prosjektvalg.",
+      "source_ids": [
+        "tb03",
+        "tb04",
+        "tb05",
+        "tb07"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-38",
+      "claim": "En faglig analyse av digital utgave og tekstmodell må skille og dokumentere variantmodell, stand-off markup og overlappende strukturer.",
+      "source_ids": [
+        "tb03",
+        "tb04",
+        "tb05",
+        "tb07"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-39",
+      "claim": "En faglig analyse av digital utgave og tekstmodell må skille og dokumentere søk, API, visualisering og beregnbar tilgang.",
+      "source_ids": [
+        "tb03",
+        "tb04",
+        "tb05",
+        "tb07"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-40",
+      "claim": "En faglig analyse av digital utgave og tekstmodell må skille og dokumentere grensesnitt som argument og skjult modell.",
+      "source_ids": [
+        "tb03",
+        "tb04",
+        "tb05",
+        "tb07"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-41",
+      "claim": "En faglig analyse av digital utgave og tekstmodell må skille og dokumentere versjonering, sitatstabilitet og bærekraft.",
+      "source_ids": [
+        "tb03",
+        "tb04",
+        "tb05",
+        "tb07"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "tbx-42",
+      "claim": "En faglig analyse av digital utgave og tekstmodell må skille og dokumentere tilgjengelighet, lisens, dataetikk og reproduksjon.",
+      "source_ids": [
+        "tb03",
+        "tb04",
+        "tb05",
+        "tb07"
+      ],
+      "classification": "textual_bibliography_archive_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "b5e-07",
+      "claim": "Manuskript, utgave og variant kan prøves konkret gjennom Hamlet Q2, First Folio og Dickinson-fasciklene.",
+      "source_ids": [
+        "tb01",
+        "tb04",
+        "tb08"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b5e-08",
+      "claim": "Bibliografi og materiell tekst kan prøves konkret gjennom Hamlet- og First Folio-eksemplarer.",
+      "source_ids": [
+        "tb01",
+        "tb13",
+        "tb14"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b5e-09",
+      "claim": "Trykk, forlag og distribusjon kan prøves konkret gjennom The Pickwick Papers og African Writers Series.",
+      "source_ids": [
+        "tb02",
+        "tb06",
+        "tb12"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b5e-10",
+      "claim": "Arkiv, proveniens og bevaring kan prøves konkret gjennom Ibsen-materiale, Timbuktu-manuskripter og Sámi Archives.",
+      "source_ids": [
+        "tb10",
+        "tb11",
+        "tb12"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b5e-11",
+      "claim": "Redaksjon, kommentar og apparat kan prøves konkret gjennom Henrik Ibsens skrifter, King Lear og Emily Dickinson Archive.",
+      "source_ids": [
+        "tb05",
+        "tb08",
+        "tb09"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b5e-12",
+      "claim": "Digital utgave og tekstmodell kan prøves konkret gjennom Shelley-Godwin og Walt Whitman Archive.",
+      "source_ids": [
+        "tb03",
+        "tb04",
+        "tb07"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    }
+  ]
+}

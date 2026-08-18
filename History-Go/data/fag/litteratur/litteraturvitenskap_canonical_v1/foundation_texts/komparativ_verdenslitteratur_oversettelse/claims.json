@@ -1,0 +1,695 @@
+{
+  "schema": "history_go_fagverk_claims_v1",
+  "version": "1.0.0",
+  "subject_id": "litteratur",
+  "chapter_id": "komparativ_verdenslitteratur_oversettelse",
+  "verified_at": "2026-08-07",
+  "verification_status": "verified",
+  "sources": [
+    {
+      "id": "kv01",
+      "label": "Index Translationum Bibliography",
+      "url": "https://data.unesco.org/explore/assets/tran001/",
+      "publisher": "UNESCO",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Bibliografiens felter for originalspråk, målspråk, forfatter, tittel, utgiver, sted og år"
+    },
+    {
+      "id": "kv02",
+      "label": "Index Translationum: UNESCO’s Oldest Database",
+      "url": "https://www.unesco.org/en/articles/index-translationum-unescos-oldest-database-gains-new-life",
+      "publisher": "UNESCO",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Seksjonene om databasens historie, omfang, modernisering, metadata og dekningsgrenser"
+    },
+    {
+      "id": "kv03",
+      "label": "Henrik Ibsens skrifter",
+      "url": "https://www.ibsen.uio.no/",
+      "publisher": "Universitetet i Oslo",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Utgaveprinsippene og Et dukkehjem-visningene med grunntekst, varianter og oversettelsesspor"
+    },
+    {
+      "id": "kv04",
+      "label": "IbsenStage",
+      "url": "https://www.hf.uio.no/is/english/services/virtual-ibsen-centre/ibsenstage/",
+      "publisher": "Universitetet i Oslo",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Databasens felter for verk, oppsetning, dato, sted, språk, kompani og medvirkende"
+    },
+    {
+      "id": "kv05",
+      "label": "Translation Studies",
+      "url": "https://www.routledge.com/Translation-Studies/Bassnett/p/book/9780415506731",
+      "publisher": "Routledge",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Kapitlene om fagets historie, ekvivalens, kultur, omskriving og komparativ metode"
+    },
+    {
+      "id": "kv06",
+      "label": "The Translator’s Invisibility",
+      "url": "https://www.routledge.com/The-Translators-Invisibility-A-History-of-Translation/Venuti/p/book/9781138093164",
+      "publisher": "Routledge",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Kapitlene om domesticating, foreignizing, oversetterens synlighet og forlagsinstitusjoner"
+    },
+    {
+      "id": "kv07",
+      "label": "Nobel Prize in Literature",
+      "url": "https://www.nobelprize.org/prizes/literature/",
+      "publisher": "Nobel Prize Outreach",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Prisdatabasens år, laureater, begrunnelser, biografier, språk og dokumentarkiv"
+    },
+    {
+      "id": "kv08",
+      "label": "The Odyssey",
+      "url": "https://www.gutenberg.org/ebooks/1727",
+      "publisher": "Project Gutenberg",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Sang 1–24 og den engelske oversettelsens forord, navn, heksameterløsning og register"
+    },
+    {
+      "id": "kv09",
+      "label": "The Oedipus Trilogy",
+      "url": "https://www.gutenberg.org/ebooks/31",
+      "publisher": "Project Gutenberg",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Oedipus Rex, Oedipus at Colonus og Antigone samt oversetterens innramming"
+    },
+    {
+      "id": "kv10",
+      "label": "Litteraturbanken",
+      "url": "https://litteraturbanken.se/",
+      "publisher": "Svenska Akademien",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Forfatter-, verk-, utgave- og fulltekstvisningene med svensk bibliografisk metadata"
+    },
+    {
+      "id": "kv11",
+      "label": "Project Runeberg",
+      "url": "https://runeberg.org/",
+      "publisher": "Linköping University",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Forfatter-, tittel-, språk- og utgavevisningene i den nordiske digitale samlingen"
+    },
+    {
+      "id": "kv12",
+      "label": "PEN/Heim Translation Fund",
+      "url": "https://pen.org/literary-grants/pen-heim-grants/",
+      "publisher": "PEN America",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Søknadskriteriene, prioriteringene, støtteformene og kravene til oversettelsesprosjekt"
+    },
+    {
+      "id": "kv13",
+      "label": "Words Without Borders: About",
+      "url": "https://wordswithoutborders.org/about/",
+      "publisher": "Words Without Borders",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Seksjonene om oppdrag, redaksjonell utvelgelse, språkdekning, tidsskrift og oversettere"
+    },
+    {
+      "id": "kv14",
+      "label": "Translation: From One World to Another",
+      "url": "https://courier.unesco.org/en/articles/translation-one-world-another",
+      "publisher": "UNESCO Courier",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Artikkelens deler om verdens språkstrømmer, oversettelse, ulikhet og kulturell utveksling"
+    }
+  ],
+  "claims": [
+    {
+      "id": "kvo-01",
+      "claim": "En faglig analyse av komparasjon og sammenlignbarhet må skille og dokumentere begrunnelse for valg av sammenligningsobjekter.",
+      "source_ids": [
+        "kv03",
+        "kv08",
+        "kv09",
+        "kv05"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-02",
+      "claim": "En faglig analyse av komparasjon og sammenlignbarhet må skille og dokumentere felles dimensjon uten å utslette historisk og språklig forskjell.",
+      "source_ids": [
+        "kv03",
+        "kv08",
+        "kv09",
+        "kv05"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-03",
+      "claim": "En faglig analyse av komparasjon og sammenlignbarhet må skille og dokumentere typologi, genealogi, kontakt og uavhengig parallell.",
+      "source_ids": [
+        "kv03",
+        "kv08",
+        "kv09",
+        "kv05"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-04",
+      "claim": "En faglig analyse av komparasjon og sammenlignbarhet må skille og dokumentere symmetrisk spørsmål og asymmetrisk materiale.",
+      "source_ids": [
+        "kv03",
+        "kv08",
+        "kv09",
+        "kv05"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-05",
+      "claim": "En faglig analyse av komparasjon og sammenlignbarhet må skille og dokumentere sjanger, medium og skala som sammenligningsbetingelser.",
+      "source_ids": [
+        "kv03",
+        "kv08",
+        "kv09",
+        "kv05"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-06",
+      "claim": "En faglig analyse av komparasjon og sammenlignbarhet må skille og dokumentere negativt tilfelle, avvik og rivaliserende forklaring.",
+      "source_ids": [
+        "kv03",
+        "kv08",
+        "kv09",
+        "kv05"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-07",
+      "claim": "En faglig analyse av komparasjon og sammenlignbarhet må skille og dokumentere grensen mellom dokumentert forbindelse og analytisk analogi.",
+      "source_ids": [
+        "kv03",
+        "kv08",
+        "kv09",
+        "kv05"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-08",
+      "claim": "En faglig analyse av verdenslitteratur og sirkulasjon må skille og dokumentere verdenslitteratur som lesemåte, korpus og sirkulasjonsprosess.",
+      "source_ids": [
+        "kv01",
+        "kv02",
+        "kv04",
+        "kv07",
+        "kv13"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-09",
+      "claim": "En faglig analyse av verdenslitteratur og sirkulasjon må skille og dokumentere oversettelse, nyutgave og paratekst som kontekstskifte.",
+      "source_ids": [
+        "kv01",
+        "kv02",
+        "kv04",
+        "kv07",
+        "kv13"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-10",
+      "claim": "En faglig analyse av verdenslitteratur og sirkulasjon må skille og dokumentere forlag, agent, bokmesse, skole og pris som portvakter.",
+      "source_ids": [
+        "kv01",
+        "kv02",
+        "kv04",
+        "kv07",
+        "kv13"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-11",
+      "claim": "En faglig analyse av verdenslitteratur og sirkulasjon må skille og dokumentere kanon, tilgjengelighet og bibliografisk synlighet.",
+      "source_ids": [
+        "kv01",
+        "kv02",
+        "kv04",
+        "kv07",
+        "kv13"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-12",
+      "claim": "En faglig analyse av verdenslitteratur og sirkulasjon må skille og dokumentere opplag, katalogpost og dokumentert resepsjon som ulike spor.",
+      "source_ids": [
+        "kv01",
+        "kv02",
+        "kv04",
+        "kv07",
+        "kv13"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-13",
+      "claim": "En faglig analyse av verdenslitteratur og sirkulasjon må skille og dokumentere lokal betydning før, under og etter internasjonal sirkulasjon.",
+      "source_ids": [
+        "kv01",
+        "kv02",
+        "kv04",
+        "kv07",
+        "kv13"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-14",
+      "claim": "En faglig analyse av verdenslitteratur og sirkulasjon må skille og dokumentere grensen mellom global rekkevidde og representativ verdensdekning.",
+      "source_ids": [
+        "kv01",
+        "kv02",
+        "kv04",
+        "kv07",
+        "kv13"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-15",
+      "claim": "En faglig analyse av oversettelse, ekvivalens og forskjell må skille og dokumentere kildetekst, måltekst, mellomtekst og identifisert utgave.",
+      "source_ids": [
+        "kv05",
+        "kv06",
+        "kv08",
+        "kv03"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-16",
+      "claim": "En faglig analyse av oversettelse, ekvivalens og forskjell må skille og dokumentere semantisk valg, register, idiom og pragmatisk situasjon.",
+      "source_ids": [
+        "kv05",
+        "kv06",
+        "kv08",
+        "kv03"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-17",
+      "claim": "En faglig analyse av oversettelse, ekvivalens og forskjell må skille og dokumentere rytme, klang, syntaks og formelle begrensninger.",
+      "source_ids": [
+        "kv05",
+        "kv06",
+        "kv08",
+        "kv03"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-18",
+      "claim": "En faglig analyse av oversettelse, ekvivalens og forskjell må skille og dokumentere domestisering, fremmedgjøring og leserposisjon.",
+      "source_ids": [
+        "kv05",
+        "kv06",
+        "kv08",
+        "kv03"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-19",
+      "claim": "En faglig analyse av oversettelse, ekvivalens og forskjell må skille og dokumentere ekvivalens som formåls- og dimensjonsbestemt likhet.",
+      "source_ids": [
+        "kv05",
+        "kv06",
+        "kv08",
+        "kv03"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-20",
+      "claim": "En faglig analyse av oversettelse, ekvivalens og forskjell må skille og dokumentere oversetter, redaktør, oppdragsgiver og paratekst som aktører.",
+      "source_ids": [
+        "kv05",
+        "kv06",
+        "kv08",
+        "kv03"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-21",
+      "claim": "En faglig analyse av oversettelse, ekvivalens og forskjell må skille og dokumentere oversettelseskritikk med alternativer framfor feiljakt alene.",
+      "source_ids": [
+        "kv05",
+        "kv06",
+        "kv08",
+        "kv03"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-22",
+      "claim": "En faglig analyse av sentrum, periferi og ulik utveksling må skille og dokumentere sentrum og periferi som relasjonelle posisjoner, ikke faste steder.",
+      "source_ids": [
+        "kv01",
+        "kv02",
+        "kv07",
+        "kv12"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-23",
+      "claim": "En faglig analyse av sentrum, periferi og ulik utveksling må skille og dokumentere oversettelsesretning, språkhierarki og ulik synlighet.",
+      "source_ids": [
+        "kv01",
+        "kv02",
+        "kv07",
+        "kv12"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-24",
+      "claim": "En faglig analyse av sentrum, periferi og ulik utveksling må skille og dokumentere kapital, nettverk, stipend og institusjonell anerkjennelse.",
+      "source_ids": [
+        "kv01",
+        "kv02",
+        "kv07",
+        "kv12"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-25",
+      "claim": "En faglig analyse av sentrum, periferi og ulik utveksling må skille og dokumentere selvoversettelse, mellomledd og strategisk tilpasning.",
+      "source_ids": [
+        "kv01",
+        "kv02",
+        "kv07",
+        "kv12"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-26",
+      "claim": "En faglig analyse av sentrum, periferi og ulik utveksling må skille og dokumentere eksotisering, universaliserbarhet og markedets paratekst.",
+      "source_ids": [
+        "kv01",
+        "kv02",
+        "kv07",
+        "kv12"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-27",
+      "claim": "En faglig analyse av sentrum, periferi og ulik utveksling må skille og dokumentere motnettverk, småforlag og regionale kretsløp.",
+      "source_ids": [
+        "kv01",
+        "kv02",
+        "kv07",
+        "kv12"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-28",
+      "claim": "En faglig analyse av sentrum, periferi og ulik utveksling må skille og dokumentere empirisk grense for påstander om global litterær makt.",
+      "source_ids": [
+        "kv01",
+        "kv02",
+        "kv07",
+        "kv12"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-29",
+      "claim": "En faglig analyse av flerspråklighet og uoversettelighet må skille og dokumentere kodeveksling, registerskifte og språkfordeling i teksten.",
+      "source_ids": [
+        "kv05",
+        "kv06",
+        "kv10",
+        "kv14"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-30",
+      "claim": "En faglig analyse av flerspråklighet og uoversettelighet må skille og dokumentere heteroglossia, dialekt, translitterasjon og skriftvalg.",
+      "source_ids": [
+        "kv05",
+        "kv06",
+        "kv10",
+        "kv14"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-31",
+      "claim": "En faglig analyse av flerspråklighet og uoversettelighet må skille og dokumentere ordspill, lyd, grammatikk og kulturspesifikk betydning.",
+      "source_ids": [
+        "kv05",
+        "kv06",
+        "kv10",
+        "kv14"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-32",
+      "claim": "En faglig analyse av flerspråklighet og uoversettelighet må skille og dokumentere uoversettelighet som rest, forhandling og produktiv friksjon.",
+      "source_ids": [
+        "kv05",
+        "kv06",
+        "kv10",
+        "kv14"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-33",
+      "claim": "En faglig analyse av flerspråklighet og uoversettelighet må skille og dokumentere fotnote, glossar, typografi og ikke-oversettelse som strategi.",
+      "source_ids": [
+        "kv05",
+        "kv06",
+        "kv10",
+        "kv14"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-34",
+      "claim": "En faglig analyse av flerspråklighet og uoversettelighet må skille og dokumentere leserkompetanse, fremmedhet og ulikt fordelt forståelsesarbeid.",
+      "source_ids": [
+        "kv05",
+        "kv06",
+        "kv10",
+        "kv14"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-35",
+      "claim": "En faglig analyse av flerspråklighet og uoversettelighet må skille og dokumentere språkrett, minoritetsposisjon og oversetterens etiske grense.",
+      "source_ids": [
+        "kv05",
+        "kv06",
+        "kv10",
+        "kv14"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-36",
+      "claim": "En faglig analyse av resepsjon og gjenbruk på tvers må skille og dokumentere dokumentert lesning, anmeldelse, undervisning og kanonisering.",
+      "source_ids": [
+        "kv04",
+        "kv09",
+        "kv11",
+        "kv13"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-37",
+      "claim": "En faglig analyse av resepsjon og gjenbruk på tvers må skille og dokumentere sitat, allusjon, omskriving, adaptasjon og appropriasjon.",
+      "source_ids": [
+        "kv04",
+        "kv09",
+        "kv11",
+        "kv13"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-38",
+      "claim": "En faglig analyse av resepsjon og gjenbruk på tvers må skille og dokumentere scene, film, tale og digital remiks som ulike realiseringer.",
+      "source_ids": [
+        "kv04",
+        "kv09",
+        "kv11",
+        "kv13"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-39",
+      "claim": "En faglig analyse av resepsjon og gjenbruk på tvers må skille og dokumentere politisk bruk, motlesning og historisk aktualisering.",
+      "source_ids": [
+        "kv04",
+        "kv09",
+        "kv11",
+        "kv13"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-40",
+      "claim": "En faglig analyse av resepsjon og gjenbruk på tvers må skille og dokumentere opphavsrett, kreditering, eierskap og kulturell autoritet.",
+      "source_ids": [
+        "kv04",
+        "kv09",
+        "kv11",
+        "kv13"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-41",
+      "claim": "En faglig analyse av resepsjon og gjenbruk på tvers må skille og dokumentere transnasjonal resepsjon med lokale institusjoner og begreper.",
+      "source_ids": [
+        "kv04",
+        "kv09",
+        "kv11",
+        "kv13"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "kvo-42",
+      "claim": "En faglig analyse av resepsjon og gjenbruk på tvers må skille og dokumentere skillet mellom faktisk resepsjonshistorie og forskerens likhetslesning.",
+      "source_ids": [
+        "kv04",
+        "kv09",
+        "kv11",
+        "kv13"
+      ],
+      "classification": "comparative_world_literature_translation_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "b6e-19",
+      "claim": "Komparasjon og sammenlignbarhet kan prøves konkret gjennom Et dukkehjem og en identifisert oversettelse av Odysseen.",
+      "source_ids": [
+        "kv03",
+        "kv08"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b6e-20",
+      "claim": "Verdenslitteratur og sirkulasjon kan prøves konkret gjennom Index Translationum og IbsenStage.",
+      "source_ids": [
+        "kv01",
+        "kv02"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b6e-21",
+      "claim": "Oversettelse, ekvivalens og forskjell kan prøves konkret gjennom to identifiserte oversettelser av Odysseen.",
+      "source_ids": [
+        "kv05",
+        "kv06"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b6e-22",
+      "claim": "Sentrum, periferi og ulik utveksling kan prøves konkret gjennom oversettelsesstrømmer og PEN/Heim-støttede prosjekter.",
+      "source_ids": [
+        "kv01",
+        "kv12"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b6e-23",
+      "claim": "Flerspråklighet og uoversettelighet kan prøves konkret gjennom en flerspråklig tekst og dens publiserte oversettelse.",
+      "source_ids": [
+        "kv08",
+        "kv10"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b6e-24",
+      "claim": "Resepsjon og gjenbruk på tvers kan prøves konkret gjennom Et dukkehjem-oppsetninger og Words Without Borders.",
+      "source_ids": [
+        "kv04",
+        "kv13"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    }
+  ]
+}

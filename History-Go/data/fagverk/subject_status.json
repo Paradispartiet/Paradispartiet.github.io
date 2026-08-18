@@ -1,0 +1,165 @@
+{
+  "schema": "history_go_fagverk_subject_status_v1",
+  "version": "1.98.0",
+  "status": "canonical_fagverk_status",
+  "updatedAt": "2026-08-17",
+  "owner": "fagverk_subject_status",
+  "contract": "docs/FAGVERK.md",
+  "rules": {
+    "navigationStatuses": [
+      "planned",
+      "materialized"
+    ],
+    "assessmentStatuses": [
+      "pending",
+      "audited",
+      "blocked"
+    ],
+    "editorialStatuses": [
+      "not_started",
+      "structure_ready",
+      "chapters_in_progress",
+      "complete",
+      "expanded_and_audited"
+    ],
+    "progressionRule": "Redaksjonell fremdrift krever materialized navigasjonsstatus, individuell audited evidens og grønn fagverkaudit. Complete krever redigerte kapitler som dekker alle canonicale fagområder og emner. Expanded_and_audited krever i tillegg en eksplisitt kvalitetsutvidelse med egne, permanente porter."
+  },
+  "subjects": [
+    {
+      "id": "by",
+      "navigationStatus": "materialized",
+      "assessmentStatus": "audited",
+      "editorialStatus": "complete",
+      "nextGate": "maintenance_source_refresh_and_place_case_expansion",
+      "note": "By & arkitektur er redaksjonelt komplett etter separat helhetsaudit: alle 12 canonicale fagområder og 82 emner er dekket nøyaktig én gang gjennom 17 fullverdige kapitler. Pakken har 51 moduler, 153 seksjoner, 459 claimsporede fagavsnitt, 306 verifiserte claims, 219 inspiserbare kilderegistreringer, alle 14 canonicale metoder og 20 unike stedscase. Videre arbeid er vedlikehold, kildeoppdatering og utvidelse med nye stedscase under de samme portene."
+    },
+    {
+      "id": "historie",
+      "navigationStatus": "materialized",
+      "assessmentStatus": "audited",
+      "editorialStatus": "complete",
+      "nextGate": "maintenance_source_refresh_and_place_case_expansion",
+      "note": "Historie er redaksjonelt complete etter helhetlig vitenskapelig slutt-audit: 23/23 canonicale fagområder, 23/23 fullverdige kapitler, 230/230 canonicale emner eid nøyaktig én gang og 9/9 dekkede hovedperioder. De 18 generator-eide kapitlene er deterministisk materialisert med 180 semantic/editorial-verifiserte emneseksjoner, separat canonical identity og kuratert theory-lane, 54 stedscaser, 72 redigerte årsaksledd og 18 tolkningsdebatter. Completion-gaprapporten har 0 åpne blokkere, og permanente porter låser kildeautoritet, akademisk historiografi, paragraph-to-claim-spor, semantic identity, editorial theory alignment og shared Fagverk-regresjoner. Videre arbeid er vedlikehold, kildeoppdatering og utvidelse med nye stedscase under de samme portene."
+    },
+    {
+      "id": "kunst",
+      "navigationStatus": "materialized",
+      "assessmentStatus": "audited",
+      "editorialStatus": "complete",
+      "nextGate": "maintenance_source_refresh_and_place_case_expansion",
+      "note": "Kunst er redaksjonelt complete etter separat helhetsaudit: alle 6 canonicale fagområder og 21 emner er dekket gjennom 6 kapitler, 18 moduler, 162 claimsporede fagavsnitt, 140 verifiserte claims, 100 inspiserbare kilderegistreringer og alle 21 canonicale metoder."
+    },
+    {
+      "id": "litteratur",
+      "navigationStatus": "materialized",
+      "assessmentStatus": "audited",
+      "editorialStatus": "complete",
+      "nextGate": "maintenance_and_source_refresh",
+      "note": "Litteratur er strukturelt, redaksjonelt og vurderingsmessig komplett: 28 områder, 168 artikler, 804 definerte begreper, 384 kilder, 1344 påstandsspor og 28 femtrinns vurderingsforløp med 140 kilde- og Knowledge-koblede spørsmål."
+    },
+    {
+      "id": "media",
+      "navigationStatus": "materialized",
+      "assessmentStatus": "audited",
+      "editorialStatus": "complete",
+      "nextGate": "maintenance_source_refresh_and_place_case_expansion",
+      "note": "Media har 6 canonicale hovedområder og 120 aktive hovedemner, alle materialisert i seks fulltekst- og claimsporede kapitler. Medieøkonomi, eierskap og arbeid fullfører faget med 20/20 emner, 19 canonicale metoder, 3 moduler, 9 seksjoner, 27 fagavsnitt, 27 verifiserte claims, 24 inspiserbare kilder og 4 stedscase. En separat helhetsaudit låser alle domener, eksakt emnedekning og fagets samlede innhold. Populærkultur forblir et komplett nested mediefelt med 56 emner."
+    },
+    {
+      "id": "musikk",
+      "navigationStatus": "materialized",
+      "assessmentStatus": "audited",
+      "editorialStatus": "complete",
+      "nextGate": "maintenance_source_refresh_and_place_case_expansion",
+      "note": "Musikk har 8 fagområder, 48 temaer og 18 metoder. Åtte fullverdige kapitler dekker alle 48 emner med 24 moduler, 72 seksjoner, 216 fagavsnitt, 55 uendrede fulltekstclaims og 67 unike inspiserbare kapittelkilder. Alle temaer har løst fulltekst-, direkte-objekt- og rettighetsport; videre arbeid er vedlikehold, kildeoppdatering og stedscaseutvidelse."
+    },
+    {
+      "id": "naeringsliv",
+      "navigationStatus": "materialized",
+      "assessmentStatus": "audited",
+      "editorialStatus": "complete",
+      "nextGate": "maintenance_and_source_refresh",
+      "note": "Økonomi og næringsliv er redaksjonelt komplett med tolv fullverdige kapitler: seks canonicale grunnkapitler og seks faglige fordypningskapitler. Fordypningen materialiserer makroøkonomi og økonomisk politikk, regnskap og økonomistyring, markedsføring og strategi, kvantitative metoder og business analytics, forretningsjus og skatt samt internasjonal økonomi, operations og prosjekt. De seks nye kapitlene inneholder samlet 54 seksjoner, 162 fagavsnitt, 162 sporede claims og 54 inspectable autoritative kilder. Runtime viser arbeidseksempler, misoppfatninger og canonicale claims-kilder fra alle tolv kapitlene."
+    },
+    {
+      "id": "natur",
+      "navigationStatus": "materialized",
+      "assessmentStatus": "audited",
+      "editorialStatus": "complete",
+      "nextGate": "complete",
+      "note": "Natur komponerer fase-2-basisen med canonical v5.3-sluttfaseoverlayet: 12/12 fagområder, 77 emner, 51 metoder, 136 hooks og 12 redigerte kapitler. Sluttstatus er audited og complete."
+    },
+    {
+      "id": "politikk",
+      "navigationStatus": "materialized",
+      "assessmentStatus": "audited",
+      "editorialStatus": "expanded_and_audited",
+      "nextGate": "source_refresh_and_case_expansion",
+      "note": "Politikk har et universitetsnært studieløp på 41 forklarte deler, 13 canonicale fagområder, 123 emner, 71 metoder, 962 søkbare begrepsoppføringer og 13 fullproduserte kapitler. Av begrepene er 143 direkte kilde- eller kapitteldefinisjoner, 273 særskrevne definisjonsfrø og 546 eksplisitt gjennomgåtte oppslag med eieremne, kapittelpåstand, kildelenke og kildeplassering. Ekstern statsviterkontroll er fortsatt en egen senere port."
+    },
+    {
+      "id": "psykologi",
+      "navigationStatus": "materialized",
+      "assessmentStatus": "audited",
+      "editorialStatus": "complete",
+      "nextGate": "maintenance_source_refresh_and_place_case_expansion",
+      "note": "Psykologi er komplett etter universitetsporten og den seksdelte kvalitetsporten: 6/6 canonicale kapitler, 58/58 selvstendige og kildeførte emneartikler, 136/136 håndredigerte og claimsporede begreper, syv universitetskjernegrener og seks auditerte anvendte fagfelt. Fagverket er kvalifisert for eksplisitt AHA-runtimeintegrasjon uten separat ekstern fagreview; kildeproveniens, kliniske sikkerhetsgrenser og runtime-regresjoner skal fortsatt være grønne."
+    },
+    {
+      "id": "religion",
+      "navigationStatus": "materialized",
+      "assessmentStatus": "audited",
+      "editorialStatus": "complete",
+      "nextGate": "maintenance_source_refresh_and_place_case_expansion",
+      "note": "Religion er komplett etter universitets- og sluttporten: 12/12 universitetsområder, 72/72 selvstendige og kildeførte emneartikler, 72/72 canonicale article-backed begrepslenker, 432 løste claims, 235 inspiserbare kilderegistreringer og 18/18 materialiserte universitetsmetoder. Alle artikler består representasjonsvernet og den seksdelte kvalitetsporten med 29/30. Videre arbeid er vedlikehold, kildeoppdatering og utvidelse med nye stedscase under de samme portene."
+    },
+    {
+      "id": "scenekunst",
+      "navigationStatus": "materialized",
+      "assessmentStatus": "audited",
+      "editorialStatus": "structure_ready",
+      "nextGate": "chapter_production",
+      "note": "Scenekunst er det fjerde individuelt materialiserte Fase 3-faget. Foundation v1-adapteren viser fire fagkart-eide fagområder, åtte aktive emner, ni canonicale metoder, åtte normaliserte mappinger og null canonicale hooks. De tre pensummodulene bevares som progresjonslag og blir ikke parallelle renderer-fagområder. Teater, dans, musikkteater, live-humor, produksjon og publikum behandles som levende fremføring forankret i dokumenterte forestillinger eller sceneinstitusjoner. Redaksjonelle kapitler, claims og kapittelkilder gjenstår."
+    },
+    {
+      "id": "sport",
+      "navigationStatus": "materialized",
+      "assessmentStatus": "audited",
+      "editorialStatus": "complete",
+      "nextGate": "maintenance_source_refresh_and_place_case_expansion",
+      "note": "Sport er komplett med 6/6 canonicale områder, 116/116 canonicale emner, 109 canonicale metoder, 54 redaksjonelle seksjoner, 162 claimsporede fagavsnitt og 162 claims. Alle kapitler har eksplisitt emne- og metodebinding og inspiserbar kildeproveniens."
+    },
+    {
+      "id": "subkultur",
+      "navigationStatus": "materialized",
+      "assessmentStatus": "audited",
+      "editorialStatus": "complete",
+      "nextGate": "maintenance_and_source_refresh",
+      "note": "Åtte canonicale fagområder og kapitler, 80 emner og teoriobjekter, 42 validerte cases, 8 pathways og 40 kildebelagte vurderingsspørsmål."
+    },
+    {
+      "id": "vitenskap",
+      "navigationStatus": "materialized",
+      "assessmentStatus": "audited",
+      "editorialStatus": "chapters_in_progress",
+      "nextGate": "final_holistic_university_breadth_completion_audit",
+      "note": "Vitenskap har nå materialisert alle fire tidligere reconcilerte universitetsbreddefamilier som egne fulltekstkapitler: matematikk/formelle fag, fysikk/astronomi, kjemi/materialvitenskap og medisin/biomedisin/folkehelse. Canonical inventar forblir 6 fagområder, 117 emner, 84 metoder, 117 mappinger og 64 hooks, med Teknologi som nested spesialisering. Unit 5 lukker siste breadth-blocker med claimsporet forskningsmetode og evidensvurdering, men faget står fortsatt chapters_in_progress og complete_ready=false fram til en separat helhetlig slutt-audit av samlet canonical dekning og kvalitet."
+    },
+    {
+      "id": "filosofi",
+      "navigationStatus": "materialized",
+      "assessmentStatus": "audited",
+      "editorialStatus": "complete",
+      "nextGate": "maintenance_source_refresh_and_place_case_expansion",
+      "note": "Filosofi er komplett mot en eksplisitt major-university-field benchmark: 20/20 canonicale hovedområder, 68/68 selvstendige artikler, 204/204 begreper og 34/34 metoder. Alle 68 artikler er individuelt university_depth_reviewed under substantive_university_philosophy_v3_major_fields. De tidligere hullene språkfilosofi, religionsfilosofi, rettsfilosofi, matematikkfilosofi, handlingsfilosofi, fysikkfilosofi og sannsynlighet/beslutningsteori er eksplisitt materialisert. Complete betyr alle hovedfelt i benchmarken, ikke at enhver mulig forskningsnisje er uttømt."
+    },
+    {
+      "id": "film_tv",
+      "navigationStatus": "materialized",
+      "assessmentStatus": "audited",
+      "editorialStatus": "complete",
+      "nextGate": "maintenance_source_refresh_and_place_case_expansion",
+      "note": "Film & TV er complete etter reconcilet helhetsaudit: alle 192 canonicale emner er dekket nøyaktig én gang som 38 emner i to bevarte legacy-anchor-kapitler + 154 emner i 15 fullproduserte planenheter. Sluttporten krever 17 unike kapittel- og filregistreringer, eksakt chapter/brief-eierskap, exact section→emne-eierskap for de 15 nye enhetene, paragraph→claim-spor, globalt unike claim- og section-id-er, metode- og domenedekning samt verifiserte, kildebundne claims med inspectable kilder. Videre arbeid er vedlikehold, kildeoppdatering og stedscaseutvidelse."
+    }
+  ]
+}

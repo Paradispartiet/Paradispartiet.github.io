@@ -1,0 +1,126 @@
+{
+  "schema": "history_go_literature_foundation_module_v1",
+  "qualityProfile": "full_depth_v2",
+  "id": "sprak_stil_retorikk-3",
+  "title": "Stilometri Og Flerspraklighet",
+  "sections": [
+    {
+      "id": "stilometri-og-stiltrekk",
+      "title": "Stilometri og stiltrekk",
+      "coverageTopic": "stilometri_stiltrekk",
+      "paragraphs": [
+        "Stilometri bruker målbare språkfordelinger til å sammenligne tekster, undersøke forfatterskap eller beskrive stilendring. Vanlige trekk er funksjonsord, ordlengde, tegnsetting, n-grammer, setningsmønstre og ordforråd. Metoden er ikke bare «telling av fine ord»; de mest nyttige signalene kan være hyppige og lite bevisste valg. Resultatet avhenger av korpus, tekstbehandling og modell, så alle tre må dokumenteres før en avstand eller klassifikasjon tolkes.",
+        "Korpusbygging er den første inferensgrensen. Ulike utgaver, OCR-feil, modernisert stavemåte, sjanger og tekstlengde kan skape forskjeller som feiltolkes som personlig stil. En sammenligning av Emma og Pride and Prejudice bør bruke kompatible utgaver og kontrollere fortellertekst mot dialog dersom spørsmålet gjelder fortellerstil. Metadata og eksklusjonsregler er en del av analysen, ikke teknisk bakgrunn som kan utelates fra konklusjonen.",
+        "Forfatterattribusjon er en sannsynlighetsvurdering mot et definert kandidatutvalg. En modell kan vise at en anonym tekst ligner mest på én kandidat blant de undersøkte, men den utelukker ikke en ukjent forfatter, samarbeid eller redaksjonelle inngrep. Kryssvalidering og hold-out-materiale tester hvor stabil klassifikasjonen er. Historiske dokumenter, proveniens og tekstkritikk bør kombineres med mønsteret før et forfatterskap hevdes som sikkert.",
+        "Stilistikk og stilometri utfyller hverandre når tallene fører tilbake til språklig funksjon. Hvis en analyse finner mange modale hjelpeverb eller bestemte taleverb i Emma, kan nærlesning undersøke hvordan de organiserer sikkerhet, vurdering og fri indirekte tale. Ett signifikant trekk er ikke automatisk litterært viktig, og et sentralt stilgrep trenger ikke være hyppig. Effektstørrelse, forekomststed og tekstlig sammenheng må leses sammen.",
+        "Maskinlæringsmodeller kan klassifisere tekster presist og likevel være vanskelige å forklare. Dataskjevhet kan gjøre periode, sjanger eller publiseringsformat til en skjult snarvei. Derfor bør forskeren rapportere baseline, usikkerhet, forvekslinger og hvilke trekk som driver resultatet så langt modellen tillater. Stilometri kan avdekke mønstre for videre analyse; den kan ikke alene avgjøre estetisk verdi, intensjon eller sosial identitet og må ikke presentere prediksjon som en full årsaksforklaring.",
+        "Et lite, transparent stilometrisk forsøk kan bruke kompatible kapitler fra Emma og Pride and Prejudice. Normaliser bare det som problemstillingen krever, skill dialog fra fortellertekst, og mål for eksempel funksjonsord og tegnsetting i like store tekstblokker. Del materialet i trenings- og testsett før modellen bygges, slik at resultatet ikke vurderes på samme data som formet det. Når modellen finner en forskjell, går analysen tilbake til faktiske passasjer og undersøker om trekket henger sammen med fri indirekte tale, dialogmengde eller utgavepraksis. Dersom sjanger- eller kapittelfunksjon forklarer mønsteret bedre enn forfatterstil, må konklusjonen revideres. Denne arbeidsflyten gjør beregningen reviderbar og viser hvorfor høy treffprosent ikke er sluttpunktet. Den statistiske modellen rangerer likhet innen sitt datasett; tekstlig og historisk analyse forklarer hva likheten kan bety. Usikkerhet bør oppgis med kryssvalidering, alternative egenskapssett og en tydelig avgrensning av hvilke tekster resultatet faktisk gjelder."
+      ],
+      "paragraphClaimIds": [
+        [
+          "sst-25"
+        ],
+        [
+          "sst-26"
+        ],
+        [
+          "sst-27"
+        ],
+        [
+          "sst-28"
+        ],
+        [
+          "sst-29"
+        ],
+        [
+          "sst-30"
+        ]
+      ],
+      "keyPoints": [
+        "Stilometri måler fordelinger i et dokumentert korpus og trenger språklig fortolkning.",
+        "En statistisk klassifikasjon er ikke alene bevis for forfatterskap, kvalitet eller årsak."
+      ],
+      "editorialStatus": "editorial_ready_v1"
+    },
+    {
+      "id": "flerspraklighet-og-heteroglossia",
+      "title": "Flerspråklighet og heteroglossia",
+      "coverageTopic": "flerspraklighet_heteroglossia",
+      "paragraphs": [
+        "Flerspråklighet kan være til stede gjennom flere navngitte språk, oversettelse, kodeveksling, dialekt, fremmedord eller ulike skriftformer. Heteroglossia betegner hos Bakhtin mangfoldet av sosialt ladede språk og stemmer i romanen, også innen samme standardspråk. Begrepene er derfor ikke identiske. En enspråklig roman kan være heteroglossisk gjennom profesjonelle og generasjonelle registre, mens en tekst med to språk kan underordne det ene fullstendig.",
+        "Bakhtins dialogisme innebærer at ytringer orienterer seg mot tidligere bruk, forventede svar og andres ord. Romanen kan stille autoritative, hverdagslige og parodiske språk mot hverandre uten at fortelleren løser konflikten. Analysen bør lokalisere hvem som taler, hvem som siteres, og hvordan innrammingen endrer valøren. Å liste dialektord er ikke nok; heteroglossia blir synlig i relasjonene mellom stemmer og deres mulighet til å svare.",
+        "Jazz skaper en urban flerstemmighet gjennom fortellerens skift, figurminner, musikalske rytmer og språk knyttet til generasjon og migrasjon. Harlem framstår ikke som én autentisk stemme, men som kryssende historier som korrigerer hverandre. En analyse kan følge hvordan samme hendelse omfortelles av Violet, Joe og fortelleren. Musikkanalogien må vises i repetisjon, variasjon og respons og ikke brukes som løs karakteristikk av afroamerikansk kultur.",
+        "Douglass’ Narrative viser at språklig kompetanse er knyttet til makt, adgang og offentlig troverdighet. Tekstens polerte trykkprosa og gjengitte taleformer inngår i en abolitionistisk publiseringssituasjon der autentisitet ble vurdert ulikt etter rase. Det er viktig å analysere stemmens strategi uten å kreve at én språklig form skal bevise «ekte» erfaring. Paratekster og redaksjonelle vilkår kan dokumentere rammen, men ikke uttømme Douglass’ egen retoriske kontroll.",
+        "Oversettelse i en flerspråklig tekst fordeler arbeid mellom forfatter, forteller og leser. Kursiv, ordliste, kontekstuell forklaring eller uoversatt passasje kan gjøre språkforskjellen mer eller mindre synlig. Effekten varierer med leserens repertoar, og «utilgjengelighet» er derfor situert. Forskeren bør sitere begge språk nøyaktig, oppgi egen oversettelse og unngå å gjøre standardisert enspråklighet til normalmål. Påstander om leseropplevelse trenger data utover tekstens design.",
+        "Heteroglossia kan kartlegges som relasjoner mellom ytringstyper. Velg en scene i Jazz og merk direkte tale, fortellerkommentar, rapportert tale, idiom, sanglig frase og språk som tilhører en sosial institusjon. Spør deretter hvem som kan svare på hvem, hvilke ord som blir omformulert, og om fortelleren autoriserer eller destabiliserer en stemme. Kartet viser dialogisme uten å forutsette at alle stemmer har lik makt. En alternativ lesning kan være at variasjonen først og fremst produserer én sterk fortellerstil; da må selvrettelser og perspektivbrudd undersøkes som mulig motbelegg. Dersom analysen sammenligner oversettelser, må den registrere hvordan dialekt, rytme og uoversatte ord er håndtert og hvilke lesere oversettelsen forestiller seg. Ingen versjon er et nøytralt vindu til en abstrakt «original flerstemmighet». Også typografi og anførselstegn må registreres når de avgjør om stemmene framstår som avgrensede, sammenblandede eller uavklarte."
+      ],
+      "paragraphClaimIds": [
+        [
+          "sst-31"
+        ],
+        [
+          "sst-32"
+        ],
+        [
+          "sst-33"
+        ],
+        [
+          "sst-34"
+        ],
+        [
+          "sst-35"
+        ],
+        [
+          "sst-36"
+        ]
+      ],
+      "keyPoints": [
+        "Flerspråklig form organiserer forskjeller mellom språk, stemmer og sosiale verdener.",
+        "Språkblanding dokumenterer ikke automatisk identitet, frigjøring eller autentisitet."
+      ],
+      "editorialStatus": "editorial_ready_v1"
+    }
+  ],
+  "workedExamples": [
+    {
+      "title": "Arbeidseksempel: Stilometri og stiltrekk",
+      "object": "Jane Austens Emma sammenlignet med Pride and Prejudice",
+      "steps": [
+        "Identifiser utgave, tekststed og det formelle eller retoriske trekket.",
+        "Beskriv mønsteret før det gis tematisk eller historisk betydning.",
+        "Prøv en alternativ forklaring mot et nytt tekststed eller sammenligningsobjekt.",
+        "Avgrens konklusjonen til det kildene og analyseenheten faktisk støtter."
+      ],
+      "claimIds": [
+        "sst-25",
+        "sst-26",
+        "sst-27"
+      ]
+    },
+    {
+      "title": "Arbeidseksempel: Flerspråklighet og heteroglossia",
+      "object": "Toni Morrisons Jazz og Frederick Douglass’ Narrative",
+      "steps": [
+        "Identifiser utgave, tekststed og det formelle eller retoriske trekket.",
+        "Beskriv mønsteret før det gis tematisk eller historisk betydning.",
+        "Prøv en alternativ forklaring mot et nytt tekststed eller sammenligningsobjekt.",
+        "Avgrens konklusjonen til det kildene og analyseenheten faktisk støtter."
+      ],
+      "claimIds": [
+        "sst-31",
+        "sst-32",
+        "sst-33"
+      ]
+    }
+  ],
+  "commonMisconceptions": [
+    {
+      "claim": "Stil er forfatterens personlighet uttrykt direkte i ordene.",
+      "correction": "Stil er et mønster i et avgrenset tekstmateriale og kan ha flere produksjons- og fortellernivåer."
+    },
+    {
+      "claim": "Retorikk er bare pynt eller manipulasjon.",
+      "correction": "Retorikk undersøker hvordan ytring, situasjon, argument og publikum organiseres."
+    }
+  ]
+}

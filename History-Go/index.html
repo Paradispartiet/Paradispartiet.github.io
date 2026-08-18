@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="nb" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+  <title>History Go</title>
+
+  <script src="js/config.js"></script>
+
+  <!-- MapLibre GL JS: MÅ lastes før js/map.js brukes (pinned versjon, ikke "latest"). -->
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" />
+  <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js" crossorigin="anonymous"></script>
+
+  <script>
+  window.__lastRejection = null;
+  window.addEventListener("unhandledrejection", (e) => {
+    window.__lastRejection = e;
+
+    console.error("[REAL UNHANDLED REJECTION]");
+    console.error("reason:", e.reason);
+
+    try { console.error("reason.message:", e.reason && e.reason.message); } catch {}
+    try { console.error("reason.stack:", e.reason && e.reason.stack); } catch {}
+    try { console.error("reason keys:", e.reason ? Object.keys(e.reason) : null); } catch {}
+    e.preventDefault();
+  });
+
+  window.addEventListener("error", (e) => {
+    console.error("[WINDOW ERROR]", e.message, e.filename, e.lineno, e.colno);
+    console.error(e.error && e.error.stack);
+  });
+ </script>
+     
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/search.css">
+  <link rel="stylesheet" href="css/nearby.css">
+  <link rel="stylesheet" href="css/miniProfile.css">
+  <link rel="stylesheet" href="css/profile.css">
+  <link rel="stylesheet" href="css/merits.css">
+  <link rel="stylesheet" href="css/civi.css">
+  <link rel="stylesheet" href="css/quiz.css">
+  <link rel="stylesheet" href="css/overlay.css">
+  <link rel="stylesheet" href="css/effects.css">
+  <link rel="stylesheet" href="css/map.css">
+  <link rel="stylesheet" href="css/placeCard.css">
+  <link rel="stylesheet" href="css/wonderkammer.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/sheets.css">
+  <link rel="stylesheet" href="css/historical-routes.css">
+  <link rel="stylesheet" href="css/caravan.css">
+  <link rel="stylesheet" href="css/nature.css">
+  <link rel="stylesheet" href="css/people.css">
+  <link rel="stylesheet" href="css/onboarding.css">
+  <link rel="stylesheet" href="css/popups.css">
+  <link rel="stylesheet" href="css/popup-polish.css">
+
+  <!-- Console CSS -->
+  <link rel="stylesheet" href="js/console/console.css">
+
+</head>
+
+<body class="hg-app">
+
+  <!-- EGET KARTLAG -->
+  <div id="mapLayer" aria-hidden="false">
+    <div id="map" aria-label="Kart" data-hg-i18n-aria-label="ui.attr.map"></div>
+    <div id="placesLoadingIndicator"
+         class="places-loading-indicator"
+         role="status"
+         aria-live="polite"
+         hidden>
+      <span class="places-loading-spinner" aria-hidden="true"></span>
+      <span class="places-loading-text">Laster steder …</span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+<header class="site-header">
+
+  <img class="hg-brand" src="bilder/logo_historygo.PNG" alt="History GO">
+   
+  <div class="top-actions">
+
+    <select id="languageSelect" class="top-lang-select" aria-label="Language" title="Språk" data-hg-i18n-aria-label="ui.attr.language" data-hg-i18n-title="ui.language.label" style="max-width:120px; font-size:1.15rem; padding:4px 8px;">
+      <option value="nb" aria-label="Norsk" title="Norsk">🇳🇴</option>
+      <option value="en" aria-label="English" title="English">🇬🇧</option>
+      <option value="es" aria-label="Español" title="Español">🇪🇸</option>
+      <option value="pt" aria-label="Português" title="Português">🇧🇷🇵🇹</option>
+    </select>
+
+    <a id="miniProfile" class="miniProfileTop" href="profile.html" aria-label="Profil" data-hg-i18n-aria-label="ui.attr.profile">
+      <span id="miniName" class="mpt-name">Logg inn</span>
+
+      <span class="mpt-badges" aria-label="Merker" data-hg-i18n-aria-label="ui.tabs.badges">
+        <span class="mpt-badgeIcon" aria-hidden="true"></span>
+        <span id="linkBadges" class="mpt-count">0</span>
+      </span>
+
+      <div class="mp-extra" aria-hidden="true">
+        <p id="miniStats" class="muted">
+          <span id="linkPlaces" class="linkish">0 steder</span>
+          <span id="linkQuiz" class="linkish">0 quizzer</span>
+        </p>
+
+        <div id="miniBadges" class="profile-badges"></div>
+
+        <div id="miniLastQuiz" class="profile-last-quiz" style="display:none;">
+          <img id="miniLastQuizImg" src="">
+          <span id="miniLastQuizName"></span>
+        </div>
+      </div>
+    </a>
+
+    <button id="btnSeeMap" class="iconbtn" type="button" aria-label="Kartmodus" title="Kartmodus" data-hg-i18n-aria-label="ui.attr.mapMode" data-hg-i18n-title="ui.attr.mapMode">⌖</button>
+
+    <span id="geoStatus" class="geo-status geo-unknown" title="Posisjonstatus" data-hg-i18n-title="ui.attr.positionStatus">📍</span>
+
+    <div class="header-menu" id="headerMenu">
+      <button id="headerMenuButton"
+              class="iconbtn header-menu-button"
+              type="button"
+              aria-label="Åpne meny"
+              aria-controls="headerMenuPanel"
+              aria-expanded="false">☰</button>
+
+      <div id="headerMenuPanel" class="header-menu-panel" role="menu" aria-label="Headerverktøy" hidden>
+        <div class="header-menu-intro">
+          <span class="header-menu-eyebrow">History Go</span>
+          <strong>Hurtigmeny</strong>
+        </div>
+
+        <div class="header-menu-search">
+          <input id="globalSearch" type="search" placeholder="Søk…" data-hg-i18n-placeholder="ui.attr.search" autocomplete="off">
+          <div id="searchResults"></div>
+        </div>
+
+        <div class="header-menu-actions" aria-label="Sekundære headerverktøy">
+          <a href="/History-Go/Civication.html"
+             class="header-menu-action header-menu-action--featured civication-nav-link"
+             role="menuitem"
+             aria-label="Civication"
+             title="Civication">
+             <span class="header-menu-action-icon" aria-hidden="true">🏛️</span>
+             <span class="header-menu-action-label">Civication</span>
+             <span id="civicationUnreadBadge" class="nav-unread-badge" hidden aria-hidden="true"></span>
+          </a>
+
+          <button id="btnSocialMeet"
+                  class="header-menu-action"
+                  type="button"
+                  role="menuitem"
+                  aria-label="Social Meet"
+                  title="Social Meet"
+                  data-hg-social-meet-open="all"
+                  data-hg-social-meet-source="globalMenu">
+            <span class="header-menu-action-icon" aria-hidden="true">🤝</span>
+            <span class="header-menu-action-label">Social Meet</span>
+          </button>
+
+          <button id="btnMinDag" class="header-menu-action" type="button" role="menuitem" aria-label="Min dag" title="Min dag" onclick="window.HG_TodayHubPanel?.render?.() || console.warn('[Min dag] HG_TodayHubPanel mangler')">
+            <span class="header-menu-action-icon hg-header-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M7.5 3.8v2.4M16.5 3.8v2.4M5.4 8.3h13.2M6.6 5.4h10.8a2.2 2.2 0 0 1 2.2 2.2v9.8a2.2 2.2 0 0 1-2.2 2.2H6.6a2.2 2.2 0 0 1-2.2-2.2V7.6a2.2 2.2 0 0 1 2.2-2.2Z"/>
+                <path fill="currentColor" d="M8 12.3a1.15 1.15 0 1 0 0-2.3 1.15 1.15 0 0 0 0 2.3Zm4 0a1.15 1.15 0 1 0 0-2.3 1.15 1.15 0 0 0 0 2.3Zm4 0a1.15 1.15 0 1 0 0-2.3 1.15 1.15 0 0 0 0 2.3Zm-8 4a1.15 1.15 0 1 0 0-2.3 1.15 1.15 0 0 0 0 2.3Zm4 0a1.15 1.15 0 1 0 0-2.3 1.15 1.15 0 0 0 0 2.3Z"/>
+              </svg>
+            </span>
+            <span class="header-menu-action-label">Kalender / Min dag</span>
+          </button>
+
+          <button id="btnOpenPsychologyRoom"
+                  class="header-menu-action"
+                  type="button"
+                  role="menuitem"
+                  aria-label="Psykologirommet"
+                  title="Psykologirommet">
+            <span class="header-menu-action-icon" aria-hidden="true">🧠</span>
+            <span class="header-menu-action-label">Psykologirommet</span>
+          </button>
+
+          <button id="btnLesespor" class="header-menu-action" type="button" role="menuitem" aria-label="Lesespor" title="Lesespor" data-hg-i18n-aria-label="ui.nav.readingTracks" data-hg-i18n-title="ui.nav.readingTracks">
+            <span class="header-menu-action-icon" aria-hidden="true">📚</span>
+            <span class="header-menu-action-label">Lesespor</span>
+          </button>
+
+          <button id="btnKaravane" class="header-menu-action" type="button" role="menuitem" aria-label="Karavane" title="Karavane">
+            <span class="header-menu-action-icon" aria-hidden="true">🧭</span>
+            <span class="header-menu-action-label">Ruter / Utforsk</span>
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</header>
+
+  <button id="nearbyExploreToggle"
+          type="button"
+          aria-controls="nearbyListContainer"
+          aria-expanded="false">
+    <span aria-hidden="true">🧭</span>
+    <span data-i18n="ui.static.explore">Utforsk</span>
+  </button>
+
+  <div id="nearbyListContainer" class="leftpanel is-drawer-closed">
+
+    <div class="leftpanel-head">
+      <div class="leftpanel-title" data-i18n="ui.static.explore">Utforsk</div>
+
+      <div class="nearby-row1">
+        <div class="nearby-controls" aria-label="Nearby-kontroller">
+          <button id="nearbyFilterBtn"
+                  class="nearby-filter-icon"
+                  type="button"
+                  aria-label="Filter" data-hg-i18n-aria-label="ui.attr.filter"></button>
+        </div>
+
+        <div class="nearby-tabs" role="tablist" aria-label="Utforsk" data-hg-i18n-aria-label="ui.static.explore">
+          <button class="nearby-tab is-active" data-leftmode="nearby" data-i18n="ui.tabs.places" type="button">Steder</button>
+          <button class="nearby-tab" data-leftmode="people" data-i18n="ui.tabs.people" type="button">Folk</button>
+          <button class="nearby-tab" data-leftmode="nature" data-i18n="ui.tabs.nature" type="button">Natur</button>
+          <button class="nearby-tab" data-leftmode="routes" data-i18n="ui.tabs.routes" type="button">Ruter</button>
+          <button class="nearby-tab" data-leftmode="badges" data-i18n="ui.tabs.badges" type="button">Merker</button>
+        </div>
+      </div>
+
+      <div class="nearby-row2">
+        <div id="nearbyList" class="nearby-strip"></div>
+        <div id="leftPeopleList" class="nearby-strip" hidden></div>
+        <div id="leftNatureList" class="nearby-strip" hidden></div>
+        <div id="leftRoutesList" class="nearby-strip" hidden></div>
+        <div id="leftBadgesList" class="nearby-strip" hidden></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <div class="app-shell">
+    <main>
+      <section id="panel" class="panel hidden"></section>
+    </main>
+  </div>
+
+<div id="placeCard" aria-hidden="true">
+  <button id="pcCollapseBtn" class="pc-collapse-btn" aria-label="Minimer" data-hg-i18n-aria-label="ui.attr.minimize">▾</button>
+
+  <div class="pc-body">
+    <div class="pc-text">
+      <div class="pc-title-row"><h2 id="pcTitle"></h2><button id="pcFavorite" class="pc-favorite-btn" type="button" aria-label="Legg til favoritt" title="Legg til favoritt">☆</button></div>
+      <div id="pcMeta" class="pc-meta"></div>
+      <p id="pcDesc" class="pc-desc"></p>
+    </div>
+
+  <div class="pc-grid">
+    <div class="pc-frontcard" id="pcFrontCardFlip" role="button" tabindex="0" aria-label="Vis quizkort" data-hg-i18n-aria-label="ui.attr.showQuizCard">
+      <div class="pc-card-flip-inner">
+        <div class="pc-card-face pc-card-face-front"><img id="pcFrontImage" src="" alt=""></div>
+        <div class="pc-card-face pc-card-face-back">
+          <div id="pcQuizCardBack" class="pc-quiz-card-back" aria-live="polite">
+            <img id="pcQuizCardImage" class="pc-quiz-card-image" src="" alt="">
+            <div id="pcQuizCardContent" class="pc-quiz-card-content" hidden></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pc-side-stack">
+      <div class="pc-quad pc-icons-quad">
+        <div id="pcPeopleIcon" class="pc-round" hidden></div>
+        <div id="pcNatureIcon" class="pc-round" hidden></div>
+        <div id="pcBadgesIcon" class="pc-round" hidden></div>
+        <div id="pcWorksIcon" class="pc-round" hidden></div>
+        <div id="pcCivicationStoreIcon" class="pc-round" hidden></div>
+        <div id="pcBrandsIcon" class="pc-round" hidden></div>
+        <div id="pcForNaIcon" class="pc-round" hidden></div>
+        <div id="pcFortellingerIcon" class="pc-round" hidden></div>
+        <div id="pcLeksikonIcon" class="pc-round" hidden></div>
+        <div id="pcPlayIcon" class="pc-round" hidden></div>
+        <div id="pcTrainingIcon" class="pc-round" hidden></div>
+        <div id="pcTasksIcon" class="pc-round" hidden></div>
+      </div>
+    </div>
+
+    <div class="pc-quad pc-events-quad" id="pcEventsBox" aria-label="Det som skjer her" data-hg-i18n-aria-label="ui.attr.onSite">
+      <div class="pc-events-head">
+        <span class="pc-events-title" data-i18n="ui.static.onSite">På stedet</span>
+        <button id="pcAddEvent" class="pc-events-add" type="button" aria-label="Legg til" data-hg-i18n-aria-label="ui.attr.add">＋</button>
+      </div>
+    </div>
+  </div>
+
+    <div id="pcLesespor"></div>
+    <div id="pcPeopleList"></div>
+    <div id="pcNatureList"></div>
+    <div id="pcWorksList"></div>
+    <div id="pcBadgesList"></div>
+    <div id="pcTasksList"></div>
+    <div id="pcCivicationStoreList"></div>
+    <div id="pcBrandsList"></div>
+    <div id="pcForNaList"></div>
+    <div id="pcFortellingerList"></div>
+    <div id="pcLeksikonList"></div>
+    <div id="pcPlayList"></div>
+    <div id="pcTrainingList"></div>
+   </div>
+ </div>
+
+  <footer class="site-footer app-footer" aria-label="Status og spillvalg">
+    <div id="pcMini" class="pc-mini" aria-hidden="true"><img id="pcMiniImg" src="" alt=""></div>
+    <div class="app-actions" aria-label="Stedshandlinger">
+      <button id="pcInfo" class="pc-action pc-action-text" type="button" aria-label="Mer info" title="Mer info">Mer info</button>
+      <button id="pcQuiz" class="pc-action pc-action-primary" type="button" aria-label="Ta quiz" title="Ta quiz">Ta quiz</button>
+      <button id="pcVisit" class="pc-action pc-action-visit" type="button" aria-label="Registrer besøk" title="Registrer fysisk besøk">Registrer besøk</button>
+      <button id="pcRoute" class="pc-action pc-action-icon" type="button" aria-label="Rute" title="Rute"></button>
+      <button id="pcObserve" class="pc-action pc-action-icon" type="button" aria-label="Observer" title="Observer"></button>
+      <button id="pcNote" class="pc-action pc-action-icon" type="button" aria-label="Notat" title="Notat"></button>
+    </div>
+  </footer>
+
+  <!-- Ikke-kritiske scripts får aldri blokkere app-entry. -->
+  <script>
+    window.addEventListener("hg:appReady", () => {
+      const scripts = [
+        "js/debug/HGTestMode.js",
+        "js/i18n.js",
+        "dist/web/knowledge.js",
+        "dist/web/hgInsights.js",
+        "dist/web/knowledgeV2.js",
+        "js/hgSocialGuards.js",
+        "js/knowledgeMatch.js",
+        "js/progress/profileProgressReader.js",
+        "js/ui/place-card-status-surface.js",
+        "js/ui/header-menu.js",
+        "js/ui/psychology-room-entry.js",
+        "js/ui/badges.js"
+      ];
+      let chain = Promise.resolve();
+      for (const src of scripts) {
+        chain = chain.then(() => new Promise((resolve) => {
+          if (document.querySelector(`script[src="${src}"]`)) return resolve();
+          const script = document.createElement("script");
+          script.src = src;
+          script.async = false;
+          script.onload = resolve;
+          script.onerror = () => { console.warn("[post-ready script] kunne ikke laste", src); resolve(); };
+          document.body.appendChild(script);
+        }));
+      }
+    }, { once: true });
+  </script>
+
+  <script type="module" src="./js/app.js?v=20260728-bootfix1"></script>
+</body>
+</html>

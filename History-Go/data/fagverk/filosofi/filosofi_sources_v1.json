@@ -1,0 +1,1003 @@
+{
+  "schema": "history_go_fagverk_filosofi_sources_v1",
+  "version": "3.0.0",
+  "subject_id": "filosofi",
+  "policy": [
+    "Primærverk brukes til rekonstruksjon av navngitte filosofiske posisjoner; sekundærkilder kan kontrollere fortolkning, men kan ikke erstatte relevant primærgrunnlag når et verkargument står sentralt.",
+    "Universitetsreview krever emnespesifikke sekundærkilder til den faktiske debatten, ikke bare generelle kilder fra samme fagområde.",
+    "Historiske og empiriske casepåstander krever egne historiske, tekniske eller forskningsbaserte kilder; filosofikilder dokumenterer ikke lokale fakta.",
+    "Kildetall alene er aldri et kvalitetsmål: relevans, evidensrolle og koblingen mellom claim og kilde må kunne forklares."
+  ],
+  "sources": [
+    {
+      "id": "iep-aesthetics-art-definition",
+      "title": "Aesthetics",
+      "publisher": "Internet Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://iep.utm.edu/aesthetics/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til moderne definisjoner av kunst og den kritiske litteraturen om Danto, Dickie og institusjonelle teorier."
+    },
+    {
+      "id": "iep-nagarjuna",
+      "title": "Nagarjuna",
+      "publisher": "Internet Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://iep.utm.edu/nagarjun/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til Nāgārjunas Madhyamaka-argumentasjon, śūnyatā, kritikk av substansmetafysikk og buddhistiske teorier om kunnskap."
+    },
+    {
+      "id": "sep-aesthetic-judgment",
+      "title": "Aesthetic Judgment",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/aesthetic-judgment/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-african-sage",
+      "title": "African Sage Philosophy",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/african-sage/",
+      "access": "open_web",
+      "use": "Tradisjonsspesifikk sekundærkilde til afrikansk sage philosophy, muntlighet, argumentasjon og kritikk av eurocentriske avgrensninger."
+    },
+    {
+      "id": "sep-africana",
+      "title": "Africana Philosophy",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/africana/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-ai-ethics",
+      "title": "Ethics of Artificial Intelligence and Robotics",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/ethics-ai/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-akan-person",
+      "title": "Akan Philosophy of the Person",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/akan-person/",
+      "access": "open_web",
+      "use": "Tradisjonsspesifikk sekundærkilde til Akan-debatter om person, fellesskap, ansvar og sosial anerkjennelse."
+    },
+    {
+      "id": "sep-art-definition",
+      "title": "The Definition of Art",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/art-definition/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-artificial-intelligence",
+      "title": "Artificial Intelligence",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/artificial-intelligence/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til filosofiske spørsmål om kunstig intelligens, intelligens, representasjon, mentale tilstander og maskinell kognisjon."
+    },
+    {
+      "id": "sep-authenticity",
+      "title": "Authenticity",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/authenticity/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-chinese-epistemology",
+      "title": "Epistemology in Chinese Philosophy",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/chinese-epistemology/",
+      "access": "open_web",
+      "use": "Tradisjonsspesifikk sekundærkilde til kinesiske epistemologiske kategorier og metodiske oversettelsesproblemer."
+    },
+    {
+      "id": "sep-chinese-ethics",
+      "title": "Chinese Ethics",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/ethics-chinese/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-chinese-room",
+      "title": "The Chinese Room Argument",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/chinese-room/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til Searles kinesiske rom, syntaks/semantikk-problemet og system-, robot- og funksjonalistiske svar."
+    },
+    {
+      "id": "sep-classical-logic",
+      "title": "Classical Logic",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/logic-classical/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-climate-justice",
+      "title": "Climate Justice",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/justice-climate/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-colonialism",
+      "title": "Colonialism",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/colonialism/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-conceptual-art",
+      "title": "Conceptual Art",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/conceptual-art/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til moderne kunststatus, ikke-manifeste egenskaper, Dantos artworld-problem og institusjonelle/historiske definisjoner av kunst."
+    },
+    {
+      "id": "sep-consciousness",
+      "title": "Consciousness",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/consciousness/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-consequentialism",
+      "title": "Consequentialism",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/consequentialism/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til konsekvensialistiske teorier, deres begrunnelsesstruktur, varianter og sentrale innvendinger."
+    },
+    {
+      "id": "sep-critical-theory",
+      "title": "Critical Theory",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/critical-theory/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-democracy",
+      "title": "Democracy",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/democracy/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-deontology",
+      "title": "Deontological Ethics",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/ethics-deontological/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-disagreement",
+      "title": "Epistemic Disagreement",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/disagreement/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til rasjonell uenighet, defeaters, epistemisk likemannskap og normer for respons på motargument."
+    },
+    {
+      "id": "sep-early-modern-rationalism",
+      "title": "Early Modern Rationalism",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/rationalism-early-modern/",
+      "access": "open_web",
+      "use": "Sekundærkilde til tidligmoderne filosofi og kritikk av forenklede historiografiske kategorier."
+    },
+    {
+      "id": "sep-environmental-ethics",
+      "title": "Environmental Ethics",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/ethics-environmental/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-epistemology",
+      "title": "Epistemology",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/epistemology/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-existentialism",
+      "title": "Existentialism",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/existentialism/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-fallacies",
+      "title": "Fallacies",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/fallacies/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til feilslutningsbegrepet og historiske/systematiske analyser av defekte argumentformer og dialogiske feil."
+    },
+    {
+      "id": "sep-feminist-epistemology",
+      "title": "Feminist Epistemology and Philosophy of Science",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/feminism-epistemology/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til situert kunnskap, standpunktsteori, sosial posisjon og feministisk epistemologis interne uenigheter."
+    },
+    {
+      "id": "sep-feminist-power",
+      "title": "Feminist Perspectives on Power",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/feminist-power/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-frantz-fanon",
+      "title": "Frantz Fanon",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/frantz-fanon/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til Fanons analyser av kolonial dominans, rasialisert subjektivitet, fremmedgjøring og dekolonisering."
+    },
+    {
+      "id": "sep-free-will",
+      "title": "Free Will",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/freewill/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-gadamer-aesthetics",
+      "title": "Gadamer’s Aesthetics",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/gadamer-aesthetics/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-indian-epistemology",
+      "title": "Epistemology in Classical Indian Philosophy",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/epistemology-india/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til pramāṇa-tradisjoner, buddhistisk epistemologi og konkurrerende klassiske indiske teorier om kunnskap, persepsjon og inferens."
+    },
+    {
+      "id": "sep-informal-logic",
+      "title": "Informal Logic",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/logic-informal/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-islamic-metaphysics",
+      "title": "Arabic and Islamic Metaphysics",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/arabic-islamic-metaphysics/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-latin-american",
+      "title": "Latin American Philosophy: Metaphilosophical Foundations",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/latin-american-metaphilosophy/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-latin-american-history",
+      "title": "Latin American Philosophy",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/latin-american-philosophy/",
+      "access": "open_web",
+      "use": "Tradisjonsspesifikk sekundærkilde til latinamerikansk filosofihistorie, identitetsdebatter og frigjøringsorienterte problemfelt."
+    },
+    {
+      "id": "sep-latin-american-philosophy",
+      "title": "Latin American Philosophy",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/latin-american-philosophy/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til latinamerikansk filosofihistorie og problemkonteksten for frigjørings- og dekoloniale tradisjoner; brukes sammen med de direkte kildene til kolonialitet og kjønn."
+    },
+    {
+      "id": "sep-logical-consequence",
+      "title": "Logical Consequence",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/logical-consequence/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til logisk følge, gyldighet, formalisering og motmodell; brukes som bibliografisk og begrepslig kontroll, ikke som autoritet for empiriske case."
+    },
+    {
+      "id": "sep-maimonides",
+      "title": "Maimonides",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/maimonides/",
+      "access": "open_web",
+      "use": "Tradisjonsspesifikk sekundærkilde til Maimonides, fornuft/åpenbaring og middelaldersk jødisk filosofi."
+    },
+    {
+      "id": "sep-medieval-philosophy",
+      "title": "Medieval Philosophy",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/medieval-philosophy/",
+      "access": "open_web",
+      "use": "Sekundærkilde til middelalderfilosofiens flerspråklige greske, latinske, arabiske og jødiske tradisjoner og overføringshistorie."
+    },
+    {
+      "id": "sep-metaethics",
+      "title": "Metaethics",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/metaethics/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-metaphysics",
+      "title": "Metaphysics",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/metaphysics/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-models-science",
+      "title": "Models in Science",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/models-science/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-moral-animal",
+      "title": "The Moral Status of Animals",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/moral-animal/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-moral-responsibility",
+      "title": "Moral Responsibility",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/moral-responsibility/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-nagarjuna",
+      "title": "Nāgārjuna",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/nagarjuna/",
+      "access": "open_web",
+      "use": "Tradisjonsspesifikk sekundærkilde til Madhyamaka, tomhet og Nāgārjunas argumentasjon."
+    },
+    {
+      "id": "sep-personal-identity",
+      "title": "Personal Identity",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/identity-personal/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-phenomenology",
+      "title": "Phenomenology",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/phenomenology/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-philosophy-liberation",
+      "title": "Philosophy of Liberation",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/liberation/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til latinamerikansk frigjøringsfilosofi, Dussel, avhengighet, Eurocentrismekritikk og interne strømninger i frigjøringstradisjonen."
+    },
+    {
+      "id": "sep-political-legitimacy",
+      "title": "Political Legitimacy",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/legitimacy/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-possible-worlds",
+      "title": "Possible Worlds",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/possible-worlds/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til mulig-verden-semantikk, modalitet, nødvendighet og ontologiske fortolkninger av kontrafaktiske rammer."
+    },
+    {
+      "id": "sep-privacy",
+      "title": "Privacy",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/privacy/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-properties",
+      "title": "Properties",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/properties/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til ontologisk avhengighet, egenskaper, bærere og relasjoner i substans- og relasjonsontologi."
+    },
+    {
+      "id": "sep-public-reason",
+      "title": "Public Reason",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/public-reason/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-realism",
+      "title": "Realism",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/realism/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-scientific-realism",
+      "title": "Scientific Realism",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/scientific-realism/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-scientific-representation",
+      "title": "Scientific Representation",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/scientific-representation/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-skepticism",
+      "title": "Skepticism",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/skepticism/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-social-epistemology",
+      "title": "Social Epistemology",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/epistemology-social/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til epistemisk autoritet, vitnesbyrd, sosial kunnskapsproduksjon og epistemisk urettferdighet."
+    },
+    {
+      "id": "sep-socrates",
+      "title": "Socrates",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/socrates/",
+      "access": "open_web",
+      "use": "Sekundærkilde til den sokratiske problematikken, antikke kilder og resepsjon."
+    },
+    {
+      "id": "sep-technology",
+      "title": "Philosophy of Technology",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/technology/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-testimony",
+      "title": "Epistemological Problems of Testimony",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/testimony-episprob/",
+      "access": "open_web",
+      "use": "Faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case."
+    },
+    {
+      "id": "sep-time",
+      "title": "Time",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/time/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til presentisme, eternalisme, temporal orden og sentrale metafysiske problemer om tid og endring."
+    },
+    {
+      "id": "sep-truth",
+      "title": "Truth",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/truth/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til sannhetsteorier og realistiske/antirealistiske strider om sannhetsbetingelser og objektivitet."
+    },
+    {
+      "id": "sep-turing-test",
+      "title": "The Turing Test",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/turing-test/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til Turings imitation game, behaviorale kriterier og den filosofiske debatten om hva testen kan og ikke kan etablere."
+    },
+    {
+      "id": "sep-virtue-ethics",
+      "title": "Virtue Ethics",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/ethics-virtue/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til aristotelisk og moderne dydsetikk, praktisk klokskap, eudaimonia og handlingsveiledning."
+    },
+    {
+      "id": "sep-zhuangzi",
+      "title": "Zhuangzi",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/zhuangzi/",
+      "access": "open_web",
+      "use": "Tradisjonsspesifikk sekundærkilde til Zhuangzi, daoistiske argumenter og verkhistorie."
+    },
+    {
+      "id": "sep-meaning",
+      "title": "Theories of Meaning",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/meaning/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til semantiske og metasemantiske teorier om språklig mening, sannhetsbetingelser, bruk, konvensjon og referanse."
+    },
+    {
+      "id": "sep-reference",
+      "title": "Reference",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/reference/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til teorier om referanse, beskrivelser, navn, Frege, Russell og senere direkte-referanseposisjoner."
+    },
+    {
+      "id": "sep-word-meaning",
+      "title": "Word Meaning",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/word-meaning/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til leksikalsk mening, språkkompetanse, internalisme, eksternalisme og kontekstuelle teorier om ordmening."
+    },
+    {
+      "id": "sep-speech-acts",
+      "title": "Speech Acts",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/speech-acts/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til Austin, Searle, illokusjonær kraft, performativer og den normative strukturen i språklig handling."
+    },
+    {
+      "id": "sep-implicature",
+      "title": "Implicature",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/implicature/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til Grice, konversasjonell implikatur, skillet mellom det sagte og det impliserte og rivaliserende pragmatiske modeller."
+    },
+    {
+      "id": "sep-wittgenstein",
+      "title": "Ludwig Wittgenstein",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/wittgenstein/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til Wittgensteins senere språkfilosofi, språkspill, bruk, regel­følging og kritikken av private språk."
+    },
+    {
+      "id": "sep-cosmological-argument",
+      "title": "Cosmological Argument",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/cosmological-argument/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til kosmologiske argumentfamilier fra kontingens, årsak og forklaring, inkludert sentrale modal- og regressinnvendinger."
+    },
+    {
+      "id": "sep-natural-theology",
+      "title": "Natural Theology and Natural Religion",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/natural-theology/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til filosofiske argumenter om Gud som forsøker å begrunne teistiske påstander uten å forutsette særskilt åpenbaring."
+    },
+    {
+      "id": "sep-philosophy-religion",
+      "title": "Philosophy of Religion",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/philosophy-religion/",
+      "access": "open_web",
+      "use": "Bred, emnespesifikk sekundærkilde til religionsfilosofiens teismebegrep, gudsargumenter, ondskap, tro, evidens og religiøs erfaring."
+    },
+    {
+      "id": "sep-problem-evil",
+      "title": "The Problem of Evil",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/evil/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til logiske og evidensielle former av ondskapens problem, teodicé, forsvar og rivaliserende vurderinger av lidelsens evidensielle betydning."
+    },
+    {
+      "id": "sep-divine-hiddenness",
+      "title": "Divine Hiddenness",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/divine-hiddenness/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til argumenter fra guddommelig skjulthet, ikke-motvillig vantro og svar som utfordrer premisser om guddommelig kjærlighet og epistemisk tilgang."
+    },
+    {
+      "id": "sep-religion-epistemology",
+      "title": "The Epistemology of Religion",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/religion-epistemology/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til evidensialisme, reformert epistemologi, trosrasjonalitet, vitnesbyrd og uenighet i religiøs epistemologi."
+    },
+    {
+      "id": "sep-legal-positivism",
+      "title": "Legal Positivism",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/legal-positivism/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til Austin, Hart, kildetesen, sosiale fakta, anerkjennelsesregler og positivismens rivalisering med naturrett og interpretivisme."
+    },
+    {
+      "id": "sep-natural-law-theories",
+      "title": "Natural Law Theories",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/natural-law-theories/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til klassisk og moderne naturrett, normativ autoritet, praktisk fornuft og forholdet mellom lovens eksistens og moralske grunner."
+    },
+    {
+      "id": "sep-nature-law",
+      "title": "The Nature of Law",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/lawphil-nature/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til samtidige teorier om juridisk gyldighet, reduksjon, normativitet, sosiale fakta og konstruktiv fortolkning."
+    },
+    {
+      "id": "sep-law-interpretivist",
+      "title": "Legal Interpretivism",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/law-interpretivist/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til Dworkin-inspirert interpretivisme, forholdet mellom institusjonell praksis og moralske prinsipper og kritikken av ren kildeteori."
+    },
+    {
+      "id": "sep-legal-reasoning",
+      "title": "Interpretation and Coherence in Legal Reasoning",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/legal-reas-interpret/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til rettslig fortolkning, koherens, prejudikat, lovtekst og metodiske uenigheter om hvordan rettslige grunner identifiseres."
+    },
+    {
+      "id": "sep-legal-punishment",
+      "title": "Legal Punishment",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/legal-punishment/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til retributivisme, konsekvensialisme, kommunikative teorier og abolitionistiske utfordringer i begrunnelsen av juridisk straff."
+    },
+    {
+      "id": "sep-philosophy-mathematics",
+      "title": "Philosophy of Mathematics",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/philosophy-mathematics/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til matematisk ontologi og epistemologi, logicisme, formalisme, intuisjonisme, platonisme, nominalisme og bevis."
+    },
+    {
+      "id": "sep-platonism-mathematics",
+      "title": "Platonism in the Philosophy of Mathematics",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/platonism-mathematics/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til matematisk platonisme, abstrakte objekter, Frege-inspirerte argumenter og epistemiske utfordringer til realistiske posisjoner."
+    },
+    {
+      "id": "sep-nominalism-mathematics",
+      "title": "Nominalism in the Philosophy of Mathematics",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/nominalism-mathematics/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til nominalistiske og fiksjonalistiske strategier for matematikk og diskusjonen om uunnværlighetsargumentet."
+    },
+    {
+      "id": "sep-formalism-mathematics",
+      "title": "Formalism in the Philosophy of Mathematics",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/formalism-mathematics/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til spillformalisme, Hilbert-programmet, konservativitet og grensene som Gödel-resultater setter for bestemte formalistiske ambisjoner."
+    },
+    {
+      "id": "sep-intuitionism",
+      "title": "Intuitionism in the Philosophy of Mathematics",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/intuitionism/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til Brouwers intuisjonisme, konstruktiv sannhet, avvisning av generell tertium non datur og rivalisering med klassisk matematikk."
+    },
+    {
+      "id": "sep-mathematical-explanation",
+      "title": "Explanation in Mathematics",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/mathematics-explanation/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til filosofiske spørsmål om matematisk bevis, forklaring, forståelse og forholdet mellom formell gyldighet og forklaringsverdi."
+    },
+    {
+      "id": "sep-action",
+      "title": "Action",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/action/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til handlingsfilosofi, kausale og ikke-kausale handlingsforklaringer, grunner, intensjon og skillet mellom handling og hendelse."
+    },
+    {
+      "id": "sep-intention",
+      "title": "Intention",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/intention/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til Anscombe, Davidson, Bratman og teorier om intensjon som mental tilstand, plan, praktisk kunnskap eller handling under utvikling."
+    },
+    {
+      "id": "sep-reasons-action",
+      "title": "Reasons for Action: Justification, Motivation, Explanation",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/reasons-just-vs-expl/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til skillet mellom normative og motiverende grunner og til debatten om hvordan grunner kan forklare handling."
+    },
+    {
+      "id": "sep-shared-agency",
+      "title": "Shared Agency",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/shared-agency/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til Bratman, Searle og rivaliserende analyser av delt intensjon, felles aktivitet og reduksjon av vi-handling til individuelle holdninger."
+    },
+    {
+      "id": "sep-collective-intentionality",
+      "title": "Collective Intentionality",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/collective-intentionality/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til kollektiv intensjonalitet, felles oppmerksomhet, kollektiv aksept, delt intensjon og ontologiske spørsmål om gruppeagens."
+    },
+    {
+      "id": "sep-collective-responsibility",
+      "title": "Collective Responsibility",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/collective-responsibility/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til kollektivt moralsk ansvar, ansvarstilskrivelse til grupper, medlemsansvar og forholdet mellom kollektiv agency og skyld."
+    },
+    {
+      "id": "sep-spacetime-bebecome",
+      "title": "Being and Becoming in Modern Physics",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/spacetime-bebecome/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til relativitet, samtidighet, tidsontologi og debatten om hvorvidt moderne fysikk støtter blokk-univers eller andre metafysiske tidsbilder."
+    },
+    {
+      "id": "sep-spacetime-theories",
+      "title": "Early Philosophical Interpretations of General Relativity",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/genrel-early/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til filosofiske fortolkninger av romtid, geometri og generell relativitet og til forholdet mellom matematisk struktur og fysisk realitet."
+    },
+    {
+      "id": "sep-qt-issues",
+      "title": "Philosophical Issues in Quantum Theory",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/qt-issues/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til måleproblemet, kvantetilstanden, realisme, kollaps, Everett- og Bohm-fortolkninger og sentrale konseptuelle konflikter i kvanteteori."
+    },
+    {
+      "id": "sep-quantum-mechanics",
+      "title": "Quantum Mechanics",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/qm/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til kvantemekanikkens formalisme, fortolkning, observabler, sannsynlighet og filosofiske spørsmål om representasjon av fysisk virkelighet."
+    },
+    {
+      "id": "sep-bell-theorem",
+      "title": "Bell’s Theorem",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/bell-theorem/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til Bells teorem, lokalitet, skjulte variabler og hvilke realistiske og kausale antakelser som utfordres av kvantekorrelasjoner."
+    },
+    {
+      "id": "sep-probability-interpret",
+      "title": "Interpretations of Probability",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/probability-interpret/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til klassiske, frekventistiske, propensity-, logiske og subjektivistiske fortolkninger av sannsynlighet."
+    },
+    {
+      "id": "sep-confirmation",
+      "title": "Confirmation",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/confirmation/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til bekreftelsesteori, bayesiansk evidens, sannsynlighetsoppdatering og rivaliserende analyser av hvordan data støtter hypoteser."
+    },
+    {
+      "id": "sep-bayes-theorem",
+      "title": "Bayes’ Theorem",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/bayes-theorem/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til Bayes’ teorem, betinget sannsynlighet og den filosofiske rollen til probabilistisk oppdatering i evidensvurdering."
+    },
+    {
+      "id": "sep-decision-theory",
+      "title": "Decision Theory",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/decision-theory/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til forventet nytte, preferanser, subjektiv sannsynlighet, representasjonsteoremer og sentrale utfordringer ved risiko og usikkerhet."
+    },
+    {
+      "id": "sep-causal-decision",
+      "title": "Causal Decision Theory",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/decision-causal/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til kausal beslutningsteori og konflikten mellom kausale og evidensielle kriterier for rasjonelt valg."
+    },
+    {
+      "id": "sep-risk",
+      "title": "Risk",
+      "publisher": "Stanford Encyclopedia of Philosophy",
+      "kind": "scholarly_reference",
+      "url": "https://plato.stanford.edu/entries/risk/",
+      "access": "open_web",
+      "use": "Emnespesifikk sekundærkilde til filosofiske begreper om risiko, usikkerhet, beslutning, verdi og normative spørsmål om hvordan lav sannsynlighet og stor skade skal veies."
+    }
+  ]
+}

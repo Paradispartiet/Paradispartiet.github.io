@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "1.0",
+  "placeId": "hakadal_verk",
+  "placeFile": "data/places/naeringsliv/akershus/hakadal_verk/hakadal_verk.json",
+  "evidenceStatus": "production_applied",
+  "coordinateDecision": "retain_verified_named_surviving_works_building_as_institutional_area_anchor",
+  "currentCoordinate": {
+    "lat": 60.122400847631,
+    "lon": 10.824335391711,
+    "r": 360,
+    "locatorType": "institutional_area",
+    "sourceProvider": "osm",
+    "geocodeAccuracy": "semantic_anchor",
+    "coordStatus": "verified_geometry",
+    "coordSource": "OpenStreetMap way 249239760 and building reference 151094600; Store norske leksikon – Hakadal Verk and rennverk; Nittedal Historielag – Hakadal verk",
+    "coordType": "named_surviving_ironworks_building_area_anchor",
+    "coordRole": "area_anchor",
+    "sourceObjectId": "osm-way:249239760",
+    "coordNote": "The named surviving industrial-building polygon is retained as a semantic area anchor for the wider Hakadal ironworks institution and landscape. It is not represented as the exact sixteenth-century rennverk, furnace, hammer or smelting site."
+  },
+  "legacyCoordinate": {
+    "lat": 60.12083,
+    "lon": 10.82278,
+    "r": 360,
+    "distanceToAppliedCoordinateM": 194.8,
+    "reasonReplaced": "The 2026-07-26 production moved the unresolved settlement point approximately 194.8 metres north-east to the deterministic centroid of the named surviving works-building geometry."
+  },
+  "previousProductionCoordinate": {
+    "lat": 60.122400847631,
+    "lon": 10.824335391711,
+    "r": 360,
+    "retained": true,
+    "distanceToCurrentM": 0,
+    "reasonRetained": "The geometry, centroid and source object remain correct. This pass changes the locator classification from historic_site to institutional_area so the OSM-based semantic area anchor conforms to Coordinate Source Contract v1."
+  },
+  "identity": {
+    "resolvedIdentity": "The former Hakadal ironworks and coherent works, waterpower, worker, school and estate environment, physically anchored in the named surviving industrial building.",
+    "identityStatus": "resolved",
+    "identityProblem": "Most direct production structures have disappeared. A surviving named building can anchor the wider institution and landscape, but must not be presented as the exact location of every historic production phase.",
+    "locatorTypeCandidate": "institutional_area",
+    "requiresSplit": false,
+    "splitReason": "The ironworks, water systems, main building, iron store, worker housing, school and estate landscape form one coherent historic institutional environment."
+  },
+  "requiredEvidence": [
+    "authoritative historical identity for Hakadal Verk",
+    "documented operating period and resource system",
+    "documentation of surviving and disappeared components",
+    "named physical geometry on the works site",
+    "reproducible polygon-centroid calculation",
+    "valid Coordinate Source Contract values",
+    "explicit distinction between area anchor and exact production site",
+    "access and radius limitations"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Store norske leksikon – Hakadal Verk",
+      "sourceUrl": "https://snl.no/Hakadal_Verk",
+      "sourceObjectId": "snl:hakadal-verk",
+      "sourceQuality": "authoritative_ironworks_and_surviving_environment_identity",
+      "finding": "SNL identifies Hakadal Verk as a former ironworks established around 1550 and closed in 1869 and describes surviving dams, falls, industrial buildings, the main building, worker housing, school and crofter communities.",
+      "canVerifyCoordinate": false,
+      "reason": "Confirms the historical identity and wider works environment; OSM supplies the applied geometry."
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Nittedal Historielag – Hakadal verk",
+      "sourceUrl": "https://www.nittedal-historielag.no/hakadalverk/",
+      "sourceObjectId": "nittedal-historielag:hakadal-verk",
+      "sourceQuality": "detailed_local_ironworks_and_survival_history",
+      "finding": "The local history documents production, ore from Grua, royal privileges, ownership, closure in 1869 and the disappearance of most direct iron-production traces apart from the main building and old iron store.",
+      "canVerifyCoordinate": false,
+      "reason": "Explains why the surviving building is an area anchor rather than an exact furnace or smelting-site coordinate."
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceName": "OpenStreetMap way 249239760 – Hakadal verk",
+      "sourceUrl": "https://www.openstreetmap.org/way/249239760",
+      "sourceObjectId": "osm-way:249239760;building-ref:151094600",
+      "sourceQuality": "named_historic_industrial_building_geometry",
+      "finding": "Way 249239760 is named Hakadal verk and tagged historic=works and building=industrial with national building reference 151094600. Its nine-node polygon has calculated centroid 60.122400847631, 10.824335391711.",
+      "canVerifyCoordinate": true,
+      "reason": "Provides a stable named same-site physical object and reproducible geometry for the area anchor."
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceName": "Nominatim lookup – OpenStreetMap way 249239760",
+      "sourceUrl": "https://nominatim.openstreetmap.org/lookup?osm_ids=W249239760&format=jsonv2",
+      "sourceObjectId": "nominatim:osm-way-249239760",
+      "sourceQuality": "independent_osm_object_identity_cross_check",
+      "finding": "Nominatim resolves way 249239760 as Hakadal verk, type works and category historic, with point 60.1224095, 10.8243370 approximately one metre from the calculated centroid.",
+      "canVerifyCoordinate": false,
+      "reason": "Cross-checks object identity and centroid calculation."
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Store norske leksikon – rennverk",
+      "sourceUrl": "https://snl.no/rennverk",
+      "sourceObjectId": "snl:rennverk-hakadal",
+      "sourceQuality": "authoritative_early_ironmaking_context",
+      "finding": "SNL describes an early Hakadal rennverk phase in 1541–1545 and later attempts before an ironworks was founded on the same site.",
+      "canVerifyCoordinate": false,
+      "reason": "Prevents the surviving building from being misrepresented as every historical production structure."
+    },
+    {
+      "sourceProvider": "legacy_dataset",
+      "sourceName": "Legacy Hakadal Verk point",
+      "sourceObjectId": "legacy:hakadal_verk",
+      "sourceQuality": "unresolved_southwestern_settlement_point",
+      "finding": "The previous coordinate 60.12083, 10.82278 lies approximately 194.8 metres south-west of the named works-building centroid and lacked a source contract.",
+      "canVerifyCoordinate": false,
+      "reason": "Already replaced in the 2026-07-26 production."
+    }
+  ],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:249239760;building-ref:151094600",
+      "canApplyToPlace": true,
+      "applied": true
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "snl:hakadal-verk",
+      "canApplyToPlace": true,
+      "appliedAsIdentity": true
+    },
+    {
+      "sourceProvider": "legacy_dataset",
+      "sourceObjectId": "legacy:hakadal_verk",
+      "canApplyToPlace": false,
+      "rejectionReason": "Unresolved settlement point south-west of the named surviving works geometry."
+    }
+  ],
+  "geometryCandidates": [
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:249239760",
+      "geometryType": "Polygon",
+      "geometryRole": "named_surviving_industrial_building_area_anchor",
+      "canApplyToPlace": true,
+      "applied": true
+    }
+  ],
+  "anchors": [
+    {
+      "id": "hakadal_verk_named_industrial_building",
+      "name": "Hakadal verk – named surviving works building",
+      "lat": 60.122400847631,
+      "lon": 10.824335391711,
+      "r": 90,
+      "type": "institutional_area_anchor",
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:249239760;building-ref:151094600",
+      "canApplyToPlace": true
+    }
+  ],
+  "coordinateCandidates": [
+    {
+      "sourceProvider": "legacy_dataset",
+      "sourceObjectId": "legacy:hakadal_verk",
+      "lat": 60.12083,
+      "lon": 10.82278,
+      "distanceFromAppliedM": 194.8,
+      "canApplyToPlace": false
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:249239760;building-ref:151094600",
+      "lat": 60.122400847631,
+      "lon": 10.824335391711,
+      "coordRole": "area_anchor",
+      "distanceFromLegacyM": 194.8,
+      "canApplyToPlace": true,
+      "applied": true,
+      "retainedFromPreviousProduction": true
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "nominatim:osm-way-249239760",
+      "lat": 60.1224095,
+      "lon": 10.824337,
+      "coordRole": "named_object_point_cross_check",
+      "distanceFromAppliedM": 1.0,
+      "canApplyToPlace": false
+    }
+  ],
+  "rawEvidence": [
+    {
+      "path": "reports/akershus-coordinate-hakadal-verk-source-probe/osm-way-249239760-full.xml",
+      "description": "Raw OpenStreetMap full geometry for way 249239760."
+    },
+    {
+      "path": "reports/akershus-coordinate-hakadal-verk-source-probe/nominatim-way-249239760.json",
+      "description": "Raw Nominatim lookup result for way 249239760."
+    },
+    {
+      "path": "reports/akershus-coordinate-hakadal-verk-source-probe/source-summary.txt",
+      "description": "Deterministic geometry, centroid, distance, tags, object identity and contract-migration summary."
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "coordinateChangedInThisPass": false,
+    "contractMigrationRequired": true,
+    "nextAction": "Retained the named surviving works-building centroid, migrated historic_site to institutional_area and preserved the 360-metre radius. Continue with nesodden_kirke."
+  },
+  "notes": [
+    "The 194.8-metre move occurred in the 2026-07-26 production and is preserved.",
+    "This pass changes locatorType from historic_site to institutional_area because OSM supplies physical geometry while manual historical sources define the wider identity and limits.",
+    "The surviving building is not represented as the exact rennverk, furnace, hammer or smelting site.",
+    "The 360-metre radius is not a property, heritage, archaeological, production or access boundary."
+  ]
+}

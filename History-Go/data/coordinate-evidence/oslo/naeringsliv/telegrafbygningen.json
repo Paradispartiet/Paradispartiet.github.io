@@ -1,0 +1,90 @@
+{
+  "placeId": "telegrafbygningen",
+  "placeFile": "data/places/naeringsliv/oslo/places_naeringsliv/telegrafbygningen.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.91128055555556,
+    "lon": 10.742319444444444,
+    "r": 140,
+    "coordStatus": "verified_geometry",
+    "coordSource": "OpenStreetMap relation 13931026; identity cross-checked with Riksantikvaren and Telenor Kulturarv",
+    "coordType": "building_center",
+    "coordNote": "Geonorge-oppslaget for Kongens gate 21 ble kjørt først og ga flere ikke-entydige treff. Deretter ble det eksakte OSM-bygningsobjektet relation 13931026 identifisert for Telegrafbygningen og kryssjekket mot Riksantikvaren og Telenor Kulturarv. Koordinatet beholdes fordi det allerede representerer selve Telegrafbygningen; primær kildeidentitet flyttes fra Wikidata til det dokumenterte fysiske OSM-objektet."
+  },
+  "identity": {
+    "currentName": "Telegrafbygningen",
+    "resolvedIdentity": "Telegrafbygningen i Kongens gate 21 som identifisert bygningsobjekt",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "building",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [
+    "stabil kildeidentitet",
+    "objekttilpasset representasjonsanker",
+    "fysisk avgrensning mot nærliggende canonical steder"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "osm",
+      "sourceName": "OpenStreetMap relation 13931026",
+      "sourceUrl": "https://www.openstreetmap.org/relation/13931026",
+      "sourceObjectId": "osm-relation:13931026",
+      "sourceQuality": "exact_building_geometry_after_ambiguous_official_address",
+      "finding": "Det dokumenterte OSM-objektet representerer Telegrafbygningen etter at Geonorge-adressen var tvetydig.",
+      "canVerifyCoordinate": true,
+      "reason": "Geonorge-oppslaget for Kongens gate 21 ble kjørt først og ga flere ikke-entydige treff. Deretter ble det eksakte OSM-bygningsobjektet relation 13931026 identifisert for Telegrafbygningen og kryssjekket mot Riksantikvaren og Telenor Kulturarv. Koordinatet beholdes fordi det allerede representerer selve Telegrafbygningen; primær kildeidentitet flyttes fra Wikidata til det dokumenterte fysiske OSM-objektet."
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Riksantikvaren – Telegrafbygningen",
+      "sourceUrl": "https://riksantikvaren.no/eksempelsamling/mindre-telekommunikasjon-bedre-internkommunikasjon/",
+      "sourceObjectId": "riksantikvaren:telegrafbygningen-kongens-gate-21",
+      "sourceQuality": "official_building_identity",
+      "finding": "Riksantikvaren dokumenterer Telegrafbygningen i Kongens gate 21.",
+      "canVerifyCoordinate": false,
+      "reason": "Offisiell identitetskryssjekk; OSM-relationen er geometrikilden."
+    }
+  ],
+  "addressCandidates": [
+    {
+      "address": "Kongens gate 21 Oslo",
+      "sourceProvider": "official_address",
+      "sourceObjectId": null,
+      "canApplyToPlace": false,
+      "reason": "Geonorge returnerte flere treff uten entydig match; må avklares manuelt."
+    }
+  ],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-relation:13931026",
+      "canApplyToPlace": true
+    }
+  ],
+  "geometryCandidates": [
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-relation:13931026",
+      "canApplyToPlace": true
+    }
+  ],
+  "coordinateCandidates": [
+    {
+      "lat": 59.91128055555556,
+      "lon": 10.742319444444444,
+      "coordRole": "building_center",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Eksakt OSM-bygningsobjekt er primær geometrikilde etter dokumentert tvetydig Geonorge-oppslag."
+  },
+  "notes": [
+    "Geonorge-oppslaget for Kongens gate 21 ble kjørt først og ga flere ikke-entydige treff. Deretter ble det eksakte OSM-bygningsobjektet relation 13931026 identifisert for Telegrafbygningen og kryssjekket mot Riksantikvaren og Telenor Kulturarv. Koordinatet beholdes fordi det allerede representerer selve Telegrafbygningen; primær kildeidentitet flyttes fra Wikidata til det dokumenterte fysiske OSM-objektet."
+  ]
+}

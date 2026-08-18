@@ -1,0 +1,268 @@
+{
+  "schema": "history_go_fagverk_filosofi_article_v1",
+  "version": "1.0.0",
+  "subject_id": "filosofi",
+  "id": "em_filosofi_intensjon_grunner_arsaker_handling",
+  "title": "Intensjon, grunner og årsaker i handling",
+  "domain_id": "handlingsfilosofi",
+  "area_id": "filosofi_handlingsfilosofi",
+  "level": 2,
+  "status": "complete",
+  "editorial_quality": "university_depth_reviewed",
+  "canonical_definition": "Hva som skiller intensjonale handlinger fra hendelser, og om grunner forklarer handling ved også å være årsaker.",
+  "concept_ids": [
+    "handlingsintensjon",
+    "motiverende_grunn",
+    "handlingsarsak"
+  ],
+  "method_ids": [
+    "met_filosofi_handlingsforklaring",
+    "met_filosofi_argumentrekonstruksjon",
+    "met_filosofi_begrepsanalyse"
+  ],
+  "theory_hook_ids": [
+    "fil_handlingsfilosofi_01"
+  ],
+  "thinker_refs": [
+    "gem_anscombe",
+    "donald_davidson",
+    "michael_bratman"
+  ],
+  "primary_work_refs": [
+    "Intention",
+    "Actions, Reasons, and Causes",
+    "Intention, Plans, and Practical Reason"
+  ],
+  "source_ids": [
+    "sep-action",
+    "sep-intention",
+    "sep-reasons-action"
+  ],
+  "claims": [
+    {
+      "id": "em_filosofi_intensjon_grunner_arsaker_handling_claim_problem",
+      "type": "problem_framing",
+      "text": "Når en person løfter armen frivillig og når armen løftes av en refleks, kan den observerbare bevegelsen være lik. Handlingsfilosofien søker det som gjør den første hendelsen til en intensjonal handling: intensjon, praktisk kunnskap, grunner, kausal historie eller en kombinasjon.",
+      "source_ids": [
+        "sep-action",
+        "sep-intention",
+        "sep-reasons-action"
+      ]
+    },
+    {
+      "id": "em_filosofi_intensjon_grunner_arsaker_handling_claim_position",
+      "type": "position_reconstruction",
+      "text": "P1: Anscombe hevder at intensjonal handling kjennetegnes ved at et bestemt «Hvorfor?»-spørsmål har anvendelse og at agenten normalt kjenner hva hun gjør på en praktisk, ikke-observasjonell måte. Dette flytter forklaringen fra ren kroppsbevegelse til handlingens plass i agentens begrunnede aktivitet.",
+      "source_ids": [
+        "sep-action",
+        "sep-intention",
+        "sep-reasons-action"
+      ]
+    },
+    {
+      "id": "em_filosofi_intensjon_grunner_arsaker_handling_claim_rival",
+      "type": "rival_position",
+      "text": "Innvending: Kausalismen kan synes å gjøre handling for passiv: hvis mentale tilstander «forårsaker» kroppen på samme måte som andre hendelser, forsvinner agenten som opphav. Ikke-kausale teorier hevder derfor at agency krever en annen type forklaring enn hendelseskausalitet.",
+      "source_ids": [
+        "sep-action",
+        "sep-intention",
+        "sep-reasons-action"
+      ]
+    },
+    {
+      "id": "em_filosofi_intensjon_grunner_arsaker_handling_claim_distinction",
+      "type": "concept_distinction",
+      "text": "Handlingsintensjon betegner en fremtids- eller handlingsrettet holdning som organiserer hva en agent skal gjøre og kan strukturere planlegging, oppmerksomhet og utførelse. Intensjon må skilles fra ønske og prediksjon: å tro at jeg kommer til å gjøre noe er ikke nødvendigvis å ha bestemt eller planlagt å gjøre det. I denne artikkelen er funksjonen presis: Begrepet gjør Anscombes praktiske kunnskap, Davidsons kausalisme og Bratmans planorienterte teori sammenlignbare. Det betyr at begrepet må gjøre arbeid i argumentet og kunne endre vurderingen av en rival, ikke bare stå i en ordliste.",
+      "source_ids": [
+        "sep-action",
+        "sep-intention",
+        "sep-reasons-action"
+      ]
+    },
+    {
+      "id": "em_filosofi_intensjon_grunner_arsaker_handling_claim_history",
+      "type": "historical_position",
+      "text": "G. E. M. Anscombe brukes her gjennom Intention, ikke som navnegjetting. Anscombes Intention er grunnleggende fordi hun analyserer intensjonal handling gjennom praktisk kunnskap, beskrivelse og hvorfor-spørsmål, ikke bare som et psykologisk forstadium før bevegelsen. Sammenligningen er relevant fordi posisjonen angriper eller bærer et bestemt premiss i artikkelens hoveddebatt.",
+      "source_ids": [
+        "sep-action",
+        "sep-intention",
+        "sep-reasons-action"
+      ]
+    },
+    {
+      "id": "em_filosofi_intensjon_grunner_arsaker_handling_claim_method",
+      "type": "methodological",
+      "text": "Handlingsforklaring er hovedgrepet. Rekonstruer en handlingskjede med agentens tro, mål, intensjon, mellomhandlinger og resultat. Marker separat hvilke grunner som faktisk motiverte, hvilke som normativt talte for handlingen, og hvilke hendelser som var kausalt nødvendige. Analysen skal produsere et konkret mellomledd – for eksempel handlingskjede, grunn–årsak-matrise, plananalyse – slik at leseren kan kontrollere hvordan premiss, evidens og konklusjon henger sammen.",
+      "source_ids": [
+        "sep-action",
+        "sep-intention",
+        "sep-reasons-action"
+      ]
+    },
+    {
+      "id": "em_filosofi_intensjon_grunner_arsaker_handling_claim_limit",
+      "type": "limitation",
+      "text": "Artikkelen gir ikke en full teori om fri vilje, som allerede behandles i sinnsfilosofien. Den avgrenser den mer grunnleggende analysen av handling, intensjon og grunner som fri-vilje-debatten forutsetter.",
+      "source_ids": [
+        "sep-action",
+        "sep-intention",
+        "sep-reasons-action"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "problem",
+      "title": "Problemet",
+      "paragraphs": [
+        "Når en person løfter armen frivillig og når armen løftes av en refleks, kan den observerbare bevegelsen være lik. Handlingsfilosofien søker det som gjør den første hendelsen til en intensjonal handling: intensjon, praktisk kunnskap, grunner, kausal historie eller en kombinasjon.",
+        "Forklaringen må håndtere feil, uvitenhet og avvikende kausalitet. Dersom en grunn bare er en etterrasjonalisering, forklarer den ikke handlingen; dersom enhver mental årsak er nok, kan en nervøs tro forårsake nettopp den hendelsen agenten ønsket uten at den derfor ble gjort med hensikt.",
+        "Anscombe starter fra agentens praktiske kunnskap og hvorfor-spørsmål, Davidson fra rasjonaliserende årsaksforklaring og Bratman fra intensjoner som stabile planer. De gir ulike bilder av agentens forhold til egen handling."
+      ]
+    },
+    {
+      "id": "begreper",
+      "title": "Begrepene som bærer argumentet",
+      "paragraphs": [
+        "Handlingsintensjon betegner en fremtids- eller handlingsrettet holdning som organiserer hva en agent skal gjøre og kan strukturere planlegging, oppmerksomhet og utførelse. Intensjon må skilles fra ønske og prediksjon: å tro at jeg kommer til å gjøre noe er ikke nødvendigvis å ha bestemt eller planlagt å gjøre det. I argumentrekonstruksjonen får begrepet en konkret rolle: Anscombe hevder at intensjonal handling kjennetegnes ved at et bestemt «Hvorfor?»-spørsmål har anvendelse og at agenten normalt kjenner hva hun gjør på en praktisk, ikke-observasjonell måte.",
+        "Motiverende grunn betegner den grunnen agenten faktisk handler på eller som inngår i forklaringen av hvorfor agenten handlet, uavhengig av om grunnen normativt var god. Motiverende grunner må skilles fra normative grunner som taler for en handling. En feilaktig tro kan motivere uten å gi objektivt god begrunnelse. I argumentrekonstruksjonen får begrepet en konkret rolle: Anscombe hevder at intensjonal handling kjennetegnes ved at et bestemt «Hvorfor?»-spørsmål har anvendelse og at agenten normalt kjenner hva hun gjør på en praktisk, ikke-observasjonell måte.",
+        "Handlingsårsak betegner en årsaksfaktor som inngår i produksjonen av en handling, der en sentral strid er om relevante grunner og intensjoner kan være slike årsaker. Handlingsårsak må skilles fra en ren kroppslig årsak som ikke gjør hendelsen til agentens handling; Davidson hevder at grunner kan være årsaker nettopp i en riktig rasjonaliserende forbindelse. I argumentrekonstruksjonen får begrepet en konkret rolle: Avvikende årsakskjeder utfordrer en enkel kausalisme: en agents intensjon kan forårsake den ønskede hendelsen gjennom nervøsitet eller tilfeldige mellomledd uten at hendelsen utføres med den tilsiktede kontrollen."
+      ]
+    },
+    {
+      "id": "argument",
+      "title": "Argumentrekonstruksjon",
+      "paragraphs": [
+        "P1: Anscombe hevder at intensjonal handling kjennetegnes ved at et bestemt «Hvorfor?»-spørsmål har anvendelse og at agenten normalt kjenner hva hun gjør på en praktisk, ikke-observasjonell måte. Dette flytter forklaringen fra ren kroppsbevegelse til handlingens plass i agentens begrunnede aktivitet.",
+        "P2: Davidson argumenterer for at en primær grunn – typisk en pro-holdning sammen med en relevant tro – kan rasjonalisere handlingen og samtidig være dens årsak. Dermed trenger vi ikke velge mellom «handling forklart av grunner» og «handling forklart kausalt», så lenge kausalforbindelsen er av riktig type.",
+        "P3: Avvikende årsakskjeder utfordrer en enkel kausalisme: en agents intensjon kan forårsake den ønskede hendelsen gjennom nervøsitet eller tilfeldige mellomledd uten at hendelsen utføres med den tilsiktede kontrollen. Bratmans planperspektiv tilfører tidslig stabilitet og koordinering som en enkelt mental årsak ikke fanger.",
+        "K: Intensjonal handling kan derfor ikke identifiseres med bevegelse pluss et samtidig ønske. En god teori må forklare praktisk kunnskap, rasjonaliserende grunner, korrekt kausal kontroll og intensjonens planfunksjon; Anscombe, Davidson og Bratman er reelle rivaler om hvordan disse elementene henger sammen."
+      ]
+    },
+    {
+      "id": "uenighet",
+      "title": "Innvending og svar",
+      "paragraphs": [
+        "Innvending: Kausalismen kan synes å gjøre handling for passiv: hvis mentale tilstander «forårsaker» kroppen på samme måte som andre hendelser, forsvinner agenten som opphav. Ikke-kausale teorier hevder derfor at agency krever en annen type forklaring enn hendelseskausalitet.",
+        "Svar: Davidson trenger ikke behandle agenten som et rent sted der årsaker kolliderer; grunnen er agentens egen holdning og tro. Likevel gjenstår spørsmålet om årsaksmodellen forklarer kontroll og eierskap. Agent-kausale eller ikke-kausale teorier må på sin side forklare hvordan grunner kobles til fysisk utførelse uten forklaringsgap.",
+        "En annen stresstest er svak vilje. En person kan dømme at A er best, men med vilje gjøre B. Handlingsfilosofien må kunne skille intensjon, vurdering og motivasjon slik at akrasia er mulig uten at all handling blir irrasjonell støy."
+      ]
+    },
+    {
+      "id": "teorihistorie",
+      "title": "Teori og verk",
+      "paragraphs": [
+        "Intention brukes som primæranker for Anscombe sin posisjon i denne debatten. Anscombes Intention er grunnleggende fordi hun analyserer intensjonal handling gjennom praktisk kunnskap, beskrivelse og hvorfor-spørsmål, ikke bare som et psykologisk forstadium før bevegelsen.",
+        "Actions, Reasons, and Causes brukes som primæranker for Donald Davidson sin posisjon i denne debatten. Davidsons Actions, Reasons, and Causes etablerer den moderne kausalismens kjerne: grunner kan rasjonalisere og kausalt forklare samme handling. Avvikende årsakskjeder viser samtidig at «årsaket av riktig grunn» trenger ytterligere presisering.",
+        "Intention, Plans, and Practical Reason brukes som primæranker for Michael Bratman sin posisjon i denne debatten. Bratmans Intention, Plans, and Practical Reason analyserer intensjoner som del av planer som stabiliserer beslutninger over tid og koordinerer fremtidige handlinger. Det gir intensjon en funksjon som verken enkelt ønske eller prediksjon har.",
+        "Primærverkankrene er Intention (G. E. M. Anscombe); Actions, Reasons, and Causes (Donald Davidson); Intention, Plans, and Practical Reason (Michael Bratman). De brukes til å kontrollere de navngitte debattaktørenes egne argumenter i artikkelens stridspunkt, ikke som en generell kanonliste. Anscombe analyserer intensjonal handling gjennom praktisk kunnskap og spørsmålet «Hvorfor?», Davidson hevder at rasjonaliserende grunner også kan være årsaker, og Bratman forklarer intensjon som planstruktur; rivalene er uenige om hva som gjør en hendelse til agentens handling."
+      ]
+    },
+    {
+      "id": "metode",
+      "title": "Metode og kontrollspørsmål",
+      "paragraphs": [
+        "Handlingsforklaring, Argumentrekonstruksjon, Begrepsanalyse brukes på den eksplisitte argumentrekken, ikke som en løs metodeetikett. Analysen starter med premisset «Anscombe hevder at intensjonal handling kjennetegnes ved at et bestemt «Hvorfor?»-spørsmål har anvendelse og at agenten normalt kjenner hva hun gjør på en praktisk, ikke-observasjonell måte.» og følger overgangen fram mot konklusjonen «Intensjonal handling kan derfor ikke identifiseres med bevegelse pluss et samtidig ønske.». Deretter prøves rekonstruksjonen mot rivalens hovedinnvending: «Kausalismen kan synes å gjøre handling for passiv: hvis mentale tilstander «forårsaker» kroppen på samme måte som andre hendelser, forsvinner agenten som opphav.». Målet er å lokalisere uenigheten til et bestemt premiss, begrep eller evidenskrav som leseren selv kan kontrollere.",
+        "Handlingsforklaring er hovedgrepet. Rekonstruer en handlingskjede med agentens tro, mål, intensjon, mellomhandlinger og resultat. Marker separat hvilke grunner som faktisk motiverte, hvilke som normativt talte for handlingen, og hvilke hendelser som var kausalt nødvendige. Analysen skal produsere et konkret mellomledd – for eksempel handlingskjede, grunn–årsak-matrise, plananalyse – slik at leseren kan kontrollere hvordan premiss, evidens og konklusjon henger sammen."
+      ]
+    },
+    {
+      "id": "case",
+      "title": "Anvendelse på et dokumentert case",
+      "paragraphs": [
+        "Et case kan være en dokumentert beslutningsprosess der en aktør utarbeider en plan, endrer den etter ny informasjon og til slutt handler. Materialet gjør det mulig å se hvordan intensjon stabiliserer og reviderer handling over tid i stedet for å gjette ut fra sluttresultatet.",
+        "Et case er relevant bare når det dokumenterer premisser som faktisk inngår i analysen av hva som skiller intensjonale handlinger fra hendelser, og om grunner forklarer handling ved også å være årsaker. Historiske eller empiriske opplysninger må ha egne casekilder, mens den filosofiske vurderingen fortsatt må vise hvilken rival som støttes eller utfordres og hvorfor."
+      ]
+    },
+    {
+      "id": "kilder",
+      "title": "Kildebruk og evidensgrenser",
+      "paragraphs": [
+        "De emnespesifikke sekundærkildene i denne artikkelen er Action; Intention; Reasons for Action: Justification, Motivation, Explanation. Action: emnespesifikk sekundærkilde til handlingsfilosofi, kausale og ikke-kausale handlingsforklaringer, grunner, intensjon og skillet mellom handling og hendelse. Intention: emnespesifikk sekundærkilde til Anscombe, Davidson, Bratman og teorier om intensjon som mental tilstand, plan, praktisk kunnskap eller handling under utvikling. Reasons for Action: Justification, Motivation, Explanation: emnespesifikk sekundærkilde til skillet mellom normative og motiverende grunner og til debatten om hvordan grunner kan forklare handling.",
+        "Primærverkankrene Intention; Actions, Reasons, and Causes; Intention, Plans, and Practical Reason brukes ved konkrete posisjons- og argumentrekonstruksjoner. De emnespesifikke sekundærkildene brukes til problemhistorie, rivaler, fortolkningskontroll og bibliografi; empiriske casepåstander krever egne casekilder."
+      ]
+    },
+    {
+      "id": "avgrensning",
+      "title": "Hva analysen ikke etablerer",
+      "paragraphs": [
+        "Artikkelen gir ikke en full teori om fri vilje, som allerede behandles i sinnsfilosofien. Den avgrenser den mer grunnleggende analysen av handling, intensjon og grunner som fri-vilje-debatten forutsetter.",
+        "Det åpne kontrollpunktet er rivalens innvending: «Kausalismen kan synes å gjøre handling for passiv: hvis mentale tilstander «forårsaker» kroppen på samme måte som andre hendelser, forsvinner agenten som opphav.» Artikkelens svar er «Davidson trenger ikke behandle agenten som et rent sted der årsaker kolliderer; grunnen er agentens egen holdning og tro.» Dette er ikke en påstand om at debatten dermed er lukket. Kvalitetskravet er at leseren kan se hvilke premisser som fortsatt er omstridte, hvilke verk og sekundærkilder som bærer rekonstruksjonen, og hva som måtte undersøkes videre for å styrke eller forkaste konklusjonen."
+      ]
+    }
+  ],
+  "quality": {
+    "word_count": 1313,
+    "section_count": 9,
+    "paragraph_count": 24,
+    "argument_reconstruction": true,
+    "rival_position": true,
+    "method_limit": true,
+    "source_boundaries": true,
+    "concepts_written_out": true,
+    "place_boundary": true,
+    "editorial_polish": true,
+    "tradition_specific_relevance": true,
+    "review_state": "university_depth_reviewed",
+    "reviewed_against_university_gate": true,
+    "substantive_argument_reconstruction": true,
+    "topic_specific_sources": true,
+    "source_integrity": {
+      "state": "reviewed",
+      "standard": "debate_aligned_primary_works_v2",
+      "reviewed_at": "2026-08-17",
+      "debate_actors": [
+        "G. E. M. Anscombe",
+        "Donald Davidson",
+        "Michael Bratman"
+      ],
+      "canonical_thinker_refs": [
+        "gem_anscombe",
+        "donald_davidson",
+        "michael_bratman"
+      ],
+      "primary_work_anchors": [
+        {
+          "actor": "G. E. M. Anscombe",
+          "canonical_ref": "gem_anscombe",
+          "work": "Intention"
+        },
+        {
+          "actor": "Donald Davidson",
+          "canonical_ref": "donald_davidson",
+          "work": "Actions, Reasons, and Causes"
+        },
+        {
+          "actor": "Michael Bratman",
+          "canonical_ref": "michael_bratman",
+          "work": "Intention, Plans, and Practical Reason"
+        }
+      ]
+    }
+  },
+  "university_quality": {
+    "schema": "history_go_filosofi_university_quality_v1",
+    "review_version": "3.0.0",
+    "reviewed_at": "2026-08-14",
+    "debate": "Anscombe analyserer intensjonal handling gjennom praktisk kunnskap og spørsmålet «Hvorfor?», Davidson hevder at rasjonaliserende grunner også kan være årsaker, og Bratman forklarer intensjon som planstruktur; rivalene er uenige om hva som gjør en hendelse til agentens handling.",
+    "debate_thinkers": [
+      "G. E. M. Anscombe",
+      "Donald Davidson",
+      "Michael Bratman"
+    ],
+    "required_anchors": [
+      "Anscombe",
+      "Davidson",
+      "intensjon",
+      "grunner"
+    ],
+    "substantive_argument": true,
+    "real_rival": true,
+    "primary_work_grounding": true,
+    "topic_specific_secondary_sources": true,
+    "generic_template_rejected": true,
+    "review_status": "reviewed",
+    "final_qa_repaired_at": "2026-08-16",
+    "primary_work_count": 3
+  }
+}

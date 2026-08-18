@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "domain": "sport",
+  "label": "Sportsepoker",
+  "notes": "Epokene beskriver organisering, kommersialisering, medialisering og teknologiske skifter i sport. Overlapp kan forekomme.",
+  "epoker": [
+    {
+      "id": "sport_folkeidrett_og_forening",
+      "label": "Folkeidrett og foreningsbygging",
+      "years": { "from": 1850, "to": 1919 },
+      "definition": "Idrett organiseres i lokale lag og foreninger, med vekt på disiplin, folkehelse og nasjonsbygging.",
+      "markers": ["idrettslag", "frivillighet", "lokale stevner"],
+      "tags": ["foreningsidrett", "folkeidrett", "organisering"],
+      "knagger": ["lokalt_fellesskap", "idrettens_institusjoner"]
+    },
+    {
+      "id": "sport_internasjonalisering_og_ol",
+      "label": "Internasjonalisering og olympisk epoke",
+      "years": { "from": 1920, "to": 1945 },
+      "definition": "Nasjonale idretter kobles tydeligere til internasjonale mesterskap, olympiske idealer og standardiserte regler.",
+      "markers": ["olympiske leker", "internasjonale forbund", "regelstandardisering"],
+      "tags": ["ol", "internasjonal", "mesterskap"],
+      "knagger": ["landskamper", "idrettsdiplomati"]
+    },
+    {
+      "id": "sport_velferdsstat_og_bredde",
+      "label": "Velferdsstat og breddeidrett",
+      "years": { "from": 1945, "to": 1969 },
+      "definition": "Etterkrigstiden bygger anlegg, klubber og breddeaktivitet i stor skala med offentlig støtte.",
+      "markers": ["idrettsanlegg", "kommunal støtte", "ungdomsidrett"],
+      "tags": ["breddeidrett", "anlegg", "etterkrigstid"],
+      "knagger": ["masseidrett", "lokal_infrastruktur"]
+    },
+    {
+      "id": "sport_profesjonalisering",
+      "label": "Profesjonalisering og toppidrettssystem",
+      "years": { "from": 1970, "to": 1989 },
+      "definition": "Toppsport får tydeligere profesjonell struktur med spesialisert trening, støtteapparat og elitefokus.",
+      "markers": ["toppidrett", "treningsvitenskap", "eliteklubber"],
+      "tags": ["profesjonalisering", "toppidrett", "elite"],
+      "knagger": ["prestasjon", "sportsfaglig_utvikling"]
+    },
+    {
+      "id": "sport_kommersialisering_media",
+      "label": "Kommersialisering og medieinntekter",
+      "years": { "from": 1990, "to": 2009 },
+      "definition": "Rettigheter, sponsing og tv-avtaler blir sentrale drivere for økonomi, kalender og konkurranseformat.",
+      "markers": ["sponsoravtaler", "medierettigheter", "ligaekspansjon"],
+      "tags": ["kommersiell_sport", "rettigheter", "sponsor"],
+      "knagger": ["sportsokonomi", "publikumsmarked"]
+    },
+    {
+      "id": "sport_data_og_global_plattform",
+      "label": "Data, globalisering og plattformsport",
+      "years": { "from": 2010, "to": null },
+      "definition": "Analyseverktøy, global distribusjon, sosiale medier og plattformlogikk former trening, formidling og publikum.",
+      "markers": ["sportsdata", "streaming", "globale fanmiljo"],
+      "tags": ["analyse", "global_sport", "digitale_plattformer"],
+      "knagger": ["digitalisering", "oppmerksomhetsokonomi"]
+    }
+  ],
+  "parallel_epoker": [
+    {
+      "id": "sport_para_og_inkludering",
+      "label": "Paraidrett og inkluderingsspor",
+      "years": { "from": 1960, "to": null },
+      "definition": "Parallell utvikling der paraidrett, tilgjengelighet og inkluderingsarbeid blir en stadig tydeligere del av idrettsfeltet.",
+      "markers": ["paraidrett", "tilrettelegging", "inkluderingspolitikk"],
+      "tags": ["para", "inkludering", "mangfold"],
+      "knagger": ["tilgjengelighet", "rettigheter"]
+    }
+  ],
+  "ui": {
+    "default_sort": "from_year_asc",
+    "show_parallel": true
+  }
+}

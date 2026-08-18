@@ -1,0 +1,15 @@
+{
+  "schema":"civication_role_model_v1","version":1,
+  "source":{"badge_file":"data/badges/subkultur.json","badge_id":"subkultur","badge_name":"Subkultur","tier_label":"Kulturkonsulent","tier_threshold":60,"evidence_file":"data/Civication/subcultureCareerEvidence.json"},
+  "category":"subkultur","role_scope":"subkultur_program_og_koordinering","role_id":"subkultur_kulturkonsulent","title":"Kulturkonsulent",
+  "professional_description":["Kulturfaglig og administrativ rolle som utvikler arrangement, samarbeid, publikumsarbeid og praktisk gjennomføring."],
+  "core_narrative":["Du må kunne snakke både med de som lager kulturen og de som finansierer, organiserer og åpner rommene."],
+  "work_life":{"daily_work":["utvikle program","koordinere samarbeid","skrive beslutningsgrunnlag","følge budsjett","kommunisere med publikum og aktører"],"responsibilities":["etterprøvbare prioriteringer","unngå favorisering","oversette behov mellom miljø og institusjon"],"work_environment":["kulturhus","kommune","organisasjon","festival"],"status_position":["Rådgivende/koordinerende rolle med innflytelse på program og ressurser."]},
+  "required_knowledge":{"education_basis":["Krav varierer mellom stillinger; relevant kultur-/administrasjonserfaring eller utdanning kan etterspørres."],"skills":["kulturforståelse","saksarbeid","koordinering","budsjett","kommunikasjon"],"category_knowledge":["subkulturhistorie","selvorganisering","kulturpolitikk","publikumsarbeid"],"history_go_badges":["subkultur"],"place_connections":[],"people_connections":[]},
+  "scope_boundaries":{"may_do":["utrede","koordinere","foreslå program","følge opp samarbeid"],"must_not_simulate_as_authority":["late som personlig smak er vedtak","skjule habilitetskonflikt","love midler uten fullmakt"]},
+  "challenges":[{"id":"kred_vs_habilitet","title":"Alle kjenner alle","description":"Sterke nettverk kan være ressurs og habilitetsproblem samtidig.","pressure":"nettverk_vs_likebehandling","affects":["trust","status"]}],
+  "dilemmas":[{"id":"vennens_prosjekt","title":"Vennens prosjekt","setup":"Et sterkt prosjekt kommer fra noen du har tett miljøtilknytning til.","choice_axis":"nettverk_vs_habilitet","consequence_axis":"tillit_vs_favorisering","mail_hooks":["job","people","conflict"]}],
+  "mail_integration":{"role_scope":"subkultur_program_og_koordinering","mail_profile":"subkultur_program_og_koordinering","can_feed_mail_types":["job","story","conflict","event","people","knowledge","followup"],"mail_variables":{"role_title":"Kulturkonsulent","category":"subkultur","main_pressure":"nettverk_vs_likebehandling","ethical_axis":"kred_vs_habilitet","status_axis":"tillit_vs_favorisering"},"recommended_mail_families":["subkultur_program_og_koordinering"],"role_model_refs_supported":true},
+  "competence_axes":[{"id":"program","label":"Program"},{"id":"habilitet","label":"Habilitet"},{"id":"oversettelse","label":"Oversettelse"}],"ideal_type_problems":[{"id":"nettverk_vs_likebehandling","label":"Nettverk vs likebehandling"}],
+  "notes":["Legacy filename retained for manifest stability; canonical title is Kulturkonsulent."]
+}

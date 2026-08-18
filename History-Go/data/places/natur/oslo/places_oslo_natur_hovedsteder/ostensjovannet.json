@@ -1,0 +1,161 @@
+{
+  "id": "ostensjovannet",
+  "name": "Østensjøvannet",
+  "lat": 59.88943337258171,
+  "lon": 10.829260727224845,
+  "r": 450,
+  "category": "natur",
+  "desc": "Næringsrik innsjø, naturreservat og et av Oslos viktigste våtmarks- og fugleområder.",
+  "tags": [
+    "innsjo",
+    "vatmark",
+    "fugleliv",
+    "naturreservat",
+    "habitat",
+    "biodiversitet"
+  ],
+  "sourceHint": "Hovedpunktet representerer hele Østensjøvannet naturreservat med Miljødirektoratets offisielle vernegeometri. Delankrene bygges kun fra verifiserte konkrete komponenter: Vadedammen, fugleskjulet på vestsiden, Bølerbekkens utløp og Bogerudmyra. Det generiske sivbelte-recordet er deaktivert som separat kartsted; sivbelter og våtmarkskanter formidles i hovedstedets naturprofil.",
+  "coordType": "protected_wetland_center",
+  "coordStatus": "verified_geometry",
+  "coordSource": "Miljødirektoratet Naturvernområder – offisiell geometri for Østensjøvannet naturreservat",
+  "coordVerifiedAt": "2026-07-21",
+  "coordNote": "Canonical punkt er et representativt områdeanker beregnet fra den offisielle vernegeometrien VV00000972. Punktet brukes for hele verne-/naturarealet og ikke som adresse- eller tilfeldig delpunkt.",
+  "anchors": [
+    {
+      "id": "ostensjovannet_nord",
+      "name": "Vadedammen",
+      "lat": 59.8977295,
+      "lon": 10.8308273,
+      "r": 120,
+      "type": "area_anchor",
+      "role": "north_wetland_anchor",
+      "coordStatus": "verified_geometry",
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-relation:6503853",
+      "sourceUrl": "https://www.openstreetmap.org/relation/6503853",
+      "note": "Vadedammen er den verifiserte konkrete våtmarksdammen nord for Østensjøvannet."
+    },
+    {
+      "id": "ostensjovannet_fugletarn",
+      "name": "Fugleskjulet ved Østensjøvannet",
+      "lat": 59.8863482,
+      "lon": 10.8264232,
+      "r": 90,
+      "type": "building_center",
+      "role": "observation_anchor",
+      "coordStatus": "verified_geometry",
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:533351097",
+      "sourceUrl": "https://www.openstreetmap.org/way/533351097",
+      "note": "Fugleskjulet på vestsiden er verifisert som den eneste lokale leisure=bird_hide-geometrien."
+    },
+    {
+      "id": "ostensjovannet_sor",
+      "name": "Bølerbekkens utløp i Østensjøvannet",
+      "lat": 59.8833054,
+      "lon": 10.8331603,
+      "r": 120,
+      "type": "mouth_anchor",
+      "role": "tributary_mouth_anchor",
+      "coordStatus": "verified_geometry",
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-node:1110773258",
+      "sourceUrl": "https://www.openstreetmap.org/node/1110773258",
+      "note": "Bølerbekkens utløp er verifisert som en eksplisitt delt bekk–innsjø-grensenode."
+    },
+    {
+      "id": "bogerudmyra",
+      "name": "Bogerudmyra",
+      "lat": 59.878427,
+      "lon": 10.8342964,
+      "r": 180,
+      "type": "area_anchor",
+      "role": "south_wetland_anchor",
+      "coordStatus": "verified_geometry",
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-relation:4106652",
+      "sourceUrl": "https://www.openstreetmap.org/relation/4106652",
+      "note": "Bogerudmyra er verifisert som det konkrete natural=wetland/wetland=marsh-multipolygonet sør for vannet."
+    }
+  ],
+  "year": 1992,
+  "popupDesc": "Østensjøvannet er et av Oslos viktigste våtmarksområder og fungerer som naturreservat, fuglelokalitet og bynært habitatkompleks. Innsjøen, sivbeltene, kantvegetasjonen og de grunne våtmarkssonene gjør stedet særlig relevant for spørsmål om vannfugl, biologisk mangfold, våtmarkshabitat og naturforvaltning.\n\nI History Go bør Østensjøvannet leses som et naturfaglig hovedsted, ikke som vanlig turvann eller bare grønt byrom. Spørsmål skal starte i våtmark, habitat, fugleliv, vannspeil, kantsoner, biodiversitet og vern, og derfra kobles til forvaltning, observasjon og bynær økologi.",
+  "emne_ids": [
+    "em_natur_arter_habitat_mangfold",
+    "em_natur_vern_forvaltning_politikk"
+  ],
+  "nature_profile": {
+    "type": "næringsrik innsjø / våtmark / naturreservat",
+    "title": "Hele våtmarkssystemet rundt Østensjøvannet",
+    "summary": "Østensjøvannet er hovedinngangen til et sammenhengende våtmarkssystem med åpent vann, grunne soner, sivbelter, fuktige bredder og vegeterte randarealer. Delpunktene rundt vannet viser ulike deler av dette systemet, mens hovedstedet forklarer hvordan vannstand, næring, kantvegetasjon og vern virker sammen. Natur-rundingen skal samle området som ett habitatkompleks uten å overføre artslister fra enkeltpunktene til hele innsjøen.",
+    "themes": [
+      "næringsrik innsjø og gruntvann",
+      "sivbelter og våtmarkskanter",
+      "fugleområde gjennom året",
+      "naturreservat og forvaltning",
+      "sammenheng mellom delhabitater",
+      "skånsom observasjon i bynær våtmark"
+    ],
+    "nearby_place_ids": [
+      "ostensjovannet_nord",
+      "ostensjovannet_fugletarn",
+      "ostensjovannet_sor",
+      "bogerudmyra"
+    ]
+  },
+  "quiz_profile": {
+    "place_type": "innsjo",
+    "subtype": "vatmark_og_naturreservat",
+    "signature_features": [
+      "næringsrik innsjø med sivbelter og grunne våtmarkssoner",
+      "bynært naturreservat med dokumentert fugleliv og habitatverdi",
+      "tilrettelagte observasjonspunkter og stier rundt vannet"
+    ],
+    "primary_angles": [
+      "vatmark_habitat",
+      "fugleliv_og_biodiversitet",
+      "vern_og_forvaltning",
+      "urban_okologi"
+    ],
+    "question_families": [
+      "arter_habitat_og_mangfold",
+      "vatmark_og_vannspeil",
+      "vern_forvaltning_og_bruk",
+      "bynatur_og_okologisk_infrastruktur"
+    ],
+    "avoid_angles": [
+      "generisk_badevann",
+      "poetiske_naturbeskrivelser",
+      "usikre_artslister_uten_kilde",
+      "ren_rekreasjonsquiz_uten_naturanker"
+    ],
+    "must_include": [
+      "rollen som våtmark og naturreservat i Oslo",
+      "koblingen mellom sivbelter, fugleliv og habitat",
+      "at stedet skal leses som naturfaglig hovedcase, ikke bare grønt nærtursted"
+    ],
+    "contrast_targets": [
+      "maridalsvannet",
+      "noklevann",
+      "alnaelva",
+      "akerselva"
+    ],
+    "notes": "Bruk bare em_natur_* og naturankre. Spør konkret om våtmark, habitat, biodiversitet, vannfugl, vern og forvaltning."
+  },
+  "underbadge_ids": [
+    "biologisk_mangfold"
+  ],
+  "locatorType": "natural_area",
+  "sourceProvider": "official_map",
+  "sourceObjectId": "miljodirektoratet-naturvern:VV00000972",
+  "geocodeAccuracy": "geometric_center",
+  "coordRole": "area_anchor",
+  "coordSourceId": "miljodirektoratet-naturvern:VV00000972",
+  "coordSourceUrl": "https://faktaark.naturbase.no/?id=VV00000972",
+  "rounds": [
+    "nature",
+    "leksikon",
+    "routes"
+  ],
+  "routeId": "ostensjovannet_vatmark"
+}

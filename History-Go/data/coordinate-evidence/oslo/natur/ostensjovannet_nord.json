@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.0",
+  "placeId": "ostensjovannet_nord",
+  "placeFile": "data/places/natur/oslo/places_oslo_natur_ostensjovannet/ostensjovannet_nord.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.8977295,
+    "lon": 10.8308273,
+    "r": 120,
+    "coordStatus": "verified_geometry",
+    "coordSource": "OpenStreetMap relation 6503853 – Vadedammen",
+    "coordType": "pond_area_anchor",
+    "coordNote": "Batch 149 erstatter den repo-syntetiske identiteten «Østensjøvannet nord» med det konkrete navngitte våtmarksobjektet Vadedammen, mens placeId beholdes for kompatibilitet. OSM relation 6503853 er den eneste eksakt navngitte Vadedammen-kandidaten i den korrigerte nordende-scope-boksen og er modellert som pond-polygon. Østensjøvannets Venner dokumenterer Vadedammen som en kunstig anlagt, grunn våtmarksdam nord for Østensjøvannet, etablert for vadefugl, og publiserer en GPS-referanse som faller innenfor samme polygon-scope. Canonical lat/lon beregnes deterministisk som arealvektet polygoncentroid. Hele naturreservatpolygonet, legacy-punktet og nearest/first-hit brukes ikke."
+  },
+  "identity": {
+    "currentName": "Vadedammen",
+    "resolvedIdentity": "Vadedammen – den konkrete kunstig anlagte våtmarksdammen nord for Østensjøvannet",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "natural_area",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [],
+  "evidence": [
+    {
+      "sourceProvider": "osm",
+      "sourceName": "OpenStreetMap – Vadedammen",
+      "sourceUrl": "https://www.openstreetmap.org/relation/6503853",
+      "sourceObjectId": "osm-relation:6503853",
+      "sourceQuality": "unique_exact_named_pond_polygon",
+      "finding": "Relation 6503853 er den eneste eksakt navngitte Vadedammen-kandidaten i korrigert lokal scope og er modellert som en pond-polygon. Canonical area-anchor er polygoncentroid 59.8977295, 10.8308273.",
+      "canVerifyCoordinate": true,
+      "reason": "Eksakt navngitt fysisk damgeometri med riktig objekttype og entydig lokal identitet."
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Østensjøvannets Venner – Vadedammen",
+      "sourceUrl": "https://www.ostensjovannet.no/post/vadedammen-sl%C3%A5tt-av-takr%C3%B8r-for-begrensning-av-gjengroing",
+      "sourceObjectId": "ostensjovannets-venner:vadedammen-wetland",
+      "sourceQuality": "documented_named_local_wetland_identity",
+      "finding": "Kilden dokumenterer Vadedammen som den kunstig anlagte dammen nord for Østensjøvannet, etablert som habitat for vadefugl og dominert av takrør i gjengroingsfasene.",
+      "canVerifyCoordinate": false,
+      "reason": "Fastsetter lokal identitet, naturtype og habitatfunksjon; den eksakte polygongeometrien kommer fra OSM."
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Østensjøvannets Venner – adkomst og GPS-referanser",
+      "sourceUrl": "https://www.ostensjovannet.no/adkomst",
+      "sourceObjectId": "ostensjovannets-venner:vadedammen-gps-reference",
+      "sourceQuality": "published_local_gps_scope_crosscheck",
+      "finding": "Publisert GPS-referanse for Vadedammen er 59.8974667, 10.8307833. Referansen ligger innenfor den fresh OSM-polygonens bounding box og 29.3 m fra det beregnede area-ankeret.",
+      "canVerifyCoordinate": false,
+      "reason": "Kryssjekker at den valgte OSM-geometrien ligger i den dokumenterte lokale Vadedammen-scope; referansen brukes ikke som canonical punkt."
+    }
+  ],
+  "addressCandidates": [],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-relation:6503853",
+      "canApplyToPlace": true
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "ostensjovannets-venner:vadedammen-wetland",
+      "canApplyToPlace": false
+    }
+  ],
+  "geometryCandidates": [
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-relation:6503853",
+      "lat": 59.8977295,
+      "lon": 10.8308273,
+      "coordRole": "area_anchor",
+      "geometryType": "Polygon",
+      "canApplyToPlace": true
+    }
+  ],
+  "coordinateCandidates": [
+    {
+      "lat": 59.8977295,
+      "lon": 10.8308273,
+      "coordRole": "area_anchor",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Vadedammens eksakte polygongeometri er anvendt på canonical place; den gamle syntetiske nordsonen er pensjonert som identitet."
+  },
+  "notes": [
+    "Batch 149 erstatter den repo-syntetiske identiteten «Østensjøvannet nord» med det konkrete navngitte våtmarksobjektet Vadedammen, mens placeId beholdes for kompatibilitet. OSM relation 6503853 er den eneste eksakt navngitte Vadedammen-kandidaten i den korrigerte nordende-scope-boksen og er modellert som pond-polygon. Østensjøvannets Venner dokumenterer Vadedammen som en kunstig anlagt, grunn våtmarksdam nord for Østensjøvannet, etablert for vadefugl, og publiserer en GPS-referanse som faller innenfor samme polygon-scope. Canonical lat/lon beregnes deterministisk som arealvektet polygoncentroid. Hele naturreservatpolygonet, legacy-punktet og nearest/first-hit brukes ikke."
+  ]
+}

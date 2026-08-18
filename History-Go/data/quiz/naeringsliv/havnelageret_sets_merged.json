@@ -1,0 +1,1567 @@
+{
+  "targetId": "havnelageret",
+  "categoryId": "naeringsliv",
+  "sources": {
+    "place_record": "data/places/naeringsliv/oslo/places_naeringsliv/havnelageret.json",
+    "oslo_byleksikon": "https://oslobyleksikon.no/index.php/Oslo_Havnelager",
+    "lokalhistoriewiki": "https://lokalhistoriewiki.no/wiki/Oslo_havnelager",
+    "entra": "https://www.entra.no/vare-eiendommer/ledige-lokaler/langkaia-1a",
+    "let": "https://let.no/kontor/oslo/langkaia-1",
+    "betonmast": "https://www.betonmast.no/prosjekter/langkaia-1/",
+    "bygg": "https://www.bygg.no/betonmast-kontrakter-rehabilitering/betonmast-renoverer-havnelageret/402345",
+    "estate": "https://ne.no/2025/07/04/langkaia-1-fylles-opp-entra-sikrer-ny-leieavtale-i-havnelageret/",
+    "snl_bjorvika": "https://snl.no/Bj%C3%B8rvika"
+  },
+  "production_context": {
+    "manifest_category": "naeringsliv",
+    "profile": "rich_5x7",
+    "standard_version": "3.2",
+    "source_brief": "data/quiz/production_briefs/naeringsliv/havnelageret.json",
+    "context_artifact": "data/quiz/production_context/naeringsliv/havnelageret.json",
+    "resolved_files": {
+      "pensum": "data/fag/naeringsliv/naeringslivpensum_canonical_v4_5.json",
+      "emner": "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+      "fagkart": "data/fag/naeringsliv/fagkart_naeringsliv_canonical_v4_5.json",
+      "methods": "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+      "supersetQuizMal": "data/fag/naeringsliv/supersetQUIZMAL_naeringsliv.json",
+      "quizStandard": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+      "quizQuestionSchema": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json"
+    },
+    "required_inputs_loaded": [
+      "pensum",
+      "emner",
+      "fagkart",
+      "methods",
+      "supersetQuizMal",
+      "quizStandard",
+      "quizQuestionSchema"
+    ],
+    "pensum_module_ids": [
+      "arbeid_produksjon_verdiskaping",
+      "kapital_eierskap_finans",
+      "handel_forbruk_marked",
+      "teknologi_innovasjon_plattform",
+      "logistikk_infrastruktur_rom"
+    ],
+    "emne_ids": [
+      "em_naering_arbeid_verdiskaping",
+      "em_naering_forbruk_marked",
+      "em_naering_kapital_finans",
+      "em_naering_logistikk_verdikjeder",
+      "em_naering_omstilling_kriser_skift",
+      "em_naering_teknologi_infrastruktur"
+    ],
+    "topic_hook_ids": [
+      "arbeid_som_verdiskaping"
+    ],
+    "method_ids": [
+      "met_naering_arbeidslivsanalyse",
+      "met_naering_forbruker_og_atferdsanalyse",
+      "met_naering_infrastrukturanalyse",
+      "met_naering_verdiskapingsanalyse"
+    ],
+    "thinker_ids": [
+      "max_weber"
+    ],
+    "works": [],
+    "source_review_status": "reviewed",
+    "method_start_phase": "final",
+    "theory_start_phase": "final",
+    "quality_lift": "naeringsliv_pilot_context_v1",
+    "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+    "professional_module_ids": [
+      "mod_naering_operations_kapasitet",
+      "mod_naering_innkjop_kvalitet_forsyningsrisiko",
+      "mod_naering_internasjonal_handel_valuta",
+      "mod_naering_prosjektledelse_prosjektokonomi",
+      "mod_naering_regnskapsanalyse_verdsettelse",
+      "mod_naering_markedsinnsikt_segmentering"
+    ],
+    "professional_depth_files": [
+      "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+      "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+      "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+    ],
+    "normal_opening_questions_preserved": 14,
+    "professional_questions": 21,
+    "scenario_currency": "NOK",
+    "content_balance": {
+      "fact": 19,
+      "context": 9,
+      "concept_theory": 7
+    }
+  },
+  "sets": [
+    {
+      "set_id": "naeringsliv_havnelageret_set_1",
+      "level": 1,
+      "order": 1,
+      "phase": "opening",
+      "questions": [
+        {
+          "id": "havnelageret_quiz_1",
+          "quiz_id": "naeringsliv_havnelageret_set_1_q1",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hva var Oslo Havnelager opprinnelig bygget for?",
+          "options": [
+            "Lagring av varer knyttet til havn og sjøfart",
+            "Hovedkontor for Norges Bank",
+            "Vedlikehold av tog"
+          ],
+          "answer": "Lagring av varer knyttet til havn og sjøfart",
+          "answerIndex": 0,
+          "knowledge": "Oslo byleksikon beskriver bygningen som et monument over sjøfartens utvikling, og Lokalhistoriewiki beskriver den som lagerbygning i stort format.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_logistikk_verdikjeder",
+          "source": [
+            "place_record",
+            "oslo_byleksikon",
+            "lokalhistoriewiki"
+          ],
+          "source_origin": "mixed",
+          "claim_basis": "Oslo byleksikon beskriver bygningen som et monument over sjøfartens utvikling, og Lokalhistoriewiki beskriver den som lagerbygning i stort format.",
+          "claim_id": "claim_havnelageret_01"
+        },
+        {
+          "id": "havnelageret_quiz_2",
+          "quiz_id": "naeringsliv_havnelageret_set_1_q2",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hva var bygningens opprinnelige navn?",
+          "options": [
+            "Oslo Posthus",
+            "Kristiania havnelager",
+            "Akershuskaiene"
+          ],
+          "answer": "Kristiania havnelager",
+          "answerIndex": 1,
+          "knowledge": "Lokalhistoriewiki beskriver Oslo havnelager som opprinnelig Kristiania havnelager.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "lokalhistoriewiki",
+            "oslo_byleksikon"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Lokalhistoriewiki beskriver Oslo havnelager som opprinnelig Kristiania havnelager.",
+          "claim_id": "claim_havnelageret_02"
+        },
+        {
+          "id": "havnelageret_quiz_3",
+          "quiz_id": "naeringsliv_havnelageret_set_1_q3",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hvor ligger Havnelageret?",
+          "options": [
+            "Bankplassen 3",
+            "Dyvekes vei 2",
+            "Langkaia 1"
+          ],
+          "answer": "Langkaia 1",
+          "answerIndex": 2,
+          "knowledge": "Oslo byleksikon og Lokalhistoriewiki oppgir Langkaia 1 som adresse for Oslo Havnelager.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "place_record",
+            "oslo_byleksikon",
+            "lokalhistoriewiki",
+            "entra"
+          ],
+          "source_origin": "mixed",
+          "claim_basis": "Oslo byleksikon og Lokalhistoriewiki oppgir Langkaia 1 som adresse for Oslo Havnelager.",
+          "claim_id": "claim_havnelageret_03"
+        },
+        {
+          "id": "havnelageret_quiz_4",
+          "quiz_id": "naeringsliv_havnelageret_set_1_q4",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Når ble Havnelageret oppført?",
+          "options": [
+            "1916–1920",
+            "1909–1919",
+            "1921–1924"
+          ],
+          "answer": "1916–1920",
+          "answerIndex": 0,
+          "knowledge": "Oslo byleksikon og Lokalhistoriewiki oppgir at bygget ble oppført 1916–20.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "oslo_byleksikon",
+            "lokalhistoriewiki"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Oslo byleksikon og Lokalhistoriewiki oppgir at bygget ble oppført 1916–20.",
+          "claim_id": "claim_havnelageret_04"
+        },
+        {
+          "id": "havnelageret_quiz_5",
+          "quiz_id": "naeringsliv_havnelageret_set_1_q5",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hvem var arkitekt for Havnelageret?",
+          "options": [
+            "Rudolf E. Jacobsen",
+            "Bredo Berntsen",
+            "Christian H. Grosch"
+          ],
+          "answer": "Bredo Berntsen",
+          "answerIndex": 1,
+          "knowledge": "Oslo byleksikon og Lokalhistoriewiki oppgir Bredo Berntsen som arkitekt.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "oslo_byleksikon",
+            "lokalhistoriewiki"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Oslo byleksikon og Lokalhistoriewiki oppgir Bredo Berntsen som arkitekt.",
+          "claim_id": "claim_havnelageret_05"
+        },
+        {
+          "id": "havnelageret_quiz_6",
+          "quiz_id": "naeringsliv_havnelageret_set_1_q6",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hva kjennetegner hovedmaterialet i Havnelagerets fasade?",
+          "options": [
+            "Ubehandlet laftet tømmer",
+            "Glass og aluminium som opprinnelig fasade",
+            "Prikkhamret betong"
+          ],
+          "answer": "Prikkhamret betong",
+          "answerIndex": 2,
+          "knowledge": "Oslo byleksikon beskriver Havnelagerets fasade som prikkhamret betong.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "oslo_byleksikon",
+            "lokalhistoriewiki"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Oslo byleksikon beskriver Havnelagerets fasade som prikkhamret betong.",
+          "claim_id": "claim_havnelageret_06"
+        },
+        {
+          "id": "havnelageret_quiz_7",
+          "quiz_id": "naeringsliv_havnelageret_set_1_q7",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hvor mange etasjer har Havnelageret ifølge Oslo byleksikon?",
+          "options": [
+            "Ni etasjer, med elleve i hjørnetårnene",
+            "Fire etasjer uten tårn",
+            "Tretten etasjer i hele bygget"
+          ],
+          "answer": "Ni etasjer, med elleve i hjørnetårnene",
+          "answerIndex": 0,
+          "knowledge": "Oslo byleksikon beskriver ni etasjer og elleve etasjer i hjørnetårnene.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "oslo_byleksikon",
+            "lokalhistoriewiki"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Oslo byleksikon beskriver ni etasjer og elleve etasjer i hjørnetårnene.",
+          "claim_id": "claim_havnelageret_07"
+        }
+      ]
+    },
+    {
+      "set_id": "naeringsliv_havnelageret_set_2",
+      "level": 2,
+      "order": 2,
+      "phase": "middle",
+      "questions": [
+        {
+          "id": "havnelageret_quiz_8",
+          "quiz_id": "naeringsliv_havnelageret_set_2_q1",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hvor stort areal oppgir Oslo byleksikon for Havnelageret?",
+          "options": [
+            "2 700 m²",
+            "27 000 m²",
+            "270 000 m²"
+          ],
+          "answer": "27 000 m²",
+          "answerIndex": 1,
+          "knowledge": "Oslo byleksikon oppgir 27 000 m² for Havnelageret.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "oslo_byleksikon"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Oslo byleksikon oppgir 27 000 m² for Havnelageret.",
+          "claim_id": "claim_havnelageret_08"
+        },
+        {
+          "id": "havnelageret_quiz_9",
+          "quiz_id": "naeringsliv_havnelageret_set_2_q2",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hvor mange armerte betongpæler nevner Lokalhistoriewiki/Aftenposten-kilden i forbindelse med fundamenteringen?",
+          "options": [
+            "155 betongpæler",
+            "15 500 betongpæler",
+            "1550 betongpæler"
+          ],
+          "answer": "1550 betongpæler",
+          "answerIndex": 2,
+          "knowledge": "Lokalhistoriewiki gjengir Aftenpostens omtale av 1550 armerte betongpæler på 20–24 meter.",
+          "difficulty": 2,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "lokalhistoriewiki"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Lokalhistoriewiki gjengir Aftenpostens omtale av 1550 armerte betongpæler på 20–24 meter.",
+          "claim_id": "claim_havnelageret_09"
+        },
+        {
+          "id": "havnelageret_quiz_10",
+          "quiz_id": "naeringsliv_havnelageret_set_2_q3",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hvor lange var de armerte betongpælene under Havnelageret?",
+          "options": [
+            "Omtrent 20–24 meter",
+            "Omtrent 2–4 meter",
+            "Omtrent 50–60 meter"
+          ],
+          "answer": "Omtrent 20–24 meter",
+          "answerIndex": 0,
+          "knowledge": "Lokalhistoriewiki gjengir en omtale av 1550 armerte betongpæler som var 20–24 meter lange.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "lokalhistoriewiki"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Lokalhistoriewiki gjengir en omtale av 1550 armerte betongpæler som var 20–24 meter lange.",
+          "claim_id": "claim_havnelageret_10"
+        },
+        {
+          "id": "havnelageret_quiz_11",
+          "quiz_id": "naeringsliv_havnelageret_set_2_q4",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hvilken byggemetode gjør Havnelageret særlig viktig i norsk byggehistorie?",
+          "options": [
+            "Massivtre som hovedkonstruksjon",
+            "Tidlig bruk av armert betong i sivilt byggeri",
+            "Prefabrikkerte stålkassetter fra offshore"
+          ],
+          "answer": "Tidlig bruk av armert betong i sivilt byggeri",
+          "answerIndex": 1,
+          "knowledge": "Oslo byleksikon beskriver Havnelageret som et av de tidligst kjente eksemplene på armert betong i sivilt byggeri i Norge.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "oslo_byleksikon",
+            "lokalhistoriewiki"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Oslo byleksikon beskriver Havnelageret som et av de tidligst kjente eksemplene på armert betong i sivilt byggeri i Norge.",
+          "claim_id": "claim_havnelageret_11"
+        },
+        {
+          "id": "havnelageret_quiz_12",
+          "quiz_id": "naeringsliv_havnelageret_set_2_q5",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hvilken stilretning beskriver kildene Havnelageret med?",
+          "options": [
+            "Brutalisme",
+            "Ren nyklassisistisk funksjonalisme",
+            "Nordisk nybarokk med jugenddetaljer"
+          ],
+          "answer": "Nordisk nybarokk med jugenddetaljer",
+          "answerIndex": 2,
+          "knowledge": "Oslo byleksikon beskriver prikkhamret betongfasade i nordisk nybarokk med jugenddetaljer, mens Lokalhistoriewiki beskriver nordisk nybarokk med klassiske elementer og jugenddetaljer.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "oslo_byleksikon",
+            "lokalhistoriewiki"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Oslo byleksikon beskriver prikkhamret betongfasade i nordisk nybarokk med jugenddetaljer, mens Lokalhistoriewiki beskriver nordisk nybarokk med klassiske elementer og jugenddetaljer.",
+          "claim_id": "claim_havnelageret_12"
+        },
+        {
+          "id": "havnelageret_quiz_13",
+          "quiz_id": "naeringsliv_havnelageret_set_2_q6",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hva skriver Oslo byleksikon at Havnelageret var et monument over?",
+          "options": [
+            "Sjøfartens enorme utvikling under og etter første verdenskrig",
+            "Elektrifiseringen av gatelys i 1848",
+            "Postverkets frimerkehistorie"
+          ],
+          "answer": "Sjøfartens enorme utvikling under og etter første verdenskrig",
+          "answerIndex": 0,
+          "knowledge": "Oslo byleksikon beskriver bygningen som monument over sjøfartens enorme utvikling under og etter første verdenskrig.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_logistikk_verdikjeder",
+          "source": [
+            "oslo_byleksikon",
+            "lokalhistoriewiki"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Oslo byleksikon beskriver bygningen som monument over sjøfartens enorme utvikling under og etter første verdenskrig.",
+          "claim_id": "claim_havnelageret_13"
+        },
+        {
+          "id": "havnelageret_quiz_14",
+          "quiz_id": "naeringsliv_havnelageret_set_2_q7",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hvilket historisk landemerke ligger nær Havnelageret?",
+          "options": [
+            "Frognerparken",
+            "Akershus festning",
+            "Ullevål stadion"
+          ],
+          "answer": "Akershus festning",
+          "answerIndex": 1,
+          "knowledge": "Havnelageret ligger ved Langkaia, like ved Akershus festning og Bjørvika.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "place_record",
+            "oslo_byleksikon",
+            "snl_bjorvika"
+          ],
+          "source_origin": "mixed",
+          "claim_basis": "Havnelageret ligger ved Langkaia, like ved Akershus festning og Bjørvika.",
+          "claim_id": "claim_havnelageret_14"
+        }
+      ]
+    },
+    {
+      "set_id": "naeringsliv_havnelageret_set_3",
+      "level": 3,
+      "order": 3,
+      "phase": "middle",
+      "questions": [
+        {
+          "id": "havnelageret_quiz_15",
+          "quiz_id": "naeringsliv_havnelageret_set_3_q1",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hvorfor var Havnelagerets beliggenhet ved Bjørvika effektiv for vareflyten?",
+          "options": [
+            "Varer kunne flyttes kort mellom kai, lager og byen",
+            "Skip kunne levere varer direkte til alle butikker",
+            "Lageret gjorde videre transport unødvendig"
+          ],
+          "answer": "Varer kunne flyttes kort mellom kai, lager og byen",
+          "answerIndex": 0,
+          "knowledge": "Kortere interne transportledd kan redusere tid, skader og håndteringskostnad. Gevinsten avhenger av kapasitet på kai, lager og videre distribusjon.",
+          "difficulty": 2,
+          "question_type": "context",
+          "emne_id": "em_naering_logistikk_verdikjeder",
+          "source": [
+            "place_record",
+            "oslo_byleksikon",
+            "lokalhistoriewiki",
+            "snl_bjorvika"
+          ],
+          "source_origin": "mixed",
+          "claim_basis": "Beliggenheten ved Bjørvika gjorde at varer kunne flyttes kort mellom kai, lager og byen.",
+          "claim_id": "claim_havnelageret_15",
+          "professional_module_id": "mod_naering_operations_kapasitet",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "forklar hvordan lokalisering påvirker logistikkostnad",
+          "core_concepts": [
+            "vareflyt",
+            "håndtering",
+            "lokalisering"
+          ],
+          "concept_focus": [
+            "vareflyt",
+            "håndtering"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "decision_context": "vurdere samlet kjede, ikke bare avstanden til kaia"
+        },
+        {
+          "id": "havnelageret_quiz_16",
+          "quiz_id": "naeringsliv_havnelageret_set_3_q2",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hvorfor var Havnelageret nyttig som tysk materiellager under krigen?",
+          "options": [
+            "Stor lagringskapasitet og direkte havnetilknytning",
+            "Det var byens eneste bankbygg",
+            "Det hadde ingen forbindelse til transportnettet"
+          ],
+          "answer": "Stor lagringskapasitet og direkte havnetilknytning",
+          "answerIndex": 0,
+          "knowledge": "Kapasitet og plassering gjorde bygningen strategisk. Samme egenskaper som skaper kommersiell effektivitet kan også gi makt over forsyninger.",
+          "difficulty": 2,
+          "question_type": "context",
+          "emne_id": "em_naering_logistikk_verdikjeder",
+          "source": [
+            "oslo_byleksikon",
+            "lokalhistoriewiki"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Havnelagerets store lagringskapasitet og direkte havnetilknytning gjorde bygningen nyttig som tysk materiellager under krigen.",
+          "claim_id": "claim_havnelageret_16",
+          "professional_module_id": "mod_naering_innkjop_kvalitet_forsyningsrisiko",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "identifiser dokumentert krigsbruk og logistisk grunn",
+          "core_concepts": [
+            "materiellager",
+            "forsyning",
+            "strategisk kapasitet"
+          ],
+          "concept_focus": [
+            "materiellager",
+            "forsyning"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ]
+        },
+        {
+          "id": "havnelageret_quiz_17",
+          "quiz_id": "naeringsliv_havnelageret_set_3_q3",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Når ble Havnelageret modernisert og bygd om til kontorer?",
+          "options": [
+            "1921–1924",
+            "1982–1985",
+            "2019–2021"
+          ],
+          "answer": "1982–1985",
+          "answerIndex": 1,
+          "knowledge": "Ombyggingen markerer overgangen fra sentral godslagring til kontorbruk i sentrum.",
+          "difficulty": 2,
+          "question_type": "context",
+          "emne_id": "em_naering_omstilling_kriser_skift",
+          "source": [
+            "oslo_byleksikon"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Oslo byleksikon oppgir at bygningen ble modernisert og bygd om til kontorer 1982–85.",
+          "claim_id": "claim_havnelageret_17",
+          "professional_module_id": "mod_naering_prosjektledelse_prosjektokonomi",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "identifiser dokumentert ombyggingsperiode",
+          "core_concepts": [
+            "kontorombygging",
+            "prosjektperiode",
+            "omstilling"
+          ],
+          "concept_focus": [
+            "kontorombygging",
+            "prosjektperiode"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ]
+        },
+        {
+          "id": "havnelageret_quiz_18",
+          "quiz_id": "naeringsliv_havnelageret_set_3_q4",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hva er den viktigste tekniske utfordringen når store lageretasjer skal bli moderne arbeidsplasser?",
+          "options": [
+            "Dagslys, ventilasjon, rømningsveier og tekniske systemer må tilpasses ny bruk",
+            "Lageretasjer trenger aldri nye tekniske installasjoner",
+            "Kontorbruk krever mindre personsikkerhet enn lager"
+          ],
+          "answer": "Dagslys, ventilasjon, rømningsveier og tekniske systemer må tilpasses ny bruk",
+          "answerIndex": 0,
+          "knowledge": "Ny bruk endrer belastning, personopphold, inneklima og sikkerhetskrav. Prosjektøkonomien må derfor inkludere mer enn overflatearbeid.",
+          "difficulty": 2,
+          "question_type": "context",
+          "emne_id": "em_naering_omstilling_kriser_skift",
+          "source": [
+            "oslo_byleksikon",
+            "entra"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Kontorombyggingen måtte tilpasse store lageretasjer til arbeidsplasser og moderne tekniske krav.",
+          "claim_id": "claim_havnelageret_18",
+          "professional_module_id": "mod_naering_prosjektledelse_prosjektokonomi",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "avgrens tekniske konsekvenser av bruksendring",
+          "core_concepts": [
+            "bruksendring",
+            "tekniske krav",
+            "arbeidsmiljø"
+          ],
+          "concept_focus": [
+            "bruksendring",
+            "tekniske krav"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "decision_context": "prioritere tiltak som gjør arealet lovlig, sikkert og attraktivt"
+        },
+        {
+          "id": "havnelageret_quiz_19",
+          "quiz_id": "naeringsliv_havnelageret_set_3_q5",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hva viser gjentatte oppgraderinger etter kontorombyggingen?",
+          "options": [
+            "Konkurransekraft i kontormarkedet krever løpende investeringer",
+            "Én ombygging fjerner framtidig vedlikehold",
+            "Historiske bygg kan ikke tilpasses nye leietakere"
+          ],
+          "answer": "Konkurransekraft i kontormarkedet krever løpende investeringer",
+          "answerIndex": 0,
+          "knowledge": "Leietakerkrav, teknikk og marked endrer seg. Eieren må vurdere livsløpskostnad, ikke bare første ombygging.",
+          "difficulty": 2,
+          "question_type": "context",
+          "emne_id": "em_naering_omstilling_kriser_skift",
+          "source": [
+            "oslo_byleksikon",
+            "entra",
+            "estate"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Gjentatte oppgraderinger etter kontorombyggingen har holdt den historiske bygningen konkurransedyktig i kontormarkedet.",
+          "claim_id": "claim_havnelageret_19",
+          "professional_module_id": "mod_naering_regnskapsanalyse_verdsettelse",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "forklar hvorfor eiendomsverdi krever reinvestering",
+          "core_concepts": [
+            "livsløpskostnad",
+            "reinvestering",
+            "konkurransekraft"
+          ],
+          "concept_focus": [
+            "livsløpskostnad",
+            "reinvestering"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "decision_context": "balansere oppgraderingskostnad mot framtidig leie og ledighet"
+        },
+        {
+          "id": "havnelageret_quiz_20",
+          "quiz_id": "naeringsliv_havnelageret_set_3_q6",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hvilket år kjøpte Entra eiendommen og startet en ny renoveringsfase?",
+          "options": [
+            "1985",
+            "1999",
+            "2003"
+          ],
+          "answer": "2003",
+          "answerIndex": 2,
+          "knowledge": "Eierskiftet inngår i en lengre kjede av modernisering og ny bruk av den tidligere lagerbygningen.",
+          "difficulty": 2,
+          "question_type": "context",
+          "emne_id": "em_naering_kapital_finans",
+          "source": [
+            "entra",
+            "let",
+            "estate"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Martela beskriver at Entra Eiendom kjøpte eiendommen i 2003 og startet renovering. Entra er dagens eiendomsaktør i utleiematerialet.",
+          "claim_id": "claim_havnelageret_20",
+          "professional_module_id": "mod_naering_regnskapsanalyse_verdsettelse",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "identifiser dokumentert eierskifte",
+          "core_concepts": [
+            "eierskifte",
+            "renovering",
+            "eiendomsstrategi"
+          ],
+          "concept_focus": [
+            "eierskifte",
+            "renovering"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ]
+        },
+        {
+          "id": "havnelageret_quiz_21",
+          "quiz_id": "naeringsliv_havnelageret_set_3_q7",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hvilken kombinasjon beskriver dagens fullservicebygg best?",
+          "options": [
+            "Kontorer, resepsjon, kantine, møterom og treningsrom",
+            "Kornsilo, tollbod og skipsverft",
+            "Boliger uten fellesfunksjoner"
+          ],
+          "answer": "Kontorer, resepsjon, kantine, møterom og treningsrom",
+          "answerIndex": 0,
+          "knowledge": "Servicetilbudene er del av produktet som tilbys leietakere, ikke bare tillegg uten økonomisk betydning.",
+          "difficulty": 2,
+          "question_type": "context",
+          "emne_id": "em_naering_forbruk_marked",
+          "source": [
+            "entra",
+            "let",
+            "estate"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Entra beskriver Langkaia 1 som moderne fullservicebygg med kontorlokaler, resepsjon, kantine, møterom, treningsrom og servicekonsept.",
+          "claim_id": "claim_havnelageret_21",
+          "professional_module_id": "mod_naering_markedsinnsikt_segmentering",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "identifiser dagens dokumenterte tjenestetilbud",
+          "core_concepts": [
+            "fullservicebygg",
+            "leietakerbehov",
+            "tjenestepakke"
+          ],
+          "concept_focus": [
+            "fullservicebygg",
+            "leietakerbehov"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ]
+        }
+      ]
+    },
+    {
+      "set_id": "naeringsliv_havnelageret_set_4",
+      "level": 4,
+      "order": 4,
+      "phase": "bridge",
+      "questions": [
+        {
+          "id": "havnelageret_quiz_22",
+          "quiz_id": "naeringsliv_havnelageret_set_4_q1",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hva viser rehabiliteringen av niende og tiende etasje og tårnet?",
+          "options": [
+            "Et stort bygg kan ombrukes trinnvis i avgrensede deler",
+            "Hele bygningen må alltid stenges samtidig",
+            "Delprosjekter trenger ikke koordineres med resten av driften"
+          ],
+          "answer": "Et stort bygg kan ombrukes trinnvis i avgrensede deler",
+          "answerIndex": 0,
+          "knowledge": "Fasedeling kan begrense driftsavbrudd og kapitalbehov, men skaper avhengigheter mellom midlertidig drift, tekniske systemer og senere etapper.",
+          "difficulty": 3,
+          "question_type": "fact",
+          "emne_id": "em_naering_omstilling_kriser_skift",
+          "source": [
+            "betonmast",
+            "bygg"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Rehabiliteringen av niende og tiende etasje og tårnet viser at ombruk kan gjennomføres trinnvis i deler av et stort bygg.",
+          "claim_id": "claim_havnelageret_22",
+          "professional_module_id": "mod_naering_prosjektledelse_prosjektokonomi",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "tolk dokumentert delrehabilitering som prosjektstrategi",
+          "core_concepts": [
+            "fasedeling",
+            "delprosjekt",
+            "driftskontinuitet"
+          ],
+          "concept_focus": [
+            "fasedeling",
+            "delprosjekt"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "decision_context": "velge faseplan som begrenser risiko og driftsavbrudd"
+        },
+        {
+          "id": "havnelageret_quiz_23",
+          "quiz_id": "naeringsliv_havnelageret_set_4_q2",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hva skulle arealene bli etter riving i den dokumenterte rehabiliteringen?",
+          "options": [
+            "Kontorlandskap med god standard for ny leietaker",
+            "Nytt havnelager for kolonivarer",
+            "Parkeringshus uten arbeidsplasser"
+          ],
+          "answer": "Kontorlandskap med god standard for ny leietaker",
+          "answerIndex": 0,
+          "knowledge": "Prosjektet var direkte knyttet til et nytt brukerbehov. Det gjør leietakerkrav, tidsfrist og tilpasningskostnad sentrale i prosjektstyringen.",
+          "difficulty": 3,
+          "question_type": "fact",
+          "emne_id": "em_naering_forbruk_marked",
+          "source": [
+            "betonmast",
+            "bygg"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Betonmast beskriver at arealene etter riving skulle ombygges til kontorlandskap med god standard for ny leietaker.",
+          "claim_id": "claim_havnelageret_23",
+          "professional_module_id": "mod_naering_prosjektledelse_prosjektokonomi",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "identifiser dokumentert prosjektleveranse",
+          "core_concepts": [
+            "leietakertilpasning",
+            "kontorlandskap",
+            "leveransekrav"
+          ],
+          "concept_focus": [
+            "leietakertilpasning",
+            "kontorlandskap"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ]
+        },
+        {
+          "id": "havnelageret_quiz_24",
+          "quiz_id": "naeringsliv_havnelageret_set_4_q3",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hvorfor kan beliggenhet nær kollektivknutepunkt og kulturinstitusjoner øke kontorverdien?",
+          "options": [
+            "Den kan gjøre arbeidsplassen mer tilgjengelig og attraktiv for ansatte og kunder",
+            "Den garanterer full utleie uansett pris",
+            "Den fjerner alle driftskostnader"
+          ],
+          "answer": "Den kan gjøre arbeidsplassen mer tilgjengelig og attraktiv for ansatte og kunder",
+          "answerIndex": 0,
+          "knowledge": "Tilgjengelighet er et konkurransefortrinn, men må måles sammen med leienivå, arealkvalitet, arbeidsplassbehov og alternative lokaler.",
+          "difficulty": 3,
+          "question_type": "fact",
+          "emne_id": "em_naering_forbruk_marked",
+          "source": [
+            "entra",
+            "let",
+            "estate"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Entra og utleiekilder beskriver Langkaia 1 som moderne kontorbygg i Bjørvika, nær kollektivknutepunkt og kulturinstitusjoner.",
+          "claim_id": "claim_havnelageret_24",
+          "professional_module_id": "mod_naering_markedsinnsikt_segmentering",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "knytt stedskvalitet til et eksplisitt leietakersegment",
+          "core_concepts": [
+            "tilgjengelighet",
+            "kontormarked",
+            "lokasjonsverdi"
+          ],
+          "concept_focus": [
+            "tilgjengelighet",
+            "kontormarked"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "decision_context": "vurdere betalingsvilje mot alternative kontorlokasjoner"
+        },
+        {
+          "id": "havnelageret_quiz_25",
+          "quiz_id": "naeringsliv_havnelageret_set_4_q4",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hva dokumenterer nye og fornyede leieavtaler best?",
+          "options": [
+            "At bygget har faktisk etterspørsel i kontormarkedet",
+            "At alle investeringer nødvendigvis er lønnsomme",
+            "At ledighet aldri kan oppstå senere"
+          ],
+          "answer": "At bygget har faktisk etterspørsel i kontormarkedet",
+          "answerIndex": 0,
+          "knowledge": "Leieavtaler er sterkere markedsevidens enn markedsføring alene, men lønnsomhet krever også data om leie, kostnad, investering og kontraktsrisiko.",
+          "difficulty": 3,
+          "question_type": "fact",
+          "emne_id": "em_naering_forbruk_marked",
+          "source": [
+            "estate"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Nye og fornyede leieavtaler viser at Havnelageret fortsatt konkurrerer aktivt om kontorleietakere.",
+          "claim_id": "claim_havnelageret_25",
+          "professional_module_id": "mod_naering_markedsinnsikt_segmentering",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "skille etterspørselsbevis fra full lønnsomhetsanalyse",
+          "core_concepts": [
+            "markedsevidens",
+            "leieavtale",
+            "etterspørsel"
+          ],
+          "concept_focus": [
+            "markedsevidens",
+            "leieavtale"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "decision_context": "vurdere om inngåtte avtaler forsvarer investeringsnivået"
+        },
+        {
+          "id": "havnelageret_quiz_26",
+          "quiz_id": "naeringsliv_havnelageret_set_4_q5",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Anta at 600 arbeidsplasser betaler 750 kroner per måned for en samlet servicepakke med resepsjon, kantine, møterom og treningsrom. Hva blir årlig serviceinntekt?",
+          "options": [
+            "540 000 kroner",
+            "5,4 millioner kroner",
+            "54 millioner kroner"
+          ],
+          "answer": "5,4 millioner kroner",
+          "answerIndex": 1,
+          "knowledge": "600 multiplisert med 750 kroner og 12 måneder er 5,4 millioner kroner. Dette er brutto scenarioinntekt; lønnsomhet krever også brukstall, bemanning, mat, renhold, energi, areal og andre driftskostnader.",
+          "difficulty": 3,
+          "question_type": "fact",
+          "emne_id": "em_naering_forbruk_marked",
+          "source": [
+            "entra"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Entra beskriver Langkaia 1 med resepsjon, kantine, møterom, treningsrom og andre servicetilbud.",
+          "claim_id": "claim_havnelageret_26",
+          "professional_module_id": "mod_naering_markedsinnsikt_segmentering",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "beregn serviceinntekt og skill den fra netto lønnsomhet",
+          "core_concepts": [
+            "tjenestepakke",
+            "serviceinntekt",
+            "betalingsvilje"
+          ],
+          "concept_focus": [
+            "tjenestepakke",
+            "serviceinntekt"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "calculation": {
+            "inputs": {
+              "arbeidsplasser": 600,
+              "maanedspris_per_arbeidsplass_nok": 750,
+              "maaneder": 12
+            },
+            "formula": "arbeidsplasser * maanedspris_per_arbeidsplass_nok * maaneder",
+            "result": 5400000,
+            "unit": "NOK per år"
+          },
+          "decision_context": "velge tjenester som gir dokumentert merverdi større enn kostnaden"
+        },
+        {
+          "id": "havnelageret_quiz_27",
+          "quiz_id": "naeringsliv_havnelageret_set_4_q6",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hva er hovedforskjellen mellom Havnelagerets historiske logistikk og moderne containerlogistikk utenfor sentrum?",
+          "options": [
+            "Historisk ble store lagerflater lagt tett ved sentral kai; moderne godsstrømmer bruker ofte spesialiserte terminaler lenger ute",
+            "Moderne logistikk bruker ikke lager",
+            "Historisk havnedrift hadde ingen omlasting"
+          ],
+          "answer": "Historisk ble store lagerflater lagt tett ved sentral kai; moderne godsstrømmer bruker ofte spesialiserte terminaler lenger ute",
+          "answerIndex": 0,
+          "knowledge": "Teknologi, arealbehov, skip og transportnett endrer hvor logistikk er effektiv. Sentral lokalisering kan senere få høyere verdi til andre formål.",
+          "difficulty": 3,
+          "question_type": "context",
+          "emne_id": "em_naering_logistikk_verdikjeder",
+          "source": [
+            "oslo_byleksikon",
+            "lokalhistoriewiki"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Havnelageret viser eldre havnelogistikk med store lagerflater tett på kai, før containerterminaler og ny havneorganisering flyttet mye godslogistikk ut av sentrum.",
+          "claim_id": "claim_havnelageret_27",
+          "professional_module_id": "mod_naering_operations_kapasitet",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "sammenligne to logistiske lokaliseringsmodeller",
+          "core_concepts": [
+            "containerisering",
+            "terminalstruktur",
+            "arealbruk"
+          ],
+          "concept_focus": [
+            "containerisering",
+            "terminalstruktur"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "decision_context": "vurdere når sentrumsareal bør brukes til gods eller andre formål"
+        },
+        {
+          "id": "havnelageret_quiz_28",
+          "quiz_id": "naeringsliv_havnelageret_set_4_q7",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hva er den økonomiske kjernen i at et tungt havnelager blir et moderne kontorbygg?",
+          "options": [
+            "Kapital og bygningsressurser flyttes fra godslagring til arbeidsplassutleie",
+            "Bygningen slutter å ha alternativkostnad",
+            "Kontorbruk krever ingen markedsetterspørsel"
+          ],
+          "answer": "Kapital og bygningsressurser flyttes fra godslagring til arbeidsplassutleie",
+          "answerIndex": 0,
+          "knowledge": "Omstillingen endrer kunder, inntekter, kostnader, tekniske krav og risiko. Historisk verdi kan støtte markedet, men kan ikke erstatte funksjonell kvalitet.",
+          "difficulty": 3,
+          "question_type": "context",
+          "emne_id": "em_naering_omstilling_kriser_skift",
+          "source": [
+            "oslo_byleksikon",
+            "entra",
+            "let",
+            "estate"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Havnelageret viser eiendomsøkonomisk omstilling: en tung havnelagerbygning blir modernisert kontorbygg i et nytt Bjørvika-marked.",
+          "claim_id": "claim_havnelageret_28",
+          "professional_module_id": "mod_naering_regnskapsanalyse_verdsettelse",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "forklar endring i eiendommens økonomiske funksjon",
+          "core_concepts": [
+            "alternativ bruk",
+            "eiendomsomstilling",
+            "kapital"
+          ],
+          "concept_focus": [
+            "alternativ bruk",
+            "eiendomsomstilling"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "decision_context": "teste om ny bruk gir høyere risikojustert verdi enn alternativene"
+        }
+      ]
+    },
+    {
+      "set_id": "naeringsliv_havnelageret_set_5",
+      "level": 5,
+      "order": 5,
+      "phase": "final",
+      "questions": [
+        {
+          "id": "havnelageret_quiz_29",
+          "quiz_id": "naeringsliv_havnelageret_set_5_q1",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Havnelageret er omtrent 27 000 m². Hvis 65 % kan brukes som effektivt utleieareal, hvor stort blir dette arealet?",
+          "options": [
+            "10 800 m²",
+            "17 550 m²",
+            "24 300 m²"
+          ],
+          "answer": "17 550 m²",
+          "answerIndex": 1,
+          "knowledge": "27 000 × 0,65 er 17 550 m². Effektiv andel må dokumenteres med faktiske planløsninger, fellesarealer og tekniske arealer.",
+          "difficulty": 3,
+          "question_type": "analysis",
+          "emne_id": "em_naering_logistikk_verdikjeder",
+          "source": [
+            "oslo_byleksikon",
+            "lokalhistoriewiki"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Et areal på om lag 27 000 m² og ni etasjer ga kapasitet til storskala lagring og organisering av varer ved havna.",
+          "claim_id": "claim_havnelageret_29",
+          "professional_module_id": "mod_naering_regnskapsanalyse_verdsettelse",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "beregn effektivt areal i et eksplisitt scenario",
+          "core_concepts": [
+            "utleieareal",
+            "arealeffektivitet",
+            "bruttoareal"
+          ],
+          "concept_focus": [
+            "utleieareal",
+            "arealeffektivitet"
+          ],
+          "method_id": "met_naering_verdiskapingsanalyse",
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "calculation": {
+            "inputs": {
+              "bruttoareal_m2": 27000,
+              "effektiv_andel": 0.65
+            },
+            "formula": "bruttoareal_m2 * effektiv_andel",
+            "result": 17550,
+            "unit": "m²"
+          },
+          "decision_context": "teste verdi og kapasitet med realistisk arealeffektivitet"
+        },
+        {
+          "id": "havnelageret_quiz_30",
+          "quiz_id": "naeringsliv_havnelageret_set_5_q2",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hvis de 1 550 betongpælene i gjennomsnitt var 22 meter lange, hvor mange meter pæl utgjør dette samlet?",
+          "options": [
+            "3 410 meter",
+            "34 100 meter",
+            "341 000 meter"
+          ],
+          "answer": "34 100 meter",
+          "answerIndex": 1,
+          "knowledge": "1 550 × 22 er 34 100 meter. Beregningen illustrerer konstruksjonens omfang, men sier ikke alene noe om kostnad, bæreevne eller faktisk lengde på hver pæl.",
+          "difficulty": 3,
+          "question_type": "analysis",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "lokalhistoriewiki"
+          ],
+          "source_origin": "external",
+          "claim_basis": "De mange, lange betongpælene bar den store lagerbygningen på krevende grunn ved havna.",
+          "claim_id": "claim_havnelageret_30",
+          "professional_module_id": "mod_naering_prosjektledelse_prosjektokonomi",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "beregn dokumentert konstruksjonsmengde med eksplisitt gjennomsnitt",
+          "core_concepts": [
+            "fundamentering",
+            "mengdeberegning",
+            "betongpæler"
+          ],
+          "concept_focus": [
+            "fundamentering",
+            "mengdeberegning"
+          ],
+          "method_id": "met_naering_infrastrukturanalyse",
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "calculation": {
+            "inputs": {
+              "paeler": 1550,
+              "gjennomsnittslengde_m": 22
+            },
+            "formula": "paeler * gjennomsnittslengde_m",
+            "result": 34100,
+            "unit": "meter pæl"
+          },
+          "decision_context": "forstå hvorfor fundamentering er en vesentlig prosjekt- og vedlikeholdsrisiko"
+        },
+        {
+          "id": "havnelageret_quiz_31",
+          "quiz_id": "naeringsliv_havnelageret_set_5_q3",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hva er den viktigste strategiske ressursen som videreføres når lagerbygningen blir kontorbygg?",
+          "options": [
+            "Den store, sentrale og historisk særpregede bygningsstrukturen",
+            "Den opprinnelige varebeholdningen",
+            "Tysk materiell fra krigen"
+          ],
+          "answer": "Den store, sentrale og historisk særpregede bygningsstrukturen",
+          "answerIndex": 0,
+          "knowledge": "Ombruk viderefører tomt, konstruksjon, volum og identitet, men krever nye kapabiliteter innen teknikk, utleie, service og forvaltning.",
+          "difficulty": 3,
+          "question_type": "analysis",
+          "emne_id": "em_naering_omstilling_kriser_skift",
+          "source": [
+            "oslo_byleksikon",
+            "entra",
+            "betonmast"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Havnelageret er omformet fra lager for havnens varestrømmer til et moderne kontor- og servicebygg.",
+          "claim_id": "claim_havnelageret_31",
+          "professional_module_id": "mod_naering_konkurransestrategi_ressurser",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "skille videreførte ressurser fra nye kapabilitetskrav",
+          "core_concepts": [
+            "ressursanalyse",
+            "ombruk",
+            "kapabilitet"
+          ],
+          "concept_focus": [
+            "ressursanalyse",
+            "ombruk"
+          ],
+          "method_id": "met_naering_verdiskapingsanalyse",
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "decision_context": "avgjøre hvilke historiske ressurser som faktisk gir et konkurransefortrinn"
+        },
+        {
+          "id": "havnelageret_quiz_32",
+          "quiz_id": "naeringsliv_havnelageret_set_5_q4",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hva organiserte Havnelageret først, og hva organiserer bygget i større grad i dag?",
+          "options": [
+            "Før varestrømmer; i dag arbeidsplasser, tjenester og mennesker",
+            "Før boliger; i dag skipsbygging",
+            "Før banktjenester; i dag jernbanedrift"
+          ],
+          "answer": "Før varestrømmer; i dag arbeidsplasser, tjenester og mennesker",
+          "answerIndex": 0,
+          "knowledge": "Bygningen er fortsatt en stor organiserende infrastruktur, men flytene, brukerne og inntektsmodellen er endret.",
+          "difficulty": 3,
+          "question_type": "analysis",
+          "emne_id": "em_naering_logistikk_verdikjeder",
+          "source": [
+            "oslo_byleksikon",
+            "lokalhistoriewiki",
+            "entra"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Før organiserte bygningen varestrømmer; i dag samler den arbeidsplasser, tjenester og mennesker i Bjørvika.",
+          "claim_id": "claim_havnelageret_32",
+          "professional_module_id": "mod_naering_operations_kapasitet",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "sammenligne to kapasitets- og flytsystemer",
+          "core_concepts": [
+            "varestrøm",
+            "personstrøm",
+            "bruksomstilling"
+          ],
+          "concept_focus": [
+            "varestrøm",
+            "personstrøm"
+          ],
+          "method_id": "met_naering_infrastrukturanalyse",
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "decision_context": "tilpasse drift og måltall til den nye hovedfunksjonen"
+        },
+        {
+          "id": "havnelageret_quiz_33",
+          "quiz_id": "naeringsliv_havnelageret_set_5_q5",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Anta at en oppgradering koster 120 millioner kroner og øker årlig netto driftsresultat med 12 millioner kroner. Hva er enkel tilbakebetalingstid?",
+          "options": [
+            "5 år",
+            "10 år",
+            "20 år"
+          ],
+          "answer": "10 år",
+          "answerIndex": 1,
+          "knowledge": "120 millioner delt på 12 millioner er 10 år. Enkel tilbakebetaling ser bort fra renter, restverdi, skatt, ledighet og framtidige reinvesteringer.",
+          "difficulty": 3,
+          "question_type": "analysis",
+          "emne_id": "em_naering_kapital_finans",
+          "source": [
+            "oslo_byleksikon",
+            "entra",
+            "betonmast",
+            "bygg"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Kjøp, oppgraderinger og rehabilitering viser hvordan eldre havneinfrastruktur kan få ny økonomisk verdi gjennom ombruk.",
+          "claim_id": "claim_havnelageret_33",
+          "professional_module_id": "mod_naering_regnskapsanalyse_verdsettelse",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "beregn og kritiser enkel tilbakebetalingstid",
+          "core_concepts": [
+            "tilbakebetalingstid",
+            "oppgradering",
+            "netto driftsresultat"
+          ],
+          "concept_focus": [
+            "tilbakebetalingstid",
+            "oppgradering"
+          ],
+          "method_id": "met_naering_verdiskapingsanalyse",
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "calculation": {
+            "inputs": {
+              "investering_nok": 120000000,
+              "arlig_okning_ndr_nok": 12000000
+            },
+            "formula": "investering_nok / arlig_okning_ndr_nok",
+            "result": 10,
+            "unit": "år"
+          },
+          "decision_context": "sammenligne enkel tilbakebetaling med diskontert verdi og risiko"
+        },
+        {
+          "id": "havnelageret_quiz_34",
+          "quiz_id": "naeringsliv_havnelageret_set_5_q6",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "Hvilket leietakersegment treffer kombinasjonen av sentral beliggenhet, kollektivtilgang, servicetilbud og moderne kontorer best?",
+          "options": [
+            "Virksomheter som verdsetter tilgjengelighet og et bredt arbeidsplasstilbud",
+            "Bare virksomheter som trenger tung godslagring",
+            "Leietakere som ikke bruker ansatte eller kunder"
+          ],
+          "answer": "Virksomheter som verdsetter tilgjengelighet og et bredt arbeidsplasstilbud",
+          "answerIndex": 0,
+          "knowledge": "Segmenteringen må bekreftes med faktiske leieavtaler, arealbehov, betalingsvilje og bruk av tjenestene.",
+          "difficulty": 3,
+          "question_type": "analysis",
+          "emne_id": "em_naering_forbruk_marked",
+          "source": [
+            "entra",
+            "let",
+            "estate"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Utleiekildene fremhever sentral beliggenhet, kollektivtilgang, servicetilbud og moderne kontorlokaler.",
+          "claim_id": "claim_havnelageret_34",
+          "professional_module_id": "mod_naering_markedsinnsikt_segmentering",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "formulere og avgrense et dokumenterbart målsegment",
+          "core_concepts": [
+            "leietakersegment",
+            "verdiforslag",
+            "betalingsvilje"
+          ],
+          "concept_focus": [
+            "leietakersegment",
+            "verdiforslag"
+          ],
+          "method_id": "met_naering_forbruker_og_atferdsanalyse",
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "decision_context": "velge markedsføring og investering etter segmentets faktiske behov"
+        },
+        {
+          "id": "havnelageret_quiz_35",
+          "quiz_id": "naeringsliv_havnelageret_set_5_q7",
+          "categoryId": "naeringsliv",
+          "placeId": "havnelageret",
+          "targetId": "havnelageret",
+          "question_scope": "place",
+          "question": "I et forenklet lagerscenario kan 27 000 m² bære 0,8 tonn varer per m². Hva er teoretisk lagerkapasitet?",
+          "options": [
+            "2 160 tonn",
+            "21 600 tonn",
+            "216 000 tonn"
+          ],
+          "answer": "21 600 tonn",
+          "answerIndex": 1,
+          "knowledge": "27 000 × 0,8 er 21 600 tonn. Reell kapasitet begrenses av bæreevne, gangareal, brannkrav, varetyper, høyde og omløpshastighet.",
+          "difficulty": 3,
+          "question_type": "analysis",
+          "emne_id": "em_naering_arbeid_verdiskaping",
+          "source": [
+            "oslo_byleksikon",
+            "lokalhistoriewiki"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Havnelagerets størrelse, plassering og organiserte vareflyt viser rasjonalisering av havneøkonomien i stor skala.",
+          "claim_id": "claim_havnelageret_35",
+          "professional_module_id": "mod_naering_innkjop_kvalitet_forsyningsrisiko",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "beregn teoretisk lagerkapasitet og angi begrensninger",
+          "core_concepts": [
+            "lagerkapasitet",
+            "arealtetthet",
+            "forsyningsbuffer"
+          ],
+          "concept_focus": [
+            "lagerkapasitet",
+            "arealtetthet"
+          ],
+          "method_id": "met_naering_infrastrukturanalyse",
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "calculation": {
+            "inputs": {
+              "areal_m2": 27000,
+              "tonn_per_m2": 0.8
+            },
+            "formula": "areal_m2 * tonn_per_m2",
+            "result": 21600,
+            "unit": "tonn"
+          },
+          "decision_context": "fastsette sikker kapasitet etter varetype og konstruksjon",
+          "topic_hook_id": "arbeid_som_verdiskaping",
+          "thinker_id": "max_weber",
+          "thinker_name": "Max Weber",
+          "theory_focus": "rasjonalisering og organisering av vareflyt",
+          "theory_ref": {
+            "topic_hook_id": "arbeid_som_verdiskaping",
+            "why_it_helps": "Webers perspektiv på rasjonalisering gjør det mulig å forstå hvordan lagerkapasitet, arbeidsdeling og vareflyt ble samlet og organisert i ett stort havneanlegg."
+          }
+        }
+      ]
+    }
+  ]
+}

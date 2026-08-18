@@ -1,0 +1,61 @@
+{
+  "schema": "civication_mail_family_catalog_v1",
+  "category": "naeringsliv",
+  "role_scope": "mellomleder",
+  "mail_type": "conflict",
+  "families": [
+    {
+      "id": "krysspress",
+      "mails": [
+        {
+          "id": "ml_core_008",
+          "mail_type": "conflict",
+          "mail_family": "krysspress",
+          "phase": "advanced",
+          "subject": "Du får motstridende krav",
+          "situation": [
+            "Ledelsen vil ha tempo.",
+            "Teamet trenger ro.",
+            "Du kan ikke gi begge deler."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Prioritere det som faktisk fungerer i praksis",
+              "effect": 1
+            },
+            {
+              "id": "B",
+              "label": "Prioritere det du blir målt på",
+              "effect": 0
+            }
+          ]
+        },
+        {
+          "id": "ml_core_009",
+          "mail_type": "conflict",
+          "mail_family": "krysspress",
+          "phase": "advanced",
+          "subject": "Du må velge hvem som skal merke kostnaden",
+          "situation": [
+            "Hvis du prioriterer tempo, er det folk som betaler prisen.",
+            "Hvis du prioriterer ro, er det resultatene som blir svakere.",
+            "Du kan ikke fjerne kostnaden – bare flytte den."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "La systemet ta kostnaden og stå i svakere tall",
+              "effect": 1
+            },
+            {
+              "id": "B",
+              "label": "La laget ta kostnaden og holde leveransen oppe",
+              "effect": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

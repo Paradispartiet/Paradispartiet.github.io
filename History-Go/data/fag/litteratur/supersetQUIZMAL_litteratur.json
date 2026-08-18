@@ -1,0 +1,54 @@
+{
+  "version": "2.0",
+  "status": "canonical_category_profile",
+  "type": "category_quiz_profile",
+  "categoryId": "litteratur",
+  "title": "Litteratur",
+  "governance": {
+    "production_standard": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "question_schema": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+    "template_registry": "data/quiz/regler/QUIZ_TEMPLATE_REGISTRY_V2.json",
+    "authority": "category_content_only",
+    "may_override_global_rules": false
+  },
+  "required_emne_prefix": "em_lit_",
+  "content_priorities": [
+    "forfatter, verk og utgivelse",
+    "tekst, sjanger, form og fortellerteknikk",
+    "litterære miljøer, steder og institusjoner",
+    "bokhistorie, forlag, bibliotek og offentlighet",
+    "mottakelse, kanon og historisk sammenheng"
+  ],
+  "essential_concepts": [
+    "sjanger",
+    "forteller",
+    "motiv",
+    "intertekstualitet",
+    "litterær offentlighet",
+    "kanon",
+    "bokhistorie",
+    "resepsjon"
+  ],
+  "preferred_source_types": [
+    "tekstutgave eller forfatterarkiv",
+    "bibliotek, forlag og litterær institusjon",
+    "litteraturhistorie og forskning",
+    "samtidige anmeldelser og dokumentasjon"
+  ],
+  "category_rules": [
+    "Start med dokumentert stoff fra kategorien, ikke med emneetiketten.",
+    "Bevar relevante faguttrykk i spørsmål, knowledge eller metadata.",
+    "Bruk bare emne_id som finnes i kategoriens emnefil.",
+    "Kategori-profilen styrer faglig utvalg, men ikke global quizbalanse eller språk."
+  ],
+  "example_question": {
+    "question": "Hva kalles rommet der bøker, lesere og samtaler gjør litteratur offentlig tilgjengelig?",
+    "options": ["Litterær offentlighet", "Privat manuskript", "Lukket arkiv"],
+    "answer": "Litterær offentlighet",
+    "question_type": "concept",
+    "knowledge": "Litterær offentlighet omfatter arenaene der tekster utgis, leses, diskuteres og får betydning.",
+    "emne_id": "em_lit_<velg_gyldig_emne>",
+    "source": ["<konkret_kilde>"],
+    "note": "Eksempelet viser konkret bruk av et fagbegrep. Det er ikke en ferdig produksjonsquiz."
+  }
+}

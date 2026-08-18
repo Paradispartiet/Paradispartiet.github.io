@@ -1,0 +1,85 @@
+{
+  "placeId": "gjerdesvagen_jernvinne",
+  "placeFile": "data/places/historie/vestland/kvinnherad/gjerdesvagen_jernvinne.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.71710129338869,
+    "lon": 5.7052694711403165,
+    "r": 180,
+    "coordStatus": "verified_geometry",
+    "coordSource": "Riksantikvaren/Kulturminnesøk",
+    "coordType": "site_center",
+    "coordNote": "Riksantikvaren/Kulturminnesøk sitt registrerte enkeltminnepunkt for Gjerde jernvinneanlegg i Gjerdesvågen, kulturminne 94612-1. Primærkilden plasserer lokaliteten i Kvinnherad; posten er derfor flyttet ut av Etne."
+  },
+  "identity": {
+    "currentName": "Jernvinneanlegget i Gjerdesvågen",
+    "resolvedIdentity": "Gjerde jernvinneanlegg i Gjerdesvågen, Kvinnherad",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "archaeological_site",
+    "requiresSplit": false,
+    "splitReason": "Posten er flyttet fra Etne til Kvinnherad i samsvar med primærkilden."
+  },
+  "requiredEvidence": [
+    "offisiell arkeologisk kilde som identifiserer en jernvinnelokalitet i Etne",
+    "stabilt kildeobjekt med kommune og geometri",
+    "redaksjonell avgjørelse om Etne-posten skal fjernes, flyttes eller erstattes"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Riksantikvaren/Kulturminnesøk API v2",
+      "sourceUrl": "https://kms-api.kulturminnesok.no/api/v2/search/94612",
+      "sourceObjectId": "kulturminnesok:94612-1",
+      "sourceQuality": "official_primary_registry",
+      "finding": "Kulturminne 94612-1 heter Gjerde - Jernvinneanlegg, Gjerdesvågen og har samme funnbeskrivelse som place-filen, men Kulturminnesøk plasserer objektet i Kvinnherad ved 59.71710129338869, 5.7052694711403165.",
+      "canVerifyCoordinate": true,
+      "reason": "Posten er flyttet til riktig kommune, og kildeobjektet kan derfor verifisere geometrien."
+    },
+    {
+      "sourceProvider": "municipality",
+      "sourceName": "Etne kommune – Arkeologiske kulturminne i Etne kommune",
+      "sourceUrl": "https://www.etne.kommune.no/_f/p1/i4eafad86-cabd-457e-966f-ded5c38a9ab0/vedlegg-1-liste-over-arkeologiske-kulturminne.pdf",
+      "sourceObjectId": "etne-arkeologiske-kulturminne-register",
+      "sourceQuality": "official_municipal_registry",
+      "finding": "Registeret inneholder ikke kulturminne 94612 eller en Gjerdesvågen-jernvinne i Etne.",
+      "canVerifyCoordinate": false,
+      "reason": "Kommuneregisteret gir ingen Etne-identitet eller geometri for stedet."
+    }
+  ],
+  "addressCandidates": [],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "kulturminnesok:94612-1",
+      "sourceUrl": "https://kms-api.kulturminnesok.no/api/v2/search/94612",
+      "objectType": "archaeological_site",
+      "municipality": "Kvinnherad",
+      "whyRepresentative": "Objektet matcher navn og beskrivelse og er representativt etter at posten er flyttet fra Etne til Kvinnherad.",
+      "canApplyToPlace": true
+    }
+  ],
+  "geometryCandidates": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "kulturminnesok:94612-1",
+      "geometryType": "Point",
+      "lat": 59.71710129338869,
+      "lon": 5.7052694711403165,
+      "municipality": "Kvinnherad",
+      "canApplyToPlace": true,
+      "reason": "Geometrien tilhører den tekstlig matchende lokaliteten i Kvinnherad, som nå er postens kommune."
+    }
+  ],
+  "coordinateCandidates": [],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Posten er flyttet til Kvinnherad og oppdatert med kulturminne 94612-1 som verifisert geometri."
+  },
+  "notes": [
+    "Det tidligere Etne-ankeret er erstattet med Kulturminnesøk-geometrien etter kommuneopprydding.",
+    "Kulturminne 94612-1 verifiserer posten som Kvinnherad-sted, ikke som Etne-sted."
+  ]
+}

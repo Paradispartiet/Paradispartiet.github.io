@@ -1,0 +1,141 @@
+{
+  "id": "gressbanen",
+  "name": "Gressbanen",
+  "lat": 59.9507593,
+  "lon": 10.6767767,
+  "r": 170,
+  "category": "sport",
+  "sport_type": "multi_sport",
+  "place_type": "sports_ground",
+  "groundhopper": true,
+  "stadium_tier": "historic_club_ground",
+  "groundhopper_tags": [
+    "fotballground",
+    "bandyarena",
+    "ready",
+    "tidligere_landslagsarena",
+    "historisk_osloground"
+  ],
+  "year": 1918,
+  "officialUrl": "https://ready.no/sted/gressbanen/",
+  "emne_ids": [
+    "em_sport_arena_samling",
+    "em_sport_klubbidentitet"
+  ],
+  "desc": "Gressbanen på Holmen er en historisk fotball- og bandyarena, kjent som tidlig landslagsarena og som Ready-sted. Den er særlig viktig for Groundhopper fordi den viser fotballens overgang fra tidlige gressbaner og landskamper til lokal klubb- og bandytradisjon.",
+  "popupDesc": "Gressbanen åpnet i 1918 og var en av de tidligste gressbanene i norsk fotballhistorie. Den var hovedarena for landslaget før Ullevaal overtok rollen, og har også vært cupfinalested og bandyarena. I dagens History Go bør Gressbanen fungere som et historisk groundhopper-sted: et punkt der spilleren kan samle tidlig landslagsfotball, Ready, bandy, kunstis, gamle publikumsminner og overgangen fra nasjonalt anlegg til lokalt klubbpunkt. Stedet egner seg for spørsmål om hva en bane var før stadionkulturen ble standardisert.",
+  "quiz_profile": {
+    "place_type": "bane",
+    "subtype": "tidlig_fotball_og_bandybane",
+    "signature_features": [
+      "tidlig norsk gressbane",
+      "tidligere landslagsarena",
+      "Ready og bandytradisjon"
+    ],
+    "primary_angles": [
+      "fotballhistorie",
+      "bandy",
+      "landslag",
+      "klubb",
+      "arenaendring"
+    ],
+    "question_families": [
+      "tidlig_fotball",
+      "landslagsarena",
+      "cupfinale",
+      "bandy",
+      "klubbhistorie"
+    ],
+    "avoid_angles": [
+      "generisk_breddebane"
+    ],
+    "must_include": [
+      "rollen som tidlig landslagsarena",
+      "Ready og bandybruken",
+      "overgangen til Ullevaal som nasjonalarena"
+    ],
+    "contrast_targets": [
+      "ullevaal_stadion",
+      "frogner_stadion"
+    ],
+    "notes": "Skal spørres som tidlig fotball- og bandysted med sterk stadionhistorisk verdi."
+  },
+  "sport_profile": {
+    "place_type": "bane",
+    "sports": [
+      "fotball",
+      "bandy"
+    ],
+    "clubs_or_teams": [
+      "IF Ready",
+      "Mercantile SFK",
+      "Norges herrelandslag"
+    ],
+    "groundhopper_type": "historisk_fotballground",
+    "stats_focus": [
+      "åpningsår",
+      "landskamper",
+      "cupfinaler",
+      "bandybruk",
+      "rekordpublikum",
+      "hjemmeklubb"
+    ],
+    "collection_hooks": [
+      "historisk_fotballground_besøkt",
+      "bandyarena_besøkt",
+      "tidlig_landslagssted_besøkt"
+    ],
+    "venue_kind": "football_ground",
+    "groundhopper_relevant": true
+  },
+  "underbadge_ids": [
+    "fotball",
+    "bandy",
+    "stadion",
+    "idrettsarenaer",
+    "idrettshistorie"
+  ],
+  "locatorType": "current_place",
+  "coordStatus": "verified_geometry",
+  "coordType": "sports_ground_center",
+  "coordSource": "OpenStreetMap way 5046575 – Gressbanen",
+  "coordVerifiedAt": "2026-07-21",
+  "coordNote": "Batch 122: Ready og Oslo kommune dokumenterer Gressbanen på Stasjonsveien 24. Address-first ble forsøkt først, men Geonorge-søket ga 2 adressetreff og ingen entydig eksakt ulettert 24-rad. Ingen adressevariant ble derfor valgt. Canonical place er selve navngitte fotball-/bandygrounden, og direkte stable-ID-oppslag av eksakt OSM way 5046575 brukes som geometrisk area-anchor; ingen nearest/first-hit-logikk.",
+  "sourceProvider": "osm",
+  "sourceObjectId": "osm-way:5046575",
+  "geocodeAccuracy": "geometric_center",
+  "coordRole": "area_anchor",
+  "coordSourceId": "osm-way:5046575",
+  "coordSourceUrl": "https://www.openstreetmap.org/way/5046575",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          10.6756537,
+          59.9506703
+        ],
+        [
+          10.6774278,
+          59.9502925
+        ],
+        [
+          10.6778998,
+          59.9508483
+        ],
+        [
+          10.6761257,
+          59.9512261
+        ],
+        [
+          10.6760444,
+          59.9511304
+        ],
+        [
+          10.6756537,
+          59.9506703
+        ]
+      ]
+    ]
+  }
+}

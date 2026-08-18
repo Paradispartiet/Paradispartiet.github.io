@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://history-go.local/schemas/sprakatlas-norge-v1.json",
+  "title": "History Go Språkatlas Norge v1",
+  "type": "object",
+  "required": [
+    "schema",
+    "title",
+    "verified_at",
+    "scope",
+    "macro_regions",
+    "dialect_regions",
+    "language_status_layers",
+    "local_varieties",
+    "research_basis"
+  ],
+  "properties": {
+    "schema": {
+      "const": "history_go_language_atlas_v1"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "verified_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "scope": {
+      "const": "Norge"
+    },
+    "macro_regions": {
+      "type": "array",
+      "minItems": 4
+    },
+    "dialect_regions": {
+      "type": "array",
+      "minItems": 25
+    },
+    "urban_overlays": {
+      "type": "array"
+    },
+    "language_status_layers": {
+      "type": "array",
+      "minItems": 6
+    },
+    "local_varieties": {
+      "type": "array",
+      "minItems": 40,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "kind",
+          "macro_region_id",
+          "profile_status",
+          "summary",
+          "variation_note"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "const": "local_speech"
+          },
+          "macro_region_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "region_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "profile_status": {
+            "enum": [
+              "documented_seed",
+              "local_research_required",
+              "evidence_materialized"
+            ]
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "variation_note": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sources": {
+            "type": "array",
+            "minItems": 1
+          },
+          "feature_labels": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 4
+          },
+          "evidence_last_verified": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "feature_evidence": {
+            "type": "array",
+            "minItems": 4,
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "label",
+                "kind",
+                "claim",
+                "time_scope",
+                "source_urls"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "kind": {
+                  "enum": [
+                    "structural_feature",
+                    "social_variation",
+                    "language_change",
+                    "contact_history",
+                    "corpus_basis"
+                  ]
+                },
+                "claim": {
+                  "type": "string",
+                  "minLength": 20
+                },
+                "time_scope": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source_urls": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string",
+                    "pattern": "^https://"
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": true,
+        "allOf": [
+          {
+            "x-history-go-rule": "evidence-materialized",
+            "if": {
+              "properties": {
+                "profile_status": {
+                  "const": "evidence_materialized"
+                }
+              },
+              "required": [
+                "profile_status"
+              ]
+            },
+            "then": {
+              "required": [
+                "feature_labels",
+                "feature_evidence",
+                "evidence_last_verified"
+              ],
+              "properties": {
+                "sources": {
+                  "minItems": 2
+                },
+                "feature_labels": {
+                  "minItems": 4
+                },
+                "feature_evidence": {
+                  "minItems": 4
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "research_basis": {
+      "type": "object",
+      "required": [
+        "verified_at",
+        "methodology",
+        "source_coverage",
+        "baseline_sources"
+      ],
+      "properties": {
+        "verified_at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "methodology": {
+          "type": "array",
+          "minItems": 4
+        },
+        "source_coverage": {
+          "type": "array",
+          "minItems": 4
+        },
+        "baseline_sources": {
+          "type": "array",
+          "minItems": 5
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

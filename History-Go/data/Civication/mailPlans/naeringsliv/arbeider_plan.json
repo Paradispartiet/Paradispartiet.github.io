@@ -1,0 +1,425 @@
+{
+  "schema": "civication_mail_plan_v1",
+  "id": "arbeider_naeringsliv_v2",
+  "category": "naeringsliv",
+  "role_scope": "arbeider",
+  "description": "Dramaturgisk plan for Arbeider/Saksstøtte i Næringsliv & industri: første uke starter med praksisfortellinger i fellesinnboks, deretter videre arbeiderbue om rytme, vern, lojalitet og kvalitet.",
+  "arc": {
+    "from": "Ny i saksstøtte/mottak/fellesinnboks. Spilleren møter første uke med uklare eierskap, private forstyrrelser, kvalitetspress og små valg som setter spor.",
+    "to": "En arbeider som forstår at arbeid ikke bare er oppgaver, men også rytme, lojalitet, vern, kvalitet, taus kunnskap og grenser.",
+    "core_questions": [
+      "Når er tempo faktisk hjelp, og når er det bare ansvar som flyttes?",
+      "Hvordan skiller du mellom jobbmail og private forpliktelser uten å bli kald?",
+      "Når gir grundighet mestring, og når gir den bare mer arbeid?",
+      "Når er stagnasjon et valg om mindre stress, og hva koster det senere?"
+    ]
+  },
+  "outcome_rules": {
+    "fired": {
+      "stability_values": [
+        "FIRED"
+      ],
+      "strikes_gte": 3,
+      "score_lte": -3
+    },
+    "promoted": {
+      "completion_ratio_gte": 1,
+      "score_gte": 2,
+      "strikes_lte": 0,
+      "allow_warning": false
+    },
+    "stagnated": {
+      "autonomy_delta": -12,
+      "stability": "STAGNATED",
+      "add_branch_flags": [
+        "career_stagnated",
+        "evening_pressure",
+        "morning_choices_expand",
+        "worker_routine_loop"
+      ]
+    }
+  },
+  "sequence": [
+    {
+      "step": 1,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Mandag jobbmail: Første uke – oppgaven ingen eier.",
+      "allowed_families": [
+        "first_week_praksisfortellinger_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 2,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Mandag privat: Kan du bare hjelpe meg med én liten ting?",
+      "allowed_families": [
+        "first_week_praksisfortellinger_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 3,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Tirsdag jobbmail: Statusmøtet.",
+      "allowed_families": [
+        "first_week_praksisfortellinger_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 4,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Tirsdag privat: Middag du egentlig ikke har energi til.",
+      "allowed_families": [
+        "first_week_praksisfortellinger_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 5,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Onsdag jobbmail: Feilen som ingen vil eie.",
+      "allowed_families": [
+        "first_week_praksisfortellinger_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 6,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Onsdag privat: Regningen som må betales.",
+      "allowed_families": [
+        "first_week_praksisfortellinger_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 7,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Torsdag jobbmail: Når ros blir mer arbeid.",
+      "allowed_families": [
+        "first_week_praksisfortellinger_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 8,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Torsdag privat: Vennen som svarer for sent.",
+      "allowed_families": [
+        "first_week_praksisfortellinger_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 9,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Fredag jobbmail: Oppsummeringen av uka.",
+      "allowed_families": [
+        "first_week_praksisfortellinger_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 10,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Fredag privat: Familien som forventer at du stiller opp.",
+      "allowed_families": [
+        "first_week_praksisfortellinger_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 11,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Mandag jobbmail: Mandagsmøtet – notatet blir brukt.",
+      "allowed_families": [
+        "second_week_praksisfortellinger_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 12,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Mandag privat: Helgen du ikke rakk å ha.",
+      "allowed_families": [
+        "second_week_praksisfortellinger_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 13,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Tirsdag jobbmail: Brukeren som har ventet.",
+      "allowed_families": [
+        "second_week_praksisfortellinger_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 14,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Tirsdag privat: Purringen som kom likevel.",
+      "allowed_families": [
+        "second_week_praksisfortellinger_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 15,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Onsdag jobbmail: Kollegaen som trenger dekning.",
+      "allowed_families": [
+        "second_week_praksisfortellinger_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 16,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Onsdag privat: Intervjuet til Jonas.",
+      "allowed_families": [
+        "second_week_praksisfortellinger_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 17,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Torsdag jobbmail: Når rutine blir politikk.",
+      "allowed_families": [
+        "second_week_praksisfortellinger_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 18,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Torsdag privat: Middagen som må avtales ordentlig.",
+      "allowed_families": [
+        "second_week_praksisfortellinger_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 19,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Fredag jobbmail: Andre ukes vurdering.",
+      "allowed_families": [
+        "second_week_praksisfortellinger_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 20,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Fredag privat: Helgen som test.",
+      "allowed_families": [
+        "second_week_praksisfortellinger_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 21,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Etablere første møte med gulvet: oppmøte, rytme, Egil, Marit, Roger og de første tegnene på hva som teller.",
+      "allowed_families": [
+        "arbeider_intro_v2",
+        "arbeider_intro"
+      ],
+      "fallback_types": [
+        "job",
+        "people"
+      ]
+    },
+    {
+      "step": 22,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "La spilleren kjenne drift som summen av småting: rutine, oppgaveflyt og hull i systemet.",
+      "allowed_families": [
+        "drift_basics",
+        "oppgaveflyt",
+        "arbeider_intro_v2"
+      ],
+      "fallback_types": [
+        "job",
+        "people"
+      ]
+    },
+    {
+      "step": 23,
+      "type": "conflict",
+      "phase": "intro",
+      "step_goal": "Introdusere første grunnkonflikt: tempo mot kvalitet eller lojalitet mot selvoppholdelse.",
+      "allowed_families": [
+        "tempo_vs_kvalitet_intro",
+        "lojalitet_vs_selvoppholdelse_intro"
+      ],
+      "fallback_types": [
+        "job",
+        "people"
+      ]
+    },
+    {
+      "step": 24,
+      "type": "people",
+      "phase": "early",
+      "step_goal": "Gjøre arbeidsplassen sosial: spilleren blir lest av kolleger, uformelle ledere og folk som har egne behov.",
+      "allowed_families": [
+        "uformell_leder_intro",
+        "kollega_press_intro",
+        "taus_lojalitet"
+      ],
+      "fallback_types": [
+        "job",
+        "conflict"
+      ]
+    },
+    {
+      "step": 25,
+      "type": "job",
+      "phase": "early",
+      "step_goal": "Øke driftspresset: spilleren må velge mellom flyt, kvalitet og små forbedringer uten mandat.",
+      "allowed_families": [
+        "drift_press",
+        "forbedring_uten_mandat",
+        "oppgaveflyt"
+      ],
+      "fallback_types": [
+        "people",
+        "conflict",
+        "job"
+      ]
+    },
+    {
+      "step": 26,
+      "type": "conflict",
+      "phase": "early",
+      "step_goal": "La tidligere mønstre komme tilbake: snarveier, skjult kostnad og lojalitet som begynner å koste.",
+      "allowed_families": [
+        "tempo_vs_kvalitet_early",
+        "lojalitet_vs_selvoppholdelse_early"
+      ],
+      "fallback_types": [
+        "job",
+        "people"
+      ]
+    },
+    {
+      "step": 27,
+      "type": "story",
+      "phase": "mid",
+      "step_goal": "Løfte blikket fra enkeltoppgaver til arbeidets usynlighet, industrihistorie og hva slags liv rytmen skaper.",
+      "allowed_families": [
+        "industrihistorisk_ekko",
+        "arbeidets_usynlighet"
+      ],
+      "fallback_types": [
+        "conflict",
+        "people",
+        "job"
+      ]
+    },
+    {
+      "step": 28,
+      "type": "job",
+      "phase": "mid",
+      "step_goal": "Teste om spilleren bruker erfaring til bedre struktur, eller bare tåler mer press.",
+      "allowed_families": [
+        "drift_press",
+        "oppgaveflyt",
+        "forbedring_uten_mandat"
+      ],
+      "fallback_types": [
+        "people",
+        "conflict",
+        "job"
+      ]
+    },
+    {
+      "step": 29,
+      "type": "people",
+      "phase": "mid",
+      "step_goal": "La sosial gjeld bli synlig: kollegaskyld, taus lojalitet og hvem som bærer restene etter andre.",
+      "allowed_families": [
+        "taus_lojalitet",
+        "kollega_skyld"
+      ],
+      "fallback_types": [
+        "job",
+        "conflict",
+        "story"
+      ]
+    },
+    {
+      "step": 30,
+      "type": "event",
+      "phase": "advanced",
+      "step_goal": "Utløse ytre press: feil, inspeksjon eller ansvarsforskyvning som gjør arbeidets små valg større.",
+      "allowed_families": [
+        "feil_i_linja",
+        "inspeksjon",
+        "ansvarsforskyvning"
+      ],
+      "fallback_types": [
+        "conflict",
+        "job",
+        "people"
+      ]
+    },
+    {
+      "step": 31,
+      "type": "conflict",
+      "phase": "mastery",
+      "step_goal": "La spilleren bruke erfaringen sin i en moden konflikt: kvalitet, ansvar og grenser er ikke lenger abstrakte.",
+      "allowed_families": [
+        "tempo_vs_kvalitet_early",
+        "lojalitet_vs_selvoppholdelse_early",
+        "tempo_vs_kvalitet_intro"
+      ],
+      "fallback_types": [
+        "event",
+        "job",
+        "people"
+      ]
+    },
+    {
+      "step": 32,
+      "type": "story",
+      "phase": "climax",
+      "step_goal": "Avrunde arbeiderbuen: hva har spilleren lært om arbeidets usynlige kostnader og sin egen plass i laget?",
+      "allowed_families": [
+        "arbeidets_usynlighet",
+        "industrihistorisk_ekko"
+      ],
+      "fallback_types": [
+        "event",
+        "conflict",
+        "job"
+      ]
+    }
+  ]
+}
