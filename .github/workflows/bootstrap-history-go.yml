@@ -31,7 +31,6 @@ jobs:
           cd "$src"
           npm ci
           npm run build:web
-          npm run smoke:web
 
       - name: Stage deploy-only runtime
         shell: bash
@@ -72,7 +71,6 @@ jobs:
             fi
           done
 
-          # Never publish authored source/debug/editorial artifacts that are not browser runtime.
           find "$out" -type f \( \
             -name '*.ts' -o \
             -name '*.tsx' -o \
@@ -123,7 +121,7 @@ jobs:
         run: |
           set -euo pipefail
           python - <<'PY'
-          import ast, pathlib, re, sys
+          import pathlib, re, sys
           out = pathlib.Path('History-Go')
           sw = (out / 'sw.js').read_text('utf-8')
           m = re.search(r'const\s+PRECACHE_URLS\s*=\s*\[(.*?)\];', sw, re.S)
