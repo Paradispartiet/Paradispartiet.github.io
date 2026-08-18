@@ -11,7 +11,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - name: Probe published History Go runtime
+      - name: Probe published History Go runtime after source privacy transition
         shell: bash
         run: |
           set -euo pipefail
