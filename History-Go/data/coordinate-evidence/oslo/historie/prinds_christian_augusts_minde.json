@@ -1,0 +1,92 @@
+{
+  "placeId": "prinds_christian_augusts_minde",
+  "placeFile": "data/places/historie/oslo/places_historie_added_batch_01/prinds_christian_augusts_minde.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.9150905,
+    "lon": 10.7569061,
+    "r": 120,
+    "coordStatus": "verified_historical_source",
+    "coordSource": "Prindsen – dokumentasjon av Prinds Christian Augusts Minde; OpenStreetMap osm-way:112236667",
+    "coordType": "historic_complex_area",
+    "coordNote": "Storgata 36 ble tidligere kjørt adresse-first, men ga flere ikke-entydige Geonorge-treff for det sammensatte anlegget. Prindsens egen dokumentasjon avgrenser det fredede bygningskomplekset, og det entydige navngitte OSM-objektet osm-way:112236667 (Prinds Christian Augusts Minde) brukes som geometrisk områdeanker for anlegget, ikke som et vilkårlig husbokstavpunkt."
+  },
+  "identity": {
+    "currentName": "Prinds Christian Augusts Minde",
+    "resolvedIdentity": "det historiske Prindsen/Mangelsgården-komplekset i Storgata 36",
+    "identityStatus": "resolved",
+    "identityProblem": "Adressekandidaten er fysisk flertydig på bygnings-/inngangsnivå.",
+    "locatorTypeCandidate": "linear_area",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [
+    "offisiell bygnings- eller eiendomsgeometri for Prindsen-komplekset",
+    "entydig kobling mellom komplekset og ett representativt adressepunkt"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Prindsen – dokumentasjon av Prinds Christian Augusts Minde",
+      "sourceUrl": "https://prindsen.no/om-prindsen.html",
+      "sourceObjectId": "prindsen:official-documentation",
+      "sourceQuality": "documented_identity_or_site_definition",
+      "finding": "Prindsen dokumenterer det fredede anlegget i Storgata 36 som et sammensatt fysisk bygningskompleks.",
+      "canVerifyCoordinate": true,
+      "reason": "Storgata 36 ble tidligere kjørt adresse-first, men ga flere ikke-entydige Geonorge-treff for det sammensatte anlegget. Prindsens egen dokumentasjon avgrenser det fredede bygningskomplekset, og det entydige navngitte OSM-objektet osm-way:112236667 (Prinds Christian Augusts Minde) brukes som geometrisk områdeanker for anlegget, ikke som et vilkårlig husbokstavpunkt."
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceName": "OpenStreetMap osm-way:112236667 – Prinds Christian Augusts Minde",
+      "sourceUrl": "https://www.openstreetmap.org/way/112236667",
+      "sourceObjectId": "osm-way:112236667",
+      "sourceQuality": "unique_exact_named_object_geometry",
+      "finding": "Nominatim returned one accepted exact named way object for the physical place after object-type filtering.",
+      "canVerifyCoordinate": true,
+      "reason": "Storgata 36 ble tidligere kjørt adresse-first, men ga flere ikke-entydige Geonorge-treff for det sammensatte anlegget. Prindsens egen dokumentasjon avgrenser det fredede bygningskomplekset, og det entydige navngitte OSM-objektet osm-way:112236667 (Prinds Christian Augusts Minde) brukes som geometrisk områdeanker for anlegget, ikke som et vilkårlig husbokstavpunkt."
+    }
+  ],
+  "addressCandidates": [
+    {
+      "address": "Storgata 36 Oslo",
+      "sourceProvider": "official_address",
+      "canApplyToPlace": false
+    },
+    {
+      "address": "Storgata 36B Oslo",
+      "sourceProvider": "official_address",
+      "canApplyToPlace": false
+    }
+  ],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:112236667",
+      "canApplyToPlace": true
+    }
+  ],
+  "geometryCandidates": [
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:112236667",
+      "canApplyToPlace": true
+    }
+  ],
+  "coordinateCandidates": [
+    {
+      "lat": 59.9150905,
+      "lon": 10.7569061,
+      "coordRole": "area_anchor",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Entydig objektgeometri er anvendt på canonical place."
+  },
+  "notes": [
+    "Storgata 36 ble tidligere kjørt adresse-first, men ga flere ikke-entydige Geonorge-treff for det sammensatte anlegget. Prindsens egen dokumentasjon avgrenser det fredede bygningskomplekset, og det entydige navngitte OSM-objektet osm-way:112236667 (Prinds Christian Augusts Minde) brukes som geometrisk områdeanker for anlegget, ikke som et vilkårlig husbokstavpunkt."
+  ]
+}

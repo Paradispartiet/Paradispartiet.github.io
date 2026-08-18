@@ -1,0 +1,142 @@
+{
+  "id": "intility_arena",
+  "name": "Intility Arena",
+  "visual": {
+    "designCode": "stadium_miniature"
+  },
+  "lat": 59.91795564300498,
+  "lon": 10.806618694864738,
+  "r": 180,
+  "category": "sport",
+  "rounds": [
+    "football",
+    "people",
+    "badges",
+    "brands",
+    "leksikon",
+    "routes"
+  ],
+  "sport_type": "football",
+  "place_type": "stadium",
+  "groundhopper": true,
+  "stadium_tier": "club_ground",
+  "groundhopper_tags": [
+    "klubbground",
+    "valerenga",
+    "moderne_fotballarena",
+    "supporterfelt",
+    "valle"
+  ],
+  "year": 2017,
+  "wikipedia": "https://no.wikipedia.org/wiki/Intility_Arena",
+  "emne_ids": [
+    "em_sport_klubbidentitet",
+    "em_sport_arenaendring_byutvikling"
+  ],
+  "desc": "Intility Arena er Vålerengas moderne hjem på Valle, og et sentralt sted for å forstå nyere klubbfotball i Oslo. Arenaen kobler toppfotball, supporteridentitet, kvinnefotball, byutvikling og lokalt eierskap til et tydelig stadionpunkt øst i byen.",
+  "popupDesc": "Intility Arena åpnet i 2017 og markerer et skifte i Oslos fotballgeografi: Vålerenga fikk et eget hjem etter mange år på andre arenaer. For Groundhopper-modus er dette en moderne klubbground med klare sportsstatistiske data: kapasitet, åpningskamp, publikumsrekorder, hjemmekamper for herre- og kvinnelag, europeiske kvelder og nærheten til Valle Hovin-miljøet. Stedet bør brukes til spørsmål om klubbidentitet, stadionbygging, supporterfelt, kunstgress, flomlys, rivalisering og forskjellen mellom nasjonalarena og klubbhjem.",
+  "tasks_profile": {
+    "title": "Les Vålerengas stadionsted",
+    "summary": "Stedoppgaver rundt Intility Arena som leser klubbidentitet og stadionens møte med nabolaget uten å forutsette adgang til bane eller interne stadionarealer.",
+    "tasks": [
+      {
+        "id": "intility_arena_task_supporterspor",
+        "title": "Finn supporterspor",
+        "instruction": "Fra et offentlig gang- eller oppholdsareal: finn synlige spor av klubbidentitet som logo, farger, skilt eller supporterrelaterte markører. Beskriv hva som gjør stedet gjenkjennelig som Vålerengas hjem.",
+        "why": "Synlige klubbmarkører viser hvordan en fotballarena kan gjøre tilhørighet og supporteridentitet fysisk lesbar i byrommet."
+      },
+      {
+        "id": "intility_arena_task_stadion_som_byrom",
+        "title": "Stadion som byrom",
+        "instruction": "Gå på offentlige ganglinjer rundt arenaen og se hvordan stadionbygget møter gate, plass, bolig- og sportsområdet rundt. Finn ett punkt der arenaen styrer bevegelse eller opphold.",
+        "why": "Intility Arena er både kampsted og et stort fysisk objekt i Valle-området, og derfor egnet til å lese forholdet mellom fotball, nabolag og byrom."
+      }
+    ]
+  },
+  "quiz_profile": {
+    "place_type": "stadion",
+    "subtype": "moderne_klubbstadion",
+    "signature_features": [
+      "Vålerengas hjemmebane",
+      "moderne fotballarena på Valle",
+      "tydelig supporter- og klubbidentitet"
+    ],
+    "primary_angles": [
+      "klubb",
+      "arena",
+      "supporter",
+      "kamp",
+      "moderne_fotball"
+    ],
+    "question_families": [
+      "klubbtilhorighet",
+      "arenafakta",
+      "supporterkultur",
+      "stadionutvikling",
+      "kampdag"
+    ],
+    "avoid_angles": [
+      "generisk_moderne_arena"
+    ],
+    "must_include": [
+      "Vålerengas overgang til egen stadion",
+      "Valle som nytt klubbtyngdepunkt",
+      "forskjellen mellom klubbground og nasjonalarena"
+    ],
+    "contrast_targets": [
+      "ullevaal_stadion",
+      "valle_hovin_stadion"
+    ],
+    "notes": "Skal spørres som moderne klubbground med tydelig Vålerenga-identitet."
+  },
+  "sport_profile": {
+    "place_type": "stadion",
+    "sports": [
+      "fotball"
+    ],
+    "clubs_or_teams": [
+      "Vålerenga Fotball",
+      "Vålerenga Fotball Damer"
+    ],
+    "groundhopper_type": "klubbground",
+    "stats_focus": [
+      "åpningsår",
+      "kapasitet",
+      "rekordpublikum",
+      "hjemmekamper",
+      "europakamper",
+      "supporterfelt"
+    ],
+    "collection_hooks": [
+      "klubbground_besøkt",
+      "valerenga_sted_besøkt",
+      "moderne_fotballarena_besøkt"
+    ],
+    "venue_kind": "arena",
+    "groundhopper_relevant": true
+  },
+  "underbadge_ids": [
+    "fotball",
+    "stadion",
+    "idrettsarenaer",
+    "kunstgressbane",
+    "supporterkultur",
+    "idrettslag"
+  ],
+  "related_place_ids": [
+    "helsfyr"
+  ],
+  "parent_area_id": "helsfyr",
+  "locatorType": "current_place",
+  "sourceProvider": "osm",
+  "sourceObjectId": "osm-way:443983964",
+  "geocodeAccuracy": "geometric_center",
+  "coordRole": "area_anchor",
+  "coordType": "stadium_center",
+  "coordStatus": "verified_geometry",
+  "coordSource": "OpenStreetMap way 443983964 – Intility Arena",
+  "coordSourceId": "osm-way:443983964",
+  "coordSourceUrl": "https://www.openstreetmap.org/way/443983964",
+  "coordVerifiedAt": "2026-07-21",
+  "coordNote": "Eksakt navngitt OSM-sportsobjekt valgt innenfor forhåndsdefinert lokal scope og riktig objekttype leisure/stadium; ikke nearest/first-hit. Representasjonspunktet er beregnet fra kildegeometrien."
+}

@@ -1,0 +1,64 @@
+{
+  "schema": "history_go_fagverk_chapter_v1",
+  "version": "1.0.0",
+  "subject": "historie",
+  "id": "minne_kulturarv_historiebruk",
+  "title": "Minne, kulturarv og historiebruk",
+  "subtitle": "Hvordan fortiden velges, bevares, brukes og bestrides",
+  "lead": "Kulturarv er ikke fortiden selv, men et nåtidig utvalg av hva som skal bevares, vises, navngis og gis autoritet. Kapittelet følger kjeden fra gjenstand og sted til dokumentasjon, restaurering, museum, ritual og offentlig strid. 22. juli-senteret, Akershus festning, Hovedøya kloster og Bispelokket viser ulike konflikter mellom bevaring, bruk, fravær og omtolkning.",
+  "learningObjectives": [
+    "forklare kulturminner, utvelgelse og bevaring med avgrenset kronologi, navngitte kilder og en uttrykt kildebegrensning",
+    "forklare restaurering, rekonstruksjon og autentisitet med avgrenset kronologi, navngitte kilder og en uttrykt kildebegrensning",
+    "forklare museum, samling og historisk kanon med avgrenset kronologi, navngitte kilder og en uttrykt kildebegrensning",
+    "forklare minnesteder, ritual og offentlig historiebruk med avgrenset kronologi, navngitte kilder og en uttrykt kildebegrensning",
+    "forklare monumenter, symbolsk makt og kontrovers med avgrenset kronologi, navngitte kilder og en uttrykt kildebegrensning",
+    "forklare kulturarvskonflikt, fjerning og omtolking med avgrenset kronologi, navngitte kilder og en uttrykt kildebegrensning",
+    "forklare jubileer, seremonier og historiske fortellinger med avgrenset kronologi, navngitte kilder og en uttrykt kildebegrensning",
+    "forklare stedsnavn, navnepolitikk og offentlig minne med avgrenset kronologi, navngitte kilder og en uttrykt kildebegrensning",
+    "forklare fravær, taushet og motminne med avgrenset kronologi, navngitte kilder og en uttrykt kildebegrensning",
+    "forklare digital kulturarv, arkiv og formidling med avgrenset kronologi, navngitte kilder og en uttrykt kildebegrensning"
+  ],
+  "diagnosticQuestions": [
+    {
+      "question": "Hvilke kilder dokumenterer kulturminner, utvelgelse og bevaring, og hvem produserte dem?",
+      "answer": "Undersøker kulturminner, utvelgelse og bevaring gjennom utvelgelse, bevaring, autentisitet, samling, ritual, monument, kontrovers, navngivning og offentlig historiebruk. Analysen avgrenser aktører, sted og tidsrom, skiller dokumentasjon fra tolkning og viser hvilke historiske konsekvenser som kan underbygges."
+    },
+    {
+      "question": "Hvilke kilder dokumenterer restaurering, rekonstruksjon og autentisitet, og hvem produserte dem?",
+      "answer": "Undersøker restaurering, rekonstruksjon og autentisitet gjennom utvelgelse, bevaring, autentisitet, samling, ritual, monument, kontrovers, navngivning og offentlig historiebruk. Analysen avgrenser aktører, sted og tidsrom, skiller dokumentasjon fra tolkning og viser hvilke historiske konsekvenser som kan underbygges."
+    },
+    {
+      "question": "Hvilke kilder dokumenterer museum, samling og historisk kanon, og hvem produserte dem?",
+      "answer": "Undersøker museum, samling og historisk kanon gjennom utvelgelse, bevaring, autentisitet, samling, ritual, monument, kontrovers, navngivning og offentlig historiebruk. Analysen avgrenser aktører, sted og tidsrom, skiller dokumentasjon fra tolkning og viser hvilke historiske konsekvenser som kan underbygges."
+    },
+    {
+      "question": "Hvilke kilder dokumenterer minnesteder, ritual og offentlig historiebruk, og hvem produserte dem?",
+      "answer": "Undersøker minnesteder, ritual og offentlig historiebruk gjennom utvelgelse, bevaring, autentisitet, samling, ritual, monument, kontrovers, navngivning og offentlig historiebruk. Analysen avgrenser aktører, sted og tidsrom, skiller dokumentasjon fra tolkning og viser hvilke historiske konsekvenser som kan underbygges."
+    }
+  ],
+  "productionBriefFile": "data/fagverk/historie/minne_kulturarv_historiebruk/brief.json",
+  "editorialProfileId": "his_minne_kulturarv_historiebruk",
+  "narrativeArchitecture": {
+    "causalFramework": [
+      "Materielle spor og muntlige minner blir ikke kulturarv før aktører registrerer, velger og begrunner dem.",
+      "Bevaring og restaurering endrer sporet gjennom materialvalg, rekonstruksjon og fortolkning.",
+      "Museer, monumenter, navn og seremonier gir enkelte fortellinger offentlig autoritet og lar andre forbli tause.",
+      "Konflikt, nye kilder og endrede verdier kan åpne kulturarven for omtolkning, motminner eller fjerning."
+    ],
+    "historiographicalQuestion": "Skal kulturarv først og fremst bevare et autentisk spor eller gjøre fortiden meningsfull og relevant for nåtiden?",
+    "historiographyEvidenceSourceIds": [
+      "hist_method_gaddis_2002",
+      "hist_memory_nora_1989"
+    ],
+    "caseAnchorIds": [
+      "22_juli_senteret",
+      "hovedoya_kloster",
+      "bispelokket"
+    ]
+  },
+  "moduleFiles": [
+    "data/fagverk/historie/minne_kulturarv_historiebruk/01-grunnlag.json",
+    "data/fagverk/historie/minne_kulturarv_historiebruk/02-fordypning.json",
+    "data/fagverk/historie/minne_kulturarv_historiebruk/03-anvendelse.json"
+  ]
+}

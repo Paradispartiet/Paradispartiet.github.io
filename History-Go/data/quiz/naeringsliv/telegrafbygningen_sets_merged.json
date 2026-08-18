@@ -1,0 +1,1593 @@
+{
+  "targetId": "telegrafbygningen",
+  "categoryId": "naeringsliv",
+  "sources": {
+    "place_record": "data/places/naeringsliv/oslo/places_naeringsliv.json",
+    "oslo_byleksikon": "https://oslobyleksikon.no/side/Telegrafbygningen",
+    "kima": "https://kimaarkitektur.no/projects/telegrafbygningen1/",
+    "oslo_byes_vel": "https://www.oslobyesvel.no/kalender/telegrafbygningen",
+    "telegrafen": "https://telegrafenoslo.no/",
+    "telegrafen_history": "https://telegrafenoslo.no/historien/",
+    "byggalliansen": "https://www.byggalliansen.no/kunnskapssenter/byggeprosjekter/kongens-gate-21",
+    "vedal": "https://www.vedal.no/prosjekt/telegrafen/"
+  },
+  "production_context": {
+    "manifest_category": "naeringsliv",
+    "profile": "rich_5x7",
+    "standard_version": "3.2",
+    "source_brief": "data/quiz/production_briefs/naeringsliv/telegrafbygningen.json",
+    "context_artifact": "data/quiz/production_context/naeringsliv/telegrafbygningen.json",
+    "resolved_files": {
+      "pensum": "data/fag/naeringsliv/naeringslivpensum_canonical_v4_5.json",
+      "emner": "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+      "fagkart": "data/fag/naeringsliv/fagkart_naeringsliv_canonical_v4_5.json",
+      "methods": "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+      "supersetQuizMal": "data/fag/naeringsliv/supersetQUIZMAL_naeringsliv.json",
+      "quizStandard": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+      "quizQuestionSchema": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json"
+    },
+    "required_inputs_loaded": [
+      "pensum",
+      "emner",
+      "fagkart",
+      "methods",
+      "supersetQuizMal",
+      "quizStandard",
+      "quizQuestionSchema"
+    ],
+    "pensum_module_ids": [
+      "arbeid_produksjon_verdiskaping",
+      "kapital_eierskap_finans",
+      "handel_forbruk_marked",
+      "teknologi_innovasjon_plattform",
+      "logistikk_infrastruktur_rom"
+    ],
+    "emne_ids": [
+      "em_naering_arbeid_verdiskaping",
+      "em_naering_forbruk_marked",
+      "em_naering_innovasjon_teknologisk_skift",
+      "em_naering_kapital_finans",
+      "em_naering_logistikk_verdikjeder",
+      "em_naering_omstilling_kriser_skift",
+      "em_naering_teknologi_infrastruktur"
+    ],
+    "topic_hook_ids": [
+      "arbeid_som_verdiskaping"
+    ],
+    "method_ids": [
+      "met_naering_arbeidslivsanalyse",
+      "met_naering_forbruker_og_atferdsanalyse",
+      "met_naering_infrastrukturanalyse",
+      "met_naering_verdiskapingsanalyse"
+    ],
+    "thinker_ids": [
+      "max_weber"
+    ],
+    "works": [],
+    "source_review_status": "reviewed",
+    "theory_start_phase": "final",
+    "quality_lift": "naeringsliv_pilot_context_v1",
+    "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+    "professional_module_ids": [
+      "mod_naering_operations_kapasitet",
+      "mod_naering_kostnad_kalkulasjon_budsjett",
+      "mod_naering_internkontroll_revisjon_prestasjon",
+      "mod_naering_prosjektledelse_prosjektokonomi",
+      "mod_naering_markedsmiks_kanaler",
+      "mod_naering_regnskapsanalyse_verdsettelse",
+      "mod_naering_konkurranserett_compliance_baerekraft"
+    ],
+    "professional_depth_files": [
+      "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+      "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+      "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+      "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+    ],
+    "normal_opening_questions_preserved": 14,
+    "professional_questions": 21,
+    "scenario_currency": "NOK",
+    "method_start_phase": "final",
+    "content_balance": {
+      "fact": 19,
+      "context": 9,
+      "concept_theory": 7
+    }
+  },
+  "sets": [
+    {
+      "set_id": "naeringsliv_telegrafbygningen_set_1",
+      "level": 1,
+      "order": 1,
+      "phase": "opening",
+      "questions": [
+        {
+          "id": "telegrafbygningen_quiz_1",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_1_q1",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hvor ligger Telegrafbygningen?",
+          "options": [
+            "Kongens gate 21",
+            "Dronningens gate 15",
+            "Langkaia 1"
+          ],
+          "answer": "Kongens gate 21",
+          "answerIndex": 0,
+          "knowledge": "Telegrafbygningen ligger i Kongens gate 21 i Kvadraturen.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "place_record",
+            "oslo_byleksikon",
+            "telegrafen"
+          ],
+          "source_origin": "mixed",
+          "claim_basis": "Telegrafbygningen ligger i Kongens gate 21 i Kvadraturen.",
+          "claim_id": "claim_telegrafbygningen_01"
+        },
+        {
+          "id": "telegrafbygningen_quiz_2",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_1_q2",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Når ble Telegrafbygningen oppført for Telegrafverket?",
+          "options": [
+            "1896–1897",
+            "1916–1924",
+            "1966–1976"
+          ],
+          "answer": "1916–1924",
+          "answerIndex": 1,
+          "knowledge": "Telegrafbygningen ble oppført for Telegrafverket i perioden 1916–1924.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "place_record",
+            "oslo_byleksikon",
+            "oslo_byes_vel"
+          ],
+          "source_origin": "mixed",
+          "claim_basis": "Telegrafbygningen ble oppført for Telegrafverket i perioden 1916–1924.",
+          "claim_id": "claim_telegrafbygningen_02"
+        },
+        {
+          "id": "telegrafbygningen_quiz_3",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_1_q3",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hvilke arkitekter tegnet Telegrafbygningen?",
+          "options": [
+            "Rudolf E. Jacobsen og Bredo Berntsen",
+            "Adolf Schirmer og Johan Nebelong",
+            "Arnstein Arneberg og Magnus Poulsson"
+          ],
+          "answer": "Arnstein Arneberg og Magnus Poulsson",
+          "answerIndex": 2,
+          "knowledge": "Arnstein Arneberg og Magnus Poulsson tegnet den opprinnelige Telegrafbygningen.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "oslo_byleksikon",
+            "kima",
+            "byggalliansen"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Arnstein Arneberg og Magnus Poulsson tegnet den opprinnelige Telegrafbygningen.",
+          "claim_id": "claim_telegrafbygningen_03"
+        },
+        {
+          "id": "telegrafbygningen_quiz_4",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_1_q4",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hva var bygningens opprinnelige hovedfunksjon?",
+          "options": [
+            "Hovedsentral og administrasjonsbygning for telegraf og telefoni",
+            "Hovedlager for kolonivarer",
+            "Gassverk for gatebelysning"
+          ],
+          "answer": "Hovedsentral og administrasjonsbygning for telegraf og telefoni",
+          "answerIndex": 0,
+          "knowledge": "Bygningen var hovedsentral og administrasjonsbygning for Telegrafverkets telegraf- og telefonvirksomhet.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "place_record",
+            "oslo_byleksikon",
+            "vedal"
+          ],
+          "source_origin": "mixed",
+          "claim_basis": "Bygningen var hovedsentral og administrasjonsbygning for Telegrafverkets telegraf- og telefonvirksomhet.",
+          "claim_id": "claim_telegrafbygningen_04"
+        },
+        {
+          "id": "telegrafbygningen_quiz_5",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_1_q5",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hva kaller Oslo byleksikon bygningens tidligere kommunikasjonsrolle?",
+          "options": [
+            "Byens første postgård",
+            "Landets kommunikasjonsmessige nervesenter",
+            "Oslos eldste tollpakkhus"
+          ],
+          "answer": "Landets kommunikasjonsmessige nervesenter",
+          "answerIndex": 1,
+          "knowledge": "Oslo byleksikon omtaler Telegrafbygningen som landets tidligere kommunikasjonsmessige nervesenter.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "oslo_byleksikon",
+            "oslo_byes_vel"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Oslo byleksikon omtaler Telegrafbygningen som landets tidligere kommunikasjonsmessige nervesenter.",
+          "claim_id": "claim_telegrafbygningen_05"
+        },
+        {
+          "id": "telegrafbygningen_quiz_6",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_1_q6",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hvilken institusjon fikk Telegrafbygningen oppført?",
+          "options": [
+            "Oslo Havnevesen",
+            "Norges Statsbaner",
+            "Telegrafverket"
+          ],
+          "answer": "Telegrafverket",
+          "answerIndex": 2,
+          "knowledge": "Telegrafverket fikk bygningen oppført som hovedsentral og administrasjonsbygg.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "oslo_byleksikon",
+            "kima"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Telegrafverket fikk bygningen oppført som hovedsentral og administrasjonsbygg.",
+          "claim_id": "claim_telegrafbygningen_06"
+        },
+        {
+          "id": "telegrafbygningen_quiz_7",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_1_q7",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hvilken arkitekturstil har den opprinnelige bygningen?",
+          "options": [
+            "Nordisk nybarokk",
+            "Brutalisme",
+            "Funksjonalisme"
+          ],
+          "answer": "Nordisk nybarokk",
+          "answerIndex": 0,
+          "knowledge": "KIMA og Grønn Byggallianse beskriver den opprinnelige bygningen som nordisk nybarokk.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "kima",
+            "byggalliansen"
+          ],
+          "source_origin": "external",
+          "claim_basis": "KIMA og Grønn Byggallianse beskriver den opprinnelige bygningen som nordisk nybarokk.",
+          "claim_id": "claim_telegrafbygningen_07"
+        }
+      ]
+    },
+    {
+      "set_id": "naeringsliv_telegrafbygningen_set_2",
+      "level": 2,
+      "order": 2,
+      "phase": "middle",
+      "questions": [
+        {
+          "id": "telegrafbygningen_quiz_8",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_2_q1",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hvor stor del av kvartalet opptar Telegrafbygningen?",
+          "options": [
+            "Bare ett gatehjørne",
+            "Hele kvartalet",
+            "En liten bakgård"
+          ],
+          "answer": "Hele kvartalet",
+          "answerIndex": 1,
+          "knowledge": "Kongens gate 21 utgjør som eneste bygg et helt kvartal i Kvadraturen.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "kima",
+            "oslo_byleksikon",
+            "byggalliansen"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Kongens gate 21 utgjør som eneste bygg et helt kvartal i Kvadraturen.",
+          "claim_id": "claim_telegrafbygningen_08"
+        },
+        {
+          "id": "telegrafbygningen_quiz_9",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_2_q2",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hvilken fasadekledning har Telegrafbygningen?",
+          "options": [
+            "Keramiske fliser",
+            "Ubehandlet trepanel",
+            "Prikkhamret labradorstein"
+          ],
+          "answer": "Prikkhamret labradorstein",
+          "answerIndex": 2,
+          "knowledge": "Fasadene er forblendet med prikkhamret labradorstein.",
+          "difficulty": 2,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "oslo_byleksikon",
+            "oslo_byes_vel"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Fasadene er forblendet med prikkhamret labradorstein.",
+          "claim_id": "claim_telegrafbygningen_09"
+        },
+        {
+          "id": "telegrafbygningen_quiz_10",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_2_q3",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hvem dekorerte ekspedisjonshallen i 1922?",
+          "options": [
+            "Alf Rolfsen",
+            "Henrik Sørensen",
+            "Edvard Munch"
+          ],
+          "answer": "Alf Rolfsen",
+          "answerIndex": 0,
+          "knowledge": "Alf Rolfsen dekorerte ekspedisjonshallen i 1922.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "oslo_byleksikon",
+            "oslo_byes_vel"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Alf Rolfsen dekorerte ekspedisjonshallen i 1922.",
+          "claim_id": "claim_telegrafbygningen_10"
+        },
+        {
+          "id": "telegrafbygningen_quiz_11",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_2_q4",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hva kunne publikum blant annet gjøre i ekspedisjonshallen?",
+          "options": [
+            "Levere gods til jernbanen",
+            "Sende telegrammer",
+            "Bestille kullgass"
+          ],
+          "answer": "Sende telegrammer",
+          "answerIndex": 1,
+          "knowledge": "Publikum kunne henvende seg i ekspedisjonshallen, blant annet for å sende telegrammer.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_forbruk_marked",
+          "source": [
+            "kima"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Publikum kunne henvende seg i ekspedisjonshallen, blant annet for å sende telegrammer.",
+          "claim_id": "claim_telegrafbygningen_11"
+        },
+        {
+          "id": "telegrafbygningen_quiz_12",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_2_q5",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hvem tegnet tilbygget fra 1966?",
+          "options": [
+            "Sverre Fehn",
+            "Bredo Berntsen",
+            "Nils Holter"
+          ],
+          "answer": "Nils Holter",
+          "answerIndex": 2,
+          "knowledge": "Nils Holter tegnet tilbygget fra 1966.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "oslo_byleksikon",
+            "kima",
+            "telegrafen_history"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Nils Holter tegnet tilbygget fra 1966.",
+          "claim_id": "claim_telegrafbygningen_12"
+        },
+        {
+          "id": "telegrafbygningen_quiz_13",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_2_q6",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hva var hovedfunksjonen til tilbygget fra 1966?",
+          "options": [
+            "Automatsentral",
+            "Tollpakkhus",
+            "Kraftstasjon"
+          ],
+          "answer": "Automatsentral",
+          "answerIndex": 0,
+          "knowledge": "Tilbygget fra 1966 ble oppført som automatsentral.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "kima",
+            "telegrafen_history"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Tilbygget fra 1966 ble oppført som automatsentral.",
+          "claim_id": "claim_telegrafbygningen_13"
+        },
+        {
+          "id": "telegrafbygningen_quiz_14",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_2_q7",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hvilke kommunikasjonssystemer var bygningen særlig knyttet til?",
+          "options": [
+            "Kullgass og gatelys",
+            "Telegrafi og telefoni",
+            "Tollklarering og pakkhus"
+          ],
+          "answer": "Telegrafi og telefoni",
+          "answerIndex": 1,
+          "knowledge": "Telegrafbygningen var særlig knyttet til telegrafi og telefoni.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "place_record",
+            "oslo_byleksikon",
+            "telegrafen_history"
+          ],
+          "source_origin": "mixed",
+          "claim_basis": "Telegrafbygningen var særlig knyttet til telegrafi og telefoni.",
+          "claim_id": "claim_telegrafbygningen_14"
+        }
+      ]
+    },
+    {
+      "set_id": "naeringsliv_telegrafbygningen_set_3",
+      "level": 3,
+      "order": 3,
+      "phase": "middle",
+      "questions": [
+        {
+          "id": "telegrafbygningen_quiz_15",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_3_q1",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hva var den viktigste økonomiske virkningen av at telegraf- og telefonforbindelser ble samlet i Telegrafbygningen?",
+          "options": [
+            "Kortere koordineringstid mellom virksomheter og myndigheter",
+            "Lavere behov for all varetransport i Oslo",
+            "Automatisk fall i alle kommunikasjonspriser"
+          ],
+          "answer": "Kortere koordineringstid mellom virksomheter og myndigheter",
+          "answerIndex": 0,
+          "knowledge": "Et samlet kommunikasjonsknutepunkt reduserte tiden mellom beskjed og handling. Gevinsten var raskere koordinering, ikke at fysisk transport eller priser forsvant.",
+          "difficulty": 2,
+          "question_type": "context",
+          "emne_id": "em_naering_logistikk_verdikjeder",
+          "source": [
+            "place_record",
+            "oslo_byleksikon"
+          ],
+          "source_origin": "mixed",
+          "claim_basis": "Telegraf- og telefonnettet bandt handel, forvaltning og offentlig kommunikasjon sammen gjennom rask informasjonsflyt.",
+          "claim_id": "claim_telegrafbygningen_15",
+          "professional_module_id": "mod_naering_operations_kapasitet",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "forklar hvordan et fysisk nettverksknutepunkt påvirker gjennomløpstid",
+          "core_concepts": [
+            "informasjonsflyt",
+            "koordineringstid",
+            "knutepunkt"
+          ],
+          "concept_focus": [
+            "informasjonsflyt",
+            "koordineringstid"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "decision_context": "vurdere om sentralisering gir større samlet nytte enn sårbarhet"
+        },
+        {
+          "id": "telegrafbygningen_quiz_16",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_3_q2",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Omtrent hvor mange telefonistinner arbeidet ved sentralene i Telegrafbygningen under okkupasjonen?",
+          "options": [
+            "Nærmere hundre",
+            "Nærmere tusen",
+            "Nærmere ti tusen"
+          ],
+          "answer": "Nærmere tusen",
+          "answerIndex": 1,
+          "knowledge": "Omfanget viser at telefoni før automatiseringen var en stor arbeidsorganisasjon, ikke bare et teknisk anlegg.",
+          "difficulty": 2,
+          "question_type": "context",
+          "emne_id": "em_naering_arbeid_verdiskaping",
+          "source": [
+            "oslo_byleksikon"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Nærmere tusen telefonistinner arbeidet ved telefonsentralene i bygningen under okkupasjonen.",
+          "claim_id": "claim_telegrafbygningen_16",
+          "professional_module_id": "mod_naering_operations_kapasitet",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "identifiser den dokumenterte bemanningsskalaen",
+          "core_concepts": [
+            "arbeidsintensitet",
+            "telefonistinner",
+            "kapasitet"
+          ],
+          "concept_focus": [
+            "arbeidsintensitet",
+            "telefonistinner"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ]
+        },
+        {
+          "id": "telegrafbygningen_quiz_17",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_3_q3",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hvis 980 telefonistinner fordeles likt over sju etasjer, omtrent hvor mange arbeider i gjennomsnitt per etasje?",
+          "options": [
+            "70",
+            "140",
+            "280"
+          ],
+          "answer": "140",
+          "answerIndex": 1,
+          "knowledge": "980 delt på 7 er 140. Beregningen gjør bemanningsskalaen konkret, men sier ikke hvordan arbeidet faktisk var fordelt mellom rom og skift.",
+          "difficulty": 2,
+          "question_type": "context",
+          "emne_id": "em_naering_arbeid_verdiskaping",
+          "source": [
+            "oslo_byleksikon"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Nærmere tusen telefonistinner, organisert med om lag hundre i hvert rom over sju etasjer, viser at manuell telefoni krevde mye organisert arbeidskraft.",
+          "claim_id": "claim_telegrafbygningen_17",
+          "professional_module_id": "mod_naering_operations_kapasitet",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "beregn gjennomsnittlig bemanning per etasje",
+          "core_concepts": [
+            "bemanning",
+            "kapasitetsfordeling",
+            "gjennomsnitt"
+          ],
+          "concept_focus": [
+            "bemanning",
+            "kapasitetsfordeling"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "calculation": {
+            "inputs": {
+              "telefonistinner": 980,
+              "etasjer": 7
+            },
+            "formula": "telefonistinner / etasjer",
+            "result": 140,
+            "unit": "personer per etasje"
+          }
+        },
+        {
+          "id": "telegrafbygningen_quiz_18",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_3_q4",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hva het den tyske post- og kommunikasjonsenheten som holdt til i Telegrafbygningen under okkupasjonen?",
+          "options": [
+            "Dienstpoststelle",
+            "Reichshafenlager",
+            "Nordische Zentralbank"
+          ],
+          "answer": "Dienstpoststelle",
+          "answerIndex": 0,
+          "knowledge": "Den tyske bruken viser at kontroll over kommunikasjon var en del av okkupasjonsmaktens operative infrastruktur.",
+          "difficulty": 2,
+          "question_type": "context",
+          "emne_id": "em_naering_omstilling_kriser_skift",
+          "source": [
+            "oslo_byleksikon"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Tyskerne hadde sitt Dienstpoststelle i Telegrafbygningen under okkupasjonen.",
+          "claim_id": "claim_telegrafbygningen_18",
+          "professional_module_id": "mod_naering_internkontroll_revisjon_prestasjon",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "identifiser den dokumenterte institusjonen",
+          "core_concepts": [
+            "okkupasjon",
+            "kommunikasjonskontroll",
+            "kritisk infrastruktur"
+          ],
+          "concept_focus": [
+            "okkupasjon",
+            "kommunikasjonskontroll"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ]
+        },
+        {
+          "id": "telegrafbygningen_quiz_19",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_3_q5",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Telefonistinner kunne fange opp eller forsinke meldinger. Hvilket kontrolltiltak ville best redusere misbruksrisiko uten å stanse arbeidet?",
+          "options": [
+            "Uavhengig loggføring og etterkontroll av kritiske forbindelser",
+            "At alle operatører arbeider helt uten dokumentasjon",
+            "At én person alene godkjenner og utfører alle koblinger"
+          ],
+          "answer": "Uavhengig loggføring og etterkontroll av kritiske forbindelser",
+          "answerIndex": 0,
+          "knowledge": "Sporbar logg og uavhengig kontroll reduserer risikoen for skjult manipulering. Samtidig må kontrollen utformes slik at tidskritisk kommunikasjon fortsatt fungerer.",
+          "difficulty": 2,
+          "question_type": "context",
+          "emne_id": "em_naering_arbeid_verdiskaping",
+          "source": [
+            "oslo_byleksikon"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Telefonistinner som arbeidet i koblingsleddet kunne fange opp viktige meldinger og forsinke andre, noe som gjorde arbeidsplassen strategisk under okkupasjonen.",
+          "claim_id": "claim_telegrafbygningen_19",
+          "professional_module_id": "mod_naering_internkontroll_revisjon_prestasjon",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "utform et kontrolltiltak for en kritisk manuell prosess",
+          "core_concepts": [
+            "sporbarhet",
+            "arbeidsdeling",
+            "kontrollrisiko"
+          ],
+          "concept_focus": [
+            "sporbarhet",
+            "arbeidsdeling"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "decision_context": "balansere rask drift mot etterprøvbarhet og maktmisbruk"
+        },
+        {
+          "id": "telegrafbygningen_quiz_20",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_3_q6",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hva er den største driftsrisikoen når svært mange forbindelser samles i ett kommunikasjonsknutepunkt?",
+          "options": [
+            "At ett alvorlig avbrudd kan ramme mange forbindelser samtidig",
+            "At alle meldinger automatisk blir billigere",
+            "At bygningen ikke lenger trenger vedlikehold"
+          ],
+          "answer": "At ett alvorlig avbrudd kan ramme mange forbindelser samtidig",
+          "answerIndex": 0,
+          "knowledge": "Sentralisering kan gi effektiv drift, men også et enkelt feilpunkt. Reservekapasitet og alternative ruter blir derfor en del av kapasitetsstyringen.",
+          "difficulty": 2,
+          "question_type": "context",
+          "emne_id": "em_naering_teknologi_infrastruktur",
+          "source": [
+            "place_record",
+            "oslo_byleksikon"
+          ],
+          "source_origin": "mixed",
+          "claim_basis": "Telegrafbygningen samlet sentrale telegraf- og telefonforbindelser og var derfor strategisk viktig under okkupasjonen.",
+          "claim_id": "claim_telegrafbygningen_20",
+          "professional_module_id": "mod_naering_operations_kapasitet",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "identifiser systemrisiko ved sentralisert kapasitet",
+          "core_concepts": [
+            "enkelt feilpunkt",
+            "reservekapasitet",
+            "driftsrisiko"
+          ],
+          "concept_focus": [
+            "enkelt feilpunkt",
+            "reservekapasitet"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "decision_context": "avgjøre hvor mye redundans et kritisk nettverk trenger"
+        },
+        {
+          "id": "telegrafbygningen_quiz_21",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_3_q7",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "I et forenklet scenario øker automatsentralen kapasiteten med 20 %, mens bemanningen faller fra 1 000 til 400. Hvor mange ganger høyere blir kapasiteten per ansatt?",
+          "options": [
+            "1,2 ganger",
+            "2 ganger",
+            "3 ganger"
+          ],
+          "answer": "3 ganger",
+          "answerIndex": 2,
+          "knowledge": "Kapasitetsindeksen går fra 100/1 000 til 120/400. Det er 0,10 mot 0,30, altså tre ganger høyere kapasitet per ansatt. Resultatet sier ikke noe alene om kvalitet eller arbeidsbelastning.",
+          "difficulty": 2,
+          "question_type": "context",
+          "emne_id": "em_naering_innovasjon_teknologisk_skift",
+          "source": [
+            "kima",
+            "telegrafen_history"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Tilbygget fra 1966 ble oppført som automatsentral og viser at televirksomheten gikk mot mer automatisert teknisk drift.",
+          "claim_id": "claim_telegrafbygningen_21",
+          "professional_module_id": "mod_naering_kostnad_kalkulasjon_budsjett",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "beregn produktivitetsendring etter automatisering",
+          "core_concepts": [
+            "produktivitet",
+            "automatisering",
+            "kapasitet per ansatt"
+          ],
+          "concept_focus": [
+            "produktivitet",
+            "automatisering"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "calculation": {
+            "inputs": {
+              "gammel_kapasitetsindeks": 100,
+              "gammel_bemanning": 1000,
+              "ny_kapasitetsindeks": 120,
+              "ny_bemanning": 400
+            },
+            "formula": "(120/400) / (100/1000)",
+            "result": 3,
+            "unit": "ganger"
+          },
+          "decision_context": "vurdere produktivitetsgevinst sammen med kvalitet og omstillingskostnad"
+        }
+      ]
+    },
+    {
+      "set_id": "naeringsliv_telegrafbygningen_set_4",
+      "level": 4,
+      "order": 4,
+      "phase": "bridge",
+      "questions": [
+        {
+          "id": "telegrafbygningen_quiz_22",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_4_q1",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "I hvilken periode ble Telegrafbygningen ombygd og rehabilitert?",
+          "options": [
+            "1982–1985",
+            "2003–2005",
+            "2019–2021"
+          ],
+          "answer": "2019–2021",
+          "answerIndex": 2,
+          "knowledge": "Rehabiliteringen var en flerårig transformasjon av et helt kvartalsanlegg, ikke en mindre overflateoppussing.",
+          "difficulty": 3,
+          "question_type": "fact",
+          "emne_id": "em_naering_omstilling_kriser_skift",
+          "source": [
+            "oslo_byleksikon",
+            "byggalliansen",
+            "vedal"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Telegrafbygningen ble ombygd og rehabilitert i perioden 2019–2021.",
+          "claim_id": "claim_telegrafbygningen_22",
+          "professional_module_id": "mod_naering_prosjektledelse_prosjektokonomi",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "identifiser prosjektets dokumenterte tidsrom",
+          "core_concepts": [
+            "rehabilitering",
+            "prosjektperiode",
+            "ombruk"
+          ],
+          "concept_focus": [
+            "rehabilitering",
+            "prosjektperiode"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ]
+        },
+        {
+          "id": "telegrafbygningen_quiz_23",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_4_q2",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hva kan en BREEAM-NOR-vurdering dokumentere best i en rehabilitering?",
+          "options": [
+            "Målte og dokumenterte miljøprestasjoner etter en definert standard",
+            "At prosjektet er bærekraftig på alle tenkelige områder",
+            "At historiske interiører automatisk er økonomisk lønnsomme"
+          ],
+          "answer": "Målte og dokumenterte miljøprestasjoner etter en definert standard",
+          "answerIndex": 0,
+          "knowledge": "En sertifisering gir strukturert dokumentasjon på valgte kriterier. Den erstatter ikke vurdering av alle klima-, arbeidslivs- eller fordelingsvirkninger.",
+          "difficulty": 3,
+          "question_type": "fact",
+          "emne_id": "em_naering_innovasjon_teknologisk_skift",
+          "source": [
+            "byggalliansen"
+          ],
+          "source_origin": "external",
+          "claim_basis": "BREEAM-NOR-sertifiseringen Very Good viser at dokumentert miljøprestasjon var et mål i rehabiliteringen og den nye eiendomsdriften.",
+          "claim_id": "claim_telegrafbygningen_23",
+          "professional_module_id": "mod_naering_konkurranserett_compliance_baerekraft",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "tolk hva en standardisert bærekraftsvurdering faktisk kan bevise",
+          "core_concepts": [
+            "miljøprestasjon",
+            "sertifisering",
+            "dokumentasjon"
+          ],
+          "concept_focus": [
+            "miljøprestasjon",
+            "sertifisering"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "decision_context": "skille dokumentert kriterieoppnåelse fra bredere bærekraftspåstander"
+        },
+        {
+          "id": "telegrafbygningen_quiz_24",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_4_q3",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Anta en rehabiliteringskostnad på 42 000 kroner per m² for 16 670 m². Hva blir samlet kostnad omtrent?",
+          "options": [
+            "70,0 millioner kroner",
+            "700,1 millioner kroner",
+            "7,0 milliarder kroner"
+          ],
+          "answer": "700,1 millioner kroner",
+          "answerIndex": 1,
+          "knowledge": "16 670 × 42 000 kroner er 700 140 000 kroner. En prosjektkalkyle må i tillegg vise prisnivå, reserve, finansiering og hva som faktisk inngår i kvadratmeterprisen.",
+          "difficulty": 3,
+          "question_type": "fact",
+          "emne_id": "em_naering_kapital_finans",
+          "source": [
+            "byggalliansen"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Et samlet prosjektareal på 16 670 m² viser at rehabiliteringen var en omfattende transformasjon av et helt kvartalsanlegg.",
+          "claim_id": "claim_telegrafbygningen_24",
+          "professional_module_id": "mod_naering_prosjektledelse_prosjektokonomi",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "beregn en arealbasert investeringsramme",
+          "core_concepts": [
+            "investeringskostnad",
+            "areal",
+            "prosjektkalkyle"
+          ],
+          "concept_focus": [
+            "investeringskostnad",
+            "areal"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "calculation": {
+            "inputs": {
+              "areal_m2": 16670,
+              "kostnad_per_m2_nok": 42000
+            },
+            "formula": "areal_m2 * kostnad_per_m2_nok",
+            "result": 700140000,
+            "unit": "NOK"
+          },
+          "decision_context": "vurdere om kostnadsrammen tåler reserve og finansiering"
+        },
+        {
+          "id": "telegrafbygningen_quiz_25",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_4_q4",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hvilket selskap var entreprenør i rehabiliteringsprosjektet?",
+          "options": [
+            "Vedal Entreprenør AS",
+            "Posten Bring AS",
+            "Oslo Havnevesen"
+          ],
+          "answer": "Vedal Entreprenør AS",
+          "answerIndex": 0,
+          "knowledge": "Entreprenørrollen må skilles fra eier-, arkitekt- og operatørrollen når ansvar, kostnad og gjennomføring vurderes.",
+          "difficulty": 3,
+          "question_type": "fact",
+          "emne_id": "em_naering_kapital_finans",
+          "source": [
+            "oslo_byleksikon",
+            "vedal"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Vedal Entreprenør AS var entreprenør i rehabiliteringsprosjektet.",
+          "claim_id": "claim_telegrafbygningen_25",
+          "professional_module_id": "mod_naering_prosjektledelse_prosjektokonomi",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "identifiser dokumentert prosjektrolle",
+          "core_concepts": [
+            "entreprenør",
+            "prosjektrolle",
+            "ansvar"
+          ],
+          "concept_focus": [
+            "entreprenør",
+            "prosjektrolle"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ]
+        },
+        {
+          "id": "telegrafbygningen_quiz_26",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_4_q5",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hva heter dagens publikumsrettede konsept i bygningen?",
+          "options": [
+            "Telegrafen Oslo",
+            "Posthallen",
+            "Langkaia Kontorpark"
+          ],
+          "answer": "Telegrafen Oslo",
+          "answerIndex": 0,
+          "knowledge": "Navnet markerer en ny kommersiell bruk, men bygger samtidig videre på stedets kommunikasjonsidentitet.",
+          "difficulty": 3,
+          "question_type": "fact",
+          "emne_id": "em_naering_forbruk_marked",
+          "source": [
+            "oslo_byleksikon",
+            "telegrafen",
+            "telegrafen_history"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Dagens publikumsrettede konsept i bygningen heter Telegrafen Oslo.",
+          "claim_id": "claim_telegrafbygningen_26",
+          "professional_module_id": "mod_naering_merkevare_kunderelasjon",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "identifiser dagens dokumenterte konsept",
+          "core_concepts": [
+            "stedsidentitet",
+            "merkevare",
+            "ombruk"
+          ],
+          "concept_focus": [
+            "stedsidentitet",
+            "merkevare"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ]
+        },
+        {
+          "id": "telegrafbygningen_quiz_27",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_4_q6",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Telegrafen har hovedinngang fra Prinsens gate, mens Faksen har inngang fra Tollbugata. Hva kan to tydelige innganger brukes til kommersielt?",
+          "options": [
+            "Å styre ulike publikumsstrømmer mot ulike tilbud",
+            "Å gjøre alle leietakere usynlige fra gateplan",
+            "Å fjerne behovet for skilting og drift"
+          ],
+          "answer": "Å styre ulike publikumsstrømmer mot ulike tilbud",
+          "answerIndex": 0,
+          "knowledge": "Flere innganger kan gi ulik eksponering, kapasitet og kundereise. Effekten må undersøkes med faktisk trafikk, omsetning og tilgjengelighet.",
+          "difficulty": 3,
+          "question_type": "context",
+          "emne_id": "em_naering_forbruk_marked",
+          "source": [
+            "telegrafen",
+            "telegrafen_history"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Telegrafen har hovedinngang fra Prinsens gate, mens Faksen har inngang fra Tollbugata.",
+          "claim_id": "claim_telegrafbygningen_27",
+          "professional_module_id": "mod_naering_markedsmiks_kanaler",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "knytt fysisk tilgjengelighet til kanal- og kundereiseanalyse",
+          "core_concepts": [
+            "kundestrøm",
+            "distribusjon",
+            "inngang"
+          ],
+          "concept_focus": [
+            "kundestrøm",
+            "distribusjon"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "decision_context": "fordele tilbud og skilting mellom innganger"
+        },
+        {
+          "id": "telegrafbygningen_quiz_28",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_4_q7",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hva er den viktigste endringen når et lukket teknisk gateplan får butikker, restauranter og kafeer?",
+          "options": [
+            "Publikumsstrømmer blir en del av eiendommens inntektsmodell",
+            "Bygningen slutter å ha faste driftskostnader",
+            "Alle kontorarealer blir automatisk boliger"
+          ],
+          "answer": "Publikumsstrømmer blir en del av eiendommens inntektsmodell",
+          "answerIndex": 0,
+          "knowledge": "Gateplanet går fra intern produksjonsinfrastruktur til et marked der synlighet, besøk, leietakermiks og oppholdstid påvirker verdiskapingen.",
+          "difficulty": 3,
+          "question_type": "context",
+          "emne_id": "em_naering_forbruk_marked",
+          "source": [
+            "vedal"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Butikker, restauranter og kafeer i første etasje endret gateplanet fra lukket teknisk drift til publikumsrettet næringsliv.",
+          "claim_id": "claim_telegrafbygningen_28",
+          "professional_module_id": "mod_naering_markedsmiks_kanaler",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "forklar hvordan ny bruk endrer eiendommens inntektsdrivere",
+          "core_concepts": [
+            "gateplan",
+            "leietakermiks",
+            "publikumsstrøm"
+          ],
+          "concept_focus": [
+            "gateplan",
+            "leietakermiks"
+          ],
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "decision_context": "velge tilbud som både skaper besøk og bærekraftig drift"
+        }
+      ]
+    },
+    {
+      "set_id": "naeringsliv_telegrafbygningen_set_5",
+      "level": 5,
+      "order": 5,
+      "phase": "final",
+      "questions": [
+        {
+          "id": "telegrafbygningen_quiz_29",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_5_q1",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Gateplanet er oppgitt til 3 200 m². Med 4 500 kroner i årlig leie per m² og 90 % utleiegrad, hva blir årlig brutto leie omtrent?",
+          "options": [
+            "1,30 millioner kroner",
+            "12,96 millioner kroner",
+            "129,6 millioner kroner"
+          ],
+          "answer": "12,96 millioner kroner",
+          "answerIndex": 1,
+          "knowledge": "3 200 × 4 500 × 0,90 er 12 960 000 kroner. Brutto leie er ikke det samme som netto driftsresultat fordi ledighet, felleskostnader, vedlikehold og investeringer må trekkes inn.",
+          "difficulty": 3,
+          "question_type": "analysis",
+          "emne_id": "em_naering_forbruk_marked",
+          "source": [
+            "vedal"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Vedal beskriver et gateplan på 3 200 m² for opplevelser, arrangementer og bevertning.",
+          "claim_id": "claim_telegrafbygningen_29",
+          "professional_module_id": "mod_naering_regnskapsanalyse_verdsettelse",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "beregn scenario for årlig brutto leie",
+          "core_concepts": [
+            "brutto leie",
+            "utleiegrad",
+            "arealproduktivitet"
+          ],
+          "concept_focus": [
+            "brutto leie",
+            "utleiegrad"
+          ],
+          "method_id": "met_naering_verdiskapingsanalyse",
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "calculation": {
+            "inputs": {
+              "areal_m2": 3200,
+              "leie_per_m2_nok": 4500,
+              "utleiegrad": 0.9
+            },
+            "formula": "areal_m2 * leie_per_m2_nok * utleiegrad",
+            "result": 12960000,
+            "unit": "NOK per år"
+          },
+          "decision_context": "teste om publikumsarealet kan bære drift og kapital"
+        },
+        {
+          "id": "telegrafbygningen_quiz_30",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_5_q2",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hvilken pris vant Telegrafen-prosjektet i 2021?",
+          "options": [
+            "Cityprisen",
+            "Betongtavlen",
+            "Houens fonds diplom"
+          ],
+          "answer": "Cityprisen",
+          "answerIndex": 0,
+          "knowledge": "En pris kan være et markedssignal om prosjektkvalitet, men dokumenterer ikke alene lønnsomhet, brukertilfredshet eller langsiktig drift.",
+          "difficulty": 3,
+          "question_type": "analysis",
+          "emne_id": "em_naering_kapital_finans",
+          "source": [
+            "vedal"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Telegrafen-prosjektet vant Cityprisen 2021.",
+          "claim_id": "claim_telegrafbygningen_30",
+          "professional_module_id": "mod_naering_merkevare_kunderelasjon",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "identifiser den dokumenterte utmerkelsen",
+          "core_concepts": [
+            "prosjektpris",
+            "omdømme",
+            "markedssignal"
+          ],
+          "concept_focus": [
+            "prosjektpris",
+            "omdømme"
+          ],
+          "method_id": "met_naering_forbruker_og_atferdsanalyse",
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ]
+        },
+        {
+          "id": "telegrafbygningen_quiz_31",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_5_q3",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hva er den sentrale prosjektkonflikten når historiske bygningskvaliteter bevares samtidig som nye kontorer og publikumsfunksjoner bygges?",
+          "options": [
+            "Bevaring og ny funksjonalitet må løses innen samme kostnads- og tidsramme",
+            "Historiske bygg har aldri tekniske krav",
+            "Ny bruk gjør all dokumentasjon unødvendig"
+          ],
+          "answer": "Bevaring og ny funksjonalitet må løses innen samme kostnads- og tidsramme",
+          "answerIndex": 0,
+          "knowledge": "Adaptiv ombruk krever valg mellom inngrep, bevaring, teknisk ytelse, leietakerbehov og prosjektøkonomi. Ingen av hensynene kan vurderes isolert.",
+          "difficulty": 3,
+          "question_type": "analysis",
+          "emne_id": "em_naering_omstilling_kriser_skift",
+          "source": [
+            "kima",
+            "byggalliansen",
+            "vedal"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Rehabiliteringen kombinerte kontorer og publikumsrettede tilbud med bevaring og ombruk av historiske bygningskvaliteter.",
+          "claim_id": "claim_telegrafbygningen_31",
+          "professional_module_id": "mod_naering_prosjektledelse_prosjektokonomi",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "avgrens prosjektets viktigste målkonflikt",
+          "core_concepts": [
+            "adaptiv ombruk",
+            "prosjektavgrensning",
+            "bevaringskrav"
+          ],
+          "concept_focus": [
+            "adaptiv ombruk",
+            "prosjektavgrensning"
+          ],
+          "method_id": "met_naering_infrastrukturanalyse",
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "decision_context": "prioritere tiltak når bevaring, funksjon, kostnad og tid kolliderer"
+        },
+        {
+          "id": "telegrafbygningen_quiz_32",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_5_q4",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hvis sju etasjer har 100 operatører hver og én arbeidsleder kan følge opp 20 operatører, hvor mange arbeidsledere trengs minst?",
+          "options": [
+            "7",
+            "20",
+            "35"
+          ],
+          "answer": "35",
+          "answerIndex": 2,
+          "knowledge": "Sju ganger 100 er 700 operatører. 700 delt på 20 er 35 arbeidsledere. Beregningen viser organisatorisk skala, men ikke om samme lederspenn passet alle oppgaver.",
+          "difficulty": 3,
+          "question_type": "analysis",
+          "emne_id": "em_naering_arbeid_verdiskaping",
+          "source": [
+            "kima",
+            "oslo_byleksikon"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Samlingen av sentraler, administrasjon og mange arbeidsplasser i ett kvartal viser en storstilt rasjonalisering og organisering av kommunikasjonstjenestene.",
+          "claim_id": "claim_telegrafbygningen_32",
+          "professional_module_id": "mod_naering_internkontroll_revisjon_prestasjon",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "beregn nødvendig kontroll- og ledelseskapasitet",
+          "core_concepts": [
+            "lederspenn",
+            "bemanning",
+            "kontrollkapasitet"
+          ],
+          "concept_focus": [
+            "lederspenn",
+            "bemanning"
+          ],
+          "method_id": "met_naering_infrastrukturanalyse",
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "topic_hook_id": "arbeid_som_verdiskaping",
+          "thinker_id": "max_weber",
+          "calculation": {
+            "inputs": {
+              "etasjer": 7,
+              "operatorer_per_etasje": 100,
+              "operatorer_per_leder": 20
+            },
+            "formula": "etasjer * operatorer_per_etasje / operatorer_per_leder",
+            "result": 35,
+            "unit": "arbeidsledere"
+          },
+          "decision_context": "vurdere om kontrollspennet er forsvarlig",
+          "theory_ref": {
+            "topic_hook_id": "arbeid_som_verdiskaping",
+            "why_it_helps": "Webers begrep om rasjonalisering synliggjør hvordan kommunikasjon, arbeidsdeling, standardiserte rutiner og tekniske systemer ble samlet i én stor organisasjon."
+          }
+        },
+        {
+          "id": "telegrafbygningen_quiz_33",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_5_q5",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hva skiller den historiske og den moderne forretningsmodellen i Telegrafbygningen tydeligst?",
+          "options": [
+            "Fra drift av kommunikasjonssystemer til utleie, servering, handel og arrangementer",
+            "Fra kullproduksjon til skipsverft",
+            "Fra boligbygg til jernbaneterminal"
+          ],
+          "answer": "Fra drift av kommunikasjonssystemer til utleie, servering, handel og arrangementer",
+          "answerIndex": 0,
+          "knowledge": "Begge modellene kobler mennesker og informasjon, men inntektskildene, kundene, kostnadsstrukturen og risikoen er helt forskjellige.",
+          "difficulty": 3,
+          "question_type": "analysis",
+          "emne_id": "em_naering_omstilling_kriser_skift",
+          "source": [
+            "oslo_byleksikon",
+            "telegrafen",
+            "vedal"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Bygningen har gått fra å være kommunikasjonsentral og administrasjonsbygg til en blanding av kontorer, servering, handel og arrangementer.",
+          "claim_id": "claim_telegrafbygningen_33",
+          "professional_module_id": "mod_naering_konsernstrategi_implementering",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "sammenlign historisk og moderne verdiskaping",
+          "core_concepts": [
+            "forretningsmodell",
+            "inntektsdrivere",
+            "omstilling"
+          ],
+          "concept_focus": [
+            "forretningsmodell",
+            "inntektsdrivere"
+          ],
+          "method_id": "met_naering_arbeidslivsanalyse",
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "decision_context": "avgjøre hvilke historiske ressurser som skal videreføres i ny strategi"
+        },
+        {
+          "id": "telegrafbygningen_quiz_34",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_5_q6",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Hvorfor kan en blanding av kontorer, servering, handel og arrangementer være mer robust enn bare én bruk?",
+          "options": [
+            "Flere inntektskilder kan redusere avhengigheten av ett marked",
+            "Alle brukstyper har alltid samme etterspørsel",
+            "Blandet bruk fjerner behovet for vedlikehold"
+          ],
+          "answer": "Flere inntektskilder kan redusere avhengigheten av ett marked",
+          "answerIndex": 0,
+          "knowledge": "Blandet bruk kan spre risiko og skape kryssende kundestrømmer. Samtidig øker kompleksiteten i drift, kontrakter, sikkerhet og koordinering.",
+          "difficulty": 3,
+          "question_type": "analysis",
+          "emne_id": "em_naering_innovasjon_teknologisk_skift",
+          "source": [
+            "place_record",
+            "telegrafen",
+            "vedal"
+          ],
+          "source_origin": "mixed",
+          "claim_basis": "Både den historiske telekommunikasjonen og dagens service- og møtesteder knytter mennesker, tjenester og informasjonsutveksling sammen.",
+          "claim_id": "claim_telegrafbygningen_34",
+          "professional_module_id": "mod_naering_konsernstrategi_implementering",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "vurder robusthet i en blandet bruksportefølje",
+          "core_concepts": [
+            "inntektsdiversifisering",
+            "porteføljerisiko",
+            "driftskompleksitet"
+          ],
+          "concept_focus": [
+            "inntektsdiversifisering",
+            "porteføljerisiko"
+          ],
+          "method_id": "met_naering_verdiskapingsanalyse",
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "decision_context": "balansere diversifisering mot koordinasjonskostnad"
+        },
+        {
+          "id": "telegrafbygningen_quiz_35",
+          "quiz_id": "naeringsliv_telegrafbygningen_set_5_q7",
+          "categoryId": "naeringsliv",
+          "placeId": "telegrafbygningen",
+          "targetId": "telegrafbygningen",
+          "question_scope": "place",
+          "question": "Anta at den ombygde eiendommen gir 36 millioner kroner i årlig netto driftsresultat og markedets avkastningskrav er 5 %. Hva blir en enkel direkteavkastningsverdi?",
+          "options": [
+            "180 millioner kroner",
+            "720 millioner kroner",
+            "1,8 milliarder kroner"
+          ],
+          "answer": "720 millioner kroner",
+          "answerIndex": 1,
+          "knowledge": "36 millioner delt på 0,05 er 720 millioner kroner. Verdien er svært følsom for normalisert driftsresultat, ledighet, investeringer og valgt avkastningskrav.",
+          "difficulty": 3,
+          "question_type": "analysis",
+          "emne_id": "em_naering_omstilling_kriser_skift",
+          "source": [
+            "place_record",
+            "oslo_byleksikon",
+            "byggalliansen",
+            "vedal",
+            "telegrafen"
+          ],
+          "source_origin": "mixed",
+          "claim_basis": "Telegrafbygningen er kommunikasjonsinfrastruktur som gjennom rehabilitering er omformet til moderne kontor-, service- og arrangementsbruk.",
+          "claim_id": "claim_telegrafbygningen_35",
+          "professional_module_id": "mod_naering_regnskapsanalyse_verdsettelse",
+          "professional_materialization_version": "naeringsliv_oslo_profesjonsmaterialisering_v1",
+          "professional_operation": "beregn og begrens en direkteavkastningsverdi",
+          "core_concepts": [
+            "netto driftsresultat",
+            "avkastningskrav",
+            "eiendomsverdi"
+          ],
+          "concept_focus": [
+            "netto driftsresultat",
+            "avkastningskrav"
+          ],
+          "method_id": "met_naering_verdiskapingsanalyse",
+          "guidance_basis": [
+            "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_regnskap_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_markedsstrategi_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_jus_v1.json",
+            "data/fag/naeringsliv/handelshogskolefordypning_internasjonal_operations_v1.json"
+          ],
+          "calculation": {
+            "inputs": {
+              "netto_driftsresultat_nok": 36000000,
+              "avkastningskrav": 0.05
+            },
+            "formula": "netto_driftsresultat_nok / avkastningskrav",
+            "result": 720000000,
+            "unit": "NOK"
+          },
+          "decision_context": "teste verdi under alternative avkastningskrav og ledighet"
+        }
+      ]
+    }
+  ]
+}

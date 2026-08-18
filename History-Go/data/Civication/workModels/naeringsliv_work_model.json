@@ -1,0 +1,84 @@
+{
+  "schema": "civication_work_model_v1",
+  "version": 1,
+  "career_id": "naeringsliv",
+  "name": "Næringsliv",
+  "purpose": "Arbeidsmodell for butikkdrift og ekspeditørflyt i tidlig næringslivskarriere.",
+  "internal_role_ladder": [
+    "ekspeditor",
+    "fagarbeider",
+    "mellomleder",
+    "formann"
+  ],
+  "task_domains": [
+    "customer_service",
+    "cash_desk",
+    "returns",
+    "product_guidance",
+    "stock_flow",
+    "campaign_setup",
+    "shrinkage_control",
+    "opening_closing"
+  ],
+  "competencies": [
+    "nøyaktighet_under_press",
+    "problemlosning",
+    "regelbruk_med_skjonn",
+    "faglig_nysgjerrighet",
+    "prioritering",
+    "kommunikasjon",
+    "kvalitet",
+    "samarbeid",
+    "ansvar"
+  ],
+  "pressures": [
+    "høy_kø",
+    "teknisk_stopp",
+    "kundepress",
+    "kunnskapshull",
+    "tidspress",
+    "kollegapress",
+    "måltallspress"
+  ],
+  "choice_axes": [
+    "faktasjekk_vs_flyt",
+    "manualrutine_vs_improvisasjon",
+    "policy_vs_unntak",
+    "hente_hjelp_vs_late_som",
+    "kortsiktig_flyt_vs_langsiktig_kontroll",
+    "unngå_konflikt_vs_ta_samtalen",
+    "snarvei_vs_standard"
+  ],
+  "consequence_axes": [
+    "tillit_vs_tempo",
+    "ro_vs_kaos",
+    "rettferdighet_vs_stoy",
+    "treff_vs_mersalg",
+    "tempo_vs_tillit",
+    "synlighet_vs_presisjon",
+    "komfort_vs_laring"
+  ],
+  "narrative_arcs": [
+    "forste_uke_pa_gulvet",
+    "kundenes_blikk",
+    "fra_ansatt_til_fagperson",
+    "varene_som_system",
+    "snarveien"
+  ],
+  "mail_schema_requirements": [
+    "id",
+    "mail_type",
+    "mail_family",
+    "role_scope",
+    "subject",
+    "summary",
+    "situation",
+    "task_domain",
+    "competency",
+    "pressure",
+    "choice_axis",
+    "consequence_axis",
+    "narrative_arc",
+    "choices"
+  ]
+}

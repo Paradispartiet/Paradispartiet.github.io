@@ -1,0 +1,118 @@
+{
+  "version": "2.1",
+  "status": "canonical",
+  "purpose": "Teknisk feltkontrakt for quizspørsmål. Produksjons- og innholdsreglene ligger kun i QUIZ_PRODUCTION_CANONICAL.md.",
+  "required_fields": [
+    "id",
+    "quiz_id",
+    "categoryId",
+    "targetId",
+    "question_scope",
+    "question",
+    "options",
+    "answer",
+    "answerIndex",
+    "knowledge",
+    "difficulty",
+    "question_type",
+    "emne_id",
+    "source"
+  ],
+  "target_fields": {
+    "place_question": [
+      "placeId",
+      "targetId"
+    ],
+    "person_question": [
+      "personId",
+      "targetId"
+    ],
+    "nature_question": [
+      "natureId",
+      "targetId"
+    ],
+    "subject_area_question": [
+      "targetId",
+      "question_scope",
+      "emne_id"
+    ]
+  },
+  "question_type_values": [
+    "fact",
+    "context",
+    "analysis",
+    "concept",
+    "observation",
+    "comparison"
+  ],
+  "content_classification": {
+    "fact": "Konkret, verifiserbar opplysning om person, tid, verk, hendelse, funksjon, objekt, art, teknikk eller synlig spor.",
+    "context": "Årsak, utvikling, konsekvens eller sammenheng mellom konkrete opplysninger.",
+    "analysis": "Steds- eller faglig analyse som bygger på en dokumentert situasjon.",
+    "concept": "Et nødvendig fagbegrep brukt på en konkret situasjon, ikke en emneetikett i spørsmålsform.",
+    "observation": "Verifiserbar observasjon som kan gjøres ved stedet eller objektet.",
+    "comparison": "Sammenligning med eksplisitt og relevant sammenligningsgrunnlag."
+  },
+  "field_roles": {
+    "question": "Det spilleren faktisk skal løse.",
+    "options": "Plausible alternativer på samme faglige og språklige nivå.",
+    "knowledge": "Forklaring, kontekst og faglig fordypning som ikke bare gjentar svaret.",
+    "emne_id": "Primær faglig organisering. Skal finnes i kategoriens emnefil.",
+    "related_emner": "Sekundære faglige koblinger.",
+    "core_concepts": "Sentrale faguttrykk som spørsmålet eller forklaringen faktisk bruker.",
+    "concept_focus": "Begreper spilleren særlig skal forstå.",
+    "method_id": "Relevant faglig metode når den faktisk brukes.",
+    "claim_id": "Påstands-ID i quizpakkens resolverte source_brief. Obligatorisk for kategorier med aktiv quizProduction.",
+    "topic_hook_id": "Eksakt teorihook i kategoriens fagkart når spørsmålet bruker teori.",
+    "thinker_id": "Eksakt teoretiker-ID fra valgt teorihook.",
+    "work": "Verk fra valgt teoretiker når verket tilfører faglig presisjon.",
+    "theory_ref": "Strukturert teoribinding med hook, teoretiker eller verk og forklaring på hvorfor teorien hjelper.",
+    "source": "Konkrete kilder eller kilde-ID-er for synlige påstander.",
+    "source_origin": "external, mixed eller observation. internal_only er ikke tillatt for synlige faktapåstander.",
+    "claim_basis": "Den konkrete påstanden eller observasjonen spørsmålet bygger på.",
+    "guidance_basis": "Fagfilene som hjalp med organisering, ikke med å dikte faktapåstanden."
+  },
+  "recommended_fields": [
+    "year",
+    "epoke_id",
+    "epoke_domain",
+    "related_emner",
+    "core_concepts",
+    "concept_focus",
+    "method_id",
+    "claim_id",
+    "topic_hook_id",
+    "thinker_id",
+    "thinker_name",
+    "work",
+    "theory_focus",
+    "theory_ref",
+    "tags",
+    "source_origin",
+    "claim_basis",
+    "guidance_basis"
+  ],
+  "array_rules": {
+    "options_min": 3,
+    "options_max": 4,
+    "answer_must_equal_option": true,
+    "answer_index_must_match_answer": true
+  },
+  "authority": {
+    "content_standard": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "category_profiles": "data/fag/fag_manifest.json",
+    "package_schema": "data/quiz/regler/QUIZ_PACKAGE_SCHEMA_V1.json",
+    "registry": "data/quiz/regler/QUIZ_TEMPLATE_REGISTRY_V2.json"
+  },
+  "subject_area_required_fields": [
+    "primary_knowledge_unit_id",
+    "knowledge_unit_ids",
+    "concept_ids",
+    "term_ids",
+    "learning_objective_id",
+    "evidence_type",
+    "knowledge_payload",
+    "feedback_basis"
+  ],
+  "subject_area_rule": "Subject-area questions use question_scope=subject_area and are validated by QUIZ_SUBJECT_PATHWAY_PACKAGE_SCHEMA_V1.json; they are not place visits."
+}

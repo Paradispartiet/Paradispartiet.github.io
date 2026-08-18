@@ -1,0 +1,96 @@
+{
+  "id": "wk_entry_formatlogikk_01",
+  "type": "pivot",
+  "title": "Formatlogikken tar over",
+  "one_liner": "Når format blir viktigere enn innhold, endres offentligheten.",
+  "status": "draft",
+  "confidence": "medium",
+
+  "popupDesc": "Lengre tekst som gir brukeren en umiddelbar forståelse av stedet, dets stemning, historie og hvorfor det er verdt å stoppe her."
+
+  
+  "time": {
+    "year": 1990,
+    "period": "1980-1999",
+    "date": null,
+    "time_span": "1990s"
+  },
+
+  "scope": {
+    "anchors": [
+      { "ref_type": "place", "ref_id": "nrk_huset_marienlyst" }
+    ],
+    "nearby": [],
+    "area_hint": "Marienlyst / Majorstuen"
+  },
+
+  "content": {
+    "lede": "Kort lede som setter scenen.",
+    "story": [
+      "Avsnitt 1.",
+      "Avsnitt 2.",
+      "Avsnitt 3."
+    ],
+    "what_to_notice": [
+      "Hvilke fortellerformer går igjen?"
+    ],
+    "why_it_matters": [
+      "Ringvirkning 1.",
+      "Ringvirkning 2."
+    ],
+    "counterpoints": [
+      "Alternative tolkninger, kritikk, usikkerhet."
+    ],
+    "quotes": [
+      {
+        "text": "Kort sitat.",
+        "who": "Navn / rolle",
+        "year": 1997,
+        "source_ref": "src_01"
+      }
+    ]
+  },
+
+  "structured": {
+    "facts": [],
+    "actors": [
+      { "ref_type": "institution", "ref_id": "nrk", "role": "produsent" }
+    ],
+    "concepts": [
+      { "term": "medielogikk", "note": "format, tempo, dramaturgi" }
+    ],
+    "mechanisms": [
+      "Ritualisering.",
+      "Kjendisforsterkning.",
+      "Oppmerksomhetslogikk."
+    ],
+    "style": {
+      "aesthetic": ["studioestetikk", "grafikk"],
+      "tone": ["folkelig", "direkte"]
+    }
+  },
+
+  "pop": {
+    "brands_products": [],
+    "popularized_things": [],
+    "fandom": [],
+    "media_moments": []
+  },
+
+  "artifacts": [],
+
+  "classification": {
+    "tags": ["tv", "offentlighet", "underholdning"],
+    "knagger": ["formatlogikk", "mediemaskin"]
+  },
+
+  "sources": [
+    { "id": "src_01", "label": "Kilde ...", "type": "web", "year": null, "credibility": "medium" }
+  ],
+
+  "ui": {
+    "card_hint": "Vis som ‘Vendepunkt’ med 1-liner + 2 bullets.",
+    "priority": 80,
+    "spoiler_level": 0
+  }
+}

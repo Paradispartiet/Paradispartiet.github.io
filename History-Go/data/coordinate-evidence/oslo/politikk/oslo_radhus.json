@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "1.0",
+  "placeId": "oslo_radhus",
+  "placeFile": "data/places/politikk/oslo/places_politikk/oslo_radhus.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.91174989125625,
+    "lon": 10.733452414128745,
+    "r": 60,
+    "coordStatus": "verified",
+    "coordSource": "geonorge_adresser_v1",
+    "coordType": "address_point",
+    "coordNote": "Offisiell adressekoordinat fra Geonorge Adresser API for Rådhusplassen 1, OSLO. Punktet er representasjonspunktet for adressen og brukes som display-marker, ikke som kai-, vei-, vannflate- eller generelt områdeanker."
+  },
+  "identity": {
+    "currentName": "Oslo rådhus",
+    "resolvedIdentity": "Oslo rådhus som kommunalt institusjonsbygg",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "building",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [
+    "entydig offisielt adressepunkt",
+    "dokumentert at adressen representerer den konkrete canonical bygningen"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "official_address",
+      "sourceName": "geonorge_adresser_v1",
+      "sourceUrl": "https://ws.geonorge.no/adresser/v1/sok?sok=R%C3%A5dhusplassen%201%20Oslo",
+      "sourceObjectId": "geonorge-adresser-v1:0301:16120:1",
+      "sourceQuality": "official_address_plus_documented_identity",
+      "finding": "Geonorge returnerte ett tydelig adressetreff. Oslo kommune oppgir Rådhusplassen 1 som besøksadresse for Oslo rådhus.",
+      "canVerifyCoordinate": true,
+      "reason": "Offisiell adressekoordinat fra Geonorge Adresser API for Rådhusplassen 1, OSLO. Punktet er representasjonspunktet for adressen og brukes som display-marker, ikke som kai-, vei-, vannflate- eller generelt områdeanker."
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceName": "OpenStreetMap – Oslo rådhus",
+      "sourceUrl": "https://www.openstreetmap.org/way/24900009",
+      "sourceObjectId": "osm-way:24900009",
+      "sourceQuality": "secondary_geometry_qa",
+      "finding": "Eksakt navnetreff med objekttype amenity/townhall og geometri Polygon.",
+      "canVerifyCoordinate": false,
+      "reason": "Beholdes kun som sekundær identitets-/geometri-QA; Geonorge er primær koordinatkilde for det konkrete adressebare bygget."
+    }
+  ],
+  "addressCandidates": [
+    {
+      "address": "Rådhusplassen 1 Oslo",
+      "sourceProvider": "official_address",
+      "sourceObjectId": "geonorge-adresser-v1:0301:16120:1",
+      "canApplyToPlace": true
+    }
+  ],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "official_address",
+      "sourceObjectId": "geonorge-adresser-v1:0301:16120:1",
+      "canApplyToPlace": true
+    }
+  ],
+  "geometryCandidates": [],
+  "coordinateCandidates": [
+    {
+      "lat": 59.91174989125625,
+      "lon": 10.733452414128745,
+      "coordRole": "display_marker",
+      "sourceObjectId": "geonorge-adresser-v1:0301:16120:1",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Kildekontrakt, identitet og representasjonsanker er anvendt på canonical place."
+  },
+  "notes": [
+    "Offisiell adressekoordinat fra Geonorge Adresser API for Rådhusplassen 1, OSLO. Punktet er representasjonspunktet for adressen og brukes som display-marker, ikke som kai-, vei-, vannflate- eller generelt områdeanker.",
+    "Oslo kommune oppgir Rådhusplassen 1 som besøksadresse for Oslo rådhus.",
+    "Address-first-korreksjon av batch 118: OSM-geometri brukes ikke som primærkilde når Geonorge gir ett entydig relevant adressepunkt."
+  ]
+}

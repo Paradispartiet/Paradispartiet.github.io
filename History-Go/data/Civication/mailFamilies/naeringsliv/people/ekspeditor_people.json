@@ -1,0 +1,2040 @@
+{
+  "schema": "civication_mail_family_catalog_v1",
+  "version": 1,
+  "category": "naeringsliv",
+  "role_scope": "ekspeditor",
+  "mail_type": "people",
+  "families": [
+    {
+      "id": "first_week_praksisfortellinger_ekspeditor_private",
+      "description": "Første uke privat: service-stemmen lekker hjem, og spilleren må skille nærhet fra ekspedering.",
+      "learning_focus": [
+        "service_mask",
+        "relationship_private",
+        "autonomy_private"
+      ],
+      "mails": [
+        {
+          "id": "personal_ekspeditor_week1_reading_faces_at_home",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "phase": "intro",
+          "priority": 94,
+          "cooldown": 0,
+          "repeatable": false,
+          "stage": "stable",
+          "subject": "Du begynner å lese ansikter hjemme",
+          "summary": "Kundelesningen flytter inn i privatlivet.",
+          "situation": [
+            "Fra Privat notat: Du kommer hjem og merker at du fortsatt leser ansikter. Er Sara irritert? Er Jonas utålmodig? Butikkgulvet sitter igjen i kroppen som små rykk: smil, forklar, ro ned, neste kunde. Men hjemme er det ingen kø.",
+            "Fra Sara: Du svarte “selvfølgelig, jeg skal se hva jeg kan gjøre” da jeg spurte om vi hadde melk. Det var veldig hyggelig. Også litt som om jeg hadde klaget i butikk."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Slippe kundestemmen",
+              "reply": "Jeg ler litt og sier at jeg bare er igjen i butikkmodus, men at hun ikke er kunde.",
+              "effects": {
+                "relationship_sara": 2,
+                "self_awareness": 2,
+                "stress": -1,
+                "service_mask": -1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week1_drops_customer_voice"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week1_drops_customer_voice",
+              "feedback": "Bra. Jeg vil helst være person, ikke henvendelse.",
+              "effect": {
+                "relationship_sara": 2,
+                "self_awareness": 2,
+                "stress": -1,
+                "service_mask": -1
+              },
+              "tags": [
+                "ekspeditor_week1_drops_customer_voice"
+              ]
+            },
+            {
+              "id": "B",
+              "label": "Spøke med det",
+              "reply": "Jeg sier at melkespørsmålet er mottatt og behandles fortløpende.",
+              "effects": {
+                "relationship_sara": 1,
+                "mood": 1,
+                "self_awareness": 1,
+                "stress": 0
+              },
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week1_jokes_customer_voice"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week1_jokes_customer_voice",
+              "feedback": "Avslag. For mye butikk. Men litt morsomt.",
+              "effect": {
+                "relationship_sara": 1,
+                "mood": 1,
+                "self_awareness": 1,
+                "stress": 0
+              },
+              "tags": [
+                "ekspeditor_week1_jokes_customer_voice"
+              ]
+            },
+            {
+              "id": "C",
+              "label": "Fortsette å være overhøflig",
+              "reply": "Jeg svarer ekstra vennlig og spør om det er noe mer jeg kan hjelpe med.",
+              "effects": {
+                "service_mask": 2,
+                "relationship_sara": -1,
+                "stress": 1,
+                "stagnation_private": 1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week1_overpolite_at_home"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week1_overpolite_at_home",
+              "feedback": "Nå ble det verre. Du kundebehandler meg.",
+              "effect": {
+                "service_mask": 2,
+                "relationship_sara": -1,
+                "stress": 1,
+                "stagnation_private": 1
+              },
+              "tags": [
+                "ekspeditor_week1_overpolite_at_home"
+              ]
+            }
+          ],
+          "task_domain": "privatliv_og_serviceblikk",
+          "competency": "relasjonell_grensesetting",
+          "pressure": "kundeblikk_vs_narhet",
+          "choice_axis": "service_refleks_vs_ekte_tilstedevaerelse",
+          "consequence_axis": "relasjonell_tillit_vs_emosjonell_slitasje",
+          "narrative_arc": "ekspeditor_first_week_service_role_at_home"
+        },
+        {
+          "id": "personal_ekspeditor_week1_friend_not_customer",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "phase": "intro",
+          "priority": 92,
+          "cooldown": 0,
+          "repeatable": false,
+          "stage": "stable",
+          "subject": "Vennen som ikke vil være kunde",
+          "summary": "Serviceformen kan gjøre private relasjoner rare.",
+          "situation": [
+            "Fra Jonas: Du svarte “jeg skjønner at det er frustrerende” på meldingen min. Jeg vet du mente det bra. Men jeg følte meg plutselig som en fyr i kundeservice-chat. Jeg trengte kompis, ikke standardsetning.",
+            "Fra Privat notat: Setningen var riktig. Den var også litt død. Du har lært å roe folk uten å ta alt inn. Privat kan det høres ut som nærhet med navneskilt."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Svare som venn",
+              "reply": "Jeg skriver at han har rett, og svarer mer direkte: det høres skikkelig kjipt ut.",
+              "effects": {
+                "relationship_jonas": 3,
+                "self_awareness": 2,
+                "service_mask": -1,
+                "stress": -1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week1_answers_as_friend"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week1_answers_as_friend",
+              "feedback": "Der ja. Ikke perfekt formulert. Bare faktisk deg.",
+              "effect": {
+                "relationship_jonas": 3,
+                "self_awareness": 2,
+                "service_mask": -1,
+                "stress": -1
+              },
+              "tags": [
+                "ekspeditor_week1_answers_as_friend"
+              ]
+            },
+            {
+              "id": "B",
+              "label": "Spøke med kundeservice-stemmen",
+              "reply": "Jeg skriver at saken er eskalert til kompisavdelingen.",
+              "effects": {
+                "relationship_jonas": 1,
+                "mood": 1,
+                "self_awareness": 1,
+                "stress": 0
+              },
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week1_friend_department_joke"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week1_friend_department_joke",
+              "feedback": "Greit. Men kompisavdelingen må være mer uprofesjonell.",
+              "effect": {
+                "relationship_jonas": 1,
+                "mood": 1,
+                "self_awareness": 1,
+                "stress": 0
+              },
+              "tags": [
+                "ekspeditor_week1_friend_department_joke"
+              ]
+            },
+            {
+              "id": "C",
+              "label": "Forsvare at du bare prøvde å være støttende",
+              "reply": "Jeg skriver at jeg bare ville vise at jeg forstod ham.",
+              "effects": {
+                "relationship_jonas": -1,
+                "service_mask": 1,
+                "conflict": 1,
+                "self_awareness": 0
+              },
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week1_defends_service_phrase"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week1_defends_service_phrase",
+              "feedback": "Jeg skjønner det. Men du hørtes mer opplært enn nær ut.",
+              "effect": {
+                "relationship_jonas": -1,
+                "service_mask": 1,
+                "conflict": 1,
+                "self_awareness": 0
+              },
+              "tags": [
+                "ekspeditor_week1_defends_service_phrase"
+              ]
+            }
+          ],
+          "task_domain": "privatliv_og_serviceblikk",
+          "competency": "relasjonell_grensesetting",
+          "pressure": "kundeblikk_vs_narhet",
+          "choice_axis": "service_refleks_vs_ekte_tilstedevaerelse",
+          "consequence_axis": "relasjonell_tillit_vs_emosjonell_slitasje",
+          "narrative_arc": "ekspeditor_first_week_service_role_at_home"
+        },
+        {
+          "id": "personal_ekspeditor_week1_everyone_asks_for_something",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "phase": "intro",
+          "priority": 90,
+          "cooldown": 0,
+          "repeatable": false,
+          "stage": "stable",
+          "subject": "Du svarer som om alle spør etter noe",
+          "summary": "Private meldinger begynner å høres ut som forespørsler.",
+          "situation": [
+            "Fra Sara: Jeg skrev bare “hei”. Du svarte “hva trenger du?” Det var effektivt. Men også litt trist.",
+            "Fra Privat notat: På jobb er det et godt spørsmål. Bak disken er alle blikk en mulig forespørsel. Hjemme kan “hva trenger du?” høres ut som om nærhet alltid må ha ærend."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Svare mer åpent",
+              "reply": "Jeg skriver at hun ikke må trenge noe, og at jeg bare er litt igjen i butikkmodus.",
+              "effects": {
+                "relationship_sara": 2,
+                "self_awareness": 2,
+                "service_mask": -1,
+                "stress": -1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week1_answers_more_openly"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week1_answers_more_openly",
+              "feedback": "Bra. Jeg ville bare si hei. Det er lov det også.",
+              "effect": {
+                "relationship_sara": 2,
+                "self_awareness": 2,
+                "service_mask": -1,
+                "stress": -1
+              },
+              "tags": [
+                "ekspeditor_week1_answers_more_openly"
+              ]
+            },
+            {
+              "id": "B",
+              "label": "Spøke med det",
+              "reply": "Jeg skriver at alle henvendelser behandles fortløpende, inkludert hei.",
+              "effects": {
+                "relationship_sara": 1,
+                "mood": 1,
+                "self_awareness": 1,
+                "stress": 0
+              },
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week1_processes_hello_joke"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week1_processes_hello_joke",
+              "feedback": "Hei er godkjent. Men ikke gjør meg til kølapp.",
+              "effect": {
+                "relationship_sara": 1,
+                "mood": 1,
+                "self_awareness": 1,
+                "stress": 0
+              },
+              "tags": [
+                "ekspeditor_week1_processes_hello_joke"
+              ]
+            },
+            {
+              "id": "C",
+              "label": "Svare at du bare prøvde å være hjelpsom",
+              "reply": "Jeg sier at jeg bare ville vite om hun trengte noe.",
+              "effects": {
+                "service_mask": 1,
+                "relationship_sara": -1,
+                "stagnation_private": 1,
+                "self_awareness": 0
+              },
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week1_just_helpful_private"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week1_just_helpful_private",
+              "feedback": "Jeg vet. Men noen ganger er hjelpsomhet litt smal hvis den bare ser behov.",
+              "effect": {
+                "service_mask": 1,
+                "relationship_sara": -1,
+                "stagnation_private": 1,
+                "self_awareness": 0
+              },
+              "tags": [
+                "ekspeditor_week1_just_helpful_private"
+              ]
+            }
+          ],
+          "task_domain": "privatliv_og_serviceblikk",
+          "competency": "relasjonell_grensesetting",
+          "pressure": "kundeblikk_vs_narhet",
+          "choice_axis": "service_refleks_vs_ekte_tilstedevaerelse",
+          "consequence_axis": "relasjonell_tillit_vs_emosjonell_slitasje",
+          "narrative_arc": "ekspeditor_first_week_service_role_at_home"
+        },
+        {
+          "id": "personal_ekspeditor_week1_customer_service_dinner",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "phase": "intro",
+          "priority": 88,
+          "cooldown": 0,
+          "repeatable": false,
+          "stage": "stable",
+          "subject": "Middagen med kundeservice-stemme",
+          "summary": "Kundeservice-stemmen kan gjøre privatlivet kunstig.",
+          "situation": [
+            "Fra Jonas: Du sa “den kan jeg ordne for deg” da jeg spurte om du kunne sende saltet. Det er salt. Ikke tilleggstjeneste.",
+            "Fra Privat notat: Det er ikke at du er falsk. Du er bare opplært i å være vennlig før du rekker å være deg selv. Bak disken beskytter det deg. Ved middagsbordet kan det gjøre deg fjern på en veldig høflig måte."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Legge bort service-stemmen",
+              "reply": "Jeg sier at han har rett, sender saltet og prøver å snakke vanlig.",
+              "effects": {
+                "relationship_jonas": 2,
+                "self_awareness": 2,
+                "service_mask": -2,
+                "stress": -1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week1_puts_service_voice_away"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week1_puts_service_voice_away",
+              "feedback": "Der. Salt uten kundereise. Perfekt.",
+              "effect": {
+                "relationship_jonas": 2,
+                "self_awareness": 2,
+                "service_mask": -2,
+                "stress": -1
+              },
+              "tags": [
+                "ekspeditor_week1_puts_service_voice_away"
+              ]
+            },
+            {
+              "id": "B",
+              "label": "Spøke med det",
+              "reply": "Jeg sier at saltet leveres uten ekstra kostnad.",
+              "effects": {
+                "relationship_jonas": 1,
+                "mood": 1,
+                "self_awareness": 1,
+                "stress": 0
+              },
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week1_salt_delivery_joke"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week1_salt_delivery_joke",
+              "feedback": "Greit. Men bare fordi leveransen var rask.",
+              "effect": {
+                "relationship_jonas": 1,
+                "mood": 1,
+                "self_awareness": 1,
+                "stress": 0
+              },
+              "tags": [
+                "ekspeditor_week1_salt_delivery_joke"
+              ]
+            },
+            {
+              "id": "C",
+              "label": "Fortsette overhøflig",
+              "reply": "Jeg smiler og sier at det bare er hyggelig å hjelpe.",
+              "effects": {
+                "service_mask": 2,
+                "relationship_jonas": -1,
+                "stagnation_private": 1,
+                "stress": 1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week1_overpolite_dinner"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week1_overpolite_dinner",
+              "feedback": "Du er fortsatt på jobb. Bare med middag.",
+              "effect": {
+                "service_mask": 2,
+                "relationship_jonas": -1,
+                "stagnation_private": 1,
+                "stress": 1
+              },
+              "tags": [
+                "ekspeditor_week1_overpolite_dinner"
+              ]
+            }
+          ],
+          "task_domain": "privatliv_og_serviceblikk",
+          "competency": "relasjonell_grensesetting",
+          "pressure": "kundeblikk_vs_narhet",
+          "choice_axis": "service_refleks_vs_ekte_tilstedevaerelse",
+          "consequence_axis": "relasjonell_tillit_vs_emosjonell_slitasje",
+          "narrative_arc": "ekspeditor_first_week_service_role_at_home"
+        },
+        {
+          "id": "personal_ekspeditor_week1_weekend_without_queue",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "phase": "intro",
+          "priority": 86,
+          "cooldown": 0,
+          "repeatable": false,
+          "stage": "stable",
+          "subject": "Helgen uten kø",
+          "summary": "Helgen øver privatlivet på ikke å være en ekspedisjonslinje.",
+          "situation": [
+            "Fra Privat notat: Kroppen står fortsatt i kø mentalt: neste spørsmål, neste blikk, neste behov, neste feil som må rettes før noen blir sure. Nå er det helg. Ingen kønummer.",
+            "Fra Sara: Denne helgen vil jeg ikke at du skal ekspedere meg. Ikke spør hva jeg trenger hvert tiende minutt. Ikke smil profesjonelt. Bare vær her.",
+            "Fra Jonas: Helgeregel: Hvis du sier “neste kunde”, “jeg skal se hva jeg kan gjøre” eller “det ordner vi” med butikkstemme, skylder du snacks."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Skjerme en helg uten service-maske",
+              "reply": "Jeg bestemmer at helgen ikke skal være kasse, kø, service eller profesjonell vennlighet.",
+              "effects": {
+                "energy_weekend": 4,
+                "stress": -3,
+                "service_mask": -3,
+                "relationship_private": 3,
+                "autonomy_private": 2
+              },
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week1_private_boundary"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week1_private_boundary",
+              "feedback": "Det tar litt tid før smilet slutter å være uniform. Så blir ansiktet ditt mer ditt igjen.",
+              "effect": {
+                "energy_weekend": 4,
+                "stress": -3,
+                "service_mask": -3,
+                "relationship_private": 3,
+                "autonomy_private": 2
+              },
+              "tags": [
+                "ekspeditor_week1_private_boundary"
+              ]
+            },
+            {
+              "id": "B",
+              "label": "Være sosial uten å kundebehandle folk",
+              "reply": "Jeg møter Sara eller Jonas og lar samtalen være vanlig, uten å tolke alt som behov.",
+              "effects": {
+                "relationship_private": 4,
+                "mood": 2,
+                "stress": -2,
+                "self_awareness": 2
+              },
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week1_social_without_customer_mode"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week1_social_without_customer_mode",
+              "feedback": "Du var ikke på jobb. Det burde være et lavt krav. Men det var faktisk hyggelig.",
+              "effect": {
+                "relationship_private": 4,
+                "mood": 2,
+                "stress": -2,
+                "self_awareness": 2
+              },
+              "tags": [
+                "ekspeditor_week1_social_without_customer_mode"
+              ]
+            },
+            {
+              "id": "C",
+              "label": "Trekke deg helt unna folk",
+              "reply": "Jeg sier at jeg ikke orker flere ansikter og trenger stillhet.",
+              "effects": {
+                "energy_weekend": 2,
+                "relationship_private": -1,
+                "stress": -1,
+                "guilt": 1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week1_withdraws_from_faces"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week1_withdraws_from_faces",
+              "feedback": "Det er lov. Bare si at du er tom, ikke at alle mennesker er kunder.",
+              "effect": {
+                "energy_weekend": 2,
+                "relationship_private": -1,
+                "stress": -1,
+                "guilt": 1
+              },
+              "tags": [
+                "ekspeditor_week1_withdraws_from_faces"
+              ]
+            },
+            {
+              "id": "D",
+              "label": "Fortsette å være overhøflig hjemme",
+              "reply": "Jeg prøver å være ekstra hjelpsom og hyggelig fordi jeg ikke vet hvordan jeg slår av.",
+              "effects": {
+                "service_mask": 3,
+                "stress": 2,
+                "relationship_private": -2,
+                "energy_weekend": -2,
+                "stagnation_private": 2
+              },
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week1_keeps_service_mask_home"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week1_keeps_service_mask_home",
+              "feedback": "Du er snill. Men du er ikke helt hjemme.",
+              "effect": {
+                "service_mask": 3,
+                "stress": 2,
+                "relationship_private": -2,
+                "energy_weekend": -2,
+                "stagnation_private": 2
+              },
+              "tags": [
+                "ekspeditor_week1_keeps_service_mask_home"
+              ]
+            }
+          ],
+          "task_domain": "privatliv_og_serviceblikk",
+          "competency": "relasjonell_grensesetting",
+          "pressure": "kundeblikk_vs_narhet",
+          "choice_axis": "service_refleks_vs_ekte_tilstedevaerelse",
+          "consequence_axis": "relasjonell_tillit_vs_emosjonell_slitasje",
+          "narrative_arc": "ekspeditor_first_week_service_role_at_home"
+        }
+      ],
+      "threads": [
+        {
+          "id": "ekspeditor_week1_drops_customer_voice",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Du begynner å lese ansikter hjemme",
+          "summary": "Bra. Jeg vil helst være person, ikke henvendelse.",
+          "situation": [
+            "Bra. Jeg vil helst være person, ikke henvendelse."
+          ]
+        },
+        {
+          "id": "ekspeditor_week1_jokes_customer_voice",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Du begynner å lese ansikter hjemme",
+          "summary": "Avslag. For mye butikk. Men litt morsomt.",
+          "situation": [
+            "Avslag. For mye butikk. Men litt morsomt."
+          ]
+        },
+        {
+          "id": "ekspeditor_week1_overpolite_at_home",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Du begynner å lese ansikter hjemme",
+          "summary": "Nå ble det verre. Du kundebehandler meg.",
+          "situation": [
+            "Nå ble det verre. Du kundebehandler meg."
+          ]
+        },
+        {
+          "id": "ekspeditor_week1_answers_as_friend",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Vennen som ikke vil være kunde",
+          "summary": "Der ja. Ikke perfekt formulert. Bare faktisk deg.",
+          "situation": [
+            "Der ja. Ikke perfekt formulert. Bare faktisk deg."
+          ]
+        },
+        {
+          "id": "ekspeditor_week1_friend_department_joke",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Vennen som ikke vil være kunde",
+          "summary": "Greit. Men kompisavdelingen må være mer uprofesjonell.",
+          "situation": [
+            "Greit. Men kompisavdelingen må være mer uprofesjonell."
+          ]
+        },
+        {
+          "id": "ekspeditor_week1_defends_service_phrase",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Vennen som ikke vil være kunde",
+          "summary": "Jeg skjønner det. Men du hørtes mer opplært enn nær ut.",
+          "situation": [
+            "Jeg skjønner det. Men du hørtes mer opplært enn nær ut."
+          ]
+        },
+        {
+          "id": "ekspeditor_week1_answers_more_openly",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Du svarer som om alle spør etter noe",
+          "summary": "Bra. Jeg ville bare si hei. Det er lov det også.",
+          "situation": [
+            "Bra. Jeg ville bare si hei. Det er lov det også."
+          ]
+        },
+        {
+          "id": "ekspeditor_week1_processes_hello_joke",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Du svarer som om alle spør etter noe",
+          "summary": "Hei er godkjent. Men ikke gjør meg til kølapp.",
+          "situation": [
+            "Hei er godkjent. Men ikke gjør meg til kølapp."
+          ]
+        },
+        {
+          "id": "ekspeditor_week1_just_helpful_private",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Du svarer som om alle spør etter noe",
+          "summary": "Jeg vet. Men noen ganger er hjelpsomhet litt smal hvis den bare ser behov.",
+          "situation": [
+            "Jeg vet. Men noen ganger er hjelpsomhet litt smal hvis den bare ser behov."
+          ]
+        },
+        {
+          "id": "ekspeditor_week1_puts_service_voice_away",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Middagen med kundeservice-stemme",
+          "summary": "Der. Salt uten kundereise. Perfekt.",
+          "situation": [
+            "Der. Salt uten kundereise. Perfekt."
+          ]
+        },
+        {
+          "id": "ekspeditor_week1_salt_delivery_joke",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Middagen med kundeservice-stemme",
+          "summary": "Greit. Men bare fordi leveransen var rask.",
+          "situation": [
+            "Greit. Men bare fordi leveransen var rask."
+          ]
+        },
+        {
+          "id": "ekspeditor_week1_overpolite_dinner",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Middagen med kundeservice-stemme",
+          "summary": "Du er fortsatt på jobb. Bare med middag.",
+          "situation": [
+            "Du er fortsatt på jobb. Bare med middag."
+          ]
+        },
+        {
+          "id": "ekspeditor_week1_private_boundary",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Helgen uten kø",
+          "summary": "Det tar litt tid før smilet slutter å være uniform. Så blir ansiktet ditt mer ditt igjen.",
+          "situation": [
+            "Det tar litt tid før smilet slutter å være uniform. Så blir ansiktet ditt mer ditt igjen."
+          ]
+        },
+        {
+          "id": "ekspeditor_week1_social_without_customer_mode",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Helgen uten kø",
+          "summary": "Du var ikke på jobb. Det burde være et lavt krav. Men det var faktisk hyggelig.",
+          "situation": [
+            "Du var ikke på jobb. Det burde være et lavt krav. Men det var faktisk hyggelig."
+          ]
+        },
+        {
+          "id": "ekspeditor_week1_withdraws_from_faces",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Helgen uten kø",
+          "summary": "Det er lov. Bare si at du er tom, ikke at alle mennesker er kunder.",
+          "situation": [
+            "Det er lov. Bare si at du er tom, ikke at alle mennesker er kunder."
+          ]
+        },
+        {
+          "id": "ekspeditor_week1_keeps_service_mask_home",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Helgen uten kø",
+          "summary": "Du er snill. Men du er ikke helt hjemme.",
+          "situation": [
+            "Du er snill. Men du er ikke helt hjemme."
+          ]
+        }
+      ],
+      "week_outcomes": [
+        {
+          "id": "private_service_mask",
+          "condition": "Tar kundeservice-stemmen hjem, leser private ansikter som kø, svarer venner som kunder og klarer ikke slå av service-masken.",
+          "effects": {
+            "relationship_private": -5,
+            "service_mask": 6,
+            "stress": 3,
+            "energy_weekend": -3,
+            "stagnation_private": 4
+          },
+          "narrative": "Du er høflig hele tiden. Det høres fint ut, men menneskene nær deg merker at høfligheten har arbeidstøy på. Privatlivet trenger ikke ekspederes."
+        }
+      ]
+    },
+    {
+      "id": "second_week_praksisfortellinger_ekspeditor_private",
+      "description": "Andre private uke for ekspeditør: øve på å la butikkgulv, serviceblikk, kø og lukkerutine bli igjen på jobb.",
+      "learning_focus": [
+        "service_mask",
+        "privat_grense",
+        "mennesker_ikke_henvendelser"
+      ],
+      "mails": [
+        {
+          "id": "personal_ekspeditor_week2_remembering_small_complaints",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "phase": "mid",
+          "priority": 93,
+          "cooldown": 0,
+          "repeatable": false,
+          "stage": "stable",
+          "subject": "Du husker alle små klager",
+          "summary": "Butikkens kundehukommelse blir med hjem og gjør små kommentarer til reklamasjoner.",
+          "situation": [
+            "Fra Privat notat: Du husker alt folk sa i dag. Ikke fordi det var stort, men fordi det kunne bli stort. En kunde som sukket, en som så på kvitteringen litt for lenge, en som sa at det stod noe annet på hylla. Nå gjør hodet det samme hjemme.",
+            "Fra Sara: Jeg sa bare at det var litt rotete. Du svarte som om jeg hadde skrevet en kundeklage. Jeg vil ikke ha kompensasjon. Jeg ville bare finne benken."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Slippe klageblikket",
+              "reply": "Jeg sier at hun har rett, og at en kommentar hjemme ikke er en kundesak.",
+              "effects": {
+                "relationship_sara": 3,
+                "self_awareness": 2,
+                "service_mask": -1,
+                "stress": -1
+              },
+              "feedback": "Bra. Jeg liker at du hører meg. Men jeg vil ikke at hver kommentar skal få tiltak.",
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week2_drops_complaint_lens"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week2_drops_complaint_lens",
+              "effect": {
+                "relationship_sara": 3,
+                "self_awareness": 2,
+                "service_mask": -1,
+                "stress": -1
+              },
+              "tags": [
+                "ekspeditor_week2_drops_complaint_lens"
+              ]
+            },
+            {
+              "id": "B",
+              "label": "Spøke med det",
+              "reply": "Jeg sier at kjøkkenklagen er mottatt, men avslått på grunn av manglende kvittering.",
+              "effects": {
+                "relationship_sara": 1,
+                "mood": 1,
+                "self_awareness": 1,
+                "stress": 0
+              },
+              "feedback": "Tynt. Men litt morsomt.",
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week2_jokes_about_kitchen_complaint"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week2_jokes_about_kitchen_complaint",
+              "effect": {
+                "relationship_sara": 1,
+                "mood": 1,
+                "self_awareness": 1,
+                "stress": 0
+              },
+              "tags": [
+                "ekspeditor_week2_jokes_about_kitchen_complaint"
+              ]
+            },
+            {
+              "id": "C",
+              "label": "Begynne å fikse alt med én gang",
+              "reply": "Jeg begynner å rydde med en gang for å vise at jeg tar kommentaren alvorlig.",
+              "effects": {
+                "control": 2,
+                "relationship_sara": -1,
+                "stress": 1,
+                "stagnation_private": 1,
+                "service_mask": 1
+              },
+              "feedback": "Jeg ba ikke om strakstiltak. Jeg sa bare at det var rotete.",
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week2_immediate_home_fix"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week2_immediate_home_fix",
+              "effect": {
+                "control": 2,
+                "relationship_sara": -1,
+                "stress": 1,
+                "stagnation_private": 1,
+                "service_mask": 1
+              },
+              "tags": [
+                "ekspeditor_week2_immediate_home_fix"
+              ]
+            }
+          ],
+          "task_domain": "privatliv_og_arbeidsrolle",
+          "competency": "rolleavkobling_og_egenomsorg",
+          "pressure": "butikkmodus_vs_fritid",
+          "choice_axis": "kontrollere_situasjonen_vs_vaere_i_den",
+          "consequence_axis": "hvile_og_narhet_vs_rolleutmattelse",
+          "narrative_arc": "ekspeditor_second_week_leaving_the_shop_floor"
+        },
+        {
+          "id": "personal_ekspeditor_week2_living_room_as_store",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "phase": "mid",
+          "priority": 91,
+          "cooldown": 0,
+          "repeatable": false,
+          "stage": "stable",
+          "subject": "Du gjør stua til en butikk",
+          "summary": "Stengetid og kø får privatrommet til å ligne et butikkgulv som skal optimaliseres.",
+          "situation": [
+            "Fra Sara: Du sa nettopp at vi burde få bedre flyt i stua. Jeg tror du mente møblene. Men det hørtes ut som du skulle optimalisere kundeopplevelsen i leiligheten.",
+            "Fra Privat notat: Flyt er et godt ord på jobb: køflyt, vareflyt, kundestrøm. Hjemme kan det fort bety at alt skal fungere som en butikk. Men et hjem er ikke bare et sted der ting skal passere effektivt."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Slippe butikkgulv-blikket",
+              "reply": "Jeg sier at hun har rett, og at stua ikke trenger kundeopplevelse.",
+              "effects": {
+                "relationship_sara": 2,
+                "self_awareness": 2,
+                "control": -1,
+                "stress": -1
+              },
+              "feedback": "Takk. Stua kan godt være litt upraktisk hvis den føles som vår.",
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week2_drops_shopfloor_lens"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week2_drops_shopfloor_lens",
+              "effect": {
+                "relationship_sara": 2,
+                "self_awareness": 2,
+                "control": -1,
+                "stress": -1
+              },
+              "tags": [
+                "ekspeditor_week2_drops_shopfloor_lens"
+              ]
+            },
+            {
+              "id": "B",
+              "label": "Spøke med det",
+              "reply": "Jeg sier at sofaområdet har god konvertering, men svak vareplassering.",
+              "effects": {
+                "relationship_sara": 1,
+                "mood": 1,
+                "self_awareness": 1,
+                "stress": 0
+              },
+              "feedback": "Forbud mot butikkord i stua. Men jeg lo.",
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week2_jokes_living_room_store"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week2_jokes_living_room_store",
+              "effect": {
+                "relationship_sara": 1,
+                "mood": 1,
+                "self_awareness": 1,
+                "stress": 0
+              },
+              "tags": [
+                "ekspeditor_week2_jokes_living_room_store"
+              ]
+            },
+            {
+              "id": "C",
+              "label": "Begynne å omorganisere",
+              "reply": "Jeg begynner å flytte småting for å gjøre rommet mer ryddig og logisk.",
+              "effects": {
+                "control": 2,
+                "relationship_sara": -1,
+                "stress": 1,
+                "stagnation_private": 1
+              },
+              "feedback": "Du klarte å gjøre avslapning til varepåfyll.",
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week2_reorganizes_living_room"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week2_reorganizes_living_room",
+              "effect": {
+                "control": 2,
+                "relationship_sara": -1,
+                "stress": 1,
+                "stagnation_private": 1
+              },
+              "tags": [
+                "ekspeditor_week2_reorganizes_living_room"
+              ]
+            }
+          ],
+          "task_domain": "privatliv_og_arbeidsrolle",
+          "competency": "rolleavkobling_og_egenomsorg",
+          "pressure": "butikkmodus_vs_fritid",
+          "choice_axis": "kontrollere_situasjonen_vs_vaere_i_den",
+          "consequence_axis": "hvile_og_narhet_vs_rolleutmattelse",
+          "narrative_arc": "ekspeditor_second_week_leaving_the_shop_floor"
+        },
+        {
+          "id": "personal_ekspeditor_week2_friend_not_complaint",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "phase": "mid",
+          "priority": 89,
+          "cooldown": 0,
+          "repeatable": false,
+          "stage": "stable",
+          "subject": "Vennen som ikke vil være reklamasjon",
+          "summary": "Jonas minner deg om at venner ikke ber om reklamasjonsbehandling, men om deg.",
+          "situation": [
+            "Fra Jonas: Jeg sa at jeg syntes du var litt fjern forrige gang vi møttes. Du svarte nesten med: det var leit å høre, jeg skal ta det videre. Jeg vet du prøver. Men jeg reklamerer ikke på deg.",
+            "Fra Privat notat: På jobb er en klage noe som må håndteres ryddig. Privat kan samme ryddighet gjøre deg rar. Jonas ber ikke om kompensasjon. Han ber om deg."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Møte det som venn, ikke reklamasjon",
+              "reply": "Jeg sier at han har rett, og at jeg har vært fjern fordi hodet har vært fullt av jobb.",
+              "effects": {
+                "relationship_jonas": 3,
+                "self_awareness": 2,
+                "service_mask": -1,
+                "stress": -1
+              },
+              "feedback": "Der. Det var ikke kundebehandling. Det var svar.",
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week2_answers_friend_as_friend"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week2_answers_friend_as_friend",
+              "effect": {
+                "relationship_jonas": 3,
+                "self_awareness": 2,
+                "service_mask": -1,
+                "stress": -1
+              },
+              "tags": [
+                "ekspeditor_week2_answers_friend_as_friend"
+              ]
+            },
+            {
+              "id": "B",
+              "label": "Forklare at du prøvde å ta det seriøst",
+              "reply": "Jeg sier at jeg bare ville vise at jeg tok det han sa på alvor.",
+              "effects": {
+                "relationship_jonas": 0,
+                "service_mask": 1,
+                "self_awareness": 0,
+                "stress": 0
+              },
+              "feedback": "Det er fint. Men å ta noe seriøst trenger ikke høres ut som reklamasjonsrutine.",
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week2_defends_serious_service_tone"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week2_defends_serious_service_tone",
+              "effect": {
+                "relationship_jonas": 0,
+                "service_mask": 1,
+                "self_awareness": 0,
+                "stress": 0
+              },
+              "tags": [
+                "ekspeditor_week2_defends_serious_service_tone"
+              ]
+            },
+            {
+              "id": "C",
+              "label": "Gjøre det til spøk",
+              "reply": "Jeg sier at klagen er mottatt og vil bli behandlet av kompisavdelingen.",
+              "effects": {
+                "relationship_jonas": 1,
+                "mood": 1,
+                "self_awareness": 1,
+                "stress": 0
+              },
+              "feedback": "Kompisavdelingen får muntlig advarsel. Men greit.",
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week2_friend_complaint_joke"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week2_friend_complaint_joke",
+              "effect": {
+                "relationship_jonas": 1,
+                "mood": 1,
+                "self_awareness": 1,
+                "stress": 0
+              },
+              "tags": [
+                "ekspeditor_week2_friend_complaint_joke"
+              ]
+            }
+          ],
+          "task_domain": "privatliv_og_arbeidsrolle",
+          "competency": "rolleavkobling_og_egenomsorg",
+          "pressure": "butikkmodus_vs_fritid",
+          "choice_axis": "kontrollere_situasjonen_vs_vaere_i_den",
+          "consequence_axis": "hvile_og_narhet_vs_rolleutmattelse",
+          "narrative_arc": "ekspeditor_second_week_leaving_the_shop_floor"
+        },
+        {
+          "id": "personal_ekspeditor_week2_day_as_register_close",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "phase": "mid",
+          "priority": 87,
+          "cooldown": 0,
+          "repeatable": false,
+          "stage": "stable",
+          "subject": "Du teller dagen som et oppgjør",
+          "summary": "Etter lukkeansvar begynner du å avstemme privatdagen som en kasse.",
+          "situation": [
+            "Fra Privat notat: Du kommer hjem og begynner nesten å gjøre opp dagen. Hva brukte du? Hva fikk du igjen? Hva stemmer ikke? Hvor ble energien av? Det er ikke dumme spørsmål, men det er slitsomt når selv kvelden må avstemmes.",
+            "Fra Sara: Du sitter bare stille, men jeg ser at du teller inni hodet. Skal du gjøre opp dagen, eller kan vi bare ha kveld?"
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "La dagen være uoppgjort",
+              "reply": "Jeg sier at jeg fortsatt er i lukkehodet, men at dagen ikke trenger å avstemmes nå.",
+              "effects": {
+                "relationship_sara": 2,
+                "stress": -2,
+                "control": -1,
+                "self_awareness": 2
+              },
+              "feedback": "Bra. Noen dager trenger ikke stemme helt før man legger seg.",
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week2_leaves_day_unbalanced"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week2_leaves_day_unbalanced",
+              "effect": {
+                "relationship_sara": 2,
+                "stress": -2,
+                "control": -1,
+                "self_awareness": 2
+              },
+              "tags": [
+                "ekspeditor_week2_leaves_day_unbalanced"
+              ]
+            },
+            {
+              "id": "B",
+              "label": "Fortelle kort hva som sitter igjen",
+              "reply": "Jeg sier at jeg er sliten etter lukking og små ansvar, men prøver å lande.",
+              "effects": {
+                "relationship_sara": 2,
+                "self_awareness": 2,
+                "stress": -1,
+                "service_mask": -1
+              },
+              "feedback": "Det var fint. Ikke oppgjør. Bare forklaring.",
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week2_explains_closing_head"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week2_explains_closing_head",
+              "effect": {
+                "relationship_sara": 2,
+                "self_awareness": 2,
+                "stress": -1,
+                "service_mask": -1
+              },
+              "tags": [
+                "ekspeditor_week2_explains_closing_head"
+              ]
+            },
+            {
+              "id": "C",
+              "label": "Lage mental liste over alt som må gjøres bedre",
+              "reply": "Jeg går gjennom alt jeg burde gjort raskere, tryggere eller bedre.",
+              "effects": {
+                "control": 2,
+                "stress": 2,
+                "energy_weekend": -1,
+                "stagnation_private": 1
+              },
+              "feedback": "Du lærer kanskje noe. Men du hviler ikke.",
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week2_private_improvement_ledger"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week2_private_improvement_ledger",
+              "effect": {
+                "control": 2,
+                "stress": 2,
+                "energy_weekend": -1,
+                "stagnation_private": 1
+              },
+              "tags": [
+                "ekspeditor_week2_private_improvement_ledger"
+              ]
+            }
+          ],
+          "task_domain": "privatliv_og_arbeidsrolle",
+          "competency": "rolleavkobling_og_egenomsorg",
+          "pressure": "butikkmodus_vs_fritid",
+          "choice_axis": "kontrollere_situasjonen_vs_vaere_i_den",
+          "consequence_axis": "hvile_og_narhet_vs_rolleutmattelse",
+          "narrative_arc": "ekspeditor_second_week_leaving_the_shop_floor"
+        },
+        {
+          "id": "personal_ekspeditor_week2_weekend_without_shop_floor",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "phase": "mid",
+          "priority": 85,
+          "cooldown": 0,
+          "repeatable": false,
+          "stage": "stable",
+          "subject": "Helgen uten butikkgulv",
+          "summary": "Etter to uker i frontlinjen må du slutte å lese privatlivet som kø, kunde, klage og lukkerutine.",
+          "situation": [
+            "Fra Privat notat: Du har stått i to uker med små menneskelige trykk: Hva koster den? Hvor er den? Kan jeg bytte? Hvorfor står det noe annet på hylla? Kan du bare? Du lærer å smile uten å love alt. Nå må du lære å la ansiktet hvile.",
+            "Fra Sara: Denne helgen vil jeg ikke være kunde, kø eller noe du skal håndtere. Ikke spør hva jeg trenger hele tiden. Ikke gjør små kommentarer til klager. Ikke lukk dagen som en butikk. Bare vær her.",
+            "Fra Jonas: Ingen butikkstemme. Ingen jeg skal se hva jeg kan gjøre. Ingen bare et øyeblikk. Ingen mental kø. Hvis du begynner å rydde oss etter stengetidsrutine, skylder du middag."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Skjerme en helg uten butikkgulv",
+              "reply": "Jeg bestemmer at helgen ikke skal være service, kø, lukking, kundelesning eller profesjonell vennlighet.",
+              "effects": {
+                "energy_weekend": 5,
+                "stress": -4,
+                "service_mask": -4,
+                "relationship_private": 4,
+                "autonomy_private": 3
+              },
+              "feedback": "Du lar ansiktet falle på plass. Det er ikke uhøflig. Det er hvile.",
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week2_private_boundary"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week2_private_boundary",
+              "effect": {
+                "energy_weekend": 5,
+                "stress": -4,
+                "service_mask": -4,
+                "relationship_private": 4,
+                "autonomy_private": 3
+              },
+              "tags": [
+                "ekspeditor_week2_private_boundary"
+              ]
+            },
+            {
+              "id": "B",
+              "label": "Være sammen uten å ekspedere noen",
+              "reply": "Jeg møter Sara eller Jonas og lar samtalen være vanlig, uten å tolke alt som forespørsel eller klage.",
+              "effects": {
+                "relationship_private": 4,
+                "mood": 2,
+                "self_awareness": 2,
+                "stress": -2
+              },
+              "feedback": "Du var bare vanlig. Det var ganske luksus.",
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week2_present_without_expedition"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week2_present_without_expedition",
+              "effect": {
+                "relationship_private": 4,
+                "mood": 2,
+                "self_awareness": 2,
+                "stress": -2
+              },
+              "tags": [
+                "ekspeditor_week2_present_without_expedition"
+              ]
+            },
+            {
+              "id": "C",
+              "label": "Trekke deg unna alt sosialt",
+              "reply": "Jeg sier at jeg trenger ro og ikke orker flere menneskelige behov denne helgen.",
+              "effects": {
+                "energy_weekend": 2,
+                "relationship_private": -2,
+                "stress": -1,
+                "guilt": 1
+              },
+              "feedback": "Det er lov å være tom. Men pass på at du ikke gjør alle mennesker til etterarbeid.",
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week2_withdraws_from_social_needs"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week2_withdraws_from_social_needs",
+              "effect": {
+                "energy_weekend": 2,
+                "relationship_private": -2,
+                "stress": -1,
+                "guilt": 1
+              },
+              "tags": [
+                "ekspeditor_week2_withdraws_from_social_needs"
+              ]
+            },
+            {
+              "id": "D",
+              "label": "Prøve å være ekstra hyggelig for å kompensere",
+              "reply": "Jeg prøver å være ekstra hjelpsom, oppmerksom og smilende hjemme.",
+              "effects": {
+                "service_mask": 3,
+                "stress": 2,
+                "relationship_private": -2,
+                "energy_weekend": -2,
+                "stagnation_private": 2
+              },
+              "feedback": "Du er snill. Men det er fortsatt butikk-snill. Jeg vil heller ha deg litt sliten og ekte.",
+              "next_bias": {
+                "set_flags": [
+                  "ekspeditor_week2_compensates_with_service_mask"
+                ]
+              },
+              "triggers_on_choice": "ekspeditor_week2_compensates_with_service_mask",
+              "effect": {
+                "service_mask": 3,
+                "stress": 2,
+                "relationship_private": -2,
+                "energy_weekend": -2,
+                "stagnation_private": 2
+              },
+              "tags": [
+                "ekspeditor_week2_compensates_with_service_mask"
+              ]
+            }
+          ],
+          "task_domain": "privatliv_og_arbeidsrolle",
+          "competency": "rolleavkobling_og_egenomsorg",
+          "pressure": "butikkmodus_vs_fritid",
+          "choice_axis": "kontrollere_situasjonen_vs_vaere_i_den",
+          "consequence_axis": "hvile_og_narhet_vs_rolleutmattelse",
+          "narrative_arc": "ekspeditor_second_week_leaving_the_shop_floor"
+        }
+      ],
+      "threads": [
+        {
+          "id": "ekspeditor_week2_drops_complaint_lens",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Du husker alle små klager",
+          "summary": "Bra. Jeg liker at du hører meg. Men jeg vil ikke at hver kommentar skal få tiltak.",
+          "situation": [
+            "Bra. Jeg liker at du hører meg. Men jeg vil ikke at hver kommentar skal få tiltak."
+          ]
+        },
+        {
+          "id": "ekspeditor_week2_jokes_about_kitchen_complaint",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Du husker alle små klager",
+          "summary": "Tynt. Men litt morsomt.",
+          "situation": [
+            "Tynt. Men litt morsomt."
+          ]
+        },
+        {
+          "id": "ekspeditor_week2_immediate_home_fix",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Du husker alle små klager",
+          "summary": "Jeg ba ikke om strakstiltak. Jeg sa bare at det var rotete.",
+          "situation": [
+            "Jeg ba ikke om strakstiltak. Jeg sa bare at det var rotete."
+          ]
+        },
+        {
+          "id": "ekspeditor_week2_drops_shopfloor_lens",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Du gjør stua til en butikk",
+          "summary": "Takk. Stua kan godt være litt upraktisk hvis den føles som vår.",
+          "situation": [
+            "Takk. Stua kan godt være litt upraktisk hvis den føles som vår."
+          ]
+        },
+        {
+          "id": "ekspeditor_week2_jokes_living_room_store",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Du gjør stua til en butikk",
+          "summary": "Forbud mot butikkord i stua. Men jeg lo.",
+          "situation": [
+            "Forbud mot butikkord i stua. Men jeg lo."
+          ]
+        },
+        {
+          "id": "ekspeditor_week2_reorganizes_living_room",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Du gjør stua til en butikk",
+          "summary": "Du klarte å gjøre avslapning til varepåfyll.",
+          "situation": [
+            "Du klarte å gjøre avslapning til varepåfyll."
+          ]
+        },
+        {
+          "id": "ekspeditor_week2_answers_friend_as_friend",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Vennen som ikke vil være reklamasjon",
+          "summary": "Der. Det var ikke kundebehandling. Det var svar.",
+          "situation": [
+            "Der. Det var ikke kundebehandling. Det var svar."
+          ]
+        },
+        {
+          "id": "ekspeditor_week2_defends_serious_service_tone",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Vennen som ikke vil være reklamasjon",
+          "summary": "Det er fint. Men å ta noe seriøst trenger ikke høres ut som reklamasjonsrutine.",
+          "situation": [
+            "Det er fint. Men å ta noe seriøst trenger ikke høres ut som reklamasjonsrutine."
+          ]
+        },
+        {
+          "id": "ekspeditor_week2_friend_complaint_joke",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Vennen som ikke vil være reklamasjon",
+          "summary": "Kompisavdelingen får muntlig advarsel. Men greit.",
+          "situation": [
+            "Kompisavdelingen får muntlig advarsel. Men greit."
+          ]
+        },
+        {
+          "id": "ekspeditor_week2_leaves_day_unbalanced",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Du teller dagen som et oppgjør",
+          "summary": "Bra. Noen dager trenger ikke stemme helt før man legger seg.",
+          "situation": [
+            "Bra. Noen dager trenger ikke stemme helt før man legger seg."
+          ]
+        },
+        {
+          "id": "ekspeditor_week2_explains_closing_head",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Du teller dagen som et oppgjør",
+          "summary": "Det var fint. Ikke oppgjør. Bare forklaring.",
+          "situation": [
+            "Det var fint. Ikke oppgjør. Bare forklaring."
+          ]
+        },
+        {
+          "id": "ekspeditor_week2_private_improvement_ledger",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Du teller dagen som et oppgjør",
+          "summary": "Du lærer kanskje noe. Men du hviler ikke.",
+          "situation": [
+            "Du lærer kanskje noe. Men du hviler ikke."
+          ]
+        },
+        {
+          "id": "ekspeditor_week2_private_boundary",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Helgen uten butikkgulv",
+          "summary": "Du lar ansiktet falle på plass. Det er ikke uhøflig. Det er hvile.",
+          "situation": [
+            "Du lar ansiktet falle på plass. Det er ikke uhøflig. Det er hvile."
+          ]
+        },
+        {
+          "id": "ekspeditor_week2_present_without_expedition",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Helgen uten butikkgulv",
+          "summary": "Du var bare vanlig. Det var ganske luksus.",
+          "situation": [
+            "Du var bare vanlig. Det var ganske luksus."
+          ]
+        },
+        {
+          "id": "ekspeditor_week2_withdraws_from_social_needs",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Helgen uten butikkgulv",
+          "summary": "Det er lov å være tom. Men pass på at du ikke gjør alle mennesker til etterarbeid.",
+          "situation": [
+            "Det er lov å være tom. Men pass på at du ikke gjør alle mennesker til etterarbeid."
+          ]
+        },
+        {
+          "id": "ekspeditor_week2_compensates_with_service_mask",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_ekspeditor_private",
+          "role_scope": "ekspeditor",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Konsekvens: Helgen uten butikkgulv",
+          "summary": "Du er snill. Men det er fortsatt butikk-snill. Jeg vil heller ha deg litt sliten og ekte.",
+          "situation": [
+            "Du er snill. Men det er fortsatt butikk-snill. Jeg vil heller ha deg litt sliten og ekte."
+          ]
+        }
+      ],
+      "week_outcomes": [
+        {
+          "id": "private_shopfloor_boundary_week2",
+          "condition": "Slutter å lese privatlivet som kø, klage, kundesak, lukkerutine eller servicebehov.",
+          "effects": {
+            "relationship_private": 7,
+            "energy_weekend": 5,
+            "stress": -5,
+            "service_mask": -5,
+            "autonomy_private": 4,
+            "self_awareness": 4
+          },
+          "narrative": "Du lar butikkgulvet bli igjen på jobb. Det er ikke at du blir mindre hjelpsom. Du blir mer til stede. Privatlivet trenger ikke ekspederes."
+        }
+      ]
+    },
+    {
+      "id": "salg_og_veiledning",
+      "purpose": "Vise hvordan salg og veiledning blir relasjonelt når kunden husker deg, stoler på deg eller lar deg få for mye autoritet.",
+      "learning_focus": [
+        "kundetillit",
+        "veiledning",
+        "salg som relasjon"
+      ],
+      "mails": [
+        {
+          "id": "ekspeditor_people_salg_001",
+          "mail_type": "people",
+          "mail_family": "salg_og_veiledning",
+          "role_scope": "ekspeditor",
+          "phase": "mid",
+          "priority": 56,
+          "cooldown": 2,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "fast_kunde_anne",
+          "place_id": "storgata_handelsmiljo",
+          "subject": "Kunden spør etter deg fordi rådet traff sist",
+          "summary": "En fast kunde kommer tilbake og vil ha akkurat din vurdering.",
+          "purpose": "Vise at god veiledning skaper tillit og nytt ansvar.",
+          "stakes": "Du kan bygge videre på tilliten, men også bli for rask til å selge fordi kunden allerede tror deg.",
+          "situation": [
+            "Kunden smiler før hun legger varen på disken.",
+            "Hun sier at forrige råd faktisk fungerte, og nå vil hun ha din vurdering igjen.",
+            "Det føles godt å bli husket, men også litt farlig å bli trodd for raskt."
+          ],
+          "task_domain": "relasjonell_veiledning",
+          "competency": "tillit_med_ansvar",
+          "pressure": "kunde_tillit",
+          "choice_axis": "behovsavklaring_vs_utnytte_tillit",
+          "consequence_axis": "lang_tillit_vs_mersalg",
+          "narrative_arc": "ekspeditøren lærer at tillit fra kunde må behandles som ansvar",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Spør grundig før du anbefaler noe nytt",
+              "reply": "Så bra at det traff sist. Hva trenger du denne gangen?",
+              "effect": 1,
+              "tags": [
+                "trust",
+                "guidance",
+                "care"
+              ],
+              "feedback": "Du bruker tilliten til å høre bedre, ikke bare til å selge raskere."
+            },
+            {
+              "id": "B",
+              "label": "Foreslå raskt det du tror passer best",
+              "reply": "Da tror jeg denne passer deg nå.",
+              "effect": 0,
+              "tags": [
+                "sales",
+                "confidence"
+              ],
+              "feedback": "Du virker trygg, men lar mindre av kundens nye behov komme frem."
+            }
+          ]
+        },
+        {
+          "id": "ekspeditor_people_salg_002",
+          "mail_type": "people",
+          "mail_family": "salg_og_veiledning",
+          "role_scope": "ekspeditor",
+          "phase": "mid",
+          "priority": 53,
+          "cooldown": 2,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "sara_kollega",
+          "place_id": "storgata_handelsmiljo",
+          "subject": "Kollegaen sier du er for ærlig i salget",
+          "summary": "En kollega mener du snakker kunder ut av kjøp butikken kunne tjent på.",
+          "purpose": "Teste forholdet mellom troverdig veiledning og salgskultur i laget.",
+          "stakes": "For mye ærlighet kan koste salgstall. For hardt salg kan koste tillit.",
+          "situation": [
+            "Etter at kunden går, sier Sara lavt at du kunne solgt mer der.",
+            "Hun mener ikke å være ufin; hun ser bare tallene mer enn tilliten.",
+            "Du må finne ut om du skal forsvare veiledningen eller tilpasse deg salgstrykket."
+          ],
+          "task_domain": "salgskultur",
+          "competency": "faglig_integritet_i_front",
+          "pressure": "kollegialt_salgspress",
+          "choice_axis": "troverdig_veiledning_vs_salgsmål",
+          "consequence_axis": "tillit_vs_tall",
+          "narrative_arc": "ekspeditøren møter salgskulturen gjennom en kollegas blikk",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Forklar at tillit også er langsiktig salg",
+              "reply": "Jeg forklarer at tillit også er langsiktig salg.",
+              "effect": 1,
+              "tags": [
+                "integrity",
+                "trust",
+                "team"
+              ],
+              "feedback": "Du gir veiledningen et språk som kan tåle salgstallene."
+            },
+            {
+              "id": "B",
+              "label": "Justere deg mer mot mersalg neste gang",
+              "reply": "Jeg justerer meg mer mot mersalg neste gang.",
+              "effect": 0,
+              "tags": [
+                "sales",
+                "adaptation"
+              ],
+              "feedback": "Du tilpasser deg presset, men flytter litt på hva kundens behov får bety."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ny_kollega_og_tillit",
+      "purpose": "Vise hvordan tillit mellom kolleger oppstår gjennom hjelp, overleveringer og små situasjoner der noen kan bli stående alene.",
+      "learning_focus": [
+        "kollegial tillit",
+        "opplæring",
+        "uformell støtte"
+      ],
+      "mails": [
+        {
+          "id": "ekspeditor_people_kollega_001",
+          "mail_type": "people",
+          "mail_family": "ny_kollega_og_tillit",
+          "role_scope": "ekspeditor",
+          "phase": "early",
+          "priority": 58,
+          "cooldown": 2,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "ny_kollega_mina",
+          "place_id": "storgata_handelsmiljo",
+          "subject": "Den nye spør deg akkurat når køen vokser",
+          "summary": "En ny kollega trenger hjelp med en retur mens du har kunder foran deg.",
+          "purpose": "Vise at opplæring ofte skjer på tidspunkt som passer dårlig.",
+          "stakes": "Hjelper du godt, sinker du flyten. Avviser du raskt, kan hun lære feil alene.",
+          "situation": [
+            "Mina står med en retur hun ikke forstår.",
+            "Hun prøver å hviske spørsmålet, men du ser at hun egentlig trenger forklaring.",
+            "Køen foran deg har akkurat fått den stillheten som betyr at folk begynner å telle minutter."
+          ],
+          "task_domain": "kollegahjelp",
+          "competency": "opplæring_under_press",
+          "pressure": "kø_og_læring_samtidig",
+          "choice_axis": "lære_bort_vs_holde_flyt",
+          "consequence_axis": "lagbygging_vs_tempo",
+          "narrative_arc": "ekspeditøren blir del av butikkens uformelle opplæring",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Gi kort, presis forklaring selv om køen merker det",
+              "reply": "Jeg forklarer kort og riktig, selv om køen merker det.",
+              "effect": 1,
+              "tags": [
+                "training",
+                "team",
+                "quality"
+              ],
+              "feedback": "Du gjør laget litt sterkere i det øyeblikket det koster litt."
+            },
+            {
+              "id": "B",
+              "label": "Be henne ta raskeste løsning og spørre etterpå",
+              "reply": "Ta den raskeste løsningen nå, så forklarer jeg etterpå.",
+              "effect": -1,
+              "tags": [
+                "tempo",
+                "shortcut"
+              ],
+              "feedback": "Køen reddes, men læringen flyttes til et senere tidspunkt som kanskje aldri kommer."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "forste_ansvar",
+      "purpose": "Vise hvordan andre begynner å behandle spilleren som ansvarspunkt før rollen formelt endrer seg.",
+      "learning_focus": [
+        "ansvar",
+        "synlighet",
+        "tillit"
+      ],
+      "mails": [
+        {
+          "id": "ekspeditor_people_ansvar_001",
+          "mail_type": "people",
+          "mail_family": "forste_ansvar",
+          "role_scope": "ekspeditor",
+          "phase": "mid",
+          "priority": 56,
+          "cooldown": 2,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "ole_skiftleder",
+          "place_id": "storgata_handelsmiljo",
+          "subject": "Folk begynner å sende spørsmålene til deg",
+          "summary": "Kollegaene dine sender små avklaringer til deg selv om du ikke har fått ny tittel.",
+          "purpose": "Vise at ansvar ofte oppstår sosialt før det blir formelt.",
+          "stakes": "Tar du ansvar, blir du mer nyttig og mer synlig. Skyver du alt videre, beskytter du deg men mister tillit.",
+          "situation": [
+            "Det starter med ett spørsmål om en prisjustering.",
+            "Så et spørsmål om en retur.",
+            "Etter tredje gang skjønner du at folk ikke bare spør deg fordi du står nærmest."
+          ],
+          "task_domain": "uformelt_ansvar",
+          "competency": "selvstendig_dømmekraft",
+          "pressure": "ansvar_uten_tittel",
+          "choice_axis": "ta_ansvar_vs_sende_videre",
+          "consequence_axis": "tillit_vs_trygghet",
+          "narrative_arc": "ekspeditøren merker at rollen vokser gjennom andres forventninger",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Ta de enkle avklaringene og si fra om mønsteret",
+              "reply": "Jeg tar de enkle avklaringene og sier fra om mønsteret.",
+              "effect": 1,
+              "tags": [
+                "responsibility",
+                "visibility"
+              ],
+              "feedback": "Du bærer mer ansvar uten å gjøre det usynlig."
+            },
+            {
+              "id": "B",
+              "label": "Sende alle avklaringer videre til skiftleder",
+              "reply": "Jeg sender alle avklaringer videre til skiftleder.",
+              "effect": 0,
+              "tags": [
+                "safety",
+                "distance"
+              ],
+              "feedback": "Du holder rollen renere, men viser mindre av dømmekraften du faktisk har."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "apning_og_lukking",
+      "purpose": "Vise åpning/lukking som relasjon til kolleger: det du gjør alene, merkes ofte av noen andre.",
+      "learning_focus": [
+        "neste skift",
+        "kollegialt ansvar",
+        "usynlig arbeid"
+      ],
+      "mails": [
+        {
+          "id": "ekspeditor_people_lukking_001",
+          "mail_type": "people",
+          "mail_family": "apning_og_lukking",
+          "role_scope": "ekspeditor",
+          "phase": "advanced",
+          "priority": 53,
+          "cooldown": 2,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "morgenansvarlig_tone",
+          "place_id": "storgata_handelsmiljo",
+          "subject": "Morgenskiftet takker for noe ingen kunder så",
+          "summary": "Neste skift merker at du ryddet småtingene som ellers ville blitt deres problem.",
+          "purpose": "Forsterke læringen om usynlig, kollegial service.",
+          "stakes": "Du kan ta imot tilliten og gjøre dette til standard, eller se det som ekstraarbeid du ikke alltid kan bære.",
+          "situation": [
+            "Tone fra morgenskiftet sier at disken var uvanlig lett å starte med.",
+            "Hun nevner ikke kunder, salg eller tall.",
+            "Hun nevner bare at noen hadde tenkt på dem som kom etter."
+          ],
+          "task_domain": "lukkerutine",
+          "competency": "kollegial_pålitelighet",
+          "pressure": "usynlig_anerkjennelse",
+          "choice_axis": "gjøre_standard_vs_se_som_ekstra",
+          "consequence_axis": "lagstillit_vs_personlig_belastning",
+          "narrative_arc": "ekspeditøren ser at godt arbeid kan bli anerkjent av neste ledd, ikke kunden",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Gjøre slik lukking til egen standard",
+              "reply": "Jeg gjør slik lukking til min standard.",
+              "effect": 1,
+              "tags": [
+                "team",
+                "quality",
+                "reliability"
+              ],
+              "feedback": "Du bygger tillit bakover i systemet, ikke bare foran kunden."
+            },
+            {
+              "id": "B",
+              "label": "Ta det som hyggelig, men ikke love mer ekstraarbeid",
+              "reply": "Jeg tar det som hyggelig, men lover ikke mer ekstraarbeid.",
+              "effect": 0,
+              "tags": [
+                "self_preservation",
+                "boundary"
+              ],
+              "feedback": "Du beskytter deg mot at usynlig kvalitet blir forventet gratis hver gang."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lager_og_bestilling",
+      "purpose": "Vise lager og bestilling som samspill mellom mennesker: den som ser mønsteret må få andre til å handle før kunden merker det.",
+      "learning_focus": [
+        "lagerkommunikasjon",
+        "forutseende service",
+        "praktisk koordinering"
+      ],
+      "mails": [
+        {
+          "id": "ekspeditor_people_lager_001",
+          "mail_type": "people",
+          "mail_family": "lager_og_bestilling",
+          "role_scope": "ekspeditor",
+          "phase": "mid",
+          "priority": 52,
+          "cooldown": 2,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "lageransvarlig_jon",
+          "place_id": "storgata_handelsmiljo",
+          "subject": "Lageret sier du maser, men du har sett mønsteret",
+          "summary": "Du har varslet om lav beholdning flere ganger, og lageransvarlig begynner å bli lei.",
+          "purpose": "Vise at forutseende drift krever sosial utholdenhet.",
+          "stakes": "Holder du fast, kan varen være på plass før helgen. Gir du deg, slipper du friksjon men mister mønsteret.",
+          "situation": [
+            "Jon sukker når du nevner varen igjen.",
+            "Han ser enkeltvarselet. Du ser helgens gjentakelse.",
+            "Spørsmålet er om du klarer å gjøre mønsteret tydelig uten å bli oppfattet som masete."
+          ],
+          "task_domain": "lagerkommunikasjon",
+          "competency": "mønsterforklaring",
+          "pressure": "kollegial_friksjon",
+          "choice_axis": "stå_i_mønster_vs_unngå_mas",
+          "consequence_axis": "forebygging_vs_sosial_ro",
+          "narrative_arc": "ekspeditøren lærer at praktisk blikk må oversettes til andre ledd",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Forklar mønsteret konkret og be om bestilling",
+              "reply": "Jeg forklarer mønsteret konkret og ber om bestilling.",
+              "effect": 1,
+              "tags": [
+                "pattern",
+                "process",
+                "persistence"
+              ],
+              "feedback": "Du gjør varselet mindre personlig og mer driftsmessig."
+            },
+            {
+              "id": "B",
+              "label": "La det ligge for å slippe mer friksjon med lageret",
+              "reply": "Jeg lar det ligge for å slippe mer friksjon med lageret.",
+              "effect": 0,
+              "tags": [
+                "avoidance",
+                "comfort"
+              ],
+              "feedback": "Relasjonen glir lettere nå, men helgens tomme hylle blir mer sannsynlig."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

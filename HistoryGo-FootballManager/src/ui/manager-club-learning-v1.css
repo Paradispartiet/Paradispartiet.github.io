@@ -1,0 +1,515 @@
+.club-room-learning-v1 {
+  display: grid;
+  gap: .8rem;
+  margin-top: 1.1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,.16);
+}
+
+.club-room-learning-v1 h3,
+.club-room-learning-v1 p { margin: 0; }
+
+.club-room-learning-intro,
+.club-room-learning-note {
+  max-width: 68ch;
+  color: rgba(255,255,255,.72);
+  line-height: 1.55;
+}
+
+.club-room-learning-v1 h3 {
+  font-size: .78rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.club-room-learning-list {
+  display: grid;
+  border-top: 1px solid rgba(255,255,255,.11);
+}
+
+.club-room-learning-row {
+  display: grid;
+  grid-template-columns: minmax(8rem, .8fr) minmax(0, 1.7fr);
+  gap: .9rem;
+  padding: .72rem 0;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.club-room-learning-row strong {
+  font-size: .76rem;
+  line-height: 1.4;
+}
+
+.club-room-learning-row p {
+  color: rgba(255,255,255,.66);
+  font-size: .72rem;
+  line-height: 1.5;
+}
+
+.club-room-learning-note {
+  font-size: .68rem;
+}
+
+.medical-decision-workshop-v1 {
+  display: grid;
+  gap: .8rem;
+  margin-top: 1.15rem;
+  padding: 1rem;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 14px;
+  background: rgba(255,255,255,.035);
+}
+
+.medical-decision-workshop-v1 h3,
+.medical-decision-workshop-v1 p,
+.medical-decision-workshop-v1 ul { margin: 0; }
+
+.medical-decision-kicker {
+  color: rgba(255,255,255,.62);
+  font-size: .64rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.medical-decision-workshop-v1 > h3 { font-size: 1rem; }
+
+.medical-decision-headline { font-size: .86rem; }
+
+.medical-decision-workshop-v1 > p,
+.medical-decision-evidence li,
+.medical-decision-outcome p,
+.medical-decision-source {
+  color: rgba(255,255,255,.72);
+  font-size: .72rem;
+  line-height: 1.5;
+}
+
+.medical-decision-evidence {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .7rem;
+}
+
+.medical-decision-evidence section {
+  min-width: 0;
+  padding: .8rem;
+  border: 1px solid rgba(255,255,255,.11);
+  border-radius: 10px;
+}
+
+.medical-decision-evidence section > strong { font-size: .7rem; }
+
+.medical-decision-evidence ul {
+  display: grid;
+  gap: .35rem;
+  margin-top: .5rem;
+  padding-left: 1rem;
+}
+
+.medical-decision-question { font-weight: 800; }
+
+.medical-decision-choices {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .5rem;
+}
+
+.medical-decision-choice {
+  min-width: 0;
+  padding: .7rem;
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 10px;
+  background: rgba(0,0,0,.2);
+  color: inherit;
+  font: inherit;
+  font-size: .68rem;
+  font-weight: 800;
+  line-height: 1.35;
+  text-align: left;
+}
+
+.medical-decision-choice[aria-pressed="true"] {
+  border-color: rgba(255,255,255,.72);
+  background: rgba(255,255,255,.12);
+}
+
+.medical-decision-outcome {
+  display: grid;
+  gap: .35rem;
+  padding: .85rem;
+  border-left: 3px solid rgba(255,255,255,.55);
+  background: rgba(0,0,0,.18);
+}
+
+.medical-decision-outcome[hidden] { display: none; }
+.medical-decision-outcome[data-status="supported"] { border-left-color: #75d39b; }
+.medical-decision-outcome[data-status="incomplete"] { border-left-color: #f0c75e; }
+.medical-decision-outcome[data-status="premature"] { border-left-color: #ef8d8d; }
+.medical-decision-outcome small,
+.medical-decision-source { color: rgba(255,255,255,.58); font-size: .64rem; line-height: 1.45; }
+
+.medical-decision-empty {
+  padding: .8rem;
+  border-left: 3px solid rgba(255,255,255,.4);
+}
+
+.medical-rehabilitation-path-v2 {
+  display: grid;
+  gap: .85rem;
+  margin-top: 1.15rem;
+  padding: 1rem;
+  border: 1px solid rgba(117,211,155,.34);
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(117,211,155,.07), rgba(255,255,255,.025));
+}
+
+.medical-rehabilitation-path-v2 h3,
+.medical-rehabilitation-path-v2 p,
+.medical-rehabilitation-path-v2 ul,
+.medical-rehabilitation-path-v2 ol { margin: 0; }
+
+.medical-rehabilitation-kicker,
+.medical-rehabilitation-selected-approach span,
+.medical-rehabilitation-match-evidence span {
+  color: rgba(255,255,255,.6);
+  font-size: .61rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.medical-rehabilitation-path-v2 > h3 { font-size: 1rem; }
+.medical-rehabilitation-player { font-size: .88rem; }
+.medical-rehabilitation-current-stage {
+  color: #f5d85e;
+  font-size: .64rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.medical-rehabilitation-purpose,
+.medical-rehabilitation-assignment,
+.medical-rehabilitation-watch,
+.medical-rehabilitation-selected-approach p,
+.medical-rehabilitation-evidence li,
+.medical-rehabilitation-availability-outcome p,
+.medical-rehabilitation-match-evidence p,
+.medical-rehabilitation-empty {
+  color: rgba(255,255,255,.72);
+  font-size: .71rem;
+  line-height: 1.5;
+}
+
+.medical-rehabilitation-stages {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: .35rem;
+  padding: 0;
+  list-style: none;
+}
+
+.medical-rehabilitation-stages li {
+  min-width: 0;
+  padding: .5rem .35rem;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px;
+  color: rgba(255,255,255,.48);
+  font-size: .58rem;
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.medical-rehabilitation-stages li[data-status="completed"] {
+  border-color: rgba(117,211,155,.35);
+  color: rgba(181,238,202,.78);
+}
+
+.medical-rehabilitation-stages li[data-status="current"] {
+  border-color: #75d39b;
+  background: rgba(117,211,155,.14);
+  color: #eafff1;
+}
+
+.medical-rehabilitation-question { font-size: .73rem; font-weight: 850; }
+
+.medical-rehabilitation-approaches,
+.medical-rehabilitation-actions,
+.medical-rehabilitation-availability {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .5rem;
+}
+
+.medical-rehabilitation-approach,
+.medical-rehabilitation-primary,
+.medical-rehabilitation-secondary,
+.medical-rehabilitation-availability-choice,
+.medical-rehabilitation-complete {
+  min-width: 0;
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 10px;
+  background: rgba(0,0,0,.22);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.medical-rehabilitation-approach {
+  display: grid;
+  gap: .32rem;
+  padding: .75rem;
+  text-align: left;
+}
+
+.medical-rehabilitation-approach strong { font-size: .7rem; }
+.medical-rehabilitation-approach span,
+.medical-rehabilitation-approach small {
+  color: rgba(255,255,255,.66);
+  font-size: .62rem;
+  line-height: 1.42;
+}
+
+.medical-rehabilitation-selected-approach,
+.medical-rehabilitation-availability-outcome,
+.medical-rehabilitation-match-evidence {
+  display: grid;
+  gap: .35rem;
+  padding: .8rem;
+  border-left: 3px solid #75d39b;
+  background: rgba(0,0,0,.18);
+}
+
+.medical-rehabilitation-evidence {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .65rem;
+}
+
+.medical-rehabilitation-evidence section {
+  min-width: 0;
+  padding: .75rem;
+  border: 1px solid rgba(255,255,255,.11);
+  border-radius: 10px;
+}
+
+.medical-rehabilitation-evidence section > strong { font-size: .68rem; }
+.medical-rehabilitation-evidence ul { display: grid; gap: .35rem; margin-top: .45rem; padding-left: 1rem; }
+.medical-rehabilitation-criteria li[data-met="true"]::marker { color: #75d39b; }
+.medical-rehabilitation-criteria li[data-met="false"]::marker { color: #f0c75e; }
+
+.medical-rehabilitation-primary,
+.medical-rehabilitation-secondary,
+.medical-rehabilitation-availability-choice,
+.medical-rehabilitation-complete {
+  padding: .7rem;
+  font-size: .66rem;
+  font-weight: 850;
+  line-height: 1.35;
+}
+
+.medical-rehabilitation-primary { border-color: rgba(117,211,155,.7); }
+.medical-rehabilitation-primary:disabled { opacity: .42; cursor: not-allowed; }
+.medical-rehabilitation-availability-choice[aria-pressed="true"] { border-color: #75d39b; background: rgba(117,211,155,.14); }
+.medical-rehabilitation-availability-outcome[data-status="incomplete"] { border-left-color: #f0c75e; }
+.medical-rehabilitation-availability-outcome[data-status="premature"] { border-left-color: #ef8d8d; }
+.medical-rehabilitation-match-evidence[data-aligned="false"] { border-left-color: #f0c75e; }
+.medical-rehabilitation-availability-outcome small,
+.medical-rehabilitation-match-evidence small,
+.medical-rehabilitation-guardrail {
+  color: rgba(255,255,255,.56);
+  font-size: .62rem;
+  line-height: 1.45;
+}
+
+.medical-rehabilitation-complete { justify-self: start; }
+
+.opponent-analysis-workshop-v1 {
+  display: grid;
+  gap: .85rem;
+  margin-top: 1.15rem;
+  padding: 1rem;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 14px;
+  background: rgba(255,255,255,.035);
+}
+
+.opponent-analysis-workshop-v1 h3,
+.opponent-analysis-workshop-v1 h4,
+.opponent-analysis-workshop-v1 p,
+.opponent-analysis-workshop-v1 dl,
+.opponent-analysis-workshop-v1 ul { margin: 0; }
+
+.opponent-analysis-kicker,
+.opponent-analysis-status {
+  color: rgba(255,255,255,.62);
+  font-size: .64rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.opponent-analysis-workshop-v1 > h3 { font-size: 1rem; }
+
+.opponent-analysis-fixture-picker,
+.opponent-analysis-dynamic,
+.opponent-analysis-brief,
+.opponent-analysis-reasoning,
+.opponent-analysis-actions {
+  display: grid;
+  gap: .65rem;
+  min-width: 0;
+}
+
+.opponent-analysis-fixture-picker label,
+.opponent-analysis-question { font-size: .72rem; font-weight: 850; }
+
+.opponent-analysis-fixture-picker select {
+  width: 100%;
+  min-width: 0;
+  padding: .7rem;
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 9px;
+  background: #0c1118;
+  color: inherit;
+  font: inherit;
+  font-size: .72rem;
+}
+
+.opponent-analysis-fixture-picker small,
+.opponent-analysis-empty,
+.opponent-analysis-prompt,
+.opponent-analysis-reasoning p,
+.opponent-analysis-signals,
+.opponent-analysis-feedback,
+.opponent-analysis-guardrail {
+  color: rgba(255,255,255,.68);
+  font-size: .68rem;
+  line-height: 1.5;
+}
+
+.opponent-analysis-brief,
+.opponent-analysis-reasoning {
+  padding: .85rem;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+  background: rgba(0,0,0,.16);
+}
+
+.opponent-analysis-brief h4 { font-size: 1rem; }
+
+.opponent-analysis-profile {
+  display: grid;
+  grid-template-columns: minmax(6rem, .58fr) minmax(0, 1.42fr);
+  gap: .35rem .7rem;
+}
+
+.opponent-analysis-profile dt {
+  color: rgba(255,255,255,.54);
+  font-size: .62rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.opponent-analysis-profile dd {
+  min-width: 0;
+  color: rgba(255,255,255,.82);
+  font-size: .7rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.opponent-analysis-focuses,
+.opponent-analysis-countermeasures {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .5rem;
+}
+
+.opponent-analysis-focus,
+.opponent-analysis-countermeasure,
+.opponent-analysis-save,
+.opponent-analysis-open-target {
+  min-width: 0;
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 10px;
+  background: rgba(0,0,0,.2);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.opponent-analysis-focus {
+  padding: .7rem;
+  font-size: .68rem;
+  font-weight: 850;
+}
+
+.opponent-analysis-focus[aria-pressed="true"],
+.opponent-analysis-countermeasure[aria-pressed="true"] {
+  border-color: rgba(255,255,255,.78);
+  background: rgba(255,255,255,.12);
+}
+
+.opponent-analysis-countermeasure {
+  display: grid;
+  gap: .32rem;
+  padding: .75rem;
+}
+
+.opponent-analysis-countermeasure span {
+  color: rgba(255,255,255,.54);
+  font-size: .58rem;
+  font-weight: 850;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.opponent-analysis-countermeasure strong { font-size: .72rem; }
+.opponent-analysis-countermeasure small { color: rgba(255,255,255,.65); font-size: .63rem; line-height: 1.42; }
+
+.opponent-analysis-reasoning h4 { font-size: .7rem; }
+.opponent-analysis-signals { display: grid; gap: .3rem; padding-left: 1rem; }
+
+.opponent-analysis-actions {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+}
+
+.opponent-analysis-save,
+.opponent-analysis-open-target {
+  padding: .72rem .8rem;
+  font-size: .68rem;
+  font-weight: 850;
+  text-align: center;
+}
+
+.opponent-analysis-save:disabled { opacity: .45; cursor: not-allowed; }
+.opponent-analysis-feedback { grid-column: 1 / -1; }
+.opponent-analysis-feedback:empty { display: none; }
+.opponent-analysis-feedback[data-status="saved"] { color: #8bd7a7; }
+.opponent-analysis-feedback[data-status="error"] { color: #ef9a9a; }
+.opponent-analysis-guardrail { padding-top: .65rem; border-top: 1px solid rgba(255,255,255,.11); }
+
+@media (max-width: 640px) {
+  .club-room-learning-row {
+    grid-template-columns: 1fr;
+    gap: .25rem;
+  }
+
+  .medical-decision-evidence,
+  .medical-decision-choices,
+  .medical-rehabilitation-stages,
+  .medical-rehabilitation-approaches,
+  .medical-rehabilitation-evidence,
+  .medical-rehabilitation-actions,
+  .medical-rehabilitation-availability,
+  .opponent-analysis-focuses,
+  .opponent-analysis-countermeasures,
+  .opponent-analysis-actions { grid-template-columns: 1fr; }
+
+  .opponent-analysis-profile { grid-template-columns: 1fr; }
+}

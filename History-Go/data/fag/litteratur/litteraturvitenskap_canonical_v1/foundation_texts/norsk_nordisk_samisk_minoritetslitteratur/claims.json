@@ -1,0 +1,695 @@
+{
+  "schema": "history_go_fagverk_claims_v1",
+  "version": "1.0.0",
+  "subject_id": "litteratur",
+  "chapter_id": "norsk_nordisk_samisk_minoritetslitteratur",
+  "verified_at": "2026-08-07",
+  "verification_status": "verified",
+  "sources": [
+    {
+      "id": "nn01",
+      "label": "Nasjonalbibliotekets bibliografier",
+      "url": "https://www.nb.no/ressurser/bibliografier/",
+      "publisher": "Nasjonalbiblioteket",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Bibliografienes søkefelt, språkfiltre, periodeavgrensninger, materialtyper og dekningsnotater"
+    },
+    {
+      "id": "nn02",
+      "label": "Henrik Ibsens skrifter",
+      "url": "https://www.ibsen.uio.no/",
+      "publisher": "Universitetet i Oslo",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Utgaveprinsippene og verkvisningene med grunntekst, varianter, kommentarer og manuskriptspor"
+    },
+    {
+      "id": "nn03",
+      "label": "Litteraturbanken",
+      "url": "https://litteraturbanken.se/",
+      "publisher": "Svenska Akademien",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Forfatter-, verk-, utgave- og fulltekstvisningene med svensk bibliografisk metadata"
+    },
+    {
+      "id": "nn04",
+      "label": "Project Runeberg",
+      "url": "https://runeberg.org/",
+      "publisher": "Linköping University",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Forfatter-, tittel-, språk- og utgavevisningene i den nordiske digitale samlingen"
+    },
+    {
+      "id": "nn05",
+      "label": "The History of Nordic Women’s Literature",
+      "url": "https://nordicwomensliterature.net/welcome-to-the-history-of-nordic-womens-literature/",
+      "publisher": "University of Southern Denmark",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Innledningen og kapitlene om periodisering, kvinnelige forfatterskap, sjanger og nordisk kanon"
+    },
+    {
+      "id": "nn06",
+      "label": "Samisk bibliografi – Sámi bibliografiija",
+      "url": "https://www.nb.no/ressurser/bibliografier/",
+      "publisher": "Nasjonalbiblioteket",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Sámi bibliografiijas språk-, material-, forfatter-, emne- og utgavefelt samt dekningsbeskrivelse"
+    },
+    {
+      "id": "nn07",
+      "label": "Samiske forfattere",
+      "url": "https://result.uit.no/reaidu/vare-tema/litteratur-film-og-media/samiske-forfattere/",
+      "publisher": "UiT Norges arktiske universitet",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Presentasjonene av samiske forfattere, språk, sjangre, verk og historiske sammenhenger"
+    },
+    {
+      "id": "nn08",
+      "label": "The Native Poet as Shaman",
+      "url": "https://septentrio.uit.no/index.php/nordlit/article/view/1905",
+      "publisher": "UiT Norges arktiske universitet",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Artikkelens deler om noaidi, joik, sjamanbegrep, poetrolle og metodisk kulturkontakt"
+    },
+    {
+      "id": "nn09",
+      "label": "Dette er språklova",
+      "url": "https://sprakradet.no/spraklova/dette-er-spraklova/",
+      "publisher": "Språkrådet",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Seksjonene om norsk, samisk, nasjonale minoritetsspråk, offentlige plikter og språkstatus"
+    },
+    {
+      "id": "nn10",
+      "label": "Nasjonale minoritetsspråk",
+      "url": "https://sprakradet.no/spraklova/urfolkssprak-og-nasjonale-minoritetssprak/nasjonale-minoritetssprak/",
+      "publisher": "Språkrådet",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Seksjonene om kvensk, romani og romanes, vern, språkstatus og offentlige institusjoner"
+    },
+    {
+      "id": "nn11",
+      "label": "Kainun institutti – Kvensk institutt",
+      "url": "https://www.kvenskinstitutt.no/",
+      "publisher": "Kvensk institutt",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Instituttets presentasjon av kvensk språk, litteratur, terminologi, forskning og formidling"
+    },
+    {
+      "id": "nn12",
+      "label": "Jødisk Museum i Oslo",
+      "url": "https://www.jodiskmuseumoslo.no/",
+      "publisher": "Jødisk Museum i Oslo",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Museets samlings-, utstillings-, historie- og formidlingssider om jødisk liv i Norge"
+    },
+    {
+      "id": "nn13",
+      "label": "Sámi Archives",
+      "url": "https://www.arkivverket.no/en/about-us/sami-archives",
+      "publisher": "Arkivverket",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Institusjonspresentasjonen om samiske arkiver, språk, samlinger, adgang og ansvar"
+    },
+    {
+      "id": "nn14",
+      "label": "Jon Fosse – Facts",
+      "url": "https://www.nobelprize.org/prizes/literature/2023/fosse/facts/",
+      "publisher": "Nobel Prize Outreach",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Nobel-presentasjonens biografi, verkoversikt, språkopplysninger og prisbegrunnelse for Jon Fosse"
+    }
+  ],
+  "claims": [
+    {
+      "id": "nns-01",
+      "claim": "En faglig analyse av norsk litteraturhistoriografi må skille og dokumentere nasjonsbygging, språk og avgrensning av det norske.",
+      "source_ids": [
+        "nn01",
+        "nn02",
+        "nn05",
+        "nn14"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-02",
+      "claim": "En faglig analyse av norsk litteraturhistoriografi må skille og dokumentere periodisering, epokebrudd og konkurrerende tidslinjer.",
+      "source_ids": [
+        "nn01",
+        "nn02",
+        "nn05",
+        "nn14"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-03",
+      "claim": "En faglig analyse av norsk litteraturhistoriografi må skille og dokumentere kanonutvalg, utelatelse og kriterier for litterær verdi.",
+      "source_ids": [
+        "nn01",
+        "nn02",
+        "nn05",
+        "nn14"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-04",
+      "claim": "En faglig analyse av norsk litteraturhistoriografi må skille og dokumentere forholdet mellom forfatterbiografi, verk, institusjon og samfunn.",
+      "source_ids": [
+        "nn01",
+        "nn02",
+        "nn05",
+        "nn14"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-05",
+      "claim": "En faglig analyse av norsk litteraturhistoriografi må skille og dokumentere bokmål, nynorsk, samisk og minoritetsspråk i historiografien.",
+      "source_ids": [
+        "nn01",
+        "nn02",
+        "nn05",
+        "nn14"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-06",
+      "claim": "En faglig analyse av norsk litteraturhistoriografi må skille og dokumentere kjønn, klasse, region og koloniale relasjoner som korrektiv.",
+      "source_ids": [
+        "nn01",
+        "nn02",
+        "nn05",
+        "nn14"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-07",
+      "claim": "En faglig analyse av norsk litteraturhistoriografi må skille og dokumentere litteraturhistorie som argument med dokumentert kildegrunnlag.",
+      "source_ids": [
+        "nn01",
+        "nn02",
+        "nn05",
+        "nn14"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-08",
+      "claim": "En faglig analyse av nordisk komparasjon må skille og dokumentere Norden som historisk og institusjonell konstruksjon.",
+      "source_ids": [
+        "nn02",
+        "nn03",
+        "nn04",
+        "nn05"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-09",
+      "claim": "En faglig analyse av nordisk komparasjon må skille og dokumentere språknærhet, oversettelse og ujevnt gjensidig lesefellesskap.",
+      "source_ids": [
+        "nn02",
+        "nn03",
+        "nn04",
+        "nn05"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-10",
+      "claim": "En faglig analyse av nordisk komparasjon må skille og dokumentere kontakt, parallell og konkurranse mellom nasjonale felt.",
+      "source_ids": [
+        "nn02",
+        "nn03",
+        "nn04",
+        "nn05"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-11",
+      "claim": "En faglig analyse av nordisk komparasjon må skille og dokumentere det moderne gjennombrudd, tidsskrift og scenenettverk.",
+      "source_ids": [
+        "nn02",
+        "nn03",
+        "nn04",
+        "nn05"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-12",
+      "claim": "En faglig analyse av nordisk komparasjon må skille og dokumentere koloniale relasjoner til Sápmi, Grønland og Færøyene.",
+      "source_ids": [
+        "nn02",
+        "nn03",
+        "nn04",
+        "nn05"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-13",
+      "claim": "En faglig analyse av nordisk komparasjon må skille og dokumentere kjønn, velferd og sosial form i nordisk sammenstilling.",
+      "source_ids": [
+        "nn02",
+        "nn03",
+        "nn04",
+        "nn05"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-14",
+      "claim": "En faglig analyse av nordisk komparasjon må skille og dokumentere grensen mellom nordisk fellesskap og intern regional forskjell.",
+      "source_ids": [
+        "nn02",
+        "nn03",
+        "nn04",
+        "nn05"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-15",
+      "claim": "En faglig analyse av samisk litteratur, språk og suverenitet må skille og dokumentere Sápmi som transnasjonalt urfolksterritorium og litterært felt.",
+      "source_ids": [
+        "nn06",
+        "nn07",
+        "nn08",
+        "nn13"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-16",
+      "claim": "En faglig analyse av samisk litteratur, språk og suverenitet må skille og dokumentere samiske språk, ortografier og oversettelsesvalg.",
+      "source_ids": [
+        "nn06",
+        "nn07",
+        "nn08",
+        "nn13"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-17",
+      "claim": "En faglig analyse av samisk litteratur, språk og suverenitet må skille og dokumentere joik, muntlighet, bilde, duodji og skriftlig form.",
+      "source_ids": [
+        "nn06",
+        "nn07",
+        "nn08",
+        "nn13"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-18",
+      "claim": "En faglig analyse av samisk litteratur, språk og suverenitet må skille og dokumentere fornorsking, misjon, skole og arkiv som litterære betingelser.",
+      "source_ids": [
+        "nn06",
+        "nn07",
+        "nn08",
+        "nn13"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-19",
+      "claim": "En faglig analyse av samisk litteratur, språk og suverenitet må skille og dokumentere språksuverenitet, urfolksrett og lokal kunnskapsmyndighet.",
+      "source_ids": [
+        "nn06",
+        "nn07",
+        "nn08",
+        "nn13"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-20",
+      "claim": "En faglig analyse av samisk litteratur, språk og suverenitet må skille og dokumentere forlag, bibliografi, pris og institusjonell synlighet.",
+      "source_ids": [
+        "nn06",
+        "nn07",
+        "nn08",
+        "nn13"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-21",
+      "claim": "En faglig analyse av samisk litteratur, språk og suverenitet må skille og dokumentere forskerposisjon, samtykke, tilgang og restitutiv praksis.",
+      "source_ids": [
+        "nn06",
+        "nn07",
+        "nn08",
+        "nn13"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-22",
+      "claim": "En faglig analyse av kvensk, romani, romanes og jødisk minoritetslitteratur må skille og dokumentere hver minoritets særegne historie, språk og institusjonelle posisjon.",
+      "source_ids": [
+        "nn01",
+        "nn09",
+        "nn10",
+        "nn11",
+        "nn12"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-23",
+      "claim": "En faglig analyse av kvensk, romani, romanes og jødisk minoritetslitteratur må skille og dokumentere migrasjon, grense, reise, diaspora og flerstedlig tilhørighet.",
+      "source_ids": [
+        "nn01",
+        "nn09",
+        "nn10",
+        "nn11",
+        "nn12"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-24",
+      "claim": "En faglig analyse av kvensk, romani, romanes og jødisk minoritetslitteratur må skille og dokumentere fornorsking, assimilasjon, registrering, forfølgelse og taushet.",
+      "source_ids": [
+        "nn01",
+        "nn09",
+        "nn10",
+        "nn11",
+        "nn12"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-25",
+      "claim": "En faglig analyse av kvensk, romani, romanes og jødisk minoritetslitteratur må skille og dokumentere muntlig tradisjon, minne, vitnesbyrd og litterær form.",
+      "source_ids": [
+        "nn01",
+        "nn09",
+        "nn10",
+        "nn11",
+        "nn12"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-26",
+      "claim": "En faglig analyse av kvensk, romani, romanes og jødisk minoritetslitteratur må skille og dokumentere språkskifte, revitalisering, oversettelse og publiseringsvilkår.",
+      "source_ids": [
+        "nn01",
+        "nn09",
+        "nn10",
+        "nn11",
+        "nn12"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-27",
+      "claim": "En faglig analyse av kvensk, romani, romanes og jødisk minoritetslitteratur må skille og dokumentere arkivfravær, egenarkiv og minoritetsstyrt dokumentasjon.",
+      "source_ids": [
+        "nn01",
+        "nn09",
+        "nn10",
+        "nn11",
+        "nn12"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-28",
+      "claim": "En faglig analyse av kvensk, romani, romanes og jødisk minoritetslitteratur må skille og dokumentere grensen mot en homogen og utskiftbar minoritetskategori.",
+      "source_ids": [
+        "nn01",
+        "nn09",
+        "nn10",
+        "nn11",
+        "nn12"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-29",
+      "claim": "En faglig analyse av dialekt, målform og flerspråklighet må skille og dokumentere bokmål og nynorsk som historiske og institusjonelle skriftspråk.",
+      "source_ids": [
+        "nn02",
+        "nn09",
+        "nn10",
+        "nn01"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-30",
+      "claim": "En faglig analyse av dialekt, målform og flerspråklighet må skille og dokumentere dialekt som stemme, sted, klasse og sosial lesbarhet.",
+      "source_ids": [
+        "nn02",
+        "nn09",
+        "nn10",
+        "nn01"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-31",
+      "claim": "En faglig analyse av dialekt, målform og flerspråklighet må skille og dokumentere kodeveksling, nyere minoritetsspråk og flerspråklig byspråk.",
+      "source_ids": [
+        "nn02",
+        "nn09",
+        "nn10",
+        "nn01"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-32",
+      "claim": "En faglig analyse av dialekt, målform og flerspråklighet må skille og dokumentere ortografi, syntaks, ordvalg og litterær stilisering.",
+      "source_ids": [
+        "nn02",
+        "nn09",
+        "nn10",
+        "nn01"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-33",
+      "claim": "En faglig analyse av dialekt, målform og flerspråklighet må skille og dokumentere normalisering, korrektur, utgave og tap av språklig forskjell.",
+      "source_ids": [
+        "nn02",
+        "nn09",
+        "nn10",
+        "nn01"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-34",
+      "claim": "En faglig analyse av dialekt, målform og flerspråklighet må skille og dokumentere forlag, skole, kritikk og marked som språkportvakter.",
+      "source_ids": [
+        "nn02",
+        "nn09",
+        "nn10",
+        "nn01"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-35",
+      "claim": "En faglig analyse av dialekt, målform og flerspråklighet må skille og dokumentere skillet mellom dokumentert språkbruk og forskerens identitetsattribusjon.",
+      "source_ids": [
+        "nn02",
+        "nn09",
+        "nn10",
+        "nn01"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-36",
+      "claim": "En faglig analyse av sted, region, nasjon og kanon må skille og dokumentere sted som sanset miljø, sosial relasjon og juridisk territorium.",
+      "source_ids": [
+        "nn01",
+        "nn05",
+        "nn07",
+        "nn14"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-37",
+      "claim": "En faglig analyse av sted, region, nasjon og kanon må skille og dokumentere region som litterær, økonomisk og institusjonell skala.",
+      "source_ids": [
+        "nn01",
+        "nn05",
+        "nn07",
+        "nn14"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-38",
+      "claim": "En faglig analyse av sted, region, nasjon og kanon må skille og dokumentere nasjon som fortelling, språkregime og kanoniserende infrastruktur.",
+      "source_ids": [
+        "nn01",
+        "nn05",
+        "nn07",
+        "nn14"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-39",
+      "claim": "En faglig analyse av sted, region, nasjon og kanon må skille og dokumentere by, bygd, kyst, innland og nordområde som formede rom.",
+      "source_ids": [
+        "nn01",
+        "nn05",
+        "nn07",
+        "nn14"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-40",
+      "claim": "En faglig analyse av sted, region, nasjon og kanon må skille og dokumentere minnested, landskap, navngiving og konkurrerende tilhørighet.",
+      "source_ids": [
+        "nn01",
+        "nn05",
+        "nn07",
+        "nn14"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-41",
+      "claim": "En faglig analyse av sted, region, nasjon og kanon må skille og dokumentere skole, bibliotek, museum, pris og festival som kanonaktører.",
+      "source_ids": [
+        "nn01",
+        "nn05",
+        "nn07",
+        "nn14"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "nns-42",
+      "claim": "En faglig analyse av sted, region, nasjon og kanon må skille og dokumentere skalaveksling uten at lokalt verk blir nasjonalt symbol automatisk.",
+      "source_ids": [
+        "nn01",
+        "nn05",
+        "nn07",
+        "nn14"
+      ],
+      "classification": "norwegian_nordic_sami_minority_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "b7e-01",
+      "claim": "Norsk litteraturhistoriografi kan prøves gjennom en kontrollert sammenstilling av Henrik Ibsen: Et dukkehjem, Camilla Collett: Amtmandens Døtre og Knut Hamsun: Sult. historiografisk kollasjon og periodiseringsanalyse brukes til å undersøke nasjonsbygging, språk og avgrensning av det norske, periodisering, epokebrudd og konkurrerende tidslinjer og kanonutvalg, utelatelse og kriterier for litterær verdi, mens norsk litteraturhistoriografi og nasjons- og kanonteori organiserer spørsmålene uten å bestemme svaret på forhånd.",
+      "source_ids": [
+        "nn01",
+        "nn02"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b7e-02",
+      "claim": "Nordisk komparasjon kan prøves gjennom en kontrollert sammenstilling av Henrik Ibsen: Et dukkehjem, August Strindberg: Fröken Julie og Selma Lagerlöf: Gösta Berlings saga. parallell næranalyse og kontakt- og oversettelseskartlegging brukes til å undersøke Norden som historisk og institusjonell konstruksjon, språknærhet, oversettelse og ujevnt gjensidig lesefellesskap og kontakt, parallell og konkurranse mellom nasjonale felt, mens nordisk komparatisme og transnasjonal litteraturteori organiserer spørsmålene uten å bestemme svaret på forhånd.",
+      "source_ids": [
+        "nn02",
+        "nn03"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b7e-03",
+      "claim": "Samisk litteratur, språk og suverenitet kan prøves gjennom en kontrollert sammenstilling av Nils-Aslak Valkeapää: Beaivi, áhčážan, Kirsti Paltto: Guhtoset dearvan min bohccot og Sigbjørn Skåden: Våke over dem som sover.",
+      "source_ids": [
+        "nn06",
+        "nn07"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b7e-04",
+      "claim": "Kvensk, romani, romanes og jødisk minoritetslitteratur kan prøves gjennom en kontrollert sammenstilling av Nasjonalbiblioteket: kvenske publikasjoner, Nasjonalbiblioteket: romani- og romanessamlinger og Ruth Maier: Ruth Maiers dagbok.",
+      "source_ids": [
+        "nn01",
+        "nn09"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b7e-05",
+      "claim": "Dialekt, målform og flerspråklighet kan prøves gjennom en kontrollert sammenstilling av Oskar Braaten: Ulvehiet, Tarjei Vesaas: Fuglane og Zeshan Shakar: Tante Ulrikkes vei.",
+      "source_ids": [
+        "nn02",
+        "nn09"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b7e-06",
+      "claim": "Sted, region, nasjon og kanon kan prøves gjennom en kontrollert sammenstilling av Knut Hamsun: Sult, Jon Fosse: Septologien og Roy Jacobsen: De usynlige. stednær tekstanalyse og region- og sirkulasjonskartlegging brukes til å undersøke sted som sanset miljø, sosial relasjon og juridisk territorium, region som litterær, økonomisk og institusjonell skala og nasjon som fortelling, språkregime og kanoniserende infrastruktur, mens stedsteori og regionteori organiserer spørsmålene uten å bestemme svaret på forhånd.",
+      "source_ids": [
+        "nn01",
+        "nn05"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    }
+  ]
+}

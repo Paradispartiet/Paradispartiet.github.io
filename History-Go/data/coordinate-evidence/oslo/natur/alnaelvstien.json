@@ -1,0 +1,143 @@
+{
+  "schemaVersion": "1.0",
+  "placeId": "alnaelvstien",
+  "placeFile": "data/places/natur/oslo/places_oslo_alna/alnaelvstien.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.9059364,
+    "lon": 10.8030114,
+    "r": 250,
+    "coordStatus": "verified_geometry",
+    "coordSource": "OpenStreetMap Alnastien routeSegments (31989054, 1527826111, 1527826112, 113281394, 113281380, 945870545, 112543906, 1085893555, 385329987, 385329986, 674182052); display midpoint on way 113281394",
+    "coordType": "multi_segment_route_display_anchor",
+    "coordNote": "Batch 159 retter den tidligere brede og uverifiserte «Alnaelvstien»-representasjonen til den konkrete kartlagte Alnastien-komponenten gjennom Svartdalen og Bryn. Fresh OSM validerer elleve ways med eksakt name=Alnastien. De danner én uforgrenet endepunktkoblet kjede uten isolerte segmenter eller forgreningsnoder. Samlet lengde er 1642 meter. Canonical lat/lon er deterministisk lengdemidtpunkt for den sammensatte kjeden og ligger på OSM way 113281394; denne wayen brukes derfor som coordinate-source-contract displaykilde. Alle elleve ways lagres eksplisitt som routeSegments. Oslo kommune dokumenterer turveien langs Alnaelva gjennom Svartdalsparken og omtaler Alnastien i Etterstad/Bryn-kontekst. Modellen hevder ikke at disse 1,64 kilometerne er hele turveisystemet langs Alna. Legacy-punktet og nearest/first-hit brukes ikke."
+  },
+  "identity": {
+    "currentName": "Alnastien – Svartdalen og Bryn",
+    "resolvedIdentity": "Den konkrete sammenhengende Alnastien-komponenten gjennom Svartdalen og Bryn, modellert som elleve eksakt navngitte OSM-routeSegments",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "route",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [],
+  "evidence": [
+    {
+      "sourceProvider": "osm",
+      "sourceName": "OpenStreetMap – sammenhengende Alnastien routeSegments",
+      "sourceUrl": "https://www.openstreetmap.org/way/113281394",
+      "sourceObjectId": "osm-way:113281394",
+      "sourceQuality": "exact_named_unbranched_multi_segment_route_chain",
+      "finding": "Elleve ferskt validerte ways med eksakt name=Alnastien danner én uforgrenet endepunktkoblet kjede på 1642 m. Deterministisk rutemidtpunkt er 59.9059364, 10.8030114 og ligger på way 113281394.",
+      "canVerifyCoordinate": true,
+      "reason": "Canonical displaykoordinat beregnes direkte fra den eksplisitte sammensatte rutekjeden, og alle delgeometrier lagres som routeSegments."
+    },
+    {
+      "sourceProvider": "municipality",
+      "sourceName": "Oslo kommune – rehabilitering av hengebrua i Svartdalsparken",
+      "sourceUrl": "https://aktuelt.oslo.kommune.no/rehabilitering-av-hengebrua-i-svartdalsparken",
+      "sourceObjectId": "oslo-kommune:svartdalsparken:turvei-langs-alnaelva",
+      "sourceQuality": "official_local_trail_context",
+      "finding": "Oslo kommune dokumenterer hengebrua og bordgangen i Svartdalsparken som del av turveien langs Alnaelva.",
+      "canVerifyCoordinate": false,
+      "reason": "Kryssjekker den lokale turvei-identiteten; eksakt rutekjede kommer fra OSM."
+    },
+    {
+      "sourceProvider": "municipality",
+      "sourceName": "Oslo kommune – Etterstadsletta vest",
+      "sourceUrl": "https://www.oslo.kommune.no/slik-bygger-vi-oslo/etterstadsletta-vest-bedre-tilrettelegging-for-syklende-og-gaende",
+      "sourceObjectId": "oslo-kommune:etterstadsletta-vest:alnastien",
+      "sourceQuality": "official_named_alnastien_scope_context",
+      "finding": "Oslo kommune omtaler en snarvei fra Alnastien til Etterstadkroken og kryssjekker Alnastien-navnet i Bryn/Etterstad-scope.",
+      "canVerifyCoordinate": false,
+      "reason": "Kryssjekker geografisk scope og navn; canonical geometri kommer fra OSM-routeSegments."
+    }
+  ],
+  "addressCandidates": [],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:31989054",
+      "canApplyToPlace": false
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:1527826111",
+      "canApplyToPlace": false
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:1527826112",
+      "canApplyToPlace": false
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:113281394",
+      "canApplyToPlace": true
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:113281380",
+      "canApplyToPlace": false
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:945870545",
+      "canApplyToPlace": false
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:112543906",
+      "canApplyToPlace": false
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:1085893555",
+      "canApplyToPlace": false
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:385329987",
+      "canApplyToPlace": false
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:385329986",
+      "canApplyToPlace": false
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:674182052",
+      "canApplyToPlace": false
+    }
+  ],
+  "geometryCandidates": [
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:113281394",
+      "lat": 59.9059364,
+      "lon": 10.8030114,
+      "coordRole": "line_anchor",
+      "geometryType": "MultiSegmentLineString",
+      "canApplyToPlace": true
+    }
+  ],
+  "coordinateCandidates": [
+    {
+      "lat": 59.9059364,
+      "lon": 10.8030114,
+      "coordRole": "line_anchor",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Den konkrete Alnastien-komponenten gjennom Svartdalen og Bryn er anvendt som verified multi-segment route med alle elleve ways lagret eksplisitt."
+  },
+  "notes": [
+    "Batch 159 retter den tidligere brede og uverifiserte «Alnaelvstien»-representasjonen til den konkrete kartlagte Alnastien-komponenten gjennom Svartdalen og Bryn. Fresh OSM validerer elleve ways med eksakt name=Alnastien. De danner én uforgrenet endepunktkoblet kjede uten isolerte segmenter eller forgreningsnoder. Samlet lengde er 1642 meter. Canonical lat/lon er deterministisk lengdemidtpunkt for den sammensatte kjeden og ligger på OSM way 113281394; denne wayen brukes derfor som coordinate-source-contract displaykilde. Alle elleve ways lagres eksplisitt som routeSegments. Oslo kommune dokumenterer turveien langs Alnaelva gjennom Svartdalsparken og omtaler Alnastien i Etterstad/Bryn-kontekst. Modellen hevder ikke at disse 1,64 kilometerne er hele turveisystemet langs Alna. Legacy-punktet og nearest/first-hit brukes ikke."
+  ]
+}

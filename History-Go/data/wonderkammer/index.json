@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "description": "Manifest for Wonderkammer-data. Legg nye Wonderkammer-filer i files-listen, så flettes de automatisk inn i window.WONDERKAMMER ved boot.",
+  "files": [
+    "data/wonderkammer/base.json",
+    "data/wonderkammer/urban_culture.json",
+    "data/wonderkammer/playgrounds.json",
+    "data/wonderkammer/playgrounds_expansion.json",
+    "data/wonderkammer/oslo_lekeplasser_trening_flat.json",
+    "data/wonderkammer/training_expansion.json",
+    "data/wonderkammer/family_routes.json",
+    "data/wonderkammer/art.json",
+    "data/wonderkammer/street_art.json",
+    "data/wonderkammer/architecture.json",
+    "data/wonderkammer/parks_nature.json",
+    "data/wonderkammer/museums_libraries.json",
+    "data/wonderkammer/seasonal.json",
+    "data/wonderkammer/person_chambers.json",
+    "data/wonderkammer/time_layers.json",
+    "data/wonderkammer/civication_v2.json",
+    "data/wonderkammer/art/oslo_street_art.json",
+    "data/wonderkammer/playgrounds/oslo_playground_objects_flat.json",
+    "data/wonderkammer/actual_site_treasures_batch_1.json",
+    "data/wonderkammer/site_package_batch_1.json",
+    "data/wonderkammer/site_package_batch_2.json",
+    "data/wonderkammer/site_package_batch_3.json",
+    "data/wonderkammer/site_package_batch_4.json",
+    "data/wonderkammer/site_package_sagene_kampen.json",
+    "data/wonderkammer/site_package_alna_korridor.json",
+    "data/wonderkammer/site_package_ljanselva_korridor.json",
+    "data/wonderkammer/site_package_bygdoy_friluft.json",
+    "data/wonderkammer/site_package_populaerkultur_sentrum.json",
+    "data/wonderkammer/site_package_psykologisk_institutt_uio.json",
+    "data/wonderkammer/site_package_kampen_park_good_game.json",
+    "data/wonderkammer/site_package_ost_alna_natur_byhistorie.json",
+    "data/wonderkammer/site_package_oslo_media_redaksjoner.json",
+    "data/wonderkammer/site_package_oslo_popkultur_sentrum_batch1.json",
+    "data/wonderkammer/atlas_obscura_oslo_microplaces_batch_1.json",
+    "data/wonderkammer/atlas_obscura_oslo_microplaces_batch_2.json",
+    "data/wonderkammer/atlas_obscura_oslo_microplaces_batch_3.json",
+    "data/wonderkammer/atlas_obscura_oslo_microplaces_batch_4.json",
+    "data/wonderkammer/oslo_kultureiendommer_microplaces_batch_1.json",
+    "data/wonderkammer/oslo_oppdag_kvadraturen_microplaces_batch_1.json",
+    "data/wonderkammer/oslo_oppdag_kvadraturen_art_microplaces_batch_1.json",
+    "data/wonderkammer/oslo_oppdag_kvadraturen_art_microplaces_batch_2.json",
+    "data/wonderkammer/oslo_oppdag_kvadraturen_hovedstaden_microplaces_batch_1.json",
+    "data/wonderkammer/oslo_oppdag_kvadraturen_hovedstaden_microplaces_batch_2.json",
+    "data/wonderkammer/oslo_oppdag_kvadraturen_under_bakken_microplaces_batch_1.json",
+    "data/wonderkammer/oslo_oppdag_kvadraturen_her_skal_byen_ligge_microplaces_batch_1.json",
+    "data/wonderkammer/oslo_oppdag_kvadraturen_festningsbyen_microplaces_batch_1.json",
+    "data/wonderkammer/oslo_oppdag_kvadraturen_stil_arkitektur_microplaces_batch_1.json",
+    "data/wonderkammer/oslo_oppdag_kvadraturen_barnas_kvadratur_microplaces_batch_1.json",
+    "data/wonderkammer/oslo_oppdag_kvadraturen_historien_christiania_microplaces_batch_1.json"
+  ],
+  "groups": {
+    "base": [
+      "data/wonderkammer/base.json"
+    ],
+    "urban_culture": [
+      "data/wonderkammer/urban_culture.json"
+    ],
+    "playgrounds": [
+      "data/wonderkammer/playgrounds.json",
+      "data/wonderkammer/playgrounds_expansion.json",
+      "data/wonderkammer/oslo_lekeplasser_trening_flat.json",
+      "data/wonderkammer/playgrounds/oslo_playground_objects_flat.json"
+    ],
+    "training": [
+      "data/wonderkammer/training_expansion.json",
+      "data/wonderkammer/oslo_lekeplasser_trening_flat.json"
+    ],
+    "family_routes": [
+      "data/wonderkammer/family_routes.json"
+    ],
+    "art": [
+      "data/wonderkammer/art.json",
+      "data/wonderkammer/art/oslo_street_art.json"
+    ],
+    "street_art": [
+      "data/wonderkammer/street_art.json",
+      "data/wonderkammer/art/oslo_street_art.json"
+    ],
+    "architecture": [
+      "data/wonderkammer/architecture.json"
+    ],
+    "parks_nature": [
+      "data/wonderkammer/parks_nature.json"
+    ],
+    "museums_libraries": [
+      "data/wonderkammer/museums_libraries.json"
+    ],
+    "seasonal": [
+      "data/wonderkammer/seasonal.json"
+    ],
+    "person_chambers": [
+      "data/wonderkammer/person_chambers.json"
+    ],
+    "time_layers": [
+      "data/wonderkammer/time_layers.json"
+    ],
+    "civication": [
+      "data/wonderkammer/civication_v2.json"
+    ]
+  }
+}

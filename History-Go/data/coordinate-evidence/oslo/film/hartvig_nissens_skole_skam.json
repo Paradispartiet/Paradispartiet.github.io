@@ -1,0 +1,98 @@
+{
+  "placeId": "hartvig_nissens_skole_skam",
+  "placeFile": "data/places/film/oslo/places/hartvig_nissens_skole_skam.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.918543,
+    "lon": 10.7167887,
+    "r": 130,
+    "coordStatus": "verified_geometry",
+    "coordSource": "OpenStreetMap node 325636287 – Hartvig Nissens skole",
+    "coordType": "school_site_point",
+    "coordNote": "President Harbitz' gate 11 ble tidligere kjørt adresse-first, men ga flere ikke-entydige Geonorge-treff. Oslo byleksikon dokumenterer den historiske skolen og lenker stedet til Oslo bykart point 7165. Det entydige navngitte OSM-skoleobjektet node 325636287 har Oslo kommune som operator og offisielle organisasjons-/skolereferanser, og brukes derfor som objektgeometri-fallback for skoleområdet der SKAM ble spilt inn."
+  },
+  "identity": {
+    "currentName": "Hartvig Nissens skole (SKAM)",
+    "resolvedIdentity": "det historiske Hartvig Nissen-bygget brukt som SKAM-lokasjon, tidligere Niels Juels gate 56 og nå knyttet til President Harbitz' gate 11",
+    "identityStatus": "resolved",
+    "identityProblem": "Den fysiske bygningen er identifisert, men Geonorge-adressen gir flere ikke-entydige treff.",
+    "locatorTypeCandidate": "building",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [
+    "offisiell objektgeometri for det historiske skolebygget",
+    "entydig kobling mellom bygningen og ett Geonorge-adressepunkt",
+    "fysisk kontroll mot resten av skolecampuset"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Oslo byleksikon – Hartvig Nissens skole",
+      "sourceUrl": "https://oslobyleksikon.no/side/Hartvig_Nissens_skole",
+      "sourceObjectId": "oslobykart:point:7165",
+      "finding": "Oslo byleksikon dokumenterer skolen i President Harbitz' gate 11, SKAM-innspillingen og lenker stedet til Oslo bykart point 7165.",
+      "sourceQuality": "documented_identity_or_source_coordinate",
+      "canVerifyCoordinate": true,
+      "reason": "President Harbitz' gate 11 ble tidligere kjørt adresse-first, men ga flere ikke-entydige Geonorge-treff. Oslo byleksikon dokumenterer den historiske skolen og lenker stedet til Oslo bykart point 7165. Det entydige navngitte OSM-skoleobjektet node 325636287 har Oslo kommune som operator og offisielle organisasjons-/skolereferanser, og brukes derfor som objektgeometri-fallback for skoleområdet der SKAM ble spilt inn."
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceName": "OpenStreetMap node 325636287 – Hartvig Nissens skole",
+      "sourceUrl": "https://www.openstreetmap.org/node/325636287",
+      "sourceObjectId": "osm-node:325636287",
+      "finding": "Det eksakte navngitte amenity=school-objektet identifiserer Hartvig Nissens skole, har Oslo kommune som operator og offisielle organisasjons-/skolereferanser.",
+      "sourceQuality": "unique_exact_named_object_geometry",
+      "canVerifyCoordinate": true,
+      "reason": "President Harbitz' gate 11 ble tidligere kjørt adresse-first, men ga flere ikke-entydige Geonorge-treff. Oslo byleksikon dokumenterer den historiske skolen og lenker stedet til Oslo bykart point 7165. Det entydige navngitte OSM-skoleobjektet node 325636287 har Oslo kommune som operator og offisielle organisasjons-/skolereferanser, og brukes derfor som objektgeometri-fallback for skoleområdet der SKAM ble spilt inn."
+    }
+  ],
+  "addressCandidates": [
+    {
+      "address": "President Harbitz' gate 11, Oslo",
+      "sourceProvider": "official_address",
+      "canApplyToPlace": false
+    },
+    {
+      "address": "Niels Juels gate 56, Oslo (tidligere adresse)",
+      "sourceProvider": "manual_research",
+      "canApplyToPlace": false
+    }
+  ],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "oslobykart:point:7165",
+      "canApplyToPlace": true
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-node:325636287",
+      "canApplyToPlace": true
+    }
+  ],
+  "geometryCandidates": [
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-node:325636287",
+      "canApplyToPlace": true
+    }
+  ],
+  "coordinateCandidates": [
+    {
+      "lat": 59.918543,
+      "lon": 10.7167887,
+      "coordRole": "site_center",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Dokumentert koordinat-/objektkilde er anvendt på canonical place."
+  },
+  "notes": [
+    "President Harbitz' gate 11 ble tidligere kjørt adresse-first, men ga flere ikke-entydige Geonorge-treff. Oslo byleksikon dokumenterer den historiske skolen og lenker stedet til Oslo bykart point 7165. Det entydige navngitte OSM-skoleobjektet node 325636287 har Oslo kommune som operator og offisielle organisasjons-/skolereferanser, og brukes derfor som objektgeometri-fallback for skoleområdet der SKAM ble spilt inn."
+  ]
+}

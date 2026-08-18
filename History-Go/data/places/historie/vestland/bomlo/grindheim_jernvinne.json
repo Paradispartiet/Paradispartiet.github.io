@@ -1,0 +1,152 @@
+{
+  "id": "grindheim_jernvinne",
+  "name": "Jernvinna på Grindheim",
+  "lat": 59.69558126562117,
+  "lon": 5.352804622812133,
+  "r": 180,
+  "coordType": "site_center",
+  "coordStatus": "verified_geometry",
+  "coordSource": "Riksantikvaren/Kulturminnesøk",
+  "coordVerifiedAt": "2026-07-18",
+  "coordNote": "Riksantikvaren/Kulturminnesøk sitt registrerte enkeltminnepunkt for Grindheim jernvinne, kulturminne 72832-1. Primærkilden plasserer lokaliteten i Bømlo; posten er derfor flyttet ut av Etne.",
+  "locatorType": "archaeological_site",
+  "sourceProvider": "manual_research",
+  "sourceObjectId": "kulturminnesok:72832-1",
+  "geocodeAccuracy": "geometric_center",
+  "coordRole": "site_center",
+  "category": "historie",
+  "fylke": "vestland",
+  "kommune": "Bømlo",
+  "year": null,
+  "period": "Førindustriell jernproduksjon",
+  "tags": [
+    "historie",
+    "arkeologi",
+    "jernvinne",
+    "grindheim",
+    "jernproduksjon",
+    "produksjonshistorie"
+  ],
+  "desc": "Arkeologisk registrert jernvinnelokalitet på Grindheim, oppdaget da en vannledningsgrøft traff en steinbygd struktur omtrent én meter under bakken.",
+  "popupDesc": "På Grindheim ble en arkeologisk lokalitet registrert som jernvinne etter at graving av en vannledningsgrøft avdekket en struktur omtrent én meter under overflaten. Store steinheller var lagt opp i en tydelig konstruksjon. Den tilgjengelige registreringen gir ikke grunnlag for å rekonstruere hele anlegget eller fastslå en sikker datering, men funnet viser at produksjonsspor også ligger skjult under det historiske gårdslandskapet på Grindheim. Stedet bør derfor leses som et arkeologisk produksjonsfunn, ikke som et synlig eller rekonstruert jernverk.",
+  "externalLinks": [
+    {"type": "official", "label": "Riksantikvaren/Kulturminnesøk – Grindheim jernvinne", "url": "https://kms-api.kulturminnesok.no/api/v2/search/72832", "lang": "nn", "verifiedAt": "2026-07-18"},
+    {"type": "reference", "label": "Store norske leksikon – jernvinna", "url": "https://snl.no/jernvinna", "lang": "no", "verifiedAt": "2026-07-18"}
+  ],
+  "emne_ids": [
+    "em_his_spor_materialitet",
+    "em_his_kildekritikk_arkiv_spor",
+    "em_his_kilder_taushet_blindsoner",
+    "em_his_kulturminner_bevaring"
+  ],
+  "underbadge_ids": ["forhistorie", "kulturminner_og_bevaring"],
+  "works": [
+    {
+      "id": "grindheim_jernvinne_steinhellene",
+      "title": "Den steinbygde strukturen",
+      "type": "produksjonsspor",
+      "kind": "steinstruktur",
+      "desc": "Store heller låg lagde i ein konstruksjon om lag éin meter under bakken.",
+      "why_here": "Dette er det konkret dokumenterte fysiske sporet i den tilgjengelege registreringa.",
+      "source_note": "Riksantikvaren/Kulturminnesøk, kulturminne 72832-1. Kontrollert 18. juli 2026."
+    },
+    {
+      "id": "grindheim_jernvinne_grofta",
+      "title": "Vassleidningsgrøfta",
+      "type": "funnkontekst",
+      "kind": "moderne_inngrep",
+      "desc": "Lokaliteten vart oppdaga då ei moderne grøft skar ned gjennom det eldre kulturlaget.",
+      "why_here": "Funnet viser korleis arkeologiske produksjonsspor kan bli kjende ved tilfeldig eller planlagt anleggsarbeid.",
+      "source_note": "Riksantikvaren/Kulturminnesøk, kulturminne 72832-1. Kontrollert 18. juli 2026."
+    },
+    {
+      "id": "grindheim_jernvinne_registreringa",
+      "title": "Registreringa som jernvinne",
+      "type": "arkeologisk_kjelde",
+      "kind": "lokalitetsregistrering",
+      "desc": "Kulturminneregistreringa klassifiserer den underjordiske strukturen som jernvinne.",
+      "why_here": "Klassifiseringa gir ein fagleg inngang, men er ikkje nok til å dikte ovnsform, slaggfunn eller sikker dato.",
+      "source_note": "Riksantikvaren/Kulturminnesøk, kulturminne 72832-1. Kontrollert 18. juli 2026."
+    }
+  ],
+  "for_na": {
+    "title": "Frå skjult produksjonsspor til grøftefunn",
+    "before": "Ein steinbygd struktur inngjekk i førindustriell jernframstilling på Grindheim. Den tilgjengelege registreringa gir ikkje sikker datering eller full plan av anlegget.",
+    "now": "Lokaliteten er framleis underjordisk og blir kjend gjennom grøftefunnet og kulturminneregistreringa, ikkje som eit synleg rekonstruert jernverk.",
+    "change": "Eit produksjonsspor som låg skjult i gardsjorda vart synleg eit kort augeblikk gjennom moderne infrastrukturarbeid og deretter gjort til dokumentert arkeologisk kjelde.",
+    "lookFor": ["at markøren er representativ, ikkje eit eksakt utstillingspunkt", "det historiske gardslandskapet", "samanhengen med andre skjulte kulturspor", "skiljet mellom registrert funn og rekonstruksjon"],
+    "sources": ["https://kms-api.kulturminnesok.no/api/v2/search/72832", "https://snl.no/jernvinna"]
+  },
+  "nature_profile": {
+    "type": "gardsjord / undergrunn / terrasselandskap",
+    "title": "Produksjonssporet under Grindheim-jorda",
+    "summary": "Lokaliteten ligg i den arkeologiske undergrunnen på Grindheim. Jordlaget som skjuler anlegget er sjølv del av bevaringsmiljøet.",
+    "themes": ["undergrunn", "gardslandskap", "steinstruktur", "moderne grøft", "skjult kulturminne"],
+    "nearby_place_ids": []
+  },
+  "civication_store": [
+    {
+      "id": "grindheim_jernvinne_hellemodell",
+      "title": "Hellekonstruksjon frå Grindheim",
+      "type": "arkeologisk_modell",
+      "kind": "physical_object",
+      "desc": "Ein modell av dei store hellene slik registreringa skildrar dei under bakken.",
+      "placeSpecificReason": "Steinhellene er det stadsspesifikke, dokumenterte konstruksjonssporet.",
+      "historicalFunction": "Del av ein struktur registrert som jernvinne; detaljert funksjon er ikkje sikkert rekonstruert.",
+      "physicalObject": true, "placeSpecific": true, "storePrice": 30, "currency": "PC", "collection": "grindheim_jernvinne", "collectable": true,
+      "civicationUse": ["produksjonshistorie", "arkeologi", "kildekritikk"],
+      "source_urls": ["https://kms-api.kulturminnesok.no/api/v2/search/72832"]
+    },
+    {
+      "id": "grindheim_jernvinne_grofteprofil",
+      "title": "Grøfteprofil med skjult anlegg",
+      "type": "funnmodell",
+      "kind": "physical_object",
+      "desc": "Ein lagprofil som viser korleis moderne graving kan treffe eit kulturminne om lag éin meter nede.",
+      "placeSpecificReason": "Grindheim-lokaliteten vart oppdaga i ei vassleidningsgrøft.",
+      "historicalFunction": "Spelmodell for funnkontekst, dokumentasjon og vern.",
+      "physicalObject": true, "placeSpecific": true, "storePrice": 25, "currency": "PC", "collection": "grindheim_jernvinne", "collectable": true,
+      "civicationUse": ["stratigrafi", "kulturminnevern", "moderne_inngrep"],
+      "source_urls": ["https://kms-api.kulturminnesok.no/api/v2/search/72832"]
+    }
+  ],
+  "brands": [
+    {"id": "vestland_fylkeskommune_kulturarv", "name": "Vestland fylkeskommune – kulturarv", "brand_kind": "professional"},
+    {"id": "store_norske_leksikon", "name": "Store norske leksikon", "brand_kind": "professional"}
+  ],
+  "quiz_profile": {
+    "place_type": "jernvinneanlegg",
+    "subtype": "underjordisk_pavist_produksjonsstruktur_i_gardslandskap",
+    "signature_features": [
+      "oppdaget under graving av vannledningsgrøft",
+      "steinbygd struktur omtrent én meter under bakken",
+      "registrert som jernvinne på Grindheim"
+    ],
+    "primary_angles": [
+      "jernproduksjon",
+      "arkeologi",
+      "gårdslandskap",
+      "skjulte_kulturspor"
+    ],
+    "question_families": [
+      "jernvinne",
+      "arkeologiske_funn",
+      "grindheim",
+      "produksjonshistorie"
+    ],
+    "avoid_angles": [
+      "dikta_opp_slaggfunn_som_ikke_er_beskrevet_i_den_tilgjengelige_registreringen",
+      "gi_anlegget_en_sikker_datering"
+    ],
+    "must_include": [
+      "at anlegget ble oppdaget under moderne grøftegraving",
+      "den steinbygde strukturen under bakken",
+      "at registreringen klassifiserer lokaliteten som jernvinne"
+    ],
+    "contrast_targets": [
+      "gjerdesvagen_jernvinne",
+      "grindheim_kyrkje_etne"
+    ],
+    "notes": "Koordinaten bruker Riksantikvaren/Kulturminnesøk sitt registrerte enkeltminnepunkt for kulturminne 72832-1 i Bømlo. Posten ble flyttet ut av Etne etter identitetskontroll."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema":"civication_role_model_v1","version":1,
+  "source":{"badge_file":"data/badges/subkultur.json","badge_id":"subkultur","badge_name":"Subkultur","tier_label":"Arrangementsplanlegger","tier_threshold":40,"evidence_file":"data/Civication/subcultureCareerEvidence.json"},
+  "category":"subkultur","role_scope":"subkultur_program_og_koordinering","role_id":"subkultur_arrangementsplanlegger","title":"Arrangementsplanlegger",
+  "professional_description":["Planlegger, koordinerer og gjennomfører arrangement fra bestilling og budsjett til leveranse og oppgjør."],
+  "core_narrative":["Du gjør ideen gjennomførbar uten å polere bort alt som gjorde den interessant."],
+  "work_life":{"daily_work":["lage plan og budsjett","bestille leveranser","koordinere aktører","markedsføre arrangement","følge opp faktura og oppgjør"],"responsibilities":["realistisk framdrift","tydelige avtaler","åpen prioritering","publikums- og produksjonshensyn"],"work_environment":["kultur","event","festival","selvstendig produksjon"],"status_position":["Koordinerende rolle med betydelig påvirkning, men uten automatisk personalansvar."]},
+  "required_knowledge":{"education_basis":["Utdanning.no oppgir ingen spesielle utdanningskrav til yrket; relevant utdanning og erfaring kan være nyttig."],"skills":["planlegging","budsjett","avtaler","markedsføring","koordinering"],"category_knowledge":["konsert- og klubbkultur","DIY-arrangering","publikumsutvikling"],"history_go_badges":["subkultur"],"place_connections":[],"people_connections":[]},
+  "scope_boundaries":{"may_do":["planlegge","koordinere","budsjettere innen mandat","bestille leveranser"],"must_not_simulate_as_authority":["inngå avtaler utover fullmakt","skjule økonomiske avvik","omgå sikkerhetskrav"]},
+  "challenges":[{"id":"egenart_vs_leveranse","title":"Det rå rommet","description":"Et uforutsigbart konsept må få struktur uten å bli et annet arrangement.","pressure":"egenart_vs_gjennomforbarhet","affects":["trust","money","status"]}],
+  "dilemmas":[{"id":"budsjettkuttet","title":"Budsjettkuttet","setup":"En kostnadsøkning tvinger fram et valg mellom artistvilkår, publikumsopplevelse og teknisk buffer.","choice_axis":"kunstnerisk_ambisjon_vs_baerekraft","consequence_axis":"kvalitet_vs_okonomi","mail_hooks":["job","conflict","consequence"]}],
+  "mail_integration":{"role_scope":"subkultur_program_og_koordinering","mail_profile":"subkultur_program_og_koordinering","can_feed_mail_types":["job","story","conflict","event","people","followup","consequence"],"mail_variables":{"role_title":"Arrangementsplanlegger","category":"subkultur","main_pressure":"egenart_vs_gjennomforbarhet","ethical_axis":"ambisjon_vs_baerekraft","status_axis":"kvalitet_vs_okonomi"},"recommended_mail_families":["subkultur_program_og_koordinering"],"role_model_refs_supported":true},
+  "competence_axes":[{"id":"plan","label":"Plan"},{"id":"budsjett","label":"Budsjett"},{"id":"koordinering","label":"Koordinering"}],"ideal_type_problems":[{"id":"egenart_vs_leveranse","label":"Egenart vs leveranse"}],
+  "notes":["Legacy filename retained for manifest stability; canonical title is Arrangementsplanlegger."]
+}

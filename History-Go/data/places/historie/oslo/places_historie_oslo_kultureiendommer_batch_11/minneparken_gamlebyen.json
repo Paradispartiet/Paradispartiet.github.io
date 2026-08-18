@@ -1,0 +1,79 @@
+{
+  "id": "minneparken_gamlebyen",
+  "name": "Minneparken",
+  "lat": 59.90616,
+  "lon": 10.76884,
+  "r": 150,
+  "category": "historie",
+  "year": 1932,
+  "period": "middelalderen–",
+  "desc": "Minneparken er et eget ruinlandskap nord for Middelalderparken, med St. Hallvardskatedralen, Klosterkirken, Olavsklostret og middelalderske gravplasser. Jernbaneinngrep, parkåpningen i 1932, E18-lokket fra 1960-tallet og tilbakeføringen som startet i 2024 viser både den langvarige konflikten mellom infrastruktur og kulturminner i Oslo og hvordan bevaringspolitikken fortsatt endres.",
+  "popupDesc": "Minneparken er et eget historisk område i Gamlebyen, nord for Bispegata og adskilt fra Middelalderparken. Parken samler ruinene av St. Hallvardskatedralen, Klosterkirken og Olavsklostret, sammen med spor etter den store middelalderske kirkegården rundt katedralen. Området må leses som ett ruinlandskap med flere historiske deler.\n\nSt. Hallvardskatedralen var Oslos første domkirke og parkens viktigste ruin. Klosterkirken og Olavsklostret viser andre institusjoner i middelalderbyen, mens gravene minner om at området også var brukt av mange mennesker som ikke tilhørte byens politiske og kirkelige elite. Ruinene forteller dermed om både makt, tro og hverdagsliv.\n\nJernbaneutbyggingen skar gjennom ruinområdet og ødela eller utilgjengeliggjorde viktige sammenhenger. Minneparken ble åpnet for publikum i 1932 som et forsøk på å bevare og formidle det som var igjen. Parken er derfor selv et produkt av 1900-tallets kulturminnearbeid, ikke bare et urørt middelalderområde.\n\nPå 1960-tallet ble deler av St. Hallvardskatedralen lagt under et betonglokk for å gi plass til en firefelts E18. Inngrepet gjorde moderne trafikk viktigere enn ruinens lesbarhet. Betonglokket ble et tydelig eksempel på hvordan planlegging kan skjule kulturminner selv når de formelt bevares.\n\nI 2024 startet arbeidet med å fjerne lokket og utvide Minneparken tilbake mot en tidligere størrelse. Den romanske apsiden er bygget opp som et lesbart ruinspor, og området skal bli mer tilgjengelig. Tilbakeføringen viser at kulturminnepolitikk kan endre seg og forsøke å reparere eldre inngrep.\n\nI History Go representerer `minneparken_gamlebyen` hele den navngitte ruinparken. Kirke-, kloster- og gravplassruinene er innholdslag i området, ikke overlappende kartprikker. Stedet skal også holdes tydelig adskilt fra Middelalderparken sør for Bispegata, selv om begge inngår i den historiske middelalderbyen. Parken gjør dermed også selve bevaringshistorien synlig: først fragmentering, så tilrettelegging, deretter nedbygging og nå en ny åpning. Moderne tiltak er en del av stedets historie, ikke bare et nøytralt lag rundt ruinene, og bør forklares like tydelig som middelalderhistorien.",
+  "emne_ids": [
+    "em_his_spor_materialitet",
+    "em_his_historiske_lag_i_byrom",
+    "em_his_kulturminner_bevaring",
+    "em_his_samtid_ettertid_fortelling"
+  ],
+  "quiz_profile": {
+    "place_type": "middelaldersk_ruinpark",
+    "subtype": "samlet_kirke_kloster_og_gravplasslandskap",
+    "signature_features": [
+      "ruinene av St. Hallvardskatedralen",
+      "Klosterkirken og Olavsklostret",
+      "middelalderske gravplasser",
+      "park åpnet for publikum i 1932",
+      "betonglokket fra 1960-tallet og tilbakeføringen fra 2024"
+    ],
+    "primary_angles": [
+      "middelalderby",
+      "kirke_og_kloster",
+      "gravplass",
+      "infrastrukturinngrep",
+      "arkeologi",
+      "bevaring_og_tilgjengeliggjoring"
+    ],
+    "question_families": [
+      "tidslag",
+      "ruin_og_opprinnelig_funksjon",
+      "inngrep_og_bevaring",
+      "historisk_endring",
+      "kontrast"
+    ],
+    "avoid_angles": [
+      "forveksling_med_middelalderparken",
+      "påstand_om_at_alle_ruinene_er_separate_canonical_steder",
+      "påstand_om_at_betonglokket_var_del_av_middelalderanlegget"
+    ],
+    "must_include": [
+      "Minneparken som eget område nord for Middelalderparken",
+      "St. Hallvardskatedralen som parkens viktigste ruin",
+      "de andre kirke- og klosterlagene",
+      "konflikten mellom moderne infrastruktur og middelalderruiner"
+    ],
+    "contrast_targets": [
+      "middelalder_oslo",
+      "oslo_ladegard"
+    ],
+    "notes": "Kartankeret representerer hele den navngitte parkgeometrien. De enkelte ruinene skal utdypes som innholdslag og kan få Wonderkammer/leksikon-underpunkter uten nye overlappende canonical place-markører."
+  },
+  "locatorType": "park",
+  "sourceProvider": "osm",
+  "sourceObjectId": "osm-way:111546637",
+  "geocodeAccuracy": "semantic_anchor",
+  "coordRole": "area_anchor",
+  "coordStatus": "verified_geometry",
+  "coordSource": "OpenStreetMap way 111546637 + Oslo kommune",
+  "coordType": "area_center",
+  "coordVerifiedAt": "2026-07-21",
+  "coordNote": "Representativt anker i den navngitte Minneparken-geometrien, OpenStreetMap way 111546637, kryssjekket mot Oslo kommunes offisielle kultureiendomside. Punktet representerer hele ruinparken og ikke én enkelt ruin. Contract v1-normalisering 2026-07-21: den samme eksakt navngitte parkgeometrien beholdes; legacy-verdiene locatorType=area og geocodeAccuracy=geometry er erstattet med tillatte canonical verdier park og semantic_anchor. Punktet er et områdeanker og semantisk midtpunkt for den samlede, eksakt navngitte parkgeometrien.",
+  "externalLinks": [
+    {
+      "type": "official",
+      "label": "Oslo kommune – Minneparken",
+      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/kunst-og-kultur/kultureiendommer/minneparken/",
+      "lang": "nb",
+      "verifiedAt": "2026-07-19"
+    }
+  ]
+}

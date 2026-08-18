@@ -1,0 +1,1937 @@
+{
+  "schema": "civication_mail_family_catalog_v1",
+  "version": 1,
+  "category": "naeringsliv",
+  "role_scope": "controller",
+  "mail_type": "job",
+  "families": [
+    {
+      "id": "avstemming_og_rapport",
+      "description": "Controlleren lærer hvordan avstemming, lagerverdi og rapportering binder driftens fysiske verden til regnskapets tall.",
+      "mails": [
+        {
+          "id": "controller_job_001",
+          "mail_type": "job",
+          "mail_family": "avstemming_og_rapport",
+          "role_scope": "controller",
+          "subject": "Lagerverdien stemmer ikke: paller, svinn og et tall som er blitt for pent",
+          "summary": "Lagerverdien i driftssystemet stemmer ikke med regnskapet, og du må finne om feilen ligger i fysisk vareflyt eller bokført verdi.",
+          "purpose": "Simulere controllerens arbeid med å koble regnskap til fysisk drift: varer, lager, svinn, mottak, feilplukk og manuelle justeringer.",
+          "stakes": "En manuell korreksjon kan få rapporten til å gå opp, men hvis rotårsaken er i vareflyten, vil feilen gjenta seg og skjule et driftsproblem.",
+          "situation": [
+            "Du får to tall på skjermen: lagerverdien i driftssystemet og bokført verdi i regnskapet. De skulle vært like. Det er de ikke.",
+            "På gulvet handler dette om paller, mottak, kampanjevarer, returer og svinn. I regnskapet ser det bare ut som en differanse.",
+            "Driftsleder mener det sikkert er en timingfeil. Regnskap vil ha rapporten låst. Du ser at differansen følger én bestemt varegruppe og én bestemt leveringsdato.",
+            "Nå må du avgjøre om du gjør rapporten pen, eller om du følger sporet tilbake til den fysiske virkeligheten tallene kommer fra."
+          ],
+          "task_domain": "inventory_accounting",
+          "competency": "avstemming",
+          "pressure": "månedsslutt",
+          "choice_axis": "rotarsak_vs_manuell_justering",
+          "consequence_axis": "kvalitet_vs_tempo",
+          "narrative_arc": "sporbarhet_i_tallene",
+          "learning_focus": [
+            "lagerverdi",
+            "svinn",
+            "vareflyt",
+            "rotårsaksanalyse",
+            "internkontroll"
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Spor differansen til varegruppe, mottaksdato og fysisk beholdning før justering.",
+              "effect": 1,
+              "tags": [
+                "kvalitet",
+                "process",
+                "drift"
+              ],
+              "feedback": "Du finner at én kampanjeleveranse er mottatt fysisk, men ikke periodisert riktig. Rapporten blir senere, men årsaken forsvinner ikke inn i en manuell post."
+            },
+            {
+              "id": "B",
+              "label": "Legg inn en midlertidig manuell korreksjon og noter at differansen undersøkes senere.",
+              "effect": -1,
+              "tags": [
+                "tempo",
+                "snarvei",
+                "risk"
+              ],
+              "feedback": "Rapporten går opp, men differansen er ikke forstått. Du har ikke løst problemet; du har gitt det et penere navn."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prognose_og_budsjett",
+      "description": "Controlleren arbeider med prognoser, scenarioer og budsjett som sosialt forhandlet styringsinformasjon, ikke bare matematisk fremskriving.",
+      "mails": [
+        {
+          "id": "controller_job_002",
+          "mail_type": "job",
+          "mail_family": "prognose_og_budsjett",
+          "role_scope": "controller",
+          "subject": "Ny prognose før ledermøtet: budsjettet møter virkeligheten",
+          "summary": "Du må oppdatere prognosen etter svakere salg, brukte kampanjekostnader og press om å beholde et optimistisk bilde.",
+          "purpose": "Vise hvordan prognosearbeid handler om antakelser, usikkerhet og styring, ikke bare å fylle inn nye tall i budsjettet.",
+          "stakes": "En for optimistisk prognose beskytter stemningen i møtet, men gjør at virksomheten reagerer for sent på sviktende salg.",
+          "situation": [
+            "Salget ligger under forventning, men kampanjekostnaden er allerede brukt. Markedssjefen mener effekten kommer neste uke. Driftsleder sier bemanningen allerede er satt opp etter det gamle budsjettet.",
+            "Ledergruppen vil ha ny prognose før klokken 14. De spør ikke bare om hva som skjer; de spør indirekte hvem som må endre planene sine.",
+            "En prognose er en modell av fremtiden, men også et sosialt dokument. Den fordeler ansvar før fremtiden har skjedd.",
+            "Du må velge om du lager en realistisk prognose med tydelige forutsetninger, eller glatter ut avviket for å gi organisasjonen litt mer ro."
+          ],
+          "task_domain": "forecasting",
+          "competency": "prognosearbeid",
+          "pressure": "ledermote",
+          "choice_axis": "realistisk_scenario_vs_optimistisk_glatting",
+          "consequence_axis": "tillit_vs_behag",
+          "narrative_arc": "budsjettets_grenser",
+          "learning_focus": [
+            "prognose",
+            "scenario",
+            "budsjettavvik",
+            "forutsetninger",
+            "styringssignal"
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Lag realistisk prognose med base, downside og tydelige forutsetninger.",
+              "effect": 1,
+              "tags": [
+                "kvalitet",
+                "integritet",
+                "analyse"
+              ],
+              "feedback": "Du gjør det ubehagelige tydelig nok til at det kan styres. Prognosen blir ikke populær, men den blir brukbar."
+            },
+            {
+              "id": "B",
+              "label": "Glatt ut avviket med forventet innhenting senere i måneden.",
+              "effect": -1,
+              "tags": [
+                "visibility",
+                "risk",
+                "tempo"
+              ],
+              "feedback": "Prognosen ser roligere ut, og møtet blir enklere. Men organisasjonen mister tid til å reagere hvis salget ikke kommer tilbake."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_week_praksisfortellinger_controller_job",
+      "description": "Første uke som Controller. Tall er spor etter arbeid, ikke bare fasit.",
+      "mails": [
+        {
+          "id": "job_controller_week1_month_report_before_explanation",
+          "mail_type": "job",
+          "mail_family": "first_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "subject": "08:17 – avviket som må forklares før rapporten går videre",
+          "summary": "Varekostnaden for kampanjevarer avviker før månedsrapporten skal låses, og du må velge hvordan tall, drift og ledelse får møtes i rapporten.",
+          "situation": [
+            "Klokken 08:17 ligger månedsrapporten åpen på skjermen din. Ingrid, økonomisjefen, har skrevet i emnefeltet: «Må videre til ledergruppen senest 14:00.»",
+            "På linjen for varekost lyser avviket rødt: 4,8 prosentpoeng over budsjett, 312 000 kroner dårligere enn prognosen. Tallene stemmer nesten med lagerlisten, men ikke med historikken for kampanjevarene.",
+            "Marius i regnskap peker på tre mulige forklaringer: prisendring fra leverandør, feil periodisering av en kampanjefaktura eller svinn som ikke er bokført. Underlaget ligger i tre ulike mapper, og ingen av dem er komplette.",
+            "Elin i drift skriver kort: «Hvis dette går uten forklaring, ser det ut som vi har mistet kontroll på gulvet.» Ingrid svarer at rapportpakken ikke kan vente på en full gransking.",
+            "Som controller eier du ikke driften, men du eier sporet mellom tall og beslutning. Du må velge om rapporten skal være rask, pen eller faktisk nyttig før andre bruker tallet mot noen."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Hold rapporten åpen i 45 minutter og hent forklaring fra drift og regnskap.",
+              "reply": "Jeg holder pakken åpen til 09:15, ber Elin forklare fysisk vareflyt og Marius legge ved faktura-/periodiseringsspor før jeg låser linjen.",
+              "effects": {
+                "accuracy": 3,
+                "trust_drift": 2,
+                "trust_manager": 2,
+                "deadline_pressure": 1,
+                "report_quality": 3,
+                "stress": 1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week1_explanation_before_report"
+                ]
+              },
+              "triggers_on_choice": "controller_week1_month_report_A",
+              "effect": {
+                "accuracy": 3,
+                "trust_drift": 2,
+                "trust_manager": 2,
+                "deadline_pressure": 1,
+                "report_quality": 3,
+                "stress": 1
+              },
+              "tags": [
+                "controller_week1_explanation_before_report",
+                "controller_week1_month_report_A"
+              ],
+              "feedback": "Jeg holder pakken åpen til 09:15, ber Elin forklare fysisk vareflyt og Marius legge ved faktura-/periodiseringsspor før jeg låser linjen."
+            },
+            {
+              "id": "B",
+              "label": "Send rapporten nå med avviket ukommentert for å beskytte fristen.",
+              "reply": "Jeg sender rapportpakken med varekostlinjen som den står, uten å vente på driftskommentar eller revisjonsspor.",
+              "effects": {
+                "deadline_met": 2,
+                "deadline_pressure": -2,
+                "trust_drift": -2,
+                "future_risk": 2,
+                "report_quality": -2,
+                "stagnation": 1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week1_fast_unexplained_report"
+                ]
+              },
+              "triggers_on_choice": "controller_week1_month_report_B",
+              "effect": {
+                "deadline_met": 2,
+                "deadline_pressure": -2,
+                "trust_drift": -2,
+                "future_risk": 2,
+                "report_quality": -2,
+                "stagnation": 1
+              },
+              "tags": [
+                "controller_week1_fast_unexplained_report",
+                "controller_week1_month_report_B"
+              ],
+              "feedback": "Jeg sender rapportpakken med varekostlinjen som den står, uten å vente på driftskommentar eller revisjonsspor."
+            },
+            {
+              "id": "C",
+              "label": "Send rapporten med rødt forbehold og konkret spørsmål til drift.",
+              "reply": "Jeg sender pakken med et tydelig forbehold: avviket skal ikke brukes som beslutningsgrunnlag før kampanjefaktura, svinn og lagerverdi er avstemt.",
+              "effects": {
+                "deadline_met": 1,
+                "accuracy": 1,
+                "trust_manager": 1,
+                "trust_drift": 1,
+                "report_quality": 1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week1_report_with_caveat"
+                ]
+              },
+              "triggers_on_choice": "controller_week1_month_report_C",
+              "effect": {
+                "deadline_met": 1,
+                "accuracy": 1,
+                "trust_manager": 1,
+                "trust_drift": 1,
+                "report_quality": 1
+              },
+              "tags": [
+                "controller_week1_report_with_caveat",
+                "controller_week1_month_report_C"
+              ],
+              "feedback": "Jeg sender pakken med et tydelig forbehold: avviket skal ikke brukes som beslutningsgrunnlag før kampanjefaktura, svinn og lagerverdi er avstemt."
+            }
+          ],
+          "task_domain": "avvik_og_rapportering",
+          "competency": "avviksanalyse_og_sporbarhet",
+          "pressure": "rapportfrist_vs_forklaring",
+          "choice_axis": "tempo_vs_presisjon",
+          "consequence_axis": "styringskvalitet_vs_fremtidig_risiko",
+          "narrative_arc": "controller_first_week_numbers_as_responsibility"
+        },
+        {
+          "id": "job_controller_week1_reconciliation_almost_matches",
+          "mail_type": "job",
+          "mail_family": "first_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "subject": "Avstemmingen som nesten stemmer",
+          "summary": "Konto 4300 har en liten differanse som kan være periodisering, men små avvik kan bli mønster.",
+          "situation": [
+            "Marius sender deg en avstemming med liten differanse på konto 4300.",
+            "Beløpet er ikke stort, men kan skyldes periodisering, feilført faktura eller mottakslinje som ikke er lukket.",
+            "Historikken viser at lignende smådifferanser er godkjent før.",
+            "Elin ber om linjene før regnskap antar at driften har rotet.",
+            "Du må velge mellom tempo, sporbarhet og kontroll uten mistillit."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Holde avstemmingen åpen og hente underlag.",
+              "reply": "Jeg ber om faktura, mottakslinje og driftskontroll før avstemmingen godkjennes.",
+              "effects": {
+                "traceability": 3,
+                "accuracy": 3,
+                "trust_drift": 1,
+                "deadline_pressure": 1,
+                "process_quality": 2
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week1_trace_before_close"
+                ]
+              },
+              "triggers_on_choice": "controller_week1_reconciliation_A",
+              "effect": {
+                "traceability": 3,
+                "accuracy": 3,
+                "trust_drift": 1,
+                "deadline_pressure": 1,
+                "process_quality": 2
+              },
+              "tags": [
+                "controller_week1_trace_before_close",
+                "controller_week1_reconciliation_A"
+              ],
+              "feedback": "Jeg ber om faktura, mottakslinje og driftskontroll før avstemmingen godkjennes."
+            },
+            {
+              "id": "B",
+              "label": "Godkjenne med kommentar om sannsynlig periodisering.",
+              "reply": "Jeg godkjenner avstemmingen med kommentar og ber om oppfølging neste periode.",
+              "effects": {
+                "deadline_met": 1,
+                "traceability": 1,
+                "future_risk": 1,
+                "process_quality": 0,
+                "stress": -1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week1_close_with_note"
+                ]
+              },
+              "triggers_on_choice": "controller_week1_reconciliation_B",
+              "effect": {
+                "deadline_met": 1,
+                "traceability": 1,
+                "future_risk": 1,
+                "process_quality": 0,
+                "stress": -1
+              },
+              "tags": [
+                "controller_week1_close_with_note",
+                "controller_week1_reconciliation_B"
+              ],
+              "feedback": "Jeg godkjenner avstemmingen med kommentar og ber om oppfølging neste periode."
+            },
+            {
+              "id": "C",
+              "label": "Godkjenne fordi beløpet er lite.",
+              "reply": "Jeg godkjenner avstemmingen fordi beløpet er lite og ikke vesentlig for rapporten.",
+              "effects": {
+                "deadline_met": 2,
+                "deadline_pressure": -2,
+                "traceability": -2,
+                "future_risk": 2,
+                "stagnation": 1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week1_materiality_shortcut"
+                ]
+              },
+              "triggers_on_choice": "controller_week1_reconciliation_C",
+              "effect": {
+                "deadline_met": 2,
+                "deadline_pressure": -2,
+                "traceability": -2,
+                "future_risk": 2,
+                "stagnation": 1
+              },
+              "tags": [
+                "controller_week1_materiality_shortcut",
+                "controller_week1_reconciliation_C"
+              ],
+              "feedback": "Jeg godkjenner avstemmingen fordi beløpet er lite og ikke vesentlig for rapporten."
+            }
+          ],
+          "task_domain": "avvik_og_rapportering",
+          "competency": "avviksanalyse_og_sporbarhet",
+          "pressure": "rapportfrist_vs_forklaring",
+          "choice_axis": "tempo_vs_presisjon",
+          "consequence_axis": "styringskvalitet_vs_fremtidig_risiko",
+          "narrative_arc": "controller_first_week_numbers_as_responsibility"
+        },
+        {
+          "id": "job_controller_week1_operations_explains_variance",
+          "mail_type": "job",
+          "mail_family": "first_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "subject": "Driften forklarer avviket",
+          "summary": "Driftens forklaring er delvis dokumentert, delvis sannsynlig og delvis usikker.",
+          "situation": [
+            "Elin forklarer varekostavviket med kampanjeuttak, feilplukk, prisendring og ekstra uttak.",
+            "Hun innrømmer at ikke alt er like godt dokumentert.",
+            "Ingrid ber deg skille dokumentert årsak, sannsynlig årsak og usikker rest.",
+            "Marius finner underlag for kampanje og noe prisendring, men svinn og ekstra uttak er utydeligere.",
+            "Du må gjøre forklaringen styrbar uten å gjøre den falsk presis."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Gradere forklaringen presist.",
+              "reply": "Jeg skriver rapportkommentar som skiller dokumenterte årsaker, sannsynlige årsaker og usikker rest.",
+              "effects": {
+                "accuracy": 4,
+                "trust_drift": 2,
+                "trust_manager": 3,
+                "report_quality": 3,
+                "stress": 1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week1_graded_explanation"
+                ]
+              },
+              "triggers_on_choice": "controller_week1_operations_A",
+              "effect": {
+                "accuracy": 4,
+                "trust_drift": 2,
+                "trust_manager": 3,
+                "report_quality": 3,
+                "stress": 1
+              },
+              "tags": [
+                "controller_week1_graded_explanation",
+                "controller_week1_operations_A"
+              ],
+              "feedback": "Jeg skriver rapportkommentar som skiller dokumenterte årsaker, sannsynlige årsaker og usikker rest."
+            },
+            {
+              "id": "B",
+              "label": "Godta driftsforklaringen samlet.",
+              "reply": "Jeg legger Elins forklaring inn som hovedforklaring uten å skille dokumentert og sannsynlig.",
+              "effects": {
+                "trust_drift": 2,
+                "deadline_pressure": -1,
+                "accuracy": -1,
+                "future_risk": 2
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week1_accepts_story"
+                ]
+              },
+              "triggers_on_choice": "controller_week1_operations_B",
+              "effect": {
+                "trust_drift": 2,
+                "deadline_pressure": -1,
+                "accuracy": -1,
+                "future_risk": 2
+              },
+              "tags": [
+                "controller_week1_accepts_story",
+                "controller_week1_operations_B"
+              ],
+              "feedback": "Jeg legger Elins forklaring inn som hovedforklaring uten å skille dokumentert og sannsynlig."
+            },
+            {
+              "id": "C",
+              "label": "Kreve full dokumentasjon før forklaring godtas.",
+              "reply": "Jeg skriver at avviket ikke kan forklares før alle punkter er dokumentert.",
+              "effects": {
+                "accuracy": 2,
+                "trust_drift": -2,
+                "conflict": 2,
+                "deadline_pressure": 2,
+                "report_quality": 1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week1_hard_documentation"
+                ]
+              },
+              "triggers_on_choice": "controller_week1_operations_C",
+              "effect": {
+                "accuracy": 2,
+                "trust_drift": -2,
+                "conflict": 2,
+                "deadline_pressure": 2,
+                "report_quality": 1
+              },
+              "tags": [
+                "controller_week1_hard_documentation",
+                "controller_week1_operations_C"
+              ],
+              "feedback": "Jeg skriver at avviket ikke kan forklares før alle punkter er dokumentert."
+            }
+          ],
+          "task_domain": "avvik_og_rapportering",
+          "competency": "avviksanalyse_og_sporbarhet",
+          "pressure": "rapportfrist_vs_forklaring",
+          "choice_axis": "tempo_vs_presisjon",
+          "consequence_axis": "styringskvalitet_vs_fremtidig_risiko",
+          "narrative_arc": "controller_first_week_numbers_as_responsibility"
+        },
+        {
+          "id": "job_controller_week1_forecast_everyone_wants_certain",
+          "mail_type": "job",
+          "mail_family": "first_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "subject": "Prognosen som alle vil ha sikker",
+          "summary": "Ledergruppen vil vite om varekostavviket er midlertidig, men grunnlaget er usikkert.",
+          "situation": [
+            "Ingrid ber om prognose for månedsslutt før ledermøtet.",
+            "Ledergruppen vil vite om varekostavviket normaliseres eller blir varig budsjettoverskridelse.",
+            "Øyvind anbefaler basis-, forsiktig- og risikoscenario.",
+            "Elin tror ikke avviket blir varig på samme nivå, men svinnregistreringen er usikker.",
+            "Du må velge mellom ett lett tall og et mer krevende, ærligere beslutningsgrunnlag."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Lage tre scenarioer med tydelig usikkerhet.",
+              "reply": "Jeg lager basis-, forsiktig- og risikoscenario og forklarer hva som må avklares.",
+              "effects": {
+                "forecast_quality": 4,
+                "trust_manager": 3,
+                "accuracy": 3,
+                "decision_quality": 3,
+                "stress": 2
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week1_scenario_forecast"
+                ]
+              },
+              "triggers_on_choice": "controller_week1_forecast_A",
+              "effect": {
+                "forecast_quality": 4,
+                "trust_manager": 3,
+                "accuracy": 3,
+                "decision_quality": 3,
+                "stress": 2
+              },
+              "tags": [
+                "controller_week1_scenario_forecast",
+                "controller_week1_forecast_A"
+              ],
+              "feedback": "Jeg lager basis-, forsiktig- og risikoscenario og forklarer hva som må avklares."
+            },
+            {
+              "id": "B",
+              "label": "Lage ett sannsynlig prognosetall.",
+              "reply": "Jeg lager ett hovedestimat og skriver at avviket trolig normaliseres neste periode.",
+              "effects": {
+                "manager_pressure": -1,
+                "forecast_quality": 0,
+                "future_risk": 2,
+                "decision_quality": -1,
+                "stress": -1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week1_single_number_forecast"
+                ]
+              },
+              "triggers_on_choice": "controller_week1_forecast_B",
+              "effect": {
+                "manager_pressure": -1,
+                "forecast_quality": 0,
+                "future_risk": 2,
+                "decision_quality": -1,
+                "stress": -1
+              },
+              "tags": [
+                "controller_week1_single_number_forecast",
+                "controller_week1_forecast_B"
+              ],
+              "feedback": "Jeg lager ett hovedestimat og skriver at avviket trolig normaliseres neste periode."
+            },
+            {
+              "id": "C",
+              "label": "Varsle høy risiko tydelig.",
+              "reply": "Jeg skriver at det er risiko for varig budsjettoverskridelse dersom svinn og feilplukk viser seg å være mønster.",
+              "effects": {
+                "risk_visibility": 3,
+                "trust_manager": 1,
+                "conflict": 1,
+                "manager_pressure": 2,
+                "stress": 2
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week1_high_risk_warning"
+                ]
+              },
+              "triggers_on_choice": "controller_week1_forecast_C",
+              "effect": {
+                "risk_visibility": 3,
+                "trust_manager": 1,
+                "conflict": 1,
+                "manager_pressure": 2,
+                "stress": 2
+              },
+              "tags": [
+                "controller_week1_high_risk_warning",
+                "controller_week1_forecast_C"
+              ],
+              "feedback": "Jeg skriver at det er risiko for varig budsjettoverskridelse dersom svinn og feilplukk viser seg å være mønster."
+            }
+          ],
+          "task_domain": "avvik_og_rapportering",
+          "competency": "avviksanalyse_og_sporbarhet",
+          "pressure": "rapportfrist_vs_forklaring",
+          "choice_axis": "tempo_vs_presisjon",
+          "consequence_axis": "styringskvalitet_vs_fremtidig_risiko",
+          "narrative_arc": "controller_first_week_numbers_as_responsibility"
+        },
+        {
+          "id": "job_controller_week1_numbers_as_responsibility",
+          "mail_type": "job",
+          "mail_family": "first_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "subject": "Første uke med tall som ansvar",
+          "summary": "Du må oppsummere hva som er dokumentert, sannsynlig og usikkert etter første controlleruke.",
+          "situation": [
+            "Ingrid ber om en kort controlleroppsummering før helg.",
+            "Hun vil vite hvordan du vurderer varekostavviket, avstemmingsdifferansen og prognosen.",
+            "Elin ber om at drift ikke gjøres frikjent eller skyldig, men beskrives presist.",
+            "Marius anbefaler at konto 4300 holdes på oppfølgingsliste.",
+            "Du må vise om tallene er blitt et ansvar, ikke bare en rapport."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Skrive presis oppsummering med graderte forbehold.",
+              "reply": "Jeg skriver kort hva som er dokumentert, sannsynlig og usikkert, og foreslår oppfølging på svinn, feilplukk og konto 4300.",
+              "effects": {
+                "accuracy": 5,
+                "trust_manager": 4,
+                "trust_drift": 3,
+                "decision_quality": 3,
+                "stress": 2
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week1_precise_summary"
+                ]
+              },
+              "triggers_on_choice": "controller_week1_summary_A",
+              "effect": {
+                "accuracy": 5,
+                "trust_manager": 4,
+                "trust_drift": 3,
+                "decision_quality": 3,
+                "stress": 2
+              },
+              "tags": [
+                "controller_week1_precise_summary",
+                "controller_week1_summary_A"
+              ],
+              "feedback": "Jeg skriver kort hva som er dokumentert, sannsynlig og usikkert, og foreslår oppfølging på svinn, feilplukk og konto 4300."
+            },
+            {
+              "id": "B",
+              "label": "Skrive en glatt og tydelig rapport.",
+              "reply": "Jeg skriver at avvikene i hovedsak er forklart, prognosen er under kontroll, og oppfølging skjer neste uke.",
+              "effects": {
+                "manager_pressure": -2,
+                "stress": -1,
+                "stagnation": 3,
+                "future_risk": 3,
+                "trust_drift": -1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week1_smooth_summary"
+                ]
+              },
+              "triggers_on_choice": "controller_week1_summary_B",
+              "effect": {
+                "manager_pressure": -2,
+                "stress": -1,
+                "stagnation": 3,
+                "future_risk": 3,
+                "trust_drift": -1
+              },
+              "tags": [
+                "controller_week1_smooth_summary",
+                "controller_week1_summary_B"
+              ],
+              "feedback": "Jeg skriver at avvikene i hovedsak er forklart, prognosen er under kontroll, og oppfølging skjer neste uke."
+            },
+            {
+              "id": "C",
+              "label": "Skrive hardt om svak dokumentasjon.",
+              "reply": "Jeg skriver at dokumentasjonen fra drift er utilstrekkelig og at avviket ikke bør anses forklart.",
+              "effects": {
+                "accuracy": 2,
+                "control": 3,
+                "trust_drift": -3,
+                "conflict": 3,
+                "manager_pressure": 1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week1_hard_control_summary"
+                ]
+              },
+              "triggers_on_choice": "controller_week1_summary_C",
+              "effect": {
+                "accuracy": 2,
+                "control": 3,
+                "trust_drift": -3,
+                "conflict": 3,
+                "manager_pressure": 1
+              },
+              "tags": [
+                "controller_week1_hard_control_summary",
+                "controller_week1_summary_C"
+              ],
+              "feedback": "Jeg skriver at dokumentasjonen fra drift er utilstrekkelig og at avviket ikke bør anses forklart."
+            },
+            {
+              "id": "D",
+              "label": "Be om mer tid før konklusjon.",
+              "reply": "Jeg skriver at grunnlaget fortsatt er for uferdig til å konkludere, og ber om at vurderingen holdes åpen til mandag.",
+              "effects": {
+                "accuracy": 1,
+                "deadline_pressure": 2,
+                "manager_pressure": 2,
+                "decision_quality": 1,
+                "stress": 2
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week1_needs_more_evidence"
+                ]
+              },
+              "triggers_on_choice": "controller_week1_summary_D",
+              "effect": {
+                "accuracy": 1,
+                "deadline_pressure": 2,
+                "manager_pressure": 2,
+                "decision_quality": 1,
+                "stress": 2
+              },
+              "tags": [
+                "controller_week1_needs_more_evidence",
+                "controller_week1_summary_D"
+              ],
+              "feedback": "Jeg skriver at grunnlaget fortsatt er for uferdig til å konkludere, og ber om at vurderingen holdes åpen til mandag."
+            }
+          ],
+          "task_domain": "avvik_og_rapportering",
+          "competency": "avviksanalyse_og_sporbarhet",
+          "pressure": "rapportfrist_vs_forklaring",
+          "choice_axis": "tempo_vs_presisjon",
+          "consequence_axis": "styringskvalitet_vs_fremtidig_risiko",
+          "narrative_arc": "controller_first_week_numbers_as_responsibility"
+        }
+      ],
+      "threads": [
+        {
+          "id": "controller_week1_month_report_A",
+          "mail_type": "job",
+          "mail_family": "first_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "ingrid_okonomisjef",
+          "subject": "Re: 09:12 – forklaring før rapporten",
+          "summary": "Drift og regnskap rekker en kort forklaring, og rapporten blir senere, men mer styrbar.",
+          "situation": [
+            "Elin sender bilde av mottakslisten fra kampanjeleveransen og peker på to paller som ble flyttet før tellingen var låst. Marius finner samtidig en faktura som er bokført i feil periode.",
+            "Ingrid skriver at 45 minutter er dyrt akkurat i dag, men at ledergruppen nå får et avvik med årsak, risiko og neste kontrollpunkt.",
+            "Du merker forskjellen: tallet er fortsatt rødt, men det er ikke lenger en dom over drift. Det er et spor som noen kan følge videre."
+          ]
+        },
+        {
+          "id": "controller_week1_month_report_B",
+          "mail_type": "job",
+          "mail_family": "first_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "elin_driftsleder",
+          "subject": "Re: 10:03 – tallet begynner å leve uten forklaring",
+          "summary": "Fristen holdes, men avviket blir en sosial dom før noen har analysert det.",
+          "situation": [
+            "Rapporten går videre raskt. Før lunsj videresender salgsdirektøren varekostlinjen med kommentaren: «Drift må forklare kontrollsvikten.»",
+            "Elin svarer ikke i tråden, men du ser at hun har lastet ned lagerlisten tre ganger. Marius spør om dere skal lage forklaringen etterpå, når alle allerede har lest tallet.",
+            "Du har beskyttet fristen, men svekket revisjonssporet. Avviket er blitt en fortelling om skyld før det ble en analyse av årsak."
+          ]
+        },
+        {
+          "id": "controller_week1_month_report_C",
+          "mail_type": "job",
+          "mail_family": "first_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "marius_regnskap",
+          "subject": "Re: 09:48 – forbeholdet som kjøper tid",
+          "summary": "Rapporten går videre, men forbeholdet gjør både ledelse og drift oppmerksomme på risikoen.",
+          "situation": [
+            "Månedsrapporten sendes innen fristen med en rød merknad: «Varekostavvik krever avstemming mot kampanjefaktura, svinn og lagerverdi før tiltak besluttes.»",
+            "Ingrid liker ikke synlig usikkerhet, men lar forbeholdet stå fordi det er konkret. Elin svarer med to linjer om fysisk vareflyt og lover underlag før 13:30.",
+            "Du har ikke løst avviket, men du har hindret at nesten-riktige tall blir behandlet som fasit. Ettermiddagen kommer til å handle om om forbeholdet var presist nok."
+          ]
+        },
+        {
+          "id": "controller_week1_reconciliation_A",
+          "mail_type": "job",
+          "mail_family": "first_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "marius_regnskap",
+          "subject": "Re: Avstemmingen",
+          "summary": "Underlag hentes før lukking.",
+          "situation": [
+            "Underlag hentes før lukking."
+          ]
+        },
+        {
+          "id": "controller_week1_reconciliation_B",
+          "mail_type": "job",
+          "mail_family": "first_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "ingrid_okonomisjef",
+          "subject": "Re: Avstemmingen",
+          "summary": "Oppfølging neste periode må faktisk skje.",
+          "situation": [
+            "Oppfølging neste periode må faktisk skje."
+          ]
+        },
+        {
+          "id": "controller_week1_reconciliation_C",
+          "mail_type": "job",
+          "mail_family": "first_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "marius_regnskap",
+          "subject": "Re: Avstemmingen",
+          "summary": "Vesentlighet handler også om gjentakelse.",
+          "situation": [
+            "Vesentlighet handler også om gjentakelse."
+          ]
+        },
+        {
+          "id": "controller_week1_operations_A",
+          "mail_type": "job",
+          "mail_family": "first_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "ingrid_okonomisjef",
+          "subject": "Re: Driftsforklaring",
+          "summary": "Forklaringen graderes presist.",
+          "situation": [
+            "Forklaringen graderes presist."
+          ]
+        },
+        {
+          "id": "controller_week1_operations_B",
+          "mail_type": "job",
+          "mail_family": "first_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "marius_regnskap",
+          "subject": "Re: Driftsforklaring",
+          "summary": "Alt høres like dokumentert ut.",
+          "situation": [
+            "Alt høres like dokumentert ut."
+          ]
+        },
+        {
+          "id": "controller_week1_operations_C",
+          "mail_type": "job",
+          "mail_family": "first_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "elin_driftsleder",
+          "subject": "Re: Driftsforklaring",
+          "summary": "For hard dokumentasjonslinje kan stenge tidlige forklaringer.",
+          "situation": [
+            "For hard dokumentasjonslinje kan stenge tidlige forklaringer."
+          ]
+        },
+        {
+          "id": "controller_week1_forecast_A",
+          "mail_type": "job",
+          "mail_family": "first_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "ingrid_okonomisjef",
+          "subject": "Re: Prognosen",
+          "summary": "Scenarioer gir beslutningsgrunnlag.",
+          "situation": [
+            "Scenarioer gir beslutningsgrunnlag."
+          ]
+        },
+        {
+          "id": "controller_week1_forecast_B",
+          "mail_type": "job",
+          "mail_family": "first_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "oyvind_controller",
+          "subject": "Re: Prognosen",
+          "summary": "Ett tall er lett å misbruke.",
+          "situation": [
+            "Ett tall er lett å misbruke."
+          ]
+        },
+        {
+          "id": "controller_week1_forecast_C",
+          "mail_type": "job",
+          "mail_family": "first_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "ingrid_okonomisjef",
+          "subject": "Re: Prognosen",
+          "summary": "Høy risiko må skilles fra alarmisme.",
+          "situation": [
+            "Høy risiko må skilles fra alarmisme."
+          ]
+        },
+        {
+          "id": "controller_week1_summary_A",
+          "mail_type": "job",
+          "mail_family": "first_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "ingrid_okonomisjef",
+          "subject": "Re: Første uke",
+          "summary": "Usikkerhet gjøres brukbar.",
+          "situation": [
+            "Usikkerhet gjøres brukbar."
+          ]
+        },
+        {
+          "id": "controller_week1_summary_B",
+          "mail_type": "job",
+          "mail_family": "first_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "marius_regnskap",
+          "subject": "Re: Første uke",
+          "summary": "Under kontroll kan skjule uferdig forklaring.",
+          "situation": [
+            "Under kontroll kan skjule uferdig forklaring."
+          ]
+        },
+        {
+          "id": "controller_week1_summary_C",
+          "mail_type": "job",
+          "mail_family": "first_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "elin_driftsleder",
+          "subject": "Re: Første uke",
+          "summary": "Hard kontroll kan skape forsvar.",
+          "situation": [
+            "Hard kontroll kan skape forsvar."
+          ]
+        },
+        {
+          "id": "controller_week1_summary_D",
+          "mail_type": "job",
+          "mail_family": "first_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "ingrid_okonomisjef",
+          "subject": "Re: Første uke",
+          "summary": "Forbehold må bli anbefaling.",
+          "situation": [
+            "Forbehold må bli anbefaling."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second_week_praksisfortellinger_controller_job",
+      "purpose": "Praksisfortellinger – Controller pakke 2: Andre uke der varekostavvik, konto 4300, driftstillit, periodisering og revisjonsspor begynner å få konsekvenser.",
+      "learning_focus": [
+        "varekostavvik",
+        "konto_4300",
+        "driftsforklaringer",
+        "periodisering",
+        "revisjonsspor",
+        "styring"
+      ],
+      "week_outcomes": [
+        {
+          "id": "precise_governance_controller_week2",
+          "condition": "Spilleren spisser avviksanalysen, graderer forklaringer, vurderer periodisering etter substans, lager godt revisjonsspor og gir tydelig anbefaling.",
+          "effects": {
+            "accuracy": 7,
+            "integrity": 6,
+            "trust_manager": 5,
+            "trust_drift": 4,
+            "decision_quality": 5,
+            "audit_readiness": 4,
+            "report_quality": 4
+          },
+          "story": "Du blir en controller som gjør tallene styrbare uten å gjøre dem kunstig sikre. Du beskytter både beslutningen og forklaringen bak den."
+        },
+        {
+          "id": "smooth_result_controller_week2",
+          "condition": "Spilleren toner ned avvik, bruker brede periodiseringer, skriver at situasjonen er under kontroll og lar rapporten bli ryddigere enn virkeligheten.",
+          "effects": {
+            "report_smoothness": 6,
+            "manager_pressure": -4,
+            "stagnation": 5,
+            "future_risk": 5,
+            "integrity": -4,
+            "accuracy": -2
+          },
+          "story": "Du får tallene til å ligge penere. Det skaper ro nå, men gjør det vanskeligere å vite når roen er kjøpt med sannhet."
+        },
+        {
+          "id": "hard_control_controller_week2",
+          "condition": "Spilleren krever bred dokumentasjon, stenger tidlige forklaringer ute, skriver hardt om svak dokumentasjon og gjør kontroll til terskel.",
+          "effects": {
+            "control": 6,
+            "accuracy": 3,
+            "conflict": 5,
+            "trust_drift": -6,
+            "audit_readiness": 3,
+            "stress": 3
+          },
+          "story": "Du gjør det vanskeligere å skjule svake forklaringer. Men du gjør det også vanskeligere for folk å forklare før de har bygd forsvar."
+        },
+        {
+          "id": "drift_trust_controller_week2",
+          "condition": "Spilleren avgrenser spørsmål, bruker forklaringsnivåer, beholder driftens tidlige signaler og gjør kontroll til støtte.",
+          "effects": {
+            "trust_drift": 7,
+            "accuracy": 5,
+            "process_quality": 5,
+            "report_quality": 4,
+            "conflict": -2,
+            "decision_quality": 3
+          },
+          "story": "Du bygger en kontrollform folk tør å delta i. Det gjør tallene bedre fordi virkeligheten kommer inn før den er ferdigpyntet."
+        },
+        {
+          "id": "caveat_collector_week2",
+          "condition": "Spilleren samler forbehold, holder vurderinger åpne, ber om mer tid og unngår faglig anbefaling når ledelsen trenger beslutning.",
+          "effects": {
+            "accuracy": 2,
+            "manager_pressure": 5,
+            "decision_quality": -3,
+            "stagnation": 4,
+            "stress": 3
+          },
+          "story": "Du ser alt som kan være usikkert. Det er en styrke. Men usikkerhet må til slutt bli anbefalt handling, ellers blir den bare utsettelse med bedre språk."
+        }
+      ],
+      "mails": [
+        {
+          "id": "job_controller_week2_variance_did_not_disappear",
+          "mail_type": "job",
+          "mail_family": "second_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "subject": "Avviket som ikke forsvant",
+          "summary": "Varekostavviket er lavere, men ikke borte, og kontrolleren må følge sporet uten å gjøre hele driften mistenkt.",
+          "situation": [
+            "Fra: Ingrid, økonomisjef\nEmne: Varekost – ny status\nBody:\nVarekostavviket er lavere enn forrige uke, men ikke borte. Kampanje og periodisering forklarte noe, men sannsynligvis ikke alt. Jeg trenger hva som er forklart, hva som gjenstår, om dette ser ut som mønster, og om drift trenger et nytt spørsmål eller bedre data. Ikke start på nytt; bygg videre på vurderingen fra fredag.",
+            "Fra: Marius, regnskap\nEmne: Konto 4300 og varekost\nBody:\nResterende differanse på 4300 ser ikke dramatisk ut isolert, men peker mot samme område som varekostavviket: mottak, feilplukk og justeringer etter kampanje. Det er ikke bevis for mønster ennå, men heller ikke tilfeldig nok til å glemme.",
+            "Fra: Elin, drift\nEmne: Varekost igjen\nBody:\nJeg kan sjekke mer, men det begynner å føles som om alt drift gjør blir tolket som mulig forklaring på avvik. Bare si konkret hva dere trenger, så slipper vi å lete i alt.",
+            "Fra: System\nEmne: Uke 2 – foreløpig avviksbilde\nBody:\nVarekostavviket er redusert, men fortsatt over budsjett. Kampanjeeffekt og periodisering er delvis forklart. Konto 4300 har mindre restdifferanse. Mottak og feilplukk kan være mønster. Følg sporet smalt; ikke gjør hele driften til mistenkt område."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Spisse analysen mot konkret mønster",
+              "reply": "Jeg avgrenser videre analyse til mottak, feilplukk og kampanjerelaterte justeringer, og ber drift om konkret underlag på disse punktene.",
+              "effects": {
+                "accuracy": 4,
+                "traceability": 3,
+                "trust_drift": 2,
+                "trust_manager": 3,
+                "report_quality": 3,
+                "stress": 1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week2_targeted_followup"
+                ]
+              },
+              "triggers_on_choice": "controller_week2_variance_A",
+              "effect": {
+                "accuracy": 4,
+                "traceability": 3,
+                "trust_drift": 2,
+                "trust_manager": 3,
+                "report_quality": 3,
+                "stress": 1
+              },
+              "tags": [
+                "controller_week2_targeted_followup",
+                "controller_week2_variance_A"
+              ],
+              "feedback": "Jeg avgrenser videre analyse til mottak, feilplukk og kampanjerelaterte justeringer, og ber drift om konkret underlag på disse punktene."
+            },
+            {
+              "id": "B",
+              "label": "Be drift dokumentere hele vareflyten bredt",
+              "reply": "Jeg ber drift dokumentere alle relevante bevegelser rundt varekost, mottak, svinn, feilplukk og kampanjeuttak.",
+              "effects": {
+                "control": 3,
+                "accuracy": 1,
+                "trust_drift": -3,
+                "conflict": 2,
+                "deadline_pressure": 2,
+                "future_risk": 1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week2_broad_control_request"
+                ]
+              },
+              "triggers_on_choice": "controller_week2_variance_B",
+              "effect": {
+                "control": 3,
+                "accuracy": 1,
+                "trust_drift": -3,
+                "conflict": 2,
+                "deadline_pressure": 2,
+                "future_risk": 1
+              },
+              "tags": [
+                "controller_week2_broad_control_request",
+                "controller_week2_variance_B"
+              ],
+              "feedback": "Jeg ber drift dokumentere alle relevante bevegelser rundt varekost, mottak, svinn, feilplukk og kampanjeuttak."
+            },
+            {
+              "id": "C",
+              "label": "Tone ned avviket fordi det er lavere",
+              "reply": "Jeg skriver at avviket ser ut til å være på vei ned, og anbefaler å følge det videre uten ny analyse nå.",
+              "effects": {
+                "deadline_pressure": -1,
+                "manager_pressure": -1,
+                "stagnation": 3,
+                "future_risk": 3,
+                "accuracy": -1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week2_variance_minimized"
+                ]
+              },
+              "triggers_on_choice": "controller_week2_variance_C",
+              "effect": {
+                "deadline_pressure": -1,
+                "manager_pressure": -1,
+                "stagnation": 3,
+                "future_risk": 3,
+                "accuracy": -1
+              },
+              "tags": [
+                "controller_week2_variance_minimized",
+                "controller_week2_variance_C"
+              ],
+              "feedback": "Jeg skriver at avviket ser ut til å være på vei ned, og anbefaler å følge det videre uten ny analyse nå."
+            }
+          ],
+          "task_domain": "internkontroll_og_styring",
+          "competency": "kontrollkommunikasjon_og_revisjonsspor",
+          "pressure": "kontrolltrykk_vs_tillit",
+          "choice_axis": "dokumentasjon_vs_handlingsrom",
+          "consequence_axis": "tillit_i_drift_vs_ledelsesrisiko",
+          "narrative_arc": "controller_second_week_numbers_as_governance"
+        },
+        {
+          "id": "job_controller_week2_operations_stop_explaining",
+          "mail_type": "job",
+          "mail_family": "second_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "subject": "Når drift slutter å forklare",
+          "summary": "Kontrollen må skille mellom tidlige signaler, foreløpige vurderinger og dokumenterte årsaker for å beholde læring.",
+          "situation": [
+            "Fra: Elin\nEmne: Om forklaringene\nBody:\nNoen hos oss begynner å vente med å si fra fordi de er redde for at uferdige forklaringer blir skrevet som svak kontroll. Da får dere bedre dokumentasjon senere, men dårligere virkelighet tidligere.",
+            "Fra: Ingrid\nEmne: Driftstillit\nBody:\nVi trenger dokumentasjon, men også tidlige signaler. Kan du foreslå en enkel måte å skille mellom tidlig forklaring, foreløpig vurdering, dokumentert årsak og endelig rapportkommentar?",
+            "Fra: Marius\nEmne: Praktisk løsning\nBody:\nVi kan lage et lite språk: tidlig driftsforklaring, foreløpig sannsynlig årsak, dokumentert årsak og åpent punkt. Da slipper vi at alt enten blir sant eller ubrukelig.",
+            "Fra: System\nEmne: Kontroll og forklaring\nBody:\nHard kontroll kan få drift til å vente; for myk kontroll kan gjøre svake forklaringer til fakta. Rapporten trenger graderte forklaringsnivåer."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Innføre graderte forklaringsnivåer",
+              "reply": "Jeg foreslår fire nivåer: tidlig driftsforklaring, foreløpig sannsynlig årsak, dokumentert årsak og åpent punkt.",
+              "effects": {
+                "process_quality": 4,
+                "trust_drift": 4,
+                "trust_manager": 3,
+                "accuracy": 3,
+                "report_quality": 3,
+                "stress": 1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week2_explanation_levels"
+                ]
+              },
+              "triggers_on_choice": "controller_week2_operations_A",
+              "effect": {
+                "process_quality": 4,
+                "trust_drift": 4,
+                "trust_manager": 3,
+                "accuracy": 3,
+                "report_quality": 3,
+                "stress": 1
+              },
+              "tags": [
+                "controller_week2_explanation_levels",
+                "controller_week2_operations_A"
+              ],
+              "feedback": "Jeg foreslår fire nivåer: tidlig driftsforklaring, foreløpig sannsynlig årsak, dokumentert årsak og åpent punkt."
+            },
+            {
+              "id": "B",
+              "label": "Kreve bedre dokumentasjon før drift får inn forklaring",
+              "reply": "Jeg skriver at drift må dokumentere forklaringer bedre før de kan brukes i rapportering.",
+              "effects": {
+                "control": 3,
+                "accuracy": 2,
+                "trust_drift": -4,
+                "conflict": 3,
+                "future_risk": 2
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week2_documentation_gate"
+                ]
+              },
+              "triggers_on_choice": "controller_week2_operations_B",
+              "effect": {
+                "control": 3,
+                "accuracy": 2,
+                "trust_drift": -4,
+                "conflict": 3,
+                "future_risk": 2
+              },
+              "tags": [
+                "controller_week2_documentation_gate",
+                "controller_week2_operations_B"
+              ],
+              "feedback": "Jeg skriver at drift må dokumentere forklaringer bedre før de kan brukes i rapportering."
+            },
+            {
+              "id": "C",
+              "label": "Bruke driftsforklaringer mer uformelt uten tydelig klassifisering",
+              "reply": "Jeg sier at vi kan bruke driftsforklaringer mer fleksibelt og bare være tydelige i teksten.",
+              "effects": {
+                "trust_drift": 1,
+                "accuracy": -1,
+                "report_quality": -1,
+                "future_risk": 2,
+                "stagnation": 1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week2_loose_explanations"
+                ]
+              },
+              "triggers_on_choice": "controller_week2_operations_C",
+              "effect": {
+                "trust_drift": 1,
+                "accuracy": -1,
+                "report_quality": -1,
+                "future_risk": 2,
+                "stagnation": 1
+              },
+              "tags": [
+                "controller_week2_loose_explanations",
+                "controller_week2_operations_C"
+              ],
+              "feedback": "Jeg sier at vi kan bruke driftsforklaringer mer fleksibelt og bare være tydelige i teksten."
+            }
+          ],
+          "task_domain": "internkontroll_og_styring",
+          "competency": "kontrollkommunikasjon_og_revisjonsspor",
+          "pressure": "kontrolltrykk_vs_tillit",
+          "choice_axis": "dokumentasjon_vs_handlingsrom",
+          "consequence_axis": "tillit_i_drift_vs_ledelsesrisiko",
+          "narrative_arc": "controller_second_week_numbers_as_governance"
+        },
+        {
+          "id": "job_controller_week2_periodization_or_polishing",
+          "mail_type": "job",
+          "mail_family": "second_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "subject": "Periodisering eller resultatpynt",
+          "summary": "Kampanjekostnaden kan kanskje periodiseres, men bare dersom flerperiodeeffekten har substans.",
+          "situation": [
+            "Fra: Ingrid\nEmne: Periodisering av kampanjekost\nBody:\nDet finnes et argument for å periodisere deler av kostnaden over to perioder, siden effekten ventes å komme senere. Vurder om periodiseringen har regnskapsmessig substans, eller om den bare flytter ubehaget.",
+            "Fra: Mads, kommersiell leder\nEmne: Kampanjen\nBody:\nKampanjen er ikke ferdig med å virke. Hvis hele kostnaden tas nå, ser tiltaket dårligere ut enn det er. Salgseffekten kommer delvis senere.",
+            "Fra: Marius\nEmne: Periodisering\nBody:\nNoe kan periodiseres hvis vi faktisk har grunnlag for at kostnaden gjelder flere perioder. Hvis poenget bare er å få denne måneden til å se bedre ut, er det resultatpynt.",
+            "Fra: System\nEmne: Periodiseringsvurdering\nBody:\nSpør om kostnaden faktisk gjelder flere perioder, om dokumentasjon finnes, om effektperioden er sannsynlig eller ønsket, og om samme vurdering ville vært gjort ved bedre resultat."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Vurdere periodisering strengt etter substans",
+              "reply": "Jeg skriver at bare dokumentert flerperiodeeffekt bør periodiseres, og at resten må belastes nå selv om det gjør resultatet svakere.",
+              "effects": {
+                "integrity": 4,
+                "accuracy": 4,
+                "trust_manager": 3,
+                "conflict": 2,
+                "manager_pressure": 3,
+                "report_quality": 3
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week2_substance_over_polish"
+                ]
+              },
+              "triggers_on_choice": "controller_week2_periodization_A",
+              "effect": {
+                "integrity": 4,
+                "accuracy": 4,
+                "trust_manager": 3,
+                "conflict": 2,
+                "manager_pressure": 3,
+                "report_quality": 3
+              },
+              "tags": [
+                "controller_week2_substance_over_polish",
+                "controller_week2_periodization_A"
+              ],
+              "feedback": "Jeg skriver at bare dokumentert flerperiodeeffekt bør periodiseres, og at resten må belastes nå selv om det gjør resultatet svakere."
+            },
+            {
+              "id": "B",
+              "label": "Periodisere bredt for å matche forventet effekt",
+              "reply": "Jeg anbefaler å periodisere en større del av kampanjekostnaden fordi effekten forventes å komme senere.",
+              "effects": {
+                "manager_pressure": -2,
+                "report_smoothness": 3,
+                "integrity": -3,
+                "future_risk": 3,
+                "accuracy": -2
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week2_result_polishing"
+                ]
+              },
+              "triggers_on_choice": "controller_week2_periodization_B",
+              "effect": {
+                "manager_pressure": -2,
+                "report_smoothness": 3,
+                "integrity": -3,
+                "future_risk": 3,
+                "accuracy": -2
+              },
+              "tags": [
+                "controller_week2_result_polishing",
+                "controller_week2_periodization_B"
+              ],
+              "feedback": "Jeg anbefaler å periodisere en større del av kampanjekostnaden fordi effekten forventes å komme senere."
+            },
+            {
+              "id": "C",
+              "label": "Sende vurderingen videre uten anbefaling",
+              "reply": "Jeg skriver at det finnes argumenter begge veier og ber Ingrid ta endelig vurdering.",
+              "effects": {
+                "stress": -1,
+                "manager_pressure": 1,
+                "decision_quality": -1,
+                "stagnation": 2,
+                "accuracy": 1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week2_avoids_periodization_recommendation"
+                ]
+              },
+              "triggers_on_choice": "controller_week2_periodization_C",
+              "effect": {
+                "stress": -1,
+                "manager_pressure": 1,
+                "decision_quality": -1,
+                "stagnation": 2,
+                "accuracy": 1
+              },
+              "tags": [
+                "controller_week2_avoids_periodization_recommendation",
+                "controller_week2_periodization_C"
+              ],
+              "feedback": "Jeg skriver at det finnes argumenter begge veier og ber Ingrid ta endelig vurdering."
+            }
+          ],
+          "task_domain": "internkontroll_og_styring",
+          "competency": "kontrollkommunikasjon_og_revisjonsspor",
+          "pressure": "kontrolltrykk_vs_tillit",
+          "choice_axis": "dokumentasjon_vs_handlingsrom",
+          "consequence_axis": "tillit_i_drift_vs_ledelsesrisiko",
+          "narrative_arc": "controller_second_week_numbers_as_governance"
+        },
+        {
+          "id": "job_controller_week2_audit_trail",
+          "mail_type": "job",
+          "mail_family": "second_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "subject": "Revisjonssporet",
+          "summary": "Revisjonssporet skal gjøre vurderingen etterprøvbar uten at dokumentasjonen blir et forsvarsverk.",
+          "situation": [
+            "Fra: Ingrid\nEmne: Dokumentasjon før lukking\nBody:\nSikre revisjonsspor på varekostforklaringen, konto 4300 og periodiseringsvurderingen. Ikke overdriv, men sørg for at en annen person kan forstå hvorfor vi landet som vi gjorde.",
+            "Fra: Marius\nEmne: Revisjonsspor\nBody:\nVi trenger et kort beslutningsnotat: hva ble vurdert, hvilket grunnlag ble brukt, hva ble konkludert og hva står åpent. Uten det blir det bare en mappe med filer.",
+            "Fra: Elin\nEmne: Driftens del\nBody:\nTa gjerne med at noe var tidlig forklaring, ikke endelig dokumentasjon. Jeg vil ikke at en foreløpig vurdering skal komme tilbake som “drift bekreftet”.",
+            "Fra: System\nEmne: Revisjonsspor – risiko\nBody:\nFor lite dokumentasjon gjør vurderingen uetterprøvbar; for mye gjør at folk slutter å bruke systemet. Sporet må være følgbar tanke, ikke bare filsamling."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Lage kort beslutningsnotat med nivåer og åpne punkter",
+              "reply": "Jeg lager et kort notat som skiller grunnlag, konklusjon, forklaringsnivå og åpne punkter.",
+              "effects": {
+                "traceability": 4,
+                "process_quality": 4,
+                "trust_manager": 3,
+                "trust_drift": 2,
+                "audit_readiness": 4,
+                "stress": 1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week2_clean_audit_trail"
+                ]
+              },
+              "triggers_on_choice": "controller_week2_audit_A",
+              "effect": {
+                "traceability": 4,
+                "process_quality": 4,
+                "trust_manager": 3,
+                "trust_drift": 2,
+                "audit_readiness": 4,
+                "stress": 1
+              },
+              "tags": [
+                "controller_week2_clean_audit_trail",
+                "controller_week2_audit_A"
+              ],
+              "feedback": "Jeg lager et kort notat som skiller grunnlag, konklusjon, forklaringsnivå og åpne punkter."
+            },
+            {
+              "id": "B",
+              "label": "Legge inn alt underlag uten beslutningsnotat",
+              "reply": "Jeg samler alle filer, mailer og forklaringer i mappen, men skriver ikke eget beslutningsnotat.",
+              "effects": {
+                "traceability": 1,
+                "process_quality": -1,
+                "future_risk": 2,
+                "stress": -1,
+                "audit_readiness": 1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week2_document_dump"
+                ]
+              },
+              "triggers_on_choice": "controller_week2_audit_B",
+              "effect": {
+                "traceability": 1,
+                "process_quality": -1,
+                "future_risk": 2,
+                "stress": -1,
+                "audit_readiness": 1
+              },
+              "tags": [
+                "controller_week2_document_dump",
+                "controller_week2_audit_B"
+              ],
+              "feedback": "Jeg samler alle filer, mailer og forklaringer i mappen, men skriver ikke eget beslutningsnotat."
+            },
+            {
+              "id": "C",
+              "label": "Skrive omfattende dokumentasjon for å dekke alt",
+              "reply": "Jeg skriver et langt notat med alle vurderinger, forbehold, mulige tolkninger og åpne spørsmål.",
+              "effects": {
+                "traceability": 3,
+                "stress": 3,
+                "deadline_pressure": 2,
+                "decision_quality": -1,
+                "process_quality": 0
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week2_overdocumented"
+                ]
+              },
+              "triggers_on_choice": "controller_week2_audit_C",
+              "effect": {
+                "traceability": 3,
+                "stress": 3,
+                "deadline_pressure": 2,
+                "decision_quality": -1,
+                "process_quality": 0
+              },
+              "tags": [
+                "controller_week2_overdocumented",
+                "controller_week2_audit_C"
+              ],
+              "feedback": "Jeg skriver et langt notat med alle vurderinger, forbehold, mulige tolkninger og åpne spørsmål."
+            }
+          ],
+          "task_domain": "internkontroll_og_styring",
+          "competency": "kontrollkommunikasjon_og_revisjonsspor",
+          "pressure": "kontrolltrykk_vs_tillit",
+          "choice_axis": "dokumentasjon_vs_handlingsrom",
+          "consequence_axis": "tillit_i_drift_vs_ledelsesrisiko",
+          "narrative_arc": "controller_second_week_numbers_as_governance"
+        },
+        {
+          "id": "job_controller_week2_numbers_as_governance",
+          "mail_type": "job",
+          "mail_family": "second_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "subject": "Andre uke med tall som styring",
+          "summary": "Fredag må controlleren gi tydelig faglig anbefaling om avvik, konto 4300, driftsforklaringer, periodisering og revisjonsspor.",
+          "situation": [
+            "Fra: Ingrid\nEmne: Andre uke – controlleroppsummering\nBody:\nSend en kort oppsummering: hva vi vet om varekostavviket, om konto 4300 er enkeltfeil eller mønster, hvordan driftsforklaringer skal brukes, hva du anbefaler om periodisering, om revisjonssporet er godt nok og hva som må følges neste uke. Vær tydelig på faglig anbefaling.",
+            "Fra: Elin\nEmne: Hvis du skriver om drift\nBody:\nSkriv gjerne hva som er usikkert, men også at vi faktisk bidro til å forklare avviket. Det er forskjell på ikke ferdig dokumentert og ikke til å stole på.",
+            "Fra: Marius\nEmne: Før helg\nBody:\nVi har godt nok spor på mesteparten nå. Konto 4300 bør holdes på oppfølgingsliste, ikke blåses opp, ikke glemmes. Periodiseringen bør være konservativ.",
+            "Fra: System\nEmne: Uke 2 – controllersignaler\nBody:\nVarekost er delvis forklart og rest følges. Konto 4300 er mulig mønster, ikke konkludert. Driftsforklaringer bør graderes. Periodisering krever substans. Revisjonsspor må vise vurdering, ikke bare filer."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Skrive tydelig anbefaling med presisjon og tillit",
+              "reply": "Jeg anbefaler konservativ periodisering, gradert bruk av driftsforklaringer, oppfølging av konto 4300 og kort revisjonsspor med åpne punkter.",
+              "effects": {
+                "accuracy": 5,
+                "integrity": 5,
+                "trust_manager": 4,
+                "trust_drift": 3,
+                "decision_quality": 4,
+                "audit_readiness": 3,
+                "stress": 2
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week2_precise_governance"
+                ]
+              },
+              "triggers_on_choice": "controller_week2_summary_A",
+              "effect": {
+                "accuracy": 5,
+                "integrity": 5,
+                "trust_manager": 4,
+                "trust_drift": 3,
+                "decision_quality": 4,
+                "audit_readiness": 3,
+                "stress": 2
+              },
+              "tags": [
+                "controller_week2_precise_governance",
+                "controller_week2_summary_A"
+              ],
+              "feedback": "Jeg anbefaler konservativ periodisering, gradert bruk av driftsforklaringer, oppfølging av konto 4300 og kort revisjonsspor med åpne punkter."
+            },
+            {
+              "id": "B",
+              "label": "Skrive at situasjonen i hovedsak er under kontroll",
+              "reply": "Jeg skriver at avvikene i hovedsak er forklart, periodiseringen kan brukes moderat, og resterende punkter følges opp.",
+              "effects": {
+                "manager_pressure": -2,
+                "report_smoothness": 3,
+                "stagnation": 3,
+                "future_risk": 3,
+                "accuracy": -1
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week2_smooth_control"
+                ]
+              },
+              "triggers_on_choice": "controller_week2_summary_B",
+              "effect": {
+                "manager_pressure": -2,
+                "report_smoothness": 3,
+                "stagnation": 3,
+                "future_risk": 3,
+                "accuracy": -1
+              },
+              "tags": [
+                "controller_week2_smooth_control",
+                "controller_week2_summary_B"
+              ],
+              "feedback": "Jeg skriver at avvikene i hovedsak er forklart, periodiseringen kan brukes moderat, og resterende punkter følges opp."
+            },
+            {
+              "id": "C",
+              "label": "Skrive hardt om manglende dokumentasjon og risiko",
+              "reply": "Jeg skriver at driftsforklaringene fortsatt er for svakt dokumentert, periodisering bør avvises, og konto 4300 kan indikere kontrollsvikt.",
+              "effects": {
+                "control": 4,
+                "accuracy": 2,
+                "conflict": 4,
+                "trust_drift": -4,
+                "manager_pressure": 2,
+                "audit_readiness": 2
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week2_hard_control_line"
+                ]
+              },
+              "triggers_on_choice": "controller_week2_summary_C",
+              "effect": {
+                "control": 4,
+                "accuracy": 2,
+                "conflict": 4,
+                "trust_drift": -4,
+                "manager_pressure": 2,
+                "audit_readiness": 2
+              },
+              "tags": [
+                "controller_week2_hard_control_line",
+                "controller_week2_summary_C"
+              ],
+              "feedback": "Jeg skriver at driftsforklaringene fortsatt er for svakt dokumentert, periodisering bør avvises, og konto 4300 kan indikere kontrollsvikt."
+            },
+            {
+              "id": "D",
+              "label": "Be om mer tid og holde anbefalingen åpen",
+              "reply": "Jeg skriver at vurderingen bør holdes åpen til mer dokumentasjon foreligger, særlig rundt svinn, konto 4300 og periodisering.",
+              "effects": {
+                "accuracy": 1,
+                "manager_pressure": 3,
+                "decision_quality": -2,
+                "stagnation": 3,
+                "stress": 2
+              },
+              "next_bias": {
+                "set_flags": [
+                  "controller_week2_caveat_collector"
+                ]
+              },
+              "triggers_on_choice": "controller_week2_summary_D",
+              "effect": {
+                "accuracy": 1,
+                "manager_pressure": 3,
+                "decision_quality": -2,
+                "stagnation": 3,
+                "stress": 2
+              },
+              "tags": [
+                "controller_week2_caveat_collector",
+                "controller_week2_summary_D"
+              ],
+              "feedback": "Jeg skriver at vurderingen bør holdes åpen til mer dokumentasjon foreligger, særlig rundt svinn, konto 4300 og periodisering."
+            }
+          ],
+          "task_domain": "internkontroll_og_styring",
+          "competency": "kontrollkommunikasjon_og_revisjonsspor",
+          "pressure": "kontrolltrykk_vs_tillit",
+          "choice_axis": "dokumentasjon_vs_handlingsrom",
+          "consequence_axis": "tillit_i_drift_vs_ledelsesrisiko",
+          "narrative_arc": "controller_second_week_numbers_as_governance"
+        }
+      ],
+      "threads": [
+        {
+          "id": "controller_week2_variance_A",
+          "mail_type": "job",
+          "mail_family": "second_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "ingrid_okonomisjef",
+          "subject": "Re: Varekost",
+          "summary": "Smalt spor gir svarbar kontroll.",
+          "situation": [
+            "Dette er riktig. Du følger sporet videre, men avgrenser det nok til at drift faktisk kan svare. Det er slik vi unngår at kontroll blir tåke."
+          ]
+        },
+        {
+          "id": "controller_week2_variance_B",
+          "mail_type": "job",
+          "mail_family": "second_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "elin_driftsleder",
+          "subject": "Re: Varekost",
+          "summary": "Bred kontroll gir defensivt svar.",
+          "situation": [
+            "Dette er veldig bredt. Hvis dere vil ha alt, kommer dere til å få sent, defensivt og halvnyttig svar. Spør heller om det dere faktisk trenger."
+          ]
+        },
+        {
+          "id": "controller_week2_variance_C",
+          "mail_type": "job",
+          "mail_family": "second_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "marius_regnskap",
+          "subject": "Re: Varekost",
+          "summary": "Lavere er ikke forklart.",
+          "situation": [
+            "Det kan hende det går ned av seg selv. Men “lavere enn før” er ikke det samme som forklart."
+          ]
+        },
+        {
+          "id": "controller_week2_operations_A",
+          "mail_type": "job",
+          "mail_family": "second_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "elin_driftsleder",
+          "subject": "Re: Forklaringsnivåer",
+          "summary": "Graderte nivåer lar drift si fra tidlig.",
+          "situation": [
+            "Dette kan fungere. Da kan vi si fra tidlig uten at det later som vi vet alt, og dere kan bruke informasjonen uten å gjøre den sterkere enn den er."
+          ]
+        },
+        {
+          "id": "controller_week2_operations_B",
+          "mail_type": "job",
+          "mail_family": "second_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "elin_driftsleder",
+          "subject": "Re: Dokumentasjonskrav",
+          "summary": "Dokumentasjonsporten gjør signalene senere.",
+          "situation": [
+            "Da vet vi det. Da venter vi heller med forklaringer til vi har alt klart. Bare ikke bli overrasket når dere får signalene senere."
+          ]
+        },
+        {
+          "id": "controller_week2_operations_C",
+          "mail_type": "job",
+          "mail_family": "second_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "marius_regnskap",
+          "subject": "Re: Fleksibel forklaring",
+          "summary": "Uten nivåer blir styrken uklar.",
+          "situation": [
+            "Fleksibelt kan fungere, men uten tydelige nivåer er vi fort tilbake til at alle tror ulike ting om hvor sterk forklaringen er."
+          ]
+        },
+        {
+          "id": "controller_week2_periodization_A",
+          "mail_type": "job",
+          "mail_family": "second_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "ingrid_okonomisjef",
+          "subject": "Re: Periodisering",
+          "summary": "Substans må tåle spørsmål.",
+          "situation": [
+            "Dette er riktig linje. Hvis periodisering skal brukes, må den tåle spørsmål. Ellers kjøper vi ro med dårligere styring."
+          ]
+        },
+        {
+          "id": "controller_week2_periodization_B",
+          "mail_type": "job",
+          "mail_family": "second_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "marius_regnskap",
+          "subject": "Re: Periodisering",
+          "summary": "Nesten riktige setninger kan bli pynt.",
+          "situation": [
+            "Det kan kanskje forsvares i språk, men jeg er ikke sikker på at det tåler substans. Resultatpynt starter ofte i setninger som nesten er riktige."
+          ]
+        },
+        {
+          "id": "controller_week2_periodization_C",
+          "mail_type": "job",
+          "mail_family": "second_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "ingrid_okonomisjef",
+          "subject": "Re: Periodisering",
+          "summary": "Controllerrollen må anbefale.",
+          "situation": [
+            "Jeg kan ta beslutningen, men jeg trenger din faglige anbefaling. Controllerrollen er også å si hvilket grunnlag som holder."
+          ]
+        },
+        {
+          "id": "controller_week2_audit_A",
+          "mail_type": "job",
+          "mail_family": "second_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "ingrid_okonomisjef",
+          "subject": "Re: Revisjonsspor",
+          "summary": "Akkurat passe spor.",
+          "situation": [
+            "Dette er akkurat passe. Ikke en roman. Ikke en løs mappe. Et spor noen faktisk kan følge."
+          ]
+        },
+        {
+          "id": "controller_week2_audit_B",
+          "mail_type": "job",
+          "mail_family": "second_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "marius_regnskap",
+          "subject": "Re: Revisjonsspor",
+          "summary": "En mappe er ikke et spor.",
+          "situation": [
+            "Alt ligger der, men ingen vet hva som faktisk ble vurdert. En mappe er ikke et revisjonsspor før noen kan følge tanken."
+          ]
+        },
+        {
+          "id": "controller_week2_audit_C",
+          "mail_type": "job",
+          "mail_family": "second_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "ingrid_okonomisjef",
+          "subject": "Re: Revisjonsspor",
+          "summary": "For mye dokumentasjon blir ny rapportpakke.",
+          "situation": [
+            "Dette er grundig, men litt for grundig. Vi trenger spor, ikke en ny rapportpakke inne i rapportpakken."
+          ]
+        },
+        {
+          "id": "controller_week2_summary_A",
+          "mail_type": "job",
+          "mail_family": "second_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "ingrid_okonomisjef",
+          "subject": "Re: Andre uke",
+          "summary": "Sterk controlleroppsummering.",
+          "situation": [
+            "Dette er en sterk controlleroppsummering. Du gir anbefaling, ikke bare forbehold, og holder både tallgrunnlaget og driftstilliten levende. God helg."
+          ]
+        },
+        {
+          "id": "controller_week2_summary_B",
+          "mail_type": "job",
+          "mail_family": "second_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "marius_regnskap",
+          "subject": "Re: Andre uke",
+          "summary": "Ryddig kan bli for ryddig.",
+          "situation": [
+            "Det høres ryddig ut. Kanskje litt for ryddig. Noen av punktene er ikke farlige, men de er heller ikke ferdige."
+          ]
+        },
+        {
+          "id": "controller_week2_summary_C",
+          "mail_type": "job",
+          "mail_family": "second_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "elin_driftsleder",
+          "subject": "Re: Andre uke",
+          "summary": "Hard linje gir færre tidlige forklaringer.",
+          "situation": [
+            "Da skjønner jeg hvor du legger lista. Men hvis alle tidlige forklaringer blir behandlet som svake, kommer du til å få færre av dem."
+          ]
+        },
+        {
+          "id": "controller_week2_summary_D",
+          "mail_type": "job",
+          "mail_family": "second_week_praksisfortellinger_controller_job",
+          "role_scope": "controller",
+          "channel": "job",
+          "messageChannel": "job",
+          "mail_class": "job_message",
+          "from": "ingrid_okonomisjef",
+          "subject": "Re: Andre uke",
+          "summary": "Usikkerhet må bli handling.",
+          "situation": [
+            "Jeg forstår forbeholdene. Men vi må fortsatt styre. Neste uke trenger jeg at du omsetter usikkerheten til anbefalt handling."
+          ]
+        }
+      ]
+    }
+  ]
+}

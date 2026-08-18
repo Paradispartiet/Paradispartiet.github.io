@@ -1,0 +1,418 @@
+@import url("./manager-shell-foundation.css");
+
+/* Manager Shell v4 IA: presentation-only layer. Engines and persisted state stay
+   in their existing modules; this file owns the four-area shell and direct work
+   surfaces: Kontor · Lag · Kamp · Stats. */
+
+.main-nav-inner {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.main-nav .nav-tab {
+  min-width: 0;
+}
+
+/* Klubb er en del av Kontor, aldri en femte hovedfane. Denne regelen er
+   permanent og tåler at eldre mode-rendering forsøker å vise knappen igjen. */
+.main-nav .nav-tab[data-tab-target="board"] {
+  display: none !important;
+}
+
+/* Forslag til neste steg skal kunne forklare seg uten å renne ut av kortet. */
+.next-action-primary {
+  min-width: 0;
+}
+
+.next-action-primary > * {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.next-action-hint {
+  white-space: normal !important;
+}
+
+/* Stats skal være et stabilt hovedområde også før første seriekamp. Panelet kan
+   da vise før-sesong-status, mens tabell/terminliste fylles når sesongen finnes. */
+.statistikk-view #leagueSeasonPanel[hidden] {
+  display: block !important;
+}
+
+.office-main,
+.pitch-stage,
+.lineup-direct-editor,
+.pitch-bench,
+.bench-player-list {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.pitch-stage {
+  overflow: hidden;
+}
+
+.lineup-direct-editor,
+.pitch-bench {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.lineup-direct-head,
+.pitch-bench-head,
+.training-workspace-step-head,
+.match-flow-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.lineup-direct-head h3,
+.pitch-bench-head h3,
+.training-workspace-step-head strong {
+  margin: 0;
+}
+
+.lineup-direct-head > .muted-text,
+.pitch-bench-head > .muted-text {
+  max-width: 42ch;
+  margin: 0;
+  font-size: 0.78rem;
+}
+
+.lineup-player-choices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.lineup-player-card,
+.bench-player-card {
+  appearance: none;
+  width: 100%;
+  min-width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.025);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lineup-player-card {
+  display: grid;
+  gap: 3px;
+  padding: 9px 10px;
+}
+
+.lineup-player-card strong,
+.lineup-player-card span,
+.bench-player-card strong,
+.bench-player-card span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lineup-player-card span,
+.bench-player-card span {
+  color: var(--hg-text-muted, #aeb6b0);
+  font-size: 0.72rem;
+}
+
+.lineup-player-card:hover:not(:disabled),
+.bench-player-card:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.lineup-player-card.is-selected,
+.lineup-role-chip.is-selected {
+  border-color: var(--hg-accent-tactics, #48ca78);
+  box-shadow: inset 0 0 0 1px var(--hg-accent-tactics, #48ca78);
+}
+
+.lineup-player-card:disabled {
+  opacity: 0.36;
+  cursor: not-allowed;
+}
+
+.lineup-role-choices {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 9px 0 2px;
+  scrollbar-width: thin;
+}
+
+.lineup-role-chip {
+  flex: 0 0 auto;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.bench-player-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 7px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bench-player-card {
+  display: grid;
+  gap: 3px;
+  padding: 9px 10px;
+}
+
+.bench-player-card.is-registered {
+  border-left: 3px solid #fff;
+}
+
+/* Samlede ferdighetssirkler hører ikke hjemme i uttaket. Spilleren beskrives
+   av navn, posisjon, egenskaper og rollefit. */
+.profile-rating,
+.chip-token {
+  display: none !important;
+}
+
+.training-workspace {
+  display: grid;
+  gap: 14px;
+}
+
+.training-workspace-step {
+  scroll-margin-top: 80px;
+  outline: none;
+}
+
+.training-workspace-step-head {
+  appearance: none;
+  width: 100%;
+  padding: 10px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.training-workspace-step-head > span:first-child {
+  display: grid;
+  gap: 3px;
+}
+
+.training-workspace-step-head > span:first-child > strong {
+  font-size: 1.05rem;
+}
+
+.training-workspace-step-head::after {
+  content: "+";
+  align-self: center;
+  font-size: 1.25rem;
+}
+
+.training-workspace-step-head[aria-expanded="true"]::after {
+  content: "–";
+}
+
+.training-workspace-step-body {
+  padding-top: 12px;
+}
+
+.training-workspace-step-body[hidden] {
+  display: none !important;
+}
+
+.training-workspace-step:focus {
+  border-color: #fff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.12);
+}
+
+.training-workspace-step-head > span:last-of-type {
+  padding: 5px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  color: var(--hg-text-muted, #aeb6b0);
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.training-support-actions {
+  margin-top: 14px;
+}
+
+.kamp-view > .insight-grid,
+.kamp-view .matchday-panel {
+  width: 100%;
+  max-width: none;
+}
+
+.kamp-view > .insight-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.matchday-result-card {
+  max-width: none;
+}
+
+.match-flow {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0;
+  padding: 11px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(5, 24, 13, 0.72);
+}
+
+.match-flow-momentum {
+  font-size: 0.78rem;
+  color: var(--hg-text-muted, #aeb6b0);
+}
+
+.match-flow-momentum[data-tone="positive"] { color: var(--good, #55d98a); }
+.match-flow-momentum[data-tone="negative"] { color: var(--danger, #ef7777); }
+
+.match-flow-zones {
+  display: flex;
+  width: 100%;
+  min-height: 48px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 5px;
+}
+
+.match-flow-zones > span {
+  flex: 0 0 var(--zone-share);
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.34);
+  transition: flex-basis 180ms ease;
+}
+
+.match-flow-zones > span:last-child { border-right: 0; }
+.match-flow-zones .is-defensive { background: rgba(204, 82, 82, 0.18); }
+.match-flow-zones .is-neutral { background: rgba(255, 255, 255, 0.07); }
+.match-flow-zones .is-attacking { background: rgba(70, 214, 140, 0.22); }
+.match-flow-zones small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.match-flow-hint { margin: 0; color: var(--hg-text-muted, #aeb6b0); font-size: 0.72rem; }
+
+@media (max-width: 760px) {
+  .main-nav {
+    position: static !important;
+    inset: auto !important;
+    z-index: 30;
+    padding-bottom: 4px !important;
+    border-top: 0;
+    background: #070a10;
+  }
+
+  .main-nav-inner {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .main-nav .nav-tab {
+    display: grid;
+    place-items: center;
+    gap: 2px;
+    padding: 7px 2px !important;
+  }
+
+  .main-nav .nav-tab[data-tab-target="board"] {
+    display: none !important;
+  }
+
+  .site-footer {
+    bottom: auto;
+  }
+
+  .app-shell {
+    padding-bottom: 0;
+  }
+
+  .office-main {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .pitch-stage {
+    grid-column: 1 !important;
+  }
+
+  .pitch {
+    width: 100%;
+    max-width: 100%;
+    min-height: 430px;
+  }
+
+  .lineup-direct-head,
+  .pitch-bench-head,
+  .training-workspace-step-head {
+    display: grid;
+  }
+
+  .lineup-direct-head > .muted-text,
+  .pitch-bench-head > .muted-text {
+    max-width: none;
+  }
+
+  .lineup-player-choices,
+  .bench-player-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .matchday-panel {
+    padding: 14px;
+  }
+}
+
+/* The plan is a compact progress rail; the actual program, focus and player
+   work lives in the one-open-at-a-time workspace directly below it. */
+.training-plan-steps {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.training-plan-step {
+  min-width: 0;
+  border: 0;
+  border-top: 2px solid var(--line-soft, rgba(255, 255, 255, 0.24));
+  border-radius: 0;
+  background: transparent;
+  padding: 0.65rem 0.15rem 0;
+}
+
+.training-plan-step-role,
+.training-plan-step-detail {
+  display: none;
+}
+
+.training-plan-step-action {
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 760px) {
+  .training-plan-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 390px) {
+  .lineup-player-choices,
+  .bench-player-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .match-flow-zones small { font-size: 0.62rem; }
+}

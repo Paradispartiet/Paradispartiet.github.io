@@ -1,0 +1,83 @@
+{
+  "placeId": "grini_fangeleir",
+  "placeFile": "data/places/historie/akershus/grini_fangeleir.json",
+  "evidenceStatus": "needs_research",
+  "coordinateDecision": "needs_geometry",
+  "currentCoordinate": {
+    "lat": 59.954295776884884,
+    "lon": 10.582680030345253,
+    "r": 360,
+    "coordStatus": "verified_historical_source",
+    "coordSource": "MiA Grinimuseet – Grini prison camp history; OpenStreetMap way 1420075236 current original-prison building geometry; Kartverket Jøssingveien 33; Lokalhistoriewiki wartime camp plan and Fallskjermen identification; Bærum municipality",
+    "coordType": "surviving_original_prison_building_centroid_for_grini_camp_core",
+    "coordNote": "MiA documents that Polizeihäftlingslager Grini was established on 14 June 1941 in the original Ila women's-prison building, and that this main building is now Ila fengsel og forvaringsanstalt. OpenStreetMap way 1420075236 is the large building polygon at the current Ila address, Jøssingveien 33; Kartverket's exact address point lies approximately 23.5 metres from its deterministic polygon centroid. The mapped Fallskjermen room lies inside the polygon, and historical sources place Fallskjermen in the original prison building; that room is used only as an identity cross-check. The wartime camp expanded from 1942 into more than thirty barracks around this building, so the building centroid is a stable historical anchor rather than a claimed centroid of the full camp perimeter. The current Grinimuseet at Jøssingveien 31 lies approximately 200.6 metres away in an authentic prisoner barrack that MiA states was moved after the war and now stands just outside the original camp. It is therefore a separate public visitor anchor. The 360-metre radius is a gameplay core, not the historic camp boundary, current prison boundary, property line, security perimeter or protection polygon."
+  },
+  "identity": {
+    "currentName": "Grini fangeleir",
+    "resolvedIdentity": "den historiske Grini fangeleir ved Ila i Bærum",
+    "identityStatus": "resolved",
+    "identityProblem": "Tidligere plassert i Oslo-kilden; korrekt fylkes-/kommunetilhørighet er Akershus/Bærum.",
+    "locatorTypeCandidate": "linear_area",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [
+    "offisiell eller historisk leirgeometri",
+    "dokumentert områdeanker som representerer leiren og ikke bare museet",
+    "visuell kontroll mot Ila fengsel, Grinimuseet og historisk leirutstrekning"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "municipality",
+      "sourceName": "Bærum kommune – Forsvar og krigsminner",
+      "sourceUrl": "https://www.baerum.kommune.no/tjenester/kultur-idrett-og-fritid/kunst-og-kultur/rik-pa-historie/6.-forsvar-og-krigsminner",
+      "sourceObjectId": "baerum-kommune:grini-fangeleir",
+      "sourceQuality": "official_identity_and_municipality",
+      "finding": "Bærum kommune dokumenterer Grini fangeleir ved Ila og leirens historiske utstrekning.",
+      "canVerifyCoordinate": false,
+      "reason": "Grini fangeleir ligger i Bærum og er derfor flyttet ut av Oslo-kilden. Dagens punkt er et eldre områdepunkt uten kildebelagt leirgeometri. Grinimuseets besøksadresse dokumenterer dagens museum ved stedet, men kan ikke brukes som sentrum for hele den historiske leiren."
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "MiA – Grinimuseet",
+      "sourceUrl": "https://mia.no/grinimuseet/finn-oss",
+      "sourceObjectId": "mia:grinimuseet:jossingveien-31",
+      "sourceQuality": "official_museum_location",
+      "finding": "Grinimuseet ligger i Jøssingveien 31 i Eiksmarka, Bærum, ved Ila. Adressen identifiserer museet, ikke hele den historiske leiren.",
+      "canVerifyCoordinate": false,
+      "reason": "Brukes som fysisk identitetskontroll, ikke som canonical leirsentrum."
+    }
+  ],
+  "addressCandidates": [
+    {
+      "address": "Jøssingveien 31, 1359 Eiksmarka",
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "mia:grinimuseet:jossingveien-31",
+      "canApplyToPlace": false
+    }
+  ],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "municipality",
+      "sourceObjectId": "baerum-kommune:grini-fangeleir",
+      "canApplyToPlace": false
+    }
+  ],
+  "geometryCandidates": [],
+  "coordinateCandidates": [
+    {
+      "lat": 59.9565,
+      "lon": 10.5909,
+      "coordRole": "area_anchor",
+      "canApplyToPlace": false
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": false,
+    "blockedReason": "Grini fangeleir ligger i Bærum og er derfor flyttet ut av Oslo-kilden. Dagens punkt er et eldre områdepunkt uten kildebelagt leirgeometri. Grinimuseets besøksadresse dokumenterer dagens museum ved stedet, men kan ikke brukes som sentrum for hele den historiske leiren.",
+    "nextAction": "Finn kildebelagt leirgeometri eller et dokumentert historisk områdeanker før koordinaten godkjennes."
+  },
+  "notes": [
+    "Recorden er flyttet fra Oslo-kilden til Akershus/Bærum fordi både place-teksten og Bærum kommune plasserer Grini fangeleir i Bærum. Eksisterende punkt beholdes foreløpig uten godkjenning. Grinimuseets besøksadresse Jøssingveien 31 dokumenterer dagens museum ved leirstedet, men brukes ikke som kunstig sentrum for hele den historiske leiren. Krever offisiell leirgeometri eller dokumentert historisk områdeanker før koordinaten kan godkjennes."
+  ]
+}

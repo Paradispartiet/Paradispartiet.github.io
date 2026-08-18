@@ -1,0 +1,320 @@
+{
+  "schema": "civication_mail_family_catalog_v1",
+  "version": 1,
+  "category": "naeringsliv",
+  "role_scope": "ekspeditor",
+  "mail_type": "conflict",
+  "families": [
+    {
+      "id": "apning_og_lukking",
+      "purpose": "Vise konfliktpunktet der service, lukkerutiner og kollegialt ansvar drar i ulike retninger.",
+      "learning_focus": ["lukkeansvar", "servicegrenser", "neste skift"],
+      "mails": [
+        {
+          "id": "ekspeditor_conflict_apning_001",
+          "mail_type": "conflict",
+          "mail_family": "apning_og_lukking",
+          "role_scope": "ekspeditor",
+          "phase": "advanced",
+          "priority": 60,
+          "cooldown": 2,
+          "repeatable": false,
+          "stage": "stable_warning",
+          "from": "marit_butikkleder",
+          "place_id": "storgata_handelsmiljo",
+          "subject": "Kunden kommer inn etter at lukkerutinene har begynt",
+          "summary": "En kunde går inn idet du har startet lukking, og spør som om butikken fortsatt har all tid i verden.",
+          "purpose": "Teste om spilleren kan være hjelpsom uten å miste ansvar for lukking.",
+          "stakes": "For mye service kan ødelegge lukking for neste skift. For hard grense kan gjøre butikken kald.",
+          "situation": [
+            "Du har begynt å telle kasse og rydde disken.",
+            "Kunden sier at hun bare trenger ett raskt råd, men beveger seg allerede innover i butikken.",
+            "Du vet at fem minutter kan bli femten hvis du ikke setter formen nå."
+          ],
+          "task_domain": "lukking",
+          "competency": "grensesetting_med_service",
+          "pressure": "stengetid_og_kundeforventning",
+          "choice_axis": "hjelpe_med_rammesetting_vs_grenseløs_service",
+          "consequence_axis": "kundeopplevelse_vs_lukkerutine",
+          "narrative_arc": "ekspeditøren lærer at vennlighet må ha form for ikke å spise neste oppgave",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Hjelp kort, men sett tydelig tidsramme",
+              "reply": "Jeg kan hjelpe kort, men vi er i ferd med å stenge.",
+              "effect": 1,
+              "tags": ["service", "boundary", "clarity"],
+              "feedback": "Du gjør grensen tydelig uten å gjøre kunden til et problem."
+            },
+            {
+              "id": "B",
+              "label": "La kunden få full hjelp og ta lukking etterpå",
+              "reply": "Jeg hjelper kunden ferdig og tar lukking etterpå.",
+              "effect": -1,
+              "tags": ["service", "risk", "delay"],
+              "feedback": "Kunden får tid, men neste skift arver konsekvensen av at grensen aldri kom."
+            }
+          ]
+        },
+        {
+          "id": "ekspeditor_conflict_apning_002",
+          "mail_type": "conflict",
+          "mail_family": "apning_og_lukking",
+          "role_scope": "ekspeditor",
+          "phase": "advanced",
+          "priority": 56,
+          "cooldown": 2,
+          "repeatable": false,
+          "stage": "stable_warning",
+          "from": "ole_skiftleder",
+          "place_id": "storgata_handelsmiljo",
+          "subject": "Lukkingen ser ferdig ut, men stemmer ikke helt",
+          "summary": "Du ser små avvik i disken før du går, og ingen kunde vil merke dem før i morgen.",
+          "purpose": "Vise konflikt mellom egen tid og ansvar for neste skift.",
+          "stakes": "Retter du det, mister du tid. Lar du det stå, blir morgenen tyngre for noen andre.",
+          "situation": [
+            "Kassa stemmer, og på papiret kan du gå.",
+            "Likevel ser du at returområdet ligger rotete og en kampanjevare står feil.",
+            "Det er ikke dramatisk. Det er akkurat derfor det er lett å la stå."
+          ],
+          "task_domain": "lukkerutine",
+          "competency": "kollegialt_ansvar",
+          "pressure": "sliten_sluttfase",
+          "choice_axis": "rydde_for_neste_vs_beskytte_egen_tid",
+          "consequence_axis": "laglojalitet_vs_personlig_flyt",
+          "narrative_arc": "ekspeditøren møter det usynlige ansvaret etter stengetid",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Rydd avvikene før du går",
+              "reply": "Jeg rydder avvikene før jeg går.",
+              "effect": 1,
+              "tags": ["team", "quality", "responsibility"],
+              "feedback": "Ingen ser det nå, men neste skift starter med mindre friksjon."
+            },
+            {
+              "id": "B",
+              "label": "La det stå siden det ikke stopper åpning",
+              "reply": "Jeg lar det stå siden det ikke stopper åpning.",
+              "effect": 0,
+              "tags": ["self_preservation", "shortcut"],
+              "feedback": "Du går til tiden. Noen andre starter dagen med små rester av din kveld."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lager_og_bestilling",
+      "purpose": "Vise konflikter der lagerstatus, bestilling og ansvar for fremtidige kunder blir presset av dagens tempo.",
+      "learning_focus": ["lageravvik", "bestilling", "forutseende drift"],
+      "mails": [
+        {
+          "id": "ekspeditor_conflict_lager_001",
+          "mail_type": "conflict",
+          "mail_family": "lager_og_bestilling",
+          "role_scope": "ekspeditor",
+          "phase": "mid",
+          "priority": 58,
+          "cooldown": 2,
+          "repeatable": false,
+          "stage": "stable_warning",
+          "from": "marit_butikkleder",
+          "place_id": "storgata_handelsmiljo",
+          "subject": "Systemet sier ja, hylla sier nei",
+          "summary": "Lageret viser beholdning, men kunden står foran en tom hylle og begynner å miste tillit.",
+          "purpose": "Teste om spilleren gjør lagerfeil synlig eller bare lukker kundesaken.",
+          "stakes": "Å spore varen tar tid. Å avvise kunden raskt lar lagerfeilen fortsette å produsere irritasjon.",
+          "situation": [
+            "Skjermen viser at varen finnes.",
+            "Hylla er tom, og kunden peker på tallet som om det er et løfte.",
+            "Du vet at problemet enten ligger i systemet, på lageret eller i måten butikken flyter på."
+          ],
+          "task_domain": "lageravvik",
+          "competency": "praktisk_sporbarhet",
+          "pressure": "kunde_venter",
+          "choice_axis": "spore_vare_vs_lukke_sak",
+          "consequence_axis": "tillit_vs_tidsbruk",
+          "narrative_arc": "ekspeditøren lærer at digital beholdning må gjøres fysisk sann",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Spor varen og registrer avviket hvis den mangler",
+              "reply": "Jeg sporer varen og registrerer avviket hvis den mangler.",
+              "effect": 1,
+              "tags": ["process", "stock", "trust"],
+              "feedback": "Du bruker tid på saken, men gjør problemet til noe butikken kan lære av."
+            },
+            {
+              "id": "B",
+              "label": "Si at den må være utsolgt og gå videre",
+              "reply": "Jeg sier at den må være utsolgt og går videre.",
+              "effect": -1,
+              "tags": ["tempo", "shortcut", "risk"],
+              "feedback": "Køen går videre, men lageret får fortsette å motsi butikken."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "salg_og_veiledning",
+      "purpose": "Vise konflikten mellom å selge, veilede og bevare kundens tillit når salgsmål møter faktisk behov.",
+      "learning_focus": ["etisk salg", "behovsavklaring", "kundetillit"],
+      "mails": [
+        {
+          "id": "ekspeditor_conflict_salg_001",
+          "mail_type": "conflict",
+          "mail_family": "salg_og_veiledning",
+          "role_scope": "ekspeditor",
+          "phase": "mid",
+          "priority": 57,
+          "cooldown": 2,
+          "repeatable": false,
+          "stage": "stable_warning",
+          "from": "sara_kollega",
+          "place_id": "storgata_handelsmiljo",
+          "subject": "Kampanjevaren passer dårlig, men teller godt",
+          "summary": "Kunden kan ta med en kampanjevare, men du skjønner at hun egentlig ikke trenger den.",
+          "purpose": "Teste om spilleren følger salgspress eller veiledningens integritet.",
+          "stakes": "Kampanjen gir tall i dag. God veiledning bygger tillit over tid.",
+          "situation": [
+            "Kassa minner deg om kampanjen.",
+            "Kunden beskriver et behov som kampanjevaren egentlig ikke løser.",
+            "Du kjenner forskjellen mellom å selge noe og å hjelpe henne å velge."
+          ],
+          "task_domain": "salg_og_veiledning",
+          "competency": "etisk_veiledning",
+          "pressure": "salgsmål",
+          "choice_axis": "kampanje_vs_reelt_behov",
+          "consequence_axis": "dagsmål_vs_lang_tillit",
+          "narrative_arc": "ekspeditøren ser at salg kan komme i konflikt med god veiledning",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Veiled ut fra kundens behov, ikke kampanjen",
+              "reply": "Jeg veileder ut fra kundens behov, ikke kampanjen.",
+              "effect": 1,
+              "tags": ["integrity", "trust", "guidance"],
+              "feedback": "Du gjør salget mindre aggressivt og rollen mer troverdig."
+            },
+            {
+              "id": "B",
+              "label": "Foreslå kampanjevaren likevel",
+              "reply": "Jeg foreslår kampanjevaren likevel.",
+              "effect": 0,
+              "tags": ["sales", "target"],
+              "feedback": "Du følger systemets dytt, men kunden får mindre hjelp til å forstå sitt eget behov."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ny_kollega_og_tillit",
+      "purpose": "Vise konflikter rundt kollegial tillit, opplæring og skjev belastning i frontlinjen.",
+      "learning_focus": ["kollegapress", "opplæring", "arbeidsdeling"],
+      "mails": [
+        {
+          "id": "ekspeditor_conflict_kollega_001",
+          "mail_type": "conflict",
+          "mail_family": "ny_kollega_og_tillit",
+          "role_scope": "ekspeditor",
+          "phase": "early",
+          "priority": 56,
+          "cooldown": 2,
+          "repeatable": false,
+          "stage": "stable_warning",
+          "from": "ole_skiftleder",
+          "place_id": "storgata_handelsmiljo",
+          "subject": "Kollegaen gjør snarveien foran den nye",
+          "summary": "En erfaren kollega viser en nyansatt en rask løsning som du vet ikke bør bli standard.",
+          "purpose": "Teste om spilleren tør å korrigere praksis når sosial rang gjør det ubehagelig.",
+          "stakes": "Korrigerer du, kan det skape friksjon. Lar du det gå, blir snarveien opplæring.",
+          "situation": [
+            "Den erfarne sier: sånn gjør vi det når det er travelt.",
+            "Den nye nikker og ser ut som hun nettopp lærte regelen.",
+            "Du vet at hun egentlig lærte unntaket."
+          ],
+          "task_domain": "kollegial_opplæring",
+          "competency": "standardforståelse",
+          "pressure": "uformell_rang",
+          "choice_axis": "korrigere_vs_bevare_ro",
+          "consequence_axis": "standard_vs_stemning",
+          "narrative_arc": "ekspeditøren lærer at kultur overføres i små snarveier",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Korriger rolig og forklar hvorfor unntaket ikke er standard",
+              "reply": "Jeg korrigerer rolig og forklarer hvorfor unntaket ikke er standard.",
+              "effect": 1,
+              "tags": ["quality", "training", "boundary"],
+              "feedback": "Du tar friksjonen før snarveien får pedagogisk verdi."
+            },
+            {
+              "id": "B",
+              "label": "La det passere for å unngå å sette kollegaen i dårlig lys",
+              "reply": "Jeg lar det passere for å unngå å sette kollegaen i dårlig lys.",
+              "effect": -1,
+              "tags": ["avoidance", "shortcut", "team"],
+              "feedback": "Stemningen reddes, men den nye lærer en svakere butikk."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "forste_ansvar",
+      "purpose": "Vise konfliktpunktet der ekspeditøren må gå fra å være utførende til å bære små beslutninger selv.",
+      "learning_focus": ["første ansvar", "synlighet", "selvstendighet"],
+      "mails": [
+        {
+          "id": "ekspeditor_conflict_ansvar_001",
+          "mail_type": "conflict",
+          "mail_family": "forste_ansvar",
+          "role_scope": "ekspeditor",
+          "phase": "mid",
+          "priority": 58,
+          "cooldown": 2,
+          "repeatable": false,
+          "stage": "stable_warning",
+          "from": "marit_butikkleder",
+          "place_id": "storgata_handelsmiljo",
+          "subject": "Du får ansvaret for feilen før du vet om den er din",
+          "summary": "Et lite avvik peker mot tidspunktet du sto alene, men årsaken er fortsatt uklar.",
+          "purpose": "Teste om spilleren undersøker ansvar uten å gå rett i forsvar.",
+          "stakes": "Å undersøke bygger tillit. Å avvise raskt kan beskytte deg, men gjør avviket mer uklart.",
+          "situation": [
+            "Avviket er lite, men tidsrommet peker mot deg.",
+            "Du vet at du kan ha gjort noe feil, men det kan også være system eller overlevering.",
+            "Det første valget er ikke skyld, men hvordan du møter sporet."
+          ],
+          "task_domain": "første_ansvar",
+          "competency": "ansvarlighet_under_usikkerhet",
+          "pressure": "feil_med_eget_navn",
+          "choice_axis": "undersøke_vs_forsvare",
+          "consequence_axis": "tillit_vs_tåklegging",
+          "narrative_arc": "ekspeditøren lærer at ansvar begynner før sikker skyld",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Undersøk avviket og gjør sporet tydelig",
+              "reply": "Jeg undersøker avviket og gjør sporet tydelig.",
+              "effect": 1,
+              "tags": ["accountability", "process"],
+              "feedback": "Du behandler ansvar som arbeid, ikke som personlig dom."
+            },
+            {
+              "id": "B",
+              "label": "Si raskt at dette ikke kan ha vært deg",
+              "reply": "Jeg sier raskt at dette ikke kan ha vært meg.",
+              "effect": -1,
+              "tags": ["defense", "avoidance"],
+              "feedback": "Du beskytter deg raskt, men gjør det vanskeligere å finne ut hva som faktisk skjedde."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,605 @@
+{
+  "_comment": "Modell-register for Civication 3D-kartet (hybrid). buildingTypes og landmarks bruker kuraterte Kenney CC0-modeller med primitiv-fallback; scenery er kontrollert geografisk dekor/infrastruktur; assetLibrary eksponerer et bredere stedsspesifikt modellbibliotek uten å spre alt tilfeldig på Oslo-kartet. Veinettet forblir geografisk/prosedyralt.",
+  "buildingTypes": {
+    "default": [
+      "suburban/building-type-a.glb",
+      "suburban/building-type-c.glb",
+      "modular/building-sample-house-a.glb",
+      "modular/building-sample-house-b.glb",
+      "modular/building-sample-house-c.glb"
+    ],
+    "apartment": [
+      "suburban/building-type-h.glb",
+      "suburban/building-type-b.glb",
+      "suburban/building-type-m.glb",
+      "modular/building-sample-tower-a.glb",
+      "modular/building-sample-tower-b.glb",
+      "modular/building-sample-tower-c.glb",
+      "modular/building-sample-tower-d.glb"
+    ],
+    "commerce": [
+      "commercial/building-a.glb",
+      "commercial/building-b.glb",
+      "commercial/building-c.glb",
+      "modular/building-sample-tower-b.glb",
+      "modular/building-sample-tower-c.glb"
+    ],
+    "civic": [
+      "commercial/building-d.glb",
+      "commercial/building-j.glb",
+      "commercial/building-k.glb",
+      "modular/building-sample-tower-a.glb"
+    ],
+    "subculture": [
+      "commercial/building-m.glb",
+      "commercial/building-n.glb",
+      "mini-skate/half-pipe.glb",
+      "mini-skate/structure-platform.glb"
+    ],
+    "industrial": [
+      "industrial/building-a.glb",
+      "industrial/building-c.glb",
+      "industrial/building-e.glb",
+      "industrial/building-g.glb",
+      "factory/structure-tall.glb",
+      "factory/structure-high.glb",
+      "factory/structure-yellow-tall.glb",
+      "retro-urban/scaffolding-structure.glb"
+    ],
+    "park": [
+      "mini-forest/tree.glb",
+      "mini-forest/tree-high.glb",
+      "mini-forest/bridge.glb",
+      "mini-forest/building-platform.glb"
+    ],
+    "playground": [
+      "mini-skate/half-pipe.glb",
+      "mini-skate/bowl-side.glb",
+      "mini-skate/structure-platform.glb",
+      "mini-skate/rail-low.glb"
+    ],
+    "sports_field": [
+      "racing/grandStand.glb",
+      "racing/grandStandAwning.glb",
+      "racing/grandStandCovered.glb"
+    ],
+    "stadium": [
+      "racing/grandStandCovered.glb",
+      "racing/grandStandCoveredRound.glb",
+      "racing/grandStandRound.glb"
+    ],
+    "ice_arena": [
+      "racing/grandStandCoveredRound.glb",
+      "racing/grandStandRound.glb"
+    ]
+  },
+  "landmarks": {
+    "akershus": {
+      "_comment": "Sammensatt festning (castle-deler): dominerende keep, runde hjørnetårn, rampartmur, port og vindebro mot fjorden.",
+      "targetSize": 1.3,
+      "scale": 1.0,
+      "parts": [
+        { "file": "castle/tower-square.glb", "x": 0.0, "z": -0.05, "size": 0.72 },
+        { "file": "castle/wall-corner-half-tower.glb", "x": -0.52, "z": -0.5, "size": 0.36 },
+        { "file": "castle/wall-corner-half-tower.glb", "x": 0.52, "z": -0.5, "size": 0.36 },
+        { "file": "castle/wall-corner-half-tower.glb", "x": -0.52, "z": 0.5, "size": 0.36 },
+        { "file": "castle/wall-corner-half-tower.glb", "x": 0.52, "z": 0.5, "size": 0.36 },
+        { "file": "castle/wall.glb", "x": 0.0, "z": -0.52, "size": 0.62 },
+        { "file": "castle/wall.glb", "x": -0.52, "z": 0.0, "size": 0.56, "rotationY": 1.5708 },
+        { "file": "castle/wall.glb", "x": 0.52, "z": 0.0, "size": 0.56, "rotationY": 1.5708 },
+        { "file": "castle/gate.glb", "x": 0.0, "z": 0.52, "size": 0.5, "rotationY": 1.5708 },
+        { "file": "castle/bridge-draw.glb", "x": 0.0, "z": 0.8, "size": 0.52, "rotationY": 1.5708 }
+      ]
+    },
+    "aker_brygge": {
+      "_comment": "Sammensatt brygge: staggered rad av moderne commercial-bygg langs kaia. Båtene ligger som scenery ute i selve fjorden (ikke i komposisjonen) så de aldri havner på land. Ullevaal/Bislett/Jordal bruker de særpregede håndmodellene (fotballbowl/løpebane/ishall) – ikke like tribune-GLB-er.",
+      "targetSize": 1.75,
+      "scale": 1.0,
+      "parts": [
+        { "file": "commercial/building-h.glb", "x": -1.0, "z": -0.22, "size": 0.5 },
+        { "file": "commercial/building-l.glb", "x": -0.52, "z": -0.26, "size": 0.54 },
+        { "file": "commercial/building-i.glb", "x": -0.04, "z": -0.2, "size": 0.5 },
+        { "file": "commercial/building-j.glb", "x": 0.52, "z": -0.24, "size": 0.62 },
+        { "file": "commercial/building-d.glb", "x": 1.02, "z": -0.18, "size": 0.46 }
+      ]
+    },
+    "tjuvholmen": {
+      "_comment": "Sammensatt holme: kompakt klynge av moderne glass-bygg (commercial) + lav bred museumspaviljong + marina med seilbåter mot fjorden (+z).",
+      "targetSize": 1.35,
+      "scale": 1.0,
+      "parts": [
+        { "file": "commercial/building-i.glb", "x": -0.42, "z": -0.2, "size": 0.5 },
+        { "file": "commercial/building-skyscraper-a.glb", "x": 0.05, "z": -0.28, "size": 0.46 },
+        { "file": "commercial/building-l.glb", "x": 0.48, "z": -0.15, "size": 0.5 },
+        { "file": "commercial/building-e.glb", "x": -0.05, "z": 0.18, "size": 0.58 }
+      ]
+    }
+  },
+  "scenery": [
+    {
+      "_comment": "Marina-båter fortøyd i vannet rett utenfor Aker Brygge og Tjuvholmen (kysten går ved ca. y=0.68-0.70 her).",
+      "file": "water/boat-sail-a.glb",
+      "x": 0.402,
+      "y": 0.706,
+      "size": 0.42,
+      "rotationY": 0.25
+    },
+    {
+      "file": "water/boat-tug-a.glb",
+      "x": 0.372,
+      "y": 0.716,
+      "size": 0.38,
+      "rotationY": -0.4
+    },
+    {
+      "file": "water/boat-sail-a.glb",
+      "x": 0.338,
+      "y": 0.726,
+      "size": 0.4,
+      "rotationY": 0.9
+    },
+    {
+      "file": "water/boat-speed-b.glb",
+      "x": 0.31,
+      "y": 0.737,
+      "size": 0.3,
+      "rotationY": 1.6
+    },
+    {
+      "file": "water/boat-fishing-small.glb",
+      "x": 0.42,
+      "y": 0.74,
+      "size": 0.55,
+      "rotationY": 0.35
+    },
+    {
+      "file": "water/boat-tug-a.glb",
+      "x": 0.6,
+      "y": 0.73,
+      "size": 0.6,
+      "rotationY": -0.5
+    },
+    {
+      "file": "water/boat-sail-a.glb",
+      "x": 0.5,
+      "y": 0.765,
+      "size": 0.55,
+      "rotationY": 0.8
+    },
+    {
+      "file": "water/boat-speed-b.glb",
+      "x": 0.62,
+      "y": 0.8,
+      "size": 0.42,
+      "rotationY": 1.5
+    },
+    {
+      "file": "water/boat-fishing-small.glb",
+      "x": 0.375,
+      "y": 0.82,
+      "size": 0.5,
+      "rotationY": 2.3
+    },
+    {
+      "file": "water/boat-sail-a.glb",
+      "x": 0.52,
+      "y": 0.875,
+      "size": 0.55,
+      "rotationY": -0.3
+    },
+    {
+      "file": "cars/sedan.glb",
+      "x": 0.47,
+      "y": 0.578,
+      "size": 0.22,
+      "baseY": 0.12,
+      "rotationY": 2.6
+    },
+    {
+      "file": "cars/suv.glb",
+      "x": 0.515,
+      "y": 0.59,
+      "size": 0.24,
+      "baseY": 0.12,
+      "rotationY": -0.5
+    },
+    {
+      "file": "cars/taxi.glb",
+      "x": 0.55,
+      "y": 0.6,
+      "size": 0.22,
+      "baseY": 0.12,
+      "rotationY": 2.5
+    },
+    {
+      "file": "cars/delivery.glb",
+      "x": 0.42,
+      "y": 0.666,
+      "size": 0.26,
+      "baseY": 0.12,
+      "rotationY": 0.1
+    },
+    {
+      "file": "cars/sedan.glb",
+      "x": 0.5,
+      "y": 0.662,
+      "size": 0.22,
+      "baseY": 0.12,
+      "rotationY": 0.15
+    },
+    {
+      "file": "cars/hatchback-sports.glb",
+      "x": 0.58,
+      "y": 0.662,
+      "size": 0.21,
+      "baseY": 0.12,
+      "rotationY": 3.0
+    },
+    {
+      "file": "cars/police.glb",
+      "x": 0.445,
+      "y": 0.47,
+      "size": 0.23,
+      "baseY": 0.12,
+      "rotationY": -1.0
+    },
+    {
+      "file": "cars/suv.glb",
+      "x": 0.55,
+      "y": 0.457,
+      "size": 0.24,
+      "baseY": 0.12,
+      "rotationY": 1.2
+    },
+    {
+      "file": "cars/taxi.glb",
+      "x": 0.6,
+      "y": 0.485,
+      "size": 0.22,
+      "baseY": 0.12,
+      "rotationY": 0.9
+    },
+    {
+      "file": "cars/sedan.glb",
+      "x": 0.535,
+      "y": 0.53,
+      "size": 0.22,
+      "baseY": 0.12,
+      "rotationY": -0.3
+    },
+    {
+      "file": "people/character-male-a.glb",
+      "x": 0.622,
+      "y": 0.516,
+      "size": 0.06,
+      "baseY": 0.12,
+      "rotationY": 0.0
+    },
+    {
+      "file": "people/character-female-c.glb",
+      "x": 0.63,
+      "y": 0.522,
+      "size": 0.06,
+      "baseY": 0.12,
+      "rotationY": 1.5
+    },
+    {
+      "file": "people/character-male-e.glb",
+      "x": 0.468,
+      "y": 0.573,
+      "size": 0.06,
+      "baseY": 0.12,
+      "rotationY": 0.5
+    },
+    {
+      "file": "people/character-female-a.glb",
+      "x": 0.485,
+      "y": 0.582,
+      "size": 0.06,
+      "baseY": 0.12,
+      "rotationY": 2.0
+    },
+    {
+      "file": "people/character-male-c.glb",
+      "x": 0.455,
+      "y": 0.515,
+      "size": 0.06,
+      "baseY": 0.12,
+      "rotationY": 3.0
+    },
+    {
+      "file": "people/character-female-e.glb",
+      "x": 0.31,
+      "y": 0.465,
+      "size": 0.06,
+      "baseY": 0.12,
+      "rotationY": 1.0
+    },
+    {
+      "file": "people/character-male-a.glb",
+      "x": 0.3,
+      "y": 0.455,
+      "size": 0.06,
+      "baseY": 0.12,
+      "rotationY": -1.0
+    },
+    {
+      "file": "people/character-female-c.glb",
+      "x": 0.61,
+      "y": 0.505,
+      "size": 0.06,
+      "baseY": 0.12,
+      "rotationY": 0.7
+    },
+    {
+      "file": "roads/light-square.glb",
+      "x": 0.47,
+      "y": 0.565,
+      "size": 0.18,
+      "baseY": 0.12,
+      "rotationY": 0.15
+    },
+    {
+      "file": "roads/light-square.glb",
+      "x": 0.505,
+      "y": 0.582,
+      "size": 0.18,
+      "baseY": 0.12,
+      "rotationY": 0.15
+    },
+    {
+      "file": "roads/light-square-double.glb",
+      "x": 0.545,
+      "y": 0.598,
+      "size": 0.2,
+      "baseY": 0.12,
+      "rotationY": 0.15
+    },
+    {
+      "file": "roads/light-square.glb",
+      "x": 0.585,
+      "y": 0.615,
+      "size": 0.18,
+      "baseY": 0.12,
+      "rotationY": 0.15
+    },
+    {
+      "file": "roads/light-square-double.glb",
+      "x": 0.615,
+      "y": 0.635,
+      "size": 0.2,
+      "baseY": 0.12,
+      "rotationY": 0.15
+    },
+    {
+      "file": "train/track-single-detailed.glb",
+      "x": 0.56,
+      "y": 0.628,
+      "size": 0.34,
+      "baseY": 0.125,
+      "rotationY": 1.15
+    },
+    {
+      "file": "train/track-single-detailed.glb",
+      "x": 0.574,
+      "y": 0.62,
+      "size": 0.34,
+      "baseY": 0.125,
+      "rotationY": 1.15
+    },
+    {
+      "file": "train/track-single-detailed.glb",
+      "x": 0.588,
+      "y": 0.612,
+      "size": 0.34,
+      "baseY": 0.125,
+      "rotationY": 1.15
+    },
+    {
+      "file": "train/track-single-detailed.glb",
+      "x": 0.602,
+      "y": 0.604,
+      "size": 0.34,
+      "baseY": 0.125,
+      "rotationY": 1.15
+    },
+    {
+      "file": "train/track-single-detailed.glb",
+      "x": 0.616,
+      "y": 0.596,
+      "size": 0.34,
+      "baseY": 0.125,
+      "rotationY": 1.15
+    },
+    {
+      "file": "retro-urban/truck-grey.glb",
+      "x": 0.71,
+      "y": 0.49,
+      "size": 0.3,
+      "baseY": 0.12,
+      "rotationY": 1.15
+    },
+    {
+      "file": "roads/construction-barrier.glb",
+      "x": 0.446,
+      "y": 0.606,
+      "size": 0.18,
+      "baseY": 0.12,
+      "rotationY": 0.7
+    },
+    {
+      "file": "roads/construction-cone.glb",
+      "x": 0.454,
+      "y": 0.61,
+      "size": 0.07,
+      "baseY": 0.12,
+      "rotationY": 0.0
+    },
+    {
+      "file": "roads/sign-highway.glb",
+      "x": 0.632,
+      "y": 0.646,
+      "size": 0.24,
+      "baseY": 0.12,
+      "rotationY": 0.15
+    },
+    {
+      "file": "train/train-diesel-a.glb",
+      "x": 0.578,
+      "y": 0.618,
+      "size": 0.25,
+      "baseY": 0.135,
+      "rotationY": 1.15
+    },
+    {
+      "file": "train/train-carriage-container-blue.glb",
+      "x": 0.596,
+      "y": 0.608,
+      "size": 0.23,
+      "baseY": 0.135,
+      "rotationY": 1.15
+    },
+    {
+      "file": "train/train-carriage-container-green.glb",
+      "x": 0.613,
+      "y": 0.598,
+      "size": 0.23,
+      "baseY": 0.135,
+      "rotationY": 1.15
+    },
+    {
+      "file": "retro-urban/truck-green-cargo.glb",
+      "x": 0.684,
+      "y": 0.512,
+      "size": 0.28,
+      "baseY": 0.12,
+      "rotationY": -0.45
+    },
+    {
+      "file": "retro-urban/truck-flat.glb",
+      "x": 0.735,
+      "y": 0.525,
+      "size": 0.27,
+      "baseY": 0.12,
+      "rotationY": 2.1
+    },
+    {
+      "file": "retro-urban/detail-dumpster-closed.glb",
+      "x": 0.662,
+      "y": 0.495,
+      "size": 0.13,
+      "baseY": 0.12,
+      "rotationY": 0.2
+    },
+    {
+      "file": "retro-urban/detail-light-traffic.glb",
+      "x": 0.648,
+      "y": 0.558,
+      "size": 0.16,
+      "baseY": 0.12,
+      "rotationY": 0.1
+    }
+  ],
+  "assetLibrary": {
+    "urbanBuildings": [
+      "modular/building-sample-house-a.glb",
+      "modular/building-sample-house-b.glb",
+      "modular/building-sample-house-c.glb",
+      "modular/building-sample-tower-a.glb",
+      "modular/building-sample-tower-c.glb",
+      "modular/building-sample-tower-d.glb",
+      "modular/building-window-awnings.glb",
+      "modular/building-window-balcony.glb",
+      "modular/roof-flat-detail-a.glb",
+      "modular/roof-flat-detail-b.glb"
+    ],
+    "urbanDetails": [
+      "retro-urban/truck-flat.glb",
+      "retro-urban/truck-green-cargo.glb",
+      "retro-urban/truck-green.glb",
+      "retro-urban/truck-grey-cargo.glb",
+      "retro-urban/detail-awning-wide.glb",
+      "retro-urban/detail-bench.glb",
+      "retro-urban/detail-dumpster-closed.glb",
+      "retro-urban/detail-light-single.glb",
+      "retro-urban/detail-light-traffic.glb",
+      "retro-urban/scaffolding-structure.glb",
+      "retro-urban/tree-park-large.glb",
+      "retro-urban/tree-shrub.glb"
+    ],
+    "roadInfrastructure": [
+      "roads/bridge-pillar.glb",
+      "roads/construction-barrier.glb",
+      "roads/construction-cone.glb",
+      "roads/construction-light.glb",
+      "roads/light-curved.glb",
+      "roads/light-curved-double.glb",
+      "roads/light-curved-cross.glb",
+      "roads/sign-highway.glb"
+    ],
+    "rail": [
+      "train/track-detailed.glb",
+      "train/track-single.glb",
+      "train/track.glb",
+      "train/train-diesel-a.glb",
+      "train/train-diesel-b.glb",
+      "train/train-diesel-c.glb",
+      "train/train-diesel-box-a.glb",
+      "train/train-carriage-container-blue.glb",
+      "train/train-carriage-container-green.glb",
+      "train/train-carriage-tank.glb"
+    ],
+    "skateparks": [
+      "mini-skate/bowl-corner-inner.glb",
+      "mini-skate/bowl-corner-outer.glb",
+      "mini-skate/bowl-side.glb",
+      "mini-skate/half-pipe.glb",
+      "mini-skate/obstacle-box.glb",
+      "mini-skate/rail-high.glb",
+      "mini-skate/rail-low.glb",
+      "mini-skate/rail-slope.glb",
+      "mini-skate/steps.glb",
+      "mini-skate/structure-platform.glb"
+    ],
+    "natureAreas": [
+      "mini-forest/bridge.glb",
+      "mini-forest/building-platform.glb",
+      "mini-forest/fence.glb",
+      "mini-forest/plant.glb",
+      "mini-forest/rocks-high.glb",
+      "mini-forest/tent.glb",
+      "mini-forest/tree-high.glb",
+      "mini-forest/tree.glb"
+    ],
+    "sportsVenues": [
+      "racing/grandStand.glb",
+      "racing/grandStandAwning.glb",
+      "racing/grandStandCovered.glb",
+      "racing/grandStandCoveredRound.glb",
+      "racing/grandStandRound.glb",
+      "racing/fenceStraight.glb",
+      "racing/lightPostModern.glb",
+      "racing/overheadLights.glb"
+    ],
+    "heritageFortress": [
+      "castle/bridge-draw.glb",
+      "castle/gate.glb",
+      "castle/tower-square.glb",
+      "castle/tower-hexagon-top.glb",
+      "castle/wall-corner-half-tower.glb",
+      "castle/wall.glb"
+    ],
+    "amusementParks": [
+      "coaster/park-entrance.glb",
+      "coaster/ride-entrance.glb",
+      "coaster/station.glb",
+      "coaster/coaster-steel-looping.glb",
+      "coaster/stall-food.glb"
+    ],
+    "architectureComponents": [
+      "building-kit/column.glb",
+      "building-kit/roof-flat-center.glb",
+      "building-kit/wall-window-square-detailed.glb"
+    ]
+  }
+}

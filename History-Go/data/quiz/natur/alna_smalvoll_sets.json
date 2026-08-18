@@ -1,0 +1,2357 @@
+{
+  "targetId": "alna_smalvoll",
+  "categoryId": "natur",
+  "generator_version": "history_go_nature_place_v2",
+  "generated_from": [
+    "data/places/natur/oslo/places_oslo_natur_alnaelva_rute/alna_smalvoll.json",
+    "data/stories/stories_alna_smalvoll.json",
+    "data/leksikon/places/oslo/natur/leksikon_alna_smalvoll.json",
+    "data/quiz/regler/SET_MAL_README_v3.md"
+  ],
+  "manual_production_notes": {
+    "quality_direction": "sted → observasjon → emne → forståelse",
+    "species_rule": "all active mapped species; mapped does not guarantee current find",
+    "hold_back": [
+      "ingen vading",
+      "ingen kontakt med eller flytting av slirekne",
+      "ingen selvstyrt bekjempelse"
+    ]
+  },
+  "sets": [
+    {
+      "set_id": "natur_alna_smalvoll_set_1",
+      "level": 1,
+      "order": 1,
+      "xp": 50,
+      "mode": "place_intro",
+      "questions": [
+        {
+          "id": "alna_smalvoll_s1_q1",
+          "quiz_id": "natur_alna_smalvoll_set_1_q1",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hvilken elv følger Smalvoll-rundingen?",
+          "options": [
+            "Alnaelva",
+            "Akerselva",
+            "Lysakerelva"
+          ],
+          "answer": "Alnaelva",
+          "answerIndex": 0,
+          "knowledge": "Smalvoll er et delsted langs Alna.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "intro",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "intro"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/Alnastien"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_smalvoll_er_et_delsted_l_58d0e7543e",
+          "knowledge_unit_ids": [
+            "ku_natur_smalvoll_er_et_delsted_l_58d0e7543e"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s1_q2",
+          "quiz_id": "natur_alna_smalvoll_set_1_q2",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hvor fortsetter Alnastien fra Smalvoll?",
+          "options": [
+            "Mot Bryn",
+            "Mot Bygdøy",
+            "Mot Maridalsvannet"
+          ],
+          "answer": "Mot Bryn",
+          "answerIndex": 0,
+          "knowledge": "Alnastien går langs Smalvollveien til Bryn.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "intro",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "intro"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/Alnastien"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_alnastien_gar_langs_smal_12880af354",
+          "knowledge_unit_ids": [
+            "ku_natur_alnastien_gar_langs_smal_12880af354"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s1_q3",
+          "quiz_id": "natur_alna_smalvoll_set_1_q3",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva preger landskapet sterkest?",
+          "options": [
+            "Elv mellom næring og transport",
+            "Åpent høyfjell",
+            "Saltvannsstrand"
+          ],
+          "answer": "Elv mellom næring og transport",
+          "answerIndex": 0,
+          "knowledge": "Smalvoll er en smal byelvkorridor i et utbygd område.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "intro",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "intro"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/Alnastien",
+            "https://www.niva.no/nyheter/naturrestaurering-er-losningen-for-oslos-mest-forurensede-elv",
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/nature_place_map.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_smalvoll_er_en_smal_byel_5d75befcc4",
+          "knowledge_unit_ids": [
+            "ku_natur_smalvoll_er_en_smal_byel_5d75befcc4"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s1_q4",
+          "quiz_id": "natur_alna_smalvoll_set_1_q4",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva bør leses først fra stien?",
+          "options": [
+            "Elv, kantbredde, kryssinger og harde flater",
+            "Bare butikkskilt",
+            "Kun himmelretning"
+          ],
+          "answer": "Elv, kantbredde, kryssinger og harde flater",
+          "answerIndex": 0,
+          "knowledge": "Disse elementene viser korridorens sammenheng og press.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "intro",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "intro"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/Alnastien",
+            "https://www.niva.no/nyheter/naturrestaurering-er-losningen-for-oslos-mest-forurensede-elv",
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/nature_place_map.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_disse_elementene_viser_k_cb2e87f752",
+          "knowledge_unit_ids": [
+            "ku_natur_disse_elementene_viser_k_cb2e87f752"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s1_q5",
+          "quiz_id": "natur_alna_smalvoll_set_1_q5",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hvilken turveibetegnelse hører til Alnastien?",
+          "options": [
+            "D9 og store deler av D10",
+            "A1 alene",
+            "Kyststi K2"
+          ],
+          "answer": "D9 og store deler av D10",
+          "answerIndex": 0,
+          "knowledge": "Oslo byleksikon knytter Alnastien til D9 og D10.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "intro",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "intro"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/Alnastien"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_oslo_byleksikon_knytter__1f191a71fb",
+          "knowledge_unit_ids": [
+            "ku_natur_oslo_byleksikon_knytter__1f191a71fb"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s1_q6",
+          "quiz_id": "natur_alna_smalvoll_set_1_q6",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Når startet kommunen Aksjon Alna?",
+          "options": [
+            "1992",
+            "1922",
+            "2024"
+          ],
+          "answer": "1992",
+          "answerIndex": 0,
+          "knowledge": "Aksjon Alna startet i 1992.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "intro",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "intro"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/Alnastien"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_aksjon_alna_startet_i_19_3be05c59ac",
+          "knowledge_unit_ids": [
+            "ku_natur_aksjon_alna_startet_i_19_3be05c59ac"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s1_q7",
+          "quiz_id": "natur_alna_smalvoll_set_1_q7",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva er trygg første feltregel?",
+          "options": [
+            "Hold deg på etablert turvei",
+            "Vad gjennom elva",
+            "Gå inn på næringsområder"
+          ],
+          "answer": "Hold deg på etablert turvei",
+          "answerIndex": 0,
+          "knowledge": "Turveien gir observasjon uten unødig slitasje eller risiko.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "intro",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "intro"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/Alnastien"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_turveien_gir_observasjon_5ba54aae5c",
+          "knowledge_unit_ids": [
+            "ku_natur_turveien_gir_observasjon_5ba54aae5c"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        }
+      ]
+    },
+    {
+      "set_id": "natur_alna_smalvoll_set_2",
+      "level": 2,
+      "order": 2,
+      "xp": 60,
+      "mode": "corridor",
+      "questions": [
+        {
+          "id": "alna_smalvoll_s2_q1",
+          "quiz_id": "natur_alna_smalvoll_set_2_q1",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva betyr fragmentering her?",
+          "options": [
+            "At elvenaturen deles eller snevres inn av byflater",
+            "At elva blir salt",
+            "At alle arter blir større"
+          ],
+          "answer": "At elvenaturen deles eller snevres inn av byflater",
+          "answerIndex": 0,
+          "knowledge": "Veier, bygg og kryssinger kan svekke sammenheng.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "habitat",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "habitat"
+          ],
+          "source": [
+            "https://www.niva.no/nyheter/naturrestaurering-er-losningen-for-oslos-mest-forurensede-elv",
+            "https://www.osloelveforum.org/om-alnaelva/"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_veier_bygg_og_kryssinger_bf7141b4db",
+          "knowledge_unit_ids": [
+            "ku_natur_veier_bygg_og_kryssinger_bf7141b4db"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s2_q2",
+          "quiz_id": "natur_alna_smalvoll_set_2_q2",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva viser et bredere vegetasjonsbelte?",
+          "options": [
+            "Mer plass til kantfunksjoner",
+            "Sikkert rent vann",
+            "Ingen påvirkning fra byen"
+          ],
+          "answer": "Mer plass til kantfunksjoner",
+          "answerIndex": 0,
+          "knowledge": "Bredde kan gi mer habitat og buffersone, men sier ikke alt om kvalitet.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "habitat",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "habitat"
+          ],
+          "source": [
+            "https://www.niva.no/nyheter/naturrestaurering-er-losningen-for-oslos-mest-forurensede-elv",
+            "https://www.osloelveforum.org/om-alnaelva/"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_bredde_kan_gi_mer_habita_ea84353975",
+          "knowledge_unit_ids": [
+            "ku_natur_bredde_kan_gi_mer_habita_ea84353975"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s2_q3",
+          "quiz_id": "natur_alna_smalvoll_set_2_q3",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva er en fysisk barriere?",
+          "options": [
+            "En vei eller kulvert som bryter korridoren",
+            "Et artsnavn",
+            "Et årstall"
+          ],
+          "answer": "En vei eller kulvert som bryter korridoren",
+          "answerIndex": 0,
+          "knowledge": "Kryssende infrastruktur kan påvirke forbindelse og ferdsel.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "habitat",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "habitat"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/Alnastien",
+            "https://www.niva.no/nyheter/naturrestaurering-er-losningen-for-oslos-mest-forurensede-elv",
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/nature_place_map.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_kryssende_infrastruktur__35bdc2ccc5",
+          "knowledge_unit_ids": [
+            "ku_natur_kryssende_infrastruktur__35bdc2ccc5"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s2_q4",
+          "quiz_id": "natur_alna_smalvoll_set_2_q4",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hvorfor er Alnastien viktig?",
+          "options": [
+            "Den gjør vassdraget tilgjengelig og sammenhengende for ferdsel",
+            "Den lukker elva",
+            "Den flytter elva til fjorden"
+          ],
+          "answer": "Den gjør vassdraget tilgjengelig og sammenhengende for ferdsel",
+          "answerIndex": 0,
+          "knowledge": "Turveien gjør det mulig å følge elvekorridoren.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "habitat",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "habitat"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/Alnastien"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_turveien_gj_r_det_mulig__bda637bca8",
+          "knowledge_unit_ids": [
+            "ku_natur_turveien_gj_r_det_mulig__bda637bca8"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s2_q5",
+          "quiz_id": "natur_alna_smalvoll_set_2_q5",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva kan erosjon langs kanten vise?",
+          "options": [
+            "At jord og vegetasjon er utsatt for vann eller slitasje",
+            "At vannet alltid er giftig",
+            "At arten er sikkert parkslirekne"
+          ],
+          "answer": "At jord og vegetasjon er utsatt for vann eller slitasje",
+          "answerIndex": 0,
+          "knowledge": "Erosjon er et synlig spor, men årsaken må undersøkes.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "habitat",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "habitat"
+          ],
+          "source": [
+            "https://www.niva.no/nyheter/naturrestaurering-er-losningen-for-oslos-mest-forurensede-elv",
+            "https://www.osloelveforum.org/om-alnaelva/"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_erosjon_er_et_synlig_spo_e2c9290576",
+          "knowledge_unit_ids": [
+            "ku_natur_erosjon_er_et_synlig_spo_e2c9290576"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s2_q6",
+          "quiz_id": "natur_alna_smalvoll_set_2_q6",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva skal skilles fra en observasjon?",
+          "options": [
+            "En udokumentert forklaring på tiltak eller årsak",
+            "Sted og tidspunkt",
+            "Synlig kantbredde"
+          ],
+          "answer": "En udokumentert forklaring på tiltak eller årsak",
+          "answerIndex": 0,
+          "knowledge": "Feltloggen må skille det synlige fra tolkningen.",
+          "difficulty": 2,
+          "question_type": "sted_observasjon",
+          "question_layer": "habitat",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "habitat"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/Alnastien",
+            "https://www.niva.no/nyheter/naturrestaurering-er-losningen-for-oslos-mest-forurensede-elv",
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/nature_place_map.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_feltloggen_ma_skille_det_2dd9e04328",
+          "knowledge_unit_ids": [
+            "ku_natur_feltloggen_ma_skille_det_2dd9e04328"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s2_q7",
+          "quiz_id": "natur_alna_smalvoll_set_2_q7",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva er den beste samlelesningen?",
+          "options": [
+            "Forbindelse, belastning og mulig restaurering",
+            "Kun antall benker",
+            "Kun parkeringskapasitet"
+          ],
+          "answer": "Forbindelse, belastning og mulig restaurering",
+          "answerIndex": 0,
+          "knowledge": "Smalvoll må leses som et helt byøkologisk system.",
+          "difficulty": 2,
+          "question_type": "sted_observasjon",
+          "question_layer": "habitat",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "habitat"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/Alnastien",
+            "https://www.niva.no/nyheter/naturrestaurering-er-losningen-for-oslos-mest-forurensede-elv",
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/nature_place_map.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_smalvoll_ma_leses_som_et_4316f9e875",
+          "knowledge_unit_ids": [
+            "ku_natur_smalvoll_ma_leses_som_et_4316f9e875"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        }
+      ]
+    },
+    {
+      "set_id": "natur_alna_smalvoll_set_3",
+      "level": 3,
+      "order": 3,
+      "xp": 70,
+      "mode": "species",
+      "questions": [
+        {
+          "id": "alna_smalvoll_s3_q1",
+          "quiz_id": "natur_alna_smalvoll_set_3_q1",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hvilken art er aktivt koblet til Smalvoll?",
+          "options": [
+            "Parkslirekne",
+            "Åkerkvein",
+            "Stokkand"
+          ],
+          "answer": "Parkslirekne",
+          "answerIndex": 0,
+          "knowledge": "Parkslirekne er stedets eneste aktive artskobling.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "species",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "species"
+          ],
+          "source": [
+            "data/natur/nature_place_map.json",
+            "data/natur/nature_oslo_expansion_place_map.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_parkslirekne_er_stedets__1c82157bd6",
+          "knowledge_unit_ids": [
+            "ku_natur_parkslirekne_er_stedets__1c82157bd6"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s3_q2",
+          "quiz_id": "natur_alna_smalvoll_set_3_q2",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva er parkslireknes vitenskapelige navn?",
+          "options": [
+            "Reynoutria japonica",
+            "Agrostis gigantea",
+            "Anas platyrhynchos"
+          ],
+          "answer": "Reynoutria japonica",
+          "answerIndex": 0,
+          "knowledge": "Artskortet og Artsdatabanken bruker Reynoutria japonica.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "species",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "species"
+          ],
+          "source": [
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/flora/fremmedarter.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_artskortet_og_artsdataba_85a3d4147b",
+          "knowledge_unit_ids": [
+            "ku_natur_artskortet_og_artsdataba_85a3d4147b"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s3_q3",
+          "quiz_id": "natur_alna_smalvoll_set_3_q3",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hvilket kjennetegn passer?",
+          "options": [
+            "Bambuslignende stengler",
+            "Grønt fuglehode",
+            "Nåler i kongler"
+          ],
+          "answer": "Bambuslignende stengler",
+          "answerIndex": 0,
+          "knowledge": "Stenglene er et sentralt feltkjennetegn.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "species",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "species"
+          ],
+          "source": [
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/flora/fremmedarter.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_stenglene_er_et_sentralt_3ebb8bbd79",
+          "knowledge_unit_ids": [
+            "ku_natur_stenglene_er_et_sentralt_3ebb8bbd79"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s3_q4",
+          "quiz_id": "natur_alna_smalvoll_set_3_q4",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hvordan er bladene ofte beskrevet?",
+          "options": [
+            "Store og trekantede",
+            "Smale barnåler",
+            "Flytende runde blader"
+          ],
+          "answer": "Store og trekantede",
+          "answerIndex": 0,
+          "knowledge": "Store trekantede blader inngår i artskortet.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "species",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "species"
+          ],
+          "source": [
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/flora/fremmedarter.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_store_trekantede_blader__b7b9004f36",
+          "knowledge_unit_ids": [
+            "ku_natur_store_trekantede_blader__b7b9004f36"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s3_q5",
+          "quiz_id": "natur_alna_smalvoll_set_3_q5",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hvordan vokser arten ofte?",
+          "options": [
+            "I tette bestander",
+            "Som enkeltstående tre",
+            "Bare under vann"
+          ],
+          "answer": "I tette bestander",
+          "answerIndex": 0,
+          "knowledge": "Parkslirekne kan danne tett skuddskog.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "species",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "species"
+          ],
+          "source": [
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/flora/fremmedarter.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_parkslirekne_kan_danne_t_63c0dc841b",
+          "knowledge_unit_ids": [
+            "ku_natur_parkslirekne_kan_danne_t_63c0dc841b"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s3_q6",
+          "quiz_id": "natur_alna_smalvoll_set_3_q6",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Når blomstrer den ofte?",
+          "options": [
+            "Sent på sommeren eller tidlig høst",
+            "Midtvinters",
+            "Bare i april"
+          ],
+          "answer": "Sent på sommeren eller tidlig høst",
+          "answerIndex": 0,
+          "knowledge": "Repoets artskort oppgir august og september.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "species",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "species"
+          ],
+          "source": [
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/flora/fremmedarter.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_repoets_artskort_oppgir__080bc69fc9",
+          "knowledge_unit_ids": [
+            "ku_natur_repoets_artskort_oppgir__080bc69fc9"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s3_q7",
+          "quiz_id": "natur_alna_smalvoll_set_3_q7",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva må gjøres før registrering?",
+          "options": [
+            "Kjennetegn må faktisk observeres",
+            "Kartikonet er nok",
+            "Planten må knekkes"
+          ],
+          "answer": "Kjennetegn må faktisk observeres",
+          "answerIndex": 0,
+          "knowledge": "Kartkoblingen alene dokumenterer ikke et feltfunn.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "species",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "species"
+          ],
+          "source": [
+            "data/natur/nature_place_map.json",
+            "data/natur/nature_oslo_expansion_place_map.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_kartkoblingen_alene_doku_6f065cc47e",
+          "knowledge_unit_ids": [
+            "ku_natur_kartkoblingen_alene_doku_6f065cc47e"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        }
+      ]
+    },
+    {
+      "set_id": "natur_alna_smalvoll_set_4",
+      "level": 4,
+      "order": 4,
+      "xp": 80,
+      "mode": "risk",
+      "questions": [
+        {
+          "id": "alna_smalvoll_s4_q1",
+          "quiz_id": "natur_alna_smalvoll_set_4_q1",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hvordan vurderer Artsdatabanken parkslirekne?",
+          "options": [
+            "Svært høy økologisk risiko",
+            "Ingen kjent risiko",
+            "Naturlig rødlisteart"
+          ],
+          "answer": "Svært høy økologisk risiko",
+          "answerIndex": 0,
+          "knowledge": "Arten er vurdert til SE—svært høy risiko.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "risk",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "risk"
+          ],
+          "source": [
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/flora/fremmedarter.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_arten_er_vurdert_til_se__847a6bf51b",
+          "knowledge_unit_ids": [
+            "ku_natur_arten_er_vurdert_til_se__847a6bf51b"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s4_q2",
+          "quiz_id": "natur_alna_smalvoll_set_4_q2",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva driver spredningen særlig?",
+          "options": [
+            "Jordstengler og plantedeler",
+            "Fuglefjær",
+            "Saltvannsbølger"
+          ],
+          "answer": "Jordstengler og plantedeler",
+          "answerIndex": 0,
+          "knowledge": "Vegetativ spredning gjør flytting av masser risikabelt.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "risk",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "risk"
+          ],
+          "source": [
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/flora/fremmedarter.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_vegetativ_spredning_gj_r_aee87a04a9",
+          "knowledge_unit_ids": [
+            "ku_natur_vegetativ_spredning_gj_r_aee87a04a9"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s4_q3",
+          "quiz_id": "natur_alna_smalvoll_set_4_q3",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hvorfor skal planten ikke knekkes?",
+          "options": [
+            "Deler kan bidra til ny spredning",
+            "Den blir til et tre",
+            "Elva stopper"
+          ],
+          "answer": "Deler kan bidra til ny spredning",
+          "answerIndex": 0,
+          "knowledge": "Feltarbeidet skal ikke skape nye plantedeler.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "risk",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "risk"
+          ],
+          "source": [
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/flora/fremmedarter.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_feltarbeidet_skal_ikke_s_c068c562ff",
+          "knowledge_unit_ids": [
+            "ku_natur_feltarbeidet_skal_ikke_s_c068c562ff"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s4_q4",
+          "quiz_id": "natur_alna_smalvoll_set_4_q4",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hvilke arter gir forvekslingsfare?",
+          "options": [
+            "Hybrid- og kjempeslirekne",
+            "Stokkand og gråmåke",
+            "Gran og furu"
+          ],
+          "answer": "Hybrid- og kjempeslirekne",
+          "answerIndex": 0,
+          "knowledge": "Artsdatabanken dokumenterer betydelig feilbestemmelse i slireknegruppen.",
+          "difficulty": 2,
+          "question_type": "sted_observasjon",
+          "question_layer": "risk",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "risk"
+          ],
+          "source": [
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/flora/fremmedarter.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_artsdatabanken_dokumente_b2305c6c11",
+          "knowledge_unit_ids": [
+            "ku_natur_artsdatabanken_dokumente_b2305c6c11"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s4_q5",
+          "quiz_id": "natur_alna_smalvoll_set_4_q5",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva kan en tett bestand gjøre?",
+          "options": [
+            "Fortrenge annen vegetasjon",
+            "Rense all forurensning",
+            "Åpne alle kulverter"
+          ],
+          "answer": "Fortrenge annen vegetasjon",
+          "answerIndex": 0,
+          "knowledge": "Arten kan dominere og redusere undervegetasjon.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "risk",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "risk"
+          ],
+          "source": [
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/flora/fremmedarter.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_arten_kan_dominere_og_re_e32dfaebfc",
+          "knowledge_unit_ids": [
+            "ku_natur_arten_kan_dominere_og_re_e32dfaebfc"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s4_q6",
+          "quiz_id": "natur_alna_smalvoll_set_4_q6",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hvorfor kan vassdragskanter bli sårbare?",
+          "options": [
+            "Tett bestand kan svekke variert undervegetasjon og øke erosjonsfare",
+            "Fordi elva blir salt",
+            "Fordi alle planter blir fisk"
+          ],
+          "answer": "Tett bestand kan svekke variert undervegetasjon og øke erosjonsfare",
+          "answerIndex": 0,
+          "knowledge": "Artsdatabanken peker på erosjonsutsatt jord langs vassdrag.",
+          "difficulty": 2,
+          "question_type": "sted_observasjon",
+          "question_layer": "risk",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "risk"
+          ],
+          "source": [
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/flora/fremmedarter.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_artsdatabanken_peker_pa__a3ff726582",
+          "knowledge_unit_ids": [
+            "ku_natur_artsdatabanken_peker_pa__a3ff726582"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s4_q7",
+          "quiz_id": "natur_alna_smalvoll_set_4_q7",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva er riktig spillerhandling?",
+          "options": [
+            "Fotografer fra stien og meld usikkerhet",
+            "Grav opp røttene",
+            "Flytt skudd til et annet sted"
+          ],
+          "answer": "Fotografer fra stien og meld usikkerhet",
+          "answerIndex": 0,
+          "knowledge": "Bekjempelse skal være faglig ledet.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "risk",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "risk"
+          ],
+          "source": [
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/flora/fremmedarter.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_bekjempelse_skal_v_re_fa_186415a1e6",
+          "knowledge_unit_ids": [
+            "ku_natur_bekjempelse_skal_v_re_fa_186415a1e6"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        }
+      ]
+    },
+    {
+      "set_id": "natur_alna_smalvoll_set_5",
+      "level": 5,
+      "order": 5,
+      "xp": 90,
+      "mode": "restoration",
+      "questions": [
+        {
+          "id": "alna_smalvoll_s5_q1",
+          "quiz_id": "natur_alna_smalvoll_set_5_q1",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva kan naturrestaurering langs Alna omfatte?",
+          "options": [
+            "Bedre vannkvalitet og restaurerte elvebredder",
+            "Flere parkeringsfelt i kanten",
+            "Lukking av all vegetasjon"
+          ],
+          "answer": "Bedre vannkvalitet og restaurerte elvebredder",
+          "answerIndex": 0,
+          "knowledge": "NIVA beskriver vannkvalitet, bredder og økosystemtjenester som sentrale tema.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "management",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "management"
+          ],
+          "source": [
+            "https://www.niva.no/nyheter/naturrestaurering-er-losningen-for-oslos-mest-forurensede-elv",
+            "https://www.osloelveforum.org/om-alnaelva/"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_niva_beskriver_vannkvali_42571f9360",
+          "knowledge_unit_ids": [
+            "ku_natur_niva_beskriver_vannkvali_42571f9360"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s5_q2",
+          "quiz_id": "natur_alna_smalvoll_set_5_q2",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva er feil å anta?",
+          "options": [
+            "At alt nytt grønt automatisk er restaurering",
+            "At tiltak bør dokumenteres",
+            "At korridorbredde kan observeres"
+          ],
+          "answer": "At alt nytt grønt automatisk er restaurering",
+          "answerIndex": 0,
+          "knowledge": "Restaurering er et målrettet og dokumenterbart arbeid.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "management",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "management"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/Alnastien",
+            "https://www.niva.no/nyheter/naturrestaurering-er-losningen-for-oslos-mest-forurensede-elv",
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/nature_place_map.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_restaurering_er_et_malre_45774292a8",
+          "knowledge_unit_ids": [
+            "ku_natur_restaurering_er_et_malre_45774292a8"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s5_q3",
+          "quiz_id": "natur_alna_smalvoll_set_5_q3",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hvem bør håndtere parkslireknebekjempelse?",
+          "options": [
+            "Faglig ledede forvaltere eller tiltak",
+            "Tilfeldige forbipasserende",
+            "Barn på tur alene"
+          ],
+          "answer": "Faglig ledede forvaltere eller tiltak",
+          "answerIndex": 0,
+          "knowledge": "Feil håndtering kan spre arten.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "management",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "management"
+          ],
+          "source": [
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/flora/fremmedarter.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_feil_handtering_kan_spre_a94f442112",
+          "knowledge_unit_ids": [
+            "ku_natur_feil_handtering_kan_spre_a94f442112"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s5_q4",
+          "quiz_id": "natur_alna_smalvoll_set_5_q4",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva bør meldes i en feltlogg?",
+          "options": [
+            "Sted, kjennetegn, omfang og usikkerhet",
+            "Bare et artsnavn uten belegg",
+            "En løs gjetning om kjemikalier"
+          ],
+          "answer": "Sted, kjennetegn, omfang og usikkerhet",
+          "answerIndex": 0,
+          "knowledge": "Etterprøvbare data er mer nyttige for forvaltning.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "management",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "management"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/Alnastien",
+            "https://www.niva.no/nyheter/naturrestaurering-er-losningen-for-oslos-mest-forurensede-elv",
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/nature_place_map.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_etterpr_vbare_data_er_me_1d37bc64cb",
+          "knowledge_unit_ids": [
+            "ku_natur_etterpr_vbare_data_er_me_1d37bc64cb"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s5_q5",
+          "quiz_id": "natur_alna_smalvoll_set_5_q5",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hvordan balanseres ferdsel og kantvern?",
+          "options": [
+            "Bruk turveien og la elvekanten få ro",
+            "Gå nærmest mulig vannet",
+            "Steng hele bydelen"
+          ],
+          "answer": "Bruk turveien og la elvekanten få ro",
+          "answerIndex": 0,
+          "knowledge": "Tilgang og naturhensyn kan kombineres gjennom robuste ferdselslinjer.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "management",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "management"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/Alnastien"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_tilgang_og_naturhensyn_k_ef0827094c",
+          "knowledge_unit_ids": [
+            "ku_natur_tilgang_og_naturhensyn_k_ef0827094c"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s5_q6",
+          "quiz_id": "natur_alna_smalvoll_set_5_q6",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva viser søppel i korridoren?",
+          "options": [
+            "En konkret belastning som kan dokumenteres",
+            "Sikker vannkjemi",
+            "Et artsfunn"
+          ],
+          "answer": "En konkret belastning som kan dokumenteres",
+          "answerIndex": 0,
+          "knowledge": "Synlig avfall kan registreres uten spekulasjon.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "management",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "management"
+          ],
+          "source": [
+            "https://www.niva.no/nyheter/naturrestaurering-er-losningen-for-oslos-mest-forurensede-elv",
+            "https://www.osloelveforum.org/om-alnaelva/"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_synlig_avfall_kan_regist_6f2419955e",
+          "knowledge_unit_ids": [
+            "ku_natur_synlig_avfall_kan_regist_6f2419955e"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s5_q7",
+          "quiz_id": "natur_alna_smalvoll_set_5_q7",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva er den beste restaureringsobservasjonen?",
+          "options": [
+            "Sammenlign barrierer, vegetasjon og belastning over flere punkter",
+            "Se bare på én plante",
+            "Mål bare gangfart"
+          ],
+          "answer": "Sammenlign barrierer, vegetasjon og belastning over flere punkter",
+          "answerIndex": 0,
+          "knowledge": "Flere punkter gir bedre forståelse av korridorens variasjon.",
+          "difficulty": 2,
+          "question_type": "sted_observasjon",
+          "question_layer": "management",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "management"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/Alnastien",
+            "https://www.niva.no/nyheter/naturrestaurering-er-losningen-for-oslos-mest-forurensede-elv",
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/nature_place_map.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_flere_punkter_gir_bedre__45be57707e",
+          "knowledge_unit_ids": [
+            "ku_natur_flere_punkter_gir_bedre__45be57707e"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        }
+      ]
+    },
+    {
+      "set_id": "natur_alna_smalvoll_set_6",
+      "level": 6,
+      "order": 6,
+      "xp": 100,
+      "mode": "synthesis",
+      "questions": [
+        {
+          "id": "alna_smalvoll_s6_q1",
+          "quiz_id": "natur_alna_smalvoll_set_6_q1",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva er den sterkeste samlebeskrivelsen av Smalvoll?",
+          "options": [
+            "Presset elvekorridor med restaureringsbehov og fremmedartsrisiko",
+            "Urørt villmark",
+            "Saltvannshavn"
+          ],
+          "answer": "Presset elvekorridor med restaureringsbehov og fremmedartsrisiko",
+          "answerIndex": 0,
+          "knowledge": "Stedet kombinerer byelv, infrastruktur, ferdsel og forvaltning.",
+          "difficulty": 2,
+          "question_type": "sted_observasjon",
+          "question_layer": "synthesis",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "synthesis"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/Alnastien",
+            "https://www.niva.no/nyheter/naturrestaurering-er-losningen-for-oslos-mest-forurensede-elv",
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/nature_place_map.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_stedet_kombinerer_byelv__8eb75da052",
+          "knowledge_unit_ids": [
+            "ku_natur_stedet_kombinerer_byelv__8eb75da052"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s6_q2",
+          "quiz_id": "natur_alna_smalvoll_set_6_q2",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva skiller Smalvoll fra Alnaparken?",
+          "options": [
+            "Smalvoll er trangere og tettere omgitt av næring og transport",
+            "Smalvoll ligger ved Akerselva",
+            "Alnaparken er under vann"
+          ],
+          "answer": "Smalvoll er trangere og tettere omgitt av næring og transport",
+          "answerIndex": 0,
+          "knowledge": "Kontrasten viser hvordan Alna endrer karakter.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "synthesis",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "synthesis"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/Alnastien",
+            "https://www.niva.no/nyheter/naturrestaurering-er-losningen-for-oslos-mest-forurensede-elv",
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/nature_place_map.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_kontrasten_viser_hvordan_63179a1b55",
+          "knowledge_unit_ids": [
+            "ku_natur_kontrasten_viser_hvordan_63179a1b55"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s6_q3",
+          "quiz_id": "natur_alna_smalvoll_set_6_q3",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva forbinder Smalvoll med Bryn?",
+          "options": [
+            "Alnastien og Alnas sammenhengende løp",
+            "En fjellrygg",
+            "En sjølinje"
+          ],
+          "answer": "Alnastien og Alnas sammenhengende løp",
+          "answerIndex": 0,
+          "knowledge": "Turveien og elva fortsetter sørover mot Bryn.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "synthesis",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "synthesis"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/Alnastien"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_turveien_og_elva_fortset_a0b255c68e",
+          "knowledge_unit_ids": [
+            "ku_natur_turveien_og_elva_fortset_a0b255c68e"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s6_q4",
+          "quiz_id": "natur_alna_smalvoll_set_6_q4",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva lærer parkslireknefeltet om bynatur?",
+          "options": [
+            "Frodig grønt er ikke alltid høy naturkvalitet",
+            "Alle fremmede arter er ufarlige",
+            "Tett vekst betyr rent vann"
+          ],
+          "answer": "Frodig grønt er ikke alltid høy naturkvalitet",
+          "answerIndex": 0,
+          "knowledge": "Artskunnskap er nødvendig for å tolke vegetasjonen.",
+          "difficulty": 2,
+          "question_type": "sted_observasjon",
+          "question_layer": "synthesis",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "synthesis"
+          ],
+          "source": [
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/flora/fremmedarter.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_artskunnskap_er_n_dvendi_001170d503",
+          "knowledge_unit_ids": [
+            "ku_natur_artskunnskap_er_n_dvendi_001170d503"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s6_q5",
+          "quiz_id": "natur_alna_smalvoll_set_6_q5",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva bør en god observasjon ende med?",
+          "options": [
+            "Etterprøvbar beskrivelse og tydelig usikkerhet",
+            "Sikker påstand uten funn",
+            "Flytting av planten"
+          ],
+          "answer": "Etterprøvbar beskrivelse og tydelig usikkerhet",
+          "answerIndex": 0,
+          "knowledge": "Presis dokumentasjon er målet.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "synthesis",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "synthesis"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/Alnastien",
+            "https://www.niva.no/nyheter/naturrestaurering-er-losningen-for-oslos-mest-forurensede-elv",
+            "https://lister.artsdatabanken.no/fremmedartslista/2023/150",
+            "data/natur/nature_place_map.json"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_presis_dokumentasjon_er__b915b4ce14",
+          "knowledge_unit_ids": [
+            "ku_natur_presis_dokumentasjon_er__b915b4ce14"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s6_q6",
+          "quiz_id": "natur_alna_smalvoll_set_6_q6",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hvorfor er 1992 viktig?",
+          "options": [
+            "Aksjon Alna startet",
+            "Parkslirekne kom til Japan",
+            "Alna ble saltvann"
+          ],
+          "answer": "Aksjon Alna startet",
+          "answerIndex": 0,
+          "knowledge": "Året markerer et kommunalt løft for elva og turveien.",
+          "difficulty": 1,
+          "question_type": "sted_observasjon",
+          "question_layer": "synthesis",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "synthesis"
+          ],
+          "source": [
+            "https://oslobyleksikon.no/side/Alnastien"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_aret_markerer_et_kommuna_d4613d444c",
+          "knowledge_unit_ids": [
+            "ku_natur_aret_markerer_et_kommuna_d4613d444c"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        },
+        {
+          "id": "alna_smalvoll_s6_q7",
+          "quiz_id": "natur_alna_smalvoll_set_6_q7",
+          "categoryId": "natur",
+          "placeId": "alna_smalvoll",
+          "targetId": "alna_smalvoll",
+          "question_scope": "place",
+          "question": "Hva viser Smalvoll om naturrestaurering?",
+          "options": [
+            "Restaurering må virke i et landskap som fortsatt brukes intensivt",
+            "Restaurering krever ingen forvaltning",
+            "By og natur kan aldri møtes"
+          ],
+          "answer": "Restaurering må virke i et landskap som fortsatt brukes intensivt",
+          "answerIndex": 0,
+          "knowledge": "Smalvoll er et praktisk eksempel på langsiktig avveiing og forbedring.",
+          "difficulty": 2,
+          "question_type": "sted_observasjon",
+          "question_layer": "synthesis",
+          "tags": [
+            "alna_smalvoll",
+            "alnaelva",
+            "synthesis"
+          ],
+          "source": [
+            "https://www.niva.no/nyheter/naturrestaurering-er-losningen-for-oslos-mest-forurensede-elv",
+            "https://www.osloelveforum.org/om-alnaelva/"
+          ],
+          "claim_basis": "documented",
+          "related_emners": [
+            "em_natur_arter_habitat_mangfold"
+          ],
+          "core_concepts": [
+            "arter",
+            "habitat",
+            "vassdrag",
+            "restaurering",
+            "forvaltning"
+          ],
+          "primary_knowledge_unit_id": "ku_natur_smalvoll_er_et_praktisk__4b57cedf82",
+          "knowledge_unit_ids": [
+            "ku_natur_smalvoll_er_et_praktisk__4b57cedf82"
+          ],
+          "concept_ids": [
+            "co_natur_arter_caaa8c0a74",
+            "co_natur_habitat_7113fb7965",
+            "co_natur_vassdrag_3b7df7fcdd",
+            "co_natur_restaurering_e2d22b80e4",
+            "co_natur_forvaltning_9bd4183d18"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked"
+        }
+      ]
+    }
+  ]
+}

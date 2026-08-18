@@ -1,0 +1,57 @@
+{
+  "id": "ljanselva_skullerud",
+  "name": "Ljanselva ved Skullerud",
+  "lat": 59.8627529,
+  "lon": 10.8450942,
+  "r": 180,
+  "category": "natur",
+  "desc": "Bekk-/elvestrekk gjennom skog og friområder ved Skullerud.",
+  "tags": [
+    "elv",
+    "bekk",
+    "skog",
+    "grontdrag"
+  ],
+  "routeId": "ljanselva_grontdrag",
+  "sourceHint": "Koordinaten er lengdemidtpunktet på eksakt OSM way 27271638, Ljanselva / Skullerudbekken, valgt innenfor den allerede avgrensede Skullerud-strekningen.",
+  "coordType": "river_segment_anchor",
+  "coordStatus": "verified_geometry",
+  "coordSource": "OpenStreetMap way 27271638 – Ljanselva / Skullerudbekken",
+  "coordVerifiedAt": "2026-07-22",
+  "popupDesc": "Ved Skullerud går Ljanselva som et elvestrekk gjennom skog og åpne friområder. Her blir overgangen tydelig fra markapreget terreng til grøntdrag nærmere boligområder. Følger du stiene i området, kan du lese hvordan vannløpet binder sammen ferdsel, naturkorridor og bynær bruk. Dette punktet viser den midtre delen av systemet før elva går videre mot mer utbygd bebyggelse.",
+  "nature_profile": {
+    "type": "skogselv / friområde / grønn korridor",
+    "title": "Skogkledt elveløp på vei ut av Østmarka",
+    "summary": "Ved Skullerud går Ljanselva gjennom et grønt landskap med skog, åpne friområder og stier langs eller nær vannløpet. Her blir overgangen fra det mer sammenhengende markalandskapet til bynære grøntområder tydelig, men elva beholder rollen som naturkorridor. Natur-rundingen viser hvordan rennende vann, kantvegetasjon, skogbunn og ferdselsårer følger samme daldrag videre mot boligområdene i sør.",
+    "themes": [
+      "skogkledt elveløp",
+      "kantvegetasjon langs vannet",
+      "åpne friområder",
+      "overgang fra marka til byen",
+      "grønn korridor for arter",
+      "stier som følger daldraget"
+    ],
+    "nearby_place_ids": [
+      "skraperudtjern",
+      "noklevann_ljanselva_start",
+      "ljanselva_hauketo"
+    ]
+  },
+  "underbadge_ids": [
+    "elv",
+    "bekk",
+    "skog",
+    "gronn_korridor"
+  ],
+  "visual": {
+    "designCode": "waterfront_miniature"
+  },
+  "locatorType": "route",
+  "coordNote": "Batch 143 verifiserer den lokale Ljanselva-strekningen ved Skullerud med eksakt OSM way 27271638. Batch 112 fant fem eksakt navngitte Ljanselva-segmenter i den forhåndsdefinerte lokale scope-boksen; way 27271638 er det eneste kandidatsegmentet hvis geometri omslutter recordens eksisterende Skullerud-markør, og way-en har i tillegg alternativnavnet Skullerudbekken. Legacy-punktet brukes bare til å løse hvilken kildegeometri den allerede definerte place-identiteten viser til, ikke som koordinatbevis. Canonical lat/lon er beregnet som lengdemidtpunkt langs selve OSM-geometrien, uten nearest/first-hit-logikk.",
+  "sourceProvider": "osm",
+  "sourceObjectId": "osm-way:27271638",
+  "geocodeAccuracy": "semantic_anchor",
+  "coordRole": "line_anchor",
+  "coordSourceId": "osm-way:27271638",
+  "coordSourceUrl": "https://www.openstreetmap.org/way/27271638"
+}

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "1.0",
+  "placeId": "politihuset_gronland",
+  "placeFile": "data/places/politikk/oslo/places_politikk/politihuset_gronland.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.91076260893923,
+    "lon": 10.770099603960052,
+    "r": 60,
+    "coordStatus": "verified",
+    "coordSource": "geonorge_adresser_v1",
+    "coordType": "address_point",
+    "coordNote": "Offisiell adressekoordinat fra Geonorge Adresser API for Grønlandsleiret 44, OSLO. Punktet er representasjonspunktet for adressen og brukes som display-marker, ikke som kai-, vei-, vannflate- eller generelt områdeanker."
+  },
+  "identity": {
+    "currentName": "Politihuset på Grønland",
+    "resolvedIdentity": "Politihuset på Grønland som politi- og beredskapsinstitusjon",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "building",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [
+    "entydig offisielt adressepunkt",
+    "dokumentert at adressen representerer den konkrete canonical bygningen"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "official_address",
+      "sourceName": "geonorge_adresser_v1",
+      "sourceUrl": "https://ws.geonorge.no/adresser/v1/sok?sok=Gr%C3%B8nlandsleiret%2044%20Oslo",
+      "sourceObjectId": "geonorge-adresser-v1:0301:12450:44",
+      "sourceQuality": "official_address_plus_documented_identity",
+      "finding": "Geonorge returnerte ett tydelig adressetreff. Politiet oppgir Grønlandsleiret 44 som besøksadresse for Grønland politistasjon / Politihuset i Oslo.",
+      "canVerifyCoordinate": true,
+      "reason": "Offisiell adressekoordinat fra Geonorge Adresser API for Grønlandsleiret 44, OSLO. Punktet er representasjonspunktet for adressen og brukes som display-marker, ikke som kai-, vei-, vannflate- eller generelt områdeanker."
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceName": "OpenStreetMap – Grønland politistasjon",
+      "sourceUrl": "https://www.openstreetmap.org/way/557060199",
+      "sourceObjectId": "osm-way:557060199",
+      "sourceQuality": "secondary_geometry_qa",
+      "finding": "Eksakt navnetreff med objekttype amenity/police og geometri Polygon.",
+      "canVerifyCoordinate": false,
+      "reason": "Beholdes kun som sekundær identitets-/geometri-QA; Geonorge er primær koordinatkilde for det konkrete adressebare bygget."
+    }
+  ],
+  "addressCandidates": [
+    {
+      "address": "Grønlandsleiret 44 Oslo",
+      "sourceProvider": "official_address",
+      "sourceObjectId": "geonorge-adresser-v1:0301:12450:44",
+      "canApplyToPlace": true
+    }
+  ],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "official_address",
+      "sourceObjectId": "geonorge-adresser-v1:0301:12450:44",
+      "canApplyToPlace": true
+    }
+  ],
+  "geometryCandidates": [],
+  "coordinateCandidates": [
+    {
+      "lat": 59.91076260893923,
+      "lon": 10.770099603960052,
+      "coordRole": "display_marker",
+      "sourceObjectId": "geonorge-adresser-v1:0301:12450:44",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Kildekontrakt, identitet og representasjonsanker er anvendt på canonical place."
+  },
+  "notes": [
+    "Offisiell adressekoordinat fra Geonorge Adresser API for Grønlandsleiret 44, OSLO. Punktet er representasjonspunktet for adressen og brukes som display-marker, ikke som kai-, vei-, vannflate- eller generelt områdeanker.",
+    "Politiet oppgir Grønlandsleiret 44 som besøksadresse for Grønland politistasjon / Politihuset i Oslo.",
+    "Address-first-korreksjon av batch 118: OSM-geometri brukes ikke som primærkilde når Geonorge gir ett entydig relevant adressepunkt."
+  ]
+}

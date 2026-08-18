@@ -1,0 +1,1690 @@
+{
+  "schema": "civication_mail_family_catalog_v1",
+  "version": 1,
+  "category": "by",
+  "role_scope": "by_radgiver_plan",
+  "mail_type": "people",
+  "families": [
+    {
+      "id": "aktorer_og_press",
+      "purpose": "Aktører presser saken fra hver sin kant",
+      "learning_focus": [
+        "aktorer_og_press"
+      ],
+      "mails": [
+        {
+          "id": "by_areal_people_utbygger_001",
+          "mail_type": "people",
+          "mail_family": "aktorer_og_press",
+          "role_scope": "by_radgiver_plan",
+          "phase": "morning",
+          "priority": 70,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "ivar_utbygger",
+          "sender": "ivar_utbygger",
+          "person_id": "ivar_utbygger",
+          "place_id": "oslo_planomrade_indre_by",
+          "subject": "Utbyggeren vil ha rask avklaring før nabomøtet",
+          "summary": "Utbyggerrepresentanten ber om et signal om høyde og parkering før naboene møtes.",
+          "purpose": "Utbyggerrepresentanten ber om et signal om høyde og parkering før naboene møtes.",
+          "stakes": "Valget påvirker faglig presisjon, tillit og risiko i Lillebekk-saken.",
+          "situation": [
+            "Utbyggerrepresentanten ber om et signal om høyde og parkering før naboene møtes.",
+            "Planforslaget gjelder Lillebekk kvartal, der fortetting, grøntdrag, skolevei, støy og overvann overlapper.",
+            "Du må svare slik at både kart, bestemmelser og den videre prosessen tåler å bli lest av andre."
+          ],
+          "task_domain": "utbyggerdialog",
+          "task_kind": "people",
+          "competency": "offentlig_integritet",
+          "learning_focus": [
+            "utbyggerdialog",
+            "offentlig_integritet"
+          ],
+          "pressure": "tempo_vs_integritet",
+          "choice_axis": "faglig_presisjon_vs_tempo",
+          "consequence_axis": "tillit_vs_juridisk_risiko",
+          "narrative_arc": "Et område skal utvikles, men ingen er enige om hva byen egentlig trenger.",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Be om en formell skriftlig forespørsel og svar skriftlig",
+              "reply": "Jeg ber utbygger om en formell skriftlig forespørsel og svarer skriftlig.",
+              "effect": 1,
+              "tags": [
+                "skriftlig_spor",
+                "ryddig_prosess"
+              ],
+              "feedback": "Utbygger må vente på et formelt svar, men svaret tåler å bli lest av andre senere."
+            },
+            {
+              "id": "B",
+              "label": "Gi et muntlig signal nå og følg opp skriftlig",
+              "reply": "Jeg gir utbygger et muntlig signal nå og følger opp skriftlig etterpå.",
+              "effect": 1,
+              "tags": [
+                "forutsigbarhet",
+                "arbeidsrelasjon"
+              ],
+              "feedback": "Utbygger kan planlegge videre med en gang og du bygger arbeidsrelasjon, men signalet må følges opp skriftlig for å stå seg."
+            }
+          ],
+          "next_bias": {
+            "tags": [
+              "tempo_vs_integritet",
+              "utbyggerdialog"
+            ],
+            "weight": 1
+          },
+          "triggers_on_choice": {
+            "A": [
+              "faglig_spor_videre"
+            ],
+            "B": [
+              "frist_for_utvalg"
+            ]
+          }
+        },
+        {
+          "id": "by_areal_people_nabo_001",
+          "mail_type": "people",
+          "mail_family": "aktorer_og_press",
+          "role_scope": "by_radgiver_plan",
+          "thread_key": "by_radgiver_plan.case.den_irriterende_nabomailen_har_ett_sant_punkt",
+          "phase": "lunch",
+          "priority": 70,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "hanne_beboer",
+          "sender": "hanne_beboer",
+          "person_id": "hanne_beboer",
+          "place_id": "skolevei_lillebekk",
+          "subject": "Den lange nabomailen har faktisk ett avgjørende poeng",
+          "summary": "Beboerrepresentanten skriver for langt, men peker på en skolevei som ikke vises i plankartet.",
+          "purpose": "Beboerrepresentanten skriver for langt, men peker på en skolevei som ikke vises i plankartet.",
+          "stakes": "Valget påvirker faglig presisjon, tillit og risiko i Lillebekk-saken.",
+          "situation": [
+            "Beboerrepresentanten skriver for langt, men peker på en skolevei som ikke vises i plankartet.",
+            "Planforslaget gjelder Lillebekk kvartal, der fortetting, grøntdrag, skolevei, støy og overvann overlapper.",
+            "Du må svare slik at både kart, bestemmelser og den videre prosessen tåler å bli lest av andre."
+          ],
+          "task_domain": "medvirkning",
+          "task_kind": "people",
+          "competency": "lokal_kunnskap",
+          "learning_focus": [
+            "medvirkning",
+            "lokal_kunnskap"
+          ],
+          "pressure": "motstand_vs_kunnskap",
+          "choice_axis": "faglig_presisjon_vs_tempo",
+          "consequence_axis": "tillit_vs_juridisk_risiko",
+          "narrative_arc": "Et område skal utvikles, men ingen er enige om hva byen egentlig trenger.",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Trekk ut skoleveien som gyldig medvirkningspoeng",
+              "reply": "Jeg trekker ut skoleveien som et konkret medvirkningspoeng og kobler den til plankartet.",
+              "effect": 1,
+              "tags": [
+                "medvirkning",
+                "precision"
+              ],
+              "feedback": "Du viser at lang innbyggerpost kan romme viktig lokal kunnskap som saken må tåle."
+            },
+            {
+              "id": "B",
+              "label": "Parker mailen som for omfattende til denne runden",
+              "reply": "Jeg parkerer mailen som for omfattende og ber om en kortere oppsummering senere.",
+              "effect": 0,
+              "tags": [
+                "tempo",
+                "risk"
+              ],
+              "feedback": "Du sparer tid nå, men kan miste et gyldig poeng om faktisk bruk av området."
+            }
+          ],
+          "next_bias": {
+            "tags": [
+              "motstand_vs_kunnskap",
+              "medvirkning"
+            ],
+            "weight": 1
+          },
+          "triggers_on_choice": {
+            "A": [
+              "faglig_spor_videre"
+            ],
+            "B": [
+              "frist_for_utvalg"
+            ]
+          }
+        },
+        {
+          "id": "by_areal_people_politikk_001",
+          "mail_type": "people",
+          "mail_family": "aktorer_og_press",
+          "role_scope": "by_radgiver_plan",
+          "phase": "evening",
+          "priority": 70,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "maja_utvalgssekretaer",
+          "sender": "maja_utvalgssekretaer",
+          "person_id": "maja_utvalgssekretaer",
+          "place_id": "politisk_utvalg_moterom",
+          "subject": "Politikeren spør om dette kan kalles byliv",
+          "summary": "Utvalgssekretæren spør etter en enklere forklaring før politisk behandling.",
+          "purpose": "Utvalgssekretæren spør etter en enklere forklaring før politisk behandling.",
+          "stakes": "Valget påvirker faglig presisjon, tillit og risiko i Lillebekk-saken.",
+          "situation": [
+            "Utvalgssekretæren spør etter en enklere forklaring før politisk behandling.",
+            "Planforslaget gjelder Lillebekk kvartal, der fortetting, grøntdrag, skolevei, støy og overvann overlapper.",
+            "Du må svare slik at både kart, bestemmelser og den videre prosessen tåler å bli lest av andre."
+          ],
+          "task_domain": "politisk_lesbarhet",
+          "task_kind": "people",
+          "competency": "fagformidling",
+          "learning_focus": [
+            "politisk_lesbarhet",
+            "fagformidling"
+          ],
+          "pressure": "forenkling_vs_presisjon",
+          "choice_axis": "faglig_presisjon_vs_tempo",
+          "consequence_axis": "tillit_vs_juridisk_risiko",
+          "narrative_arc": "Et område skal utvikles, men ingen er enige om hva byen egentlig trenger.",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Skriv risikoen i klartekst og trim det tekniske",
+              "reply": "Jeg skriver risikoen i klartekst og trimmer det tekniske rundt den.",
+              "effect": 1,
+              "tags": [
+                "politisk_klarhet",
+                "aapenhet"
+              ],
+              "feedback": "Teksten blir direkte og litt ubehagelig, men utvalget vet hva som står på spill."
+            },
+            {
+              "id": "B",
+              "label": "Hold et nøytralt fagspråk som lar saken behandles rolig",
+              "reply": "Jeg holder et nøytralt fagspråk som lar saken behandles rolig.",
+              "effect": 1,
+              "tags": [
+                "prosessro",
+                "faglig_noeytralitet"
+              ],
+              "feedback": "Saken behandles roligere, men den politiske forståelsen av risikoen blir svakere."
+            }
+          ],
+          "next_bias": {
+            "tags": [
+              "forenkling_vs_presisjon",
+              "politisk_lesbarhet"
+            ],
+            "weight": 1
+          },
+          "triggers_on_choice": {
+            "A": [
+              "faglig_spor_videre"
+            ],
+            "B": [
+              "frist_for_utvalg"
+            ]
+          }
+        },
+        {
+          "id": "by_areal_people_plansjef_004",
+          "mail_type": "people",
+          "mail_family": "aktorer_og_press",
+          "role_scope": "by_radgiver_plan",
+          "phase": "morning",
+          "priority": 72,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "elin_plansjef",
+          "sender": "elin_plansjef",
+          "person_id": "elin_plansjef",
+          "place_id": "oslo_planomrade_indre_by",
+          "subject": "Plansjefen vil ha en enklere vurdering før møtet",
+          "summary": "Plansjefen ber deg skjære saken ned til det utvalget faktisk må forstå før formannskapets arbeidsmøte.",
+          "purpose": "Plansjefen ber deg skjære saken ned til det utvalget faktisk må forstå før formannskapets arbeidsmøte.",
+          "stakes": "Valget påvirker hvordan Lillebekk-saken blir forstått av folk, fagmiljø og politisk nivå.",
+          "situation": [
+            "Plansjefen ber deg skjære saken ned til det utvalget faktisk må forstå før formannskapets arbeidsmøte.",
+            "Planforslaget gjelder Lillebekk kvartal, der fortetting, grøntdrag, skolevei, støy og overvann overlapper.",
+            "Du må svare slik at både menneskene i saken og den juridiske planlogikken blir synlige."
+          ],
+          "task_domain": "plansjef_dialog",
+          "task_kind": "people",
+          "competency": "politisk_lesbarhet",
+          "learning_focus": [
+            "plansjef_dialog",
+            "politisk_lesbarhet"
+          ],
+          "pressure": "tempo_vs_faglighet",
+          "choice_axis": "faglig_presisjon_vs_tempo",
+          "consequence_axis": "tillit_vs_juridisk_risiko",
+          "narrative_arc": "Et område skal utvikles, men ingen er enige om hva byen egentlig trenger.",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Komprimer saken uten å skjule grøntdrag og skoleveisrisiko",
+              "reply": "Jeg komprimerer saken til en kort møtetekst, men lar grøntdrag og skoleveisrisiko stå tydelig.",
+              "effect": 1,
+              "tags": [
+                "precision",
+                "politisk_lesbarhet"
+              ],
+              "feedback": "Du gjør saken kortere uten å gjøre risikoen usynlig for ledelsen."
+            },
+            {
+              "id": "B",
+              "label": "Lag en kort møteversjon med tydelige forbehold",
+              "reply": "Jeg lager en kort møteversjon og merker de faglige forbeholdene som må avklares etterpå.",
+              "effect": 0,
+              "tags": [
+                "tempo",
+                "risk"
+              ],
+              "feedback": "Du gir plansjefen noe brukbart raskt, men skyver deler av vurderingen videre."
+            }
+          ],
+          "next_bias": {
+            "tags": [
+              "tempo_vs_faglighet",
+              "plansjef_dialog"
+            ],
+            "weight": 1
+          },
+          "triggers_on_choice": {
+            "A": [
+              "by_areal_people_plansjef_004_presisjon"
+            ],
+            "B": [
+              "by_areal_people_plansjef_004_tempo_risiko"
+            ]
+          },
+          "channel": "job",
+          "messageChannel": "job"
+        },
+        {
+          "id": "by_areal_people_skolevei_005",
+          "mail_type": "people",
+          "mail_family": "aktorer_og_press",
+          "role_scope": "by_radgiver_plan",
+          "phase": "lunch",
+          "priority": 68,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "tariq_trafikk_skolevei",
+          "sender": "tariq_trafikk_skolevei",
+          "person_id": "tariq_trafikk_skolevei",
+          "place_id": "oslo_planomrade_indre_by",
+          "subject": "Skolekontakt peker på snarveien bak parkeringskjelleren",
+          "summary": "Trafikksikkerhetskontakten har sett at barnas faktiske skolevei ikke ligger der plankartet antar.",
+          "purpose": "Trafikksikkerhetskontakten har sett at barnas faktiske skolevei ikke ligger der plankartet antar.",
+          "stakes": "Valget påvirker hvordan Lillebekk-saken blir forstått av folk, fagmiljø og politisk nivå.",
+          "situation": [
+            "Trafikksikkerhetskontakten har sett at barnas faktiske skolevei ikke ligger der plankartet antar.",
+            "Planforslaget gjelder Lillebekk kvartal, der fortetting, grøntdrag, skolevei, støy og overvann overlapper.",
+            "Du må svare slik at både menneskene i saken og den juridiske planlogikken blir synlige."
+          ],
+          "task_domain": "skolevei",
+          "task_kind": "people",
+          "competency": "trafikksikkerhet",
+          "learning_focus": [
+            "skolevei",
+            "trafikksikkerhet"
+          ],
+          "pressure": "kartlogikk_vs_bruk",
+          "choice_axis": "faglig_presisjon_vs_tempo",
+          "consequence_axis": "tillit_vs_juridisk_risiko",
+          "narrative_arc": "Et område skal utvikles, men ingen er enige om hva byen egentlig trenger.",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Legg faktisk brukt skolevei inn i kartgrunnlag og notat",
+              "reply": "Jeg legger barnas faktiske skolevei inn i kartgrunnlaget, notatet og videre prosess.",
+              "effect": 1,
+              "tags": [
+                "trafikksikkerhet",
+                "precision"
+              ],
+              "feedback": "Du gjør brukskunnskapen etterprøvbar før den forsvinner i plankartets antakelser."
+            },
+            {
+              "id": "B",
+              "label": "Avklar skoleveien midlertidig uten å endre grunnlaget ennå",
+              "reply": "Jeg gir en praktisk midlertidig avklaring og venter med å oppdatere kartgrunnlaget.",
+              "effect": 0,
+              "tags": [
+                "tempo",
+                "risk"
+              ],
+              "feedback": "Du demper trykket raskt, men lar et mulig avvik mellom kart og faktisk bruk bestå."
+            }
+          ],
+          "next_bias": {
+            "tags": [
+              "kartlogikk_vs_bruk",
+              "skolevei"
+            ],
+            "weight": 1
+          },
+          "triggers_on_choice": {
+            "A": [
+              "by_areal_people_skolevei_005_presisjon"
+            ],
+            "B": [
+              "by_areal_people_skolevei_005_tempo_risiko"
+            ]
+          },
+          "channel": "job",
+          "messageChannel": "job"
+        },
+        {
+          "id": "by_areal_people_juridisk_006",
+          "mail_type": "people",
+          "mail_family": "aktorer_og_press",
+          "role_scope": "by_radgiver_plan",
+          "phase": "afternoon",
+          "priority": 74,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "nora_planjuss",
+          "sender": "nora_planjuss",
+          "person_id": "nora_planjuss",
+          "place_id": "oslo_planomrade_indre_by",
+          "subject": "Juridisk rådgiver: rekkefølgekravet er for svakt",
+          "summary": "Plansaksjuristen advarer om at grøntdrag og skolevei kan bli intensjoner uten håndhevbar rekkefølge.",
+          "purpose": "Plansaksjuristen advarer om at grøntdrag og skolevei kan bli intensjoner uten håndhevbar rekkefølge.",
+          "stakes": "Valget påvirker hvordan Lillebekk-saken blir forstått av folk, fagmiljø og politisk nivå.",
+          "situation": [
+            "Plansaksjuristen advarer om at grøntdrag og skolevei kan bli intensjoner uten håndhevbar rekkefølge.",
+            "Planforslaget gjelder Lillebekk kvartal, der fortetting, grøntdrag, skolevei, støy og overvann overlapper.",
+            "Du må svare slik at både menneskene i saken og den juridiske planlogikken blir synlige."
+          ],
+          "task_domain": "plansaksjuss",
+          "task_kind": "people",
+          "competency": "juridisk_presisjon",
+          "learning_focus": [
+            "plansaksjuss",
+            "juridisk_presisjon"
+          ],
+          "pressure": "tempo_vs_hjemmel",
+          "choice_axis": "faglig_presisjon_vs_tempo",
+          "consequence_axis": "tillit_vs_juridisk_risiko",
+          "narrative_arc": "Et område skal utvikles, men ingen er enige om hva byen egentlig trenger.",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Skriv rekkefølgekravet slik at grøntdrag og skolevei kan håndheves",
+              "reply": "Jeg strammer bestemmelsen slik at grøntdrag og skolevei får et håndhevbart rekkefølgekrav.",
+              "effect": 1,
+              "tags": [
+                "juridisk_presisjon",
+                "integrity"
+              ],
+              "feedback": "Du gjør intensjonen om til en bestemmelse som kan følges opp i byggesaken."
+            },
+            {
+              "id": "B",
+              "label": "La intensjonen stå i teksten og holde framdriften oppe",
+              "reply": "Jeg lar intensjonen stå i teksten og holder framdriften uten å stramme kravet nå.",
+              "effect": 0,
+              "tags": [
+                "tempo",
+                "risk"
+              ],
+              "feedback": "Du unngår omkamp nå, men bestemmelsen kan bli for svak når tiltaket skal gjennomføres."
+            }
+          ],
+          "next_bias": {
+            "tags": [
+              "tempo_vs_hjemmel",
+              "plansaksjuss"
+            ],
+            "weight": 1
+          },
+          "triggers_on_choice": {
+            "A": [
+              "by_areal_people_juridisk_006_presisjon"
+            ],
+            "B": [
+              "by_areal_people_juridisk_006_tempo_risiko"
+            ]
+          },
+          "channel": "job",
+          "messageChannel": "job"
+        },
+        {
+          "id": "by_areal_people_politisk_007",
+          "mail_type": "people",
+          "mail_family": "aktorer_og_press",
+          "role_scope": "by_radgiver_plan",
+          "phase": "afternoon",
+          "priority": 66,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "maja_utvalgssekretaer",
+          "sender": "maja_utvalgssekretaer",
+          "person_id": "maja_utvalgssekretaer",
+          "place_id": "oslo_planomrade_indre_by",
+          "subject": "Utvalgssekretæren spør hva som egentlig er politisk valg",
+          "summary": "Utvalgssekretæren trenger en sakstekst som skiller faglig risiko fra politisk prioritering.",
+          "purpose": "Utvalgssekretæren trenger en sakstekst som skiller faglig risiko fra politisk prioritering.",
+          "stakes": "Valget påvirker hvordan Lillebekk-saken blir forstått av folk, fagmiljø og politisk nivå.",
+          "situation": [
+            "Utvalgssekretæren trenger en sakstekst som skiller faglig risiko fra politisk prioritering.",
+            "Planforslaget gjelder Lillebekk kvartal, der fortetting, grøntdrag, skolevei, støy og overvann overlapper.",
+            "Du må svare slik at både menneskene i saken og den juridiske planlogikken blir synlige."
+          ],
+          "task_domain": "utvalgssak",
+          "task_kind": "people",
+          "competency": "demokratisk_lesbarhet",
+          "learning_focus": [
+            "utvalgssak",
+            "demokratisk_lesbarhet"
+          ],
+          "pressure": "fag_vs_politikk",
+          "choice_axis": "faglig_presisjon_vs_tempo",
+          "consequence_axis": "tillit_vs_juridisk_risiko",
+          "narrative_arc": "Et område skal utvikles, men ingen er enige om hva byen egentlig trenger.",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Skill faglig risiko fra politisk prioritering i saken",
+              "reply": "Jeg skiller tydelig mellom faglig risiko og hva utvalget faktisk kan prioritere politisk.",
+              "effect": 1,
+              "tags": [
+                "demokratisk_lesbarhet",
+                "precision"
+              ],
+              "feedback": "Du gjør ansvaret lesbart uten å ta den politiske vurderingen ut av politikken."
+            },
+            {
+              "id": "B",
+              "label": "Forenkle saken selv om ansvarsdelingen blir uklar",
+              "reply": "Jeg forenkler saken kraftig, selv om skillet mellom fag og politisk prioritering blir mindre tydelig.",
+              "effect": 0,
+              "tags": [
+                "tempo",
+                "risk"
+              ],
+              "feedback": "Du gjør teksten lettere å lese, men kan gjøre det uklart hvem som eier risikoen."
+            }
+          ],
+          "next_bias": {
+            "tags": [
+              "fag_vs_politikk",
+              "utvalgssak"
+            ],
+            "weight": 1
+          },
+          "triggers_on_choice": {
+            "A": [
+              "by_areal_people_politisk_007_presisjon"
+            ],
+            "B": [
+              "by_areal_people_politisk_007_tempo_risiko"
+            ]
+          },
+          "channel": "job",
+          "messageChannel": "job"
+        },
+        {
+          "id": "by_areal_people_arkitekt_008",
+          "mail_type": "people",
+          "mail_family": "aktorer_og_press",
+          "role_scope": "by_radgiver_plan",
+          "phase": "evening",
+          "priority": 64,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "petter_plankonsulent",
+          "sender": "petter_plankonsulent",
+          "person_id": "petter_plankonsulent",
+          "place_id": "oslo_planomrade_indre_by",
+          "subject": "Plankonsulenten sender en ny høydeillustrasjon etter arbeidstid",
+          "summary": "Arkitektens kveldsmelding viser mindre skygge på torget, men forutsetter at grøntdraget smalnes inn.",
+          "purpose": "Arkitektens kveldsmelding viser mindre skygge på torget, men forutsetter at grøntdraget smalnes inn.",
+          "stakes": "Valget påvirker hvordan Lillebekk-saken blir forstått av folk, fagmiljø og politisk nivå.",
+          "situation": [
+            "Arkitektens kveldsmelding viser mindre skygge på torget, men forutsetter at grøntdraget smalnes inn.",
+            "Planforslaget gjelder Lillebekk kvartal, der fortetting, grøntdrag, skolevei, støy og overvann overlapper.",
+            "Du må svare slik at både menneskene i saken og den juridiske planlogikken blir synlige."
+          ],
+          "task_domain": "plankonsulentdialog",
+          "task_kind": "people",
+          "competency": "romlig_forstaelse",
+          "learning_focus": [
+            "plankonsulentdialog",
+            "romlig_forstaelse"
+          ],
+          "pressure": "hoyde_vs_grontdrag",
+          "choice_axis": "faglig_presisjon_vs_tempo",
+          "consequence_axis": "tillit_vs_juridisk_risiko",
+          "narrative_arc": "Et område skal utvikles, men ingen er enige om hva byen egentlig trenger.",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Test høydeillustrasjonen mot grøntdrag skolevei støy og overvann",
+              "reply": "Jeg tester høydeillustrasjonen mot grøntdrag, skolevei, støy og overvann før vi bruker den.",
+              "effect": 1,
+              "tags": [
+                "romlig_forstaelse",
+                "precision"
+              ],
+              "feedback": "Du behandler illustrasjonen som faglig materiale, ikke bare som et pent bilde."
+            },
+            {
+              "id": "B",
+              "label": "Bruk illustrasjonen raskt som kommunikasjonsgrep",
+              "reply": "Jeg bruker illustrasjonen raskt som et kommunikasjonsgrep og tar fagtestene senere.",
+              "effect": 0,
+              "tags": [
+                "tempo",
+                "risk"
+              ],
+              "feedback": "Du får et tydelig bilde ut raskt, men kan låse forventninger før konsekvensene er sjekket."
+            }
+          ],
+          "next_bias": {
+            "tags": [
+              "hoyde_vs_grontdrag",
+              "plankonsulentdialog"
+            ],
+            "weight": 1
+          },
+          "triggers_on_choice": {
+            "A": [
+              "by_areal_people_arkitekt_008_presisjon"
+            ],
+            "B": [
+              "by_areal_people_arkitekt_008_tempo_risiko"
+            ]
+          },
+          "channel": "private",
+          "messageChannel": "private"
+        }
+      ]
+    },
+    {
+      "id": "lillebekk_week2_aktorer",
+      "purpose": "Aktørene presser videre når saken modnes (uke 2+ av rollebuen).",
+      "learning_focus": [
+        "lillebekk_week2_aktorer"
+      ],
+      "mails": [
+        {
+          "id": "by_areal_people_week2_byokolog_009",
+          "mail_type": "people",
+          "mail_family": "lillebekk_week2_aktorer",
+          "practice_story_id": "linjen_pa_kartet",
+          "role_scope": "by_radgiver_plan",
+          "phase": "forenoon",
+          "priority": 65,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "signe_byokolog",
+          "sender": "signe_byokolog",
+          "person_id": "signe_byokolog",
+          "place_id": "grontdrag_lillebekk",
+          "subject": "Byøkologen vil ha grøntdraget inn som hensynssone",
+          "summary": "Byøkologen ber deg sikre grøntdraget med en hensynssone i stedet for løse intensjoner i planbeskrivelsen.",
+          "purpose": "Byøkologen ber deg sikre grøntdraget med en hensynssone i stedet for løse intensjoner i planbeskrivelsen.",
+          "stakes": "Valget påvirker faglig presisjon, tillit og risiko i Lillebekk-saken.",
+          "situation": [
+            "Byøkologen ber deg sikre grøntdraget med en hensynssone i stedet for løse intensjoner i planbeskrivelsen.",
+            "Planforslaget gjelder Lillebekk kvartal, der fortetting, grøntdrag, skolevei, støy og overvann overlapper.",
+            "Du må svare slik at både kart, bestemmelser og den videre prosessen tåler å bli lest av andre."
+          ],
+          "task_domain": "fagdialog",
+          "task_kind": "people",
+          "competency": "tverrfaglig_koordinering",
+          "learning_focus": [
+            "fagdialog",
+            "tverrfaglig_koordinering"
+          ],
+          "pressure": "kvalitet_vs_gjennomforing",
+          "choice_axis": "faglig_presisjon_vs_tempo",
+          "consequence_axis": "tillit_vs_juridisk_risiko",
+          "narrative_arc": "Et område skal utvikles, men ingen er enige om hva byen egentlig trenger.",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Støtt hensynssone og ta diskusjonen om utnyttelse",
+              "reply": "Jeg støtter en hensynssone og tar diskusjonen om utnyttelse åpent.",
+              "effect": 1,
+              "tags": [
+                "hensynssone",
+                "faglig_forankring"
+              ],
+              "feedback": "Grøntdraget får et juridisk vern, men utnyttelsen må forhandles på nytt."
+            },
+            {
+              "id": "B",
+              "label": "Hold grøntdraget som grønnstruktur uten hensynssone",
+              "reply": "Jeg holder grøntdraget som grønnstruktur uten hensynssone for å beholde fleksibiliteten.",
+              "effect": 1,
+              "tags": [
+                "fleksibilitet",
+                "framdrift"
+              ],
+              "feedback": "Saken holder tempo, men uten hensynssone hviler grøntdraget på god vilje i neste fase."
+            }
+          ],
+          "next_bias": {
+            "tags": [
+              "kvalitet_vs_gjennomforing",
+              "fagdialog"
+            ],
+            "weight": 1
+          },
+          "triggers_on_choice": {
+            "A": [
+              "faglig_spor_videre"
+            ],
+            "B": [
+              "frist_for_utvalg"
+            ]
+          }
+        },
+        {
+          "id": "by_areal_people_week2_plankonsulent_010",
+          "mail_type": "people",
+          "mail_family": "lillebekk_week2_aktorer",
+          "practice_story_id": "kartet_ser_ryddig_men_tier",
+          "role_scope": "by_radgiver_plan",
+          "phase": "lunch",
+          "priority": 65,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "petter_plankonsulent",
+          "sender": "petter_plankonsulent",
+          "person_id": "petter_plankonsulent",
+          "place_id": "gis_plankart_arbeidsflate",
+          "subject": "Plankonsulenten vil selge kartet som ferdig",
+          "summary": "Utbyggers plankonsulent presenterer et rent plankart og vil at de uavklarte temaene ikke skal forstyrre bildet.",
+          "purpose": "Utbyggers plankonsulent presenterer et rent plankart og vil at de uavklarte temaene ikke skal forstyrre bildet.",
+          "stakes": "Valget påvirker faglig presisjon, tillit og risiko i Lillebekk-saken.",
+          "situation": [
+            "Utbyggers plankonsulent presenterer et rent plankart og vil at de uavklarte temaene ikke skal forstyrre bildet.",
+            "Planforslaget gjelder Lillebekk kvartal, der fortetting, grøntdrag, skolevei, støy og overvann overlapper.",
+            "Du må svare slik at både kart, bestemmelser og den videre prosessen tåler å bli lest av andre."
+          ],
+          "task_domain": "fagdialog",
+          "task_kind": "people",
+          "competency": "faglig_integritet",
+          "learning_focus": [
+            "fagdialog",
+            "faglig_integritet"
+          ],
+          "pressure": "profesjonelt_press_vs_aapenhet",
+          "choice_axis": "faglig_presisjon_vs_tempo",
+          "consequence_axis": "tillit_vs_juridisk_risiko",
+          "narrative_arc": "Et område skal utvikles, men ingen er enige om hva byen egentlig trenger.",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Be om at de uavklarte temaene merkes tydelig i kartet",
+              "reply": "Jeg ber om at de uavklarte temaene merkes tydelig i kartet før det går videre.",
+              "effect": 1,
+              "tags": [
+                "aapenhet",
+                "sporbarhet"
+              ],
+              "feedback": "Kartet ser mindre ferdig ut, men ingen kan si at uenigheten var skjult."
+            },
+            {
+              "id": "B",
+              "label": "Godta det rene kartet og noter forbeholdene i notatet",
+              "reply": "Jeg godtar det rene kartet og legger forbeholdene i fagnotatet i stedet.",
+              "effect": 1,
+              "tags": [
+                "presentasjon",
+                "kompromiss"
+              ],
+              "feedback": "Kartet blir lett å lese, men forbeholdene drukner lett når bare kartet vises fram."
+            }
+          ],
+          "next_bias": {
+            "tags": [
+              "profesjonelt_press_vs_aapenhet",
+              "fagdialog"
+            ],
+            "weight": 1
+          },
+          "triggers_on_choice": {
+            "A": [
+              "faglig_spor_videre"
+            ],
+            "B": [
+              "frist_for_utvalg"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "first_week_praksisfortellinger_by_radgiver_private",
+      "purpose": "Fem private etterklanger som viser hvordan fagspråk, status, kontroll og frister følger by-rådgiveren hjem.",
+      "learning_focus": [
+        "relationship_private",
+        "energy",
+        "rollegrense"
+      ],
+      "mails": [
+        {
+          "id": "by_radgiver_week1_jonas_spor",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_by_radgiver_private",
+          "role_scope": "by_radgiver_plan",
+          "phase": "evening",
+          "priority": 48,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "venn",
+          "sender": "venn",
+          "person_id": "venn",
+          "place_id": "hjemme",
+          "subject": "Jonas sier at du snakker om gata som om den var et saksnummer.",
+          "summary": "Jonas sier at du snakker om gata som om den var et saksnummer.",
+          "purpose": "Koble planfaglig ansvar til privat språk, relasjon, energi og status uten å gjøre hjemmet til en ekstra jobbscene.",
+          "stakes": "Valget påvirker om arbeidsrollen får være kompetanse spilleren har, eller en maske som overtar privatlivet.",
+          "situation": [
+            "Dere går hjem gjennom byen.",
+            "Du begynner å forklare hvert gatehjørne som planproblem.",
+            "Jonas spør om du kan være til stede uten å analysere."
+          ],
+          "task_domain": "privat_etterklang",
+          "task_kind": "people",
+          "competency": "rollegrense",
+          "learning_focus": [
+            "privat_etterklang",
+            "rollegrense"
+          ],
+          "pressure": "arbeidsrolle_vs_privat_narhet",
+          "choice_axis": "legge_jobben_fra_seg_vs_fortsette_saksmodus",
+          "consequence_axis": "narhet_og_hvile_vs_status_og_kontroll",
+          "narrative_arc": "Lillebekk uke 1: arbeidsblikket møter Jonas og familien etter arbeidstid.",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Legg bort fagspråket og spør hvordan han har det",
+              "reply": "Legg bort fagspråket og spør hvordan han har det.",
+              "effect": 1,
+              "effects": {
+                "score_delta": 1,
+                "quality_axes": {
+                  "relationship_private": 3,
+                  "energy": 1
+                }
+              },
+              "tags": [
+                "relationship",
+                "boundary"
+              ],
+              "feedback": "Du lar relasjonen være noe annet enn en forlengelse av saken.",
+              "next_bias": {
+                "tags": [
+                  "private_boundary",
+                  "recovery"
+                ],
+                "weight": 1
+              },
+              "triggers_on_choice": "by_radgiver_week1_private_followup"
+            },
+            {
+              "id": "B",
+              "label": "Forklar hvorfor analysen faktisk er viktig",
+              "reply": "Forklar hvorfor analysen faktisk er viktig.",
+              "effect": 0,
+              "effects": {
+                "score_delta": 0,
+                "quality_axes": {
+                  "relationship_private": -2,
+                  "energy": -1
+                }
+              },
+              "tags": [
+                "status",
+                "work_leakage"
+              ],
+              "feedback": "Arbeidsrollen gir kontroll et øyeblikk, men tar mer plass privat."
+            }
+          ],
+          "planned_only": true
+        },
+        {
+          "id": "by_radgiver_week1_hjemmet_som_saksmappe",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_by_radgiver_private",
+          "role_scope": "by_radgiver_plan",
+          "phase": "evening",
+          "priority": 47,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "venn",
+          "sender": "venn",
+          "person_id": "venn",
+          "place_id": "hjemme",
+          "subject": "Du åpner kartet hjemme bare for å sjekke én ting til.",
+          "summary": "Du åpner kartet hjemme bare for å sjekke én ting til.",
+          "purpose": "Koble planfaglig ansvar til privat språk, relasjon, energi og status uten å gjøre hjemmet til en ekstra jobbscene.",
+          "stakes": "Valget påvirker om arbeidsrollen får være kompetanse spilleren har, eller en maske som overtar privatlivet.",
+          "situation": [
+            "Saken er teknisk lukket for dagen.",
+            "En detalj om skoleveien ligger fortsatt i hodet.",
+            "Du kan la usikkerheten vente eller gjøre hjemmet til et ekstra kontor."
+          ],
+          "task_domain": "privat_etterklang",
+          "task_kind": "people",
+          "competency": "rollegrense",
+          "learning_focus": [
+            "privat_etterklang",
+            "rollegrense"
+          ],
+          "pressure": "arbeidsrolle_vs_privat_narhet",
+          "choice_axis": "legge_jobben_fra_seg_vs_fortsette_saksmodus",
+          "consequence_axis": "narhet_og_hvile_vs_status_og_kontroll",
+          "narrative_arc": "Lillebekk uke 1: arbeidsblikket møter Jonas og familien etter arbeidstid.",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Lukk maskinen og la saken vente",
+              "reply": "Lukk maskinen og la saken vente.",
+              "effect": 1,
+              "effects": {
+                "score_delta": 1,
+                "quality_axes": {
+                  "relationship_private": 2,
+                  "energy": 3
+                }
+              },
+              "tags": [
+                "relationship",
+                "boundary"
+              ],
+              "feedback": "Du lar relasjonen være noe annet enn en forlengelse av saken.",
+              "next_bias": {
+                "tags": [
+                  "private_boundary",
+                  "recovery"
+                ],
+                "weight": 1
+              },
+              "triggers_on_choice": "by_radgiver_week1_private_followup"
+            },
+            {
+              "id": "B",
+              "label": "Åpne kartet og rydde opp før du får ro",
+              "reply": "Åpne kartet og rydde opp før du får ro.",
+              "effect": 0,
+              "effects": {
+                "score_delta": 0,
+                "quality_axes": {
+                  "relationship_private": -2,
+                  "energy": -3
+                }
+              },
+              "tags": [
+                "status",
+                "work_leakage"
+              ],
+              "feedback": "Arbeidsrollen gir kontroll et øyeblikk, men tar mer plass privat."
+            }
+          ],
+          "planned_only": true
+        },
+        {
+          "id": "by_radgiver_week1_middagen_uten_notat",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_by_radgiver_private",
+          "role_scope": "by_radgiver_plan",
+          "phase": "evening",
+          "priority": 46,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "familie",
+          "sender": "familie",
+          "person_id": "familie",
+          "place_id": "hjemme",
+          "subject": "Søsteren spør hvordan én setning i et plandokument kan flytte så mye.",
+          "summary": "Søsteren spør hvordan én setning i et plandokument kan flytte så mye.",
+          "purpose": "Koble planfaglig ansvar til privat språk, relasjon, energi og status uten å gjøre hjemmet til en ekstra jobbscene.",
+          "stakes": "Valget påvirker om arbeidsrollen får være kompetanse spilleren har, eller en maske som overtar privatlivet.",
+          "situation": [
+            "Hun spør om jobben din over middag.",
+            "Du merker at du begynner å forelese.",
+            "Samtalen kan bli forklaring eller maktmarkering."
+          ],
+          "task_domain": "privat_etterklang",
+          "task_kind": "people",
+          "competency": "rollegrense",
+          "learning_focus": [
+            "privat_etterklang",
+            "rollegrense"
+          ],
+          "pressure": "arbeidsrolle_vs_privat_narhet",
+          "choice_axis": "legge_jobben_fra_seg_vs_fortsette_saksmodus",
+          "consequence_axis": "narhet_og_hvile_vs_status_og_kontroll",
+          "narrative_arc": "Lillebekk uke 1: arbeidsblikket møter Jonas og familien etter arbeidstid.",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Forklar konkret og innrøm hva du ikke bestemmer",
+              "reply": "Forklar konkret og innrøm hva du ikke bestemmer.",
+              "effect": 1,
+              "effects": {
+                "score_delta": 1,
+                "quality_axes": {
+                  "relationship_private": 3,
+                  "political_readability": 1
+                }
+              },
+              "tags": [
+                "relationship",
+                "boundary"
+              ],
+              "feedback": "Du lar relasjonen være noe annet enn en forlengelse av saken.",
+              "next_bias": {
+                "tags": [
+                  "private_boundary",
+                  "recovery"
+                ],
+                "weight": 1
+              },
+              "triggers_on_choice": "by_radgiver_week1_private_followup"
+            },
+            {
+              "id": "B",
+              "label": "Bruk fagrollen til å avslutte diskusjonen",
+              "reply": "Bruk fagrollen til å avslutte diskusjonen.",
+              "effect": 0,
+              "effects": {
+                "score_delta": 0,
+                "quality_axes": {
+                  "relationship_private": -2,
+                  "status_anxiety": 2
+                }
+              },
+              "tags": [
+                "status",
+                "work_leakage"
+              ],
+              "feedback": "Arbeidsrollen gir kontroll et øyeblikk, men tar mer plass privat."
+            }
+          ],
+          "planned_only": true
+        },
+        {
+          "id": "by_radgiver_week1_soster_om_byen",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_by_radgiver_private",
+          "role_scope": "by_radgiver_plan",
+          "phase": "evening",
+          "priority": 45,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "familie",
+          "sender": "familie",
+          "person_id": "familie",
+          "place_id": "hjemme",
+          "subject": "Boligpraten blir personlig når søsteren spør hvem byen egentlig bygges for.",
+          "summary": "Boligpraten blir personlig når søsteren spør hvem byen egentlig bygges for.",
+          "purpose": "Koble planfaglig ansvar til privat språk, relasjon, energi og status uten å gjøre hjemmet til en ekstra jobbscene.",
+          "stakes": "Valget påvirker om arbeidsrollen får være kompetanse spilleren har, eller en maske som overtar privatlivet.",
+          "situation": [
+            "Hun snakker om egen boligøkonomi.",
+            "Du kjenner saksargumentene fra Lillebekk.",
+            "Det er fristende å svare som rådgiver i stedet for søsken."
+          ],
+          "task_domain": "privat_etterklang",
+          "task_kind": "people",
+          "competency": "rollegrense",
+          "learning_focus": [
+            "privat_etterklang",
+            "rollegrense"
+          ],
+          "pressure": "arbeidsrolle_vs_privat_narhet",
+          "choice_axis": "legge_jobben_fra_seg_vs_fortsette_saksmodus",
+          "consequence_axis": "narhet_og_hvile_vs_status_og_kontroll",
+          "narrative_arc": "Lillebekk uke 1: arbeidsblikket møter Jonas og familien etter arbeidstid.",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Lytt til erfaringen hennes uten å gjøre den til case",
+              "reply": "Lytt til erfaringen hennes uten å gjøre den til case.",
+              "effect": 1,
+              "effects": {
+                "score_delta": 1,
+                "quality_axes": {
+                  "relationship_private": 3,
+                  "local_knowledge": 1
+                }
+              },
+              "tags": [
+                "relationship",
+                "boundary"
+              ],
+              "feedback": "Du lar relasjonen være noe annet enn en forlengelse av saken.",
+              "next_bias": {
+                "tags": [
+                  "private_boundary",
+                  "recovery"
+                ],
+                "weight": 1
+              },
+              "triggers_on_choice": "by_radgiver_week1_private_followup"
+            },
+            {
+              "id": "B",
+              "label": "Svar med planfaglige hovedmål og statistikk",
+              "reply": "Svar med planfaglige hovedmål og statistikk.",
+              "effect": 0,
+              "effects": {
+                "score_delta": 0,
+                "quality_axes": {
+                  "relationship_private": -2,
+                  "status_anxiety": 2
+                }
+              },
+              "tags": [
+                "status",
+                "work_leakage"
+              ],
+              "feedback": "Arbeidsrollen gir kontroll et øyeblikk, men tar mer plass privat."
+            }
+          ],
+          "planned_only": true
+        },
+        {
+          "id": "by_radgiver_week1_helg_uten_lillebekk",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_by_radgiver_private",
+          "role_scope": "by_radgiver_plan",
+          "phase": "evening",
+          "priority": 44,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "venn",
+          "sender": "venn",
+          "person_id": "venn",
+          "place_id": "hjemme",
+          "subject": "Helgen begynner med at Jonas foreslår en tur uten å diskutere Lillebekk.",
+          "summary": "Helgen begynner med at Jonas foreslår en tur uten å diskutere Lillebekk.",
+          "purpose": "Koble planfaglig ansvar til privat språk, relasjon, energi og status uten å gjøre hjemmet til en ekstra jobbscene.",
+          "stakes": "Valget påvirker om arbeidsrollen får være kompetanse spilleren har, eller en maske som overtar privatlivet.",
+          "situation": [
+            "Du har lyst til å sjekke saksloggen.",
+            "Ingen frist krever arbeid akkurat nå.",
+            "Å ikke kontrollere saken er også et valg."
+          ],
+          "task_domain": "privat_etterklang",
+          "task_kind": "people",
+          "competency": "rollegrense",
+          "learning_focus": [
+            "privat_etterklang",
+            "rollegrense"
+          ],
+          "pressure": "arbeidsrolle_vs_privat_narhet",
+          "choice_axis": "legge_jobben_fra_seg_vs_fortsette_saksmodus",
+          "consequence_axis": "narhet_og_hvile_vs_status_og_kontroll",
+          "narrative_arc": "Lillebekk uke 1: arbeidsblikket møter Jonas og familien etter arbeidstid.",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "choices": [
+            {
+              "id": "A",
+              "label": "La telefonen ligge og ta fri",
+              "reply": "La telefonen ligge og ta fri.",
+              "effect": 1,
+              "effects": {
+                "score_delta": 1,
+                "quality_axes": {
+                  "relationship_private": 2,
+                  "energy": 4
+                }
+              },
+              "tags": [
+                "relationship",
+                "boundary"
+              ],
+              "feedback": "Du lar relasjonen være noe annet enn en forlengelse av saken.",
+              "next_bias": {
+                "tags": [
+                  "private_boundary",
+                  "recovery"
+                ],
+                "weight": 1
+              },
+              "triggers_on_choice": "by_radgiver_week1_private_followup"
+            },
+            {
+              "id": "B",
+              "label": "Sjekk bare om det har kommet noe nytt",
+              "reply": "Sjekk bare om det har kommet noe nytt.",
+              "effect": 0,
+              "effects": {
+                "score_delta": 0,
+                "quality_axes": {
+                  "relationship_private": -1,
+                  "energy": -3
+                }
+              },
+              "tags": [
+                "status",
+                "work_leakage"
+              ],
+              "feedback": "Arbeidsrollen gir kontroll et øyeblikk, men tar mer plass privat."
+            }
+          ],
+          "planned_only": true
+        }
+      ],
+      "threads": [
+        {
+          "id": "by_radgiver_week1_private_followup",
+          "mail_type": "people",
+          "mail_family": "first_week_praksisfortellinger_by_radgiver_private",
+          "role_scope": "by_radgiver_plan",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Uke 1: senere følge av valgene",
+          "summary": "Et tidligere valg kommer tilbake og gjør faglig spor, relasjon eller kapasitet synlig i neste del av forløpet.",
+          "situation": [
+            "Et tidligere valg er registrert.",
+            "Konsekvensen kan nå leses i saken eller relasjonen."
+          ],
+          "choices": []
+        }
+      ]
+    },
+    {
+      "id": "second_week_praksisfortellinger_by_radgiver_private",
+      "purpose": "Fem private etterklanger som tester om spilleren kan beholde faglig ansvar uten å gjøre privatlivet til ekstra saksbehandling.",
+      "learning_focus": [
+        "relationship_private",
+        "energy",
+        "status_anxiety"
+      ],
+      "mails": [
+        {
+          "id": "by_radgiver_week2_jonas_utbyggerprat",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_by_radgiver_private",
+          "role_scope": "by_radgiver_plan",
+          "phase": "evening",
+          "priority": 48,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "venn",
+          "sender": "venn",
+          "person_id": "venn",
+          "place_id": "hjemme",
+          "subject": "Jonas spør om alle utbyggere egentlig bare prøver å presse kommunen.",
+          "summary": "Jonas spør om alle utbyggere egentlig bare prøver å presse kommunen.",
+          "purpose": "Koble planfaglig ansvar til privat språk, relasjon, energi og status uten å gjøre hjemmet til en ekstra jobbscene.",
+          "stakes": "Valget påvirker om arbeidsrollen får være kompetanse spilleren har, eller en maske som overtar privatlivet.",
+          "situation": [
+            "Du kjenner presset fra Ivar.",
+            "Det er lett å gjøre en aktør til moralsk type.",
+            "Privat samtale kan tåle mer nyanse enn saksfrontene."
+          ],
+          "task_domain": "privat_etterklang",
+          "task_kind": "people",
+          "competency": "rollegrense",
+          "learning_focus": [
+            "privat_etterklang",
+            "rollegrense"
+          ],
+          "pressure": "arbeidsrolle_vs_privat_narhet",
+          "choice_axis": "legge_jobben_fra_seg_vs_fortsette_saksmodus",
+          "consequence_axis": "narhet_og_hvile_vs_status_og_kontroll",
+          "narrative_arc": "Lillebekk uke 2: arbeidsblikket møter Jonas og familien etter arbeidstid.",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Svar nyansert om interesser, rettigheter og prosess",
+              "reply": "Svar nyansert om interesser, rettigheter og prosess.",
+              "effect": 1,
+              "effects": {
+                "score_delta": 1,
+                "quality_axes": {
+                  "relationship_private": 3,
+                  "energy": 1
+                }
+              },
+              "tags": [
+                "relationship",
+                "boundary"
+              ],
+              "feedback": "Du lar relasjonen være noe annet enn en forlengelse av saken.",
+              "next_bias": {
+                "tags": [
+                  "private_boundary",
+                  "recovery"
+                ],
+                "weight": 1
+              },
+              "triggers_on_choice": "by_radgiver_week2_private_followup"
+            },
+            {
+              "id": "B",
+              "label": "Bruk jobberfaringen til å avvise hele utbyggersiden",
+              "reply": "Bruk jobberfaringen til å avvise hele utbyggersiden.",
+              "effect": 0,
+              "effects": {
+                "score_delta": 0,
+                "quality_axes": {
+                  "relationship_private": -2,
+                  "status_anxiety": 1
+                }
+              },
+              "tags": [
+                "status",
+                "work_leakage"
+              ],
+              "feedback": "Arbeidsrollen gir kontroll et øyeblikk, men tar mer plass privat."
+            }
+          ],
+          "planned_only": true
+        },
+        {
+          "id": "by_radgiver_week2_familie_hvem_eier_byen",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_by_radgiver_private",
+          "role_scope": "by_radgiver_plan",
+          "phase": "evening",
+          "priority": 47,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "familie",
+          "sender": "familie",
+          "person_id": "familie",
+          "place_id": "hjemme",
+          "subject": "Søsteren spør hvem som egentlig eier retten til å bestemme hva byen skal bli.",
+          "summary": "Søsteren spør hvem som egentlig eier retten til å bestemme hva byen skal bli.",
+          "purpose": "Koble planfaglig ansvar til privat språk, relasjon, energi og status uten å gjøre hjemmet til en ekstra jobbscene.",
+          "stakes": "Valget påvirker om arbeidsrollen får være kompetanse spilleren har, eller en maske som overtar privatlivet.",
+          "situation": [
+            "Hun spør om politikere, utbyggere og administrasjon.",
+            "Du har påvirkning, men ikke vedtaksmyndighet.",
+            "Svaret tester om status brukes som autoritet."
+          ],
+          "task_domain": "privat_etterklang",
+          "task_kind": "people",
+          "competency": "rollegrense",
+          "learning_focus": [
+            "privat_etterklang",
+            "rollegrense"
+          ],
+          "pressure": "arbeidsrolle_vs_privat_narhet",
+          "choice_axis": "legge_jobben_fra_seg_vs_fortsette_saksmodus",
+          "consequence_axis": "narhet_og_hvile_vs_status_og_kontroll",
+          "narrative_arc": "Lillebekk uke 2: arbeidsblikket møter Jonas og familien etter arbeidstid.",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Forklar maktfordelingen og egen begrensning",
+              "reply": "Forklar maktfordelingen og egen begrensning.",
+              "effect": 1,
+              "effects": {
+                "score_delta": 1,
+                "quality_axes": {
+                  "relationship_private": 3,
+                  "political_readability": 2
+                }
+              },
+              "tags": [
+                "relationship",
+                "boundary"
+              ],
+              "feedback": "Du lar relasjonen være noe annet enn en forlengelse av saken.",
+              "next_bias": {
+                "tags": [
+                  "private_boundary",
+                  "recovery"
+                ],
+                "weight": 1
+              },
+              "triggers_on_choice": "by_radgiver_week2_private_followup"
+            },
+            {
+              "id": "B",
+              "label": "Svar som om faglig ekspertise gir siste ord",
+              "reply": "Svar som om faglig ekspertise gir siste ord.",
+              "effect": 0,
+              "effects": {
+                "score_delta": 0,
+                "quality_axes": {
+                  "relationship_private": -2,
+                  "status_anxiety": 2
+                }
+              },
+              "tags": [
+                "status",
+                "work_leakage"
+              ],
+              "feedback": "Arbeidsrollen gir kontroll et øyeblikk, men tar mer plass privat."
+            }
+          ],
+          "planned_only": true
+        },
+        {
+          "id": "by_radgiver_week2_boligprat_hjemme",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_by_radgiver_private",
+          "role_scope": "by_radgiver_plan",
+          "phase": "evening",
+          "priority": 46,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "familie",
+          "sender": "familie",
+          "person_id": "familie",
+          "place_id": "hjemme",
+          "subject": "En samtale om bolig blir til en prøve på om du kan lytte uten å oversette alt til planbegreper.",
+          "summary": "En samtale om bolig blir til en prøve på om du kan lytte uten å oversette alt til planbegreper.",
+          "purpose": "Koble planfaglig ansvar til privat språk, relasjon, energi og status uten å gjøre hjemmet til en ekstra jobbscene.",
+          "stakes": "Valget påvirker om arbeidsrollen får være kompetanse spilleren har, eller en maske som overtar privatlivet.",
+          "situation": [
+            "Søsteren beskriver hva hun faktisk har råd til.",
+            "Du tenker straks på fortetting og kollektivdekning.",
+            "Hun trenger ikke en saksutredning."
+          ],
+          "task_domain": "privat_etterklang",
+          "task_kind": "people",
+          "competency": "rollegrense",
+          "learning_focus": [
+            "privat_etterklang",
+            "rollegrense"
+          ],
+          "pressure": "arbeidsrolle_vs_privat_narhet",
+          "choice_axis": "legge_jobben_fra_seg_vs_fortsette_saksmodus",
+          "consequence_axis": "narhet_og_hvile_vs_status_og_kontroll",
+          "narrative_arc": "Lillebekk uke 2: arbeidsblikket møter Jonas og familien etter arbeidstid.",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Lytt og spør om hennes erfaring",
+              "reply": "Lytt og spør om hennes erfaring.",
+              "effect": 1,
+              "effects": {
+                "score_delta": 1,
+                "quality_axes": {
+                  "relationship_private": 4,
+                  "local_knowledge": 1
+                }
+              },
+              "tags": [
+                "relationship",
+                "boundary"
+              ],
+              "feedback": "Du lar relasjonen være noe annet enn en forlengelse av saken.",
+              "next_bias": {
+                "tags": [
+                  "private_boundary",
+                  "recovery"
+                ],
+                "weight": 1
+              },
+              "triggers_on_choice": "by_radgiver_week2_private_followup"
+            },
+            {
+              "id": "B",
+              "label": "Forklar hvorfor bystrategien likevel er riktig",
+              "reply": "Forklar hvorfor bystrategien likevel er riktig.",
+              "effect": 0,
+              "effects": {
+                "score_delta": 0,
+                "quality_axes": {
+                  "relationship_private": -3,
+                  "status_anxiety": 1
+                }
+              },
+              "tags": [
+                "status",
+                "work_leakage"
+              ],
+              "feedback": "Arbeidsrollen gir kontroll et øyeblikk, men tar mer plass privat."
+            }
+          ],
+          "planned_only": true
+        },
+        {
+          "id": "by_radgiver_week2_sliten_etter_utvalg",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_by_radgiver_private",
+          "role_scope": "by_radgiver_plan",
+          "phase": "evening",
+          "priority": 45,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "venn",
+          "sender": "venn",
+          "person_id": "venn",
+          "place_id": "hjemme",
+          "subject": "Etter utvalgskvelden er hodet fortsatt fullt av formuleringer og mulige misforståelser.",
+          "summary": "Etter utvalgskvelden er hodet fortsatt fullt av formuleringer og mulige misforståelser.",
+          "purpose": "Koble planfaglig ansvar til privat språk, relasjon, energi og status uten å gjøre hjemmet til en ekstra jobbscene.",
+          "stakes": "Valget påvirker om arbeidsrollen får være kompetanse spilleren har, eller en maske som overtar privatlivet.",
+          "situation": [
+            "Saken er sendt.",
+            "Du kan ikke endre møtet hjemmefra.",
+            "Kroppen trenger en faktisk slutt på arbeidsdagen."
+          ],
+          "task_domain": "privat_etterklang",
+          "task_kind": "people",
+          "competency": "rollegrense",
+          "learning_focus": [
+            "privat_etterklang",
+            "rollegrense"
+          ],
+          "pressure": "arbeidsrolle_vs_privat_narhet",
+          "choice_axis": "legge_jobben_fra_seg_vs_fortsette_saksmodus",
+          "consequence_axis": "narhet_og_hvile_vs_status_og_kontroll",
+          "narrative_arc": "Lillebekk uke 2: arbeidsblikket møter Jonas og familien etter arbeidstid.",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "choices": [
+            {
+              "id": "A",
+              "label": "La saken ligge og gjør noe helt annet",
+              "reply": "La saken ligge og gjør noe helt annet.",
+              "effect": 1,
+              "effects": {
+                "score_delta": 1,
+                "quality_axes": {
+                  "relationship_private": 2,
+                  "energy": 4
+                }
+              },
+              "tags": [
+                "relationship",
+                "boundary"
+              ],
+              "feedback": "Du lar relasjonen være noe annet enn en forlengelse av saken.",
+              "next_bias": {
+                "tags": [
+                  "private_boundary",
+                  "recovery"
+                ],
+                "weight": 1
+              },
+              "triggers_on_choice": "by_radgiver_week2_private_followup"
+            },
+            {
+              "id": "B",
+              "label": "Gå gjennom alle formuleringene én gang til",
+              "reply": "Gå gjennom alle formuleringene én gang til.",
+              "effect": 0,
+              "effects": {
+                "score_delta": 0,
+                "quality_axes": {
+                  "relationship_private": -1,
+                  "energy": -4
+                }
+              },
+              "tags": [
+                "status",
+                "work_leakage"
+              ],
+              "feedback": "Arbeidsrollen gir kontroll et øyeblikk, men tar mer plass privat."
+            }
+          ],
+          "planned_only": true
+        },
+        {
+          "id": "by_radgiver_week2_helg_med_usikkerhet",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_by_radgiver_private",
+          "role_scope": "by_radgiver_plan",
+          "phase": "evening",
+          "priority": 44,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "venn",
+          "sender": "venn",
+          "person_id": "venn",
+          "place_id": "hjemme",
+          "subject": "Helgen kommer før du vet hvilket politisk utfall Lillebekk får.",
+          "summary": "Helgen kommer før du vet hvilket politisk utfall Lillebekk får.",
+          "purpose": "Koble planfaglig ansvar til privat språk, relasjon, energi og status uten å gjøre hjemmet til en ekstra jobbscene.",
+          "stakes": "Valget påvirker om arbeidsrollen får være kompetanse spilleren har, eller en maske som overtar privatlivet.",
+          "situation": [
+            "Du har gjort premissene etterprøvbare.",
+            "Utfallet ligger hos andre.",
+            "Å tåle usikkerhet er siste del av å holde mandatgrensen."
+          ],
+          "task_domain": "privat_etterklang",
+          "task_kind": "people",
+          "competency": "rollegrense",
+          "learning_focus": [
+            "privat_etterklang",
+            "rollegrense"
+          ],
+          "pressure": "arbeidsrolle_vs_privat_narhet",
+          "choice_axis": "legge_jobben_fra_seg_vs_fortsette_saksmodus",
+          "consequence_axis": "narhet_og_hvile_vs_status_og_kontroll",
+          "narrative_arc": "Lillebekk uke 2: arbeidsblikket møter Jonas og familien etter arbeidstid.",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "choices": [
+            {
+              "id": "A",
+              "label": "Ta fri og la utfallet tilhøre den politiske prosessen",
+              "reply": "Ta fri og la utfallet tilhøre den politiske prosessen.",
+              "effect": 1,
+              "effects": {
+                "score_delta": 1,
+                "quality_axes": {
+                  "relationship_private": 3,
+                  "energy": 4,
+                  "integrity": 2
+                }
+              },
+              "tags": [
+                "relationship",
+                "boundary"
+              ],
+              "feedback": "Du lar relasjonen være noe annet enn en forlengelse av saken.",
+              "next_bias": {
+                "tags": [
+                  "private_boundary",
+                  "recovery"
+                ],
+                "weight": 1
+              },
+              "triggers_on_choice": "by_radgiver_week2_private_followup"
+            },
+            {
+              "id": "B",
+              "label": "Følg telefonen tett for å se hvordan saken lander",
+              "reply": "Følg telefonen tett for å se hvordan saken lander.",
+              "effect": 0,
+              "effects": {
+                "score_delta": 0,
+                "quality_axes": {
+                  "relationship_private": -2,
+                  "energy": -3,
+                  "status_anxiety": 2
+                }
+              },
+              "tags": [
+                "status",
+                "work_leakage"
+              ],
+              "feedback": "Arbeidsrollen gir kontroll et øyeblikk, men tar mer plass privat."
+            }
+          ],
+          "planned_only": true
+        }
+      ],
+      "threads": [
+        {
+          "id": "by_radgiver_week2_private_followup",
+          "mail_type": "people",
+          "mail_family": "second_week_praksisfortellinger_by_radgiver_private",
+          "role_scope": "by_radgiver_plan",
+          "channel": "private",
+          "messageChannel": "private",
+          "mail_class": "private_message",
+          "subject": "Uke 2: senere følge av valgene",
+          "summary": "Et tidligere valg kommer tilbake og gjør faglig spor, relasjon eller kapasitet synlig i neste del av forløpet.",
+          "situation": [
+            "Et tidligere valg er registrert.",
+            "Konsekvensen kan nå leses i saken eller relasjonen."
+          ],
+          "choices": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "schema": "history_go_fagverk_filosofi_article_v1",
+  "version": "1.0.0",
+  "subject_id": "filosofi",
+  "id": "em_filosofi_normativ_etikk",
+  "title": "Normativ etikk",
+  "domain_id": "etikk_moralpsykologi",
+  "area_id": "filosofi_etikk_moralpsykologi",
+  "level": 1,
+  "status": "complete",
+  "editorial_quality": "university_depth_reviewed",
+  "canonical_definition": "Konsekvensetikk, pliktetikk, dydsetikk og andre normative modeller.",
+  "concept_ids": [
+    "konsekvensetikk",
+    "pliktetikk",
+    "dydsetikk"
+  ],
+  "method_ids": [
+    "met_filosofi_normativ_sammenligning",
+    "met_filosofi_reflektiv_likevekt",
+    "met_filosofi_casebasert_etikk"
+  ],
+  "theory_hook_ids": [
+    "fil_etikk_moralpsykologi_01"
+  ],
+  "thinker_refs": [
+    "john_stuart_mill",
+    "immanuel_kant",
+    "aristoteles"
+  ],
+  "primary_work_refs": [
+    "Utilitarianism",
+    "Groundwork of the Metaphysics of Morals",
+    "Organon"
+  ],
+  "source_ids": [
+    "sep-consequentialism",
+    "sep-deontology",
+    "sep-virtue-ethics"
+  ],
+  "claims": [
+    {
+      "id": "em_filosofi_normativ_etikk_claim_problem",
+      "type": "problem_framing",
+      "text": "Normativ etikk spør hva som gjør handlinger riktige eller gale og hvilke grunner som har normativ autoritet. Det klassiske poenget med å skille konsekvensetikk, pliktetikk og dydsetikk er derfor ikke å lage tre etiketter, men å vise tre ulike modeller for hva som i siste instans begrunner en moralsk dom. Et dilemma blir filosofisk interessant når teoriene kan rangere de samme handlingsalternativene forskjellig og vi kan identifisere hvilket grunnpremiss som skaper forskjellen.",
+      "source_ids": [
+        "sep-consequentialism",
+        "sep-deontology",
+        "sep-virtue-ethics"
+      ]
+    },
+    {
+      "id": "em_filosofi_normativ_etikk_claim_position",
+      "type": "position_reconstruction",
+      "text": "P1: Hvis handlingers moralske riktighet i siste instans bestemmes av hvordan deres konsekvenser rangeres i forhold til alternativene, vil et ellers forbudt handlingsvalg kunne være påkrevd når det gir det klart beste relevante utfallet. Dette uttrykker konsekvensetikkens begrunnelsesprioritet, selv om konkrete konsekvensialistiske teorier er uenige om verdi, regler og beslutningsprosedyrer.",
+      "source_ids": [
+        "sep-consequentialism",
+        "sep-deontology",
+        "sep-virtue-ethics"
+      ]
+    },
+    {
+      "id": "em_filosofi_normativ_etikk_claim_rival",
+      "type": "rival_position",
+      "text": "Innvending: Tredelingen kan overdrive avstanden mellom teoriene. Regelkonsekvensialister kan forsvare stabile rettigheter og regler fordi de gir bedre konsekvenser; kantianske teorier kan ta forventede følger med i vurderingen av hvilke plikter som er aktuelle; moderne dydsetikk kan formulere regler og forbud. Hvis teoriene låner hverandres språk, kan det se ut som om kontrasten mellom konsekvens, plikt og dyd kollapser.",
+      "source_ids": [
+        "sep-consequentialism",
+        "sep-deontology",
+        "sep-virtue-ethics"
+      ]
+    },
+    {
+      "id": "em_filosofi_normativ_etikk_claim_distinction",
+      "type": "concept_distinction",
+      "text": "Konsekvensetikk vurderer handlinger gjennom konsekvensenes verdi og gjør en sammenligning mellom mulige utfall normativt grunnleggende. I utilitaristiske varianter, slik John Stuart Mill forsvarer utilitarismen, står velferd eller lykke sentralt, men konsekvensialisme er bredere enn én bestemt teori om hva som er godt. Et viktig skille går mellom å si at konsekvenser alltid er relevante og å si at de alene bestemmer rett handling. Det siste er den sterke konsekvensialistiske tesen som gjør teorien til en rival til teorier med uavhengige plikter eller begrensninger.",
+      "source_ids": [
+        "sep-consequentialism",
+        "sep-deontology",
+        "sep-virtue-ethics"
+      ]
+    },
+    {
+      "id": "em_filosofi_normativ_etikk_claim_history",
+      "type": "historical_position",
+      "text": "John Stuart Mills Utilitarianism gir en klassisk formulering av utilitaristisk moral der lykke og lidelse står sentralt i vurderingen av handlinger og regler. Mill må leses i lys av hans egen argumentasjon om kvalitativt forskjellige gleder, karakter og sosial moral; han bør ikke reduseres til slagordet «mest mulig lykke» uten de mellomliggende premissene.",
+      "source_ids": [
+        "sep-consequentialism",
+        "sep-deontology",
+        "sep-virtue-ethics"
+      ]
+    },
+    {
+      "id": "em_filosofi_normativ_etikk_claim_method",
+      "type": "methodological",
+      "text": "Metodevalget for normativ etikk må produsere en analyse der de navngitte posisjonene kan sammenlignes på samme problem uten at empiriske premisser og normative eller metafysiske konklusjoner blandes.",
+      "source_ids": [
+        "sep-consequentialism",
+        "sep-deontology",
+        "sep-virtue-ethics"
+      ]
+    },
+    {
+      "id": "em_filosofi_normativ_etikk_claim_limit",
+      "type": "limitation",
+      "text": "Artikkelen etablerer ikke at én av de tre teoriene er endelig sann. Den etablerer hvilke begrunnelsesstrukturer som må sammenlignes og hvilke typer case som kan gjøre rivaliseringen synlig. Andre normative teorier – kontraktualisme, omsorgsetikk og rettighetsbaserte teorier – kan utfordre eller krysse tredelingen og må behandles på egne premisser når de er relevante.",
+      "source_ids": [
+        "sep-consequentialism",
+        "sep-deontology",
+        "sep-virtue-ethics"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "problem",
+      "title": "Problemet",
+      "paragraphs": [
+        "Normativ etikk spør hva som gjør handlinger riktige eller gale og hvilke grunner som har normativ autoritet. Det klassiske poenget med å skille konsekvensetikk, pliktetikk og dydsetikk er derfor ikke å lage tre etiketter, men å vise tre ulike modeller for hva som i siste instans begrunner en moralsk dom. Et dilemma blir filosofisk interessant når teoriene kan rangere de samme handlingsalternativene forskjellig og vi kan identifisere hvilket grunnpremiss som skaper forskjellen.",
+        "En redelig sammenligning må samtidig unngå karikaturer. Konsekvensetikere kan ta regler, relasjoner og langsiktige institusjoner på alvor; deontologer behøver ikke være blinde for konsekvenser; dydsetikere kan gi konkret handlingsveiledning. Uenigheten gjelder derfor ikke hvilke ord teoriene får lov til å bruke, men hva som har forklarende og begrunnende prioritet når hensyn kolliderer."
+      ]
+    },
+    {
+      "id": "begreper",
+      "title": "Begrepene som bærer argumentet",
+      "paragraphs": [
+        "Konsekvensetikk vurderer handlinger gjennom konsekvensenes verdi og gjør en sammenligning mellom mulige utfall normativt grunnleggende. I utilitaristiske varianter, slik John Stuart Mill forsvarer utilitarismen, står velferd eller lykke sentralt, men konsekvensialisme er bredere enn én bestemt teori om hva som er godt. Et viktig skille går mellom å si at konsekvenser alltid er relevante og å si at de alene bestemmer rett handling. Det siste er den sterke konsekvensialistiske tesen som gjør teorien til en rival til teorier med uavhengige plikter eller begrensninger. I argumentrekonstruksjonen får begrepet en konkret rolle: Hvis handlingers moralske riktighet i siste instans bestemmes av hvordan deres konsekvenser rangeres i forhold til alternativene, vil et ellers forbudt handlingsvalg kunne være påkrevd når det gir det klart beste relevante utfallet.",
+        "Pliktetikk betegner teorier der enkelte plikter, krav eller rettigheter har normativ kraft som ikke bare avledes fra total nytte. Hos Immanuel Kant forbindes dette med autonomi og respekt for rasjonelle personer, blant annet kravet om ikke å behandle personer bare som midler. Kantiansk pliktetikk er dermed mer enn en liste over regler: den forsøker å forklare hvorfor bestemte handlemåter er uforenlige med en moralsk relasjon mellom frie og likeverdige personer. Konsekvenser kan ha betydning uten at de får avgjøre om en grunnleggende moralsk begrensning kan settes til side. I argumentrekonstruksjonen får begrepet en konkret rolle: Kantiansk pliktetikk avviser at aggregert gode alene kan ha denne prioriteten.",
+        "Dydsetikk tar karakter, dyd, praktisk klokskap og menneskelig blomstring som sentrale utgangspunkter. I Aristoteles’ Nikomakiske etikk kan ikke god handling reduseres til mekanisk regelbruk, fordi phronesis – praktisk klokskap – må oppfatte hva situasjonen krever og hvordan relevante hensyn får riktig vekt. Dette betyr ikke at dydsetikk mangler normer eller konsekvenser; poenget er at vurderingen av en handling inngår i en bredere teori om den gode aktøren og det gode menneskelivet. Dydsetikk må derfor ikke forveksles med påstanden om at alt er situasjonsbestemt eller subjektivt. I argumentrekonstruksjonen får begrepet en konkret rolle: Aristotelisk dydsetikk flytter dessuten vurderingen fra én maksimeringsregel eller én universell plikt til spørsmålet om hva en dydig og praktisk klok aktør har grunn til å gjøre som del av et blomstrende liv."
+      ]
+    },
+    {
+      "id": "argument",
+      "title": "Argumentrekonstruksjon",
+      "paragraphs": [
+        "P1: Hvis handlingers moralske riktighet i siste instans bestemmes av hvordan deres konsekvenser rangeres i forhold til alternativene, vil et ellers forbudt handlingsvalg kunne være påkrevd når det gir det klart beste relevante utfallet. Dette uttrykker konsekvensetikkens begrunnelsesprioritet, selv om konkrete konsekvensialistiske teorier er uenige om verdi, regler og beslutningsprosedyrer.",
+        "P2: Kantiansk pliktetikk avviser at aggregert gode alene kan ha denne prioriteten. Dersom en handling krenker et krav som følger av respekt for personer – for eksempel ved å gjøre en person til et rent middel – kan bedre totalutfall ikke uten videre oppheve krenkelsen. Dermed kan Kant rangere et valg annerledes enn Mill selv når partene er enige om de empiriske konsekvensene.",
+        "P3: Aristotelisk dydsetikk flytter dessuten vurderingen fra én maksimeringsregel eller én universell plikt til spørsmålet om hva en dydig og praktisk klok aktør har grunn til å gjøre som del av et blomstrende liv. Praktisk klokskap må gripe de moralsk relevante trekkene ved situasjonen, og teorien kan derfor kritisere både konsekvensetikk og pliktetikk dersom de beskriver moralsk dømmekraft for snevert.",
+        "K: Konsekvensetikk, pliktetikk og dydsetikk er derfor substansielle rivaler når de gir ulike begrunnelser og handlingsrangeringer i samme case. En filosofisk sammenligning må vise hvor Mill, Kant og Aristoteles faktisk divergerer: om normativ prioritet ligger i utfallet, i plikten/respekten eller i dydig praktisk klokskap – ikke bare konstatere at tre begreper kan defineres forskjellig."
+      ]
+    },
+    {
+      "id": "uenighet",
+      "title": "Innvending og svar",
+      "paragraphs": [
+        "Innvending: Tredelingen kan overdrive avstanden mellom teoriene. Regelkonsekvensialister kan forsvare stabile rettigheter og regler fordi de gir bedre konsekvenser; kantianske teorier kan ta forventede følger med i vurderingen av hvilke plikter som er aktuelle; moderne dydsetikk kan formulere regler og forbud. Hvis teoriene låner hverandres språk, kan det se ut som om kontrasten mellom konsekvens, plikt og dyd kollapser.",
+        "Svar: At teorier kan anerkjenne de samme hensynene viser ikke at de begrunner dem på samme måte. Det avgjørende spørsmålet er hva som forklarer hvorfor et hensyn har normativ kraft når hensynene trekker i hver sin retning. En regel kan i én teori begrunnes instrumentelt av gode konsekvenser, i en annen av respekt for personers status og i en tredje som uttrykk for en dydig praksis. Det er denne begrunnelsesarkitekturen som må rekonstrueres.",
+        "Et godt stresstest-case er et løfte eller en sannhetsplikt som bare kan brytes for å forhindre betydelig skade. Analysen må først holde de empiriske forutsetningene faste og deretter spørre hvorfor hver teori tillater, krever eller forbyr bruddet. Da blir uenigheten mellom Mill, Kant og Aristoteles synlig som en faglig konflikt om normative grunner, ikke som en forskjell i ordvalg."
+      ]
+    },
+    {
+      "id": "teorihistorie",
+      "title": "Teori og verk",
+      "paragraphs": [
+        "John Stuart Mills Utilitarianism gir en klassisk formulering av utilitaristisk moral der lykke og lidelse står sentralt i vurderingen av handlinger og regler. Mill må leses i lys av hans egen argumentasjon om kvalitativt forskjellige gleder, karakter og sosial moral; han bør ikke reduseres til slagordet «mest mulig lykke» uten de mellomliggende premissene.",
+        "Immanuel Kants Groundwork of the Metaphysics of Morals utvikler en deontologisk begrunnelse gjennom det kategoriske imperativ, autonomi og menneskeheten som mål i seg selv. Det relevante rivalpunktet mot konsekvensetikken er at moralsk gyldighet ikke avledes fra forventet nytte. Kants posisjon må derfor rekonstrueres gjennom hans begrunnelse for plikt, ikke gjennom en løs påstand om at «regler alltid gjelder».",
+        "Aristoteles’ Nicomachean Ethics organiserer etikken rundt eudaimonia, dydene og phronesis. Dyd oppstår gjennom dannelse og praksis, mens praktisk klokskap forbinder generelle dyder med konkrete situasjoner. Denne strukturen gjør Aristoteles til en reell tredje posisjon: dydsetikk spør ikke bare hvilket utfall eller hvilken regel som vinner, men hva god moralsk dømmekraft består i og hvordan den inngår i et helt liv.",
+        "Primærverkankrene er Utilitarianism (John Stuart Mill); Groundwork of the Metaphysics of Morals (Immanuel Kant); Organon (Aristoteles). De brukes til å kontrollere de navngitte debattaktørenes egne argumenter i artikkelens stridspunkt, ikke som en generell kanonliste. Konsekvensetikk, kantiansk pliktetikk og aristotelisk dydsetikk er reelle normative rivaler fordi de plasserer den grunnleggende begrunnelsen for rett handling i henholdsvis konsekvensenes verdi, plikt og respekt for personer, og dydig praktisk klokskap orientert mot menneskelig blomstring."
+      ]
+    },
+    {
+      "id": "metode",
+      "title": "Metode og kontrollspørsmål",
+      "paragraphs": [
+        "Normativ sammenligning, Reflektiv likevekt, Casebasert etikk brukes på den eksplisitte argumentrekken, ikke som en løs metodeetikett. Analysen starter med premisset «Hvis handlingers moralske riktighet i siste instans bestemmes av hvordan deres konsekvenser rangeres i forhold til alternativene, vil et ellers forbudt handlingsvalg kunne være påkrevd når det gir det klart beste relevante utfallet.» og følger overgangen fram mot konklusjonen «Konsekvensetikk, pliktetikk og dydsetikk er derfor substansielle rivaler når de gir ulike begrunnelser og handlingsrangeringer i samme case.». Deretter prøves rekonstruksjonen mot rivalens hovedinnvending: «Tredelingen kan overdrive avstanden mellom teoriene.». Målet er å lokalisere uenigheten til et bestemt premiss, begrep eller evidenskrav som leseren selv kan kontrollere.",
+        "Metodebegrensningen følger av samme struktur: et formelt, historisk, normativt eller empirisk premiss kan ikke uten videre gjøre arbeidet til de andre. Når analysen skifter nivå, skal det markeres eksplisitt, og eventuelle casefakta må dokumenteres uavhengig av den filosofiske slutningen."
+      ]
+    },
+    {
+      "id": "case",
+      "title": "Anvendelse på et dokumentert case",
+      "paragraphs": [
+        "Tenk et dokumentert profesjonsetisk tilfelle der en behandler har lovet konfidensialitet, men troverdig informasjon peker mot alvorlig skade på en tredjepart. Konsekvensetikken må vurdere sannsynlige utfall av taushet og brudd; pliktetikken må undersøke løftet, rettigheter og respekt for berørte personer; dydsetikken må spørre hvordan praktisk klokskap, omsorg, rettferdighet og integritet skal uttrykkes i situasjonen. Caset er nyttig fordi de empiriske fakta kan holdes stabile mens de normative begrunnelsene varierer.",
+        "Et case er relevant bare når det dokumenterer premisser som faktisk inngår i analysen av konsekvensetikk, pliktetikk, dydsetikk og andre normative modeller. Historiske eller empiriske opplysninger må ha egne casekilder, mens den filosofiske vurderingen fortsatt må vise hvilken rival som støttes eller utfordres og hvorfor."
+      ]
+    },
+    {
+      "id": "kilder",
+      "title": "Kildebruk og evidensgrenser",
+      "paragraphs": [
+        "De emnespesifikke sekundærkildene i denne artikkelen er Consequentialism; Deontological Ethics; Virtue Ethics. Consequentialism: emnespesifikk sekundærkilde til konsekvensialistiske teorier, deres begrunnelsesstruktur, varianter og sentrale innvendinger. Deontological Ethics: faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case. Virtue Ethics: emnespesifikk sekundærkilde til aristotelisk og moderne dydsetikk, praktisk klokskap, eudaimonia og handlingsveiledning.",
+        "Primærverkankrene Utilitarianism; Groundwork of the Metaphysics of Morals; Organon brukes ved konkrete posisjons- og argumentrekonstruksjoner. De emnespesifikke sekundærkildene brukes til problemhistorie, rivaler, fortolkningskontroll og bibliografi; empiriske casepåstander krever egne casekilder."
+      ]
+    },
+    {
+      "id": "avgrensning",
+      "title": "Hva analysen ikke etablerer",
+      "paragraphs": [
+        "Artikkelen etablerer ikke at én av de tre teoriene er endelig sann. Den etablerer hvilke begrunnelsesstrukturer som må sammenlignes og hvilke typer case som kan gjøre rivaliseringen synlig. Andre normative teorier – kontraktualisme, omsorgsetikk og rettighetsbaserte teorier – kan utfordre eller krysse tredelingen og må behandles på egne premisser når de er relevante.",
+        "Det åpne kontrollpunktet er rivalens innvending: «Tredelingen kan overdrive avstanden mellom teoriene.» Artikkelens svar er «At teorier kan anerkjenne de samme hensynene viser ikke at de begrunner dem på samme måte.» Dette er ikke en påstand om at debatten dermed er lukket. Kvalitetskravet er at leseren kan se hvilke premisser som fortsatt er omstridte, hvilke verk og sekundærkilder som bærer rekonstruksjonen, og hva som måtte undersøkes videre for å styrke eller forkaste konklusjonen."
+      ]
+    }
+  ],
+  "quality": {
+    "word_count": 1570,
+    "section_count": 9,
+    "paragraph_count": 23,
+    "argument_reconstruction": true,
+    "rival_position": true,
+    "method_limit": true,
+    "source_boundaries": true,
+    "concepts_written_out": true,
+    "place_boundary": true,
+    "editorial_polish": true,
+    "tradition_specific_relevance": true,
+    "review_state": "university_depth_reviewed",
+    "reviewed_against_university_gate": true,
+    "substantive_argument_reconstruction": true,
+    "topic_specific_sources": true,
+    "source_integrity": {
+      "state": "reviewed",
+      "standard": "debate_aligned_primary_works_v2",
+      "reviewed_at": "2026-08-17",
+      "debate_actors": [
+        "John Stuart Mill",
+        "Immanuel Kant",
+        "Aristoteles"
+      ],
+      "canonical_thinker_refs": [
+        "john_stuart_mill",
+        "immanuel_kant",
+        "aristoteles"
+      ],
+      "primary_work_anchors": [
+        {
+          "actor": "John Stuart Mill",
+          "canonical_ref": "john_stuart_mill",
+          "work": "Utilitarianism"
+        },
+        {
+          "actor": "Immanuel Kant",
+          "canonical_ref": "immanuel_kant",
+          "work": "Groundwork of the Metaphysics of Morals"
+        },
+        {
+          "actor": "Aristoteles",
+          "canonical_ref": "aristoteles",
+          "work": "Organon"
+        }
+      ]
+    }
+  },
+  "university_quality": {
+    "schema": "history_go_filosofi_university_quality_v1",
+    "review_version": "2.0.0",
+    "reviewed_at": "2026-08-14",
+    "debate": "Konsekvensetikk, kantiansk pliktetikk og aristotelisk dydsetikk er reelle normative rivaler fordi de plasserer den grunnleggende begrunnelsen for rett handling i henholdsvis konsekvensenes verdi, plikt og respekt for personer, og dydig praktisk klokskap orientert mot menneskelig blomstring.",
+    "debate_thinkers": [
+      "John Stuart Mill",
+      "Immanuel Kant",
+      "Aristoteles"
+    ],
+    "required_anchors": [
+      "konsekvensetikk",
+      "pliktetikk",
+      "dydsetikk",
+      "Mill",
+      "Kant",
+      "Aristoteles"
+    ],
+    "substantive_argument": true,
+    "real_rival": true,
+    "primary_work_grounding": true,
+    "topic_specific_secondary_sources": true,
+    "generic_template_rejected": true,
+    "review_status": "reviewed",
+    "final_qa_repaired_at": "2026-08-16",
+    "primary_work_count": 3
+  }
+}

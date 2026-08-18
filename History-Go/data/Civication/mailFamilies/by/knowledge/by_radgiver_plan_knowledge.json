@@ -1,0 +1,763 @@
+{
+  "schema": "civication_mail_family_catalog_v1",
+  "version": 1,
+  "category": "by",
+  "role_scope": "by_radgiver_plan",
+  "mail_type": "knowledge",
+  "families": [
+    {
+      "id": "planfag_kunnskap",
+      "purpose": "Kunnskapsmailer som lærer sentrale planbegreper gjennom Lillebekk-saken.",
+      "learning_focus": [
+        "Linjen på kartet",
+        "reguleringsplan og arealformål",
+        "hensynssone og grønnstruktur",
+        "rekkefølgekrav og planbestemmelser",
+        "ROS-analyse og overvann",
+        "medvirkning og skolevei",
+        "støy og støyskjerm",
+        "sol/skygge og byrom",
+        "parkering og kollektivdekning"
+      ],
+      "mails": [
+        {
+          "id": "by_areal_knowledge_001",
+          "mail_type": "knowledge",
+          "mail_family": "planfag_kunnskap",
+          "role_scope": "by_radgiver_plan",
+          "phase": "morning",
+          "priority": 68,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable_warning",
+          "from": "elin_plansjef",
+          "sender": "elin_plansjef",
+          "person_id": "elin_plansjef",
+          "place_id": "radhuset_planavdeling",
+          "subject": "Kartet lyver ikke, men det tier: reguleringsplan og arealformål i Lillebekk",
+          "summary": "En kort avklaring om reguleringsplan og arealformål viser at linjen på kartet flytter ansvar mellom bolig, grøntdrag, skolevei og politisk risiko.",
+          "purpose": "Trene arealplanleggeren i å behandle reguleringsplan og arealformål som del av hovedplottet Linjen på kartet.",
+          "stakes": "Hvis avklaringen glattes over, sparer saken tid nå, men mister sporbarhet når naboer, utbygger eller utvalg leser den senere.",
+          "situation": [
+            "Lillebekk-planen ser ryddig ut i kartlaget, men reguleringsplan og arealformål peker på en skjult målkonflikt.",
+            "Aktørene ber om en formulering som kan brukes videre uten ny runde.",
+            "Du må velge om faglig risiko skal gjøres synlig nå eller pakkes inn som praktisk framdrift."
+          ],
+          "task_domain": "reguleringsplan og arealformål",
+          "task_kind": "knowledge",
+          "competency": "begrepsforståelse",
+          "pressure": "tempo_vs_faglig_sporbarhet",
+          "choice_axis": "synlig_risiko_vs_rask_framdrift",
+          "consequence_axis": "sporbarhet_vs_klagerisiko",
+          "narrative_arc": "Kartet lyver ikke, men det tier",
+          "learning_focus": [
+            "reguleringsplan og arealformål",
+            "Linjen på kartet",
+            "Kartet lyver ikke, men det tier"
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Forklar skillet arealformål/bestemmelse presist med eksempel",
+              "reply": "Jeg forklarer skillet mellom arealformål og bestemmelse presist, med et eksempel fra Lillebekk.",
+              "effect": 1,
+              "tags": [
+                "presis_forklaring",
+                "faglig_grunnlag",
+                "reguleringsplan og arealformål"
+              ],
+              "feedback": "Forklaringen tar tid, men gir et grunnlag som tåler å sjekkes mot loven."
+            },
+            {
+              "id": "B",
+              "label": "Gi et kort, forenklet bilde som treffer kjernen",
+              "reply": "Jeg gir et kort, forenklet bilde som treffer kjernen.",
+              "effect": 1,
+              "tags": [
+                "tilgjengelig",
+                "kjernebudskap",
+                "reguleringsplan og arealformål"
+              ],
+              "feedback": "Forklaringen er rask å forstå og fortsatt riktig, men dekker ikke alt formålet styrer."
+            }
+          ],
+          "next_bias": {
+            "tags": [
+              "reguleringsplan og arealformål",
+              "kartet_lyver_ikke,_men_det_tier"
+            ],
+            "weight": 1
+          },
+          "triggers_on_choice": {
+            "A": [
+              "faglig_spor_videre"
+            ],
+            "B": [
+              "frist_for_utvalg"
+            ]
+          },
+          "branch_flags": {
+            "A": [
+              "knowledge_reguleringsplan og arealformål_sporbarhet"
+            ],
+            "B": [
+              "knowledge_reguleringsplan og arealformål_risiko_skjult"
+            ]
+          },
+          "tags": [
+            "knowledge",
+            "reguleringsplan og arealformål",
+            "by_radgiver_plan",
+            "lillebekk"
+          ]
+        },
+        {
+          "id": "by_areal_knowledge_002",
+          "mail_type": "knowledge",
+          "mail_family": "planfag_kunnskap",
+          "role_scope": "by_radgiver_plan",
+          "phase": "forenoon",
+          "priority": 67,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "ivar_utbygger",
+          "sender": "ivar_utbygger",
+          "person_id": "ivar_utbygger",
+          "place_id": "oslo_planomrade_indre_by",
+          "subject": "Alle gode formål får ikke plass: hensynssone og grønnstruktur i Lillebekk",
+          "summary": "En kort avklaring om hensynssone og grønnstruktur viser at linjen på kartet flytter ansvar mellom bolig, grøntdrag, skolevei og politisk risiko.",
+          "purpose": "Trene arealplanleggeren i å behandle hensynssone og grønnstruktur som del av hovedplottet Linjen på kartet.",
+          "stakes": "Hvis avklaringen glattes over, sparer saken tid nå, men mister sporbarhet når naboer, utbygger eller utvalg leser den senere.",
+          "situation": [
+            "Lillebekk-planen ser ryddig ut i kartlaget, men hensynssone og grønnstruktur peker på en skjult målkonflikt.",
+            "Aktørene ber om en formulering som kan brukes videre uten ny runde.",
+            "Du må velge om faglig risiko skal gjøres synlig nå eller pakkes inn som praktisk framdrift."
+          ],
+          "task_domain": "hensynssone og grønnstruktur",
+          "task_kind": "knowledge",
+          "competency": "begrepsforståelse",
+          "pressure": "tempo_vs_faglig_sporbarhet",
+          "choice_axis": "synlig_risiko_vs_rask_framdrift",
+          "consequence_axis": "sporbarhet_vs_klagerisiko",
+          "narrative_arc": "Alle gode formål får ikke plass",
+          "learning_focus": [
+            "hensynssone og grønnstruktur",
+            "Linjen på kartet",
+            "Alle gode formål får ikke plass"
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Forklar presist hva hensynssonen begrenser",
+              "reply": "Jeg forklarer presist hva hensynssonen begrenser, med henvisning til bestemmelsen.",
+              "effect": 1,
+              "tags": [
+                "juridisk_klar",
+                "forventningsstyring",
+                "hensynssone og grønnstruktur"
+              ],
+              "feedback": "Svaret gleder ikke utbygger, men setter tydelige rammer fra start."
+            },
+            {
+              "id": "B",
+              "label": "Vis hva som faktisk er mulig innenfor sonen",
+              "reply": "Jeg viser hva som faktisk er mulig å gjøre innenfor hensynssonen.",
+              "effect": 1,
+              "tags": [
+                "loesningsorientert",
+                "dialog",
+                "hensynssone og grønnstruktur"
+              ],
+              "feedback": "Du holder utbygger løsningsorientert, men må passe på at mulighetsrommet ikke leses som et ja."
+            }
+          ],
+          "next_bias": {
+            "tags": [
+              "hensynssone og grønnstruktur",
+              "alle_gode_formål_får_ikke_plass"
+            ],
+            "weight": 1
+          },
+          "triggers_on_choice": {
+            "A": [
+              "faglig_spor_videre"
+            ],
+            "B": [
+              "frist_for_utvalg"
+            ]
+          },
+          "branch_flags": {
+            "A": [
+              "knowledge_hensynssone og grønnstruktur_sporbarhet"
+            ],
+            "B": [
+              "knowledge_hensynssone og grønnstruktur_risiko_skjult"
+            ]
+          },
+          "tags": [
+            "knowledge",
+            "hensynssone og grønnstruktur",
+            "by_radgiver_plan",
+            "lillebekk"
+          ]
+        },
+        {
+          "id": "by_areal_knowledge_003",
+          "mail_type": "knowledge",
+          "mail_family": "planfag_kunnskap",
+          "role_scope": "by_radgiver_plan",
+          "phase": "workday",
+          "priority": 66,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "hanne_beboer",
+          "sender": "hanne_beboer",
+          "person_id": "hanne_beboer",
+          "place_id": "grontdrag_lillebekk",
+          "subject": "Den irriterende nabomailen har ett sant punkt: rekkefølgekrav og planbestemmelser i Lillebekk",
+          "summary": "En kort avklaring om rekkefølgekrav og planbestemmelser viser at linjen på kartet flytter ansvar mellom bolig, grøntdrag, skolevei og politisk risiko.",
+          "purpose": "Trene arealplanleggeren i å behandle rekkefølgekrav og planbestemmelser som del av hovedplottet Linjen på kartet.",
+          "stakes": "Hvis avklaringen glattes over, sparer saken tid nå, men mister sporbarhet når naboer, utbygger eller utvalg leser den senere.",
+          "situation": [
+            "Lillebekk-planen ser ryddig ut i kartlaget, men rekkefølgekrav og planbestemmelser peker på en skjult målkonflikt.",
+            "Aktørene ber om en formulering som kan brukes videre uten ny runde.",
+            "Du må velge om faglig risiko skal gjøres synlig nå eller pakkes inn som praktisk framdrift."
+          ],
+          "task_domain": "rekkefølgekrav og planbestemmelser",
+          "task_kind": "knowledge",
+          "competency": "begrepsforståelse",
+          "pressure": "tempo_vs_faglig_sporbarhet",
+          "choice_axis": "synlig_risiko_vs_rask_framdrift",
+          "consequence_axis": "sporbarhet_vs_klagerisiko",
+          "narrative_arc": "Den irriterende nabomailen har ett sant punkt",
+          "learning_focus": [
+            "rekkefølgekrav og planbestemmelser",
+            "Linjen på kartet",
+            "Den irriterende nabomailen har ett sant punkt"
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Forklar at rekkefølgekrav er bindende vilkår",
+              "reply": "Jeg forklarer at rekkefølgekrav er bindende vilkår, ikke anbefalinger.",
+              "effect": 1,
+              "tags": [
+                "presis_juss",
+                "myndiggjoering",
+                "rekkefølgekrav og planbestemmelser"
+              ],
+              "feedback": "Beboeren forstår at kravet faktisk kan stoppe innflytting, men forklaringen er teknisk."
+            },
+            {
+              "id": "B",
+              "label": "Forklar hva kravet praktisk betyr for hennes tidslinje",
+              "reply": "Jeg forklarer hva rekkefølgekravet praktisk betyr for hennes tidslinje.",
+              "effect": 1,
+              "tags": [
+                "konkret",
+                "hverdagsnaer",
+                "rekkefølgekrav og planbestemmelser"
+              ],
+              "feedback": "Beboeren ser hva det betyr for henne, men de juridiske detaljene må hun få ved behov."
+            }
+          ],
+          "next_bias": {
+            "tags": [
+              "rekkefølgekrav og planbestemmelser",
+              "den_irriterende_nabomailen_har_ett_sant_punkt"
+            ],
+            "weight": 1
+          },
+          "triggers_on_choice": {
+            "A": [
+              "faglig_spor_videre"
+            ],
+            "B": [
+              "frist_for_utvalg"
+            ]
+          },
+          "branch_flags": {
+            "A": [
+              "knowledge_rekkefølgekrav og planbestemmelser_sporbarhet"
+            ],
+            "B": [
+              "knowledge_rekkefølgekrav og planbestemmelser_risiko_skjult"
+            ]
+          },
+          "tags": [
+            "knowledge",
+            "rekkefølgekrav og planbestemmelser",
+            "by_radgiver_plan",
+            "lillebekk"
+          ]
+        },
+        {
+          "id": "by_areal_knowledge_004",
+          "mail_type": "knowledge",
+          "mail_family": "planfag_kunnskap",
+          "role_scope": "by_radgiver_plan",
+          "phase": "lunch",
+          "priority": 65,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable_warning",
+          "from": "signe_byokolog",
+          "sender": "signe_byokolog",
+          "person_id": "signe_byokolog",
+          "place_id": "skolevei_lillebekk",
+          "subject": "Utbyggeren spør ikke om lov, han spør om signal: ROS-analyse og overvann i Lillebekk",
+          "summary": "En kort avklaring om ROS-analyse og overvann viser at linjen på kartet flytter ansvar mellom bolig, grøntdrag, skolevei og politisk risiko.",
+          "purpose": "Trene arealplanleggeren i å behandle ROS-analyse og overvann som del av hovedplottet Linjen på kartet.",
+          "stakes": "Hvis avklaringen glattes over, sparer saken tid nå, men mister sporbarhet når naboer, utbygger eller utvalg leser den senere.",
+          "situation": [
+            "Lillebekk-planen ser ryddig ut i kartlaget, men ROS-analyse og overvann peker på en skjult målkonflikt.",
+            "Aktørene ber om en formulering som kan brukes videre uten ny runde.",
+            "Du må velge om faglig risiko skal gjøres synlig nå eller pakkes inn som praktisk framdrift."
+          ],
+          "task_domain": "ROS-analyse og overvann",
+          "task_kind": "knowledge",
+          "competency": "begrepsforståelse",
+          "pressure": "tempo_vs_faglig_sporbarhet",
+          "choice_axis": "synlig_risiko_vs_rask_framdrift",
+          "consequence_axis": "sporbarhet_vs_klagerisiko",
+          "narrative_arc": "Utbyggeren spør ikke om lov, han spør om signal",
+          "learning_focus": [
+            "ROS-analyse og overvann",
+            "Linjen på kartet",
+            "Utbyggeren spør ikke om lov, han spør om signal"
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Vis hvordan ROS knytter overvannsrisiko til konkrete tiltak",
+              "reply": "Jeg viser hvordan ROS-analysen knytter overvannsrisikoen til konkrete tiltak.",
+              "effect": 1,
+              "tags": [
+                "faglig_komplett",
+                "risikostyring",
+                "ROS-analyse og overvann"
+              ],
+              "feedback": "Forklaringen blir teknisk, men viser at risikoen faktisk er håndtert."
+            },
+            {
+              "id": "B",
+              "label": "Oppsummer at risikoen er håndtert med hovedtiltaket",
+              "reply": "Jeg oppsummerer at risikoen er håndtert med hovedtiltaket.",
+              "effect": 1,
+              "tags": [
+                "tilgjengelig",
+                "beslutningsnaer",
+                "ROS-analyse og overvann"
+              ],
+              "feedback": "Oppsummeringen er lett å forstå, men hovedtiltaket må stå seg når noen spør om detaljene."
+            }
+          ],
+          "next_bias": {
+            "tags": [
+              "ROS-analyse og overvann",
+              "utbyggeren_spør_ikke_om_lov,_han_spør_om_signal"
+            ],
+            "weight": 1
+          },
+          "triggers_on_choice": {
+            "A": [
+              "faglig_spor_videre"
+            ],
+            "B": [
+              "frist_for_utvalg"
+            ]
+          },
+          "branch_flags": {
+            "A": [
+              "knowledge_ROS-analyse og overvann_sporbarhet"
+            ],
+            "B": [
+              "knowledge_ROS-analyse og overvann_risiko_skjult"
+            ]
+          },
+          "tags": [
+            "knowledge",
+            "ROS-analyse og overvann",
+            "by_radgiver_plan",
+            "lillebekk"
+          ]
+        },
+        {
+          "id": "by_areal_knowledge_005",
+          "mail_type": "knowledge",
+          "mail_family": "planfag_kunnskap",
+          "role_scope": "by_radgiver_plan",
+          "phase": "afternoon",
+          "priority": 64,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "tariq_trafikk_skolevei",
+          "sender": "tariq_trafikk_skolevei",
+          "person_id": "tariq_trafikk_skolevei",
+          "place_id": "kollektivknutepunkt_bryn",
+          "subject": "Støyskjermen løser én ting og ødelegger en annen: medvirkning og skolevei i Lillebekk",
+          "summary": "En kort avklaring om medvirkning og skolevei viser at linjen på kartet flytter ansvar mellom bolig, grøntdrag, skolevei og politisk risiko.",
+          "purpose": "Trene arealplanleggeren i å behandle medvirkning og skolevei som del av hovedplottet Linjen på kartet.",
+          "stakes": "Hvis avklaringen glattes over, sparer saken tid nå, men mister sporbarhet når naboer, utbygger eller utvalg leser den senere.",
+          "situation": [
+            "Lillebekk-planen ser ryddig ut i kartlaget, men medvirkning og skolevei peker på en skjult målkonflikt.",
+            "Aktørene ber om en formulering som kan brukes videre uten ny runde.",
+            "Du må velge om faglig risiko skal gjøres synlig nå eller pakkes inn som praktisk framdrift."
+          ],
+          "task_domain": "medvirkning og skolevei",
+          "task_kind": "knowledge",
+          "competency": "begrepsforståelse",
+          "pressure": "tempo_vs_faglig_sporbarhet",
+          "choice_axis": "synlig_risiko_vs_rask_framdrift",
+          "consequence_axis": "sporbarhet_vs_klagerisiko",
+          "narrative_arc": "Støyskjermen løser én ting og ødelegger en annen",
+          "learning_focus": [
+            "medvirkning og skolevei",
+            "Linjen på kartet",
+            "Støyskjermen løser én ting og ødelegger en annen"
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Forklar punkt for punkt hvordan innspillene endret planen",
+              "reply": "Jeg forklarer punkt for punkt hvordan medvirkningsinnspillene endret planen.",
+              "effect": 1,
+              "tags": [
+                "sporbar_medvirkning",
+                "grundig",
+                "medvirkning og skolevei"
+              ],
+              "feedback": "Svaret tar tid, men viser at medvirkningen hadde en reell effekt."
+            },
+            {
+              "id": "B",
+              "label": "Oppsummer hovedendringen innspillene førte til",
+              "reply": "Jeg oppsummerer hovedendringen innspillene førte til.",
+              "effect": 1,
+              "tags": [
+                "konsis",
+                "tydelig_resultat",
+                "medvirkning og skolevei"
+              ],
+              "feedback": "Oppsummeringen er rask, men den enkelte må spørre om de vil se hele sporet."
+            }
+          ],
+          "next_bias": {
+            "tags": [
+              "medvirkning og skolevei",
+              "støyskjermen_løser_én_ting_og_ødelegger_en_annen"
+            ],
+            "weight": 1
+          },
+          "triggers_on_choice": {
+            "A": [
+              "faglig_spor_videre"
+            ],
+            "B": [
+              "frist_for_utvalg"
+            ]
+          },
+          "branch_flags": {
+            "A": [
+              "knowledge_medvirkning og skolevei_sporbarhet"
+            ],
+            "B": [
+              "knowledge_medvirkning og skolevei_risiko_skjult"
+            ]
+          },
+          "tags": [
+            "knowledge",
+            "medvirkning og skolevei",
+            "by_radgiver_plan",
+            "lillebekk"
+          ]
+        },
+        {
+          "id": "by_areal_knowledge_006",
+          "mail_type": "knowledge",
+          "mail_family": "planfag_kunnskap",
+          "role_scope": "by_radgiver_plan",
+          "phase": "dinner",
+          "priority": 63,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "maja_utvalgssekretaer",
+          "sender": "maja_utvalgssekretaer",
+          "person_id": "maja_utvalgssekretaer",
+          "place_id": "politisk_utvalg_moterom",
+          "subject": "Politisk lesbarhet uten å skjule faglig risiko: støy og støyskjerm i Lillebekk",
+          "summary": "En kort avklaring om støy og støyskjerm viser at linjen på kartet flytter ansvar mellom bolig, grøntdrag, skolevei og politisk risiko.",
+          "purpose": "Trene arealplanleggeren i å behandle støy og støyskjerm som del av hovedplottet Linjen på kartet.",
+          "stakes": "Hvis avklaringen glattes over, sparer saken tid nå, men mister sporbarhet når naboer, utbygger eller utvalg leser den senere.",
+          "situation": [
+            "Lillebekk-planen ser ryddig ut i kartlaget, men støy og støyskjerm peker på en skjult målkonflikt.",
+            "Aktørene ber om en formulering som kan brukes videre uten ny runde.",
+            "Du må velge om faglig risiko skal gjøres synlig nå eller pakkes inn som praktisk framdrift."
+          ],
+          "task_domain": "støy og støyskjerm",
+          "task_kind": "knowledge",
+          "competency": "begrepsforståelse",
+          "pressure": "tempo_vs_faglig_sporbarhet",
+          "choice_axis": "synlig_risiko_vs_rask_framdrift",
+          "consequence_axis": "sporbarhet_vs_klagerisiko",
+          "narrative_arc": "Politisk lesbarhet uten å skjule faglig risiko",
+          "learning_focus": [
+            "støy og støyskjerm",
+            "Linjen på kartet",
+            "Politisk lesbarhet uten å skjule faglig risiko"
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Forklar hva skjermen dekker og hva den ikke løser",
+              "reply": "Jeg forklarer hva støyskjermen dekker, og hva den ikke løser.",
+              "effect": 1,
+              "tags": [
+                "nyansert",
+                "fullt_bilde",
+                "støy og støyskjerm"
+              ],
+              "feedback": "Svaret blir nyansert, men gir utvalget et riktig bilde før vedtak."
+            },
+            {
+              "id": "B",
+              "label": "Forklar nettoeffekten utvalget skal vedta",
+              "reply": "Jeg forklarer nettoeffekten av støyskjermen som utvalget skal vedta.",
+              "effect": 1,
+              "tags": [
+                "beslutningsnaer",
+                "tydelig",
+                "støy og støyskjerm"
+              ],
+              "feedback": "Nettoeffekten er lett å vedta på, men forbeholdene må følge med så de ikke glemmes."
+            }
+          ],
+          "next_bias": {
+            "tags": [
+              "støy og støyskjerm",
+              "politisk_lesbarhet_uten_å_skjule_faglig_risiko"
+            ],
+            "weight": 1
+          },
+          "triggers_on_choice": {
+            "A": [
+              "faglig_spor_videre"
+            ],
+            "B": [
+              "frist_for_utvalg"
+            ]
+          },
+          "branch_flags": {
+            "A": [
+              "knowledge_støy og støyskjerm_sporbarhet"
+            ],
+            "B": [
+              "knowledge_støy og støyskjerm_risiko_skjult"
+            ]
+          },
+          "tags": [
+            "knowledge",
+            "støy og støyskjerm",
+            "by_radgiver_plan",
+            "lillebekk"
+          ]
+        },
+        {
+          "id": "by_areal_day1_evening_knowledge_001",
+          "mail_type": "knowledge",
+          "mail_family": "planfag_kunnskap",
+          "role_scope": "by_radgiver_plan",
+          "phase": "evening",
+          "priority": 92,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "nora_planjuss",
+          "sender": "nora_planjuss",
+          "person_id": "nora_planjuss",
+          "place_id": "gis_plankart_arbeidsflate",
+          "subject": "Kveldsnotat: hva betyr hensynssone når plankartet tier?",
+          "summary": "Kvelden lærer ett begrep: hensynssone. Lillebekk-saken viser at en ryddig kartflate kan skjule grøntdrag, skolevei og støy som må sikres særskilt.",
+          "purpose": "Gi Day 1 en tydelig faglig landingsstripe der spilleren forstår hvorfor plankartet alene ikke forteller hele saken.",
+          "stakes": "Hvis hensynssonen bare nevnes løst, blir risikoen usynlig. Hvis den knyttes til bestemmelse og rekkefølge, får morgendagens konflikt et faglig spor.",
+          "situation": [
+            "Etter en dag med Lillebekk ser plankartet fortsatt pent ut, men grøntdrag, skolevei og støy har begynt å presse mot samme flate.",
+            "Nora sender en kort forklaring: hensynssone er ikke pynt i kartet, men en måte å vise at området krever særskilt vurdering eller vern.",
+            "Du må bestemme om kveldsnotatet skal lære begrepet presist, eller bare bruke det som et beroligende ord før saken går videre."
+          ],
+          "task_domain": "hensynssone",
+          "task_kind": "knowledge",
+          "competency": "begrepsforståelse",
+          "pressure": "kartlogikk_vs_levd_risiko",
+          "choice_axis": "presist_begrep_vs_beroligende_ord",
+          "consequence_axis": "sporbar_hensynssone_vs_skjult_klagerisiko",
+          "narrative_arc": "Kartet lyver ikke, men det tier",
+          "learning_focus": [
+            "hensynssone",
+            "plankart",
+            "grøntdrag",
+            "skolevei",
+            "støy",
+            "Kartet lyver ikke, men det tier"
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Forklar hensynssonen presist og knytt den til plankart, bestemmelse og rekkefølge",
+              "reply": "Jeg forklarer hensynssonen presist og knytter den til plankart, bestemmelse og rekkefølge.",
+              "effect": 1,
+              "tags": [
+                "precision",
+                "traceability",
+                "hensynssone",
+                "plankart"
+              ],
+              "feedback": "Du gjør kvelden faglig tydelig: Lillebekk er ikke løst, men saken har fått et språk for risikoen."
+            },
+            {
+              "id": "B",
+              "label": "Bruk hensynssone som et kort forbehold og hold notatet lettlest",
+              "reply": "Jeg bruker hensynssone som et kort forbehold og holder notatet lettlest.",
+              "effect": 0,
+              "tags": [
+                "tempo",
+                "risk",
+                "hensynssone"
+              ],
+              "feedback": "Notatet blir lett å lese, men begrepet kan bli et skjulested for uavklart risiko."
+            }
+          ],
+          "next_bias": {
+            "tags": [
+              "hensynssone",
+              "kartet_lyver_ikke_men_det_tier",
+              "day1_carryover"
+            ],
+            "weight": 2
+          },
+          "triggers_on_choice": {
+            "A": [
+              "faglig_spor_videre"
+            ],
+            "B": [
+              "frist_for_utvalg"
+            ]
+          },
+          "branch_flags": {
+            "A": [
+              "day1_hensynssone_sporbar",
+              "lillebekk_egentlig_sak_oppdaget"
+            ],
+            "B": [
+              "day1_hensynssone_glattet",
+              "lillebekk_risiko_skjult"
+            ]
+          },
+          "tags": [
+            "knowledge",
+            "hensynssone",
+            "plankart",
+            "by_radgiver_plan",
+            "lillebekk",
+            "day1"
+          ]
+        },
+        {
+          "id": "by_areal_knowledge_008",
+          "mail_type": "knowledge",
+          "mail_family": "planfag_kunnskap",
+          "role_scope": "by_radgiver_plan",
+          "phase": "day_end",
+          "priority": 61,
+          "cooldown": 1,
+          "repeatable": false,
+          "stage": "stable",
+          "from": "petter_plankonsulent",
+          "sender": "petter_plankonsulent",
+          "person_id": "petter_plankonsulent",
+          "place_id": "radhuset_planavdeling",
+          "subject": "Alle gode formål får ikke plass: parkering og kollektivdekning i Lillebekk",
+          "summary": "En kort avklaring om parkering og kollektivdekning viser at linjen på kartet flytter ansvar mellom bolig, grøntdrag, skolevei og politisk risiko.",
+          "purpose": "Trene arealplanleggeren i å behandle parkering og kollektivdekning som del av hovedplottet Linjen på kartet.",
+          "stakes": "Hvis avklaringen glattes over, sparer saken tid nå, men mister sporbarhet når naboer, utbygger eller utvalg leser den senere.",
+          "situation": [
+            "Lillebekk-planen ser ryddig ut i kartlaget, men parkering og kollektivdekning peker på en skjult målkonflikt.",
+            "Aktørene ber om en formulering som kan brukes videre uten ny runde.",
+            "Du må velge om faglig risiko skal gjøres synlig nå eller pakkes inn som praktisk framdrift."
+          ],
+          "task_domain": "parkering og kollektivdekning",
+          "task_kind": "knowledge",
+          "competency": "begrepsforståelse",
+          "pressure": "tempo_vs_faglig_sporbarhet",
+          "choice_axis": "synlig_risiko_vs_rask_framdrift",
+          "consequence_axis": "sporbarhet_vs_klagerisiko",
+          "narrative_arc": "Alle gode formål får ikke plass",
+          "learning_focus": [
+            "parkering og kollektivdekning",
+            "Linjen på kartet",
+            "Alle gode formål får ikke plass"
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Knytt redusert parkering til faktisk kollektivdekning i analysen",
+              "reply": "Jeg knytter det reduserte parkeringskravet til den faktiske kollektivdekningen i analysen.",
+              "effect": 1,
+              "tags": [
+                "datadrevet",
+                "presis_begrunnelse",
+                "parkering og kollektivdekning"
+              ],
+              "feedback": "Begrunnelsen blir presis, men avhenger av at tallene i analysen holder."
+            },
+            {
+              "id": "B",
+              "label": "Bruk den standardiserte normen med kort kollektivbegrunnelse",
+              "reply": "Jeg bruker den standardiserte parkeringsnormen med en kort kollektivbegrunnelse.",
+              "effect": 1,
+              "tags": [
+                "robust_norm",
+                "enkel_begrunnelse",
+                "parkering og kollektivdekning"
+              ],
+              "feedback": "Normen er enkel og robust, men den tilpassede begrunnelsen ville stått sterkere mot innsigelser."
+            }
+          ],
+          "next_bias": {
+            "tags": [
+              "parkering og kollektivdekning",
+              "alle_gode_formål_får_ikke_plass"
+            ],
+            "weight": 1
+          },
+          "triggers_on_choice": {
+            "A": [
+              "faglig_spor_videre"
+            ],
+            "B": [
+              "frist_for_utvalg"
+            ]
+          },
+          "branch_flags": {
+            "A": [
+              "knowledge_parkering og kollektivdekning_sporbarhet"
+            ],
+            "B": [
+              "knowledge_parkering og kollektivdekning_risiko_skjult"
+            ]
+          },
+          "tags": [
+            "knowledge",
+            "parkering og kollektivdekning",
+            "by_radgiver_plan",
+            "lillebekk"
+          ]
+        }
+      ]
+    }
+  ]
+}

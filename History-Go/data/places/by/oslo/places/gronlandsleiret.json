@@ -1,0 +1,81 @@
+{
+  "id": "gronlandsleiret",
+  "name": "Grønlandsleiret",
+  "lat": 59.91155,
+  "lon": 10.76715,
+  "r": 210,
+  "coordType": "street_midpoint",
+  "coordStatus": "verified_geometry",
+  "coordNote": "Dokumentert linjeanker for Grønlandsleiret. Oslo byleksikon avgrenser gaten fra Tøyenbekken til Schweigaards gate. Hovedpunktet er det matematiske midtpunktet mellom de to eksisterende, dokumenterte ruteankrene i vest og øst; det er derfor en avledet linjerepresentasjon og ikke kunstig desimalpresisjon eller et adressepunkt.",
+  "anchors": [
+    {
+      "id": "gronlandsleiret_vest_gronland_torg",
+      "name": "Grønlandsleiret vest (Grønland torg)",
+      "type": "route_point",
+      "lat": 59.9122,
+      "lon": 10.7641,
+      "r": 70
+    },
+    {
+      "id": "gronlandsleiret_ost_oslo_gate",
+      "name": "Grønlandsleiret øst (Oslo gate/Galgeberg)",
+      "type": "route_point",
+      "lat": 59.9109,
+      "lon": 10.7702,
+      "r": 70
+    }
+  ],
+  "category": "by",
+  "year": 1860,
+  "emne_ids": [
+    "em_by_kommersielle_gater",
+    "em_by_sosial_miks_i_offentlige_rom"
+  ],
+  "desc": "Grønlandsleiret er en gammel veiforbindelse mellom Christiania og middelalderbyen Oslo. Den sumpige veien, kalt «Leret», ble steinsatt med de siste løse steinene fra Hallvardskatedralen. Langs gaten ligger Grønland kirke, Olympen, tidligere institusjonsbygg, pølsemakerhistorie og snublesteiner etter jødiske familier som ble deportert i 1942.",
+  "image": "bilder/places/gronlandsleiret.JPG",
+  "cardImage": "bilder/kort/places/gronlandsleiret.PNG",
+  "popupDesc": "Grønlandsleiret går fra Tøyenbekken til Schweigaards gate og følger en veiforbindelse som er eldre enn byutvidelsen på 1800-tallet. Veien bandt Christiania sammen med det gamle Oslo i Gamlebyen. Den vestlige delen ble kalt Gammel-leret og den østlige Ny-leret. Navnet «Leret» viser til den sumpige grunnen som gjorde ferdselen vanskelig.\n\nDa veien ble steinsatt på 1800-tallet, ble de siste løse steinrestene fra middelalderens Hallvardskatedral brukt som byggemateriale. En gate som senere ble fylt av boliger, butikker og offentlige institusjoner, fikk dermed bokstavelig talt middelalderbyen inn i veidekket. Denne detaljen knytter Grønlandsleiret til ruinene i Gamlebyen på en mer direkte måte enn et gatenavn eller et minneskilt.\n\nGrønland kirke åpnet i 1869. Sammen med den gamle skolen og den tidligere brann- og politistasjonen dannet kirken et markant institusjonsmiljø i nyromansk rød tegl. Flere offentlige funksjoner ble samlet langs den samme gaten og fikk et beslektet arkitektonisk uttrykk. Mellom disse byggene vokste det fram boliger, verksteder, handel og serveringssteder.\n\nRestauranten Olympen i nummer 15 har vært et kjent serveringssted siden slutten av 1800-tallet. I Smedsrudgården i nummer 23 drev Jens Evensen pølsefabrikk og kjøttforretning fra 1922. Plassen ved gården fikk senere navnet hans. I nummer 13 har det vært begravelsesbyrå siden tiden omkring første verdenskrig, og i andre etasje lå en likkistefabrikk. Gaten rommet dermed både matproduksjon, servering og arbeid knyttet til begravelser.\n\nFortauene bærer også snublesteiner for jødiske beboere som ble deportert med skipet Donau 26. november 1942. Elsa Dickman kom seg til Sverige og brukte familiens erfaringer i romanen «Korsveien» fra 1946. Grønlandsleiret samler derfor uvanlig mange konkrete tidslag: middelalderstein i den gamle veien, kirke og offentlige teglbygg fra 1800-tallet, industri og handel, langvarige serveringssteder og adresser knyttet til deportasjonen under okkupasjonen.\n\nGaten har derfor ikke én dominerende tidsperiode. Middelalderens steinrester, 1800-tallets institusjonsbygg, 1900-tallets matproduksjon og begravelsesvirksomhet og minnesmerkene etter 1942 ligger innenfor den samme korte strekningen. Det gjør Grønlandsleiret til en gate der historien ikke først og fremst finnes i ett monument, men i rekkefølgen av adresser og virksomheter.",
+  "quiz_profile": {
+    "place_type": "gate",
+    "subtype": "mangfoldig_handelsgate_med_hverdagsintensitet",
+    "signature_features": [
+      "historisk handlegate på Grønland",
+      "mange butikktyper og sterk hverdagstrafikk",
+      "sosial og kulturell blanding mer enn kuratert bybranding"
+    ],
+    "primary_angles": [
+      "historie",
+      "bruk",
+      "konflikt_forandring",
+      "institusjon"
+    ],
+    "question_families": [
+      "gjenkjenning",
+      "bruk",
+      "saertrekk",
+      "kontrast"
+    ],
+    "avoid_angles": [
+      "generisk_mangfold",
+      "generisk_handelsgate"
+    ],
+    "must_include": [
+      "hverdagshandelen",
+      "forskjellen mellom lokal intensitet og mer polert sentrumsgatelogikk"
+    ],
+    "contrast_targets": [
+      "bogstadveien",
+      "torggata"
+    ],
+    "notes": "Skal spørres som sosialt tett handelsgate, ikke som abstrakt mangfoldscase."
+  },
+  "locatorType": "street",
+  "sourceProvider": "manual_research",
+  "sourceObjectId": "oslobyleksikon:gronlandsleiret",
+  "geocodeAccuracy": "semantic_anchor",
+  "coordRole": "line_anchor",
+  "coordSource": "Oslo byleksikon – Grønlandsleiret + dokumenterte ruteankre",
+  "coordSourceId": "oslobyleksikon:gronlandsleiret",
+  "coordSourceUrl": "https://oslobyleksikon.no/side/Gr%C3%B8nlandsleiret",
+  "coordVerifiedAt": "2026-07-19"
+}

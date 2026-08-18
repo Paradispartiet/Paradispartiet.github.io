@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.0",
+  "placeId": "gressbanen",
+  "placeFile": "data/places/sport/europa/norway/oslo_sport/gressbanen.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.9507593,
+    "lon": 10.6767767,
+    "r": 170,
+    "coordStatus": "verified_geometry",
+    "coordSource": "OpenStreetMap way 5046575 – Gressbanen",
+    "coordType": "sports_ground_center",
+    "coordNote": "Batch 122: Ready og Oslo kommune dokumenterer Gressbanen på Stasjonsveien 24. Address-first ble forsøkt først, men Geonorge-søket ga 2 adressetreff og ingen entydig eksakt ulettert 24-rad. Ingen adressevariant ble derfor valgt. Canonical place er selve navngitte fotball-/bandygrounden, og direkte stable-ID-oppslag av eksakt OSM way 5046575 brukes som geometrisk area-anchor; ingen nearest/first-hit-logikk."
+  },
+  "identity": {
+    "currentName": "Gressbanen",
+    "resolvedIdentity": "Gressbanen som navngitt stadion- og idrettsanlegg",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "current_place",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [
+    "address-first-forsøk",
+    "eksakt navngitt ground-objekt",
+    "stabil sourceObjectId"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Ready / Oslo kommune – Gressbanen",
+      "sourceUrl": "https://ready.no/sted/gressbanen/",
+      "sourceObjectId": "official-venue-address:gressbanen",
+      "sourceQuality": "official_current_visitor_address",
+      "finding": "Offisielle kilder dokumenterer Stasjonsveien 24 og canonical identitet Gressbanen.",
+      "canVerifyCoordinate": false,
+      "reason": "Address-first-identitet."
+    },
+    {
+      "sourceProvider": "official_address",
+      "sourceName": "Geonorge address-first attempt",
+      "sourceUrl": "https://ws.geonorge.no/adresser/v1/sok?sok=Stasjonsveien%2024%20Oslo",
+      "sourceObjectId": "geonorge-address-search:Stasjonsveien-24",
+      "sourceQuality": "ambiguous_address_search",
+      "finding": "2 treff, men ingen entydig eksakt ulettert 24-rad.",
+      "canVerifyCoordinate": false,
+      "reason": "Ingen adressevariant velges uten belegg."
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceName": "OpenStreetMap – Gressbanen",
+      "sourceUrl": "https://www.openstreetmap.org/way/5046575",
+      "sourceObjectId": "osm-way:5046575",
+      "sourceQuality": "direct_stable_id_exact_named_sports_ground",
+      "finding": "Direkte stable-ID-oppslag av eksakt navngitt canonical ground.",
+      "canVerifyCoordinate": true,
+      "reason": "Batch 122: Ready og Oslo kommune dokumenterer Gressbanen på Stasjonsveien 24. Address-first ble forsøkt først, men Geonorge-søket ga 2 adressetreff og ingen entydig eksakt ulettert 24-rad. Ingen adressevariant ble derfor valgt. Canonical place er selve navngitte fotball-/bandygrounden, og direkte stable-ID-oppslag av eksakt OSM way 5046575 brukes som geometrisk area-anchor; ingen nearest/first-hit-logikk."
+    }
+  ],
+  "addressCandidates": [],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:5046575",
+      "canApplyToPlace": true
+    }
+  ],
+  "geometryCandidates": [
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:5046575",
+      "lat": 59.9507593,
+      "lon": 10.6767767,
+      "coordRole": "area_anchor",
+      "canApplyToPlace": true
+    }
+  ],
+  "coordinateCandidates": [
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:5046575",
+      "lat": 59.9507593,
+      "lon": 10.6767767,
+      "coordRole": "area_anchor",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Godkjent kildeobjekt er anvendt på canonical place."
+  },
+  "notes": [
+    "Batch 122: Ready og Oslo kommune dokumenterer Gressbanen på Stasjonsveien 24. Address-first ble forsøkt først, men Geonorge-søket ga 2 adressetreff og ingen entydig eksakt ulettert 24-rad. Ingen adressevariant ble derfor valgt. Canonical place er selve navngitte fotball-/bandygrounden, og direkte stable-ID-oppslag av eksakt OSM way 5046575 brukes som geometrisk area-anchor; ingen nearest/first-hit-logikk."
+  ]
+}

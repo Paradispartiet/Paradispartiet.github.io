@@ -1,0 +1,69 @@
+{
+  "placeId": "tollbukaia",
+  "placeFile": "data/places/naeringsliv/oslo/places_naeringsliv/tollbukaia.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.9091402,
+    "lon": 10.7493045,
+    "r": 130,
+    "coordStatus": "verified_historical_source",
+    "coordSource": "Oslo byleksikon + OpenStreetMap way 280893929",
+    "coordType": "quay_semantic_anchor",
+    "coordNote": "Dokumentert linjeanker for Tollbukaia mellom Langkaia og Palékaia innerst i Bjørvika. Oslo byleksikon avklarer det historiske kaiområdet, mens OpenStreetMap way 280893929 gir den nå kartfestede Tollbukaia-linjen. Punktet er et representativt linjeanker, ikke et påstått sentrum for hele den historiske kaiflaten."
+  },
+  "identity": {
+    "currentName": "Tollbukaia",
+    "resolvedIdentity": "Tollbukaia mellom Langkaia og Palékaia innerst i Bjørvika",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "quay",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [
+    "official_map eller OSM/kommunal geometri",
+    "geometry eller anchors",
+    "coordRole line_anchor eller area_anchor"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Oslo byleksikon – Tollbukaia",
+      "sourceUrl": "https://oslobyleksikon.no/side/Tollbukaia",
+      "sourceObjectId": "oslobyleksikon:tollbukaia",
+      "sourceQuality": "historical_place_definition",
+      "finding": "Tollbukaia var kaiområdet mellom Langkaia og Palékaia innerst i Bjørvika.",
+      "canVerifyCoordinate": true,
+      "reason": "Definisjonen avgrenser riktig historisk kaiområde; OSM-way gir dokumentert linjeanker."
+    }
+  ],
+  "addressCandidates": [],
+  "sourceObjectCandidates": [],
+  "geometryCandidates": [
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:280893929",
+      "geometryType": "LineString",
+      "canApplyToPlace": true
+    }
+  ],
+  "coordinateCandidates": [
+    {
+      "lat": 59.9091402,
+      "lon": 10.7493045,
+      "sourceObjectId": "osm-way:280893929",
+      "coordRole": "line_anchor",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Tollbukaia er oppdatert med historisk avgrensning og dokumentert linjeanker."
+  },
+  "notes": [
+    "Dette er et quay/linear_area-problem, ikke vanlig building/site_center.",
+    "Valgt anker er dokumentert med Oslo byleksikons områdeavgrensning og OpenStreetMap way 280893929."
+  ]
+}

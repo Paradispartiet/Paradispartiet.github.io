@@ -1,0 +1,15 @@
+{
+  "schema":"civication_role_model_v1","version":1,
+  "source":{"badge_file":"data/badges/subkultur.json","badge_id":"subkultur","badge_name":"Subkultur","tier_label":"Arrangementscrew","tier_threshold":10,"evidence_file":"data/Civication/subcultureCareerEvidence.json"},
+  "category":"subkultur","role_scope":"subkultur_arrangementsdrift","role_id":"subkultur_arrangementscrew","title":"Arrangementscrew",
+  "professional_description":["Praktisk arrangementsarbeid med rigg, nedrigg, publikumslogistikk, adgang og produksjonsstøtte."],
+  "core_narrative":["Du får rommet til å virke: riktig utstyr på riktig sted, publikum gjennom døra og små feil løst før de vokser."],
+  "work_life":{"daily_work":["rigg og nedrigg","møblering","adgang og kø","publikumslogistikk","bistå produksjon"],"responsibilities":["følge produksjonsplan","bruke utstyr innen opplæring","rapportere feil","ivareta publikum"],"work_environment":["konserter","klubbkvelder","festival","kulturarena"],"status_position":["Operativt crew uten automatisk teknisk sertifisering eller ledermandat."]},
+  "required_knowledge":{"education_basis":["Arbeidsgiver kan kreve arrangementserfaring og lokal opplæring; rollen er ikke en regulert profesjon."],"skills":["rigg","logistikk","teamarbeid","tidsforståelse","service"],"category_knowledge":["scene- og klubbkultur","DIY-arrangering","publikumspraksis"],"history_go_badges":["subkultur"],"place_connections":[],"people_connections":[]},
+  "scope_boundaries":{"may_do":["praktisk rigg","publikumslogistikk","produksjonsassistanse"],"must_not_simulate_as_authority":["koble eller bruke risikofylt teknisk utstyr uten opplæring","endre sikkerhetsopplegg på egen hånd"]},
+  "challenges":[{"id":"tempo_vs_sikkerhet","title":"Fem minutter forsinket","description":"Tidsplanen presser, men rigg og publikumsflyt må fortsatt være trygg.","pressure":"tempo_vs_sikkerhet","affects":["trust","risk"]}],
+  "dilemmas":[{"id":"snarvei_i_riggen","title":"Snarveien","setup":"En erfaren kollega foreslår en rask løsning som avviker fra avtalt oppsett.","choice_axis":"tempo_vs_prosedyre","consequence_axis":"framdrift_vs_sikkerhet","mail_hooks":["job","conflict","consequence"]}],
+  "mail_integration":{"role_scope":"subkultur_arrangementsdrift","mail_profile":"subkultur_arrangementsdrift","can_feed_mail_types":["job","story","conflict","event","followup"],"mail_variables":{"role_title":"Arrangementscrew","category":"subkultur","main_pressure":"tempo_vs_sikkerhet","ethical_axis":"snarvei_vs_prosedyre","status_axis":"crew_tillit_vs_risiko"},"recommended_mail_families":["subkultur_arrangementsdrift"],"role_model_refs_supported":true},
+  "competence_axes":[{"id":"rigg","label":"Rigg"},{"id":"logistikk","label":"Logistikk"},{"id":"sikkerhet","label":"Sikkerhet"}],"ideal_type_problems":[{"id":"tempo_vs_sikkerhet","label":"Tempo vs sikkerhet"}],
+  "notes":["Legacy filename retained for manifest stability; canonical title is Arrangementscrew."]
+}

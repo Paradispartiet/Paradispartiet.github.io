@@ -1,0 +1,707 @@
+// js/Civication/ui/CivicationTestModeUI.js
+// Civication testmodus: dev-/flagget "Test"-knapp + testpanel for å starte ALLE roller,
+// ikke bare Controller, uten konsoll.
+//
+// Prinsipp:
+// - Knappen monteres bare i dev/localhost eller når flagget er eksplisitt aktivert.
+// - Rollelisten bygges datadrevet fra data/Civication/roleModels/manifest.json.
+// - Roller startes via eksisterende CivicationRoleStarter.
+// - Arbeidsdagen bygges via eksisterende CivicationDailyMailBuilder.
+// - Modulen eksponerer et samlet test-API på window.CivicationTestMode.
+//
+// UI eier aldri sannhet: knappene leser/skriver kun via RoleStarter, DailyMailBuilder
+// og CivicationState. Statuspanelet viser kun det disse lagene rapporterer.
+
+(function () {
+  "use strict";
+
+  const FLAG_KEY = "civication_test_mode_v1";
+  const PANEL_ID = "civicationTestModePanel";
+  const BUTTON_ID = "civicationTestButton";
+  const SEARCH_ID = "civicationTestSearch";
+  const FILTER_ID = "civicationTestFilter";
+  const ROLES_ID = "civicationTestRoles";
+  const STATUS_ID = "civicationTestStatus";
+  const WEEK_NAME = "civicationTestWeek";
+  const MANIFEST_PATH = "data/Civication/roleModels/manifest.json";
+  const ROLE_PACK_INDEX_PATH = "docs/CIVICATION_ROLE_PACK_INDEX.md";
+
+  // Startpunkt -> step_index i mail_plan_progress. DailyMailBuilder tolker
+  // step_index >= 10 som uke 2 og holder uke 1 ren for tidlige steg.
+  const STARTPOINTS = [
+    { key: "begin", label: "Start fra begynnelsen", step_index: 0 },
+    { key: "week1", label: "Uke 1", step_index: 0 },
+    { key: "week2", label: "Uke 2", step_index: 10 }
+  ];
+
+  const state = {
+    roles: [],
+    rolesPromise: null,
+    rolesLoading: false,
+    rolesLoaded: false,
+    rolesError: "",
+    selectedKey: "",
+    startpoint: "week1",
+    panelOpen: false,
+    query: "",
+    category: "",
+    filter: "all",
+    packIndex: new Map(),
+    packIndexLoaded: false
+  };
+
+  function norm(value) { return String(value || "").trim(); }
+
+  function esc(value) {
+    return String(value ?? "")
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+  }
+
+  function slugify(value) {
+    return norm(value).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
+      .replace(/æ/g, "ae").replace(/ø/g, "o").replace(/å/g, "a")
+      .replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 80);
+  }
+
+  function hasDom() {
+    return typeof document !== "undefined" && !!document && typeof document.createElement === "function";
+  }
+
+  function isEnabled() {
+    var queryEnabled = false;
+    try { queryEnabled = new URLSearchParams(window.location.search || "").has("civiTest"); } catch (e) {}
+    var host = String(window.location?.hostname || "");
+    var localHost = host === "localhost" || host === "127.0.0.1" || host === "";
+    var stored = false;
+    try { stored = localStorage.getItem(FLAG_KEY) === "true"; } catch (e) {}
+    return queryEnabled || stored || localHost;
+  }
+
+  async function loadJson(path) {
+    try {
+      const res = await fetch(path, { cache: "no-store" });
+      return res && res.ok ? res.json() : null;
+    } catch (e) { return null; }
+  }
+
+  function fallbackRoleFromPath(path) {
+    const parts = norm(path).split("/");
+    const file = parts.pop() || "";
+    return {
+      category: parts.pop() || "",
+      role_scope: file.replace(/\.json$/i, ""),
+      title: file.replace(/\.json$/i, "").replace(/_/g, " ")
+    };
+  }
+
+  const REFERENCE_ROLE_IDS = new Set(["by_arealplanlegger", "naer_renholder", "sosial_laering_barnehageassistent"]);
+  const REFERENCE_ROLE_TITLES = ["Arealplanlegger", "Renholder", "Barnehageassistent"];
+  const STATUS_ORDER = ["complete_reference_v2", "partial_pack", "role_model_only"];
+  const MAIL_FAMILIES = ["job", "people", "conflict", "story", "event", "micro", "followup", "knowledge", "consequence"];
+
+  function yesNo(value) { return /^ja$/i.test(norm(value)); }
+
+  function isReferenceRole(role) {
+    if (!role) return false;
+    if (REFERENCE_ROLE_IDS.has(norm(role.role_id))) return true;
+    return REFERENCE_ROLE_TITLES.some(title => norm(role.title).toLowerCase().includes(title.toLowerCase()));
+  }
+
+  function parseRolePackIndex(markdown) {
+    const map = new Map();
+    String(markdown || "").split(/\r?\n/).forEach(line => {
+      if (!/^\|\s*[^|]+\s*\|/.test(line) || /---/.test(line) || /category\s*\|\s*role_scope/.test(line)) return;
+      const cols = line.split("|").slice(1, -1).map(part => norm(part));
+      if (cols.length < 18) return;
+      const [category, role_scope, role_id, title, roleModel, workGrammar, mailPlan, job, people, conflict, story, event, micro, followup, knowledge, consequence, test, status] = cols;
+      const entry = {
+        category, role_scope, role_id, title, status,
+        roleModel: yesNo(roleModel),
+        workGrammar: yesNo(workGrammar),
+        mailPlan: yesNo(mailPlan),
+        mailFamilies: { job: yesNo(job), people: yesNo(people), conflict: yesNo(conflict), story: yesNo(story), event: yesNo(event), micro: yesNo(micro), followup: yesNo(followup), knowledge: yesNo(knowledge), consequence: yesNo(consequence) },
+        test: yesNo(test)
+      };
+      [role_id, role_scope, `${category}:${role_scope}`, `${category}:${role_id}`].filter(Boolean).forEach(key => map.set(slugify(key), entry));
+    });
+    return map;
+  }
+
+  async function loadRolePackIndex() {
+    if (state.packIndexLoaded) return state.packIndex;
+    try {
+      const res = await fetch(ROLE_PACK_INDEX_PATH, { cache: "no-store" });
+      const text = res && res.ok ? await res.text() : "";
+      state.packIndex = parseRolePackIndex(text);
+    } catch (e) { state.packIndex = new Map(); }
+    state.packIndexLoaded = true;
+    return state.packIndex;
+  }
+
+  function packInfoFor(role) {
+    return state.packIndex.get(slugify(role.role_id))
+      || state.packIndex.get(slugify(role.role_scope))
+      || state.packIndex.get(slugify(`${role.category}:${role.role_scope}`))
+      || state.packIndex.get(slugify(`${role.category}:${role.role_id}`))
+      || null;
+  }
+
+  function enrichRole(role) {
+    const pack = packInfoFor(role) || {};
+    const families = pack.mailFamilies || {};
+    const covered = MAIL_FAMILIES.filter(name => families[name]);
+    return {
+      ...role,
+      status: pack.status || "role_model_only",
+      workGrammar: pack.workGrammar === true,
+      mailPlan: pack.mailPlan === true,
+      mailFamilies: families,
+      mailFamiliesCoverage: `${covered.length}/${MAIL_FAMILIES.length}${covered.length ? ` (${covered.join(", ")})` : ""}`,
+      isReferenceRole: isReferenceRole(role) || pack.status === "complete_reference_v2"
+    };
+  }
+
+  function toRole(path, model) {
+    const fallback = fallbackRoleFromPath(path);
+    const category = norm(model?.category || model?.source?.badge_id || fallback.category);
+    const title = norm(model?.title || model?.source?.tier_label || fallback.title);
+    const resolved = /** @type {any} */ (window.CivicationCareerRoleResolver?.resolveCareerRole?.({
+      career_id: category,
+      title,
+      role_key: model?.role_key || model?.role_scope || fallback.role_scope,
+      role_id: model?.role_id
+    }) || {});
+    const roleScope = norm(model?.role_scope || resolved.role_scope || fallback.role_scope);
+    const roleKey = norm(model?.role_key || resolved.role_key || roleScope || slugify(title));
+    return {
+      title,
+      category,
+      career: norm(model?.source?.badge_name || category),
+      career_id: category,
+      career_name: norm(model?.source?.badge_name || category),
+      role_scope: roleScope,
+      role_key: roleKey,
+      role_id: norm(model?.role_id || resolved.role_id),
+      path
+    };
+  }
+
+  async function loadRoles() {
+    state.rolesError = "";
+    const manifest = await loadJson(MANIFEST_PATH);
+    if (!manifest) {
+      state.rolesError = "Kunne ikke laste roleModels/manifest.json";
+      return [];
+    }
+    const paths = Array.isArray(manifest?.files) ? manifest.files : [];
+    if (!paths.length) {
+      state.rolesError = "Fant ingen roller";
+      return [];
+    }
+    await loadRolePackIndex();
+    const models = await Promise.all(paths.map(async path => ({ path, model: await loadJson(path) })));
+    return models
+      .map(({ path, model }) => enrichRole(toRole(path, model)))
+      .filter(role => role.title && role.role_key)
+      .sort((a, b) => (a.category + a.title).localeCompare(b.category + b.title, "no"));
+  }
+
+  // Bygger (og cacher) rollelisten. loadRolesAsync brukes av UI-et for å vente
+  // på fetch, mens listRoles() er bevisst synkron for konsoll/API: den returnerer
+  // alltid en Array og starter bakgrunnslasting hvis listen ikke er klar ennå.
+  function loadRolesAsync() {
+    if (state.rolesLoaded) return Promise.resolve(state.roles);
+    if (!state.rolesPromise) {
+      state.rolesLoading = true;
+      state.rolesPromise = loadRoles().then(roles => {
+        state.roles = roles;
+        state.rolesLoaded = true;
+        state.rolesLoading = false;
+        if (!roles.length && !state.rolesError) state.rolesError = "Fant ingen roller";
+        return roles;
+      }).catch(error => {
+        state.rolesLoading = false;
+        state.rolesLoaded = true;
+        state.rolesError = state.rolesError || `Kunne ikke laste roleModels/manifest.json: ${error?.message || "ukjent feil"}`;
+        return state.roles;
+      });
+    }
+    return state.rolesPromise;
+  }
+
+  function listRoles() {
+    if (!state.rolesLoaded && !state.rolesLoading) loadRolesAsync();
+    return state.roles.slice();
+  }
+
+  function findRole(roleKey) {
+    const key = slugify(roleKey);
+    return state.roles.find(role => slugify(role.role_key) === key)
+      || state.roles.find(role => slugify(role.role_scope) === key)
+      || null;
+  }
+
+  function getSelectedRole() {
+    return findRole(state.selectedKey);
+  }
+
+  // Registrerer en datadrevet rolle i RoleStarter dersom den ikke allerede er
+  // hardkodet. Roller som finnes fra før (f.eks. Controller) beholder sin
+  // ekte mailPlan og overskrives ikke.
+  function registerRoleForStarter(role) {
+    const starter = window.CivicationRoleStarter;
+    if (!role || !starter?.ROLES || !starter?.ROLE_TO_PLAN) return;
+    if (!starter.ROLES[role.role_key]) {
+      starter.ROLES[role.role_key] = {
+        career_id: role.career_id,
+        career_name: role.career_name || role.career_id,
+        title: role.title,
+        role_key: role.role_key,
+        role_scope: role.role_scope || role.role_key,
+        role_id: role.role_id || `${role.career_id}_${role.role_key}`
+      };
+    }
+    if (!starter.ROLE_TO_PLAN[role.role_key]) {
+      starter.ROLE_TO_PLAN[role.role_key] = `${role.role_key}_${role.career_id}_test_v1`;
+    }
+  }
+
+  function startpointByKey(key) {
+    return STARTPOINTS.find(sp => sp.key === key) || STARTPOINTS.find(sp => sp.key === "week1");
+  }
+
+  // Setter et generelt startpunkt (step_index) før dagen bygges. Holdt generisk
+  // slik at alle roller kan få tilsvarende uke-/pakke-startpunkter senere.
+  function applyStartpoint(key) {
+    const api = window.CivicationState;
+    if (!api?.getState || !api?.setState) return null;
+    const sp = startpointByKey(key);
+    const current = /** @type {any} */ (api.getState() || {});
+    const progress = current.mail_plan_progress && typeof current.mail_plan_progress === "object"
+      ? current.mail_plan_progress
+      : {};
+    api.setState({
+      mail_plan_progress: {
+        ...progress,
+        step_index: sp.step_index
+      }
+    });
+    return sp;
+  }
+
+  // ---- Handlinger (delt mellom UI og test-API) ----
+
+  function startRole(roleKey) {
+    const role = findRole(roleKey);
+    if (!role) {
+      renderStatus("Ingen rolle valgt");
+      return null;
+    }
+    registerRoleForStarter(role);
+    const started = window.CivicationRoleStarter?.startRole?.(role.role_key, { clearInbox: true, started_by: "test_mode", is_test_session: true });
+    state.selectedKey = role.role_key;
+    renderRoles();
+    renderStatus(started ? `Startet ${role.title}.` : `Kunne ikke starte ${role.title}.`);
+    return started || null;
+  }
+
+  async function startDay(opts) {
+    const active = /** @type {any} */ (window.CivicationState?.getActivePosition?.() || null);
+    if (!active) {
+      renderStatus("Velg og start en rolle først");
+      return { ok: false, reason: "no_active_role" };
+    }
+
+    const builder = window.CivicationDailyMailBuilder;
+    if (!builder?.startToday) {
+      renderStatus("Dag feilet: DailyMailBuilder mangler");
+      return { ok: false, reason: "missing_daily_mail_builder" };
+    }
+
+    const startpointKey = norm(opts?.startpoint) || state.startpoint;
+    const sp = startpointByKey(startpointKey);
+    applyStartpoint(startpointKey);
+    renderStatus(`Starter dag for ${active.title || active.role_key || "aktiv rolle"} (${sp.label}) …`);
+
+    const result = await builder.startToday({
+      forceNew: true,
+      ignorePending: true
+    });
+
+    try { window.dispatchEvent(new Event("civi:inboxChanged")); } catch (e) { /* ignore */ }
+    try { window.dispatchEvent(new Event("updateInbox")); } catch (e) { /* ignore */ }
+    try { window.dispatchEvent(new Event("updateProfile")); } catch (e) { /* ignore */ }
+
+    const info = builder.inspect?.() || {};
+    const count = Number(info.item_count || 0);
+    const pendingSubject = info.pending?.subject ? ` Pending: ${info.pending.subject}` : "";
+    renderStatus(result?.ok
+      ? `Dag startet: ${count} elementer (${sp.label}).${pendingSubject}`
+      : `Dag feilet: ${result?.reason || "ukjent"}`);
+    return result || null;
+  }
+
+  function openNextAction() {
+    const api = window.CivicationNextActionUI;
+    if (api?.open) {
+      api.open();
+      renderStatus("Åpnet eksisterende Neste handling-flate.");
+      return true;
+    }
+    renderStatus("Neste handling-UI mangler");
+    return false;
+  }
+
+  function resetDay() {
+    if (window.CivicationDailyMailBuilder?.resetToday) window.CivicationDailyMailBuilder.resetToday();
+    else window.CivicationState?.setState?.({ mail_day_runtime_v1: null, narrative_day_state_v1: null });
+    try { localStorage.removeItem("mail_day_runtime_v1"); } catch (e) { /* ignore */ }
+    try { localStorage.removeItem("workday_runtime_v1"); } catch (e) { /* ignore */ }
+    window.CivicationState?.setInbox?.([]);
+    try { window.dispatchEvent(new Event("updateInbox")); } catch (e) { /* ignore */ }
+    renderStatus("Dag nullstilt.");
+    return true;
+  }
+
+  function resetTestPlayer() {
+    const reset = window.CivicationRoleSession?.clearActiveRoleSession?.({ reason: "test_player_reset" });
+    renderRoles();
+    renderStatus(reset ? "Aktiv rolle og testspiller-state er nullstilt." : "Rolle-session helper mangler.");
+    return !!reset;
+  }
+
+  function setFilter(filter) {
+    state.filter = norm(filter || "all");
+    renderRoles();
+    return visibleRoles();
+  }
+
+  function inspect() {
+    const dmb = window.CivicationDailyMailBuilder?.inspect?.() || null;
+    const runtime = dmb?.runtime || null;
+    const selected = getSelectedRole();
+    return {
+      enabled: isEnabled(),
+      panelOpen: state.panelOpen,
+      active: window.CivicationState?.getActivePosition?.() || null,
+      selectedRole: selected,
+      roleCount: state.roles.length,
+      roleLoading: state.rolesLoading,
+      roleLoaded: state.rolesLoaded,
+      rolesError: state.rolesError || null,
+      startpoint: state.startpoint,
+      filter: state.filter,
+      runtimeExists: !!runtime,
+      itemCount: dmb ? Number(dmb.item_count || 0) : 0,
+      byPhase: dmb?.by_phase || {},
+      byStatus: dmb?.by_status || {},
+      pending: dmb?.pending || null,
+      visibleRoles: visibleRoles(),
+      brokenMapping: [...state.packIndex.values()].filter(entry => entry.status === "broken_mapping").length
+    };
+  }
+
+  // ---- Rendering ----
+
+  function countsLabel(map) {
+    const entries = Object.entries(map || {});
+    if (!entries.length) return "—";
+    return entries.map(([key, value]) => `${esc(key)}: ${esc(value)}`).join(", ");
+  }
+
+  function renderStatus(message) {
+    if (!hasDom()) return;
+    const el = document.getElementById(STATUS_ID);
+    if (!el) return;
+    const info = inspect();
+    const active = /** @type {any} */ (info.active || {});
+    const statusMessage = message || (state.rolesLoading ? "Laster roller …" : (info.selectedRole ? `Valgt rolle: ${info.selectedRole.title}` : "Ingen rolle valgt"));
+    el.innerHTML = `
+      <p class="civi-test-message">${esc(statusMessage)}</p>
+      <div><span>roller</span><strong>${esc(info.roleCount)}${state.rolesLoading ? " (laster)" : ""}</strong></div>
+      <div><span>aktiv rolle</span><strong>${esc(active.title || "—")}</strong></div>
+      <div><span>career_id</span><strong>${esc(active.career_id || "—")}</strong></div>
+      <div><span>role_key</span><strong>${esc(active.role_key || active.role_scope || "—")}</strong></div>
+      <div><span>role_id</span><strong>${esc(active.role_id || "—")}</strong></div>
+      <div><span>DailyMailBuilder runtime</span><strong>${info.runtimeExists ? "runtime finnes" : "ingen runtime"}</strong></div>
+      <div><span>item_count</span><strong>${info.runtimeExists ? esc(info.itemCount) : "—"}</strong></div>
+      <div><span>by_phase</span><strong>${esc(countsLabel(info.byPhase))}</strong></div>
+      <div><span>by_status</span><strong>${esc(countsLabel(info.byStatus))}</strong></div>
+      <div><span>pending subject</span><strong>${esc(info.pending?.subject || "—")}</strong></div>`;
+  }
+
+  function visibleRoles() {
+    const query = slugify(state.query);
+    const category = norm(state.category);
+    const filter = norm(state.filter || "all");
+    return state.roles.filter(role => {
+      if (category && norm(role.category) !== category) return false;
+      if (filter === "reference" && !role.isReferenceRole) return false;
+      if (filter === "complete" && role.status !== "complete_reference_v2") return false;
+      if (filter === "partial" && role.status !== "partial_pack") return false;
+      if (filter === "role_model_only" && role.status !== "role_model_only") return false;
+      if (!query) return true;
+      const hay = slugify(`${role.title} ${role.category} ${role.role_key} ${role.role_scope} ${role.role_id}`);
+      return hay.includes(query);
+    });
+  }
+
+  function renderRoles() {
+    if (!hasDom()) return;
+    const list = document.getElementById(ROLES_ID);
+    if (!list) return;
+    const roles = visibleRoles();
+    if (!state.roles.length && state.rolesLoading) {
+      list.innerHTML = `<p class="civi-test-empty">Laster roller …</p>`;
+      return;
+    }
+    if (!state.roles.length && state.rolesError) {
+      list.innerHTML = `<p class="civi-test-empty">${esc(state.rolesError)}</p>`;
+      return;
+    }
+    if (!roles.length) {
+      list.innerHTML = `<p class="civi-test-empty">${state.roles.length ? "Ingen roller matcher." : "Fant ingen roller"}</p>`;
+      return;
+    }
+    /** @type {[string, any[]][]} */
+    const grouped = STATUS_ORDER.map(status => /** @type {[string, any[]]} */ ([status, roles.filter(role => role.status === status)])).filter(([, items]) => items.length);
+    const other = roles.filter(role => !STATUS_ORDER.includes(role.status));
+    if (other.length) grouped.push(["other", other]);
+    list.innerHTML = grouped.map(([status, items]) => `
+      <section class="civi-test-role-group" data-status="${esc(status)}">
+        <h3>${esc(status)} <span>${esc(items.length)}</span></h3>
+        ${items.map(role => {
+          const selected = slugify(role.role_key) === slugify(state.selectedKey);
+          return `<button type="button" class="civi-test-role${selected ? " is-selected" : ""}${role.isReferenceRole ? " is-reference" : ""}" data-role-key="${esc(role.role_key)}">
+            <span class="civi-test-role-title">${role.isReferenceRole ? "★ " : ""}${esc(role.title)}</span>
+            <span class="civi-test-role-meta">${esc(role.category)} · ${esc(role.role_scope || role.role_key)} · ${esc(role.role_id || "—")}</span>
+            <span class="civi-test-role-meta">status: ${esc(role.status)} · workGrammar: ${role.workGrammar ? "finnes" : "mangler"} · mailPlan: ${role.mailPlan ? "finnes" : "mangler"}</span>
+            <span class="civi-test-role-meta">mailFamilies: ${esc(role.mailFamiliesCoverage)}</span>
+          </button>`;
+        }).join("")}
+      </section>`).join("");
+  }
+
+  function renderCategories() {
+    if (!hasDom()) return;
+    const select = /** @type {any} */ (document.getElementById(FILTER_ID));
+    if (!select) return;
+    const categories = [...new Set(state.roles.map(role => norm(role.category)).filter(Boolean))]
+      .sort((a, b) => a.localeCompare(b, "no"));
+    select.innerHTML = `<option value="">Alle kategorier (${state.roles.length})</option>`
+      + categories.map(cat => `<option value="${esc(cat)}">${esc(cat)}</option>`).join("");
+    select.value = state.category;
+  }
+
+  function buildPanelHtml() {
+    const weeks = STARTPOINTS.map(sp =>
+      `<label class="civi-test-week"><input type="radio" name="${WEEK_NAME}" value="${esc(sp.key)}"${sp.key === state.startpoint ? " checked" : ""}> ${esc(sp.label)}</label>`
+    ).join("");
+    return `
+      <div class="civi-test-head">
+        <h2>Civication testmodus</h2>
+        <button type="button" id="civicationTestClose" class="civi-test-close" aria-label="Lukk">×</button>
+      </div>
+      <div class="civi-test-controls">
+        <input type="search" id="${SEARCH_ID}" class="civi-test-search" placeholder="Søk rolle …" autocomplete="off">
+        <select id="${FILTER_ID}" class="civi-test-filter"><option value="">Alle kategorier</option></select>
+      </div>
+      <div class="civi-test-filter-buttons" role="group" aria-label="Rollefilter">
+        <button type="button" data-civi-test-filter="reference">Referanseroller</button>
+        <button type="button" data-civi-test-filter="all">Alle roller</button>
+        <button type="button" data-civi-test-filter="complete">Complete</button>
+        <button type="button" data-civi-test-filter="partial">Partial</button>
+        <button type="button" data-civi-test-filter="role_model_only">Role model only</button>
+      </div>
+      <div id="${ROLES_ID}" class="civi-test-roles"><p class="civi-test-empty">Laster roller …</p></div>
+      <div class="civi-test-startpoint">
+        <div class="civi-test-startpoint-label">Progresjonsuke / startpunkt</div>
+        <div class="civi-test-weeks">${weeks}</div>
+      </div>
+      <div class="civi-test-actions">
+        <button type="button" id="civiTestStartRole">Start rolle</button>
+        <button type="button" id="civiTestStartDay">Start dag</button>
+        <button type="button" id="civiTestOpenNextAction">Åpne Neste handling</button>
+        <button type="button" id="civiTestResetDay">Nullstill dag</button>
+        <button type="button" id="civiTestResetPlayer">Avslutt aktiv rolle / Nullstill testspiller</button>
+      </div>
+      <div id="${STATUS_ID}" class="civi-test-status"></div>`;
+  }
+
+  function ensurePanel() {
+    if (!hasDom()) return null;
+    let panel = document.getElementById(PANEL_ID);
+    if (!panel) {
+      panel = document.createElement("section");
+      panel.id = PANEL_ID;
+      panel.className = "civi-test-mode civi-test-floating is-hidden";
+      const host = document.body || document.querySelector(".civi-panels");
+      if (!host) return null;
+      // Flytende testpanel ligger direkte i body, ikke inni .civi-panels-gridet.
+      // Det gjør at panelet alltid har en synlig render-host uavhengig av
+      // dashboard-layout, scrolling og seksjonsstiler.
+      host.appendChild(panel);
+    }
+
+    const needsBody = !document.getElementById(ROLES_ID) || !document.getElementById(STATUS_ID);
+    if (needsBody) panel.innerHTML = buildPanelHtml();
+
+    if (needsBody || panel.dataset?.civiTestBound !== "true") {
+      document.getElementById("civicationTestClose")?.addEventListener("click", closePanel);
+      document.getElementById("civiTestStartRole")?.addEventListener("click", () => startRole(state.selectedKey));
+      document.getElementById("civiTestStartDay")?.addEventListener("click", async () => { await startDay(); });
+      document.getElementById("civiTestOpenNextAction")?.addEventListener("click", openNextAction);
+      document.getElementById("civiTestResetDay")?.addEventListener("click", resetDay);
+      document.getElementById("civiTestResetPlayer")?.addEventListener("click", resetTestPlayer);
+      panel.querySelectorAll?.("[data-civi-test-filter]").forEach((/** @type {any} */ button) => {
+        button.addEventListener("click", () => { state.filter = button.dataset?.civiTestFilter || "all"; renderRoles(); });
+      });
+
+      const search = /** @type {any} */ (document.getElementById(SEARCH_ID));
+      search?.addEventListener("input", () => { state.query = search.value || ""; renderRoles(); });
+
+      const filter = /** @type {any} */ (document.getElementById(FILTER_ID));
+      filter?.addEventListener("change", () => { state.category = filter.value || ""; renderRoles(); });
+
+      const roles = document.getElementById(ROLES_ID);
+      roles?.addEventListener("click", event => {
+        const button = /** @type {any} */ (event.target)?.closest?.(".civi-test-role");
+        const key = button?.dataset?.roleKey;
+        if (!key) return;
+        state.selectedKey = key;
+        renderRoles();
+        renderStatus(`Valgt rolle: ${esc(findRole(key)?.title || key)}`);
+      });
+
+      panel.querySelectorAll?.(`input[name="${WEEK_NAME}"]`).forEach((/** @type {any} */ input) => {
+        input.addEventListener("change", () => { if (input.checked) state.startpoint = input.value; });
+      });
+      if (panel.dataset) panel.dataset.civiTestBound = "true";
+    }
+
+    loadRolesAsync().then(() => {
+      renderCategories();
+      renderRoles();
+      renderStatus(state.roles.length
+        ? `${state.roles.length} roller lastet fra roleModels-manifest.`
+        : (state.rolesError || "Fant ingen roller"));
+    });
+    renderStatus();
+    return panel;
+  }
+
+  function openPanel() {
+    const panel = ensurePanel();
+    if (!panel) {
+      state.panelOpen = false;
+      state.rolesError = state.rolesError || "Panel-body/host mangler";
+      return;
+    }
+    // Hver åpning repopulerer synlige felt. Dette hindrer en tom boks hvis
+    // panelet finnes fra før, eller hvis første rollelasting fortsatt pågår.
+    renderCategories();
+    renderRoles();
+    renderStatus();
+    loadRolesAsync().then(() => {
+      if (!state.panelOpen) return;
+      renderCategories();
+      renderRoles();
+      renderStatus(state.roles.length ? `${state.roles.length} roller lastet fra roleModels-manifest.` : (state.rolesError || "Fant ingen roller"));
+    });
+    panel.classList?.remove("is-hidden");
+    state.panelOpen = true;
+    const button = document.getElementById(BUTTON_ID);
+    button?.classList?.add("is-active");
+    renderStatus();
+  }
+
+  function closePanel() {
+    const panel = hasDom() ? document.getElementById(PANEL_ID) : null;
+    panel?.classList?.add("is-hidden");
+    state.panelOpen = false;
+    const button = hasDom() ? document.getElementById(BUTTON_ID) : null;
+    button?.classList?.remove("is-active");
+  }
+
+  function togglePanel() {
+    if (state.panelOpen) closePanel();
+    else openPanel();
+  }
+
+  function ensureButton() {
+    if (!hasDom()) return null;
+    let button = /** @type {any} */ (document.getElementById(BUTTON_ID));
+    if (button) return button;
+
+    button = document.createElement("button");
+    button.id = BUTTON_ID;
+    button.type = "button";
+    button.className = "civi-test-button";
+    button.textContent = "Test";
+    button.title = "Civication testmodus";
+    button.addEventListener("click", togglePanel);
+
+    const host = document.querySelector(".topbar-right") || document.querySelector(".topbar") || document.body;
+    if (host) host.insertBefore(button, host.firstChild || null);
+    return button;
+  }
+
+  function mount() {
+    if (!hasDom()) return;
+    if (!isEnabled()) return;
+    ensureButton();
+    loadRolesAsync();
+  }
+
+  function unmount() {
+    if (!hasDom()) return;
+    document.getElementById(PANEL_ID)?.remove?.();
+    document.getElementById(BUTTON_ID)?.remove?.();
+    state.panelOpen = false;
+  }
+
+  function enable() {
+    try { localStorage.setItem(FLAG_KEY, "true"); } catch (e) { /* ignore */ }
+    mount();
+    return true;
+  }
+
+  function disable() {
+    try { localStorage.setItem(FLAG_KEY, "false"); } catch (e) { /* ignore */ }
+    closePanel();
+    return true;
+  }
+
+  window.CivicationTestMode = {
+    enable,
+    disable,
+    isEnabled,
+    listRoles,
+    loadRoles: loadRolesAsync,
+    startRole,
+    startDay,
+    resetDay,
+    resetTestPlayer,
+    clearActiveRoleSession: resetTestPlayer,
+    openNextAction,
+    setFilter,
+    inspect,
+    openPanel,
+    closePanel,
+    togglePanel,
+    open: openPanel,
+    close: closePanel,
+    toggle: togglePanel
+  };
+
+  if (hasDom()) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", mount, { once: true });
+    } else {
+      mount();
+    }
+    window.addEventListener?.("updateProfile", () => renderStatus());
+    window.addEventListener?.("updateInbox", () => renderStatus());
+  }
+})();

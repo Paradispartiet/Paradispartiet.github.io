@@ -1,0 +1,238 @@
+{
+  "schema": "civication_mail_plan_v1",
+  "id": "renholder_naeringsliv_v1",
+  "category": "naeringsliv",
+  "role_scope": "renholder",
+  "description": "Praksisfortellinger og grunnplan for Renholder i Næringsliv & industri: første og andre uke veksler mellom jobbmail og private konsekvenser om hygiene, romstandard, HMS, kropp, verdighet, avvik og grenser.",
+  "arc": {
+    "from": "Ny renholder som først ser rommet som en liste med synlige flater.",
+    "to": "Trygg renholder som prioriterer soner, berøringspunkter, HMS og verdighet under realistisk tidspress.",
+    "core_questions": [
+      "Hva er forskjellen på synlig rent og hygienisk rent?",
+      "Når må tempo vike for standard?",
+      "Hvordan gjør du usynlig arbeid tydelig uten å miste verdighet?",
+      "Hvordan beskytter du kroppen når driften presser?",
+      "Når er et lite avvik egentlig et driftsproblem?"
+    ]
+  },
+  "sequence": [
+    {
+      "step": 1,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Jobbmail: Rommet som så rent ut",
+      "allowed_families": [
+        "first_week_praksisfortellinger_renholder_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 2,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Privat: Du begynner å se flekker hjemme",
+      "allowed_families": [
+        "first_week_praksisfortellinger_renholder_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 3,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Jobbmail: Berøringspunktene alle glemmer",
+      "allowed_families": [
+        "first_week_praksisfortellinger_renholder_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 4,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Privat: Vennen som ikke vil bli kontrollert for hygiene",
+      "allowed_families": [
+        "first_week_praksisfortellinger_renholder_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 5,
+      "type": "job",
+      "phase": "build",
+      "step_goal": "Jobbmail: Tolv minutter til et rom som trenger tjue",
+      "allowed_families": [
+        "first_week_praksisfortellinger_renholder_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 6,
+      "type": "people",
+      "phase": "build",
+      "step_goal": "Privat: Du vasker for å få ro i hodet",
+      "allowed_families": [
+        "first_week_praksisfortellinger_renholder_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 7,
+      "type": "job",
+      "phase": "build",
+      "step_goal": "Jobbmail: Kjemikaliet på feil flate",
+      "allowed_families": [
+        "first_week_praksisfortellinger_renholder_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 8,
+      "type": "people",
+      "phase": "build",
+      "step_goal": "Privat: Kroppen etter renhold",
+      "allowed_families": [
+        "first_week_praksisfortellinger_renholder_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 9,
+      "type": "job",
+      "phase": "mastery",
+      "step_goal": "Jobbmail: Første uke med usynlig arbeid",
+      "allowed_families": [
+        "first_week_praksisfortellinger_renholder_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 10,
+      "type": "people",
+      "phase": "mastery",
+      "step_goal": "Privat: Helgen uten renholdsblikk",
+      "allowed_families": [
+        "first_week_praksisfortellinger_renholder_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 11,
+      "type": "job",
+      "phase": "build",
+      "step_goal": "Jobbmail: Rommet som ble brukt før det var ferdig",
+      "allowed_families": [
+        "second_week_praksisfortellinger_renholder_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 12,
+      "type": "people",
+      "phase": "build",
+      "step_goal": "Privat: Du klarer ikke slippe halvferdige ting",
+      "allowed_families": [
+        "second_week_praksisfortellinger_renholder_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 13,
+      "type": "job",
+      "phase": "build",
+      "step_goal": "Jobbmail: Når søl blir avvik",
+      "allowed_families": [
+        "second_week_praksisfortellinger_renholder_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 14,
+      "type": "people",
+      "phase": "build",
+      "step_goal": "Privat: Du reagerer på rot som om det er fare",
+      "allowed_families": [
+        "second_week_praksisfortellinger_renholder_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 15,
+      "type": "job",
+      "phase": "reflection",
+      "step_goal": "Jobbmail: Den usynlige renholderen",
+      "allowed_families": [
+        "second_week_praksisfortellinger_renholder_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 16,
+      "type": "people",
+      "phase": "reflection",
+      "step_goal": "Privat: Vennen som ikke vil være arbeidsområde",
+      "allowed_families": [
+        "second_week_praksisfortellinger_renholder_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 17,
+      "type": "job",
+      "phase": "mastery",
+      "step_goal": "Jobbmail: Kroppen som del av HMS",
+      "allowed_families": [
+        "second_week_praksisfortellinger_renholder_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 18,
+      "type": "people",
+      "phase": "mastery",
+      "step_goal": "Privat: Du prøver å hvile uten å rydde først",
+      "allowed_families": [
+        "second_week_praksisfortellinger_renholder_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 19,
+      "type": "job",
+      "phase": "mastery",
+      "step_goal": "Jobbmail: Andre uke med romstandard og verdighet",
+      "allowed_families": [
+        "second_week_praksisfortellinger_renholder_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 20,
+      "type": "people",
+      "phase": "mastery",
+      "step_goal": "Privat: Helgen uten standardkontroll",
+      "allowed_families": [
+        "second_week_praksisfortellinger_renholder_private"
+      ],
+      "fallback_types": []
+    }
+  ],
+  "role_id": "naer_renholder",
+  "role_key": "renholder",
+  "main_case": {
+    "title": "Rommet må være klart før noen vet at du var der",
+    "premise": "Du starter en dag i et bygg der møterom, toaletter, inngangsparti og fellesarealer må være klare før brukerne kommer. Samtidig mangler en kollega, en søppellekkasje oppstår, en leder vil ha synlige resultater, og et usynlig hygieneproblem er viktigere enn det folk legger merke til."
+  },
+  "outcome_rules": {
+    "mastery": [
+      "prioriterer hygiene og kontaktflater",
+      "melder avvik",
+      "beskytter kropp og verdighet"
+    ],
+    "risk": [
+      "velger bare synlig renhet",
+      "skjuler avvik",
+      "lar tidspress bli kroppsskade"
+    ]
+  }
+}

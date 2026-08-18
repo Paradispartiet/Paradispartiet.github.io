@@ -1,0 +1,1045 @@
+{
+  "targetId": "glads_molle",
+  "categoryId": "historie",
+  "generator_version": "chatgpt_history_go_source_backed_v2",
+  "generated_from": [
+    "data/places/natur/oslo/places_oslo_natur_akerselvarute/glads_molle.json",
+    "data/leksikon/places/oslo/historie/leksikon_oslo_historie_batch2.json",
+    "data/quiz/regler/SET_MAL_README_v3.md"
+  ],
+  "manual_production_notes": {
+    "quality_direction": "sted → observasjon → emne → forståelse",
+    "hold_back": [
+      "Ingen adgang inn i bygningen eller på privat område forutsettes.",
+      "Ingen usikre artsdetaljer.",
+      "Dagens leietakere hardkodes ikke."
+    ]
+  },
+  "sets": [
+    {
+      "set_id": "historie_glads_molle_set_1",
+      "level": 1,
+      "order": 1,
+      "xp": 50,
+      "mode": "place_intro_story",
+      "questions": [
+        {
+          "id": "glads_molle_s1_q1",
+          "quiz_id": "historie_glads_molle_set_1_q1",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hva er det viktigste å vite om Glads mølle?",
+          "options": [
+            "Det er en bevart papirmøllebygning fra 1736",
+            "Det er en moderne kornsilo",
+            "Det er en foss uten bygning"
+          ],
+          "answer": "Det er en bevart papirmøllebygning fra 1736",
+          "answerIndex": 0,
+          "knowledge": "Glads mølle står fortsatt i Sandakerveien 10A.",
+          "difficulty": 1,
+          "question_type": "stedskonkret",
+          "question_layer": "intro_story",
+          "tags": [
+            "glads_molle",
+            "identitet"
+          ],
+          "source": [
+            "Oslo byleksikon: Glads mølle"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s1_q2",
+          "quiz_id": "historie_glads_molle_set_1_q2",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hva het anlegget opprinnelig?",
+          "options": [
+            "Nedre Papirmølle",
+            "Bjølsen Valsemølle",
+            "Nedre Foss Mølle"
+          ],
+          "answer": "Nedre Papirmølle",
+          "answerIndex": 0,
+          "knowledge": "Navnet viser at produksjonen var papir, ikke mel.",
+          "difficulty": 1,
+          "question_type": "stedskonkret",
+          "question_layer": "intro_story",
+          "tags": [
+            "glads_molle",
+            "papir"
+          ],
+          "source": [
+            "Oslo byleksikon: Glads mølle"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s1_q3",
+          "quiz_id": "historie_glads_molle_set_1_q3",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hvilket byggemateriale preger den fredede bygningen?",
+          "options": [
+            "Panelt tømmer",
+            "Armert betong",
+            "Glass og stål"
+          ],
+          "answer": "Panelt tømmer",
+          "answerIndex": 0,
+          "knowledge": "Trebygningen med mansardtak skiller stedet fra senere teglfabrikker.",
+          "difficulty": 1,
+          "question_type": "stedskonkret",
+          "question_layer": "intro_story",
+          "tags": [
+            "glads_molle",
+            "arkitektur"
+          ],
+          "source": [
+            "Oslo kommune: Sagene – et unikt område"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s1_q4",
+          "quiz_id": "historie_glads_molle_set_1_q4",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hvor står Glads mølle?",
+          "options": [
+            "Sandakerveien 10A ved Akerselva",
+            "Ved Maridalsvannet",
+            "På Karl Johans gate"
+          ],
+          "answer": "Sandakerveien 10A ved Akerselva",
+          "answerIndex": 0,
+          "knowledge": "Den presise adressen gjør det mulig å finne selve bygningen.",
+          "difficulty": 1,
+          "question_type": "stedskonkret",
+          "question_layer": "intro_story",
+          "tags": [
+            "glads_molle",
+            "koordinat"
+          ],
+          "source": [
+            "Lokalhistoriewiki: Glads mølle"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s1_q5",
+          "quiz_id": "historie_glads_molle_set_1_q5",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hva gjorde Akerselva nødvendig for papirmølla?",
+          "options": [
+            "Elvas fall ga mekanisk energi",
+            "Elva leverte ferdige papirark",
+            "Elva var bare utsikt"
+          ],
+          "answer": "Elvas fall ga mekanisk energi",
+          "answerIndex": 0,
+          "knowledge": "Labakkenfallene drev bearbeidingen av fiberråstoff.",
+          "difficulty": 1,
+          "question_type": "stedskonkret",
+          "question_layer": "intro_story",
+          "tags": [
+            "glads_molle",
+            "vannkraft"
+          ],
+          "source": [
+            "Industrimuseum: Akerselva Digitalt"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s1_q6",
+          "quiz_id": "historie_glads_molle_set_1_q6",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hvem var med på å oppføre Nedre Papirmølle?",
+          "options": [
+            "Collett & Leuch og Iver Elieson",
+            "Gustav Martinsen og Ole Amundsen",
+            "Halvor Schou og Oluf Roll"
+          ],
+          "answer": "Collett & Leuch og Iver Elieson",
+          "answerIndex": 0,
+          "knowledge": "Papirmølla ble reist av handelsaktører fra Christianias storborgerskap.",
+          "difficulty": 1,
+          "question_type": "stedskonkret",
+          "question_layer": "intro_story",
+          "tags": [
+            "glads_molle",
+            "person"
+          ],
+          "source": [
+            "Store norske leksikon: Iver Elieson"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s1_q7",
+          "quiz_id": "historie_glads_molle_set_1_q7",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hva bør spilleren se etter først?",
+          "options": [
+            "Trebygningen, mansardtaket og forholdet til elvefallet",
+            "Bare parkerte biler",
+            "En moderne stadion"
+          ],
+          "answer": "Trebygningen, mansardtaket og forholdet til elvefallet",
+          "answerIndex": 0,
+          "knowledge": "Stedlesningen starter med materialer og plassering.",
+          "difficulty": 1,
+          "question_type": "stedskonkret",
+          "question_layer": "intro_story",
+          "tags": [
+            "glads_molle",
+            "stedlesning"
+          ],
+          "source": [
+            "Oslo byleksikon: Glads mølle"
+          ],
+          "claim_basis": "source_backed"
+        }
+      ]
+    },
+    {
+      "set_id": "historie_glads_molle_set_2",
+      "level": 2,
+      "order": 2,
+      "xp": 60,
+      "mode": "place_life_people_events",
+      "questions": [
+        {
+          "id": "glads_molle_s2_q1",
+          "quiz_id": "historie_glads_molle_set_2_q1",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hvem ga mølla navnet den har i dag?",
+          "options": [
+            "Fredrik Glad",
+            "Iver Elieson",
+            "Halvor Schou"
+          ],
+          "answer": "Fredrik Glad",
+          "answerIndex": 0,
+          "knowledge": "Fredrik Glad overtok i 1798.",
+          "difficulty": 1,
+          "question_type": "stedskonkret",
+          "question_layer": "place_life",
+          "tags": [
+            "glads_molle",
+            "person"
+          ],
+          "source": [
+            "Lokalhistoriewiki: Glads mølle"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s2_q2",
+          "quiz_id": "historie_glads_molle_set_2_q2",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hvordan var mølla organisert 1748–1798?",
+          "options": [
+            "Den ble drevet sammen med Bentse Brug",
+            "Den var del av Bjølsen Valsemølle",
+            "Den stod ubrukt"
+          ],
+          "answer": "Den ble drevet sammen med Bentse Brug",
+          "answerIndex": 0,
+          "knowledge": "Samdriften knyttet mølla til et større papirmiljø.",
+          "difficulty": 1,
+          "question_type": "stedskonkret",
+          "question_layer": "place_life",
+          "tags": [
+            "glads_molle",
+            "drift"
+          ],
+          "source": [
+            "Oslo byleksikon: Glads mølle"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s2_q3",
+          "quiz_id": "historie_glads_molle_set_2_q3",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Når opphørte papirmølledriften?",
+          "options": [
+            "I 1870-årene",
+            "I 1740-årene",
+            "I 1990-årene"
+          ],
+          "answer": "I 1870-årene",
+          "answerIndex": 0,
+          "knowledge": "Den gamle produksjonsformen ble avleggs.",
+          "difficulty": 1,
+          "question_type": "stedskonkret",
+          "question_layer": "place_life",
+          "tags": [
+            "glads_molle",
+            "tidslinje"
+          ],
+          "source": [
+            "Lokalhistoriewiki: Glads mølle"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s2_q4",
+          "quiz_id": "historie_glads_molle_set_2_q4",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hva skjedde fra 1880?",
+          "options": [
+            "Bygningen ble del av Hjula Væverier",
+            "Den ble kongelig slott",
+            "Den ble revet"
+          ],
+          "answer": "Bygningen ble del av Hjula Væverier",
+          "answerIndex": 0,
+          "knowledge": "Den gamle papirmølla ble del av tekstilbedriften over elva.",
+          "difficulty": 1,
+          "question_type": "stedskonkret",
+          "question_layer": "place_life",
+          "tags": [
+            "glads_molle",
+            "hjula"
+          ],
+          "source": [
+            "Oslo byleksikon: Hjula Væverier"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s2_q5",
+          "quiz_id": "historie_glads_molle_set_2_q5",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hva ble anlagt i underetasjen?",
+          "options": [
+            "En kraftstasjon",
+            "En kino",
+            "Et svømmebasseng"
+          ],
+          "answer": "En kraftstasjon",
+          "answerIndex": 0,
+          "knowledge": "Energien ble overført til Hjula på motsatt side.",
+          "difficulty": 1,
+          "question_type": "stedskonkret",
+          "question_layer": "place_life",
+          "tags": [
+            "glads_molle",
+            "teknologi"
+          ],
+          "source": [
+            "Oslo byleksikon: Glads mølle"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s2_q6",
+          "quiz_id": "historie_glads_molle_set_2_q6",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hvilken produksjon fant sted før 1958?",
+          "options": [
+            "Grammofonplater",
+            "Flymotorer",
+            "Sement"
+          ],
+          "answer": "Grammofonplater",
+          "answerIndex": 0,
+          "knowledge": "Bygningen fortsatte å romme industriproduksjon.",
+          "difficulty": 1,
+          "question_type": "stedskonkret",
+          "question_layer": "place_life",
+          "tags": [
+            "glads_molle",
+            "grammofon"
+          ],
+          "source": [
+            "Oslo byleksikon: Glads mølle"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s2_q7",
+          "quiz_id": "historie_glads_molle_set_2_q7",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hvem flyttet inn i 1958?",
+          "options": [
+            "F. J. Stenersens trykkeri",
+            "Bjølsen Valsemølle",
+            "Nydalens Compagnie"
+          ],
+          "answer": "F. J. Stenersens trykkeri",
+          "answerIndex": 0,
+          "knowledge": "Trykkeriet videreførte forbindelsen til papir.",
+          "difficulty": 1,
+          "question_type": "stedskonkret",
+          "question_layer": "place_life",
+          "tags": [
+            "glads_molle",
+            "trykkeri"
+          ],
+          "source": [
+            "Lokalhistoriewiki: Glads mølle"
+          ],
+          "claim_basis": "source_backed"
+        }
+      ]
+    },
+    {
+      "set_id": "historie_glads_molle_set_3",
+      "level": 3,
+      "order": 3,
+      "xp": 70,
+      "mode": "emne_based_foundation",
+      "questions": [
+        {
+          "id": "glads_molle_s3_q1",
+          "quiz_id": "historie_glads_molle_set_3_q1",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "emne",
+          "question": "Hva er en papirmølle?",
+          "options": [
+            "Et anlegg som bearbeidet fiberråstoff til papir ved hjelp av vannkraft",
+            "En kornmølle med papirskilt",
+            "Et bibliotek"
+          ],
+          "answer": "Et anlegg som bearbeidet fiberråstoff til papir ved hjelp av vannkraft",
+          "answerIndex": 0,
+          "knowledge": "Glads mølle koblet vannkraft til håndlaget papir.",
+          "difficulty": 2,
+          "question_type": "definition",
+          "question_layer": "foundation",
+          "tags": [
+            "glads_molle",
+            "begrep"
+          ],
+          "source": [
+            "Industrimuseum: Akerselva Digitalt"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s3_q2",
+          "quiz_id": "historie_glads_molle_set_3_q2",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "emne",
+          "question": "Hvorfor var tekstilfiller et viktig råstoff?",
+          "options": [
+            "Fibrene kunne formes til nye papirark",
+            "De ble brent i turbiner",
+            "De gjorde elva dypere"
+          ],
+          "answer": "Fibrene kunne formes til nye papirark",
+          "answerIndex": 0,
+          "knowledge": "Brukte tekstiler var en sentral kilde til papirfiber.",
+          "difficulty": 2,
+          "question_type": "definition",
+          "question_layer": "foundation",
+          "tags": [
+            "glads_molle",
+            "begrep"
+          ],
+          "source": [
+            "Industrimuseum: Akerselva Digitalt"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s3_q3",
+          "quiz_id": "historie_glads_molle_set_3_q3",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "emne",
+          "question": "Hva er et mansardtak?",
+          "options": [
+            "Et tak med knekt, bratt nedre takflate",
+            "Et helt flatt betongtak",
+            "Et glasstak uten helling"
+          ],
+          "answer": "Et tak med knekt, bratt nedre takflate",
+          "answerIndex": 0,
+          "knowledge": "Mansardtaket er et tydelig trekk ved bygningen.",
+          "difficulty": 2,
+          "question_type": "definition",
+          "question_layer": "foundation",
+          "tags": [
+            "glads_molle",
+            "begrep"
+          ],
+          "source": [
+            "Oslo byleksikon: Glads mølle"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s3_q4",
+          "quiz_id": "historie_glads_molle_set_3_q4",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "emne",
+          "question": "Hva betyr adaptiv gjenbruk?",
+          "options": [
+            "At en eldre bygning får ny bruk uten å miste historiske trekk",
+            "At bygningen kopieres et annet sted",
+            "At all gammel struktur fjernes"
+          ],
+          "answer": "At en eldre bygning får ny bruk uten å miste historiske trekk",
+          "answerIndex": 0,
+          "knowledge": "Glads mølle har rommet nye virksomheter samtidig som den er bevart.",
+          "difficulty": 2,
+          "question_type": "definition",
+          "question_layer": "foundation",
+          "tags": [
+            "glads_molle",
+            "begrep"
+          ],
+          "source": [
+            "Oslo kommune: Sagene – et unikt område"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s3_q5",
+          "quiz_id": "historie_glads_molle_set_3_q5",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "emne",
+          "question": "Hva betyr fredning?",
+          "options": [
+            "Bygningen har juridisk vern som kulturminne",
+            "Bygningen fryses ned",
+            "Bygningen må stå tom"
+          ],
+          "answer": "Bygningen har juridisk vern som kulturminne",
+          "answerIndex": 0,
+          "knowledge": "Fredningen fra 1967 beskytter kulturhistoriske verdier.",
+          "difficulty": 2,
+          "question_type": "definition",
+          "question_layer": "foundation",
+          "tags": [
+            "glads_molle",
+            "begrep"
+          ],
+          "source": [
+            "Lokalhistoriewiki: Glads mølle"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s3_q6",
+          "quiz_id": "historie_glads_molle_set_3_q6",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hva viser Hjula-kraftstasjonen?",
+          "options": [
+            "At samme elvefall kunne brukes i en ny industriell teknologi",
+            "At vannkraften ikke betydde noe",
+            "At bygningen ble bolig"
+          ],
+          "answer": "At samme elvefall kunne brukes i en ny industriell teknologi",
+          "answerIndex": 0,
+          "knowledge": "Stedets energifunksjon fortsatte etter papirproduksjonen.",
+          "difficulty": 2,
+          "question_type": "stedskonkret",
+          "question_layer": "foundation",
+          "tags": [
+            "glads_molle",
+            "teknologi"
+          ],
+          "source": [
+            "Oslo byleksikon: Hjula Væverier"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s3_q7",
+          "quiz_id": "historie_glads_molle_set_3_q7",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "emne",
+          "question": "Hva er god kildekritikk her?",
+          "options": [
+            "Å skille dokumenterte opplysninger fra antakelser",
+            "Å fylle inn detaljer fritt",
+            "Å bruke bare dagens utseende"
+          ],
+          "answer": "Å skille dokumenterte opplysninger fra antakelser",
+          "answerIndex": 0,
+          "knowledge": "Hovedtidslinjen er dokumentert, mens enkeltdetaljer må kildebelegges.",
+          "difficulty": 2,
+          "question_type": "kildekritikk",
+          "question_layer": "foundation",
+          "tags": [
+            "glads_molle",
+            "begrep"
+          ],
+          "source": [
+            "Oslo byleksikon: Glads mølle"
+          ],
+          "claim_basis": "source_backed"
+        }
+      ]
+    },
+    {
+      "set_id": "historie_glads_molle_set_4",
+      "level": 4,
+      "order": 4,
+      "xp": 80,
+      "mode": "place_concrete_advanced",
+      "questions": [
+        {
+          "id": "glads_molle_s4_q1",
+          "quiz_id": "historie_glads_molle_set_4_q1",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hvilken tidsrekkefølge er riktig?",
+          "options": [
+            "Papirmølle – Hjula-kraftstasjon – trykkeri – restaurering",
+            "Trykkeri – papirmølle – riving – kraftstasjon",
+            "Kornsilo – slott – papirmølle – stadion"
+          ],
+          "answer": "Papirmølle – Hjula-kraftstasjon – trykkeri – restaurering",
+          "answerIndex": 0,
+          "knowledge": "Rekkefølgen viser fire brukslag i samme bygning.",
+          "difficulty": 2,
+          "question_type": "stedskonkret",
+          "question_layer": "advanced_place",
+          "tags": [
+            "glads_molle",
+            "analyse"
+          ],
+          "source": [
+            "Oslo byleksikon: Glads mølle"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s4_q2",
+          "quiz_id": "historie_glads_molle_set_4_q2",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hvorfor var den gamle markøren misvisende?",
+          "options": [
+            "Den lå omtrent 600 meter nord for bygningen",
+            "Den lå inne i bygningen",
+            "Stedet har aldri hatt adresse"
+          ],
+          "answer": "Den lå omtrent 600 meter nord for bygningen",
+          "answerIndex": 0,
+          "knowledge": "Glads mølle er en konkret bygning i Sandakerveien 10A.",
+          "difficulty": 2,
+          "question_type": "stedskonkret",
+          "question_layer": "advanced_place",
+          "tags": [
+            "glads_molle",
+            "koordinat"
+          ],
+          "source": [
+            "Lokalhistoriewiki: Glads mølle"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s4_q3",
+          "quiz_id": "historie_glads_molle_set_4_q3",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hva skiller Glads mølle fra Bjølsenfossen?",
+          "options": [
+            "Glads viser papirmøllebygning; Bjølsen viser foss, sag og valsemølle",
+            "De er samme sted",
+            "Glads handler bare om park"
+          ],
+          "answer": "Glads viser papirmøllebygning; Bjølsen viser foss, sag og valsemølle",
+          "answerIndex": 0,
+          "knowledge": "Produksjonene og hovedobjektene er ulike.",
+          "difficulty": 2,
+          "question_type": "stedskonkret",
+          "question_layer": "advanced_place",
+          "tags": [
+            "glads_molle",
+            "sammenligning"
+          ],
+          "source": [
+            "History Go: bjoelsenfossen"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s4_q4",
+          "quiz_id": "historie_glads_molle_set_4_q4",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hva kan den blå plaketten brukes til?",
+          "options": [
+            "Å kontrollere stedsidentiteten og lese kort historie",
+            "Å måle vannstanden",
+            "Å låse opp bygningen"
+          ],
+          "answer": "Å kontrollere stedsidentiteten og lese kort historie",
+          "answerIndex": 0,
+          "knowledge": "Oslo Byes Vels skilt markerer historisk viktige bygg.",
+          "difficulty": 2,
+          "question_type": "stedskonkret",
+          "question_layer": "advanced_place",
+          "tags": [
+            "glads_molle",
+            "observasjon"
+          ],
+          "source": [
+            "Oslo byleksikon: Glads mølle"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s4_q5",
+          "quiz_id": "historie_glads_molle_set_4_q5",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hvordan observerer man stedet trygt?",
+          "options": [
+            "Fra offentlig gangvei eller bru uten å gå inn på privat område",
+            "Ved å klatre på taket",
+            "Ved å åpne tekniske luker"
+          ],
+          "answer": "Fra offentlig gangvei eller bru uten å gå inn på privat område",
+          "answerIndex": 0,
+          "knowledge": "Stedet kan leses uten å overskride grenser eller gå ned mot vannet.",
+          "difficulty": 2,
+          "question_type": "stedskonkret",
+          "question_layer": "advanced_place",
+          "tags": [
+            "glads_molle",
+            "sikkerhet"
+          ],
+          "source": [
+            "History Go safety rule"
+          ],
+          "claim_basis": "curated_safety"
+        },
+        {
+          "id": "glads_molle_s4_q6",
+          "quiz_id": "historie_glads_molle_set_4_q6",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hvorfor er trebygningen særlig viktig?",
+          "options": [
+            "Den bevarer en sjelden fabrikkbygningstype fra 1700-tallet",
+            "Alle fabrikker var identiske trehus",
+            "Den ble bygget etter 2000"
+          ],
+          "answer": "Den bevarer en sjelden fabrikkbygningstype fra 1700-tallet",
+          "answerIndex": 0,
+          "knowledge": "Den omtales som Norges eldste bevarte fabrikkbygning i tre.",
+          "difficulty": 2,
+          "question_type": "stedskonkret",
+          "question_layer": "advanced_place",
+          "tags": [
+            "glads_molle",
+            "bevaring"
+          ],
+          "source": [
+            "Oslo kommune: Sagene – et unikt område"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s4_q7",
+          "quiz_id": "historie_glads_molle_set_4_q7",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hva forteller plasseringen mot Hjula?",
+          "options": [
+            "Energi og industrinettverk var koblet over elva",
+            "Elva skilte virksomhetene helt",
+            "Hjula lå i en annen by"
+          ],
+          "answer": "Energi og industrinettverk var koblet over elva",
+          "answerIndex": 0,
+          "knowledge": "Kraftstasjonen overførte energi til tekstilfabrikken.",
+          "difficulty": 2,
+          "question_type": "stedskonkret",
+          "question_layer": "advanced_place",
+          "tags": [
+            "glads_molle",
+            "hjula"
+          ],
+          "source": [
+            "Oslo byleksikon: Hjula Væverier"
+          ],
+          "claim_basis": "source_backed"
+        }
+      ]
+    },
+    {
+      "set_id": "historie_glads_molle_set_5",
+      "level": 5,
+      "order": 5,
+      "xp": 90,
+      "mode": "emne_based_advanced",
+      "questions": [
+        {
+          "id": "glads_molle_s5_q1",
+          "quiz_id": "historie_glads_molle_set_5_q1",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hva er den dypeste læringen?",
+          "options": [
+            "Én bygning viser skiftet fra håndverk til storindustri, vern og gjenbruk",
+            "Industrihistorie handler bare om maskiner",
+            "Gamle bygg kan ikke få ny bruk"
+          ],
+          "answer": "Én bygning viser skiftet fra håndverk til storindustri, vern og gjenbruk",
+          "answerIndex": 0,
+          "knowledge": "Glads mølle samler nesten tre hundre år med produksjon.",
+          "difficulty": 3,
+          "question_type": "stedskonkret",
+          "question_layer": "advanced_emne",
+          "tags": [
+            "glads_molle",
+            "historiske_lag"
+          ],
+          "source": [
+            "Oslo byleksikon: Glads mølle"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s5_q2",
+          "quiz_id": "historie_glads_molle_set_5_q2",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hvorfor var 1967 et vendepunkt?",
+          "options": [
+            "Bygningen ble fredet",
+            "Papirmølla åpnet",
+            "Hjula ble grunnlagt"
+          ],
+          "answer": "Bygningen ble fredet",
+          "answerIndex": 0,
+          "knowledge": "Fredningen endret vilkårene for senere bruk.",
+          "difficulty": 3,
+          "question_type": "stedskonkret",
+          "question_layer": "advanced_emne",
+          "tags": [
+            "glads_molle",
+            "bevaring"
+          ],
+          "source": [
+            "Lokalhistoriewiki: Glads mølle"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s5_q3",
+          "quiz_id": "historie_glads_molle_set_5_q3",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hva representerer restaureringen i 1992?",
+          "options": [
+            "At bruk og vern kunne kombineres",
+            "At bygningen ble erstattet",
+            "At elva ble flyttet"
+          ],
+          "answer": "At bruk og vern kunne kombineres",
+          "answerIndex": 0,
+          "knowledge": "Restaureringen sikret bygningen samtidig som den kunne brukes.",
+          "difficulty": 3,
+          "question_type": "stedskonkret",
+          "question_layer": "advanced_emne",
+          "tags": [
+            "glads_molle",
+            "gjenbruk"
+          ],
+          "source": [
+            "Oslo byleksikon: Glads mølle"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s5_q4",
+          "quiz_id": "historie_glads_molle_set_5_q4",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hvordan henger papirmølle og trykkeri sammen?",
+          "options": [
+            "Begge arbeider med papir på ulike trinn",
+            "De har ingen forbindelse",
+            "Begge produserte korn"
+          ],
+          "answer": "Begge arbeider med papir på ulike trinn",
+          "answerIndex": 0,
+          "knowledge": "Papirmølla laget materialet; trykkeriet brukte det.",
+          "difficulty": 3,
+          "question_type": "stedskonkret",
+          "question_layer": "advanced_emne",
+          "tags": [
+            "glads_molle",
+            "papir"
+          ],
+          "source": [
+            "Lokalhistoriewiki: Glads mølle"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s5_q5",
+          "quiz_id": "historie_glads_molle_set_5_q5",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hva viser stedet om natur og teknologi?",
+          "options": [
+            "Samme elvefall kunne drive ulike teknologier over tid",
+            "Natur og teknologi var adskilt",
+            "Elva fikk betydning etter 1992"
+          ],
+          "answer": "Samme elvefall kunne drive ulike teknologier over tid",
+          "answerIndex": 0,
+          "knowledge": "Vannkraften bandt papirmølle og kraftstasjon til samme terreng.",
+          "difficulty": 3,
+          "question_type": "stedskonkret",
+          "question_layer": "advanced_emne",
+          "tags": [
+            "glads_molle",
+            "vannkraft"
+          ],
+          "source": [
+            "Oslo byleksikon: Labakken"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s5_q6",
+          "quiz_id": "historie_glads_molle_set_5_q6",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hvorfor er Iver Elieson relevant?",
+          "options": [
+            "Han knytter bygningen til handelskapital og tidlig industri",
+            "Han var trykker i 1958",
+            "Han restaurerte huset i 1992"
+          ],
+          "answer": "Han knytter bygningen til handelskapital og tidlig industri",
+          "answerIndex": 0,
+          "knowledge": "Papirmølla krevde kapital, råvarer og handelsnettverk.",
+          "difficulty": 3,
+          "question_type": "stedskonkret",
+          "question_layer": "advanced_emne",
+          "tags": [
+            "glads_molle",
+            "person"
+          ],
+          "source": [
+            "Store norske leksikon: Iver Elieson"
+          ],
+          "claim_basis": "source_backed"
+        },
+        {
+          "id": "glads_molle_s5_q7",
+          "quiz_id": "historie_glads_molle_set_5_q7",
+          "categoryId": "historie",
+          "placeId": "glads_molle",
+          "targetId": "glads_molle",
+          "question_scope": "place",
+          "question": "Hva bør spilleren kunne forklare etter besøket?",
+          "options": [
+            "Hvordan bygning, vannfall, eiere, produksjoner og vern henger sammen",
+            "Bare adressen",
+            "Bare fargen på huset"
+          ],
+          "answer": "Hvordan bygning, vannfall, eiere, produksjoner og vern henger sammen",
+          "answerIndex": 0,
+          "knowledge": "Målet er å bruke observasjoner til å forstå tidslinjen.",
+          "difficulty": 3,
+          "question_type": "stedskonkret",
+          "question_layer": "advanced_emne",
+          "tags": [
+            "glads_molle",
+            "stedbasert_laring"
+          ],
+          "source": [
+            "Oslo byleksikon: Glads mølle"
+          ],
+          "claim_basis": "source_backed"
+        }
+      ]
+    }
+  ]
+}

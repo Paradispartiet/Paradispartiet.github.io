@@ -1,0 +1,252 @@
+{
+  "schema": "history_go_fagverk_filosofi_article_v1",
+  "version": "1.0.0",
+  "subject_id": "filosofi",
+  "id": "em_filosofi_gyldighet_holdbarhet",
+  "title": "Gyldighet, holdbarhet og slutningsform",
+  "domain_id": "argumentasjon_logikk",
+  "area_id": "filosofi_argumentasjon_logikk",
+  "level": 2,
+  "status": "complete",
+  "editorial_quality": "university_depth_reviewed",
+  "canonical_definition": "Forskjellen mellom logisk følge og sanne eller rimelige premisser.",
+  "concept_ids": [
+    "gyldighet",
+    "holdbarhet",
+    "logisk_folge"
+  ],
+  "method_ids": [
+    "met_filosofi_argumentrekonstruksjon",
+    "met_filosofi_deduktiv_analyse",
+    "met_filosofi_premissproving"
+  ],
+  "theory_hook_ids": [
+    "fil_argumentasjon_logikk_02"
+  ],
+  "thinker_refs": [
+    "gottlob_frege",
+    "alfred_tarski"
+  ],
+  "primary_work_refs": [
+    "Begriffsschrift",
+    "The Concept of Truth in Formalized Languages"
+  ],
+  "source_ids": [
+    "sep-classical-logic",
+    "sep-informal-logic",
+    "sep-logical-consequence"
+  ],
+  "claims": [
+    {
+      "id": "em_filosofi_gyldighet_holdbarhet_claim_problem",
+      "type": "problem_framing",
+      "text": "Debatten skiller den semantiske eller formelle egenskapen gyldighet, forstått som sannhetsbevaring i deduktive følgerelasjoner, fra spørsmålet om premissene faktisk er sanne eller godt begrunnet. Dette skillet er avgjørende for å unngå at et gyldig argument feilaktig behandles som et godt argument om verden.",
+      "source_ids": [
+        "sep-classical-logic",
+        "sep-informal-logic",
+        "sep-logical-consequence"
+      ]
+    },
+    {
+      "id": "em_filosofi_gyldighet_holdbarhet_claim_argument",
+      "type": "position_reconstruction",
+      "text": "K: Evaluering må derfor gjøres i to trinn: først testes slutningsformen for gyldighet eller motmodell, deretter vurderes sannheten og begrunnelsen for premissene.",
+      "source_ids": [
+        "sep-classical-logic",
+        "sep-informal-logic",
+        "sep-logical-consequence"
+      ]
+    },
+    {
+      "id": "em_filosofi_gyldighet_holdbarhet_claim_distinction",
+      "type": "concept_distinction",
+      "text": "P2: Frege og den senere semantiske tradisjonen gjør det mulig å skille logisk følge fra psykologisk overbevisning: at en konklusjon virker plausibel sier ingenting om hvorvidt den følger av premissene.",
+      "source_ids": [
+        "sep-classical-logic",
+        "sep-informal-logic",
+        "sep-logical-consequence"
+      ]
+    },
+    {
+      "id": "em_filosofi_gyldighet_holdbarhet_claim_rival",
+      "type": "rival_position",
+      "text": "Innvending: Den klassiske sannhetsbevarende forståelsen av gyldighet er for smal for induktive, abduktive og ikke-monotone slutninger som er sentrale i vitenskap og hverdagsresonnering.",
+      "source_ids": [
+        "sep-classical-logic",
+        "sep-informal-logic",
+        "sep-logical-consequence"
+      ]
+    },
+    {
+      "id": "em_filosofi_gyldighet_holdbarhet_claim_reply",
+      "type": "philosophical_argument",
+      "text": "Svar: Det viser en avgrensning, ikke at gyldighetsbegrepet er ubrukelig. Deduktiv gyldighet bør reserveres for nødvendige følgerelasjoner; andre slutningstyper må vurderes med egne styrkekriterier i stedet for å få betegnelsen gyldig uten presisering.",
+      "source_ids": [
+        "sep-classical-logic",
+        "sep-informal-logic",
+        "sep-logical-consequence"
+      ]
+    },
+    {
+      "id": "em_filosofi_gyldighet_holdbarhet_claim_source",
+      "type": "source_boundary",
+      "text": "Primærverk bærer konkrete posisjons- og tekstrekonstruksjoner, mens faglige sekundærkilder brukes til problemhistorie, rivaler og bibliografisk kontroll; empiriske casepåstander krever egne casekilder.",
+      "source_ids": [
+        "sep-classical-logic",
+        "sep-informal-logic",
+        "sep-logical-consequence"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "problem",
+      "title": "Problemet",
+      "paragraphs": [
+        "Gyldighet, holdbarhet og slutningsform undersøker forskjellen mellom logisk følge og sanne eller rimelige premisser. Den sentrale oppgaven er ikke å gjenta definisjoner, men å vise hvilke premisser som skiller de konkurrerende posisjonene og hva som følger når ett premiss forkastes. Debatten skiller den semantiske eller formelle egenskapen gyldighet, forstått som sannhetsbevaring i deduktive følgerelasjoner, fra spørsmålet om premissene faktisk er sanne eller godt begrunnet. Dette skillet er avgjørende for å unngå at et gyldig argument feilaktig behandles som et godt argument om verden.",
+        "Emnet hører til Argumentasjon og logikk. Her ligger den sentrale spenningen mellom formell gyldighet på den ene siden og kontekstavhengig, praktisk argumentasjon på den andre. Målet er ikke å fjerne denne spenningen med en rask definisjon, men å vise hvilke påstander som følger av hvilke premisser, hvilke premisser som trenger støtte, og hvilke deler av uenigheten som skyldes ulike begreper eller normative mål."
+      ]
+    },
+    {
+      "id": "begreper",
+      "title": "Begrepene som bærer argumentet",
+      "paragraphs": [
+        "Gyldighet: Egenskapen ved et deduktivt argument at sannheten i premissene garanterer sannheten i konklusjonen. Gyldighet må særlig holdes fra Holdbarhet og Logisk følge; relasjonen må prøves i selve argumentet. I analysen av gyldighet, holdbarhet og slutningsform skal begrepet gjøre en synlig forskjell: leseren må kunne peke på hvilket premiss, kriterium eller grensetilfelle som endres dersom gyldighet forstås annerledes. I argumentrekonstruksjonen får begrepet en konkret rolle: Et deduktivt argument er gyldig når det ikke finnes en mulig tolkning av den relevante formen der alle premissene er sanne og konklusjonen falsk; en motmodell er derfor nok til å vise ugyldighet.",
+        "Holdbarhet: At et deduktivt argument både er gyldig og har sanne eller godt begrunnede premisser. Holdbarhet må særlig holdes fra Gyldighet og Logisk følge; relasjonen må prøves i selve argumentet. En presis bruk i gyldighet, holdbarhet og slutningsform krever derfor et eksempel eller moteksempel som viser når holdbarhet gjelder, og når et nærliggende begrep er bedre. I argumentrekonstruksjonen får begrepet en konkret rolle: Holdbarhet krever mer enn gyldighet, fordi også premissene må kunne forsvares.",
+        "Logisk følge: logisk følge brukes i denne artikkelen som et arbeidsbegrep for å analysere forskjellen mellom logisk følge og sanne eller rimelige premisser; den presise rekkevidden må fastsettes gjennom begrepets relasjoner, eksempler, innvendinger og den teorien som brukes. Logisk følge må særlig holdes fra Gyldighet og Holdbarhet; relasjonen må prøves i selve argumentet. Begrepet er faglig mest nyttig når det kan brukes til å avgjøre en konkret uenighet i gyldighet, holdbarhet og slutningsform, ikke når det bare fungerer som navn på temaet. I argumentrekonstruksjonen får begrepet en konkret rolle: Frege og den senere semantiske tradisjonen gjør det mulig å skille logisk følge fra psykologisk overbevisning: at en konklusjon virker plausibel sier ingenting om hvorvidt den følger av premissene."
+      ]
+    },
+    {
+      "id": "argument",
+      "title": "Argumentrekonstruksjon",
+      "paragraphs": [
+        "P1: Et deduktivt argument er gyldig når det ikke finnes en mulig tolkning av den relevante formen der alle premissene er sanne og konklusjonen falsk; en motmodell er derfor nok til å vise ugyldighet.",
+        "P2: Frege og den senere semantiske tradisjonen gjør det mulig å skille logisk følge fra psykologisk overbevisning: at en konklusjon virker plausibel sier ingenting om hvorvidt den følger av premissene.",
+        "P3: Holdbarhet krever mer enn gyldighet, fordi også premissene må kunne forsvares. Et gyldig argument med et falskt eller ubegrunnet premiss overfører ikke automatisk kunnskap om saken.",
+        "K: Evaluering må derfor gjøres i to trinn: først testes slutningsformen for gyldighet eller motmodell, deretter vurderes sannheten og begrunnelsen for premissene."
+      ]
+    },
+    {
+      "id": "uenighet",
+      "title": "Innvending og svar",
+      "paragraphs": [
+        "Innvending: Den klassiske sannhetsbevarende forståelsen av gyldighet er for smal for induktive, abduktive og ikke-monotone slutninger som er sentrale i vitenskap og hverdagsresonnering.",
+        "Svar: Det viser en avgrensning, ikke at gyldighetsbegrepet er ubrukelig. Deduktiv gyldighet bør reserveres for nødvendige følgerelasjoner; andre slutningstyper må vurderes med egne styrkekriterier i stedet for å få betegnelsen gyldig uten presisering."
+      ]
+    },
+    {
+      "id": "teorihistorie",
+      "title": "Teori og verk",
+      "paragraphs": [
+        "Debatten skiller den semantiske eller formelle egenskapen gyldighet, forstått som sannhetsbevaring i deduktive følgerelasjoner, fra spørsmålet om premissene faktisk er sanne eller godt begrunnet. Dette skillet er avgjørende for å unngå at et gyldig argument feilaktig behandles som et godt argument om verden.",
+        "Primærverkankrene er Begriffsschrift (Gottlob Frege); The Concept of Truth in Formalized Languages (Alfred Tarski). De brukes til å kontrollere de navngitte debattaktørenes egne argumenter i artikkelens stridspunkt, ikke som en generell kanonliste. Debatten skiller den semantiske eller formelle egenskapen gyldighet, forstått som sannhetsbevaring i deduktive følgerelasjoner, fra spørsmålet om premissene faktisk er sanne eller godt begrunnet. Dette skillet er avgjørende for å unngå at et gyldig argument feilaktig behandles som et godt argument om verden.",
+        "Teorihistoriske verk fungerer som primærfilosofiske kilder til argumenter og begreper, mens Classical Logic; Informal Logic brukes som faglige sekundærkilder til problemhistorie, posisjoner og bibliografisk kontroll. De to kildetypene har forskjellige roller: en sekundærkilde kan hjelpe oss å lokalisere en debatt, men en spesifikk teksttolkning bør så langt mulig kontrolleres mot selve verket eller en pålitelig utgave."
+      ]
+    },
+    {
+      "id": "metode",
+      "title": "Metode og kontrollspørsmål",
+      "paragraphs": [
+        "Argumentrekonstruksjon, Deduktiv analyse, Premissprøving brukes på den eksplisitte argumentrekken, ikke som en løs metodeetikett. Analysen starter med premisset «Et deduktivt argument er gyldig når det ikke finnes en mulig tolkning av den relevante formen der alle premissene er sanne og konklusjonen falsk; en motmodell er derfor nok til å vise ugyldighet.» og følger overgangen fram mot konklusjonen «Evaluering må derfor gjøres i to trinn: først testes slutningsformen for gyldighet eller motmodell, deretter vurderes sannheten og begrunnelsen for premissene.». Deretter prøves rekonstruksjonen mot rivalens hovedinnvending: «Den klassiske sannhetsbevarende forståelsen av gyldighet er for smal for induktive, abduktive og ikke-monotone slutninger som er sentrale i vitenskap og hverdagsresonnering.». Målet er å lokalisere uenigheten til et bestemt premiss, begrep eller evidenskrav som leseren selv kan kontrollere.",
+        "Metodebegrensningen følger av samme struktur: et formelt, historisk, normativt eller empirisk premiss kan ikke uten videre gjøre arbeidet til de andre. Når analysen skifter nivå, skal det markeres eksplisitt, og eventuelle casefakta må dokumenteres uavhengig av den filosofiske slutningen."
+      ]
+    },
+    {
+      "id": "case",
+      "title": "Anvendelse på et dokumentert case",
+      "paragraphs": [
+        "Et egnet case er en offentlig debatt, domsbegrunnelse eller lederartikkel der premisser og konklusjon kan rekonstrueres eksplisitt. Relevante stedstyper for dette emnet omfatter universitet, bibliotek, debattarena. Caset skal fungere som prøvestein for argumentet: Hvilke trekk er observerbare eller dokumenterte? Hvilke premisser kommer fra kilder? Hvilke normative eller metafysiske slutninger er våre egne?",
+        "Primærverk bærer konkrete posisjons- og tekstrekonstruksjoner, mens faglige sekundærkilder brukes til problemhistorie, rivaler og bibliografisk kontroll; empiriske casepåstander krever egne casekilder. Derfor er et case relevant bare når det dokumenterer premisser som faktisk inngår i artikkelens argument; stedet eller eksemplet er aldri i seg selv bevis for den filosofiske konklusjonen."
+      ]
+    },
+    {
+      "id": "kilder",
+      "title": "Kildebruk og evidensgrenser",
+      "paragraphs": [
+        "De emnespesifikke sekundærkildene i denne artikkelen er Classical Logic; Informal Logic; Logical Consequence. Classical Logic: faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case. Informal Logic: faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case. Logical Consequence: emnespesifikk sekundærkilde til logisk følge, gyldighet, formalisering og motmodell; brukes som bibliografisk og begrepslig kontroll, ikke som autoritet for empiriske case.",
+        "Primærverkankrene Begriffsschrift; The Concept of Truth in Formalized Languages brukes ved konkrete posisjons- og argumentrekonstruksjoner. De emnespesifikke sekundærkildene brukes til problemhistorie, rivaler, fortolkningskontroll og bibliografi; empiriske casepåstander krever egne casekilder."
+      ]
+    },
+    {
+      "id": "avgrensning",
+      "title": "Hva analysen ikke etablerer",
+      "paragraphs": [
+        "Formalisering kan avdekke struktur, men kan også skjule pragmatikk, tvetydighet og kontekst hvis naturlig språk presses inn i et for enkelt skjema. Det betyr at artikkelen kan etablere en presis filosofisk problemstruktur uten å late som om alle empiriske spørsmål er avgjort. Uenighet beholdes når rivalposisjoner har reelle argumenter; en sterk artikkel viser hvor vurderingen står åpen og hva som måtte undersøkes for å komme videre.",
+        "Det åpne kontrollpunktet er rivalens innvending: «Den klassiske sannhetsbevarende forståelsen av gyldighet er for smal for induktive, abduktive og ikke-monotone slutninger som er sentrale i vitenskap og hverdagsresonnering.» Artikkelens svar er «Det viser en avgrensning, ikke at gyldighetsbegrepet er ubrukelig.» Dette er ikke en påstand om at debatten dermed er lukket. Kvalitetskravet er at leseren kan se hvilke premisser som fortsatt er omstridte, hvilke verk og sekundærkilder som bærer rekonstruksjonen, og hva som måtte undersøkes videre for å styrke eller forkaste konklusjonen."
+      ]
+    }
+  ],
+  "quality": {
+    "word_count": 1331,
+    "section_count": 9,
+    "paragraph_count": 21,
+    "argument_reconstruction": true,
+    "rival_position": true,
+    "method_limit": true,
+    "source_boundaries": true,
+    "concepts_written_out": true,
+    "place_boundary": true,
+    "editorial_polish": true,
+    "tradition_specific_relevance": true,
+    "review_state": "university_depth_reviewed",
+    "reviewed_against_university_gate": true,
+    "substantive_argument_reconstruction": true,
+    "topic_specific_sources": true,
+    "source_integrity": {
+      "state": "reviewed",
+      "standard": "debate_aligned_primary_works_v2",
+      "reviewed_at": "2026-08-17",
+      "debate_actors": [
+        "Gottlob Frege",
+        "Alfred Tarski"
+      ],
+      "canonical_thinker_refs": [
+        "gottlob_frege",
+        "alfred_tarski"
+      ],
+      "primary_work_anchors": [
+        {
+          "actor": "Gottlob Frege",
+          "canonical_ref": "gottlob_frege",
+          "work": "Begriffsschrift"
+        },
+        {
+          "actor": "Alfred Tarski",
+          "canonical_ref": "alfred_tarski",
+          "work": "The Concept of Truth in Formalized Languages"
+        }
+      ]
+    }
+  },
+  "university_quality": {
+    "schema": "history_go_filosofi_university_quality_v1",
+    "standard": "substantive_university_philosophy_v2",
+    "review_status": "reviewed",
+    "debate": "Debatten skiller den semantiske eller formelle egenskapen gyldighet, forstått som sannhetsbevaring i deduktive følgerelasjoner, fra spørsmålet om premissene faktisk er sanne eller godt begrunnet. Dette skillet er avgjørende for å unngå at et gyldig argument feilaktig behandles som et godt argument om verden.",
+    "debate_thinkers": [
+      "Gottlob Frege",
+      "Alfred Tarski"
+    ],
+    "required_anchors": [
+      "logisk følge",
+      "gyldighet",
+      "sannhetsbevaring",
+      "holdbarhet",
+      "motmodell"
+    ],
+    "primary_work_count": 2,
+    "secondary_source_count": 3,
+    "review_contract": [
+      "Argumentet rekonstruerer et faktisk filosofisk stridspunkt og kan kritiseres premiss for premiss.",
+      "Rivalen forklarer hva en alternativ posisjon bestrider, ikke bare at uenighet finnes.",
+      "Navngitte tenkere og verk brukes som problem- og argumentankere, ikke som navneliste.",
+      "Fagankere må forekomme i argument, innvending eller teorihistorie og kan ikke bare deklareres i metadata."
+    ],
+    "substantive_argument": true,
+    "real_rival": true,
+    "primary_work_grounding": true,
+    "topic_specific_secondary_sources": true,
+    "generic_template_rejected": true,
+    "final_qa_repaired_at": "2026-08-16"
+  }
+}

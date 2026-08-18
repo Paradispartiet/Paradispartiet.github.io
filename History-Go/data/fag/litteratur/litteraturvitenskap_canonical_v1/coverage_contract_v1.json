@@ -1,0 +1,433 @@
+{
+  "schema": "history_go_literature_universal_coverage_contract_v1",
+  "version": "1.0.0",
+  "subject_id": "litteratur",
+  "status": "structural_full_field_coverage_editorial_rewrite_in_progress",
+  "updated_at": "2026-08-07",
+  "completion_definition": {
+    "required_area_count": 28,
+    "required_topic_count": 168,
+    "requirements_per_topic": [
+      "presis faglig avgrensning",
+      "særskrevet forklarende grunntekst",
+      "definert begrepsapparat",
+      "minst ett navngitt verk, tekstobjekt, arkivobjekt eller dokumentert case",
+      "etterprøvbare kilder og påstandsspor",
+      "metode, alternativ fortolkning og inferensgrense"
+    ],
+    "requirements_per_area": [
+      "alle seks temaer oppfyller temakravene",
+      "ett redigert syntesekapittel med progresjon og anvendelse",
+      "ingen uavklarte canonicale identitets- eller mappingfeil",
+      "permanent audit er grønn",
+      "områder med full_field_contract må ha en validert fulfillment-fil før komplettstatus",
+      "utvidede kontrakter skal dokumentere underdekning, teorier, metoder, navngitte objekter, historisk og geografisk spenn samt canonicale grenseflater"
+    ],
+    "forbidden_shortcuts": [
+      "akse-, emne- eller filantall alene",
+      "generiske definisjoner som bare gjentar tittelen",
+      "spørsmål uten identifisert forskningsobjekt",
+      "kildelister uten kobling til konkrete påstander",
+      "vestlig periodehistorie presentert som hele verdens litteraturhistorie",
+      "seks brede temaoverskrifter brukt som erstatning for bindende underdekning",
+      "teorier, metoder, tradisjoner eller analyseobjekter som bare listes uten anvendelses- og kildespor"
+    ]
+  },
+  "coverage_areas": [
+    {
+      "id": "faggrunnlag_metode_forskningspraksis",
+      "title": "Faggrunnlag, metode og forskningspraksis",
+      "status": "chapter_and_overview_text_materialized",
+      "topics": [
+        "litteraturvitenskapens_faghistorie",
+        "problemstilling_analyseenhet_avgrensning",
+        "tekstobservasjon_tolkning_argumentasjon",
+        "naerlesning_hermeneutikk_kontekstualisering",
+        "komparativ_historisk_empirisk_metode",
+        "kildesok_sitering_forskningsetikk"
+      ]
+    },
+    {
+      "id": "poetikk_estetikk_litteraritet",
+      "title": "Poetikk, estetikk og litteraritet",
+      "status": "chapter_and_overview_text_materialized",
+      "topics": [
+        "mimesis_representasjon",
+        "form_innhold",
+        "litteraritet_fiksjonalitet",
+        "estetisk_erfaring_dom",
+        "poetikkens_historie",
+        "kunst_autonomi_formal"
+      ]
+    },
+    {
+      "id": "sprak_stil_retorikk",
+      "title": "Språk, stil og retorikk",
+      "status": "chapter_and_overview_text_materialized",
+      "topics": [
+        "diksjon_register_stemme",
+        "metafor_metonymi_bilde",
+        "ironi_paradoks_tvetydighet",
+        "retorisk_situasjon_appell",
+        "stilometri_stiltrekk",
+        "flerspraklighet_heteroglossia"
+      ]
+    },
+    {
+      "id": "narratologi_prosa",
+      "title": "Narratologi og prosafortelling",
+      "status": "chapter_and_overview_text_materialized",
+      "topics": [
+        "forteller_fokalisering",
+        "tid_rekkefolge_varighet_frekvens",
+        "plot_hendelse_kausalitet",
+        "karakter_rom_miljo",
+        "upaalitelig_fortelling_metanarrasjon",
+        "roman_novelle_kortprosa"
+      ]
+    },
+    {
+      "id": "lyrikk_poetiske_former",
+      "title": "Lyrikk og poetiske former",
+      "status": "chapter_and_overview_text_materialized",
+      "topics": [
+        "lyrisk_jeg_talehandling",
+        "rytme_meter_prosodi",
+        "rim_klang_linjering",
+        "strofe_sjanger_form",
+        "modernistisk_fri_vers",
+        "muntlig_framfort_digital_poesi"
+      ]
+    },
+    {
+      "id": "drama_teatertekst_framforing",
+      "title": "Drama, teatertekst og framføring",
+      "status": "expanded_contract_fulfilled",
+      "topics": [
+        "dialog_monolog_didascalier",
+        "handling_konflikt_dramaturgi",
+        "tragedie_komedie_mellomformer",
+        "tekst_framforing_iscenesettelse",
+        "dramatisk_rom_tid",
+        "lesedrama_postdramatisk_tekst"
+      ],
+      "full_field_contract": "contracts/drama_teatertekst_framforing_full_field_v1.json"
+    },
+    {
+      "id": "sjanger_modus_form",
+      "title": "Sjanger, modus og form",
+      "status": "expanded_contract_fulfilled",
+      "topics": [
+        "sjangerkontrakt_forventning",
+        "epikk_lyrikk_dramatikk",
+        "realisme_romantikk_modernisme_som_modus",
+        "fantastikk_science_fiction_dystopi",
+        "krim_romanse_popularlitteratur",
+        "hybridformer_essay_litterar_sakprosa"
+      ],
+      "full_field_contract": "contracts/sjanger_modus_form_full_field_v1.json"
+    },
+    {
+      "id": "formalisme_nykritikk_strukturalisme_semiotikk",
+      "title": "Formalisme, nykritikk, strukturalisme og semiotikk",
+      "status": "chapter_and_overview_text_materialized",
+      "topics": [
+        "russisk_formalisme_fremmedgjoring_grep",
+        "nykritikk_spenning_paradoks_organisk_enhet",
+        "strukturalisme_system_relasjon_forskjell",
+        "semiotikk_tegn_kode_konvensjon",
+        "prag_skolen_funksjon_norm_dominant",
+        "formanalyse_historisering_inferensgrense"
+      ]
+    },
+    {
+      "id": "poststrukturalisme_dekonstruksjon_diskurs",
+      "title": "Poststrukturalisme, dekonstruksjon og diskursanalyse",
+      "status": "chapter_and_overview_text_materialized",
+      "topics": [
+        "poststrukturalisme_tegn_subjekt_historie",
+        "differance_spor_supplement",
+        "dekonstruksjon_apori_hierarki",
+        "diskurs_arkiv_genealogi_makt",
+        "intertekstualitet_siterbarhet_forfatterfunksjon",
+        "kontekst_etikk_inferensgrense"
+      ]
+    },
+    {
+      "id": "hermeneutikk_fortolkning_teori",
+      "title": "Hermeneutikk, fortolkning og teori",
+      "status": "chapter_and_overview_text_materialized",
+      "topics": [
+        "hermeneutisk_sirkel",
+        "intensjon_verk_leser",
+        "mistanke_symptom_overflate",
+        "fortolkningspluralisme_grenser",
+        "anakronisme_historisk_avstand",
+        "teori_som_sporsmalsapparat"
+      ]
+    },
+    {
+      "id": "psykoanalyse_fenomenologi_eksistens",
+      "title": "Psykoanalyse, fenomenologi og eksistensielle perspektiver",
+      "status": "chapter_and_overview_text_materialized",
+      "topics": [
+        "freud_ubevisst_fortetning_forskyvning",
+        "lacan_begjaer_signifikant_mangel",
+        "objektrelasjon_fantasi_overforing",
+        "fenomenologi_intensjonalitet_livsverden_kropp",
+        "eksistens_frihet_absurditet_ansvar",
+        "leseerfaring_metode_etikk_inferensgrense"
+      ]
+    },
+    {
+      "id": "minne_traume_vitnesbyrd_livsskriving",
+      "title": "Minne, traume, vitnesbyrd og livsskriving",
+      "status": "chapter_and_overview_text_materialized",
+      "topics": [
+        "kollektivt_kulturelt_minne_minnested",
+        "traumefortelling_tid_repetisjon_fragment",
+        "vitnesbyrd_vitne_adresse_arkiv",
+        "selvbiografi_memoar_livsskriving",
+        "dagbok_brev_autofiksjon_sjangerpakt",
+        "representasjonsetikk_samtykke_inferensgrense"
+      ]
+    },
+    {
+      "id": "leser_resepsjon_affekt",
+      "title": "Leser, resepsjon og affekt",
+      "status": "expanded_contract_fulfilled",
+      "topics": [
+        "implisitt_faktisk_leser",
+        "forventningshorisont_resepsjonshistorie",
+        "leserrespons_tomme_plasser",
+        "affekt_folsesstruktur",
+        "bokklubber_fandom_deltakelse",
+        "lesedata_empirisk_resepsjon"
+      ],
+      "full_field_contract": "contracts/leser_resepsjon_affekt_full_field_v1.json"
+    },
+    {
+      "id": "forfatterskap_intertekstualitet",
+      "title": "Forfatterskap, intertekstualitet og skapende praksis",
+      "status": "expanded_contract_fulfilled",
+      "topics": [
+        "forfatterfunksjon_intensjon",
+        "intertekst_sitat_allusjon",
+        "paratekst_tittel_forord",
+        "skrivemateriale_genetisk_kritikk",
+        "samarbeid_pseudonym_kollektiv",
+        "kreativ_skriving_praksisforskning"
+      ],
+      "full_field_contract": "contracts/forfatterskap_intertekstualitet_full_field_v1.json"
+    },
+    {
+      "id": "tekstkritikk_bokhistorie_arkiv",
+      "title": "Tekstkritikk, bokhistorie og arkiv",
+      "status": "expanded_contract_fulfilled",
+      "topics": [
+        "manuskript_utgave_variant",
+        "bibliografi_materialitet",
+        "trykk_forlag_distribusjon",
+        "arkiv_proveniens_bevaring",
+        "redaksjon_kommentar_apparat",
+        "digital_utgave_tekstmodell"
+      ],
+      "full_field_contract": "contracts/tekstkritikk_bokhistorie_arkiv_full_field_v1.json"
+    },
+    {
+      "id": "medier_intermedialitet_adapsjon",
+      "title": "Medier, intermedialitet og adaptasjon",
+      "status": "expanded_contract_fulfilled",
+      "topics": [
+        "medium_modalitet_materialitet",
+        "adaptasjon_omforming",
+        "litteratur_film_tv",
+        "tegneserie_bildebok_visuell_fortelling",
+        "lydbok_podkast_muntliggjøring",
+        "elektronisk_litteratur_spillfortelling"
+      ],
+      "full_field_contract": "contracts/medier_intermedialitet_adapsjon_full_field_v1.json"
+    },
+    {
+      "id": "litteratursosiologi_institusjoner_offentlighet",
+      "title": "Litteratursosiologi, institusjoner og offentlighet",
+      "status": "expanded_contract_fulfilled",
+      "topics": [
+        "litterart_felt_kulturell_kapital",
+        "forlag_bokhandel_bibliotek",
+        "kritikk_priser_kanonisering",
+        "sensur_ytringsfrihet_offentlighet",
+        "forfatterokonomi_arbeidsliv",
+        "lesekultur_utdanning_formidling"
+      ],
+      "full_field_contract": "contracts/litteratursosiologi_institusjoner_offentlighet_full_field_v1.json"
+    },
+    {
+      "id": "kjonn_feminisme_queer",
+      "title": "Kjønn, feminisme og queer litteraturvitenskap",
+      "status": "expanded_contract_fulfilled",
+      "topics": [
+        "representasjon_kjonn_makt",
+        "feministisk_litteraturhistorie",
+        "maskuliniteter",
+        "queer_lesning_heteronormativitet",
+        "kropp_begjaer_reproduksjon",
+        "interseksjonalitet_litterar_analyse"
+      ],
+      "full_field_contract": "contracts/kjonn_feminisme_queer_full_field_v1.json"
+    },
+    {
+      "id": "klasse_marxisme_okonomi_arbeid",
+      "title": "Klasse, marxisme, økonomi og arbeid",
+      "status": "expanded_contract_fulfilled",
+      "topics": [
+        "ideologi_form",
+        "klasse_arbeid_hverdagsliv",
+        "produksjonsmate_litteraturhistorie",
+        "vareform_kulturindustri",
+        "okokritikk_gjeld_finans",
+        "arbeiderlitteratur_proletaroffentlighet"
+      ],
+      "full_field_contract": "contracts/klasse_marxisme_okonomi_arbeid_full_field_v1.json"
+    },
+    {
+      "id": "postkolonial_dekolonial_rase_migrasjon",
+      "title": "Postkoloniale og dekoloniale perspektiver, rase og migrasjon",
+      "status": "expanded_contract_fulfilled",
+      "topics": [
+        "imperium_kolonial_diskurs",
+        "orientalisme_andregjoring",
+        "rase_rasisering_hvithet",
+        "diaspora_migrasjon_grense",
+        "dekolonial_metode_kunnskapsmakt",
+        "restitusjon_oversettelse_verdenssystem"
+      ],
+      "full_field_contract": "contracts/postkolonial_dekolonial_rase_migrasjon_full_field_v1.json"
+    },
+    {
+      "id": "okokritikk_dyr_miljo",
+      "title": "Økokritikk, dyr og miljøhumaniora",
+      "status": "expanded_contract_fulfilled",
+      "topics": [
+        "natur_kultur_landskap",
+        "klimafortelling_risiko",
+        "dyr_posthumanisme",
+        "energi_utvinning_avfall",
+        "sted_territorium_miljorettferdighet",
+        "antropocen_skala_tid"
+      ],
+      "full_field_contract": "contracts/okokritikk_dyr_miljo_full_field_v1.json"
+    },
+    {
+      "id": "kognitiv_empirisk_digital_litteraturvitenskap",
+      "title": "Kognitiv, empirisk og digital litteraturvitenskap",
+      "status": "expanded_contract_fulfilled",
+      "topics": [
+        "kognitiv_narratologi_sinn",
+        "empirisk_leserforskning",
+        "korpus_fjernlesning",
+        "tekstutvinning_modellering",
+        "datasett_metadata_reproduserbarhet",
+        "algoritmisk_bias_fortolkningsgrense"
+      ],
+      "full_field_contract": "contracts/kognitiv_empirisk_digital_litteraturvitenskap_full_field_v1.json"
+    },
+    {
+      "id": "komparativ_verdenslitteratur_oversettelse",
+      "title": "Komparativ litteratur, verdenslitteratur og oversettelse",
+      "status": "expanded_contract_fulfilled",
+      "topics": [
+        "komparasjon_sammenlignbarhet",
+        "verdenslitteratur_sirkulasjon",
+        "oversettelse_ekvivalens_forskjell",
+        "sentrum_periferi_ulik_utveksling",
+        "flerspraklighet_uoversettelighet",
+        "resepsjon_gjenbruk_pa_tvers"
+      ],
+      "full_field_contract": "contracts/komparativ_verdenslitteratur_oversettelse_full_field_v1.json"
+    },
+    {
+      "id": "norsk_nordisk_samisk_minoritetslitteratur",
+      "title": "Norsk, nordisk, samisk og minoritetslitteratur",
+      "status": "expanded_contract_fulfilled",
+      "topics": [
+        "norsk_litteraturhistoriografi",
+        "nordisk_komparasjon",
+        "samisk_litteratur_sprak_suverenitet",
+        "kvensk_romani_jodisk_minoritetslitteratur",
+        "dialekt_malform_flerspraklighet",
+        "sted_region_nasjon_kanon"
+      ],
+      "full_field_contract": "contracts/norsk_nordisk_samisk_minoritetslitteratur_full_field_v1.json"
+    },
+    {
+      "id": "muntlighet_folklore_urfolkskunnskap",
+      "title": "Muntlighet, folklore og urfolkskunnskap",
+      "status": "expanded_contract_fulfilled",
+      "topics": [
+        "muntlig_formel_framforing",
+        "eventyr_sagn_mytologi",
+        "innsamling_arkivering_makt",
+        "tradisjonsbaerer_eierskap_samtykke",
+        "muntlig_skriftlig_medial_overgang",
+        "urfolksmetodologi_lokal_kunnskap"
+      ],
+      "full_field_contract": "contracts/muntlighet_folklore_urfolkskunnskap_full_field_v1.json"
+    },
+    {
+      "id": "barne_ungdoms_didaktisk_litteratur",
+      "title": "Barne- og ungdomslitteratur, lesing og didaktikk",
+      "status": "expanded_contract_fulfilled",
+      "topics": [
+        "barneleser_voksenformidler",
+        "bildebok_samspill_tekst_bilde",
+        "ungdomslitteratur_identitet",
+        "litteraturdidaktikk_klasserom",
+        "leseopplaering_litterar_kompetanse",
+        "sensitivitet_alder_makt_kanon"
+      ],
+      "full_field_contract": "contracts/barne_ungdoms_didaktisk_litteratur_full_field_v1.json"
+    },
+    {
+      "id": "eldre_litteratur_antik_middelalder_tidligmoderne",
+      "title": "Eldre litteratur: antikken, middelalderen og tidlig moderne tid",
+      "status": "expanded_contract_fulfilled",
+      "topics": [
+        "antik_epikk_drama_lyrikk",
+        "retorikk_poetikk_klassisk_arv",
+        "middelalder_muntlighet_handskrift",
+        "religiose_sjangre_allegori",
+        "renessanse_humanisme_trykk",
+        "barokk_tidligmoderne_offentlighet"
+      ],
+      "full_field_contract": "contracts/eldre_litteratur_antik_middelalder_tidligmoderne_full_field_v1.json"
+    },
+    {
+      "id": "moderne_og_samtidig_litteraturhistorie",
+      "title": "Moderne og samtidig litteraturhistorie",
+      "status": "expanded_contract_fulfilled",
+      "topics": [
+        "opplysning_sentimentalitet_offentlighet",
+        "romantikk_nasjon_natur",
+        "realisme_naturalisme_modernitet",
+        "modernisme_avantgarde",
+        "etterkrig_postmodernisme",
+        "samtidslitteratur_globalisering_digitalitet"
+      ],
+      "full_field_contract": "contracts/moderne_og_samtidig_litteraturhistorie_full_field_v1.json"
+    }
+  ],
+  "progress": {
+    "areas_total": 28,
+    "areas_with_foundation_text": 28,
+    "areas_complete": 28,
+    "topics_total": 168,
+    "topics_with_foundation_text": 168,
+    "topics_complete": 168,
+    "honest_status": "Alle 28 områder og 168 temaer er strukturelt materialisert, alle 18 utvidede fullfeltkontrakter er schemaoppfylt, og samtlige 28 områder og 168 artikler består redaksjonell artikkelport v1.",
+    "editorial_ready_areas": 28,
+    "editorial_ready_topics": 168,
+    "editorial_pending_areas": 0,
+    "editorial_pending_topics": 0
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "1.0",
+  "placeId": "villa_stenersen",
+  "placeFile": "data/places/historie/oslo/places_historie_added_batch_01/villa_stenersen.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.939226276070805,
+    "lon": 10.698765324399833,
+    "r": 70,
+    "coordStatus": "verified",
+    "coordSource": "geonorge_adresser_v1",
+    "coordType": "address_point",
+    "coordNote": "Official Geonorge address coordinate for Tuengen allé 10C, OSLO. The address point is retained as the display marker for Villa Stenersen under the locked address-first method."
+  },
+  "identity": {
+    "currentName": "Villa Stenersen",
+    "resolvedIdentity": "Villa Stenersen at Tuengen allé 10C",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "building",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [],
+  "evidence": [
+    {
+      "sourceProvider": "official_address",
+      "sourceName": "Geonorge Adresser API – Tuengen allé 10C",
+      "sourceUrl": "https://ws.geonorge.no/adresser/v1/sok?sok=Tuengen%20all%C3%A9%2010C%20Oslo",
+      "sourceObjectId": "geonorge-adresser-v1:0301:17802:10C",
+      "sourceQuality": "official_exact_address_point",
+      "finding": "The existing place uses the official address representation point for Tuengen allé 10C, Oslo.",
+      "canVerifyCoordinate": true,
+      "reason": "Concrete active building with a single official address anchor under the address-first policy."
+    }
+  ],
+  "addressCandidates": [
+    {
+      "address": "Tuengen allé 10C Oslo",
+      "sourceProvider": "official_address",
+      "sourceObjectId": "geonorge-adresser-v1:0301:17802:10C",
+      "canApplyToPlace": true
+    }
+  ],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "official_address",
+      "sourceObjectId": "geonorge-adresser-v1:0301:17802:10C",
+      "canApplyToPlace": true
+    }
+  ],
+  "geometryCandidates": [],
+  "coordinateCandidates": [
+    {
+      "lat": 59.939226276070805,
+      "lon": 10.698765324399833,
+      "coordRole": "display_marker",
+      "sourceObjectId": "geonorge-adresser-v1:0301:17802:10C",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Batch audit confirms the existing canonical coordinate source and closes this record in top-level source queue order."
+  },
+  "notes": [
+    "Coordinate re-audited 2026-07-21 in top-level source queue order.",
+    "Official Geonorge address coordinate for Tuengen allé 10C, OSLO. The address point is retained as the display marker for Villa Stenersen under the locked address-first method."
+  ]
+}

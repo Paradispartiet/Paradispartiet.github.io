@@ -1,0 +1,98 @@
+{
+  "schema": "civication_role_model_v1",
+  "version": 1,
+  "source": {
+    "badge_file": "data/badges/psykologi.json",
+    "badge_id": "psykologi",
+    "badge_name": "Psykologi",
+    "tier_label": "Seniorrådgiver",
+    "tier_threshold": 85,
+    "evidence_file": "data/Civication/psychologyGuidanceEvidence.json"
+  },
+  "category": "psykologi",
+  "role_scope": "psykologi_arbeids_og_karriereveiledning",
+  "role_id": "psykologi_seniorradgiver",
+  "title": "Seniorrådgiver",
+  "core_narrative": [
+    "Seniorrådgiver-tieret representerer den samme arbeids- og karriereveiledningsfamilien med større ansvar for komplekse saker, metodekvalitet og faglig støtte til kolleger.",
+    "Senioritet betyr større veilednings- og systemansvar, ikke psykologautorisasjon, diagnosemyndighet eller behandlingsansvar."
+  ],
+  "work_life": {
+    "daily_work": [
+      "håndtere komplekse arbeids- og karrierevalg der helse, arbeid, utdanning og systemkrav møtes",
+      "støtte kolleger i metode- og etikkspørsmål",
+      "kvalitetssikre handlingsplaner og oppfølgingsløp uten å gjøre dem standardiserte for standardiseringens skyld",
+      "koordinere krevende arbeidsgiver- og samarbeidspartnerdialog",
+      "holde arbeidsmarkeds- og utdanningskunnskap oppdatert og anvendbar"
+    ],
+    "responsibilities": [
+      "modellere tydelige grenser mellom veiledning, myndighetsutøvelse og klinisk arbeid",
+      "beskytte veisøkerens autonomi i saker med stort systempress",
+      "oppdage når kartlegging, dokumentasjon eller resultatmål begynner å fungere som merkelapper",
+      "løfte kliniske, juridiske eller sikkerhetsmessige spørsmål til riktig fagansvar"
+    ],
+    "work_environment": [
+      "Komplekse veiledningsmiljøer i arbeidsinkludering, NAV, karrieresentre, utdanning eller rådgivning med mange samarbeidspartnere."
+    ],
+    "status_position": [
+      "Du får større definisjonsmakt i teamet. Kvalitet handler derfor like mye om hvilke grenser du setter for din egen tolkning som om hvilke råd du gir."
+    ]
+  },
+  "career_path": {
+    "entry_from": ["Rådgiver-tieret eller annen solid relevant veilednings- og rådgivningserfaring."],
+    "progression_to": [],
+    "possible_promotions": ["faglig ansvar for metode, kvalitet og komplekse oppfølgingsløp"],
+    "possible_exits": ["andre senior- eller fagroller innen arbeidsliv, arbeidsinkludering, HR, offentlig sektor eller utdanning"],
+    "career_risks": ["å gjøre erfaring til sikkerhet der saken fortsatt er uklar", "å la systemets behov for entydighet bli viktigere enn den andre personens handlingsrom"]
+  },
+  "required_knowledge": {
+    "education_basis": ["Relevant høyere utdanning og erfaring er vanlig i senior rådgivningsarbeid, men Badge-poeng erstatter aldri arbeidsgiverens faktiske kvalifikasjonskrav."],
+    "skills": ["kompleks beslutningsstøtte", "metodeveiledning", "arbeidsmarkeds- og utdanningsanalyse", "personvern", "tverrfaglig koordinering", "faglig kvalitetssikring"],
+    "category_knowledge": ["autonomi", "motivasjon", "mestring", "beslutninger", "identitet", "gruppeprosesser", "usikkerhet og attribusjon"],
+    "history_go_badges": ["psykologi"],
+    "place_connections": [],
+    "people_connections": []
+  },
+  "scope_boundary": {
+    "can": ["lede veiledningsfaglig refleksjon", "støtte komplekse karrierevalg", "kvalitetssikre veiledningsprosesser", "koordinere samarbeid", "eskalere til riktig fagkompetanse"],
+    "cannot": ["diagnostisere", "drive psykoterapi", "gjøre klinisk arbeidsevnevurdering", "behandle senioritet som klinisk fullmakt", "dele sensitive opplysninger uten grunnlag", "bestemme livsvalg for veisøkeren"]
+  },
+  "challenges": [
+    {
+      "id": "erfaring_blir_fasit",
+      "title": "Når erfaring blir fasit",
+      "description": "Du kjenner mønsteret fra mange saker, men den konkrete personen passer ikke helt inn i det.",
+      "pressure": "erfaring_vs_apenhet",
+      "affects": ["trust", "status", "risk"]
+    }
+  ],
+  "dilemmas": [
+    {
+      "id": "systemfrist_og_faglig_usikkerhet",
+      "title": "Systemfrist og faglig usikkerhet",
+      "setup": "Teamet trenger en tydelig plan før de viktigste avveiningene er ferdig undersøkt.",
+      "choice_axis": "systemkrav_vs_individuell_prosess",
+      "consequence_axis": "framdrift_vs_tillit",
+      "mail_hooks": ["job", "conflict", "followup"]
+    }
+  ],
+  "related_people": [],
+  "related_places": [],
+  "mail_integration": {
+    "role_scope": "psykologi_arbeids_og_karriereveiledning",
+    "mail_profile": "psykologi_karriereveileder",
+    "can_feed_mail_types": ["job", "story", "conflict", "people", "followup", "consequence"],
+    "mail_variables": {
+      "role_title": "Seniorrådgiver",
+      "category": "psykologi",
+      "main_pressure": "kompleksitet_vs_entydighet",
+      "ethical_axis": "autonomi_vs_styring",
+      "status_axis": "faglig_makt_vs_apenhet"
+    },
+    "recommended_mail_families": ["arbeidsinkludering_og_overganger", "arbeidsgiverdialog_og_personvern", "metode_og_kvalitet"],
+    "role_model_refs_supported": true
+  },
+  "competence_axes": ["kompleks_beslutningsstotte", "metodekvalitet", "personvern_og_samtykke", "tverrfaglig_samarbeid"],
+  "ideal_type_problems": ["Hvordan bruker du senioritet uten å gjøre erfaring til fasit?"],
+  "notes": ["Canonical runtime-scope: psykologi_arbeids_og_karriereveiledning."]
+}

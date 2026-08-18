@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "1.0",
+  "placeId": "chat_noir",
+  "placeFile": "data/places/scenekunst/oslo/places_scenekunst/chat_noir.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.91360791283421,
+    "lon": 10.732172099794877,
+    "r": 60,
+    "coordStatus": "verified",
+    "coordSource": "geonorge_adresser_v1",
+    "coordType": "address_point",
+    "coordNote": "Offisiell adressekoordinat fra Geonorge Adresser API for Klingenberggata 5, OSLO. Punktet er representasjonspunktet for adressen og brukes som display-marker, ikke som kai-, vei-, vannflate- eller generelt områdeanker."
+  },
+  "identity": {
+    "currentName": "Chat Noir",
+    "resolvedIdentity": "Chat Noir som teaterbygning og revyscene i Klingenberggata",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "building",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [
+    "entydig offisielt adressepunkt",
+    "dokumentert at adressen representerer det konkrete canonical stedet"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "official_address",
+      "sourceName": "geonorge_adresser_v1",
+      "sourceUrl": "https://ws.geonorge.no/adresser/v1/sok?sok=Klingenberggata%205%20Oslo",
+      "sourceObjectId": "geonorge-adresser-v1:0301:13780:5",
+      "sourceQuality": "official_address_plus_documented_identity",
+      "finding": "Geonorge returnerte ett tydelig adressetreff. Chat Noir oppgir Klingenberggata 5 som besøksadresse.",
+      "canVerifyCoordinate": true,
+      "reason": "Offisiell adressekoordinat fra Geonorge Adresser API for Klingenberggata 5, OSLO. Punktet er representasjonspunktet for adressen og brukes som display-marker, ikke som kai-, vei-, vannflate- eller generelt områdeanker."
+    },
+    {
+      "sourceProvider": "official_site",
+      "sourceName": "Chat Noir",
+      "sourceUrl": "https://www.chatnoir.no/kontakt",
+      "sourceObjectId": "official-site:chat_noir:address",
+      "sourceQuality": "official_venue_address_identity",
+      "finding": "Chat Noir oppgir Klingenberggata 5 som besøksadresse.",
+      "canVerifyCoordinate": false,
+      "reason": "Primærkilden dokumenterer venue-identiteten og adressen; Geonorge dokumenterer koordinatpunktet."
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceName": "OpenStreetMap – Chat Noir",
+      "sourceUrl": "https://www.openstreetmap.org/node/34693408",
+      "sourceObjectId": "osm-node:34693408",
+      "sourceQuality": "secondary_geometry_qa",
+      "finding": "Eksakt navnetreff med objekttype amenity/theatre og geometri Point.",
+      "canVerifyCoordinate": false,
+      "reason": "Sekundær identitets-/geometri-QA; Geonorge er primær koordinatkilde for det konkrete adressebare stedet."
+    }
+  ],
+  "addressCandidates": [
+    {
+      "address": "Klingenberggata 5 Oslo",
+      "sourceProvider": "official_address",
+      "sourceObjectId": "geonorge-adresser-v1:0301:13780:5",
+      "canApplyToPlace": true
+    }
+  ],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "official_address",
+      "sourceObjectId": "geonorge-adresser-v1:0301:13780:5",
+      "canApplyToPlace": true
+    }
+  ],
+  "geometryCandidates": [],
+  "coordinateCandidates": [
+    {
+      "lat": 59.91360791283421,
+      "lon": 10.732172099794877,
+      "coordRole": "display_marker",
+      "sourceObjectId": "geonorge-adresser-v1:0301:13780:5",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Kildekontrakt, venue-identitet og representasjonsanker er anvendt på canonical place."
+  },
+  "notes": [
+    "Offisiell adressekoordinat fra Geonorge Adresser API for Klingenberggata 5, OSLO. Punktet er representasjonspunktet for adressen og brukes som display-marker, ikke som kai-, vei-, vannflate- eller generelt områdeanker.",
+    "Chat Noir oppgir Klingenberggata 5 som besøksadresse.",
+    "Batch 119 address-first-korreksjon: OSM beholdes bare som sekundær geometri-QA når Geonorge gir et entydig relevant adressepunkt."
+  ]
+}

@@ -1,0 +1,514 @@
+{
+  "schema": "civication_job_learning_profiles_v1",
+  "version": 1,
+  "note": "Forberedt struktur for job learning (ikke career outcome). Her kan jobber/roller senere få metadata om hva de faktisk lærer spilleren, hvor verdifull læringen er, og hvor lenge det er noe nytt å hente. Dette er IKKE en full datarevisjon: bortsett fra eksemplene under arver alle roller standardprofilen i runtime. Reelle per-rolle-profiler kan legges inn etter hvert, og leses av CivicationJobLearningRuntime.registerProfiles.",
+  "field_docs": {
+    "learning_value": "Hvor verdifull jobben er læringsmessig. \"high\" | \"standard\" | \"low\".",
+    "teaches": "Kort liste over hva jobben faktisk lærer spilleren. Kan speile role.what_player_learns / scenario_families.what_it_teaches.",
+    "mastery_threshold": "Antall læringssteg før rollen regnes som utlært. Bevisst frikoblet fra career outcome sin plan-fullføring.",
+    "usefulness": "Hvor nyttig/overførbar kompetansen er utenfor rollen. \"high\" | \"standard\" | \"low\".",
+    "transferable_skills": "Ferdigheter spilleren tar med seg videre til andre roller.",
+    "dead_end_risk": "Risiko for at rollen er en blindvei læringsmessig. \"low\" | \"medium\" | \"high\" eller 0..1."
+  },
+  "default": {
+    "learning_value": "standard",
+    "teaches": [],
+    "mastery_threshold": 6,
+    "usefulness": "standard",
+    "transferable_skills": [],
+    "dead_end_risk": "low"
+  },
+  "profiles": {
+    "_examples": {
+      "_comment": "Eksempler som dokumenterer formen. De ligger under _examples og brukes ikke i runtime før de flyttes opp på profiles-nivå med ekte role scope-nøkler.",
+      "fagarbeider": {
+        "learning_value": "high",
+        "teaches": [
+          "at kvalitet er sosialt og tidsmessig presset, ikke bare teknisk definert",
+          "at praktisk kunnskap ofte bærer virksomheten uten å bli fullstendig anerkjent"
+        ],
+        "mastery_threshold": 8,
+        "usefulness": "high",
+        "transferable_skills": [
+          "kvalitetsvurdering",
+          "mønsterblikk",
+          "rolig problemløsing"
+        ],
+        "dead_end_risk": "low"
+      },
+      "lavutbytte_rolle_eksempel": {
+        "learning_value": "low",
+        "teaches": [],
+        "mastery_threshold": 3,
+        "usefulness": "low",
+        "transferable_skills": [],
+        "dead_end_risk": "high"
+      }
+    },
+    "naer_arbeider": {
+      "learning_value": "high",
+      "teaches": [
+        "Hvordan verdiskaping begynner i rytme, rutiner og konkret drift på gulvet.",
+        "Hvordan små avvik, forsinkelser og praktiske valg påvirker hele arbeidsflyten.",
+        "Hvordan uformelle regler, intern rang og kollegial kultur former arbeidshverdagen.",
+        "Når det lønner seg å spørre, tie, ta initiativ eller bare få oppgaven gjort.",
+        "Hvordan stabilitet, tempo og pålitelighet kan bli en vei videre i arbeidslivet.",
+        "Hvordan arbeid kan være nødvendig, repetitivt og meningsbærende på samme tid."
+      ],
+      "mastery_threshold": 8,
+      "usefulness": "high",
+      "transferable_skills": [
+        "arbeidsrytme",
+        "praktisk drift",
+        "rutineforståelse",
+        "avvikshåndtering",
+        "sosial lesning",
+        "stabilitet"
+      ],
+      "dead_end_risk": "medium"
+    },
+    "naer_ekspeditor": {
+      "learning_value": "high",
+      "teaches": [
+        "Hvordan handel i frontlinjen handler om mennesker, kø, varer og små forventninger samtidig.",
+        "Hvordan kundelesning og rolig kommunikasjon kan beskytte både flyt og tillit.",
+        "Hvordan service krever grenser når kunden gjør systemets feil personlig.",
+        "Hvordan varekunnskap, ærlighet og tempo former opplevelsen av profesjonalitet.",
+        "Hvordan små feil i betaling, ekspedisjon og forklaring raskt blir synlige i front.",
+        "Hvordan ekspeditørrollen kan bygge sosial presisjon og praktisk dømmekraft."
+      ],
+      "mastery_threshold": 7,
+      "usefulness": "high",
+      "transferable_skills": [
+        "kundelesning",
+        "service under press",
+        "vareforståelse",
+        "rolig kommunikasjon",
+        "køhåndtering",
+        "grensesetting"
+      ],
+      "dead_end_risk": "medium"
+    },
+    "naer_administrasjonsmedarbeider": {
+      "learning_value": "high",
+      "teaches": [
+        "Hvordan administrasjon fungerer som virksomhetens hukommelse og kontrollflate.",
+        "Hvordan små feil i bilag, frister og dokumentasjon kan få større økonomiske følger.",
+        "Hvordan driftens ujevne virkelighet må oversettes til systemets presise kategorier.",
+        "Når det er riktig å purre, rydde selv, be om bedre grunnlag eller eskalere et avvik.",
+        "Hvordan administrativ orden beskytter både økonomi, arbeidsflyt og ansvar.",
+        "Hvordan usynlig kontorarbeid ofte først blir synlig når noe mangler."
+      ],
+      "mastery_threshold": 7,
+      "usefulness": "high",
+      "transferable_skills": [
+        "nøyaktighet",
+        "systemforståelse",
+        "fristhåndtering",
+        "dokumentasjonsblikk",
+        "rolig oppfølging",
+        "administrativ dømmekraft"
+      ],
+      "dead_end_risk": "low"
+    },
+    "naer_fagarbeider": {
+      "learning_value": "high",
+      "teaches": [
+        "Hvordan kvalitet oppstår i praksis, under tidspress og med konkrete feilmarginer.",
+        "Hvordan taus kunnskap bærer drift selv når den ikke står i manualer eller planer.",
+        "Når en standard må følges strengt, og når rutinen må bøyes for å løse problemet.",
+        "Hvordan faglig presisjon kan gi tyngde uten nødvendigvis å gi formell makt.",
+        "Hvordan opplæring av andre er arbeid, ansvar og sosial overføring av erfaring.",
+        "Hvordan fagstolthet både kan beskytte kvaliteten og gjøre rollen tyngre å stå i."
+      ],
+      "mastery_threshold": 7,
+      "usefulness": "high",
+      "transferable_skills": [
+        "kvalitetsvurdering",
+        "praktisk problemløsing",
+        "presisjon",
+        "opplæring",
+        "standardforståelse",
+        "faglig integritet"
+      ],
+      "dead_end_risk": "low"
+    },
+    "naer_formann": {
+      "learning_value": "high",
+      "teaches": [
+        "Hvordan praktisk ledelse handler om å holde flyt, trygghet og tillit samtidig.",
+        "Hvordan arbeidsfordeling alltid leses som signal om verdi, rang og belastning.",
+        "Når tempo må stoppes fordi forsvarlighet veier tyngre enn produksjonsro.",
+        "Hvordan lojalitet til laget og ansvar oppover kan trekke i ulike retninger.",
+        "Hvordan autoritet på gulvet må brukes uten å skape unødvendig avstand.",
+        "Hvordan en formann bærer første ansvar når små avvik blir større hendelser."
+      ],
+      "mastery_threshold": 8,
+      "usefulness": "high",
+      "transferable_skills": [
+        "praktisk ledelse",
+        "arbeidsfordeling",
+        "sikkerhetsblikk",
+        "tydelig kommunikasjon",
+        "lojalitet under press",
+        "ansvar for flyt"
+      ],
+      "dead_end_risk": "low"
+    },
+    "naer_controller": {
+      "learning_value": "high",
+      "teaches": [
+        "Hvordan tall kan være styringsspråk uten å være hele virkeligheten.",
+        "Hvordan budsjettavvik må tolkes før de brukes til beslutninger eller skyldplassering.",
+        "Hvordan rapporter både viser, skjuler og former virksomhetens forståelse av seg selv.",
+        "Når kontroll beskytter virksomheten, og når den begynner å ligne mistillit.",
+        "Hvordan prognoser og risikovarsler må formuleres før alt er sikkert.",
+        "Hvordan økonomisk mønsterblikk kan avsløre problemer før driften selv har språk for dem."
+      ],
+      "mastery_threshold": 8,
+      "usefulness": "high",
+      "transferable_skills": [
+        "avviksanalyse",
+        "budsjettforståelse",
+        "rapportkritikk",
+        "økonomisk mønsterblikk",
+        "presis spørsmålstilling",
+        "kontroll uten mistillit"
+      ],
+      "dead_end_risk": "low"
+    },
+    "naer_avdelingsleder": {
+      "learning_value": "high",
+      "teaches": [
+        "Hvordan formell myndighet ikke er det samme som faktisk kontroll over resultater.",
+        "Hvordan mål må oversettes til gjennomførbare prioriteringer med begrensede ressurser.",
+        "Hvordan personalansvar krever både omsorg, krav og rettferdig forskjellsbehandling.",
+        "Hvordan budsjett og kapasitet må leses sammen før avdelingen slites ned.",
+        "Hvordan rapportering oppover kan beskytte eller forvrenge virkeligheten i avdelingen.",
+        "Hvordan god avdelingsledelse oversetter strategi nedover og praktisk friksjon oppover."
+      ],
+      "mastery_threshold": 9,
+      "usefulness": "high",
+      "transferable_skills": [
+        "prioritering",
+        "personalansvar",
+        "budsjettforståelse",
+        "strategisk oversettelse",
+        "konflikthåndtering",
+        "ansvarlig beslutningstaking"
+      ],
+      "dead_end_risk": "low"
+    },
+    "naer_mellomleder": {
+      "learning_value": "high",
+      "teaches": [
+        "Hvordan beslutninger ovenfra må oversettes til arbeid som faktisk kan gjennomføres.",
+        "Hvordan ansvar kan plasseres hos noen som bare delvis kontrollerer situasjonen.",
+        "Hvordan stemning, friksjon og små konflikter kan være direkte driftskritiske.",
+        "Hvordan rapportering både dokumenterer virkeligheten og redigerer den.",
+        "Når du må beskytte ansatte, når du må beskytte systemet, og hva det koster.",
+        "Hvordan mellomledelse sliter på selvbildet fordi rollen står mellom språk, lojalitet og praksis."
+      ],
+      "mastery_threshold": 9,
+      "usefulness": "high",
+      "transferable_skills": [
+        "prioritering",
+        "konfliktdemping",
+        "organisatorisk oversettelse",
+        "bemanningsforståelse",
+        "rapportering",
+        "ansvar under press"
+      ],
+      "dead_end_risk": "medium"
+    },
+    "naer_kapital_og_eierskap": {
+      "learning_value": "high",
+      "teaches": [
+        "Hvordan eierskap er en styringsform med ansvar, ikke bare en økonomisk posisjon.",
+        "Hvordan kapitalbeslutninger former arbeid, steder, risiko og framtidig handlingsrom.",
+        "Hvordan vekst må leses sammen med sårbarhet før den belønnes som verdiskaping.",
+        "Hvordan investeringer alltid prioriterer en bestemt framtid, også når tallene virker nøytrale.",
+        "Hvordan eieransvar ikke forsvinner fordi beslutningen tas i styret eller regnearket.",
+        "Hvordan langsiktig verdiskaping krever at tall, mennesker, drift og samfunnsansvar leses sammen."
+      ],
+      "mastery_threshold": 9,
+      "usefulness": "high",
+      "transferable_skills": [
+        "kapitalvurdering",
+        "risikostyring",
+        "eierstrategi",
+        "investeringslogikk",
+        "langsiktig verdiskaping",
+        "samfunnsansvarlig beslutning"
+      ],
+      "dead_end_risk": "low"
+    },
+    "by_assistent": {
+      "learning_value": "high",
+      "teaches": [
+        "Hvordan byutvikling begynner med stedlig observasjon før løsningene formuleres.",
+        "Hvordan kart, bilder og notater forenkler levende byrom og derfor må leses kritisk.",
+        "Hvordan befaring kan avdekke forskjellen mellom planlagt funksjon og faktisk bruk.",
+        "Hvordan medvirkningsinnspill må sorteres uten å glatte bort det folk faktisk sier.",
+        "Hvordan små detaljer om rytme, snarveier og friksjon kan endre en stedsanalyse.",
+        "Hvordan arkitektur og byliv må forstås sammen, ikke som separate lag."
+      ],
+      "mastery_threshold": 6,
+      "usefulness": "high",
+      "transferable_skills": [
+        "stedslig observasjon",
+        "kartforståelse",
+        "notatføring",
+        "bildedokumentasjon",
+        "medvirkningsforståelse",
+        "romlig blikk"
+      ],
+      "dead_end_risk": "low"
+    },
+    "by_saksbehandler": {
+      "learning_value": "high",
+      "teaches": [
+        "Hvordan plan- og byggesaksbehandling handler om å anvende regler på konkrete steder.",
+        "Hvordan dokumentasjonsmangler kan være reelle vurderingsproblemer, ikke bare formaliteter.",
+        "Hvordan nabomerknader må leses saklig uten å fjerne stedlig erfaring.",
+        "Hvordan likebehandling krever begrunnet skjønn når saker ligner på papiret, men virker ulikt i byen.",
+        "Hvordan frister, saksflyt og rettssikkerhet må balanseres i praktisk forvaltning.",
+        "Hvordan tydelige begrunnelser gjør vedtak mer etterprøvbare for søker, naboer og neste saksbehandler."
+      ],
+      "mastery_threshold": 7,
+      "usefulness": "high",
+      "transferable_skills": [
+        "regelverksforståelse",
+        "saksstruktur",
+        "dokumentasjonskontroll",
+        "nabomerknadsanalyse",
+        "begrunnet skjønn",
+        "forvaltningspresisjon"
+      ],
+      "dead_end_risk": "low"
+    },
+    "by_radgiver_plan": {
+      "learning_value": "high",
+      "teaches": [
+        "Hvordan planfaglig arbeid gjør målkonflikter lesbare før løsninger anbefales.",
+        "Hvordan stedsanalyse kan motsi målbildet og gjøre visjonen mer realistisk.",
+        "Hvordan arealbruk alltid prioriterer noen formål fremfor andre, også når alle målene er gode.",
+        "Hvordan medvirkning må brukes som faglig materiale uten å gjøre alle ønsker til planforslag.",
+        "Hvordan gjennomførbarhet kan true bykvaliteten hvis kvaliteten ikke beskyttes tidlig.",
+        "Hvordan en ansvarlig anbefaling viser prisen på kompromisset før beslutningen tas."
+      ],
+      "mastery_threshold": 8,
+      "usefulness": "high",
+      "transferable_skills": [
+        "stedsanalyse",
+        "arealavveiing",
+        "planfaglig argumentasjon",
+        "tverrfaglig syntese",
+        "medvirkningslesning",
+        "langsiktig bykvalitet"
+      ],
+      "dead_end_risk": "low"
+    },
+    "by_prosjektleder": {
+      "learning_value": "high",
+      "teaches": [
+        "Hvordan byprosjektledelse styrer framdrift uten å gjøre bykvalitet til pynt.",
+        "Hvordan politiske bestillinger må presiseres før de kan bli gode prosjektmandater.",
+        "Hvordan aktørkoordinering handler om ansvar, avhengigheter og tillit, ikke bare møter.",
+        "Hvordan risiko må varsles før den er helt sikker hvis prosjektet skal beholde handlingsrom.",
+        "Hvordan medvirkning og bykvalitet må følges gjennom hele gjennomføringen, ikke bare beskrives i starten.",
+        "Hvordan en god statusrapport viser pris, risiko, kvalitet og framdrift i samme bilde."
+      ],
+      "mastery_threshold": 8,
+      "usefulness": "high",
+      "transferable_skills": [
+        "prosessledelse",
+        "aktørkoordinering",
+        "risikostyring",
+        "politisk oversettelse",
+        "kvalitetsvern",
+        "beslutningsmodenhet"
+      ],
+      "dead_end_risk": "low"
+    },
+    "by_arkitekt": {
+      "learning_value": "high",
+      "teaches": [
+        "Hvordan arkitektur må vurderes som del av byrommet, ikke bare som objekt eller bilde.",
+        "Hvordan volum, høyde og skala først blir forståelige i møte med gaterom, lys og kropp.",
+        "Hvordan førsteetasje, program, innganger og synlighet kan skape eller stenge byliv.",
+        "Hvordan materialitet må tåle vær, bruk, aldring og økonomisk press for å bli varig kvalitet.",
+        "Hvordan signaturgrep må forhandle med stedets rytme, nabobygg og eksisterende romlige logikk.",
+        "Hvordan god byarkitektur gjør bygget bedre ved å gjøre stedet rundt bedre."
+      ],
+      "mastery_threshold": 8,
+      "usefulness": "high",
+      "transferable_skills": [
+        "romlig komposisjon",
+        "skala- og volumforståelse",
+        "materialitetsblikk",
+        "førsteetasjeforståelse",
+        "stedstilpasning",
+        "arkitektonisk argumentasjon"
+      ],
+      "dead_end_risk": "low"
+    },
+    "sport_utover": {
+      "learning_value": "high",
+      "teaches": [
+        "Hvordan idrettsutvikling bygges gjennom rytme, disiplin og presis gjentakelse over tid.",
+        "Hvordan kroppen er både redskap og grense i et prestasjonssystem.",
+        "Hvordan belastning, restitusjon og små kroppssignaler må leses før de blir skade.",
+        "Hvordan lagmiljø, rolleforståelse og uformelle normer former utviklingen som utøver.",
+        "Hvordan konkurransepress kan brukes uten at resultatet blir hele selvbildet.",
+        "Hvordan en moden utøver holder prestasjon, kropp, lag og langsiktig utvikling sammen."
+      ],
+      "mastery_threshold": 8,
+      "usefulness": "high",
+      "transferable_skills": [
+        "treningsdisiplin",
+        "kroppslytting",
+        "teknisk utvikling",
+        "konkurransero",
+        "lagforståelse",
+        "restitusjonsansvar"
+      ],
+      "dead_end_risk": "low"
+    },
+    "sport_kaptein": {
+      "learning_value": "high",
+      "teaches": [
+        "Hvordan kapteinsansvar handler om normer, tillit og små inngrep før konflikter blir store.",
+        "Hvordan lagkultur formes av garderobereaksjoner, standarder og hvem reglene faktisk gjelder for.",
+        "Hvordan kapteinen må oversette trenerkrav til spillergruppen uten å bli budbringer alene.",
+        "Hvordan beskjed oppover kan være lojalitet til laget når frustrasjon gjøres konkret og handlebar.",
+        "Hvordan kapteinen må prestere og lede samtidig uten å overta alle andres roller.",
+        "Hvordan moden kapteinsledelse balanserer støtte, grense, sannhet og lagmoral under press."
+      ],
+      "mastery_threshold": 7,
+      "usefulness": "high",
+      "transferable_skills": [
+        "lagledelse",
+        "garderobelesning",
+        "konfliktdemping",
+        "normsetting",
+        "presskommunikasjon",
+        "ansvar under kamp"
+      ],
+      "dead_end_risk": "low"
+    },
+    "sport_trener": {
+      "learning_value": "high",
+      "teaches": [
+        "Hvordan trenerarbeid bygger læring, roller og prestasjon over tid, ikke bare neste resultat.",
+        "Hvordan øktplanlegging må ha tydelige læringsmål og ikke bare høy aktivitet.",
+        "Hvordan uttak og roller alltid kommuniserer verdi, selv når treneren bare mener funksjon.",
+        "Hvordan kampplaner må være enkle nok til å tåle press og tydelige nok til å hjelpe spillerne.",
+        "Hvordan omsorg og krav må holdes sammen for at spillere skal utvikle seg uten å miste tillit.",
+        "Hvordan moden trenerledelse skaper standarder som mennesker faktisk kan vokse i."
+      ],
+      "mastery_threshold": 8,
+      "usefulness": "high",
+      "transferable_skills": [
+        "øktplanlegging",
+        "spillerutvikling",
+        "uttaksbegrunnelse",
+        "kampforberedelse",
+        "taktisk justering",
+        "omsorg med krav"
+      ],
+      "dead_end_risk": "low"
+    },
+    "sport_sportsledelse": {
+      "learning_value": "high",
+      "teaches": [
+        "Hvordan sportslig ledelse gjør klubbstrategi virkelig gjennom trener, spillere, økonomi og kultur.",
+        "Hvordan langsiktighet må beskyttes aktivt når resultatpresset gjør raske grep fristende.",
+        "Hvordan trenerstøtte og trener-evaluering må holdes sammen uten panikkstyring.",
+        "Hvordan spillerlogistikk, rekruttering og lønnsstruktur former klubbens sportslige identitet.",
+        "Hvordan akademi bare er strategi hvis det finnes en reell bro til seniornivå.",
+        "Hvordan en god sportssjef forklarer strategi, risiko, trenerprofil, spillerlogistikk og prestasjonskultur som én helhet."
+      ],
+      "mastery_threshold": 8,
+      "usefulness": "high",
+      "transferable_skills": [
+        "klubbstrategi",
+        "treneransettelse",
+        "spillerlogistikk",
+        "rekrutteringsvurdering",
+        "budsjettprioritering",
+        "prestasjonskultur"
+      ],
+      "dead_end_risk": "low"
+    },
+    "sport_legende": {
+      "learning_value": "high",
+      "teaches": [
+        "Hvordan toppstatus gjør utøveren til symbol for andre uten å fjerne mennesket bak symbolet.",
+        "Hvordan offentlig synlighet må styres når medier gjør mennesket til en brukbar fortelling.",
+        "Hvordan sponsoravtaler og merkevarevalg forvalter troverdighet, verdier og integritetsgrenser.",
+        "Hvordan forbildeansvar overfor barn og unge krever både ekte nærvær, sannhet og grenser.",
+        "Hvordan ettermæle formes av valg etter seieren, ikke bare av prestasjonen selv.",
+        "Hvordan en idrettslegende må forvalte prestasjon, menneske, merkevare, forbildeansvar og arv samlet."
+      ],
+      "mastery_threshold": 8,
+      "usefulness": "high",
+      "transferable_skills": [
+        "offentlig selvforvaltning",
+        "forbildeansvar",
+        "mediehåndtering",
+        "sponsorvurdering",
+        "ettermæleforståelse",
+        "identitetsvern"
+      ],
+      "dead_end_risk": "low"
+    },
+    "naer_lager_og_driftsmedarbeider": {
+      "learning_value": "high",
+      "teaches": [
+        "Hvordan vareflyt begynner i mottak, kolli, følgeseddel og kontroll av leveranser.",
+        "Hvordan riktig plukk, pakking og lagerplassering beskytter kunde, drift, butikk og transport.",
+        "Hvordan avvik, telling og differanser viser forskjellen mellom fysisk virkelighet og systemtall.",
+        "Hvordan enkel systemregistrering gjør fysisk arbeid synlig og sporbar for andre ledd.",
+        "Hvorfor HMS i fysisk lagerarbeid er produksjonsgrunnlag, ikke treghet.",
+        "Hvordan små feil i lageret kan bli store feil i kunde- eller driftsleddet."
+      ],
+      "mastery_threshold": 7,
+      "usefulness": "high",
+      "transferable_skills": [
+        "nøyaktighet",
+        "logistikkforståelse",
+        "sikkerhetsblikk",
+        "avviksforståelse",
+        "samarbeid",
+        "prioritering under press"
+      ],
+      "dead_end_risk": "medium"
+    },
+    "naer_renholder": {
+      "learning_value": "high",
+      "teaches": [
+        "hygiene",
+        "renholdssoner",
+        "smittevern",
+        "berøringspunkter",
+        "HMS",
+        "kjemikalier og utstyr",
+        "prioritering under tidspress",
+        "usynlig arbeid og verdighet"
+      ],
+      "mastery_threshold": 7,
+      "usefulness": "high",
+      "transferable_skills": [
+        "nøyaktighet",
+        "rutineforståelse",
+        "risikoblikk",
+        "kroppslig selvregulering",
+        "prioritering",
+        "avviksforståelse",
+        "driftstenkning"
+      ],
+      "dead_end_risk": "medium"
+    }
+  }
+}

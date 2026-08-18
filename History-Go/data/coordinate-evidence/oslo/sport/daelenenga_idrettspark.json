@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "1.0",
+  "placeId": "daelenenga_idrettspark",
+  "placeFile": "data/places/sport/europa/norway/oslo_sport/daelenenga_idrettspark.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.926595750000004,
+    "lon": 10.7647212,
+    "r": 170,
+    "coordStatus": "verified_geometry",
+    "coordSource": "OpenStreetMap composite – Dælenenga idrettspark way 4708872 + Grünerhallen way 101769218; scope cross-checked with Oslo kommune",
+    "coordType": "sports_complex_composite_anchor",
+    "coordNote": "Batch 122 composite closure: Oslo kommune dokumenterer Dælenenga idrettsplass/idrettspark og Grünerhallen som del av samme idrettsområde, med besøksadresse Seilduksgata 30. Address-first ble forsøkt først, men Geonorge ga ingen treff for adressen. Ett enkelt bane- eller hallobjekt brukes derfor ikke som proxy for hele canonical stedet. To direkte stable-ID-oppslag dokumenterer hovedkomponentene, OSM way 4708872 og OSM way 101769218. Hovedpunktet er et eksplisitt semantisk area-anchor midt mellom komponentankrene, ikke et påstått geometrisk sentrum."
+  },
+  "identity": {
+    "currentName": "Dælenenga idrettspark",
+    "resolvedIdentity": "Dælenenga idrettspark som samlet idrettsområde",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "current_place",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [
+    "address-first-forsøk",
+    "eksplisitt composite canonical modell",
+    "stabile kildeobjekter for hovedkomponentene"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "municipality",
+      "sourceName": "Oslo kommune – Dælenenga idrettsplass",
+      "sourceUrl": "https://www.oslo.kommune.no/natur-kultur-og-fritid/idrett/idrettsanlegg/dalenenga-idrettsplass/",
+      "sourceObjectId": "oslo-kommune:dalenenga-idrettsplass",
+      "sourceQuality": "official_scope_and_visitor_address",
+      "finding": "Kommunal kilde definerer samlet idrettsområde og besøksadresse.",
+      "canVerifyCoordinate": false,
+      "reason": "Definerer canonical scope."
+    },
+    {
+      "sourceProvider": "official_address",
+      "sourceName": "Geonorge address-first attempt",
+      "sourceUrl": "https://ws.geonorge.no/adresser/v1/sok?sok=Seilduksgata%2030%20Oslo",
+      "sourceObjectId": "geonorge-address-search:Seilduksgata-30",
+      "sourceQuality": "no_applicable_address_result",
+      "finding": "0 treff; tomt resultat brukes ikke til å gjette adressepunkt.",
+      "canVerifyCoordinate": false,
+      "reason": "Dokumentert address-first før composite-modell."
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceName": "OpenStreetMap – Dælenenga idrettspark",
+      "sourceUrl": "https://www.openstreetmap.org/way/4708872",
+      "sourceObjectId": "osm-way:4708872",
+      "sourceQuality": "direct_stable_id_named_component",
+      "finding": "Navngitt hovedground.",
+      "canVerifyCoordinate": true,
+      "reason": "Komponentanker."
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceName": "OpenStreetMap – Grünerhallen",
+      "sourceUrl": "https://www.openstreetmap.org/way/101769218",
+      "sourceObjectId": "osm-way:101769218",
+      "sourceQuality": "direct_stable_id_named_component",
+      "finding": "Navngitt hallkomponent.",
+      "canVerifyCoordinate": true,
+      "reason": "Komponentanker."
+    }
+  ],
+  "addressCandidates": [],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:4708872",
+      "canApplyToPlace": true
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:101769218",
+      "canApplyToPlace": true
+    }
+  ],
+  "geometryCandidates": [],
+  "coordinateCandidates": [
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:4708872",
+      "lat": 59.926342,
+      "lon": 10.7642962,
+      "coordRole": "area_anchor",
+      "canApplyToPlace": true
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:101769218",
+      "lat": 59.9268495,
+      "lon": 10.7651462,
+      "coordRole": "area_anchor",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Godkjent kildeobjekt er anvendt på canonical place."
+  },
+  "notes": [
+    "Batch 122 composite closure: Oslo kommune dokumenterer Dælenenga idrettsplass/idrettspark og Grünerhallen som del av samme idrettsområde, med besøksadresse Seilduksgata 30. Address-first ble forsøkt først, men Geonorge ga ingen treff for adressen. Ett enkelt bane- eller hallobjekt brukes derfor ikke som proxy for hele canonical stedet. To direkte stable-ID-oppslag dokumenterer hovedkomponentene, OSM way 4708872 og OSM way 101769218. Hovedpunktet er et eksplisitt semantisk area-anchor midt mellom komponentankrene, ikke et påstått geometrisk sentrum."
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "placeId": "akershus_kaier",
+  "placeFile": "data/places/naeringsliv/oslo/places_naeringsliv/akershus_kaier.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.906783,
+    "lon": 10.7352565,
+    "r": 200,
+    "coordStatus": "verified_geometry",
+    "coordSource": "OpenStreetMap way 4252516 + Oslo byleksikon",
+    "coordType": "quay_semantic_anchor",
+    "coordNote": "Linjeanker på OpenStreetMap way 4252516 for Akershusstranda langs kaifronten. Oslo byleksikon avgrenser Akershuskaiene fra Rådhusbryggene til Vippetangkaia og dokumenterer Nordre og Søndre Akershuskai. Punktet representerer det lange kaianlegget og er ikke et tilfeldig havnebasseng- eller Vippetangen-punkt."
+  },
+  "identity": {
+    "currentName": "Akershuskaiene",
+    "resolvedIdentity": "Akershuskaiene mellom Rådhusbryggene og Vippetangkaia",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "quay",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [
+    "official_map eller OSM/kommunal geometri",
+    "geometry eller anchors",
+    "coordRole line_anchor eller area_anchor"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Oslo byleksikon – Akershuskaiene",
+      "sourceUrl": "https://oslobyleksikon.no/side/Akershuskaiene",
+      "sourceObjectId": "oslobyleksikon:akershuskaiene",
+      "sourceQuality": "historical_place_definition",
+      "finding": "Akershuskaiene er kaianlegget langs østsiden av Pipervika mellom Rådhusbryggene og Vippetangkaia.",
+      "canVerifyCoordinate": true,
+      "reason": "Kilden avgrenser hele det lineære kaianlegget; OSM-way gir et dokumentert anker langs fronten."
+    }
+  ],
+  "addressCandidates": [],
+  "sourceObjectCandidates": [],
+  "geometryCandidates": [
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:4252516",
+      "geometryType": "LineString",
+      "canApplyToPlace": true
+    }
+  ],
+  "coordinateCandidates": [
+    {
+      "lat": 59.906783,
+      "lon": 10.7352565,
+      "sourceObjectId": "osm-way:4252516",
+      "coordRole": "line_anchor",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Akershuskaiene er oppdatert med dokumentert avgrensning og linjeanker."
+  },
+  "notes": [
+    "Dette skal ikke behandles som site_center for et bygg.",
+    "Valgt anker følger Akershusstranda-linjen og representerer det lange kaianlegget."
+  ]
+}

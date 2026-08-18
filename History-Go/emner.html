@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>History Go – Emner & pensum</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/knowledge.css">
+  <style>
+    .emner-page { max-width: 1100px; margin: 0 auto; padding: 16px; }
+    .emner-header { margin-bottom: 20px; }
+    .emner-header h1 { margin: 8px 0 4px; }
+    .emner-layout { display: grid; grid-template-columns: 260px 1fr; gap: 20px; align-items: flex-start; }
+    .emner-sidebar { background: rgba(0,0,0,.25); border-radius: 10px; padding: 12px; }
+    .emner-sidebar h2 { font-size: 1.1rem; margin-bottom: 8px; }
+    .emne-subject-list { list-style: none; padding: 0; margin: 0; }
+    .emne-subject-item + .emne-subject-item { margin-top: 6px; }
+    .emne-subject-btn { width: 100%; border: 0; cursor: pointer; text-align: left; padding: 8px 10px; border-radius: 8px; font-size: .9rem; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,.04); }
+    .emne-subject-btn small { opacity: .8; font-size: .75rem; }
+    .emne-subject-btn.active { background: rgba(255,255,255,.12); box-shadow: 0 0 0 1px rgba(255,255,255,.08); }
+    .emner-main h2 { margin: 0 0 6px; }
+    .emner-main .muted { margin-bottom: 10px; display: block; }
+    .emne-list { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-direction: column; gap: 10px; }
+    .emne-item { padding: 10px 12px; border-radius: 10px; background: rgba(0,0,0,.3); }
+    .emne-header { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 4px; }
+    .emne-header strong { font-size: .95rem; }
+    .emne-header small { font-size: .8rem; opacity: .9; }
+    .bar-bg { width: 100%; height: 6px; border-radius: 999px; background: rgba(255,255,255,.08); overflow: hidden; margin: 4px 0; }
+    .bar-bg .bar { height: 100%; border-radius: 999px; background: var(--primary, #1976d2); width: 0; }
+    .emne-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+    .emne-meta small { font-size: .75rem; opacity: .85; }
+    .emne-complete { color: var(--ok, #2ecc71); }
+    #coursesPanel { grid-column: 1 / -1; margin-top: 14px; }
+    @media (max-width: 800px) { .emner-layout { grid-template-columns: 1fr; } #coursesPanel { grid-column: auto; } }
+  </style>
+</head>
+<body class="knowledge-page">
+  <div class="emner-page">
+    <header class="emner-header">
+      <a class="back-link" href="profile.html">← Tilbake til profil</a>
+      <img src="bilder/ui/historygo_logo.PNG" class="knowledge-logo" alt="History Go logo">
+      <h1>Dine emner & pensum</h1>
+      <p>Her ser du hvordan det du har lært gjennom quiz henger sammen med emnene i History Go.</p>
+    </header>
+
+    <section class="emner-layout">
+      <aside class="emner-sidebar">
+        <h2>Fagfelt</h2>
+        <p class="muted" style="font-size:.8rem;margin-bottom:8px">Velg et felt for å se emnene du dekker der.</p>
+        <ul id="emneSubjectList" class="emne-subject-list"></ul>
+      </aside>
+
+      <section class="emner-main">
+        <h2 id="emneSubjectTitle">Laster fagfelt …</h2>
+        <span id="emneSubjectDesc" class="muted" style="font-size:.85rem">Emnene hentes fra det kanoniske fagmanifestet.</span>
+        <ul id="emneList" class="emne-list"></ul>
+      </section>
+
+      <section id="coursesPanel" class="panel">
+        <h2>Kurs</h2>
+        <div id="coursesStatus" class="muted"></div>
+        <div id="coursesList"></div>
+      </section>
+    </section>
+  </div>
+
+  <script src="dist/web/knowledge.js"></script>
+  <script src="dist/web/hgInsights.js"></script>
+  <script src="dist/web/emnerLoader.js"></script>
+  <script src="dist/web/courses.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const elSubjects = document.getElementById("emneSubjectList");
+      const elList = document.getElementById("emneList");
+      const elTitle = document.getElementById("emneSubjectTitle");
+      const elDesc = document.getElementById("emneSubjectDesc");
+      const coursesStatus = document.getElementById("coursesStatus");
+      const coursesList = document.getElementById("coursesList");
+
+      if (!window.Emner || !window.computeEmneDekningV2) {
+        elTitle.textContent = "Emne-systemet er ikke klart ennå";
+        elDesc.textContent = "Kunne ikke koble til emner eller dekningsmotoren.";
+        return;
+      }
+
+      let contract;
+      try {
+        const response = await fetch("data/categories/category_contract.json", { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        contract = await response.json();
+      } catch (error) {
+        elTitle.textContent = "Kategorikontrakten kunne ikke lastes";
+        elDesc.textContent = "Faglisten vises ikke før den kanoniske kategorifilen er tilgjengelig.";
+        if (window.DEBUG) console.warn("[emner] category contract failed", error);
+        return;
+      }
+
+      const subjects = (contract.fagSubjects || []).map((fagId) => {
+        const runtimeId = contract.fagToRuntime?.[fagId] || fagId;
+        return {
+          id: fagId,
+          runtimeId,
+          label: contract.labels?.[runtimeId] || fagId
+        };
+      });
+
+      const userId = (window.getCurrentUserId && window.getCurrentUserId()) || "anon";
+      const concepts =
+        (window.getUserConceptsFromLearningLog && window.getUserConceptsFromLearningLog()) ||
+        (window.HGInsights?.getUserConcepts && window.HGInsights.getUserConcepts(userId)) ||
+        [];
+      const emneHits =
+        (window.getUserEmneHitsFromLearningLog && window.getUserEmneHitsFromLearningLog()) ||
+        new Set();
+
+      const coverageBySubject = {};
+      const subjectStats = {};
+
+      for (const subject of subjects) {
+        try {
+          const emner = await window.Emner.loadForSubject(subject.id);
+          if (!Array.isArray(emner) || !emner.length) continue;
+          const coverage = window.computeEmneDekningV2(concepts, emner, { emneHits })
+            .filter((row) => row && Number(row.total) > 0);
+          if (!coverage.length) continue;
+          coverageBySubject[subject.id] = coverage;
+          subjectStats[subject.id] = {
+            count: coverage.length,
+            avgPercent: Math.round(coverage.reduce((sum, row) => sum + (Number(row.percent) || 0), 0) / coverage.length)
+          };
+        } catch (error) {
+          if (window.DEBUG) console.warn(`[emner] skipped ${subject.id}`, error);
+        }
+      }
+
+      const availableSubjects = subjects.filter((subject) => coverageBySubject[subject.id]);
+      if (!availableSubjects.length) {
+        elTitle.textContent = concepts.length ? "Ingen emne-dekning å vise ennå" : "Ingen emne-dekning ennå";
+        elDesc.textContent = concepts.length
+          ? "Du har læringsspor, men ingen tilgjengelige emner med målbar dekning ennå."
+          : "Ta noen quizer først, så vises dekningen din per fagfelt.";
+        coursesStatus.textContent = "";
+        coursesList.innerHTML = "";
+        return;
+      }
+
+      elSubjects.innerHTML = availableSubjects.map((subject) => {
+        const stats = subjectStats[subject.id];
+        return `<li class="emne-subject-item"><button class="emne-subject-btn" data-subject="${subject.id}"><span>${subject.label}</span><small>${stats.avgPercent}% • ${stats.count} emner</small></button></li>`;
+      }).join("");
+
+      async function renderCourses(subjectId) {
+        if (!window.HGCourses || typeof window.HGCourses.compute !== "function") {
+          coursesStatus.textContent = "Kursmotor ikke koblet.";
+          coursesList.innerHTML = "";
+          return;
+        }
+        try {
+          coursesStatus.textContent = "Laster kursstatus …";
+          coursesList.innerHTML = "";
+          const emnerAll = await window.Emner.loadForSubject(subjectId);
+          const result = await window.HGCourses.compute({ subjectId, emnerAll });
+          const course = result.course;
+          const diploma = result.diploma;
+          coursesStatus.innerHTML = `Progresjon: <strong>${course.percent}%</strong> · Moduler: <strong>${course.done}/${course.total}</strong>${diploma.eligible ? " · <strong>🎓 Diplom klar!</strong>" : ""}`;
+          if (!course.modules?.length) {
+            coursesList.innerHTML = `<div class="muted">Ingen moduler definert i pensum for «${subjectId}».</div>`;
+            return;
+          }
+          coursesList.innerHTML = course.modules.map((module) => {
+            const emner = module.stats?.emner || {};
+            const conceptStats = module.stats?.concepts || {};
+            return `<div class="panel" style="padding:10px;margin:10px 0"><div style="display:flex;justify-content:space-between;gap:10px"><strong>${module.title || module.module_id || "Modul"}</strong><span>${module.completed ? "✅" : "⏳"}</span></div><div class="muted" style="margin-top:8px">Emner: <strong>${emner.coveredCount || 0}/${emner.requiredCount || 0}</strong> · Konsepter: <strong>${conceptStats.hit || 0}/${conceptStats.requiredCount || 0} (${conceptStats.percent || 0}%)</strong></div></div>`;
+          }).join("");
+        } catch (error) {
+          coursesStatus.textContent = "Klarte ikke å beregne kurs akkurat nå.";
+          coursesList.innerHTML = "";
+          if (window.DEBUG) console.warn("[emner] course compute failed", error);
+        }
+      }
+
+      function renderSubject(subjectId) {
+        const subject = subjects.find((item) => item.id === subjectId);
+        const coverage = coverageBySubject[subjectId] || [];
+        elSubjects.querySelectorAll(".emne-subject-btn").forEach((button) => {
+          button.classList.toggle("active", button.dataset.subject === subjectId);
+        });
+        elTitle.textContent = subject?.label || "Emner";
+        elDesc.textContent = "Hvert emne består av kjernebegreper. Vi viser hvor mange du har dekket gjennom quizer.";
+        elList.innerHTML = coverage.map((row) => {
+          const total = Number(row.total) || 0;
+          const matchCount = Number(row.matchCount) || 0;
+          const percent = Number(row.percent) || 0;
+          const complete = total > 0 && matchCount === total;
+          return `<li class="emne-item"><div class="emne-header"><strong>${row.title || "Emne"}</strong><small>${percent}% (${matchCount}/${total})</small></div><div class="bar-bg"><div class="bar" style="width:${percent}%"></div></div><div class="emne-meta"><small>${complete ? '<span class="emne-complete">✔ Alle kjernebegrepene er dekket</span>' : `Mangler ${Math.max(0, total - matchCount)} kjernebegreper`}</small></div></li>`;
+        }).join("");
+        renderCourses(subjectId);
+      }
+
+      elSubjects.querySelectorAll(".emne-subject-btn").forEach((button) => {
+        button.addEventListener("click", () => renderSubject(button.dataset.subject));
+      });
+      renderSubject(availableSubjects[0].id);
+    });
+  </script>
+</body>
+</html>

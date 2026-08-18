@@ -1,0 +1,331 @@
+{
+  "schemaVersion": "1.0",
+  "placeId": "grini_fangeleir",
+  "placeFile": "data/places/historie/akershus/grini_fangeleir.json",
+  "evidenceStatus": "production_applied",
+  "coordinateDecision": "verified_surviving_original_prison_building_as_historical_camp_core_anchor",
+  "currentCoordinate": {
+    "lat": 59.954295776884884,
+    "lon": 10.582680030345253,
+    "r": 360,
+    "locatorType": "historic_site",
+    "sourceProvider": "manual_research",
+    "geocodeAccuracy": "geometric_center",
+    "coordStatus": "verified_historical_source",
+    "coordSource": "MiA Grinimuseet history; OSM way 1420075236 original-prison building geometry; Kartverket Jøssingveien 33; Lokalhistoriewiki historical camp plan and original-building identification; Bærum municipality",
+    "coordType": "surviving_original_prison_building_centroid_for_grini_camp_core",
+    "coordRole": "historical_anchor",
+    "sourceObjectId": "mia:grini-original-main-building;osm-way:1420075236",
+    "coordNote": "The canonical point is the deterministic centroid of the surviving original Ila prison building where Grini fangeleir was established in 1941. The building is a stable historical core anchor, not a claimed centroid of the full barracks camp. The current Grinimuseet is a separate public visitor anchor approximately 200.6 metres away and outside the original camp location."
+  },
+  "previousCoordinate": {
+    "lat": 59.9565,
+    "lon": 10.5909,
+    "r": 240,
+    "coordStatus": "needs_manual_map_check",
+    "coordSource": "Legacy point retained pending georeferenced wartime camp geometry",
+    "coordType": "provisional_historical_camp_area",
+    "distanceToAppliedCoordinateM": 519.1,
+    "reasonReplaced": "The provisional point had no documented relationship to a historical camp feature. The surviving original prison building now provides a physically reproducible and historically explicit anchor."
+  },
+  "identity": {
+    "currentName": "Grini fangeleir",
+    "resolvedIdentity": "The wartime detention-camp compound established in the original Ila prison building and expanded from 1942 into a large barracks camp, represented canonically by the surviving original main building and separately by the public Grinimuseet visitor anchor.",
+    "identityStatus": "resolved",
+    "identityProblem": "The historical camp was a broad compound and cannot honestly be reduced to the current museum or to a guessed perimeter centroid. The surviving original main building is, however, a documented fixed component that remained central throughout the camp period.",
+    "locatorTypeCandidate": "historic_site",
+    "requiresSplit": false,
+    "splitReason": "One historical camp record can use the surviving original prison building as its historical anchor and the current museum as a separate visitor anchor without claiming a complete wartime perimeter polygon."
+  },
+  "requiredEvidence": [
+    "official historical identification of the original prison building as the first Grini camp core",
+    "current-ground geometry for the surviving original prison building",
+    "official current address cross-check for Ila",
+    "historical camp-plan and interior-feature cross-check against the original building",
+    "documented barracks-camp expansion around the main building",
+    "separate visitor anchor for the current museum",
+    "explicit active-prison access restrictions",
+    "radius decision that does not claim the historical perimeter"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Grinimuseet – Om Grini fangeleir",
+      "sourceUrl": "https://mia.no/grinimuseet/om-grini-fangeleir",
+      "sourceObjectId": "mia:grini-fangeleir-history",
+      "sourceQuality": "official_museum_history_and_original_building_identity",
+      "finding": "MiA documents that Grini was established on 14 June 1941 in the nearly completed Ila women's-prison building. The first prisoners were housed there, and from 1942 more than thirty barracks were built after forest around the original building was cleared. MiA states that Ila fengsel og forvaringsanstalt occupies the building today.",
+      "canVerifyCoordinate": true,
+      "reason": "Authoritatively identifies the surviving current building as the historical main building and establishes its role as the fixed core around which the camp expanded."
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceName": "OpenStreetMap way 1420075236 – surviving Ila main building geometry",
+      "sourceUrl": "https://www.openstreetmap.org/way/1420075236",
+      "sourceObjectId": "osm-way:1420075236",
+      "sourceQuality": "materialized_current_building_polygon_for_historical_main_building",
+      "finding": "The 41-node closed building polygon at the Ila address has deterministic centroid 59.954295776884884, 10.582680030345253. The one-time source artifact captures the surrounding current prison and museum geometry.",
+      "canVerifyCoordinate": true,
+      "reason": "Provides reproducible current geometry for the historically identified surviving original prison building."
+    },
+    {
+      "sourceProvider": "official_address",
+      "sourceName": "Kartverket Address API – Jøssingveien 33",
+      "sourceUrl": "https://ws.geonorge.no/adresser/v1/",
+      "sourceObjectId": "geonorge-address:Jøssingveien-33",
+      "sourceQuality": "official_current_prison_address_cross_check",
+      "finding": "Kartverket returns one exact Jøssingveien 33 address point at 59.954506038554115, 10.58271591642294, approximately 23.5 metres from the applied building centroid.",
+      "canVerifyCoordinate": false,
+      "reason": "Independently confirms that the applied building geometry is at the current Ila prison address."
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Kriminalomsorgen – Ila fengsel og forvaringsanstalt",
+      "sourceUrl": "https://www.kriminalomsorgen.no/fengsel/ila-fengsel-og-forvaringsanstalt",
+      "sourceObjectId": "kriminalomsorgen:ila-jossingveien-33",
+      "sourceQuality": "official_current_institution_identity_and_security_context",
+      "finding": "Kriminalomsorgen identifies Ila fengsel og forvaringsanstalt as a high-security prison at Jøssingveien 33, 1359 Eiksmarka.",
+      "canVerifyCoordinate": false,
+      "reason": "Confirms current identity and establishes that the historical anchor is not a public-access point."
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Lokalhistoriewiki – Grini fangeleir",
+      "sourceUrl": "https://lokalhistoriewiki.no/Grini_fangeleir",
+      "sourceObjectId": "lokalhistoriewiki:grini-fangeleir-plan-and-main-building",
+      "sourceQuality": "historical_plan_original_building_and_appeal_area_cross_check",
+      "finding": "The wartime camp plan identifies the original prison building as one of the black masonry structures. A 1945 appeal photograph is described as taken from the fourth floor of the original prison building toward the large appeal area. The same source identifies the original building as today's Ila institution and places Fallskjermen inside it.",
+      "canVerifyCoordinate": false,
+      "reason": "Ties the current surviving building to the wartime plan and the appeal-area orientation without inventing a full georeferenced camp perimeter."
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceName": "OpenStreetMap way 1470255130 – Fallskjermen interior cross-check",
+      "sourceUrl": "https://www.openstreetmap.org/way/1470255130",
+      "sourceObjectId": "osm-way:1470255130",
+      "sourceQuality": "mapped_historical_room_inside_candidate_building",
+      "finding": "The mapped Fallskjermen room centroid at 59.954447254986555, 10.582640771814834 lies inside building way 1420075236. Its OSM position carries a fixme and is therefore used only as identity QA.",
+      "canVerifyCoordinate": false,
+      "reason": "Supports the building identification but is not sufficiently precise to act as its own production coordinate."
+    },
+    {
+      "sourceProvider": "municipality",
+      "sourceName": "Bærum kommune – Forsvar og krigsminner",
+      "sourceUrl": "https://www.baerum.kommune.no/tjenester/kultur-idrett-og-fritid/kunst-og-kultur/rik-pa-historie/6.-forsvar-og-krigsminner",
+      "sourceObjectId": "baerum-kommune:grini-fangeleir",
+      "sourceQuality": "official_municipal_camp_structure_and_extent_context",
+      "finding": "Bærum municipality documents the original prison building and the surrounding barracks town of more than thirty barracks, with inner and outer camp functions.",
+      "canVerifyCoordinate": false,
+      "reason": "Confirms that the historical place is broader than the canonical building anchor and that the gameplay circle cannot be read as a perimeter polygon."
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Grinimuseet – current museum",
+      "sourceUrl": "https://mia.no/grinimuseet/en/grini-museum",
+      "sourceObjectId": "mia:grinimuseet-jossingveien-31",
+      "sourceQuality": "official_separate_public_visitor_anchor",
+      "finding": "MiA states that today's museum is in an authentic prisoner barrack moved after the war and located just outside the original Grini camp location.",
+      "canVerifyCoordinate": false,
+      "reason": "Requires the public museum to remain a separate visitor anchor rather than replacing the historical main-building coordinate."
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceName": "OpenStreetMap node 5446566958 – Grini museum",
+      "sourceUrl": "https://www.openstreetmap.org/node/5446566958",
+      "sourceObjectId": "osm-node:5446566958",
+      "sourceQuality": "named_public_museum_visitor_point",
+      "finding": "The museum point at 59.9557896, 10.5847011 lies approximately 200.6 metres from the applied historical building centroid.",
+      "canVerifyCoordinate": false,
+      "reason": "Public visitor anchor inside the 360-metre gameplay radius, not the historical camp centre."
+    },
+    {
+      "sourceProvider": "wikidata",
+      "sourceName": "Wikidata Q637411 – Grini detention camp",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q637411",
+      "sourceObjectId": "wikidata:Q637411",
+      "sourceQuality": "nearby_historical_entity_point_without_coordinate_reference",
+      "finding": "The Wikidata point at approximately 59.9534333333, 10.5825472222 lies approximately 96.2 metres from the applied main-building centroid but has no cited coordinate derivation or feature role.",
+      "canVerifyCoordinate": false,
+      "reason": "Retained only as an entity cross-check; proximity does not substitute for sourced feature identity."
+    },
+    {
+      "sourceProvider": "legacy_dataset",
+      "sourceName": "Legacy Grini fangeleir point",
+      "sourceUrl": "",
+      "sourceObjectId": "legacy:grini_fangeleir",
+      "sourceQuality": "uncontracted_provisional_area_point",
+      "finding": "The previous coordinate 59.9565, 10.5909 lies approximately 519.1 metres from the surviving original main-building centroid and has no documented relationship to a wartime camp feature.",
+      "canVerifyCoordinate": false,
+      "reason": "Replaced by the physically and historically identified original main building."
+    }
+  ],
+  "addressCandidates": [
+    {
+      "sourceProvider": "official_address",
+      "address": {
+        "street": "Jøssingveien",
+        "number": "33",
+        "postcode": "1359",
+        "city": "Eiksmarka",
+        "country": "NO"
+      },
+      "sourceUrl": "https://ws.geonorge.no/adresser/v1/",
+      "sourceObjectId": "geonorge-address:Jøssingveien-33",
+      "canApplyToPlace": false,
+      "rejectionReason": "Confirms the historical main-building location but is the active high-security prison address and must not be exposed as a visitor destination."
+    },
+    {
+      "sourceProvider": "official_address",
+      "address": {
+        "street": "Jøssingveien",
+        "number": "31",
+        "postcode": "1359",
+        "city": "Eiksmarka",
+        "country": "NO"
+      },
+      "sourceUrl": "https://ws.geonorge.no/adresser/v1/",
+      "sourceObjectId": "geonorge-address:Jøssingveien-31",
+      "canApplyToPlace": false,
+      "rejectionReason": "Public museum visitor address outside the original camp location, not the historical anchor."
+    }
+  ],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "mia:grini-original-main-building;osm-way:1420075236",
+      "canApplyToPlace": true,
+      "applied": true
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-node:5446566958",
+      "canApplyToPlace": false,
+      "rejectionReason": "Current museum visitor point outside the original camp location."
+    },
+    {
+      "sourceProvider": "wikidata",
+      "sourceObjectId": "wikidata:Q637411",
+      "canApplyToPlace": false,
+      "rejectionReason": "Unreferenced historical entity coordinate with no feature-role derivation."
+    },
+    {
+      "sourceProvider": "legacy_dataset",
+      "sourceObjectId": "legacy:grini_fangeleir",
+      "canApplyToPlace": false,
+      "rejectionReason": "No source or historical feature role."
+    }
+  ],
+  "geometryCandidates": [
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:1420075236",
+      "geometryType": "Polygon",
+      "geometryRole": "surviving_original_prison_building_historical_anchor",
+      "canApplyToPlace": true,
+      "applied": true
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "griniboken:camp-plan-1945",
+      "geometryType": "historical_plan_image",
+      "geometryRole": "camp_scope_and_main_building_orientation_cross_check",
+      "canApplyToPlace": false
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-way:375269932",
+      "geometryType": "Polygon",
+      "geometryRole": "current_active_prison_boundary_access_context_only",
+      "canApplyToPlace": false
+    }
+  ],
+  "anchors": [
+    {
+      "id": "grini_original_main_building",
+      "name": "Grini – original main prison building",
+      "lat": 59.954295776884884,
+      "lon": 10.582680030345253,
+      "r": 120,
+      "type": "historical_anchor",
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "mia:grini-original-main-building;osm-way:1420075236",
+      "canApplyToPlace": true
+    },
+    {
+      "id": "grinimuseet_visitor_anchor",
+      "name": "Grinimuseet – public visitor anchor",
+      "lat": 59.9557896,
+      "lon": 10.5847011,
+      "r": 80,
+      "type": "display_marker",
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-node:5446566958",
+      "canApplyToPlace": false
+    }
+  ],
+  "coordinateCandidates": [
+    {
+      "sourceProvider": "legacy_dataset",
+      "sourceObjectId": "legacy:grini_fangeleir",
+      "lat": 59.9565,
+      "lon": 10.5909,
+      "coordRole": "provisional_area_anchor",
+      "distanceFromAppliedM": 519.1,
+      "canApplyToPlace": false
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "mia:grini-original-main-building;osm-way:1420075236",
+      "lat": 59.954295776884884,
+      "lon": 10.582680030345253,
+      "coordRole": "historical_anchor",
+      "distanceFromPreviousM": 519.1,
+      "canApplyToPlace": true,
+      "applied": true
+    },
+    {
+      "sourceProvider": "osm",
+      "sourceObjectId": "osm-node:5446566958",
+      "lat": 59.9557896,
+      "lon": 10.5847011,
+      "coordRole": "public_museum_visitor_anchor",
+      "distanceFromAppliedM": 200.6,
+      "canApplyToPlace": false
+    },
+    {
+      "sourceProvider": "wikidata",
+      "sourceObjectId": "wikidata:Q637411",
+      "lat": 59.95343333333334,
+      "lon": 10.582547222222223,
+      "coordRole": "unreferenced_historical_entity_candidate",
+      "distanceFromAppliedM": 96.2,
+      "canApplyToPlace": false
+    }
+  ],
+  "rawEvidence": [
+    {
+      "path": "reports/akershus-coordinate-grini-fangeleir-source-probe/source-summary.json",
+      "description": "Persisted official history, original-building identification, current address, museum visitor anchor, historical-plan cross-check and radius/access decision."
+    },
+    {
+      "path": "reports/akershus-coordinate-grini-fangeleir-source-probe/osm-way-1420075236-original-prison-building-geometry.json",
+      "description": "Materialized 41-node original-prison building polygon, deterministic centroid, current prison context, official-address cross-check, Fallskjermen identity QA and museum visitor anchor."
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "coordinateChangedInThisPass": true,
+    "radiusChangedInThisPass": true,
+    "previousRadiusM": 240,
+    "appliedRadiusM": 360,
+    "nextAction": "Applied the surviving original prison building as the historical Grini camp-core anchor, retained the current museum as a separate public visitor anchor and prohibited gameplay interpretation of the active prison perimeter. Continue with the next unresolved coordinate record."
+  },
+  "notes": [
+    "The canonical point moves approximately 519.1 metres to the surviving original main-building centroid.",
+    "The radius increases from 240 to 360 metres so the public Grinimuseet visitor anchor remains inside the gameplay core while the circle is explicitly not treated as the wartime perimeter.",
+    "The historical camp plan is used for feature identity and spatial-role control rather than as an invented full georeferenced polygon.",
+    "The current active prison boundary is access context only and never a historical camp boundary.",
+    "The museum is public, but its authentic barrack was moved after the war and stands outside the original camp location."
+  ]
+}

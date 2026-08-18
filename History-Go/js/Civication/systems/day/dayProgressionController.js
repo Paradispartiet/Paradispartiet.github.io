@@ -1,0 +1,456 @@
+// js/Civication/systems/day/dayProgressionController.js
+// CivicationDayProgression — eier fasefremdriften gjennom maildagen: finner gjeldende/neste
+// fase, avgjør om fasen kan avanseres og avanserer når dagen er klar.
+// Dispatcher civi:dayPhaseChanged / civi:inboxChanged / updateProfile.
+(function () {
+  "use strict";
+
+  /**
+   * @typedef {Record<string, unknown>} DayProgRecord
+   * @typedef {DayProgRecord & {
+   *  id?: string,
+   *  status?: string,
+   *  subject?: string,
+   *  phase?: string,
+   *  resolved?: boolean,
+   *  answered_at?: string,
+   *  answeredAt?: string,
+   *  event?: DayProgMailEvent
+   * }} DayProgRuntimeItem
+   * @typedef {DayProgRecord & {
+   *  id?: string,
+   *  subject?: string,
+   *  phase?: string,
+   *  phase_tag?: string,
+   *  daily_mail_meta?: DayProgRecord
+   * }} DayProgMailEvent
+   * @typedef {DayProgRecord & {
+   *  phase: string,
+   *  phaseLabel: string,
+   *  dayIndex: number,
+   *  openItemsInPhase: number,
+   *  openItemSubjects: string[],
+   *  nextPhase: string|null,
+   *  canAdvance: boolean,
+   *  reason: string
+   * }} DayProgInspection
+   * @typedef {DayProgRecord & {
+   *  advanced: boolean,
+   *  reason?: string,
+   *  fromPhase?: string,
+   *  toPhase?: string
+   * }} DayProgAdvanceResult
+   */
+
+  const OPEN_STATUSES = new Set(["queued", "pending", "delivered", "open"]);
+
+  function norm(value) {
+    return String(value || "").trim();
+  }
+
+  function uniqueStrings(values) {
+    return [...new Set((Array.isArray(values) ? values : []).map(norm).filter(Boolean))];
+  }
+
+  function getCalendar() {
+    return window.CivicationCalendar || null;
+  }
+
+  function getBuilderInspect() {
+    return window.CivicationDailyMailBuilder?.inspect?.() || null;
+  }
+
+  /**
+   * @returns {DayProgRuntimeItem[]}
+   */
+  function getRuntimeItems() {
+    const inspected = getBuilderInspect();
+    const runtime = inspected?.runtime;
+    return Array.isArray(runtime?.items) ? runtime.items : [];
+  }
+
+  function getInboxItems() {
+    const fromEngine = window.CivicationMailEngine?.getInbox?.();
+    if (Array.isArray(fromEngine)) return fromEngine;
+    const fromState = window.CivicationState?.getInbox?.();
+    return Array.isArray(fromState) ? fromState : [];
+  }
+
+  function inboxEventOf(item) {
+    return item?.event || item || null;
+  }
+
+  function isOpenActionableInboxItem(item, answeredRuntimeIds) {
+    if (!item || item.deleted === true || item.archived === true || item.resolved === true) return false;
+    const ev = inboxEventOf(item);
+    const status = norm(item.status || ev?.status || "pending").toLowerCase();
+    if (status !== "pending" && status !== "open") return false;
+    // Dagsruntimen eier sannheten for dagens saker: er runtime-raden besvart,
+    // skal en hengende innbokskopi ikke blokkere faseavansering.
+    if (answeredRuntimeIds && answeredRuntimeIds.has(norm(ev?.id))) return false;
+    return Array.isArray(ev?.choices) && ev.choices.length > 0;
+  }
+
+  // To rytmer: en privat fase blokkeres BARE av private fase-mailer, og
+  // arbeidsdagsfasen blokkeres BARE av arbeidslivsmail. En åpen jobbmail i den
+  // globale innboksen skal ikke stoppe lunsj/middag/kveld/dagslutt, og en åpen
+  // privat mail skal ikke stoppe arbeidsdagen.
+  const PRIVATE_PHASES = new Set(["morning", "lunch", "afternoon", "dinner", "evening", "day_end"]);
+
+  function inboxItemChannel(item) {
+    const ev = inboxEventOf(item) || {};
+    const channels = window.CivicationEventChannels;
+    if (channels?.getMessageChannel) return norm(channels.getMessageChannel(ev)).toLowerCase();
+    // Fallback uten EventChannels: bruk klassene direkte.
+    if (norm(ev.mail_class) === "daily_private" || norm(ev.source_type) === "daily_private_phase") return "private";
+    if (norm(ev.mail_class) === "daily_workday") return "job";
+    return "";
+  }
+
+  // Blokkerer inbox-item denne fasen? En privat fase blokkeres kun av private
+  // mailer; en arbeidsfase kun av jobbmailer. Ukjent kanal blokkerer den fasen
+  // den «hører hjemme» i via faserytmen (privat som standard).
+  function inboxItemBlocksPhase(item, phase) {
+    const channel = inboxItemChannel(item);
+    const phaseIsPrivate = PRIVATE_PHASES.has(norm(phase));
+    if (channel === "job") return !phaseIsPrivate;
+    if (channel === "private") return phaseIsPrivate;
+    // Ukjent: la den blokkere i privat rytme (defensiv), aldri jobbfasen.
+    return phaseIsPrivate;
+  }
+
+  function getOpenInboxActionItems(phase) {
+    const answeredRuntimeIds = new Set(
+      getRuntimeItems()
+        .filter((row) => norm(row?.status).toLowerCase() === "answered")
+        .map((row) => norm(row?.event?.id))
+        .filter(Boolean)
+    );
+    const openItems = getInboxItems().filter((item) => isOpenActionableInboxItem(item, answeredRuntimeIds));
+    if (!phase) return openItems;
+    return openItems.filter((item) => inboxItemBlocksPhase(item, phase));
+  }
+
+  function getCurrentPhase() {
+    return norm(getCalendar()?.getPhase?.() || "morning") || "morning";
+  }
+
+  function getPhaseLabel(phase) {
+    const calendar = getCalendar();
+    if (typeof calendar?.getPhaseLabel === "function") return calendar.getPhaseLabel(phase);
+    return norm(phase || "morning") || "morning";
+  }
+
+  function getDayIndex() {
+    const clock = getCalendar()?.getClock?.() || {};
+    return Number(clock.dayIndex || 1);
+  }
+
+  /**
+   * @param {DayProgRuntimeItem} row
+   * @returns {string}
+   */
+  function getPhaseForRow(row) {
+    if (!row || typeof row !== "object") return "";
+    return norm(row.phase || row?.event?.phase_tag || row?.event?.daily_mail_meta?.phase);
+  }
+
+  /**
+   * @param {DayProgRuntimeItem} row
+   * @param {string} phase
+   * @returns {boolean}
+   */
+  function belongsToPhase(row, phase) {
+    const wanted = norm(phase);
+    if (!wanted) return false;
+    return getPhaseForRow(row) === wanted;
+  }
+
+
+  /**
+   * @param {DayProgRuntimeItem} row
+   * @returns {DayProgRuntimeItem|null}
+   */
+  function findInboxItemForRow(row) {
+    const rowId = norm(row?.id || row?.event?.id);
+    if (!rowId) return null;
+
+    const inbox = window.CivicationState?.getInbox?.();
+    if (!Array.isArray(inbox)) return null;
+
+    return inbox.find((item) => norm(item?.event?.id || item?.id) === rowId) || null;
+  }
+
+  /**
+   * @param {DayProgRuntimeItem} row
+   * @returns {boolean}
+   */
+  function isOpenRow(row) {
+    if (!row || typeof row !== "object") return false;
+    const status = norm(row.status || "queued").toLowerCase();
+    if (!OPEN_STATUSES.has(status)) return false;
+    if (row.resolved === true) return false;
+
+    const inboxItem = findInboxItemForRow(row);
+    const inboxStatus = norm(inboxItem?.status).toLowerCase();
+    const inboxEventStatus = norm(inboxItem?.event?.status).toLowerCase();
+    if (
+      inboxItem?.resolved === true
+      || inboxStatus === "resolved"
+      || inboxItem?.event?.resolved === true
+      || inboxEventStatus === "resolved"
+    ) return false;
+
+    if (row.answered_at || row.answeredAt) return false;
+    return true;
+  }
+
+  function getPhaseList() {
+    const phases = getCalendar()?.DAY_PHASES;
+    return Array.isArray(phases) && phases.length
+      ? phases.map(norm).filter(Boolean)
+      : ["morning", "forenoon", "workday", "lunch", "afternoon", "dinner", "evening", "day_end"];
+  }
+
+  function getNextPhase(phase) {
+    const phases = getPhaseList();
+    const idx = phases.indexOf(norm(phase));
+    if (idx < 0) return phases[0] || "morning";
+    return phases[idx + 1] || null;
+  }
+
+  function getPhaseItems(phase) {
+    const wanted = norm(phase || getCurrentPhase());
+    return getRuntimeItems().filter((row) => belongsToPhase(row, wanted));
+  }
+
+  function getQueuedItemsForPhase(phase) {
+    return getPhaseItems(phase).filter((row) => norm(row?.status).toLowerCase() === "queued");
+  }
+
+  function getDeliveredItemsForPhase(phase) {
+    return getPhaseItems(phase).filter((row) => ["delivered", "pending", "open"].includes(norm(row?.status).toLowerCase()));
+  }
+
+  function getAnsweredItemsForPhase(phase) {
+    return getPhaseItems(phase).filter((row) => norm(row?.status).toLowerCase() === "answered" || row?.resolved === true || row?.answered_at || row?.answeredAt);
+  }
+
+  function isRequiredRow(row) {
+    return norm(row?.required).toLowerCase() !== "false" && row?.optional !== true;
+  }
+
+  function summarizeRow(row) {
+    const event = row?.event || {};
+    const choices = Array.isArray(event?.choices) ? event.choices : [];
+    return { id: norm(event?.id || row?.id), subject: norm(event?.subject || row?.subject), mail_type: norm(event?.mail_type || event?.type || row?.mail_type), type: norm(event?.type), slot: norm(row?.slot || event?.daily_mail_meta?.slot), status: norm(row?.status || "queued"), phase: getPhaseForRow(row), required: isRequiredRow(row), optional: row?.optional === true, hasChoices: choices.length > 0, choiceCount: choices.length, choices: choices.map((choice) => ({ id: norm(choice?.id), label: norm(choice?.label || choice?.text || choice?.id) })).filter((choice) => choice.id), body: norm(event?.body), text: norm(event?.text), situation: Array.isArray(event?.situation) ? event.situation.map(norm).filter(Boolean) : norm(event?.situation), description: norm(event?.description), snippet: norm(event?.snippet), prompt: norm(event?.prompt), summary: norm(event?.summary), task_id: norm(event?.task_id || row?.task_id) };
+  }
+
+  function getPhaseCompletion(phase) {
+    const rows = getPhaseItems(phase);
+    const required = rows.filter(isRequiredRow);
+    const answered = getAnsweredItemsForPhase(phase);
+    const completedRequired = required.filter((row) => answered.includes(row) || norm(row?.status).toLowerCase() === "answered");
+    return { requiredCount: required.length, completedCount: completedRequired.length, isComplete: required.length === 0 || completedRequired.length >= required.length };
+  }
+
+  function getCurrentPhaseItems() {
+    return getPhaseItems(getCurrentPhase()).map(summarizeRow);
+  }
+
+  function getCurrentPhaseBundle() {
+    const phase = getCurrentPhase();
+    const items = getPhaseItems(phase);
+    const pendingItems = getDeliveredItemsForPhase(phase);
+    const queuedItems = getQueuedItemsForPhase(phase);
+    const answeredItems = getAnsweredItemsForPhase(phase);
+    const completion = getPhaseCompletion(phase);
+    return {
+      phase,
+      phaseLabel: getPhaseLabel(phase),
+      items: items.map(summarizeRow),
+      pendingItems: pendingItems.map(summarizeRow),
+      queuedItems: queuedItems.map(summarizeRow),
+      answeredItems: answeredItems.map(summarizeRow),
+      requiredCount: completion.requiredCount,
+      completedCount: completion.completedCount,
+      isComplete: completion.isComplete && queuedItems.length === 0 && pendingItems.length === 0,
+      nextPhase: getNextPhase(phase)
+    };
+  }
+
+  /**
+   * @returns {DayProgInspection}
+   */
+  function inspect() {
+    const phase = getCurrentPhase();
+    /** @type {DayProgRuntimeItem[]} */
+    const items = getRuntimeItems();
+    const openRows = items.filter((row) => belongsToPhase(row, phase) && isOpenRow(row));
+    const queuedRows = items.filter((row) => belongsToPhase(row, phase) && norm(row?.status).toLowerCase() === "queued");
+    const deliveredRows = items.filter((row) => belongsToPhase(row, phase) && ["delivered", "pending", "open"].includes(norm(row?.status).toLowerCase()));
+    const nextQueuedRow = queuedRows[0] || null;
+    const pendingRow = deliveredRows[0] || null;
+    // Kun inbox-mailer som hører til DENNE fasens rytme kan blokkere fasen.
+    const openInboxRows = getOpenInboxActionItems(phase);
+    const nextPhase = getNextPhase(phase);
+
+    let reason = "ready_to_advance";
+    let canAdvance = true;
+
+    if (!nextPhase) {
+      canAdvance = false;
+      reason = "at_last_phase";
+    } else if (openRows.length > 0) {
+      canAdvance = false;
+      reason = "open_items_in_phase";
+    } else if (openInboxRows.length > 0) {
+      canAdvance = false;
+      reason = "open_inbox_items";
+    } else if (queuedRows.length > 0) {
+      canAdvance = false;
+      reason = "queued_items_in_phase";
+    } else if (deliveredRows.length > 0) {
+      canAdvance = false;
+      reason = "delivered_items_in_phase";
+    }
+
+    const bundle = getCurrentPhaseBundle();
+    const nextActionableItem = deliveredRows[0] ? summarizeRow(deliveredRows[0]) : (nextQueuedRow ? summarizeRow(nextQueuedRow) : null);
+
+    return {
+      phase,
+      phaseLabel: getPhaseLabel(phase),
+      dayIndex: getDayIndex(),
+      openItemsInPhase: openRows.length + openInboxRows.length,
+      openInboxItems: openInboxRows.length,
+      queuedItemsInPhase: queuedRows.length,
+      deliveredItemsInPhase: deliveredRows.length,
+      completedItemsInPhase: items.filter((row) => belongsToPhase(row, phase) && norm(row?.status).toLowerCase() === "answered").length,
+      openItemSubjects: openRows.map((row) => norm(row?.event?.subject || row?.subject || row?.event?.id)).filter(Boolean).concat(openInboxRows.map((item) => norm(inboxEventOf(item)?.subject || item?.subject || item?.id)).filter(Boolean)),
+      pendingItem: pendingRow ? { id: norm(pendingRow?.event?.id || pendingRow?.id), subject: norm(pendingRow?.event?.subject || pendingRow?.subject), status: norm(pendingRow?.status), phase: getPhaseForRow(pendingRow) } : null,
+      nextQueuedItem: nextQueuedRow ? { id: norm(nextQueuedRow?.event?.id || nextQueuedRow?.id), subject: norm(nextQueuedRow?.event?.subject || nextQueuedRow?.subject), status: norm(nextQueuedRow?.status), phase: getPhaseForRow(nextQueuedRow) } : null,
+      phaseBundle: bundle,
+      requiredCount: bundle.requiredCount,
+      completedCount: bundle.completedCount,
+      isComplete: bundle.isComplete,
+      blockingReason: reason,
+      nextActionableItem,
+      nextPhase,
+      canAdvance,
+      reason
+    };
+  }
+
+  /**
+   * @returns {boolean}
+   */
+  function canAdvancePhase() {
+    return !!inspect().canAdvance;
+  }
+
+  /**
+   * @returns {Promise<DayProgAdvanceResult>}
+   */
+  async function advancePhaseIfReady() {
+    const state = inspect();
+    const canAdvanceToNextPhase = state.canAdvance;
+    const canResetAtDayEnd = state.reason === "at_last_phase"
+      && state.phase === "day_end"
+      && Number(state.openItemsInPhase || 0) === 0;
+
+    if (!canAdvanceToNextPhase && !canResetAtDayEnd) {
+      return { advanced: false, reason: state.reason };
+    }
+
+    const calendar = getCalendar();
+    const fromPhase = state.phase;
+
+    // PR F: dagsrullnings (day_end → ny dag) skal ferdigstille ukesoppsummeringen. For daily-events
+    // kjører ikke lenger dayPatches.answer sin day_end-gren (PR A), så `saveDailySummaryToWeek` +
+    // `finalizeWeekIfNeeded` var foreldreløse — uke-review ble aldri skrevet, og det inert-gjorde
+    // det ukentlige carryover-signalet (visibility/process/fatigue). Vi lagrer dagens summary til
+    // uken FØR rullnings, fordi `advancePhase()` ved day_end nullstiller dagen og fjerner
+    // dailySummary. Begge helperne er idempotente (dag-oppdatering by index + applied-flagg).
+    if (fromPhase === "day_end") {
+      try {
+        const summary = calendar?.getDailySummary?.();
+        if (summary && typeof window.saveDailySummaryToWeek === "function") {
+          window.saveDailySummaryToWeek(summary);
+        }
+        if (typeof window.finalizeWeekIfNeeded === "function") {
+          const activePosition = /** @type {{ career_id?: unknown } | null | undefined} */ (
+            window.CivicationState?.getActivePosition?.()
+          );
+          const careerId = activePosition?.career_id || "";
+          window.finalizeWeekIfNeeded(careerId);
+        }
+      } catch {}
+    }
+
+    calendar?.advancePhase?.();
+    const toPhase = getCurrentPhase();
+
+
+    try { window.dispatchEvent(new Event("civi:dayPhaseChanged")); } catch {}
+    try { window.dispatchEvent(new Event("civi:inboxChanged")); } catch {}
+    // Dagsrullnings (day_end → ny dag) gjenbruker IKKE gårsdagens (ferdigbesvarte) bunke:
+    // runtime er datokeyet (todayKey), så en ny in-game-dag i samme kalenderdøgn må tvinge en
+    // ny buildQueue. Uten forceNew finner enqueueNext ingen ubesvarte items → tom/fast ny dag.
+    try { await window.CivicationDailyMailBuilder?.enqueueNext?.(window.HG_CiviEngine || null, { ignorePending: false, forceNew: fromPhase === "day_end" }); } catch {}
+    try { window.dispatchEvent(new Event("updateProfile")); } catch {}
+
+    return { advanced: true, fromPhase, toPhase };
+  }
+
+  function getDayEndSummary() {
+    const items = getRuntimeItems();
+    const phases = getPhaseList();
+    const phaseBundles = phases.map((phase) => {
+      const rows = getPhaseItems(phase);
+      const answered = getAnsweredItemsForPhase(phase);
+      const required = rows.filter(isRequiredRow);
+      const completedRequired = required.filter(row => answered.includes(row) || norm(row?.status).toLowerCase() === "answered");
+      return { phase, phaseLabel: getPhaseLabel(phase), total: rows.length, answered: answered.length, required: required.length, complete: rows.length > 0 && completedRequired.length >= required.length && getQueuedItemsForPhase(phase).length === 0 && getDeliveredItemsForPhase(phase).length === 0 };
+    });
+    const answeredItems = items.filter(row => norm(row?.status).toLowerCase() === "answered");
+    const openRequired = items.filter(row => isRequiredRow(row) && isOpenRow(row));
+    const peopleContacts = new Set(answeredItems.filter(row => /people|person|kollega|friend|family/i.test(`${row?.event?.mail_type || ""} ${row?.slot || ""} ${row?.event?.mail_family || ""}`)).map(row => norm(row?.event?.source || row?.event?.from || row?.event?.id)).filter(Boolean));
+    const tasksCompleted = answeredItems.filter(row => norm(row?.event?.mail_type) === "task_gate" || norm(row?.slot) === "task_gate").length;
+    const learningTags = uniqueStrings(answeredItems.flatMap(row => [row?.event?.competency, ...(Array.isArray(row?.event?.mail_tags) ? row.event.mail_tags : []), ...(Array.isArray(row?.event?.choices) ? row.event.choices.flatMap(c => c.tags || []) : [])]).filter(tag => /learn|kompet|fag|jurid|plan|process|knowledge/i.test(norm(tag))));
+    const relationshipTags = answeredItems.flatMap(row => Array.isArray(row?.event?.choices) ? row.event.choices.flatMap(c => c.tags || []) : []).filter(tag => /relasjon|trust|people|social|tillit/i.test(norm(tag))).length;
+    const completedPhases = phaseBundles.filter(p => p.complete).length;
+    const score = Math.max(0, Math.min(100, Math.round(answeredItems.length * 4 + completedPhases * 6 + tasksCompleted * 8 + learningTags.length * 2 + relationshipTags * 2 - openRequired.length * 8)));
+    return {
+      title: "Dagen er over",
+      dayIndex: getDayIndex(),
+      completedPhases,
+      totalPhases: phases.length,
+      handledItems: answeredItems.length,
+      peopleMet: peopleContacts.size,
+      tasksCompleted,
+      importantChoices: answeredItems.map(row => norm(row?.event?.subject || row?.subject)).filter(Boolean).slice(0, 6),
+      score,
+      scoreExplanation: "Score = besvarte saker + fullførte bolker + task gates + læring/relasjon - åpne required saker.",
+      roleDevelopment: learningTags.length ? `Rolleutvikling: Du har styrket ${learningTags.slice(0, 3).join(", ")}.` : "Ingen tydelig rolleutvikling i dag",
+      learning: learningTags.slice(0, 8),
+      effects: { psyche: null, energy: null, money: null },
+      carryover: openRequired.length ? `${openRequired.length} required saker følger med.` : "Ingen åpne required saker følger med til i morgen.",
+      phases: phaseBundles
+    };
+  }
+
+  window.CivicationDayProgression = {
+    inspect,
+    canAdvancePhase,
+    advancePhaseIfReady,
+    getCurrentPhaseItems,
+    getCurrentPhaseBundle,
+    getOpenItemsForPhase: (phase) => getPhaseItems(phase).filter(isOpenRow).map(summarizeRow),
+    getQueuedItemsForPhase: (phase) => getQueuedItemsForPhase(phase).map(summarizeRow),
+    getDeliveredItemsForPhase: (phase) => getDeliveredItemsForPhase(phase).map(summarizeRow),
+    getAnsweredItemsForPhase: (phase) => getAnsweredItemsForPhase(phase).map(summarizeRow),
+    getPhaseCompletion,
+    getDayEndSummary
+  };
+})();

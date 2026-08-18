@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0",
+  "placeId": "inger_hagerups_plass",
+  "placeFile": "data/places/litteratur/oslo/places_litteratur/inger_hagerups_plass.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.9221744,
+    "lon": 10.853756,
+    "r": 130,
+    "coordStatus": "verified",
+    "coordSource": "Lokalhistoriewiki – Inger Hagerups plass; identity cross-checked with Oslo byleksikon and Oslo bykart point 2357",
+    "coordType": "documented_place_coordinate",
+    "coordNote": "Oslo byleksikon identifiserer Inger Hagerups plass som snuplassen i enden av Hagapynten og lenker stedet til Oslo bykart point 2357. Lokalhistoriewiki oppgir en eksplisitt kildekoordinat for den samme navngitte plassen. Dette dokumenterte plasspunktet erstatter legacy-koordinaten som lå over to kilometer nord for den faktiske plassen; ingen naboadresse er brukt som proxy."
+  },
+  "identity": {
+    "currentName": "Inger Hagerups plass",
+    "resolvedIdentity": "Inger Hagerups plass, snuplassen i enden av Hagapynten på Haugerud",
+    "identityStatus": "resolved",
+    "identityProblem": "Fysisk identitet er dokumentert, men batchens strenge koordinatkrav er ikke oppfylt for ett entydig canonical punkt.",
+    "locatorTypeCandidate": "square",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [
+    "entydig canonical hovedanker eller eksakt objektgeometri"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Oslo byleksikon – Inger Hagerups plass",
+      "sourceUrl": "https://oslobyleksikon.no/side/Inger_Hagerups_plass",
+      "sourceObjectId": "oslobykart:point:2357",
+      "finding": "Oslo byleksikon identifiserer plassen som snuplassen i enden av Hagapynten og lenker direkte til Oslo bykart point 2357.",
+      "sourceQuality": "documented_identity_or_source_coordinate",
+      "canVerifyCoordinate": true,
+      "reason": "Oslo byleksikon identifiserer Inger Hagerups plass som snuplassen i enden av Hagapynten og lenker stedet til Oslo bykart point 2357. Lokalhistoriewiki oppgir en eksplisitt kildekoordinat for den samme navngitte plassen. Dette dokumenterte plasspunktet erstatter legacy-koordinaten som lå over to kilometer nord for den faktiske plassen; ingen naboadresse er brukt som proxy."
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Lokalhistoriewiki – Inger Hagerups plass",
+      "sourceUrl": "https://lokalhistoriewiki.no/Inger_Hagerups_plass",
+      "sourceObjectId": "lokalhistoriewiki:inger-hagerups-plass",
+      "finding": "Lokalhistoriewiki oppgir eksplisitt koordinaten 59.9221744 N, 10.853756 E for den navngitte plassen.",
+      "sourceQuality": "documented_identity_or_source_coordinate",
+      "canVerifyCoordinate": true,
+      "reason": "Oslo byleksikon identifiserer Inger Hagerups plass som snuplassen i enden av Hagapynten og lenker stedet til Oslo bykart point 2357. Lokalhistoriewiki oppgir en eksplisitt kildekoordinat for den samme navngitte plassen. Dette dokumenterte plasspunktet erstatter legacy-koordinaten som lå over to kilometer nord for den faktiske plassen; ingen naboadresse er brukt som proxy."
+    }
+  ],
+  "addressCandidates": [],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "oslobykart:point:2357",
+      "canApplyToPlace": true
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "lokalhistoriewiki:inger-hagerups-plass",
+      "canApplyToPlace": true
+    }
+  ],
+  "geometryCandidates": [],
+  "coordinateCandidates": [
+    {
+      "lat": 59.9221744,
+      "lon": 10.853756,
+      "coordRole": "area_anchor",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Dokumentert koordinat-/objektkilde er anvendt på canonical place."
+  },
+  "notes": [
+    "Oslo byleksikon identifiserer Inger Hagerups plass som snuplassen i enden av Hagapynten og lenker stedet til Oslo bykart point 2357. Lokalhistoriewiki oppgir en eksplisitt kildekoordinat for den samme navngitte plassen. Dette dokumenterte plasspunktet erstatter legacy-koordinaten som lå over to kilometer nord for den faktiske plassen; ingen naboadresse er brukt som proxy."
+  ]
+}

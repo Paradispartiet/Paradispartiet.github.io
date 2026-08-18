@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0",
+  "placeId": "nybrua_vaterlandsparken",
+  "placeFile": "data/places/natur/oslo/places_oslo_natur_akerselvarute/nybrua_vaterlandsparken.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.9177872,
+    "lon": 10.7591639,
+    "r": 120,
+    "coordStatus": "verified_geometry",
+    "coordSource": "OpenStreetMap way 315066295 – Nybrua",
+    "coordType": "bridge_center",
+    "coordNote": "Legacy-posten er splittet: denne ID-en representerer nå bare den eksakte navngitte OSM-wayen for Nybrua. Vaterlandsparken er opprettet som eget sted omtrent 538 meter lenger sør."
+  },
+  "identity": {
+    "currentName": "Nybrua",
+    "resolvedIdentity": "Nybrua",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "linear_area",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [],
+  "evidence": [],
+  "addressCandidates": [],
+  "sourceObjectCandidates": [
+    {
+      "sourceObjectId": "osm-way:315066295",
+      "name": "Nybrua",
+      "lat": 59.9177872,
+      "lon": 10.7591639
+    }
+  ],
+  "geometryCandidates": [],
+  "coordinateCandidates": [],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Applied to canonical split place."
+  },
+  "notes": [
+    "Legacy-posten er splittet: denne ID-en representerer nå bare den eksakte navngitte OSM-wayen for Nybrua. Vaterlandsparken er opprettet som eget sted omtrent 538 meter lenger sør.",
+    "Vaterlandsparken er opprettet som separat canonical place_id vaterlandsparken."
+  ]
+}

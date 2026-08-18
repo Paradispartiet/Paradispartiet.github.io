@@ -1,0 +1,789 @@
+{
+  "meta": {
+    "version": "0.2.0",
+    "created_from": "data/natur/nature_place_map_candidates.json",
+    "candidate_file_generated_at": "2026-04-28T21:44:03.186Z",
+    "purpose": "Place-level fuglekart for vanlige by-, våtmarks- og skogsfugler i Oslo. Lastes inn i Natur-rundingen sammen med øvrige naturkart.",
+    "rule": "Fuglearter som finnes i data/natur/fauna/fugler_by.json eller data/natur/fauna/fugler_vatmark_og_skog.json, med medium/high confidence i Artskart-kandidater."
+  },
+  "places": {
+    "torggata": {
+      "fauna": [
+        "emne_fauna_graamaake",
+        "emne_fauna_blaameis",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_graaspurv",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_kraake",
+        "emne_fauna_skjaere",
+        "emne_fauna_stokkand",
+        "emne_fauna_graatrost",
+        "emne_fauna_hettemaake",
+        "emne_fauna_linerle"
+      ]
+    },
+    "bispelokket": {
+      "fauna": [
+        "emne_fauna_graamaake",
+        "emne_fauna_stokkand",
+        "emne_fauna_kraake",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_graaspurv",
+        "emne_fauna_skjaere",
+        "emne_fauna_svarttrost",
+        "emne_fauna_ringdue",
+        "emne_fauna_blaameis",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_knoppsvane",
+        "emne_fauna_hettemaake",
+        "emne_fauna_sildemaake",
+        "emne_fauna_storskarv",
+        "emne_fauna_graagas",
+        "emne_fauna_linerle",
+        "emne_fauna_toppand",
+        "emne_fauna_sothone",
+        "emne_fauna_graatrost",
+        "emne_fauna_rodstrupe",
+        "emne_fauna_gronnfink"
+      ]
+    },
+    "karl_johan": {
+      "fauna": [
+        "emne_fauna_graamaake",
+        "emne_fauna_kraake",
+        "emne_fauna_graaspurv",
+        "emne_fauna_svarttrost",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_ringdue",
+        "emne_fauna_skjaere",
+        "emne_fauna_stokkand",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_blaameis",
+        "emne_fauna_hettemaake",
+        "emne_fauna_linerle",
+        "emne_fauna_sildemaake",
+        "emne_fauna_graatrost",
+        "emne_fauna_spettmeis",
+        "emne_fauna_knoppsvane",
+        "emne_fauna_graagas",
+        "emne_fauna_gronnfink",
+        "emne_fauna_storskarv"
+      ]
+    },
+    "radhusplassen": {
+      "fauna": [
+        "emne_fauna_graamaake",
+        "emne_fauna_kraake",
+        "emne_fauna_graaspurv",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_stokkand",
+        "emne_fauna_skjaere",
+        "emne_fauna_blaameis",
+        "emne_fauna_svarttrost",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_ringdue",
+        "emne_fauna_hettemaake",
+        "emne_fauna_sildemaake",
+        "emne_fauna_knoppsvane",
+        "emne_fauna_storskarv",
+        "emne_fauna_linerle",
+        "emne_fauna_graatrost",
+        "emne_fauna_gronnfink",
+        "emne_fauna_graagas",
+        "emne_fauna_graahegre"
+      ]
+    },
+    "bjorvika": {
+      "fauna": [
+        "emne_fauna_graamaake",
+        "emne_fauna_stokkand",
+        "emne_fauna_kraake",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_graaspurv",
+        "emne_fauna_skjaere",
+        "emne_fauna_svarttrost",
+        "emne_fauna_ringdue",
+        "emne_fauna_blaameis",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_knoppsvane",
+        "emne_fauna_hettemaake",
+        "emne_fauna_sildemaake",
+        "emne_fauna_graagas",
+        "emne_fauna_storskarv",
+        "emne_fauna_linerle",
+        "emne_fauna_toppand",
+        "emne_fauna_sothone",
+        "emne_fauna_graatrost",
+        "emne_fauna_rodstrupe"
+      ]
+    },
+    "ring_3": {
+      "fauna": [
+        "emne_fauna_skjaere",
+        "emne_fauna_blaameis",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_svarttrost",
+        "emne_fauna_graaspurv",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_kraake",
+        "emne_fauna_linerle"
+      ]
+    },
+    "trikk_17_18": {
+      "fauna": [
+        "emne_fauna_graamaake",
+        "emne_fauna_kraake",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_graaspurv",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_skjaere",
+        "emne_fauna_svarttrost",
+        "emne_fauna_blaameis",
+        "emne_fauna_sildemaake",
+        "emne_fauna_hettemaake",
+        "emne_fauna_linerle"
+      ]
+    },
+    "grunerlokka_helgesens_tm": {
+      "fauna": [
+        "emne_fauna_graaspurv",
+        "emne_fauna_kraake",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_svarttrost",
+        "emne_fauna_graamaake",
+        "emne_fauna_skjaere",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_ringdue",
+        "emne_fauna_blaameis",
+        "emne_fauna_stokkand",
+        "emne_fauna_graatrost",
+        "emne_fauna_hettemaake",
+        "emne_fauna_sildemaake",
+        "emne_fauna_linerle",
+        "emne_fauna_gronnfink",
+        "emne_fauna_spettmeis",
+        "emne_fauna_rodstrupe"
+      ]
+    },
+    "toyen_torg": {
+      "fauna": [
+        "emne_fauna_graatrost"
+      ]
+    },
+    "majorstuen_krysset": {
+      "fauna": [
+        "emne_fauna_graaspurv",
+        "emne_fauna_svarttrost",
+        "emne_fauna_blaameis",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_skjaere",
+        "emne_fauna_graamaake",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_kraake",
+        "emne_fauna_spettmeis",
+        "emne_fauna_rodstrupe",
+        "emne_fauna_graatrost",
+        "emne_fauna_sildemaake",
+        "emne_fauna_gronnfink",
+        "emne_fauna_hettemaake"
+      ]
+    },
+    "st_hanshaugen_park": {
+      "fauna": [
+        "emne_fauna_kraake",
+        "emne_fauna_blaameis",
+        "emne_fauna_graamaake",
+        "emne_fauna_skjaere",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_svarttrost",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_graaspurv",
+        "emne_fauna_ringdue",
+        "emne_fauna_stokkand",
+        "emne_fauna_spettmeis",
+        "emne_fauna_gronnfink",
+        "emne_fauna_graatrost",
+        "emne_fauna_hettemaake",
+        "emne_fauna_sildemaake",
+        "emne_fauna_linerle",
+        "emne_fauna_rodstrupe"
+      ]
+    },
+    "oslo_s": {
+      "fauna": [
+        "emne_fauna_graamaake",
+        "emne_fauna_graaspurv",
+        "emne_fauna_kraake",
+        "emne_fauna_stokkand",
+        "emne_fauna_blaameis",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_skjaere",
+        "emne_fauna_svarttrost",
+        "emne_fauna_sildemaake",
+        "emne_fauna_hettemaake",
+        "emne_fauna_graagas"
+      ]
+    },
+    "vulkan_energisentral": {
+      "fauna": [
+        "emne_fauna_graatrost"
+      ]
+    },
+    "aker_brygge": {
+      "fauna": [
+        "emne_fauna_graamaake",
+        "emne_fauna_graaspurv",
+        "emne_fauna_kraake",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_stokkand",
+        "emne_fauna_skjaere",
+        "emne_fauna_svarttrost",
+        "emne_fauna_ringdue",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_blaameis",
+        "emne_fauna_hettemaake",
+        "emne_fauna_storskarv",
+        "emne_fauna_sildemaake",
+        "emne_fauna_linerle",
+        "emne_fauna_knoppsvane",
+        "emne_fauna_graagas",
+        "emne_fauna_graatrost",
+        "emne_fauna_gronnfink"
+      ]
+    },
+    "tigeren": {
+      "fauna": [
+        "emne_fauna_graamaake",
+        "emne_fauna_graaspurv",
+        "emne_fauna_kraake"
+      ]
+    },
+    "gronland_kirke": {
+      "fauna": [
+        "emne_fauna_kraake",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_graamaake",
+        "emne_fauna_graaspurv",
+        "emne_fauna_skjaere",
+        "emne_fauna_svarttrost",
+        "emne_fauna_ringdue"
+      ]
+    },
+    "kampen_kirke": {
+      "fauna": [
+        "emne_fauna_graatrost"
+      ]
+    },
+    "jernbanetorget": {
+      "fauna": [
+        "emne_fauna_graamaake",
+        "emne_fauna_graaspurv",
+        "emne_fauna_kraake",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_sildemaake",
+        "emne_fauna_hettemaake"
+      ]
+    },
+    "oslo_bussterminal": {
+      "fauna": [
+        "emne_fauna_knoppsvane"
+      ]
+    },
+    "helsfyr": {
+      "fauna": [
+        "emne_fauna_hettemaake"
+      ]
+    },
+    "bogstadveien": {
+      "fauna": [
+        "emne_fauna_blaameis",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_skjaere",
+        "emne_fauna_graamaake",
+        "emne_fauna_kraake",
+        "emne_fauna_graaspurv",
+        "emne_fauna_svarttrost",
+        "emne_fauna_spettmeis",
+        "emne_fauna_rodstrupe",
+        "emne_fauna_gronnfink"
+      ]
+    },
+    "gronlandsleiret": {
+      "fauna": [
+        "emne_fauna_graamaake",
+        "emne_fauna_kraake"
+      ]
+    },
+    "spikersuppa": {
+      "fauna": [
+        "emne_fauna_graamaake",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_kraake",
+        "emne_fauna_svarttrost",
+        "emne_fauna_knoppsvane",
+        "emne_fauna_graagas",
+        "emne_fauna_hettemaake",
+        "emne_fauna_storskarv",
+        "emne_fauna_sildemaake"
+      ]
+    },
+    "bankplassen": {
+      "fauna": [
+        "emne_fauna_kraake",
+        "emne_fauna_graamaake",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_graaspurv",
+        "emne_fauna_skjaere",
+        "emne_fauna_svarttrost",
+        "emne_fauna_ringdue",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_hettemaake",
+        "emne_fauna_sildemaake",
+        "emne_fauna_graatrost"
+      ]
+    },
+    "universitetsplassen": {
+      "fauna": [
+        "emne_fauna_svarttrost"
+      ]
+    },
+    "damstredet_telthusbakken": {
+      "fauna": [
+        "emne_fauna_blaameis",
+        "emne_fauna_kjottmeis"
+      ]
+    },
+    "tjuvholmen": {
+      "fauna": [
+        "emne_fauna_graamaake",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_kraake",
+        "emne_fauna_graaspurv",
+        "emne_fauna_stokkand",
+        "emne_fauna_skjaere",
+        "emne_fauna_knoppsvane",
+        "emne_fauna_storskarv",
+        "emne_fauna_sildemaake",
+        "emne_fauna_graatrost",
+        "emne_fauna_hettemaake"
+      ]
+    },
+    "operahuset": {
+      "fauna": [
+        "emne_fauna_graamaake",
+        "emne_fauna_stokkand",
+        "emne_fauna_kraake",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_graaspurv",
+        "emne_fauna_skjaere",
+        "emne_fauna_svarttrost",
+        "emne_fauna_ringdue",
+        "emne_fauna_blaameis",
+        "emne_fauna_knoppsvane",
+        "emne_fauna_hettemaake",
+        "emne_fauna_sildemaake",
+        "emne_fauna_storskarv",
+        "emne_fauna_linerle",
+        "emne_fauna_toppand",
+        "emne_fauna_sothone",
+        "emne_fauna_graatrost",
+        "emne_fauna_rodstrupe"
+      ]
+    },
+    "oslo_domkirke": {
+      "fauna": [
+        "emne_fauna_kraake",
+        "emne_fauna_graaspurv"
+      ]
+    },
+    "deichman_bjorvika": {
+      "fauna": [
+        "emne_fauna_graamaake",
+        "emne_fauna_stokkand",
+        "emne_fauna_kraake",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_graaspurv",
+        "emne_fauna_skjaere",
+        "emne_fauna_svarttrost",
+        "emne_fauna_blaameis",
+        "emne_fauna_ringdue",
+        "emne_fauna_knoppsvane",
+        "emne_fauna_hettemaake",
+        "emne_fauna_sildemaake",
+        "emne_fauna_storskarv",
+        "emne_fauna_linerle",
+        "emne_fauna_toppand",
+        "emne_fauna_sothone",
+        "emne_fauna_graatrost"
+      ]
+    },
+    "vigelandsparken": {
+      "fauna": [
+        "emne_fauna_graaspurv",
+        "emne_fauna_kraake",
+        "emne_fauna_skjaere",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_graamaake",
+        "emne_fauna_ringdue",
+        "emne_fauna_stokkand",
+        "emne_fauna_svarttrost",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_graatrost",
+        "emne_fauna_sildemaake",
+        "emne_fauna_linerle",
+        "emne_fauna_hettemaake",
+        "emne_fauna_graagas",
+        "emne_fauna_knoppsvane",
+        "emne_fauna_toppand",
+        "emne_fauna_storskarv"
+      ]
+    },
+    "slottet": {
+      "fauna": [
+        "emne_fauna_kraake",
+        "emne_fauna_ringdue",
+        "emne_fauna_graatrost"
+      ]
+    },
+    "gamlebyen_gravlund": {
+      "fauna": [
+        "emne_fauna_ringdue",
+        "emne_fauna_myrmaur",
+        "emne_fauna_svarttrost",
+        "emne_fauna_blaameis",
+        "emne_fauna_graamaake",
+        "emne_fauna_kraake",
+        "emne_fauna_stokkand",
+        "emne_fauna_myrstankelbein",
+        "emne_fauna_mork_jordhumle",
+        "emne_fauna_munk"
+      ]
+    },
+    "inger_hagerups_plass": {
+      "fauna": [
+        "emne_fauna_graaspurv",
+        "emne_fauna_kraake",
+        "emne_fauna_ringdue",
+        "emne_fauna_graamaake",
+        "emne_fauna_fiskemaake"
+      ]
+    },
+    "gronland_basarene": {
+      "fauna": [
+        "emne_fauna_graamaake"
+      ]
+    },
+    "middelalder_oslo": {
+      "fauna": [
+        "emne_fauna_toppand",
+        "emne_fauna_sothone",
+        "emne_fauna_graagas",
+        "emne_fauna_storskarv"
+      ]
+    },
+    "akerselva": {
+      "fauna": [
+        "emne_fauna_kraake",
+        "emne_fauna_stokkand",
+        "emne_fauna_graaspurv",
+        "emne_fauna_svarttrost",
+        "emne_fauna_graamaake",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_skjaere",
+        "emne_fauna_blaameis",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_ringdue",
+        "emne_fauna_storskarv",
+        "emne_fauna_graahegre",
+        "emne_fauna_flaggspett",
+        "emne_fauna_gronnfink",
+        "emne_fauna_graatrost"
+      ]
+    },
+    "munch_museet": {
+      "fauna": [
+        "emne_fauna_graamaake",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_stokkand",
+        "emne_fauna_sildemaake",
+        "emne_fauna_hettemaake",
+        "emne_fauna_storskarv",
+        "emne_fauna_toppand"
+      ]
+    },
+    "majorstuen_tbanestasjon": {
+      "fauna": [
+        "emne_fauna_graaspurv",
+        "emne_fauna_svarttrost",
+        "emne_fauna_skjaere",
+        "emne_fauna_graamaake"
+      ]
+    },
+    "sofienbergparken": {
+      "fauna": [
+        "emne_fauna_blaameis",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_kraake",
+        "emne_fauna_skjaere",
+        "emne_fauna_svarttrost",
+        "emne_fauna_graaspurv",
+        "emne_fauna_graamaake"
+      ]
+    },
+    "nydalen": {
+      "fauna": [
+        "emne_fauna_kjottmeis",
+        "emne_fauna_blaameis",
+        "emne_fauna_svarttrost",
+        "emne_fauna_kraake",
+        "emne_fauna_ringdue",
+        "emne_fauna_graaspurv",
+        "emne_fauna_stokkand"
+      ]
+    },
+    "stensparken": {
+      "fauna": [
+        "emne_fauna_steinhumle",
+        "emne_fauna_svarttrost",
+        "emne_fauna_graatrost",
+        "emne_fauna_graaspurv",
+        "emne_fauna_kraake",
+        "emne_fauna_gronnfink",
+        "emne_fauna_linerle"
+      ]
+    },
+    "holmenkollen_nasjonalanlegg": {
+      "fauna": [
+        "emne_fauna_skjaere",
+        "emne_fauna_kraake",
+        "emne_fauna_graatrost",
+        "emne_fauna_linerle"
+      ]
+    },
+    "romsaås": {
+      "fauna": [
+        "emne_fauna_skjaere",
+        "emne_fauna_svarttrost",
+        "emne_fauna_kraake",
+        "emne_fauna_graamaake",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_blaameis",
+        "emne_fauna_graaspurv",
+        "emne_fauna_spettmeis",
+        "emne_fauna_rodstrupe",
+        "emne_fauna_flaggspett",
+        "emne_fauna_graatrost"
+      ]
+    },
+    "vaalerenga": {
+      "fauna": [
+        "emne_fauna_skjaere",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_blaameis",
+        "emne_fauna_svarttrost",
+        "emne_fauna_kraake",
+        "emne_fauna_graaspurv",
+        "emne_fauna_ringdue",
+        "emne_fauna_gronnfink",
+        "emne_fauna_spettmeis",
+        "emne_fauna_flaggspett",
+        "emne_fauna_linerle"
+      ]
+    },
+    "ullevål_hageby": {
+      "fauna": [
+        "emne_fauna_gronnfink"
+      ]
+    },
+    "olaf_ryes_plass": {
+      "fauna": [
+        "emne_fauna_graaspurv",
+        "emne_fauna_skjaere"
+      ]
+    },
+    "frysjadammen": {
+      "fauna": [
+        "emne_fauna_blaameis",
+        "emne_fauna_kraake",
+        "emne_fauna_skjaere",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_graamaake",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_ringdue",
+        "emne_fauna_stokkand",
+        "emne_fauna_svarttrost",
+        "emne_fauna_notteskrike"
+      ]
+    },
+    "frysja_industriomrade": {
+      "fauna": [
+        "emne_fauna_graamaake"
+      ]
+    },
+    "seilduksfabrikken_nydalen": {
+      "fauna": [
+        "emne_fauna_svarttrost",
+        "emne_fauna_stokkand",
+        "emne_fauna_blaameis"
+      ]
+    },
+    "nydalsdammen": {
+      "fauna": [
+        "emne_fauna_svarttrost",
+        "emne_fauna_graaspurv",
+        "emne_fauna_skjaere",
+        "emne_fauna_blaameis",
+        "emne_fauna_kraake",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_graamaake",
+        "emne_fauna_ringdue",
+        "emne_fauna_stokkand",
+        "emne_fauna_graatrost",
+        "emne_fauna_linerle",
+        "emne_fauna_gronnfink",
+        "emne_fauna_sildemaake"
+      ]
+    },
+    "stilla_nydalen": {
+      "fauna": [
+        "emne_fauna_svarttrost",
+        "emne_fauna_stokkand",
+        "emne_fauna_blaameis",
+        "emne_fauna_graahegre"
+      ]
+    },
+    "bjoelsenfossen": {
+      "fauna": [
+        "emne_fauna_storskarv"
+      ]
+    },
+    "voienfossen": {
+      "fauna": [
+        "emne_fauna_kjottmeis",
+        "emne_fauna_graaspurv",
+        "emne_fauna_blaameis"
+      ]
+    },
+    "voien_gard_voienvolden": {
+      "fauna": [
+        "emne_fauna_svarttrost",
+        "emne_fauna_graaspurv",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_blaameis",
+        "emne_fauna_ringdue",
+        "emne_fauna_graamaake",
+        "emne_fauna_skjaere",
+        "emne_fauna_kraake"
+      ]
+    },
+    "myralokka": {
+      "fauna": [
+        "emne_fauna_svarttrost",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_blaameis",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_graamaake",
+        "emne_fauna_graaspurv",
+        "emne_fauna_ringdue",
+        "emne_fauna_skjaere"
+      ]
+    },
+    "nedre_foss": {
+      "fauna": [
+        "emne_fauna_svarttrost"
+      ]
+    },
+    "vulkan_industriomrade": {
+      "fauna": [
+        "emne_fauna_svarttrost"
+      ]
+    },
+    "hausmannsomradet_elvelop": {
+      "fauna": [
+        "emne_fauna_graaspurv",
+        "emne_fauna_svarttrost"
+      ]
+    },
+    "ankerbrua": {
+      "fauna": [
+        "emne_fauna_graatrost"
+      ]
+    },
+    "nybrua_vaterlandsparken": {
+      "fauna": [
+        "emne_fauna_graaspurv",
+        "emne_fauna_blaameis",
+        "emne_fauna_graamaake",
+        "emne_fauna_kraake",
+        "emne_fauna_skjaere"
+      ]
+    },
+    "vaterland_historisk_elvelop": {
+      "fauna": [
+        "emne_fauna_graaspurv",
+        "emne_fauna_svarttrost",
+        "emne_fauna_kraake",
+        "emne_fauna_graamaake",
+        "emne_fauna_blaameis",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_skjaere",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_stokkand",
+        "emne_fauna_ringdue",
+        "emne_fauna_hettemaake",
+        "emne_fauna_sildemaake",
+        "emne_fauna_graagas",
+        "emne_fauna_linerle",
+        "emne_fauna_graatrost"
+      ]
+    },
+    "akerselva_utlop_bjorvika": {
+      "fauna": [
+        "emne_fauna_graaspurv",
+        "emne_fauna_graamaake",
+        "emne_fauna_svarttrost",
+        "emne_fauna_kraake",
+        "emne_fauna_skjaere",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_fiskemaake",
+        "emne_fauna_ringdue",
+        "emne_fauna_blaameis",
+        "emne_fauna_sildemaake",
+        "emne_fauna_graagas"
+      ]
+    },
+    "hovedoya": {
+      "fauna": [
+        "emne_fauna_stokkand"
+      ]
+    },
+    "bygdoy_natur": {
+      "fauna": [
+        "emne_fauna_graaspurv",
+        "emne_fauna_skjaere"
+      ]
+    },
+    "ljanselva": {
+      "fauna": [
+        "emne_fauna_kjottmeis",
+        "emne_fauna_blaameis",
+        "emne_fauna_skjaere",
+        "emne_fauna_svarttrost",
+        "emne_fauna_kraake",
+        "emne_fauna_graaspurv",
+        "emne_fauna_graamaake"
+      ]
+    },
+    "noklevann": {
+      "fauna": [
+        "emne_fauna_svarttrost",
+        "emne_fauna_kjottmeis",
+        "emne_fauna_blaameis",
+        "emne_fauna_ringdue",
+        "emne_fauna_skjaere",
+        "emne_fauna_maaltrost"
+      ]
+    }
+  }
+}
