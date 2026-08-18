@@ -7,12 +7,16 @@ on:
       - .github/workflows/retire-central-surface.yml
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
+concurrency:
+  group: retire-central-surface
+  cancel-in-progress: true
+
 jobs:
-  retire:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Build inactive page
@@ -29,5 +33,42 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy retired site
+        id: deployment
         uses: actions/deploy-pages@v4
+
+  verify:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify retired page and record success
+        shell: bash
+        env:
+          PAGE_URL: ${{ needs.deploy.outputs.page_url }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 30); do
+            body="$(curl --fail --silent --show-error --location --max-time 20 "${PAGE_URL}?retire=${GITHUB_SHA}&attempt=${attempt}" 2>/dev/null || true)"
+            if grep -Fq 'Denne midlertidige deployflaten er ikke lenger i bruk.' <<<"$body"; then
+              printf 'retired=success\nrun_id=%s\nsource_sha=%s\n' "$GITHUB_RUN_ID" "$GITHUB_SHA" > /tmp/retired
+              encoded="$(base64 -w0 /tmp/retired)"
+              current="$(gh api "repos/${GITHUB_REPOSITORY}/contents/.retired-pages.txt?ref=main" --jq .sha 2>/dev/null || true)"
+              args=(--method PUT "repos/${GITHUB_REPOSITORY}/contents/.retired-pages.txt" -f message="Record retired central surface ${GITHUB_RUN_ID}" -f content="$encoded" -f branch=main)
+              if [[ -n "$current" ]]; then args+=(-f sha="$current"); fi
+              gh api "${args[@]}" >/dev/null
+              exit 0
+            fi
+            sleep 5
+          done
+          exit 1
