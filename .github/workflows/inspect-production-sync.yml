@@ -20,5 +20,6 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
+          echo 'Recent sync runs:'
           gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/sync-production-sites.yml/runs?per_page=10" \
             --jq '.workflow_runs[] | [.id,.status,.conclusion,.event,.head_sha,.created_at] | @tsv'
