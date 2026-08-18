@@ -1,0 +1,401 @@
+{
+  "by": {
+    "pensum": "by/pensum_by.json",
+    "emner": "by/emner_by.json",
+    "fagkart": "by/fagkart_by.json",
+    "methods": "by/methods_by.json",
+    "supersetQuizMal": "by/supersetQUIZMAL_by.json",
+    "quizStandard": "../quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "quizQuestionSchema": "../quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+    "quizPackageSchema": "../quiz/regler/QUIZ_PACKAGE_SCHEMA_V1.json",
+    "quizProduction": {
+      "status": "pilot",
+      "required_inputs": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods",
+        "supersetQuizMal",
+        "quizStandard",
+        "quizQuestionSchema"
+      ],
+      "context_builder": "scripts/build-quiz-production-context.mjs",
+      "profile_system": "adaptive_relative_superset",
+      "package_schema": "quizPackageSchema",
+      "context_artifact_root": "data/quiz/production_context",
+      "targets": {
+        "deichman_bjorvika": {
+          "source_brief": "../quiz/production_briefs/by/deichman_bjorvika.json",
+          "context_artifact": "../quiz/production_context/by/deichman_bjorvika.json",
+          "quiz_file": "../quiz/by/deichman_bjorvika_sets.json"
+        },
+        "torggata": {
+          "source_brief": "../quiz/production_briefs/by/torggata.json",
+          "context_artifact": "../quiz/production_context/by/torggata.json",
+          "quiz_file": "../quiz/by/torggata_sets.json"
+        }
+      }
+    },
+    "qualityContract": "by/quality_contract_by_v1.json",
+    "curriculumArchitecture": "by/curriculum_architecture_by_v1.json",
+    "sourcePriorityRules": "by/quiz_generator_rules_by_v5_1_source_priority_patch.json",
+    "sourceRegistry": "by/source_registry_by_v1.json"
+  },
+  "historie": {
+    "pensum": "historie/historiepensum_canonical_v4_5.json",
+    "emner": "historie/emner_historie_canonical_v4_5.json",
+    "fagkart": "historie/fagkart_historie_canonical_v4_5.json",
+    "methods": "historie/methods_historie_canonical_v4_5.json",
+    "concepts": "historie/concepts_historie_canonical_v5_5.json",
+    "supersetQuizMal": "historie/supersetQUIZMAL_historie.json",
+    "quizStandard": "../quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "quizQuestionSchema": "../quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+    "quizPackageSchema": "../quiz/regler/QUIZ_PACKAGE_SCHEMA_V1.json",
+    "quizProduction": {
+      "status": "pilot",
+      "required_inputs": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods",
+        "supersetQuizMal",
+        "quizStandard",
+        "quizQuestionSchema"
+      ],
+      "context_builder": "scripts/build-quiz-production-context.mjs",
+      "profile_system": "adaptive_relative_superset",
+      "package_schema": "quizPackageSchema",
+      "context_artifact_root": "data/quiz/production_context",
+      "targets": {
+        "grindheim_runestein": {
+          "source_brief": "../quiz/production_briefs/historie/grindheim_runestein.json",
+          "context_artifact": "../quiz/production_context/historie/grindheim_runestein.json",
+          "quiz_file": "../quiz/historie/grindheim_runestein_sets.json"
+        },
+        "grindheim_steinkross": {
+          "source_brief": "../quiz/production_briefs/historie/grindheim_steinkross.json",
+          "context_artifact": "../quiz/production_context/historie/grindheim_steinkross.json",
+          "quiz_file": "../quiz/historie/grindheim_steinkross_sets.json"
+        },
+        "grindheimsveien_nord_gravfelt": {
+          "source_brief": "../quiz/production_briefs/historie/grindheimsveien_nord_gravfelt.json",
+          "context_artifact": "../quiz/production_context/historie/grindheimsveien_nord_gravfelt.json",
+          "quiz_file": "../quiz/historie/grindheimsveien_nord_gravfelt_sets.json"
+        },
+        "hoyland_gravhaug_etne": {
+          "source_brief": "../quiz/production_briefs/historie/hoyland_gravhaug_etne.json",
+          "context_artifact": "../quiz/production_context/historie/hoyland_gravhaug_etne.json",
+          "quiz_file": "../quiz/historie/hoyland_gravhaug_etne_sets.json"
+        }
+      }
+    },
+    "version": "v5.8-canonical",
+    "scope": "universal",
+    "curriculumArchitecture": "historie/curriculum_architecture_historie_v1.json",
+    "periodGuides": "historie/period_guides_historie_v1.json",
+    "periodModules": "historie/period_modules_historie_v1.json",
+    "coverageContract": "historie/historie_universal_coverage_contract_v1.json",
+    "qualityContract": "historie/historie_v5_contract.json",
+    "caseRequirements": "historie/case_requirements_historie_canonical_v1.json",
+    "claims": "historie/claims_historie_canonical_v1.json",
+    "sources": "historie/sources_historie_canonical_v1.json",
+    "placeEvidence": "historie/place_evidence_historie_v1.json",
+    "profilesManifest": "profiles/manifest.json"
+  },
+  "kunst": {
+    "pensum": "kunst/kunstpensum_canonical_v4_5.json",
+    "emner": "kunst/emner_kunst_canonical_v4_5.json",
+    "fagkart": "kunst/fagkart_kunst_canonical_v4_5.json",
+    "methods": "kunst/methods_kunst_canonical_v4_5.json",
+    "emneMappings": "kunst/emnemapping_kunst_canonical_v4_5.json",
+    "supersetQuizMal": "kunst/supersetQUIZMAL_kunst.json",
+    "quizStandard": "../quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "quizQuestionSchema": "../quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json"
+  },
+  "litteratur": {
+    "pensum": "litteratur/litteraturpensum_canonical_v4_5.json",
+    "emner": "litteratur/emner_litteratur_canonical_v4_5.json",
+    "fagkart": "litteratur/fagkart_litteratur_canonical_v4_5.json",
+    "methods": "litteratur/methods_litteratur_canonical_v4_5.json",
+    "emneMappings": "litteratur/emnemapping_litteratur_canonical_v4_5.json",
+    "scientificPackage": "litteratur/litteraturvitenskap_canonical_v1/index.json",
+    "coverageContract": "litteratur/litteraturvitenskap_canonical_v1/coverage_contract_v1.json",
+    "topicFoundations": "litteratur/litteraturvitenskap_canonical_v1/topic_foundations_v1.json",
+    "supersetQuizMal": "litteratur/supersetQUIZMAL_litteratur.json",
+    "quizStandard": "../quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "quizQuestionSchema": "../quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+    "subjectPathwaySchema": "../quiz/regler/QUIZ_SUBJECT_PATHWAY_PACKAGE_SCHEMA_V1.json",
+    "subjectPathwayPackage": "../quiz/litteratur/litteratur_subject_pathways_v1.json"
+  },
+  "media": {
+    "pensum": "media/mediapensum_canonical_v4_5.json",
+    "emner": "media/emner_media_canonical_v4_5.json",
+    "fagkart": "media/fagkart_media_canonical_v4_5.json",
+    "methods": "media/methods_media_canonical_v4_5.json",
+    "emneMappings": "media/emnemapping_media_canonical_v4_5.json",
+    "supersetQuizMal": "media/supersetQUIZMAL_media.json",
+    "quizStandard": "../quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "quizQuestionSchema": "../quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+    "supplements": {
+      "populaerkultur_som_mediefelt": {
+        "status": "migrated_subfield",
+        "root": "media/populaerkultur_som_mediefelt",
+        "rationale": "Populærkultur er en tverrgående analyse- og tagglinse, ikke et toppdomene. Fagpakken er bevart som mediefaglig delfelt."
+      }
+    }
+  },
+  "musikk": {
+    "pensum": "musikk/musikkpensum_canonical_v4_5.json",
+    "emner": "musikk/emner_musikk_canonical_v4_5.json",
+    "fagkart": "musikk/fagkart_musikk_canonical_v4_5.json",
+    "methods": "musikk/methods_musikk_canonical_v4_5.json",
+    "supersetQuizMal": "musikk/supersetQUIZMAL_musikk.json",
+    "quizStandard": "../quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "quizQuestionSchema": "../quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+    "scientificPackage": "musikk/scientific_package.json",
+    "quizPackageSchema": "../quiz/regler/QUIZ_PACKAGE_SCHEMA_V1.json",
+    "subjectPathwaySchema": "../quiz/regler/QUIZ_SUBJECT_PATHWAY_PACKAGE_SCHEMA_V1.json",
+    "subjectPathwayPackage": "../quiz/musikk/musikk_subject_pathways_v1.json"
+  },
+  "naeringsliv": {
+    "pensum": "naeringsliv/naeringslivpensum_canonical_v4_5.json",
+    "emner": "naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+    "fagkart": "naeringsliv/fagkart_naeringsliv_canonical_v4_5.json",
+    "methods": "naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+    "supersetQuizMal": "naeringsliv/supersetQUIZMAL_naeringsliv.json",
+    "quizStandard": "../quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "quizQuestionSchema": "../quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+    "quizPackageSchema": "../quiz/regler/QUIZ_PACKAGE_SCHEMA_V1.json",
+    "quizProduction": {
+      "status": "pilot",
+      "required_inputs": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods",
+        "supersetQuizMal",
+        "quizStandard",
+        "quizQuestionSchema"
+      ],
+      "context_builder": "scripts/build-quiz-production-context.mjs",
+      "profile_system": "adaptive_relative_superset",
+      "package_schema": "quizPackageSchema",
+      "context_artifact_root": "data/quiz/production_context",
+      "targets": {
+        "telegrafbygningen": {
+          "source_brief": "../quiz/production_briefs/naeringsliv/telegrafbygningen.json",
+          "context_artifact": "../quiz/production_context/naeringsliv/telegrafbygningen.json",
+          "quiz_file": "../quiz/naeringsliv/telegrafbygningen_sets_merged.json"
+        },
+        "oslo_posthus": {
+          "source_brief": "../quiz/production_briefs/naeringsliv/oslo_posthus.json",
+          "context_artifact": "../quiz/production_context/naeringsliv/oslo_posthus.json",
+          "quiz_file": "../quiz/naeringsliv/oslo_posthus_sets_merged.json"
+        },
+        "havnelageret": {
+          "source_brief": "../quiz/production_briefs/naeringsliv/havnelageret.json",
+          "context_artifact": "../quiz/production_context/naeringsliv/havnelageret.json",
+          "quiz_file": "../quiz/naeringsliv/havnelageret_sets_merged.json"
+        }
+      }
+    },
+    "universityFramework": "naeringsliv/universitetsramme_okonomi_og_naeringsliv_v1.json",
+    "businessSchoolExtension": {
+      "framework": "naeringsliv/handelshogskoleramme_okonomi_og_naeringsliv_v1.json",
+      "tracks": "naeringsliv/handelshogskolespor_okonomi_og_naeringsliv_v1.json",
+      "modules": "naeringsliv/handelshogskolemoduler_okonomi_og_naeringsliv_v1.json",
+      "theories": "naeringsliv/handelshogskoleteori_okonomi_og_naeringsliv_v1.json",
+      "methods": "naeringsliv/handelshogskolemetoder_okonomi_og_naeringsliv_v1.json",
+      "models": "naeringsliv/handelshogskolemodeller_okonomi_og_naeringsliv_v1.json",
+      "measures": "naeringsliv/handelshogskolemal_okonomi_og_naeringsliv_v1.json",
+      "datasets": "naeringsliv/handelshogskolekilder_okonomi_og_naeringsliv_v1.json",
+      "assessment": "naeringsliv/handelshogskolevurdering_okonomi_og_naeringsliv_v1.json",
+      "status": "canonical_professional_extension"
+    }
+  },
+  "natur": {
+    "pensum": "natur/naturpensum_canonical_v4_5.json",
+    "emner": "natur/emner_natur_canonical_v4_5.json",
+    "fagkart": "natur/fagkart_natur_canonical_v4_5.json",
+    "methods": "natur/methods_natur_canonical_v4_5.json",
+    "supersetQuizMal": "natur/supersetQUIZMAL_natur.json",
+    "quizStandard": "../quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "quizQuestionSchema": "../quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json"
+  },
+  "politikk": {
+    "pensum": "politikk/politikkpensum_canonical_v4_5.json",
+    "emner": "politikk/emner_politikk_canonical_v4_5.json",
+    "fagkart": "politikk/fagkart_politikk_canonical_v4_5.json",
+    "methods": "politikk/methods_politikk_canonical_v4_5.json",
+    "curriculum": "politikk/curriculum_architecture_politikk_v1.json",
+    "concepts": "politikk/concepts_politikk_canonical_v1.json",
+    "supersetQuizMal": "politikk/supersetQUIZMAL_politikk.json",
+    "quizStandard": "../quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "quizQuestionSchema": "../quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+    "quizPackageSchema": "../quiz/regler/QUIZ_PACKAGE_SCHEMA_V1.json",
+    "quizProduction": {
+      "status": "pilot",
+      "required_inputs": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods",
+        "supersetQuizMal",
+        "quizStandard",
+        "quizQuestionSchema"
+      ],
+      "context_builder": "scripts/build-quiz-production-context.mjs",
+      "profile_system": "adaptive_relative_superset",
+      "package_schema": "quizPackageSchema",
+      "context_artifact_root": "data/quiz/production_context",
+      "targets": {
+        "tinghuset": {
+          "source_brief": "../quiz/production_briefs/politikk/tinghuset.json",
+          "context_artifact": "../quiz/production_context/politikk/tinghuset.json",
+          "quiz_file": "../quiz/politikk/tinghuset_sets.json"
+        },
+        "regjeringskvartalet": {
+          "source_brief": "../quiz/production_briefs/politikk/regjeringskvartalet.json",
+          "context_artifact": "../quiz/production_context/politikk/regjeringskvartalet.json",
+          "quiz_file": "../quiz/politikk/regjeringskvartalet_sets.json"
+        }
+      }
+    }
+  },
+  "psykologi": {
+    "pensum": "psykologi/psykologipensum_canonical_v4_5.json",
+    "emner": "psykologi/emner_psykologi_canonical_v4_5.json",
+    "fagkart": "psykologi/fagkart_psykologi_canonical_v4_5.json",
+    "methods": "psykologi/methods_psykologi_canonical_v4_5.json",
+    "supersetQuizMal": "psykologi/supersetQUIZMAL_psykologi.json",
+    "quizStandard": "../quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "quizQuestionSchema": "../quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+    "emneMappings": "psykologi/emnemapping_psykologi_canonical_v4_5.json"
+  },
+  "religion": {
+    "pensum": "religion/religionpensum_canonical_v1.json",
+    "emner": "religion/emner_religion_canonical_v1.json",
+    "fagkart": "religion/fagkart_religion_canonical_v1.json",
+    "methods": "religion/methods_religion_canonical_v1.json",
+    "supersetQuizMal": "religion/supersetQUIZMAL_religion.json",
+    "status": "active_foundation",
+    "quizStandard": "../quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "quizQuestionSchema": "../quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json"
+  },
+  "scenekunst": {
+    "pensum": "scenekunst/scenekunstpensum_canonical_v1.json",
+    "emner": "scenekunst/emner_scenekunst_canonical_v1.json",
+    "fagkart": "scenekunst/fagkart_scenekunst_canonical_v1.json",
+    "methods": "scenekunst/methods_scenekunst_canonical_v1.json",
+    "supersetQuizMal": "scenekunst/supersetQUIZMAL_scenekunst.json",
+    "status": "active_foundation",
+    "quizStandard": "../quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "quizQuestionSchema": "../quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json"
+  },
+  "sport": {
+    "pensum": "sport/sportpensum_canonical_v4_5.json",
+    "emner": "sport/emner_sport_canonical_v4_5.json",
+    "fagkart": "sport/fagkart_sport_canonical_v4_5.json",
+    "methods": "sport/methods_sport_canonical_v4_5.json",
+    "supersetQuizMal": "sport/supersetQUIZMAL_sport.json",
+    "knowledgePolicy": "../knowledge/knowledge_system_policy_v1.json",
+    "knowledgeUnitSchema": "../knowledge/knowledge_unit_schema_v1.json",
+    "knowledgeArchitecture": "../../README/KNOWLEDGE_MEMORY_CHAMBER.md",
+    "quizStandard": "../quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "quizQuestionSchema": "../quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+    "emneMappings": "sport/emnemapping_sport_canonical_v4_5.json"
+  },
+  "subkultur": {
+    "pensum": "subkultur/subkulturpensum_canonical_v4_5.json",
+    "emner": "subkultur/emner_subkultur_canonical_v4_5.json",
+    "fagkart": "subkultur/fagkart_subkultur_canonical_v4_5.json",
+    "methods": "subkultur/methods_subkultur_canonical_v4_5.json",
+    "supersetQuizMal": "subkultur/supersetQUIZMAL_subkultur.json",
+    "quizStandard": "../quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "quizQuestionSchema": "../quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+    "quizPackageSchema": "../quiz/regler/QUIZ_PACKAGE_SCHEMA_V1.json",
+    "subjectPathwaySchema": "../quiz/regler/QUIZ_SUBJECT_PATHWAY_PACKAGE_SCHEMA_V1.json",
+    "subjectPathwayPackage": "../quiz/subkultur/subkultur_subject_pathways_v1.json",
+    "runtimeManifest": "subkultur/subkultur_runtime_manifest.json"
+  },
+  "vitenskap": {
+    "pensum": "vitenskap/vitenskappensum_canonical_v4_6.json",
+    "emner": "vitenskap/emner_vitenskap_canonical_v4_6.json",
+    "fagkart": "vitenskap/fagkart_vitenskap_canonical_v4_6.json",
+    "methods": "vitenskap/methods_vitenskap_canonical_v4_6.json",
+    "supersetQuizMal": "vitenskap/supersetQUIZMAL_vitenskap.json",
+    "quizStandard": "../quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "quizQuestionSchema": "../quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+    "specializations": {
+      "teknologi": {
+        "id": "teknologi",
+        "label": "Teknologi",
+        "canonicalParentSubject": "vitenskap",
+        "badgeId": "vitenskap",
+        "schemaFamily": "technology_scientific_v2_4",
+        "routeStatus": "planned",
+        "route": "",
+        "pensum": "teknologi/teknologipensum_canonical_v3.json",
+        "emner": "teknologi/emner_teknologi_canonical_v3.json",
+        "fagkart": "teknologi/fagkart_teknologi_canonical_v3.json",
+        "methods": "teknologi/methods_teknologi_canonical_v3.json",
+        "supersetQuizMal": "teknologi/supersetQUIZMAL_teknologi.json",
+        "status": "canonical_scientific_specialization",
+        "quizStandard": "../quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+        "quizQuestionSchema": "../quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+        "scientificPackage": "teknologi/teknologi_scientific_v2/index.json",
+        "quizPackageSchema": "../quiz/regler/QUIZ_PACKAGE_SCHEMA_V1.json",
+        "subjectPathwaySchema": "../quiz/regler/QUIZ_SUBJECT_PATHWAY_PACKAGE_SCHEMA_V1.json",
+        "subjectPathwayPackage": "../quiz/teknologi/teknologi_subject_pathways_v1.json",
+        "canonicalModelVersion": "3.0",
+        "universalCoverage": {
+          "status": "complete",
+          "areas": 12,
+          "topics": 48,
+          "methods": 35,
+          "modules": 12
+        },
+        "geographicProduction": {
+          "status": "separate",
+          "rule": "Lokale steder, personer, claims, kilder og stedsquizer produseres i geografiske lag."
+        },
+        "editorialContract": "teknologi/editorial_contract_teknologi_v3.json",
+        "legacyStatus": "teknologi/canonical_legacy_status_v3.json",
+        "editorialStatus": "reviewed_and_operationalized",
+        "sourceIntegrity": {
+          "status": "blocking",
+          "required": [
+            "external_source",
+            "locator",
+            "claim_basis",
+            "technology_anchor",
+            "validity_scope"
+          ]
+        }
+      }
+    },
+    "emneMappings": "vitenskap/emnemapping_vitenskap_canonical_v4_6.json",
+    "universityBreadthReconciliation": "vitenskap/vitenskap_university_breadth_reconciliation_v1.json",
+    "canonicalModelVersion": "4.6"
+  },
+  "filosofi": {
+    "pensum": "filosofi/filosofipensum_canonical_v1.json",
+    "emner": "filosofi/emner_filosofi_canonical_v1.json",
+    "fagkart": "filosofi/fagkart_filosofi_canonical_v1.json",
+    "methods": "filosofi/methods_filosofi_canonical_v1.json",
+    "supersetQuizMal": "filosofi/supersetQUIZMAL_filosofi.json",
+    "status": "active_foundation",
+    "quizStandard": "../quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "quizQuestionSchema": "../quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json"
+  },
+  "film_tv": {
+    "pensum": "TV_og_Film/film_tvpensum_canonical_v4_5.json",
+    "emner": "TV_og_Film/emner_film_tv_canonical_v4_5.json",
+    "fagkart": "TV_og_Film/fagkart_film_tv_canonical_v4_5.json",
+    "methods": "TV_og_Film/methods_film_tv_canonical_v4_5.json",
+    "supersetQuizMal": "TV_og_Film/supersetQUIZMAL_film_tv.json",
+    "quizStandard": "../quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "quizQuestionSchema": "../quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+    "emneMappings": "TV_og_Film/emnemapping_film_tv_canonical_v4_5.json"
+  }
+}

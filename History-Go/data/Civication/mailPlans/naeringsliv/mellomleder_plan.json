@@ -1,0 +1,297 @@
+{
+  "schema": "civication_mail_plan_v1",
+  "id": "mellomleder_naeringsliv_v2",
+  "category": "naeringsliv",
+  "role_scope": "mellomleder",
+  "description": "Dramaturgisk plan for Mellomleder i Næringsliv & industri: første og andre uke starter med praksisfortellinger om å oversette mellom tall, mennesker, kapasitet, tiltak og rapportering, deretter videre mellomlederbue.",
+  "arc": {
+    "from": "Forfremmet eller etablert mellomleder som står mellom ledelsens tall, sidestilte lederes politikk og gulvets krav om trygghet og rettferdighet.",
+    "to": "Strategisk ansvarsbærer som forstår rapportering, allianser, formell styring, uformell tillit, kriser og hva slags makt som ligger i å oversette mellom nivåer.",
+    "core_questions": [
+      "Hvem beskytter du når tallene faller?",
+      "Hva rapporterer du oppover, og hva lar du bli igjen på gulvet?",
+      "Når er en allianse samarbeid, og når er den posisjonering?",
+      "Hvordan bruker du makt uten å gjøre menneskene usynlige?",
+      "Hvilken virkelighet blir sann når rapporten og folkene sier ulike ting?"
+    ]
+  },
+  "sequence": [
+    {
+      "step": 1,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Mandag jobbmail: Første mandagsrapport – tallene ser roligere ut enn folkene.",
+      "allowed_families": [
+        "first_week_praksisfortellinger_mellomleder_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 2,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Mandag privat: Rollen du ikke klarer å forklare enkelt.",
+      "allowed_families": [
+        "first_week_praksisfortellinger_mellomleder_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 3,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Tirsdag jobbmail: Kapasiteten som mangler i regnearket.",
+      "allowed_families": [
+        "first_week_praksisfortellinger_mellomleder_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 4,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Tirsdag privat: Vennen som trenger et tydelig svar.",
+      "allowed_families": [
+        "first_week_praksisfortellinger_mellomleder_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 5,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Onsdag jobbmail: Når avdelingen ber om ro og ledelsen ber om fart.",
+      "allowed_families": [
+        "first_week_praksisfortellinger_mellomleder_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 6,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Onsdag privat: Middagen som blir et statusmøte.",
+      "allowed_families": [
+        "first_week_praksisfortellinger_mellomleder_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 7,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Torsdag jobbmail: Den vanskelige tilbakemeldingen.",
+      "allowed_families": [
+        "first_week_praksisfortellinger_mellomleder_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 8,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Torsdag privat: Meldingen du formulerer for pent.",
+      "allowed_families": [
+        "first_week_praksisfortellinger_mellomleder_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 9,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Fredag jobbmail: Første uke i klemmen.",
+      "allowed_families": [
+        "first_week_praksisfortellinger_mellomleder_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 10,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Fredag privat: Helgen uten rapport.",
+      "allowed_families": [
+        "first_week_praksisfortellinger_mellomleder_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 11,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Mandag jobbmail: Tiltaksplanen som høres enkel ut",
+      "allowed_families": [
+        "second_week_praksisfortellinger_mellomleder_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 12,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Mandag privat: Mandagskvelden etter å ha lovet tiltak",
+      "allowed_families": [
+        "second_week_praksisfortellinger_mellomleder_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 13,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Tirsdag jobbmail: Teamet spør hva som faktisk skjer",
+      "allowed_families": [
+        "second_week_praksisfortellinger_mellomleder_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 14,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Tirsdag privat: Vennen som ikke vil bli fulgt opp",
+      "allowed_families": [
+        "second_week_praksisfortellinger_mellomleder_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 15,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Onsdag jobbmail: Tallene blir politikk",
+      "allowed_families": [
+        "second_week_praksisfortellinger_mellomleder_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 16,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Onsdag privat: Du bruker møteord hjemme",
+      "allowed_families": [
+        "second_week_praksisfortellinger_mellomleder_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 17,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Torsdag jobbmail: Etterspillet etter Thomas-samtalen",
+      "allowed_families": [
+        "second_week_praksisfortellinger_mellomleder_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 18,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Torsdag privat: Den private samtalen du utsetter",
+      "allowed_families": [
+        "second_week_praksisfortellinger_mellomleder_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 19,
+      "type": "job",
+      "phase": "intro",
+      "step_goal": "Fredag jobbmail: Andre uke i klemmen",
+      "allowed_families": [
+        "second_week_praksisfortellinger_mellomleder_job"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 20,
+      "type": "people",
+      "phase": "intro",
+      "step_goal": "Fredag privat: Helgen uten å være buffer",
+      "allowed_families": [
+        "second_week_praksisfortellinger_mellomleder_private"
+      ],
+      "fallback_types": []
+    },
+    {
+      "step": 21,
+      "type": "conflict",
+      "phase": "advanced",
+      "step_goal": "La krisen bli sosial og politisk: hvem får skylden, hvem får beskyttelse, og hva blir dokumentert?",
+      "allowed_families": [
+        "krysspress"
+      ],
+      "fallback_types": [
+        "event",
+        "people",
+        "job"
+      ]
+    },
+    {
+      "step": 22,
+      "type": "people",
+      "phase": "mastery",
+      "step_goal": "Sette spilleren opp mot modne autoritetsfigurer: Jahn, Rygg, Eyde, Bjercke, Ringnes og Schweigaard speiler ulike lederformer.",
+      "allowed_families": [
+        "rapportering_og_styring",
+        "institusjonell_krise",
+        "industri_og_systembygging",
+        "kvalitet_og_standarder",
+        "bedrift_og_symbolsk_kapital",
+        "administrasjon_og_hverdagsmakt"
+      ],
+      "fallback_types": [
+        "story",
+        "event",
+        "conflict"
+      ]
+    },
+    {
+      "step": 23,
+      "type": "job",
+      "phase": "mastery",
+      "step_goal": "Gi spilleren en moden lederoppgave der plan, tall, tillit og risiko må holdes sammen.",
+      "allowed_families": [
+        "mellomleder_mastery",
+        "mellomleder_planlegging",
+        "mellomleder_rolleforstaelse"
+      ],
+      "fallback_types": [
+        "people",
+        "event",
+        "conflict"
+      ]
+    },
+    {
+      "step": 24,
+      "type": "story",
+      "phase": "mastery",
+      "step_goal": "Avrunde identitetsbuen: spilleren må se hvilken type makt og ansvar de faktisk har lært å bruke.",
+      "allowed_families": [
+        "mellomleder_identitet"
+      ],
+      "fallback_types": [
+        "people",
+        "event",
+        "job"
+      ]
+    },
+    {
+      "step": 25,
+      "type": "event",
+      "phase": "climax",
+      "step_goal": "La en større drifts- eller institusjonell hendelse avgjøre om spilleren fungerer som oversetter, beskytter, administrator eller ren resultatmaskin.",
+      "allowed_families": [
+        "driftskrise"
+      ],
+      "fallback_types": [
+        "conflict",
+        "people",
+        "story"
+      ]
+    }
+  ]
+}

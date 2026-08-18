@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Civication</title>
+
+  <!-- Import map: lar 3D-kartet (CivicationThreeMap) og three-addonene (SSAO/SMAA/
+       EffectComposer) dele ÉN lokal, vendret three-instans. Må stå før første
+       modullast. Alt lastes lokalt fra js/vendor/three (ingen CDN). Tunge 3D-kart er
+       eksplisitt debug; import-mappen må ligge klar for debug-loaderen. -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "./js/vendor/three/three.module.js",
+      "three/addons/": "./js/vendor/three/addons/"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/civi.css" />
+  <link rel="stylesheet" href="css/civi-refresh.css" />
+  <link rel="stylesheet" href="css/civi-dashboard.css" />
+  <link rel="stylesheet" href="css/civi-mini.css" />
+  <link rel="stylesheet" href="css/civi-system-map.css" />
+  <link rel="stylesheet" href="css/civi-map-miniatures.css" />
+  <link rel="stylesheet" href="css/civi-canvas-map.css" />
+  <link rel="stylesheet" href="css/civi-three-map.css" />
+  <link rel="stylesheet" href="css/civi-city-layer.css" />
+  <link rel="stylesheet" href="css/fixed-shell.css" />
+</head>
+
+<!-- ============================================================
+     CIVICATION — samfunns-/livssimulator (Civication-skall).
+     Standardvisning: hele skallet — kart, dashboard, nabolag,
+     kapital, psyke, identitet, folk, offentlig lag, rolle/
+     arbeidsdag og innboks — MED «Min dag» (Life Story) som
+     primærpanelet øverst. Min dag er ÉN modul i skallet, ikke
+     hele appen.
+
+     Skallet lastes av civicationShellLoader.js så snart shell-DOM-en
+     finnes. Day/mail lastes etterpå som eget lag. Det rike Canvas/WebGL-kartet er standard for normal runtime.
+     Det lette SVG-skallkartet brukes bare som fallback/test/lite-modus
+     (for eksempel Civication.html?civicationLite=1).
+     Se docs/civication-life-story-system.md.
+     ============================================================ -->
+<body class="civi-app">
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="app-title">Civication</span>
+    </div>
+
+    <!-- v2-header: rolle, dag, fase og noen få statusverdier (fylles av CivicationLifestoryUI) -->
+    <div id="civiLifestoryHeaderStatus" class="civi-lifestory-header-status muted"></div>
+
+    <!-- Dashboard-HUD (nøkkeltall, drevet av CivicationDashboardUI) -->
+    <div class="civi-header-metrics">
+      <div class="civi-dashboard-metrics" aria-label="Civication nøkkeltall">
+        <div class="civi-dashboard-metric is-primary">
+          <span>PC</span>
+          <strong id="civiDashWallet">0 PC</strong>
+          <small id="civiDashIncome">Ingen ukeinntekt</small>
+        </div>
+
+        <div class="civi-dashboard-metric is-status">
+          <span>Status</span>
+          <strong id="civiDashStatus">Stabil</strong>
+          <small id="civiDashStatusMeta">Startfase</small>
+        </div>
+
+        <div class="civi-dashboard-metric is-inbox">
+          <span>Inbox</span>
+          <strong id="civiDashInbox">0</strong>
+          <small id="civiDashInboxMeta">åpne hendelser</small>
+        </div>
+
+        <div class="civi-dashboard-metric">
+          <span>Hjem</span>
+          <strong id="civiDashHome">Ikke valgt</strong>
+          <small id="civiDashHomeMeta">Velg nabolag</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="topbar-right">
+      <a href="index.html" class="back-link">← History Go</a>
+    </div>
+  </header>
+
+  <main class="civi-world">
+
+    <!-- Civication-kartet. Normal runtime laster rikt Canvas/WebGL-kart;
+         dette SVG-kartet er trygg fallback/test/lite-modus. -->
+    <div id="civiMapWorld">
+      <div class="civi-map-layer"></div>
+    </div>
+
+    <div class="civi-panels">
+
+      <!-- ============ MIN DAG — primærpanelet i skallet ============
+           Life Story: NÅ-scenen med valg, aktive tråder, kalender/
+           senere i dag og arkiv. Én modul øverst i skallet — de andre
+           panelene under (dashboard, kart, kapital, psyke, folk, rolle
+           …) er resten av Civication-produktet, ikke legacy. -->
+      <section id="civiLifestorySection">
+        <h2>Min dag</h2>
+        <div id="civiLifestoryPanel"></div>
+      </section>
+
+      <!-- ============ CIVICATION-SKALLET — statuspaneler og flater ============
+           Aktivt produkt, synlig som standard sammen med Min dag. -->
+
+      <section id="civiDashboardSection" class="civi-dashboard" aria-label="Civication oversikt">
+        <div class="civi-dashboard-copy">
+          <div class="civi-dashboard-kicker">Min situasjon</div>
+          <h1 id="civiDashRole">Ingen aktiv rolle</h1>
+          <p id="civiDashSummary">Ta quiz og åpne jobbtilbud for å starte et livsløp.</p>
+
+          <div class="civi-dashboard-focus">
+            <div class="civi-dashboard-focus-label">Neste fokus</div>
+            <div id="civiDashFocus">Ingen åpne hendelser</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="civiOnboardingSection">
+        <h2>Neste steg</h2>
+        <div id="civiOnboardingPanel"></div>
+      </section>
+
+      <section class="civi-capital">
+        <h2>Kapital</h2>
+        <div class="capital-grid">
+          <div class="capital-item"><div class="capital-label">Økonomisk</div><div class="capital-value" id="capEconomic">—</div></div>
+          <div class="capital-item"><div class="capital-label">Kulturell</div><div class="capital-value" id="capCultural">—</div></div>
+          <div class="capital-item"><div class="capital-label">Sosial</div><div class="capital-value" id="capSocial">—</div></div>
+          <div class="capital-item"><div class="capital-label">Symbolsk</div><div class="capital-value" id="capSymbolic">—</div></div>
+          <div class="capital-item"><div class="capital-label">Politisk</div><div class="capital-value" id="capPolitical">—</div></div>
+        </div>
+      </section>
+
+      <section id="civiIdentitySection" class="civi-identity">
+        <h2>Identitet</h2>
+        <div id="identityCompass"></div>
+        <div id="identityDominant"></div>
+        <button id="identityPerceptionBtn">Se hvordan du blir oppfattet</button>
+        <div id="identityPerception"></div>
+      </section>
+
+      <section id="civiPsyche" class="civi-psyche">
+        <h2>Psyke</h2>
+        <div class="psyche-grid">
+          <div class="psyche-item"><div class="psyche-label">Integritet</div><div class="psyche-value" id="psyIntegrity">—</div></div>
+          <div class="psyche-item"><div class="psyche-label">Synlighet</div><div class="psyche-value" id="psyVisibility">—</div></div>
+          <div class="psyche-item"><div class="psyche-label">Økonomisk handlingsrom</div><div class="psyche-value" id="psyEconomic">—</div></div>
+          <div class="psyche-item"><div class="psyche-label">Tillit</div><div class="psyche-value" id="psyTrust">—</div></div>
+          <div class="psyche-item highlight"><div class="psyche-label">Selvstendighet</div><div class="psyche-value" id="psyAutonomy">—</div></div>
+        </div>
+
+        <div id="psyBurnout" class="psyche-burnout" style="display:none;"></div>
+
+        <div class="psyche-collapses">
+          <div class="psyche-label">Kollapser</div>
+          <div id="psyCollapseHistory">—</div>
+        </div>
+      </section>
+
+      <section id="civiHomeStatus">
+        <h2>Hjem</h2>
+        <div id="homeStatusContent"></div>
+      </section>
+
+      <section id="civiPublicFeedSection">
+        <h2>Offentlig</h2>
+        <div id="civiPublicFeed"></div>
+      </section>
+
+      <section id="activeJobSection">
+        <h2>Aktiv rolle</h2>
+        <div id="activeJobCard"></div>
+      </section>
+
+      <section id="civiWorkdaySection">
+        <h2>Arbeidsdag</h2>
+        <div id="civiWorkdayPanel"></div>
+      </section>
+
+      <section id="civiDebateSection">
+        <h2>Debatt / konfrontasjon</h2>
+        <div id="civiDebatePanel"></div>
+      </section>
+
+      <section id="civiPeopleSection">
+        <h2>Mennesker du krysser med</h2>
+        <div id="civiPeoplePanel"></div>
+      </section>
+
+      <section id="civiStoreSection">
+        <h2>Butikker og pakker</h2>
+        <div id="civiStorePanel"></div>
+      </section>
+
+      <div id="civiTrackHUD" class="civi-track-hud">
+        <div class="civi-track-title">🎯 Aktiv retning</div>
+        <div id="civiTrackName">–</div>
+        <div id="civiTrackProgress" class="muted">–</div>
+        <div id="civiTrackTags" class="civi-track-tags"></div>
+      </div>
+
+      <section id="civiInboxSection">
+        <h2>Innkommende</h2>
+        <div id="civiInbox"></div>
+      </section>
+
+    </div>
+
+    <div id="districtModal" class="civi-modal" style="display:none;">
+      <div class="civi-modal-content">
+        <div class="civi-modal-header">
+          <h2>Velg nabolag</h2>
+          <button id="closeDistrictModal">×</button>
+        </div>
+        <div id="districtList" class="district-grid"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <div class="civi-footer" aria-label="Civication-navigasjon">
+    <button id="btnCiviMap" class="civi-btn civi-map-icon-btn" type="button" aria-label="Kart" title="Kart">🗺️</button>
+    <button class="civi-btn civi-category-tab" type="button" data-category="minDag">Min dag</button>
+    <button class="civi-btn civi-category-tab" type="button" data-category="personlig">Personlig</button>
+    <button class="civi-btn civi-category-tab" type="button" data-category="karriere">Karriere</button>
+    <button class="civi-btn civi-category-tab" type="button" data-category="fritid">Fritid</button>
+    <button class="civi-btn civi-category-tab" type="button" data-category="kommers">Kommers</button>
+    <button class="civi-btn civi-category-tab" type="button" data-category="kultur">Kultur</button>
+  </div>
+
+  <!-- ============ MIN DAG (Life Story) — primærpanelet, lastes først ============
+       config (canvas/3D-bryter) -> lagring/JSON -> Life Story System -> Min dag-UI.
+       Disse rendrer Min dag raskt og uavhengig av resten av skallet. -->
+  <script src="js/Civication/civicationV2Config.js"></script>
+  <script src="js/Civication/core/CivicationStorageAdapter.js"></script>
+  <script src="js/Civication/core/civicationJsonStore.js"></script>
+  <script src="js/Civication/lifestory/lifestoryContent.js"></script>
+  <script src="js/Civication/lifestory/lifestoryState.js"></script>
+  <script src="js/Civication/lifestory/lifestoryRunner.js"></script>
+  <script src="js/Civication/lifestory/lifestoryEndings.js"></script>
+  <script src="js/Civication/lifestory/lifestoryShellBridge.js"></script>
+  <script src="js/Civication/ui/CivicationLifestoryActions.js"></script>
+  <script src="js/Civication/ui/CivicationLifestoryUI.js"></script>
+
+  <!-- ============ CIVICATION-SKALLET — lastes som standard ============
+       Shell-loaderen injiserer produkt-skallet (kart, dashboard, nabolag,
+       kapital, psyke, folk, rollepanel, footer og tomtilstander), vekker
+       shell-boot først og laster deretter day/mail som separat lag.
+       ?civicationLegacy=1 slår kun på ekstra debugpaneler; rich map er standard. -->
+  <script src="js/Civication/civicationShellLoader.js"></script>
+
+</body>
+</html>

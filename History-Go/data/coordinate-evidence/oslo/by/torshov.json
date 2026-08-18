@@ -1,0 +1,66 @@
+{
+  "placeId": "torshov",
+  "placeFile": "data/places/by/oslo/places/torshov.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.933611,
+    "lon": 10.764167,
+    "r": 450,
+    "coordStatus": "verified_geometry",
+    "coordSource": "Oslo byleksikon – Torshov (strøk)",
+    "coordType": "district_anchor",
+    "coordNote": "Representativt områdeanker for Torshov som boligstrøk nord for Grünerløkka. Oslo byleksikon dokumenterer strøkets områdeidentitet rundt Torshovbyen, Torshovparken og Torshovdalen; punktet er et semantic area anchor, ikke én adresse eller et påstått geometrisk sentrum."
+  },
+  "identity": {
+    "currentName": "Torshov",
+    "resolvedIdentity": "Torshov som bystrøk i indre Oslo nordøst",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "linear_area",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [
+    "stabil kildeidentitet",
+    "objekttilpasset representasjonsanker",
+    "avgrensning mot nærliggende canonical steder"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Oslo byleksikon – Torshov (strøk)",
+      "sourceUrl": "https://oslobyleksikon.no/side/Torshov_%28str%C3%B8k%29",
+      "sourceObjectId": "oslobyleksikon:torshov-strok",
+      "sourceQuality": "documented_place_or_area_definition",
+      "finding": "Oslo byleksikon dokumenterer Torshov som sogn og boligstrøk nord for Grünerløkka med Torshovbyen, Torshovparken og Torshovdalen som sentrale deler.",
+      "canVerifyCoordinate": true,
+      "reason": "Representativt områdeanker for Torshov som boligstrøk nord for Grünerløkka. Oslo byleksikon dokumenterer strøkets områdeidentitet rundt Torshovbyen, Torshovparken og Torshovdalen; punktet er et semantic area anchor, ikke én adresse eller et påstått geometrisk sentrum."
+    }
+  ],
+  "addressCandidates": [],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "oslobyleksikon:torshov-strok",
+      "canApplyToPlace": true
+    }
+  ],
+  "geometryCandidates": [],
+  "coordinateCandidates": [
+    {
+      "lat": 59.933611,
+      "lon": 10.764167,
+      "coordRole": "area_anchor",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Kildekontrakt og representasjonsanker er anvendt på canonical place."
+  },
+  "notes": [
+    "Representativt områdeanker for Torshov som boligstrøk nord for Grünerløkka. Oslo byleksikon dokumenterer strøkets områdeidentitet rundt Torshovbyen, Torshovparken og Torshovdalen; punktet er et semantic area anchor, ikke én adresse eller et påstått geometrisk sentrum."
+  ]
+}

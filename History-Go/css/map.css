@@ -1,0 +1,338 @@
+/* ===================================================== */
+/* map.css – KART + KARTKONTROLLER                       */
+/* ===================================================== */
+
+#map{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #000;
+  overflow: hidden;
+}
+
+/* Hindrer 1px-gaps */
+#map .maplibregl-canvas{
+  display: block;
+}
+
+/* ===================================================== */
+/* KARTKONTROLL-DOCK                                     */
+/* ===================================================== */
+
+.map-controls{
+  --hg-map-control-width: min(228px, calc(100vw - 24px));
+
+  position: fixed;
+  left: auto;
+  right: calc(12px + env(safe-area-inset-right, 0px));
+  transform: none;
+  bottom: calc(var(--hg-bottom-nav-height, 72px) + 14px);
+  z-index: 10050;
+
+  /* LayerManager skjuler historisk hele kontrollflaten i explore-mode.
+     Kategorien skal nå være tilgjengelig i begge moduser, derfor eier CSS
+     den endelige display-kontrakten. */
+  display: flex !important;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 6px;
+
+  width: auto;
+  max-width: calc(100vw - 24px - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px));
+
+  pointer-events: none;
+  touch-action: manipulation;
+}
+
+body.mode-map .map-controls,
+body.map-only .map-controls{
+  bottom: calc(var(--hg-bottom-nav-height, 72px) + 14px + env(safe-area-inset-bottom, 0px));
+}
+
+.map-controls > *{
+  pointer-events: auto;
+}
+
+/* Alle kontrollene ligger på samme flate rad; X skjules utenfor faktisk kartmodus. */
+body:not(.mode-map):not(.map-only) .map-controls .hg-map-exit-btn{
+  display: none !important;
+}
+
+.map-controls button{
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(18,27,39,.94);
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.04);
+  pointer-events: auto;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.map-controls button:focus-visible{
+  outline: 2px solid rgba(255,255,255,.92);
+  outline-offset: 3px;
+}
+
+/* ===================================================== */
+/* KART / DETALJERT                                      */
+/* ===================================================== */
+
+.hg-map-style-toggle{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  width: auto;
+  min-width: 154px;
+  height: 46px;
+  padding: 4px;
+  box-sizing: border-box;
+
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(18,27,39,.94);
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 12px 28px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.04);
+
+  pointer-events: auto;
+  touch-action: manipulation;
+  z-index: 30;
+}
+
+.hg-map-style-toggle::before,
+.hg-map-style-toggle::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.hg-map-style-toggle .hg-map-style-btn{
+  position: relative;
+  z-index: 2;
+
+  flex: 1 1 50%;
+  width: auto;
+  min-width: 0;
+  height: 36px;
+  padding: 0 10px;
+
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  box-shadow: none;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .01em;
+  cursor: pointer;
+}
+
+.hg-map-style-toggle .hg-map-style-btn.is-active{
+  background: rgba(255,255,255,.17);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.10);
+}
+
+/* ===================================================== */
+/* KATEGORIPRIKKER                                       */
+/* ===================================================== */
+
+.hg-map-category-filter{
+  position: relative;
+  width: 104px;
+  flex: 0 0 104px;
+  order: 999;
+  pointer-events: auto;
+}
+
+.map-controls .hg-map-category-trigger{
+  width: 100%;
+  height: 46px;
+  padding: 0 13px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 14px;
+  align-items: center;
+  gap: 9px;
+
+  border-radius: 999px;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: left;
+}
+
+.hg-map-category-trigger-icon{
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  font-size: 18px;
+}
+
+.hg-map-category-trigger-label{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.hg-map-category-trigger-caret{
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  opacity: .72;
+  transition: transform .16s ease;
+}
+
+.hg-map-category-trigger[aria-expanded="true"] .hg-map-category-trigger-caret{
+  transform: rotate(180deg);
+}
+
+.hg-map-category-options{
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 8px);
+  z-index: 10080;
+
+  width: 104px;
+  max-height: min(52dvh, 430px);
+  padding: 8px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 18px;
+  background: rgba(15,23,34,.97);
+  box-shadow: 0 18px 45px rgba(0,0,0,.38);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.hg-map-category-options:not([hidden]){
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hg-map-category-options[hidden]{
+  display: none !important;
+}
+
+.map-controls .hg-map-category-option{
+  width: 100%;
+  min-height: 58px;
+  height: auto;
+  padding: 8px 10px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  gap: 0;
+
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.map-controls .hg-map-category-option + .hg-map-category-option{
+  margin-top: 2px;
+}
+
+.map-controls .hg-map-category-option:hover,
+.map-controls .hg-map-category-option:focus-visible,
+.map-controls .hg-map-category-option.is-active{
+  background: rgba(255,255,255,.12);
+}
+
+.hg-map-category-option-icon{
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--hg-cat-color, rgba(255,255,255,.12));
+  font-size: 17px;
+}
+
+.hg-map-category-option-label{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.hg-map-category-option-check{
+  text-align: center;
+  opacity: 0;
+}
+
+.hg-map-category-option.is-active .hg-map-category-option-check{
+  opacity: 1;
+}
+
+/* ===================================================== */
+/* NYTTEKNAPPER                                          */
+/* ===================================================== */
+
+.hg-map-utility-row{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  width: auto;
+}
+
+.map-controls .hg-map-utility-btn{
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  flex: 0 0 46px;
+
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.map-controls .hg-map-utility-btn svg{
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.map-controls .hg-map-utility-btn:active{
+  transform: translateY(1px);
+  background: rgba(35,48,65,.98);
+}
+
+.map-controls .hg-map-utility-btn:disabled{
+  opacity: .55;
+  cursor: wait;
+}
+
+@media (max-width: 640px){
+  .map-controls{
+    --hg-map-control-width: min(208px, calc(100vw - 20px));
+    right: calc(6px + env(safe-area-inset-right, 0px));
+    bottom: calc(var(--hg-bottom-nav-height, 72px) + 10px);
+  }
+
+  body.mode-map .map-controls,
+  body.map-only .map-controls{
+    bottom: calc(var(--hg-bottom-nav-height, 72px) + 10px + env(safe-area-inset-bottom, 0px));
+  }
+}

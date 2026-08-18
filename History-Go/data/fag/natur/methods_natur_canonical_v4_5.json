@@ -1,0 +1,3828 @@
+{
+  "version": "v5.2-canonical-biology-phase-2",
+  "subject_id": "natur",
+  "subject_title": "Natur & miljø",
+  "scope": "universal",
+  "type": "methods",
+  "purpose": "Metodekatalog for Natur & miljø. Hver metode beskriver hva den undersøker, hvilket materiale den krever, en etterprøvbar arbeidsprosedyre og begrensninger som må synliggjøres før en konklusjon trekkes.",
+  "updated_at": "2026-07-29",
+  "canonical_inputs": {
+    "pensum": "naturpensum_canonical_v4_5.json",
+    "emner": "emner_natur_canonical_v4_5.json",
+    "fagkart": "fagkart_natur_canonical_v4_5.json"
+  },
+  "principles": {
+    "source_first": true,
+    "external_claim_basis_required": true,
+    "ecosystem_water_climate_or_place_before_theory": true,
+    "avoid_generic_nature_romanticism": true,
+    "required_emne_prefix": "em_natur_",
+    "blocked_emne_prefixes": [
+      "em_by_",
+      "em_his_",
+      "em_kunst_",
+      "em_lit_",
+      "em_media_",
+      "em_musikk_",
+      "em_pop_",
+      "em_vit_",
+      "em_pol_",
+      "em_naering_"
+    ]
+  },
+  "methods": [
+    {
+      "method_id": "met_natur_artsovervaking",
+      "title": "Artsovervåking",
+      "short_label": "Artsovervåking",
+      "description": "Systematisk gjentakelse av artsregistreringer på faste steder og tidspunkt for å oppdage endringer i forekomst, utbredelse, bestand eller reproduksjon over tid.",
+      "best_for_emne_kinds": [
+        "okosystem_mangfold_habitat",
+        "urban_okologi_gronnstruktur"
+      ],
+      "data_forms": [
+        "standardiserte artslister og telledata",
+        "faste prøveflater, transekter eller lyttepunkt",
+        "metadata om tidspunkt, innsats, vær og observatør",
+        "kvalitetssikrede funn og fraværsdata"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "okosystem_mangfold_habitat",
+        "urban_okologi_gronnstruktur"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bystrand",
+        "bytre",
+        "dam",
+        "elvekant",
+        "elvepark",
+        "grøntdrag",
+        "hage",
+        "kolonihage",
+        "naturreservat",
+        "park",
+        "skog",
+        "strand",
+        "tursti",
+        "våtmark"
+      ],
+      "question_moves": [
+        "spør hva som faktisk ble registrert og med hvilken innsats",
+        "skill bestandstrend fra tilfeldig observasjon",
+        "knytt endringen til habitat, sesong og metode"
+      ],
+      "method_use_note": "Bruk metoden når spørsmålet gjelder dokumentert endring i arter, ikke som erstatning for en generell artsliste.",
+      "rotation_note": "Kombiner med habitat- eller påvirkningsanalyse når årsaken til en trend skal vurderes.",
+      "hook_affinities": [
+        "bydyr",
+        "fremmede_arter"
+      ],
+      "emne_affinities": [
+        "em_natur_arter_habitat_mangfold",
+        "em_natur_biodiversitet_resiliens",
+        "em_natur_fremmede_arter_forstyrrelse",
+        "em_natur_urban_okologi_byrom"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "avgrens målart, indikator eller artsgruppe og velg egnet sesong",
+        "fastsett prøvedesign, innsats og registreringsprotokoll før feltarbeidet",
+        "gjenta målingen på samme måte og vurder oppdagbarhet",
+        "sammenlign tidsserien og dokumenter metodeendringer og usikkerhet"
+      ],
+      "limitations": [
+        "manglende funn betyr ikke nødvendigvis at arten er fraværende",
+        "endret observatør, vær eller innsats kan skape falske trender",
+        "sensitive artsdata kan kreve skjerming"
+      ]
+    },
+    {
+      "method_id": "met_natur_biodiversitetsanalyse",
+      "title": "Biodiversitetsanalyse",
+      "short_label": "Biodiversitet",
+      "description": "Vurdering av biologisk mangfold gjennom artsrikdom, fordeling, funksjonell variasjon, habitatmangfold og genetiske eller landskapsmessige forhold som påvirker systemets robusthet.",
+      "best_for_emne_kinds": [
+        "okosystem_mangfold_habitat",
+        "klima_energi_resiliens",
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "data_forms": [
+        "artsforekomster og mengdedata",
+        "funksjonelle grupper og rødliste-/risikostatus",
+        "habitatkart og arealtilstand",
+        "mål på jevnhet, beta-diversitet eller konnektivitet"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "okosystem_mangfold_habitat",
+        "klima_energi_resiliens",
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bekk",
+        "dam",
+        "elv",
+        "elvekant",
+        "fjellknaus",
+        "fjord",
+        "forurenset_sted",
+        "grøntdrag",
+        "industriomrade",
+        "miljøtiltak",
+        "naturreservat",
+        "overvannsanlegg",
+        "park",
+        "restaurert_elv"
+      ],
+      "question_moves": [
+        "spør hvilket mangfoldsmål som brukes",
+        "skill artsrikdom fra funksjonell variasjon",
+        "koble tallene til habitat og økologisk betydning"
+      ],
+      "method_use_note": "Metoden skal begrunne hvorfor et mangfoldsmål er relevant, ikke bare telle arter.",
+      "rotation_note": "Roter med økosystemanalyse og artsovervåking for å unngå at biodiversitet reduseres til én indeks.",
+      "hook_affinities": [
+        "naringsnett",
+        "resiliens",
+        "vern"
+      ],
+      "emne_affinities": [
+        "em_natur_arter_habitat_mangfold",
+        "em_natur_biodiversitet_resiliens",
+        "em_natur_klimatilpasning_risiko",
+        "em_natur_okosystem_nettverk",
+        "em_natur_vern_forvaltning_politikk"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "definer hvilket nivå av mangfold som undersøkes",
+        "velg indikatorer som passer skala og datakvalitet",
+        "sammenlign steder eller perioder med samme innsats",
+        "tolk resultatet sammen med habitatkvalitet og økologisk funksjon"
+      ],
+      "limitations": [
+        "høyt artsantall kan skyldes fremmede eller generalistiske arter",
+        "indekser kan skjule hvilke arter og funksjoner som er tapt",
+        "resultater avhenger sterkt av prøvetakingsinnsats"
+      ]
+    },
+    {
+      "method_id": "met_natur_endrings_og_tidsserieanalyse",
+      "title": "Endrings- og tidsserieanalyse",
+      "short_label": "Endring/tidsserie",
+      "description": "Analyse av gjentatte målinger, kart, bilder eller naturarkiver for å skille kortvarig variasjon fra langsiktige trender, brudd og forsinkede responser.",
+      "best_for_emne_kinds": [
+        "geologi_landskap_tid",
+        "okosystem_mangfold_habitat",
+        "klima_energi_resiliens"
+      ],
+      "data_forms": [
+        "standardiserte måleserier",
+        "historiske kart, flyfoto og satellittdata",
+        "sediment-, pollen- eller årringserier",
+        "metadata om metode, dekning og tidsoppløsning"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "geologi_landskap_tid",
+        "okosystem_mangfold_habitat",
+        "klima_energi_resiliens"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bekk",
+        "dalføre",
+        "dam",
+        "elv",
+        "elvekant",
+        "fjellknaus",
+        "grøntdrag",
+        "naturreservat",
+        "overvannsanlegg",
+        "park",
+        "ravine",
+        "skog",
+        "strand",
+        "utsiktspunkt"
+      ],
+      "question_moves": [
+        "spør hva som er trend og hva som er normal variasjon",
+        "identifiser eventuelle metodebrudd",
+        "knytt tidsmønsteret til en testbar prosess"
+      ],
+      "method_use_note": "Bruk tidsserien til å dokumentere endring før årsaksforklaringer introduseres.",
+      "rotation_note": "Kombiner med feltmåling eller historisk kildekritikk når eldre og nyere data kobles.",
+      "hook_affinities": [
+        "istid_landheving",
+        "klimahukommelse",
+        "langsom_tid",
+        "suksesjon"
+      ],
+      "emne_affinities": [
+        "em_natur_forstyrrelse_regenerasjon",
+        "em_natur_geologi_landskapsform",
+        "em_natur_karbon_energi_klima",
+        "em_natur_lang_tid_klima_historie",
+        "em_natur_natur_som_aktor",
+        "em_natur_skog_vegetasjon_suksesjon"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "kontroller at målinger og definisjoner er sammenlignbare",
+        "visualiser trend, sesong og mulige brudd",
+        "test alternative periodiseringer og forklaringer",
+        "vurder datagap, autokorrelasjon og usikkerhet"
+      ],
+      "limitations": [
+        "samtidige trender dokumenterer ikke årsak",
+        "metode- eller sensorbytte kan se ut som miljøendring",
+        "korte serier kan overvurdere tilfeldige svingninger"
+      ]
+    },
+    {
+      "method_id": "met_natur_feltmaling_og_overvaking",
+      "title": "Feltmåling og overvåking",
+      "short_label": "Feltmåling",
+      "description": "Planlagt innsamling av fysiske, kjemiske eller biologiske målinger i felt med kalibrert utstyr, dokumentert prøvested og en protokoll som gjør data sammenlignbare.",
+      "best_for_emne_kinds": [
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "data_forms": [
+        "temperatur, fuktighet, vannstand eller strøm",
+        "pH, oksygen, ledningsevne eller turbiditet",
+        "feltlogger, koordinater og fotografier",
+        "kalibreringsdata og kvalitetskontroll"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "progression_stage": "advanced",
+      "good_for_place_types": [
+        "fjord",
+        "forurenset_sted",
+        "industriomrade",
+        "miljøtiltak",
+        "naturreservat",
+        "park",
+        "restaurert_elv"
+      ],
+      "question_moves": [
+        "spør hva instrumentet faktisk måler",
+        "etterspør enhet, tidspunkt og kalibrering",
+        "skill måleusikkerhet fra miljøvariasjon"
+      ],
+      "method_use_note": "Målingen må knyttes til et tydelig fagspørsmål og dokumentert protokoll.",
+      "rotation_note": "Roter med tidsserieanalyse slik at feltdata ikke tolkes som trend uten gjentakelse.",
+      "hook_affinities": [
+        "forvaltning_data"
+      ],
+      "emne_affinities": [
+        "em_natur_miljodata_overvaking",
+        "em_natur_vern_forvaltning_politikk"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "formuler målespørsmål og velg indikator",
+        "kalibrer utstyr og fastsett prøvesteder og tidspunkt",
+        "registrer måling, miljøforhold og avvik samtidig",
+        "kontroller og lagre data med enhet, presisjon og metadata"
+      ],
+      "limitations": [
+        "instrumentfeil og plassering kan dominere signalet",
+        "enkeltmålinger sier lite om variasjon over tid",
+        "feltforhold kan gjøre planlagte steder usammenlignbare"
+      ]
+    },
+    {
+      "method_id": "met_natur_forurensningsanalyse",
+      "title": "Forurensningsanalyse",
+      "short_label": "Forurensning",
+      "description": "Sporing av forurensning fra kilde gjennom transportvei og miljømedium til eksponering og mulig effekt på organismer, økosystem eller mennesker.",
+      "best_for_emne_kinds": [
+        "vann_hydrologi_kretslop",
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "data_forms": [
+        "utslipps- og virksomhetsdata",
+        "konsentrasjoner i vann, jord, luft, sediment eller biota",
+        "strømnings-, sprednings- og nedbørdata",
+        "toksikologiske eller økologiske effektdata"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "vann_hydrologi_kretslop",
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bekk",
+        "dam",
+        "elv",
+        "elvepark",
+        "fjord",
+        "forurenset_sted",
+        "industriomrade",
+        "innsjø",
+        "miljøtiltak",
+        "naturreservat",
+        "overvannsanlegg",
+        "park",
+        "restaurert_elv",
+        "våtmark"
+      ],
+      "question_moves": [
+        "spør hvor stoffet kommer fra og hvor det går",
+        "skill forekomst fra eksponering og effekt",
+        "vurder om tiltaket fjerner kilden eller bare flytter belastningen"
+      ],
+      "method_use_note": "Analysen skal følge hele kjeden kilde–transport–eksponering–effekt.",
+      "rotation_note": "Kombiner med vann-, jord- eller miljørettferdighetsanalyse etter hvilket medium og hvem som berøres.",
+      "hook_affinities": [
+        "forurensning",
+        "mikroplast_kjemi",
+        "miljogifter",
+        "vannkvalitet"
+      ],
+      "emne_affinities": [
+        "em_natur_kjemiske_balanser",
+        "em_natur_mikroplast_miljogifter",
+        "em_natur_vannkvalitet_forurensning"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "identifiser stoff, kilde og sannsynlig transportvei",
+        "velg prøvesteder som kan skille bakgrunn fra påvirkning",
+        "sammenlign målinger med relevante referanser og effektnivåer",
+        "vurder samlet belastning, usikkerhet og tiltakspunkt"
+      ],
+      "limitations": [
+        "grenseverdi alene beskriver ikke samlet økologisk effekt",
+        "forurensning kan flyttes eller fortynnes uten å fjernes",
+        "ukjente blandingseffekter kan undervurderes"
+      ]
+    },
+    {
+      "method_id": "met_natur_forvaltningsanalyse",
+      "title": "Forvaltningsanalyse",
+      "short_label": "Forvaltning",
+      "description": "Undersøkelse av hvordan mål, ansvar, regler, kunnskapsgrunnlag, ressurser og oppfølging er organisert for å opprettholde eller forbedre naturtilstand.",
+      "best_for_emne_kinds": [
+        "miljopavirkning_forvaltning_regenerasjon",
+        "urban_okologi_gronnstruktur"
+      ],
+      "data_forms": [
+        "forvaltningsplaner og vedtak",
+        "verneformål, reguleringer og dispensasjoner",
+        "budsjetter, ansvarskart og tiltaksplaner",
+        "tilstands- og effektmålinger"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "miljopavirkning_forvaltning_regenerasjon",
+        "urban_okologi_gronnstruktur"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bystrand",
+        "bytre",
+        "elvepark",
+        "fjord",
+        "forurenset_sted",
+        "grøntdrag",
+        "hage",
+        "industriomrade",
+        "kolonihage",
+        "miljøtiltak",
+        "naturreservat",
+        "park",
+        "restaurert_elv",
+        "tursti"
+      ],
+      "question_moves": [
+        "spør hva målet er og hvem som har ansvar",
+        "skill vedtak fra gjennomføring",
+        "etterspør hvordan effekt måles og praksis justeres"
+      ],
+      "method_use_note": "Metoden vurderer styring og gjennomføring, ikke bare om et område har formell vernestatus.",
+      "rotation_note": "Kombiner med økologisk tilstandsanalyse for å sammenholde styring og naturresultat.",
+      "hook_affinities": [
+        "forvaltning_data",
+        "marka_bygrense",
+        "vern"
+      ],
+      "emne_affinities": [
+        "em_natur_arter_habitat_mangfold",
+        "em_natur_gronnstruktur_korridorer",
+        "em_natur_marka_skog_bygrense",
+        "em_natur_miljodata_overvaking",
+        "em_natur_vern_forvaltning_politikk"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "avklar forvaltningsmål og rettslig ramme",
+        "kartlegg aktører, ansvar og virkemidler",
+        "sammenlign planlagte tiltak med faktisk gjennomføring",
+        "vurder resultat, læring og behov for justering"
+      ],
+      "limitations": [
+        "planstatus sier ikke at tiltak er gjennomført",
+        "mål kan være uklare eller innbyrdes motstridende",
+        "manglende overvåking gjør effekt vanskelig å dokumentere"
+      ]
+    },
+    {
+      "method_id": "met_natur_geologisk_analyse",
+      "title": "Geologisk analyse",
+      "short_label": "Geologi",
+      "description": "Tolkning av berggrunn, mineraler, strukturer, løsmasser og geologiske prosesser for å forklare landskapsform, stabilitet, jorddannelse og naturgrunnlag.",
+      "best_for_emne_kinds": [
+        "geologi_landskap_tid",
+        "vann_hydrologi_kretslop"
+      ],
+      "data_forms": [
+        "berggrunns- og løsmassekart",
+        "feltobservasjoner av lag, sprekker og bergarter",
+        "terrengmodeller og profiler",
+        "dateringer og geologiske rapporter"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "geologi_landskap_tid",
+        "vann_hydrologi_kretslop"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bekk",
+        "dalføre",
+        "dam",
+        "elv",
+        "elvepark",
+        "fjellknaus",
+        "fjord",
+        "innsjø",
+        "overvannsanlegg",
+        "park",
+        "ravine",
+        "strand",
+        "utsiktspunkt",
+        "våtmark"
+      ],
+      "question_moves": [
+        "spør hvilket materiale og hvilken struktur som er observert",
+        "skill landform fra dannelsesprosess",
+        "koble geologi til dagens vann, jord eller risiko"
+      ],
+      "method_use_note": "Start i konkrete geologiske observasjoner før stedets historie forklares.",
+      "rotation_note": "Roter med landskapslesning og jord-/sedimentanalyse for å dekke både form og materiale.",
+      "hook_affinities": [
+        "berggrunn",
+        "erosjon",
+        "flom_erosjon",
+        "istid_landheving",
+        "jordprofiler",
+        "sedimenter"
+      ],
+      "emne_affinities": [
+        "em_natur_geologi_landskapsform",
+        "em_natur_jord_sediment_mikroliv",
+        "em_natur_klimatilpasning_risiko",
+        "em_natur_lang_tid_klima_historie"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "beskriv bergart, struktur og løsmasser uten å tolke først",
+        "koble observasjonene til geologisk prosess og tidsrekkefølge",
+        "sammenlign med kart og regional geologi",
+        "vurder betydning for vann, jord, naturtype og inngrep"
+      ],
+      "limitations": [
+        "overflateobservasjoner kan skjule undergrunnsforhold",
+        "samme landform kan ha flere mulige dannelsesprosesser",
+        "kartskala kan være for grov for lokale beslutninger"
+      ]
+    },
+    {
+      "method_id": "met_natur_habitat_og_biotopanalyse",
+      "title": "Habitat- og biotopanalyse",
+      "short_label": "Habitat/biotop",
+      "description": "Vurdering av et leveområdes fysiske og biologiske kvaliteter opp mot behovene til bestemte arter eller artsgrupper gjennom livssyklus og sesong.",
+      "best_for_emne_kinds": [
+        "okosystem_mangfold_habitat",
+        "geologi_landskap_tid",
+        "urban_okologi_gronnstruktur"
+      ],
+      "data_forms": [
+        "vegetasjonsstruktur, substrat og mikroklima",
+        "tilgang på næring, skjul, hekke- eller yngleplass",
+        "barrierer og forbindelser til andre leveområder",
+        "artsfunn og habitatkart"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "okosystem_mangfold_habitat",
+        "geologi_landskap_tid",
+        "urban_okologi_gronnstruktur"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bystrand",
+        "bytre",
+        "dalføre",
+        "dam",
+        "elvekant",
+        "elvepark",
+        "fjellknaus",
+        "grøntdrag",
+        "hage",
+        "kolonihage",
+        "naturreservat",
+        "park",
+        "ravine",
+        "skog"
+      ],
+      "question_moves": [
+        "spør habitat for hvem og til hvilken livsfase",
+        "etterspør konkrete ressurser og begrensninger",
+        "skill forekomst fra funksjonelt leveområde"
+      ],
+      "method_use_note": "Habitat skal alltid knyttes til en art, gruppe eller økologisk funksjon.",
+      "rotation_note": "Kombiner med artsovervåking når habitatkvalitet skal testes mot faktisk bruk.",
+      "hook_affinities": [
+        "arter_og_habitat",
+        "gronne_korridorer",
+        "kantsoner",
+        "oy_okologi",
+        "skogstruktur"
+      ],
+      "emne_affinities": [
+        "em_natur_arter_habitat_mangfold",
+        "em_natur_gronnstruktur_korridorer",
+        "em_natur_kyst_fjord_og_strand",
+        "em_natur_okosystem_nettverk",
+        "em_natur_skog_vegetasjon_suksesjon"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "velg art eller funksjon som habitatet skal vurderes for",
+        "registrer nødvendige ressurser og begrensende faktorer",
+        "kartlegg kvalitet, størrelse, kant og forbindelser",
+        "vurder sesongbruk, forstyrrelse og forbedringstiltak"
+      ],
+      "limitations": [
+        "et område er ikke godt habitat for alle arter samtidig",
+        "artsfunn kan være tilfeldig bruk og ikke reproduksjon",
+        "habitatkvalitet varierer gjennom sesong og livsstadium"
+      ]
+    },
+    {
+      "method_id": "met_natur_hydrologisk_analyse",
+      "title": "Hydrologisk analyse",
+      "short_label": "Hydrologi",
+      "description": "Analyse av hvordan nedbør, infiltrasjon, grunnvann, avrenning, vannføring og lagring fordeler vann i et nedbørfelt og endres av terreng og arealbruk.",
+      "best_for_emne_kinds": [
+        "vann_hydrologi_kretslop",
+        "geologi_landskap_tid",
+        "okosystem_mangfold_habitat",
+        "klima_energi_resiliens",
+        "urban_okologi_gronnstruktur",
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "data_forms": [
+        "nedbør- og vannføringsserier",
+        "nedbørfelt, høyde- og helningsdata",
+        "jord, infiltrasjon og tette flater",
+        "kulverter, bekker, magasiner og flomveier"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "vann_hydrologi_kretslop",
+        "geologi_landskap_tid",
+        "okosystem_mangfold_habitat",
+        "klima_energi_resiliens",
+        "urban_okologi_gronnstruktur",
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bekk",
+        "bystrand",
+        "bytre",
+        "dalføre",
+        "dam",
+        "elv",
+        "elvekant",
+        "elvepark",
+        "fjellknaus",
+        "fjord",
+        "forurenset_sted",
+        "grøntdrag",
+        "hage",
+        "industriomrade"
+      ],
+      "question_moves": [
+        "følg vannet gjennom hele nedbørfeltet",
+        "skill vannstand fra vannføring",
+        "spør hvor vann lagres og hvor risiko flyttes"
+      ],
+      "method_use_note": "Hydrologiske forklaringer skal bygge på vannvei, volum og tid – ikke bare nærhet til vann.",
+      "rotation_note": "Kombiner med vannkvalitets- eller risikoanalyse når vannets innhold eller konsekvens er hovedspørsmålet.",
+      "hook_affinities": [
+        "dalforer",
+        "ekstremvaer",
+        "elv_som_system",
+        "elvekant_korridor",
+        "overvann",
+        "restaurering",
+        "vannskiller",
+        "vatmark_habitat"
+      ],
+      "emne_affinities": [
+        "em_natur_bekkeapning_overvann",
+        "em_natur_dalforer_vannskiller_topografi",
+        "em_natur_elver_bekker_vassdrag",
+        "em_natur_forstyrrelse_regenerasjon",
+        "em_natur_gronnstruktur_korridorer",
+        "em_natur_klimatilpasning_risiko",
+        "em_natur_okosystemtjenester",
+        "em_natur_vannkvalitet_forurensning",
+        "em_natur_vatmark_vannspeil_habitat"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "avgrens nedbørfelt og vannveier",
+        "bygg vannbalanse for relevante perioder",
+        "identifiser lagring, forsinkelse og flaskehalser",
+        "test hvordan tiltak eller arealendring påvirker topp og varighet"
+      ],
+      "limitations": [
+        "lokale målinger kan mangle eller ha korte serier",
+        "grunnvann og lekkasjer kan bryte en enkel vannbalanse",
+        "modellresultat avhenger av antakelser om ekstremnedbør"
+      ]
+    },
+    {
+      "method_id": "met_natur_jord_og_sedimentanalyse",
+      "title": "Jord- og sedimentanalyse",
+      "short_label": "Jord/sediment",
+      "description": "Undersøkelse av jord og sediment gjennom lagdeling, partikkelstørrelse, organisk materiale, vanninnhold, kjemi og biologisk aktivitet for å forklare funksjon og belastning.",
+      "best_for_emne_kinds": [
+        "okosystem_mangfold_habitat",
+        "vann_hydrologi_kretslop",
+        "geologi_landskap_tid",
+        "urban_okologi_gronnstruktur",
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "data_forms": [
+        "jordprofiler og sedimentkjerner",
+        "kornstørrelse, pH og organisk innhold",
+        "næringsstoffer, metaller og organiske miljøgifter",
+        "mikrobiologiske eller biologiske indikatorer"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "okosystem_mangfold_habitat",
+        "vann_hydrologi_kretslop",
+        "geologi_landskap_tid",
+        "urban_okologi_gronnstruktur",
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bekk",
+        "bystrand",
+        "bytre",
+        "dalføre",
+        "dam",
+        "elv",
+        "elvekant",
+        "elvepark",
+        "fjellknaus",
+        "fjord",
+        "forurenset_sted",
+        "grøntdrag",
+        "hage",
+        "industriomrade"
+      ],
+      "question_moves": [
+        "spør hvilket lag og hvilken fraksjon som er analysert",
+        "skill totalinnhold fra tilgjengelighet",
+        "koble funn til transport og historisk avsetning"
+      ],
+      "method_use_note": "Prøvens plassering, dybde og behandling er del av resultatet.",
+      "rotation_note": "Roter med forurensnings- eller kretsløpsanalyse avhengig av om belastning eller funksjon undersøkes.",
+      "hook_affinities": [
+        "jordliv_mikroliv",
+        "jordprofiler",
+        "kolonihage_matjord",
+        "miljogifter",
+        "sedimenter"
+      ],
+      "emne_affinities": [
+        "em_natur_geologi_landskapsform",
+        "em_natur_jord_sediment_mikroliv",
+        "em_natur_kjemiske_balanser",
+        "em_natur_kretslop_materie",
+        "em_natur_mikroplast_miljogifter",
+        "em_natur_sosial_naturforvaltning"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "definer prøvedybde, referanse og romlig design",
+        "ta og oppbevar prøver uten krysskontaminering",
+        "analyser fysiske, kjemiske og biologiske egenskaper",
+        "tolke lag og verdier i lys av transport, historikk og biologisk tilgjengelighet"
+      ],
+      "limitations": [
+        "punktprøver kan overse sterk romlig variasjon",
+        "total konsentrasjon er ikke lik biologisk tilgjengelig dose",
+        "prøvetaking kan blande eller forstyrre lag"
+      ]
+    },
+    {
+      "method_id": "met_natur_klima_og_karbonanalyse",
+      "title": "Klima- og karbonanalyse",
+      "short_label": "Klima/karbon",
+      "description": "Kvantitativ vurdering av utslipp, opptak og karbonlagre sammen med energiflyt og klimadrivere, med tydelig systemgrense og tidshorisont.",
+      "best_for_emne_kinds": [
+        "klima_energi_resiliens",
+        "vann_hydrologi_kretslop"
+      ],
+      "data_forms": [
+        "karbonlagre i vegetasjon, jord og sediment",
+        "utslipps- og aktivitetsdata",
+        "produksjon, respirasjon og nedbrytning",
+        "klimadata og arealendringshistorikk"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "klima_energi_resiliens",
+        "vann_hydrologi_kretslop"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bekk",
+        "dam",
+        "elv",
+        "elvepark",
+        "fjellknaus",
+        "fjord",
+        "grøntdrag",
+        "innsjø",
+        "overvannsanlegg",
+        "park",
+        "skog",
+        "våtmark"
+      ],
+      "question_moves": [
+        "spør om resultatet gjelder lager eller årlig strøm",
+        "etterspør systemgrense og tidshorisont",
+        "skill karbongevinst fra øvrig naturverdi"
+      ],
+      "method_use_note": "Alle karbonpåstander skal oppgi hva som telles, hvor og over hvilket tidsrom.",
+      "rotation_note": "Kombiner med biodiversitetsanalyse for å unngå at karbon blir eneste mål på naturkvalitet.",
+      "hook_affinities": [
+        "energi_i_okosystemer",
+        "karbon_energiflyt",
+        "klimahukommelse",
+        "kretslop_vann_karbon"
+      ],
+      "emne_affinities": [
+        "em_natur_karbon_energi_klima",
+        "em_natur_kretslop_materie",
+        "em_natur_lang_tid_klima_historie",
+        "em_natur_okosystem_nettverk"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "sett systemgrense, referanse og tidsperiode",
+        "kartlegg lager og strømmer uten dobbeltelling",
+        "beregn netto endring og viktigste usikkerheter",
+        "sammenlign alternativer og vurder varighet og reversibilitet"
+      ],
+      "limitations": [
+        "kortsiktig opptak kan forveksles med permanent lagring",
+        "systemgrensen kan skjule utslipp utenfor området",
+        "karbonregnskap dekker ikke alle natur- og klimaeffekter"
+      ]
+    },
+    {
+      "method_id": "met_natur_klimamodellering",
+      "title": "Klimamodellering",
+      "short_label": "Klimamodell",
+      "description": "Bruk av matematiske modeller og klimascenarioer til å beregne mulige framtidige temperatur-, nedbør-, havnivå- eller ekstremmønstre under eksplisitte antakelser.",
+      "best_for_emne_kinds": [
+        "klima_energi_resiliens"
+      ],
+      "data_forms": [
+        "historiske klimaobservasjoner",
+        "globale og regionale klimamodeller",
+        "utslipps- eller konsentrasjonsscenarioer",
+        "nedskalerte sannsynlighetsfordelinger og usikkerhetsintervall"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "klima_energi_resiliens"
+      ],
+      "progression_stage": "advanced",
+      "good_for_place_types": [
+        "bekk",
+        "elv",
+        "fjellknaus",
+        "grøntdrag",
+        "overvannsanlegg",
+        "park",
+        "skog"
+      ],
+      "question_moves": [
+        "spør hvilket scenario og tidsrom resultatet gjelder",
+        "vis spenn mellom modeller fremfor ett tall",
+        "skill modellusikkerhet fra framtidig samfunnsutvikling"
+      ],
+      "method_use_note": "Modellresultat skal presenteres som betingede framtidsbilder, ikke sikre lokale fasiter.",
+      "rotation_note": "Kombiner med risikoanalyse for å oversette klimadata til konkrete konsekvenser.",
+      "hook_affinities": [
+        "ekstremvaer",
+        "vippepunkter"
+      ],
+      "emne_affinities": [
+        "em_natur_bekkeapning_overvann",
+        "em_natur_klimatilpasning_risiko",
+        "em_natur_vippepunkt_sarbarhet"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "velg variabel, scenario, periode og romlig skala",
+        "kontroller modellens historiske ytelse og skjevheter",
+        "sammenlign flere modeller eller ensembler",
+        "formidle intervall, sannsynlighet og beslutningsrelevant robusthet"
+      ],
+      "limitations": [
+        "lokale ekstremhendelser kan være dårlig representert",
+        "scenario er ikke en prognose med kjent sannsynlighet",
+        "nedskalering kan gi falsk presisjon"
+      ]
+    },
+    {
+      "method_id": "met_natur_konflikt_og_forvaltningsanalyse",
+      "title": "Konflikt- og forvaltningsanalyse",
+      "short_label": "Konflikt/forvaltning",
+      "description": "Strukturert analyse av aktører, interesser, rettigheter, kunnskapsgrunnlag og handlingsalternativer i en naturkonflikt, med naturverdiene som eksplisitt del av beslutningen.",
+      "best_for_emne_kinds": [
+        "miljopavirkning_forvaltning_regenerasjon",
+        "urban_okologi_gronnstruktur"
+      ],
+      "data_forms": [
+        "plan- og høringsdokumenter",
+        "rettigheter, lovgrunnlag og vedtak",
+        "naturkartlegging og konsekvensutredning",
+        "aktørposisjoner, alternativer og fordelingsvirkninger"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "miljopavirkning_forvaltning_regenerasjon",
+        "urban_okologi_gronnstruktur"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bystrand",
+        "bytre",
+        "elvepark",
+        "fjord",
+        "forurenset_sted",
+        "grøntdrag",
+        "hage",
+        "industriomrade",
+        "kolonihage",
+        "miljøtiltak",
+        "naturreservat",
+        "park",
+        "restaurert_elv",
+        "tursti"
+      ],
+      "question_moves": [
+        "spør hva som faktisk står på spill økologisk",
+        "skill interesse fra rettighet og ansvar",
+        "etterspør reelle alternativer før kompensasjon"
+      ],
+      "method_use_note": "Konflikten skal analyseres gjennom både naturgrunnlag og beslutningsmakt.",
+      "rotation_note": "Roter med miljørettferdighets- og forvaltningsanalyse for å dekke fordeling og gjennomføring.",
+      "hook_affinities": [
+        "miljoaktivisme",
+        "naturinngrep",
+        "okologisk_friksjon",
+        "okologisk_rettferdighet"
+      ],
+      "emne_affinities": [
+        "em_natur_byutvikling_naturkonflikt",
+        "em_natur_forstyrrelse_regenerasjon",
+        "em_natur_miljorettferdighet",
+        "em_natur_sosial_naturforvaltning",
+        "em_natur_vern_forvaltning_politikk"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "definer konfliktens naturfaglige og beslutningsmessige kjerne",
+        "kartlegg aktører, interesser, rettigheter og makt",
+        "sammenlign alternativer, unngåelse og avbøting",
+        "vurder prosess, fordeling, irreversibilitet og oppfølging"
+      ],
+      "limitations": [
+        "aktørkart kan overse natur som ikke har direkte representant",
+        "kompromiss er ikke alltid økologisk forsvarlig",
+        "offentlige dokumenter kan skjule uformell innflytelse"
+      ]
+    },
+    {
+      "method_id": "met_natur_kretslopsanalyse",
+      "title": "Kretsløpsanalyse",
+      "short_label": "Kretsløp",
+      "description": "Kartlegging av lagre, strømmer og omsetningsprosesser for vann, karbon, nitrogen, fosfor eller andre stoffer gjennom et avgrenset økologisk system.",
+      "best_for_emne_kinds": [
+        "okosystem_mangfold_habitat",
+        "vann_hydrologi_kretslop",
+        "klima_energi_resiliens"
+      ],
+      "data_forms": [
+        "mengder i jord, vann, luft og biomasse",
+        "tilførsel, eksport og intern omsetning",
+        "oppholdstid og prosessrater",
+        "kilder, sluk og massebalanse"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "okosystem_mangfold_habitat",
+        "vann_hydrologi_kretslop",
+        "klima_energi_resiliens"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bekk",
+        "dam",
+        "elv",
+        "elvekant",
+        "elvepark",
+        "fjellknaus",
+        "fjord",
+        "grøntdrag",
+        "innsjø",
+        "naturreservat",
+        "overvannsanlegg",
+        "park",
+        "skog",
+        "strand"
+      ],
+      "question_moves": [
+        "spør hvor stoffet kommer fra, lagres og forlater systemet",
+        "skill lager fra strøm",
+        "identifiser hvor menneskelig aktivitet bryter eller akselererer kretsløpet"
+      ],
+      "method_use_note": "Kretsløpet skal avgrenses eksplisitt i stoff, rom og tid.",
+      "rotation_note": "Kombiner med kjemisk eller økosystemanalyse når stoffets virkning skal forklares.",
+      "hook_affinities": [
+        "jordliv_mikroliv",
+        "karbon_energiflyt",
+        "kretslop_vann_karbon"
+      ],
+      "emne_affinities": [
+        "em_natur_jord_sediment_mikroliv",
+        "em_natur_karbon_energi_klima",
+        "em_natur_kretslop_materie"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "avgrens system, stoff og tidsperiode",
+        "identifiser alle vesentlige lagre og strømmer",
+        "sett opp massebalanse og finn manglende ledd",
+        "vurder hvordan inngrep endrer hastighet, lagring og lekkasje"
+      ],
+      "limitations": [
+        "ukjente strømmer kan gjøre balansen tilsynelatende feil",
+        "gjennomsnitt skjuler pulser etter flom eller sesong",
+        "stoffmengde sier ikke alene noe om biologisk effekt"
+      ]
+    },
+    {
+      "method_id": "met_natur_kyst_og_marinsystemanalyse",
+      "title": "Kyst- og marinsystemanalyse",
+      "short_label": "Kyst/marint",
+      "description": "Analyse av kyst- og fjordsystemer gjennom salt-, dybde-, lys-, temperatur- og oksygengradienter, strømmer, habitater og påvirkning fra land og sjø.",
+      "best_for_emne_kinds": [
+        "geologi_landskap_tid",
+        "vann_hydrologi_kretslop"
+      ],
+      "data_forms": [
+        "dybdeprofiler og hydrografiske målinger",
+        "kart over bunn, strand og marine naturtyper",
+        "arts- og næringsnettdata",
+        "avrenning, utslipp, høsting og ferdselsdata"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "geologi_landskap_tid",
+        "vann_hydrologi_kretslop"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bekk",
+        "dalføre",
+        "dam",
+        "elv",
+        "elvepark",
+        "fjellknaus",
+        "fjord",
+        "innsjø",
+        "overvannsanlegg",
+        "park",
+        "ravine",
+        "strand",
+        "utsiktspunkt",
+        "våtmark"
+      ],
+      "question_moves": [
+        "spør hvilken dybde og vannmasse data gjelder",
+        "koble landbasert belastning til marin respons",
+        "skill kystens geologi fra kystens økologi"
+      ],
+      "method_use_note": "Kystanalyse må inkludere undervannssystemet, ikke bare strandlinjen.",
+      "rotation_note": "Kombiner med vannkvalitets- og habitatmetoder når påvirkning eller artsliv står sentralt.",
+      "hook_affinities": [
+        "fjord_okologi",
+        "oy_okologi",
+        "strandlinjer"
+      ],
+      "emne_affinities": [
+        "em_natur_arter_habitat_mangfold",
+        "em_natur_kyst_fjord_og_strand",
+        "em_natur_lang_tid_klima_historie",
+        "em_natur_vannkvalitet_forurensning"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "avgrens vannmasse, habitat og kobling til nedbørfelt",
+        "kartlegg fysiske gradienter og sirkulasjon",
+        "koble forholdene til arter og økologiske prosesser",
+        "vurder samlet påvirkning og sesongvariasjon"
+      ],
+      "limitations": [
+        "overflateobservasjoner sier lite om undervannsforhold",
+        "fjordsystemer påvirkes av kilder langt utenfor stedet",
+        "sterk sesong- og dybdevariasjon krever flere målepunkter"
+      ]
+    },
+    {
+      "method_id": "met_natur_landskapslesning",
+      "title": "Landskapslesning",
+      "short_label": "Landskap",
+      "description": "Systematisk tolkning av terreng, landformer, vegetasjonsmønster, vannveier og menneskelige spor for å formulere hypoteser om hvordan landskapet er dannet og endret.",
+      "best_for_emne_kinds": [
+        "geologi_landskap_tid"
+      ],
+      "data_forms": [
+        "terrengmodell, kart og profil",
+        "feltobservasjon av form, retning og materiale",
+        "historiske kart og flyfoto",
+        "vannveier, vegetasjonsgrenser og inngrep"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "geologi_landskap_tid"
+      ],
+      "progression_stage": "advanced",
+      "good_for_place_types": [
+        "dalføre",
+        "fjellknaus",
+        "park",
+        "ravine",
+        "strand",
+        "utsiktspunkt",
+        "ås",
+        "øy"
+      ],
+      "question_moves": [
+        "spør hva som faktisk kan observeres i formen",
+        "skill beskrivelse fra tolkning",
+        "test landskapshypotesen mot kart eller materiale"
+      ],
+      "method_use_note": "Landskapslesning er en hypoteseinngang og må etterprøves med geologiske eller historiske data.",
+      "rotation_note": "Roter med geologisk og hydrologisk analyse for å unngå rent estetisk landskapsspråk.",
+      "hook_affinities": [
+        "berggrunn",
+        "dalforer",
+        "strandlinjer",
+        "topografi_og_by",
+        "vannskiller"
+      ],
+      "emne_affinities": [
+        "em_natur_bekkeapning_overvann",
+        "em_natur_dalforer_vannskiller_topografi",
+        "em_natur_elver_bekker_vassdrag",
+        "em_natur_geologi_landskapsform",
+        "em_natur_kyst_fjord_og_strand",
+        "em_natur_lang_tid_klima_historie",
+        "em_natur_urban_okologi_byrom"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "beskriv synlige mønstre før forklaring",
+        "identifiser mulige geologiske, hydrologiske og menneskelige prosesser",
+        "kontroller hypotesene mot kart og materiale",
+        "sett landskapet inn i en tidsrekkefølge"
+      ],
+      "limitations": [
+        "visuell form alene kan gi feil prosessforklaring",
+        "vegetasjon og bygg kan skjule terrenget",
+        "landskapet kan være resultat av flere overlappende perioder"
+      ]
+    },
+    {
+      "method_id": "met_natur_landskapsokologisk_analyse",
+      "title": "Landskapsøkologisk analyse",
+      "short_label": "Landskapsøkologi",
+      "description": "Analyse av habitatmosaikk, arealstørrelse, kant, avstand, barrierer og forbindelser for å forstå hvordan arter og prosesser fungerer på tvers av landskapet.",
+      "best_for_emne_kinds": [
+        "urban_okologi_gronnstruktur",
+        "okosystem_mangfold_habitat",
+        "vann_hydrologi_kretslop"
+      ],
+      "data_forms": [
+        "habitat- og arealdekkekart",
+        "fragmenterings- og konnektivitetsmål",
+        "artsbevegelse og spredningsdata",
+        "barrierer, randsoner og arealendring"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "urban_okologi_gronnstruktur",
+        "okosystem_mangfold_habitat",
+        "vann_hydrologi_kretslop"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bekk",
+        "bystrand",
+        "bytre",
+        "dam",
+        "elv",
+        "elvekant",
+        "elvepark",
+        "fjord",
+        "grøntdrag",
+        "hage",
+        "innsjø",
+        "kolonihage",
+        "naturreservat",
+        "overvannsanlegg"
+      ],
+      "question_moves": [
+        "spør forbindelse for hvilken art eller prosess",
+        "skill arealdekke fra habitatkvalitet",
+        "identifiser flaskehals og skala"
+      ],
+      "method_use_note": "Analysen skal være art- eller prosesspesifikk, ikke bare vise grønne flater.",
+      "rotation_note": "Kombiner med habitatkartlegging eller artsovervåking for å teste funksjonen.",
+      "hook_affinities": [
+        "bynatur",
+        "elvekant_korridor",
+        "gronne_korridorer",
+        "kantsoner",
+        "marka_bygrense",
+        "vann_som_bygrense"
+      ],
+      "emne_affinities": [
+        "em_natur_arter_habitat_mangfold",
+        "em_natur_elver_bekker_vassdrag",
+        "em_natur_gronnstruktur_korridorer",
+        "em_natur_marka_skog_bygrense",
+        "em_natur_urban_okologi_byrom"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "definer målart, prosess og relevant skala",
+        "kartlegg habitatkjerner, mellomområder og barrierer",
+        "beregn eller vurder konnektivitet og kanteffekt",
+        "sammenlign tiltak som styrker nettverket"
+      ],
+      "limitations": [
+        "én korridormodell passer ikke alle arter",
+        "kartlagt grønt areal kan ha lav habitatkvalitet",
+        "modellert forbindelse er ikke dokumentert bruk"
+      ]
+    },
+    {
+      "method_id": "met_natur_mikroklimaanalyse",
+      "title": "Mikroklimaanalyse",
+      "short_label": "Mikroklima",
+      "description": "Måling og forklaring av lokale forskjeller i temperatur, stråling, vind, fuktighet og fordampning skapt av terreng, materialer, vegetasjon, vann og byform.",
+      "best_for_emne_kinds": [
+        "klima_energi_resiliens",
+        "urban_okologi_gronnstruktur"
+      ],
+      "data_forms": [
+        "luft- og overflatetemperatur",
+        "stråling, skygge og vind",
+        "luftfuktighet og jordfuktighet",
+        "materialkart, trekroner og bygeometri"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "klima_energi_resiliens",
+        "urban_okologi_gronnstruktur"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bekk",
+        "bystrand",
+        "bytre",
+        "elv",
+        "elvepark",
+        "fjellknaus",
+        "grøntdrag",
+        "hage",
+        "kolonihage",
+        "overvannsanlegg",
+        "park",
+        "skog",
+        "tursti"
+      ],
+      "question_moves": [
+        "spør hvor, når og hvordan temperaturen er målt",
+        "skill lufttemperatur fra stråling og overflatetemperatur",
+        "knytt forskjellen til en fysisk mekanisme"
+      ],
+      "method_use_note": "Mikroklimapåstander skal bygge på sammenlignbare målinger og eksponering.",
+      "rotation_note": "Kombiner med risikoanalyse når varmebelastning for mennesker eller arter vurderes.",
+      "hook_affinities": [
+        "traer_i_by",
+        "urban_varme",
+        "vegetasjon_klimatiltak"
+      ],
+      "emne_affinities": [
+        "em_natur_klimatilpasning_risiko",
+        "em_natur_skog_vegetasjon_suksesjon",
+        "em_natur_urban_varme_klima"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "velg sammenlignbare målesteder og eksponeringsforhold",
+        "mål flere tider på døgnet og under relevante værtyper",
+        "koble forskjeller til skygge, materiale, vind og evapotranspirasjon",
+        "vurder effekt for mennesker, arter og tiltak"
+      ],
+      "limitations": [
+        "sensorplassering kan skape store skjevheter",
+        "én varm dag beskriver ikke hele mikroklimaet",
+        "lufttemperatur alene fanger ikke opplevd varme"
+      ]
+    },
+    {
+      "method_id": "met_natur_miljoetisk_analyse",
+      "title": "Miljøetisk analyse",
+      "short_label": "Miljøetikk",
+      "description": "Normativ analyse av hvilke moralske hensyn som gis vekt i beslutninger om arter, økosystemer, naturinngrep og framtidige generasjoner, og hvordan begrunnelsene skiller seg.",
+      "best_for_emne_kinds": [
+        "okosystem_mangfold_habitat",
+        "geologi_landskap_tid",
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "data_forms": [
+        "begrunnelser i planer, vedtak og debatt",
+        "påstander om nytte, rettigheter og egenverdi",
+        "fordeling av skade og ansvar",
+        "alternativer og irreversible konsekvenser"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "okosystem_mangfold_habitat",
+        "geologi_landskap_tid",
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "dalføre",
+        "dam",
+        "elvekant",
+        "fjellknaus",
+        "fjord",
+        "forurenset_sted",
+        "industriomrade",
+        "miljøtiltak",
+        "naturreservat",
+        "park",
+        "ravine",
+        "restaurert_elv",
+        "skog",
+        "strand"
+      ],
+      "question_moves": [
+        "spør hvem eller hva som teller moralsk",
+        "skill empirisk påstand fra normativ begrunnelse",
+        "vis hvilken verdi som ofres i hvert alternativ"
+      ],
+      "method_use_note": "Etiske argumenter skal knyttes til dokumenterte konsekvenser og tydelige premisser.",
+      "rotation_note": "Kombiner med naturfaglig og forvaltningsmessig analyse slik at verdidiskusjonen ikke løsriver seg fra saken.",
+      "hook_affinities": [
+        "langsom_tid",
+        "naturens_egenverdi",
+        "talegrenser"
+      ],
+      "emne_affinities": [
+        "em_natur_biodiversitet_resiliens",
+        "em_natur_lang_tid_klima_historie",
+        "em_natur_natur_som_aktor",
+        "em_natur_vippepunkt_sarbarhet"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "identifiser hvilke berørte mennesker og ikke-menneskelige verdier som inngår",
+        "skill fakta, interesse og normativ premiss",
+        "sammenlign etiske rammer og konsekvenser",
+        "test om begrunnelsen er konsistent på tvers av alternativer"
+      ],
+      "limitations": [
+        "etisk analyse avgjør ikke empiriske uenigheter",
+        "begrepet naturens egenverdi kan brukes uten tydelig konsekvens",
+        "ulike etiske rammer kan gi legitime, motstridende svar"
+      ]
+    },
+    {
+      "method_id": "met_natur_miljorettferdighetsanalyse",
+      "title": "Miljørettferdighetsanalyse",
+      "short_label": "Miljørettferdighet",
+      "description": "Analyse av hvordan miljøgoder, belastninger, risiko, medvirkning og anerkjennelse fordeles mellom grupper og steder gjennom en beslutning eller miljøendring.",
+      "best_for_emne_kinds": [
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "data_forms": [
+        "geografisk fordeling av belastning og naturtilgang",
+        "demografi, sårbarhet og helseindikatorer",
+        "høringer, deltakelse og beslutningsprosesser",
+        "kostnader, gevinster og mulig fortrengning"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "progression_stage": "advanced",
+      "good_for_place_types": [
+        "fjord",
+        "forurenset_sted",
+        "industriomrade",
+        "miljøtiltak",
+        "naturreservat",
+        "park",
+        "restaurert_elv"
+      ],
+      "question_moves": [
+        "spør hvem som får gevinst og belastning",
+        "skill lik behandling fra likeverdig resultat",
+        "undersøk både fordeling og beslutningsmakt"
+      ],
+      "method_use_note": "Miljøeffekt og sosial fordeling skal vurderes i samme analyse.",
+      "rotation_note": "Kombiner med konflikt- og sosioøkologisk analyse for å forstå aktører og systemvirkninger.",
+      "hook_affinities": [
+        "okologisk_rettferdighet"
+      ],
+      "emne_affinities": [
+        "em_natur_byutvikling_naturkonflikt",
+        "em_natur_miljorettferdighet"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "kartlegg hvem som får nytte og hvem som bærer belastning",
+        "vurder eksponering sammen med sosial og helsemessig sårbarhet",
+        "undersøk representasjon og reell innflytelse",
+        "test om tiltak flytter risiko eller skaper nye ulikheter"
+      ],
+      "limitations": [
+        "grove områdedata kan skjule variasjon innen gruppene",
+        "formell deltakelse er ikke det samme som innflytelse",
+        "kategorisering av grupper kan forenkle identitet og erfaring"
+      ]
+    },
+    {
+      "method_id": "met_natur_okologisk_kartlegging",
+      "title": "Økologisk kartlegging",
+      "short_label": "Økologisk kartlegging",
+      "description": "Felt- og kartbasert registrering av naturtyper, arter, strukturer og tilstand innen et avgrenset område etter en eksplisitt klassifikasjon og dokumentert innsats.",
+      "best_for_emne_kinds": [
+        "okosystem_mangfold_habitat"
+      ],
+      "data_forms": [
+        "naturtypepolygoner og lokalitetsbeskrivelser",
+        "artsfunn med koordinat og dato",
+        "struktur-, tilstands- og påvirkningsvariabler",
+        "foto, feltlogg og kartgrunnlag"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "okosystem_mangfold_habitat"
+      ],
+      "progression_stage": "advanced",
+      "good_for_place_types": [
+        "dam",
+        "elvekant",
+        "naturreservat",
+        "park",
+        "skog",
+        "strand",
+        "våtmark",
+        "øy"
+      ],
+      "question_moves": [
+        "spør etter klassifikasjon, dato og feltinnsats",
+        "skill kartlagt verdi fra fullstendig artsinventar",
+        "synliggjør usikker grense og manglende dekning"
+      ],
+      "method_use_note": "Kartleggingen skal være etterprøvbar i metode, tid, geometri og evidens.",
+      "rotation_note": "Kombiner med habitat- eller biodiversitetsanalyse for å tolke økologisk betydning.",
+      "hook_affinities": [
+        "arter_og_habitat",
+        "pollinering_samspill"
+      ],
+      "emne_affinities": [
+        "em_natur_arter_habitat_mangfold",
+        "em_natur_okosystem_nettverk",
+        "em_natur_okosystemtjenester"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "avgrens område, formål og klassifikasjon",
+        "planlegg feltdekning etter sesong og terreng",
+        "registrer naturtype, art, struktur, tilstand og påvirkning",
+        "kvalitetssikre geometri, dokumentasjon og usikkerhet"
+      ],
+      "limitations": [
+        "kartleggingsresultat avhenger av sesong og innsats",
+        "klassifikasjoner kan endres og være vanskelige å sammenligne",
+        "kartgrense er en modell og ikke alltid en skarp naturgrense"
+      ]
+    },
+    {
+      "method_id": "met_natur_okosystemanalyse",
+      "title": "Økosystemanalyse",
+      "short_label": "Økosystem",
+      "description": "Helhetlig analyse av organismer, fysiske forhold, energi, stoffstrømmer og tilbakekoblinger innen et avgrenset økologisk system.",
+      "best_for_emne_kinds": [
+        "okosystem_mangfold_habitat",
+        "klima_energi_resiliens"
+      ],
+      "data_forms": [
+        "arter, bestander og interaksjoner",
+        "energi- og stoffstrømmer",
+        "klima, jord, vann og habitatstruktur",
+        "forstyrrelser, tilbakekoblinger og systemgrenser"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "okosystem_mangfold_habitat",
+        "klima_energi_resiliens"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bekk",
+        "dam",
+        "elv",
+        "elvekant",
+        "fjellknaus",
+        "grøntdrag",
+        "naturreservat",
+        "overvannsanlegg",
+        "park",
+        "skog",
+        "strand",
+        "våtmark",
+        "øy"
+      ],
+      "question_moves": [
+        "spør hva systemet omfatter og hva som står utenfor",
+        "koble komponenter gjennom prosess",
+        "let etter indirekte effekt og tilbakekobling"
+      ],
+      "method_use_note": "Økosystemanalysen skal vise forbindelser og prosesser, ikke bare liste bestanddeler.",
+      "rotation_note": "Roter med kretsløps-, habitat- og nettverksanalyse etter hvilken mekanisme som er sentral.",
+      "hook_affinities": [
+        "energi_i_okosystemer",
+        "naringsnett",
+        "naturens_egenverdi"
+      ],
+      "emne_affinities": [
+        "em_natur_biodiversitet_resiliens",
+        "em_natur_karbon_energi_klima",
+        "em_natur_natur_som_aktor",
+        "em_natur_okosystem_nettverk"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "avgrens system og sentralt spørsmål",
+        "kartlegg biotiske og abiotiske komponenter",
+        "identifiser strømmer, begrensninger og tilbakekoblinger",
+        "test hvordan en endring påvirker funksjon og stabilitet"
+      ],
+      "limitations": [
+        "systemgrensen er analytisk og kan utelate viktige koblinger",
+        "komplekse nettverk gir ofte flere mulige forklaringer",
+        "mangelfulle data kan gjøre helhetsmodellen spekulativ"
+      ]
+    },
+    {
+      "method_id": "met_natur_okosystemtjenesteanalyse",
+      "title": "Økosystemtjenesteanalyse",
+      "short_label": "Økosystemtjeneste",
+      "description": "Analyse av hvordan økologiske funksjoner gir konkrete goder eller risikoreduksjon for mennesker, hvem som mottar dem og hvilke naturverdier tjenesteperspektivet utelater.",
+      "best_for_emne_kinds": [
+        "okosystem_mangfold_habitat",
+        "klima_energi_resiliens",
+        "urban_okologi_gronnstruktur"
+      ],
+      "data_forms": [
+        "økologisk funksjon og tilstand",
+        "mottakere, sted og tidsperiode for nytte",
+        "biofysiske eller økonomiske verdsettingsdata",
+        "alternativer, avhengigheter og fordelingsvirkninger"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "okosystem_mangfold_habitat",
+        "klima_energi_resiliens",
+        "urban_okologi_gronnstruktur"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bekk",
+        "bystrand",
+        "bytre",
+        "dam",
+        "elv",
+        "elvekant",
+        "elvepark",
+        "fjellknaus",
+        "grøntdrag",
+        "hage",
+        "kolonihage",
+        "naturreservat",
+        "overvannsanlegg",
+        "park"
+      ],
+      "question_moves": [
+        "spør hvilken prosess som produserer tjenesten",
+        "identifiser hvem som mottar nytten",
+        "vis hva som ikke fanges av pris eller tjenestekategori"
+      ],
+      "method_use_note": "Tjenesten må forankres i dokumentert økologisk funksjon og faktisk mottaker.",
+      "rotation_note": "Kombiner med miljøetisk og biodiversitetsanalyse for å balansere nytte og integritet.",
+      "hook_affinities": [
+        "naturbaserte_losninger",
+        "park_som_okosystem",
+        "pollinering_samspill",
+        "vatmark_habitat"
+      ],
+      "emne_affinities": [
+        "em_natur_arter_habitat_mangfold",
+        "em_natur_forstyrrelse_regenerasjon",
+        "em_natur_okosystemtjenester",
+        "em_natur_urban_okologi_byrom",
+        "em_natur_vatmark_vannspeil_habitat"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "identifiser økologisk funksjon før tjenesten navngis",
+        "kartlegg mottaker, leveranseområde og tidsrom",
+        "velg verdsettingsform som passer beslutningen",
+        "synliggjør avhengigheter, tapere og ikke-prissatte verdier"
+      ],
+      "limitations": [
+        "tjenestespråk kan overskygge naturens egenverdi",
+        "verdsetting kan gi inntrykk av enkel utskiftbarhet",
+        "samme funksjon kan gi ulik nytte til ulike grupper"
+      ]
+    },
+    {
+      "method_id": "met_natur_resiliensanalyse",
+      "title": "Resiliensanalyse",
+      "short_label": "Resiliens",
+      "description": "Vurdering av et systems evne til å motstå, absorbere og gjenopprette funksjon etter forstyrrelse, med vekt på terskler, redundans, mangfold og forbindelser.",
+      "best_for_emne_kinds": [
+        "klima_energi_resiliens",
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "data_forms": [
+        "historiske forstyrrelser og responser",
+        "funksjonell diversitet og reservekapasitet",
+        "terskelindikatorer og tilbakekoblinger",
+        "gjenopprettingstid og tilstandsdata"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "klima_energi_resiliens",
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bekk",
+        "elv",
+        "fjellknaus",
+        "fjord",
+        "forurenset_sted",
+        "grøntdrag",
+        "industriomrade",
+        "miljøtiltak",
+        "naturreservat",
+        "overvannsanlegg",
+        "park",
+        "restaurert_elv",
+        "skog"
+      ],
+      "question_moves": [
+        "spør resiliens av hva mot hvilken forstyrrelse",
+        "skill motstand fra gjenoppretting",
+        "identifiser reservefunksjon og mulig terskel"
+      ],
+      "method_use_note": "Resiliens må knyttes til en definert funksjon, forstyrrelse og tidsskala.",
+      "rotation_note": "Kombiner med biodiversitets- eller risikoanalyse for å underbygge mekanisme og konsekvens.",
+      "hook_affinities": [
+        "regenerasjon",
+        "resiliens",
+        "sarbarhet"
+      ],
+      "emne_affinities": [
+        "em_natur_biodiversitet_resiliens",
+        "em_natur_forstyrrelse_regenerasjon",
+        "em_natur_klimatilpasning_risiko",
+        "em_natur_vippepunkt_sarbarhet"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "definer hvilken funksjon som skal opprettholdes",
+        "identifiser relevante forstyrrelser og sårbare komponenter",
+        "vurder redundans, mangfold, konnektivitet og tilbakekobling",
+        "sammenlign tiltak som øker robusthet uten å låse systemet"
+      ],
+      "limitations": [
+        "stabilitet kan skjule redusert framtidig tilpasningsevne",
+        "resiliens for én funksjon kan svekke andre verdier",
+        "terskler er ofte usikre før de passeres"
+      ]
+    },
+    {
+      "method_id": "met_natur_restaureringsanalyse",
+      "title": "Restaureringsanalyse",
+      "short_label": "Restaurering",
+      "description": "Vurdering av økologisk restaurering fra degraderingsårsak og referanseramme til tiltak, målbare responsindikatorer og langsiktig oppfølging.",
+      "best_for_emne_kinds": [
+        "miljopavirkning_forvaltning_regenerasjon",
+        "vann_hydrologi_kretslop",
+        "klima_energi_resiliens"
+      ],
+      "data_forms": [
+        "historisk og nåværende tilstand",
+        "degraderingskilder og belastningsdata",
+        "referanseøkosystem eller måltilstand",
+        "tiltak, indikatorer og oppfølgingsserier"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "miljopavirkning_forvaltning_regenerasjon",
+        "vann_hydrologi_kretslop",
+        "klima_energi_resiliens"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bekk",
+        "dam",
+        "elv",
+        "elvepark",
+        "fjellknaus",
+        "fjord",
+        "forurenset_sted",
+        "grøntdrag",
+        "industriomrade",
+        "innsjø",
+        "miljøtiltak",
+        "naturreservat",
+        "overvannsanlegg",
+        "park"
+      ],
+      "question_moves": [
+        "spør hva som var degradert og hvorfor",
+        "skill restaurering fra forskjønning",
+        "etterspør mål, indikator og oppfølging"
+      ],
+      "method_use_note": "Restaurering skal vurderes som gjenoppretting av prosess og funksjon, ikke bare nytt anlegg.",
+      "rotation_note": "Kombiner med hydrologisk, habitat- eller forvaltningsanalyse etter restaureringstype.",
+      "hook_affinities": [
+        "bekkeapning",
+        "naturbaserte_losninger",
+        "regenerasjon",
+        "restaurering"
+      ],
+      "emne_affinities": [
+        "em_natur_bekkeapning_overvann",
+        "em_natur_biodiversitet_resiliens",
+        "em_natur_forstyrrelse_regenerasjon",
+        "em_natur_okosystemtjenester"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "fjern eller reduser den viktigste degraderingsårsaken",
+        "definer referanse, mål og akseptabel utviklingsbane",
+        "velg tiltak som gjenoppretter prosess og habitat",
+        "mål respons, juster tiltak og planlegg langsiktig drift"
+      ],
+      "limitations": [
+        "historisk tilstand kan være urealistisk under nytt klima",
+        "synlig grønn vekst er ikke nødvendigvis gjenopprettet funksjon",
+        "kort prosjektperiode kan skjule senere tilbakefall"
+      ]
+    },
+    {
+      "method_id": "met_natur_risiko_og_sarbarhetsanalyse",
+      "title": "Risiko- og sårbarhetsanalyse",
+      "short_label": "Risiko/sårbarhet",
+      "description": "Systematisk vurdering av fare, eksponering, sårbarhet og konsekvens for mennesker, natur og infrastruktur under dagens og framtidige forhold.",
+      "best_for_emne_kinds": [
+        "klima_energi_resiliens",
+        "vann_hydrologi_kretslop",
+        "okosystem_mangfold_habitat",
+        "geologi_landskap_tid",
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "data_forms": [
+        "farekart og hendelsesstatistikk",
+        "eksponerte mennesker, arter, arealer og anlegg",
+        "sårbarhets- og avhengighetsdata",
+        "scenarioer, konsekvenser og tiltak"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "klima_energi_resiliens",
+        "vann_hydrologi_kretslop",
+        "okosystem_mangfold_habitat",
+        "geologi_landskap_tid",
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bekk",
+        "dalføre",
+        "dam",
+        "elv",
+        "elvekant",
+        "elvepark",
+        "fjellknaus",
+        "fjord",
+        "forurenset_sted",
+        "grøntdrag",
+        "industriomrade",
+        "innsjø",
+        "miljøtiltak",
+        "naturreservat"
+      ],
+      "question_moves": [
+        "skill fare fra risiko",
+        "spør hva som er eksponert og hvorfor det er sårbart",
+        "vis restrisiko og hvem tiltaket beskytter"
+      ],
+      "method_use_note": "Risiko skal uttrykkes gjennom både sannsynlighet, konsekvens og sårbarhet.",
+      "rotation_note": "Kombiner med klima-, hydrologisk eller miljørettferdighetsanalyse etter hvilken fare som vurderes.",
+      "hook_affinities": [
+        "erosjon",
+        "flom_erosjon",
+        "fremmede_arter",
+        "overvann",
+        "sarbarhet",
+        "talegrenser",
+        "urban_varme",
+        "vippepunkter"
+      ],
+      "emne_affinities": [
+        "em_natur_bekkeapning_overvann",
+        "em_natur_biodiversitet_resiliens",
+        "em_natur_forstyrrelse_regenerasjon",
+        "em_natur_fremmede_arter_forstyrrelse",
+        "em_natur_geologi_landskapsform",
+        "em_natur_klimatilpasning_risiko",
+        "em_natur_natur_som_aktor",
+        "em_natur_urban_varme_klima",
+        "em_natur_vippepunkt_sarbarhet"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "definer fare og relevant scenario",
+        "kartlegg hva som er eksponert",
+        "vurder sårbarhet, avhengighet og konsekvens",
+        "sammenlign forebygging, beredskap og tilpasning med restrisiko"
+      ],
+      "limitations": [
+        "lav sannsynlighet kan kombineres med svært stor konsekvens",
+        "framtidig eksponering og sårbarhet er usikker",
+        "risikomatriser kan gi falsk presisjon"
+      ]
+    },
+    {
+      "method_id": "met_natur_sosiookologisk_analyse",
+      "title": "Sosioøkologisk analyse",
+      "short_label": "Sosioøkologi",
+      "description": "Analyse av gjensidige avhengigheter mellom økologiske prosesser, institusjoner, økonomi, praksiser og sosial ulikhet i et felles menneske–natur-system.",
+      "best_for_emne_kinds": [
+        "urban_okologi_gronnstruktur",
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "data_forms": [
+        "økologisk tilstand og ressursstrømmer",
+        "aktører, regler og eierskap",
+        "bruksmønster, økonomiske drivere og kunnskap",
+        "fordeling, konflikt og tilbakekoblinger"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "urban_okologi_gronnstruktur",
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bystrand",
+        "bytre",
+        "elvepark",
+        "fjord",
+        "forurenset_sted",
+        "grøntdrag",
+        "hage",
+        "industriomrade",
+        "kolonihage",
+        "miljøtiltak",
+        "naturreservat",
+        "park",
+        "restaurert_elv",
+        "tursti"
+      ],
+      "question_moves": [
+        "spør hvordan sosial praksis endrer økologisk prosess og omvendt",
+        "identifiser makt og avhengighet",
+        "se etter tilbakekobling og eksternalisert belastning"
+      ],
+      "method_use_note": "Begge sider av menneske–natur-koblingen må dokumenteres, ikke bare omtales.",
+      "rotation_note": "Roter med konflikt-, forvaltnings- eller økosystemanalyse for større presisjon.",
+      "hook_affinities": [
+        "kolonihage_matjord",
+        "miljoaktivisme",
+        "natur_rekreasjon",
+        "naturinngrep",
+        "okologisk_friksjon"
+      ],
+      "emne_affinities": [
+        "em_natur_byutvikling_naturkonflikt",
+        "em_natur_forstyrrelse_regenerasjon",
+        "em_natur_jord_sediment_mikroliv",
+        "em_natur_naturopplevelse_folkehelse",
+        "em_natur_sosial_naturforvaltning",
+        "em_natur_urban_okologi_byrom",
+        "em_natur_vern_forvaltning_politikk"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "avgrens det koblede systemet og sentrale avhengigheter",
+        "kartlegg økologiske og sosiale komponenter samtidig",
+        "identifiser drivere, makt og tilbakekoblinger",
+        "vurder tiltak for både naturfunksjon og sosial bærekraft"
+      ],
+      "limitations": [
+        "brede systemkart kan bli overflatiske uten konkrete data",
+        "årsaksretning kan være vanskelig å skille",
+        "systemgrensen kan utelate eksterne kostnader"
+      ]
+    },
+    {
+      "method_id": "met_natur_urban_okologi",
+      "title": "Urban økologi",
+      "short_label": "Urban økologi",
+      "description": "Analyse av byens særegne økosystemer gjennom habitat, arter, vann, varme, jord, forstyrrelse og forbindelser mellom bebygde og grønne arealer.",
+      "best_for_emne_kinds": [
+        "urban_okologi_gronnstruktur",
+        "vann_hydrologi_kretslop",
+        "geologi_landskap_tid"
+      ],
+      "data_forms": [
+        "arealdekke, bygninger og tette flater",
+        "arter, habitat og grønnstruktur",
+        "mikroklima, jord og overvann",
+        "drift, ferdsel, lys, støy og barrierer"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "urban_okologi_gronnstruktur",
+        "vann_hydrologi_kretslop",
+        "geologi_landskap_tid"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bekk",
+        "bystrand",
+        "bytre",
+        "dalføre",
+        "dam",
+        "elv",
+        "elvepark",
+        "fjellknaus",
+        "fjord",
+        "grøntdrag",
+        "hage",
+        "innsjø",
+        "kolonihage",
+        "overvannsanlegg"
+      ],
+      "question_moves": [
+        "spør hvilken urban faktor som former habitatet",
+        "skill grønn estetikk fra funksjon",
+        "koble stedet til det større byøkologiske nettverket"
+      ],
+      "method_use_note": "Urban økologi skal forklare mekanismer mellom byform, drift og levende systemer.",
+      "rotation_note": "Kombiner med mikroklima, landskapsøkologi eller habitatmetode etter hovedprosessen.",
+      "hook_affinities": [
+        "bekkeapning",
+        "bydyr",
+        "bynatur",
+        "natur_rekreasjon",
+        "park_som_okosystem",
+        "topografi_og_by",
+        "vann_som_bygrense"
+      ],
+      "emne_affinities": [
+        "em_natur_arter_habitat_mangfold",
+        "em_natur_bekkeapning_overvann",
+        "em_natur_dalforer_vannskiller_topografi",
+        "em_natur_elver_bekker_vassdrag",
+        "em_natur_forstyrrelse_regenerasjon",
+        "em_natur_gronnstruktur_korridorer",
+        "em_natur_naturopplevelse_folkehelse",
+        "em_natur_okosystemtjenester",
+        "em_natur_urban_okologi_byrom"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "avgrens byrommet og de økologiske funksjonene",
+        "kartlegg urbane miljøgradienter og habitat",
+        "koble arter og prosesser til byform og drift",
+        "vurder tiltak på både sted- og nettverksnivå"
+      ],
+      "limitations": [
+        "grønt uttrykk er ikke det samme som økologisk funksjon",
+        "byarter kan bruke et sted uten å reprodusere der",
+        "lokale tiltak kan mislykkes uten regional konnektivitet"
+      ]
+    },
+    {
+      "method_id": "met_natur_vannkvalitetsanalyse",
+      "title": "Vannkvalitetsanalyse",
+      "short_label": "Vannkvalitet",
+      "description": "Vurdering av vannets fysiske, kjemiske og biologiske tilstand gjennom relevante parametere, tidsvariasjon, referanseforhold og påvirkningskilder i nedbørfeltet.",
+      "best_for_emne_kinds": [
+        "vann_hydrologi_kretslop",
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "data_forms": [
+        "temperatur, turbiditet og ledningsevne",
+        "pH, oksygen, næringsstoffer og miljøgifter",
+        "bunndyr, alger, fisk eller andre biologiske indikatorer",
+        "vannføring, nedbør og utslippsdata"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "vann_hydrologi_kretslop",
+        "miljopavirkning_forvaltning_regenerasjon"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bekk",
+        "dam",
+        "elv",
+        "elvepark",
+        "fjord",
+        "forurenset_sted",
+        "industriomrade",
+        "innsjø",
+        "miljøtiltak",
+        "naturreservat",
+        "overvannsanlegg",
+        "park",
+        "restaurert_elv",
+        "våtmark"
+      ],
+      "question_moves": [
+        "spør hvilke parametere som er relevante og hvorfor",
+        "koble resultat til tidspunkt og vannføring",
+        "skill kjemisk måling fra økologisk respons"
+      ],
+      "method_use_note": "Vannkvalitet skal vurderes som flere indikatorer i en hydrologisk sammenheng.",
+      "rotation_note": "Kombiner med hydrologisk og forurensningsanalyse for å finne kilde og transport.",
+      "hook_affinities": [
+        "elv_som_system",
+        "fjord_okologi",
+        "forurensning",
+        "mikroplast_kjemi",
+        "vannkvalitet"
+      ],
+      "emne_affinities": [
+        "em_natur_elver_bekker_vassdrag",
+        "em_natur_kjemiske_balanser",
+        "em_natur_kyst_fjord_og_strand",
+        "em_natur_mikroplast_miljogifter",
+        "em_natur_vannkvalitet_forurensning"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "definer tilstands- eller påvirkningsspørsmål",
+        "velg parametere, steder og tidspunkt som dekker variasjon",
+        "ta prøver og feltmålinger med kvalitetskontroll",
+        "tolke kjemi og biologi sammen med vannføring og kilder"
+      ],
+      "limitations": [
+        "klart vann kan ha dårlig kjemisk eller økologisk tilstand",
+        "konsentrasjoner varierer sterkt med vannføring",
+        "én parameter kan ikke beskrive samlet vannkvalitet"
+      ]
+    },
+    {
+      "method_id": "met_natur_vegetasjonsanalyse",
+      "title": "Vegetasjonsanalyse",
+      "short_label": "Vegetasjon",
+      "description": "Systematisk registrering av plantesamfunn, dekning, sjikt, artssammensetning og miljøgradienter for å beskrive vegetasjonstype, tilstand og endring.",
+      "best_for_emne_kinds": [
+        "okosystem_mangfold_habitat",
+        "klima_energi_resiliens",
+        "urban_okologi_gronnstruktur"
+      ],
+      "data_forms": [
+        "prøveflater og artsdekning",
+        "sjikt, høyde, alder og død ved",
+        "jordfuktighet, lys, pH og forstyrrelse",
+        "kart, foto og gjentatte registreringer"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "okosystem_mangfold_habitat",
+        "klima_energi_resiliens",
+        "urban_okologi_gronnstruktur"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "bekk",
+        "bystrand",
+        "bytre",
+        "dam",
+        "elv",
+        "elvekant",
+        "elvepark",
+        "fjellknaus",
+        "grøntdrag",
+        "hage",
+        "kolonihage",
+        "naturreservat",
+        "overvannsanlegg",
+        "park"
+      ],
+      "question_moves": [
+        "spør hvordan prøveflatene er valgt",
+        "skill artssammensetning fra struktur",
+        "koble vegetasjonsmønster til miljøgradient eller forstyrrelse"
+      ],
+      "method_use_note": "Vegetasjonsdata skal knyttes til prøvedesign, sesong og miljøforhold.",
+      "rotation_note": "Kombiner med jord-, habitat- eller suksesjonsanalyse for å forklare mønsteret.",
+      "hook_affinities": [
+        "skogstruktur",
+        "suksesjon",
+        "traer_i_by",
+        "vegetasjon_klimatiltak"
+      ],
+      "emne_affinities": [
+        "em_natur_arter_habitat_mangfold",
+        "em_natur_forstyrrelse_regenerasjon",
+        "em_natur_skog_vegetasjon_suksesjon",
+        "em_natur_urban_varme_klima"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v4_5",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "velg prøvedesign og riktig fenologisk tidspunkt",
+        "registrer arter, dekning og struktur etter fast skala",
+        "mål eller klassifiser sentrale miljøforhold",
+        "sammenlign vegetasjonen med referanse, gradient eller tidsserie"
+      ],
+      "limitations": [
+        "sesong og artskunnskap påvirker registrert artsliste",
+        "dekning er observatøravhengig",
+        "vegetasjonslikhet betyr ikke nødvendigvis lik jord eller historie"
+      ]
+    },
+    {
+      "method_id": "met_natur_taksonomisk_kildekontroll",
+      "title": "Taksonomisk kildekontroll",
+      "short_label": "Taksonomisk kildekontroll",
+      "description": "Sammenstiller akseptert navn, rang, synonymi og revisjonshistorikk fra autoritative navnebaser og original eller revidert taksonomisk litteratur før artsdata sammenlignes.",
+      "best_for_emne_kinds": [
+        "artskunnskap_systematikk"
+      ],
+      "data_forms": [
+        "takson-ID, akseptert navn og autor",
+        "synonymer og navnebruk over tid",
+        "taksonomisk kilde, versjon og kontrolldato",
+        "revisjonsnotat eller originalbeskrivelse"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "artskunnskap_systematikk"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "naturhistorisk museum",
+        "herbarium",
+        "zoologisk samling",
+        "naturreservat",
+        "museumssamling",
+        "kyst",
+        "skog",
+        "fossillokalitet",
+        "forskningslaboratorium",
+        "våtmark",
+        "strand",
+        "park",
+        "ferskvann"
+      ],
+      "question_moves": [
+        "avgrens hvilket taksonomisk kildekontroll-spørsmål materialet faktisk kan besvare",
+        "dokumenter prøve, observasjon, sammenligningsgrunnlag og arbeidssteg",
+        "rapporter resultat, alternative tolkninger og metodisk usikkerhet"
+      ],
+      "method_use_note": "Bruk taksonomisk kildekontroll når datagrunnlaget og spørsmålet hører til artskunnskap systematikk, ikke som en generell etikett for naturfaglig arbeid.",
+      "rotation_note": "Roter organismegruppe, materiale, livsstadium og sted før taksonomisk kildekontroll brukes på nytt, og kombiner metoden med en uavhengig kontroll når konklusjonen er arts- eller funksjonsspesifikk.",
+      "hook_affinities": [],
+      "emne_affinities": [
+        "em_natur_taksonomi_nomenklatur",
+        "em_natur_artsbegreper_avgrensning",
+        "em_natur_fylogeni_slektskap",
+        "em_natur_homologi_analogi_karakterer",
+        "em_natur_bestemmelsesnokler_morfologi",
+        "em_natur_dna_strekkoding_integrativ_taksonomi"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v5_1",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "avgrens hvilket navne- eller taksonproblem som skal løses",
+        "slå opp samme organisme i minst én autoritativ taksonomisk kilde",
+        "spor synonymi, rangendringer og takson-ID-er",
+        "dokumenter valgt navn, kildeversjon og uløst konflikt"
+      ],
+      "limitations": [
+        "autoritative databaser kan følge ulike taksonomiske vurderinger",
+        "navneendring betyr ikke nødvendigvis at artsforekomsten har endret seg"
+      ]
+    },
+    {
+      "method_id": "met_natur_morfologisk_artsbestemmelse",
+      "title": "Morfologisk artsbestemmelse",
+      "short_label": "Morfologisk artsbestemmelse",
+      "description": "Identifiserer organisme eller organismegruppe gjennom en eksplisitt bestemmelsesnøkkel, dokumenterte morfologiske karakterer og sammenligning med relevante forvekslingsarter.",
+      "best_for_emne_kinds": [
+        "artskunnskap_systematikk"
+      ],
+      "data_forms": [
+        "foto, mål eller preparat av diagnostiske trekk",
+        "bestemmelsesnøkkel med geografisk og taksonomisk omfang",
+        "metadata om livsstadium, kjønn, sted og dato",
+        "referansebeskrivelser eller bestemte belegg"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "artskunnskap_systematikk"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "naturhistorisk museum",
+        "herbarium",
+        "zoologisk samling",
+        "naturreservat",
+        "museumssamling",
+        "kyst",
+        "skog",
+        "fossillokalitet",
+        "forskningslaboratorium",
+        "våtmark",
+        "strand",
+        "park",
+        "ferskvann"
+      ],
+      "question_moves": [
+        "avgrens hvilket morfologisk artsbestemmelse-spørsmål materialet faktisk kan besvare",
+        "dokumenter prøve, observasjon, sammenligningsgrunnlag og arbeidssteg",
+        "rapporter resultat, alternative tolkninger og metodisk usikkerhet"
+      ],
+      "method_use_note": "Bruk morfologisk artsbestemmelse når datagrunnlaget og spørsmålet hører til artskunnskap systematikk, ikke som en generell etikett for naturfaglig arbeid.",
+      "rotation_note": "Roter organismegruppe, materiale, livsstadium og sted før morfologisk artsbestemmelse brukes på nytt, og kombiner metoden med en uavhengig kontroll når konklusjonen er arts- eller funksjonsspesifikk.",
+      "hook_affinities": [],
+      "emne_affinities": [
+        "em_natur_taksonomi_nomenklatur",
+        "em_natur_artsbegreper_avgrensning",
+        "em_natur_fylogeni_slektskap",
+        "em_natur_homologi_analogi_karakterer",
+        "em_natur_bestemmelsesnokler_morfologi",
+        "em_natur_dna_strekkoding_integrativ_taksonomi"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v5_1",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "avklar organismegruppe, livsstadium og egnet nøkkel",
+        "følg hvert karaktervalg og dokumenter hva som faktisk observeres",
+        "sammenlign med nærstående arter og noter manglende trekk",
+        "angi laveste sikre taksonomiske nivå og sikkerhetsgrad"
+      ],
+      "limitations": [
+        "variasjon, skade eller feil livsstadium kan skjule diagnostiske trekk",
+        "en nøkkel dekker bare gruppene, området og kunnskapen den ble laget for"
+      ]
+    },
+    {
+      "method_id": "met_natur_dna_strekkodingsanalyse",
+      "title": "DNA-strekkodingsanalyse",
+      "short_label": "DNA-strekkodingsanalyse",
+      "description": "Vurderer artsidentifikasjon fra en standardisert genetisk markør ved å kontrollere prøvens proveniens, sekvenskvalitet, referansebibliotek, alternative treff og samsvar med morfologi.",
+      "best_for_emne_kinds": [
+        "artskunnskap_systematikk"
+      ],
+      "data_forms": [
+        "prøve-ID, vouchere og innsamlingsmetadata",
+        "rå eller kvalitetssikret markørsekvens",
+        "referansetreff med likhet og dekning",
+        "morfologisk og geografisk kontroll"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "artskunnskap_systematikk"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "naturhistorisk museum",
+        "herbarium",
+        "zoologisk samling",
+        "naturreservat",
+        "museumssamling",
+        "kyst",
+        "skog",
+        "fossillokalitet",
+        "forskningslaboratorium",
+        "våtmark",
+        "strand",
+        "park",
+        "ferskvann"
+      ],
+      "question_moves": [
+        "avgrens hvilket dna-strekkodingsanalyse-spørsmål materialet faktisk kan besvare",
+        "dokumenter prøve, observasjon, sammenligningsgrunnlag og arbeidssteg",
+        "rapporter resultat, alternative tolkninger og metodisk usikkerhet"
+      ],
+      "method_use_note": "Bruk dna-strekkodingsanalyse når datagrunnlaget og spørsmålet hører til artskunnskap systematikk, ikke som en generell etikett for naturfaglig arbeid.",
+      "rotation_note": "Roter organismegruppe, materiale, livsstadium og sted før dna-strekkodingsanalyse brukes på nytt, og kombiner metoden med en uavhengig kontroll når konklusjonen er arts- eller funksjonsspesifikk.",
+      "hook_affinities": [],
+      "emne_affinities": [
+        "em_natur_taksonomi_nomenklatur",
+        "em_natur_artsbegreper_avgrensning",
+        "em_natur_fylogeni_slektskap",
+        "em_natur_homologi_analogi_karakterer",
+        "em_natur_bestemmelsesnokler_morfologi",
+        "em_natur_dna_strekkoding_integrativ_taksonomi"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v5_1",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "koble prøven entydig til fysisk materiale og metadata",
+        "kontroller sekvenskvalitet, markør og mulige kontaminasjoner",
+        "sammenlign flere referansetreff og deres bestemmelser",
+        "rapporter resultat som bekreftet, foreløpig eller konfliktfylt"
+      ],
+      "limitations": [
+        "referansebibliotek kan være ufullstendig eller inneholde feilbestemte belegg",
+        "én markør kan mangle oppløsning mellom nylig skilte eller hybridiserende arter"
+      ]
+    },
+    {
+      "method_id": "met_natur_planteanatomisk_undersokelse",
+      "title": "Planteanatomisk undersøkelse",
+      "short_label": "Planteanatomisk undersøkelse",
+      "description": "Undersøker planteceller, vev og organer med snitt, mikroskopi, mål og strukturfarge for å koble observerbar anatomi til transport, fotosyntese, støtte og vekst.",
+      "best_for_emne_kinds": [
+        "botanikk_vegetasjon"
+      ],
+      "data_forms": [
+        "planteorgan med dokumentert art og utviklingsstadium",
+        "tverr- eller lengdesnitt med målestokk",
+        "mikroskopibilder av celler og vev",
+        "observasjonsark med struktur og funksjon"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "botanikk_vegetasjon"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "botanisk hage",
+        "herbarium",
+        "skog",
+        "eng",
+        "våtmark",
+        "tørreng",
+        "bytre",
+        "strand",
+        "veksthus",
+        "park",
+        "skogkant",
+        "blomstereng",
+        "myr",
+        "strandeng",
+        "fjell"
+      ],
+      "question_moves": [
+        "avgrens hvilket planteanatomisk undersøkelse-spørsmål materialet faktisk kan besvare",
+        "dokumenter prøve, observasjon, sammenligningsgrunnlag og arbeidssteg",
+        "rapporter resultat, alternative tolkninger og metodisk usikkerhet"
+      ],
+      "method_use_note": "Bruk planteanatomisk undersøkelse når datagrunnlaget og spørsmålet hører til botanikk vegetasjon, ikke som en generell etikett for naturfaglig arbeid.",
+      "rotation_note": "Roter organismegruppe, materiale, livsstadium og sted før planteanatomisk undersøkelse brukes på nytt, og kombiner metoden med en uavhengig kontroll når konklusjonen er arts- eller funksjonsspesifikk.",
+      "hook_affinities": [],
+      "emne_affinities": [
+        "em_natur_plantecelle_vev_organer",
+        "em_natur_rot_stengel_blad_transport",
+        "em_natur_fotosyntese_respirasjon",
+        "em_natur_vekst_hormoner_responser",
+        "em_natur_livssykluser_formering_spredning",
+        "em_natur_plantegrupper_vegetasjonstyper_bestemmelse"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v5_1",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "velg organ, art og snittplan ut fra spørsmålet",
+        "lag eller finn et dokumentert preparat og kalibrer målestokk",
+        "identifiser vev etter plassering og cellekarakterer",
+        "sammenlign strukturen med forventet funksjon og alternative arter eller miljøer"
+      ],
+      "limitations": [
+        "preparering og farging kan deformere eller skjule vev",
+        "struktur alene dokumenterer ikke prosesshastighet eller fysiologisk årsak"
+      ]
+    },
+    {
+      "method_id": "met_natur_plantebestemmelse_herbariebelegg",
+      "title": "Plantebestemmelse med herbariebelegg",
+      "short_label": "Plantebestemmelse med herbariebelegg",
+      "description": "Bestemmer planter gjennom reproduktive og vegetative kjennetegn og dokumenterer resultatet med innsamling eller foto, etikettdata, nøkkelspor og kontroll mot herbarium eller artsbeskrivelse.",
+      "best_for_emne_kinds": [
+        "botanikk_vegetasjon"
+      ],
+      "data_forms": [
+        "hele planten eller nødvendige diagnostiske deler",
+        "detaljfoto og mål av blomster, frukt, blad og hår",
+        "lokalitet, dato, habitat og innsamler",
+        "bestemmelsesnøkkel og referansebelegg"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "botanikk_vegetasjon"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "botanisk hage",
+        "herbarium",
+        "skog",
+        "eng",
+        "våtmark",
+        "tørreng",
+        "bytre",
+        "strand",
+        "veksthus",
+        "park",
+        "skogkant",
+        "blomstereng",
+        "myr",
+        "strandeng",
+        "fjell"
+      ],
+      "question_moves": [
+        "avgrens hvilket plantebestemmelse med herbariebelegg-spørsmål materialet faktisk kan besvare",
+        "dokumenter prøve, observasjon, sammenligningsgrunnlag og arbeidssteg",
+        "rapporter resultat, alternative tolkninger og metodisk usikkerhet"
+      ],
+      "method_use_note": "Bruk plantebestemmelse med herbariebelegg når datagrunnlaget og spørsmålet hører til botanikk vegetasjon, ikke som en generell etikett for naturfaglig arbeid.",
+      "rotation_note": "Roter organismegruppe, materiale, livsstadium og sted før plantebestemmelse med herbariebelegg brukes på nytt, og kombiner metoden med en uavhengig kontroll når konklusjonen er arts- eller funksjonsspesifikk.",
+      "hook_affinities": [],
+      "emne_affinities": [
+        "em_natur_plantecelle_vev_organer",
+        "em_natur_rot_stengel_blad_transport",
+        "em_natur_fotosyntese_respirasjon",
+        "em_natur_vekst_hormoner_responser",
+        "em_natur_livssykluser_formering_spredning",
+        "em_natur_plantegrupper_vegetasjonstyper_bestemmelse"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v5_1",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "vurder om arten kan dokumenteres uten innsamling og følg verne- og etikettregler",
+        "registrer karakterer før materialet tørker eller endrer form",
+        "følg nøkkelen og utelukk forvekslingsarter",
+        "arkiver belegg eller bildeserie med identifikator og sikkerhetsgrad"
+      ],
+      "limitations": [
+        "sterilt materiale kan ofte ikke bestemmes sikkert til art",
+        "innsamling kan være uetisk eller ulovlig for truede arter og små bestander"
+      ]
+    },
+    {
+      "method_id": "met_natur_vegetasjonsrute_gradientanalyse",
+      "title": "Vegetasjonsrute og gradientanalyse",
+      "short_label": "Vegetasjonsrute og gradientanalyse",
+      "description": "Måler artssammensetning, frekvens, dekning og vegetasjonssjikt i standardiserte ruter eller transekter og sammenholder mønsteret med målte miljøgradienter.",
+      "best_for_emne_kinds": [
+        "botanikk_vegetasjon"
+      ],
+      "data_forms": [
+        "artsbestemte rute- eller transektdata",
+        "dekning, frekvens og sjikthøyde",
+        "jordfuktighet, lys, pH, høyde eller forstyrrelse",
+        "kart, prøvedesign og gjentaksmetadata"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "botanikk_vegetasjon"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "botanisk hage",
+        "herbarium",
+        "skog",
+        "eng",
+        "våtmark",
+        "tørreng",
+        "bytre",
+        "strand",
+        "veksthus",
+        "park",
+        "skogkant",
+        "blomstereng",
+        "myr",
+        "strandeng",
+        "fjell"
+      ],
+      "question_moves": [
+        "avgrens hvilket vegetasjonsrute og gradientanalyse-spørsmål materialet faktisk kan besvare",
+        "dokumenter prøve, observasjon, sammenligningsgrunnlag og arbeidssteg",
+        "rapporter resultat, alternative tolkninger og metodisk usikkerhet"
+      ],
+      "method_use_note": "Bruk vegetasjonsrute og gradientanalyse når datagrunnlaget og spørsmålet hører til botanikk vegetasjon, ikke som en generell etikett for naturfaglig arbeid.",
+      "rotation_note": "Roter organismegruppe, materiale, livsstadium og sted før vegetasjonsrute og gradientanalyse brukes på nytt, og kombiner metoden med en uavhengig kontroll når konklusjonen er arts- eller funksjonsspesifikk.",
+      "hook_affinities": [],
+      "emne_affinities": [
+        "em_natur_plantecelle_vev_organer",
+        "em_natur_rot_stengel_blad_transport",
+        "em_natur_fotosyntese_respirasjon",
+        "em_natur_vekst_hormoner_responser",
+        "em_natur_livssykluser_formering_spredning",
+        "em_natur_plantegrupper_vegetasjonstyper_bestemmelse"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v5_1",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "formuler gradienthypotese og velg representativt prøvedesign",
+        "registrer arter og dekning med samme skala i alle ruter",
+        "mål miljøvariabler og dokumenter påvirkningshistorie",
+        "analyser samvariasjon og skill gradient fra romlig eller metodisk skjevhet"
+      ],
+      "limitations": [
+        "små ruter kan overse sjeldne eller flekkvis fordelte arter",
+        "korrelasjon langs en gradient beviser ikke hvilken miljøfaktor som er årsak"
+      ]
+    },
+    {
+      "method_id": "met_natur_zoologisk_morfologi",
+      "title": "Zoologisk morfologianalyse",
+      "short_label": "Zoologisk morfologianalyse",
+      "description": "Sammenligner kroppsplan, organer og diagnostiske strukturer hos dyr med mål, illustrasjoner, preparater eller bilder for å bestemme gruppe og tolke funksjon uten å forveksle analogi med slektskap.",
+      "best_for_emne_kinds": [
+        "zoologi_dyreliv"
+      ],
+      "data_forms": [
+        "dokumentert individ, preparat eller bildeserie",
+        "mål av kroppsavsnitt og diagnostiske strukturer",
+        "livsstadium, kjønn, lokalitet og dato",
+        "sammenligningsmateriale og bestemmelseslitteratur"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "zoologi_dyreliv"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "naturhistorisk museum",
+        "fjæresone",
+        "ferskvann",
+        "skogbunn",
+        "strand",
+        "innsjø",
+        "elv",
+        "blomstereng",
+        "skog",
+        "dam",
+        "park",
+        "våtmark",
+        "kyst",
+        "fjell",
+        "fugletårn"
+      ],
+      "question_moves": [
+        "avgrens hvilket zoologisk morfologianalyse-spørsmål materialet faktisk kan besvare",
+        "dokumenter prøve, observasjon, sammenligningsgrunnlag og arbeidssteg",
+        "rapporter resultat, alternative tolkninger og metodisk usikkerhet"
+      ],
+      "method_use_note": "Bruk zoologisk morfologianalyse når datagrunnlaget og spørsmålet hører til zoologi dyreliv, ikke som en generell etikett for naturfaglig arbeid.",
+      "rotation_note": "Roter organismegruppe, materiale, livsstadium og sted før zoologisk morfologianalyse brukes på nytt, og kombiner metoden med en uavhengig kontroll når konklusjonen er arts- eller funksjonsspesifikk.",
+      "hook_affinities": [],
+      "emne_affinities": [
+        "em_natur_dyrerikets_kroppsplaner",
+        "em_natur_virvellose_dyr_mangfold",
+        "em_natur_leddyr_insekter_livssykluser",
+        "em_natur_fisk_amfibier_reptiler",
+        "em_natur_fugler_pattedyr",
+        "em_natur_dyreatferd_formering_tilpasning"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v5_1",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "avklar hvilke strukturer som svarer på bestemmelses- eller funksjonsspørsmålet",
+        "registrer trekk med målestokk og standardisert orientering",
+        "sammenlign homologe strukturer og relevante forvekslingsgrupper",
+        "rapporter gruppe, funksjonstolkning og gjenværende usikkerhet"
+      ],
+      "limitations": [
+        "fiksering, vinkel og livsstadium kan endre synlige kjennetegn",
+        "funksjon kan ikke alltid utledes sikkert fra form alene"
+      ]
+    },
+    {
+      "method_id": "met_natur_standardisert_faunaobservasjon",
+      "title": "Standardisert faunaobservasjon",
+      "short_label": "Standardisert faunaobservasjon",
+      "description": "Registrerer dyr med fast areal, tidsrom, innsats og observasjonsmåte slik at funn, fravær, aktivitet og livsstadium kan sammenlignes mellom steder eller tidspunkt.",
+      "best_for_emne_kinds": [
+        "zoologi_dyreliv"
+      ],
+      "data_forms": [
+        "arts- eller grupperegistreringer med tid og posisjon",
+        "innsats, observatør, vær og utstyr",
+        "livsstadium, antall og aktivitet",
+        "fraværsdata og oppdagbarhetsnotat"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "zoologi_dyreliv"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "naturhistorisk museum",
+        "fjæresone",
+        "ferskvann",
+        "skogbunn",
+        "strand",
+        "innsjø",
+        "elv",
+        "blomstereng",
+        "skog",
+        "dam",
+        "park",
+        "våtmark",
+        "kyst",
+        "fjell",
+        "fugletårn"
+      ],
+      "question_moves": [
+        "avgrens hvilket standardisert faunaobservasjon-spørsmål materialet faktisk kan besvare",
+        "dokumenter prøve, observasjon, sammenligningsgrunnlag og arbeidssteg",
+        "rapporter resultat, alternative tolkninger og metodisk usikkerhet"
+      ],
+      "method_use_note": "Bruk standardisert faunaobservasjon når datagrunnlaget og spørsmålet hører til zoologi dyreliv, ikke som en generell etikett for naturfaglig arbeid.",
+      "rotation_note": "Roter organismegruppe, materiale, livsstadium og sted før standardisert faunaobservasjon brukes på nytt, og kombiner metoden med en uavhengig kontroll når konklusjonen er arts- eller funksjonsspesifikk.",
+      "hook_affinities": [],
+      "emne_affinities": [
+        "em_natur_dyrerikets_kroppsplaner",
+        "em_natur_virvellose_dyr_mangfold",
+        "em_natur_leddyr_insekter_livssykluser",
+        "em_natur_fisk_amfibier_reptiler",
+        "em_natur_fugler_pattedyr",
+        "em_natur_dyreatferd_formering_tilpasning"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v5_1",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "definer målgruppe, sesong og egnet observasjonsvindu",
+        "fastsett transekt, punkt, felle eller søketid før registrering",
+        "registrer både funn og standardisert innsats uten å forstyrre dyrene",
+        "vurder oppdagbarhet og sammenlign bare metodisk like datasett"
+      ],
+      "limitations": [
+        "manglende observasjon dokumenterer ikke sikkert fravær",
+        "vær, lyd, vegetasjon og observatører påvirker oppdagbarheten ulikt mellom dyregrupper"
+      ]
+    },
+    {
+      "method_id": "met_natur_atferdsanalyse_felt",
+      "title": "Atferdsanalyse i felt",
+      "short_label": "Atferdsanalyse i felt",
+      "description": "Beskriver dyreatferd med et forhåndsdefinert etogram, individ- eller gruppeutvalg og tidsregistrering for å skille observerte handlinger fra antatt motiv og teste sammenheng med miljøbetingelser.",
+      "best_for_emne_kinds": [
+        "zoologi_dyreliv"
+      ],
+      "data_forms": [
+        "etogram med gjensidig avgrensede atferdskategorier",
+        "fokal-, skann- eller hendelsesregistrering",
+        "individ, gruppe, tid og miljøbetingelser",
+        "observatøravstand og mulig forstyrrelse"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "zoologi_dyreliv"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "naturhistorisk museum",
+        "fjæresone",
+        "ferskvann",
+        "skogbunn",
+        "strand",
+        "innsjø",
+        "elv",
+        "blomstereng",
+        "skog",
+        "dam",
+        "park",
+        "våtmark",
+        "kyst",
+        "fjell",
+        "fugletårn"
+      ],
+      "question_moves": [
+        "avgrens hvilket atferdsanalyse i felt-spørsmål materialet faktisk kan besvare",
+        "dokumenter prøve, observasjon, sammenligningsgrunnlag og arbeidssteg",
+        "rapporter resultat, alternative tolkninger og metodisk usikkerhet"
+      ],
+      "method_use_note": "Bruk atferdsanalyse i felt når datagrunnlaget og spørsmålet hører til zoologi dyreliv, ikke som en generell etikett for naturfaglig arbeid.",
+      "rotation_note": "Roter organismegruppe, materiale, livsstadium og sted før atferdsanalyse i felt brukes på nytt, og kombiner metoden med en uavhengig kontroll når konklusjonen er arts- eller funksjonsspesifikk.",
+      "hook_affinities": [],
+      "emne_affinities": [
+        "em_natur_dyrerikets_kroppsplaner",
+        "em_natur_virvellose_dyr_mangfold",
+        "em_natur_leddyr_insekter_livssykluser",
+        "em_natur_fisk_amfibier_reptiler",
+        "em_natur_fugler_pattedyr",
+        "em_natur_dyreatferd_formering_tilpasning"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v5_1",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "definer atferdskategorier med synlige start- og stoppkriterier",
+        "velg observasjonsutvalg og tidsplan før feltøkten",
+        "registrer handling, kontekst og innsats uten motivtolkning",
+        "analyser tidsbudsjett eller hendelsesrate og test alternative forklaringer"
+      ],
+      "limitations": [
+        "observatøren kan endre atferden eller feilklassifisere korte handlinger",
+        "en lokal tidsserie kan ikke uten videre generaliseres til arten eller en adaptiv funksjon"
+      ]
+    },
+    {
+      "method_id": "met_natur_populasjonsgenetisk_analyse",
+      "title": "Populasjonsgenetisk analyse",
+      "short_label": "Populasjonsgenetisk analyse",
+      "description": "Estimerer genetisk variasjon, allelfrekvenser og struktur mellom populasjoner og tester hvilke evolusjonsmekanismer dataene kan støtte.",
+      "best_for_emne_kinds": [
+        "evolusjon_biologisk_mangfold"
+      ],
+      "data_forms": [
+        "genotyper eller sekvenser med prøve-ID",
+        "allel- og genotypefrekvenser",
+        "lokalitet, tidspunkt og populasjonsavgrensning"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "evolusjon_biologisk_mangfold"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "museumssamling",
+        "naturreservat",
+        "forskningslaboratorium",
+        "artsrik eng",
+        "øy",
+        "fragmentert skog",
+        "elveløp",
+        "fuglekoloni",
+        "pollinatoreng",
+        "fjellgradient",
+        "kysthabitat",
+        "øygruppe",
+        "innsjø",
+        "fjellområde",
+        "fragmentert kulturlandskap",
+        "fossilsamling",
+        "naturhistorisk museum",
+        "pollinatornettverk",
+        "fjord"
+      ],
+      "question_moves": [
+        "avgrens hvilket populasjonsgenetisk analyse-spørsmål materialet faktisk kan besvare",
+        "dokumenter prøve, observasjon, sammenligningsgrunnlag og arbeidssteg",
+        "rapporter resultat, alternative tolkninger og metodisk usikkerhet"
+      ],
+      "method_use_note": "Bruk populasjonsgenetisk analyse når datagrunnlaget og spørsmålet hører til evolusjon biologisk mangfold, ikke som en generell etikett for naturfaglig arbeid.",
+      "rotation_note": "Roter organismegruppe, materiale, livsstadium og sted før populasjonsgenetisk analyse brukes på nytt, og kombiner metoden med en uavhengig kontroll når konklusjonen er arts- eller funksjonsspesifikk.",
+      "hook_affinities": [],
+      "emne_affinities": [
+        "em_natur_genetisk_variasjon_mutasjon_rekombinasjon",
+        "em_natur_populasjonsgenetikk_drift_genflyt",
+        "em_natur_naturlig_seksuell_seleksjon_tilpasning",
+        "em_natur_artsdannelse_reproduktiv_isolasjon",
+        "em_natur_koevolusjon_utdoing_makroevolusjon",
+        "em_natur_biogeografi_historisk_utbredelse_mangfold"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v5_1",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "Definer populasjoner, tidsrom og arvelige markører før analysen.",
+        "Kontroller prøvestørrelse, slektskap, manglende data og markørkvalitet.",
+        "Beregn variasjon og frekvenser med usikkerhet for hver populasjon.",
+        "Sammenlign observerte mønstre med forventninger under drift, genflyt og seleksjon.",
+        "Rapporter alternative forklaringer og hvilke nye prøver som kan skille dem."
+      ],
+      "limitations": [
+        "Markører kan være nøytrale og ikke representere funksjonelle egenskaper.",
+        "Populasjonsavgrensning og skjev prøvetaking kan skape kunstig struktur.",
+        "Frekvensendring alene identifiserer ikke hvilken evolusjonsmekanisme som virket."
+      ]
+    },
+    {
+      "method_id": "met_natur_komparativ_evolusjonsanalyse",
+      "title": "Komparativ evolusjonsanalyse",
+      "short_label": "Komparativ evolusjonsanalyse",
+      "description": "Sammenligner egenskaper på tvers av arter eller populasjoner med slektskap, miljø og funksjon som eksplisitte kontrollnivåer.",
+      "best_for_emne_kinds": [
+        "evolusjon_biologisk_mangfold"
+      ],
+      "data_forms": [
+        "fylogenetisk tre med støtte",
+        "standardiserte egenskapsdata",
+        "miljø-, fossil- eller livshistoriedata"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "evolusjon_biologisk_mangfold"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "museumssamling",
+        "naturreservat",
+        "forskningslaboratorium",
+        "artsrik eng",
+        "øy",
+        "fragmentert skog",
+        "elveløp",
+        "fuglekoloni",
+        "pollinatoreng",
+        "fjellgradient",
+        "kysthabitat",
+        "øygruppe",
+        "innsjø",
+        "fjellområde",
+        "fragmentert kulturlandskap",
+        "fossilsamling",
+        "naturhistorisk museum",
+        "pollinatornettverk",
+        "fjord"
+      ],
+      "question_moves": [
+        "avgrens hvilket komparativ evolusjonsanalyse-spørsmål materialet faktisk kan besvare",
+        "dokumenter prøve, observasjon, sammenligningsgrunnlag og arbeidssteg",
+        "rapporter resultat, alternative tolkninger og metodisk usikkerhet"
+      ],
+      "method_use_note": "Bruk komparativ evolusjonsanalyse når datagrunnlaget og spørsmålet hører til evolusjon biologisk mangfold, ikke som en generell etikett for naturfaglig arbeid.",
+      "rotation_note": "Roter organismegruppe, materiale, livsstadium og sted før komparativ evolusjonsanalyse brukes på nytt, og kombiner metoden med en uavhengig kontroll når konklusjonen er arts- eller funksjonsspesifikk.",
+      "hook_affinities": [],
+      "emne_affinities": [
+        "em_natur_genetisk_variasjon_mutasjon_rekombinasjon",
+        "em_natur_populasjonsgenetikk_drift_genflyt",
+        "em_natur_naturlig_seksuell_seleksjon_tilpasning",
+        "em_natur_artsdannelse_reproduktiv_isolasjon",
+        "em_natur_koevolusjon_utdoing_makroevolusjon",
+        "em_natur_biogeografi_historisk_utbredelse_mangfold"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v5_1",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "Formuler alternative hypoteser om egenskapens opphav eller funksjon.",
+        "Velg sammenlignbare taksa og dokumenter fylogenetisk grunnlag.",
+        "Kod egenskaper og miljøvariable med samme definisjoner.",
+        "Kontroller om likheten følger felles avstamning eller uavhengige endringer.",
+        "Rapporter følsomhet for tre, utvalg, datering og manglende data."
+      ],
+      "limitations": [
+        "Arter er ikke uavhengige datapunkter når de deler evolusjonær historie.",
+        "Korrelasjon mellom egenskap og miljø dokumenterer ikke seleksjonsmekanismen alene.",
+        "Ufullstendig fossil- og artsutvalg kan endre rekonstruerte mønstre."
+      ]
+    },
+    {
+      "method_id": "met_natur_biogeografisk_utbredelsesanalyse",
+      "title": "Biogeografisk utbredelsesanalyse",
+      "short_label": "Biogeografisk utbredelsesanalyse",
+      "description": "Analyserer daterte artsfunn, spredning, barrierer, klima og historiske landskapsendringer for å forklare utbredelsesmønstre.",
+      "best_for_emne_kinds": [
+        "evolusjon_biologisk_mangfold"
+      ],
+      "data_forms": [
+        "georefererte og daterte artsfunn",
+        "registreringsinnsats og fraværsdata",
+        "klima-, høyde-, habitat- og paleogeografiske lag"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "evolusjon_biologisk_mangfold"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "museumssamling",
+        "naturreservat",
+        "forskningslaboratorium",
+        "artsrik eng",
+        "øy",
+        "fragmentert skog",
+        "elveløp",
+        "fuglekoloni",
+        "pollinatoreng",
+        "fjellgradient",
+        "kysthabitat",
+        "øygruppe",
+        "innsjø",
+        "fjellområde",
+        "fragmentert kulturlandskap",
+        "fossilsamling",
+        "naturhistorisk museum",
+        "pollinatornettverk",
+        "fjord"
+      ],
+      "question_moves": [
+        "avgrens hvilket biogeografisk utbredelsesanalyse-spørsmål materialet faktisk kan besvare",
+        "dokumenter prøve, observasjon, sammenligningsgrunnlag og arbeidssteg",
+        "rapporter resultat, alternative tolkninger og metodisk usikkerhet"
+      ],
+      "method_use_note": "Bruk biogeografisk utbredelsesanalyse når datagrunnlaget og spørsmålet hører til evolusjon biologisk mangfold, ikke som en generell etikett for naturfaglig arbeid.",
+      "rotation_note": "Roter organismegruppe, materiale, livsstadium og sted før biogeografisk utbredelsesanalyse brukes på nytt, og kombiner metoden med en uavhengig kontroll når konklusjonen er arts- eller funksjonsspesifikk.",
+      "hook_affinities": [],
+      "emne_affinities": [
+        "em_natur_genetisk_variasjon_mutasjon_rekombinasjon",
+        "em_natur_populasjonsgenetikk_drift_genflyt",
+        "em_natur_naturlig_seksuell_seleksjon_tilpasning",
+        "em_natur_artsdannelse_reproduktiv_isolasjon",
+        "em_natur_koevolusjon_utdoing_makroevolusjon",
+        "em_natur_biogeografi_historisk_utbredelse_mangfold"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v5_1",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "Avgrens art, tidsperiode, geografisk område og datakilder.",
+        "Rens koordinater og skill dokumentert fravær fra manglende søk.",
+        "Kartlegg funn mot innsats, barrierer, miljø og historiske endringer.",
+        "Test alternative forklaringer som spredning, vikarians og dagens habitat.",
+        "Rapporter skala, skjevhet, ekstrapolasjon og områder uten tilstrekkelige data."
+      ],
+      "limitations": [
+        "Artskart gjenspeiler både utbredelse og hvor noen har lett.",
+        "Dagens miljø kan ikke alene forklare historiske eller disjunkte mønstre.",
+        "Korrelative utbredelsesmodeller viser potensielle sammenhenger, ikke sikker årsak."
+      ]
+    },
+    {
+      "method_id": "met_natur_respirometri_energiomsetning",
+      "title": "Respirometri og energiomsetning",
+      "short_label": "Respirometri og energiomsetning",
+      "description": "Måler oksygenforbruk eller karbondioksidproduksjon over tid for å estimere organismers eller prøvers metabolske rate.",
+      "best_for_emne_kinds": [
+        "organismebiologi_fysiologi"
+      ],
+      "data_forms": [
+        "oksygen- eller karbondioksidtidsserie",
+        "temperatur, masse, aktivitet og kammerdata",
+        "blankprøve og kalibreringsdata"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "organismebiologi_fysiologi"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "laboratorium",
+        "ferskvann",
+        "jordprøve",
+        "kompost",
+        "dyreobservasjon",
+        "innsjø",
+        "bekk",
+        "fugleobservasjon",
+        "fjæresone",
+        "saltvann",
+        "vinterhabitat",
+        "feltlaboratorium",
+        "fugletårn",
+        "dam",
+        "mørkt skogsmiljø",
+        "beiteområde",
+        "pollinatoreng",
+        "salamanderdam",
+        "fuglekoloni",
+        "høydegradient"
+      ],
+      "question_moves": [
+        "avgrens hvilket respirometri og energiomsetning-spørsmål materialet faktisk kan besvare",
+        "dokumenter prøve, observasjon, sammenligningsgrunnlag og arbeidssteg",
+        "rapporter resultat, alternative tolkninger og metodisk usikkerhet"
+      ],
+      "method_use_note": "Bruk respirometri og energiomsetning når datagrunnlaget og spørsmålet hører til organismebiologi fysiologi, ikke som en generell etikett for naturfaglig arbeid.",
+      "rotation_note": "Roter organismegruppe, materiale, livsstadium og sted før respirometri og energiomsetning brukes på nytt, og kombiner metoden med en uavhengig kontroll når konklusjonen er arts- eller funksjonsspesifikk.",
+      "hook_affinities": [],
+      "emne_affinities": [
+        "em_natur_energiomsetning_celleanding",
+        "em_natur_gassutveksling_sirkulasjon_transport",
+        "em_natur_osmoregulering_temperaturregulering",
+        "em_natur_sanser_nervesystem_bevegelse",
+        "em_natur_ernaering_fordoyelse_hormoner",
+        "em_natur_reproduksjon_homeostase_toleranse"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v5_1",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "Definer organisme, fysiologisk tilstand og måleperiode.",
+        "Kalibrer sensor og mål blankkammerets bakgrunnsendring.",
+        "Kontroller temperatur, kammerstørrelse, masse og aktivitet.",
+        "Beregn gassendring per tid og relevant masse eller individ.",
+        "Rapporter lekkasje, stress, diffusjonsbegrensning og hva målet ikke sier om ATP direkte."
+      ],
+      "limitations": [
+        "Lukket kammer kan endre oksygen, karbondioksid, fukt og stress under forsøket.",
+        "Kroppsmasse og temperatur gjør rå rater lite sammenlignbare.",
+        "Gassutveksling kan påvirkes av fotosyntese, mikrober eller kjemiske prosesser i blandede prøver."
+      ]
+    },
+    {
+      "method_id": "met_natur_komparativ_fysiologisk_maling",
+      "title": "Komparativ fysiologisk måling",
+      "short_label": "Komparativ fysiologisk måling",
+      "description": "Sammenligner en definert fysiologisk variabel mellom arter, livsstadier eller miljøbetingelser med standardisert måling og kontroll.",
+      "best_for_emne_kinds": [
+        "organismebiologi_fysiologi"
+      ],
+      "data_forms": [
+        "temperatur, osmolaritet, puls, ventilasjon eller annen definert variabel",
+        "kroppsstørrelse, livsstadium og miljømetadata",
+        "kalibrering, kontrollgruppe og gjentakelser"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "organismebiologi_fysiologi"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "laboratorium",
+        "ferskvann",
+        "jordprøve",
+        "kompost",
+        "dyreobservasjon",
+        "innsjø",
+        "bekk",
+        "fugleobservasjon",
+        "fjæresone",
+        "saltvann",
+        "vinterhabitat",
+        "feltlaboratorium",
+        "fugletårn",
+        "dam",
+        "mørkt skogsmiljø",
+        "beiteområde",
+        "pollinatoreng",
+        "salamanderdam",
+        "fuglekoloni",
+        "høydegradient"
+      ],
+      "question_moves": [
+        "avgrens hvilket komparativ fysiologisk måling-spørsmål materialet faktisk kan besvare",
+        "dokumenter prøve, observasjon, sammenligningsgrunnlag og arbeidssteg",
+        "rapporter resultat, alternative tolkninger og metodisk usikkerhet"
+      ],
+      "method_use_note": "Bruk komparativ fysiologisk måling når datagrunnlaget og spørsmålet hører til organismebiologi fysiologi, ikke som en generell etikett for naturfaglig arbeid.",
+      "rotation_note": "Roter organismegruppe, materiale, livsstadium og sted før komparativ fysiologisk måling brukes på nytt, og kombiner metoden med en uavhengig kontroll når konklusjonen er arts- eller funksjonsspesifikk.",
+      "hook_affinities": [],
+      "emne_affinities": [
+        "em_natur_energiomsetning_celleanding",
+        "em_natur_gassutveksling_sirkulasjon_transport",
+        "em_natur_osmoregulering_temperaturregulering",
+        "em_natur_sanser_nervesystem_bevegelse",
+        "em_natur_ernaering_fordoyelse_hormoner",
+        "em_natur_reproduksjon_homeostase_toleranse"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v5_1",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "Velg én fysiologisk variabel og begrunn måleinstrument og enhet.",
+        "Standardiser tid, håndtering, temperatur, masse og livsstadium.",
+        "Mål kontroll og behandling med biologiske gjentakelser.",
+        "Analyser respons, variasjon, restitusjon og mulig terskel.",
+        "Skill kortvarig plastisitet fra akklimatisering og evolusjonær forskjell."
+      ],
+      "limitations": [
+        "Håndtering og måleutstyr kan selv utløse stressrespons.",
+        "Sammenligning mellom arter krever kontroll for størrelse, slektskap og livshistorie.",
+        "Én målevariabel representerer ikke hele organismens fysiologiske tilstand."
+      ]
+    },
+    {
+      "method_id": "met_natur_stimulus_respons_forsok",
+      "title": "Stimulus–respons-forsøk",
+      "short_label": "Stimulus–respons-forsøk",
+      "description": "Tester hvordan en presist definert fysisk eller kjemisk påvirkning endrer sanserespons, bevegelse, hormonell regulering eller annen fysiologisk funksjon.",
+      "best_for_emne_kinds": [
+        "organismebiologi_fysiologi"
+      ],
+      "data_forms": [
+        "standardisert stimulus med intensitet og varighet",
+        "latens, terskel, styrke eller sannsynlighet for respons",
+        "kontrollstimulus, rekkefølge og restitusjon"
+      ],
+      "course_level_fit": [
+        "grunnkurs",
+        "mellomnivå",
+        "avansert"
+      ],
+      "coverage_domains": [
+        "organismebiologi_fysiologi"
+      ],
+      "progression_stage": "full_ladder",
+      "good_for_place_types": [
+        "laboratorium",
+        "ferskvann",
+        "jordprøve",
+        "kompost",
+        "dyreobservasjon",
+        "innsjø",
+        "bekk",
+        "fugleobservasjon",
+        "fjæresone",
+        "saltvann",
+        "vinterhabitat",
+        "feltlaboratorium",
+        "fugletårn",
+        "dam",
+        "mørkt skogsmiljø",
+        "beiteområde",
+        "pollinatoreng",
+        "salamanderdam",
+        "fuglekoloni",
+        "høydegradient"
+      ],
+      "question_moves": [
+        "avgrens hvilket stimulus–respons-forsøk-spørsmål materialet faktisk kan besvare",
+        "dokumenter prøve, observasjon, sammenligningsgrunnlag og arbeidssteg",
+        "rapporter resultat, alternative tolkninger og metodisk usikkerhet"
+      ],
+      "method_use_note": "Bruk stimulus–respons-forsøk når datagrunnlaget og spørsmålet hører til organismebiologi fysiologi, ikke som en generell etikett for naturfaglig arbeid.",
+      "rotation_note": "Roter organismegruppe, materiale, livsstadium og sted før stimulus–respons-forsøk brukes på nytt, og kombiner metoden med en uavhengig kontroll når konklusjonen er arts- eller funksjonsspesifikk.",
+      "hook_affinities": [],
+      "emne_affinities": [
+        "em_natur_energiomsetning_celleanding",
+        "em_natur_gassutveksling_sirkulasjon_transport",
+        "em_natur_osmoregulering_temperaturregulering",
+        "em_natur_sanser_nervesystem_bevegelse",
+        "em_natur_ernaering_fordoyelse_hormoner",
+        "em_natur_reproduksjon_homeostase_toleranse"
+      ],
+      "canonical_status": "canonical",
+      "registry_version": "naturpensum_v5_1",
+      "canonical_file_role": "active",
+      "case_gate_required": true,
+      "method_gate_required": true,
+      "external_claim_basis_required": true,
+      "ecosystem_water_climate_or_place_anchor_required": true,
+      "generator_constraints": {
+        "require_concrete_ecosystem_water_climate_geology_or_management_case": true,
+        "require_external_claim_basis": true,
+        "do_not_generate_from_method_label_only": true,
+        "require_emne_prefix": "em_natur_"
+      },
+      "procedure": [
+        "Definer stimulus, forventet reseptor og målbar respons før forsøket.",
+        "Etabler kontroll, randomisert rekkefølge og tilstrekkelig hviletid.",
+        "Mål baseline, stimulusrespons og restitusjon uten å endre flere faktorer samtidig.",
+        "Test dose–respons eller terskel innenfor etisk og fysiologisk forsvarlige grenser.",
+        "Rapporter habituering, stress, individvariasjon og alternative sansekanaler."
+      ],
+      "limitations": [
+        "Gjentatte stimuli kan gi habituering, sensibilisering eller utmattelse.",
+        "Observerbar bevegelse identifiserer ikke automatisk reseptor eller nervebane.",
+        "Sterke stimuli kan måle skade eller flukt i stedet for normal fysiologisk regulering."
+      ]
+    }
+  ],
+  "application_scope": "kan_anvendes_globalt_med_stedsspesifikke_data_og_kilder"
+}

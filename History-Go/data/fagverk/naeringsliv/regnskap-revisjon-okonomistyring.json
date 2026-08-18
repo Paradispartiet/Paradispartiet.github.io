@@ -1,0 +1,269 @@
+{
+  "schema": "history_go_fagverk_chapter_v1",
+  "version": "1.0.0",
+  "subject": "naeringsliv",
+  "subject_id": "naeringsliv",
+  "id": "regnskap-revisjon-okonomistyring",
+  "chapter_id": "regnskap-revisjon-okonomistyring",
+  "chapter_role": "specialization",
+  "primary_domain_id": "kapital_eierskap_finans",
+  "title": "Regnskap, revisjon og økonomistyring",
+  "subtitle": "Fra bilag og periodisering til årsregnskap, kontantstrøm, budsjett, internkontroll og revisjonsbevis",
+  "lead": "Kapittelet følger kontrollsporet fra transaksjon til beslutning. Det viser hvordan bokføring, rapportering, analyse, budsjettering og revisjon bruker forskjellige regler og bevis, og hvorfor lønnsomhet, likviditet, skatt og verdi ikke kan blandes sammen.",
+  "emne_ids": [
+    "em_naering_verdsetting_pris_regnskap",
+    "em_naering_eierskap_styring",
+    "em_naering_kapital_finans",
+    "em_naering_effektivitet_optimalisering",
+    "em_naering_produksjon_produktivitet",
+    "em_naering_ledelse_kontrollsystemer",
+    "em_naering_risiko_regulering"
+  ],
+  "method_ids": [
+    "met_naering_kapital_og_finansanalyse",
+    "met_naering_eierskaps_og_styringsanalyse",
+    "met_naering_ledelses_og_kontrollanalyse",
+    "met_naering_statistikk_og_indikatoranalyse",
+    "met_naering_verdiskapingsanalyse",
+    "met_naering_risiko_og_kriseanalyse"
+  ],
+  "concepts": [
+    {
+      "id": "bilag",
+      "term": "bilag",
+      "definition": "Begrepet brukes i analysen av bokføring og regnskapskretsløp og må avgrenses mot analyseenheten ett avgrenset regnskapsår eller en måned med komplett bilagsserie."
+    },
+    {
+      "id": "debet",
+      "term": "debet",
+      "definition": "Begrepet brukes i analysen av bokføring og regnskapskretsløp og må avgrenses mot analyseenheten ett avgrenset regnskapsår eller en måned med komplett bilagsserie."
+    },
+    {
+      "id": "kredit",
+      "term": "kredit",
+      "definition": "Begrepet brukes i analysen av bokføring og regnskapskretsløp og må avgrenses mot analyseenheten ett avgrenset regnskapsår eller en måned med komplett bilagsserie."
+    },
+    {
+      "id": "hovedbok",
+      "term": "hovedbok",
+      "definition": "Begrepet brukes i analysen av bokføring og regnskapskretsløp og må avgrenses mot analyseenheten ett avgrenset regnskapsår eller en måned med komplett bilagsserie."
+    },
+    {
+      "id": "provebalanse",
+      "term": "prøvebalanse",
+      "definition": "Begrepet brukes i analysen av bokføring og regnskapskretsløp og må avgrenses mot analyseenheten ett avgrenset regnskapsår eller en måned med komplett bilagsserie."
+    },
+    {
+      "id": "periodisering",
+      "term": "periodisering",
+      "definition": "Begrepet brukes i analysen av bokføring og regnskapskretsløp og må avgrenses mot analyseenheten ett avgrenset regnskapsår eller en måned med komplett bilagsserie."
+    },
+    {
+      "id": "innregning",
+      "term": "innregning",
+      "definition": "Begrepet brukes i analysen av finansregnskap og ekstern rapportering og må avgrenses mot analyseenheten ett årsregnskap med sammenligningstall og sentrale noter."
+    },
+    {
+      "id": "maling",
+      "term": "måling",
+      "definition": "Begrepet brukes i analysen av finansregnskap og ekstern rapportering og må avgrenses mot analyseenheten ett årsregnskap med sammenligningstall og sentrale noter."
+    },
+    {
+      "id": "klassifisering",
+      "term": "klassifisering",
+      "definition": "Begrepet brukes i analysen av finansregnskap og ekstern rapportering og må avgrenses mot analyseenheten ett årsregnskap med sammenligningstall og sentrale noter."
+    },
+    {
+      "id": "resultat",
+      "term": "resultat",
+      "definition": "Begrepet brukes i analysen av finansregnskap og ekstern rapportering og må avgrenses mot analyseenheten ett årsregnskap med sammenligningstall og sentrale noter."
+    },
+    {
+      "id": "balanse",
+      "term": "balanse",
+      "definition": "Begrepet brukes i analysen av finansregnskap og ekstern rapportering og må avgrenses mot analyseenheten ett årsregnskap med sammenligningstall og sentrale noter."
+    },
+    {
+      "id": "kontantstrom",
+      "term": "kontantstrøm",
+      "definition": "Begrepet brukes i analysen av finansregnskap og ekstern rapportering og må avgrenses mot analyseenheten ett årsregnskap med sammenligningstall og sentrale noter."
+    },
+    {
+      "id": "noter",
+      "term": "noter",
+      "definition": "Begrepet brukes i analysen av finansregnskap og ekstern rapportering og må avgrenses mot analyseenheten ett årsregnskap med sammenligningstall og sentrale noter."
+    },
+    {
+      "id": "normalisering",
+      "term": "normalisering",
+      "definition": "Begrepet brukes i analysen av regnskapsanalyse og verdsettelse og må avgrenses mot analyseenheten én virksomhet analysert over minst tre år og mot en relevant sammenligningsgruppe."
+    },
+    {
+      "id": "nokkeltall",
+      "term": "nøkkeltall",
+      "definition": "Begrepet brukes i analysen av regnskapsanalyse og verdsettelse og må avgrenses mot analyseenheten én virksomhet analysert over minst tre år og mot en relevant sammenligningsgruppe."
+    },
+    {
+      "id": "dupont",
+      "term": "DuPont",
+      "definition": "Begrepet brukes i analysen av regnskapsanalyse og verdsettelse og må avgrenses mot analyseenheten én virksomhet analysert over minst tre år og mot en relevant sammenligningsgruppe."
+    },
+    {
+      "id": "roic",
+      "term": "ROIC",
+      "definition": "Begrepet brukes i analysen av regnskapsanalyse og verdsettelse og må avgrenses mot analyseenheten én virksomhet analysert over minst tre år og mot en relevant sammenligningsgruppe."
+    },
+    {
+      "id": "fri-kontantstrom",
+      "term": "fri kontantstrøm",
+      "definition": "Begrepet brukes i analysen av regnskapsanalyse og verdsettelse og må avgrenses mot analyseenheten én virksomhet analysert over minst tre år og mot en relevant sammenligningsgruppe."
+    },
+    {
+      "id": "kapitalkostnad",
+      "term": "kapitalkostnad",
+      "definition": "Begrepet brukes i analysen av regnskapsanalyse og verdsettelse og må avgrenses mot analyseenheten én virksomhet analysert over minst tre år og mot en relevant sammenligningsgruppe."
+    },
+    {
+      "id": "terminalverdi",
+      "term": "terminalverdi",
+      "definition": "Begrepet brukes i analysen av regnskapsanalyse og verdsettelse og må avgrenses mot analyseenheten én virksomhet analysert over minst tre år og mot en relevant sammenligningsgruppe."
+    },
+    {
+      "id": "kostnadsatferd",
+      "term": "kostnadsatferd",
+      "definition": "Begrepet brukes i analysen av kostnadsanalyse, kalkulasjon og budsjettering og må avgrenses mot analyseenheten ett kostnadssted eller produkt- og tjenestespekter med volum, kapasitet og indirekte kostnader."
+    },
+    {
+      "id": "relevante-kostnader",
+      "term": "relevante kostnader",
+      "definition": "Begrepet brukes i analysen av kostnadsanalyse, kalkulasjon og budsjettering og må avgrenses mot analyseenheten ett kostnadssted eller produkt- og tjenestespekter med volum, kapasitet og indirekte kostnader."
+    },
+    {
+      "id": "kostnadsdrivere",
+      "term": "kostnadsdrivere",
+      "definition": "Begrepet brukes i analysen av kostnadsanalyse, kalkulasjon og budsjettering og må avgrenses mot analyseenheten ett kostnadssted eller produkt- og tjenestespekter med volum, kapasitet og indirekte kostnader."
+    },
+    {
+      "id": "abc",
+      "term": "ABC",
+      "definition": "Begrepet brukes i analysen av kostnadsanalyse, kalkulasjon og budsjettering og må avgrenses mot analyseenheten ett kostnadssted eller produkt- og tjenestespekter med volum, kapasitet og indirekte kostnader."
+    },
+    {
+      "id": "fleksibelt-budsjett",
+      "term": "fleksibelt budsjett",
+      "definition": "Begrepet brukes i analysen av kostnadsanalyse, kalkulasjon og budsjettering og må avgrenses mot analyseenheten ett kostnadssted eller produkt- og tjenestespekter med volum, kapasitet og indirekte kostnader."
+    },
+    {
+      "id": "avvik",
+      "term": "avvik",
+      "definition": "Begrepet brukes i analysen av kostnadsanalyse, kalkulasjon og budsjettering og må avgrenses mot analyseenheten ett kostnadssted eller produkt- og tjenestespekter med volum, kapasitet og indirekte kostnader."
+    },
+    {
+      "id": "kontrollmiljo",
+      "term": "kontrollmiljø",
+      "definition": "Begrepet brukes i analysen av internkontroll, revisjon og prestasjonsstyring og må avgrenses mot analyseenheten én kritisk prosess med påstander, risikoer, kontroller, eiere og resultatmål."
+    },
+    {
+      "id": "revisjonsrisiko",
+      "term": "revisjonsrisiko",
+      "definition": "Begrepet brukes i analysen av internkontroll, revisjon og prestasjonsstyring og må avgrenses mot analyseenheten én kritisk prosess med påstander, risikoer, kontroller, eiere og resultatmål."
+    },
+    {
+      "id": "revisjonsbevis",
+      "term": "revisjonsbevis",
+      "definition": "Begrepet brukes i analysen av internkontroll, revisjon og prestasjonsstyring og må avgrenses mot analyseenheten én kritisk prosess med påstander, risikoer, kontroller, eiere og resultatmål."
+    },
+    {
+      "id": "kpi-er",
+      "term": "KPI-er",
+      "definition": "Begrepet brukes i analysen av internkontroll, revisjon og prestasjonsstyring og må avgrenses mot analyseenheten én kritisk prosess med påstander, risikoer, kontroller, eiere og resultatmål."
+    },
+    {
+      "id": "malforskyvning",
+      "term": "målforskyvning",
+      "definition": "Begrepet brukes i analysen av internkontroll, revisjon og prestasjonsstyring og må avgrenses mot analyseenheten én kritisk prosess med påstander, risikoer, kontroller, eiere og resultatmål."
+    },
+    {
+      "id": "balansert-styring",
+      "term": "balansert styring",
+      "definition": "Begrepet brukes i analysen av internkontroll, revisjon og prestasjonsstyring og må avgrenses mot analyseenheten én kritisk prosess med påstander, risikoer, kontroller, eiere og resultatmål."
+    },
+    {
+      "id": "kontrollspor",
+      "term": "kontrollspor",
+      "definition": "Begrepet brukes i analysen av kontrollspor og avstemming og må avgrenses mot analyseenheten en avgrenset bilagsserie med hovedbok og reskontro."
+    },
+    {
+      "id": "avstemming",
+      "term": "avstemming",
+      "definition": "Begrepet brukes i analysen av kontrollspor og avstemming og må avgrenses mot analyseenheten en avgrenset bilagsserie med hovedbok og reskontro."
+    },
+    {
+      "id": "likviditet",
+      "term": "likviditet",
+      "definition": "Begrepet brukes i analysen av resultat, likviditet og arbeidskapital og må avgrenses mot analyseenheten ett foretak over minst to perioder."
+    },
+    {
+      "id": "arbeidskapital",
+      "term": "arbeidskapital",
+      "definition": "Begrepet brukes i analysen av resultat, likviditet og arbeidskapital og må avgrenses mot analyseenheten ett foretak over minst to perioder."
+    },
+    {
+      "id": "budsjett",
+      "term": "budsjett",
+      "definition": "Begrepet brukes i analysen av budsjett, avvik og beslutningsansvar og må avgrenses mot analyseenheten ett ansvarssenter med budsjett og faktisk aktivitet."
+    },
+    {
+      "id": "beslutningsansvar",
+      "term": "beslutningsansvar",
+      "definition": "Begrepet brukes i analysen av budsjett, avvik og beslutningsansvar og må avgrenses mot analyseenheten ett ansvarssenter med budsjett og faktisk aktivitet."
+    },
+    {
+      "id": "profesjonell-skepsis",
+      "term": "profesjonell skepsis",
+      "definition": "Begrepet brukes i analysen av revisjonsbevis og profesjonell skepsis og må avgrenses mot analyseenheten ett vesentlig regnskapsområde i et revisjonsoppdrag."
+    }
+  ],
+  "learningObjectives": [
+    "Modulen dekker bilag, debet og kredit, hovedbok, prøvebalanse og periodisering som et selvstendig profesjonsfag og kobler begreper, dokumentasjon, beregning og beslutningsansvar. Gjennomfør oppgaven «før minst tolv bilag med dobbel bokføring, avstem bank og kunde-/leverandørsaldo og bygg prøvebalanse» med dokumentert usikkerhet.",
+    "Modulen dekker innregning, måling, klassifisering, resultat, balanse, kontantstrøm og noter som et selvstendig profesjonsfag og kobler begreper, dokumentasjon, beregning og beslutningsansvar. Gjennomfør oppgaven «rekonstruer resultat, balanse og indirekte kontantstrøm og beregn effekten av to alternative periodiseringsvalg» med dokumentert usikkerhet.",
+    "Modulen dekker normalisering, nøkkeltall, DuPont, ROIC, fri kontantstrøm, kapitalkostnad og terminalverdi som et selvstendig profesjonsfag og kobler begreper, dokumentasjon, beregning og beslutningsansvar. Gjennomfør oppgaven «normaliser resultat, dekomponer avkastning med DuPont og gjennomfør DCF med sensitivitetsmatrise» med dokumentert usikkerhet.",
+    "Modulen dekker kostnadsatferd, relevante kostnader, kostnadsdrivere, ABC, fleksibelt budsjett og avvik som et selvstendig profesjonsfag og kobler begreper, dokumentasjon, beregning og beslutningsansvar. Gjennomfør oppgaven «bygg bidrags- og selvkostkalkyle, aktivitetsbasert kalkyle og fleksibelt budsjett med pris-, volum- og effektivitetsavvik» med dokumentert usikkerhet.",
+    "Modulen dekker kontrollmiljø, revisjonsrisiko, revisjonsbevis, KPI-er, målforskyvning og balansert styring som et selvstendig profesjonsfag og kobler begreper, dokumentasjon, beregning og beslutningsansvar. Gjennomfør oppgaven «bygg risiko-kontrollmatrise, beregn revisjonsrisiko og utform balansert målekort med ledende og etterslepende indikatorer» med dokumentert usikkerhet.",
+    "Følge en transaksjon fra dokumentasjon til rapportert beløp. Gjennomfør oppgaven «avstem bank, kunde, leverandør og avgiftskonto» med dokumentert usikkerhet.",
+    "Skille opptjent resultat fra kontantstrøm og finansieringsbehov. Gjennomfør oppgaven «bygg resultatbro og kontantstrømbro og beregn arbeidskapitalendring» med dokumentert usikkerhet.",
+    "Bruke avvik som startsignal for forklaring, ikke som dom over prestasjon. Gjennomfør oppgaven «dekomponer pris-, volum-, miks- og effektivitetsavvik» med dokumentert usikkerhet.",
+    "Vurdere påstand, risiko, kontroll og bevis med eksplisitt sikkerhetsnivå. Gjennomfør oppgaven «koble risiko til handling, utvalg, bevis og konklusjon» med dokumentert usikkerhet."
+  ],
+  "diagnosticQuestions": [
+    {
+      "question": "Hva må avgrenses før bokføring og regnskapskretsløp analyseres?",
+      "answer": "Analyseenheten ett avgrenset regnskapsår eller en måned med komplett bilagsserie, tidsrom, data, metode og beslutningskriterium."
+    },
+    {
+      "question": "Hva må avgrenses før finansregnskap og ekstern rapportering analyseres?",
+      "answer": "Analyseenheten ett årsregnskap med sammenligningstall og sentrale noter, tidsrom, data, metode og beslutningskriterium."
+    },
+    {
+      "question": "Hva må avgrenses før regnskapsanalyse og verdsettelse analyseres?",
+      "answer": "Analyseenheten én virksomhet analysert over minst tre år og mot en relevant sammenligningsgruppe, tidsrom, data, metode og beslutningskriterium."
+    },
+    {
+      "question": "Hva må avgrenses før kostnadsanalyse, kalkulasjon og budsjettering analyseres?",
+      "answer": "Analyseenheten ett kostnadssted eller produkt- og tjenestespekter med volum, kapasitet og indirekte kostnader, tidsrom, data, metode og beslutningskriterium."
+    },
+    {
+      "question": "Hva må avgrenses før internkontroll, revisjon og prestasjonsstyring analyseres?",
+      "answer": "Analyseenheten én kritisk prosess med påstander, risikoer, kontroller, eiere og resultatmål, tidsrom, data, metode og beslutningskriterium."
+    }
+  ],
+  "moduleFiles": [
+    "data/fagverk/naeringsliv/regnskap-revisjon-okonomistyring/01-grunnlag.json",
+    "data/fagverk/naeringsliv/regnskap-revisjon-okonomistyring/02-fordypning.json",
+    "data/fagverk/naeringsliv/regnskap-revisjon-okonomistyring/03-anvendelse.json"
+  ],
+  "briefFile": "data/fagverk/naeringsliv/regnskap-revisjon-okonomistyring/brief.json",
+  "claimsFile": "data/fagverk/naeringsliv/regnskap-revisjon-okonomistyring/claims.json",
+  "editorialStatus": "chapter_ready",
+  "claimTraceRequired": true
+}

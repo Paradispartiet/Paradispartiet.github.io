@@ -1,0 +1,447 @@
+{
+  "schema": "history_go_fagverk_claims_v1",
+  "version": "1.0.0",
+  "subject_id": "litteratur",
+  "chapter_id": "poetikk_estetikk_litteraritet",
+  "verified_at": "2026-08-07",
+  "verification_status": "verified",
+  "sources": [
+    {
+      "id": "spo01",
+      "label": "Aristotle’s Poetics",
+      "url": "https://www.cambridge.org/core/books/cambridge-history-of-literary-criticism/aristotles-poetics/901DBEBFF50D43D0709ACF7BBC6C0495",
+      "publisher": "Cambridge University Press",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Kapittelets seksjoner om mimesis, handling, karakter, gjenkjennelse og katharsis"
+    },
+    {
+      "id": "spo02",
+      "label": "Plato and Poetry",
+      "url": "https://www.cambridge.org/core/books/cambridge-history-of-literary-criticism/plato-and-poetry/885B1DB0512C060514EFEDA2396E6E2B",
+      "publisher": "Cambridge University Press",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Seksjonene om Platon, dikterisk etterligning og poesiens epistemiske og politiske problem"
+    },
+    {
+      "id": "spo03",
+      "label": "Literature – Oxford Handbook of Aesthetics",
+      "url": "https://academic.oup.com/edited-volume/37198/chapter/327329809",
+      "publisher": "Oxford University Press",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Kapittelets seksjoner om litterær verdi, fiksjon, form og estetisk erfaring"
+    },
+    {
+      "id": "spo04",
+      "label": "Mimesis as Make-Believe",
+      "url": "https://www.hup.harvard.edu/books/9780674576032",
+      "publisher": "Harvard University Press",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Bokbeskrivelsen og innholdsoversikten om make-believe, props og fictional worlds"
+    },
+    {
+      "id": "spo05",
+      "label": "Expression and Meaning",
+      "url": "https://www.cambridge.org/core/books/expression-and-meaning/C4CBA3EB44908E98410502D821A0D4EB",
+      "publisher": "Cambridge University Press",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Bokbeskrivelsen og innholdsoversikten om intensjon, talehandling og fiksjon"
+    },
+    {
+      "id": "spo06",
+      "label": "Critique of the Power of Judgment",
+      "url": "https://www.cambridge.org/core/books/critique-of-the-power-of-judgment/1B3D8A80D0A7B8C6953A88D7855B90C4",
+      "publisher": "Cambridge University Press",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Del I, §§1–22 om smaksdom og del II om teleologi og estetisk form"
+    },
+    {
+      "id": "spo07",
+      "label": "Art as Experience",
+      "url": "https://www.penguinrandomhouse.com/books/294029/art-as-experience-by-john-dewey/",
+      "publisher": "Penguin Random House",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Bokbeskrivelsen og kapitlene om experience, expression og the live creature"
+    },
+    {
+      "id": "spo08",
+      "label": "Aesthetic Theory",
+      "url": "https://www.bloomsbury.com/uk/aesthetic-theory-9781780936590/",
+      "publisher": "Bloomsbury Academic",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Bokbeskrivelsen og seksjonene om kunstverk, samfunn, autonomi og form"
+    },
+    {
+      "id": "spo09",
+      "label": "Arabic Poetics",
+      "url": "https://www.cambridge.org/core/books/arabic-poetics/AA5279D26A3B57133DAFEDF8AF6CA6CF",
+      "publisher": "Cambridge University Press",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Kapittelets seksjoner om arabisk poetikk, retorikk, meter og kritisk tradisjon"
+    },
+    {
+      "id": "spo10",
+      "label": "To the Lighthouse",
+      "url": "https://www.penguin.co.uk/books/60318/to-the-lighthouse-by-woolf-virginia/9780241371954",
+      "publisher": "Penguin",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Romanens del 1, åpningen ved Ramsay-huset, og del 2, Time Passes"
+    },
+    {
+      "id": "spo11",
+      "label": "The Picture of Dorian Gray",
+      "url": "https://www.gutenberg.org/ebooks/174",
+      "publisher": "Project Gutenberg",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Preface og kapitlene 1–2 samt sluttscenen i kapittel 20"
+    },
+    {
+      "id": "spo12",
+      "label": "Robinson Crusoe",
+      "url": "https://www.gutenberg.org/ebooks/521",
+      "publisher": "Project Gutenberg",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Kapittel 1–5 om øya, fortellerstemmen og Crusoes arbeid med omgivelsene"
+    }
+  ],
+  "claims": [
+    {
+      "id": "poe-01",
+      "claim": "Mimesis betegner framstilling eller etterligning, men ikke en fotografisk kopiering av en ferdig virkelighet.",
+      "source_ids": [
+        "spo01",
+        "spo02"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-02",
+      "claim": "Aristoteles legger hovedvekten på handlingens komposisjon snarere enn på hvor naturtro hver detalj er.",
+      "source_ids": [
+        "spo01"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-03",
+      "claim": "Robinson Crusoe produserer realisme gjennom datoer, inventarer, arbeidssekvenser og en jeg-forteller som måler øya.",
+      "source_ids": [
+        "spo12"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-04",
+      "claim": "The Picture of Dorian Gray gjør forholdet mellom bilde, kropp og moral til selve plottets motor.",
+      "source_ids": [
+        "spo11"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-05",
+      "claim": "Representasjon har også en etisk og politisk side fordi framstillinger fordeler tale, kompleksitet og synlighet.",
+      "source_ids": [
+        "spo03"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-06",
+      "claim": "Et praktisk sammenligningsdesign kan skille mellom representert objekt, framstillingsmåte og tekstens vurderingsramme.",
+      "source_ids": [
+        "spo01",
+        "spo12"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-07",
+      "claim": "Form er ikke en dekorativ beholder rundt et uforandret innhold.",
+      "source_ids": [
+        "spo03"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-08",
+      "claim": "I To the Lighthouse oppstår familiens relasjoner gjennom skiftende bevisstheter, avbrutte setninger og bevegelser mellom sansning og tanke.",
+      "source_ids": [
+        "spo10"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-09",
+      "claim": "Mellomdelen Time Passes omformer varighet ved å la huset, været og parentesene bære store historiske tap.",
+      "source_ids": [
+        "spo10"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-10",
+      "claim": "Paradise Lost bruker blankvers, episk påkalling og omfattende sammenligninger til å gi den bibelske fortellingen kosmisk og argumenterende form.",
+      "source_ids": [
+        "spo03"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-11",
+      "claim": "Formanalyse trenger historisering fordi former bærer konvensjoner som skifter mellom miljøer og epoker.",
+      "source_ids": [
+        "spo01",
+        "spo09"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-12",
+      "claim": "En form–innholdsanalyse kan begynne med en omskrivingsprøve. Gjenfortell Time Passes kronologisk og sammenlign referatet med Woolfs faktiske fordeling av setninger, parenteser, perspektiv og materielle beskrivelser.",
+      "source_ids": [
+        "spo10",
+        "spo03"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-13",
+      "claim": "Litteraritet viser til trekk og lesepraksiser som gjør språk kunstnerisk eller særlig formbevisst, mens fiksjonalitet gjelder en kommunikativ status der personer, hendelser eller verdener ikke framsettes som direkte faktarapport.",
+      "source_ids": [
+        "spo03"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-14",
+      "claim": "Fiksjon ber leseren forestille seg en verden etter tekstens regler uten at hver setning vurderes som en historisk påstand.",
+      "source_ids": [
+        "spo04"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-15",
+      "claim": "The Picture of Dorian Gray signaliserer fiksjon gjennom fantastisk premiss, komposisjon og fortellerkonvensjon, men forordets aforismer framsetter også en poetikk om kunst og moral.",
+      "source_ids": [
+        "spo11"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-16",
+      "claim": "Robinson Crusoe låner dagbok, reiseberetning, økonomisk regnskap og åndelig selvprøving for å produsere dokumentarisk autoritet.",
+      "source_ids": [
+        "spo12"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-17",
+      "claim": "Litteraritet er også institusjonelt fordi skole, kritikk, pris og forlag lærer lesere hvilke tekster som fortjener langsom oppmerksomhet.",
+      "source_ids": [
+        "spo03"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-18",
+      "claim": "Fiksjonalitet kan undersøkes med en lagdelt ytringsanalyse. I Dorian Gray bør forskeren først merke hvem som ytrer en setning—forteller, figur eller forordets aforistiske stemme—og deretter spørre hvilken verden og hvilken kommunikativ regel utsagnet gjelder i.",
+      "source_ids": [
+        "spo04",
+        "spo11"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-19",
+      "claim": "Estetisk erfaring betegner oppmerksomhet på hvordan et verk sanses, organiseres og vurderes som form.",
+      "source_ids": [
+        "spo03"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-20",
+      "claim": "Kants analyse av smaksdommen undersøker hvordan en subjektiv lyst likevel framsettes med krav om allmenn tilslutning.",
+      "source_ids": [
+        "spo06"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-21",
+      "claim": "Deweys Art as Experience knytter kunst til organismens samspill med omgivelser og til erfaringer som får rytmisk helhet.",
+      "source_ids": [
+        "spo07",
+        "spo10"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-22",
+      "claim": "Aesthetic Theory forbinder kunstens form med samfunnets motsetninger og forsvarer en relativ autonomi uten å tenke kunst som sosialt ren.",
+      "source_ids": [
+        "spo08"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-23",
+      "claim": "Begrunnelse av estetisk dom kan kombinere nærlesning, sammenligning og resepsjonshistorie.",
+      "source_ids": [
+        "spo03",
+        "spo08"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-24",
+      "claim": "Estetisk argumentasjon kan gjøres etterprøvbar uten å late som dommen er matematisk.",
+      "source_ids": [
+        "spo06",
+        "spo07"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-25",
+      "claim": "Poetikk er refleksjon over hvordan litterære former virker, hvordan de bør utformes og hvordan de kan vurderes.",
+      "source_ids": [
+        "spo01",
+        "spo02"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-26",
+      "claim": "Platon og Aristoteles etablerer ikke én samlet «klassisk teori».",
+      "source_ids": [
+        "spo01",
+        "spo02"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-27",
+      "claim": "Arabisk poetikk utviklet omfattende diskusjoner om vers, retorikk, metafor, komposisjon og Koranens språk i samspill med oversettelse og bearbeiding av gresk filosofi.",
+      "source_ids": [
+        "spo09"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-28",
+      "claim": "Renessansens, klassisismens og romantikkens poetikker omformet arven gjennom nye språk, hoff, teatre, trykkmarkeder og forestillinger om forfatteren.",
+      "source_ids": [
+        "spo03"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-29",
+      "claim": "Moderne poetikk omfatter formalisme, språkvitenskap, avantgardemanifest, strukturalisme og situerte teorier om kjønn, kolonialitet, medium og leser.",
+      "source_ids": [
+        "spo03",
+        "spo08"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-30",
+      "claim": "En ikke-teleologisk poetikkhistorie organiseres best rundt problemer fremfor en parade av store navn.",
+      "source_ids": [
+        "spo01",
+        "spo09"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-31",
+      "claim": "Kunstnerisk autonomi betegner forestillingen om at kunst kan utvikle egne former og vurderingskriterier som ikke reduseres til moral, politikk, religion eller marked.",
+      "source_ids": [
+        "spo06",
+        "spo08"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-32",
+      "claim": "Forordet til The Picture of Dorian Gray framsetter aforismer om kunstner, moral og betrakter som ofte leses som estetisistisk autonomiprogram.",
+      "source_ids": [
+        "spo11"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-33",
+      "claim": "Kants estetikk bidro til en moderne forståelse av dom uten direkte nytte, men institusjonell autonomi følger ikke automatisk av den filosofiske modellen.",
+      "source_ids": [
+        "spo06"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-34",
+      "claim": "Adornos autonomibegrep er dialektisk fordi kunstverket både er samfunnsprodukt og kan motstå samfunnets etablerte former gjennom sin egen organisering.",
+      "source_ids": [
+        "spo08",
+        "spo10"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-35",
+      "claim": "Autonomipåstander bør avgrenses med et konkret spørsmål. Gjelder det kunstnerens juridiske frihet, verkets formelle egenlogikk, kritikernes verdikriterier eller en institusjons avstand til staten?",
+      "source_ids": [
+        "spo08"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "poe-36",
+      "claim": "Autonomi kan operasjonaliseres gjennom tre separate spørsmål. Det formelle spørsmålet undersøker om verkets organisering motsetter seg en enkel moralsk eller instrumentell lesning; det institusjonelle spørsmålet kartlegger finansiering, publisering og kritiske verdikriterier; det juridiske spørsmålet gjelder hvilke inngrep og rettigheter som rammer produksjonen.",
+      "source_ids": [
+        "spo08",
+        "spo11"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    }
+  ]
+}

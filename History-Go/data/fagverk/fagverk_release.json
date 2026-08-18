@@ -1,0 +1,4809 @@
+{
+  "schema": "history_go_fagverk_release_v2",
+  "version": "2.0.0",
+  "source": {
+    "repository": "Paradispartiet/History-Go",
+    "branch": "main",
+    "source_ref_mode": "consumer_observed_head"
+  },
+  "registry": {
+    "path": "data/fagverk/fagverk_registry.json",
+    "schema": "history_go_fagverk_registry_v1",
+    "version": "3.12.0",
+    "updated_at": "2026-08-18",
+    "content_sha256": "a9367c9d88a59f5105b5ae3cbeef4368cb9577f37b9d14b7efbc518c45b1a128"
+  },
+  "subject_inventory": {
+    "path": "data/fagverk/subject_inventory.json",
+    "schema": "history_go_fagverk_subject_inventory_v1",
+    "version": "1.11.0",
+    "updated_at": "2026-08-13",
+    "content_sha256": "d959548cb11ba36c4b9a0d01444d62447bcf5e20443f1852e164b6248dcf1236",
+    "root_subject_count": 17,
+    "specialization_count": 1
+  },
+  "fag_manifest": {
+    "path": "data/fag/fag_manifest.json",
+    "schema": null,
+    "version": null,
+    "updated_at": null,
+    "content_sha256": "11a8d59dce7070f1bd620e2479e28d248570c78f03dbfbc8e40c73e2f97ddaa9"
+  },
+  "summary": {
+    "subject_count": 18,
+    "root_subject_count": 17,
+    "specialization_count": 1,
+    "chapter_subject_count": 14,
+    "chapter_count": 159,
+    "module_file_count": 389,
+    "package_file_count": 205,
+    "chapter_referenced_file_count": 735,
+    "referenced_file_count": 899,
+    "missing_file_count": 0,
+    "optional_gap_count": 1
+  },
+  "subjects": {
+    "by": {
+      "title": "By & arkitektur",
+      "kind": "subject",
+      "parent_subject_id": null,
+      "schema_family": "by_compatibility",
+      "pilot": true,
+      "package_status": "complete",
+      "chapter_status": "materialized",
+      "required_manifest_fields": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods"
+      ],
+      "optional_manifest_fields": [
+        "supersetQuizMal",
+        "quizStandard",
+        "quizQuestionSchema",
+        "quizPackageSchema",
+        "quizProduction"
+      ],
+      "present_manifest_fields": [
+        "emner",
+        "fagkart",
+        "methods",
+        "pensum",
+        "quizPackageSchema",
+        "quizProduction",
+        "quizQuestionSchema",
+        "quizStandard",
+        "supersetQuizMal"
+      ],
+      "missing_manifest_fields": [],
+      "package_file_count": 15,
+      "required_package_file_count": 4,
+      "optional_package_file_count": 11,
+      "package_files": [
+        {
+          "path": "data/fag/by/emner_by.json",
+          "required": true,
+          "fields": [
+            "emner"
+          ],
+          "key_paths": [
+            "emner"
+          ],
+          "exists": true,
+          "content_sha256": "d53d02de4658059a411dc393d30b3765b8ea7ece7af33173811a3641f7e5efac"
+        },
+        {
+          "path": "data/fag/by/fagkart_by.json",
+          "required": true,
+          "fields": [
+            "fagkart"
+          ],
+          "key_paths": [
+            "fagkart"
+          ],
+          "exists": true,
+          "content_sha256": "d84cb69488e5f7dab2237c231489c6ce7bf0769e47f780a29ee27add98606889"
+        },
+        {
+          "path": "data/fag/by/methods_by.json",
+          "required": true,
+          "fields": [
+            "methods"
+          ],
+          "key_paths": [
+            "methods"
+          ],
+          "exists": true,
+          "content_sha256": "5391bf55e0a764158e15eac31e5f7b8b34cf02f4acc40dea56a97977ff6ebd0b"
+        },
+        {
+          "path": "data/fag/by/pensum_by.json",
+          "required": true,
+          "fields": [
+            "pensum"
+          ],
+          "key_paths": [
+            "pensum"
+          ],
+          "exists": true,
+          "content_sha256": "98271a067dc29328537b3f16151e5a925d45df088cce912682c6d45a734471b6"
+        },
+        {
+          "path": "data/fag/by/supersetQUIZMAL_by.json",
+          "required": false,
+          "fields": [
+            "supersetQuizMal"
+          ],
+          "key_paths": [
+            "supersetQuizMal"
+          ],
+          "exists": true,
+          "content_sha256": "289f1004b8cd8fd3a551b7e884908ee2653ea9d4315a58dce417ffb064007956"
+        },
+        {
+          "path": "data/quiz/by/deichman_bjorvika_sets.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.deichman_bjorvika.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "0bbf806341a777cac2cddaaa839716623bf9202dca3ba604ed956b1b7501617d"
+        },
+        {
+          "path": "data/quiz/by/torggata_sets.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.torggata.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "cf6eafa10b607b1ce5e5f6c3d29f42b965d9dfed596ad37d45e18eca119bcdfd"
+        },
+        {
+          "path": "data/quiz/production_briefs/by/deichman_bjorvika.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.deichman_bjorvika.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "39c221abfd5d9cd96d3d2850152521e7a05a1aac463c6995863dd72a23009672"
+        },
+        {
+          "path": "data/quiz/production_briefs/by/torggata.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.torggata.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "e19e930817be069930e5273fef95c1b7aa19d3e1f303f0ca64b2ad8d2d86250f"
+        },
+        {
+          "path": "data/quiz/production_context/by/deichman_bjorvika.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.deichman_bjorvika.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "65c46983929de157a806b8b9111ae2a880f0713711748e0b4812087617d8cc05"
+        },
+        {
+          "path": "data/quiz/production_context/by/torggata.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.torggata.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "e9c65a4a8db6d34ab89b0c9101b3b4b6324575d817aa880f08f09c1f555d05e4"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PACKAGE_SCHEMA_V1.json",
+          "required": false,
+          "fields": [
+            "quizPackageSchema"
+          ],
+          "key_paths": [
+            "quizPackageSchema"
+          ],
+          "exists": true,
+          "content_sha256": "3a01fb4177c9cf81df823d3bacdb24b1a37b2bdbfd45dade8aa18f4d0e5ec8d6"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+          "required": false,
+          "fields": [
+            "quizStandard"
+          ],
+          "key_paths": [
+            "quizStandard"
+          ],
+          "exists": true,
+          "content_sha256": "98b23395fb461f7a7cf4920774551902060facc20d9013e5fe4d3e8327aceb33"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+          "required": false,
+          "fields": [
+            "quizQuestionSchema"
+          ],
+          "key_paths": [
+            "quizQuestionSchema"
+          ],
+          "exists": true,
+          "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
+        },
+        {
+          "path": "scripts/build-quiz-production-context.mjs",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.context_builder"
+          ],
+          "exists": true,
+          "content_sha256": "636265081b34aef4899fb33a8dd8ad7b03233480abdbfb812edced0d6a1a14d5"
+        }
+      ],
+      "package_content_sha256": "850e17a5e11073edc7b7a1f2b6fb42c23cb0c8bc0bb98e9b29f924903cd66ed5",
+      "chapter_count": 17,
+      "module_file_count": 51,
+      "brief_file_count": 17,
+      "claims_file_count": 17,
+      "chapter_referenced_file_count": 102,
+      "chapter_content_sha256": "21ed783bb2d9f06494fa9a56eb60af89e5d8c8225a51d930eebddf35203dd283",
+      "referenced_file_count": 117,
+      "missing_required_files": [],
+      "missing_optional_files": [],
+      "missing_chapter_files": [],
+      "missing_files": [],
+      "structure_sha256": "67805efadd63cfa6d026b3d3ee82064a882f88d18e7fc3a9cccd8ecc3fd65ffb",
+      "content_sha256": "d5b520e36e6f7bd84f5d83abf287e4f78296dc3e8525a51df31699fdd055ea56",
+      "chapters": [
+        {
+          "chapter_id": "byliv-offentlige-rom",
+          "title": "Offentlige rom: opphold, bevegelse og møteplasser",
+          "file": "data/fagverk/by/byliv-offentlige-rom.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "d34ae278eee5fe464cef772ea2019b43b54f32d77f46487bc6790b65cb2f4f95"
+        },
+        {
+          "chapter_id": "byliv-sosial-offentlighet",
+          "title": "Sosial offentlighet: møter, venting og lavterskel byliv",
+          "file": "data/fagverk/by/byliv-sosial-offentlighet.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "5b3d0517b132851a1e79167567b8b4c8f718781199ee85b531665fb595d03feb"
+        },
+        {
+          "chapter_id": "byliv-hendelser-midlertidighet",
+          "title": "Hendelser og midlertidighet: når byrom skifter modus",
+          "file": "data/fagverk/by/byliv-hendelser-midlertidighet.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "c79120669a1114fd5edf5effe10e3b0afeffe79f962d09dc6397a8b9334e04d4"
+        },
+        {
+          "chapter_id": "byliv-stemning-mikrokomfort",
+          "title": "Stemning og mikrokomfort: lyd, lys, materialitet og vær i byrommet",
+          "file": "data/fagverk/by/byliv-stemning-mikrokomfort.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "3102c4c1e76ee7881cacc86430f765872dddfca38e700dc9f9cbc3d0fe30b9b5"
+        },
+        {
+          "chapter_id": "byliv-rytmer-miks-konflikt",
+          "title": "Rytmer, sosial miks og hverdagsfriksjon: hvem deler byen når?",
+          "file": "data/fagverk/by/byliv-rytmer-miks-konflikt.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "d03740d9cb5e518e9e4702990951fa894d5b4e50cce4f32aa894156d09437469"
+        },
+        {
+          "chapter_id": "arkitektur-type-skala-byform",
+          "title": "Type, skala og byform: fra hageby til høyhus",
+          "file": "data/fagverk/by/arkitektur-type-skala-byform.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "e03af23bf9d7188994d6d824ebef649a1763bade749039c2d68ee4fcc69531bd"
+        },
+        {
+          "chapter_id": "arkitektur-gatekant-makt-ombruk",
+          "title": "Gatekant, symbol og ombruk: hvordan arkitektur virker og styres",
+          "file": "data/fagverk/by/arkitektur-gatekant-makt-ombruk.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "753b2062da19c5928092a1b86ac04d6d67b00edb8bf9ceab06e4e388aa29cc7b"
+        },
+        {
+          "chapter_id": "bolig-nabolag-tilgang-endring",
+          "title": "Bolig, tilgang og nabolagsendring: hvem kan bli boende?",
+          "file": "data/fagverk/by/bolig-nabolag-tilgang-endring.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "9374dc1f2a28d08bed13d63c45c976e8c6e5a93027e9fa75cb886bdc3f3aedd2"
+        },
+        {
+          "chapter_id": "administrasjon-plan-kontroll-beredskap",
+          "title": "Regler, kontroll og beredskap: hvordan byen styres i praksis",
+          "file": "data/fagverk/by/administrasjon-plan-kontroll-beredskap.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "aea9fc446ef73bc321eae15f7af4740ff556f09f9ac32bd32cd15cf045ce52d5"
+        },
+        {
+          "chapter_id": "urbanisme-idealer-forbindelser-fortetting",
+          "title": "Byidealer, forbindelser og fortetting: fra planmodell til faktisk by",
+          "file": "data/fagverk/by/urbanisme-idealer-forbindelser-fortetting.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "362be52144e10345ad30368ced21193f384322a385066fddcf74481b37bfccdf"
+        },
+        {
+          "chapter_id": "arbeid-naering-handel-logistikk",
+          "title": "Arbeidsby, handel og logistikk: økonomien i byrommet",
+          "file": "data/fagverk/by/arbeid-naering-handel-logistikk.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "73cb864cb2347f713749576724150d62d08ed92b7d80d5752200a9a436e005c1"
+        },
+        {
+          "chapter_id": "historiske-lag-ruiner-minner",
+          "title": "Ruiner, tomrom og minnespor: hvordan byen husker",
+          "file": "data/fagverk/by/historiske-lag-ruiner-minner.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "871b6881ca9610a592f47d20d1ffa400a5b09a99a38a6268ac1dbc18b36fcc14"
+        },
+        {
+          "chapter_id": "makt-konflikt-protest-grenser-trygghet",
+          "title": "Protest, grenser og trygghet: hvem får bruke byen?",
+          "file": "data/fagverk/by/makt-konflikt-protest-grenser-trygghet.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "894f29ea4e697203fd850e190298ae267b655166d5aad88e342a0972a9c1ebed"
+        },
+        {
+          "chapter_id": "klima-helse-varme-vann-tilgjengelighet",
+          "title": "Varme, vann og tilgjengelighet: hvem tåler byen?",
+          "file": "data/fagverk/by/klima-helse-varme-vann-tilgjengelighet.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "18dbeaf980547e2ffd0ee49486fbec1d33bcd4dcea3a4a1522546339aa9c1731"
+        },
+        {
+          "chapter_id": "data-styring-kart-plan-medvirkning-algoritmer",
+          "title": "Kart, vedtak og algoritmer: hvem styrer den målte byen?",
+          "file": "data/fagverk/by/data-styring-kart-plan-medvirkning-algoritmer.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "7ad60cd0cbbb52ba95243da94d49d361d6ec7b9c87d6802171ef230e4c18b71c"
+        },
+        {
+          "chapter_id": "regional-global-pendling-migrasjon-sammenligning",
+          "title": "Oslo i strømmen: pendling, migrasjon og sammenlignbare byer",
+          "file": "data/fagverk/by/regional-global-pendling-migrasjon-sammenligning.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "4b609b07849c6ea2dc0fed24aacd8c90c34681057d565b468b844345d7bd242c"
+        },
+        {
+          "chapter_id": "boligpolitikk-pris-leie-eie-tilgang",
+          "title": "Hvem har råd til byen? Pris, leie, eie og boligtrygghet",
+          "file": "data/fagverk/by/boligpolitikk-pris-leie-eie-tilgang.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "38a32d45f885c977d8f8037f373cffa273e64307110428e3a1856951d1ef3f9e"
+        }
+      ]
+    },
+    "film_tv": {
+      "title": "Film & TV",
+      "kind": "subject",
+      "parent_subject_id": null,
+      "schema_family": "standard_canonical",
+      "pilot": false,
+      "package_status": "complete",
+      "chapter_status": "materialized",
+      "required_manifest_fields": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods"
+      ],
+      "optional_manifest_fields": [
+        "supersetQuizMal",
+        "quizStandard",
+        "quizQuestionSchema",
+        "emneMappings"
+      ],
+      "present_manifest_fields": [
+        "emneMappings",
+        "emner",
+        "fagkart",
+        "methods",
+        "pensum",
+        "quizQuestionSchema",
+        "quizStandard",
+        "supersetQuizMal"
+      ],
+      "missing_manifest_fields": [],
+      "package_file_count": 8,
+      "required_package_file_count": 4,
+      "optional_package_file_count": 4,
+      "package_files": [
+        {
+          "path": "data/fag/TV_og_Film/emnemapping_film_tv_canonical_v4_5.json",
+          "required": false,
+          "fields": [
+            "emneMappings"
+          ],
+          "key_paths": [
+            "emneMappings"
+          ],
+          "exists": true,
+          "content_sha256": "5c634e662041dc5c86147430779920b657c3195e593f3ff0816ee4977b2cbbbd"
+        },
+        {
+          "path": "data/fag/TV_og_Film/emner_film_tv_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "emner"
+          ],
+          "key_paths": [
+            "emner"
+          ],
+          "exists": true,
+          "content_sha256": "ec5038f467c7e46fb0479f79c7bef471d4346b58b0cbed53c77b25c68ee17f2e"
+        },
+        {
+          "path": "data/fag/TV_og_Film/fagkart_film_tv_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "fagkart"
+          ],
+          "key_paths": [
+            "fagkart"
+          ],
+          "exists": true,
+          "content_sha256": "145258c31fbb91d541fddb1fb63a4dabc8e9e11db4b9b9834bd38bd6a4b3b7a9"
+        },
+        {
+          "path": "data/fag/TV_og_Film/film_tvpensum_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "pensum"
+          ],
+          "key_paths": [
+            "pensum"
+          ],
+          "exists": true,
+          "content_sha256": "c5a7e8ba2ee0a448122ab5a7f22793960511fe400587fd929be1a0803361a143"
+        },
+        {
+          "path": "data/fag/TV_og_Film/methods_film_tv_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "methods"
+          ],
+          "key_paths": [
+            "methods"
+          ],
+          "exists": true,
+          "content_sha256": "35fc52237f88e4bfe881006b3d922bd25f811ac82a8ef66955bbf952be40f21c"
+        },
+        {
+          "path": "data/fag/TV_og_Film/supersetQUIZMAL_film_tv.json",
+          "required": false,
+          "fields": [
+            "supersetQuizMal"
+          ],
+          "key_paths": [
+            "supersetQuizMal"
+          ],
+          "exists": true,
+          "content_sha256": "6b9c816196a097f190595025f924506610a46412770d4509faf2d7090db226d5"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+          "required": false,
+          "fields": [
+            "quizStandard"
+          ],
+          "key_paths": [
+            "quizStandard"
+          ],
+          "exists": true,
+          "content_sha256": "98b23395fb461f7a7cf4920774551902060facc20d9013e5fe4d3e8327aceb33"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+          "required": false,
+          "fields": [
+            "quizQuestionSchema"
+          ],
+          "key_paths": [
+            "quizQuestionSchema"
+          ],
+          "exists": true,
+          "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
+        }
+      ],
+      "package_content_sha256": "69fb6e4e6d7814d54997a89aae2ef47acfaf4ffcfbfaa73f284a084b4d9a9f93",
+      "chapter_count": 17,
+      "module_file_count": 63,
+      "brief_file_count": 17,
+      "claims_file_count": 17,
+      "chapter_referenced_file_count": 114,
+      "chapter_content_sha256": "3ffb028f13a2742a1a03d0c47fbd70ce8e817aa46e77feb09c12bc17617ddd60",
+      "referenced_file_count": 122,
+      "missing_required_files": [],
+      "missing_optional_files": [],
+      "missing_chapter_files": [],
+      "missing_files": [],
+      "structure_sha256": "fa1aa9d206a68ce075117f929fd25bf8373123ca36246d8aae026e64e6052986",
+      "content_sha256": "d21c354754910fc3dc6d756380105a08949121864c7fe940923dbd439c81be5c",
+      "chapters": [
+        {
+          "chapter_id": "kinoer-visningssteder-og-publikum",
+          "title": "Kinoer, visningssteder og publikum: hvordan skjermopplevelsen blir sosial",
+          "file": "data/fagverk/film_tv/kinoer-visningssteder-og-publikum.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "b9e2e0651d918038328e41e8ac9771daadb18c2568cef85f7be08572b20d883b"
+        },
+        {
+          "chapter_id": "produksjon-studio-og-filmarbeid",
+          "title": "Produksjon, studio og filmarbeid: hvordan levende bilder blir laget",
+          "file": "data/fagverk/film_tv/produksjon-studio-og-filmarbeid.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "b01ef00f94ce4acd7b02b83f6aeb4bbaa6350b82fadc442f9d81430f749b9ccd"
+        },
+        {
+          "chapter_id": "audiovisuell-form-og-sansing",
+          "title": "Audiovisuell form og sansing: hvordan bilde og lyd skaper mening",
+          "file": "data/fagverk/film_tv/audiovisuell-form-og-sansing.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "d5f6be1fb3b49a25c09c87801b56cd0bb16ed3cd8463d6d02f34d3a16645decc"
+        },
+        {
+          "chapter_id": "fortelling-synsvinkel-og-sjanger",
+          "title": "Fortelling, synsvinkel og sjanger: hvordan verk organiserer verden, kunnskap og forventning",
+          "file": "data/fagverk/film_tv/fortelling-synsvinkel-og-sjanger.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "5ad38a9c9e2d5527c038c8922cad0eac777f2b189d399685b9da813287053b62"
+        },
+        {
+          "chapter_id": "serialitet-format-og-adaptasjon",
+          "title": "Serialitet, format og adaptasjon: hvordan fortellinger gjentas, deles og omformes",
+          "file": "data/fagverk/film_tv/serialitet-format-og-adaptasjon.json",
+          "module_file_count": 4,
+          "referenced_file_count": 7,
+          "content_sha256": "613618d317b3c9d5ef82399ce9dfd646d33c829ece80db0b92d82db9661a6bf2"
+        },
+        {
+          "chapter_id": "filmhistorie-bevegelser-og-historiografi",
+          "title": "Filmhistorie, bevegelser og historiografi: hvordan fortiden blir periodisert og revidert",
+          "file": "data/fagverk/film_tv/filmhistorie-bevegelser-og-historiografi.json",
+          "module_file_count": 4,
+          "referenced_file_count": 7,
+          "content_sha256": "baf284029d7b1d41969b858bcf3947c8309ee7ab041e723b31132f380e576e43"
+        },
+        {
+          "chapter_id": "fjernsyn-plattformer-og-deltakerhistorier",
+          "title": "Fjernsyn, plattformer og deltakerhistorier: hvordan signaler, tjenester og bilder blir historie",
+          "file": "data/fagverk/film_tv/fjernsyn-plattformer-og-deltakerhistorier.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "ecd786cbc06eec33a89d8c0006e169d0e8da48379317eb48ea13076d829c60db"
+        },
+        {
+          "chapter_id": "dokumentar-evidens-og-etikk",
+          "title": "Dokumentar, evidens og etikk: hvordan virkelighetsbilder blir påstander og ansvar",
+          "file": "data/fagverk/film_tv/dokumentar-evidens-og-etikk.json",
+          "module_file_count": 4,
+          "referenced_file_count": 7,
+          "content_sha256": "6989a954df11f1a009366abad2e9f29906db06270029f6888ce4a5d1bdcf9b66"
+        },
+        {
+          "chapter_id": "representasjon-posisjon-og-motbilder",
+          "title": "Representasjon, posisjon og motbilder: hvem får synlighet, autoritet og kontroll",
+          "file": "data/fagverk/film_tv/representasjon-posisjon-og-motbilder.json",
+          "module_file_count": 4,
+          "referenced_file_count": 7,
+          "content_sha256": "f41ec4303c74b2d425f868369957db8f51f0aed1d5a3571367f77d6a7a2996a5"
+        },
+        {
+          "chapter_id": "skjermoffentlighet-fellesskap-og-samfunn",
+          "title": "Skjermoffentlighet, fellesskap og samfunn: fra representasjon til dokumenterbar virkning",
+          "file": "data/fagverk/film_tv/skjermoffentlighet-fellesskap-og-samfunn.json",
+          "module_file_count": 4,
+          "referenced_file_count": 7,
+          "content_sha256": "863193d43949d6a18b71a31efe63be0cf491c64298fb915f48237e150cd660d2"
+        },
+        {
+          "chapter_id": "skapende-arbeid-teknologi-og-ansvar",
+          "title": "Skapende arbeid, teknologi og ansvar: fra utviklingsdokument til dokumenterbar virkning",
+          "file": "data/fagverk/film_tv/skapende-arbeid-teknologi-og-ansvar.json",
+          "module_file_count": 4,
+          "referenced_file_count": 7,
+          "content_sha256": "f3596d9fdf71730087aa06ffd7d7b176286a3b4bb45412e7ce86be537dc64999"
+        },
+        {
+          "chapter_id": "industri-regulering-og-distribusjon",
+          "title": "Industri, regulering og distribusjon: hvem som finansierer, eier, regulerer og gjør verk tilgjengelige",
+          "file": "data/fagverk/film_tv/industri-regulering-og-distribusjon.json",
+          "module_file_count": 4,
+          "referenced_file_count": 7,
+          "content_sha256": "817a83787298c8500ad0f6a85fb12bf5f07128af4bf2b43f88ec1abb51e8bf28"
+        },
+        {
+          "chapter_id": "resepsjon-deltakelse-og-publikumsmetoder",
+          "title": "Resepsjon, deltakelse og publikumsmetoder: hvordan mennesker faktisk møter, bruker og fortolker skjermmedier",
+          "file": "data/fagverk/film_tv/resepsjon-deltakelse-og-publikumsmetoder.json",
+          "module_file_count": 4,
+          "referenced_file_count": 7,
+          "content_sha256": "904ed676a594bb9b6cb675f95eaa5a22e77e0fc709fb9934550db520b07f5899"
+        },
+        {
+          "chapter_id": "skjermsteder-identitet-og-sirkulasjon",
+          "title": "Skjermsteder, identitet og sirkulasjon: hvordan audiovisuelle rom bygges, flyttes og huskes",
+          "file": "data/fagverk/film_tv/skjermsteder-identitet-og-sirkulasjon.json",
+          "module_file_count": 4,
+          "referenced_file_count": 7,
+          "content_sha256": "beade885cf1def07520fba028e6d3e2685f019c81c9a8aaedf3871aa73ae6908"
+        },
+        {
+          "chapter_id": "location-produksjon-og-stedsetikk",
+          "title": "Location, produksjon og stedsetikk: inngrep, samtykke, økologi og lokal virkning",
+          "file": "data/fagverk/film_tv/location-produksjon-og-stedsetikk.json",
+          "module_file_count": 4,
+          "referenced_file_count": 7,
+          "content_sha256": "c3d3d9fa93d1a550c6829dce2bae5b2067fbb9837310d6d48088cd80f762d5f9"
+        },
+        {
+          "chapter_id": "arkiv-bevaring-tilgang-og-autentisitet",
+          "title": "Arkiv, bevaring, tilgang og autentisitet: proveniens, versjoner og digital varighet",
+          "file": "data/fagverk/film_tv/arkiv-bevaring-tilgang-og-autentisitet.json",
+          "module_file_count": 4,
+          "referenced_file_count": 7,
+          "content_sha256": "dc1b5a10fa35941273dde94c890b18e9f1320193f846e12e05f110ea4388680d"
+        },
+        {
+          "chapter_id": "kulturarv-kanon-stjerner-og-minne",
+          "title": "Kulturarv, kanon, stjerner og minne: hvordan audiovisuell kultur får varighet",
+          "file": "data/fagverk/film_tv/kulturarv-kanon-stjerner-og-minne.json",
+          "module_file_count": 4,
+          "referenced_file_count": 7,
+          "content_sha256": "e434b3f4bde3860b8413533a3718fe7a8de4c1bd6300b86d82a560a355def0de"
+        }
+      ]
+    },
+    "filosofi": {
+      "title": "Filosofi",
+      "kind": "subject",
+      "parent_subject_id": null,
+      "schema_family": "foundation_v1",
+      "pilot": false,
+      "package_status": "complete",
+      "chapter_status": "materialized",
+      "required_manifest_fields": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods"
+      ],
+      "optional_manifest_fields": [
+        "supersetQuizMal",
+        "status",
+        "quizStandard",
+        "quizQuestionSchema"
+      ],
+      "present_manifest_fields": [
+        "emner",
+        "fagkart",
+        "methods",
+        "pensum",
+        "quizQuestionSchema",
+        "quizStandard",
+        "status",
+        "supersetQuizMal"
+      ],
+      "missing_manifest_fields": [],
+      "package_file_count": 7,
+      "required_package_file_count": 4,
+      "optional_package_file_count": 3,
+      "package_files": [
+        {
+          "path": "data/fag/filosofi/emner_filosofi_canonical_v1.json",
+          "required": true,
+          "fields": [
+            "emner"
+          ],
+          "key_paths": [
+            "emner"
+          ],
+          "exists": true,
+          "content_sha256": "91fa56b8d5ef896850420c7493af01b96e898de18dd9f120aca833e094f89d2d"
+        },
+        {
+          "path": "data/fag/filosofi/fagkart_filosofi_canonical_v1.json",
+          "required": true,
+          "fields": [
+            "fagkart"
+          ],
+          "key_paths": [
+            "fagkart"
+          ],
+          "exists": true,
+          "content_sha256": "66f0b23c8b5624e2ef4c216b9e713a6ea56bf89b64cc3d3f798df905078b3e73"
+        },
+        {
+          "path": "data/fag/filosofi/filosofipensum_canonical_v1.json",
+          "required": true,
+          "fields": [
+            "pensum"
+          ],
+          "key_paths": [
+            "pensum"
+          ],
+          "exists": true,
+          "content_sha256": "6a68f4e9eacbdf87f0c72b58b711020682a99910bcfa4a273127d87f81c256fc"
+        },
+        {
+          "path": "data/fag/filosofi/methods_filosofi_canonical_v1.json",
+          "required": true,
+          "fields": [
+            "methods"
+          ],
+          "key_paths": [
+            "methods"
+          ],
+          "exists": true,
+          "content_sha256": "8b6a6b44d26f6534ac1312b88f414eb068a22806e89504ec36b8da063237e9e0"
+        },
+        {
+          "path": "data/fag/filosofi/supersetQUIZMAL_filosofi.json",
+          "required": false,
+          "fields": [
+            "supersetQuizMal"
+          ],
+          "key_paths": [
+            "supersetQuizMal"
+          ],
+          "exists": true,
+          "content_sha256": "9d0fb17a200e812f6b0478c9715709c4dd4473c2f985f7489b2fa8b93437b420"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+          "required": false,
+          "fields": [
+            "quizStandard"
+          ],
+          "key_paths": [
+            "quizStandard"
+          ],
+          "exists": true,
+          "content_sha256": "98b23395fb461f7a7cf4920774551902060facc20d9013e5fe4d3e8327aceb33"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+          "required": false,
+          "fields": [
+            "quizQuestionSchema"
+          ],
+          "key_paths": [
+            "quizQuestionSchema"
+          ],
+          "exists": true,
+          "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
+        }
+      ],
+      "package_content_sha256": "d38eced4418fefe76a16a48c244d9addb055630a4403fb441cfc7acb397f0aa6",
+      "chapter_count": 20,
+      "module_file_count": 0,
+      "brief_file_count": 0,
+      "claims_file_count": 0,
+      "chapter_referenced_file_count": 20,
+      "chapter_content_sha256": "736c675449219e7ee7c872679b1f14845df5ecc6e018858978a7b95bfd7b5915",
+      "referenced_file_count": 27,
+      "missing_required_files": [],
+      "missing_optional_files": [],
+      "missing_chapter_files": [],
+      "missing_files": [],
+      "structure_sha256": "1a691ced6090605a11520de4c6481cff82ef807e9bfe46dd76c1c387dddd2ca0",
+      "content_sha256": "93254f9ab9924c7b9b8acda5724086a649db3e1c1366e7836a6d977ea4ff150b",
+      "chapters": [
+        {
+          "chapter_id": "filosofi-argumentasjon-logikk",
+          "title": "Argumentasjon og logikk",
+          "file": "data/fagverk/filosofi/chapters/filosofi-argumentasjon-logikk.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "eca9c00c57168535ae2de556f2a78bf4c31cbe37fa3539a8a336811c830716f1"
+        },
+        {
+          "chapter_id": "filosofi-erkjennelse-sannhet",
+          "title": "Erkjennelse, sannhet og kunnskapsmakt",
+          "file": "data/fagverk/filosofi/chapters/filosofi-erkjennelse-sannhet.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "393643504fdbe4d1373011bb16ada1bcf98c7ec5a8a6042f3736adebc548c7c4"
+        },
+        {
+          "chapter_id": "filosofi-metafysikk-virkelighet",
+          "title": "Metafysikk, virkelighet og tid",
+          "file": "data/fagverk/filosofi/chapters/filosofi-metafysikk-virkelighet.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "14e097e073fb8b9c4fe316615e0192ed864604b2dac20ced9e8272f41b3740d8"
+        },
+        {
+          "chapter_id": "filosofi-sinn-bevissthet-identitet",
+          "title": "Sinn, bevissthet og personlig identitet",
+          "file": "data/fagverk/filosofi/chapters/filosofi-sinn-bevissthet-identitet.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "84b44efe622082de70146cc346ba20371b908a9dac1c7e9f38e173c046eef223"
+        },
+        {
+          "chapter_id": "filosofi-etikk-moralpsykologi",
+          "title": "Etikk, dyd og moralsk ansvar",
+          "file": "data/fagverk/filosofi/chapters/filosofi-etikk-moralpsykologi.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "f6ccae90e90fab729399140cbfc980c2f7bbd2a52ce957691332658235cded67"
+        },
+        {
+          "chapter_id": "filosofi-politisk-filosofi-rettferdighet",
+          "title": "Politisk filosofi, frihet og rettferdighet",
+          "file": "data/fagverk/filosofi/chapters/filosofi-politisk-filosofi-rettferdighet.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "3d16303714b086cf51fcb27316b701c96453b621be7c53cadb019761539a76b3"
+        },
+        {
+          "chapter_id": "filosofi-sosial-filosofi-makt",
+          "title": "Sosial filosofi, makt og frigjøring",
+          "file": "data/fagverk/filosofi/chapters/filosofi-sosial-filosofi-makt.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "4d1eb14ec1827d78b1e17894c877bc0443c08912630b1a75f97ac7aa09dd7c56"
+        },
+        {
+          "chapter_id": "filosofi-estetikk-fortolkning",
+          "title": "Estetikk, kunst og fortolkning",
+          "file": "data/fagverk/filosofi/chapters/filosofi-estetikk-fortolkning.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "fe2699059764b0f961a23179a8dbd6206d78b5405062191a673689f177bcf0a6"
+        },
+        {
+          "chapter_id": "filosofi-vitenskapsfilosofi",
+          "title": "Vitenskapsfilosofi og forklaring",
+          "file": "data/fagverk/filosofi/chapters/filosofi-vitenskapsfilosofi.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "0359bd80d697f9b7c15a6453403b7598278375bfa5da6869c00520703d1a48ae"
+        },
+        {
+          "chapter_id": "filosofi-teknologi-ai",
+          "title": "Teknologi, digitalitet og kunstig intelligens",
+          "file": "data/fagverk/filosofi/chapters/filosofi-teknologi-ai.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "83c95bb1bb9e4b4db6163c62b1893b985a8111e543154ecbb9ca5c125b6ccc96"
+        },
+        {
+          "chapter_id": "filosofi-eksistens-fenomenologi",
+          "title": "Eksistens, fenomenologi og livstolkning",
+          "file": "data/fagverk/filosofi/chapters/filosofi-eksistens-fenomenologi.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "baeb206cf45db54dfb57d8208220c4524286f817a5ff1f723cb9dd44494eda26"
+        },
+        {
+          "chapter_id": "filosofi-miljo-dyr-klima",
+          "title": "Miljø-, dyre- og klimafilosofi",
+          "file": "data/fagverk/filosofi/chapters/filosofi-miljo-dyr-klima.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "d326cdff8d4bf65bfd9d7c846f768d46d59d11c081a65a98afbddaf099d7a344"
+        },
+        {
+          "chapter_id": "filosofi-globale-tradisjoner",
+          "title": "Globale tradisjoner og filosofihistorie",
+          "file": "data/fagverk/filosofi/chapters/filosofi-globale-tradisjoner.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "7659e16a0e8f1a9fefa0d1275ee0a24d9a70d7667a0d08a78ee78d34a70cc31e"
+        },
+        {
+          "chapter_id": "filosofi-sprakfilosofi",
+          "title": "Språkfilosofi, mening og bruk",
+          "file": "data/fagverk/filosofi/chapters/filosofi-sprakfilosofi.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "146561deb4b8fe16eae7fbfc09e0d96d46b746dc3c07f83e56aeff0db7181bc1"
+        },
+        {
+          "chapter_id": "filosofi-religionsfilosofi",
+          "title": "Religionsfilosofi, gudsbegrep og tro",
+          "file": "data/fagverk/filosofi/chapters/filosofi-religionsfilosofi.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "6009c877627a68a8240989dd9b97838169f415b7b0bdc656689acb6db9f0c8e8"
+        },
+        {
+          "chapter_id": "filosofi-rettsfilosofi",
+          "title": "Rettsfilosofi, autoritet og fortolkning",
+          "file": "data/fagverk/filosofi/chapters/filosofi-rettsfilosofi.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "d4f03e0325418f97c09cbbb995dd386167d29977b14e8037a386a10b61be78fa"
+        },
+        {
+          "chapter_id": "filosofi-matematikkfilosofi",
+          "title": "Matematikkfilosofi, objekter og bevis",
+          "file": "data/fagverk/filosofi/chapters/filosofi-matematikkfilosofi.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "39b107849c39df94d5823ff4cbfd435d8d18845649a5e478ecdae275b56e0053"
+        },
+        {
+          "chapter_id": "filosofi-handlingsfilosofi",
+          "title": "Handlingsfilosofi, intensjon og agency",
+          "file": "data/fagverk/filosofi/chapters/filosofi-handlingsfilosofi.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "277a7025d0c946e09763313f738c28529e82fceeef2addff0201ed03e25266ab"
+        },
+        {
+          "chapter_id": "filosofi-fysikkfilosofi",
+          "title": "Fysikkfilosofi, romtid og kvanteteori",
+          "file": "data/fagverk/filosofi/chapters/filosofi-fysikkfilosofi.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "c980caeeaecc3d774bbc781a866d01804d44e8fbec588f6b4866f58ae677a503"
+        },
+        {
+          "chapter_id": "filosofi-sannsynlighet-beslutning",
+          "title": "Sannsynlighet, risiko og beslutningsteori",
+          "file": "data/fagverk/filosofi/chapters/filosofi-sannsynlighet-beslutning.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "60c9e339bceb2eb7150f26d0e6d911537bad8259541def9f7bff76040ef58f08"
+        }
+      ]
+    },
+    "historie": {
+      "title": "Historie",
+      "kind": "subject",
+      "parent_subject_id": null,
+      "schema_family": "standard_canonical",
+      "pilot": false,
+      "package_status": "complete",
+      "chapter_status": "materialized",
+      "required_manifest_fields": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods"
+      ],
+      "optional_manifest_fields": [
+        "supersetQuizMal",
+        "quizStandard",
+        "quizQuestionSchema",
+        "quizPackageSchema",
+        "quizProduction",
+        "version",
+        "scope",
+        "curriculumArchitecture",
+        "coverageContract",
+        "qualityContract",
+        "caseRequirements",
+        "claims",
+        "sources",
+        "placeEvidence",
+        "profilesManifest"
+      ],
+      "present_manifest_fields": [
+        "caseRequirements",
+        "claims",
+        "coverageContract",
+        "curriculumArchitecture",
+        "emner",
+        "fagkart",
+        "methods",
+        "pensum",
+        "placeEvidence",
+        "profilesManifest",
+        "qualityContract",
+        "quizPackageSchema",
+        "quizProduction",
+        "quizQuestionSchema",
+        "quizStandard",
+        "scope",
+        "sources",
+        "supersetQuizMal",
+        "version"
+      ],
+      "missing_manifest_fields": [],
+      "package_file_count": 29,
+      "required_package_file_count": 4,
+      "optional_package_file_count": 25,
+      "package_files": [
+        {
+          "path": "data/fag/historie/case_requirements_historie_canonical_v1.json",
+          "required": false,
+          "fields": [
+            "caseRequirements"
+          ],
+          "key_paths": [
+            "caseRequirements"
+          ],
+          "exists": true,
+          "content_sha256": "30b566129c3bdae484114b3f98dd9dea3f0f6908397bf80ff867dfa14d9aa3e4"
+        },
+        {
+          "path": "data/fag/historie/claims_historie_canonical_v1.json",
+          "required": false,
+          "fields": [
+            "claims"
+          ],
+          "key_paths": [
+            "claims"
+          ],
+          "exists": true,
+          "content_sha256": "1469d4f10b36adacacf2b3aad95f232bb040d4004aad659b02dd07dc2aa6a322"
+        },
+        {
+          "path": "data/fag/historie/curriculum_architecture_historie_v1.json",
+          "required": false,
+          "fields": [
+            "curriculumArchitecture"
+          ],
+          "key_paths": [
+            "curriculumArchitecture"
+          ],
+          "exists": true,
+          "content_sha256": "a9c8071a90a89876cd264010d12b82afa5e8d14594525cdab780a487bbe1a2ba"
+        },
+        {
+          "path": "data/fag/historie/emner_historie_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "emner"
+          ],
+          "key_paths": [
+            "emner"
+          ],
+          "exists": true,
+          "content_sha256": "496d5cf504562d5bfcaeb53fdc060ab75bd80b3999d9e6542298ac74f3d06cd0"
+        },
+        {
+          "path": "data/fag/historie/fagkart_historie_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "fagkart"
+          ],
+          "key_paths": [
+            "fagkart"
+          ],
+          "exists": true,
+          "content_sha256": "5832c9ab0c5feb8e194bc09013ee2f7e769b23fdeadcb11a4d839de40640e215"
+        },
+        {
+          "path": "data/fag/historie/historie_universal_coverage_contract_v1.json",
+          "required": false,
+          "fields": [
+            "coverageContract"
+          ],
+          "key_paths": [
+            "coverageContract"
+          ],
+          "exists": true,
+          "content_sha256": "8d12d3a38c288faa64a41ef76f11a5808170d91f5f1e9dc35abbd9ca40e93ab9"
+        },
+        {
+          "path": "data/fag/historie/historie_v5_contract.json",
+          "required": false,
+          "fields": [
+            "qualityContract"
+          ],
+          "key_paths": [
+            "qualityContract"
+          ],
+          "exists": true,
+          "content_sha256": "441bf8fc742ab7306620eb4c6a6df05989a07be5d5b4b76e7398e09005a90632"
+        },
+        {
+          "path": "data/fag/historie/historiepensum_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "pensum"
+          ],
+          "key_paths": [
+            "pensum"
+          ],
+          "exists": true,
+          "content_sha256": "d03bce76609fbc12a6b936e906f9ecfd7e45bc09f182567869a319e9eafbe88c"
+        },
+        {
+          "path": "data/fag/historie/methods_historie_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "methods"
+          ],
+          "key_paths": [
+            "methods"
+          ],
+          "exists": true,
+          "content_sha256": "e9bf3b7d8b30eaad9059d94d46cae41affa05aa6cd38aa7d262d9abf1a4c2f9b"
+        },
+        {
+          "path": "data/fag/historie/place_evidence_historie_v1.json",
+          "required": false,
+          "fields": [
+            "placeEvidence"
+          ],
+          "key_paths": [
+            "placeEvidence"
+          ],
+          "exists": true,
+          "content_sha256": "958095bdc13a3907cd18e69b1c02647c473f01b71ec679f265b4f3ed3b5a8e4f"
+        },
+        {
+          "path": "data/fag/historie/sources_historie_canonical_v1.json",
+          "required": false,
+          "fields": [
+            "sources"
+          ],
+          "key_paths": [
+            "sources"
+          ],
+          "exists": true,
+          "content_sha256": "d368e1aa0a6a1d4a9c3c770c4664e6be760426689c2ada36e687efebff998934"
+        },
+        {
+          "path": "data/fag/historie/supersetQUIZMAL_historie.json",
+          "required": false,
+          "fields": [
+            "supersetQuizMal"
+          ],
+          "key_paths": [
+            "supersetQuizMal"
+          ],
+          "exists": true,
+          "content_sha256": "bdb2ba22388c47479b31057025a70febf7ef3d42ae0c0f33c3be38812162c698"
+        },
+        {
+          "path": "data/fag/profiles/manifest.json",
+          "required": false,
+          "fields": [
+            "profilesManifest"
+          ],
+          "key_paths": [
+            "profilesManifest"
+          ],
+          "exists": true,
+          "content_sha256": "cd0ecf17487c6c31811ea2d857a3f60c0b757a3e71652af438cdadb597442606"
+        },
+        {
+          "path": "data/quiz/historie/grindheim_runestein_sets.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.grindheim_runestein.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "2a93e444d427dea449b3e9a10cc1a298d5eefab057cc00516b3ba13471a6c701"
+        },
+        {
+          "path": "data/quiz/historie/grindheim_steinkross_sets.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.grindheim_steinkross.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "d52a70bb3eecd3d8b663e5bf0e96307b81d92d8c6a633a0963a196acd58b14e2"
+        },
+        {
+          "path": "data/quiz/historie/grindheimsveien_nord_gravfelt_sets.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.grindheimsveien_nord_gravfelt.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "ecafa7d78696df493599dc7383c24e73677a4722e74e2eb32f11c0c2d237e598"
+        },
+        {
+          "path": "data/quiz/historie/hoyland_gravhaug_etne_sets.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.hoyland_gravhaug_etne.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "03b329a3d5754efcf3f9248ea677e9ca269cbc8f76b0e850e626aff47e1e2f59"
+        },
+        {
+          "path": "data/quiz/production_briefs/historie/grindheim_runestein.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.grindheim_runestein.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "9f7081b0c952decc56fe985782f7e63e6f0b9e82770dfdca7e164b69ec573681"
+        },
+        {
+          "path": "data/quiz/production_briefs/historie/grindheim_steinkross.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.grindheim_steinkross.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "9c24e5d9837e7fb4fc2996db1432908e93b9a9c2641218018478d7818bb1ec81"
+        },
+        {
+          "path": "data/quiz/production_briefs/historie/grindheimsveien_nord_gravfelt.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.grindheimsveien_nord_gravfelt.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "e05f1cd11aeaa5ebe0e3bef1f6775e0fde93b47b44194002901815a54cc25b75"
+        },
+        {
+          "path": "data/quiz/production_briefs/historie/hoyland_gravhaug_etne.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.hoyland_gravhaug_etne.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "309ed881d26d29421f1b6442e2c892e021cbf55789ed1a3eb1b41723bc6127a5"
+        },
+        {
+          "path": "data/quiz/production_context/historie/grindheim_runestein.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.grindheim_runestein.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "9539e9c12449796304e6e2c1c49356de749bb831d3ccc6db902ee698f331efb2"
+        },
+        {
+          "path": "data/quiz/production_context/historie/grindheim_steinkross.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.grindheim_steinkross.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "42cdf9e84e28ba35bc9cd1ccdc999edd36bd8a692f4a71b26f7b8d329214744e"
+        },
+        {
+          "path": "data/quiz/production_context/historie/grindheimsveien_nord_gravfelt.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.grindheimsveien_nord_gravfelt.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "6c92004bf7aafd7bfa573788e18309fd692852267400e2a334df44e056a4f8c2"
+        },
+        {
+          "path": "data/quiz/production_context/historie/hoyland_gravhaug_etne.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.hoyland_gravhaug_etne.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "4b5adc965f5b3d481b65d124914493f87415ce649ff0852e149988088bd0966b"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PACKAGE_SCHEMA_V1.json",
+          "required": false,
+          "fields": [
+            "quizPackageSchema"
+          ],
+          "key_paths": [
+            "quizPackageSchema"
+          ],
+          "exists": true,
+          "content_sha256": "3a01fb4177c9cf81df823d3bacdb24b1a37b2bdbfd45dade8aa18f4d0e5ec8d6"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+          "required": false,
+          "fields": [
+            "quizStandard"
+          ],
+          "key_paths": [
+            "quizStandard"
+          ],
+          "exists": true,
+          "content_sha256": "98b23395fb461f7a7cf4920774551902060facc20d9013e5fe4d3e8327aceb33"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+          "required": false,
+          "fields": [
+            "quizQuestionSchema"
+          ],
+          "key_paths": [
+            "quizQuestionSchema"
+          ],
+          "exists": true,
+          "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
+        },
+        {
+          "path": "scripts/build-quiz-production-context.mjs",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.context_builder"
+          ],
+          "exists": true,
+          "content_sha256": "636265081b34aef4899fb33a8dd8ad7b03233480abdbfb812edced0d6a1a14d5"
+        }
+      ],
+      "package_content_sha256": "288a742516189e56d99d9696a6470b8ec56e7d367d8f2f6ecc60cf7bbe22524f",
+      "chapter_count": 23,
+      "module_file_count": 69,
+      "brief_file_count": 0,
+      "claims_file_count": 0,
+      "chapter_referenced_file_count": 92,
+      "chapter_content_sha256": "bedfd019dc2fa60ba92a540bf6b9f2504e0f6b1680350762a5fe074e82153148",
+      "referenced_file_count": 121,
+      "missing_required_files": [],
+      "missing_optional_files": [],
+      "missing_chapter_files": [],
+      "missing_files": [],
+      "structure_sha256": "5cca90e7191b198c49a6c4fabf958e2e77ca635b8083b44c0315c5bb05af6370",
+      "content_sha256": "b046e08b3a8c0809e2f85029b901c9f3c20cf4102aef48f060da9aa6ae7e1082",
+      "chapters": [
+        {
+          "chapter_id": "historisk_tid_periodisering",
+          "title": "Historisk tid og periodisering",
+          "file": "data/fagverk/historie/historisk_tid_periodisering.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "5a5e97feaa2b96a82d03227bd19f4febf9894fa37226fb7681de495ed1c165e2"
+        },
+        {
+          "chapter_id": "kilder_arkiv_spor",
+          "title": "Kilder, arkiv og spor",
+          "file": "data/fagverk/historie/kilder_arkiv_spor.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "0055c164fd325c718893e1e8fe2b145f3eea0840d9d365922a2ac82aa1937f2c"
+        },
+        {
+          "chapter_id": "makt_stat_institusjoner",
+          "title": "Makt, stat og institusjoner",
+          "file": "data/fagverk/historie/makt_stat_institusjoner.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "bab316d0cba71f79a72d64195c656325c1f6b1248c37dbdaeb83fdb1a3e04d4d"
+        },
+        {
+          "chapter_id": "middelalder_kirke_kongemakt",
+          "title": "Middelalder, kirke og kongemakt",
+          "file": "data/fagverk/historie/middelalder_kirke_kongemakt.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "3f672980b1c629797d83495652fb6cf526a5d843a130d2abe8bd68857e44c045"
+        },
+        {
+          "chapter_id": "1814_statsdannelse",
+          "title": "1814, grunnlov og statsdannelse",
+          "file": "data/fagverk/historie/1814_statsdannelse.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "eef4a94d7b87d3b58ab6df81d97576fe7d27a5f17ebd1799a5fdfc71e608496b"
+        },
+        {
+          "chapter_id": "industri_arbeid_sosialhistorie",
+          "title": "Industri, arbeid og sosialhistorie",
+          "file": "data/fagverk/historie/industri_arbeid_sosialhistorie.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "93a4355cebb6848396522b570f9ceab46603a2c7673173afac7fb3e754a41903"
+        },
+        {
+          "chapter_id": "krig_okkupasjon_motstand",
+          "title": "Krig, okkupasjon og motstand",
+          "file": "data/fagverk/historie/krig_okkupasjon_motstand.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "26f4b35b1fe227e9369083f386fc7c17e06dc8b0cc877c6bcd109096e1d9867e"
+        },
+        {
+          "chapter_id": "velferd_rett_hverdagsliv",
+          "title": "Velferd, rett og hverdagsliv",
+          "file": "data/fagverk/historie/velferd_rett_hverdagsliv.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "311e69129b1e24eabf28f93f2030fde32257d305fc4897eeb68c019a65a71d81"
+        },
+        {
+          "chapter_id": "migrasjon_minoritet_tilhorighet",
+          "title": "Migrasjon, minoritet og tilhørighet",
+          "file": "data/fagverk/historie/migrasjon_minoritet_tilhorighet.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "8c7000d9c253963f3c84c58beee405acd3487ef6ab771ebde2e804b07614c36c"
+        },
+        {
+          "chapter_id": "minne_kulturarv_historiebruk",
+          "title": "Minne, kulturarv og historiebruk",
+          "file": "data/fagverk/historie/minne_kulturarv_historiebruk.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "687349114b02137bec3bd4d49005af22aecf4efa168030074b6abacfd0a2259e"
+        },
+        {
+          "chapter_id": "byhistorie_stedsendring",
+          "title": "Byhistorie og stedsendring",
+          "file": "data/fagverk/historie/byhistorie_stedsendring.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "8bbce181568db322ed937932b247635ad51144a5dd01bd844ccd6ef03847a369"
+        },
+        {
+          "chapter_id": "katastrofer_brudd_ulykker",
+          "title": "Katastrofer, branner, ulykker og historiske brudd",
+          "file": "data/fagverk/historie/katastrofer_brudd_ulykker.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "20e61278f31d2e25ad794bc2193ba7c31d3ec7ca3861adfbcdbad3c281836d99"
+        },
+        {
+          "chapter_id": "kjonn_familie_livslop",
+          "title": "Kjønn, familie, seksualitet og livsløp",
+          "file": "data/fagverk/historie/kjonn_familie_livslop.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "e25b267f57a58757a13f788fd36db31cc9b9cf17db44d1d8eb12bb4354d4ed58"
+        },
+        {
+          "chapter_id": "okonomi_handel_materielle_systemer",
+          "title": "Økonomi, handel og materielle systemer",
+          "file": "data/fagverk/historie/okonomi_handel_materielle_systemer.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "d426906d39cfe4966efec9118ccf51eaf99ec126dd6fd06aabd88cbf4c4f553a"
+        },
+        {
+          "chapter_id": "religion_reformasjon_livssyn",
+          "title": "Religion, reformasjon og livssyn",
+          "file": "data/fagverk/historie/religion_reformasjon_livssyn.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "1a7ead254a06abbf699f4d3338852e2b90d8500e6eefca244e2918edcd4a06cc"
+        },
+        {
+          "chapter_id": "samisk_urfolkshistorie",
+          "title": "Samisk og urfolkshistorie",
+          "file": "data/fagverk/historie/samisk_urfolkshistorie.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "729de95080a9cdcf6d69c9d6d5bd9968dc183da9498cbe7c463f36a95c84ed79"
+        },
+        {
+          "chapter_id": "miljo_klima_landskap",
+          "title": "Miljø-, klima- og landskapshistorie",
+          "file": "data/fagverk/historie/miljo_klima_landskap.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "f5a42a1f03e6764c5f3c6594dd60b8e375a6c7b38619e8d9d314c37364a95dac"
+        },
+        {
+          "chapter_id": "vitenskap_teknologi_kunnskap",
+          "title": "Vitenskap-, teknologi- og kunnskapshistorie",
+          "file": "data/fagverk/historie/vitenskap_teknologi_kunnskap.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "eb9eaa177bc2ee8becba5bcc4b7dc830db3fc571bc69c4914b121e1edd774f1c"
+        },
+        {
+          "chapter_id": "global_kolonial_transnasjonal",
+          "title": "Global, kolonial og transnasjonal historie",
+          "file": "data/fagverk/historie/global_kolonial_transnasjonal.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "90a4b3195769ee1c0d886c5e96690fce56b2726132b1ada2a72b50c803ddeaa8"
+        },
+        {
+          "chapter_id": "offentlighet_mobilisering_bevegelser",
+          "title": "Offentlighet, mobilisering og sosiale bevegelser",
+          "file": "data/fagverk/historie/offentlighet_mobilisering_bevegelser.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "037bae50aca5ef22cfa32309577011e6564dd0f469c77fb548bd0f0926511fb1"
+        },
+        {
+          "chapter_id": "forhistorie_arkeologi",
+          "title": "Forhistorie og arkeologi",
+          "file": "data/fagverk/historie/forhistorie_arkeologi.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "4909843fdaa6625feb6b52492c17865259d1b290da0c1a345be6fd0c6a929807"
+        },
+        {
+          "chapter_id": "forste_verdenskrig_mellomkrig",
+          "title": "Første verdenskrig og mellomkrigstiden",
+          "file": "data/fagverk/historie/forste_verdenskrig_mellomkrig.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "1a2b6fef666d38b7fc89b73a9a0a30d4b952ebab5530eeaf193665fa9b25d87d"
+        },
+        {
+          "chapter_id": "kald_krig_etterkrig",
+          "title": "Den kalde krigen og etterkrigssamfunnet 1945–1991",
+          "file": "data/fagverk/historie/kald_krig_etterkrig.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "390d812d7ce526496c4af23edcbaba7b0d75d9f3179f874b310bd8e21761cb1c"
+        }
+      ]
+    },
+    "kunst": {
+      "title": "Kunst & kultur",
+      "kind": "subject",
+      "parent_subject_id": null,
+      "schema_family": "standard_canonical",
+      "pilot": false,
+      "package_status": "complete",
+      "chapter_status": "materialized",
+      "required_manifest_fields": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods"
+      ],
+      "optional_manifest_fields": [
+        "supersetQuizMal",
+        "quizStandard",
+        "quizQuestionSchema",
+        "emneMappings",
+        "scientificPackage",
+        "coverageContract",
+        "topicFoundations"
+      ],
+      "present_manifest_fields": [
+        "emneMappings",
+        "emner",
+        "fagkart",
+        "methods",
+        "pensum",
+        "quizQuestionSchema",
+        "quizStandard",
+        "supersetQuizMal"
+      ],
+      "missing_manifest_fields": [],
+      "package_file_count": 8,
+      "required_package_file_count": 4,
+      "optional_package_file_count": 4,
+      "package_files": [
+        {
+          "path": "data/fag/kunst/emnemapping_kunst_canonical_v4_5.json",
+          "required": false,
+          "fields": [
+            "emneMappings"
+          ],
+          "key_paths": [
+            "emneMappings"
+          ],
+          "exists": true,
+          "content_sha256": "2e5d4f7ea0f355ce97532d7622e6c2b8de97d4634b4af659e34e84bf6c30abbe"
+        },
+        {
+          "path": "data/fag/kunst/emner_kunst_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "emner"
+          ],
+          "key_paths": [
+            "emner"
+          ],
+          "exists": true,
+          "content_sha256": "714648b5e9dd59d7b37e9388b175bacb476ea08ceeaa5a3ba01fbb745d860c15"
+        },
+        {
+          "path": "data/fag/kunst/fagkart_kunst_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "fagkart"
+          ],
+          "key_paths": [
+            "fagkart"
+          ],
+          "exists": true,
+          "content_sha256": "fb48d79431441aca14708ec59986b600d608c482f674d50d6572f9a754153553"
+        },
+        {
+          "path": "data/fag/kunst/kunstpensum_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "pensum"
+          ],
+          "key_paths": [
+            "pensum"
+          ],
+          "exists": true,
+          "content_sha256": "755444672ef553031adad24bc8ad570ec311f64b01f8298eb29fb5fb89950c56"
+        },
+        {
+          "path": "data/fag/kunst/methods_kunst_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "methods"
+          ],
+          "key_paths": [
+            "methods"
+          ],
+          "exists": true,
+          "content_sha256": "a49f5dcca38d0e2feaf377218d27c581b4c0c8841db92dbf48e8758e34aeb3a9"
+        },
+        {
+          "path": "data/fag/kunst/supersetQUIZMAL_kunst.json",
+          "required": false,
+          "fields": [
+            "supersetQuizMal"
+          ],
+          "key_paths": [
+            "supersetQuizMal"
+          ],
+          "exists": true,
+          "content_sha256": "49f0f715f99b5db7278b590feb81dfe7a4df3d60569970d05d60225b1b92ae98"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+          "required": false,
+          "fields": [
+            "quizStandard"
+          ],
+          "key_paths": [
+            "quizStandard"
+          ],
+          "exists": true,
+          "content_sha256": "98b23395fb461f7a7cf4920774551902060facc20d9013e5fe4d3e8327aceb33"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+          "required": false,
+          "fields": [
+            "quizQuestionSchema"
+          ],
+          "key_paths": [
+            "quizQuestionSchema"
+          ],
+          "exists": true,
+          "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
+        }
+      ],
+      "package_content_sha256": "7508fbcc72de7396b7d19efaeb03802a650e580af4678f757db3bdee82683eda",
+      "chapter_count": 6,
+      "module_file_count": 18,
+      "brief_file_count": 6,
+      "claims_file_count": 6,
+      "chapter_referenced_file_count": 36,
+      "chapter_content_sha256": "0ca295855548115bcd592b970c7827f19663a49dd7faca738f1a6c9a17937624",
+      "referenced_file_count": 44,
+      "missing_required_files": [],
+      "missing_optional_files": [],
+      "missing_chapter_files": [],
+      "missing_files": [],
+      "structure_sha256": "a5177ca482e3f523073224eee8a5b40e26aef6639342b4a29da15cd8605e03e8",
+      "content_sha256": "9eac0e2d8b2a30c696808360730d895823f9639479458bb09a61c664679fa07d",
+      "chapters": [
+        {
+          "chapter_id": "felt-og-institusjon",
+          "title": "Felt og institusjon: hvem gjør kunst synlig, varig og legitim?",
+          "file": "data/fagverk/kunst/felt-og-institusjon.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "f7eac8f97cdf100768ebbd4322504b23bed926425c1854057e6858066a41ad35"
+        },
+        {
+          "chapter_id": "produksjon-og-praksis",
+          "title": "Produksjon og praksis: hvordan kunst blir til",
+          "file": "data/fagverk/kunst/produksjon-og-praksis.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "b1a23cdc500ddd3f5ddb5c4b6971fc162e6d3b5547be85de7371af4dcbf74eae"
+        },
+        {
+          "chapter_id": "estetisk-sprak-og-form",
+          "title": "Estetisk språk og form: hvordan verk kommuniserer",
+          "file": "data/fagverk/kunst/estetisk-sprak-og-form.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "8db85c87c57d7633417435b72473a44fff47b43cdcceea2c5760447747ee4203"
+        },
+        {
+          "chapter_id": "makt-og-legitimitet",
+          "title": "Makt og legitimitet: hvem definerer kunstens verdi?",
+          "file": "data/fagverk/kunst/makt-og-legitimitet.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "f6873693fda3cfadcdbeacb1fb3a36c604fa87e8ea8ef780e51985f902ea2af8"
+        },
+        {
+          "chapter_id": "publikum-og-offentlighet",
+          "title": "Publikum og offentlighet: hvor og hvordan kunst blir felles",
+          "file": "data/fagverk/kunst/publikum-og-offentlighet.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "c085e4961ae0febcd3a9dec918892a2420dc664f9f98b1465fa4a19a93dde35f"
+        },
+        {
+          "chapter_id": "tid-og-transformasjon",
+          "title": "Tid og transformasjon: hvordan kunsthistorien blir skrevet om",
+          "file": "data/fagverk/kunst/tid-og-transformasjon.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "eb954585606b3bc4a7c71b326cf0be7551bd4228a7307b3e0d55a20df3a7f16e"
+        }
+      ]
+    },
+    "litteratur": {
+      "title": "litteratur",
+      "kind": "subject",
+      "parent_subject_id": null,
+      "schema_family": "standard_canonical",
+      "pilot": false,
+      "package_status": "complete",
+      "chapter_status": "not_materialized",
+      "required_manifest_fields": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods"
+      ],
+      "optional_manifest_fields": [
+        "supersetQuizMal",
+        "quizStandard",
+        "quizQuestionSchema",
+        "emneMappings",
+        "scientificPackage",
+        "coverageContract",
+        "topicFoundations",
+        "subjectPathwaySchema",
+        "subjectPathwayPackage"
+      ],
+      "present_manifest_fields": [
+        "coverageContract",
+        "emneMappings",
+        "emner",
+        "fagkart",
+        "methods",
+        "pensum",
+        "quizQuestionSchema",
+        "quizStandard",
+        "scientificPackage",
+        "subjectPathwayPackage",
+        "subjectPathwaySchema",
+        "supersetQuizMal",
+        "topicFoundations"
+      ],
+      "missing_manifest_fields": [],
+      "package_file_count": 13,
+      "required_package_file_count": 4,
+      "optional_package_file_count": 9,
+      "package_files": [
+        {
+          "path": "data/fag/litteratur/emnemapping_litteratur_canonical_v4_5.json",
+          "required": false,
+          "fields": [
+            "emneMappings"
+          ],
+          "key_paths": [
+            "emneMappings"
+          ],
+          "exists": true,
+          "content_sha256": "488c0abb5028f49d9f0dd234a4d4e0ced5cb6ec17eca23fa9f04b4d8e458448b"
+        },
+        {
+          "path": "data/fag/litteratur/emner_litteratur_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "emner"
+          ],
+          "key_paths": [
+            "emner"
+          ],
+          "exists": true,
+          "content_sha256": "d108509e92db95d25690fc7dbfa0e8d6d74bf193d6cd45d1179f2374de7c3f85"
+        },
+        {
+          "path": "data/fag/litteratur/fagkart_litteratur_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "fagkart"
+          ],
+          "key_paths": [
+            "fagkart"
+          ],
+          "exists": true,
+          "content_sha256": "b5e547049912c38e34b1ed91209de29b385f0bc9265cbe4aa830b517363679e3"
+        },
+        {
+          "path": "data/fag/litteratur/litteraturpensum_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "pensum"
+          ],
+          "key_paths": [
+            "pensum"
+          ],
+          "exists": true,
+          "content_sha256": "9089ab6530e88e67b122843528209fbf4f8d712dda97d80f8534f1a130a85d6f"
+        },
+        {
+          "path": "data/fag/litteratur/litteraturvitenskap_canonical_v1/coverage_contract_v1.json",
+          "required": false,
+          "fields": [
+            "coverageContract"
+          ],
+          "key_paths": [
+            "coverageContract"
+          ],
+          "exists": true,
+          "content_sha256": "be7b7a742eae8a06d580bbde2288f5d6248a9913629b98786661bc9d34da5668"
+        },
+        {
+          "path": "data/fag/litteratur/litteraturvitenskap_canonical_v1/index.json",
+          "required": false,
+          "fields": [
+            "scientificPackage"
+          ],
+          "key_paths": [
+            "scientificPackage"
+          ],
+          "exists": true,
+          "content_sha256": "3d2c7320ff7958f54e3c7489a4e22cedff8a81f5ea13f6497913c599231be98e"
+        },
+        {
+          "path": "data/fag/litteratur/litteraturvitenskap_canonical_v1/topic_foundations_v1.json",
+          "required": false,
+          "fields": [
+            "topicFoundations"
+          ],
+          "key_paths": [
+            "topicFoundations"
+          ],
+          "exists": true,
+          "content_sha256": "b4f6e4a4d93e6c09f771ed882280796be31f066038b4723752f03f3eb36ee28e"
+        },
+        {
+          "path": "data/fag/litteratur/methods_litteratur_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "methods"
+          ],
+          "key_paths": [
+            "methods"
+          ],
+          "exists": true,
+          "content_sha256": "e9f57ff2c9e4a03fdb084b1132806565af483348b22a0aaa95affb4e98cac300"
+        },
+        {
+          "path": "data/fag/litteratur/supersetQUIZMAL_litteratur.json",
+          "required": false,
+          "fields": [
+            "supersetQuizMal"
+          ],
+          "key_paths": [
+            "supersetQuizMal"
+          ],
+          "exists": true,
+          "content_sha256": "6f02fcd363bbacd3b16ff26ac23229798ad07a574f173ba112e13b532085c6b0"
+        },
+        {
+          "path": "data/quiz/litteratur/litteratur_subject_pathways_v1.json",
+          "required": false,
+          "fields": [
+            "subjectPathwayPackage"
+          ],
+          "key_paths": [
+            "subjectPathwayPackage"
+          ],
+          "exists": true,
+          "content_sha256": "c7d49e027681ccbb641ca51e62794bf7240bf5ad45e5e4919386f912a3117707"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+          "required": false,
+          "fields": [
+            "quizStandard"
+          ],
+          "key_paths": [
+            "quizStandard"
+          ],
+          "exists": true,
+          "content_sha256": "98b23395fb461f7a7cf4920774551902060facc20d9013e5fe4d3e8327aceb33"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+          "required": false,
+          "fields": [
+            "quizQuestionSchema"
+          ],
+          "key_paths": [
+            "quizQuestionSchema"
+          ],
+          "exists": true,
+          "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_SUBJECT_PATHWAY_PACKAGE_SCHEMA_V1.json",
+          "required": false,
+          "fields": [
+            "subjectPathwaySchema"
+          ],
+          "key_paths": [
+            "subjectPathwaySchema"
+          ],
+          "exists": true,
+          "content_sha256": "f19ed931d5a47c3969551cf58d9895049a399aff71dc397a3ea63ac76e31d2c5"
+        }
+      ],
+      "package_content_sha256": "e343d0fc163adaae3eecf78aac9fb43bdfbd5cc1dcb955c3b114e90b027d0607",
+      "chapter_count": 0,
+      "module_file_count": 0,
+      "brief_file_count": 0,
+      "claims_file_count": 0,
+      "chapter_referenced_file_count": 0,
+      "chapter_content_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "referenced_file_count": 13,
+      "missing_required_files": [],
+      "missing_optional_files": [],
+      "missing_chapter_files": [],
+      "missing_files": [],
+      "structure_sha256": "99926d393ec27754b0768624e119da7190a0d3f2dbcb11c252eff0cbc27cc442",
+      "content_sha256": "e343d0fc163adaae3eecf78aac9fb43bdfbd5cc1dcb955c3b114e90b027d0607",
+      "chapters": []
+    },
+    "media": {
+      "title": "Media",
+      "kind": "subject",
+      "parent_subject_id": null,
+      "schema_family": "standard_canonical",
+      "pilot": false,
+      "package_status": "complete",
+      "chapter_status": "materialized",
+      "required_manifest_fields": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods"
+      ],
+      "optional_manifest_fields": [
+        "supersetQuizMal",
+        "quizStandard",
+        "quizQuestionSchema",
+        "emneMappings",
+        "supplements"
+      ],
+      "present_manifest_fields": [
+        "emneMappings",
+        "emner",
+        "fagkart",
+        "methods",
+        "pensum",
+        "quizQuestionSchema",
+        "quizStandard",
+        "supersetQuizMal",
+        "supplements"
+      ],
+      "missing_manifest_fields": [],
+      "package_file_count": 8,
+      "required_package_file_count": 4,
+      "optional_package_file_count": 4,
+      "package_files": [
+        {
+          "path": "data/fag/media/emnemapping_media_canonical_v4_5.json",
+          "required": false,
+          "fields": [
+            "emneMappings"
+          ],
+          "key_paths": [
+            "emneMappings"
+          ],
+          "exists": true,
+          "content_sha256": "f9c3e589ede087dea473a85ce50fecc18cbd3611ff0ab4feed5f89dd5a59fdfb"
+        },
+        {
+          "path": "data/fag/media/emner_media_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "emner"
+          ],
+          "key_paths": [
+            "emner"
+          ],
+          "exists": true,
+          "content_sha256": "fb5ce7905cdb771bf25fd0a2e9a45fbc2d0c2657ffb353315d5bee4838c60605"
+        },
+        {
+          "path": "data/fag/media/fagkart_media_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "fagkart"
+          ],
+          "key_paths": [
+            "fagkart"
+          ],
+          "exists": true,
+          "content_sha256": "3a0a301cfae82c397c9a2807d66c69fc2bc98e3eb05d3f7023d52364becef42c"
+        },
+        {
+          "path": "data/fag/media/mediapensum_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "pensum"
+          ],
+          "key_paths": [
+            "pensum"
+          ],
+          "exists": true,
+          "content_sha256": "30b914cc916e27b710b1757fa20ed1e01a9fdb827b629975b0674267f06ad536"
+        },
+        {
+          "path": "data/fag/media/methods_media_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "methods"
+          ],
+          "key_paths": [
+            "methods"
+          ],
+          "exists": true,
+          "content_sha256": "cdf6aac3339a552a1f2a2663ef909b6b0fbcabb073a2443741a246cfa79001b8"
+        },
+        {
+          "path": "data/fag/media/supersetQUIZMAL_media.json",
+          "required": false,
+          "fields": [
+            "supersetQuizMal"
+          ],
+          "key_paths": [
+            "supersetQuizMal"
+          ],
+          "exists": true,
+          "content_sha256": "858910051370d1e57f4a7eaf34172fd398fcb41c12295b87efe8c06f6f872413"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+          "required": false,
+          "fields": [
+            "quizStandard"
+          ],
+          "key_paths": [
+            "quizStandard"
+          ],
+          "exists": true,
+          "content_sha256": "98b23395fb461f7a7cf4920774551902060facc20d9013e5fe4d3e8327aceb33"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+          "required": false,
+          "fields": [
+            "quizQuestionSchema"
+          ],
+          "key_paths": [
+            "quizQuestionSchema"
+          ],
+          "exists": true,
+          "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
+        }
+      ],
+      "package_content_sha256": "bd077770a8ed3d1dfaf8cbc14e6d922dee68c03ba5bcc7cf1bac867b2cc5fce6",
+      "chapter_count": 6,
+      "module_file_count": 18,
+      "brief_file_count": 6,
+      "claims_file_count": 6,
+      "chapter_referenced_file_count": 36,
+      "chapter_content_sha256": "7b8db693674dacf7b8e95d6987fc43ee86e516385b73aec789b35c37d395c082",
+      "referenced_file_count": 44,
+      "missing_required_files": [],
+      "missing_optional_files": [],
+      "missing_chapter_files": [],
+      "missing_files": [],
+      "structure_sha256": "cf32792bd8f85884b7f8cf0306f15b62922f9a51ce3657a8f9651cf98d033d70",
+      "content_sha256": "be1c9d1dee599032dd5918b755266eb4b8a6d2eefaaa3de307127bdc17b29d9e",
+      "chapters": [
+        {
+          "chapter_id": "presse-redaksjoner-og-avishus",
+          "title": "Presse, redaksjoner og avishus: hvordan nyheter blir til",
+          "file": "data/fagverk/media/presse-redaksjoner-og-avishus.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "0845a565d4e97e2fdcb2f7033363fddb6a4a41021df4affbd4aed9d89bbb641f"
+        },
+        {
+          "chapter_id": "offentlighet-ytringsfrihet-og-medieetikk",
+          "title": "Offentlighet, ytringsfrihet og medieetikk: frihet, ansvar og tillit",
+          "file": "data/fagverk/media/offentlighet-ytringsfrihet-og-medieetikk.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "ffa297e55adf707f83318ff5702a6a6660ba0d8fe9035c60c1568cf8cb455570"
+        },
+        {
+          "chapter_id": "kilder-kritikk-og-sannhet",
+          "title": "Kilder, kritikk og sannhet: fra påstand til offentlig fakta",
+          "file": "data/fagverk/media/kilder-kritikk-og-sannhet.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "99910a5391405f9ae10ba75fec8715312dd19a357fabd338be1168489f9bcd39"
+        },
+        {
+          "chapter_id": "plattformer-algoritmer-og-distribusjon",
+          "title": "Plattformer, algoritmer og distribusjon: hvem styrer synligheten?",
+          "file": "data/fagverk/media/plattformer-algoritmer-og-distribusjon.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "99beaec4406d5baf78c1b48742d043fa66bcf41e8435b30234e44767a8cea14a"
+        },
+        {
+          "chapter_id": "propaganda-pavirkning-og-informasjonskrig",
+          "title": "Propaganda, påvirkning og informasjonskrig: kampen om virkeligheten",
+          "file": "data/fagverk/media/propaganda-pavirkning-og-informasjonskrig.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "30a19487084c2eb254f5abc8af64913e10a15d58bab94328749ebae62151a624"
+        },
+        {
+          "chapter_id": "medieokonomi-eierskap-og-arbeid",
+          "title": "Medieøkonomi, eierskap og arbeid: hvem betaler for journalistikken?",
+          "file": "data/fagverk/media/medieokonomi-eierskap-og-arbeid.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "7537be9e91b8603baee5127ae47485814c87a3af2070e92f8c8a8ed299816a9e"
+        }
+      ]
+    },
+    "musikk": {
+      "title": "Musikkvitenskap",
+      "kind": "subject",
+      "parent_subject_id": null,
+      "schema_family": "standard_canonical",
+      "pilot": false,
+      "package_status": "complete",
+      "chapter_status": "materialized",
+      "required_manifest_fields": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods"
+      ],
+      "optional_manifest_fields": [
+        "supersetQuizMal",
+        "quizStandard",
+        "quizQuestionSchema",
+        "scientificPackage",
+        "quizPackageSchema",
+        "subjectPathwaySchema",
+        "subjectPathwayPackage"
+      ],
+      "present_manifest_fields": [
+        "emner",
+        "fagkart",
+        "methods",
+        "pensum",
+        "quizPackageSchema",
+        "quizQuestionSchema",
+        "quizStandard",
+        "scientificPackage",
+        "subjectPathwayPackage",
+        "subjectPathwaySchema",
+        "supersetQuizMal"
+      ],
+      "missing_manifest_fields": [],
+      "package_file_count": 11,
+      "required_package_file_count": 4,
+      "optional_package_file_count": 7,
+      "package_files": [
+        {
+          "path": "data/fag/musikk/emner_musikk_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "emner"
+          ],
+          "key_paths": [
+            "emner"
+          ],
+          "exists": true,
+          "content_sha256": "ef6fe710c6b2838c77ffbd93a2cb7582dc37a6f800954807854ae5c0ccfdc8a2"
+        },
+        {
+          "path": "data/fag/musikk/fagkart_musikk_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "fagkart"
+          ],
+          "key_paths": [
+            "fagkart"
+          ],
+          "exists": true,
+          "content_sha256": "c236a1c2006a195ab028419bad5c81ff607eaf25f02370737f0694834e08b861"
+        },
+        {
+          "path": "data/fag/musikk/methods_musikk_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "methods"
+          ],
+          "key_paths": [
+            "methods"
+          ],
+          "exists": true,
+          "content_sha256": "9deac558cc3c16f81573e63a72c2f82db2ea13c4ad074ab68cd52da7294ab4b0"
+        },
+        {
+          "path": "data/fag/musikk/musikkpensum_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "pensum"
+          ],
+          "key_paths": [
+            "pensum"
+          ],
+          "exists": true,
+          "content_sha256": "12722b075062e1a82105bf7d128d3170b646688d106da3a2330e9694ca32414f"
+        },
+        {
+          "path": "data/fag/musikk/scientific_package.json",
+          "required": false,
+          "fields": [
+            "scientificPackage"
+          ],
+          "key_paths": [
+            "scientificPackage"
+          ],
+          "exists": true,
+          "content_sha256": "cb3e26ede4b4fb8245edc800842bae10e380441975413fde8576e134fea064e0"
+        },
+        {
+          "path": "data/fag/musikk/supersetQUIZMAL_musikk.json",
+          "required": false,
+          "fields": [
+            "supersetQuizMal"
+          ],
+          "key_paths": [
+            "supersetQuizMal"
+          ],
+          "exists": true,
+          "content_sha256": "cdef0969b4c9e2ed5050fb1f96b81a6afc5defe61806e8dbc8bb3ed9f810f215"
+        },
+        {
+          "path": "data/quiz/musikk/musikk_subject_pathways_v1.json",
+          "required": false,
+          "fields": [
+            "subjectPathwayPackage"
+          ],
+          "key_paths": [
+            "subjectPathwayPackage"
+          ],
+          "exists": true,
+          "content_sha256": "ddb373763cf640732d856e1150510ecdeae2c1b6b16abf1c613e5839a33e3028"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PACKAGE_SCHEMA_V1.json",
+          "required": false,
+          "fields": [
+            "quizPackageSchema"
+          ],
+          "key_paths": [
+            "quizPackageSchema"
+          ],
+          "exists": true,
+          "content_sha256": "3a01fb4177c9cf81df823d3bacdb24b1a37b2bdbfd45dade8aa18f4d0e5ec8d6"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+          "required": false,
+          "fields": [
+            "quizStandard"
+          ],
+          "key_paths": [
+            "quizStandard"
+          ],
+          "exists": true,
+          "content_sha256": "98b23395fb461f7a7cf4920774551902060facc20d9013e5fe4d3e8327aceb33"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+          "required": false,
+          "fields": [
+            "quizQuestionSchema"
+          ],
+          "key_paths": [
+            "quizQuestionSchema"
+          ],
+          "exists": true,
+          "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_SUBJECT_PATHWAY_PACKAGE_SCHEMA_V1.json",
+          "required": false,
+          "fields": [
+            "subjectPathwaySchema"
+          ],
+          "key_paths": [
+            "subjectPathwaySchema"
+          ],
+          "exists": true,
+          "content_sha256": "f19ed931d5a47c3969551cf58d9895049a399aff71dc397a3ea63ac76e31d2c5"
+        }
+      ],
+      "package_content_sha256": "1b888cc5b3765d9c3c4ad93b88bf6c7761c5c01caff3bed45c836f4756d50490",
+      "chapter_count": 8,
+      "module_file_count": 24,
+      "brief_file_count": 8,
+      "claims_file_count": 8,
+      "chapter_referenced_file_count": 48,
+      "chapter_content_sha256": "8f3c0a2e04511a06bd47e2a95dcf40af299167fd746d1b5c775e2bedd41c8d23",
+      "referenced_file_count": 59,
+      "missing_required_files": [],
+      "missing_optional_files": [],
+      "missing_chapter_files": [],
+      "missing_files": [],
+      "structure_sha256": "ec5e0894be3726772d4783391bb94347518f74e20bfcfdedfcbc9c5b36377c7a",
+      "content_sha256": "ba57820636b63fe55130a2146d7a4b294b14a008229cdeb69af0bd4decef348b",
+      "chapters": [
+        {
+          "chapter_id": "musikalsk-analyse-lyd-struktur",
+          "title": "Musikalsk analyse, lyd og struktur",
+          "file": "data/fagverk/musikk/musikalsk-analyse-lyd-struktur.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "01bdcf6c4bc12f1997f7226025ba5cf356253006e1cedc2861eeee058d2c703d"
+        },
+        {
+          "chapter_id": "historisk-musikkvitenskap-historiografi",
+          "title": "Historisk musikkvitenskap og historiografi",
+          "file": "data/fagverk/musikk/historisk-musikkvitenskap-historiografi.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "6cd80739a276577f429ac19dfd1fd5a06c69acfe86d7531638f8174bfca5a24e"
+        },
+        {
+          "chapter_id": "etnomusikologi-kultur-samfunn",
+          "title": "Etnomusikologi, kultur og samfunn",
+          "file": "data/fagverk/musikk/etnomusikologi-kultur-samfunn.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "85d9892ba3b3b0ef2c4f2defa4c1d5cf70bac262aa98b04c6e0a15d61f363751"
+        },
+        {
+          "chapter_id": "framforing-praksis-samspill",
+          "title": "Framføring, praksis og samspill",
+          "file": "data/fagverk/musikk/framforing-praksis-samspill.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "f0d392aa1daae03ce515f5b798290ea9ad65c088cb9966361713b26d4b3b12af"
+        },
+        {
+          "chapter_id": "lydmedier-teknologi-beregning",
+          "title": "Lydmedier, teknologi og beregningsmetoder",
+          "file": "data/fagverk/musikk/lydmedier-teknologi-beregning.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "ea7464f219aac888088b13d3ffde97aac9424131f38c94d58fc941f902b5b39d"
+        },
+        {
+          "chapter_id": "persepsjon-kognisjon-akustikk",
+          "title": "Musikkpersepsjon, kognisjon og akustikk",
+          "file": "data/fagverk/musikk/persepsjon-kognisjon-akustikk.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "2f0eb1f2da45ad42cb49d52e158e2ce43c943a4f947fbf443bb179b9bdf4cedf"
+        },
+        {
+          "chapter_id": "institusjoner-okonomi-politikk-offentlighet",
+          "title": "Institusjoner, økonomi, politikk og musikalske offentligheter",
+          "file": "data/fagverk/musikk/institusjoner-okonomi-politikk-offentlighet.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "360dfa37f766924d0710c16c661f8a623c415a3405c0e2b4cb8a36d6fd0dd4f2"
+        },
+        {
+          "chapter_id": "norsk-nordisk-samisk-sted-arkiv",
+          "title": "Norsk, nordisk og samisk musikk; sted og arkiv",
+          "file": "data/fagverk/musikk/norsk-nordisk-samisk-sted-arkiv.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "2930b3743454a578f11c2eeedaf6ccb9c235aff6ec1a6f3789e53edd9cb5b7f1"
+        }
+      ]
+    },
+    "naeringsliv": {
+      "title": "Økonomi og næringsliv",
+      "kind": "subject",
+      "parent_subject_id": null,
+      "schema_family": "standard_canonical",
+      "pilot": false,
+      "package_status": "complete",
+      "chapter_status": "materialized",
+      "required_manifest_fields": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods"
+      ],
+      "optional_manifest_fields": [
+        "supersetQuizMal",
+        "quizStandard",
+        "quizQuestionSchema",
+        "quizPackageSchema",
+        "quizProduction",
+        "universityFramework",
+        "businessSchoolExtension"
+      ],
+      "present_manifest_fields": [
+        "businessSchoolExtension",
+        "emner",
+        "fagkart",
+        "methods",
+        "pensum",
+        "quizPackageSchema",
+        "quizProduction",
+        "quizQuestionSchema",
+        "quizStandard",
+        "supersetQuizMal",
+        "universityFramework"
+      ],
+      "missing_manifest_fields": [],
+      "package_file_count": 28,
+      "required_package_file_count": 4,
+      "optional_package_file_count": 24,
+      "package_files": [
+        {
+          "path": "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "emner"
+          ],
+          "key_paths": [
+            "emner"
+          ],
+          "exists": true,
+          "content_sha256": "17440d653fd04ded66cbd0260678fd38f87986cfbd14df1e9bbbfc6c97a9d495"
+        },
+        {
+          "path": "data/fag/naeringsliv/fagkart_naeringsliv_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "fagkart"
+          ],
+          "key_paths": [
+            "fagkart"
+          ],
+          "exists": true,
+          "content_sha256": "def977c8549a0f1cf3c39f6b9ec70d79f0719e274b7de5a7f68e427ddaf2b67f"
+        },
+        {
+          "path": "data/fag/naeringsliv/handelshogskolekilder_okonomi_og_naeringsliv_v1.json",
+          "required": false,
+          "fields": [
+            "businessSchoolExtension"
+          ],
+          "key_paths": [
+            "businessSchoolExtension.datasets"
+          ],
+          "exists": true,
+          "content_sha256": "abc082f989fe318ad90006e09bc4a9698d839ef25337ff4958dddc2f854607d4"
+        },
+        {
+          "path": "data/fag/naeringsliv/handelshogskolemal_okonomi_og_naeringsliv_v1.json",
+          "required": false,
+          "fields": [
+            "businessSchoolExtension"
+          ],
+          "key_paths": [
+            "businessSchoolExtension.measures"
+          ],
+          "exists": true,
+          "content_sha256": "d84c371ed4687814500db99542f3299bffb43d83cd8c7a7cd17c2b39b2c5c2d4"
+        },
+        {
+          "path": "data/fag/naeringsliv/handelshogskolemetoder_okonomi_og_naeringsliv_v1.json",
+          "required": false,
+          "fields": [
+            "businessSchoolExtension"
+          ],
+          "key_paths": [
+            "businessSchoolExtension.methods"
+          ],
+          "exists": true,
+          "content_sha256": "4b66a6a55f9627194db82f3a6aaa5e38d4ece569ebd66fdce8b851118524559c"
+        },
+        {
+          "path": "data/fag/naeringsliv/handelshogskolemodeller_okonomi_og_naeringsliv_v1.json",
+          "required": false,
+          "fields": [
+            "businessSchoolExtension"
+          ],
+          "key_paths": [
+            "businessSchoolExtension.models"
+          ],
+          "exists": true,
+          "content_sha256": "d165e198ad0064ded47e0b52c2bdbd217fe53f3df7c9dc62581c8e65fdf98401"
+        },
+        {
+          "path": "data/fag/naeringsliv/handelshogskolemoduler_okonomi_og_naeringsliv_v1.json",
+          "required": false,
+          "fields": [
+            "businessSchoolExtension"
+          ],
+          "key_paths": [
+            "businessSchoolExtension.modules"
+          ],
+          "exists": true,
+          "content_sha256": "af42d61971ed4bb1f12c95772a872cd0fa01317f8bde5d385c4d21d84df528ee"
+        },
+        {
+          "path": "data/fag/naeringsliv/handelshogskoleramme_okonomi_og_naeringsliv_v1.json",
+          "required": false,
+          "fields": [
+            "businessSchoolExtension"
+          ],
+          "key_paths": [
+            "businessSchoolExtension.framework"
+          ],
+          "exists": true,
+          "content_sha256": "2194479c3cddf3060d0f171416c10ea55f928526f0ee8c86583254938ea96022"
+        },
+        {
+          "path": "data/fag/naeringsliv/handelshogskolespor_okonomi_og_naeringsliv_v1.json",
+          "required": false,
+          "fields": [
+            "businessSchoolExtension"
+          ],
+          "key_paths": [
+            "businessSchoolExtension.tracks"
+          ],
+          "exists": true,
+          "content_sha256": "5ea9d46cb54181137ebb499df134239ccc45140f91c9a66323315875c89a2034"
+        },
+        {
+          "path": "data/fag/naeringsliv/handelshogskoleteori_okonomi_og_naeringsliv_v1.json",
+          "required": false,
+          "fields": [
+            "businessSchoolExtension"
+          ],
+          "key_paths": [
+            "businessSchoolExtension.theories"
+          ],
+          "exists": true,
+          "content_sha256": "0298462a400aa7e08975b2570a70f8f925fa5044417fdc524a5a089053f492a8"
+        },
+        {
+          "path": "data/fag/naeringsliv/handelshogskolevurdering_okonomi_og_naeringsliv_v1.json",
+          "required": false,
+          "fields": [
+            "businessSchoolExtension"
+          ],
+          "key_paths": [
+            "businessSchoolExtension.assessment"
+          ],
+          "exists": true,
+          "content_sha256": "cf30e38fca4762c87c1f616d9dca9a16ab66a4aa10af6d538d363d8415f869e9"
+        },
+        {
+          "path": "data/fag/naeringsliv/methods_naeringsliv_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "methods"
+          ],
+          "key_paths": [
+            "methods"
+          ],
+          "exists": true,
+          "content_sha256": "cd656a49f622fb66091946845bb71ab2a8048794942178e408323eb19b496bf1"
+        },
+        {
+          "path": "data/fag/naeringsliv/naeringslivpensum_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "pensum"
+          ],
+          "key_paths": [
+            "pensum"
+          ],
+          "exists": true,
+          "content_sha256": "de604172a0dff067e733d924b2341150cea67b22714a2c93471e1243d1b83437"
+        },
+        {
+          "path": "data/fag/naeringsliv/supersetQUIZMAL_naeringsliv.json",
+          "required": false,
+          "fields": [
+            "supersetQuizMal"
+          ],
+          "key_paths": [
+            "supersetQuizMal"
+          ],
+          "exists": true,
+          "content_sha256": "352ea2d5f9ab2f0ee052c06058325bf8842babbfdf260259346cd91169719e84"
+        },
+        {
+          "path": "data/fag/naeringsliv/universitetsramme_okonomi_og_naeringsliv_v1.json",
+          "required": false,
+          "fields": [
+            "universityFramework"
+          ],
+          "key_paths": [
+            "universityFramework"
+          ],
+          "exists": true,
+          "content_sha256": "07f7d4df74275325d75a683886beda0d21c3f43a4703d58661a05d767f563b47"
+        },
+        {
+          "path": "data/quiz/naeringsliv/havnelageret_sets_merged.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.havnelageret.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "15508c98b148ed60838bd2624a843900aaa1288676d6d81787652694c99845c7"
+        },
+        {
+          "path": "data/quiz/naeringsliv/oslo_posthus_sets_merged.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.oslo_posthus.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "76917e1ee563e2c64768199041473fab1830432077e54916c4d56c0a4c628ce6"
+        },
+        {
+          "path": "data/quiz/naeringsliv/telegrafbygningen_sets_merged.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.telegrafbygningen.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "39f8fb6985fe8ee9891959dadb582fc0bf9963b2669319a7ab5b29a34ac526dd"
+        },
+        {
+          "path": "data/quiz/production_briefs/naeringsliv/havnelageret.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.havnelageret.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "e905ac7285377827dc06624dd0d1dc578b1d003329c9430a7ffd220db7b338c7"
+        },
+        {
+          "path": "data/quiz/production_briefs/naeringsliv/oslo_posthus.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.oslo_posthus.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "c303a57ed0e975cbb1b82b03ec5424b0fa09c7ed893f222f33bcb033124577a6"
+        },
+        {
+          "path": "data/quiz/production_briefs/naeringsliv/telegrafbygningen.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.telegrafbygningen.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "2bfd115a43be6af78830e6e7634154b84c038b2193b4e71a4858578fdc902e4a"
+        },
+        {
+          "path": "data/quiz/production_context/naeringsliv/havnelageret.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.havnelageret.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "cf65d9819b08f767bf862f7a7447f4b8f0546c6382c0d3b8a162bd33b5255ae0"
+        },
+        {
+          "path": "data/quiz/production_context/naeringsliv/oslo_posthus.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.oslo_posthus.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "5a188dec0578c9599220202373f05a155aaf969962abc8680def4a6cc8c35f1a"
+        },
+        {
+          "path": "data/quiz/production_context/naeringsliv/telegrafbygningen.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.telegrafbygningen.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "9abfa322ef9104651b47e8353b02e86d68944fa19bd669935b190bc9ffb330ed"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PACKAGE_SCHEMA_V1.json",
+          "required": false,
+          "fields": [
+            "quizPackageSchema"
+          ],
+          "key_paths": [
+            "quizPackageSchema"
+          ],
+          "exists": true,
+          "content_sha256": "3a01fb4177c9cf81df823d3bacdb24b1a37b2bdbfd45dade8aa18f4d0e5ec8d6"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+          "required": false,
+          "fields": [
+            "quizStandard"
+          ],
+          "key_paths": [
+            "quizStandard"
+          ],
+          "exists": true,
+          "content_sha256": "98b23395fb461f7a7cf4920774551902060facc20d9013e5fe4d3e8327aceb33"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+          "required": false,
+          "fields": [
+            "quizQuestionSchema"
+          ],
+          "key_paths": [
+            "quizQuestionSchema"
+          ],
+          "exists": true,
+          "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
+        },
+        {
+          "path": "scripts/build-quiz-production-context.mjs",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.context_builder"
+          ],
+          "exists": true,
+          "content_sha256": "636265081b34aef4899fb33a8dd8ad7b03233480abdbfb812edced0d6a1a14d5"
+        }
+      ],
+      "package_content_sha256": "e317d09709e9a5e06be272cf1c9bed10199c86517e07f4c2e642acb5a8778d4f",
+      "chapter_count": 12,
+      "module_file_count": 36,
+      "brief_file_count": 12,
+      "claims_file_count": 12,
+      "chapter_referenced_file_count": 72,
+      "chapter_content_sha256": "06d3f52d2c3e2ff12545cbbc2fc0c1a783071c46a79f1e46ae368e44562143d1",
+      "referenced_file_count": 100,
+      "missing_required_files": [],
+      "missing_optional_files": [],
+      "missing_chapter_files": [],
+      "missing_files": [],
+      "structure_sha256": "226987d65ef23ec22dddb60dd34256f9be96bda55607c14c84825b337378905f",
+      "content_sha256": "41e35ea18bf69a24149cd42fae09cd0e6d12e9016715b93aa47349548b6a3941",
+      "chapters": [
+        {
+          "chapter_id": "arbeid-produksjon-verdiskaping",
+          "title": "Arbeid, produksjon og verdiskaping",
+          "file": "data/fagverk/naeringsliv/arbeid-produksjon-verdiskaping.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "2b3748d8f8bc3afe9ce47de8a5350ba577b586bde1cda9a92a63e4986bf6d2fb"
+        },
+        {
+          "chapter_id": "kapital-eierskap-finans",
+          "title": "Kapital, eierskap og finans",
+          "file": "data/fagverk/naeringsliv/kapital-eierskap-finans.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "0ce96379953a43b69a967572dfbd4969e76ff53c421c106d5932b46e844fe66d"
+        },
+        {
+          "chapter_id": "handel-forbruk-marked",
+          "title": "Handel, forbruk og marked",
+          "file": "data/fagverk/naeringsliv/handel-forbruk-marked.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "e73dd5aae287fda33226beb59737443fcb4cb26e0bf0d63734304ec56ab037e9"
+        },
+        {
+          "chapter_id": "teknologi-innovasjon-plattformer",
+          "title": "Teknologi, innovasjon og plattformer",
+          "file": "data/fagverk/naeringsliv/teknologi-innovasjon-plattformer.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "dc306321e6603580f4b288e6b6178ef4e6f59e0df43e065f3fbcbbfa913ca041"
+        },
+        {
+          "chapter_id": "logistikk-infrastruktur-okonomisk-rom",
+          "title": "Logistikk, infrastruktur og økonomisk rom",
+          "file": "data/fagverk/naeringsliv/logistikk-infrastruktur-okonomisk-rom.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "a3457523b4a8f75b42108a29a6fb9bd8bb48bd513c8b3fd6c15d7bb9fe38bca9"
+        },
+        {
+          "chapter_id": "makt-regulering-baerekraft",
+          "title": "Makt, regulering og bærekraft",
+          "file": "data/fagverk/naeringsliv/makt-regulering-baerekraft.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "f4ae1a107ff837c62d99de6ba280a28e7712a33571e26f319b16931da10f025f"
+        },
+        {
+          "chapter_id": "makrookonomi-konjunkturer-okonomisk-politikk",
+          "title": "Makroøkonomi, konjunkturer og økonomisk politikk",
+          "file": "data/fagverk/naeringsliv/makrookonomi-konjunkturer-okonomisk-politikk.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "52d0ddb48b6b3230a0d315dd812bcd1dee3c9bc7b45f29510f333b48f272e672"
+        },
+        {
+          "chapter_id": "regnskap-revisjon-okonomistyring",
+          "title": "Regnskap, revisjon og økonomistyring",
+          "file": "data/fagverk/naeringsliv/regnskap-revisjon-okonomistyring.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "d771629e474da60c9ed44490734212d035c42692bf5e649d64a35e658b684690"
+        },
+        {
+          "chapter_id": "markedsforing-strategi-kunder",
+          "title": "Markedsføring, strategi og kunder",
+          "file": "data/fagverk/naeringsliv/markedsforing-strategi-kunder.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "edff879ba6d3f65e349b2da2cc2115f981732164ba48baefe82c796a62dbdca9"
+        },
+        {
+          "chapter_id": "kvantitative-metoder-business-analytics",
+          "title": "Kvantitative metoder og business analytics",
+          "file": "data/fagverk/naeringsliv/kvantitative-metoder-business-analytics.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "760fc538b3bd830e59070e526e998a5be98f585f74fb9dbbaf533301d8666f23"
+        },
+        {
+          "chapter_id": "forretningsjus-skatt-compliance",
+          "title": "Forretningsjus, skatt og compliance",
+          "file": "data/fagverk/naeringsliv/forretningsjus-skatt-compliance.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "4441d71ef9bd3a29723996fb2d18ea829470c06341ecbb9e1824117fc1a8b4ab"
+        },
+        {
+          "chapter_id": "internasjonal-okonomi-operations-prosjekt",
+          "title": "Internasjonal økonomi, operations og prosjekt",
+          "file": "data/fagverk/naeringsliv/internasjonal-okonomi-operations-prosjekt.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "0317bada63747877ee4aa8f322ad43bc38ffd0295bcfe0678bd242d9413251b3"
+        }
+      ]
+    },
+    "natur": {
+      "title": "Natur & miljø",
+      "kind": "subject",
+      "parent_subject_id": null,
+      "schema_family": "standard_canonical",
+      "pilot": true,
+      "package_status": "complete",
+      "chapter_status": "materialized",
+      "required_manifest_fields": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods"
+      ],
+      "optional_manifest_fields": [
+        "supersetQuizMal",
+        "quizStandard",
+        "quizQuestionSchema"
+      ],
+      "present_manifest_fields": [
+        "emner",
+        "fagkart",
+        "methods",
+        "pensum",
+        "quizQuestionSchema",
+        "quizStandard",
+        "supersetQuizMal"
+      ],
+      "missing_manifest_fields": [],
+      "package_file_count": 7,
+      "required_package_file_count": 4,
+      "optional_package_file_count": 3,
+      "package_files": [
+        {
+          "path": "data/fag/natur/emner_natur_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "emner"
+          ],
+          "key_paths": [
+            "emner"
+          ],
+          "exists": true,
+          "content_sha256": "2a0e420b239e6431107b76515dc45619b211169032224a0aeb59608aba107662"
+        },
+        {
+          "path": "data/fag/natur/fagkart_natur_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "fagkart"
+          ],
+          "key_paths": [
+            "fagkart"
+          ],
+          "exists": true,
+          "content_sha256": "f281692ed943ef432da6e63886775686147e27492b9ca9d65340faa6df1dafde"
+        },
+        {
+          "path": "data/fag/natur/methods_natur_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "methods"
+          ],
+          "key_paths": [
+            "methods"
+          ],
+          "exists": true,
+          "content_sha256": "e23c8e793131527b29f569a74b0d042dccaea3083b9bd01e7a28ee229dc653c4"
+        },
+        {
+          "path": "data/fag/natur/naturpensum_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "pensum"
+          ],
+          "key_paths": [
+            "pensum"
+          ],
+          "exists": true,
+          "content_sha256": "489a400f985c42570dc1ac7d0acef5ca4df32de981454af09da7b0ff724cba85"
+        },
+        {
+          "path": "data/fag/natur/supersetQUIZMAL_natur.json",
+          "required": false,
+          "fields": [
+            "supersetQuizMal"
+          ],
+          "key_paths": [
+            "supersetQuizMal"
+          ],
+          "exists": true,
+          "content_sha256": "3fab8c2f939fdd2927b81d11c34c380ae092f8902eb85e0c9ba1145c3eaa6615"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+          "required": false,
+          "fields": [
+            "quizStandard"
+          ],
+          "key_paths": [
+            "quizStandard"
+          ],
+          "exists": true,
+          "content_sha256": "98b23395fb461f7a7cf4920774551902060facc20d9013e5fe4d3e8327aceb33"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+          "required": false,
+          "fields": [
+            "quizQuestionSchema"
+          ],
+          "key_paths": [
+            "quizQuestionSchema"
+          ],
+          "exists": true,
+          "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
+        }
+      ],
+      "package_content_sha256": "908075a97fa20d8595ed95a987eb1e00607b94a98750a416ca3f97aef8765714",
+      "chapter_count": 12,
+      "module_file_count": 0,
+      "brief_file_count": 0,
+      "claims_file_count": 0,
+      "chapter_referenced_file_count": 12,
+      "chapter_content_sha256": "84abf7bc1fcd55ab9a32436b30618a0cca980cef35845e0dbb41e7824eab2aa2",
+      "referenced_file_count": 19,
+      "missing_required_files": [],
+      "missing_optional_files": [],
+      "missing_chapter_files": [],
+      "missing_files": [],
+      "structure_sha256": "cd5dcaa333ccf3deecdd9dd3acd19415aad65ddac774b81a4506e7fc1f1e2ecf",
+      "content_sha256": "bb401af465d10947c167da47eaace09ed8309df905f4e812f02c097f0088a99b",
+      "chapters": [
+        {
+          "chapter_id": "okosystem_mangfold_habitat",
+          "title": "Økosystem, mangfold og habitat",
+          "file": "data/fagverk/natur/okosystem_mangfold_habitat.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "1b183d6171af315b87793c506c33bcd6e9d7e197a53354fc2c75481f4114f1db"
+        },
+        {
+          "chapter_id": "artskunnskap_systematikk",
+          "title": "Artskunnskap og systematikk",
+          "file": "data/fagverk/natur/artskunnskap_systematikk.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "40f1a431a0f9265a0ac1e5ac35f22196bf9bf3f1b2f608401ce9ba77f0f52c04"
+        },
+        {
+          "chapter_id": "evolusjon_biologisk_mangfold",
+          "title": "Evolusjon og biologisk mangfold",
+          "file": "data/fagverk/natur/evolusjon_biologisk_mangfold.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "c7630ca07c00a48f57de9ec9e82394b7b72c088e0359605fda3491429b35f424"
+        },
+        {
+          "chapter_id": "botanikk_vegetasjon",
+          "title": "Botanikk og vegetasjon",
+          "file": "data/fagverk/natur/botanikk_vegetasjon.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "447b5c2f46ae05aa7f3b93a59ff925c288652c50fe3adddaeab98a220d0a7aa8"
+        },
+        {
+          "chapter_id": "zoologi_dyreliv",
+          "title": "Zoologi og dyreliv",
+          "file": "data/fagverk/natur/zoologi_dyreliv.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "5d23409b129e1782853790b8a0e20f97b009633af7de16873801cb50626e5671"
+        },
+        {
+          "chapter_id": "sopp_lav_mikroorganismer",
+          "title": "Sopp, lav og mikroorganismer",
+          "file": "data/fagverk/natur/sopp_lav_mikroorganismer.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "7738c6f837562f08d51570c2e354c40ba8d464d4023f30e8bcdb5eb4349de208"
+        },
+        {
+          "chapter_id": "organismebiologi_fysiologi",
+          "title": "Organismebiologi og fysiologi",
+          "file": "data/fagverk/natur/organismebiologi_fysiologi.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "ae243c2faec64f47e78f3d53d2015336a16f6ebedd3297d17176709f549dec39"
+        },
+        {
+          "chapter_id": "vann_hydrologi_kretslop",
+          "title": "Vann, hydrologi og kretsløp",
+          "file": "data/fagverk/natur/vann_hydrologi_kretslop.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "43b8a1b1d5dd5ffec269f6f59ee18b414519bf135f4710ba3b09759d22fc7fec"
+        },
+        {
+          "chapter_id": "klima_energi_resiliens",
+          "title": "Klima, energi og resiliens",
+          "file": "data/fagverk/natur/klima_energi_resiliens.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "0256e874db16785c6ea53fa89c9c25680aaeabb6556001499a5849e729d9056f"
+        },
+        {
+          "chapter_id": "geologi_landskap_tid",
+          "title": "Geologi og naturhistorie",
+          "file": "data/fagverk/natur/geologi_naturhistorie_v5_3.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "ae2b13163000a39e7014cb9dd4731dce153ba67029d8b6c8527037fe0b61804f"
+        },
+        {
+          "chapter_id": "urban_okologi_gronnstruktur",
+          "title": "Urban økologi og grønnstruktur",
+          "file": "data/fagverk/natur/urban_okologi_gronnstruktur.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "3c212debef29a5d105f1875ecc3fd63d6054ce329e2a8456a6d763efbf53f176"
+        },
+        {
+          "chapter_id": "miljopavirkning_forvaltning_regenerasjon",
+          "title": "Miljøpåvirkning, forvaltning og regenerasjon",
+          "file": "data/fagverk/natur/miljopavirkning_forvaltning_regenerasjon.json",
+          "module_file_count": 0,
+          "referenced_file_count": 1,
+          "content_sha256": "9918dfae959d6d0e7914ae39f39236d0bc7281f2b0ec2dc236780b4e2241d233"
+        }
+      ]
+    },
+    "politikk": {
+      "title": "Politikk og samfunn",
+      "kind": "subject",
+      "parent_subject_id": null,
+      "schema_family": "standard_canonical",
+      "pilot": false,
+      "package_status": "complete",
+      "chapter_status": "materialized",
+      "required_manifest_fields": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods"
+      ],
+      "optional_manifest_fields": [
+        "curriculum",
+        "concepts",
+        "supersetQuizMal",
+        "quizStandard",
+        "quizQuestionSchema"
+      ],
+      "present_manifest_fields": [
+        "concepts",
+        "curriculum",
+        "emner",
+        "fagkart",
+        "methods",
+        "pensum",
+        "quizQuestionSchema",
+        "quizStandard",
+        "supersetQuizMal"
+      ],
+      "missing_manifest_fields": [],
+      "package_file_count": 9,
+      "required_package_file_count": 4,
+      "optional_package_file_count": 5,
+      "package_files": [
+        {
+          "path": "data/fag/politikk/concepts_politikk_canonical_v1.json",
+          "required": false,
+          "fields": [
+            "concepts"
+          ],
+          "key_paths": [
+            "concepts"
+          ],
+          "exists": true,
+          "content_sha256": "1375f68cd38a246d72323003af6b9825a43e1e6f85916888c9e01f3efd29b9d4"
+        },
+        {
+          "path": "data/fag/politikk/curriculum_architecture_politikk_v1.json",
+          "required": false,
+          "fields": [
+            "curriculum"
+          ],
+          "key_paths": [
+            "curriculum"
+          ],
+          "exists": true,
+          "content_sha256": "d86245390b182a41e8c736ad8cce389655f40ae6c1fdf9b28bbfba368d221c42"
+        },
+        {
+          "path": "data/fag/politikk/emner_politikk_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "emner"
+          ],
+          "key_paths": [
+            "emner"
+          ],
+          "exists": true,
+          "content_sha256": "7c04ece1287b9af7d431850ba0fb72e27963f8caddd1c16ccd679f52bcff7a91"
+        },
+        {
+          "path": "data/fag/politikk/fagkart_politikk_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "fagkart"
+          ],
+          "key_paths": [
+            "fagkart"
+          ],
+          "exists": true,
+          "content_sha256": "7c5d8c8083781054cec485f670ef058f0d7dbcbdc3f2e149332e4bbc31162504"
+        },
+        {
+          "path": "data/fag/politikk/methods_politikk_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "methods"
+          ],
+          "key_paths": [
+            "methods"
+          ],
+          "exists": true,
+          "content_sha256": "2ff2f66cd86dcee12924fcb778d435955dea5638714d1b45595cc5a6e9ad8e13"
+        },
+        {
+          "path": "data/fag/politikk/politikkpensum_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "pensum"
+          ],
+          "key_paths": [
+            "pensum"
+          ],
+          "exists": true,
+          "content_sha256": "8e8411c676ec7c4ef79296c193779204d1094866d88b7016467535c613cec3a9"
+        },
+        {
+          "path": "data/fag/politikk/supersetQUIZMAL_politikk.json",
+          "required": false,
+          "fields": [
+            "supersetQuizMal"
+          ],
+          "key_paths": [
+            "supersetQuizMal"
+          ],
+          "exists": true,
+          "content_sha256": "0c460fa94bff71ef1dc2bc2f814e63b1a487680355a140a78c89867ab6059525"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+          "required": false,
+          "fields": [
+            "quizStandard"
+          ],
+          "key_paths": [
+            "quizStandard"
+          ],
+          "exists": true,
+          "content_sha256": "98b23395fb461f7a7cf4920774551902060facc20d9013e5fe4d3e8327aceb33"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+          "required": false,
+          "fields": [
+            "quizQuestionSchema"
+          ],
+          "key_paths": [
+            "quizQuestionSchema"
+          ],
+          "exists": true,
+          "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
+        }
+      ],
+      "package_content_sha256": "6887232b792bef70c20dc9f32760486fdfeea0e4d86e0f7abebc21a788792fba",
+      "chapter_count": 13,
+      "module_file_count": 39,
+      "brief_file_count": 13,
+      "claims_file_count": 13,
+      "chapter_referenced_file_count": 78,
+      "chapter_content_sha256": "49a9ecd379041fe7827b0fd0386c66cf5f91e4fa547b8fbef04a07ae12ad582d",
+      "referenced_file_count": 87,
+      "missing_required_files": [],
+      "missing_optional_files": [],
+      "missing_chapter_files": [],
+      "missing_files": [],
+      "structure_sha256": "55e818cf86a82450dfe365ef47a56bd3ce2ecd2159c8325a09cb7c6b669833ad",
+      "content_sha256": "7798747650cf84cf0f0ee6e4441b95c26b853a700713da5117555fe7b19bf3c0",
+      "chapters": [
+        {
+          "chapter_id": "forvaltning",
+          "title": "Offentlig forvaltning",
+          "file": "data/fagverk/politikk/forvaltning.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "8ad7473d46cf18e12f5f4416bc94d55e9ae9319df839c560d935b16a81701a9c"
+        },
+        {
+          "chapter_id": "parlamentarisme",
+          "title": "Parlamentarisme, representasjon og offentlighet",
+          "file": "data/fagverk/politikk/parlamentarisme.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "d0b2ea9712afb8ab4aaccec7b8f5877cc3e617c4c9be263cd362adb7d3cd64b4"
+        },
+        {
+          "chapter_id": "regimer-og-institusjoner",
+          "title": "Regimer og institusjoner",
+          "file": "data/fagverk/politikk/regimer-og-institusjoner.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "050e622037780f58f87322689b5a6075b536efa71aa9545df18a9d195d8f65d3"
+        },
+        {
+          "chapter_id": "valg-partier-velgeratferd",
+          "title": "Valg, partier og velgeratferd",
+          "file": "data/fagverk/politikk/valg-partier-velgeratferd.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "0c9d7b73007de752819a7273d63c97806ca188e76c99db1647368597a9b3476f"
+        },
+        {
+          "chapter_id": "offentlig-politikk-beslutning-implementering",
+          "title": "Offentlig politikk, beslutning og implementering",
+          "file": "data/fagverk/politikk/offentlig-politikk-beslutning-implementering.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "a9a1822762c89dce074d7391cb7f424a222b8b6840e267e491f7953b143b0ec6"
+        },
+        {
+          "chapter_id": "internasjonal-politikk-sikkerhet-samarbeid",
+          "title": "Internasjonal politikk, sikkerhet og samarbeid",
+          "file": "data/fagverk/politikk/internasjonal-politikk-sikkerhet-samarbeid.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "8ab13c23fdfb383dd3397446830e70f94a28561d27e939d02940f577d75939df"
+        },
+        {
+          "chapter_id": "politisk-okonomi-stat-marked",
+          "title": "Politisk økonomi, stat og marked",
+          "file": "data/fagverk/politikk/politisk-okonomi-stat-marked.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "eabcb4c5b504bc55650ecc898797a2afaf86e0dd0b7e601db856de04cf4aabb1"
+        },
+        {
+          "chapter_id": "statsvitenskapelig-metode-og-sammenligning",
+          "title": "Statsvitenskapelig metode og sammenligning",
+          "file": "data/fagverk/politikk/statsvitenskapelig-metode-og-sammenligning.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "523d25ac7a390580635916d4fd32ef7736312e8b744e86215325eb388600a3b5"
+        },
+        {
+          "chapter_id": "norsk-politikk-eos-eu-flernivastyring",
+          "title": "Norsk politikk, EØS/EU og flernivåstyring",
+          "file": "data/fagverk/politikk/norsk-politikk-eos-eu-flernivastyring.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "3dc7a673c81497fd894ad7392e7b700890317b6438cfac5001d5867cb76c5f56"
+        },
+        {
+          "chapter_id": "rett-lov-rettssikkerhet",
+          "title": "Rett, lov og rettssikkerhet",
+          "file": "data/fagverk/politikk/rett-lov-rettssikkerhet.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "dcb93c828a6896576e3ea883fd4a1da99ee2a07ea1b8b2280b0cc889b3f4a5d3"
+        },
+        {
+          "chapter_id": "fordeling-velferd-ulikhet",
+          "title": "Fordeling, velferd og ulikhet",
+          "file": "data/fagverk/politikk/fordeling-velferd-ulikhet.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "64a110e5344b0cd05168f41d779c1ceb8ad6dc72459492a84037d91e4b6301fb"
+        },
+        {
+          "chapter_id": "konflikt-makt-sivilsamfunn",
+          "title": "Konflikt, makt og sivilsamfunn",
+          "file": "data/fagverk/politikk/konflikt-makt-sivilsamfunn.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "aeeaf795bea692a4a2b611657d8a13b2ab929e26551acfdfe8b170b968cb7db3"
+        },
+        {
+          "chapter_id": "normer-identitet-hverdagsliv",
+          "title": "Normer, identitet og hverdagsliv",
+          "file": "data/fagverk/politikk/normer-identitet-hverdagsliv.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "c262ed6e258dcfef34001734bfd1b1a6e9366319ed0397dcc55110d0a919af30"
+        }
+      ]
+    },
+    "psykologi": {
+      "title": "Psykologi",
+      "kind": "subject",
+      "parent_subject_id": null,
+      "schema_family": "standard_canonical",
+      "pilot": false,
+      "package_status": "complete",
+      "chapter_status": "materialized",
+      "required_manifest_fields": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods"
+      ],
+      "optional_manifest_fields": [
+        "supersetQuizMal",
+        "quizStandard",
+        "quizQuestionSchema",
+        "emneMappings"
+      ],
+      "present_manifest_fields": [
+        "emneMappings",
+        "emner",
+        "fagkart",
+        "methods",
+        "pensum",
+        "quizQuestionSchema",
+        "quizStandard",
+        "supersetQuizMal"
+      ],
+      "missing_manifest_fields": [],
+      "package_file_count": 8,
+      "required_package_file_count": 4,
+      "optional_package_file_count": 4,
+      "package_files": [
+        {
+          "path": "data/fag/psykologi/emnemapping_psykologi_canonical_v4_5.json",
+          "required": false,
+          "fields": [
+            "emneMappings"
+          ],
+          "key_paths": [
+            "emneMappings"
+          ],
+          "exists": true,
+          "content_sha256": "b41d478c86732b5411ac21d6dd8ea331e83b6cd50685d1c3117728c6c8517446"
+        },
+        {
+          "path": "data/fag/psykologi/emner_psykologi_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "emner"
+          ],
+          "key_paths": [
+            "emner"
+          ],
+          "exists": true,
+          "content_sha256": "3b5cc741ee0c65b27d68a42f5fc4926dbec31a9e48a5afebb5cf222c6b3b391b"
+        },
+        {
+          "path": "data/fag/psykologi/fagkart_psykologi_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "fagkart"
+          ],
+          "key_paths": [
+            "fagkart"
+          ],
+          "exists": true,
+          "content_sha256": "009a2be8c48196cd445b2b6f65592bc24aec2a86864b0cd9dd91185b7f9bff0c"
+        },
+        {
+          "path": "data/fag/psykologi/methods_psykologi_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "methods"
+          ],
+          "key_paths": [
+            "methods"
+          ],
+          "exists": true,
+          "content_sha256": "6578e8f46de12cb17d6009474f9d1597c219887a8c066cabef14fe5d98856570"
+        },
+        {
+          "path": "data/fag/psykologi/psykologipensum_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "pensum"
+          ],
+          "key_paths": [
+            "pensum"
+          ],
+          "exists": true,
+          "content_sha256": "a0c9f74e7f28e0a5070011fbe516d3564f53ef658e7ffe00c83dc5f5e59acc64"
+        },
+        {
+          "path": "data/fag/psykologi/supersetQUIZMAL_psykologi.json",
+          "required": false,
+          "fields": [
+            "supersetQuizMal"
+          ],
+          "key_paths": [
+            "supersetQuizMal"
+          ],
+          "exists": true,
+          "content_sha256": "5069ef81afdcffcbdd1c6160aa4d89c0b29927cbf200c85de084337cd0985816"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+          "required": false,
+          "fields": [
+            "quizStandard"
+          ],
+          "key_paths": [
+            "quizStandard"
+          ],
+          "exists": true,
+          "content_sha256": "98b23395fb461f7a7cf4920774551902060facc20d9013e5fe4d3e8327aceb33"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+          "required": false,
+          "fields": [
+            "quizQuestionSchema"
+          ],
+          "key_paths": [
+            "quizQuestionSchema"
+          ],
+          "exists": true,
+          "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
+        }
+      ],
+      "package_content_sha256": "99d35a4d11d9f71defe2bcec243fbf1f76840c14b5cf204fa04be88d8d2e69ee",
+      "chapter_count": 6,
+      "module_file_count": 18,
+      "brief_file_count": 6,
+      "claims_file_count": 6,
+      "chapter_referenced_file_count": 36,
+      "chapter_content_sha256": "c71c3758146f1f44551542663b723f4d0e50e621ad50b2f36a13dd6b04ca62cb",
+      "referenced_file_count": 44,
+      "missing_required_files": [],
+      "missing_optional_files": [],
+      "missing_chapter_files": [],
+      "missing_files": [],
+      "structure_sha256": "6ccae84d32a80d89d270408bb8ad10dd612ba7d9216d2651ed2a462a619288f7",
+      "content_sha256": "6a817b63087d0e4cd84906091f64416f806caef620f5dafe71f1daf2e2f85e49",
+      "chapters": [
+        {
+          "chapter_id": "psykisk-helse-institusjoner-og-behandling",
+          "title": "Psykisk helse, institusjoner og behandling",
+          "file": "data/fagverk/psykologi/psykisk-helse-institusjoner-og-behandling.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "316f6e0ac9709df535344c1c024785cffcb41612487e0ca1da663f4bade58dae"
+        },
+        {
+          "chapter_id": "fagtradisjoner-teori-og-sinnet",
+          "title": "Fagtradisjoner, teori og forståelsen av sinnet",
+          "file": "data/fagverk/psykologi/fagtradisjoner-teori-og-sinnet.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "d937beaff6e49eae9b63fb337268800311483dbad35c017c0621f2e04e350e71"
+        },
+        {
+          "chapter_id": "utvikling-oppvekst-og-laring",
+          "title": "Utvikling, oppvekst og læring",
+          "file": "data/fagverk/psykologi/utvikling-oppvekst-og-laring.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "1b019836c38164b4d78819b73f8dad9b02fb4ab3cad3b0ef15548c6c4b4b4c95"
+        },
+        {
+          "chapter_id": "kognisjon-folelser-og-atferd",
+          "title": "Kognisjon, følelser og atferd",
+          "file": "data/fagverk/psykologi/kognisjon-folelser-og-atferd.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "00695353d3dabdd51de93f4fff2d8ce2a97f8432d6005b6367bc722e044e6f92"
+        },
+        {
+          "chapter_id": "sosialpsykologi-normalitet-og-stigma",
+          "title": "Sosialpsykologi, normalitet og stigma",
+          "file": "data/fagverk/psykologi/sosialpsykologi-normalitet-og-stigma.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "6c1d24f352b595a4ba4908a9c7ed3bedeb7a120fb095f956c31c3b523ac67d3a"
+        },
+        {
+          "chapter_id": "traume-krise-resiliens-og-omsorg",
+          "title": "Traume, krise, resiliens og omsorg",
+          "file": "data/fagverk/psykologi/traume-krise-resiliens-og-omsorg.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "aef40f20e3d9a9227ab64e5744e892fa3c12182f1a18294a5016995725ae27ef"
+        }
+      ]
+    },
+    "religion": {
+      "title": "Religion",
+      "kind": "subject",
+      "parent_subject_id": null,
+      "schema_family": "foundation_v1",
+      "pilot": true,
+      "package_status": "complete",
+      "chapter_status": "not_materialized",
+      "required_manifest_fields": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods"
+      ],
+      "optional_manifest_fields": [
+        "supersetQuizMal",
+        "status",
+        "quizStandard",
+        "quizQuestionSchema"
+      ],
+      "present_manifest_fields": [
+        "emner",
+        "fagkart",
+        "methods",
+        "pensum",
+        "quizQuestionSchema",
+        "quizStandard",
+        "status",
+        "supersetQuizMal"
+      ],
+      "missing_manifest_fields": [],
+      "package_file_count": 7,
+      "required_package_file_count": 4,
+      "optional_package_file_count": 3,
+      "package_files": [
+        {
+          "path": "data/fag/religion/emner_religion_canonical_v1.json",
+          "required": true,
+          "fields": [
+            "emner"
+          ],
+          "key_paths": [
+            "emner"
+          ],
+          "exists": true,
+          "content_sha256": "0bf3810adb028c48c422ba23f7a11d98235e4f64a35937b5c85752ef0a10799a"
+        },
+        {
+          "path": "data/fag/religion/fagkart_religion_canonical_v1.json",
+          "required": true,
+          "fields": [
+            "fagkart"
+          ],
+          "key_paths": [
+            "fagkart"
+          ],
+          "exists": true,
+          "content_sha256": "37a7a124f29ee195205bdd7b9977c2bca9a26363b35ba287d5d83344a8e53c68"
+        },
+        {
+          "path": "data/fag/religion/methods_religion_canonical_v1.json",
+          "required": true,
+          "fields": [
+            "methods"
+          ],
+          "key_paths": [
+            "methods"
+          ],
+          "exists": true,
+          "content_sha256": "c93e07bbdffae86489834132b2540baa161cbb0618430dad276cfa04ea73df19"
+        },
+        {
+          "path": "data/fag/religion/religionpensum_canonical_v1.json",
+          "required": true,
+          "fields": [
+            "pensum"
+          ],
+          "key_paths": [
+            "pensum"
+          ],
+          "exists": true,
+          "content_sha256": "c19e798d8fd0405ff5ca5a85c60ba25ed6bd40cc2a8e00e608e9982322d7a676"
+        },
+        {
+          "path": "data/fag/religion/supersetQUIZMAL_religion.json",
+          "required": false,
+          "fields": [
+            "supersetQuizMal"
+          ],
+          "key_paths": [
+            "supersetQuizMal"
+          ],
+          "exists": true,
+          "content_sha256": "5467ba8b9d389c4e3b2a89bc192dede28ec70e12ac838a688e8ea5c5d21ecdf0"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+          "required": false,
+          "fields": [
+            "quizStandard"
+          ],
+          "key_paths": [
+            "quizStandard"
+          ],
+          "exists": true,
+          "content_sha256": "98b23395fb461f7a7cf4920774551902060facc20d9013e5fe4d3e8327aceb33"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+          "required": false,
+          "fields": [
+            "quizQuestionSchema"
+          ],
+          "key_paths": [
+            "quizQuestionSchema"
+          ],
+          "exists": true,
+          "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
+        }
+      ],
+      "package_content_sha256": "757c0c038c6087229347c1681c949d84bffd11107c74101b82cf26e74a725ed1",
+      "chapter_count": 0,
+      "module_file_count": 0,
+      "brief_file_count": 0,
+      "claims_file_count": 0,
+      "chapter_referenced_file_count": 0,
+      "chapter_content_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "referenced_file_count": 7,
+      "missing_required_files": [],
+      "missing_optional_files": [],
+      "missing_chapter_files": [],
+      "missing_files": [],
+      "structure_sha256": "b0d15d6d852934f96b8703a62499287f09e96eb83b20fc32cad3e0f52e5b899b",
+      "content_sha256": "757c0c038c6087229347c1681c949d84bffd11107c74101b82cf26e74a725ed1",
+      "chapters": []
+    },
+    "scenekunst": {
+      "title": "Scenekunst",
+      "kind": "subject",
+      "parent_subject_id": null,
+      "schema_family": "foundation_v1",
+      "pilot": false,
+      "package_status": "complete",
+      "chapter_status": "not_materialized",
+      "required_manifest_fields": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods"
+      ],
+      "optional_manifest_fields": [
+        "supersetQuizMal",
+        "status",
+        "quizStandard",
+        "quizQuestionSchema"
+      ],
+      "present_manifest_fields": [
+        "emner",
+        "fagkart",
+        "methods",
+        "pensum",
+        "quizQuestionSchema",
+        "quizStandard",
+        "status",
+        "supersetQuizMal"
+      ],
+      "missing_manifest_fields": [],
+      "package_file_count": 7,
+      "required_package_file_count": 4,
+      "optional_package_file_count": 3,
+      "package_files": [
+        {
+          "path": "data/fag/scenekunst/emner_scenekunst_canonical_v1.json",
+          "required": true,
+          "fields": [
+            "emner"
+          ],
+          "key_paths": [
+            "emner"
+          ],
+          "exists": true,
+          "content_sha256": "fc6255cb8ddf7c3356d01c5e79cf266f5941ec4aa82cf4281810ac52e3ae7d97"
+        },
+        {
+          "path": "data/fag/scenekunst/fagkart_scenekunst_canonical_v1.json",
+          "required": true,
+          "fields": [
+            "fagkart"
+          ],
+          "key_paths": [
+            "fagkart"
+          ],
+          "exists": true,
+          "content_sha256": "6a61cf89c8fdb0f96f39865da790dd5edafe2473b86b154848ad64e8289dec29"
+        },
+        {
+          "path": "data/fag/scenekunst/methods_scenekunst_canonical_v1.json",
+          "required": true,
+          "fields": [
+            "methods"
+          ],
+          "key_paths": [
+            "methods"
+          ],
+          "exists": true,
+          "content_sha256": "03dd7708131fbaa5654c876d01900b06316cc56b1310a26bd19211360cf51079"
+        },
+        {
+          "path": "data/fag/scenekunst/scenekunstpensum_canonical_v1.json",
+          "required": true,
+          "fields": [
+            "pensum"
+          ],
+          "key_paths": [
+            "pensum"
+          ],
+          "exists": true,
+          "content_sha256": "31df473fcfac320822fb930b21cb64466086cc9f57e7487953cf66f715d4cf0a"
+        },
+        {
+          "path": "data/fag/scenekunst/supersetQUIZMAL_scenekunst.json",
+          "required": false,
+          "fields": [
+            "supersetQuizMal"
+          ],
+          "key_paths": [
+            "supersetQuizMal"
+          ],
+          "exists": true,
+          "content_sha256": "ba284e2ec33a84619ceabccd21531bd3481ab9892a9521087dd2f3acc9e11dff"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+          "required": false,
+          "fields": [
+            "quizStandard"
+          ],
+          "key_paths": [
+            "quizStandard"
+          ],
+          "exists": true,
+          "content_sha256": "98b23395fb461f7a7cf4920774551902060facc20d9013e5fe4d3e8327aceb33"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+          "required": false,
+          "fields": [
+            "quizQuestionSchema"
+          ],
+          "key_paths": [
+            "quizQuestionSchema"
+          ],
+          "exists": true,
+          "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
+        }
+      ],
+      "package_content_sha256": "9c8e2077da13b18d6c667460d877ea6e4b9554b10d0d93772f2af82f44f3ab42",
+      "chapter_count": 0,
+      "module_file_count": 0,
+      "brief_file_count": 0,
+      "claims_file_count": 0,
+      "chapter_referenced_file_count": 0,
+      "chapter_content_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "referenced_file_count": 7,
+      "missing_required_files": [],
+      "missing_optional_files": [],
+      "missing_chapter_files": [],
+      "missing_files": [],
+      "structure_sha256": "60c7b8d70a78e60bd673849625da6b66b967b114a56be1fbf9acb59599cf40ec",
+      "content_sha256": "9c8e2077da13b18d6c667460d877ea6e4b9554b10d0d93772f2af82f44f3ab42",
+      "chapters": []
+    },
+    "sport": {
+      "title": "Sport & lek",
+      "kind": "subject",
+      "parent_subject_id": null,
+      "schema_family": "standard_canonical",
+      "pilot": false,
+      "package_status": "complete_with_optional_gaps",
+      "chapter_status": "materialized",
+      "required_manifest_fields": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods"
+      ],
+      "optional_manifest_fields": [
+        "supersetQuizMal",
+        "knowledgePolicy",
+        "knowledgeUnitSchema",
+        "knowledgeArchitecture",
+        "quizStandard",
+        "quizQuestionSchema",
+        "emneMappings"
+      ],
+      "present_manifest_fields": [
+        "emneMappings",
+        "emner",
+        "fagkart",
+        "knowledgeArchitecture",
+        "knowledgePolicy",
+        "knowledgeUnitSchema",
+        "methods",
+        "pensum",
+        "quizQuestionSchema",
+        "quizStandard",
+        "supersetQuizMal"
+      ],
+      "missing_manifest_fields": [],
+      "package_file_count": 11,
+      "required_package_file_count": 4,
+      "optional_package_file_count": 7,
+      "package_files": [
+        {
+          "path": "data/fag/sport/emnemapping_sport_canonical_v4_5.json",
+          "required": false,
+          "fields": [
+            "emneMappings"
+          ],
+          "key_paths": [
+            "emneMappings"
+          ],
+          "exists": true,
+          "content_sha256": "a75695b96cc0be0e77823cbf424961c4473aedd22c3c0bd159c0a59d063920ed"
+        },
+        {
+          "path": "data/fag/sport/emner_sport_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "emner"
+          ],
+          "key_paths": [
+            "emner"
+          ],
+          "exists": true,
+          "content_sha256": "4959e388c01a94b6c9d8c5f635821b921d0df0dea7a384b46728716756a1c084"
+        },
+        {
+          "path": "data/fag/sport/fagkart_sport_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "fagkart"
+          ],
+          "key_paths": [
+            "fagkart"
+          ],
+          "exists": true,
+          "content_sha256": "b6e4a34dbfdf770d874584da01a2ce5c285b985a9d1eac408857785b83678f9a"
+        },
+        {
+          "path": "data/fag/sport/methods_sport_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "methods"
+          ],
+          "key_paths": [
+            "methods"
+          ],
+          "exists": true,
+          "content_sha256": "d1fe089f6570a3662868fe39f9480ffa23061a2653e08e9c5a367fce037f9b8c"
+        },
+        {
+          "path": "data/fag/sport/sportpensum_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "pensum"
+          ],
+          "key_paths": [
+            "pensum"
+          ],
+          "exists": true,
+          "content_sha256": "d8926e9b1e3dc90f628a1ddda65050a2f029e5e0dfcf8bb949e4cc4db1dc6294"
+        },
+        {
+          "path": "data/fag/sport/supersetQUIZMAL_sport.json",
+          "required": false,
+          "fields": [
+            "supersetQuizMal"
+          ],
+          "key_paths": [
+            "supersetQuizMal"
+          ],
+          "exists": true,
+          "content_sha256": "77c44aa9bef16d13964673b153261cade827b0fbd10f83545449a663354c249a"
+        },
+        {
+          "path": "data/knowledge/knowledge_system_policy_v1.json",
+          "required": false,
+          "fields": [
+            "knowledgePolicy"
+          ],
+          "key_paths": [
+            "knowledgePolicy"
+          ],
+          "exists": true,
+          "content_sha256": "a8cb01b1effc762142d019cd78230702e53c8d1e5fcad9ff507950242520c172"
+        },
+        {
+          "path": "data/knowledge/knowledge_unit_schema_v1.json",
+          "required": false,
+          "fields": [
+            "knowledgeUnitSchema"
+          ],
+          "key_paths": [
+            "knowledgeUnitSchema"
+          ],
+          "exists": true,
+          "content_sha256": "9f8ac9eedc81afa96e72f57c8a1d2af3f8b023273f3595b5661030da4a39d5b5"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+          "required": false,
+          "fields": [
+            "quizStandard"
+          ],
+          "key_paths": [
+            "quizStandard"
+          ],
+          "exists": true,
+          "content_sha256": "98b23395fb461f7a7cf4920774551902060facc20d9013e5fe4d3e8327aceb33"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+          "required": false,
+          "fields": [
+            "quizQuestionSchema"
+          ],
+          "key_paths": [
+            "quizQuestionSchema"
+          ],
+          "exists": true,
+          "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
+        },
+        {
+          "path": "README/KNOWLEDGE_MEMORY_CHAMBER.md",
+          "required": false,
+          "fields": [
+            "knowledgeArchitecture"
+          ],
+          "key_paths": [
+            "knowledgeArchitecture"
+          ],
+          "exists": false,
+          "content_sha256": null
+        }
+      ],
+      "package_content_sha256": "c3192eff524cbcb12bf002528628cdac8e71193727d76cd8f88a896939e96a87",
+      "chapter_count": 6,
+      "module_file_count": 8,
+      "brief_file_count": 1,
+      "claims_file_count": 6,
+      "chapter_referenced_file_count": 21,
+      "chapter_content_sha256": "b71bb43b87c71b3e08542c5dc135c0817ca5ee45ba95e99aa0e44deca088e3ba",
+      "referenced_file_count": 32,
+      "missing_required_files": [],
+      "missing_optional_files": [
+        "README/KNOWLEDGE_MEMORY_CHAMBER.md"
+      ],
+      "missing_chapter_files": [],
+      "missing_files": [
+        "README/KNOWLEDGE_MEMORY_CHAMBER.md"
+      ],
+      "structure_sha256": "ad22de32eada16df16b6cb5b70b3e589fdbd3fdf2722139bf5937fb7f5227050",
+      "content_sha256": "7faa2cda6574659d1b10f55af085682fc717547c687c6bfd3d1bce3665d1b39f",
+      "chapters": [
+        {
+          "chapter_id": "arenaer-steder-groundhopper",
+          "title": "Arenaer, steder og Groundhopper: hvordan idrett blir sted",
+          "file": "data/fagverk/sport/arenaer-steder-groundhopper.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "016ce353f0fd964d1c89a05caf7cf7d501230ef347e9f5b202bf4cf1ef498f72"
+        },
+        {
+          "chapter_id": "regler-spill-konkurranse",
+          "title": "Regler, spill og konkurranse: hvordan sport blir sammenlignbar",
+          "file": "data/fagverk/sport/regler-spill-konkurranse.json",
+          "module_file_count": 1,
+          "referenced_file_count": 3,
+          "content_sha256": "8a25949bffc3d8a193b5a94315b599a64dcde702e9a6b6d498e117f41fbe817f"
+        },
+        {
+          "chapter_id": "kropp-trening-prestasjon",
+          "title": "Kropp, trening og prestasjon: fra øving til belastningsstyring",
+          "file": "data/fagverk/sport/kropp-trening-prestasjon.json",
+          "module_file_count": 1,
+          "referenced_file_count": 3,
+          "content_sha256": "deceb6d01f0973e240f6d2d1eda1db4768e3f605d50c0f4e45ff81f1a480f0f5"
+        },
+        {
+          "chapter_id": "klubber-lag-frivillighet",
+          "title": "Klubber, lag og frivillighet: organisasjonen bak aktiviteten",
+          "file": "data/fagverk/sport/klubber-lag-frivillighet.json",
+          "module_file_count": 1,
+          "referenced_file_count": 3,
+          "content_sha256": "16f365d467b0ad790fd22395542d69e738e9bb5a0e0153c1568665827b534705"
+        },
+        {
+          "chapter_id": "supportere-publikum-kultur",
+          "title": "Supportere, publikum og idrettskultur: fra kampdag til kollektivt minne",
+          "file": "data/fagverk/sport/supportere-publikum-kultur.json",
+          "module_file_count": 1,
+          "referenced_file_count": 3,
+          "content_sha256": "1f5e924ae29df44798470a0b34593b7e4ac8a5ca2070981f2fc99e56bf84324d"
+        },
+        {
+          "chapter_id": "inkludering-helse-lek-samfunn",
+          "title": "Inkludering, helse, lek og samfunn: hvem får delta",
+          "file": "data/fagverk/sport/inkludering-helse-lek-samfunn.json",
+          "module_file_count": 1,
+          "referenced_file_count": 3,
+          "content_sha256": "ae93cbc24c0314cf432a74ba064b38be962bd4fa811eac89b780ca111b515198"
+        }
+      ]
+    },
+    "subkultur": {
+      "title": "Subkultur",
+      "kind": "subject",
+      "parent_subject_id": null,
+      "schema_family": "standard_canonical",
+      "pilot": false,
+      "package_status": "complete",
+      "chapter_status": "materialized",
+      "required_manifest_fields": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods"
+      ],
+      "optional_manifest_fields": [
+        "supersetQuizMal",
+        "quizStandard",
+        "quizQuestionSchema",
+        "quizPackageSchema",
+        "subjectPathwaySchema",
+        "subjectPathwayPackage",
+        "runtimeManifest"
+      ],
+      "present_manifest_fields": [
+        "emner",
+        "fagkart",
+        "methods",
+        "pensum",
+        "quizPackageSchema",
+        "quizQuestionSchema",
+        "quizStandard",
+        "runtimeManifest",
+        "subjectPathwayPackage",
+        "subjectPathwaySchema",
+        "supersetQuizMal"
+      ],
+      "missing_manifest_fields": [],
+      "package_file_count": 11,
+      "required_package_file_count": 4,
+      "optional_package_file_count": 7,
+      "package_files": [
+        {
+          "path": "data/fag/subkultur/emner_subkultur_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "emner"
+          ],
+          "key_paths": [
+            "emner"
+          ],
+          "exists": true,
+          "content_sha256": "986ea3a51bc30d56c027d1310c3dcec14d6817dd1257066e3b3af281ca1a0d98"
+        },
+        {
+          "path": "data/fag/subkultur/fagkart_subkultur_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "fagkart"
+          ],
+          "key_paths": [
+            "fagkart"
+          ],
+          "exists": true,
+          "content_sha256": "68301b2dd845efc99ebb105921f6dbb0ed6055198ef7fca80dd43a8dbd160d35"
+        },
+        {
+          "path": "data/fag/subkultur/methods_subkultur_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "methods"
+          ],
+          "key_paths": [
+            "methods"
+          ],
+          "exists": true,
+          "content_sha256": "dcf94b0dbd2fd7b0c6baf8b54a7122f472377c41bba02697bc5c28ffacd9989c"
+        },
+        {
+          "path": "data/fag/subkultur/subkultur_runtime_manifest.json",
+          "required": false,
+          "fields": [
+            "runtimeManifest"
+          ],
+          "key_paths": [
+            "runtimeManifest"
+          ],
+          "exists": true,
+          "content_sha256": "cd47bfd1245e2792685f5a5b842faa732a61bf224891f11abed6264432196e7a"
+        },
+        {
+          "path": "data/fag/subkultur/subkulturpensum_canonical_v4_5.json",
+          "required": true,
+          "fields": [
+            "pensum"
+          ],
+          "key_paths": [
+            "pensum"
+          ],
+          "exists": true,
+          "content_sha256": "c3388487821fe3a843f59b457777ae65576bb6b631b2421ed53a118f23ebf0f2"
+        },
+        {
+          "path": "data/fag/subkultur/supersetQUIZMAL_subkultur.json",
+          "required": false,
+          "fields": [
+            "supersetQuizMal"
+          ],
+          "key_paths": [
+            "supersetQuizMal"
+          ],
+          "exists": true,
+          "content_sha256": "167c7e9cdffa972ed9a7eca906f38e671c9409db0077ac058846a42263c7ffe1"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PACKAGE_SCHEMA_V1.json",
+          "required": false,
+          "fields": [
+            "quizPackageSchema"
+          ],
+          "key_paths": [
+            "quizPackageSchema"
+          ],
+          "exists": true,
+          "content_sha256": "3a01fb4177c9cf81df823d3bacdb24b1a37b2bdbfd45dade8aa18f4d0e5ec8d6"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+          "required": false,
+          "fields": [
+            "quizStandard"
+          ],
+          "key_paths": [
+            "quizStandard"
+          ],
+          "exists": true,
+          "content_sha256": "98b23395fb461f7a7cf4920774551902060facc20d9013e5fe4d3e8327aceb33"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+          "required": false,
+          "fields": [
+            "quizQuestionSchema"
+          ],
+          "key_paths": [
+            "quizQuestionSchema"
+          ],
+          "exists": true,
+          "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_SUBJECT_PATHWAY_PACKAGE_SCHEMA_V1.json",
+          "required": false,
+          "fields": [
+            "subjectPathwaySchema"
+          ],
+          "key_paths": [
+            "subjectPathwaySchema"
+          ],
+          "exists": true,
+          "content_sha256": "f19ed931d5a47c3969551cf58d9895049a399aff71dc397a3ea63ac76e31d2c5"
+        },
+        {
+          "path": "data/quiz/subkultur/subkultur_subject_pathways_v1.json",
+          "required": false,
+          "fields": [
+            "subjectPathwayPackage"
+          ],
+          "key_paths": [
+            "subjectPathwayPackage"
+          ],
+          "exists": true,
+          "content_sha256": "433545b9735dd873d7fd8842d9c8053bbf5830a72c48114a2d0e93d753b95093"
+        }
+      ],
+      "package_content_sha256": "24b3aaa920ac0a9e37d14f4c983bc877990617fb7eb76aa8a869223e1e36e4cb",
+      "chapter_count": 8,
+      "module_file_count": 24,
+      "brief_file_count": 0,
+      "claims_file_count": 0,
+      "chapter_referenced_file_count": 32,
+      "chapter_content_sha256": "925a02abdc902dcfb15de23298518faea5036ccb450f07e18528d4aeef372bc4",
+      "referenced_file_count": 43,
+      "missing_required_files": [],
+      "missing_optional_files": [],
+      "missing_chapter_files": [],
+      "missing_files": [],
+      "structure_sha256": "2ff5c4da930a4c39886d57a63cc6430e291978e5679f7f97811f5231f426e564",
+      "content_sha256": "fe7495e7b655533271f698987a8b075f23ccf0723dbf24c73bbd9f323baa90a0",
+      "chapters": [
+        {
+          "chapter_id": "subkulturteori_feltgrenser",
+          "title": "Subkulturteori og feltgrenser",
+          "file": "data/fagverk/subkultur/subkulturteori_feltgrenser.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "539bf6360b6afa82effa9cc148a87549780fdaef8d6c5cbd95874c9eff1ea7a5"
+        },
+        {
+          "chapter_id": "fellesskap_scener_egenorganisering",
+          "title": "Fellesskap, scener og egenorganisering",
+          "file": "data/fagverk/subkultur/fellesskap_scener_egenorganisering.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "06af87eb12434c9811dea2186887383fa6a9cc08d24750f63876fda74eace0df"
+        },
+        {
+          "chapter_id": "stil_symboler_koder_kropp",
+          "title": "Stil, symboler, koder og kropp",
+          "file": "data/fagverk/subkultur/stil_symboler_koder_kropp.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "8f70c844d23208cc29541d7d6136407032637fa4e895161907fc726131606182"
+        },
+        {
+          "chapter_id": "steder_territorier_okkupering",
+          "title": "Steder, territorier og okkupasjon",
+          "file": "data/fagverk/subkultur/steder_territorier_okkupering.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "b0bb061f4de4409a6f64d7cea46886219908ad975802c195b9b73d18787b4222"
+        },
+        {
+          "chapter_id": "motstand_avvik_kontroll",
+          "title": "Motstand, avvik og kontroll",
+          "file": "data/fagverk/subkultur/motstand_avvik_kontroll.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "bea88f9acb51eda718cdad4402f5cd3784a327d0729aea589c882d125865c579"
+        },
+        {
+          "chapter_id": "medier_objekter_praksiser",
+          "title": "Medier, objekter og praksiser",
+          "file": "data/fagverk/subkultur/medier_objekter_praksiser.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "f4a6b4ed5172ba4de44d189bf187331a915b0391f44c7db785f8e8c4347b4a07"
+        },
+        {
+          "chapter_id": "sosiale_randsoner_omsorg_skadereduksjon",
+          "title": "Sosiale randsoner, omsorg og skadereduksjon",
+          "file": "data/fagverk/subkultur/sosiale_randsoner_omsorg_skadereduksjon.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "c262922ca16187b62b85bd00178cf5dd9448cd66f94861a67c39273b1359a8ff"
+        },
+        {
+          "chapter_id": "kommersialisering_institusjonalisering_minne",
+          "title": "Kommersialisering, institusjonalisering og minne",
+          "file": "data/fagverk/subkultur/kommersialisering_institusjonalisering_minne.json",
+          "module_file_count": 3,
+          "referenced_file_count": 4,
+          "content_sha256": "d5f2a8a3962713e5173a542fffc61ed52ec26fd0b1f65150758af546c1754cb0"
+        }
+      ]
+    },
+    "teknologi": {
+      "title": "Teknologi",
+      "kind": "specialization",
+      "parent_subject_id": "vitenskap",
+      "schema_family": "technology_scientific_v2_4",
+      "pilot": true,
+      "package_status": "complete",
+      "chapter_status": "not_materialized",
+      "required_manifest_fields": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods"
+      ],
+      "optional_manifest_fields": [
+        "supersetQuizMal",
+        "quizStandard",
+        "quizQuestionSchema",
+        "scientificPackage",
+        "quizPackageSchema",
+        "subjectPathwaySchema",
+        "subjectPathwayPackage",
+        "canonicalModelVersion",
+        "universalCoverage",
+        "geographicProduction"
+      ],
+      "present_manifest_fields": [
+        "canonicalModelVersion",
+        "emner",
+        "fagkart",
+        "geographicProduction",
+        "methods",
+        "pensum",
+        "quizPackageSchema",
+        "quizQuestionSchema",
+        "quizStandard",
+        "scientificPackage",
+        "subjectPathwayPackage",
+        "subjectPathwaySchema",
+        "supersetQuizMal",
+        "universalCoverage"
+      ],
+      "missing_manifest_fields": [],
+      "package_file_count": 11,
+      "required_package_file_count": 4,
+      "optional_package_file_count": 7,
+      "package_files": [
+        {
+          "path": "data/fag/teknologi/emner_teknologi_canonical_v3.json",
+          "required": true,
+          "fields": [
+            "emner"
+          ],
+          "key_paths": [
+            "emner"
+          ],
+          "exists": true,
+          "content_sha256": "8e2a606260273ab6fffc306b241036ad5d563dad2c740fd54d6f225473dba062"
+        },
+        {
+          "path": "data/fag/teknologi/fagkart_teknologi_canonical_v3.json",
+          "required": true,
+          "fields": [
+            "fagkart"
+          ],
+          "key_paths": [
+            "fagkart"
+          ],
+          "exists": true,
+          "content_sha256": "39b386f316391cadd3bf6af92c0886470ac171510a3caee9849b39d3b3ebd191"
+        },
+        {
+          "path": "data/fag/teknologi/methods_teknologi_canonical_v3.json",
+          "required": true,
+          "fields": [
+            "methods"
+          ],
+          "key_paths": [
+            "methods"
+          ],
+          "exists": true,
+          "content_sha256": "da83fcef6e0835c50f60ef21a2324e89ede6980f5714e4e9462ad404e7320a1e"
+        },
+        {
+          "path": "data/fag/teknologi/supersetQUIZMAL_teknologi.json",
+          "required": false,
+          "fields": [
+            "supersetQuizMal"
+          ],
+          "key_paths": [
+            "supersetQuizMal"
+          ],
+          "exists": true,
+          "content_sha256": "47762ce5ef542660042107b37a39c8179b60e6507f87d10b74341440c147320c"
+        },
+        {
+          "path": "data/fag/teknologi/teknologi_scientific_v2/index.json",
+          "required": false,
+          "fields": [
+            "scientificPackage"
+          ],
+          "key_paths": [
+            "scientificPackage"
+          ],
+          "exists": true,
+          "content_sha256": "9f16241ef5cbafc270e29c1e8809d80710cee8b07e17abc12461a146cd240650"
+        },
+        {
+          "path": "data/fag/teknologi/teknologipensum_canonical_v3.json",
+          "required": true,
+          "fields": [
+            "pensum"
+          ],
+          "key_paths": [
+            "pensum"
+          ],
+          "exists": true,
+          "content_sha256": "9a7497edb5766eac57ecb8d46f3d9ca5019b6596ac63e167f682ff862b1b8f7e"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PACKAGE_SCHEMA_V1.json",
+          "required": false,
+          "fields": [
+            "quizPackageSchema"
+          ],
+          "key_paths": [
+            "quizPackageSchema"
+          ],
+          "exists": true,
+          "content_sha256": "3a01fb4177c9cf81df823d3bacdb24b1a37b2bdbfd45dade8aa18f4d0e5ec8d6"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+          "required": false,
+          "fields": [
+            "quizStandard"
+          ],
+          "key_paths": [
+            "quizStandard"
+          ],
+          "exists": true,
+          "content_sha256": "98b23395fb461f7a7cf4920774551902060facc20d9013e5fe4d3e8327aceb33"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+          "required": false,
+          "fields": [
+            "quizQuestionSchema"
+          ],
+          "key_paths": [
+            "quizQuestionSchema"
+          ],
+          "exists": true,
+          "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_SUBJECT_PATHWAY_PACKAGE_SCHEMA_V1.json",
+          "required": false,
+          "fields": [
+            "subjectPathwaySchema"
+          ],
+          "key_paths": [
+            "subjectPathwaySchema"
+          ],
+          "exists": true,
+          "content_sha256": "f19ed931d5a47c3969551cf58d9895049a399aff71dc397a3ea63ac76e31d2c5"
+        },
+        {
+          "path": "data/quiz/teknologi/teknologi_subject_pathways_v1.json",
+          "required": false,
+          "fields": [
+            "subjectPathwayPackage"
+          ],
+          "key_paths": [
+            "subjectPathwayPackage"
+          ],
+          "exists": true,
+          "content_sha256": "cdb4209eaa267639f14e1bf8ab014ea6bf7d715ec78a527950896933d250a036"
+        }
+      ],
+      "package_content_sha256": "5969344da09f9514e3ec5fd2e131d1b750b837c6d53bf7cd868b5bbf302170fe",
+      "chapter_count": 0,
+      "module_file_count": 0,
+      "brief_file_count": 0,
+      "claims_file_count": 0,
+      "chapter_referenced_file_count": 0,
+      "chapter_content_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "referenced_file_count": 11,
+      "missing_required_files": [],
+      "missing_optional_files": [],
+      "missing_chapter_files": [],
+      "missing_files": [],
+      "structure_sha256": "22dfbbe4ea926079ff5506593f43e3c5b7e8746f4603df845123da0e6e6272c5",
+      "content_sha256": "5969344da09f9514e3ec5fd2e131d1b750b837c6d53bf7cd868b5bbf302170fe",
+      "chapters": []
+    },
+    "vitenskap": {
+      "title": "Vitenskap & teknologi",
+      "kind": "subject",
+      "parent_subject_id": null,
+      "schema_family": "standard_canonical",
+      "pilot": true,
+      "package_status": "complete",
+      "chapter_status": "materialized",
+      "required_manifest_fields": [
+        "pensum",
+        "emner",
+        "fagkart",
+        "methods"
+      ],
+      "optional_manifest_fields": [
+        "supersetQuizMal",
+        "quizStandard",
+        "quizQuestionSchema",
+        "specializations"
+      ],
+      "present_manifest_fields": [
+        "emner",
+        "fagkart",
+        "methods",
+        "pensum",
+        "quizQuestionSchema",
+        "quizStandard",
+        "specializations",
+        "supersetQuizMal"
+      ],
+      "missing_manifest_fields": [],
+      "package_file_count": 7,
+      "required_package_file_count": 4,
+      "optional_package_file_count": 3,
+      "package_files": [
+        {
+          "path": "data/fag/vitenskap/emner_vitenskap_canonical_v4_6.json",
+          "required": true,
+          "fields": [
+            "emner"
+          ],
+          "key_paths": [
+            "emner"
+          ],
+          "exists": true,
+          "content_sha256": "0a5366674ab3df2cada77baf330e112099c157c5c10f572adfc08689cf574dc1"
+        },
+        {
+          "path": "data/fag/vitenskap/fagkart_vitenskap_canonical_v4_6.json",
+          "required": true,
+          "fields": [
+            "fagkart"
+          ],
+          "key_paths": [
+            "fagkart"
+          ],
+          "exists": true,
+          "content_sha256": "3a0981c4f2f4dbfca8bf8e148ab54f1451997a727469d25e5e160f432985f436"
+        },
+        {
+          "path": "data/fag/vitenskap/methods_vitenskap_canonical_v4_6.json",
+          "required": true,
+          "fields": [
+            "methods"
+          ],
+          "key_paths": [
+            "methods"
+          ],
+          "exists": true,
+          "content_sha256": "b4390db9560a7cb9c834136da64ac64248381543b1d3dd6986f7b02249d6c238"
+        },
+        {
+          "path": "data/fag/vitenskap/supersetQUIZMAL_vitenskap.json",
+          "required": false,
+          "fields": [
+            "supersetQuizMal"
+          ],
+          "key_paths": [
+            "supersetQuizMal"
+          ],
+          "exists": true,
+          "content_sha256": "7e5fab7694749f7b84f172297788e01a901b8e85f8cfa429cf1f9d659417b7fc"
+        },
+        {
+          "path": "data/fag/vitenskap/vitenskappensum_canonical_v4_6.json",
+          "required": true,
+          "fields": [
+            "pensum"
+          ],
+          "key_paths": [
+            "pensum"
+          ],
+          "exists": true,
+          "content_sha256": "f1909039be99837ace964d157c221ef7ad8410767656ebc537478f135d047279"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+          "required": false,
+          "fields": [
+            "quizStandard"
+          ],
+          "key_paths": [
+            "quizStandard"
+          ],
+          "exists": true,
+          "content_sha256": "98b23395fb461f7a7cf4920774551902060facc20d9013e5fe4d3e8327aceb33"
+        },
+        {
+          "path": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+          "required": false,
+          "fields": [
+            "quizQuestionSchema"
+          ],
+          "key_paths": [
+            "quizQuestionSchema"
+          ],
+          "exists": true,
+          "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
+        }
+      ],
+      "package_content_sha256": "1cb0494e52e45b8c38628e3c03ed5cbb6054ce823699f7ee4bdc2255c66dabb9",
+      "chapter_count": 5,
+      "module_file_count": 21,
+      "brief_file_count": 5,
+      "claims_file_count": 5,
+      "chapter_referenced_file_count": 36,
+      "chapter_content_sha256": "458e7f9fe9aed1e9750220c8b34fbe22468046ac34b4743c9fbb230f5c7b1891",
+      "referenced_file_count": 43,
+      "missing_required_files": [],
+      "missing_optional_files": [],
+      "missing_chapter_files": [],
+      "missing_files": [],
+      "structure_sha256": "d408e1c91c599c0a1d0dc126aecebb1cc274ae91acb02ce9ca72810a15cc38f2",
+      "content_sha256": "acb67c8cdf7f3a6fe07b53ed555387a232613113a1d82f03634f89aa65e2304a",
+      "chapters": [
+        {
+          "chapter_id": "vitenskap-fra-observasjon-til-etterprovbar-kunnskap",
+          "title": "Fra observasjon til etterprøvbar kunnskap",
+          "file": "data/fagverk/vitenskap/vitenskap-fra-observasjon-til-etterprovbar-kunnskap.json",
+          "module_file_count": 9,
+          "referenced_file_count": 12,
+          "content_sha256": "a32fe2d71bd08f4b0525a656bbab554ead1861182df2ca78abf678b6c9288943"
+        },
+        {
+          "chapter_id": "vitenskap-matematisk-bevis-struktur-og-modell",
+          "title": "Matematisk bevis, struktur og modell",
+          "file": "data/fagverk/vitenskap/vitenskap-matematisk-bevis-struktur-og-modell.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "b03346aa5fc1c2c67ba3e3fcc4fe983042bea4bd74b6844ed2d20252aa4417a5"
+        },
+        {
+          "chapter_id": "vitenskap-fysikk-fra-bevegelse-til-kosmos",
+          "title": "Fysikk fra bevegelse til kosmos",
+          "file": "data/fagverk/vitenskap/vitenskap-fysikk-fra-bevegelse-til-kosmos.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "798dd44581c0f6254c1e0c4304656f7b8f687158f14b0d4cf64c22babadee9b7"
+        },
+        {
+          "chapter_id": "vitenskap-kjemi-fra-atomstruktur-til-materialegenskap",
+          "title": "Kjemi fra atomstruktur til materialegenskap",
+          "file": "data/fagverk/vitenskap/vitenskap-kjemi-fra-atomstruktur-til-materialegenskap.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "e0b04d4acdbf6337c59de00eb2e619397605d735646a4cfb3a6dc69da33bfd3a"
+        },
+        {
+          "chapter_id": "vitenskap-medisin-fra-mekanisme-til-folkehelse",
+          "title": "Medisin fra mekanisme til folkehelse",
+          "file": "data/fagverk/vitenskap/vitenskap-medisin-fra-mekanisme-til-folkehelse.json",
+          "module_file_count": 3,
+          "referenced_file_count": 6,
+          "content_sha256": "5858e92803b4caf52d36073f73cc80540340e15623009ff649fa669d5580fcaa"
+        }
+      ]
+    }
+  },
+  "release_sha256": "273903b37a272381558e80b75ea05302e6fe56dcd0e68cbc70c5c57b87519c6b"
+}

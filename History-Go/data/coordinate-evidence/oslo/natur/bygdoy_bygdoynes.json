@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "placeId": "bygdoy_bygdoynes",
+  "placeFile": "data/places/natur/oslo/places_oslo_natur_bygdoy/bygdoy_bygdoynes.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.90369,
+    "lon": 10.70131,
+    "r": 120,
+    "coordStatus": "verified_geometry",
+    "coordSource": "Kartverket Sentralt stedsnavnregister – Bygdøynes, objekttype Nes i sjø",
+    "coordType": "named_place_anchor",
+    "coordNote": "Batch 138 official-map object-type-first: Kartverket SSR gir nøyaktig ett aktivt Bygdøynes-treff i Oslo, objekttype Nes i sjø, stedsnummer 732865, med offisielt representasjonspunkt 59.90369, 10.70131. Store norske leksikon kryssjekker identiteten som det ytterste sørøstre neset på Bygdøy ved innløpet til Frognerkilen. SSR-punktet brukes som stabilt navne-/områdeanker etter at tidligere streng OSM-kontroll ikke fant ett entydig navngitt objekt. Punktet er ikke valgt med nearest/first-hit og er ikke en påstand om et eksakt polygon-centroid."
+  },
+  "identity": {
+    "currentName": "Bygdøy Bygdøynes",
+    "resolvedIdentity": "Bygdøynes, det sørøstre neset på Bygdøy ved innløpet til Frognerkilen",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "natural_area",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [
+    "eksakt aktiv Kartverket SSR-identitet",
+    "uavhengig geografisk identitetskryssjekk"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "kartverket",
+      "sourceName": "Kartverket Sentralt stedsnavnregister – Bygdøynes, objekttype Nes i sjø",
+      "sourceUrl": "https://api.kartverket.no/stedsnavn/v1/sted?sok=Bygd%C3%B8ynes&knr=0301&treffPerSide=100&side=1",
+      "sourceObjectId": "kartverket-ssr:732865",
+      "sourceQuality": "official_named_place_registry",
+      "finding": "Ett aktivt Bygdøynes-objekt i Oslo, objekttype Nes i sjø, stedsnummer 732865, med offisielt representasjonspunkt 59.90369, 10.70131.",
+      "canVerifyCoordinate": true,
+      "reason": "Offisielt stabilt navne-/områdeobjekt med entydig treff; ingen nearest/first-hit."
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Store norske leksikon – Bygdøynes",
+      "sourceUrl": "https://snl.no/Bygd%C3%B8ynes",
+      "sourceObjectId": "snl:bygdoynes",
+      "sourceQuality": "independent_geographic_identity_crosscheck",
+      "finding": "SNL definerer Bygdøynes som det ytterste sørøstre neset på Bygdøy ved innløpet til Frognerkilen.",
+      "canVerifyCoordinate": false,
+      "reason": "Kryssjekker fysisk identitet; canonical koordinat kommer fra Kartverket SSR."
+    }
+  ],
+  "addressCandidates": [],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "kartverket",
+      "sourceObjectId": "kartverket-ssr:732865",
+      "canApplyToPlace": true
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "snl:bygdoynes",
+      "canApplyToPlace": false
+    }
+  ],
+  "geometryCandidates": [],
+  "coordinateCandidates": [
+    {
+      "lat": 59.90369,
+      "lon": 10.70131,
+      "coordRole": "area_anchor",
+      "sourceObjectId": "kartverket-ssr:732865",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Kartverket SSR-identiteten og representasjonspunktet er anvendt på canonical place."
+  },
+  "notes": [
+    "Batch 138 official-map object-type-first: Kartverket SSR gir nøyaktig ett aktivt Bygdøynes-treff i Oslo, objekttype Nes i sjø, stedsnummer 732865, med offisielt representasjonspunkt 59.90369, 10.70131. Store norske leksikon kryssjekker identiteten som det ytterste sørøstre neset på Bygdøy ved innløpet til Frognerkilen. SSR-punktet brukes som stabilt navne-/områdeanker etter at tidligere streng OSM-kontroll ikke fant ett entydig navngitt objekt. Punktet er ikke valgt med nearest/first-hit og er ikke en påstand om et eksakt polygon-centroid."
+  ]
+}

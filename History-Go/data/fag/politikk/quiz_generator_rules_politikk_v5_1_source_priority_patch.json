@@ -1,0 +1,2899 @@
+{
+  "version": "v5.6-two-normal-opening-sets",
+  "subject_id": "politikk",
+  "subject_title": "Politikk & samfunn",
+  "scope": "oslo_og_omegn",
+  "purpose": "Styresystem for et statsvitenskapelig hovedpensum med komparativ politikk, valg, offentlig politikk, internasjonal politikk, politisk økonomi og metode, støttet av sosiologiske, rettslige og normative domener.",
+  "canonical_inputs": {
+    "fagkart": "fagkart_politikk_canonical_v4_5.json",
+    "methods": "methods_politikk_canonical_v4_5.json",
+    "emner": "emner_politikk_canonical_v4_5.json",
+    "emnemapping": "emnemapping_politikk_canonical_v4_5.json",
+    "pensum": "politikkpensum_canonical_v4_5.json",
+    "domain_count": 13,
+    "emne_count": 123,
+    "method_count": 71,
+    "mapping_count": 121,
+    "topic_hook_count": 152
+  },
+  "hard_rules": {
+    "source_dominance_rule": "Eksterne politiske, rettslige, forvaltningsmessige, statistiske, historiske og samfunnsfaglige kilder, konkrete institusjoner, lover, reformer, vedtak, budsjett, reguleringsplaner, rettsbygg, offentlige tjenester, demokratiske arenaer, konflikter, protester, normsystemer, fordelingsdata, levekårsdata, demografi, arkiver, utredninger og dokumenterte samfunnsprosesser skal dominere det synlige faktainnholdet i politikkquizzer. Canonical-filene er styringsfiler, ikke faktakilde.",
+    "canonical_files_are_guides_not_content": true,
+    "external_politics_source_first_all_sets": true,
+    "minimum_external_source_ratio_by_set": {
+      "1": 0.85,
+      "2": 0.85,
+      "3": 0.8,
+      "4": 0.75,
+      "5": 0.75,
+      "6": 0.7,
+      "7": 0.75,
+      "8": 0.75
+    },
+    "internal_file_only_questions_max_per_quiz": 0.05,
+    "internal_file_only_questions_allowed_only_for": [
+      "ren observasjon av synlig institusjon, offentlig bygg, rettsbygg, demokratisk arena, forvaltningssted, velferdstjeneste, minnesmerke, demonstrasjonssted, valglokale eller politisk symbol",
+      "validering av metadata, kategori eller spørsmålslag",
+      "nødfallback når ekstern kilde ikke finnes, og dette loggføres eksplisitt"
+    ],
+    "question_seed_priority": [
+      "konkret institusjon, lov, reform, vedtak, offentlig tjeneste, demokratisk arena, rettsbygg, konflikt, protest, normsystem eller sosial prosess",
+      "offisiell kommune-, stat-, Storting-, domstol-, Lovdata-, SSB-, arkiv-, partiprogram-, utrednings-, rapport-, budsjett-, reguleringsplan- eller institusjonskilde",
+      "politisk historie, samfunnsfaglig forskning, rettskilde, NOU, stortingsmelding, kommunalt dokument, statistikk, levekårsdata, demografiske data eller forvaltningsdokument",
+      "dokumentert samfunnsprosess: styring, representasjon, fordeling, rettssikkerhet, regulering, konflikt, offentlighet, legitimitet, normalitet, sosial kontroll eller kollektiv beslutning",
+      "dokumentert politisk offentlighet: debatt, protest, organisering, partier, bevegelser, interessegrupper, sivilsamfunn, ytringsfrihet, polarisering eller demokratisk møteplass",
+      "stedsdata/persondata i appen",
+      "fagkart, methods, emner, emnemapping og pensum som styring – ikke faktakilde"
+    ],
+    "politikk_question_must_start_from": [
+      "konkret institusjon, offentlig bygg, forvaltningssted, rådhus, Storting, departement, tinghus, bydelshus, arkiv eller offentlig tjeneste",
+      "lov, rettighet, plikt, domstol, rettspraksis, rettssikkerhet, straff, kontroll, forvaltningsvedtak eller borger–stat-relasjon",
+      "valg, representasjon, parlamentarisme, lokaldemokrati, offentlighet, debattarena, politisk symbol, partier eller demokratiske møteplasser",
+      "fordeling, budsjett, velferdstjeneste, levekår, klasse, boligpolitikk, helsepolitikk, utdanning, demografi eller ulikhet",
+      "politisk konflikt, demonstrasjon, protest, sivilsamfunn, interessegruppe, organisasjon, bevegelse, arbeidslivspolitikk eller ideologisk konfliktlinje",
+      "norm, normalitet, majoritet, minoritet, identitet, kjønn, familie, migrasjon, integrering, hverdagsregel eller sosial kontroll",
+      "dokumentert kilde: lovtekst, vedtak, budsjett, reguleringsplan, NOU, stortingsmelding, SSB-data, rettskilde, arkiv, partiprogram, forvaltningsdokument eller samfunnsfaglig forskning"
+    ],
+    "forbidden_generation_patterns": [
+      "Ikke generer synlige spørsmål direkte fra emne-, hook-, metode- eller teorinavn.",
+      "Ikke spør generisk om politikk uten konkret institusjon, lov, vedtak, konflikt, fordeling, norm, offentlighet, sted eller kilde.",
+      "Ikke lag politiske holdningsspørsmål eller meningsspørsmål der fasiten blir ideologisk preferanse i stedet for dokumentert samfunnsfaglig påstand.",
+      "Ikke gjør et sted til politikk bare fordi det ligger nær et maktbygg eller har vag samfunnsvinkel, uten dokumentert institusjons-, lov-, fordelings-, konflikt-, norm-, offentlighets- eller forvaltningsmessig hovedkobling.",
+      "Ikke klassifiser byarkitektur, historie, næringsliv, media, kunst, litteratur, musikk, sport, natur, vitenskap eller populærkultur som politikk når politikk bare er sekundærlag.",
+      "Ikke bruk em_by_*, em_his_*, em_kunst_*, em_lit_*, em_media_*, em_musikk_*, em_pop_*, em_vit_*, em_naering_* eller em_natur_* som hoved-emne_ids i places_politikk eller people_politikk.",
+      "Ikke lag generell samfunnsmoral uten institusjon, lov, data, rettighet, velferdstjeneste, offentlighet, konflikt, norm, kilde eller stedsspesifikk prosess."
+    ],
+    "required_emne_prefix": "em_pol_",
+    "blocked_emne_prefixes_for_politikk_files": [
+      "em_by_",
+      "em_his_",
+      "em_kunst_",
+      "em_lit_",
+      "em_media_",
+      "em_musikk_",
+      "em_pop_",
+      "em_vit_",
+      "em_naering_",
+      "em_natur_"
+    ],
+    "people_politikk_rule": "people_politikk skal inneholde personer der hovedrollen er politiker, statsråd, byråd, stortingsrepresentant, ordfører, samfunnsreformator, aktivist, organisasjonsleder, juridisk aktør, demokratiforkjemper, velferdspolitisk aktør, maktkritiker, samfunnsforsker med tydelig politisk/samfunnsfaglig hovedrolle eller sentral aktør i offentlig styring, fordeling, konflikt, rett, normer eller sivilsamfunn. Personer der hovedrollen er by, historie, næringsliv, media, kunst, litteratur, musikk, sport, natur, vitenskap eller populærkultur skal primært ligge i disse kategoriene, med politikk som sekundært tag bare der det er relevant.",
+    "places_politikk_rule": "places_politikk skal inneholde steder der hovedrollen er rådhus, Storting, departement, regjeringsbygg, tinghus, domstol, politisk plass, demonstrasjonssted, valglokale, bydelshus, offentlig tjeneste, velferdsinstitusjon, partikontor, organisasjonsbygg, minnessted for politisk kamp, forvaltningssted, offentlig arkiv, rettslig institusjon eller sted der styring, rett, fordeling, konflikt, representasjon, normer eller offentlighet er hovedpoenget.",
+    "require_case_mechanism_distinction_chain": true,
+    "ban_theorist_name_as_answer_without_concept": true,
+    "theory_may_not_supply_claim_basis": true,
+    "method_must_match_documented_mechanism": true,
+    "mapping_must_supply_question_build_sequence": true,
+    "first_two_sets_must_be_normal_quiz": true,
+    "opening_normal_set_count": 2,
+    "opening_questions_per_set": 7,
+    "opening_normal_question_total": 14,
+    "visible_academic_language_forbidden_in_sets_1_2": true,
+    "theory_forbidden_in_sets_1_2": true,
+    "method_names_forbidden_in_sets_1_2": true,
+    "mechanism_or_distinction_as_visible_task_forbidden_in_sets_1_2": true,
+    "opening_question_answer_must_be_short_concrete_and_verifiable": true,
+    "opening_distractors_must_be_plausible_not_absurd": true,
+    "political_science_primary_required": true,
+    "comparative_claims_require_case_selection_and_comparable_indicators": true,
+    "causal_claims_require_design_or_mechanism": true,
+    "election_claims_require_defined_electorate_denominator_and_rules": true,
+    "policy_claims_distinguish_output_outcome_and_impact": true,
+    "international_relations_claims_require_level_of_analysis": true,
+    "political_economy_claims_require_distributional_incidence": true,
+    "method_claims_require_scope_and_uncertainty": true,
+    "constitutional_claims_require_rule_actor_mechanism_and_outcome": true,
+    "executive_legislative_claims_require_accountability_or_agenda_mechanism": true,
+    "democratic_backsliding_claims_require_baseline_sequence_and_institutional_indicator": true,
+    "normative_claims_must_not_be_presented_as_empirical_facts": true,
+    "normative_questions_require_explicit_premise_argument_counterargument_and_consequence": true,
+    "empirical_premises_in_normative_questions_require_external_source": true,
+    "ideology_may_not_be_reduced_to_party_label": true,
+    "norwegian_politics_claims_require_official_source_and_institutional_level": true,
+    "norwegian_institution_claims_require_actor_competence_and_document_chain": true,
+    "multilevel_governance_claims_require_competence_finance_and_implementation_chain": true,
+    "eos_eu_claims_require_european_decision_incorporation_and_national_implementation_chain": true,
+    "indigenous_politics_claims_require_legal_basis_representation_and_consultation_context": true,
+    "current_office_holder_or_rule_claims_require_current_external_verification": true
+  },
+  "soft_preferences": {
+    "preferred_external_source_mix_per_place": [
+      "minst én offisiell kommune-, stat-, Storting-, domstol-, Lovdata-, SSB-, arkiv-, utrednings-, rapport-, budsjett-, reguleringsplan- eller institusjonskilde",
+      "minst én politisk-historisk, rettslig, samfunnsfaglig, levekårsfaglig, demokratifaglig, velferdsfaglig eller forvaltningsfaglig kilde",
+      "minst én konkret institusjons-, lov-, vedtaks-, konflikt-, fordelings-, norm-, offentlighets-, rettighets- eller prosesskilde når quiz handler om sted eller person"
+    ],
+    "preferred_question_build_path": "politisk/samfunnsfaglig kilde eller konkret institusjon/lov/konflikt/fordeling/norm -> presist claim -> sted/person/institusjon/prosess -> metode/emne -> teori",
+    "preferred_role_of_canonical_files": [
+      "velge riktig em_pol_*",
+      "velge relevant politikkmetode",
+      "styre om spørsmålet bør starte i institusjon, lov, reform, offentlig rom, fordeling, rettighet, konflikt, norm, velferdstjeneste eller sosial prosess",
+      "spre teorier, tenkere, institusjoner, kildetyper, steder, metoder, konfliktlinjer og samfunnsprosesser",
+      "unngå kategorirot mellom politikk, by, historie, næringsliv, media, kunst, litteratur, musikk, sport, natur og vitenskap",
+      "unngå teorioverstyring der institusjonen, loven, konflikten, fordelingscaset, normen eller samfunnsprosessen blir borte"
+    ],
+    "preferred_question_surfaces": [
+      "institution-governance-first",
+      "democracy-public-sphere-first",
+      "law-rights-first",
+      "welfare-distribution-first",
+      "conflict-power-first",
+      "norms-everyday-first",
+      "institution-law-conflict-process-first_then_named_theorist"
+    ],
+    "preferred_norwegian_theory_path": "Når relevant norsk politisk teori, sosiologi, rettsvitenskap, velferdsforskning, demokratiforskning, maktutredning eller samfunnsfaglig forskning finnes, kan den brukes i senere sett, men bare etter at institusjon, lov, konflikt, fordeling, norm eller sosial prosess allerede er etablert.",
+    "prefer_political_science_core_rotation": true,
+    "prefer_norwegian_and_comparative_case_pairing": true
+  },
+  "set_guidance": {
+    "1": {
+      "name": "normalquiz_1_sted_institusjon_funksjon",
+      "opening_normal_set": true,
+      "questions_required": 7,
+      "visible_question_mode": "normal_factual_quiz",
+      "difficulty": "lett_til_middels",
+      "dominant_driver": "ekstern kilde og direkte fakta om stedet, institusjonen, personen eller den offentlige funksjonen",
+      "canonical_role": "metadata og intern klassifisering; ikke synlig fagspråk",
+      "preferred_question_types": [
+        "Hva heter stedet eller institusjonen?",
+        "Hvilken institusjon holder til her?",
+        "Hva er stedets viktigste offentlige funksjon?",
+        "Når åpnet, ble opprettet eller tatt i bruk?",
+        "Hvilket organ bruker stedet?",
+        "Hva erstattet stedet eller institusjonen?",
+        "Hvilket dokumentert kjennetegn er knyttet til stedet?"
+      ],
+      "external_source_ratio_minimum": 1,
+      "theory_allowed": false,
+      "named_theorist_allowed": false,
+      "method_name_visible_allowed": false,
+      "mechanism_as_visible_task_allowed": false,
+      "critical_distinction_as_visible_task_allowed": false,
+      "questions_must_have_short_concrete_answers": true
+    },
+    "2": {
+      "name": "normalquiz_2_historie_personer_hendelser",
+      "opening_normal_set": true,
+      "questions_required": 7,
+      "visible_question_mode": "normal_factual_quiz",
+      "difficulty": "lett_til_middels",
+      "dominant_driver": "ekstern kilde og dokumenterte personer, hendelser, beslutninger, organisasjoner, funksjonsendringer og kronologi",
+      "canonical_role": "metadata og intern klassifisering; ikke synlig fagspråk",
+      "preferred_question_types": [
+        "Hvem hadde en dokumentert rolle her?",
+        "Hvilken hendelse fant sted her?",
+        "Hvilket vedtak, hvilken lov eller reform er knyttet til stedet?",
+        "Hvilken organisasjon brukte eller bruker stedet?",
+        "Hva skjedde først eller sist?",
+        "Hvordan endret stedets funksjon seg – formulert som et konkret faktaspørsmål?",
+        "Hvilken tidligere bruk, person eller institusjon er dokumentert her?"
+      ],
+      "external_source_ratio_minimum": 1,
+      "theory_allowed": false,
+      "named_theorist_allowed": false,
+      "method_name_visible_allowed": false,
+      "mechanism_as_visible_task_allowed": false,
+      "critical_distinction_as_visible_task_allowed": false,
+      "questions_must_have_short_concrete_answers": true
+    },
+    "3": {
+      "name": "demokrati_representasjon_offentlighet",
+      "dominant_driver": "dokumenterbart valg, mandat, representasjonskrav, parlamentarisk ansvar, offentlig debatt, organisasjon, majoritet–minoritet-forhold, tillitsdata eller politisk rom",
+      "canonical_role": "høy metode- og emnestyring, men faktapåstanden skal være ekstern",
+      "allowed_methods": [
+        "met_pol_demokratianalyse",
+        "met_pol_representasjonsanalyse",
+        "met_pol_valg_og_deltakelsesanalyse",
+        "met_pol_offentlighetsanalyse",
+        "met_pol_maktbalanseanalyse",
+        "met_pol_parti_og_bevegelsesanalyse",
+        "met_pol_minoritet_og_representasjonsanalyse",
+        "met_pol_symbolanalyse"
+      ],
+      "question_style": "case, aktør og demokratisk mekanisme først; deretter distinksjon og eventuelt målrettet teori"
+    },
+    "4": {
+      "name": "rett_lov_rettssikkerhet",
+      "dominant_driver": "dokumenterbar lov, dom, forvaltningsavgjørelse, kontrollsak, sanksjon, rettighetskonflikt eller historisk lovendring",
+      "canonical_role": "høy metode- og emnestyring, men påstanden om gjeldende rett eller praksis skal være ekstern",
+      "allowed_methods": [
+        "met_pol_institusjonsanalyse",
+        "met_pol_rettslig_analyse",
+        "met_pol_rettighetsanalyse",
+        "met_pol_normanalyse",
+        "met_pol_kritisk_rettsanalyse",
+        "met_pol_makt_og_ulikhetsanalyse",
+        "met_pol_likestillingsanalyse",
+        "met_pol_fordelingsanalyse",
+        "met_pol_maktbalanseanalyse",
+        "met_pol_kontroll_og_sanksjonsanalyse",
+        "met_pol_romlig_maktanalyse",
+        "met_pol_politisk_historisk_analyse",
+        "met_pol_dokumentanalyse",
+        "met_pol_minoritet_og_representasjonsanalyse",
+        "met_pol_forvaltningsanalyse"
+      ],
+      "question_style": "rettskilde, hjemmel og aktører først; deretter mekanisme, distinksjon og eventuelt målrettet teori"
+    },
+    "5": {
+      "name": "fordeling_velferd_ulikhet",
+      "dominant_driver": "budsjett, offentlig tjeneste, velferdsinstitusjon, levekårsdata, boligpolitikk, helsepolitikk, utdanning, demografi eller ulikhet",
+      "canonical_role": "høy fordelings- og velferdsstyring tillatt",
+      "allowed_methods": [
+        "met_pol_fordelingsanalyse",
+        "met_pol_budsjett_og_fordelingsanalyse",
+        "met_pol_velferdsstatlig_analyse",
+        "met_pol_statistikk_og_fordelingsanalyse",
+        "met_pol_levekarsanalyse"
+      ],
+      "question_style": "fordeling, velferdsstat, levekår, klasse, bolig, helse, utdanning, demografi, sosialpolitikk og legitimitet"
+    },
+    "6": {
+      "name": "konflikt_makt_sivilsamfunn",
+      "dominant_driver": "demonstrasjon, protest, offentlig plass, organisasjon, interessegruppe, bevegelse, ideologi, arbeidslivspolitikk eller konfliktlinje",
+      "canonical_role": "høy makt-, konflikt- og offentlighetsstyring tillatt",
+      "allowed_methods": [
+        "met_pol_makt_og_interesseanalyse",
+        "met_pol_konfliktanalyse",
+        "met_pol_protest_og_bevegelsesanalyse",
+        "met_pol_sivilsamfunnsanalyse",
+        "met_pol_ideologianalyse"
+      ],
+      "question_style": "makt, interesser, protest, sivilsamfunn, organisasjoner, ideologi, arbeidslivspolitikk, miljøpolitisk konflikt, polarisering og konfliktens rom"
+    },
+    "7": {
+      "name": "normer_identitet_hverdagsliv",
+      "dominant_driver": "norm, normalitet, minoritet, majoritet, kjønn, familie, migrasjon, integrering, sosial kontroll, skole, bydel eller offentlig tjeneste",
+      "canonical_role": "høy norm- og samfunnsteoristyring tillatt, men bare etter konkret sosial prosess",
+      "allowed_methods": [
+        "met_pol_normanalyse",
+        "met_pol_praksisanalyse",
+        "met_pol_minoritet_og_representasjonsanalyse",
+        "met_pol_integreringsanalyse",
+        "met_pol_likestillingsanalyse"
+      ],
+      "question_style": "normalitet, minoritet, majoritet, hverdagsliv, kjønn, familie, migrasjon, integrering, sosial kontroll, likeverd og samfunnets grenser"
+    },
+    "8": {
+      "name": "system_makt_legitimitet_samfunnsteori",
+      "dominant_driver": "konkret institusjon, rettskilde, fordelingscase, konflikt, offentlighet, normsystem, legitimitetskrise eller sosial prosess",
+      "canonical_role": "høy teori tillatt, men med konkret institusjon, lov, konflikt, fordeling, norm eller samfunnsprosess",
+      "allowed_methods": [
+        "met_pol_legitimitetsanalyse",
+        "met_pol_makt_og_ulikhetsanalyse",
+        "met_pol_diskursanalyse",
+        "met_pol_symbolanalyse",
+        "met_pol_romlig_maktanalyse"
+      ],
+      "question_style": "makt, legitimitet, doxa, symbolsk makt, strukturell vold, polarisering, rettferdighet, offentlighet og institusjonell orden"
+    },
+    "political_science_core_share": "Minst to tredeler av analytiske spørsmål etter åpningen bør komme fra statsvitenskapelige kjernedomener.",
+    "support_fields": "Støttefeltene brukes for å utdype politiske mekanismer, ikke som erstatning for statsvitenskapelig analyseenhet."
+  },
+  "politikk_category_guardrails": {
+    "accept_as_politikk_primary_when": [
+      "stedet eller personen har politisk eller samfunnsfaglig hovedrolle",
+      "det finnes konkret institusjon, lov, vedtak, reform, rettighet, offentlig tjeneste, demokratisk arena, fordeling, konflikt, norm, offentlighet eller sosial prosess",
+      "spørsmål kan bygges fra politiske, rettslige, forvaltningsmessige, statistiske, historiske eller samfunnsfaglige kilder",
+      "politikkens og samfunnets systemlogikk er primær, ikke bare generell historie, arkitektur, kultur eller nærhet til maktbygg",
+      "stedet, personen eller kilden bærer et dokumentert statsvitenskapelig hovedpoeng om institusjoner, regimer, valg, partier, policy, internasjonal politikk, politisk økonomi eller metode",
+      "spørsmålet kan bygges rundt eksplisitt analyseenhet, definert utfall, mekanisme eller forskningsdesign"
+    ],
+    "do_not_accept_as_politikk_primary_when": [
+      "hovedrollen er byarkitektur, historie, næringsliv, media, kunst, litteratur, musikk, sport, natur, vitenskap eller populærkultur",
+      "stedet er bare nær et politisk bygg uten dokumentert politisk eller samfunnsfaglig hovedrolle",
+      "stedet er bare en generell byutviklingscase uten konkret institusjon, lov, fordeling, offentlighet, konflikt, norm eller sosial prosess",
+      "personen er kulturpersonlighet, næringslivsaktør, forsker, artist, idrettsutøver eller medieperson uten hovedrolle som politisk/samfunnsfaglig aktør",
+      "internasjonal hendelse uten statsvitenskapelig analysenivå, mekanisme eller institusjonell kobling",
+      "økonomisk fenomen uten politisk regel, interesse, styringsvalg eller fordelingskonsekvens",
+      "metodeetikett uten faktisk politisk påstand eller datagrunnlag"
+    ],
+    "secondary_politikk_tag_allowed": true
+  },
+  "validator_additions": [
+    "Avvis politikkquiz hvis synlig innhold primært er parafrase av fagkart, emner, methods eller mapping.",
+    "Avvis spørsmål som kan spores bare til emne-/hook-/metodenavn og ikke til konkret institusjon, lov, vedtak, konflikt, fordeling, norm, offentlighet, rettighet, tjeneste, sosial prosess eller ekstern kilde.",
+    "Avvis hoved-emne_ids i places_politikk eller people_politikk som ikke starter med em_pol_*.",
+    "Flagg poster der hovedkategori ser ut til å være by, historie, næringsliv, media, kunst, litteratur, musikk, sport, natur, vitenskap eller populærkultur.",
+    "Logg per spørsmål source_origin som external, mixed, observed_institution, observed_law_site, observed_public_sphere, observed_welfare_service, observed_conflict_site, observed_social_process eller internal_only.",
+    "Flagg quiz der internal_only overstiger 5 prosent.",
+    "Flagg teorioverstyring når navngitt teoretiker kommer før institusjon/lov/konflikt/fordeling/norm/offentlighet/sosial prosess er etablert.",
+    "Flagg politisk analyse som blir generisk holdning eller samfunnsmoral uten dokumentert institusjon, lov, data, rettighet, velferdstjeneste, offentlighet, konflikt, norm eller kilde.",
+    "Flagg biografiske spørsmål som ikke kobler person til konkret politisk rolle, institusjon, reform, konflikt, rettighet, organisasjon, forvaltning, velferd eller samfunnsprosess.",
+    "Flagg stedsbaserte spørsmål der koblingen til politikk bare er løs assosiasjon, nærhet til maktbygg eller generell samfunnsvinkel.",
+    "Avvis styringsspørsmål uten eksplisitt mekanisme.",
+    "Avvis styringsspørsmål der valgt metode ikke passer mekanismen eller kildetypen.",
+    "Avvis teorispørsmål uten reell begrepsdistinksjon eller sammenligning.",
+    "Avvis teoretikernavn som svar når begrep og mekanisme ikke er del av spørsmålet.",
+    "Avvis demokratspørsmål uten dokumenterbart valg, mandat, institusjonelt ansvar, offentlig ordskifte, organisasjon, konflikt, tillitsgrunnlag eller politisk rom.",
+    "Avvis spørsmål som likestiller deltakelse med innflytelse, synlighet med dagsordenmakt eller flertallsregel med legitim majoritetsdominans.",
+    "Avvis teorispørsmål der teoretikernavn kan besvares uten at et begrep forklarer en dokumentert mekanisme.",
+    "Avvis rettsspørsmål uten dokumenterbar lov, dom, avgjørelse, kontrollsak, sanksjon, rettighetskonflikt eller lovendring.",
+    "Avvis spørsmål som likestiller legalitet med legitimitet, formell rettighet med reell tilgang eller sikkerhetsformål med forholdsmessig inngrep.",
+    "Avvis teorispørsmål der teoretikernavn kan besvares uten at et rettslig begrep forklarer en dokumentert mekanisme.",
+    "Avvis enhver politikkquiz som ikke har nøyaktig sju normale faktaspørsmål i både sett 1 og sett 2.",
+    "Avvis synlig teori-, metode-, mekanisme- eller distinksjonsspråk i sett 1 og sett 2.",
+    "Avvis åpningsspørsmål som bruker formuleringene «Hvordan kan stedet leses som», «Hvorfor passer stedet til emnet», «mest presise faglige lesning», «Hvilket begrep beskriver best» eller «Hvilken teoretiker».",
+    "Avvis åpningsspørsmål uten kort, konkret og direkte kildeverifiserbar fasit.",
+    "Avvis åpningssett med åpenbart tullete distraktorer; alle alternativer skal være plausible innen samme svarkategori.",
+    "Avvis generatorløp som lar et avansert sted hoppe over de 14 normale åpningsspørsmålene."
+  ],
+  "generation_metadata_additions": {
+    "required_per_question_fields_recommended": [
+      "source_origin",
+      "claim_basis",
+      "guidance_basis",
+      "method_id",
+      "emne_id",
+      "politics_anchor_type",
+      "source_note",
+      "hook_id",
+      "mechanism",
+      "critical_distinction",
+      "theory_concept",
+      "case_anchor",
+      "set_index",
+      "opening_normal_question",
+      "normal_question_type",
+      "visible_question_register"
+    ],
+    "source_origin_values": [
+      "external",
+      "mixed",
+      "observed_institution",
+      "observed_law_site",
+      "observed_public_sphere",
+      "observed_welfare_service",
+      "observed_conflict_site",
+      "observed_social_process",
+      "internal_only"
+    ],
+    "politics_anchor_type_values": [
+      "institution",
+      "government_building",
+      "municipality",
+      "parliament",
+      "city_hall",
+      "court",
+      "law",
+      "legal_right",
+      "administrative_decision",
+      "public_service",
+      "welfare_service",
+      "budget",
+      "distribution",
+      "statistics",
+      "election",
+      "representation",
+      "public_sphere",
+      "debate_arena",
+      "political_symbol",
+      "party",
+      "movement",
+      "civil_society",
+      "protest",
+      "conflict",
+      "interest_group",
+      "norm",
+      "normality",
+      "minority",
+      "majority",
+      "identity",
+      "migration",
+      "integration",
+      "social_control",
+      "legitimacy",
+      "trust",
+      "urban_policy",
+      "regulation_plan",
+      "legal_source",
+      "archive",
+      "official_report"
+    ],
+    "claim_basis_definition": "Den konkrete politiske eller samfunnsfaglige påstanden fra ekstern kilde, institusjon, lovtekst, vedtak, budsjett, reguleringsplan, statistikk, arkiv, rettskilde, rapport, offentlig dokument eller dokumentert samfunnsprosess.",
+    "guidance_basis_definition": "Hvilket em_pol_*, hook, metode eller teorispor som styrte spørsmålets form uten å levere faktapåstanden.",
+    "method_id_definition": "Én method_id fra methods_politikk_canonical_v4_5.json brukt til å forme spørsmålet.",
+    "emne_id_definition": "Én em_pol_* fra emner_politikk_canonical_v4_5.json brukt som hovedemne.",
+    "source_note_definition": "Kort kildebeskrivelse som sier hvilken type politisk, rettslig, forvaltningsmessig, statistisk eller samfunnsfaglig kilde som er brukt.",
+    "hook_id_definition": "Topic hook som kobler emne, metode, mekanisme og teorispor.",
+    "mechanism_definition": "Den dokumenterbare prosessen som forklarer hvordan styring gir et konkret utfall.",
+    "critical_distinction_definition": "Begrepsskillet spørsmålet faktisk tester.",
+    "theory_concept_definition": "Valgfritt teoretisk begrep som forklarer eller sammenligner mekanismen.",
+    "case_anchor_definition": "Konkret institusjon, dokument, tjeneste, plan, budsjett eller offentlig prosess.",
+    "opening_sets_metadata_rule": "Metadata kan inneholde emne, metode og mekanisme, men synlig spørsmålstekst i sett 1–2 skal være vanlig faktaspråk.",
+    "political_science_domain_id_required": true,
+    "unit_of_analysis_required": true,
+    "defined_outcome_required": true,
+    "method_or_design_required": true,
+    "scope_condition_required": true
+  },
+  "diagnosis_note": "Når mange filer er opplastet, må modellen ikke overvekte canonical systemfiler bare fordi de er mange. For politikk skal konkrete institusjoner, lover, vedtak, reformer, offentlige rom, rettsbygg, forvaltningssteder, demokratiske arenaer, velferdstjenester, konflikter, proteststeder, normsystemer, fordelingsdata, rettskilder, budsjett, reguleringsplaner, statistikk og samfunnsfaglige kilder dominere synlig quizinnhold. Fagkart, methods, emner, emnemapping og pensum er styring.",
+  "migration_note": "Eksisterende places_politikk og people_politikk bør migreres til em_pol_* bare etter at hvert objekt er lest. Det må samtidig sjekkes at hovedkategori faktisk er politikk og ikke by, historie, næringsliv, media, kunst, litteratur, musikk, sport, natur, vitenskap eller annet fag.",
+  "updated_at": "2026-07-24",
+  "quality_revision": "politikk-statsvitenskap-core-expansion-2026-07-24",
+  "domain_quality_profiles": {
+    "styring_institusjoner_forvaltning": {
+      "status": "complete_revised",
+      "quality_revision": "politikk-styring-vertical-2026-07-24",
+      "required_question_chain": [
+        "external_case_or_document",
+        "claim_basis",
+        "mechanism",
+        "critical_distinction",
+        "optional_theory_lens"
+      ],
+      "required_mapping_fields": [
+        "recommended_method_ids",
+        "mechanism_options",
+        "critical_distinction_options",
+        "theory_lenses",
+        "required_anchor_types"
+      ],
+      "revised_method_ids": [
+        "met_pol_institusjonsanalyse",
+        "met_pol_forvaltningsanalyse",
+        "met_pol_teknokrati_og_ekspertanalyse",
+        "met_pol_budsjett_og_fordelingsanalyse",
+        "met_pol_praksisanalyse",
+        "met_pol_rettslig_analyse",
+        "met_pol_velferdsstatlig_analyse",
+        "met_pol_legitimitetsanalyse",
+        "met_pol_lokalpolitisk_analyse",
+        "met_pol_dokumentanalyse",
+        "met_pol_romlig_maktanalyse",
+        "met_pol_plan_og_reguleringsanalyse"
+      ],
+      "hook_count": 10,
+      "method_selection_rule": "Metoden velges etter dokumentert mekanisme og kildetype.",
+      "theory_rule": "Teori kommer sist og må forklare eller sammenligne en allerede etablert mekanisme.",
+      "rejection_rules": [
+        "avvis teoretikernavn som løsrevet svar",
+        "avvis spørsmål uten ekstern claim_basis",
+        "avvis spørsmål uten mekanisme",
+        "avvis spørsmål uten reell distinksjon når teori brukes"
+      ]
+    },
+    "demokrati_representasjon_offentlighet": {
+      "profile_id": "demokrati_representasjon_offentlighet",
+      "revision": "politikk-demokrati-vertical-2026-07-24",
+      "status": "complete_revised",
+      "required_hook_ids": [
+        "representasjon",
+        "valg_og_deltakelse",
+        "offentlighet",
+        "parlamentarisme",
+        "politiske_symboler",
+        "partier_og_bevegelser",
+        "debattarenaer",
+        "majoritet_minoritet",
+        "politisk_tillit",
+        "demokratiets_rom"
+      ],
+      "required_method_ids": [
+        "met_pol_demokratianalyse",
+        "met_pol_representasjonsanalyse",
+        "met_pol_valg_og_deltakelsesanalyse",
+        "met_pol_statistikk_og_fordelingsanalyse",
+        "met_pol_symbolanalyse",
+        "met_pol_legitimitetsanalyse",
+        "met_pol_offentlighetsanalyse",
+        "met_pol_diskursanalyse",
+        "met_pol_praksisanalyse",
+        "met_pol_romlig_maktanalyse",
+        "met_pol_protest_og_bevegelsesanalyse",
+        "met_pol_institusjonsanalyse",
+        "met_pol_maktbalanseanalyse",
+        "met_pol_parti_og_bevegelsesanalyse",
+        "met_pol_ideologianalyse",
+        "met_pol_sivilsamfunnsanalyse",
+        "met_pol_politisk_historisk_analyse",
+        "met_pol_minoritet_og_representasjonsanalyse",
+        "met_pol_fordelingsanalyse"
+      ],
+      "generation_sequence": [
+        "external_case_or_source",
+        "claim_basis",
+        "mechanism",
+        "critical_distinction",
+        "optional_theory_lens"
+      ],
+      "hard_requirements": {
+        "require_external_claim_basis": true,
+        "require_case_specific_question": true,
+        "require_mechanism_explanation": true,
+        "require_critical_distinction": true,
+        "require_method_match_to_mechanism": true,
+        "ban_theorist_name_as_answer_without_concept": true,
+        "canonical_files_are_guides_not_fact_sources": true
+      },
+      "forbidden_patterns": [
+        "teoretikernavn som løsrevet fasit",
+        "generisk demokratiholdning uten dokumentert case",
+        "valg som eneste mål på demokratisk kvalitet",
+        "synlighet likestilt med innflytelse",
+        "flertall likestilt med legitim dominans"
+      ],
+      "source_rule": "Påstander om valg, representasjon, parlamentariske prosesser, organisasjoner, offentlige debatter, tillit, protester eller konkrete politiske rom må bygge på eksterne kilder. Canonical-filene styrer analysen, men leverer ikke faktapåstanden.",
+      "hook_profiles": {
+        "representasjon": {
+          "required_methods": [
+            "met_pol_representasjonsanalyse",
+            "met_pol_demokratianalyse"
+          ],
+          "mechanisms": [
+            "autorisasjon",
+            "delegasjon",
+            "kravsframsetting",
+            "responsivitet",
+            "ansvarliggjøring",
+            "deskriptiv tilstedeværelse"
+          ],
+          "critical_distinctions": [
+            "deskriptiv vs substansiell representasjon",
+            "delegat vs tillitsrepresentant",
+            "autorisasjon vs ansvarliggjøring",
+            "representasjon av interesser vs representasjon av identiteter"
+          ],
+          "anchor_types": [
+            "representation",
+            "election",
+            "parliament",
+            "city_hall"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "hanna_pitkin",
+              "concept": "stå-for, handle-for, autorisasjon og ansvarlighet"
+            },
+            {
+              "thinker_id": "jane_mansbridge",
+              "concept": "promissorisk, anticipatorisk og gyroskopisk representasjon"
+            },
+            {
+              "thinker_id": "robert_dahl",
+              "concept": "politisk likhet og effektiv deltakelse"
+            }
+          ]
+        },
+        "valg_og_deltakelse": {
+          "required_methods": [
+            "met_pol_valg_og_deltakelsesanalyse",
+            "met_pol_statistikk_og_fordelingsanalyse"
+          ],
+          "mechanisms": [
+            "stemmerett og valgbarhet",
+            "valgsystem og mandatfordeling",
+            "mobilisering",
+            "ressursulikhet",
+            "deltakelsesterskler",
+            "politisk rekruttering"
+          ],
+          "critical_distinctions": [
+            "valgdeltakelse vs bred politisk deltakelse",
+            "formell rett vs faktisk kapasitet",
+            "oppslutning vs representativitet",
+            "mobilisering vs selvseleksjon"
+          ],
+          "anchor_types": [
+            "election",
+            "statistics",
+            "representation",
+            "party"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "robert_dahl",
+              "concept": "effektiv deltakelse og stemmelikhet"
+            },
+            {
+              "thinker_id": "sidney_verba",
+              "concept": "ressurser, motivasjon og rekruttering"
+            },
+            {
+              "thinker_id": "stein_rokkan",
+              "concept": "mobilisering, konfliktlinjer og partisystem"
+            }
+          ]
+        },
+        "offentlighet": {
+          "required_methods": [
+            "met_pol_offentlighetsanalyse",
+            "met_pol_diskursanalyse"
+          ],
+          "mechanisms": [
+            "dagsordensetting",
+            "portvokting",
+            "sirkulasjon",
+            "begrunnelseskrav",
+            "mediering",
+            "motoffentlig organisering"
+          ],
+          "critical_distinctions": [
+            "offentlighet vs publikum",
+            "synlighet vs innflytelse",
+            "felles offentlighet vs motoffentligheter",
+            "deliberasjon vs strategisk kommunikasjon"
+          ],
+          "anchor_types": [
+            "public_sphere",
+            "debate_arena",
+            "official_report",
+            "movement"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "jurgen_habermas",
+              "concept": "offentlig begrunnelse og deliberasjon"
+            },
+            {
+              "thinker_id": "nancy_fraser",
+              "concept": "motoffentligheter og deltakelsesparitet"
+            },
+            {
+              "thinker_id": "hannah_arendt",
+              "concept": "offentlig fremtredelse og pluralitet"
+            }
+          ]
+        },
+        "parlamentarisme": {
+          "required_methods": [
+            "met_pol_maktbalanseanalyse",
+            "met_pol_institusjonsanalyse"
+          ],
+          "mechanisms": [
+            "tillitsforhold",
+            "regjeringsdannelse",
+            "partidisiplin",
+            "komitékontroll",
+            "delegasjon",
+            "mistillit og kabinettspørsmål"
+          ],
+          "critical_distinctions": [
+            "parlamentarisme vs maktseparasjon",
+            "rettslig kompetanse vs politisk tillit",
+            "flertallsregjering vs mindretallsregjering",
+            "regjeringens styring vs parlamentets kontroll"
+          ],
+          "anchor_types": [
+            "parliament",
+            "institution",
+            "government_building",
+            "representation"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "kaare_strom",
+              "concept": "delegasjon, parlamentarisk ansvarlighet og mindretallsregjering"
+            },
+            {
+              "thinker_id": "arend_lijphart",
+              "concept": "flertalls- og konsensusdemokrati"
+            },
+            {
+              "thinker_id": "max_weber",
+              "concept": "parlamentarisk lederskap og ansvarsetikk"
+            }
+          ]
+        },
+        "politiske_symboler": {
+          "required_methods": [
+            "met_pol_symbolanalyse",
+            "met_pol_representasjonsanalyse"
+          ],
+          "mechanisms": [
+            "klassifikasjon",
+            "ritualisering",
+            "minnepolitikk",
+            "grensedragning",
+            "personifisering",
+            "symbolsk legitimering"
+          ],
+          "critical_distinctions": [
+            "symbol vs institusjon",
+            "anerkjennelse vs omfordeling",
+            "nasjonalt symbol vs partisymbol",
+            "minnemarkering vs mobilisering"
+          ],
+          "anchor_types": [
+            "political_symbol",
+            "parliament",
+            "public_sphere",
+            "representation"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "pierre_bourdieu",
+              "concept": "symbolsk makt og legitim klassifikasjon"
+            },
+            {
+              "thinker_id": "murray_edelman",
+              "concept": "symbolsk iscenesettelse og politisk beroligelse"
+            },
+            {
+              "thinker_id": "benedict_anderson",
+              "concept": "forestilte fellesskap og nasjonal tilhørighet"
+            }
+          ]
+        },
+        "partier_og_bevegelser": {
+          "required_methods": [
+            "met_pol_parti_og_bevegelsesanalyse",
+            "met_pol_ideologianalyse"
+          ],
+          "mechanisms": [
+            "interesseaggregering",
+            "kandidatrekruttering",
+            "mobilisering",
+            "innramming",
+            "koalisjonsbygging",
+            "politiske mulighetsstrukturer"
+          ],
+          "critical_distinctions": [
+            "parti vs sosial bevegelse",
+            "medlemskap vs velgergrunnlag",
+            "organisasjon vs nettverk",
+            "ideologi vs sakseierskap"
+          ],
+          "anchor_types": [
+            "party",
+            "movement",
+            "civil_society",
+            "protest"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "stein_rokkan",
+              "concept": "konfliktlinjer og partisystem"
+            },
+            {
+              "thinker_id": "charles_tilly",
+              "concept": "kravsframsetting og kollektiv handling"
+            },
+            {
+              "thinker_id": "sidney_tarrow",
+              "concept": "politiske muligheter og mobiliseringssykluser"
+            }
+          ]
+        },
+        "debattarenaer": {
+          "required_methods": [
+            "met_pol_offentlighetsanalyse",
+            "met_pol_praksisanalyse"
+          ],
+          "mechanisms": [
+            "adgangsregulering",
+            "moderering",
+            "dagsordensetting",
+            "innramming",
+            "talefordeling",
+            "publisering og sirkulasjon"
+          ],
+          "critical_distinctions": [
+            "debatt vs deliberasjon",
+            "åpen adgang vs effektiv deltakelse",
+            "synlighet vs dagsordenkontroll",
+            "begrunnelse vs politisk framføring"
+          ],
+          "anchor_types": [
+            "debate_arena",
+            "public_sphere",
+            "civil_society",
+            "movement"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "jurgen_habermas",
+              "concept": "deliberasjon og begrunnelseskrav"
+            },
+            {
+              "thinker_id": "chantal_mouffe",
+              "concept": "agonistisk konflikt"
+            },
+            {
+              "thinker_id": "nancy_fraser",
+              "concept": "motoffentligheter og deltakelsesparitet"
+            }
+          ]
+        },
+        "majoritet_minoritet": {
+          "required_methods": [
+            "met_pol_minoritet_og_representasjonsanalyse",
+            "met_pol_fordelingsanalyse"
+          ],
+          "mechanisms": [
+            "flertallsregel",
+            "valgterskler",
+            "koalisjonsdannelse",
+            "vetopunkter",
+            "rettighetsvern",
+            "makt- og posisjonsdeling"
+          ],
+          "critical_distinctions": [
+            "numerisk flertall vs dominerende gruppe",
+            "flertallsregel vs majoritetsdominans",
+            "lik behandling vs minoritetsvern",
+            "integrasjon vs assimilering"
+          ],
+          "anchor_types": [
+            "majority",
+            "minority",
+            "representation",
+            "legal_right"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "robert_dahl",
+              "concept": "politisk likhet og minoriteters opposisjonsrett"
+            },
+            {
+              "thinker_id": "arend_lijphart",
+              "concept": "konsensusdemokrati og maktdeling"
+            },
+            {
+              "thinker_id": "anne_phillips",
+              "concept": "tilstedeværelsens politikk"
+            }
+          ]
+        },
+        "politisk_tillit": {
+          "required_methods": [
+            "met_pol_legitimitetsanalyse",
+            "met_pol_demokratianalyse"
+          ],
+          "mechanisms": [
+            "resultatvurdering",
+            "prosedyrerettferdighet",
+            "åpenhet",
+            "responsivitet",
+            "ansvarsplassering",
+            "tillitsspredning mellom institusjoner"
+          ],
+          "critical_distinctions": [
+            "tillit vs legitimitet",
+            "spesifikk vs diffus støtte",
+            "institusjonell vs mellommenneskelig tillit",
+            "etterlevelse vs tillit"
+          ],
+          "anchor_types": [
+            "trust",
+            "legitimacy",
+            "institution",
+            "official_report"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "david_easton",
+              "concept": "spesifikk og diffus støtte"
+            },
+            {
+              "thinker_id": "fritz_scharpf",
+              "concept": "input-, throughput- og output-legitimitet"
+            },
+            {
+              "thinker_id": "jurgen_habermas",
+              "concept": "legitimitet gjennom offentlig begrunnelse"
+            }
+          ]
+        },
+        "demokratiets_rom": {
+          "required_methods": [
+            "met_pol_romlig_maktanalyse",
+            "met_pol_offentlighetsanalyse"
+          ],
+          "mechanisms": [
+            "romlig adgang",
+            "forsamlingsmulighet",
+            "synliggjøring",
+            "politiregulering",
+            "symbolsk okkupasjon",
+            "infrastrukturell tilrettelegging"
+          ],
+          "critical_distinctions": [
+            "offentlig eierskap vs offentlig tilgjengelighet",
+            "synlighet vs innflytelse",
+            "forsamlingsfrihet vs ordensregulering",
+            "planlagt bruk vs politisk appropriasjon"
+          ],
+          "anchor_types": [
+            "public_sphere",
+            "protest",
+            "debate_arena",
+            "political_symbol"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "hannah_arendt",
+              "concept": "fremtredelsesrom og politisk handling"
+            },
+            {
+              "thinker_id": "henri_lefebvre",
+              "concept": "produksjon av rom og retten til byen"
+            },
+            {
+              "thinker_id": "charles_tilly",
+              "concept": "repertoarer og offentlig kravsframsetting"
+            }
+          ]
+        }
+      },
+      "normative_theory_extension": {
+        "revision": "politikk-teori-vertical-phase-2-2026-07-24",
+        "hook_ids": [
+          "politisk_teori_republikanisme_ikke_dominans",
+          "politisk_teori_populisme_folkebegrepet",
+          "politisk_teori_frihet_likhet_autoritet_legitimitet",
+          "politisk_teori_demokrati_normativt_ideal",
+          "politisk_teori_sivil_ulydighet_politisk_forpliktelse"
+        ],
+        "emne_ids": [
+          "em_pol_teorifordypning_republikanisme_ikke_dominans",
+          "em_pol_teorifordypning_populisme_folkebegrepet",
+          "em_pol_teorifordypning_frihet_likhet_autoritet_legitimitet",
+          "em_pol_teorifordypning_demokrati_normativt_ideal",
+          "em_pol_teorifordypning_sivil_ulydighet_politisk_forpliktelse"
+        ],
+        "method_ids": [
+          "met_pol_normativ_argumentasjonsanalyse",
+          "met_pol_ideologisk_sammenligningsanalyse",
+          "met_pol_politisk_begrepsanalyse",
+          "met_pol_normativ_institusjonsvurdering"
+        ],
+        "required_sequence": [
+          "external_case_or_text",
+          "empirical_context",
+          "explicit_normative_premise",
+          "argument",
+          "counterargument",
+          "normative_consequence",
+          "scope_condition"
+        ]
+      },
+      "hook_count": 15
+    },
+    "rett_lov_rettssikkerhet": {
+      "profile_id": "rett_lov_rettssikkerhet",
+      "revision": "politikk-rett-vertical-2026-07-24",
+      "status": "complete_revised",
+      "required_hook_ids": [
+        "rettsstat",
+        "domstoler",
+        "lover_og_regler",
+        "rettigheter",
+        "straff_og_kontroll",
+        "politi_og_makt",
+        "forvaltningsvedtak",
+        "lovendringer",
+        "rettslige_blindsoner",
+        "borger_og_stat"
+      ],
+      "required_method_ids": [
+        "met_pol_institusjonsanalyse",
+        "met_pol_rettslig_analyse",
+        "met_pol_rettighetsanalyse",
+        "met_pol_normanalyse",
+        "met_pol_kritisk_rettsanalyse",
+        "met_pol_makt_og_ulikhetsanalyse",
+        "met_pol_likestillingsanalyse",
+        "met_pol_fordelingsanalyse",
+        "met_pol_maktbalanseanalyse",
+        "met_pol_kontroll_og_sanksjonsanalyse",
+        "met_pol_romlig_maktanalyse",
+        "met_pol_politisk_historisk_analyse",
+        "met_pol_dokumentanalyse",
+        "met_pol_minoritet_og_representasjonsanalyse",
+        "met_pol_forvaltningsanalyse"
+      ],
+      "generation_sequence": [
+        "external_legal_case_or_source",
+        "claim_basis",
+        "legal_mechanism",
+        "critical_distinction",
+        "optional_theory_lens"
+      ],
+      "hard_requirements": {
+        "require_external_claim_basis": true,
+        "require_case_specific_question": true,
+        "require_mechanism_explanation": true,
+        "require_critical_distinction": true,
+        "require_method_match_to_mechanism": true,
+        "ban_theorist_name_as_answer_without_concept": true,
+        "canonical_files_are_guides_not_legal_sources": true
+      },
+      "forbidden_patterns": [
+        "teoretikernavn som løsrevet fasit",
+        "generisk rettferdighetsmening uten rettskilde eller case",
+        "lovlighet likestilt med legitimitet",
+        "formell rettighet likestilt med reell tilgang",
+        "sikkerhet brukt som automatisk begrunnelse for inngrep"
+      ],
+      "source_rule": "Påstander om gjeldende rett, dommer, politimyndighet, sanksjoner, forvaltningsvedtak eller lovendringer må bygge på eksterne rettskilder og dokumenterbare institusjonskilder. Canonical-filene styrer analyseformen, men er ikke rettskilder.",
+      "hook_profiles": {
+        "rettsstat": {
+          "required_methods": [
+            "met_pol_rettslig_analyse",
+            "met_pol_maktbalanseanalyse"
+          ],
+          "mechanisms": [
+            "legalitetsprinsipp",
+            "normhierarki",
+            "kunngjøring og fremoverskuende regler",
+            "kompetansegrenser",
+            "uavhengig prøving",
+            "rettsmidler"
+          ],
+          "critical_distinctions": [
+            "rettsstat vs styring gjennom lov",
+            "formell vs materiell rettsstat",
+            "legalitet vs legitimitet",
+            "myndighetsautorisasjon vs maktbegrensning"
+          ],
+          "anchor_types": [
+            "constitution",
+            "legal_source",
+            "court",
+            "institution"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "lon_fuller",
+              "concept": "rettens indre moral og krav til regelkvalitet"
+            },
+            {
+              "thinker_id": "joseph_raz",
+              "concept": "formell rettsstat og vern mot vilkårlighet"
+            },
+            {
+              "thinker_id": "montesquieu",
+              "concept": "maktfordeling og uavhengig kontroll"
+            }
+          ]
+        },
+        "domstoler": {
+          "required_methods": [
+            "met_pol_institusjonsanalyse",
+            "met_pol_rettslig_analyse"
+          ],
+          "mechanisms": [
+            "jurisdiksjon",
+            "kontradiksjon",
+            "bevisvurdering",
+            "lovtolkning",
+            "prejudikat",
+            "domstolskontroll",
+            "anke og rettsmiddel"
+          ],
+          "critical_distinctions": [
+            "uavhengighet vs isolasjon",
+            "domstolskontroll vs politisk styring",
+            "rettsspørsmål vs bevisspørsmål",
+            "prejudikat vs lovgivning"
+          ],
+          "anchor_types": [
+            "court",
+            "judgment",
+            "legal_source",
+            "constitution"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "montesquieu",
+              "concept": "uavhengig dømmende makt"
+            },
+            {
+              "thinker_id": "ronald_dworkin",
+              "concept": "rettigheter, prinsipper og begrunnelse"
+            },
+            {
+              "thinker_id": "alexander_bickel",
+              "concept": "det kontramajoritære problemet"
+            }
+          ]
+        },
+        "lover_og_regler": {
+          "required_methods": [
+            "met_pol_dokumentanalyse",
+            "met_pol_rettslig_analyse"
+          ],
+          "mechanisms": [
+            "lovgivning",
+            "normhierarki",
+            "primære og sekundære regler",
+            "kunngjøring",
+            "lovtolkning",
+            "standarder og unntak",
+            "håndheving"
+          ],
+          "critical_distinctions": [
+            "lov vs forskrift",
+            "regel vs rettslig standard",
+            "gyldighet vs effektivitet",
+            "lovtekst vs anvendelse"
+          ],
+          "anchor_types": [
+            "legal_source",
+            "archive",
+            "parliament",
+            "administrative_rule"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "h_l_a_hart",
+              "concept": "primære og sekundære regler"
+            },
+            {
+              "thinker_id": "lon_fuller",
+              "concept": "offentlighet, klarhet og samsvar mellom regel og praksis"
+            },
+            {
+              "thinker_id": "max_weber",
+              "concept": "legal-rasjonell regelbundethet"
+            }
+          ]
+        },
+        "rettigheter": {
+          "required_methods": [
+            "met_pol_rettighetsanalyse",
+            "met_pol_normanalyse"
+          ],
+          "mechanisms": [
+            "rettighetskrav og pliktstildeling",
+            "prøving",
+            "forholdsmessighet",
+            "avveining",
+            "positiv forpliktelse",
+            "rettsmiddel og reparasjon"
+          ],
+          "critical_distinctions": [
+            "rettighet vs interesse",
+            "absolutt vs kvalifisert rettighet",
+            "negativ vs positiv rettighet",
+            "formell rettighet vs reell kapabilitet"
+          ],
+          "anchor_types": [
+            "legal_right",
+            "court",
+            "public_service",
+            "legal_source"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "ronald_dworkin",
+              "concept": "rettigheter som vern mot aggregert nytte"
+            },
+            {
+              "thinker_id": "john_rawls",
+              "concept": "grunnleggende friheter og rettferdig institusjonsorden"
+            },
+            {
+              "thinker_id": "amartya_sen",
+              "concept": "reell frihet og kapabilitet"
+            }
+          ]
+        },
+        "straff_og_kontroll": {
+          "required_methods": [
+            "met_pol_kontroll_og_sanksjonsanalyse",
+            "met_pol_institusjonsanalyse"
+          ],
+          "mechanisms": [
+            "kriminalisering",
+            "skyldfastsettelse",
+            "straffutmåling",
+            "avskrekking",
+            "uskadeliggjøring",
+            "rehabilitering",
+            "disiplinær overvåking"
+          ],
+          "critical_distinctions": [
+            "straff vs administrativ sanksjon",
+            "skyld vs risiko",
+            "proporsjonalitet vs prevensjon",
+            "rettslig straff vs uformell sosial kontroll"
+          ],
+          "anchor_types": [
+            "prison",
+            "court",
+            "police",
+            "sanction"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "cesare_beccaria",
+              "concept": "legalitet, nødvendighet og proporsjonalitet"
+            },
+            {
+              "thinker_id": "michel_foucault",
+              "concept": "disiplin, overvåking og normalisering"
+            },
+            {
+              "thinker_id": "david_garland",
+              "concept": "straffestat og kontrollkultur"
+            }
+          ]
+        },
+        "politi_og_makt": {
+          "required_methods": [
+            "met_pol_kontroll_og_sanksjonsanalyse",
+            "met_pol_romlig_maktanalyse"
+          ],
+          "mechanisms": [
+            "tvangsfullmakt",
+            "skjønnsutøvelse",
+            "mistankeklassifikasjon",
+            "territoriell tilstedeværelse",
+            "etterforskning",
+            "dokumentasjon",
+            "intern og ekstern kontroll"
+          ],
+          "critical_distinctions": [
+            "legitimt voldsmonopol vs konkret lovlig tvangsbruk",
+            "forebygging vs etterforskning",
+            "ordenshåndheving vs rettighetsvern",
+            "individfeil vs institusjonelt mønster"
+          ],
+          "anchor_types": [
+            "police",
+            "public_space",
+            "coercive_power",
+            "control_body"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "max_weber",
+              "concept": "statens legitime voldsmonopol"
+            },
+            {
+              "thinker_id": "egon_bittner",
+              "concept": "kapasiteten til ikke-forhandlingsbar tvang"
+            },
+            {
+              "thinker_id": "michel_foucault",
+              "concept": "overvåking, klassifikasjon og disiplin"
+            }
+          ]
+        },
+        "forvaltningsvedtak": {
+          "required_methods": [
+            "met_pol_forvaltningsanalyse",
+            "met_pol_rettslig_analyse"
+          ],
+          "mechanisms": [
+            "hjemmel og kompetanse",
+            "saksopplysning",
+            "varsel og kontradiksjon",
+            "habilitet",
+            "begrunnelse",
+            "skjønn",
+            "klage og omgjøring"
+          ],
+          "critical_distinctions": [
+            "vedtak vs veiledning",
+            "bundet kompetanse vs skjønn",
+            "prosessuell vs materiell prøving",
+            "likebehandling vs individualisert vurdering"
+          ],
+          "anchor_types": [
+            "administrative_decision",
+            "public_service",
+            "city_hall",
+            "appeal_body"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "max_weber",
+              "concept": "regelbundet forvaltning og kompetanse"
+            },
+            {
+              "thinker_id": "michael_lipsky",
+              "concept": "førstelinjeskjønn og praktisk rettighetstilgang"
+            },
+            {
+              "thinker_id": "jerry_mashaw",
+              "concept": "administrativ rettferdighet og beslutningsmodeller"
+            }
+          ]
+        },
+        "lovendringer": {
+          "required_methods": [
+            "met_pol_politisk_historisk_analyse",
+            "met_pol_dokumentanalyse"
+          ],
+          "mechanisms": [
+            "problemdefinisjon",
+            "utredning og høring",
+            "koalisjonsbygging",
+            "lovvedtak",
+            "ikraftsetting",
+            "rettslig fortolkning",
+            "stiavhengighet og tilbakekobling"
+          ],
+          "critical_distinctions": [
+            "lovendring vs praksisendring",
+            "reformhendelse vs implementeringsprosess",
+            "kontinuitet vs brudd",
+            "tilsiktet vs utilsiktet virkning"
+          ],
+          "anchor_types": [
+            "legislative_change",
+            "parliament",
+            "archive",
+            "legal_source"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "stein_rokkan",
+              "concept": "konfliktlinjer og institusjonalisering"
+            },
+            {
+              "thinker_id": "charles_tilly",
+              "concept": "kravsframsetting, statsdannelse og konflikt"
+            },
+            {
+              "thinker_id": "theda_skocpol",
+              "concept": "institusjonell kapasitet og historisk endring"
+            }
+          ]
+        },
+        "rettslige_blindsoner": {
+          "required_methods": [
+            "met_pol_kritisk_rettsanalyse",
+            "met_pol_makt_og_ulikhetsanalyse"
+          ],
+          "mechanisms": [
+            "kategorisk eksklusjon",
+            "bevismessig usynlighet",
+            "adgangskostnader",
+            "kumulativ ulempe",
+            "underhåndheving",
+            "interseksjonell feilklassifisering",
+            "profesjonell portvokting"
+          ],
+          "critical_distinctions": [
+            "formell nøytralitet vs ulik virkning",
+            "individuelt brudd vs strukturelt mønster",
+            "rettslig anerkjennelse vs effektivt rettsmiddel",
+            "kategoriutelukkelse vs eksplisitt diskriminering"
+          ],
+          "anchor_types": [
+            "legal_gap",
+            "court",
+            "minority",
+            "unequal_outcome"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "kimberle_crenshaw",
+              "concept": "interseksjonalitet og kategoriens blindsoner"
+            },
+            {
+              "thinker_id": "catharine_mackinnon",
+              "concept": "dominans og formell nøytralitet"
+            },
+            {
+              "thinker_id": "pierre_bourdieu",
+              "concept": "juridisk felt og profesjonell definisjonsmakt"
+            }
+          ]
+        },
+        "borger_og_stat": {
+          "required_methods": [
+            "met_pol_rettighetsanalyse",
+            "met_pol_institusjonsanalyse"
+          ],
+          "mechanisms": [
+            "statsborgerskap og status",
+            "registrering og dokumentasjon",
+            "rettighets- og pliktstildeling",
+            "administrativ klassifikasjon",
+            "saksbehandling",
+            "klage og rettsmiddel"
+          ],
+          "critical_distinctions": [
+            "borger vs bosatt",
+            "rettighet vs tjenestevilkår",
+            "plikt vs tvang",
+            "politisk medlemskap vs universell personstatus"
+          ],
+          "anchor_types": [
+            "citizenship",
+            "public_service",
+            "government_building",
+            "legal_status"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "t_h_marshall",
+              "concept": "sivile, politiske og sosiale medborgerskapsrettigheter"
+            },
+            {
+              "thinker_id": "hannah_arendt",
+              "concept": "retten til å ha rettigheter"
+            },
+            {
+              "thinker_id": "ronald_dworkin",
+              "concept": "lik respekt og omtanke fra staten"
+            }
+          ]
+        }
+      }
+    },
+    "fordeling_velferd_ulikhet": {
+      "status": "complete_revised",
+      "quality_revision": "politikk-fordeling-vertical-2026-07-24",
+      "required_question_chain": [
+        "external_distribution_case_or_source",
+        "claim_basis",
+        "distribution_or_welfare_mechanism",
+        "critical_distinction",
+        "optional_theory_lens"
+      ],
+      "required_mapping_fields": [
+        "recommended_method_ids",
+        "mechanism_options",
+        "critical_distinction_options",
+        "theory_lenses",
+        "required_anchor_types"
+      ],
+      "revised_method_ids": [
+        "met_pol_bolig_og_byutviklingsanalyse",
+        "met_pol_levekarsanalyse",
+        "met_pol_fordelingsanalyse",
+        "met_pol_budsjett_og_fordelingsanalyse",
+        "met_pol_velferdsstatlig_analyse",
+        "met_pol_institusjonsanalyse",
+        "met_pol_makt_og_ulikhetsanalyse",
+        "met_pol_statistikk_og_fordelingsanalyse",
+        "met_pol_plan_og_reguleringsanalyse",
+        "met_pol_romlig_maktanalyse",
+        "met_pol_minoritet_og_representasjonsanalyse",
+        "met_pol_legitimitetsanalyse",
+        "met_pol_konfliktanalyse",
+        "met_pol_normanalyse",
+        "met_pol_rettighetsanalyse"
+      ],
+      "hook_count": 10,
+      "method_selection_rule": "Metoden velges etter dokumentert ressursstrøm, terskel, tilgangsproblem, reproduksjonsmekanisme eller kildetype.",
+      "theory_rule": "Teori kommer sist og må forklare eller sammenligne en allerede etablert fordelings- eller velferdsmekanisme.",
+      "rejection_rules": [
+        "avvis teoretikernavn som løsrevet svar",
+        "avvis spørsmål uten ekstern claim_basis",
+        "avvis spørsmål uten fordelings- eller velferdsmekanisme",
+        "avvis spørsmål uten reell distinksjon når teori brukes",
+        "avvis canonical-filen som statistikk- eller faktakilde"
+      ]
+    },
+    "konflikt_makt_sivilsamfunn": {
+      "profile_id": "konflikt_makt_sivilsamfunn",
+      "revision": "politikk-konflikt-vertical-2026-07-24",
+      "status": "complete_revised",
+      "required_hook_ids": [
+        "makt_og_interesser",
+        "demonstrasjoner",
+        "sivilsamfunn",
+        "interessegrupper",
+        "ideologi",
+        "arbeidslivspolitikk",
+        "miljopolitisk_konflikt",
+        "minne_og_makt",
+        "polarisering",
+        "konfliktens_rom"
+      ],
+      "required_method_ids": [
+        "met_pol_konfliktanalyse",
+        "met_pol_fordelingsanalyse",
+        "met_pol_protest_og_bevegelsesanalyse",
+        "met_pol_offentlighetsanalyse",
+        "met_pol_romlig_maktanalyse",
+        "met_pol_parti_og_bevegelsesanalyse",
+        "met_pol_ideologianalyse",
+        "met_pol_makt_og_interesseanalyse",
+        "met_pol_diskursanalyse",
+        "met_pol_sivilsamfunnsanalyse",
+        "met_pol_symbolanalyse",
+        "met_pol_politisk_historisk_analyse",
+        "met_pol_legitimitetsanalyse"
+      ],
+      "generation_sequence": [
+        "external_conflict_case_or_source",
+        "claim_basis",
+        "actors_claims_resources_and_arena",
+        "conflict_or_power_mechanism",
+        "critical_distinction",
+        "optional_theory_lens"
+      ],
+      "hard_requirements": {
+        "external_claim_basis_required": true,
+        "case_specific_question_required": true,
+        "actors_claims_resources_required": true,
+        "mechanism_explanation_required": true,
+        "critical_distinction_required": true,
+        "method_match_to_mechanism_required": true,
+        "ban_theorist_name_as_answer_without_concept": true
+      },
+      "forbidden_patterns": [
+        "generisk uenighet uten dokumentert konflikt",
+        "teoretikernavn som løsrevet fasit",
+        "organisasjons- eller stedsnavn uten aktør-, krav- og responsanalyse",
+        "canonical-fil brukt som faktakilde"
+      ],
+      "source_rule": "Konkrete påstander må bygge på ekstern kilde: vedtak, høring, arkiv, organisasjonskilde, protestforløp, tariff- eller arbeidslivskilde, plan, statistikk, meningsdata eller dokumentert offentlig konflikt.",
+      "hook_profiles": {
+        "makt_og_interesser": {
+          "required_emne_ids": [
+            "em_pol_makt_interesser",
+            "em_pol_ideologi_konfliktlinjer"
+          ],
+          "required_method_ids": [
+            "met_pol_makt_og_interesseanalyse",
+            "met_pol_konfliktanalyse",
+            "met_pol_institusjonsanalyse"
+          ],
+          "mechanism_options": [
+            "ressursasymmetri",
+            "dagsordenkontroll",
+            "vetoposisjon",
+            "nettverkstilgang",
+            "probleminnramming",
+            "strukturell avhengighet"
+          ],
+          "critical_distinction_options": [
+            "formell myndighet vs faktisk innflytelse",
+            "beslutningsmakt vs dagsordenmakt",
+            "uttalt preferanse vs institusjonelt interesseutfall",
+            "makt over vs makt til"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "robert_dahl",
+              "concept": "pluralistisk konkurranse og observerbar beslutningsmakt"
+            },
+            {
+              "thinker_id": "karl_marx",
+              "concept": "klasseinteresser og strukturell makt"
+            },
+            {
+              "thinker_id": "antonio_gramsci",
+              "concept": "hegemoni og samtykke"
+            }
+          ],
+          "required_anchor_types": [
+            "public_decision",
+            "interest_organisation",
+            "hearing",
+            "budget_or_policy_document"
+          ],
+          "recommended_oslo_cases": [
+            "Stortinget",
+            "Regjeringskvartalet",
+            "Oslo rådhus",
+            "LO-bygget",
+            "Youngstorget"
+          ]
+        },
+        "demonstrasjoner": {
+          "required_emne_ids": [
+            "em_pol_demonstrasjoner_protest",
+            "em_pol_offentlighet_debatt"
+          ],
+          "required_method_ids": [
+            "met_pol_protest_og_bevegelsesanalyse",
+            "met_pol_konfliktanalyse",
+            "met_pol_offentlighetsanalyse"
+          ],
+          "mechanism_options": [
+            "mobilisering",
+            "rammefortolkning",
+            "handlingsrepertoar",
+            "politisk mulighetsstruktur",
+            "mediesynlighet",
+            "politi- og myndighetsrespons"
+          ],
+          "critical_distinction_options": [
+            "demonstrasjon vs sivil ulydighet",
+            "protesthendelse vs sosial bevegelse",
+            "lovlig adgang vs faktisk politisk effekt",
+            "deltakelse vs forstyrrelse"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "charles_tilly",
+              "concept": "repertoarer for kollektiv handling"
+            },
+            {
+              "thinker_id": "sidney_tarrow",
+              "concept": "politiske muligheter og mobilisering"
+            },
+            {
+              "thinker_id": "chantal_mouffe",
+              "concept": "agonistisk konflikt"
+            }
+          ],
+          "required_anchor_types": [
+            "demonstration",
+            "protest_archive",
+            "police_or_permit_document",
+            "movement_source"
+          ],
+          "recommended_oslo_cases": [
+            "Eidsvolls plass",
+            "Youngstorget",
+            "Rådhusplassen",
+            "Universitetsplassen",
+            "Regjeringskvartalet"
+          ]
+        },
+        "sivilsamfunn": {
+          "required_emne_ids": [
+            "em_pol_sivilsamfunn_organisering",
+            "em_pol_partier_bevegelser"
+          ],
+          "required_method_ids": [
+            "met_pol_sivilsamfunnsanalyse",
+            "met_pol_parti_og_bevegelsesanalyse",
+            "met_pol_offentlighetsanalyse"
+          ],
+          "mechanism_options": [
+            "foreningsdannelse",
+            "medlemsmobilisering",
+            "tjenesteproduksjon",
+            "interesseartikulasjon",
+            "motöffentlichhet",
+            "ressursavhengighet"
+          ],
+          "critical_distinction_options": [
+            "sivilsamfunn vs stat og marked",
+            "medlemskap vs representativt mandat",
+            "tjenesteyting vs politisk påvirkning",
+            "brobyggende vs avgrensende fellesskap"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "alexis_de_tocqueville",
+              "concept": "foreningsliv og demokratisk læring"
+            },
+            {
+              "thinker_id": "antonio_gramsci",
+              "concept": "sivilsamfunn og hegemoni"
+            },
+            {
+              "thinker_id": "jurgen_habermas",
+              "concept": "offentlighet og kommunikativ innflytelse"
+            }
+          ],
+          "required_anchor_types": [
+            "civil_society_organisation",
+            "membership_source",
+            "grant_or_service_agreement",
+            "public_campaign"
+          ],
+          "recommended_oslo_cases": [
+            "Litteraturhuset",
+            "Youngstorget",
+            "Frivillighetens hus",
+            "Oslo rådhus",
+            "Eidsvolls plass"
+          ]
+        },
+        "interessegrupper": {
+          "required_emne_ids": [
+            "em_pol_interessegrupper_organisasjoner",
+            "em_pol_makt_interesser"
+          ],
+          "required_method_ids": [
+            "met_pol_makt_og_interesseanalyse",
+            "met_pol_sivilsamfunnsanalyse",
+            "met_pol_institusjonsanalyse"
+          ],
+          "mechanism_options": [
+            "lobbytilgang",
+            "ekspertisekontroll",
+            "høringsdeltakelse",
+            "korporativ representasjon",
+            "koalisjonsbygging",
+            "innsider- og outsiderstrategi"
+          ],
+          "critical_distinction_options": [
+            "interesserepresentasjon vs demokratisk representasjon",
+            "høring vs beslutning",
+            "innsiderstrategi vs offentlig mobilisering",
+            "pluralisme vs korporatisme"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "robert_dahl",
+              "concept": "organisert pluralisme"
+            },
+            {
+              "thinker_id": "stein_rokkan",
+              "concept": "korporative kanaler og konfliktstruktur"
+            },
+            {
+              "thinker_id": "antonio_gramsci",
+              "concept": "organisert hegemoni"
+            }
+          ],
+          "required_anchor_types": [
+            "hearing",
+            "lobby_register_or_meeting",
+            "interest_organisation",
+            "policy_process"
+          ],
+          "recommended_oslo_cases": [
+            "Stortinget",
+            "Regjeringskvartalet",
+            "LO-bygget",
+            "Oslo rådhus",
+            "Youngstorget"
+          ]
+        },
+        "ideologi": {
+          "required_emne_ids": [
+            "em_pol_ideologi_konfliktlinjer",
+            "em_pol_normer_doxa"
+          ],
+          "required_method_ids": [
+            "met_pol_ideologianalyse",
+            "met_pol_diskursanalyse",
+            "met_pol_makt_og_interesseanalyse"
+          ],
+          "mechanism_options": [
+            "problemdefinisjon",
+            "begrepskobling",
+            "identitetsbygging",
+            "normalisering",
+            "grensedragning",
+            "politisk legitimering"
+          ],
+          "critical_distinction_options": [
+            "ideologi vs enkeltstandpunkt",
+            "beskrivende påstand vs normativ premiss",
+            "partiprogram vs bredere verdensbilde",
+            "konsensus vs hegemoni"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "karl_marx",
+              "concept": "ideologi og materielle interesser"
+            },
+            {
+              "thinker_id": "antonio_gramsci",
+              "concept": "hegemoni og sunn fornuft"
+            },
+            {
+              "thinker_id": "chantal_mouffe",
+              "concept": "artikulasjon og agonistisk grense"
+            }
+          ],
+          "required_anchor_types": [
+            "party_program",
+            "speech_or_manifesto",
+            "policy_document",
+            "public_debate"
+          ],
+          "recommended_oslo_cases": [
+            "Stortinget",
+            "Youngstorget",
+            "Eidsvolls plass",
+            "Litteraturhuset",
+            "Regjeringskvartalet"
+          ]
+        },
+        "arbeidslivspolitikk": {
+          "required_emne_ids": [
+            "em_pol_arbeidsliv_kollektiv_kamp",
+            "em_pol_fordeling_ressurser"
+          ],
+          "required_method_ids": [
+            "met_pol_konfliktanalyse",
+            "met_pol_fordelingsanalyse",
+            "met_pol_makt_og_interesseanalyse"
+          ],
+          "mechanism_options": [
+            "fagorganisering",
+            "kollektive forhandlinger",
+            "tariffbinding",
+            "streik",
+            "lockout",
+            "trepartssamarbeid",
+            "lønnsdannelse"
+          ],
+          "critical_distinction_options": [
+            "individuell arbeidsavtale vs tariffavtale",
+            "arbeidskamp vs generell politisk protest",
+            "formell streikerett vs faktisk forhandlingsmakt",
+            "medlemsmandat vs organisasjonsledelse"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "karl_marx",
+              "concept": "arbeidsforhold og klassekonflikt"
+            },
+            {
+              "thinker_id": "stein_rokkan",
+              "concept": "organiserte konfliktlinjer og korporatisme"
+            },
+            {
+              "thinker_id": "charles_tilly",
+              "concept": "kollektiv handling og mobilisering"
+            }
+          ],
+          "required_anchor_types": [
+            "collective_agreement",
+            "strike_or_lockout",
+            "labour_law_or_decision",
+            "union_or_employer_source"
+          ],
+          "recommended_oslo_cases": [
+            "Youngstorget",
+            "LO-bygget",
+            "Stortinget",
+            "Regjeringskvartalet",
+            "Oslo rådhus"
+          ]
+        },
+        "miljopolitisk_konflikt": {
+          "required_emne_ids": [
+            "em_pol_miljopolitikk_samfunn",
+            "em_pol_demonstrasjoner_protest"
+          ],
+          "required_method_ids": [
+            "met_pol_konfliktanalyse",
+            "met_pol_protest_og_bevegelsesanalyse",
+            "met_pol_plan_og_reguleringsanalyse"
+          ],
+          "mechanism_options": [
+            "kostnads- og risikofordeling",
+            "arealprioritering",
+            "ekspertinnramming",
+            "høring og medvirkning",
+            "vetoposisjon",
+            "skalaforskyvning",
+            "tidsdiskontering"
+          ],
+          "critical_distinction_options": [
+            "miljømål vs virkemiddel",
+            "lokal belastning vs kollektiv gevinst",
+            "vitenskapelig usikkerhet vs politisk verdikonflikt",
+            "medvirkning vs samtykke"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "charles_tilly",
+              "concept": "mobilisering og konfliktforløp"
+            },
+            {
+              "thinker_id": "chantal_mouffe",
+              "concept": "legitim politisk konflikt"
+            },
+            {
+              "thinker_id": "jurgen_habermas",
+              "concept": "offentlig begrunnelse og deltakelse"
+            }
+          ],
+          "required_anchor_types": [
+            "environmental_plan",
+            "impact_assessment",
+            "hearing",
+            "protest_or_campaign",
+            "public_decision"
+          ],
+          "recommended_oslo_cases": [
+            "Oslo rådhus",
+            "Rådhusplassen",
+            "Eidsvolls plass",
+            "Maridalen",
+            "Bjørvika"
+          ]
+        },
+        "minne_og_makt": {
+          "required_emne_ids": [
+            "em_pol_minnesteder_politisk_kamp",
+            "em_pol_symbolsk_makt"
+          ],
+          "required_method_ids": [
+            "met_pol_symbolanalyse",
+            "met_pol_politisk_historisk_analyse",
+            "met_pol_diskursanalyse"
+          ],
+          "mechanism_options": [
+            "utvelgelse",
+            "navngiving",
+            "ritualisering",
+            "symbolsk legitimering",
+            "utelatelse",
+            "motminne",
+            "institusjonell kuratering"
+          ],
+          "critical_distinction_options": [
+            "historie vs kollektivt minne",
+            "minne vs feiring",
+            "anerkjennelse vs omfordeling",
+            "monument som kilde vs monument som politisk handling"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "pierre_bourdieu",
+              "concept": "symbolsk makt og klassifikasjon"
+            },
+            {
+              "thinker_id": "antonio_gramsci",
+              "concept": "hegemoni og motminne"
+            },
+            {
+              "thinker_id": "hannah_arendt",
+              "concept": "offentlig handling og felles verden"
+            }
+          ],
+          "required_anchor_types": [
+            "memorial",
+            "commemoration_decision",
+            "archive",
+            "naming_process",
+            "counter_memory_action"
+          ],
+          "recommended_oslo_cases": [
+            "22. juli-senteret",
+            "Eidsvolls plass",
+            "Universitetsplassen",
+            "Youngstorget",
+            "Rådhusplassen"
+          ]
+        },
+        "polarisering": {
+          "required_emne_ids": [
+            "em_pol_polarisering_tillit",
+            "em_pol_offentlighet_debatt"
+          ],
+          "required_method_ids": [
+            "met_pol_diskursanalyse",
+            "met_pol_legitimitetsanalyse",
+            "met_pol_konfliktanalyse"
+          ],
+          "mechanism_options": [
+            "elite-signalisering",
+            "sosial sortering",
+            "identitetsgrensedragning",
+            "medieforsterkning",
+            "negativ partiskhet",
+            "mistillitsdannelse"
+          ],
+          "critical_distinction_options": [
+            "uenighet vs polarisering",
+            "sakspolarisering vs affektiv polarisering",
+            "kritisk mistillit vs systemdelegitimering",
+            "motstander vs fiende"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "chantal_mouffe",
+              "concept": "agonisme og antagonisme"
+            },
+            {
+              "thinker_id": "jurgen_habermas",
+              "concept": "offentlig begrunnelse og kommunikativ konflikt"
+            },
+            {
+              "thinker_id": "robert_dahl",
+              "concept": "demokratisk opposisjon og toleranse"
+            }
+          ],
+          "required_anchor_types": [
+            "survey_or_election_data",
+            "public_debate",
+            "party_or_elite_statement",
+            "media_analysis",
+            "trust_measurement"
+          ],
+          "recommended_oslo_cases": [
+            "Stortinget",
+            "Eidsvolls plass",
+            "Litteraturhuset",
+            "Youngstorget",
+            "Universitetsplassen"
+          ]
+        },
+        "konfliktens_rom": {
+          "required_emne_ids": [
+            "em_pol_maktens_geografi",
+            "em_pol_demonstrasjoner_protest"
+          ],
+          "required_method_ids": [
+            "met_pol_romlig_maktanalyse",
+            "met_pol_protest_og_bevegelsesanalyse",
+            "met_pol_konfliktanalyse"
+          ],
+          "mechanism_options": [
+            "adgangskontroll",
+            "tillatelsesregime",
+            "politi- og sikkerhetsstyring",
+            "synlighetskonsentrasjon",
+            "symbolsk okkupasjon",
+            "overvåking",
+            "romlig fortrengning"
+          ],
+          "critical_distinction_options": [
+            "offentlig rom vs offentlig tilgjengelig rom",
+            "juridisk adgang vs praktisk adgang",
+            "tilstedeværelse vs politisk innflytelse",
+            "hendelsessted vs bevegelsesinfrastruktur"
+          ],
+          "theory_lenses": [
+            {
+              "thinker_id": "hannah_arendt",
+              "concept": "offentlig rom og politisk fremtreden"
+            },
+            {
+              "thinker_id": "charles_tilly",
+              "concept": "repertoar, arena og myndighetsrespons"
+            },
+            {
+              "thinker_id": "pierre_bourdieu",
+              "concept": "symbolsk og romlig makt"
+            }
+          ],
+          "required_anchor_types": [
+            "public_space",
+            "permit_or_police_document",
+            "demonstration_route",
+            "security_measure",
+            "spatial_plan"
+          ],
+          "recommended_oslo_cases": [
+            "Eidsvolls plass",
+            "Youngstorget",
+            "Rådhusplassen",
+            "Universitetsplassen",
+            "Regjeringskvartalet"
+          ]
+        }
+      },
+      "normative_theory_extension": {
+        "revision": "politikk-teori-vertical-phase-2-2026-07-24",
+        "hook_ids": [
+          "politisk_teori_ideologiske_hovedtradisjoner",
+          "politisk_teori_sosialdemokrati_demokratisk_sosialisme",
+          "politisk_teori_feminisme_politisk_likhet",
+          "politisk_teori_gronn_politisk_teori",
+          "politisk_teori_nasjonalisme_statsborgerskap"
+        ],
+        "emne_ids": [
+          "em_pol_teorifordypning_ideologiske_hovedtradisjoner",
+          "em_pol_teorifordypning_sosialdemokrati_demokratisk_sosialisme",
+          "em_pol_teorifordypning_feminisme_politisk_likhet",
+          "em_pol_teorifordypning_gronn_politisk_teori",
+          "em_pol_teorifordypning_nasjonalisme_statsborgerskap"
+        ],
+        "method_ids": [
+          "met_pol_normativ_argumentasjonsanalyse",
+          "met_pol_ideologisk_sammenligningsanalyse",
+          "met_pol_politisk_begrepsanalyse",
+          "met_pol_normativ_institusjonsvurdering"
+        ],
+        "required_sequence": [
+          "external_case_or_text",
+          "empirical_context",
+          "explicit_normative_premise",
+          "argument",
+          "counterargument",
+          "normative_consequence",
+          "scope_condition"
+        ]
+      },
+      "hook_count": 15
+    },
+    "normer_identitet_hverdagsliv": {
+      "status": "complete_revised",
+      "quality_revision": "politikk-normer-vertical-2026-07-24",
+      "domain_id": "normer_identitet_hverdagsliv",
+      "question_surface_mode": "norm-case-rule-practice-consequence-distinction-theory",
+      "required_chain": [
+        "external_norm_rights_practice_or_population_source",
+        "claim_basis",
+        "rule_category_or_expectation",
+        "actor_institution_and_enforcement",
+        "observable_consequence",
+        "critical_distinction",
+        "optional_theory_lens"
+      ],
+      "source_anchor_required": true,
+      "external_claim_basis_required": true,
+      "norm_rule_or_category_required": true,
+      "observable_consequence_required": true,
+      "revised_hook_ids": [
+        "normalitet",
+        "minoritet_majoritet",
+        "hverdagslivets_politikk",
+        "kjonn_og_samfunn",
+        "familie_og_stat",
+        "migrasjon",
+        "sosial_kontroll",
+        "tause_regler",
+        "likeverd",
+        "samfunnets_grenser"
+      ],
+      "revised_emne_ids": [
+        "em_pol_familie_stat_omsorg",
+        "em_pol_hverdagslivets_regler",
+        "em_pol_inkludering_ekskludering",
+        "em_pol_integrering_migrasjon",
+        "em_pol_kjonn_familie_likestilling",
+        "em_pol_majoritet_minoritet",
+        "em_pol_normer_doxa",
+        "em_pol_normer_normalitet",
+        "em_pol_sosial_kontroll"
+      ],
+      "revised_method_ids": [
+        "met_pol_velferdsstatlig_analyse",
+        "met_pol_rettighetsanalyse",
+        "met_pol_forvaltningsanalyse",
+        "met_pol_praksisanalyse",
+        "met_pol_dokumentanalyse",
+        "met_pol_rettslig_analyse",
+        "met_pol_normanalyse",
+        "met_pol_diskursanalyse",
+        "met_pol_minoritet_og_representasjonsanalyse",
+        "met_pol_makt_og_ulikhetsanalyse",
+        "met_pol_integreringsanalyse",
+        "met_pol_statistikk_og_fordelingsanalyse",
+        "met_pol_likestillingsanalyse",
+        "met_pol_fordelingsanalyse",
+        "met_pol_ideologianalyse",
+        "met_pol_kontroll_og_sanksjonsanalyse"
+      ],
+      "global_bans": [
+        "identitet eller gruppe som essensiell forklaring",
+        "teoretikernavn som løsrevet fasit",
+        "anekdote som populasjonspåstand",
+        "formell regel som bevis for faktisk praksis",
+        "påstand hentet bare fra emne- eller hooknavn"
+      ],
+      "generator_constraints": {
+        "require_external_claim_basis": true,
+        "require_norm_rule_or_category_identification": true,
+        "require_actor_or_institution_identification": true,
+        "require_practice_or_enforcement_mechanism": true,
+        "require_observable_consequence": true,
+        "require_critical_distinction": true,
+        "require_method_match_to_mechanism": true,
+        "require_population_and_denominator_for_group_claims": true,
+        "ban_identity_essence_questions": true,
+        "ban_theorist_name_as_answer_without_concept": true
+      }
+    },
+    "komparativ_politikk_regimer_institusjoner": {
+      "status": "complete_revised",
+      "quality_revision": "politikk-institusjoner-vertical-phase-1-2026-07-24",
+      "required_question_chain": [
+        "external_source",
+        "unit_of_analysis",
+        "defined_outcome",
+        "mechanism_or_institutional_rule",
+        "method_or_design",
+        "competing_explanation_or_critical_distinction",
+        "scope_condition",
+        "optional_theory"
+      ],
+      "required_mapping_fields": [
+        "recommended_method_ids",
+        "mechanism_options",
+        "critical_distinction_options",
+        "theory_lenses",
+        "required_anchor_types"
+      ],
+      "revised_method_ids": [
+        "met_pol_komparativ_institusjonsanalyse",
+        "met_pol_regime_og_demokratiseringsanalyse",
+        "met_pol_komparativt_forskningsdesign",
+        "met_pol_prosessporing"
+      ],
+      "hook_count": 20,
+      "method_selection_rule": "Metoden velges etter påstand, analyseenhet, datakilde og inferensbehov.",
+      "theory_rule": "Teori kommer etter ekstern dokumentasjon og metode, og må forklare eller sammenligne mekanismen.",
+      "rejection_rules": [
+        "avvis teoretikernavn som løsrevet svar",
+        "avvis komparasjon uten sammenlignbare indikatorer",
+        "avvis kausal påstand uten design eller mekanisme",
+        "avvis generalisering uten scope condition"
+      ],
+      "required_hook_ids": [
+        "demokrati_og_autokrati",
+        "demokratisk_tilbakegang_og_institusjonell_uthuling",
+        "domstolskontroll_og_konstitusjonsdomstoler",
+        "enhetsstat_foderalisme_territorial_makt",
+        "ett_og_tokammersystemer",
+        "federalisme_og_desentralisering",
+        "flertalls_og_konsensusdemokrati",
+        "institusjonell_endring_og_stiavhengighet",
+        "koalisjoner_og_mindretallsregjeringer",
+        "komparativ_velferdsstat",
+        "maktfordeling_og_vetospillere",
+        "mistillit_kabinett_opplosning",
+        "parlamentarisme_og_presidentialisme",
+        "parlamentarisme_og_presidentstyre",
+        "rettsstat_og_demokratisk_tilbakegang",
+        "sivilt_militaert_forhold",
+        "statsborgerskap_og_nasjon",
+        "statsdannelse_og_statlig_kapasitet",
+        "utovende_og_lovgivende_makt",
+        "vetospillere_og_beslutningskapasitet"
+      ],
+      "required_method_ids": [
+        "met_pol_parlamentarisk_ansvarlighetsanalyse",
+        "met_pol_vetospilleranalyse",
+        "met_pol_foderalisme_og_flernivaanalyse",
+        "met_pol_konstitusjonell_domstolsanalyse",
+        "met_pol_institusjonell_tilbakegangsanalyse",
+        "met_pol_lovgivningsstruktur_analyse"
+      ],
+      "vertical_depth_phase_1": {
+        "revision": "politikk-institusjoner-vertical-phase-1-2026-07-24",
+        "hook_ids": [
+          "parlamentarisme_og_presidentstyre",
+          "flertalls_og_konsensusdemokrati",
+          "enhetsstat_foderalisme_territorial_makt",
+          "ett_og_tokammersystemer",
+          "koalisjoner_og_mindretallsregjeringer",
+          "mistillit_kabinett_opplosning",
+          "vetospillere_og_beslutningskapasitet",
+          "domstolskontroll_og_konstitusjonsdomstoler",
+          "utovende_og_lovgivende_makt",
+          "demokratisk_tilbakegang_og_institusjonell_uthuling"
+        ],
+        "emne_ids": [
+          "em_pol_institusjonsfordypning_parlamentarisme_presidentstyre",
+          "em_pol_institusjonsfordypning_flertalls_konsensusdemokrati",
+          "em_pol_institusjonsfordypning_enhetsstat_foderalisme",
+          "em_pol_institusjonsfordypning_ett_tokammersystem",
+          "em_pol_institusjonsfordypning_koalisjoner_mindretallsregjeringer",
+          "em_pol_institusjonsfordypning_mistillit_opplosningsrett",
+          "em_pol_institusjonsfordypning_vetospillere_beslutningskapasitet",
+          "em_pol_institusjonsfordypning_domstolskontroll_konstitusjonsdomstoler",
+          "em_pol_institusjonsfordypning_utovende_lovgivende_makt",
+          "em_pol_institusjonsfordypning_demokratisk_tilbakegang"
+        ],
+        "method_ids": [
+          "met_pol_parlamentarisk_ansvarlighetsanalyse",
+          "met_pol_vetospilleranalyse",
+          "met_pol_foderalisme_og_flernivaanalyse",
+          "met_pol_konstitusjonell_domstolsanalyse",
+          "met_pol_institusjonell_tilbakegangsanalyse",
+          "met_pol_lovgivningsstruktur_analyse"
+        ],
+        "question_blueprint_count": 10,
+        "status": "complete_revised"
+      }
+    },
+    "valg_partier_velgeratferd": {
+      "status": "complete_revised",
+      "quality_revision": "politikk-statsvitenskap-core-expansion-2026-07-24",
+      "required_question_chain": [
+        "external_source",
+        "unit_of_analysis",
+        "defined_outcome",
+        "mechanism_or_institutional_rule",
+        "method_or_design",
+        "competing_explanation_or_critical_distinction",
+        "scope_condition",
+        "optional_theory"
+      ],
+      "required_mapping_fields": [
+        "recommended_method_ids",
+        "mechanism_options",
+        "critical_distinction_options",
+        "theory_lenses",
+        "required_anchor_types"
+      ],
+      "revised_method_ids": [
+        "met_pol_valgsystemanalyse",
+        "met_pol_partisystemanalyse",
+        "met_pol_velgeratferdsanalyse",
+        "met_pol_regjerings_og_koalisjonsanalyse",
+        "met_pol_survey_og_valgdataanalyse"
+      ],
+      "hook_count": 10,
+      "method_selection_rule": "Metoden velges etter påstand, analyseenhet, datakilde og inferensbehov.",
+      "theory_rule": "Teori kommer etter ekstern dokumentasjon og metode, og må forklare eller sammenligne mekanismen.",
+      "rejection_rules": [
+        "avvis teoretikernavn som løsrevet svar",
+        "avvis komparasjon uten sammenlignbare indikatorer",
+        "avvis kausal påstand uten design eller mekanisme",
+        "avvis generalisering uten scope condition"
+      ]
+    },
+    "offentlig_politikk_beslutning_implementering": {
+      "status": "complete_revised",
+      "quality_revision": "politikk-statsvitenskap-core-expansion-2026-07-24",
+      "required_question_chain": [
+        "external_source",
+        "unit_of_analysis",
+        "defined_outcome",
+        "mechanism_or_institutional_rule",
+        "method_or_design",
+        "competing_explanation_or_critical_distinction",
+        "scope_condition",
+        "optional_theory"
+      ],
+      "required_mapping_fields": [
+        "recommended_method_ids",
+        "mechanism_options",
+        "critical_distinction_options",
+        "theory_lenses",
+        "required_anchor_types"
+      ],
+      "revised_method_ids": [
+        "met_pol_policyprosessanalyse",
+        "met_pol_policy_design_og_virkemiddelanalyse",
+        "met_pol_implementeringsanalyse",
+        "met_pol_policy_evaluering",
+        "met_pol_prosessporing"
+      ],
+      "hook_count": 10,
+      "method_selection_rule": "Metoden velges etter påstand, analyseenhet, datakilde og inferensbehov.",
+      "theory_rule": "Teori kommer etter ekstern dokumentasjon og metode, og må forklare eller sammenligne mekanismen.",
+      "rejection_rules": [
+        "avvis teoretikernavn som løsrevet svar",
+        "avvis komparasjon uten sammenlignbare indikatorer",
+        "avvis kausal påstand uten design eller mekanisme",
+        "avvis generalisering uten scope condition"
+      ]
+    },
+    "internasjonal_politikk_sikkerhet_samarbeid": {
+      "status": "complete_revised",
+      "quality_revision": "politikk-statsvitenskap-core-expansion-2026-07-24",
+      "required_question_chain": [
+        "external_source",
+        "unit_of_analysis",
+        "defined_outcome",
+        "mechanism_or_institutional_rule",
+        "method_or_design",
+        "competing_explanation_or_critical_distinction",
+        "scope_condition",
+        "optional_theory"
+      ],
+      "required_mapping_fields": [
+        "recommended_method_ids",
+        "mechanism_options",
+        "critical_distinction_options",
+        "theory_lenses",
+        "required_anchor_types"
+      ],
+      "revised_method_ids": [
+        "met_pol_internasjonal_politisk_analyse",
+        "met_pol_utenrikspolitisk_analyse",
+        "met_pol_komparativt_forskningsdesign",
+        "met_pol_prosessporing"
+      ],
+      "hook_count": 10,
+      "method_selection_rule": "Metoden velges etter påstand, analyseenhet, datakilde og inferensbehov.",
+      "theory_rule": "Teori kommer etter ekstern dokumentasjon og metode, og må forklare eller sammenligne mekanismen.",
+      "rejection_rules": [
+        "avvis teoretikernavn som løsrevet svar",
+        "avvis komparasjon uten sammenlignbare indikatorer",
+        "avvis kausal påstand uten design eller mekanisme",
+        "avvis generalisering uten scope condition"
+      ]
+    },
+    "politisk_okonomi_stat_marked": {
+      "status": "complete_revised",
+      "quality_revision": "politikk-statsvitenskap-core-expansion-2026-07-24",
+      "required_question_chain": [
+        "external_source",
+        "unit_of_analysis",
+        "defined_outcome",
+        "mechanism_or_institutional_rule",
+        "method_or_design",
+        "competing_explanation_or_critical_distinction",
+        "scope_condition",
+        "optional_theory"
+      ],
+      "required_mapping_fields": [
+        "recommended_method_ids",
+        "mechanism_options",
+        "critical_distinction_options",
+        "theory_lenses",
+        "required_anchor_types"
+      ],
+      "revised_method_ids": [
+        "met_pol_politisk_okonomianalyse",
+        "met_pol_policy_design_og_virkemiddelanalyse",
+        "met_pol_komparativ_institusjonsanalyse",
+        "met_pol_kausalt_forskningsdesign"
+      ],
+      "hook_count": 10,
+      "method_selection_rule": "Metoden velges etter påstand, analyseenhet, datakilde og inferensbehov.",
+      "theory_rule": "Teori kommer etter ekstern dokumentasjon og metode, og må forklare eller sammenligne mekanismen.",
+      "rejection_rules": [
+        "avvis teoretikernavn som løsrevet svar",
+        "avvis komparasjon uten sammenlignbare indikatorer",
+        "avvis kausal påstand uten design eller mekanisme",
+        "avvis generalisering uten scope condition"
+      ]
+    },
+    "statsvitenskapelig_metode_og_sammenligning": {
+      "status": "complete_revised",
+      "quality_revision": "politikk-statsvitenskap-core-expansion-2026-07-24",
+      "required_question_chain": [
+        "external_source",
+        "unit_of_analysis",
+        "defined_outcome",
+        "mechanism_or_institutional_rule",
+        "method_or_design",
+        "competing_explanation_or_critical_distinction",
+        "scope_condition",
+        "optional_theory"
+      ],
+      "required_mapping_fields": [
+        "recommended_method_ids",
+        "mechanism_options",
+        "critical_distinction_options",
+        "theory_lenses",
+        "required_anchor_types"
+      ],
+      "revised_method_ids": [
+        "met_pol_kausalt_forskningsdesign",
+        "met_pol_komparativt_forskningsdesign",
+        "met_pol_prosessporing",
+        "met_pol_survey_og_valgdataanalyse",
+        "met_pol_dokumentanalyse"
+      ],
+      "hook_count": 10,
+      "method_selection_rule": "Metoden velges etter påstand, analyseenhet, datakilde og inferensbehov.",
+      "theory_rule": "Teori kommer etter ekstern dokumentasjon og metode, og må forklare eller sammenligne mekanismen.",
+      "rejection_rules": [
+        "avvis teoretikernavn som løsrevet svar",
+        "avvis komparasjon uten sammenlignbare indikatorer",
+        "avvis kausal påstand uten design eller mekanisme",
+        "avvis generalisering uten scope condition"
+      ]
+    },
+    "norsk_politikk_eos_flernivastyring": {
+      "status": "complete_revised",
+      "quality_revision": "politikk-norsk-eos-vertical-phase-3-2026-07-24",
+      "required_question_chain": [
+        "external_source",
+        "unit_of_analysis",
+        "defined_outcome",
+        "mechanism_or_institutional_rule",
+        "method_or_design",
+        "competing_explanation_or_critical_distinction",
+        "scope_condition",
+        "optional_theory"
+      ],
+      "required_mapping_fields": [
+        "recommended_method_ids",
+        "mechanism_options",
+        "critical_distinction_options",
+        "theory_lenses",
+        "required_anchor_types"
+      ],
+      "revised_method_ids": [
+        "met_pol_norsk_institusjonskjedeanalyse",
+        "met_pol_parlamentarisk_kontrollanalyse_norge",
+        "met_pol_norsk_parti_skillelinjeanalyse",
+        "met_pol_flerniva_kommunestyringsanalyse",
+        "met_pol_eos_eu_implementeringsanalyse",
+        "met_pol_korporativ_interesseanalyse_norge"
+      ],
+      "hook_count": 12,
+      "method_selection_rule": "Metoden velges etter påstand, analyseenhet, datakilde og inferensbehov.",
+      "theory_rule": "Teori kommer etter ekstern dokumentasjon og metode, og må forklare eller sammenligne mekanismen.",
+      "rejection_rules": [
+        "avvis teoretikernavn som løsrevet svar",
+        "avvis komparasjon uten sammenlignbare indikatorer",
+        "avvis kausal påstand uten design eller mekanisme",
+        "avvis generalisering uten scope condition"
+      ],
+      "required_hook_ids": [
+        "norsk_politikk_styringsorganer_maktkjede",
+        "norsk_politikk_mindretallsparlamentarisme_kontroll",
+        "norsk_politikk_partisystem_skillelinjer",
+        "norsk_politikk_kommuner_fylker_lokaldemokrati",
+        "norsk_politikk_stat_kommune_flernivastyring",
+        "norsk_politikk_sametinget_urfolk_konsultasjon",
+        "norsk_politikk_eos_eu_integrasjon",
+        "norsk_politikk_europeiske_regler_gjennomforing",
+        "norsk_politikk_utenriks_sikkerhetspolitikk",
+        "norsk_politikk_korporatisme_trepart_interesser",
+        "norsk_politikk_utredning_horing_lovprosess",
+        "norsk_politikk_statsbudsjett_kommunefinansiering"
+      ],
+      "required_method_ids": [
+        "met_pol_norsk_institusjonskjedeanalyse",
+        "met_pol_parlamentarisk_kontrollanalyse_norge",
+        "met_pol_norsk_parti_skillelinjeanalyse",
+        "met_pol_flerniva_kommunestyringsanalyse",
+        "met_pol_eos_eu_implementeringsanalyse",
+        "met_pol_korporativ_interesseanalyse_norge"
+      ],
+      "vertical_depth_phase_1": {
+        "revision": "politikk-institusjoner-vertical-phase-1-2026-07-24",
+        "hook_ids": [
+          "parlamentarisme_og_presidentstyre",
+          "flertalls_og_konsensusdemokrati",
+          "enhetsstat_foderalisme_territorial_makt",
+          "ett_og_tokammersystemer",
+          "koalisjoner_og_mindretallsregjeringer",
+          "mistillit_kabinett_opplosning",
+          "vetospillere_og_beslutningskapasitet",
+          "domstolskontroll_og_konstitusjonsdomstoler",
+          "utovende_og_lovgivende_makt",
+          "demokratisk_tilbakegang_og_institusjonell_uthuling"
+        ],
+        "emne_ids": [
+          "em_pol_institusjonsfordypning_parlamentarisme_presidentstyre",
+          "em_pol_institusjonsfordypning_flertalls_konsensusdemokrati",
+          "em_pol_institusjonsfordypning_enhetsstat_foderalisme",
+          "em_pol_institusjonsfordypning_ett_tokammersystem",
+          "em_pol_institusjonsfordypning_koalisjoner_mindretallsregjeringer",
+          "em_pol_institusjonsfordypning_mistillit_opplosningsrett",
+          "em_pol_institusjonsfordypning_vetospillere_beslutningskapasitet",
+          "em_pol_institusjonsfordypning_domstolskontroll_konstitusjonsdomstoler",
+          "em_pol_institusjonsfordypning_utovende_lovgivende_makt",
+          "em_pol_institusjonsfordypning_demokratisk_tilbakegang"
+        ],
+        "method_ids": [
+          "met_pol_parlamentarisk_ansvarlighetsanalyse",
+          "met_pol_vetospilleranalyse",
+          "met_pol_foderalisme_og_flernivaanalyse",
+          "met_pol_konstitusjonell_domstolsanalyse",
+          "met_pol_institusjonell_tilbakegangsanalyse",
+          "met_pol_lovgivningsstruktur_analyse"
+        ],
+        "question_blueprint_count": 10,
+        "status": "complete_revised"
+      },
+      "profile_id": "norsk_politikk_eos_flernivastyring",
+      "domain_id": "norsk_politikk_eos_flernivastyring",
+      "label": "Norsk politikk, EØS/EU og flernivåstyring",
+      "revised_hook_ids": [
+        "norsk_politikk_styringsorganer_maktkjede",
+        "norsk_politikk_mindretallsparlamentarisme_kontroll",
+        "norsk_politikk_partisystem_skillelinjer",
+        "norsk_politikk_kommuner_fylker_lokaldemokrati",
+        "norsk_politikk_stat_kommune_flernivastyring",
+        "norsk_politikk_sametinget_urfolk_konsultasjon",
+        "norsk_politikk_eos_eu_integrasjon",
+        "norsk_politikk_europeiske_regler_gjennomforing",
+        "norsk_politikk_utenriks_sikkerhetspolitikk",
+        "norsk_politikk_korporatisme_trepart_interesser",
+        "norsk_politikk_utredning_horing_lovprosess",
+        "norsk_politikk_statsbudsjett_kommunefinansiering"
+      ],
+      "revised_emne_ids": [
+        "em_pol_norsk_politikk_styringsorganer_maktkjede",
+        "em_pol_norsk_politikk_mindretallsparlamentarisme_kontroll",
+        "em_pol_norsk_politikk_partisystem_skillelinjer",
+        "em_pol_norsk_politikk_kommuner_fylker_lokaldemokrati",
+        "em_pol_norsk_politikk_stat_kommune_flernivastyring",
+        "em_pol_norsk_politikk_sametinget_urfolk_konsultasjon",
+        "em_pol_norsk_politikk_eos_eu_integrasjon",
+        "em_pol_norsk_politikk_europeiske_regler_gjennomforing",
+        "em_pol_norsk_politikk_utenriks_sikkerhetspolitikk",
+        "em_pol_norsk_politikk_korporatisme_trepart_interesser",
+        "em_pol_norsk_politikk_utredning_horing_lovprosess",
+        "em_pol_norsk_politikk_statsbudsjett_kommunefinansiering"
+      ],
+      "sequence": [
+        "external_source",
+        "institutional_level",
+        "actors_and_competence",
+        "document_or_decision_chain",
+        "defined_outcome",
+        "mechanism",
+        "critical_distinction_or_competing_explanation",
+        "scope_condition",
+        "optional_theory"
+      ],
+      "hard_requirements": {
+        "require_external_claim_basis": true,
+        "require_named_institutional_level": true,
+        "require_actor_and_competence_identification": true,
+        "require_document_or_decision_chain": true,
+        "require_defined_outcome": true,
+        "require_mechanism_explanation": true,
+        "require_critical_distinction_or_competing_explanation": true,
+        "require_method_match_to_claim": true,
+        "require_scope_condition": true,
+        "ban_theorist_name_as_answer_without_concept": true,
+        "ban_formal_rule_as_complete_description_of_practice": true,
+        "ban_canonical_file_as_fact_source": true
+      },
+      "source_requirements": [
+        "offisiell norsk, samisk, kommunal, EØS- eller EU-kilde",
+        "lov, forskrift, proposisjon, stortingsdokument, budsjett, NOU, høring eller forvaltningsdokument",
+        "valg-, økonomi-, tjeneste- eller implementeringsdata",
+        "fagfellevurdert statsvitenskapelig forskning",
+        "canonical-filer som styring – aldri som faktakilde"
+      ],
+      "generator_constraints": {
+        "require_external_claim_basis": true,
+        "require_named_institutional_level": true,
+        "require_actor_and_competence_identification": true,
+        "require_document_or_decision_chain": true,
+        "require_defined_outcome": true,
+        "require_mechanism_explanation": true,
+        "require_critical_distinction_or_competing_explanation": true,
+        "require_method_match_to_claim": true,
+        "require_scope_condition": true,
+        "ban_theorist_name_as_answer_without_concept": true,
+        "ban_formal_rule_as_complete_description_of_practice": true,
+        "ban_canonical_file_as_fact_source": true
+      }
+    }
+  },
+  "opening_normal_quiz_contract": {
+    "status": "required",
+    "quality_revision": "politikk-two-normal-opening-sets-2026-07-24",
+    "applies_to_every_place_and_person_quiz": true,
+    "opening_set_ids": [
+      1,
+      2
+    ],
+    "questions_per_set": 7,
+    "total_opening_normal_questions": 14,
+    "visible_register": "vanlig norsk quizspråk",
+    "purpose": "Etablere sted, institusjon, person, funksjon, hendelser og kronologi med normale faktaspørsmål før faglig analyse.",
+    "set_1_role": "direkte grunnfakta om sted, institusjon, offentlig funksjon og identifiserbare kjennetegn",
+    "set_2_role": "historie, personer, hendelser, vedtak, organisasjoner, endret funksjon og enkel kronologi",
+    "allowed_question_starts": [
+      "Hva",
+      "Hvem",
+      "Hvor",
+      "Når",
+      "Hvilket",
+      "Hvilken",
+      "Hvilke"
+    ],
+    "preferred_normal_question_types": [
+      "navn eller identifikasjon",
+      "institusjon eller organisasjon",
+      "offentlig funksjon",
+      "årstall eller periode",
+      "person og dokumentert rolle",
+      "hendelse",
+      "lov, vedtak eller reform",
+      "hva stedet erstattet eller ble brukt til",
+      "enkel kronologi",
+      "synlig eller dokumentert kjennetegn"
+    ],
+    "required_source_rule": "Alle 14 spørsmål skal ha et eksternt kildegrunnlag som direkte bærer fasiten.",
+    "answer_rule": "Ett kort, konkret og etterprøvbart svar skal være tydelig riktig. Distraktorene skal være plausible, men faktuelt feil.",
+    "metadata_may_be_academic_but_visible_question_may_not": true,
+    "analysis_may_begin_from_set": 3,
+    "theory_may_begin_from_set": 4,
+    "forbidden_visible_features_in_sets_1_2": [
+      "teoretikernavn som spørsmålets hovedpoeng",
+      "metodenavn",
+      "hook-id eller emne-id",
+      "krav om å velge faglig lesning",
+      "krav om å identifisere abstrakt mekanisme",
+      "krav om å velge kritisk distinksjon",
+      "akademisk omskriving av et enkelt faktaspørsmål"
+    ],
+    "forbidden_stems_in_sets_1_2": [
+      "Hvordan kan stedet leses som",
+      "Hvorfor passer stedet til emnet",
+      "Hva er den mest presise faglige lesningen",
+      "Hvilket begrep beskriver best",
+      "Hvilken teoretiker",
+      "Hvordan illustrerer stedet",
+      "Hva viser stedet om",
+      "Hvilken mekanisme forklarer best",
+      "Hvilken distinksjon er mest relevant"
+    ],
+    "no_exceptions_for_advanced_places": true
+  },
+  "analytical_domain_rotation_after_opening": {
+    "status": "active",
+    "quality_revision": "politikk-statsvitenskap-core-expansion-2026-07-24",
+    "minimum_core_domain_share": 0.67,
+    "rotation_order": [
+      "styring_institusjoner_forvaltning",
+      "demokrati_representasjon_offentlighet",
+      "komparativ_politikk_regimer_institusjoner",
+      "valg_partier_velgeratferd",
+      "offentlig_politikk_beslutning_implementering",
+      "internasjonal_politikk_sikkerhet_samarbeid",
+      "politisk_okonomi_stat_marked",
+      "statsvitenskapelig_metode_og_sammenligning",
+      "rett_lov_rettssikkerhet",
+      "fordeling_velferd_ulikhet",
+      "konflikt_makt_sivilsamfunn",
+      "normer_identitet_hverdagsliv"
+    ],
+    "rule": "Etter åpningen skal settene rotere mellom statsvitenskapelige hoveddomener før støtte- og brodomener overvektes."
+  },
+  "disciplinary_profile": {
+    "primary_discipline": "statsvitenskap",
+    "level": "bachelor_core",
+    "political_science_core_domain_count": 8,
+    "supporting_bridge_domain_count": 4,
+    "core_subfields": [
+      "political institutions",
+      "comparative politics",
+      "electoral politics",
+      "public policy",
+      "international relations",
+      "political economy",
+      "political methodology"
+    ],
+    "supporting_fields": [
+      "political sociology",
+      "sociology of law",
+      "social policy",
+      "norm and identity analysis"
+    ],
+    "design_rule": "Statsvitenskapelige forklaringer skal dominere kategorien. Støttefag brukes når de presiserer mekanisme, konsekvens eller normativ konflikt."
+  },
+  "political_science_core_contract": {
+    "required_core_share": 0.67,
+    "core_domain_ids": [
+      "styring_institusjoner_forvaltning",
+      "demokrati_representasjon_offentlighet",
+      "komparativ_politikk_regimer_institusjoner",
+      "valg_partier_velgeratferd",
+      "offentlig_politikk_beslutning_implementering",
+      "internasjonal_politikk_sikkerhet_samarbeid",
+      "politisk_okonomi_stat_marked",
+      "statsvitenskapelig_metode_og_sammenligning"
+    ],
+    "supporting_domain_ids": [
+      "rett_lov_rettssikkerhet",
+      "fordeling_velferd_ulikhet",
+      "konflikt_makt_sivilsamfunn",
+      "normer_identitet_hverdagsliv"
+    ],
+    "required_claim_chain": [
+      "external_source",
+      "unit_of_analysis",
+      "defined_outcome",
+      "institution_actor_or_system_mechanism",
+      "method_or_design",
+      "competing_explanation_or_critical_distinction",
+      "scope_condition",
+      "optional_theory"
+    ],
+    "comparative_rule": "Sammenligninger krever begrunnet caseutvalg og sammenlignbare indikatorer.",
+    "causal_rule": "Kausale påstander krever mekanisme, kontrafaktisk design eller eksplisitt identifikasjonsstrategi.",
+    "support_field_rule": "Sosiologiske, rettslige og normative perspektiver skal presisere, ikke erstatte, statsvitenskapelig analyseenhet og forklaring.",
+    "vertical_depth_phase_1": {
+      "revision": "politikk-institusjoner-vertical-phase-1-2026-07-24",
+      "required_domain": "komparativ_politikk_regimer_institusjoner",
+      "required_hook_ids": [
+        "parlamentarisme_og_presidentstyre",
+        "flertalls_og_konsensusdemokrati",
+        "enhetsstat_foderalisme_territorial_makt",
+        "ett_og_tokammersystemer",
+        "koalisjoner_og_mindretallsregjeringer",
+        "mistillit_kabinett_opplosning",
+        "vetospillere_og_beslutningskapasitet",
+        "domstolskontroll_og_konstitusjonsdomstoler",
+        "utovende_og_lovgivende_makt",
+        "demokratisk_tilbakegang_og_institusjonell_uthuling"
+      ],
+      "required_method_ids": [
+        "met_pol_parlamentarisk_ansvarlighetsanalyse",
+        "met_pol_vetospilleranalyse",
+        "met_pol_foderalisme_og_flernivaanalyse",
+        "met_pol_konstitusjonell_domstolsanalyse",
+        "met_pol_institusjonell_tilbakegangsanalyse",
+        "met_pol_lovgivningsstruktur_analyse"
+      ]
+    }
+  },
+  "normative_political_theory_contract": {
+    "revision": "politikk-teori-vertical-phase-2-2026-07-24",
+    "status": "active",
+    "domains": [
+      "demokrati_representasjon_offentlighet",
+      "konflikt_makt_sivilsamfunn"
+    ],
+    "hook_ids": [
+      "politisk_teori_ideologiske_hovedtradisjoner",
+      "politisk_teori_sosialdemokrati_demokratisk_sosialisme",
+      "politisk_teori_republikanisme_ikke_dominans",
+      "politisk_teori_feminisme_politisk_likhet",
+      "politisk_teori_gronn_politisk_teori",
+      "politisk_teori_nasjonalisme_statsborgerskap",
+      "politisk_teori_populisme_folkebegrepet",
+      "politisk_teori_frihet_likhet_autoritet_legitimitet",
+      "politisk_teori_demokrati_normativt_ideal",
+      "politisk_teori_sivil_ulydighet_politisk_forpliktelse"
+    ],
+    "emne_ids": [
+      "em_pol_teorifordypning_ideologiske_hovedtradisjoner",
+      "em_pol_teorifordypning_sosialdemokrati_demokratisk_sosialisme",
+      "em_pol_teorifordypning_republikanisme_ikke_dominans",
+      "em_pol_teorifordypning_feminisme_politisk_likhet",
+      "em_pol_teorifordypning_gronn_politisk_teori",
+      "em_pol_teorifordypning_nasjonalisme_statsborgerskap",
+      "em_pol_teorifordypning_populisme_folkebegrepet",
+      "em_pol_teorifordypning_frihet_likhet_autoritet_legitimitet",
+      "em_pol_teorifordypning_demokrati_normativt_ideal",
+      "em_pol_teorifordypning_sivil_ulydighet_politisk_forpliktelse"
+    ],
+    "method_ids": [
+      "met_pol_normativ_argumentasjonsanalyse",
+      "met_pol_ideologisk_sammenligningsanalyse",
+      "met_pol_politisk_begrepsanalyse",
+      "met_pol_normativ_institusjonsvurdering"
+    ],
+    "required_sequence": [
+      "external_case_or_text",
+      "empirical_context",
+      "explicit_normative_premise",
+      "argument",
+      "counterargument",
+      "normative_consequence",
+      "scope_condition"
+    ],
+    "hard_rules": {
+      "require_external_source_for_empirical_premise": true,
+      "require_explicit_normative_premise": true,
+      "require_argument_and_counterargument": true,
+      "require_normative_consequence": true,
+      "ban_normative_claim_as_empirical_fact": true,
+      "ban_theorist_name_as_answer_without_concept": true,
+      "ban_ideology_as_party_label_only": true,
+      "theory_forbidden_in_opening_sets": true
+    }
+  },
+  "norwegian_politics_contract": {
+    "status": "active",
+    "quality_revision": "politikk-norsk-eos-vertical-phase-3-2026-07-24",
+    "domain_id": "norsk_politikk_eos_flernivastyring",
+    "required_institution_levels": [
+      "europeisk",
+      "nasjonal",
+      "samisk",
+      "regional",
+      "kommunal",
+      "bydel",
+      "organisert_interesse"
+    ],
+    "required_chain": [
+      "external_source",
+      "institutional_level",
+      "actors_and_competence",
+      "document_or_decision_chain",
+      "defined_outcome",
+      "mechanism",
+      "critical_distinction_or_competing_explanation",
+      "scope_condition",
+      "optional_theory"
+    ],
+    "institution_map": "reports/politikk-canonical-migration/norsk-politikk-institusjonskart.json",
+    "hard_rules": {
+      "require_external_claim_basis": true,
+      "require_named_institutional_level": true,
+      "require_actor_and_competence_identification": true,
+      "require_document_or_decision_chain": true,
+      "require_defined_outcome": true,
+      "require_mechanism_explanation": true,
+      "require_critical_distinction_or_competing_explanation": true,
+      "require_method_match_to_claim": true,
+      "require_scope_condition": true,
+      "ban_theorist_name_as_answer_without_concept": true,
+      "ban_formal_rule_as_complete_description_of_practice": true,
+      "ban_canonical_file_as_fact_source": true
+    }
+  }
+}

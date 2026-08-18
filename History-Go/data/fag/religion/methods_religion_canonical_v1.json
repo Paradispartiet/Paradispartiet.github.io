@@ -1,0 +1,207 @@
+{
+  "version": "1.5",
+  "subject_id": "religion",
+  "purpose": "Metodekatalog for kildebasert og respektfull produksjon av religionsinnhold i History Go.",
+  "methods": [
+    {
+      "method_id": "met_religion_stedsobservasjon",
+      "title": "Observasjon av hellige rom",
+      "description": "Systematisk observasjon av rom, retning, terskler, bruk, materialitet og synlige religiøse spor uten å gjette om trosinnhold.",
+      "data_forms": ["feltnotat", "foto", "plantegning"],
+      "canonical_status": "canonical"
+    },
+    {
+      "method_id": "met_religion_ritualanalyse",
+      "title": "Ritualanalyse",
+      "description": "Analyse av dokumenterte handlinger, rekkefølge, deltakere, symboler og funksjon i en religiøs praksis.",
+      "data_forms": ["liturgisk kilde", "program", "observasjonsnotat"],
+      "canonical_status": "canonical"
+    },
+    {
+      "method_id": "met_religion_symbolanalyse",
+      "title": "Symbol- og arkitekturanalyse",
+      "description": "Analyse av dokumenterte symboler, bilder, gjenstander og arkitektoniske elementer i religiøs sammenheng.",
+      "data_forms": ["foto", "inventarliste", "bygningsbeskrivelse"],
+      "canonical_status": "canonical"
+    },
+    {
+      "method_id": "met_religion_historisk_kildeanalyse",
+      "title": "Religionshistorisk kildeanalyse",
+      "description": "Kritisk bruk av arkiv, menighetshistorie, kulturminnedokumentasjon og samtidige kilder for å forklare endring over tid.",
+      "data_forms": ["arkiv", "protokoll", "historisk kart", "samtidig omtale"],
+      "canonical_status": "canonical"
+    },
+    {
+      "method_id": "met_religion_tradisjonsanalyse",
+      "title": "Tradisjonsanalyse",
+      "description": "Analyse av lære, praksis og institusjon innen én dokumentert religiøs tradisjon uten å behandle tradisjonen som ensartet.",
+      "data_forms": ["fagkilde", "offisiell troskilde", "historisk dokumentasjon"],
+      "canonical_status": "canonical"
+    },
+    {
+      "method_id": "met_religion_samfunnsanalyse",
+      "title": "Religion- og samfunnsanalyse",
+      "description": "Analyse av religionens forhold til lovverk, politikk, offentlighet, organisering og identitet.",
+      "data_forms": ["lovtekst", "statistikk", "institusjonskilde", "forskning"],
+      "canonical_status": "canonical"
+    },
+    {
+      "method_id": "met_religion_komparativ_analyse",
+      "title": "Komparativ religionsanalyse",
+      "description": "Sammenligning av avgrensede praksiser eller institusjoner med tydelige kilder og uten å viske ut interne forskjeller.",
+      "data_forms": ["fagkilder", "case-tabell", "institusjonsdata"],
+      "canonical_status": "canonical"
+    },
+    {
+      "method_id": "met_religion_ruteanalyse",
+      "title": "Pilegrims- og ruteanalyse",
+      "description": "Analyse av hvordan bevegelse, stopp, landskap, mål og historiske spor inngår i en hellig reise.",
+      "data_forms": ["rutekart", "reisebeskrivelse", "kulturminnedata"],
+      "canonical_status": "canonical"
+    },
+    {
+      "method_id": "met_religion_historical_source_criticism",
+      "title": "Historisk kildekritikk",
+      "description": "Systematisk vurdering av kildens datering, proveniens, sjanger, overlevering, avsenderinteresse, representativitet og forholdet mellom direkte observasjon og senere rekonstruksjon.",
+      "data_forms": ["kildeprofil", "provenienslogg", "overleveringslinje", "usikkerhetsmarkør"],
+      "canonical_status": "canonical",
+      "university_matrix_status": "materialized"
+    },
+    {
+      "method_id": "met_religion_comparative_analysis",
+      "title": "Eksplisitt komparativ analyse",
+      "description": "Sammenligning med oppgitt mål, enhet, egenskap, skala, tidsrom og symmetrisk kontekstualisering; avvikende case brukes til å revidere typologien.",
+      "data_forms": ["komparativ matrise", "kontekstprofil", "avvikscase", "revidert typologi"],
+      "canonical_status": "canonical",
+      "university_matrix_status": "materialized"
+    },
+    {
+      "method_id": "met_religion_textual_and_philological_analysis",
+      "title": "Tekstlig og filologisk analyse",
+      "description": "Analyse av ordbruk, tekstvariant, sjanger, historisk språk og oversettelse med bevaring av originalterm og dokumentasjon av semantisk tap.",
+      "data_forms": ["kildeutgave", "tekstvariant", "ordhistorikk", "oversettelsesnotat"],
+      "canonical_status": "canonical",
+      "university_matrix_status": "materialized"
+    },
+    {
+      "method_id": "met_religion_discourse_and_content_analysis",
+      "title": "Diskurs- og innholdsanalyse",
+      "description": "Systematisk analyse av avsender, sjanger, religionskategorier, motbegreper, mønstre og konsekvenser i et eksplisitt avgrenset tekst- eller mediekorpus.",
+      "data_forms": ["korpus", "kodebok", "avsenderprofil", "kontekstnotat"],
+      "canonical_status": "canonical",
+      "university_matrix_status": "materialized"
+    },
+    {
+      "method_id": "met_religion_ritual_and_performance_analysis",
+      "title": "Ritual- og performanceanalyse",
+      "description": "Kontekstuell analyse av ritual som ordnet handling gjennom kropp, lyd, materiale, rom, tid, rolle, gjentakelse, framføring og aktørfortolkning uten å slutte direkte fra norm til utførelse.",
+      "data_forms": ["ritualsekvens", "observasjonsprotokoll", "liturgisk kilde", "aktørforklaring", "rom- og lydnotat"],
+      "canonical_status": "canonical",
+      "university_matrix_status": "materialized"
+    },
+    {
+      "method_id": "met_religion_material_visual_and_architectural_analysis",
+      "title": "Materiell, visuell og arkitektonisk analyse",
+      "description": "Kontekstuell analyse av materiale, produksjon, bilde, rom, orientering, adgang, synslinje, bruksspor og deponeringshistorie uten å gjøre form til direkte avlesning av tro.",
+      "data_forms": ["objektbiografi", "bildeanalyse", "romprofil", "bruksspor", "deponeringssekvens"],
+      "canonical_status": "canonical",
+      "university_matrix_status": "materialized"
+    },
+    {
+      "method_id": "met_religion_anthropological_contextual_analysis",
+      "title": "Antropologisk kontekstanalyse",
+      "description": "Rekonstruksjon av deltakerbegreper, praksis, rolle, situasjon og lokal variasjon gjennom kontekstualiserte kvalitative data uten å gjøre én informant til kollektivstemme.",
+      "data_forms": ["feltnotat", "intervju", "deltakerbegrep", "situasjonsbeskrivelse"],
+      "canonical_status": "canonical",
+      "university_matrix_status": "materialized"
+    },
+    {
+      "method_id": "met_religion_ethnographic_observation",
+      "title": "Etnografisk observasjon",
+      "description": "Systematisk og etisk observasjon av situert religiøs praksis, samhandling, kropp, materialitet, språk og aktørforklaring med tydelig feltrolle og uten å gjøre én arena representativ for et kollektiv.",
+      "data_forms": ["observasjonsprotokoll", "feltnotat", "situasjonskart", "aktørforklaring", "refleksivitetslogg"],
+      "canonical_status": "canonical",
+      "university_matrix_status": "materialized"
+    },
+    {
+      "method_id": "met_religion_qualitative_interview",
+      "title": "Kvalitativt intervju",
+      "description": "Samtykkebasert innsamling og fortolkning av situerte aktørbeskrivelser gjennom åpne spørsmål, strategisk utvalg, kontekstualisering, konfidensialitet og eksplisitt skille mellom individuell stemme og kollektiv påstand.",
+      "data_forms": ["intervjuguide", "samtykkegrunnlag", "transkripsjon", "kodebok", "kontekstprofil"],
+      "canonical_status": "canonical",
+      "university_matrix_status": "materialized"
+    },
+    {
+      "method_id": "met_religion_spatial_route_and_landscape_analysis",
+      "title": "Rom-, rute- og landskapsanalyse",
+      "description": "Analyse av hvordan sted, retning, adgang, bevegelse, nettverk, skala og landskapsendring organiserer religiøs praksis og transmisjon uten å gjøre kartlinje til direkte bevis for erfaring eller påvirkning.",
+      "data_forms": ["rutekart", "stedsbiografi", "adgangsprofil", "nettverksdata", "landskapssekvens"],
+      "canonical_status": "canonical",
+      "university_matrix_status": "materialized"
+    },
+    {
+      "method_id": "met_religion_digital_ethnography_and_media_analysis",
+      "title": "Digital etnografi og medieanalyse",
+      "description": "Etisk analyse av religiøs handling, autoritet, fellesskap og representasjon på digitale plattformer med kontekstuell integritet, plattformkritikk og skille mellom offentlig tilgjengelighet og informert samtykke.",
+      "data_forms": ["plattformprofil", "digitalt feltnotat", "mediekorpus", "samtykkelogg", "sirkulasjonskart"],
+      "canonical_status": "canonical",
+      "university_matrix_status": "materialized"
+    },
+    {
+      "method_id": "met_religion_survey_and_demography",
+      "title": "Survey- og demografianalyse",
+      "description": "Analyse av selvrapportering, populasjonsrammer, identifikasjonskriterier, utvalg, frafall og fordelinger uten å gjøre en operasjonell kategori til en essensiell religiøs eller etnisk identitet.",
+      "data_forms": ["spørreskjema", "utvalgsramme", "sensitivitetstabell", "frafallsanalyse", "personvernplan"],
+      "canonical_status": "canonical",
+      "university_matrix_status": "materialized"
+    },
+    {
+      "method_id": "met_religion_cognitive_and_experimental_analysis",
+      "title": "Kognitiv og eksperimentell analyse",
+      "description": "Forhåndsregistrert prøving av avgrensede mekanismer i persepsjon, hukommelse, kategorisering eller representasjonsvirkning med kontrollbetingelser, skadevern og strenge populasjonsgrenser.",
+      "data_forms": ["eksperimentprotokoll", "stimulussett", "forhåndsregistrering", "effektestimat", "debrief- og skadeplan"],
+      "canonical_status": "canonical",
+      "university_matrix_status": "materialized"
+    },
+    {
+      "method_id": "met_religion_concept_history_and_genealogy",
+      "title": "Begrepshistorie og genealogi",
+      "description": "Historisk analyse av hvordan analytiske kategorier, institusjonelle skiller og kunnskapsordninger oppstår, stabiliseres og får fordelingsvirkninger.",
+      "data_forms": ["historisk korpus", "institusjonskilde", "begrepslinje", "klassifikasjonspraksis"],
+      "canonical_status": "canonical",
+      "university_matrix_status": "materialized"
+    },
+    {
+      "method_id": "met_religion_case_comparison_and_process_tracing",
+      "title": "Case-sammenligning og prosessporing",
+      "description": "Prøving av en eksplisitt mekanisme gjennom daterte mellomledd, rivaliserende forklaringer og et sammenligningscase med annet utfall eller andre betingelser.",
+      "data_forms": ["prosesskjede", "tidslinje", "rivaliserende hypotese", "sammenligningscase"],
+      "canonical_status": "canonical",
+      "university_matrix_status": "materialized"
+    },
+    {
+      "method_id": "met_religion_sociological_institutional_analysis",
+      "title": "Sosiologisk institusjonsanalyse",
+      "description": "Analyse av organisering, embeter, autoritet, medlemskap, finansiering, regelverk, nettverk og forholdet mellom formell institusjon og levd deltakelse i en avgrenset sosial kontekst.",
+      "data_forms": ["organisasjonskart", "medlemskategori", "styringsdokument", "nettverksdata", "implementeringscase"],
+      "canonical_status": "canonical",
+      "university_matrix_status": "materialized"
+    },
+    {
+      "method_id": "met_religion_reflexivity_and_positionality",
+      "title": "Refleksivitet og posisjonalitet",
+      "description": "Dokumentasjon av hvordan tilgang, språk, institusjon, avhengighet, interesser og makt påvirker data og tolkning, koblet til konkrete metodevalg og motprøver.",
+      "data_forms": ["posisjonslogg", "beslutningslogg", "tilgangskart", "tolkningsrevisjon"],
+      "canonical_status": "canonical",
+      "university_matrix_status": "materialized"
+    },
+    {
+      "method_id": "met_religion_research_ethics_privacy_and_representation",
+      "title": "Forskningsetikk, personvern og representasjon",
+      "description": "Løpende vurdering av samtykke, frivillighet, konfidensialitet, kontekstuell integritet, skade, grupperepresentasjon, dataminimering og ansvarlig formidling.",
+      "data_forms": ["risikovurdering", "informasjonsskriv", "samtykkegrunnlag", "publiseringsvurdering"],
+      "canonical_status": "canonical",
+      "university_matrix_status": "materialized"
+    }
+  ]
+}

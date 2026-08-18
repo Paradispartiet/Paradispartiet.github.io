@@ -1,0 +1,505 @@
+/* ============================================================
+   Civication Commercial (Shop) – stable runtime
+   - Gir window.HG_CiviShop med getInv(), getPacks(), buyPack()
+   - Lagrer inventory i localStorage
+   - Filtrerer synlige butikker/pakker via History Go → Civication access
+   - Leser valgt Civication-nabolag som bolig-/butikktilgang
+   ============================================================ */
+
+(function () {
+  /**
+   * @typedef {Record<string, any>} CiviCommercialRecord
+   * @typedef {CiviCommercialRecord & { balance?: number, last_tick_iso?: string | null }} CiviCommercialWallet
+   * @typedef {CiviCommercialRecord & { packs?: Record<string, boolean>, ownedItems?: string[], style_counts?: Record<string, number> }} CiviCommercialInventory
+   * @typedef {CiviCommercialRecord & { id?: string, store_id?: string, price_pc?: number, price?: number, styles?: unknown[], tags?: unknown[], effects?: CiviCommercialRecord }} CiviCommercialPack
+   * @typedef {CiviCommercialRecord & { id?: string, type?: string }} CiviCommercialStore
+   */
+
+  const LS_INV = "hg_pc_inventory_v1";
+  const LS_WALLET = "hg_pc_wallet_v1";
+
+  /**
+   * @param {string} k
+   * @param {any} fallback
+   * @returns {any}
+   */
+  const readJSON = (k, fallback) => {
+    try {
+      const raw = localStorage.getItem(k);
+      return raw ? JSON.parse(raw) : fallback;
+    } catch {
+      return fallback;
+    }
+  };
+
+  /**
+   * @param {string} k
+   * @param {any} v
+   * @returns {void}
+   */
+  const writeJSON = (k, v) =>
+    localStorage.setItem(k, JSON.stringify(v));
+
+  // ============================================================
+  // WALLET
+  // ============================================================
+
+  /**
+   * @param {CiviCommercialWallet | CiviCommercialRecord | number | null | undefined} wallet
+   * @returns {CiviCommercialWallet}
+   */
+  function normalizeWallet(wallet) {
+    const normalizeBalance = (value) => {
+      const n = Number(value || 0);
+      return Number.isFinite(n) ? n : 0;
+    };
+
+    if (typeof wallet === "number") {
+      return { balance: normalizeBalance(wallet), last_tick_iso: null };
+    }
+
+    if (!wallet || typeof wallet !== "object") {
+      return { balance: 0, last_tick_iso: null };
+    }
+
+    return {
+      balance: normalizeBalance(wallet.balance ?? wallet.pc ?? 0),
+      last_tick_iso: wallet.last_tick_iso || null
+    };
+  }
+
+  /**
+   * @returns {CiviCommercialWallet}
+   */
+  function getLegacyWallet() {
+    return normalizeWallet(readJSON(LS_WALLET, {
+      balance: 0,
+      last_tick_iso: null
+    }));
+  }
+
+  /**
+   * @returns {CiviCommercialWallet}
+   */
+  function getWallet() {
+    const state = window.CivicationState;
+
+    if (state && typeof state.getWallet === "function") {
+      const stateWallet = normalizeWallet(state.getWallet());
+      const legacyWallet = getLegacyWallet();
+
+      if (stateWallet.balance === 0 && legacyWallet.balance > 0) {
+        stateWallet.balance = legacyWallet.balance;
+        if (typeof state.updateWallet === "function") {
+          state.updateWallet(stateWallet);
+        }
+      }
+
+      return stateWallet;
+    }
+
+    return getLegacyWallet();
+  }
+
+  /**
+   * @param {CiviCommercialWallet | CiviCommercialRecord | number | null | undefined} wallet
+   * @returns {void}
+   */
+  function setWallet(wallet) {
+    const next = normalizeWallet(wallet);
+    const state = window.CivicationState;
+
+    if (state && typeof state.updateWallet === "function") {
+      state.updateWallet(next);
+    }
+
+    const legacyWallet = readJSON(LS_WALLET, {});
+    writeJSON(LS_WALLET, {
+      ...(legacyWallet && typeof legacyWallet === "object" ? legacyWallet : {}),
+      balance: next.balance,
+      pc: next.balance,
+      last_tick_iso: next.last_tick_iso || null
+    });
+  }
+
+  window.getPCWallet = function () {
+    return Number(getWallet().balance || 0);
+  };
+
+  window.savePCWallet = function (wallet) {
+    setWallet(wallet);
+    return getWallet();
+  };
+
+  // ============================================================
+  // INVENTORY
+  // ============================================================
+
+  /**
+   * @returns {CiviCommercialInventory}
+   */
+  function getInv() {
+
+    /** @type {CiviCommercialInventory | CiviCommercialRecord | null} */
+    const inv = readJSON(LS_INV, null);
+
+    if (inv && typeof inv === "object") {
+      inv.packs = inv.packs && typeof inv.packs === "object" ? inv.packs : {};
+      inv.ownedItems = Array.isArray(inv.ownedItems) ? inv.ownedItems.map(String) : [];
+      inv.style_counts = inv.style_counts && typeof inv.style_counts === "object" ? inv.style_counts : {};
+      return inv;
+    }
+
+    const fresh = { packs: {}, ownedItems: [], style_counts: {} };
+    writeJSON(LS_INV, fresh);
+    return fresh;
+  }
+
+  /**
+   * @param {CiviCommercialInventory | CiviCommercialRecord} inv
+   * @returns {void}
+   */
+  function saveInv(inv) {
+    writeJSON(LS_INV, inv);
+  }
+
+  // ============================================================
+  // DATA LOADING
+  // ============================================================
+
+  /**
+   * @returns {Promise<CiviCommercialPack[]>}
+   */
+  async function tryLoadPacks() {
+
+    const paths = [
+      "data/Civication/commercial_packs.json",
+      "data/civication_packs.json",
+      "data/commercial_packs.json",
+      "data/packs.json"
+    ];
+
+    for (const p of paths) {
+      try {
+
+        if (window.DataHub?.fetchJSON) {
+          /** @type {CiviCommercialPack[] | { packs?: CiviCommercialPack[] } | null} */
+          const j = await window.DataHub.fetchJSON(p);
+          if (Array.isArray(j)) return j;
+          if (j && Array.isArray(j.packs)) return j.packs;
+        } else {
+          const r = await fetch(p, { cache: "no-store" });
+          if (!r.ok) continue;
+          const j = await r.json();
+          if (Array.isArray(j)) return j;
+          if (j && Array.isArray(j.packs)) return j.packs;
+        }
+
+      } catch {}
+    }
+
+    return [];
+  }
+
+  /**
+   * @returns {Promise<CiviCommercialStore[]>}
+   */
+  async function tryLoadStores() {
+    const paths = [
+      "data/Civication/stores.json",
+      "data/stores.json"
+    ];
+
+    for (const p of paths) {
+      try {
+        if (window.DataHub?.fetchJSON) {
+          /** @type {CiviCommercialStore[] | { stores?: CiviCommercialStore[] } | null} */
+          const j = await window.DataHub.fetchJSON(p);
+          if (Array.isArray(j)) return j;
+          if (j && Array.isArray(j.stores)) return j.stores;
+        } else {
+          const r = await fetch(p, { cache: "no-store" });
+          if (!r.ok) continue;
+          const j = await r.json();
+          if (Array.isArray(j)) return j;
+          if (j && Array.isArray(j.stores)) return j.stores;
+        }
+      } catch {}
+    }
+
+    return [];
+  }
+
+  /** @type {Promise<CiviCommercialPack[]> | null} */
+  let _packsPromise = null;
+  /** @type {Promise<CiviCommercialStore[]> | null} */
+  let _storesPromise = null;
+
+  /**
+   * @returns {Promise<CiviCommercialPack[]>}
+   */
+  function getPacks() {
+    if (!_packsPromise) {
+      _packsPromise = tryLoadPacks();
+    }
+    return _packsPromise;
+  }
+
+  /**
+   * @returns {Promise<CiviCommercialStore[]>}
+   */
+  function getStores() {
+    if (!_storesPromise) {
+      _storesPromise = tryLoadStores();
+    }
+    return _storesPromise;
+  }
+
+  // ============================================================
+  // ACCESS FILTERING
+  // ============================================================
+
+  function getSelectedNeighborhoodAccess() {
+    const access = window.CivicationHome?.getSelectedDistrictAccess?.();
+
+    return access && typeof access === "object"
+      ? access
+      : { housing: [], store: [] };
+  }
+
+  function getStoreAccessPool() {
+    const bridge = window.CivicationPlaceAccessBridge;
+    const bucket = /** @type {unknown[]} */ (
+      bridge?.getBucket ? bridge.getBucket("store") : []
+    );
+    const neighborhood = /** @type {any} */ (getSelectedNeighborhoodAccess());
+    const selectedStore = normalizeList(neighborhood?.store);
+
+    return Array.from(new Set(bucket.map(String).concat(selectedStore)));
+  }
+
+  function getHousingAccessPool() {
+    const bridge = window.CivicationPlaceAccessBridge;
+    const bucket = /** @type {unknown[]} */ (
+      bridge?.getBucket ? bridge.getBucket("housing") : []
+    );
+    const neighborhood = /** @type {any} */ (getSelectedNeighborhoodAccess());
+    const selectedHousing = normalizeList(neighborhood?.housing);
+
+    return Array.from(new Set(bucket.map(String).concat(selectedHousing)));
+  }
+
+  /**
+   * @param {unknown[]} xs
+   * @returns {string[]}
+   */
+  function normalizeList(xs) {
+    return Array.isArray(xs) ? xs.map(String).filter(Boolean) : [];
+  }
+
+  /**
+   * @param {CiviCommercialStore | CiviCommercialRecord} store
+   * @returns {boolean}
+   */
+  function storeMatchesHistoryGoAccess(store) {
+    const pool = new Set(getStoreAccessPool().map(String));
+    const housing = new Set(getHousingAccessPool().map(String));
+
+    if (!pool.size && !housing.size) return true;
+
+    const storeType = String(store?.type || "").trim();
+    const storeId = String(store?.id || "").trim();
+
+    const mapping = {
+      street_shop_generic: ["clothing"],
+      work_shop_generic: ["equipment", "clothing"],
+      hifi_shop_generic: ["audio"],
+      car_dealer_generic: ["electronics", "equipment"],
+      housing_market: ["home", "stable_home"]
+    };
+
+    const wanted = mapping[storeId] || mapping[storeType] || [storeType];
+    if (storeId === "housing_market") {
+      return wanted.some((k) => housing.has(String(k)) || pool.has(String(k)));
+    }
+
+    return wanted.some((k) => pool.has(String(k)));
+  }
+
+  /**
+   * @param {CiviCommercialPack | CiviCommercialRecord} pack
+   * @returns {boolean}
+   */
+  function hasRequiredNeighborhoodAccess(pack) {
+    const housing = new Set(getHousingAccessPool().map(String));
+    const required = normalizeList(pack?.gating?.requires_neighborhood_any);
+    if (!required.length) return true;
+
+    const translated = required.map((key) => {
+      if (key === "nabolag_basic_unlocked") return "stable_home";
+      if (key === "bilforhandler_distrikt") return "central_comfort";
+      return key;
+    });
+
+    return translated.some((key) => housing.has(String(key)));
+  }
+
+  /**
+   * @param {string} badgeId
+   * @returns {string[]}
+   */
+  function getBadgeIdAliases(badgeId) {
+    const id = String(badgeId || "").trim();
+    if (!id) return [];
+
+    const aliases = {
+      populaerkultur: "popkultur",
+      popkultur: "populaerkultur",
+      næringsliv: "naeringsliv",
+      naeringsliv: "næringsliv"
+    };
+
+    return Array.from(new Set([id, aliases[id]].filter(Boolean)));
+  }
+
+  /**
+   * @param {unknown} merit
+   * @returns {number}
+   */
+  function getMeritPoints(merit) {
+    const points = merit && typeof merit === "object"
+      ? Number(/** @type {{ points?: unknown }} */ (merit).points)
+      : Number(merit);
+
+    return Number.isFinite(points) ? points : 0;
+  }
+
+  /**
+   * @param {CiviCommercialPack | CiviCommercialStore | CiviCommercialRecord} item
+   * @returns {boolean}
+   */
+  function hasRequiredBadgeAccess(item) {
+    const required = normalizeList(item?.gating?.requires_badges_any);
+    if (!required.length) return true;
+
+    const merits = readJSON("merits_by_category", {});
+    const meritMap = merits && typeof merits === "object" ? merits : {};
+
+    return required.some((badgeId) => (
+      getBadgeIdAliases(badgeId).some((alias) => (
+        getMeritPoints(/** @type {Record<string, unknown>} */ (meritMap)[alias]) > 0
+      ))
+    ));
+  }
+
+  /**
+   * @returns {Promise<CiviCommercialStore[]>}
+   */
+  async function getVisibleStores() {
+    const stores = await getStores();
+    return stores.filter((store) => (
+      storeMatchesHistoryGoAccess(store) && hasRequiredBadgeAccess(store)
+    ));
+  }
+
+  /**
+   * @returns {Promise<CiviCommercialPack[]>}
+   */
+  async function getVisiblePacks() {
+    const [packs, visibleStores] = await Promise.all([getPacks(), getVisibleStores()]);
+    const allowedStoreIds = new Set(visibleStores.map((s) => String(s?.id || "")));
+
+    return packs.filter((pack) => {
+      const storeId = String(pack?.store_id || "");
+      if (storeId && !allowedStoreIds.has(storeId)) return false;
+      if (!hasRequiredNeighborhoodAccess(pack)) return false;
+      if (!hasRequiredBadgeAccess(pack)) return false;
+      return true;
+    });
+  }
+
+  // ============================================================
+  // BUY PACK
+  // ============================================================
+
+  /**
+   * @param {string} packId
+   * @returns {Promise<CiviCommercialRecord>}
+   */
+  async function buyPack(packId) {
+
+    const packs = await getVisiblePacks();
+    const pack = packs.find(p => String(p.id) === String(packId));
+
+    if (!pack) {
+      return { ok: false, reason: "PACK_NOT_FOUND" };
+    }
+
+    const price = Number(pack.price_pc ?? pack.price ?? 0);
+
+    const wallet = getWallet();
+    const balance = Number(wallet.balance || 0);
+
+    if (balance < price) {
+      return {
+        ok: false,
+        reason: "NOT_ENOUGH_PC",
+        balance,
+        price
+      };
+    }
+
+    /** @type {CiviCommercialInventory} */
+    const inv = getInv();
+    const key = String(pack.id);
+
+    if (!inv.packs) inv.packs = {};
+    if (!Array.isArray(inv.ownedItems)) inv.ownedItems = [];
+    if (!inv.style_counts) inv.style_counts = {};
+
+    inv.packs[key] = true;
+    if (!inv.ownedItems.includes(key)) inv.ownedItems.push(key);
+
+    const styles =
+      Array.isArray(pack.styles)
+        ? pack.styles
+        : (Array.isArray(pack.tags)
+            ? pack.tags
+            : (Array.isArray(pack.effects?.style_tags_gain) ? pack.effects.style_tags_gain : []));
+
+    for (const s of styles) {
+      const st = String(s);
+      if (!st) continue;
+      inv.style_counts[st] =
+        Number(inv.style_counts[st] || 0) + 1;
+    }
+
+    wallet.balance = balance - price;
+    setWallet(wallet);
+
+    saveInv(inv);
+
+    window.dispatchEvent(new Event("updateProfile"));
+
+    return {
+      ok: true,
+      packId: key,
+      newBalance: wallet.balance
+    };
+  }
+
+  // ============================================================
+  // EXPORT
+  // ============================================================
+
+  window.HG_CiviShop = {
+    getWallet,
+    getInv,
+    getPacks,
+    getStores,
+    getVisibleStores,
+    getVisiblePacks,
+    buyPack
+  };
+
+})();

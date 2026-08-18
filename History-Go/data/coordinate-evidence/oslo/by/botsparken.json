@@ -1,0 +1,66 @@
+{
+  "placeId": "botsparken",
+  "placeFile": "data/places/by/oslo/places/botsparken.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.909607,
+    "lon": 10.768977,
+    "r": 170,
+    "coordStatus": "verified_geometry",
+    "coordSource": "Oslo kommune – Grønland park, del av Klosterenga",
+    "coordType": "park_anchor",
+    "coordNote": "Representativt parkanker i Grønlands park/Botsparken, den vestlige delen av Klosterenga-systemet. Oslo kommune dokumenterer Grønland park som del av Klosterenga; punktet representerer parkrommet og ikke Botsfengselet eller Politihuset."
+  },
+  "identity": {
+    "currentName": "Botsparken",
+    "resolvedIdentity": "Grønlands park / Botsparken mellom Botsfengselet, Grønlandsleiret, Borggata og Åkebergveien",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "park",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [
+    "stabil kildeidentitet",
+    "objekttilpasset representasjonsanker",
+    "tydelig avgrensning mot nærliggende canonical steder"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "municipality",
+      "sourceName": "Oslo kommune – Grønland park, del av Klosterenga",
+      "sourceUrl": "https://www.oslo.kommune.no/natur-kultur-og-fritid/tur-og-friluftsliv/parker-og-lekeplasser/gronland-park-del-av-klosterenga",
+      "sourceObjectId": "oslo-kommune:park:gronland-park-klosterenga",
+      "sourceQuality": "official_area_definition",
+      "finding": "Oslo kommune dokumenterer Grønland park som del av Klosterenga og dermed den kommunale parkidentiteten som Botsparken-recorden representerer.",
+      "canVerifyCoordinate": true,
+      "reason": "Representativt parkanker i Grønlands park/Botsparken, den vestlige delen av Klosterenga-systemet. Oslo kommune dokumenterer Grønland park som del av Klosterenga; punktet representerer parkrommet og ikke Botsfengselet eller Politihuset."
+    }
+  ],
+  "addressCandidates": [],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "municipality",
+      "sourceObjectId": "oslo-kommune:park:gronland-park-klosterenga",
+      "canApplyToPlace": true
+    }
+  ],
+  "geometryCandidates": [],
+  "coordinateCandidates": [
+    {
+      "lat": 59.909607,
+      "lon": 10.768977,
+      "coordRole": "area_anchor",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Kildekontrakt og representasjonsanker er anvendt på canonical place."
+  },
+  "notes": [
+    "Representativt parkanker i Grønlands park/Botsparken, den vestlige delen av Klosterenga-systemet. Oslo kommune dokumenterer Grønland park som del av Klosterenga; punktet representerer parkrommet og ikke Botsfengselet eller Politihuset."
+  ]
+}

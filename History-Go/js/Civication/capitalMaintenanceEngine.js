@@ -1,0 +1,361 @@
+(function () {
+  "use strict";
+
+
+/**
+ * @typedef {Record<string, any>} CiviCapitalMaintenanceRecord
+ * @typedef {CiviCapitalMaintenanceRecord & { maintenanceDays?: number, decayPerDay?: number }} CiviCapitalMaintenanceConfig
+ * @typedef {Record<string, CiviCapitalMaintenanceConfig>} CiviCapitalMaintenanceProfile
+ * @typedef {CiviCapitalMaintenanceRecord & {
+ *   economic?: number, cultural?: number, social?: number, symbolic?: number,
+ *   political?: number, institutional?: number, subculture?: number
+ * }} CiviCapitalMaintenanceVector
+ * @typedef {CiviCapitalMaintenanceRecord & {
+ *   version?: number,
+ *   lastAppliedAt?: number,
+ *   lastActive?: CiviCapitalMaintenanceRecord,
+ *   log?: any[]
+ * }} CiviCapitalMaintenanceMeta
+ */
+
+  // Keys
+  const LS_CAPITAL_VALUES = "hg_capital_v1";          // eksisterende (tall per kapital)
+  const LS_MAINT_META     = "hg_capital_maint_v1";    // ny: lastActive + lastAppliedAt + log
+
+  const DAY_MS = 24 * 60 * 60 * 1000;
+
+  // Default profil (differensiert)
+  // maintenanceDays: hvor lenge stabilt uten relevant aktivitet
+  // decayPerDay: hvor mye som trekkes per dag etter maintenanceDays
+  const DEFAULT_PROFILE = {
+    economic:      { maintenanceDays: 14, decayPerDay: 0.4 },
+    cultural:      { maintenanceDays: 21, decayPerDay: 0.3 },
+    social:        { maintenanceDays: 14, decayPerDay: 0.4 },
+    symbolic:      { maintenanceDays: 30, decayPerDay: 0.2 },
+
+    // eksisterer hos deg i noen modeller / map
+    institutional: { maintenanceDays: 10, decayPerDay: 0.6 },
+    subculture:    { maintenanceDays: 7,  decayPerDay: 0.8 },
+
+    // CivicationUI viser "political" (ikke institutional)
+    political:     { maintenanceDays: 10, decayPerDay: 0.6 }
+  };
+
+  // Status terskler (0..1 av maintenanceDays)
+  const COOLING_AT = 0.70;
+
+  // Optional overrides:
+  // window.CIVI_CAPITAL_MAINT_PROFILE = { economic:{maintenanceDays:..,decayPerDay:..}, ... }
+  /**
+   * @returns {CiviCapitalMaintenanceProfile}
+   */
+  function getProfile() {
+    /** @type {CiviCapitalMaintenanceRecord | undefined} */
+    const o = window.CIVI_CAPITAL_MAINT_PROFILE;
+    if (!o || typeof o !== "object") return DEFAULT_PROFILE;
+
+    /** @type {CiviCapitalMaintenanceProfile} */
+    const merged = { ...DEFAULT_PROFILE };
+    Object.keys(o).forEach((k) => {
+      /** @type {CiviCapitalMaintenanceConfig | undefined} */
+      const v = o[k];
+      if (!v || typeof v !== "object") return;
+      merged[k] = {
+        maintenanceDays: Number.isFinite(v.maintenanceDays) ? v.maintenanceDays : merged[k]?.maintenanceDays,
+        decayPerDay: Number.isFinite(v.decayPerDay) ? v.decayPerDay : merged[k]?.decayPerDay
+      };
+    });
+    return merged;
+  }
+
+  function clampMin0(n) {
+    const x = Number(n);
+    if (!Number.isFinite(x)) return 0;
+    return Math.max(0, x);
+  }
+
+  /**
+   * @param {string | null} raw
+   * @param {CiviCapitalMaintenanceRecord} fallback
+   * @returns {CiviCapitalMaintenanceRecord}
+   */
+  function safeParse(raw, fallback) {
+    try {
+      const v = JSON.parse(raw);
+      return v && typeof v === "object" ? v : fallback;
+    } catch {
+      return fallback;
+    }
+  }
+
+  /**
+   * @returns {CiviCapitalMaintenanceVector}
+   */
+  function loadCapitalValues() {
+  const raw = localStorage.getItem(LS_CAPITAL_VALUES);
+  /** @type {CiviCapitalMaintenanceVector} */
+  const v = safeParse(raw, {});
+
+  // ensure keys (opprydding: én kapital-liste)
+  const TYPES = ["economic","cultural","social","symbolic","political","institutional","subculture"];
+  TYPES.forEach(t => {
+    if (!Number.isFinite(Number(v[t]))) v[t] = 0;
+  });
+
+  return v;
+}
+
+  function saveCapitalValues(obj) {
+    try { localStorage.setItem(LS_CAPITAL_VALUES, JSON.stringify(obj || {})); } catch {}
+  }
+
+  /**
+   * @returns {CiviCapitalMaintenanceMeta}
+   */
+  function loadMeta() {
+    const raw = localStorage.getItem(LS_MAINT_META);
+    return safeParse(raw, {});
+  }
+
+  function saveMeta(meta) {
+    try { localStorage.setItem(LS_MAINT_META, JSON.stringify(meta || {})); } catch {}
+  }
+
+  /**
+   * @param {CiviCapitalMaintenanceRecord | null | undefined} meta
+   * @param {number} nowMs
+   * @returns {CiviCapitalMaintenanceMeta}
+   */
+  function ensureMeta(meta, nowMs) {
+    const m = meta && typeof meta === "object" ? meta : {};
+    if (!m.version) m.version = 1;
+    if (!Number.isFinite(m.lastAppliedAt)) m.lastAppliedAt = nowMs;
+    if (!m.lastActive || typeof m.lastActive !== "object") m.lastActive = {};
+    if (!Array.isArray(m.log)) m.log = [];
+    return m;
+  }
+
+  function daysBetween(aMs, bMs) {
+    return (bMs - aMs) / DAY_MS;
+  }
+
+  // stable | cooling | decaying
+  function getCapitalStatus(type, values, meta, profile, nowMs) {
+    const cfg = profile[type];
+    if (!cfg) return { state: "stable", daysInactive: 0, maintenanceDays: 0 };
+
+    const lastActive = Number.isFinite(meta.lastActive?.[type])
+      ? meta.lastActive[type]
+      : nowMs;
+
+    const daysInactive = Math.max(0, daysBetween(lastActive, nowMs));
+    const maintenanceDays = Math.max(0, Number(cfg.maintenanceDays || 0));
+
+    if (maintenanceDays === 0) {
+      return { state: "stable", daysInactive, maintenanceDays };
+    }
+
+    if (daysInactive < maintenanceDays * COOLING_AT) {
+      return { state: "stable", daysInactive, maintenanceDays };
+    }
+
+    if (daysInactive < maintenanceDays) {
+      return { state: "cooling", daysInactive, maintenanceDays };
+    }
+
+    return { state: "decaying", daysInactive, maintenanceDays };
+  }
+
+  // Apply decay only for the time slice since lastAppliedAt (no double decay)
+  function applyMaintenance(nowMs = Date.now()) {
+    const profile = getProfile();
+    const values = loadCapitalValues();
+    const meta = ensureMeta(loadMeta(), nowMs);
+
+    const lastAppliedAt = meta.lastAppliedAt;
+    if (!Number.isFinite(lastAppliedAt)) {
+      meta.lastAppliedAt = nowMs;
+      saveMeta(meta);
+      return { ok: true, changed: false, values, meta };
+    }
+
+    // If no time has passed, do nothing
+    if (nowMs <= lastAppliedAt) {
+      return { ok: true, changed: false, values, meta };
+    }
+
+    let changed = false;
+
+    Object.keys(profile).forEach((type) => {
+      const cfg = profile[type];
+      if (!cfg) return;
+
+      const maintenanceDays = Number(cfg.maintenanceDays || 0);
+      const decayPerDay = Number(cfg.decayPerDay || 0);
+      if (maintenanceDays <= 0 || decayPerDay <= 0) return;
+
+      const lastActive = Number.isFinite(meta.lastActive?.[type])
+        ? meta.lastActive[type]
+        : nowMs;
+
+      const decayStartAt = lastActive + maintenanceDays * DAY_MS;
+
+      // decay only for the overlap: [lastAppliedAt, now] ∩ [decayStartAt, now]
+      const effectiveStart = Math.max(lastAppliedAt, decayStartAt);
+      if (effectiveStart >= nowMs) return;
+
+      const decayDays = (nowMs - effectiveStart) / DAY_MS;
+      if (decayDays <= 0) return;
+
+      const cur = Number(values[type] || 0);
+      const next = clampMin0(cur - decayPerDay * decayDays);
+
+      if (next !== cur) {
+        values[type] = next;
+        changed = true;
+      }
+    });
+
+    meta.lastAppliedAt = nowMs;
+    saveMeta(meta);
+
+    if (changed) {
+      saveCapitalValues(values);
+      window.dispatchEvent(new Event("updateProfile"));
+    }
+
+    return { ok: true, changed, values, meta };
+  }
+
+  // Maintain via quiz/purchase/etc.
+  /**
+   * @param {string} type
+   * @param {number} [delta=1]
+   * @param {CiviCapitalMaintenanceRecord} [opts={}]
+   */
+  function maintain(type, delta = 1, opts = {}) {
+  const nowMs = Number.isFinite(opts.nowMs) ? opts.nowMs : Date.now();
+  const t = String(type || "").trim();
+  if (!t) return { ok: false, reason: "missing_type" };
+
+  const profile = getProfile();
+  const values = loadCapitalValues();
+  const meta = ensureMeta(loadMeta(), nowMs);
+
+  const cur = Number(values[t] || 0);
+
+  // 🔷 Identity boost
+  /** @type {number} */
+  let boost = 1;
+  if (window.HG_IdentityCore?.getBoost) {
+    const rawBoost = Number(window.HG_IdentityCore.getBoost(t));
+    boost = Number.isFinite(rawBoost) ? rawBoost : 1;
+  }
+
+  const parsedDelta = Number(delta);
+  const effectiveDelta = (Number.isFinite(parsedDelta) ? parsedDelta : 0) * boost;
+  const next = cur + effectiveDelta;
+
+  values[t] = next;
+  meta.lastActive[t] = nowMs;
+
+  meta.log.unshift({
+    at: new Date(nowMs).toISOString(),
+    type: t,
+    delta: effectiveDelta,
+    source: String(opts.source || "manual")
+  });
+  meta.log = meta.log.slice(0, 100);
+
+  saveCapitalValues(values);
+  saveMeta(meta);
+
+  window.dispatchEvent(new Event("updateProfile"));
+
+  return { ok: true, type: t, value: values[t] };
+}
+
+  function touch(type, opts = {}) {
+    return maintain(type, 0, { ...opts, source: opts.source || "touch" });
+  }
+
+  // Visible status summary (A)
+  function getStatuses(nowMs = Date.now()) {
+    const profile = getProfile();
+    const values = loadCapitalValues();
+    const meta = ensureMeta(loadMeta(), nowMs);
+
+    const out = {};
+    Object.keys(profile).forEach((type) => {
+      out[type] = {
+        value: Number(values[type] || 0),
+        ...getCapitalStatus(type, values, meta, profile, nowMs)
+      };
+    });
+
+    return out;
+  }
+
+  // Convenience: map quiz category → maintain capital types (optional)
+  // Override with window.CIVI_QUIZ_CAPITAL_MAP if you want.
+  const DEFAULT_QUIZ_MAP = {
+  historie:       ["symbolic", "institutional", "cultural", "political"],
+  vitenskap:      ["cultural", "institutional", "symbolic", "economic"],
+  kunst:          ["cultural", "symbolic", "social", "economic"],
+  by:             ["institutional", "symbolic", "political", "economic"],
+  musikk:         ["symbolic", "social", "cultural", "economic"],
+  litteratur:     ["cultural", "symbolic", "institutional", "social"],
+  natur:          ["cultural", "institutional", "political", "symbolic"],
+  sport:          ["social", "symbolic", "economic", "institutional"],
+  politikk:       ["political", "institutional", "symbolic", "social"],
+  naeringsliv:    ["economic", "institutional", "symbolic", "political"],
+  populaerkultur: ["symbolic", "social", "economic", "subculture"],
+  subkultur:      ["subculture", "symbolic", "social", "cultural"],
+  film_tv:        ["symbolic", "cultural", "social", "economic"],
+  teater:         ["symbolic", "cultural", "social", "institutional"],
+  media:          ["symbolic", "political", "institutional", "social"],
+  psykologi:      ["cultural", "institutional", "social", "symbolic"]
+};
+
+  function maintainFromQuiz(categoryId, delta = 1, opts = {}) {
+  const map = (window.CIVI_QUIZ_CAPITAL_MAP && typeof window.CIVI_QUIZ_CAPITAL_MAP === "object")
+    ? window.CIVI_QUIZ_CAPITAL_MAP
+    : DEFAULT_QUIZ_MAP;
+
+  const key = String(categoryId || "").trim();
+  const types = Array.isArray(map[key]) ? map[key] : null;
+  if (!types || !types.length) {
+    return { ok: false, reason: "no_mapping", categoryId: key };
+  }
+
+  const weights = [1.0, 0.6, 0.3, 0.15];
+  const res = [];
+
+  types.forEach((t, idx) => {
+    const w = Number(weights[idx] || 0.15);
+    res.push(
+      maintain(t, Number(delta || 0) * w, {
+        ...opts,
+        source: opts.source || "quiz"
+      })
+    );
+  });
+
+  return { ok: true, categoryId: key, results: res };
+}
+
+  // Public API
+  window.HG_CapitalMaintenance = {
+    getProfile,
+    applyMaintenance,
+    maintain,
+    touch,
+    getStatuses,
+    maintainFromQuiz
+  };
+
+  // Default: apply once on load/open (safe, idempotent)
+  // You can also call applyMaintenance() from your "onAppOpen" hook.
+  try { applyMaintenance(Date.now()); } catch {}
+
+})();

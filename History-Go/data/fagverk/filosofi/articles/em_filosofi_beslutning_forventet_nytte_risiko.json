@@ -1,0 +1,272 @@
+{
+  "schema": "history_go_fagverk_filosofi_article_v1",
+  "version": "1.0.0",
+  "subject_id": "filosofi",
+  "id": "em_filosofi_beslutning_forventet_nytte_risiko",
+  "title": "Beslutningsteori: forventet nytte, risiko og usikkerhet",
+  "domain_id": "sannsynlighet_beslutning",
+  "area_id": "filosofi_sannsynlighet_beslutning",
+  "level": 3,
+  "status": "complete",
+  "editorial_quality": "university_depth_reviewed",
+  "canonical_definition": "Hva rasjonelt valg under usikkerhet krever når alternativer har forskjellige utfall, sannsynligheter og verdier.",
+  "concept_ids": [
+    "forventet_nytte",
+    "preferanseorden",
+    "usikkerhetsaversjon"
+  ],
+  "method_ids": [
+    "met_filosofi_beslutningsteoretisk_analyse",
+    "met_filosofi_normativ_sammenligning",
+    "met_filosofi_tankeeksperiment"
+  ],
+  "theory_hook_ids": [
+    "fil_sannsynlighet_beslutning_02"
+  ],
+  "thinker_refs": [
+    "john_von_neumann",
+    "oskar_morgenstern",
+    "leonard_savage",
+    "daniel_ellsberg"
+  ],
+  "primary_work_refs": [
+    "Theory of Games and Economic Behavior",
+    "The Foundations of Statistics",
+    "Risk, Ambiguity, and the Savage Axioms"
+  ],
+  "source_ids": [
+    "sep-decision-theory",
+    "sep-causal-decision",
+    "sep-risk"
+  ],
+  "claims": [
+    {
+      "id": "em_filosofi_beslutning_forventet_nytte_risiko_claim_problem",
+      "type": "problem_framing",
+      "text": "Når et valg har flere mulige utfall, trenger rasjonalitet en regel for hvordan verdi og sannsynlighet kombineres. Forventet nytte gir en elegant modell, men paradokser og usikkerhet om selve sannsynlighetene viser at rasjonelt valg ikke alltid ser ut til å følge én enkel maksimumsregel.",
+      "source_ids": [
+        "sep-decision-theory",
+        "sep-causal-decision",
+        "sep-risk"
+      ]
+    },
+    {
+      "id": "em_filosofi_beslutning_forventet_nytte_risiko_claim_position",
+      "type": "position_reconstruction",
+      "text": "P1: Von Neumann og Morgenstern viser at dersom preferanser over lotterier tilfredsstiller bestemte aksiomer, kan de representeres som maksimering av forventet nytte. Teoremet gir en sterk forbindelse mellom kvalitative rasjonalitetsbetingelser og en kvantitativ representasjon, men begrunnelsen hviler på aksiomene.",
+      "source_ids": [
+        "sep-decision-theory",
+        "sep-causal-decision",
+        "sep-risk"
+      ]
+    },
+    {
+      "id": "em_filosofi_beslutning_forventet_nytte_risiko_claim_rival",
+      "type": "rival_position",
+      "text": "Innvending: Hvis enhver systematisk avvikstype fører til en ny beslutningsmodell, mister teorien normativ kraft. En enkel forventet-nytte-standard kan være nettopp det som trengs for å diagnostisere menneskelige bias i stedet for å rasjonalisere dem.",
+      "source_ids": [
+        "sep-decision-theory",
+        "sep-causal-decision",
+        "sep-risk"
+      ]
+    },
+    {
+      "id": "em_filosofi_beslutning_forventet_nytte_risiko_claim_distinction",
+      "type": "concept_distinction",
+      "text": "Forventet nytte betegner den sannsynlighetsvektede nytten av mulige utfall for et handlingsalternativ, brukt i teorier der rasjonelt valg representeres som maksimering av forventet verdi. Forventet nytte må skilles fra forventet pengeverdi; nytte kan representere preferanser og trenger ikke øke lineært med penger eller andre målbare goder. I denne artikkelen er funksjonen presis: Begrepet gjør von Neumann–Morgenstern og Savage-modeller sammenlignbare og viser hvilke aksiomer som må være oppfylt for representasjonen. Det betyr at begrepet må gjøre arbeid i argumentet og kunne endre vurderingen av en rival, ikke bare stå i en ordliste.",
+      "source_ids": [
+        "sep-decision-theory",
+        "sep-causal-decision",
+        "sep-risk"
+      ]
+    },
+    {
+      "id": "em_filosofi_beslutning_forventet_nytte_risiko_claim_history",
+      "type": "historical_position",
+      "text": "John von Neumann brukes her gjennom Theory of Games and Economic Behavior, ikke som navnegjetting. Von Neumann og Morgensterns Theory of Games and Economic Behavior gir den klassiske forventet-nytte-representasjonen for risikable lotterier. Resultatet må leses som et teorem under aksiomer, ikke som en psykologisk lov om faktisk menneskelig valg. Sammenligningen er relevant fordi posisjonen angriper eller bærer et bestemt premiss i artikkelens hoveddebatt.",
+      "source_ids": [
+        "sep-decision-theory",
+        "sep-causal-decision",
+        "sep-risk"
+      ]
+    },
+    {
+      "id": "em_filosofi_beslutning_forventet_nytte_risiko_claim_method",
+      "type": "methodological",
+      "text": "Beslutningsteoretisk analyse er hovedgrepet. Bygg en beslutningsmatrise med handlinger, tilstander, utfall, sannsynligheter og nytte. Marker deretter om sannsynlighetene er kjente, estimerte eller rent subjektive. Først da kan det avgjøres hvilken forventet-nytte-variant eller alternativ modell som faktisk testes. Analysen skal produsere et konkret mellomledd – for eksempel beslutningsmatrise, sannsynlighetsmodell, preferansekart – slik at leseren kan kontrollere hvordan premiss, evidens og konklusjon henger sammen.",
+      "source_ids": [
+        "sep-decision-theory",
+        "sep-causal-decision",
+        "sep-risk"
+      ]
+    },
+    {
+      "id": "em_filosofi_beslutning_forventet_nytte_risiko_claim_limit",
+      "type": "limitation",
+      "text": "Artikkelen dekker ikke spillteori, sosialt valg eller alle moderne ambiguity-modeller. Den etablerer expected-utility-kjernen og to sentrale presspunkter – tvetydighet og kausal/evidensiell konflikt – som gjør videre beslutningsteori forståelig.",
+      "source_ids": [
+        "sep-decision-theory",
+        "sep-causal-decision",
+        "sep-risk"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "problem",
+      "title": "Problemet",
+      "paragraphs": [
+        "Når et valg har flere mulige utfall, trenger rasjonalitet en regel for hvordan verdi og sannsynlighet kombineres. Forventet nytte gir en elegant modell, men paradokser og usikkerhet om selve sannsynlighetene viser at rasjonelt valg ikke alltid ser ut til å følge én enkel maksimumsregel.",
+        "Beslutningsteori brukes i økonomi, medisin, forvaltning og AI, men filosofien må skille beskrivende treffsikkerhet fra normativ begrunnelse. At mennesker bryter et aksiom viser ikke automatisk at aksiomet er galt; at et teorem representerer konsistente preferanser viser ikke automatisk at preferansene er moralsk gode.",
+        "Von Neumann–Morgenstern analyserer lotterier med kjente sannsynligheter, Savage utvikler valg under subjektiv usikkerhet, Ellsberg demonstrerer robust tvetydighetsaversjon, og kausal beslutningsteori utfordrer hvordan handling og evidens skal kobles i spesielle problemer."
+      ]
+    },
+    {
+      "id": "begreper",
+      "title": "Begrepene som bærer argumentet",
+      "paragraphs": [
+        "Forventet nytte betegner den sannsynlighetsvektede nytten av mulige utfall for et handlingsalternativ, brukt i teorier der rasjonelt valg representeres som maksimering av forventet verdi. Forventet nytte må skilles fra forventet pengeverdi; nytte kan representere preferanser og trenger ikke øke lineært med penger eller andre målbare goder. I argumentrekonstruksjonen får begrepet en konkret rolle: Von Neumann og Morgenstern viser at dersom preferanser over lotterier tilfredsstiller bestemte aksiomer, kan de representeres som maksimering av forventet nytte.",
+        "Preferanseorden betegner en struktur som rangerer alternativer eller lotterier etter hva agenten foretrekker, ofte under krav som kompletthet, transitivitet og andre konsistensbetingelser. Preferanseorden må skilles fra øyeblikkelig lyst; i normativ beslutningsteori brukes den som formalisert relasjon og kan vurderes for intern konsistens og respons på informasjon. I argumentrekonstruksjonen får begrepet en konkret rolle: Savage utvider prosjektet til situasjoner der sannsynlighetene ikke er objektivt oppgitt, ved å utlede både subjektive sannsynligheter og nytte fra preferanser over handlinger og tilstander.",
+        "Usikkerhetsaversjon betegner en systematisk preferanse for valg med bedre spesifisert sannsynlighet fremfor valg med tvetydig eller ukjent sannsynlighetsstruktur, selv når en enkel forventet-nytte-modell ville behandle dem likt. Usikkerhetsaversjon må skilles fra vanlig risikoaversjon, som kan representeres gjennom nyttekurvatur når sannsynlighetene er kjente. Ellsberg-caser viser en annen reaksjon på ukjent sannsynlighet. I argumentrekonstruksjonen får begrepet en konkret rolle: Ellsberg viser valg der mange foretrekker kjent risiko fremfor tvetydig sannsynlighet på måter som bryter Savage-lignende prinsipper."
+      ]
+    },
+    {
+      "id": "argument",
+      "title": "Argumentrekonstruksjon",
+      "paragraphs": [
+        "P1: Von Neumann og Morgenstern viser at dersom preferanser over lotterier tilfredsstiller bestemte aksiomer, kan de representeres som maksimering av forventet nytte. Teoremet gir en sterk forbindelse mellom kvalitative rasjonalitetsbetingelser og en kvantitativ representasjon, men begrunnelsen hviler på aksiomene.",
+        "P2: Savage utvider prosjektet til situasjoner der sannsynlighetene ikke er objektivt oppgitt, ved å utlede både subjektive sannsynligheter og nytte fra preferanser over handlinger og tilstander. Særlig sure-thing-prinsippet spiller en sentral rolle i representasjonen.",
+        "P3: Ellsberg viser valg der mange foretrekker kjent risiko fremfor tvetydig sannsynlighet på måter som bryter Savage-lignende prinsipper. Hvis dette er rasjonelt tillatt, må en teori representere usikkerhetsaversjon eller flere sannsynlighetsmodeller i stedet for å avfeie mønsteret som inkonsistent.",
+        "K: Forventet nytte er derfor en kraftig normativ kandidat, ikke en definisjon av rasjonalitet. Beslutningsteorien må begrunne aksiomene, skille risiko fra tvetydighet og forklare om avvik skyldes kognitive feil eller legitime rasjonalitetsverdier som robusthet, føre-var-hensyn eller kausal kontroll."
+      ]
+    },
+    {
+      "id": "uenighet",
+      "title": "Innvending og svar",
+      "paragraphs": [
+        "Innvending: Hvis enhver systematisk avvikstype fører til en ny beslutningsmodell, mister teorien normativ kraft. En enkel forventet-nytte-standard kan være nettopp det som trengs for å diagnostisere menneskelige bias i stedet for å rasjonalisere dem.",
+        "Svar: Normativ enkelhet er en verdi, men kan ikke frita axiomer fra begrunnelse. Ellsberg viser ikke bare støy; preferansene kan være stabile og sensitive for informasjonskvalitet. Spørsmålet er hvilke konsistenskrav som er rasjonelle når sannsynlighetsmodellen selv er usikker.",
+        "Newcomb-lignende problemer skaper en annen konflikt: evidensiell og kausal beslutningsteori kan anbefale forskjellige valg fordi de tolker korrelasjon mellom handling og utfall forskjellig. Dette viser at selv med nytte og sannsynlighet på plass gjenstår spørsmålet om hvilken type betingelse handlingen skal optimalisere."
+      ]
+    },
+    {
+      "id": "teorihistorie",
+      "title": "Teori og verk",
+      "paragraphs": [
+        "Theory of Games and Economic Behavior brukes som primæranker for John von Neumann sin posisjon i denne debatten. Von Neumann og Morgensterns Theory of Games and Economic Behavior gir den klassiske forventet-nytte-representasjonen for risikable lotterier. Resultatet må leses som et teorem under aksiomer, ikke som en psykologisk lov om faktisk menneskelig valg.",
+        "Theory of Games and Economic Behavior brukes som primæranker for Oskar Morgenstern sin posisjon i denne debatten. Savages Foundations of Statistics integrerer subjektiv sannsynlighet og nytte gjennom preferanser og sure-thing-prinsippet. Modellen er filosofisk kraftig fordi sannsynlighet og verdi utledes sammen, men nettopp derfor blir axiombrudd teoretisk betydningsfulle.",
+        "Leonard The Foundations of Statistics brukes som primæranker for Savage sin posisjon i denne debatten. Ellsbergs Risk, Ambiguity, and the Savage Axioms viser systematisk tvetydighetsaversjon. Casene har inspirert modeller med ikke-additive eller multiple sannsynligheter og en bredere diskusjon om rasjonell forsiktighet under dyp usikkerhet.",
+        "Primærverkankrene er Theory of Games and Economic Behavior (John von Neumann); The Foundations of Statistics (Leonard J. Savage); Risk, Ambiguity, and the Savage Axioms (Daniel Ellsberg). De brukes til å kontrollere de navngitte debattaktørenes egne argumenter i artikkelens stridspunkt, ikke som en generell kanonliste. Von Neumann og Morgenstern viser hvordan konsistente preferanser over lotterier kan representeres ved forventet nytte, Savage kobler subjektiv sannsynlighet og valg under usikkerhet, og Ellsberg viser systematiske valg som utfordrer sentrale aksiomer; nyere kausal beslutningsteori åpner en annen konflikt om hva evidens skal styre."
+      ]
+    },
+    {
+      "id": "metode",
+      "title": "Metode og kontrollspørsmål",
+      "paragraphs": [
+        "Beslutningsteoretisk analyse, Normativ sammenligning, Tankeeksperiment brukes på den eksplisitte argumentrekken, ikke som en løs metodeetikett. Analysen starter med premisset «Von Neumann og Morgenstern viser at dersom preferanser over lotterier tilfredsstiller bestemte aksiomer, kan de representeres som maksimering av forventet nytte.» og følger overgangen fram mot konklusjonen «Forventet nytte er derfor en kraftig normativ kandidat, ikke en definisjon av rasjonalitet.». Deretter prøves rekonstruksjonen mot rivalens hovedinnvending: «Hvis enhver systematisk avvikstype fører til en ny beslutningsmodell, mister teorien normativ kraft.». Målet er å lokalisere uenigheten til et bestemt premiss, begrep eller evidenskrav som leseren selv kan kontrollere.",
+        "Beslutningsteoretisk analyse er hovedgrepet. Bygg en beslutningsmatrise med handlinger, tilstander, utfall, sannsynligheter og nytte. Marker deretter om sannsynlighetene er kjente, estimerte eller rent subjektive. Først da kan det avgjøres hvilken forventet-nytte-variant eller alternativ modell som faktisk testes. Analysen skal produsere et konkret mellomledd – for eksempel beslutningsmatrise, sannsynlighetsmodell, preferansekart – slik at leseren kan kontrollere hvordan premiss, evidens og konklusjon henger sammen."
+      ]
+    },
+    {
+      "id": "case",
+      "title": "Anvendelse på et dokumentert case",
+      "paragraphs": [
+        "Et dokumentert case kan være en offentlig beslutning mellom et tiltak med kjent moderat kostnad og et alternativ med lavt estimert, men svært usikkert katastrofepotensial. Analysen kan skille forventet risiko fra tvetydighet om selve modellen.",
+        "Et case er relevant bare når det dokumenterer premisser som faktisk inngår i analysen av hva rasjonelt valg under usikkerhet krever når alternativer har forskjellige utfall, sannsynligheter og verdier. Historiske eller empiriske opplysninger må ha egne casekilder, mens den filosofiske vurderingen fortsatt må vise hvilken rival som støttes eller utfordres og hvorfor."
+      ]
+    },
+    {
+      "id": "kilder",
+      "title": "Kildebruk og evidensgrenser",
+      "paragraphs": [
+        "De emnespesifikke sekundærkildene i denne artikkelen er Decision Theory; Causal Decision Theory; Risk. Decision Theory: emnespesifikk sekundærkilde til forventet nytte, preferanser, subjektiv sannsynlighet, representasjonsteoremer og sentrale utfordringer ved risiko og usikkerhet. Causal Decision Theory: emnespesifikk sekundærkilde til kausal beslutningsteori og konflikten mellom kausale og evidensielle kriterier for rasjonelt valg. Risk: emnespesifikk sekundærkilde til filosofiske begreper om risiko, usikkerhet, beslutning, verdi og normative spørsmål om hvordan lav sannsynlighet og stor skade skal veies.",
+        "Primærverkankrene Theory of Games and Economic Behavior; The Foundations of Statistics; Risk, Ambiguity, and the Savage Axioms brukes ved konkrete posisjons- og argumentrekonstruksjoner. De emnespesifikke sekundærkildene brukes til problemhistorie, rivaler, fortolkningskontroll og bibliografi; empiriske casepåstander krever egne casekilder."
+      ]
+    },
+    {
+      "id": "avgrensning",
+      "title": "Hva analysen ikke etablerer",
+      "paragraphs": [
+        "Artikkelen dekker ikke spillteori, sosialt valg eller alle moderne ambiguity-modeller. Den etablerer expected-utility-kjernen og to sentrale presspunkter – tvetydighet og kausal/evidensiell konflikt – som gjør videre beslutningsteori forståelig.",
+        "Det åpne kontrollpunktet er rivalens innvending: «Hvis enhver systematisk avvikstype fører til en ny beslutningsmodell, mister teorien normativ kraft.» Artikkelens svar er «Normativ enkelhet er en verdi, men kan ikke frita axiomer fra begrunnelse.» Dette er ikke en påstand om at debatten dermed er lukket. Kvalitetskravet er at leseren kan se hvilke premisser som fortsatt er omstridte, hvilke verk og sekundærkilder som bærer rekonstruksjonen, og hva som måtte undersøkes videre for å styrke eller forkaste konklusjonen."
+      ]
+    }
+  ],
+  "quality": {
+    "word_count": 1245,
+    "section_count": 9,
+    "paragraph_count": 24,
+    "argument_reconstruction": true,
+    "rival_position": true,
+    "method_limit": true,
+    "source_boundaries": true,
+    "concepts_written_out": true,
+    "place_boundary": true,
+    "editorial_polish": true,
+    "tradition_specific_relevance": true,
+    "review_state": "university_depth_reviewed",
+    "reviewed_against_university_gate": true,
+    "substantive_argument_reconstruction": true,
+    "topic_specific_sources": true,
+    "source_integrity": {
+      "state": "reviewed",
+      "standard": "debate_aligned_primary_works_v2",
+      "reviewed_at": "2026-08-17",
+      "debate_actors": [
+        "John von Neumann",
+        "Oskar Morgenstern",
+        "Leonard J. Savage",
+        "Daniel Ellsberg"
+      ],
+      "canonical_thinker_refs": [
+        "john_von_neumann",
+        "oskar_morgenstern",
+        "leonard_savage",
+        "daniel_ellsberg"
+      ],
+      "primary_work_anchors": [
+        {
+          "actor": "John von Neumann",
+          "canonical_ref": "john_von_neumann",
+          "work": "Theory of Games and Economic Behavior"
+        },
+        {
+          "actor": "Leonard J. Savage",
+          "canonical_ref": "leonard_savage",
+          "work": "The Foundations of Statistics"
+        },
+        {
+          "actor": "Daniel Ellsberg",
+          "canonical_ref": "daniel_ellsberg",
+          "work": "Risk, Ambiguity, and the Savage Axioms"
+        }
+      ]
+    }
+  },
+  "university_quality": {
+    "schema": "history_go_filosofi_university_quality_v1",
+    "review_version": "3.0.0",
+    "reviewed_at": "2026-08-14",
+    "debate": "Von Neumann og Morgenstern viser hvordan konsistente preferanser over lotterier kan representeres ved forventet nytte, Savage kobler subjektiv sannsynlighet og valg under usikkerhet, og Ellsberg viser systematiske valg som utfordrer sentrale aksiomer; nyere kausal beslutningsteori åpner en annen konflikt om hva evidens skal styre.",
+    "debate_thinkers": [
+      "John von Neumann",
+      "Oskar Morgenstern",
+      "Leonard J. Savage",
+      "Daniel Ellsberg"
+    ],
+    "required_anchors": [
+      "forventet nytte",
+      "Savage",
+      "Ellsberg",
+      "usikkerhet"
+    ],
+    "substantive_argument": true,
+    "real_rival": true,
+    "primary_work_grounding": true,
+    "topic_specific_secondary_sources": true,
+    "generic_template_rejected": true,
+    "review_status": "reviewed",
+    "final_qa_repaired_at": "2026-08-16",
+    "primary_work_count": 3
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "schema": "civication_role_model_v1",
+  "version": 1,
+  "source": {
+    "badge_file": "data/badges/psykologi.json",
+    "badge_id": "psykologi",
+    "badge_name": "Psykologi",
+    "tier_label": "Aktivitetsleder (omsorgsarbeid)",
+    "tier_threshold": 15,
+    "evidence_ref": "utdanning_miljoarbeider"
+  },
+  "category": "psykologi",
+  "role_scope": "psykologi_miljoarbeid",
+  "role_id": "psykologi_aktivitetsleder_omsorg",
+  "title": "Aktivitetsleder (omsorgsarbeid)",
+  "core_narrative": [
+    "Du planlegger og leder aktiviteter som skal skape deltakelse, mestring og sosial trygghet uten å presse mennesker inn i én løsning."
+  ],
+  "work_life": {
+    "daily_work": [
+      "Planlegge aktiviteter ut fra funksjon, ønsker og dagsform.",
+      "Motivere uten å manipulere eller presse.",
+      "Følge med på gruppedynamikk og justere rammer når noen faller utenfor."
+    ],
+    "responsibilities": [
+      "Gjøre aktivitet tilgjengelig og frivillig.",
+      "Forebygge konflikt og utenforskap.",
+      "Gi videre relevante observasjoner når aktivitet avdekker behov for oppfølging."
+    ],
+    "work_environment": [
+      "Omsorgstilbud, aktivitetssentre, bofellesskap og andre arenaer der aktivitet brukes for struktur, trivsel og mestring."
+    ],
+    "status_position": [
+      "Har praktisk lederansvar i situasjonen, men ikke klinisk behandlingsansvar."
+    ]
+  },
+  "career_path": {
+    "entry_from": ["Miljøassistent", "Sosialassistent"],
+    "progression_to": ["Miljøarbeider", "Veileder"],
+    "possible_promotions": ["Ansvar for aktivitetstilbud, koordinering og mer selvstendig oppfølging."],
+    "possible_exits": ["Miljøarbeid, oppvekst, arbeidsinkludering eller relevant fagutdanning."],
+    "career_risks": ["Å gjøre deltakelse til lydighet eller overse den stille personen i gruppa."]
+  },
+  "required_knowledge": {
+    "education_basis": ["Stillingen er ikke en autorisert helseprofesjon; konkrete arbeidsgivere kan stille kompetansekrav."],
+    "skills": ["Aktivitetstilrettelegging", "motivasjon", "gruppeledelse", "konfliktdemping", "observasjon"],
+    "category_knowledge": ["Motivasjon, sosialpsykologi, gruppeprosesser, mestring, utvikling og grunnleggende psykisk helse."],
+    "history_go_badges": ["psykologi"],
+    "place_connections": [],
+    "people_connections": []
+  },
+  "scope_boundaries": {
+    "may_do": ["planlegge aktivitet", "lede aktivitet", "motivere", "tilpasse", "observere gruppedynamikk", "eskalere bekymring"],
+    "must_not_simulate_as_authority": ["bruke aktivitet som behandling uten faglig ramme", "diagnostisere", "overstyre samtykke", "gi kliniske råd"]
+  },
+  "challenges": [
+    {
+      "id": "deltakelse_vs_press",
+      "title": "Deltakelse uten press",
+      "description": "En aktivitet fungerer for gruppa, men én person trekker seg unna.",
+      "pressure": "fellesskap_vs_selvbestemmelse",
+      "affects": ["trust", "status", "risk"]
+    }
+  ],
+  "dilemmas": [
+    {
+      "id": "den_stille_i_gruppa",
+      "title": "Den stille i gruppa",
+      "setup": "Du må velge mellom å holde tempoet oppe eller endre opplegget så én person faktisk kan delta.",
+      "choice_axis": "gruppeflyt_vs_inkludering",
+      "consequence_axis": "mestring_vs_utenforskap",
+      "mail_hooks": ["job", "people", "story"]
+    }
+  ],
+  "related_people": [],
+  "related_places": [],
+  "mail_integration": {
+    "role_scope": "psykologi_miljoarbeid",
+    "mail_profile": "psykologi_miljoarbeid",
+    "can_feed_mail_types": ["job", "story", "conflict", "event", "people", "knowledge", "followup", "consequence"],
+    "mail_variables": {
+      "role_title": "Aktivitetsleder (omsorgsarbeid)",
+      "category": "psykologi",
+      "main_pressure": "fellesskap_vs_selvbestemmelse",
+      "ethical_axis": "motivasjon_vs_press",
+      "status_axis": "mestring_vs_utenforskap"
+    },
+    "recommended_mail_families": ["psykologi_miljoarbeid"],
+    "role_model_refs_supported": true
+  },
+  "competence_axes": ["aktivitet", "motivasjon", "gruppeledelse", "inkludering", "grensesetting"],
+  "ideal_type_problems": ["deltakelse_vs_press", "gruppe_vs_individ", "aktivitet_vs_dagsform"],
+  "notes": [
+    "Legacy-filnavnet atferdsobservator.json beholdes foreløpig for manifeststabilitet; canonical tittel er Aktivitetsleder (omsorgsarbeid)."
+  ]
+}

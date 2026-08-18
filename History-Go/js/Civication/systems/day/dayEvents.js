@@ -1,0 +1,1208 @@
+// js/Civication/systems/day/dayEvents.js
+// Dagens innholds-/fasemotor: bygger fasekontekst (morgen/lunsj/ettermiddag/kveld),
+// emnevarianter og store-/karriere-flavor, og fører dag-event-historikk
+// (hg_day_event_history_v1). Leverer dagsinnhold som DailyMailBuilder setter sammen.
+function getLunchContext(active) {
+  const visitedCount = getVisitedPlacesCount();
+  const brandName =
+    String(active?.brand_name || "").trim() || "stedet ditt";
+
+  if (visitedCount >= 20) {
+    return {
+      brandName,
+      visitedCount,
+      tier: "rich",
+      line1: `Du har vært mange steder i History Go og kjenner byen bedre enn før. Lunsjen rundt ${brandName} føles som en del av nettverket ditt.`,
+      line2: "Du kan bruke lunsjen til rytme, nettverk eller ren effektivitet."
+    };
+  }
+
+  if (visitedCount >= 5) {
+    return {
+      brandName,
+      visitedCount,
+      tier: "mid",
+      line1: `Du begynner å få fotfeste i byen. Lunsjen rundt ${brandName} er ikke tilfeldig lenger.`,
+      line2: "Valget ditt kan gjøre dagen litt lettere eller litt skarpere."
+    };
+  }
+
+  return {
+    brandName,
+    visitedCount,
+    tier: "basic",
+    line1: `Du er fortsatt tidlig i løypa og bruker lunsjen rundt ${brandName} mest for å holde dagen samlet.`,
+    line2: "Det er fortsatt et valg mellom ro, sosialt spill og ren effektivitet."
+  };
+}
+
+function getPhaseFamilyByTag(phaseTag) {
+  if (phaseTag === "lunch") return "lunch_store";
+  if (phaseTag === "evening") return "evening_store";
+  if (phaseTag === "day_end") return "day_end";
+  if (phaseTag === "morning") return "morning_carryover";
+  if (phaseTag === "afternoon") return "afternoon_work";
+  return "phase_generic";
+}
+
+function isControllerDayOne(active) {
+  const roleText = [
+    active?.role_scope,
+    active?.role_id,
+    active?.role_key,
+    active?.title,
+    active?.career_id
+  ].map((x) => String(x || "").toLowerCase()).join(" ");
+  const dayIndex = Number(window.CivicationCalendar?.getPhaseModel?.()?.dayIndex || 1);
+  return dayIndex === 1 && roleText.includes("controller");
+}
+
+function getPhaseSubjectVariants(phaseTag, storeName) {
+  const safeName = String(storeName || "miljøet ditt");
+  if (phaseTag === "lunch") {
+    return [
+      `Lunsj – ${safeName}`,
+      `Lunsj – en pause ved ${safeName}`,
+      `Lunsj – småprat rundt ${safeName}`,
+      `Lunsj – rytme eller omvei ved ${safeName}`,
+      `Lunsj – ${safeName} som pusterom`
+    ];
+  }
+
+  if (phaseTag === "evening") {
+    return [
+      `Kveld – ${safeName}`,
+      `Kveld – blir du værende ved ${safeName}?`,
+      `Kveld – hjem eller en runde til ved ${safeName}?`,
+      `Kveld – småpraten rundt ${safeName}`,
+      `Kveld – ${safeName} som unnskyldning`,
+      `Kveld – etterarbeid rundt ${safeName}`
+    ];
+  }
+
+  return [safeName];
+}
+
+function selectPhaseSubject(active, phaseTag, store, semanticEventKey) {
+  const variants = getPhaseSubjectVariants(phaseTag, store?.name || "");
+  if (variants.length <= 1) {
+    return {
+      subject: variants[0] || String(store?.name || "Fase"),
+      variantId: `${phaseTag || "phase"}_v1`
+    };
+  }
+
+  const careerId = String(active?.career_id || "").trim();
+  const eventHistory = getDayEventHistory()
+    .filter((entry) => String(entry?.entryType || "") === "phase_event")
+    .filter((entry) => String(entry?.phaseTag || "") === String(phaseTag || ""))
+    .filter((entry) => String(entry?.careerId || "") === careerId)
+    .slice(-18);
+
+  const sameSemantic = eventHistory.filter((entry) => {
+    return String(entry?.semanticEventKey || "") === String(semanticEventKey || "");
+  });
+
+  const lastSubject = String(sameSemantic[sameSemantic.length - 1]?.subject || "");
+  const usedCounts = new Map();
+  sameSemantic.forEach((entry) => {
+    const subject = String(entry?.subject || "");
+    if (!subject) return;
+    usedCounts.set(subject, Number(usedCounts.get(subject) || 0) + 1);
+  });
+
+  const ranked = variants
+    .map((subject, idx) => ({
+      subject,
+      variantBase: `${phaseTag}_v${idx + 1}`,
+      useCount: Number(usedCounts.get(subject) || 0)
+    }))
+    .sort((a, b) => a.useCount - b.useCount);
+
+  const preferred = ranked.find((row) => row.subject !== lastSubject) || ranked[0];
+  return {
+    subject: preferred.subject,
+    variantId: `${preferred.variantBase}_r${preferred.useCount + 1}`
+  };
+}
+
+function buildPhaseContext({
+  phaseTag,
+  semanticEventKey,
+  store,
+  variantId
+}) {
+  return {
+    phase_tag: String(phaseTag || ""),
+    phase_family: getPhaseFamilyByTag(phaseTag),
+    semantic_event_key: String(semanticEventKey || ""),
+    store_id: String(store?.id || ""),
+    store_name: String(store?.name || ""),
+    store_type: String(store?.type || ""),
+    variant_id: String(variantId || "")
+  };
+}
+
+async function makeLunchEvent(active) {
+  if (isControllerDayOne(active)) {
+    return {
+      id: `phase_lunch_controller_day1_${Date.now()}`,
+      stage: "stable",
+      source: "Civication",
+      source_type: "phase",
+      phase_tag: "lunch",
+      phase_family: getPhaseFamilyByTag("lunch"),
+      semantic_event_key: "lunch:controller_day1_avvik",
+      subject: "Lunsj – du tar avviket med deg til bordet",
+      situation: [
+        "Du sitter med brødskiven i den ene hånden og varekostlinjen i den andre. 312 000 kroner er for stort til å være støy, men lite nok til at alle håper det kan forklares pent.",
+        "Elin går forbi kantinebordet og nikker mot skjermen din: «Bare husk at det er folk bak de pallene.» Ingrids frist ligger fortsatt som en klokke i innboksen.",
+        "Lunsjen blir ikke en pause fra controllerrollen. Den blir et valg om du bruker pausen til å samle mennesker, skjerme hodet eller presse enda mer tempo inn i et avvik som allerede presser alle."
+      ],
+      choices: [
+        {
+          id: "A",
+          label: "Spis med Elin og be henne forklare vareflyten uten å forsvare seg.",
+          effect: 1,
+          tags: ["drift", "trust", "process"],
+          feedback: "Du får ikke full dokumentasjon, men du får et språk for hva som faktisk skjedde på gulvet. Det gjør ettermiddagens kontroll mindre mistenksom."
+        },
+        {
+          id: "B",
+          label: "Spis alene og marker alle åpne kontrollspor før 13:00.",
+          effect: 0,
+          tags: ["traceability", "stress", "craft"],
+          feedback: "Du får en skarpere sjekkliste, men mister en anledning til å høre forklaringen før den blir et forsvar."
+        },
+        {
+          id: "C",
+          label: "Legg skjermen bort i ti minutter så du ikke svarer alle som et avvik.",
+          effect: 1,
+          tags: ["recovery", "self_awareness"],
+          feedback: "Pausen løser ingenting, men gjør deg mindre kantete. Det kan være forskjellen på kontroll som støtte og kontroll som mistillit."
+        }
+      ]
+    };
+  }
+
+  const ctx = getLunchContext(active);
+  const store = pickStoreContext(active, "lunch");
+
+  const visitedIds = getVisitedPlaceIds();
+  const placeContexts = await loadPlaceContexts();
+  const matchedContexts = getMatchedHistoryGoContexts(placeContexts, visitedIds);
+  const historyGoContext = pickHistoryGoContext(
+    matchedContexts,
+    "lunch",
+    active
+  );
+
+  const contextFlavor = getContextFlavorForCareer(active);
+
+  const extraContextLine = contextFlavor?.flavor?.lunch
+    ? `Du trekkes også mot miljøer preget av ${contextFlavor.flavor.lunch}.`
+    : null;
+
+  const historyGoLine = historyGoContext?.lunch_text
+    ? `Bylivet ditt trekker også mot ${historyGoContext.lunch_text}.`
+    : null;
+
+  const semanticEventKey = `lunch:${store.id}`;
+  const subjectMeta = selectPhaseSubject(
+    active,
+    "lunch",
+    store,
+    semanticEventKey
+  );
+
+  const baseEvent = {
+    id: `phase_lunch_${Date.now()}`,
+    stage: "stable",
+    source: "Civication",
+    source_type: "phase",
+    phase_tag: "lunch",
+    phase_family: getPhaseFamilyByTag("lunch"),
+    semantic_event_key: semanticEventKey,
+    subject: subjectMeta.subject,
+    situation: [
+      `${ctx.line1} I dag trekkes du mot ${store.name}.`,
+      `${store.blurb} ${ctx.line2}`,
+      ...(extraContextLine ? [extraContextLine] : []),
+      ...(historyGoLine ? [historyGoLine] : [])
+    ],
+    lunch_context: {
+      brand_name: ctx.brandName,
+      visited_places_count: ctx.visitedCount,
+      tier: ctx.tier,
+      store_id: store.id,
+      store_name: store.name,
+      store_type: store.type,
+      history_go_context_id: historyGoContext?.id || null,
+      history_go_context_label: historyGoContext?.label || null,
+      history_go_match_count: Number(historyGoContext?.matchCount || 0)
+    },
+    phase_context: buildPhaseContext({
+      phaseTag: "lunch",
+      semanticEventKey,
+      store,
+      variantId: subjectMeta.variantId
+    }),
+    choices: [
+      {
+        id: "A",
+        label: `Spis raskt ved ${store.name}`,
+        effect: 0,
+        tags: ["process", "craft"],
+        feedback:
+          ctx.visitedCount >= 5
+            ? `Du holder rytmen og bruker ${store.name} nøkternt.`
+            : `Du bruker ${store.name} uten å gjøre noe større ut av lunsjen.`
+      },
+      {
+        id: "B",
+        label: `Ta en sosial lunsj ved ${store.name}`,
+        effect: 1,
+        tags: ["visibility", "legitimacy"],
+        feedback:
+          ctx.visitedCount >= 5
+            ? `Du bruker lunsjen ved ${store.name} til å bli litt mer synlig i miljøet rundt deg.`
+            : `Du blir sett rundt ${store.name}, og dagen åpner seg litt mer sosialt.`
+      },
+      {
+        id: "C",
+        label: `Hopp over lunsjen og gå forbi ${store.name}`,
+        effect: -1,
+        tags: ["avoidance", "laziness"],
+        feedback:
+          ctx.visitedCount >= 20
+            ? `Du kunne brukt ${store.name} bedre, men velger ren effektivitet.`
+            : `Du sparer tid, men lar muligheten ved ${store.name} passere.`
+      }
+    ]
+  };
+
+  const flavoredByStore = applyStoreTypeFlavor(baseEvent, "lunch", store);
+  const flavoredByCareer = applyCareerFlavor(flavoredByStore, "lunch", active);
+  const finalEvent = applyContactBonusToEvent(flavoredByCareer, "lunch");
+  rememberDayEvent(active, "lunch", store, {
+    entryType: "phase_event",
+    semanticEventKey,
+    subject: finalEvent?.subject || subjectMeta.subject,
+    variantId: finalEvent?.phase_context?.variant_id || subjectMeta.variantId
+  });
+  return finalEvent;
+}
+
+async function makeEveningEvent(active) {
+  if (isControllerDayOne(active)) {
+    return {
+      id: `phase_evening_controller_day1_${Date.now()}`,
+      stage: "stable",
+      source: "Civication",
+      source_type: "phase",
+      phase_tag: "evening",
+      phase_family: getPhaseFamilyByTag("evening"),
+      semantic_event_key: "evening:controller_day1_home",
+      subject: "Kveld – tallene slipper ikke helt taket",
+      situation: [
+        "På vei hjem ser du fortsatt varekostlinjen når du blunker. Ikke som et regneark nå, men som mennesker: Elin som ikke vil dømmes, Ingrid som trenger beslutningsgrunnlag, Marius som leter etter en faktura i feil periode.",
+        "Telefonen ligger i hånden. Du kan åpne rapporten en gang til, sende en presisering, eller la kvelden begynne før du gjør hjemmet til enda en kontrollflate.",
+        "Controllerarbeidet har gitt deg et språk for ansvar. Spørsmålet er om du klarer å legge språket ned før det gjør alt privat til dokumentasjon."
+      ],
+      choices: [
+        {
+          id: "A",
+          label: "Send én kort presisering og lukk jobbmailen for kvelden.",
+          effect: 1,
+          tags: ["boundary", "traceability"],
+          feedback: "Du etterlater et tydelig spor uten å la hele kvelden bli etterarbeid. Kontroll blir en ramme, ikke et rom du bor i."
+        },
+        {
+          id: "B",
+          label: "Åpne rapportpakken og gå gjennom alle linjene en gang til.",
+          effect: -1,
+          tags: ["control", "fatigue"],
+          feedback: "Du finner ingen ny feil, bare flere måter å tvile på. Presisjonen blir dyr når den ikke vet når den skal stoppe."
+        },
+        {
+          id: "C",
+          label: "La telefonen ligge og fortell hjemme at dagen sitter i kroppen.",
+          effect: 1,
+          tags: ["relationship", "self_awareness"],
+          feedback: "Du oversetter ikke alt til tall. Det gjør ikke avviket mindre viktig, men det gjør deg mer til stede når arbeidsdagen er over."
+        }
+      ]
+    };
+  }
+
+  const visitedCount = getVisitedPlacesCount();
+  const store = pickStoreContext(active, "evening");
+
+  const visitedIds = getVisitedPlaceIds();
+  const placeContexts = await loadPlaceContexts();
+  const matchedContexts = getMatchedHistoryGoContexts(placeContexts, visitedIds);
+  const historyGoContext = pickHistoryGoContext(
+    matchedContexts,
+    "evening",
+    active
+  );
+
+  const contextFlavor = getContextFlavorForCareer(active);
+
+  const extraContextLine = contextFlavor?.flavor?.evening
+    ? `Kvelden bærer også preg av ${contextFlavor.flavor.evening}.`
+    : null;
+
+  const historyGoLine = historyGoContext?.evening_text
+    ? `Kvelden bærer også preg av ${historyGoContext.evening_text}.`
+    : null;
+
+  const brandName =
+    String(active?.brand_name || "").trim() || store.name || "miljøet ditt";
+
+  let line1 =
+    `Arbeidsdelen av dagen er over, og kvelden trekker deg mot ${store.name}.`;
+  let line2 =
+    `Rundt ${store.name} må du velge om kvelden skal handle om ekstra innsats, ro eller synlighet.`;
+
+  if (visitedCount >= 20) {
+    line1 =
+      `Du kjenner byen godt nå, og kvelden ved ${store.name} føles som en forlengelse av posisjonen din.`;
+    line2 =
+      `${store.blurb} Kvelden kan brukes til å styrke nettverk, hente inn mer verdi eller trekke deg smart tilbake.`;
+  } else if (visitedCount >= 5) {
+    line1 =
+      `Du begynner å få flere muligheter rundt ${store.name} også etter arbeidstid.`;
+    line2 =
+      `${store.blurb} Kvelden handler om hva slags retning du vil gi dagen som helhet.`;
+  }
+
+  const semanticEventKey = `evening:${store.id}`;
+  const subjectMeta = selectPhaseSubject(
+    active,
+    "evening",
+    store,
+    semanticEventKey
+  );
+
+  const baseEvent = {
+    id: `phase_evening_${Date.now()}`,
+    stage: "stable",
+    source: "Civication",
+    source_type: "phase",
+    phase_tag: "evening",
+    phase_family: getPhaseFamilyByTag("evening"),
+    semantic_event_key: semanticEventKey,
+    subject: subjectMeta.subject,
+    situation: [
+      line1,
+      line2,
+      ...(extraContextLine ? [extraContextLine] : []),
+      ...(historyGoLine ? [historyGoLine] : [])
+    ],
+    evening_context: {
+      brand_name: brandName,
+      visited_places_count: visitedCount,
+      store_id: store.id,
+      store_name: store.name,
+      store_type: store.type,
+      history_go_context_id: historyGoContext?.id || null,
+      history_go_context_label: historyGoContext?.label || null,
+      history_go_match_count: Number(historyGoContext?.matchCount || 0)
+    },
+    phase_context: buildPhaseContext({
+      phaseTag: "evening",
+      semanticEventKey,
+      store,
+      variantId: subjectMeta.variantId
+    }),
+    choices: [
+      {
+        id: "A",
+        label: `Ta frivillig overtid før du drar fra ${store.name}`,
+        effect: 1,
+        tags: ["craft", "visibility"],
+        feedback:
+          visitedCount >= 5
+            ? `Du bruker kvelden rundt ${store.name} til å presse ut litt mer verdi av dagen.`
+            : `Du presser dagen litt lenger før du forlater ${store.name}.`
+      },
+      {
+        id: "B",
+        label: `Trekk deg rolig bort fra ${store.name}`,
+        effect: 0,
+        tags: ["process", "legitimacy"],
+        feedback:
+          visitedCount >= 5
+            ? `Du holder strukturen og lar dagen lande uten unødvendig støy rundt ${store.name}.`
+            : `Du lar kvelden roe seg ned etter ${store.name}.`
+      },
+      {
+        id: "C",
+        label: `Oppsøk folk og miljø rundt ${store.name}`,
+        effect: 1,
+        tags: ["visibility", "shortcut"],
+        feedback:
+          visitedCount >= 20
+            ? `Du bruker miljøet rundt ${store.name} aktivt, og gjør kvelden mer strategisk.`
+            : `Kvelden blir mer sosial og mer åpen rundt ${store.name}.`
+      }
+    ]
+  };
+
+  const flavoredByStore = applyStoreTypeFlavor(baseEvent, "evening", store);
+  const flavoredByCareer = applyCareerFlavor(flavoredByStore, "evening", active);
+  const finalEvent = applyContactBonusToEvent(flavoredByCareer, "evening");
+  rememberDayEvent(active, "evening", store, {
+    entryType: "phase_event",
+    semanticEventKey,
+    subject: finalEvent?.subject || subjectMeta.subject,
+    variantId: finalEvent?.phase_context?.variant_id || subjectMeta.variantId
+  });
+  return finalEvent;
+}
+
+// PR G (#3): teller fullførte hovedfaser (morgen/lunsj/ettermiddag/kveld) fra DailyMailBuilder-
+// runtime i stedet for Calendar.dailyFlags. Etter PR A settes ikke dailyFlags lenger per fase for
+// daily-events, så flagg-tellingen viste ofte 0. En fase regnes som fullført når den har items og
+// alle er besvart. Returnerer null hvis ingen runtime finnes (legacy → fall tilbake til flagg).
+function countCompletedWorkPhasesFromRuntime() {
+  const runtime = window.CivicationDailyMailBuilder?.inspect?.()?.runtime;
+  const items = Array.isArray(runtime?.items) ? runtime.items : null;
+  if (!items || !items.length) return null;
+
+  const workPhases = ["morning", "lunch", "afternoon", "evening"];
+  let done = 0;
+  for (const phaseId of workPhases) {
+    const rows = items.filter(
+      (r) => String(r?.phase || r?.event?.phase_tag || "") === phaseId
+    );
+    if (rows.length && rows.every((r) => String(r?.status || "") === "answered")) done += 1;
+  }
+  return done;
+}
+
+function makeDayEndEvent() {
+  const cal = window.CivicationCalendar;
+  const model = cal?.getPhaseModel?.() || {};
+  const flags = model.dailyFlags || {};
+
+  const runtimeDone = countCompletedWorkPhasesFromRuntime();
+  const doneCount = runtimeDone != null
+    ? runtimeDone
+    : [
+        "morning_done",
+        "lunch_done",
+        "afternoon_done",
+        "evening_done"
+      ].filter((k) => !!flags[k]).length;
+
+  /** @type {{ score?: unknown, stability?: unknown }} */
+  const state = window.CivicationState?.getState?.() || {};
+  const score = Number(state.score || 0);
+  const stability = String(state.stability || "STABLE");
+
+  const existingSummary =
+    model.dailySummary && typeof model.dailySummary === "object"
+      ? model.dailySummary
+      : {};
+
+  const choiceLog = Array.isArray(existingSummary.choiceLog)
+    ? existingSummary.choiceLog
+    : [];
+
+  let quality = "jevn";
+  if (doneCount >= 4 && score >= 1) quality = "sterk";
+  else if (doneCount <= 2 || score < 0) quality = "ujevn";
+
+  const nextDayCarryover = buildCarryoverFromChoiceLog(choiceLog);
+
+  const summary = {
+    dayIndex: Number(model.dayIndex || 1),
+    completedPhases: doneCount,
+    score,
+    stability,
+    quality,
+    choiceLog,
+    nextDayCarryover
+  };
+
+  cal?.setDailySummary?.(summary);
+
+  if (isControllerDayOne(window.CivicationState?.getActivePosition?.())) {
+    const semanticEventKey = `day_end:controller_day1:${summary.dayIndex}`;
+    return {
+      id: `phase_day_end_controller_day1_${Date.now()}`,
+      stage: "stable",
+      source: "Civication",
+      source_type: "phase",
+      phase_tag: "day_end",
+      phase_family: getPhaseFamilyByTag("day_end"),
+      semantic_event_key: semanticEventKey,
+      subject: "Dag 1 er over – avviket fikk en forklaring, men ikke fred",
+      situation: [
+        `Dag 1 som controller lukker med ${summary.completedPhases} av 4 hovedfaser fullført. Hovedlinjen var enkel og tung: et varekostavvik måtte forklares før rapporten gikk videre.`,
+        "Du lærte at 312 000 kroner ikke bare er en differanse. Det er et press på drift, et beslutningsgrunnlag for ledelse og et revisjonsspor som enten kan hjelpe folk eller brukes mot dem.",
+        choiceLog.length ? `Dagens siste registrerte valg viser rytmen din: ${choiceLog.slice(-3).map((x) => String(x?.label || "").trim()).filter(Boolean).join(" · ")}.` : "Dagen har få registrerte valg, så systemet kan ikke se hele mønsteret ditt ennå.",
+        "Det som følger med videre er ikke bare avviket, men balansen mellom presisjon og tempo, dokumentasjon og relasjon, forbehold og beslutning."
+      ],
+      phase_context: buildPhaseContext({
+        phaseTag: "day_end",
+        semanticEventKey,
+        store: null,
+        variantId: "controller_day1_day_end_v1"
+      }),
+      day_end_context: summary,
+      choices: [],
+      feedback: "Controllerdagen lukkes. Neste dag starter med sporene du valgte å etterlate."
+    };
+  }
+
+  let line1 = `Dag ${summary.dayIndex} går mot slutten. Du fullførte ${summary.completedPhases} av 4 hovedfaser.`;
+  let line2 = `Statusen din er ${summary.stability.toLowerCase()}, og dagen står igjen som ${summary.quality}.`;
+
+  if (quality === "sterk") {
+    line2 = "Du holder en tydelig rytme, og dagen virker samlet og solid.";
+  } else if (quality === "ujevn") {
+    line2 = "Dagen hang ikke helt sammen, og noe av trykket ble med videre.";
+  }
+
+  const recentChoices = choiceLog
+    .slice(-3)
+    .map((x) => {
+      const phaseLabel =
+        x?.phase === "morning"
+          ? "Morgen"
+          : x?.phase === "lunch"
+            ? "Lunsj"
+            : x?.phase === "afternoon"
+              ? "Ettermiddag"
+              : x?.phase === "evening"
+                ? "Kveld"
+                : x?.phase === "day_end"
+                  ? "Dagslutt"
+                  : "Fase";
+
+      const label = String(x?.label || "").trim();
+      if (!label) return null;
+
+      return `${phaseLabel}: ${label}`;
+    })
+    .filter(Boolean);
+
+  const line3 = recentChoices.length
+    ? `Valg du faktisk tok i dag: ${recentChoices.join(" · ")}.`
+    : "Dagen har foreløpig få registrerte valg.";
+
+  const line4 =
+    nextDayCarryover.fatigue > 1
+      ? "Neste morgen kan starte med litt slitasje."
+      : nextDayCarryover.visibilityBias > nextDayCarryover.processBias
+        ? "Neste morgen kan bli mer sosial og synlig."
+        : nextDayCarryover.processBias > 0
+          ? "Neste morgen kan bli mer ryddig og prosessorientert."
+          : "Neste morgen starter uten tydelig etterslep.";
+
+  const semanticEventKey = `day_end:${summary.dayIndex}`;
+  return {
+    id: `phase_day_end_${Date.now()}`,
+    stage: "stable",
+    source: "Civication",
+    source_type: "phase",
+    phase_tag: "day_end",
+    phase_family: getPhaseFamilyByTag("day_end"),
+    semantic_event_key: semanticEventKey,
+    subject: `Dag ${summary.dayIndex} er over`,
+    situation: [line1, line2, line3, line4],
+    phase_context: buildPhaseContext({
+      phaseTag: "day_end",
+      semanticEventKey,
+      store: null,
+      variantId: "day_end_v1"
+    }),
+    day_end_context: summary,
+    choices: [],
+    feedback: "Dagen lukkes. En ny dag starter."
+  };
+}
+
+function getAccessAwareStoreSignals(phaseTag) {
+  const bridge = window.CivicationPlaceAccessBridge;
+  if (!bridge?.getBucket) {
+    return {
+      work: [],
+      leisure: [],
+      store: []
+    };
+  }
+
+  return {
+    work: bridge.getBucket("work"),
+    leisure: bridge.getBucket("leisure"),
+    store: bridge.getBucket("store"),
+    phaseTag
+  };
+}
+
+function storeMatchesAccess(store, phaseTag, signals) {
+  const type = String(store?.type || "generic");
+  const work = Array.isArray(signals?.work) ? signals.work : [];
+  const leisure = Array.isArray(signals?.leisure) ? signals.leisure : [];
+  const storeAccess = Array.isArray(signals?.store) ? signals.store : [];
+
+  const map = {
+    clothing: {
+      lunch: ["business_style", "streetwear", "clothing"],
+      evening: ["streetwear", "shopping", "afterwork", "clothing"]
+    },
+    food: {
+      lunch: ["coffee", "kafe", "local_cafe", "afterwork"],
+      evening: ["afterwork", "kafe", "streetlife", "food"]
+    },
+    tech: {
+      lunch: ["audio", "electronics", "vitenskap", "music"],
+      evening: ["audio", "records", "music", "subculture"]
+    },
+    car: {
+      lunch: ["equipment", "naeringsliv", "eiendom"],
+      evening: ["status", "afterwork", "naeringsliv"]
+    },
+    housing: {
+      lunch: ["home", "bolig", "nabolag"],
+      evening: ["housing", "quiet_district", "family_friendly", "stable_home"]
+    },
+    generic: {
+      lunch: ["afterwork", "city_walk"],
+      evening: ["afterwork", "streetlife", "networking"]
+    }
+  };
+
+  const wanted = map?.[type]?.[phaseTag] || map.generic[phaseTag] || [];
+  const haystack = new Set([
+    ...work.map(String),
+    ...leisure.map(String),
+    ...storeAccess.map(String)
+  ]);
+
+  if (!haystack.size) return true;
+  return wanted.some((key) => haystack.has(String(key)));
+}
+
+function getCareerStorePool(active, phaseTag) {
+  const careerId = String(active?.career_id || "").trim();
+  const visitedCount = getVisitedPlacesCount();
+  const accessSignals = getAccessAwareStoreSignals(phaseTag);
+
+  const allStores = [
+    {
+      id: "street_shop_generic",
+      name: "Gatebutikken",
+      type: "clothing",
+      blurb: "Trygge valg. Mye logo. Litt sjel.",
+      careers: ["subkultur", "populaerkultur", "musikk", "naeringsliv"]
+    },
+    {
+      id: "work_shop_generic",
+      name: "Arbeidsklær & Verktøy",
+      type: "clothing",
+      blurb: "Alt som tåler regn, kaffe og mellomlederblikk.",
+      careers: ["naeringsliv", "by"]
+    },
+    {
+      id: "canteen_generic",
+      name: "Kantina & Kaffebaren",
+      type: "food",
+      blurb: "Halv pause, halv strategi. Mye småprat. Nakne lysrør.",
+      careers: ["naeringsliv", "by", "vitenskap", "media"]
+    },
+    {
+      id: "hifi_shop_generic",
+      name: "Hi-Fi & Lyd",
+      type: "tech",
+      blurb: "Du hører forskjell. (Du kommer til å si at du gjør det.)",
+      careers: ["musikk", "vitenskap", "naeringsliv"],
+      minVisitedPlaces: 5
+    },
+    {
+      id: "car_dealer_generic",
+      name: "Bilforhandler",
+      type: "car",
+      blurb: "Du trenger den ikke. Men du kommer til å ville ha den.",
+      careers: ["naeringsliv", "by"],
+      minVisitedPlaces: 10
+    },
+    {
+      id: "housing_market",
+      name: "Boligmarkedet",
+      type: "housing",
+      blurb: "Markedet er rolig i dag. (Neida.)",
+      careers: ["by"],
+      minVisitedPlaces: 8
+    }
+  ];
+
+  const careerFiltered = allStores.filter((store) => {
+    const careerOk =
+      !Array.isArray(store.careers) || store.careers.includes(careerId);
+
+    const visitOk =
+      !Number.isFinite(Number(store.minVisitedPlaces)) ||
+      visitedCount >= Number(store.minVisitedPlaces);
+
+    return careerOk && visitOk;
+  });
+
+  const accessFiltered = careerFiltered.filter((store) =>
+    storeMatchesAccess(store, phaseTag, accessSignals)
+  );
+
+  if (accessFiltered.length) return accessFiltered;
+  if (careerFiltered.length) return careerFiltered;
+  return allStores.slice(0, 2);
+}
+
+function getDayEventHistory() {
+  try {
+    const raw = localStorage.getItem("hg_day_event_history_v1");
+    const parsed = JSON.parse(raw || "[]");
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function setDayEventHistory(history) {
+  try {
+    localStorage.setItem(
+      "hg_day_event_history_v1",
+      JSON.stringify(Array.isArray(history) ? history.slice(-30) : [])
+    );
+  } catch {}
+}
+
+function getRecentDayEventKeys(phaseTag, careerId) {
+  return getDayEventHistory()
+    .filter((entry) => {
+      return String(entry?.phaseTag || "") === String(phaseTag || "") &&
+        String(entry?.careerId || "") === String(careerId || "");
+    })
+    .slice(-3)
+    .map((entry) => String(entry?.storeId || "").trim())
+    .filter(Boolean);
+}
+
+function rememberDayEvent(active, phaseTag, store, meta) {
+  const safeMeta = meta && typeof meta === "object" ? meta : {};
+  const history = getDayEventHistory();
+  history.push({
+    at: new Date().toISOString(),
+    careerId: String(active?.career_id || "").trim(),
+    phaseTag: String(phaseTag || "").trim(),
+    storeId: String(store?.id || "").trim(),
+    storeName: String(store?.name || "").trim(),
+    subject: String(safeMeta?.subject || "").trim(),
+    variantId: String(safeMeta?.variantId || "").trim(),
+    semanticEventKey: String(safeMeta?.semanticEventKey || "").trim(),
+    entryType: String(safeMeta?.entryType || "store_pick").trim()
+  });
+  setDayEventHistory(history);
+}
+
+function pickStoreContext(active, phaseTag) {
+  const pool = getCareerStorePool(active, phaseTag);
+  if (!pool.length) {
+    return {
+      id: "fallback_context",
+      name: String(active?.brand_name || "").trim() || "miljøet ditt",
+      type: "generic",
+      blurb: "Et sted du kjenner litt, men ikke helt.",
+      phaseTag
+    };
+  }
+
+  const visitedCount = getVisitedPlacesCount();
+  const idxBase =
+    Number(window.CivicationCalendar?.getPhaseModel?.()?.dayIndex || 1) +
+    (phaseTag === "evening" ? 1 : 0) +
+    visitedCount;
+
+  const careerId = String(active?.career_id || "").trim();
+  const recentStoreIds = new Set(getRecentDayEventKeys(phaseTag, careerId));
+  const rotated = pool.slice(idxBase % pool.length).concat(pool.slice(0, idxBase % pool.length));
+  const nonRecent = rotated.filter((store) => !recentStoreIds.has(String(store?.id || "").trim()));
+  const chosen = nonRecent[0] || rotated[0] || pool[0];
+
+  rememberDayEvent(active, phaseTag, chosen, { entryType: "store_pick" });
+
+  return {
+    ...chosen,
+    phaseTag,
+    visitedCount
+  };
+}
+
+function applyStoreTypeFlavor(eventObj, phaseTag, store) {
+  const type = String(store?.type || "generic");
+  const ev = {
+    ...eventObj,
+    choices: Array.isArray(eventObj?.choices)
+      ? eventObj.choices.map((c) => ({ ...c }))
+      : [],
+    situation: Array.isArray(eventObj?.situation)
+      ? eventObj.situation.slice()
+      : []
+  };
+
+  if (phaseTag === "lunch") {
+    if (type === "clothing") {
+      ev.situation.push("Miljøet her handler om stil, signaler og hva slags person du ser ut som i andres øyne.");
+      ev.choices = ev.choices.map((c) => {
+        if (c.id === "B") {
+          return {
+            ...c,
+            effect: Number(c.effect || 0) + 1,
+            label: String(c.label || "").replace("Ta en sosial lunsj", "Ta en synlig lunsj")
+          };
+        }
+        return c;
+      });
+    }
+
+    if (type === "tech") {
+      ev.situation.push("Samtalene her drar lett mot kvalitet, detaljer og hvem som faktisk kan noe.");
+      ev.choices = ev.choices.map((c) => {
+        if (c.id === "A") {
+          return {
+            ...c,
+            effect: Number(c.effect || 0) + 1,
+            label: String(c.label || "").replace("Spis raskt", "Ta en presis og fokusert lunsj")
+          };
+        }
+        return c;
+      });
+    }
+
+    if (type === "car") {
+      ev.situation.push("Her handler alt litt mer om ambisjon, status og hvor raskt ting kan beveges videre.");
+      ev.choices = ev.choices.map((c) => {
+        if (c.id === "C") {
+          return {
+            ...c,
+            effect: Number(c.effect || 0) + 1,
+            label: String(c.label || "").replace("Hopp over lunsjen", "Dropp lunsjen og jag momentum")
+          };
+        }
+        return c;
+      });
+    }
+
+    if (type === "housing") {
+      ev.situation.push("Stemningen her trekker mot stabilitet, forankring og spørsmålet om hvor livet egentlig er på vei.");
+      ev.choices = ev.choices.map((c) => {
+        if (c.id === "A") {
+          return {
+            ...c,
+            effect: Number(c.effect || 0) + 1,
+            label: String(c.label || "").replace("Spis raskt", "Ta en rolig og stabil lunsj")
+          };
+        }
+        return c;
+      });
+    }
+  }
+
+  if (phaseTag === "evening") {
+    if (type === "clothing") {
+      ev.situation.push("Kvelden her handler om stil, scene og hvor synlig du vil gjøre deg selv.");
+      ev.choices = ev.choices.map((c) => {
+        if (c.id === "C") {
+          return {
+            ...c,
+            effect: Number(c.effect || 0) + 1,
+            label: String(c.label || "").replace("Oppsøk folk og miljø", "Gjør deg synlig i miljøet")
+          };
+        }
+        return c;
+      });
+    }
+
+    if (type === "tech") {
+      ev.situation.push("Kvelden her handler mer om nerdekapital, presisjon og hvem som faktisk har oversikt.");
+      ev.choices = ev.choices.map((c) => {
+        if (c.id === "A") {
+          return {
+            ...c,
+            effect: Number(c.effect || 0) + 1,
+            label: String(c.label || "").replace("Ta frivillig overtid", "Fordyp deg og press ut mer verdi")
+          };
+        }
+        return c;
+      });
+    }
+
+    if (type === "car") {
+      ev.situation.push("Alt rundt deg peker mot tempo, status og en litt mer risikovillig kveld.");
+      ev.choices = ev.choices.map((c) => {
+        if (c.id === "A" || c.id === "C") {
+          return {
+            ...c,
+            effect: Number(c.effect || 0) + 1
+          };
+        }
+        return c;
+      });
+    }
+
+    if (type === "housing") {
+      ev.situation.push("Kvelden her gjør det vanskelig å ignorere spørsmål om trygghet, plass og hvilken struktur livet ditt hviler på.");
+      ev.choices = ev.choices.map((c) => {
+        if (c.id === "B") {
+          return {
+            ...c,
+            effect: Number(c.effect || 0) + 1,
+            label: String(c.label || "").replace("Trekk deg rolig bort", "Trekk deg hjemover og la kvelden lande")
+          };
+        }
+        return c;
+      });
+    }
+  }
+
+  return ev;
+}
+
+function applyCareerFlavor(eventObj, phaseTag, active) {
+  const careerId = String(active?.career_id || "").trim();
+
+  const ev = {
+    ...eventObj,
+    choices: Array.isArray(eventObj?.choices)
+      ? eventObj.choices.map((c) => ({ ...c }))
+      : [],
+    situation: Array.isArray(eventObj?.situation)
+      ? eventObj.situation.slice()
+      : []
+  };
+
+  if (careerId === "naeringsliv") {
+    ev.situation.push("Alt vurderes litt i lys av verdi, tempo og hva som faktisk flytter noe fremover.");
+    ev.choices = ev.choices.map((c) => {
+      if (c.id === "A") return { ...c, effect: Number(c.effect || 0) + 1 };
+      return c;
+    });
+  }
+
+  if (careerId === "by") {
+    ev.situation.push("Du leser situasjonen gjennom struktur, koordinering og hvordan ting henger sammen i større skala.");
+    ev.choices = ev.choices.map((c) => {
+      if (c.id === "B") return { ...c, effect: Number(c.effect || 0) + 1 };
+      return c;
+    });
+  }
+
+  if (careerId === "musikk") {
+    ev.situation.push("Du merker alt litt mer som scene, rytme og nærvær mellom mennesker.");
+    ev.choices = ev.choices.map((c) => {
+      if (c.id === "C") return { ...c, effect: Number(c.effect || 0) + 1 };
+      return c;
+    });
+  }
+
+  if (careerId === "politikk") {
+    ev.situation.push("Du kjenner etter hvordan valgene dine leses offentlig, og hva de signaliserer utover seg selv.");
+    ev.choices = ev.choices.map((c) => {
+      if (c.id === "B" || c.id === "C") {
+        return { ...c, effect: Number(c.effect || 0) + 1 };
+      }
+      return c;
+    });
+  }
+
+  if (careerId === "media") {
+    ev.situation.push("Du tenker fort i vinkler, oppmerksomhet og hvilke handlinger som faktisk blir lagt merke til.");
+    ev.choices = ev.choices.map((c) => {
+      if (c.id === "C") return { ...c, effect: Number(c.effect || 0) + 1 };
+      return c;
+    });
+  }
+
+  if (careerId === "historie") {
+    ev.situation.push("Du leser stedet og øyeblikket som lag på lag av spor, institusjoner og minner.");
+    ev.choices = ev.choices.map((c) => {
+      if (c.id === "B") return { ...c, effect: Number(c.effect || 0) + 1 };
+      return c;
+    });
+  }
+
+  if (careerId === "vitenskap") {
+    ev.situation.push("Du vurderer valgene gjennom presisjon, metode og hva som faktisk tåler nærmere gransking.");
+    ev.choices = ev.choices.map((c) => {
+      if (c.id === "A" || c.id === "B") {
+        return { ...c, effect: Number(c.effect || 0) + 1 };
+      }
+      return c;
+    });
+  }
+
+  if (careerId === "kunst") {
+    ev.situation.push("Du kjenner etter uttrykk, symbolsk verdi og hva slags blikk situasjonen inviterer frem.");
+    ev.choices = ev.choices.map((c) => {
+      if (c.id === "C") return { ...c, effect: Number(c.effect || 0) + 1 };
+      return c;
+    });
+  }
+
+  if (careerId === "litteratur") {
+    ev.situation.push("Du tenker i formuleringer, nyanser og hvordan små valg får mening over tid.");
+    ev.choices = ev.choices.map((c) => {
+      if (c.id === "B") return { ...c, effect: Number(c.effect || 0) + 1 };
+      return c;
+    });
+  }
+
+  if (careerId === "natur") {
+    ev.situation.push("Du leser tempo, belastning og omgivelser som del av et større økologisk og kroppslig bilde.");
+    ev.choices = ev.choices.map((c) => {
+      if (c.id === "A" || c.id === "B") {
+        return { ...c, effect: Number(c.effect || 0) + 1 };
+      }
+      return c;
+    });
+  }
+
+  if (careerId === "sport") {
+    ev.situation.push("Du oppfatter valgene som rytme, driv og hvor mye energi som faktisk er i kroppen akkurat nå.");
+    ev.choices = ev.choices.map((c) => {
+      if (c.id === "A") return { ...c, effect: Number(c.effect || 0) + 1 };
+      return c;
+    });
+  }
+
+  if (careerId === "populaerkultur") {
+    ev.situation.push("Du leser situasjonen gjennom referanser, stemning og hva som fester seg i folks oppmerksomhet.");
+    ev.choices = ev.choices.map((c) => {
+      if (c.id === "C") return { ...c, effect: Number(c.effect || 0) + 1 };
+      return c;
+    });
+  }
+
+  if (careerId === "subkultur") {
+    ev.situation.push("Du kjenner etter miljø, edge og hvem som faktisk hører hjemme i rommet.");
+    ev.choices = ev.choices.map((c) => {
+      if (c.id === "C") return { ...c, effect: Number(c.effect || 0) + 1 };
+      return c;
+    });
+  }
+
+  if (careerId === "film_tv") {
+    ev.situation.push("Du ser lett situasjonen som scene, klipp og hvordan den ville tatt seg ut for et publikum.");
+    ev.choices = ev.choices.map((c) => {
+      if (c.id === "C") return { ...c, effect: Number(c.effect || 0) + 1 };
+      return c;
+    });
+  }
+
+  if (careerId === "teater") {
+    ev.situation.push("Du kjenner etter timing, nærvær og hvordan rollen din spilles i møte med andre.");
+    ev.choices = ev.choices.map((c) => {
+      if (c.id === "C" || c.id === "B") {
+        return { ...c, effect: Number(c.effect || 0) + 1 };
+      }
+      return c;
+    });
+  }
+
+  if (careerId === "psykologi") {
+    ev.situation.push("Du merker raskt hva som driver mennesker, og hvordan små valg setter spor i relasjoner og selvforståelse.");
+    ev.choices = ev.choices.map((c) => {
+      if (c.id === "B") return { ...c, effect: Number(c.effect || 0) + 1 };
+      return c;
+    });
+  }
+
+  return ev;
+}
+
+function applyContactBonusToEvent(eventObj, phaseTag) {
+  const contacts = getCiviContacts();
+  if (!Array.isArray(contacts) || !contacts.length) return eventObj;
+
+  const ctx =
+    phaseTag === "lunch"
+      ? eventObj?.lunch_context || null
+      : phaseTag === "evening"
+        ? eventObj?.evening_context || null
+        : null;
+
+  if (!ctx) return eventObj;
+
+  const contextId = String(ctx?.history_go_context_id || ctx?.store_id || "");
+  if (!contextId) return eventObj;
+
+  const matching = contacts.filter((c) => {
+    const sourceId = String(c?.sourceContextId || "");
+    return sourceId && sourceId === contextId;
+  });
+
+  if (!matching.length) return eventObj;
+
+  const strongest = matching
+    .slice()
+    .sort((a, b) => Number(b?.strength || 0) - Number(a?.strength || 0))[0];
+
+  const type = String(strongest?.type || "generic");
+  const strength = Number(strongest?.strength || 1);
+
+  const ev = {
+    ...eventObj,
+    choices: Array.isArray(eventObj?.choices)
+      ? eventObj.choices.map((c) => ({ ...c }))
+      : [],
+    situation: Array.isArray(eventObj?.situation)
+      ? eventObj.situation.slice()
+      : []
+  };
+
+  let boostedChoiceId = null;
+
+  if (phaseTag === "lunch") {
+    if (type === "miljo" || type === "synlighet") {
+      boostedChoiceId = "B";
+    } else if (type === "kollega") {
+      boostedChoiceId = "A";
+    }
+  }
+
+  if (phaseTag === "evening") {
+    if (type === "nettverk" || type === "synlighet") {
+      boostedChoiceId = "C";
+    } else if (type === "kollega") {
+      boostedChoiceId = "A";
+    }
+  }
+
+  if (!boostedChoiceId) return ev;
+
+  ev.choices = ev.choices.map((c) => {
+    if (String(c?.id || "") === boostedChoiceId) {
+      return {
+        ...c,
+        effect: Number(c.effect || 0) + 1
+      };
+    }
+    return c;
+  });
+
+  ev.situation.push(
+    `En kontakt i dette miljøet gir deg litt ekstra handlingsrom akkurat her.`
+  );
+
+  ev.contact_bonus = {
+    contactType: type,
+    sourceContextId: contextId,
+    strength,
+    boostedChoiceId
+  };
+
+  return ev;
+}

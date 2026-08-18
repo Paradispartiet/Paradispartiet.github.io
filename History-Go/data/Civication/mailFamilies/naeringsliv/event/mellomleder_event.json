@@ -1,0 +1,36 @@
+{
+  "schema": "civication_mail_family_catalog_v1",
+  "category": "naeringsliv",
+  "role_scope": "mellomleder",
+  "mail_type": "event",
+  "families": [
+    {
+      "id": "driftskrise",
+      "mails": [
+        {
+          "id": "ml_core_010",
+          "mail_type": "event",
+          "phase": "advanced",
+          "subject": "Produksjonen stopper",
+          "situation": [
+            "En kritisk feil stopper flyten.",
+            "Alle ser på deg.",
+            "Du har få gode alternativer."
+          ],
+          "choices": [
+            {
+              "id": "A",
+              "label": "Ta styring raskt og eie konsekvensene av valget",
+              "effect": 1
+            },
+            {
+              "id": "B",
+              "label": "Prøve å vinne tid og håpe at situasjonen løser seg delvis selv",
+              "effect": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

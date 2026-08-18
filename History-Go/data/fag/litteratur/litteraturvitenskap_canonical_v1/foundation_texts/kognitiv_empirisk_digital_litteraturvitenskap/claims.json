@@ -1,0 +1,688 @@
+{
+  "schema": "history_go_fagverk_claims_v1",
+  "version": "1.0.0",
+  "subject_id": "litteratur",
+  "chapter_id": "kognitiv_empirisk_digital_litteraturvitenskap",
+  "verified_at": "2026-08-07",
+  "verification_status": "verified",
+  "sources": [
+    {
+      "id": "kd01",
+      "label": "Empirical Methods for the Study of Literature and Reading",
+      "url": "https://methods.sagepub.com/book/empirical-methods-for-the-study-of-literature-and-reading",
+      "publisher": "SAGE Research Methods",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Kapitlene om forskningsdesign, hypotese, utvalg, måling, intervju, eksperiment og statistisk analyse"
+    },
+    {
+      "id": "kd02",
+      "label": "Stanford Literary Lab Pamphlets",
+      "url": "https://litlab.stanford.edu/pamphlets/",
+      "publisher": "Stanford University",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Pamflettseriens studier av korpusbygging, sjanger, nettverk, kvantitativ modell og litteraturhistorie"
+    },
+    {
+      "id": "kd03",
+      "label": "HTRC Derived Datasets",
+      "url": "https://analytics.hathitrust.org/deriveddatasets",
+      "publisher": "HathiTrust Research Center",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Datasettoversikten med volum-ID-er, metadata, features, lisens, versjon og dokumentasjon"
+    },
+    {
+      "id": "kd04",
+      "label": "TEI Guidelines",
+      "url": "https://tei-c.org/guidelines/",
+      "publisher": "Text Encoding Initiative",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "P5-kapitlene om corpus, textcrit, manuscripts, feature structures og dokumentasjon"
+    },
+    {
+      "id": "kd05",
+      "label": "CLARIN for Literature Researchers",
+      "url": "https://www.clarin.eu/k-centre-profile-audiences/researchers-literature-and-history-ideas",
+      "publisher": "CLARIN ERIC",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Seksjonene om språkressurser, korpus, verktøy, støtte og bruk for litteraturforskere"
+    },
+    {
+      "id": "kd06",
+      "label": "The FAIR Guiding Principles",
+      "url": "https://www.nature.com/articles/sdata201618",
+      "publisher": "Scientific Data",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Prinsippene F1–F4, A1–A2, I1–I3 og R1–R1.3 om metadata og gjenbruk"
+    },
+    {
+      "id": "kd07",
+      "label": "Welcome to OSF Projects",
+      "url": "https://help.osf.io/article/353-welcome-to-projects",
+      "publisher": "Center for Open Science",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Veiledningen om OSF-prosjekt, komponenter, filer, wiki, registrering, DOI og tilgang"
+    },
+    {
+      "id": "kd08",
+      "label": "Project Gutenberg Collection",
+      "url": "https://www.gutenberg.org/",
+      "publisher": "Project Gutenberg",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Katalog-, søke-, format-, metadata- og lisensvisningene for Project Gutenberg-samlingen"
+    },
+    {
+      "id": "kd09",
+      "label": "VoyantServer",
+      "url": "https://github.com/voyanttools/VoyantServer",
+      "publisher": "Voyant Tools",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Repositoryets README, installasjon, serverarkitektur, analysefunksjoner og lisens"
+    },
+    {
+      "id": "kd10",
+      "label": "Natural Language Toolkit Book",
+      "url": "https://www.nltk.org/book/",
+      "publisher": "NLTK Project",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Kapittel 1–11 om tokenisering, korpus, klassifikasjon, tagging, parsing og semantikk"
+    },
+    {
+      "id": "kd11",
+      "label": "The Dangers of Stochastic Parrots",
+      "url": "https://dl.acm.org/doi/10.1145/3442188.3445922",
+      "publisher": "Association for Computing Machinery",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Seksjon 1–6 om språkmodellers skala, treningsdata, miljøkostnad, bias og dokumentasjon"
+    },
+    {
+      "id": "kd12",
+      "label": "Mrs Dalloway",
+      "url": "https://www.gutenberg.org/ebooks/71865",
+      "publisher": "Project Gutenberg",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Romanens dagsforløp, fri indirekte stil, bevissthetsframstilling og perspektivskifter"
+    },
+    {
+      "id": "kd13",
+      "label": "HTRC Extracted Features 2.5",
+      "url": "https://www.hathitrust.org/blogs/extracted-features-2-5-new-release-of-open-access-dataset-from-the-hathitrust-research-center/",
+      "publisher": "HathiTrust",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Utgivelsesnotatet om Extracted Features 2.5, filstruktur, metadata, versjon og dekning"
+    },
+    {
+      "id": "kd14",
+      "label": "TEI P5 Guidelines",
+      "url": "https://tei-c.org/release/doc/tei-p5-doc/en/html/index.html",
+      "publisher": "Text Encoding Initiative",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "P5-dokumentasjonens kapitler om elementer, attributter, tilpasning, validering og versjoner"
+    }
+  ],
+  "claims": [
+    {
+      "id": "ked-01",
+      "claim": "En faglig analyse av kognitiv narratologi og sinn må skille og dokumentere bevissthetsframstilling, indre tale og perspektiv.",
+      "source_ids": [
+        "kd01",
+        "kd12",
+        "kd08",
+        "kd02"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-02",
+      "claim": "En faglig analyse av kognitiv narratologi og sinn må skille og dokumentere sinnsattribusjon, teori om sinn og sosial inferens.",
+      "source_ids": [
+        "kd01",
+        "kd12",
+        "kd08",
+        "kd02"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-03",
+      "claim": "En faglig analyse av kognitiv narratologi og sinn må skille og dokumentere skjema, script og forventningsstyrt forståelse.",
+      "source_ids": [
+        "kd01",
+        "kd12",
+        "kd08",
+        "kd02"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-04",
+      "claim": "En faglig analyse av kognitiv narratologi og sinn må skille og dokumentere kroppslig, situert og enaktiv kognisjon.",
+      "source_ids": [
+        "kd01",
+        "kd12",
+        "kd08",
+        "kd02"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-05",
+      "claim": "En faglig analyse av kognitiv narratologi og sinn må skille og dokumentere upålitelige, distribuerte og ikke-menneskelige sinn.",
+      "source_ids": [
+        "kd01",
+        "kd12",
+        "kd08",
+        "kd02"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-06",
+      "claim": "En faglig analyse av kognitiv narratologi og sinn må skille og dokumentere forholdet mellom litterær figur og psykologisk personmodell.",
+      "source_ids": [
+        "kd01",
+        "kd12",
+        "kd08",
+        "kd02"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-07",
+      "claim": "En faglig analyse av kognitiv narratologi og sinn må skille og dokumentere historisk og kulturell variasjon i kognitive begreper.",
+      "source_ids": [
+        "kd01",
+        "kd12",
+        "kd08",
+        "kd02"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-08",
+      "claim": "En faglig analyse av empirisk leserforskning må skille og dokumentere forskningsspørsmål, hypotese og operasjonalisering.",
+      "source_ids": [
+        "kd01",
+        "kd07",
+        "kd12",
+        "kd06"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-09",
+      "claim": "En faglig analyse av empirisk leserforskning må skille og dokumentere utvalg, rekruttering og populasjonsgrense.",
+      "source_ids": [
+        "kd01",
+        "kd07",
+        "kd12",
+        "kd06"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-10",
+      "claim": "En faglig analyse av empirisk leserforskning må skille og dokumentere lesetid, blikksporing og atferdsdata.",
+      "source_ids": [
+        "kd01",
+        "kd07",
+        "kd12",
+        "kd06"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-11",
+      "claim": "En faglig analyse av empirisk leserforskning må skille og dokumentere intervju, tenkehøyttprotokoll og kvalitativ respons.",
+      "source_ids": [
+        "kd01",
+        "kd07",
+        "kd12",
+        "kd06"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-12",
+      "claim": "En faglig analyse av empirisk leserforskning må skille og dokumentere spørreskjema, skala og selvrapport.",
+      "source_ids": [
+        "kd01",
+        "kd07",
+        "kd12",
+        "kd06"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-13",
+      "claim": "En faglig analyse av empirisk leserforskning må skille og dokumentere reliabilitet, validitet og statistisk usikkerhet.",
+      "source_ids": [
+        "kd01",
+        "kd07",
+        "kd12",
+        "kd06"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-14",
+      "claim": "En faglig analyse av empirisk leserforskning må skille og dokumentere samtykke, personvern, preregistrering og deling.",
+      "source_ids": [
+        "kd01",
+        "kd07",
+        "kd12",
+        "kd06"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-15",
+      "claim": "En faglig analyse av korpus og fjernlesning må skille og dokumentere korpusspørsmål, inklusjonsregel og dokumentert omfang.",
+      "source_ids": [
+        "kd02",
+        "kd03",
+        "kd08",
+        "kd13"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-16",
+      "claim": "En faglig analyse av korpus og fjernlesning må skille og dokumentere representativitet, kanon, overlevelse og utvalgsskjevhet.",
+      "source_ids": [
+        "kd02",
+        "kd03",
+        "kd08",
+        "kd13"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-17",
+      "claim": "En faglig analyse av korpus og fjernlesning må skille og dokumentere bibliografiske metadata, dubletter og verk-utgave-forhold.",
+      "source_ids": [
+        "kd02",
+        "kd03",
+        "kd08",
+        "kd13"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-18",
+      "claim": "En faglig analyse av korpus og fjernlesning må skille og dokumentere frekvens, distribusjon, trend og relevant sammenligningsgrunnlag.",
+      "source_ids": [
+        "kd02",
+        "kd03",
+        "kd08",
+        "kd13"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-19",
+      "claim": "En faglig analyse av korpus og fjernlesning må skille og dokumentere sjanger, periode og kategorier som historiske konstruksjoner.",
+      "source_ids": [
+        "kd02",
+        "kd03",
+        "kd08",
+        "kd13"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-20",
+      "claim": "En faglig analyse av korpus og fjernlesning må skille og dokumentere veksling mellom makromønster og tekstnær kontroll.",
+      "source_ids": [
+        "kd02",
+        "kd03",
+        "kd08",
+        "kd13"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-21",
+      "claim": "En faglig analyse av korpus og fjernlesning må skille og dokumentere OCR-feil, opphavsrett, hull og fraværets inferensgrense.",
+      "source_ids": [
+        "kd02",
+        "kd03",
+        "kd08",
+        "kd13"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-22",
+      "claim": "En faglig analyse av tekstutvinning og modellering må skille og dokumentere tokenisering, segmentering, lemmatisering og språkteknologisk forbehandling.",
+      "source_ids": [
+        "kd04",
+        "kd09",
+        "kd10",
+        "kd14"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-23",
+      "claim": "En faglig analyse av tekstutvinning og modellering må skille og dokumentere trekkvalg, representasjon og tap av tekstlig informasjon.",
+      "source_ids": [
+        "kd04",
+        "kd09",
+        "kd10",
+        "kd14"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-24",
+      "claim": "En faglig analyse av tekstutvinning og modellering må skille og dokumentere temamodellering og probabilistiske emnefordelinger.",
+      "source_ids": [
+        "kd04",
+        "kd09",
+        "kd10",
+        "kd14"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-25",
+      "claim": "En faglig analyse av tekstutvinning og modellering må skille og dokumentere stilometri, avstandsmål og forfatterattribusjon.",
+      "source_ids": [
+        "kd04",
+        "kd09",
+        "kd10",
+        "kd14"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-26",
+      "claim": "En faglig analyse av tekstutvinning og modellering må skille og dokumentere navngjenkjenning, relasjoner og litterære nettverk.",
+      "source_ids": [
+        "kd04",
+        "kd09",
+        "kd10",
+        "kd14"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-27",
+      "claim": "En faglig analyse av tekstutvinning og modellering må skille og dokumentere trening, validering, baseline og feilkategorier.",
+      "source_ids": [
+        "kd04",
+        "kd09",
+        "kd10",
+        "kd14"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-28",
+      "claim": "En faglig analyse av tekstutvinning og modellering må skille og dokumentere modellresultat som spor for fortolkning, ikke skjult mening.",
+      "source_ids": [
+        "kd04",
+        "kd09",
+        "kd10",
+        "kd14"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-29",
+      "claim": "En faglig analyse av datasett, metadata og reproduserbarhet må skille og dokumentere datasettets proveniens, versjon, lisens og rettighetsstatus.",
+      "source_ids": [
+        "kd03",
+        "kd06",
+        "kd07",
+        "kd14"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-30",
+      "claim": "En faglig analyse av datasett, metadata og reproduserbarhet må skille og dokumentere dataordbok, schema, identifikator og dokumentert transformasjon.",
+      "source_ids": [
+        "kd03",
+        "kd06",
+        "kd07",
+        "kd14"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-31",
+      "claim": "En faglig analyse av datasett, metadata og reproduserbarhet må skille og dokumentere kode, parameter, avhengighet og kjørbart miljø.",
+      "source_ids": [
+        "kd03",
+        "kd06",
+        "kd07",
+        "kd14"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-32",
+      "claim": "En faglig analyse av datasett, metadata og reproduserbarhet må skille og dokumentere preregistrering, analyseplan og endringslogg.",
+      "source_ids": [
+        "kd03",
+        "kd06",
+        "kd07",
+        "kd14"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-33",
+      "claim": "En faglig analyse av datasett, metadata og reproduserbarhet må skille og dokumentere FAIR-prinsipper, arkivering og persistent sitering.",
+      "source_ids": [
+        "kd03",
+        "kd06",
+        "kd07",
+        "kd14"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-34",
+      "claim": "En faglig analyse av datasett, metadata og reproduserbarhet må skille og dokumentere manglende data, feil, eksklusjoner og kvalitetsrapport.",
+      "source_ids": [
+        "kd03",
+        "kd06",
+        "kd07",
+        "kd14"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-35",
+      "claim": "En faglig analyse av datasett, metadata og reproduserbarhet må skille og dokumentere reproduserbarhet, replisering og fortolkende etterprøvbarhet.",
+      "source_ids": [
+        "kd03",
+        "kd06",
+        "kd07",
+        "kd14"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-36",
+      "claim": "En faglig analyse av algoritmisk bias og fortolkningsgrense må skille og dokumentere korpusskjevhet fra innsamling, bevaring, digitalisering og tilgang.",
+      "source_ids": [
+        "kd05",
+        "kd11",
+        "kd13",
+        "kd06"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-37",
+      "claim": "En faglig analyse av algoritmisk bias og fortolkningsgrense må skille og dokumentere OCR- og normaliseringsfeil fordelt mellom språk, sjangre og typografi.",
+      "source_ids": [
+        "kd05",
+        "kd11",
+        "kd13",
+        "kd06"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-38",
+      "claim": "En faglig analyse av algoritmisk bias og fortolkningsgrense må skille og dokumentere annotasjonskategorier, uenighet og skjulte normer.",
+      "source_ids": [
+        "kd05",
+        "kd11",
+        "kd13",
+        "kd06"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-39",
+      "claim": "En faglig analyse av algoritmisk bias og fortolkningsgrense må skille og dokumentere modellarkitektur, treningsmål og innebygd forenkling.",
+      "source_ids": [
+        "kd05",
+        "kd11",
+        "kd13",
+        "kd06"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-40",
+      "claim": "En faglig analyse av algoritmisk bias og fortolkningsgrense må skille og dokumentere evalueringsmål, testsett, baseline og domeneoverføring.",
+      "source_ids": [
+        "kd05",
+        "kd11",
+        "kd13",
+        "kd06"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-41",
+      "claim": "En faglig analyse av algoritmisk bias og fortolkningsgrense må skille og dokumentere rasialisering, kjønn, klasse, språk og global dataulikhet.",
+      "source_ids": [
+        "kd05",
+        "kd11",
+        "kd13",
+        "kd06"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "ked-42",
+      "claim": "En faglig analyse av algoritmisk bias og fortolkningsgrense må skille og dokumentere skillet mellom prediksjonsytelse, forklaring og litterær fortolkning.",
+      "source_ids": [
+        "kd05",
+        "kd11",
+        "kd13",
+        "kd06"
+      ],
+      "classification": "cognitive_empirical_digital_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "b6e-13",
+      "claim": "Kognitiv narratologi og sinn kan prøves konkret gjennom Mrs Dalloway.",
+      "source_ids": [
+        "kd01",
+        "kd12"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b6e-14",
+      "claim": "Empirisk leserforskning kan prøves konkret gjennom et forhåndsregistrert leseeksperiment med ett utdrag.",
+      "source_ids": [
+        "kd01",
+        "kd07"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b6e-15",
+      "claim": "Korpus og fjernlesning kan prøves konkret gjennom et HathiTrust-korpus med eksplisitt inklusjonsregel.",
+      "source_ids": [
+        "kd02",
+        "kd03"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b6e-16",
+      "claim": "Tekstutvinning og modellering kan prøves konkret gjennom et flerspråklig korpus analysert i Voyant og NLTK.",
+      "source_ids": [
+        "kd09",
+        "kd10"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b6e-17",
+      "claim": "Datasett, metadata og reproduserbarhet kan prøves konkret gjennom et TEI-kodet datasett publisert etter FAIR-prinsippene.",
+      "source_ids": [
+        "kd04",
+        "kd06"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b6e-18",
+      "claim": "Algoritmisk bias og fortolkningsgrense kan prøves konkret gjennom HTRC Extracted Features og en språkmodell.",
+      "source_ids": [
+        "kd11",
+        "kd13"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    }
+  ]
+}

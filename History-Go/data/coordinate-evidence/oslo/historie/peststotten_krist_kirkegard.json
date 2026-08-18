@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0",
+  "placeId": "peststotten_krist_kirkegard",
+  "placeFile": "data/places/historie/oslo/places_historie_added_batch_01/peststotten_krist_kirkegard.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.917469,
+    "lon": 10.746586,
+    "r": 70,
+    "coordStatus": "verified",
+    "coordSource": "Atlas Obscura published monument coordinate; identity and placement cross-checked with Oslo byleksikon",
+    "coordType": "monument_point",
+    "coordNote": "Atlas Obscura publishes the explicit point 59.917469, 10.746586 for Peststøtten. Oslo byleksikon independently identifies Peststøtten as the monument at the entrance to Krist kirkegård. The point represents the monument itself, not the cemetery area, and no address proxy or nearest-feature logic is used."
+  },
+  "identity": {
+    "currentName": "Peststøtten – Krist kirkegård",
+    "resolvedIdentity": "Peststøtten ved inngangen til Krist kirkegård",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "poi",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [],
+  "evidence": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Atlas Obscura – Black Death Monument (Peststøtten)",
+      "sourceUrl": "https://www.atlasobscura.com/places/black-death-monument-peststotten",
+      "sourceObjectId": "atlasobscura:black-death-monument-peststotten",
+      "sourceQuality": "published_exact_source_coordinate",
+      "finding": "The source publishes 59.917469, 10.746586 specifically for the Peststøtten monument.",
+      "canVerifyCoordinate": true,
+      "reason": "Explicit published point for the named monument; retained as the coordinate source."
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Oslo byleksikon – Peststøtten",
+      "sourceUrl": "https://oslobyleksikon.no/side/Pestst%C3%B8tten",
+      "sourceObjectId": "oslobyleksikon:peststotten",
+      "sourceQuality": "independent_identity_and_placement_crosscheck",
+      "finding": "Oslo byleksikon identifies Peststøtten as Oslo’s oldest public monument and places it at the entrance to Krist kirkegård.",
+      "canVerifyCoordinate": false,
+      "reason": "Independent identity and placement cross-check; it does not publish the coordinate used by the place record."
+    }
+  ],
+  "addressCandidates": [],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "atlasobscura:black-death-monument-peststotten",
+      "canApplyToPlace": true
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "oslobyleksikon:peststotten",
+      "canApplyToPlace": false
+    }
+  ],
+  "geometryCandidates": [],
+  "coordinateCandidates": [
+    {
+      "lat": 59.917469,
+      "lon": 10.746586,
+      "coordRole": "display_marker",
+      "sourceObjectId": "atlasobscura:black-death-monument-peststotten",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Batch audit confirms the existing canonical coordinate source and closes this record in top-level source queue order."
+  },
+  "notes": [
+    "Coordinate re-audited 2026-07-21 in top-level source queue order.",
+    "Atlas Obscura publishes the explicit point 59.917469, 10.746586 for Peststøtten. Oslo byleksikon independently identifies Peststøtten as the monument at the entrance to Krist kirkegård. The point represents the monument itself, not the cemetery area, and no address proxy or nearest-feature logic is used."
+  ]
+}

@@ -1,0 +1,1914 @@
+/**
+ * @typedef {Record<string, any>} CiviEventEngineRecord
+ * @typedef {{ id?: string, label?: string, text?: string, value?: string, effect?: number|string, effects?: CiviEventEngineRecord, result?: CiviEventEngineRecord, next_event_id?: string, channel?: string, feedback?: string, tags?: unknown[], moral_flag?: boolean, [key: string]: any }} CiviEventEngineChoice
+ * @typedef {{ id?: string, stage?: string, status?: string, type?: string, channel?: string, phase?: string, phase_tag?: string, source?: string, source_type?: string, title?: string, subject?: string, body?: string, text?: string, situation?: unknown, choices?: CiviEventEngineChoice[], effect?: unknown, effects?: CiviEventEngineRecord, daily_mail_meta?: CiviEventEngineRecord, feedback?: string, conflict_ids?: unknown[], role_content_meta?: CiviEventEngineRecord, task_id?: string|null, task_payload?: CiviEventEngineRecord, created_at?: string, expires_at?: string, __pack?: CiviEventEngineRecord, [key: string]: any }} CiviEventEngineEvent
+ * @typedef {{ id?: string, event_id?: string, status?: string, type?: string, channel?: string, phase?: string, phase_tag?: string, enqueued_at?: string, created_at?: string, expires_at?: string, answered_at?: string, event?: CiviEventEngineEvent, choices?: CiviEventEngineChoice[], [key: string]: any }} CiviEventEngineInboxItem
+ * @typedef {{ stability?: string, warning_used?: boolean, strikes?: number, score?: number, active_role_key?: string|null, consumed?: CiviEventEngineRecord, identity_tags?: unknown[], tracks?: unknown[], track_progress?: CiviEventEngineRecord, unemployed_since_week?: string|null, mail_director?: CiviEventEngineRecord, conflict_state?: CiviEventEngineRecord, story_state?: CiviEventEngineRecord, [key: string]: unknown }} CiviEventEngineState
+ */
+
+function slugify(str) {
+  return String(str || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "_")
+    .replace(/^_+|_+$/g, "")
+    .slice(0, 64);
+}
+
+function weekKey(d) {
+  /** @type {Date} */
+  const base = d || new Date();
+
+  const date = new Date(
+    Date.UTC(
+      base.getFullYear(),
+      base.getMonth(),
+      base.getDate()
+    )
+  );
+
+  const dayNum = date.getUTCDay() || 7;
+
+  date.setUTCDate(
+    date.getUTCDate() + 4 - dayNum
+  );
+
+  const yearStart = new Date(
+    Date.UTC(date.getUTCFullYear(), 0, 1)
+  );
+
+  const weekNo = Math.ceil(
+    (((date.getTime() - yearStart.getTime()) / 86400000) + 1) / 7
+  );
+
+  return (
+    date.getUTCFullYear() +
+    "-W" +
+    String(weekNo).padStart(2, "0")
+  );
+}
+
+function weekIndexFromWeekKey(k) {
+  const m = String(k || "")
+    .match(/^(\d{4})-W(\d{2})$/);
+
+  if (!m) return null;
+
+  const y = Number(m[1]);
+  const w = Number(m[2]);
+
+  if (!Number.isFinite(y) ||
+      !Number.isFinite(w)) {
+    return null;
+  }
+
+  return y * 53 + w;
+}
+
+function weeksPassedBetweenWeekKeys(sinceW, nowW) {
+  const a = weekIndexFromWeekKey(sinceW);
+  const b = weekIndexFromWeekKey(nowW);
+
+  if (a == null || b == null) return 0;
+
+  return Math.max(0, b - a);
+}
+
+function isDailyWorkdayEvent(ev) {
+  return ev?.mail_class === "daily_workday" ||
+    String(ev?.source_type || "").startsWith("daily_") ||
+    !!ev?.daily_mail_meta;
+}
+
+// Mailer som eies av en aktiv rolleplan (planlagt mail eller konsekvens-tråd).
+// Reaktive mailer (advarsel/generisk followup) skal ikke fortrenge planens
+// deterministiske rekkefølge — enqueueEvent prepender, så en advarsel her ville
+// lagt seg foran neste planlagte sak.
+function isPlanManagedEvent(ev) {
+  const sourceType = String(ev?.source_type || "");
+  return sourceType === "planned" ||
+    sourceType === "thread" ||
+    ev?._is_thread === true ||
+    !!ev?.mail_plan_meta;
+}
+
+// ============================================================
+// CivicationEventEngine
+// ============================================================
+
+class CivicationEventEngine {
+
+  constructor(opts = {}) {
+
+    this.state = opts.state || window.HG_STATE || {};
+
+    this.state.career = this.state.career || {
+      activeJob: null,
+      obligations: [],
+      reputation: 70,
+      salaryModifier: 1
+    };
+
+    this.packBasePath = opts.packBasePath || "data/Civication";
+
+    this.maxInbox =
+      Number.isFinite(opts.maxInbox) ? opts.maxInbox : 1;
+
+    this.pulseLimitPerDay = 3;
+
+    this.packsCache = new Map();
+
+    /** @type {boolean|undefined} */
+    this.__civiSuppressImmediateFollowup = undefined;
+
+    this.packMap = opts.packMap || {
+      naering: "jobbmails/naeringsliv/naeringslivCivic.json",
+      naeringsliv: "jobbmails/naeringsliv/naeringslivCivic.json",
+      media: "mediaCivic.json",
+      by: "byCivic.json"
+    };
+  }
+
+  // -------- state --------
+
+  // -------- state --------
+
+  /** @returns {CiviEventEngineState} */
+  getState() {
+    return /** @type {CiviEventEngineState} */ (window.CivicationState.getState());
+  }
+
+  /** @param {CiviEventEngineRecord} patch */
+  setState(patch) {
+    return window.CivicationState.setState(patch || {});
+  }
+
+/** @param {string|null|undefined} role_key */
+resetForNewJob(role_key) {
+  const rk = role_key || null;
+
+  this.setState({
+    stability: "STABLE",
+    warning_used: false,
+    strikes: 0,
+    score: 0,
+    active_role_key: rk,
+    consumed: {},
+    identity_tags: [],
+    tracks: [],
+    track_progress: {},
+    unemployed_since_week: null,
+    mail_director: {
+      turn_index: 0,
+      last_source_type: null,
+      consecutive_role_mails: 0
+    },
+    conflict_state: {
+      category: null,
+      tier_label: null,
+      active_conflicts: [],
+      cycle_index: 0
+    }
+  });
+}
+  
+  // -------- inbox --------
+
+  /** @returns {CiviEventEngineInboxItem[]} */
+  getInbox() {
+    if (window.CivicationMailEngine?.getInbox) {
+      return /** @type {CiviEventEngineInboxItem[]} */ (window.CivicationMailEngine.getInbox());
+    }
+    return /** @type {CiviEventEngineInboxItem[]} */ (window.CivicationState.getInbox());
+  }
+
+  /** @param {CiviEventEngineInboxItem[]} arr */
+  setInbox(arr) {
+    if (window.CivicationMailEngine?.replaceInbox) {
+      window.CivicationMailEngine.replaceInbox(arr);
+      return;
+    }
+    if (window.CivicationMailEngine?.migrateOldInboxIfNeeded) {
+      window.CivicationMailEngine.migrateOldInboxIfNeeded();
+    }
+    window.CivicationState.setInbox(arr);
+  }
+
+  /** @returns {CiviEventEngineInboxItem|null} */
+  getPendingEvent() {
+    /** @type {CiviEventEngineInboxItem[]} */
+    const inbox = this.getInbox();
+    if (!Array.isArray(inbox)) return null;
+
+    return inbox.find(
+      m => m && m.status === "pending"
+    ) || null;
+  }
+
+  /** @param {string} eventId
+   * @param {string} choiceId
+   * @returns {boolean}
+   */
+  syncAnsweredChoiceToMailHistory(eventId, choiceId) {
+    const resolvedEventId = String(eventId || "").trim();
+    const resolvedChoiceId = String(choiceId || "").trim();
+
+    if (!resolvedEventId || !resolvedChoiceId) return false;
+
+    try {
+      if (typeof window.CivicationMailEngine?.markResolved === "function") {
+        return !!window.CivicationMailEngine.markResolved(
+          resolvedEventId,
+          resolvedEventId,
+          resolvedChoiceId
+        );
+      }
+    } catch (e) {
+      return false;
+    }
+
+    return false;
+  }
+
+  // -------- role_key resolution --------
+
+  /** @returns {string|null} */
+  resolveRoleKey() {
+    /** @type {CiviEventEngineRecord|null} */
+    const active = window.CivicationState.getActivePosition();
+    if (!active) return null;
+
+    if (active.role_key) {
+      return String(active.role_key);
+    }
+
+    const t = slugify(active.title || "");
+    if (t) return t;
+
+    if (active.career_id) {
+      return String(active.career_id);
+    }
+
+    return null;
+  }
+
+  syncRoleBaselineFromActive() {
+    /** @type {CiviEventEngineRecord|null} */
+    const active = window.CivicationState.getActivePosition();
+
+    if (!active?.career_id) {
+      window.CivicationPsyche?.clearRoleBaseline?.();
+      return;
+    }
+
+    const merits =
+      JSON.parse(
+        localStorage.getItem("merits_by_category") || "{}"
+      );
+
+    const points =
+      Number(merits[active.career_id]?.points || 0);
+
+    const badge =
+      window.BADGES?.find(
+        /** @param {CiviEventEngineRecord} b */
+        b => b.id === active.career_id
+      );
+
+    const tier =
+      badge
+        ? deriveTierFromPoints(badge, points)
+        : { tierIndex: 0 };
+
+    const baseline = {
+      integrity: 0,
+      visibility: 0,
+      economicRoom: 0
+    };
+
+    window.CivicationPsyche?.applyRoleBaseline?.(
+      baseline
+    );
+  }
+
+ensureRoleKeySynced() {
+  /** @type {CiviEventEngineRecord|null} */
+  const active = window.CivicationState.getActivePosition();
+
+  if (!active) {
+    this.setState({ active_role_key: null });
+    return null;
+  }
+
+  /** @type {CiviEventEngineRecord|null} */
+  const resolver = window.CivicationCareerRoleResolver;
+  const resolved = typeof resolver?.resolveCareerRole === "function"
+    ? resolver.resolveCareerRole(active)
+    : null;
+
+  const fallbackRoleKey = this.resolveRoleKey();
+  const roleKey = String(resolved?.role_key || fallbackRoleKey || "").trim() || null;
+  const roleId = String(resolved?.role_id || "").trim() || null;
+  const st = this.getState();
+
+  const nextActive = { ...active };
+  let shouldWriteActive = false;
+
+  if (roleKey && roleKey !== active?.role_key) {
+    nextActive.role_key = roleKey;
+    shouldWriteActive = true;
+  }
+
+  if (roleId && roleId !== active?.role_id) {
+    nextActive.role_id = roleId;
+    shouldWriteActive = true;
+  }
+
+  if (shouldWriteActive) {
+    window.CivicationState.setActivePosition(nextActive);
+  }
+
+  const currentStateRoleKey = String(st?.active_role_key || "").trim() || null;
+  if (roleKey && roleKey !== currentStateRoleKey) {
+    this.resetForNewJob(roleKey);
+  }
+
+  return roleKey;
+}
+  // -------- pulse gating --------
+
+  getPulseSlot() {
+    const now = new Date();
+    const hour = now.getHours();
+
+    if (hour < 8) return "morning";
+    if (hour < 16) return "day";
+    return "evening";
+  }
+
+  todayKey() {
+    const d = new Date();
+    return d.toISOString().slice(0, 10);
+  }
+
+  canPulseNow() {
+    const slot = this.getPulseSlot();
+    const t = this.todayKey();
+    /** @type {CiviEventEngineRecord} */
+    const p = /** @type {CiviEventEngineRecord} */ (window.CivicationState.getPulse() || {});
+
+    if (!p || p.date !== t) {
+      window.CivicationState.setPulse({ date: t, seen: {} });
+      return true;
+    }
+
+    const seen = p.seen || {};
+    return !seen[slot];
+  }
+
+  markPulseUsed() {
+    const slot = this.getPulseSlot();
+    const t = this.todayKey();
+    /** @type {CiviEventEngineRecord} */
+    const p = /** @type {CiviEventEngineRecord} */ (window.CivicationState.getPulse() || {});
+
+    const seen = p.seen || {};
+    seen[slot] = true;
+
+    window.CivicationState.setPulse({ date: t, seen });
+  }
+
+  // -------- pack loading --------
+
+  async loadPack(packFile) {
+    if (!packFile) return null;
+
+    if (this.packsCache.has(packFile)) {
+      return this.packsCache.get(packFile);
+    }
+
+    const url =
+      `${this.packBasePath}/${packFile}`;
+
+    const res = await fetch(url);
+    if (!res.ok) return null;
+
+    const pack = await res.json();
+    this.packsCache.set(packFile, pack);
+    return pack;
+  }
+
+async buildMailPool(active, state, role_key) {
+  const runtimeMails =
+    await window.CivicationMailRuntime?.makeCandidateMailsForActiveRole?.(
+      active,
+      state
+    ) || [];
+
+  const taggedRuntimeMails = runtimeMails.map((m) => ({
+    ...m,
+    source_type: m?.source_type || "planned"
+  }));
+
+  return {
+    role: active?.career_id || null,
+    tag_rules: {
+      max_tags_per_choice: 2,
+      memory_window: 12
+    },
+    tracks: [],
+    mails: taggedRuntimeMails,
+    __civication_mail_runtime: true,
+    __legacy_fallback: false,
+    __runtime_candidate_count: taggedRuntimeMails.length,
+    __no_runtime_candidates: taggedRuntimeMails.length === 0
+  };
+}
+  
+  // -------- event selection --------
+
+  /** @param {{mails?: CiviEventEngineEvent[]}|null|undefined} pack
+   * @param {CiviEventEngineState} state
+   * @returns {CiviEventEngineEvent|null}
+   */
+  pickEventFromPack(pack, state) {
+    if (!pack || !Array.isArray(pack.mails)) {
+      return null;
+    }
+
+    const consumed = state && state.consumed
+      ? state.consumed
+      : {};
+
+    const autonomyRaw =
+      window.CivicationPsyche &&
+      typeof window.CivicationPsyche.getAutonomy === "function"
+        ? window.CivicationPsyche.getAutonomy(state.active_role_key)
+        : 50;
+    const autonomy = Number.isFinite(Number(autonomyRaw)) ? Number(autonomyRaw) : 50;
+
+    const stability = state.stability;
+
+    const wantWarningMail =
+      (stability === "WARNING" && state.warning_used !== true);
+
+    let candidates = pack.mails.filter(function (m) {
+      return m && m.id && !consumed[m.id];
+    });
+
+    candidates = candidates.filter(function (m) {
+      return m.stage !== "fired" && m.stage !== "unemployed";
+    });
+
+    if (stability === "STABLE") {
+      candidates = candidates.filter(function (m) {
+        return m.stage === "stable" ||
+               m.stage === "stable_warning";
+      });
+    }
+
+    if (stability === "WARNING") {
+      candidates = candidates.filter(function (m) {
+        return m.stage === "warning" ||
+               m.stage === "warning_danger" ||
+               m.stage === "stable_warning";
+      });
+    }
+
+    if (wantWarningMail) {
+      const warn = candidates.find(function (m) {
+        return m.is_warning_mail === true;
+      });
+      if (warn) return warn;
+    }
+
+    function scoreMail(m) {
+      let score = 0;
+
+    
+
+      const director =
+  (state && state.mail_director && typeof state.mail_director === "object")
+    ? state.mail_director
+    : {
+        turn_index: 0,
+        last_source_type: null,
+        consecutive_role_mails: 0
+      };
+
+      const sourceType = String(m?.source_type || "pack").trim();
+       if (sourceType === "planned") {
+        score += 50;
+       }
+      const turnIndex = Number(director.turn_index || 0);
+      const consecutiveRoleMails = Number(director.consecutive_role_mails || 0);
+      const lastSourceType = String(director.last_source_type || "").trim();
+
+const conflictState =
+  state?.conflict_state && typeof state.conflict_state === "object"
+    ? state.conflict_state
+    : {
+        active_conflicts: [],
+        cycle_index: 0
+      };
+
+const activeConflicts = Array.isArray(conflictState.active_conflicts)
+  ? conflictState.active_conflicts
+  : [];
+
+const activeConflictFocus =
+  activeConflicts.length
+    ? String(
+        activeConflicts[
+          Number(conflictState.cycle_index || 0) % activeConflicts.length
+        ] || ""
+      ).trim()
+    : "";
+      
+      const identityTags =
+        Array.isArray(state.identity_tags)
+          ? state.identity_tags
+          : [];
+
+      const tracks =
+        Array.isArray(state.tracks)
+          ? state.tracks
+          : [];
+
+      const gating =
+        (m && m.gating)
+          ? m.gating
+          : {};
+
+      const trackProgress =
+        (state && state.track_progress && typeof state.track_progress === "object")
+          ? state.track_progress
+          : {};
+
+      const storyState =
+        (state && state.story_state && typeof state.story_state === "object")
+          ? state.story_state
+          : { story_flags: [], story_tags: [] };
+
+      const storyFlags = Array.isArray(storyState.story_flags)
+        ? storyState.story_flags
+        : [];
+
+      const storyTags = Array.isArray(storyState.story_tags)
+        ? storyState.story_tags
+        : [];
+
+   // Enkel mail-regissør:
+// - start med pack for å etablere jobbhverdagen
+// - ikke la rollemails komme to ganger på rad for lett
+// - gi rollemails litt plass etter at packen har etablert feltet
+
+if (turnIndex < 2) {
+  if (sourceType === "pack") score += 20;
+  if (sourceType === "role") score -= 8;
+}
+
+if (consecutiveRoleMails >= 1 && sourceType === "role") {
+  score -= 12;
+}
+
+if (lastSourceType === "pack" && turnIndex >= 2 && sourceType === "role") {
+  score += 4;
+}
+
+if (lastSourceType === "role" && sourceType === "pack") {
+  score += 6;
+}
+
+const mailConflictIds = Array.isArray(m?.conflict_ids)
+  ? m.conflict_ids.map(x => String(x || "").trim()).filter(Boolean)
+  : [];
+
+const primaryConflict = String(
+  m?.role_content_meta?.primary_conflict ||
+  m?.primary_conflict ||
+  ""
+).trim();
+
+const secondaryConflict = String(
+  m?.role_content_meta?.secondary_conflict ||
+  m?.secondary_conflict ||
+  ""
+).trim();
+
+if (activeConflictFocus) {
+  if (mailConflictIds.indexOf(activeConflictFocus) !== -1) {
+    score += 8;
+  }
+
+  if (primaryConflict === activeConflictFocus) {
+    score += 10;
+  }
+
+  if (secondaryConflict === activeConflictFocus) {
+    score += 4;
+  }
+}
+
+if (activeConflicts.length > 1) {
+  for (let i = 0; i < activeConflicts.length; i++) {
+    const ac = String(activeConflicts[i] || "").trim();
+    if (!ac || ac === activeConflictFocus) continue;
+
+    if (mailConflictIds.indexOf(ac) !== -1) {
+      score += 2;
+    }
+
+    if (primaryConflict === ac) {
+      score += 3;
+    }
+
+    if (secondaryConflict === ac) {
+      score += 1;
+    }
+  }
+}
+      
+      
+      if (Array.isArray(gating.require_tags)) {
+        for (let i = 0; i < gating.require_tags.length; i++) {
+          const t = gating.require_tags[i];
+          if (identityTags.indexOf(t) === -1) return -1000;
+        }
+      }
+
+      if (Array.isArray(gating.require_story_flags)) {
+        for (let i = 0; i < gating.require_story_flags.length; i++) {
+          const f = gating.require_story_flags[i];
+          if (storyFlags.indexOf(f) === -1) return -1000;
+        }
+      }
+
+      if (Array.isArray(gating.avoid_story_flags)) {
+        for (let i = 0; i < gating.avoid_story_flags.length; i++) {
+          const f = gating.avoid_story_flags[i];
+          if (storyFlags.indexOf(f) !== -1) return -1000;
+        }
+      }
+
+      if (Array.isArray(gating.prefer_story_flags)) {
+        for (let i = 0; i < gating.prefer_story_flags.length; i++) {
+          const f = gating.prefer_story_flags[i];
+          if (storyFlags.indexOf(f) !== -1) {
+            score += 4;
+          }
+        }
+      }
+
+      if (Array.isArray(gating.prefer_story_tags)) {
+        for (let i = 0; i < gating.prefer_story_tags.length; i++) {
+          const t = gating.prefer_story_tags[i];
+          if (storyTags.indexOf(t) !== -1) {
+            score += 2;
+          }
+        }
+      }
+
+      if (Array.isArray(gating.require_tracks)) {
+        for (let i = 0; i < gating.require_tracks.length; i++) {
+          const tr = gating.require_tracks[i];
+          if (tracks.indexOf(tr) === -1) return -1000;
+        }
+      }
+
+      if (gating.require_track_step_min && typeof gating.require_track_step_min === "object") {
+        for (const tr in gating.require_track_step_min) {
+          const need = Number(gating.require_track_step_min[tr] || 0);
+          const have = Number(trackProgress[tr] || 0);
+          if (Number.isFinite(need) && have < need) return -1000;
+        }
+      }
+
+      if (Array.isArray(gating.avoid_tags)) {
+        for (let i = 0; i < gating.avoid_tags.length; i++) {
+          const t = gating.avoid_tags[i];
+          if (identityTags.indexOf(t) !== -1) {
+            return -1000;
+          }
+        }
+      }
+
+      if (Array.isArray(gating.prefer_tags)) {
+        for (let i = 0; i < gating.prefer_tags.length; i++) {
+          const t = gating.prefer_tags[i];
+          if (identityTags.indexOf(t) !== -1) {
+            score += 2;
+          }
+        }
+      }
+
+      if (Array.isArray(gating.prefer_tracks)) {
+        for (let i = 0; i < gating.prefer_tracks.length; i++) {
+          const tr = gating.prefer_tracks[i];
+          if (tracks.indexOf(tr) !== -1) {
+            score += 3;
+          }
+        }
+      }
+
+      return score;
+    }
+
+    candidates.sort(function (a, b) {
+      return scoreMail(b) - scoreMail(a);
+    });
+
+    return candidates.length ? candidates[0] : null;
+  }
+
+  // -------- warning / fired system mails --------
+
+  makeFiredEvent(role_key, ctx = {}) {
+    const title =
+      String(ctx.title || ctx.career_name || "Stilling").trim() ||
+      "Stilling";
+
+    const expected = Number(ctx.expectedCount || 0);
+    const answered = Number(ctx.answeredCount || 0);
+
+    const pct =
+      Number.isFinite(Number(ctx.completionPercent))
+        ? Number(ctx.completionPercent)
+        : Math.max(
+            0,
+            Math.min(100, Math.round(Number(ctx.completionRate || 0) * 100))
+          );
+
+    const situation = [
+      `Arbeidsforholdet knyttet til ${title} er avsluttet.`
+    ];
+
+    if (expected > 0) {
+      situation.push(
+        `Du fullførte ${answered} av ${expected} oppgaver (${pct} %).`
+      );
+    } else {
+      situation.push("Aktiviteten din har vært for lav over tid.");
+    }
+
+    situation.push("Tilgangen stenges med umiddelbar virkning.");
+
+    return {
+      id: `${role_key || slugify(title) || "job"}_fired_${Date.now()}`,
+      stage: "fired",
+      source: "System",
+      subject: `Oppsigelse: ${title}`,
+      situation: situation,
+      choices: [
+        {
+          id: "A",
+          label: "Registrer og gå videre",
+          effect: 0,
+          feedback: "Arbeidsforholdet er avsluttet."
+        }
+      ],
+      effect: "job_lost",
+      feedback: "Arbeidsforholdet er avsluttet."
+    };
+  }
+
+  makeWarningEvent(ctx = {}) {
+    const title =
+      String(ctx.title || ctx.career_name || "Stilling").trim() ||
+      "Stilling";
+
+    const expected = Number(ctx.expectedCount || 0);
+    const answered = Number(ctx.answeredCount || 0);
+
+    const pct =
+      Number.isFinite(Number(ctx.completionPercent))
+        ? Number(ctx.completionPercent)
+        : Math.max(
+            0,
+            Math.min(100, Math.round(Number(ctx.completionRate || 0) * 100))
+          );
+
+    const daysLeft = Math.max(0, Number(ctx.daysLeft || 0));
+
+    const situation = [
+      `Du står i fare for å miste stillingen: ${title}.`
+    ];
+
+    if (expected > 0) {
+      situation.push(
+        `Du har fullført ${answered} av ${expected} oppgaver (${pct} %).`
+      );
+    } else {
+      situation.push("Aktiviteten din er for lav i denne perioden.");
+    }
+
+    if (daysLeft > 0) {
+      situation.push(
+        `Du har ${daysLeft} dager på å hente deg inn før stillingen kan ryke.`
+      );
+    } else {
+      situation.push("Du må hente deg inn umiddelbart.");
+    }
+
+    return {
+      id: `${ctx.role_key || slugify(title) || "job"}_warning_${Date.now()}`,
+      stage: "warning",
+      source: "System",
+      is_warning_mail: true,
+      subject: `Advarsel: ${title}`,
+      situation: situation,
+      choices: [
+        {
+          id: "A",
+          label: "Registrer advarselen og ta tak i det nå",
+          effect: 0,
+          tags: ["process", "legitimacy"],
+          feedback: "Advarselen er registrert. Nå må du faktisk levere."
+        }
+      ],
+      feedback: "Advarselen er registrert."
+    };
+  }
+
+  // -------- NAV fallback --------
+
+  makeNavEvent() {
+    return {
+      id: "nav_auto_" + Date.now(),
+      stage: "unemployed",
+      source: "NAV",
+      subject: "Din sak er registrert",
+      situation: [
+        "Vi mangler fortsatt dokumentasjon.",
+        "Du hører fra oss."
+      ],
+      choices: [],
+      feedback: "Bare virkelighet."
+    };
+  }
+
+  getCareerRules(careerId) {
+    const list = Array.isArray(window.HG_CAREERS)
+      ? window.HG_CAREERS
+      : Array.isArray(window.HG_CAREERS?.careers)
+        ? window.HG_CAREERS.careers
+        : [];
+
+    return list.find(c =>
+      c && String(c.career_id || "").trim() === String(careerId || "").trim()
+    ) || null;
+  }
+
+  decorateWorkMail(eventObj, active, reason) {
+    if (!eventObj || !active) return eventObj;
+
+    const stage = String(eventObj.stage || "").trim().toLowerCase();
+    if (stage === "warning" || stage === "fired" || stage === "unemployed") {
+      return eventObj;
+    }
+
+    try {
+      window.CivicationCalendar?.ensureShiftForActiveJob?.(active);
+    } catch (e) {
+      console.warn("Calendar ensure shift failed", e);
+    }
+
+    const durationMinutes = Math.max(
+      10,
+      Number(eventObj.work_minutes || eventObj.duration_minutes || 45)
+    );
+
+    const windowInfo =
+      window.CivicationCalendar?.getWindow?.(durationMinutes) || null;
+
+    const task =
+      window.CivicationTaskEngine?.ensureTaskForMail?.(
+        eventObj,
+        active,
+        { windowInfo, reason }
+      ) || null;
+
+    return Object.assign({}, eventObj, {
+      task_id: task?.id || eventObj.task_id || null,
+      work_minutes: durationMinutes,
+      work_window: windowInfo,
+      brand_id:
+        String(active?.brand_id || "").trim() ||
+        eventObj.brand_id ||
+        null,
+      brand_name:
+        String(active?.brand_name || "").trim() ||
+        eventObj.brand_name ||
+        null,
+      calendar_label: windowInfo
+        ? `${windowInfo.startsAtLabel}–${windowInfo.deadlineAtLabel}`
+        : null
+    });
+  }
+
+  async ensureStoryState() {
+    try {
+      if (window.CiviStoryResolver?.refresh) {
+        return await window.CiviStoryResolver.refresh();
+      }
+    } catch (e) {
+      console.warn("Story resolver failed", e);
+    }
+
+    return {
+      generated_at: null,
+      snapshot: null,
+      story_flags: [],
+      story_tags: [],
+      threads: []
+    };
+  }
+
+  resolvePackFile(active, role_key) {
+    const careerId = String(active?.career_id || "").trim();
+    const brandId = String(active?.brand_id || "").trim();
+
+    if (brandId) {
+      return `brand/${brandId}Civic.json`;
+    }
+
+    return (this.packMap && this.packMap[careerId])
+      ? this.packMap[careerId]
+      : (careerId
+          ? `${careerId}Civic.json`
+          : (String(role_key || "") + ".json"));
+  }
+
+async ensureConflictState(active) {
+  const careerId = String(active?.career_id || "").trim();
+  const tierLabel = String(active?.title || "").trim();
+
+  if (!careerId || !tierLabel) {
+    return {
+      category: null,
+      tier_label: null,
+      active_conflicts: [],
+      cycle_index: 0
+    };
+  }
+
+  const state = this.getState();
+  const current =
+    state?.conflict_state && typeof state.conflict_state === "object"
+      ? state.conflict_state
+      : null;
+
+  if (
+    current &&
+    current.category === careerId &&
+    current.tier_label === tierLabel &&
+    Array.isArray(current.active_conflicts) &&
+    current.active_conflicts.length
+  ) {
+    return current;
+  }
+
+  try {
+    const conflictData = await window.CivicationConflicts?.load?.(careerId);
+    const tierData = window.CivicationConflicts?.getForTier?.(conflictData, tierLabel);
+
+    const rawConflicts = Array.isArray(tierData?.conflicts)
+     ? tierData.conflicts
+     : [
+        tierData?.primary,
+        tierData?.secondary
+      ].filter(Boolean);
+
+    const activeConflicts = rawConflicts
+      .map((c) => {
+        if (typeof c === "string") return c.trim();
+        if (c && typeof c === "object") {
+          return String(c.id || c.conflict_id || c.name || "").trim();
+        }
+        return "";
+      })
+      .filter(Boolean);
+
+    const nextState = {
+      category: careerId,
+      tier_label: tierLabel,
+      active_conflicts: activeConflicts,
+      cycle_index: 0
+    };
+
+    this.setState({
+      conflict_state: nextState
+    });
+
+    return nextState;
+  } catch (e) {
+    console.warn("Conflict resolver failed", e);
+
+    const nextState = {
+      category: careerId,
+      tier_label: tierLabel,
+      active_conflicts: [],
+      cycle_index: 0
+    };
+
+    this.setState({
+      conflict_state: nextState
+    });
+
+    return nextState;
+  }
+}
+  
+  // -------- main entrypoint --------
+
+  async onAppOpen(opts = {}) {
+    const force = opts && opts.force === true;
+
+    try {
+      window.CivicationEconomyEngine?.tickWeekly?.();
+
+      try {
+        if (
+          window.CivicationPsyche &&
+          typeof window.CivicationPsyche.checkBurnout === "function"
+        ) {
+          window.CivicationPsyche.checkBurnout();
+        }
+      } catch (e) {
+        console.warn("Burnout check failed", e);
+      }
+
+    } catch (e) {
+      console.warn("Salary tick failed", e);
+    }
+
+    const role_key = this.ensureRoleKeySynced();
+
+    /** @type {CiviEventEngineRecord} */
+    let obligationEval = { ok: false, reason: "not_checked" };
+
+    try {
+      obligationEval =
+        window.CivicationObligationEngine?.evaluate?.() ||
+        { ok: false, reason: "no_engine" };
+    } catch (e) {
+      console.warn("Obligation evaluate failed", e);
+    }
+
+    const active = window.CivicationState.getActivePosition();
+
+    try {
+      if (active) {
+        window.CivicationObligationEngine?.registerLogin?.();
+      }
+    } catch (e) {
+      console.warn("Login registration failed", e);
+    }
+
+    /** @type {CiviEventEngineState} */
+    const state = this.getState();
+
+    const resolvedStoryState = await this.ensureStoryState();
+
+    this.setState({
+     story_state: resolvedStoryState
+    });
+
+    await this.ensureConflictState(active);
+
+    const stateWithStory = this.getState();
+
+    this.syncRoleBaselineFromActive();
+       if (this.getPendingEvent()) {
+         return { enqueued: false, reason: "pending_exists" };
+       }
+
+    if (obligationEval?.shouldEnqueueFired) {
+      const firedEv = this.makeFiredEvent(
+        obligationEval?.mailContext?.role_key,
+        obligationEval?.mailContext || {}
+      );
+
+      this.enqueueEvent(firedEv);
+
+      if (!force) {
+        this.markPulseUsed();
+      }
+
+      window.dispatchEvent(new Event("updateProfile"));
+
+      return {
+        enqueued: true,
+        type: "fired",
+        event: firedEv
+      };
+    }
+
+    if (obligationEval?.shouldEnqueueWarning) {
+      const warningEv = this.makeWarningEvent(
+        obligationEval?.mailContext || {}
+      );
+
+      this.enqueueEvent(warningEv);
+      this.setState({ warning_used: true });
+
+      if (!force) {
+        this.markPulseUsed();
+      }
+
+      window.dispatchEvent(new Event("updateProfile"));
+
+      return {
+        enqueued: true,
+        type: "warning",
+        event: warningEv
+      };
+    }
+
+    if (!force && !this.canPulseNow()) {
+      return { enqueued: false, reason: "pulse_used" };
+    }
+
+    if (!active) {
+      const st = this.getState();
+      const now = new Date();
+
+      /** @type {CiviEventEngineRecord} */
+      const careers =
+        /** @type {CiviEventEngineRecord} */ (window.HG_CAREERS || {});
+      /** @type {CiviEventEngineRecord} */
+      const globalRules =
+        /** @type {CiviEventEngineRecord} */ (careers.global_rules || {});
+      /** @type {CiviEventEngineRecord} */
+      const unemploymentRules =
+        /** @type {CiviEventEngineRecord} */ (globalRules.unemployment || {});
+
+      const navAfterWeeks =
+        Number(
+          unemploymentRules.nav_after_weeks || 0
+        );
+
+      const nowW = weekKey(now);
+
+      if (!st.unemployed_since_week) {
+        this.setState({ unemployed_since_week: nowW });
+        this.markPulseUsed();
+        return { enqueued: false, reason: "unemployed_started" };
+      }
+
+      const weeksPassed =
+        weeksPassedBetweenWeekKeys(st.unemployed_since_week, nowW);
+
+      if (weeksPassed >= navAfterWeeks) {
+        const nav = this.makeNavEvent();
+        this.enqueueEvent(nav);
+        this.markPulseUsed();
+        return { enqueued: true, type: "nav", event: nav };
+      }
+
+      this.markPulseUsed();
+      return { enqueued: false, reason: "unemployed_pre_nav" };
+    }
+
+    const pack = await this.buildMailPool(active, stateWithStory, role_key);
+
+if (!pack || !Array.isArray(pack.mails) || !pack.mails.length) {
+  if (!force) {
+    this.markPulseUsed();
+  }
+  return {
+    enqueued: false,
+    type: "none",
+    reason: pack?.__scene_director_error === true
+      ? "scene_director_error"
+      : "no_runtime_candidates"
+  };
+}
+
+const chosen = this.pickEventFromPack(pack, stateWithStory);
+
+if (!chosen) {
+  if (!force) {
+    this.markPulseUsed();
+  }
+  return {
+    enqueued: false,
+    type: "none",
+    reason: "no_runtime_candidate_selected"
+  };
+}
+
+    const chosenWithMeta = Object.assign({}, chosen, {
+      __pack: {
+        role: pack?.role || null,
+        tag_rules: pack?.tag_rules || null,
+        tracks: Array.isArray(pack?.tracks) ? pack.tracks : []
+      }
+    });
+
+    const decoratedChosen = this.decorateWorkMail(
+      chosenWithMeta,
+      active,
+      force ? "job_accepted" : "scheduled"
+    );
+
+    
+    this.registerChosenMail(chosenWithMeta);
+    this.enqueueEvent(decoratedChosen);
+
+    if (!force) {
+      this.markPulseUsed();
+    }
+
+    return {
+      enqueued: true,
+      type: "job",
+      event: decoratedChosen
+    };
+  }
+
+  async enqueueImmediateFollowupEvent() {
+  if (this.getPendingEvent()) {
+    return { enqueued: false, reason: "pending_exists" };
+  }
+
+  const active = window.CivicationState.getActivePosition();
+  if (!active) {
+    return { enqueued: false, reason: "no_active_job" };
+  }
+
+  await this.ensureConflictState(active);
+
+  const role_key = this.ensureRoleKeySynced();
+  const state = this.getState();
+  const pack = await this.buildMailPool(active, state, role_key);
+    
+    if (!pack || !Array.isArray(pack.mails) || !pack.mails.length) {
+      return {
+        enqueued: false,
+        type: "none",
+        reason: pack?.__scene_director_error === true
+          ? "scene_director_error"
+          : "no_runtime_candidates"
+      };
+    }
+
+    const chosen = this.pickEventFromPack(pack, state);
+
+    if (!chosen) {
+      return {
+        enqueued: false,
+        type: "none",
+        reason: "no_runtime_candidate_selected"
+      };
+    }
+
+    const chosenWithMeta = Object.assign({}, chosen, {
+      __pack: {
+        role: pack?.role || null,
+        tag_rules: pack?.tag_rules || null,
+        tracks: Array.isArray(pack?.tracks) ? pack.tracks : []
+      }
+    });
+
+    const decoratedChosen = this.decorateWorkMail(
+      chosenWithMeta,
+      active,
+      "followup"
+    );
+
+    this.registerChosenMail(chosenWithMeta);
+    this.enqueueEvent(decoratedChosen);
+    window.dispatchEvent(new Event("updateProfile"));
+
+    return {
+      enqueued: true,
+      type: "job",
+      event: decoratedChosen
+    };
+  }
+
+
+/** @param {CiviEventEngineEvent} eventObj
+ * @returns {void}
+ */
+registerChosenMail(eventObj) {
+  const state = this.getState();
+  const director =
+    (state && state.mail_director && typeof state.mail_director === "object")
+      ? state.mail_director
+      : {
+          turn_index: 0,
+          last_source_type: null,
+          consecutive_role_mails: 0
+        };
+
+  const sourceType = String(eventObj?.source_type || "pack").trim() || "pack";
+
+  const conflictState =
+    state?.conflict_state && typeof state.conflict_state === "object"
+      ? state.conflict_state
+      : {
+          category: null,
+          tier_label: null,
+          active_conflicts: [],
+          cycle_index: 0
+        };
+
+  const activeConflicts = Array.isArray(conflictState.active_conflicts)
+    ? conflictState.active_conflicts
+    : [];
+
+  const nextConflictIndex = activeConflicts.length
+    ? (Number(conflictState.cycle_index || 0) + 1) % activeConflicts.length
+    : 0;
+
+  this.setState({
+    mail_director: {
+      turn_index: Number(director.turn_index || 0) + 1,
+      last_source_type: sourceType,
+      consecutive_role_mails:
+        sourceType === "role"
+          ? Number(director.consecutive_role_mails || 0) + 1
+          : 0
+    },
+    conflict_state: {
+      ...conflictState,
+      cycle_index: nextConflictIndex
+    }
+  });
+}
+  
+  /** @param {CiviEventEngineEvent} eventObj
+   * @returns {void}
+   */
+  enqueueEvent(eventObj) {
+    const normalizedEvent = eventObj && typeof eventObj === "object"
+      ? Object.assign({}, eventObj)
+      : {};
+    const resolveChannel = window.CivicationEventChannels?.getMessageChannel;
+    if (!normalizedEvent.channel && typeof resolveChannel === "function") {
+      normalizedEvent.channel = resolveChannel(normalizedEvent);
+    }
+
+    if (window.CivicationMailEngine?.sendMail) {
+      const res = window.CivicationMailEngine.sendMail({
+        status: "pending",
+        enqueued_at: new Date().toISOString(),
+        event: normalizedEvent
+      });
+      if (res?.ok) return;
+    }
+    /** @type {CiviEventEngineInboxItem[]} */
+    const inbox = this.getInbox();
+    /** @type {CiviEventEngineInboxItem} */
+    const item = { status: "pending", enqueued_at: new Date().toISOString(), event: normalizedEvent };
+    this.setInbox(
+      /** @type {CiviEventEngineInboxItem[]} */
+      ([item].concat(inbox).slice(0, this.maxInbox))
+    );
+  }
+
+/** @param {string} taskId
+ * @returns {CiviEventEngineRecord|null}
+ */
+getStoredTaskResult(taskId) {
+  if (!taskId) return null;
+
+  try {
+    const raw = JSON.parse(
+      localStorage.getItem("hg_civi_task_results_v1") || "{}"
+    );
+
+    return raw && typeof raw === "object"
+      ? (raw[taskId] || null)
+      : null;
+  } catch {
+    return null;
+  }
+}
+
+/** @param {CiviEventEngineEvent} ev
+ * @returns {{delta:number,state:string,feedbackSuffix:string}}
+ */
+getTaskResultModifier(ev) {
+  const interaction = ev?.task_payload?.interaction || null;
+
+  // Ingen interaktiv oppgave => ingen modifikator
+  if (!interaction) {
+    return {
+      delta: 0,
+      state: "none",
+      feedbackSuffix: ""
+    };
+  }
+
+  const taskId = String(ev?.task_id || "").trim();
+  const result = this.getStoredTaskResult(taskId);
+
+  // Oppgaven finnes, men kunnskapsdelen er ikke gjort
+  if (!result || !result.selected) {
+    return {
+      delta: -1,
+      state: "not_done",
+      feedbackSuffix: "Du svarte uten å fullføre kunnskapsdelen først."
+    };
+  }
+
+  if (result.correct === true) {
+    return {
+      delta: 1,
+      state: "passed",
+      feedbackSuffix: "Du hadde også løst kunnskapsdelen riktig."
+    };
+  }
+
+  if (result.correct === false) {
+    return {
+      delta: -1,
+      state: "failed",
+      feedbackSuffix: "Kunnskapsdelen ble ikke løst riktig."
+    };
+  }
+
+  return {
+    delta: 0,
+    state: "unknown",
+    feedbackSuffix: ""
+  };
+}
+  
+  /** @param {string} eventId
+   * @param {string} choiceId
+   * @returns {Promise<CiviEventEngineRecord>} Resolves after any legacy immediate follow-up enqueue attempt has completed.
+   */
+  async answer(eventId, choiceId) {
+    /** @type {CiviEventEngineInboxItem[]} */
+    const inbox = this.getInbox();
+
+    const idx = inbox.findIndex(function (x) {
+      return x &&
+             x.status === "pending" &&
+             x.event &&
+             x.event.id === eventId;
+    });
+
+    if (idx < 0) {
+      return { ok: false, reason: "not_found" };
+    }
+
+    const item = inbox[idx];
+	    /** @type {CiviEventEngineEvent} */
+	    const ev = item.event || {};
+    /** @type {CiviEventEngineState} */
+    const state = this.getState();
+
+    let effect = 0;
+let feedback = "";
+let choice = null;
+let taskMod = {
+  delta: 0,
+  state: "none",
+  feedbackSuffix: ""
+};
+
+if (Array.isArray(ev.choices) && ev.choices.length) {
+  choice = ev.choices.find(function (c) {
+    return c && c.id === choiceId;
+  });
+
+  if (!choice) {
+    return { ok: false, reason: "bad_choice" };
+  }
+
+  if (choice.moral_flag === true) {
+	    /** @type {CiviEventEngineRecord|null} */
+	    const active = window.CivicationState.getActivePosition();
+    if (active && active.career_id &&
+        window.CivicationPsyche &&
+        typeof window.CivicationPsyche.registerCollapse === "function") {
+      window.CivicationPsyche.registerCollapse(active.career_id, "moral");
+    }
+  }
+
+  try {
+    const tags =
+      Array.isArray(choice.tags) ? choice.tags : [];
+
+    if (tags.length &&
+        window.HG_Lifestyle &&
+        typeof window.HG_Lifestyle.addTags === "function") {
+      window.HG_Lifestyle.addTags(tags, "civication_choice");
+    }
+
+  } catch (e) {}
+
+  let baseEffect = Number(choice.effect || 0);
+
+  let autonomy = 50;
+  if (window.CivicationPsyche &&
+      typeof window.CivicationPsyche.getAutonomy === "function") {
+    const autonomyRaw = window.CivicationPsyche.getAutonomy(state.active_role_key);
+    const parsedAutonomy = Number(autonomyRaw);
+    autonomy = Number.isFinite(parsedAutonomy) ? parsedAutonomy : 50;
+  }
+
+  if (baseEffect < 0 && autonomy < 30) {
+    baseEffect = baseEffect * 1.5;
+  }
+
+  if (baseEffect < 0 && autonomy > 70) {
+    baseEffect = baseEffect * 0.7;
+  }
+
+  effect = Math.round(baseEffect);
+  feedback = String(choice.feedback || "");
+
+  taskMod = this.getTaskResultModifier(ev);
+  effect += Number(taskMod.delta || 0);
+
+  if (taskMod.feedbackSuffix) {
+    feedback = feedback
+      ? `${feedback} ${taskMod.feedbackSuffix}`
+      : taskMod.feedbackSuffix;
+  }
+}
+
+    const packMeta = (ev && ev.__pack) ? ev.__pack : {};
+    const tagRules = packMeta.tag_rules || {};
+    const packTracks = Array.isArray(packMeta.tracks) ? packMeta.tracks : [];
+
+    const maxTagsPerChoice = Number(tagRules.max_tags_per_choice || 2);
+    const memoryWindow = Number(tagRules.memory_window || 12);
+
+    const chosenTags =
+      Array.isArray(choice?.tags) ? choice.tags : [];
+
+    (function applyIdentityTags() {
+      const cur = Array.isArray(state.identity_tags) ? state.identity_tags : [];
+
+      if (!chosenTags.length) {
+        state.__next_identity_tags = cur;
+        return;
+      }
+
+      const next = [];
+
+      for (let i = 0; i < chosenTags.length && next.length < maxTagsPerChoice; i++) {
+        const t = String(chosenTags[i] || "").trim();
+        if (t && next.indexOf(t) === -1) next.push(t);
+      }
+
+      for (let i = 0; i < cur.length && next.length < memoryWindow; i++) {
+        const t = String(cur[i] || "").trim();
+        if (t && next.indexOf(t) === -1) next.push(t);
+      }
+
+      state.__next_identity_tags = next;
+    })();
+
+    (function applyTracks() {
+      const curTracks = Array.isArray(state.tracks) ? state.tracks : [];
+      const curProg =
+        (state.track_progress && typeof state.track_progress === "object")
+          ? state.track_progress
+          : {};
+
+      if (!chosenTags.length) {
+        state.__next_tracks = curTracks;
+        state.__next_track_progress = curProg;
+        return;
+      }
+
+      let bestId = null;
+      let bestScore = 0;
+
+      for (let i = 0; i < packTracks.length; i++) {
+        const tr = packTracks[i];
+        const id = String(tr?.id || "").trim();
+        if (!id) continue;
+
+        const w = (tr && tr.tag_weights && typeof tr.tag_weights === "object")
+          ? tr.tag_weights
+          : {};
+
+        let score = 0;
+        for (let k = 0; k < chosenTags.length; k++) {
+          const tag = String(chosenTags[k] || "").trim();
+          if (!tag) continue;
+          score += Number(w[tag] || 0);
+        }
+
+        if (score > bestScore) {
+          bestScore = score;
+          bestId = id;
+        }
+      }
+
+      if (!bestId || bestScore <= 0) {
+        state.__next_tracks = curTracks;
+        state.__next_track_progress = curProg;
+        return;
+      }
+
+      const nextProg = Object.assign({}, curProg);
+      nextProg[bestId] = Number(nextProg[bestId] || 0) + 1;
+
+      const nextTracks = curTracks.filter(x => x !== bestId);
+      nextTracks.unshift(bestId);
+
+      state.__next_tracks = nextTracks.slice(0, 10);
+      state.__next_track_progress = nextProg;
+    })();
+
+    (function applySystemEffects() {
+      if (!chosenTags.length) return;
+
+      /** @type {CiviEventEngineRecord|null} */
+      const active = window.CivicationState.getActivePosition();
+      const careerId = String(active?.career_id || "").trim();
+
+      let dIntegrity = 0;
+      let dVisibility = 0;
+      let dEconomicRoom = 0;
+      let dTrust = 0;
+
+      for (let i = 0; i < chosenTags.length; i++) {
+        const t = String(chosenTags[i] || "").trim();
+        if (!t) continue;
+
+        if (t === "process") { dIntegrity += 2; dVisibility -= 1; dTrust += 1; }
+        if (t === "legitimacy") { dIntegrity += 1; dTrust += 2; }
+        if (t === "craft") { dIntegrity += 1; }
+        if (t === "shortcut") { dIntegrity -= 1; dVisibility += 1; dEconomicRoom += 1; dTrust -= 1; }
+        if (t === "opportunism") { dVisibility += 1; dTrust -= 1; }
+        if (t === "risk") { dIntegrity -= 2; dVisibility += 2; dTrust -= 2; }
+        if (t === "avoidance") { dIntegrity -= 1; dVisibility -= 1; }
+        if (t === "laziness") { dIntegrity -= 2; dTrust -= 1; }
+      }
+
+      const eff = (choice && choice.effects && typeof choice.effects === "object") ? choice.effects : null;
+      const psyche = eff?.psyche || null;
+
+      if (psyche) {
+        dIntegrity += Number(psyche.integrity || 0);
+        dVisibility += Number(psyche.visibility || 0);
+        dEconomicRoom += Number(psyche.economicRoom || 0);
+        dTrust += Number(psyche.trust || 0);
+      }
+
+      if (window.CivicationPsyche?.updateIntegrity && dIntegrity) window.CivicationPsyche.updateIntegrity(dIntegrity);
+      if (window.CivicationPsyche?.updateVisibility && dVisibility) window.CivicationPsyche.updateVisibility(dVisibility);
+      if (window.CivicationPsyche?.updateEconomicRoom && dEconomicRoom) window.CivicationPsyche.updateEconomicRoom(dEconomicRoom);
+
+      if (careerId && window.CivicationPsyche?.updateTrust && dTrust) {
+        window.CivicationPsyche.updateTrust(careerId, dTrust);
+      }
+
+      const idShift = eff?.identity_shift;
+      if (idShift && window.HG_IdentityCore?.shiftFocus) {
+        for (const k in idShift) {
+          const n = Number(idShift[k] || 0);
+          if (Number.isFinite(n) && n !== 0) window.HG_IdentityCore.shiftFocus(k, n);
+        }
+      }
+
+      const capDelta = eff?.capital;
+      if (capDelta && typeof capDelta === "object") {
+        try {
+          const cur = JSON.parse(localStorage.getItem("hg_capital_v1") || "{}");
+          const next = Object.assign({}, cur);
+          let changed = false;
+
+          for (const k in capDelta) {
+            const add = Number(capDelta[k] || 0);
+            if (!Number.isFinite(add)) continue;
+            const prev = Number(next[k] || 0);
+            const after = prev + add;
+            if (after !== prev) changed = true;
+            next[k] = after;
+          }
+
+          if (changed) {
+            localStorage.setItem("hg_capital_v1", JSON.stringify(next));
+            window.dispatchEvent(new Event("updateProfile"));
+          }
+        } catch (e) {}
+      }
+    })();
+
+    const consumed = Object.assign({}, state.consumed || {});
+    consumed[ev.id] = true;
+
+    let score = Number(state.score || 0) + effect;
+
+    if (score > 2) score = 2;
+    if (score < -5) score = -5;
+
+    let strikes = Number(state.strikes || 0);
+    let stability = state.stability;
+
+    if (score <= -2) {
+      strikes += 1;
+      score = 0;
+
+      if (strikes === 1) {
+        stability = "WARNING";
+      } else if (strikes >= 2) {
+        stability = "FIRED";
+      }
+
+    } else {
+      if (stability === "WARNING" && effect > 0) {
+        stability = "STABLE";
+      }
+    }
+
+    let warning_used = state.warning_used === true;
+    let legacyImmediateFollowupSuppressed = false;
+    let legacyImmediateFollowupEnqueued = false;
+
+    inbox[idx] = Object.assign({}, item, {
+      status: "resolved",
+      resolved_at: new Date().toISOString(),
+      chosen: choiceId || null,
+      effect: effect,
+      feedback: feedback
+    });
+
+    this.setInbox(inbox);
+    this.syncAnsweredChoiceToMailHistory(ev.id || eventId, choiceId);
+
+    this.setState({
+      consumed: consumed,
+      score: score,
+      strikes: strikes,
+      stability: stability,
+      warning_used: warning_used,
+
+      identity_tags: state.__next_identity_tags || state.identity_tags || [],
+      tracks: state.__next_tracks || state.tracks || [],
+      track_progress: state.__next_track_progress || state.track_progress || {}
+    });
+
+    try {
+      window.CivicationObligationEngine?.registerEventResponse?.();
+    } catch (e) {
+      console.warn("Event response registration failed", e);
+    }
+
+    try {
+     const completedTask =
+      window.CivicationTaskEngine?.completeByMail?.(
+        ev.id,
+        {
+         choiceId: choiceId || null,
+         effect: effect,
+         feedback: feedback
+       }
+     ) || null;
+
+      const spentMinutes = Math.max(
+       5,
+       Number(
+        completedTask?.durationMinutes ||
+        ev?.work_minutes ||
+        ev?.duration_minutes ||
+        45
+      )
+    );
+
+    window.CivicationCalendar?.advanceByMinutes?.(spentMinutes);
+  } catch (e) {
+    console.warn("Task/calendar completion failed", e);
+  }
+    
+    if (stability === "FIRED") {
+      /** @type {CiviEventEngineRecord|null} */
+      const prev = window.CivicationState.getActivePosition();
+      const currentState = this.getState();
+      /** @type {CiviEventEngineRecord} */
+      const currentCareerState =
+        /** @type {CiviEventEngineRecord} */ (currentState.career || {});
+      const firedRoleKey = currentState.active_role_key;
+
+      if (prev &&
+          prev.career_id &&
+          window.CivicationPsyche &&
+          typeof window.CivicationPsyche.registerCollapse === "function") {
+        window.CivicationPsyche.registerCollapse(prev.career_id, "fired");
+      }
+
+      if (prev) {
+        window.CivicationState.appendJobHistoryEnded(prev, "fired");
+      }
+
+      window.CivicationState.setActivePosition(null);
+
+      this.setState({
+        unemployed_since_week: weekKey(new Date()),
+        active_role_key: null,
+        career: {
+          ...currentCareerState,
+          activeJob: null,
+          obligations: [],
+          contract: null,
+          progress: null
+        }
+      });
+
+      const firedEv = this.makeFiredEvent(
+        firedRoleKey,
+        {
+          title: prev?.title || prev?.career_name || "Stilling",
+          career_name: prev?.career_name || "",
+          role_key: firedRoleKey
+        }
+      );
+
+      this.enqueueEvent(firedEv);
+    }
+
+    else if (stability === "WARNING" &&
+             this.getState().warning_used !== true &&
+             window.CivicationState.getActivePosition() &&
+             !isPlanManagedEvent(ev)) {
+
+      const currentState = this.getState();
+      /** @type {CiviEventEngineRecord|null} */
+      const activeNow = window.CivicationState.getActivePosition();
+      /** @type {CiviEventEngineRecord} */
+      const currentCareer =
+        /** @type {CiviEventEngineRecord} */ (currentState?.career || {});
+      /** @type {CiviEventEngineRecord} */
+      const progress =
+        /** @type {CiviEventEngineRecord} */ (currentCareer.progress || {});
+      /** @type {CiviEventEngineRecord} */
+      const contract =
+        /** @type {CiviEventEngineRecord} */ (currentCareer.contract || {});
+
+      const warningEv = this.makeWarningEvent({
+        role_key:
+          currentState.active_role_key ||
+          activeNow?.role_key ||
+          activeNow?.career_id ||
+          "job",
+        title: activeNow?.title || activeNow?.career_name || "Stilling",
+        career_name: activeNow?.career_name || "",
+        expectedCount: Number(progress.expectedCount || 0),
+        answeredCount: Number(progress.answeredCount || 0),
+        completionRate: Number(progress.completionRate || 0),
+        completionPercent: Math.max(
+          0,
+          Math.min(100, Math.round(Number(progress.completionRate || 0) * 100))
+        ),
+        daysLeft: Math.max(
+          0,
+          Number(contract.fireAfterDays || 14) -
+          Math.floor(Number(progress.daysSinceStart || 0))
+        )
+      });
+
+      this.enqueueEvent(warningEv);
+      this.setState({ warning_used: true });
+    }
+
+    else if (window.CivicationState.getActivePosition()) {
+      const suppressImmediateFollowup = this.__civiSuppressImmediateFollowup === true || isDailyWorkdayEvent(ev);
+      if (window.DEBUG) {
+        console.debug("[CivicationEventEngine] answer followup decision", {
+          mailId: ev.id || eventId,
+          choiceId: choiceId || null,
+          source_type: ev.source_type || "",
+          mail_class: ev.mail_class || "",
+          hasDailyMailMeta: !!ev.daily_mail_meta,
+          suppressImmediateFollowup
+        });
+      }
+      legacyImmediateFollowupSuppressed = suppressImmediateFollowup;
+      if (!suppressImmediateFollowup) {
+        try {
+          const followupResult = /** @type {any} */ (await this.enqueueImmediateFollowupEvent());
+          legacyImmediateFollowupEnqueued = followupResult === true || followupResult?.enqueued === true;
+        } catch (e) {
+          legacyImmediateFollowupEnqueued = false;
+          console.warn("Immediate follow-up mail failed", e);
+        }
+      }
+    }
+
+    return {
+  ok: true,
+  effect: effect,
+  stability: stability,
+  feedback: feedback,
+  taskResultState: taskMod.state,
+  legacyImmediateFollowupSuppressed: legacyImmediateFollowupSuppressed,
+  legacyImmediateFollowupEnqueued: legacyImmediateFollowupEnqueued
+};
+  }
+
+}
+
+window.CivicationEventEngine = CivicationEventEngine;

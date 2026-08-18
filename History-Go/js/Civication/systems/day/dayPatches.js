@@ -1,0 +1,714 @@
+// js/Civication/systems/day/dayPatches.js
+// Dag-fase-patch/bootstrap: recovery-/onboarding-events, task-kapital fra valg, og etter-svar-
+// effekter. Registrerer answer-middleware i ChoiceDirector og patcher onAppOpen, TaskEngine og Jobs. Dagrytmen og fase-
+// genereringen eies av DailyMailBuilder + mailDayProgram (PR A–E). Arbeidsdagspanelet (inkl.
+// fase-HUD + ukesrapport/kontakter/kunnskaps-task) rendres nativt av CivicationUI.renderWorkdayPanel
+// (PR D/G) — denne modulen monkey-patcher ikke lenger renderWorkdayPanel.
+(function () {
+
+const ANSWER_MIDDLEWARE_NAME = "day_patches";
+const ANSWER_MIDDLEWARE_PRIORITY = 90;
+const ANSWER_MIDDLEWARE_QUEUE_KEY = "__civicationChoiceAnswerMiddlewareQueue";
+
+function clearPendingEventById(engine, eventId) {
+  if (!engine || !eventId) return false;
+
+  const inbox = engine.getInbox ? engine.getInbox() : [];
+  if (!Array.isArray(inbox) || !inbox.length) return false;
+
+  const nextInbox = inbox.filter((item) => {
+    return String(item?.event?.id || "") !== String(eventId);
+  });
+
+  if (nextInbox.length === inbox.length) return false;
+
+  engine.setInbox?.(nextInbox);
+  return true;
+}
+
+function rerenderCivicationUiNow() {
+  try {
+    window.renderCivicationInbox?.();
+    window.renderWorkdayPanel?.();
+  } catch {}
+
+  try {
+    window.CivicationUI?.renderCivicationInbox?.();
+    window.CivicationUI?.renderWorkdayPanel?.();
+  } catch {}
+}
+
+function isOnboardingEvent(eventObj) {
+  return String(eventObj?.mail_class || "").trim() === "onboarding";
+}
+
+function isRecoveryEvent(eventObj) {
+  return String(eventObj?.mail_class || "").trim() === "recovery";
+}
+
+// Et daily-event er et item DailyMailBuilder har bygd fra mailDayProgram.json og levert
+// via enqueueNext. For slike events eier DailyMailBuilder + CivicationDayProgression
+// fasen (Calendar følger item.phase, og fasen avanseres først når fasens items er tomme).
+// dayPatches.answer skal derfor IKKE flytte Calendar-fasen ett hakk per svar for disse,
+// ellers ping-ponger fasen (f.eks. morning -> lunch etter første av flere morgen-items).
+// Bruker DailyMailBuilders egen klassifisering når den finnes, med en lokal fallback som
+// speiler den (mail_class === "daily_workday" / source_type starter med "daily_" /
+// daily_mail_meta finnes) slik at sjekken er robust uavhengig av lastrekkefølge.
+function isDailyRuntimeEvent(eventObj) {
+  if (!eventObj || typeof eventObj !== "object") return false;
+
+  const builderCheck = window.CivicationDailyMailBuilder?.isDailyEvent;
+  if (typeof builderCheck === "function") {
+    try {
+      return !!builderCheck(eventObj);
+    } catch {}
+  }
+
+  const mailClass = String(eventObj.mail_class || "").trim();
+  const sourceType = String(eventObj.source_type || "").trim();
+  return mailClass === "daily_workday"
+    || sourceType.startsWith("daily_")
+    || !!eventObj.daily_mail_meta;
+}
+
+/** @typedef {{ reason?: unknown, previous_role?: { title?: unknown } }} RecoveryStateLike */
+/** @typedef {{ complete?: unknown }} OnboardingStateLike */
+/** @typedef {{ career_id?: unknown }} PositionLike */
+/** @typedef {{ active?: unknown, previous_role?: unknown }} RecoveryFlagStateLike */
+
+function makeRecoveryEvent(active) {
+  /** @type {RecoveryStateLike} */
+  const recovery = window.CivicationJobs?.getRecoveryState?.() || {};
+  const reason = String(recovery.reason || "setback");
+  const title = String(recovery?.previous_role?.title || active?.title || "rollen");
+
+  const profiles = {
+    demotion_after_risk: {
+      subject: `Etterspillet etter at du falt ut av ${title}`,
+      situation: [
+        `Du står uten ${title}-rollen og kjenner at systemet ser annerledes på deg enn før.`,
+        "Det viktigste nå er ikke å skinne, men å vise at du kan bygge tillit igjen gjennom presisjon, struktur og ansvar.",
+        "Gjenoppbygging handler om hva du gjør når ingen lenger antar at du har kontroll."
+      ],
+      choices: [
+        {
+          id: "A",
+          label: "Ta ansvar for det som faktisk kan ryddes opp nå",
+          effect: 1,
+          tags: ["process", "legitimacy"],
+          feedback: "Du bygger tilbake troverdighet gjennom tydelighet og arbeid.",
+          next_bias: {
+            prefer_mail_types: ["story", "people"],
+            prefer_families: ["kunnskapens_usynlighet", "taus_fagrespekt"],
+            set_flags: ["systemsannhet", "ansvarssporing"]
+          }
+        },
+        {
+          id: "B",
+          label: "Prøve å komme deg raskt tilbake ved å pynte på det som skjedde",
+          effect: 0,
+          tags: ["visibility", "shortcut"],
+          feedback: "Du leter etter snarvei ut av fallet og står fortsatt ustøtt.",
+          next_bias: {
+            prefer_mail_types: ["people"],
+            prefer_families: ["ansvar_som_glir"],
+            set_flags: ["glattet_fortelling"]
+          }
+        }
+      ]
+    },
+    lost_lead_role: {
+      subject: `Du må finne ny tyngde etter ${title}`,
+      situation: [
+        "Det er ikke lenger rollen som bærer deg. Nå må handlingene dine gjøre det alene.",
+        "Folk ser fortsatt hva du gjør, men de lytter annerledes når tittelen er borte.",
+        "Gjenoppbygging krever at du tåler å være mindre synlig og mer presis."
+      ],
+      choices: [
+        {
+          id: "A",
+          label: "Bygge deg opp igjen gjennom konkret ansvar og rolig ledelse",
+          effect: 1,
+          tags: ["process", "craft"],
+          feedback: "Du lar substans komme før status.",
+          next_bias: {
+            prefer_mail_types: ["story", "conflict"],
+            prefer_families: ["industriell_stolthet", "faglig_integritet_early"],
+            set_flags: ["uformell_ledelse", "krisefaglighet"]
+          }
+        },
+        {
+          id: "B",
+          label: "Lete etter en rask vei tilbake til synlighet",
+          effect: 0,
+          tags: ["visibility", "risk"],
+          feedback: "Du prøver å hoppe over mellomleddet der tillit faktisk bygges.",
+          next_bias: {
+            prefer_mail_types: ["people"],
+            prefer_families: ["kollega_med_snarveier"],
+            set_flags: ["midlertidig_redning"]
+          }
+        }
+      ]
+    },
+    setback: {
+      subject: "Du prøver å finne fotfeste igjen",
+      situation: [
+        "Noe i arbeidslivet har glidd, og du kjenner at neste periode handler om å bli mer hel igjen enn å rykke fram.",
+        "Spørsmålet er ikke bare hva du kan, men hva slags rytme du velger når du skal bygge noe opp på nytt.",
+        "Små valg teller mer enn store ord akkurat nå."
+      ],
+      choices: [
+        {
+          id: "A",
+          label: "Velge det stabile og langsomme sporet tilbake",
+          effect: 1,
+          tags: ["process", "legitimacy"],
+          feedback: "Du velger å bygge før du prøver å vinne.",
+          next_bias: {
+            prefer_mail_types: ["story"],
+            prefer_families: ["kunnskapens_usynlighet"],
+            set_flags: ["mentorlinje", "erkjent_usynlig_kunnskap"]
+          }
+        },
+        {
+          id: "B",
+          label: "Prøve å presse fram fart uten å være klar",
+          effect: 0,
+          tags: ["risk", "shortcut"],
+          feedback: "Du vil videre før grunnlaget er der.",
+          next_bias: {
+            prefer_mail_types: ["people"],
+            prefer_families: ["ansvar_som_glir"],
+            set_flags: ["systemtilpasning"]
+          }
+        }
+      ]
+    }
+  };
+
+  const profile = profiles[reason] || profiles.setback;
+
+  return {
+    id: `recovery_${reason}_${Date.now()}`,
+    source: "Civication",
+    subject: profile.subject,
+    stage: "stable",
+    situation: profile.situation,
+    choices: profile.choices,
+    mail_class: "recovery",
+    recovery_reason: reason,
+    phase_tag: "morning"
+  };
+}
+
+function isOnboardingComplete(active) {
+  /** @type {OnboardingStateLike | undefined} */
+  const onboarding = window.CivicationState?.getOnboardingState?.(active);
+  return !!onboarding?.complete;
+}
+
+function updateOnboardingFromEvent(active, eventObj) {
+  const tag = String(eventObj?.onboarding_tag || "").trim();
+  if (!active || !tag) return null;
+
+  if (tag === "first_job_intro") {
+    return window.CivicationState?.setOnboardingState?.(active, {
+      intro_done: true
+    });
+  }
+
+  if (tag === "first_job_day") {
+    return window.CivicationState?.setOnboardingState?.(active, {
+      first_day_done: true,
+      complete: true
+    });
+  }
+
+  return null;
+}
+
+function getTaskCapitalPlan(phaseTag, pendingEvent, choice, result) {
+  const tags = Array.isArray(choice?.tags) ? choice.tags.map(String) : [];
+  /** @type {PositionLike | undefined} */
+  const activePosition = window.CivicationState?.getActivePosition?.();
+  const careerId =
+    String(
+      pendingEvent?.career_id ||
+      activePosition?.career_id ||
+      ""
+    ).trim();
+
+  const taskKind = String(
+    pendingEvent?.task_kind ||
+    pendingEvent?.phase_tag ||
+    ""
+  ).trim();
+
+  const plan = [];
+
+  function push(type, amount) {
+    if (!type) return;
+    const n = Number(amount || 0);
+    if (!Number.isFinite(n) || n === 0) return;
+    plan.push({ type, amount: n });
+  }
+
+  if (phaseTag === "afternoon" || pendingEvent?.task_id || taskKind === "work_case") {
+    push("institutional", 0.15);
+    push("economic", 0.08);
+  }
+
+  if (taskKind === "brand_knowledge") {
+    push("economic", 0.10);
+    push("symbolic", 0.04);
+  }
+
+  if (taskKind === "catalog_knowledge") {
+    push("cultural", 0.12);
+    push("institutional", 0.05);
+  }
+
+  if (taskKind === "place_knowledge") {
+    push("symbolic", 0.10);
+    push("institutional", 0.05);
+  }
+
+  if (tags.includes("craft")) {
+    push("cultural", 0.12);
+    push("institutional", 0.08);
+  }
+
+  if (tags.includes("process")) {
+    push("institutional", 0.12);
+    push("economic", 0.04);
+  }
+
+  if (tags.includes("legitimacy")) {
+    push("institutional", 0.10);
+    push("political", 0.05);
+  }
+
+  if (tags.includes("visibility")) {
+    push("symbolic", 0.10);
+    push("social", 0.05);
+  }
+
+  if (tags.includes("community")) {
+    push("social", 0.10);
+  }
+
+  if (tags.includes("status")) {
+    push("symbolic", 0.08);
+    push("economic", 0.04);
+  }
+
+  if (tags.includes("risk")) {
+    push("economic", 0.06);
+    push("symbolic", 0.04);
+  }
+
+  if (tags.includes("shortcut") || tags.includes("opportunism")) {
+    push("economic", 0.03);
+  }
+
+  if (tags.includes("avoidance")) {
+    push("social", -0.02);
+    push("institutional", -0.02);
+  }
+
+  if (careerId === "naeringsliv") {
+    push("economic", 0.05);
+    push("institutional", 0.03);
+  }
+
+  if (careerId === "politikk") {
+    push("political", 0.06);
+    push("institutional", 0.03);
+  }
+
+  if (careerId === "media") {
+    push("symbolic", 0.06);
+    push("political", 0.02);
+  }
+
+  if (careerId === "kunst" || careerId === "litteratur") {
+    push("cultural", 0.05);
+    push("symbolic", 0.03);
+  }
+
+  if (careerId === "subkultur") {
+    push("subculture", 0.06);
+    push("symbolic", 0.03);
+  }
+
+  return plan;
+}
+
+function mergeCapitalPlan(plan) {
+  const merged = {};
+
+  (Array.isArray(plan) ? plan : []).forEach((row) => {
+    const type = String(row?.type || "").trim();
+    const amount = Number(row?.amount || 0);
+    if (!type || !Number.isFinite(amount) || amount === 0) return;
+    merged[type] = Number(merged[type] || 0) + amount;
+  });
+
+  return merged;
+}
+
+function applyTaskCapitalFromChoice(phaseTag, pendingEvent, choice, result) {
+  if (!pendingEvent || !choice) return null;
+
+  const plan = getTaskCapitalPlan(phaseTag, pendingEvent, choice, result);
+  const merged = mergeCapitalPlan(plan);
+  const entries = Object.entries(merged);
+
+  if (!entries.length) return null;
+
+  const applied = entries.map(([type, amount]) => {
+    return window.HG_CapitalMaintenance?.maintain?.(type, amount, {
+      source: `task_${phaseTag || "work"}`,
+      useIdentityBoost: true
+    });
+  });
+
+  window.dispatchEvent(new Event("updateProfile"));
+
+  return {
+    phaseTag,
+    appliedTypes: entries.map(([type]) => type),
+    totals: merged,
+    applied
+  };
+}
+    
+function patchEventEngine() {
+  const proto = window.CivicationEventEngine?.prototype;
+  if (!proto || proto.__dayPhasePatched) return;
+  proto.__dayPhasePatched = true;
+
+  const legacyOnAppOpen = proto.onAppOpen;
+
+  proto.onAppOpen = async function (opts = {}) {
+    const active = window.CivicationState?.getActivePosition?.();
+    /** @type {RecoveryFlagStateLike} */
+    const recovery = window.CivicationJobs?.getRecoveryState?.() || {};
+
+    if (!active && !recovery.active) {
+      return legacyOnAppOpen
+        ? legacyOnAppOpen.call(this, opts)
+        : { enqueued: false, reason: "no_active_job" };
+    }
+
+    const pending = this.getPendingEvent ? this.getPendingEvent() : null;
+    if (pending?.event) {
+      return { enqueued: false, reason: "pending_exists" };
+    }
+
+    if (recovery.active) {
+      const recoveryEvent = makeRecoveryEvent(active || recovery.previous_role || {});
+      this.enqueueEvent?.(recoveryEvent);
+      return { enqueued: true, type: "recovery", event: recoveryEvent };
+    }
+
+    /** @type {OnboardingStateLike | undefined} */
+    const onboarding = window.CivicationState?.getOnboardingState?.(active);
+    if (onboarding && onboarding.complete !== true) {
+      return { enqueued: false, reason: "onboarding_incomplete" };
+    }
+
+    // PR B: DailyMailBuilder + mailDayProgram.json er den autoritative dagrytmen. Når en bygd
+    // dag finnes for aktiv rolle, skal denne eldre fase-først-generatoren IKKE lage en parallell
+    // fase-event (morgen/lunsj/ettermiddag/kveld/dagslutt). Lunch/evening/day_end-events skal
+    // komme fra programmet via DailyMailBuilder.enqueueNext. DailyMailBuilder short-circuiter
+    // allerede onAppOpen i normalflyten; denne sjekken gjør det eksplisitt også for fall-through-
+    // tilfeller (f.eks. når DailyMailBuilder er blokkert av en åpen task-gate), slik at dagen ikke
+    // får et legacy-fase-event ved siden av programmet. skipDailyMailBuilder beholdes som escape-
+    // hatch for den eldre flyten (samme flagg DailyMailBuilder selv respekterer).
+    if (!opts?.skipDailyMailBuilder
+      && window.CivicationDailyMailBuilder?.hasBuiltDayForActiveRole?.()) {
+      return { enqueued: false, reason: "deferred_to_daily_mail_builder" };
+    }
+
+    // PR E: De gamle fase-genererte onAppOpen-grenene (morgen/lunsj/ettermiddag/kveld/dagslutt)
+    // er fjernet. DailyMailBuilder + mailDayProgram eier dagrytmen og leverer alle fase-events,
+    // og fase-innholdet kommer fra dayEvents-generatorene via DailyMailBuilder (PR C). Denne
+    // wrapperen genererer ikke lenger fase-events selv: den håndterer recovery/onboarding (over)
+    // og delegerer ellers til den underliggende motoren. I Civication.html (eneste side som
+    // laster dayPatches) er DailyMailBuilder alltid lastet, så PR B-guarden over deferrer
+    // normalflyten; delegeringen her dekker bare det eksplisitte skipDailyMailBuilder-tilfellet.
+    return legacyOnAppOpen
+      ? legacyOnAppOpen.call(this, opts)
+      : { enqueued: false, reason: "no_day_phase_generator" };
+  };
+
+  }
+
+async function dayPatchesAnswerMiddleware(ctx, proceed) {
+  const engine = /** @type {any} */ (ctx?.engine);
+  const eventId = ctx?.eventId;
+  const choiceId = ctx?.choiceId;
+  const pending = engine?.getPendingEvent ? engine.getPendingEvent() : null;
+  const pendingEventId = String(pending?.event?.id || eventId || "").trim();
+  const active = window.CivicationState?.getActivePosition?.();
+  const onboardingEvent = pending?.event && isOnboardingEvent(pending.event);
+  const recoveryEvent = pending?.event && isRecoveryEvent(pending.event);
+
+  const inferredPhaseTag =
+    pending?.event?.phase_tag ||
+    (window.CivicationCalendar?.getPhase?.() === "morning" ? "morning" : null);
+  const phaseTag = inferredPhaseTag;
+
+  let originalFollowup = null;
+  if (phaseTag && typeof engine?.enqueueImmediateFollowupEvent === "function") {
+    originalFollowup = engine.enqueueImmediateFollowupEvent;
+    engine.enqueueImmediateFollowupEvent = function () {
+      return Promise.resolve({
+        enqueued: false,
+        reason: "day_phase_blocked"
+      });
+    };
+  }
+
+  // Bevar historisk nesting: dayPatches ligger innerst etter MailRuntime (priority 80).
+  // Callbacken heter med vilje proceed; day-flyten har andre historiske next-hjelpere.
+  const result = await proceed();
+
+  if (originalFollowup) {
+    engine.enqueueImmediateFollowupEvent = originalFollowup;
+  }
+
+  if (!result?.ok) return result;
+
+  if (onboardingEvent) {
+    updateOnboardingFromEvent(active, pending.event);
+    clearPendingEventById(engine, pendingEventId);
+
+    try {
+      const onboarding = /** @type {{ complete?: unknown } | null | undefined} */ (
+        window.CivicationState?.getOnboardingState?.(active)
+      );
+      if (onboarding?.complete === true) {
+        await engine.onAppOpen?.({ force: true });
+      }
+    } catch {}
+
+    rerenderCivicationUiNow();
+    window.dispatchEvent(new Event("updateProfile"));
+    return result;
+  }
+
+  if (!phaseTag) return result;
+
+  const choice =
+    Array.isArray(pending?.event?.choices)
+      ? pending.event.choices.find((c) => c && c.id === choiceId)
+      : null;
+
+  appendDayChoiceLog({
+    phase: phaseTag,
+    subject: String(pending?.event?.subject || ""),
+    choiceId,
+    label: choice?.label || (phaseTag === "day_end" ? "Bekreftet dagslutt" : ""),
+    feedback: String(result?.feedback || ""),
+    effect: Number(result?.effect || 0)
+  });
+
+  applyPhaseChoiceEffects(phaseTag, choiceId, choice);
+  applyTaskCapitalFromChoice(phaseTag, pending?.event, choice, result);
+
+  window.CivicationTaskEngine?.completeByMail?.(
+    pending?.event?.id,
+    {
+      choiceId,
+      effect: Number(result?.effect || 0),
+      feedback: String(result?.feedback || ""),
+      capitalApplied: true
+    }
+  );
+
+  maybeCreateContactFromChoice(phaseTag, pending?.event, choice, result);
+
+  try {
+    window.CivicationJobs?.maybeOfferCareerProgression?.(active);
+  } catch {}
+
+  if (recoveryEvent) {
+    clearPendingEventById(engine, pendingEventId);
+    try {
+      await engine.onAppOpen?.({ force: true });
+    } catch {}
+    rerenderCivicationUiNow();
+    window.dispatchEvent(new Event("updateProfile"));
+    return result;
+  }
+
+  const cal = window.CivicationCalendar;
+  if (!cal) return result;
+
+  // DailyMailBuilder + CivicationDayProgression eier fasen for daily-runtime-events.
+  // Legacy/non-daily events beholder den historiske per-svar-avanseringen.
+  const dailyRuntimeEvent = isDailyRuntimeEvent(pending?.event);
+
+  if (!dailyRuntimeEvent) {
+    if (phaseTag === "morning") {
+      cal.markDailyFlag?.("morning_done", true);
+      cal.setPhase?.("lunch");
+    } else if (phaseTag === "lunch") {
+      cal.markDailyFlag?.("lunch_done", true);
+      cal.setPhase?.("afternoon");
+    } else if (phaseTag === "afternoon") {
+      cal.markDailyFlag?.("afternoon_done", true);
+      cal.setPhase?.("evening");
+    } else if (phaseTag === "evening") {
+      cal.markDailyFlag?.("evening_done", true);
+      cal.setPhase?.("day_end");
+    } else if (phaseTag === "day_end") {
+      const summary = cal.getDailySummary?.();
+      if (summary) {
+        saveDailySummaryToWeek(summary);
+        const activePosition = /** @type {{ career_id?: unknown } | null | undefined} */ (
+          window.CivicationState?.getActivePosition?.()
+        );
+        const activeCareerId = activePosition?.career_id || "";
+        finalizeWeekIfNeeded(activeCareerId);
+      }
+      cal.resetForNewDay?.();
+    }
+  }
+
+  clearPendingEventById(engine, pendingEventId);
+
+  try {
+    clearPendingEventById(engine, pendingEventId);
+    await engine.onAppOpen?.({ force: true });
+  } catch {}
+
+  rerenderCivicationUiNow();
+  window.dispatchEvent(new Event("updateProfile"));
+  return result;
+}
+
+function registerAnswerMiddleware() {
+  const director = window.CivicationChoiceDirector;
+  if (director?.registerAnswerMiddleware) {
+    return director.registerAnswerMiddleware(
+      ANSWER_MIDDLEWARE_NAME,
+      dayPatchesAnswerMiddleware,
+      ANSWER_MIDDLEWARE_PRIORITY
+    );
+  }
+
+  const runtimeWindow = /** @type {Window & typeof globalThis & { __civicationChoiceAnswerMiddlewareQueue?: Array<{ name: string, fn: Function, priority: number }> }} */ (window);
+  const queue = Array.isArray(runtimeWindow[ANSWER_MIDDLEWARE_QUEUE_KEY])
+    ? runtimeWindow[ANSWER_MIDDLEWARE_QUEUE_KEY]
+    : (runtimeWindow[ANSWER_MIDDLEWARE_QUEUE_KEY] = []);
+
+  if (!queue.some((entry) => entry?.name === ANSWER_MIDDLEWARE_NAME)) {
+    queue.push({
+      name: ANSWER_MIDDLEWARE_NAME,
+      fn: dayPatchesAnswerMiddleware,
+      priority: ANSWER_MIDDLEWARE_PRIORITY
+    });
+  }
+  return true;
+}
+
+function patchTaskEngine() {
+  const engine = window.CivicationTaskEngine;
+  if (!engine || engine.__dayPhasePatched) return;
+  engine.__dayPhasePatched = true;
+
+  const originalCreateTaskForMail = engine.createTaskForMail;
+
+  if (typeof originalCreateTaskForMail === "function") {
+    engine.createTaskForMail = function (mailEvent, active, options) {
+      const task = originalCreateTaskForMail.call(engine, mailEvent, active, options);
+      if (!task) return task;
+
+      const phaseModel = window.CivicationCalendar?.getPhaseModel?.() || {};
+
+      const gatedTask = applyKnowledgeGateToTask(task, mailEvent, active);
+
+      const updated = {
+        ...gatedTask,
+        dayIndex: Number(phaseModel.dayIndex || 1),
+        phase: String(mailEvent?.phase_tag || phaseModel.phase || "morning"),
+        phase_required: true
+      };
+
+      const gatedMailEvent = applyKnowledgeGateToMailEvent(mailEvent, updated);
+
+      const store = engine.getStore ? engine.getStore() : null;
+      if (store?.byId?.[updated.id]) {
+        store.byId[updated.id] = {
+          ...updated,
+          gated_mail_event: gatedMailEvent
+        };
+        engine.setStore?.(store);
+      }
+
+      return {
+        ...updated,
+        gated_mail_event: gatedMailEvent
+      };
+    };
+  }
+
+  engine.listOpenTasksForCurrentPhase = function () {
+    const store = engine.getStore ? engine.getStore() : { byId: {}, order: [] };
+    const order = Array.isArray(store.order) ? store.order : [];
+    const phaseModel = window.CivicationCalendar?.getPhaseModel?.() || {};
+
+    return order
+      .map((id) => store.byId?.[id] || null)
+      .filter(
+        (task) =>
+          task &&
+          task.status === "open" &&
+          Number(task.dayIndex || 1) === Number(phaseModel.dayIndex || 1) &&
+          String(task.phase || "") === String(phaseModel.phase || "")
+      );
+  };
+}
+
+  function patchJobs() {
+    const jobs = /** @type {any} */ (window.CivicationJobs);
+    if (!jobs || jobs.__dayPhasePatched) return;
+    jobs.__dayPhasePatched = true;
+
+    const originalAcceptOffer = jobs.acceptOffer;
+    if (typeof originalAcceptOffer !== "function") return;
+
+    jobs.acceptOffer = function (offerKey) {
+      const res = originalAcceptOffer.call(jobs, offerKey);
+
+    if (res?.ok) {
+     window.CivicationCalendar?.setPhase?.("morning");
+     window.CivicationCalendar?.setDailySummary?.(null);
+     window.CAPITAL_ENGINE?.syncRuntimeCapitalToStorage?.();
+     window.dispatchEvent(new Event("updateProfile"));
+    }
+      return res;
+    };
+  }
+
+  // PR G: renderWorkdayPanel-monkey-patchen er fjernet. CivicationUI.renderWorkdayPanel rendrer nå
+  // fase-HUD + ukesrapport/kontakter/kunnskaps-task nativt og publiserer selv window.renderWorkdayPanel.
+  // dayPatches eier fortsatt EventEngine-/TaskEngine-/Jobs-patchene + etter-svar-effektene.
+
+  function initPatches() {
+  patchEventEngine();
+  registerAnswerMiddleware();
+  patchTaskEngine();
+  patchJobs();
+}
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initPatches);
+  } else {
+    initPatches();
+  }
+})();

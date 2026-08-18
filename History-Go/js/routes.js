@@ -1,0 +1,932 @@
+// =====================================================
+// routes.js — History GO
+//  A) Ekte gangrute: brukerposisjon -> valgt sted (ORS)
+//  B) Tematiske ruter: KUN data/routes.json + visning på kart + Nearby/rutefane
+// =====================================================
+
+console.log("routes.js start");
+
+/**
+ * Local type view for route-owned browser globals. Keeps this migration pass
+ * type-only while preserving the existing window-backed runtime API.
+ * @typedef {Window & typeof globalThis & {
+ *   HG_ORS?: { baseUrl?: string, apiKey?: string, profile?: string },
+ *   HGMap?: { getMap?: Function, resize?: Function },
+ *   MAP?: any,
+ *   PLACES?: any[],
+ *   ROUTES?: any[],
+ *   CATEGORY_LIST?: Array<{ id?: string, name?: string }>,
+ *   HG_NEARBY_BADGE_FILTER?: string,
+ *   HG_getActiveBadgeFilter?: () => string,
+ *   getPos?: () => any,
+ *   userLat?: number,
+ *   userLon?: number,
+ *   userLng?: number,
+ *   LayerManager?: { setMode?: (mode: string) => void },
+ *   enterMapMode?: () => void,
+ *   setPlaceCardCollapsed?: (collapsed: boolean) => void,
+ *   setNearbyCollapsed?: (collapsed: boolean) => void,
+ *   openPlaceCard?: (place: any) => void,
+ *   KnowledgeLearning?: { isUnderstood?: (emne: string) => boolean },
+ *   visited?: Record<string, boolean>,
+ *   HGRoutes?: any,
+ *   HGHistoricalRoutes?: any,
+ *   renderLeftRoutesList?: typeof renderLeftRoutesList,
+ *   focusRouteOnMap?: typeof focusRouteOnMap,
+ *   showRouteOverlay?: typeof showRouteOverlay,
+ *   clearThematicRoute?: typeof clearThematicRoute,
+ *   showRouteToPlace?: (place: any) => any,
+ *   showRouteTo?: (place: any) => any,
+ *   showToast?: (msg: any) => void,
+ *   DEBUG?: boolean,
+ *   maplibregl?: { LngLatBounds: new (sw: any, ne: any) => any }
+ * }} HGRoutesWindow
+ */
+
+/** @type {HGRoutesWindow} */
+const hgWindow = window;
+
+const HG_ORS = {
+  baseUrl: "https://api.openrouteservice.org",
+  apiKey: "eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6Ijg1NjAxMzZmNDg0ZDQ0NzM4OTFlMWU1ODJjMjE5NzZlIiwiaCI6Im11cm11cjY0In0=",
+  profile: "foot-walking"
+};
+
+hgWindow.HG_ORS = hgWindow.HG_ORS || {};
+hgWindow.HG_ORS.baseUrl = HG_ORS.baseUrl;
+hgWindow.HG_ORS.apiKey  = HG_ORS.apiKey;
+hgWindow.HG_ORS.profile = HG_ORS.profile;
+
+let ROUTES = [];
+let routesLoaded = false;
+
+const HG_ROUTE_SRC   = "hg-thematic-route";
+const HG_ROUTE_GLOW  = "hg-thematic-route-glow";
+const HG_ROUTE_LINE  = "hg-thematic-route-line";
+const HG_ROUTE_STOPS = "hg-thematic-route-stops";
+
+const HG_NAV_SRC  = "hg-nav-route";
+const HG_NAV_LINE = "hg-nav-route-line";
+
+function tUI(key, fallback = "") {
+  try {
+    return hgWindow.HG_I18N?.t?.(key, fallback) || fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+function tfUI(key, fallback = "", vars = {}) {
+  const template = tUI(key, fallback);
+  return String(template).replace(/\{(\w+)\}/g, (_, name) =>
+    Object.prototype.hasOwnProperty.call(vars, name) ? String(vars[name]) : `{${name}}`
+  );
+}
+
+function _toast(msg) {
+  if (typeof hgWindow.showToast === "function") hgWindow.showToast(msg);
+}
+
+function _getMap() {
+  const map = hgWindow.MAP || hgWindow.HGMap?.getMap?.() || null;
+  if (map && hgWindow.MAP !== map) hgWindow.MAP = map;
+  return map;
+}
+
+function _escapeHTML(v) {
+  return String(v ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function _validRoutes() {
+  return ROUTES.filter(r => r?.id && Array.isArray(r.stops) && r.stops.length);
+}
+
+function _routeById(routeId) {
+  return _validRoutes().find(x => x.id === routeId) || null;
+}
+
+function _placeById(id) {
+  return (hgWindow.PLACES || []).find(p => p.id === id) || null;
+}
+
+function getUserPos() {
+  if (typeof hgWindow.getPos === "function") {
+    const p = hgWindow.getPos();
+    if (p && Number.isFinite(p.lat) && Number.isFinite(p.lon)) return p;
+  }
+
+  if (Number.isFinite(hgWindow.userLat) && Number.isFinite(hgWindow.userLon)) {
+    return { lat: hgWindow.userLat, lon: hgWindow.userLon };
+  }
+
+  if (Number.isFinite(hgWindow.userLat) && Number.isFinite(hgWindow.userLng)) {
+    return { lat: hgWindow.userLat, lon: hgWindow.userLng };
+  }
+
+  return null;
+}
+
+function getActiveRouteBadgeFilter() {
+  return hgWindow.HG_getActiveBadgeFilter?.() || hgWindow.HG_NEARBY_BADGE_FILTER || "all";
+}
+
+function isRouteBadgeFilterActive() {
+  const f = getActiveRouteBadgeFilter();
+  return !!f && f !== "all";
+}
+
+function routeMatchesActiveBadge(route) {
+  if (!isRouteBadgeFilterActive()) return true;
+
+  const badge = String(getActiveRouteBadgeFilter()).trim();
+  if (!route?.stops?.length) return false;
+
+  return route.stops.some(stop => {
+    const p = _placeById(stop.placeId);
+    return p && String(p.category || "").trim() === badge;
+  });
+}
+
+function activeBadgeNameForRoutes() {
+  const id = getActiveRouteBadgeFilter();
+  const cats = Array.isArray(hgWindow.CATEGORY_LIST) ? hgWindow.CATEGORY_LIST : [];
+  const c = cats.find(x => String(x.id || "").trim() === String(id).trim());
+  return c?.name || id;
+}
+
+function _ensureRoutePanelStyles() {
+  if (document.getElementById("hg-route-strip-styles")) return;
+
+  const style = document.createElement("style");
+  style.id = "hg-route-strip-styles";
+  style.textContent = `
+    #panelRoutes.leftpanel-view{
+      padding:0 8px;
+      justify-content:flex-start;
+    }
+
+    #leftRoutesList{
+      margin-top:12px;
+      height:160px;
+      width:100%;
+      min-height:160px;
+      flex:0 0 auto;
+
+      display:flex;
+      align-items:center;
+      gap:12px;
+
+      overflow-x:auto;
+      overflow-y:hidden;
+      -webkit-overflow-scrolling:touch;
+      scrollbar-width:none;
+
+      padding:12px 2px 0;
+    }
+
+    #leftRoutesList::-webkit-scrollbar{ display:none; }
+
+    #leftRoutesList .left-route-item{
+      flex:0 0 220px;
+      width:220px;
+      height:150px;
+      position:relative;
+      overflow:hidden;
+      border:0;
+      border-radius:20px;
+      padding:14px;
+
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      gap:6px;
+
+      background:
+        radial-gradient(circle at 18% 12%, rgba(255,255,255,.18), transparent 34%),
+        linear-gradient(135deg, rgba(52,199,89,.52), rgba(8,20,12,.96));
+      color:#fff;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);
+      scroll-snap-align:start;
+      cursor:pointer;
+      text-align:left;
+    }
+
+    #leftRoutesList .left-route-item::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to bottom, transparent 44%, rgba(0,0,0,.48) 100%);
+      pointer-events:none;
+    }
+
+    #leftRoutesList .left-route-title,
+    #leftRoutesList .left-route-meta{
+      position:relative;
+      z-index:1;
+      pointer-events:none;
+    }
+
+    #leftRoutesList .left-route-title{
+      font-size:16px;
+      line-height:1.08;
+      font-weight:900;
+      color:#fff;
+      text-shadow:0 2px 8px rgba(0,0,0,.78);
+    }
+
+    #leftRoutesList .left-route-meta{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:10px;
+      font-size:11px;
+      line-height:1.1;
+      color:rgba(255,255,255,.86);
+      text-shadow:0 2px 8px rgba(0,0,0,.78);
+    }
+
+    #leftRoutesList .left-route-stop{
+      min-width:0;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    #leftRoutesList .left-route-dist{
+      flex:0 0 auto;
+      white-space:nowrap;
+      font-weight:800;
+    }
+  `;
+  document.head.appendChild(style);
+}
+
+function _enterRouteMapMode() {
+  document.body?.classList.add("map-only");
+
+  if (hgWindow.LayerManager?.setMode) {
+    hgWindow.LayerManager.setMode("map");
+  } else if (typeof hgWindow.enterMapMode === "function") {
+    hgWindow.enterMapMode();
+  }
+
+  const btnSeeMap = document.getElementById("btnSeeMap");
+  const btnExitMap = document.getElementById("btnExitMap");
+  if (btnSeeMap) btnSeeMap.style.display = "none";
+  if (btnExitMap) btnExitMap.style.display = "block";
+
+  hgWindow.setPlaceCardCollapsed?.(true);
+  hgWindow.setNearbyCollapsed?.(true);
+
+  hgWindow.HGMap?.resize?.();
+  _getMap()?.resize?.();
+}
+
+async function loadRoutes() {
+  if (routesLoaded) return ROUTES;
+
+  const sources = ["data/routes.json", "data/routes_walks.json"];
+  const loaded = [];
+  const seenIds = new Map();
+
+  const normalizeRoute = (route) => {
+    if (!route || typeof route !== "object") return null;
+
+    let stops = Array.isArray(route.stops) ? route.stops : [];
+    if (!stops.length && Array.isArray(route.place_ids)) {
+      stops = route.place_ids
+        .map(pid => ({ placeId: pid }))
+        .filter(s => s.placeId);
+    }
+
+    const normalizedStops = stops
+      .map((stop) => {
+        if (!stop || typeof stop !== "object") return null;
+        const placeId = String(stop.placeId || stop.place_id || "").trim();
+        if (!placeId) return null;
+        return {
+          placeId,
+          title: stop.title || "",
+          info: stop.info || "",
+          ...(stop.wonderkammerEntryId ? { wonderkammerEntryId: stop.wonderkammerEntryId } : {})
+        };
+      })
+      .filter(Boolean);
+
+    return {
+      ...route,
+      id: String(route.id || "").trim(),
+      name: route.name || route.title || "",
+      title: route.title || route.name || "",
+      category: route.category || "",
+      desc: route.desc || "",
+      kind: route.kind || "route",
+      theme: route.theme || "",
+      stops: normalizedStops
+    };
+  };
+
+  for (const src of sources) {
+    try {
+      const res = await fetch(src, { cache: "no-store" });
+      if (!res.ok) throw new Error(`${src} http ${res.status}`);
+      const data = await res.json();
+      const arr = Array.isArray(data) ? data : [];
+      loaded.push(...arr);
+    } catch (e) {
+      console.warn("[routes] load failed:", src, e);
+    }
+  }
+
+  ROUTES = loaded
+    .map(normalizeRoute)
+    .filter(route => route?.id && Array.isArray(route.stops) && route.stops.length)
+    .filter(route => {
+      if (!seenIds.has(route.id)) {
+        seenIds.set(route.id, true);
+        return true;
+      }
+      console.warn("[routes] duplicate id skipped:", route.id);
+      return false;
+    });
+
+  routesLoaded = true;
+  hgWindow.ROUTES = ROUTES;
+
+  if (hgWindow.DEBUG) console.log("[routes] loaded merged:", ROUTES.length);
+  return ROUTES;
+}
+
+function clearThematicRoute() {
+  const map = _getMap();
+  if (!map) return;
+
+  try {
+    if (map.getLayer(HG_ROUTE_STOPS)) map.removeLayer(HG_ROUTE_STOPS);
+    if (map.getLayer(HG_ROUTE_LINE))  map.removeLayer(HG_ROUTE_LINE);
+    if (map.getLayer(HG_ROUTE_GLOW))  map.removeLayer(HG_ROUTE_GLOW);
+    if (map.getSource(HG_ROUTE_SRC))  map.removeSource(HG_ROUTE_SRC);
+  } catch (e) {}
+}
+
+function _routePointFeatures(places, startIndex = 0) {
+  return places.map((p, i) => ({
+    type: "Feature",
+    properties: { placeId: p.id, name: p.name, idx: i + startIndex },
+    geometry: { type: "Point", coordinates: [Number(p.lon), Number(p.lat)] }
+  }));
+}
+
+async function fetchORSRouteThroughCoordsGeoJSON(coords) {
+  if (!HG_ORS.apiKey || HG_ORS.apiKey.includes("PUTT_ORS_KEY_HER")) {
+    throw new Error("Mangler ORS apiKey (HG_ORS.apiKey).");
+  }
+
+  if (!Array.isArray(coords) || coords.length < 2) {
+    throw new Error("Må ha minst to koordinater for fottur.");
+  }
+
+  const url = `${HG_ORS.baseUrl}/v2/directions/${HG_ORS.profile}/geojson`;
+
+  const r = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Authorization": HG_ORS.apiKey,
+      "Content-Type": "application/json",
+      "Accept": "application/geo+json,application/json"
+    },
+    body: JSON.stringify({
+      coordinates: coords,
+      instructions: false
+    })
+  });
+
+  if (!r.ok) throw new Error(`ORS multi-stop directions HTTP ${r.status}`);
+
+  const geojson = await r.json();
+  const feat = geojson?.features?.[0];
+  const routeCoords = feat?.geometry?.coordinates;
+
+  if (!feat || !Array.isArray(routeCoords) || routeCoords.length < 2) {
+    throw new Error("ORS ga ingen gyldig fottur-geometri.");
+  }
+
+  const summary = feat?.properties?.summary || {};
+  return { geojson, routeCoords, distance_m: summary.distance, duration_s: summary.duration };
+}
+
+function drawThematicRouteGeoJSON(map, geo, fitCoords) {
+  if (!map || !geo) return;
+
+  if (!map.getSource(HG_ROUTE_SRC)) {
+    map.addSource(HG_ROUTE_SRC, { type: "geojson", data: geo });
+  } else {
+    map.getSource(HG_ROUTE_SRC).setData(geo);
+  }
+
+  if (!map.getLayer(HG_ROUTE_GLOW)) {
+    map.addLayer({
+      id: HG_ROUTE_GLOW,
+      type: "line",
+      source: HG_ROUTE_SRC,
+      filter: ["==", ["geometry-type"], "LineString"],
+      paint: {
+        "line-color": "rgba(255,255,255,0.20)",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 10, 4, 14, 7, 18, 12],
+        "line-blur": ["interpolate", ["linear"], ["zoom"], 10, 1.2, 14, 2.0, 18, 3.2],
+        "line-opacity": 0.7
+      }
+    });
+  }
+
+  if (!map.getLayer(HG_ROUTE_LINE)) {
+    map.addLayer({
+      id: HG_ROUTE_LINE,
+      type: "line",
+      source: HG_ROUTE_SRC,
+      filter: ["==", ["geometry-type"], "LineString"],
+      paint: {
+        "line-color": "#f6c800",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 10, 2.5, 14, 4.5, 18, 7],
+        "line-opacity": 0.95
+      }
+    });
+  }
+
+  if (!map.getLayer(HG_ROUTE_STOPS)) {
+    map.addLayer({
+      id: HG_ROUTE_STOPS,
+      type: "circle",
+      source: HG_ROUTE_SRC,
+      filter: ["==", ["geometry-type"], "Point"],
+      paint: {
+        "circle-radius": ["interpolate", ["linear"], ["zoom"], 10, 5, 14, 7, 18, 11],
+        "circle-color": "#ffffff",
+        "circle-stroke-color": "#000000",
+        "circle-stroke-width": 1.8
+      }
+    });
+  }
+
+  if (!map.__hgRouteStopsClickBound) {
+    map.on("click", HG_ROUTE_STOPS, (e) => {
+      const f = e.features && e.features[0];
+      if (!f) return;
+
+      const id = f.properties?.placeId;
+      const p = id ? _placeById(id) : null;
+
+      if (p && typeof hgWindow.openPlaceCard === "function") {
+        hgWindow.openPlaceCard(p);
+      }
+    });
+
+    map.__hgRouteStopsClickBound = true;
+  }
+
+  const coords = Array.isArray(fitCoords) && fitCoords.length ? fitCoords : [];
+
+  if (coords.length === 1) {
+    map.flyTo({
+      center: coords[0],
+      zoom: Math.max(map.getZoom() || 13, 15),
+      essential: true
+    });
+  } else if (coords.length >= 2) {
+    const b = coords.reduce(
+      (bb, c) => bb.extend(c),
+      new hgWindow.maplibregl.LngLatBounds(coords[0], coords[0])
+    );
+
+    map.fitBounds(b, { padding: 70, maxZoom: 16 });
+  }
+}
+
+async function focusRouteOnMap(routeId, startIndex = 0) {
+  const map = _getMap();
+  if (!map) {
+    _toast(tUI("ui.routes.mapNotReadyAlt", "Kartet er ikke klart ennå."));
+    return;
+  }
+
+  if (typeof map.isStyleLoaded === "function" && !map.isStyleLoaded()) {
+    map.once("load", () => focusRouteOnMap(routeId, startIndex));
+    return;
+  }
+
+  const r = _routeById(routeId);
+  if (!r?.stops?.length) {
+    _toast(tUI("ui.routes.notFound", "Fant ikke rute."));
+    return;
+  }
+
+  const places = r.stops
+    .map(s => _placeById(s.placeId))
+    .filter(Boolean)
+    .filter(p => Number.isFinite(p.lat) && Number.isFinite(p.lon));
+
+  if (!places.length) {
+    _toast(tUI("ui.routes.noValidStopsInPlaces", "Ruten har ingen gyldige stopp i PLACES."));
+    return;
+  }
+
+  const sliced = places.slice(Math.max(0, startIndex));
+  const visiblePlaces = sliced.length ? sliced : places;
+  const stopCoords = visiblePlaces.map(p => [Number(p.lon), Number(p.lat)]);
+
+  let walkingCoords = null;
+  let routeStats = null;
+
+  if (stopCoords.length >= 2) {
+    try {
+      const out = await fetchORSRouteThroughCoordsGeoJSON(stopCoords);
+      walkingCoords = out.routeCoords;
+      routeStats = out;
+    } catch (e) {
+      console.warn("[routes] ORS walking route failed", e);
+    }
+  }
+
+  const features = [];
+
+  if (walkingCoords?.length >= 2) {
+    features.push({
+      type: "Feature",
+      properties: { id: r.id, name: r.name || r.title || tUI("ui.routes.fallbackRoute", "Rute"), mode: "foot-walking" },
+      geometry: { type: "LineString", coordinates: walkingCoords }
+    });
+  }
+
+  features.push(..._routePointFeatures(visiblePlaces, startIndex));
+
+  const geo = { type: "FeatureCollection", features };
+
+  try {
+    drawThematicRouteGeoJSON(map, geo, walkingCoords || stopCoords);
+
+    if (walkingCoords?.length >= 2) {
+      if (Number.isFinite(routeStats?.distance_m) && Number.isFinite(routeStats?.duration_s)) {
+        const km = (routeStats.distance_m / 1000).toFixed(1);
+        const min = Math.round(routeStats.duration_s / 60);
+        _toast(tfUI("ui.routes.hikingRouteEstimate", "Fottur vist: {km} km · ca {min} min", { km, min }));
+      } else {
+        _toast(tUI("ui.routes.hikingRouteShown", "Fottur vist på kartet"));
+      }
+    } else if (stopCoords.length === 1) {
+      _toast(tUI("ui.routes.routeStopShown", "Rutestopp vist på kartet"));
+    } else {
+      _toast(tUI("ui.routes.hikeFetchFailedShowingStops", "Kunne ikke hente fottur – viser stopp uten luftlinje."));
+    }
+  } catch (e) {
+    console.warn("[routes] thematic route draw failed", e);
+    _toast(tUI("ui.routes.drawRouteFailed", "Kunne ikke tegne ruten på kartet."));
+  }
+}
+
+function showRouteOverlay(routeId, startIndex = 0) {
+  const r = _routeById(routeId);
+  if (!r) {
+    _toast(tUI("ui.routes.notFound", "Fant ikke rute."));
+    return;
+  }
+
+  _enterRouteMapMode();
+
+  setTimeout(() => {
+    try {
+      focusRouteOnMap(routeId, startIndex);
+    } catch (e) {
+      console.warn("[showRouteOverlay] focusRouteOnMap failed", e);
+    }
+  }, 160);
+
+  _toast(tfUI("ui.routes.routeStopsToast", "{route} ({count} stopp)", { route: r.name || r.title || tUI("ui.routes.fallbackRoute", "Rute"), count: r.stops?.length || 0 }));
+}
+
+function clearNavRoute() {
+  const map = _getMap();
+  if (!map) return;
+
+  try {
+    if (map.getLayer(HG_NAV_LINE)) map.removeLayer(HG_NAV_LINE);
+    if (map.getSource(HG_NAV_SRC)) map.removeSource(HG_NAV_SRC);
+  } catch (e) {}
+}
+
+async function fetchORSRouteGeoJSON(from, to) {
+  if (!HG_ORS.apiKey || HG_ORS.apiKey.includes("PUTT_ORS_KEY_HER")) {
+    throw new Error("Mangler ORS apiKey (HG_ORS.apiKey).");
+  }
+
+  const url =
+    `${HG_ORS.baseUrl}/v2/directions/${HG_ORS.profile}/geojson` +
+    `?start=${from[0]},${from[1]}` +
+    `&end=${to[0]},${to[1]}`;
+
+  const r = await fetch(url, {
+    headers: {
+      "Authorization": HG_ORS.apiKey,
+      "Accept": "application/geo+json,application/json"
+    }
+  });
+
+  if (!r.ok) throw new Error(`ORS directions HTTP ${r.status}`);
+
+  const geojson = await r.json();
+  const feat = geojson?.features?.[0];
+  const coords = feat?.geometry?.coordinates;
+
+  if (!feat || !Array.isArray(coords) || coords.length < 2) {
+    throw new Error("ORS ga ingen gyldig rute-geometri.");
+  }
+
+  const summary = feat?.properties?.summary || {};
+  return { geojson, distance_m: summary.distance, duration_s: summary.duration };
+}
+
+async function showWalkingRouteToPlace(place) {
+  const map = _getMap();
+  if (!map) return;
+  if (!place || !Number.isFinite(place.lat) || !Number.isFinite(place.lon)) return;
+
+  if (typeof map.isStyleLoaded === "function" && !map.isStyleLoaded()) {
+    map.once("load", () => showWalkingRouteToPlace(place));
+    return;
+  }
+
+  const pos = getUserPos();
+  if (!pos) {
+    _toast("Fant ikke posisjon ennå.");
+    return;
+  }
+
+  const from = [pos.lon, pos.lat];
+  const to   = [place.lon, place.lat];
+
+  clearNavRoute();
+
+  let out;
+  try {
+    out = await fetchORSRouteGeoJSON(from, to);
+  } catch (e) {
+    console.warn("[ORS route] failed", e);
+    _toast(tUI("ui.routes.walkingRouteFetchFailed", "Kunne ikke hente gangrute."));
+    return;
+  }
+
+  try {
+    map.addSource(HG_NAV_SRC, { type: "geojson", data: out.geojson });
+
+    map.addLayer({
+      id: HG_NAV_LINE,
+      type: "line",
+      source: HG_NAV_SRC,
+      paint: {
+        "line-color": "#00d4ff",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 10, 3, 14, 5, 18, 8],
+        "line-opacity": 0.95
+      }
+    });
+  } catch (e) {
+    console.warn("[ORS route] draw failed", e);
+    _toast(tUI("ui.routes.drawWalkingRouteFailed", "Kunne ikke tegne gangruten."));
+    return;
+  }
+
+  const coords = out.geojson.features[0].geometry.coordinates;
+  const b = coords.reduce(
+    (bb, c) => bb.extend(c),
+    new hgWindow.maplibregl.LngLatBounds(coords[0], coords[0])
+  );
+
+  map.fitBounds(b, { padding: 60 });
+
+  if (Number.isFinite(out.distance_m) && Number.isFinite(out.duration_s)) {
+    const km = (out.distance_m / 1000).toFixed(1);
+    const min = Math.round(out.duration_s / 60);
+    _toast(tfUI("ui.routes.walkingRouteEstimateAlt", "Gårute: {km} km · ca {min} min", { km, min }));
+  } else {
+    _toast(tfUI("ui.routes.walkingRouteToPlace", "Gårute til {place}", { place: place.name || tUI("ui.routes.placeFallback", "sted") }));
+  }
+}
+
+function formatDist(m) {
+  if (m == null) return "";
+  const mm = Math.round(m);
+  return mm < 1000 ? `${mm} m` : `${(mm / 1000).toFixed(1)} km`;
+}
+
+function toRad(d) {
+  return (d * Math.PI) / 180;
+}
+
+function distanceMeters(lat1, lon1, lat2, lon2) {
+  const R = 6371000;
+  const dLat = toRad(lat2 - lat1);
+  const dLon = toRad(lon2 - lon1);
+  const a1 = toRad(lat1);
+  const a2 = toRad(lat2);
+  const x =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(a1) * Math.cos(a2) * Math.sin(dLon / 2) ** 2;
+
+  return 2 * R * Math.asin(Math.sqrt(x));
+}
+
+function computeNearestStop(route, userPosObj, visitedMap = null) {
+  if (!route?.stops?.length || !userPosObj) return null;
+
+  const candidates = route.stops
+    .map((s, idx) => {
+      const place = _placeById(s.placeId);
+      if (!place) return null;
+
+      const distM = distanceMeters(userPosObj.lat, userPosObj.lon, place.lat, place.lon);
+      const isVisited = visitedMap ? !!visitedMap[s.placeId] : false;
+
+      return { distM, stopIndex: idx, placeId: s.placeId, place, isVisited };
+    })
+    .filter(Boolean);
+
+  if (!candidates.length) return null;
+
+  const unvisited = candidates.filter(c => !c.isVisited);
+  const pool = unvisited.length ? unvisited : candidates;
+  pool.sort((a, b) => a.distM - b.distM);
+
+  return pool[0];
+}
+
+function getNearbyRoutesSorted(userPosObj, visitedMap = null, sourceRoutes = _validRoutes()) {
+  if (!Array.isArray(sourceRoutes) || !sourceRoutes.length) return [];
+
+  return sourceRoutes
+    .map(r => {
+      const n = computeNearestStop(r, userPosObj, visitedMap);
+      return {
+        ...r,
+        _nearestDistM: n ? n.distM : null,
+        _nearestStopIndex: n ? n.stopIndex : 0,
+        _nearestStopName: n ? (n.place?.name || "") : ""
+      };
+    })
+    .filter(r => r._nearestDistM != null)
+    .sort((a, b) => (a._nearestDistM ?? 1e12) - (b._nearestDistM ?? 1e12));
+}
+
+async function renderLeftRoutesList() {
+  const box = document.getElementById("leftRoutesList");
+  if (!box) return;
+
+  _ensureRoutePanelStyles();
+  await Promise.all([
+    loadRoutes(),
+    hgWindow.HGHistoricalRoutes?.load?.() || Promise.resolve([])
+  ]);
+
+  const historicalCards = hgWindow.HGHistoricalRoutes?.renderCards?.() || "";
+  const render = (standardContent = "") => {
+    box.innerHTML = historicalCards + standardContent;
+    hgWindow.HGHistoricalRoutes?.bindCards?.(box);
+  };
+  const availableRoutes = _validRoutes();
+
+  if (!availableRoutes.length) {
+    render(historicalCards ? "" : `<div class="muted">${tUI("ui.routes.noneLoaded", "Ingen ruter lastet fra routes.json.")}</div>`);
+    return;
+  }
+
+  const learningFilteredRoutes = availableRoutes.filter(r => {
+    if (!r.unlock_emne) return true;
+    if (!hgWindow.KnowledgeLearning) return true;
+    return hgWindow.KnowledgeLearning.isUnderstood?.(r.unlock_emne);
+  });
+
+  if (!learningFilteredRoutes.length) {
+    render(`<div class="muted">${tUI("ui.routes.noneAvailableYet", "Ingen vanlige ruter tilgjengelige enda.")}</div>`);
+    return;
+  }
+
+  const badgeFilteredRoutes = learningFilteredRoutes.filter(routeMatchesActiveBadge);
+
+  if (!badgeFilteredRoutes.length) {
+    render(`
+      <div class="hg-empty-guide">
+        <div class="hg-empty-guide-icon">🏅</div>
+        <div class="hg-empty-guide-title">${tUI("ui.routes.noneTitle", "Ingen vanlige ruter")}</div>
+        <div class="hg-empty-guide-text">${_escapeHTML(tfUI("ui.routes.noStopsForBadge", "Ingen ruter har stopp i {badge}. Trykk badgeknappen for å velge et annet badge eller alle.", { badge: activeBadgeNameForRoutes() }))}</div>
+      </div>
+    `);
+    return;
+  }
+
+  const pos = getUserPos();
+  if (!pos) {
+    render(`<div class="muted">${tUI("ui.position.notFoundYet", "Posisjon trengs bare for vanlige gåruter.")}</div>`);
+    return;
+  }
+
+  const visitedMap = (typeof hgWindow.visited !== "undefined" && hgWindow.visited) ? hgWindow.visited : {};
+  const list = getNearbyRoutesSorted(pos, visitedMap, badgeFilteredRoutes);
+
+  if (!list.length) {
+    render(`<div class="muted">${tUI("ui.routes.noValidStops", "Ingen vanlige ruter har gyldige stopp i kartdataene.")}</div>`);
+    return;
+  }
+
+  render(list.slice(0, 12).map(r => {
+    const title = r.title || r.name || tUI("ui.routes.fallbackRoute", "Rute");
+    const dist = formatDist(r._nearestDistM);
+    const stop = r._nearestStopName || "";
+
+    return `
+      <button class="left-route-item" type="button" data-route="${_escapeHTML(r.id)}">
+        <div class="left-route-title">${_escapeHTML(title)}</div>
+        <div class="left-route-meta">
+          <div class="left-route-stop">${_escapeHTML(stop)}</div>
+          <div class="left-route-dist">${_escapeHTML(dist)}</div>
+        </div>
+      </button>
+    `;
+  }).join(""));
+
+  box.onclick = (e) => {
+    const item = /** @type {Element} */ (e.target).closest(".left-route-item[data-route]");
+    if (!item) return;
+
+    const routeId = item.getAttribute("data-route");
+    if (!routeId) return;
+
+    const pos = getUserPos();
+    const visitedMap = (typeof hgWindow.visited !== "undefined" && hgWindow.visited) ? hgWindow.visited : {};
+    const r = _routeById(routeId);
+    const n = (r && pos) ? computeNearestStop(r, pos, visitedMap) : null;
+    const idx = n ? n.stopIndex : 0;
+
+    showRouteOverlay(routeId, idx);
+  };
+}
+
+function initLeftRoutesPanel() {
+  _ensureRoutePanelStyles();
+
+  const sel = /** @type {HTMLSelectElement} */ (document.getElementById("leftPanelMode"));
+  if (!sel) return;
+
+  sel.addEventListener("change", () => hgWindow.setLeftPanelMode?.(sel.value));
+
+  hgWindow.addEventListener("hg:geo", () => {
+    if (sel.value === "routes") renderLeftRoutesList();
+  });
+
+  hgWindow.setLeftPanelMode?.(sel.value || "nearby");
+}
+
+hgWindow.HGRoutes = {
+  load: loadRoutes,
+
+  init() {
+    loadRoutes();
+    _ensureRoutePanelStyles();
+    initLeftRoutesPanel();
+  },
+
+  showThematic(routeId, startIndex = 0) {
+    showRouteOverlay(routeId, startIndex);
+  },
+
+  clearThematic() {
+    clearThematicRoute();
+  },
+
+  async showToPlace(place) {
+    await showWalkingRouteToPlace(place);
+  },
+
+  clearNav() {
+    clearNavRoute();
+  },
+
+  clearAll() {
+    clearNavRoute();
+    clearThematicRoute();
+  }
+};
+
+hgWindow.renderLeftRoutesList = renderLeftRoutesList;
+hgWindow.focusRouteOnMap = focusRouteOnMap;
+hgWindow.showRouteOverlay = showRouteOverlay;
+hgWindow.clearThematicRoute = clearThematicRoute;
+
+hgWindow.showRouteToPlace = (place) => hgWindow.HGRoutes.showToPlace(place);
+hgWindow.showRouteTo = function(place) {
+  if (typeof hgWindow.showRouteToPlace === "function") return hgWindow.showRouteToPlace(place);
+  _toast(tUI("ui.routes.notLoaded", "Rute-funksjon ikke lastet"));
+};
+
+console.log("routes.js end", typeof hgWindow.showRouteToPlace);

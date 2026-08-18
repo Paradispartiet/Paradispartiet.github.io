@@ -1,0 +1,448 @@
+{
+  "schema": "history_go_fagverk_claims_v1",
+  "version": "1.0.0",
+  "subject_id": "litteratur",
+  "chapter_id": "sprak_stil_retorikk",
+  "verified_at": "2026-08-07",
+  "verification_status": "verified",
+  "sources": [
+    {
+      "id": "sst01",
+      "label": "Aristotle: The Art of Rhetoric",
+      "url": "https://www.hup.harvard.edu/books/9780674992125",
+      "publisher": "Harvard University Press / Loeb Classical Library",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Bok I, kapittel 2–3 om ethos, pathos og logos, og bok III om stil og framføring"
+    },
+    {
+      "id": "sst02",
+      "label": "The Essential Wayne Booth",
+      "url": "https://press.uchicago.edu/ucp/books/book/chicago/E/bo3770832.html",
+      "publisher": "University of Chicago Press",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Bokbeskrivelsen og innholdsoversikten om retorikk, ironi og fortellerens etikk"
+    },
+    {
+      "id": "sst03",
+      "label": "Metaphors We Live By",
+      "url": "https://press.uchicago.edu/ucp/books/book/chicago/M/bo3637992.html",
+      "publisher": "University of Chicago Press",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Kapitlene 1–3 om konseptuell metafor og hverdagslige språkmønstre"
+    },
+    {
+      "id": "sst04",
+      "label": "More than Cool Reason",
+      "url": "https://press.uchicago.edu/ucp/books/book/chicago/M/bo3774967.html",
+      "publisher": "University of Chicago Press",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Bokbeskrivelsen og kapitlene om poetisk metafor, billedskjema og analogi"
+    },
+    {
+      "id": "sst05",
+      "label": "The Cambridge Introduction to Mikhail Bakhtin",
+      "url": "https://www.cambridge.org/core/books/cambridge-introduction-to-mikhail-bakhtin/A560AC799386659DEA4566526E97C7CC",
+      "publisher": "Cambridge University Press",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Kapitlene om dialogisme, heteroglossia, kronotop og romanens språk"
+    },
+    {
+      "id": "sst06",
+      "label": "The Dialogic Imagination",
+      "url": "https://utpress.utexas.edu/9780292715349/",
+      "publisher": "University of Texas Press",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Essayene Discourse in the Novel og Forms of Time and of the Chronotope"
+    },
+    {
+      "id": "sst07",
+      "label": "Style in Fiction",
+      "url": "https://www.pearson.com/en-gb/subject-catalog/p/style-in-fiction/P200000004424",
+      "publisher": "Pearson",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Kapitlene om språkbeskrivelse, tale- og tankerepresentasjon, kohesjon og stil"
+    },
+    {
+      "id": "sst08",
+      "label": "Linguistics and Poetics",
+      "url": "https://monoskop.org/images/8/84/Jakobson_Roman_1960_Closing_statement_Linguistics_and_Poetics.pdf",
+      "publisher": "MIT Press",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Seksjonene om språkfunksjonene, poetisk funksjon, seleksjon og kombinasjon"
+    },
+    {
+      "id": "sst09",
+      "label": "Emma",
+      "url": "https://www.gutenberg.org/ebooks/158",
+      "publisher": "Project Gutenberg",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Kapittel 1, 3 og 15 om fortellerkommentar, fri indirekte tale og Emmas feillesning"
+    },
+    {
+      "id": "sst10",
+      "label": "A Modest Proposal",
+      "url": "https://www.gutenberg.org/ebooks/1080",
+      "publisher": "Project Gutenberg",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Åpningsavsnittene, den økonomiske argumentasjonen og sluttens ironi"
+    },
+    {
+      "id": "sst11",
+      "label": "Narrative of the Life of Frederick Douglass",
+      "url": "https://www.gutenberg.org/ebooks/23",
+      "publisher": "Project Gutenberg",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Kapittel 1, 7 og 10–11 om stemme, tale, lesning og offentlig argument"
+    },
+    {
+      "id": "sst12",
+      "label": "Jazz",
+      "url": "https://www.penguinrandomhouse.com/books/117649/jazz-by-toni-morrison/",
+      "publisher": "Penguin Random House",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Åpningen og seksjonene fortalt gjennom Violet, Joe og den navnløse fortellerstemmen"
+    }
+  ],
+  "claims": [
+    {
+      "id": "sst-01",
+      "claim": "Diksjon er tekstens mønster av ordvalg, mens register er språkbruk knyttet til situasjon, rolle, medium eller sosial praksis.",
+      "source_ids": [
+        "sst07"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-02",
+      "claim": "Emma bruker fri indirekte tale til å la fortellerens grammatikk gli inn i Emmas ordvalg og vurderinger.",
+      "source_ids": [
+        "sst09"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-03",
+      "claim": "Frederick Douglass’ Narrative bygger autoritet gjennom navngitt vitnesbyrd, detaljer om leseopplæring og en retorisk kontrollert jeg-stemme.",
+      "source_ids": [
+        "sst11"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-04",
+      "claim": "Toni Morrisons Jazz lar en bevegelig fortellerstemme korrigere, spekulere og endre forholdet til figurene.",
+      "source_ids": [
+        "sst12"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-05",
+      "claim": "Sosialt register kan markere alder, profesjon, klasse, region eller fellesskap, men litterær tekst stiliserer alltid det materialet den bruker.",
+      "source_ids": [
+        "sst05",
+        "sst07"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-06",
+      "claim": "En praktisk stemmeanalyse bør arbeide med kontrastpassasjer. Velg først et avsnitt i Emma der ordvalget ligger tett på hovedpersonens vurdering, og deretter et sted hvor fortelleren gir informasjon hun ikke kontrollerer.",
+      "source_ids": [
+        "sst09",
+        "sst11"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-07",
+      "claim": "Metafor lar ett begrepsområde strukturere forståelsen av et annet, mens metonymi bygger forbindelse gjennom nærhet, del–helhet eller etablert assosiasjon.",
+      "source_ids": [
+        "sst03",
+        "sst08"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-08",
+      "claim": "Metaphors We Live By viser at metafor finnes i hverdagslig begrepsdannelse, ikke bare i poetiske sammenligninger.",
+      "source_ids": [
+        "sst03"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-09",
+      "claim": "Poetisk metafor kan utvikles gjennom en hel sekvens slik at relasjonen endres underveis.",
+      "source_ids": [
+        "sst04"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-10",
+      "claim": "Metonymi er særlig viktig for hvordan fortellinger gjør komplekse miljøer gripbare gjennom steder, gjenstander og kroppstegn.",
+      "source_ids": [
+        "sst12"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-11",
+      "claim": "Billedspråk må historiseres fordi konvensjoner og assosiasjoner endres.",
+      "source_ids": [
+        "sst04",
+        "sst07"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-12",
+      "claim": "Et billedfelt kan undersøkes systematisk ved å samle alle forekomstene i et avgrenset tekstparti og kode hvilken relasjon de etablerer.",
+      "source_ids": [
+        "sst03",
+        "sst12"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-13",
+      "claim": "Verbal ironi lar en ytrings bokstavelige formulering avvike fra den vurderingen teksten inviterer til, mens situasjonsironi oppstår når hendelsesforløpet undergraver forventning.",
+      "source_ids": [
+        "sst02",
+        "sst07"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-14",
+      "claim": "A Modest Proposal etablerer en økonomisk og administrativ stemme som foreslår en grotesk løsning på fattigdom.",
+      "source_ids": [
+        "sst10",
+        "sst01"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-15",
+      "claim": "I Emma oppstår ironi ofte fordi leseren kan se mer enn hovedpersonen uten å få et helt stabilt overblikk.",
+      "source_ids": [
+        "sst09"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-16",
+      "claim": "Dramatisk ironi krever en forskjell i kunnskap mellom figur og publikum eller mellom flere figurer.",
+      "source_ids": [
+        "sst02"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-17",
+      "claim": "Ironitolkning har en etisk grense fordi den kan brukes til å frikjenne skadelige utsagn uten tekstlig støtte.",
+      "source_ids": [
+        "sst02"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-18",
+      "claim": "Ironi kan testes gjennom en fireleddet protokoll. Identifiser den bokstavelige påstanden, rekonstruer situasjonen den ytres i, finn tekstlige signaler som gjør påstanden utilstrekkelig, og beskriv hvilket alternativ teksten gjør tilgjengelig.",
+      "source_ids": [
+        "sst10",
+        "sst02"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-19",
+      "claim": "En retorisk situasjon består av et problem eller behov, mulige adressater, talerposisjon, medium og begrensninger som gjør en ytring virksom.",
+      "source_ids": [
+        "sst01",
+        "sst02"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-20",
+      "claim": "Aristoteles skiller mellom ethos, pathos og logos som ressurser knyttet til talerens troverdighet, publikums følelser og argumentets utforming.",
+      "source_ids": [
+        "sst01"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-21",
+      "claim": "Douglass’ Narrative etablerer et vitne som både forteller erfaring og argumenterer offentlig mot slaveriet.",
+      "source_ids": [
+        "sst11"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-22",
+      "claim": "A Modest Proposal konstruerer et teknokratisk ethos for å undergrave en offentlig diskurs som behandler mennesker som tall.",
+      "source_ids": [
+        "sst10"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-23",
+      "claim": "Retorisk virkning må undersøkes med egnede kilder. Teksten kan invitere til tillit, avsky eller identifikasjon, mens anmeldelser, brev, salg, undervisning eller eksperimenter dokumenterer bestemte former for respons.",
+      "source_ids": [
+        "sst01",
+        "sst02"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-24",
+      "claim": "For å unngå at ethos, pathos og logos blir etiketter, kan hver appell kobles til en konkret tekstlig operasjon og en mulig innvending.",
+      "source_ids": [
+        "sst01",
+        "sst11"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-25",
+      "claim": "Stilometri bruker målbare språkfordelinger til å sammenligne tekster, undersøke forfatterskap eller beskrive stilendring.",
+      "source_ids": [
+        "sst07"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-26",
+      "claim": "Korpusbygging er den første inferensgrensen. Ulike utgaver, OCR-feil, modernisert stavemåte, sjanger og tekstlengde kan skape forskjeller som feiltolkes som personlig stil.",
+      "source_ids": [
+        "sst09"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-27",
+      "claim": "Forfatterattribusjon er en sannsynlighetsvurdering mot et definert kandidatutvalg.",
+      "source_ids": [
+        "sst07"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-28",
+      "claim": "Stilistikk og stilometri utfyller hverandre når tallene fører tilbake til språklig funksjon.",
+      "source_ids": [
+        "sst07",
+        "sst09"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-29",
+      "claim": "Maskinlæringsmodeller kan klassifisere tekster presist og likevel være vanskelige å forklare.",
+      "source_ids": [
+        "sst07"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-30",
+      "claim": "Et lite, transparent stilometrisk forsøk kan bruke kompatible kapitler fra Emma og Pride and Prejudice.",
+      "source_ids": [
+        "sst07",
+        "sst09"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-31",
+      "claim": "Flerspråklighet kan være til stede gjennom flere navngitte språk, oversettelse, kodeveksling, dialekt, fremmedord eller ulike skriftformer.",
+      "source_ids": [
+        "sst05",
+        "sst06"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-32",
+      "claim": "Bakhtins dialogisme innebærer at ytringer orienterer seg mot tidligere bruk, forventede svar og andres ord.",
+      "source_ids": [
+        "sst06"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-33",
+      "claim": "Jazz skaper en urban flerstemmighet gjennom fortellerens skift, figurminner, musikalske rytmer og språk knyttet til generasjon og migrasjon.",
+      "source_ids": [
+        "sst12"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-34",
+      "claim": "Douglass’ Narrative viser at språklig kompetanse er knyttet til makt, adgang og offentlig troverdighet.",
+      "source_ids": [
+        "sst11"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-35",
+      "claim": "Oversettelse i en flerspråklig tekst fordeler arbeid mellom forfatter, forteller og leser.",
+      "source_ids": [
+        "sst05",
+        "sst06"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "sst-36",
+      "claim": "Heteroglossia kan kartlegges som relasjoner mellom ytringstyper. Velg en scene i Jazz og merk direkte tale, fortellerkommentar, rapportert tale, idiom, sanglig frase og språk som tilhører en sosial institusjon.",
+      "source_ids": [
+        "sst06",
+        "sst12"
+      ],
+      "classification": "redaksjonell_fagpåstand",
+      "status": "verified"
+    }
+  ]
+}

@@ -1,0 +1,587 @@
+// ============================================================
+// CivicationState – kompatibel med civicationEngine (56)
+// ============================================================
+
+(function () {
+
+  const LS_STATE = "hg_civi_state_v1";
+  const LS_INBOX = "hg_civi_inbox_v1";
+  const LS_ACTIVE_POS = "hg_active_position_v1";
+  const LS_JOB_HISTORY = "hg_job_history_v1";
+  const LS_PULSE = "hg_civi_pulse_v1";
+  const LS_WALLET = "hg_civi_wallet_v1";
+
+  const DEFAULTS = {
+  stability: "STABLE",
+  warning_used: false,
+  strikes: 0,
+  score: 0,
+  active_role_key: null,
+  consumed: {},
+  identity_tags: [],
+  tracks: [],
+  track_progress: {},
+  unemployed_since_week: null,
+  version: 1,
+
+  onboarding: {
+    by_role: {}
+  },
+
+  mail_branch_state: {
+    preferred_types: [],
+    preferred_families: [],
+    flags: []
+  },
+
+  mail_system: {
+    role_plan_id: null,
+    step_index: 0,
+    current_cycle: 1,
+    last_mail_type: null,
+    active_conflict_id: null,
+    active_conflict_phase: "intro",
+    active_people_threads: [],
+    people_thread_phases: {},
+    active_story_threads: [],
+    story_thread_phases: {},
+    active_event_queue: [],
+    active_event_thread_id: null,
+    active_event_phase: null,
+    consumed_mail_ids: [],
+    consumed_families: [],
+    cooldowns: {},
+    history: []
+  },
+
+  mail_director: {
+    turn_index: 0,
+    last_source_type: null,
+    consecutive_role_mails: 0
+  },
+
+  conflict_state: {
+    category: null,
+    tier_label: null,
+    active_conflicts: [],
+    cycle_index: 0
+  },
+
+  story_state: {
+    generated_at: null,
+    snapshot: null,
+    story_flags: [],
+    story_tags: [],
+    threads: []
+  },
+
+  narrative_state_v1: {
+    active_streams: [],
+    stream_progress: {},
+    flags: [],
+    choice_history: [],
+    updated_at: null
+  },
+
+  career: {
+    activeJob: null,
+    obligations: [],
+    reputation: 70,
+    salaryModifier: 1
+  },
+
+  civication_unread: {
+    unreadCivicationCount: 0,
+    unreadJobMailCount: 0,
+    unreadJobOfferKeys: [],
+    unreadJobMailIds: [],
+    hasNewJobOffer: false
+  }
+};
+
+function getPulse() {
+  return safeParse(
+    localStorage.getItem(LS_PULSE),
+    { date: null, seen: {} }
+  );
+}
+
+function setPulse(p) {
+  localStorage.setItem(
+    LS_PULSE,
+    JSON.stringify(p || { date: null, seen: {} })
+  );
+}
+  
+  function safeParse(raw, fallback) {
+    try {
+      return JSON.parse(raw);
+    } catch (e) {
+      return fallback;
+    }
+  }
+
+  function deepMerge(target, source) {
+    const out = { ...target };
+    for (const k in source) {
+      if (
+        source[k] &&
+        typeof source[k] === "object" &&
+        !Array.isArray(source[k])
+      ) {
+        out[k] = deepMerge(target[k] || {}, source[k]);
+      } else {
+        out[k] = source[k];
+      }
+    }
+    return out;
+  }
+
+  // Parse-cache nøklet på den rå localStorage-strengen. getState() kalles
+  // tusenvis av ganger under ett svar (DayProgression/Builder.inspect leser
+  // hele dagsruntimen som ligger inne i dette blobbet), og hver JSON.parse av
+  // ~18KB summerte seg til >100MB parsing pr. svar. Enhver skriver som endrer
+  // strengen (setState eller ekstern) buster cachen automatisk, så semantikken
+  // er uendret. deepMerge kjøres fortsatt pr. kall og gir et ferskt topp-objekt.
+  let _stateCacheRaw = null;
+  /** @type {Record<string, unknown> | null} */
+  let _stateCacheParsed = null;
+
+  function getState() {
+    const raw = localStorage.getItem(LS_STATE);
+    if (raw === _stateCacheRaw && _stateCacheParsed !== null) {
+      return deepMerge(DEFAULTS, _stateCacheParsed);
+    }
+    const parsed = raw ? safeParse(raw, {}) : {};
+    _stateCacheRaw = raw;
+    _stateCacheParsed = parsed;
+    return deepMerge(DEFAULTS, parsed);
+  }
+
+  function setState(patch) {
+    const current = getState();
+    const next = deepMerge(current, patch || {});
+    const serialized = JSON.stringify(next);
+    localStorage.setItem(LS_STATE, serialized);
+    // Prim cachen med det vi nettopp skrev, så neste getState slipper re-parse.
+    _stateCacheRaw = serialized;
+    _stateCacheParsed = next;
+    return next;
+  }
+
+
+  function normalizeUnreadState(input) {
+    const raw = input && typeof input === "object" ? input : {};
+    const offerKeys = Array.from(new Set(Array.isArray(raw.unreadJobOfferKeys)
+      ? raw.unreadJobOfferKeys.map(String).filter(Boolean)
+      : []));
+    const mailIds = Array.from(new Set(Array.isArray(raw.unreadJobMailIds)
+      ? raw.unreadJobMailIds.map(String).filter(Boolean)
+      : []));
+    return {
+      unreadCivicationCount: offerKeys.length + mailIds.length,
+      unreadJobMailCount: mailIds.length,
+      unreadJobOfferKeys: offerKeys,
+      unreadJobMailIds: mailIds,
+      hasNewJobOffer: offerKeys.length > 0
+    };
+  }
+
+  function dispatchCivicationBadgeUpdate() {
+    ["updateProfile", "updateInbox", "updateCivicationBadge"].forEach(function (eventName) {
+      try { window.dispatchEvent(new Event(eventName)); } catch (e) {}
+    });
+  }
+
+  function getCivicationUnreadState() {
+    return normalizeUnreadState(getState().civication_unread);
+  }
+
+  function setCivicationUnreadState(nextUnread, options) {
+    const opts = options && typeof options === "object" ? options : {};
+    const current = getCivicationUnreadState();
+    const next = normalizeUnreadState(nextUnread);
+    const changed = JSON.stringify(current) !== JSON.stringify(next);
+    setState({ civication_unread: next });
+    if (changed && !opts.silent) dispatchCivicationBadgeUpdate();
+    return next;
+  }
+
+  function getUnreadCivicationCount() {
+    return getCivicationUnreadState().unreadCivicationCount;
+  }
+
+  function markJobOfferUnread(offerKey) {
+    const key = String(offerKey || "").trim();
+    if (!key) return getCivicationUnreadState();
+    const current = getCivicationUnreadState();
+    if (current.unreadJobOfferKeys.includes(key)) return current;
+    return setCivicationUnreadState({
+      ...current,
+      unreadJobOfferKeys: current.unreadJobOfferKeys.concat(key)
+    });
+  }
+
+  function markJobMailUnread(mailId) {
+    const id = String(mailId || "").trim();
+    if (!id) return getCivicationUnreadState();
+    const current = getCivicationUnreadState();
+    if (current.unreadJobMailIds.includes(id)) return current;
+    return setCivicationUnreadState({
+      ...current,
+      unreadJobMailIds: current.unreadJobMailIds.concat(id)
+    });
+  }
+
+  function markJobOffersRead(offerKeys) {
+    const current = getCivicationUnreadState();
+    const keys = Array.isArray(offerKeys)
+      ? offerKeys.map(String).filter(Boolean)
+      : current.unreadJobOfferKeys;
+    const remove = new Set(keys);
+    return setCivicationUnreadState({
+      ...current,
+      unreadJobOfferKeys: current.unreadJobOfferKeys.filter(function (key) { return !remove.has(key); })
+    });
+  }
+
+  function markJobMailsRead(mailIds) {
+    const current = getCivicationUnreadState();
+    const ids = Array.isArray(mailIds)
+      ? mailIds.map(String).filter(Boolean)
+      : current.unreadJobMailIds;
+    const remove = new Set(ids);
+    return setCivicationUnreadState({
+      ...current,
+      unreadJobMailIds: current.unreadJobMailIds.filter(function (id) { return !remove.has(id); })
+    });
+  }
+
+  function clearCivicationUnread() {
+    return setCivicationUnreadState({
+      unreadCivicationCount: 0,
+      unreadJobMailCount: 0,
+      unreadJobOfferKeys: [],
+      unreadJobMailIds: [],
+      hasNewJobOffer: false
+    });
+  }
+
+  function getInbox() {
+    if (window.CivicationMailEngine?.getInbox) {
+      const engineInbox = window.CivicationMailEngine.getInbox();
+      return Array.isArray(engineInbox) ? engineInbox : [];
+    }
+
+    const legacy = safeParse(
+      localStorage.getItem(LS_INBOX),
+      []
+    );
+
+    if (Array.isArray(legacy)) return legacy;
+    if (legacy && typeof legacy === "object" && Array.isArray(legacy.items)) return legacy.items;
+    return [];
+  }
+
+  function setInbox(arr) {
+    if (window.CivicationMailEngine?.replaceInbox) {
+      window.CivicationMailEngine.replaceInbox(Array.isArray(arr) ? arr : []);
+      return;
+    }
+
+    localStorage.setItem(
+      LS_INBOX,
+      JSON.stringify(Array.isArray(arr) ? arr : [])
+    );
+  }
+
+  function getActivePosition() {
+    return safeParse(
+      localStorage.getItem(LS_ACTIVE_POS),
+      null
+    );
+  }
+
+  function setActivePosition(pos) {
+    localStorage.setItem(
+      LS_ACTIVE_POS,
+      JSON.stringify(pos)
+    );
+  }
+
+  function getOnboardingRoleKey(active) {
+    const roleId = String(active?.role_id || "").trim();
+    if (roleId) return roleId;
+
+    const roleKey = String(active?.role_key || "").trim();
+    if (roleKey) return roleKey;
+
+    return null;
+  }
+
+  function getOnboardingState(active) {
+    const state = getState();
+    const roleKey = getOnboardingRoleKey(active);
+    if (!roleKey) return null;
+
+    const byRole =
+      state?.onboarding?.by_role &&
+      typeof state.onboarding.by_role === "object"
+        ? state.onboarding.by_role
+        : {};
+
+    return byRole[roleKey] || null;
+  }
+
+  function ensureOnboardingState(active) {
+    const roleKey = getOnboardingRoleKey(active);
+    if (!roleKey) return null;
+
+    const current = getOnboardingState(active);
+    if (current) return current;
+
+    const fresh = {
+      intro_done: false,
+      first_day_done: false,
+      complete: false
+    };
+
+    const state = getState();
+    const byRole =
+      state?.onboarding?.by_role &&
+      typeof state.onboarding.by_role === "object"
+        ? state.onboarding.by_role
+        : {};
+
+    setState({
+      onboarding: {
+        by_role: {
+          ...byRole,
+          [roleKey]: fresh
+        }
+      }
+    });
+
+    return fresh;
+  }
+
+  function setOnboardingState(active, patch) {
+    const roleKey = getOnboardingRoleKey(active);
+    if (!roleKey) return null;
+
+    const current = ensureOnboardingState(active) || {
+      intro_done: false,
+      first_day_done: false,
+      complete: false
+    };
+
+    const state = getState();
+    const byRole =
+      state?.onboarding?.by_role &&
+      typeof state.onboarding.by_role === "object"
+        ? state.onboarding.by_role
+        : {};
+
+    const next = {
+      ...current,
+      ...(patch || {})
+    };
+
+    setState({
+      onboarding: {
+        by_role: {
+          ...byRole,
+          [roleKey]: next
+        }
+      }
+    });
+
+    return next;
+  }
+
+  function getMailBranchState() {
+    const state = getState();
+    const branch =
+      state?.mail_branch_state && typeof state.mail_branch_state === "object"
+        ? state.mail_branch_state
+        : {};
+
+    return {
+      preferred_types: Array.isArray(branch.preferred_types) ? branch.preferred_types : [],
+      preferred_families: Array.isArray(branch.preferred_families) ? branch.preferred_families : [],
+      flags: Array.isArray(branch.flags) ? branch.flags : []
+    };
+  }
+
+  function setMailBranchState(patch) {
+    const current = getMailBranchState();
+    const next = {
+      preferred_types: Array.isArray(patch?.preferred_types)
+        ? patch.preferred_types
+        : current.preferred_types,
+      preferred_families: Array.isArray(patch?.preferred_families)
+        ? patch.preferred_families
+        : current.preferred_families,
+      flags: Array.isArray(patch?.flags)
+        ? patch.flags
+        : current.flags
+    };
+
+    setState({
+      mail_branch_state: next
+    });
+
+    return next;
+  }
+
+  function clearMailBranchState() {
+    return setMailBranchState({
+      preferred_types: [],
+      preferred_families: [],
+      flags: []
+    });
+  }
+
+  function getWallet() {
+  return safeParse(
+    localStorage.getItem(LS_WALLET),
+    { balance: 0, last_tick_iso: null }
+  );
+}
+
+function updateWallet(wallet) {
+  localStorage.setItem(
+    LS_WALLET,
+    JSON.stringify(wallet || { balance: 0, last_tick_iso: null })
+  );
+
+  window.dispatchEvent(new Event("updateProfile"));
+}
+
+  
+
+  function appendJobHistoryEnded(prevPos, reason) {
+    if (!prevPos) return;
+
+    const hist = safeParse(
+      localStorage.getItem(LS_JOB_HISTORY),
+      []
+    );
+
+    const entry = {
+      ...prevPos,
+      ended_at: new Date().toISOString(),
+      end_reason: reason || "ended"
+    };
+
+    hist.unshift(entry);
+
+    localStorage.setItem(
+      LS_JOB_HISTORY,
+      JSON.stringify(hist)
+    );
+  }
+
+
+  
+// --------------------------------------------------
+// Week utilities (global single source of truth)
+// --------------------------------------------------
+
+function weekKey(d) {
+
+  const base = d || new Date();
+
+  const date = new Date(
+    Date.UTC(
+      base.getFullYear(),
+      base.getMonth(),
+      base.getDate()
+    )
+  );
+
+  const dayNum = date.getUTCDay() || 7;
+
+  date.setUTCDate(
+    date.getUTCDate() + 4 - dayNum
+  );
+
+  const yearStart = new Date(
+    Date.UTC(date.getUTCFullYear(), 0, 1)
+  );
+
+  const weekNo = Math.ceil(
+    (((date.getTime() - yearStart.getTime()) / 86400000) + 1) / 7
+  );
+
+  return (
+    date.getUTCFullYear() +
+    "-W" +
+    String(weekNo).padStart(2, "0")
+  );
+}
+
+function weekIndexFromWeekKey(k) {
+
+  const m = String(k || "")
+    .match(/^(\d{4})-W(\d{2})$/);
+
+  if (!m) return null;
+
+  const y = Number(m[1]);
+  const w = Number(m[2]);
+
+  if (!Number.isFinite(y) ||
+      !Number.isFinite(w)) {
+    return null;
+  }
+
+  return y * 53 + w;
+}
+
+function weeksPassedBetweenWeekKeys(sinceW, nowW) {
+
+  const a = weekIndexFromWeekKey(sinceW);
+  const b = weekIndexFromWeekKey(nowW);
+
+  if (a == null || b == null) return 0;
+
+  return Math.max(0, b - a);
+}
+
+// Eksporter globalt
+window.weekKey = weekKey;
+window.weekIndexFromWeekKey = weekIndexFromWeekKey;
+window.weeksPassedBetweenWeekKeys = weeksPassedBetweenWeekKeys;
+  
+  window.CivicationState = {
+  getState,
+  setState,
+  getInbox,
+  setInbox,
+  getActivePosition,
+  setActivePosition,
+  appendJobHistoryEnded,
+  getPulse,
+  setPulse,
+  getWallet,
+  updateWallet,
+  getOnboardingRoleKey,
+  getOnboardingState,
+  ensureOnboardingState,
+  setOnboardingState,
+  getMailBranchState,
+  setMailBranchState,
+  clearMailBranchState,
+  getCivicationUnreadState,
+  setCivicationUnreadState,
+  getUnreadCivicationCount,
+  markJobOfferUnread,
+  markJobMailUnread,
+  markJobOffersRead,
+  markJobMailsRead,
+  clearCivicationUnread,
+  dispatchCivicationBadgeUpdate
+};
+
+})();

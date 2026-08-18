@@ -1,0 +1,66 @@
+{
+  "placeId": "okern",
+  "placeFile": "data/places/by/oslo/places/okern.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.930161,
+    "lon": 10.808531,
+    "r": 450,
+    "coordStatus": "verified_geometry",
+    "coordSource": "Oslo byleksikon – Økern (strøk)",
+    "coordType": "district_anchor",
+    "coordNote": "Representativt områdeanker for Økern som industri- og boligstrøk øst for Sinsen. Oslo byleksikon dokumenterer strøkets områdeidentitet og kommunikasjonssenter. Punktet er et semantic area anchor, ikke en enkelt adresse eller et påstått geometrisk sentrum for hele strøket."
+  },
+  "identity": {
+    "currentName": "Økern",
+    "resolvedIdentity": "Økern som by- og næringsområde i Bjerke",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "linear_area",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [
+    "stabil kildeidentitet",
+    "objekttilpasset representasjonsanker",
+    "avgrensning mot nærliggende canonical steder"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Oslo byleksikon – Økern (strøk)",
+      "sourceUrl": "https://oslobyleksikon.no/side/%C3%98kern_%28str%C3%B8k%29",
+      "sourceObjectId": "oslobyleksikon:okern-strok",
+      "sourceQuality": "documented_place_or_area_definition",
+      "finding": "Oslo byleksikon dokumenterer Økern som industri- og boligstrøk øst for Sinsen, øst for Ring 3 og med kommunikasjonssenteret ved Østre Aker vei og T-banen.",
+      "canVerifyCoordinate": true,
+      "reason": "Representativt områdeanker for Økern som industri- og boligstrøk øst for Sinsen. Oslo byleksikon dokumenterer strøkets områdeidentitet og kommunikasjonssenter. Punktet er et semantic area anchor, ikke en enkelt adresse eller et påstått geometrisk sentrum for hele strøket."
+    }
+  ],
+  "addressCandidates": [],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "oslobyleksikon:okern-strok",
+      "canApplyToPlace": true
+    }
+  ],
+  "geometryCandidates": [],
+  "coordinateCandidates": [
+    {
+      "lat": 59.930161,
+      "lon": 10.808531,
+      "coordRole": "area_anchor",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Kildekontrakt og representasjonsanker er anvendt på canonical place."
+  },
+  "notes": [
+    "Representativt områdeanker for Økern som industri- og boligstrøk øst for Sinsen. Oslo byleksikon dokumenterer strøkets områdeidentitet og kommunikasjonssenter. Punktet er et semantic area anchor, ikke en enkelt adresse eller et påstått geometrisk sentrum for hele strøket."
+  ]
+}

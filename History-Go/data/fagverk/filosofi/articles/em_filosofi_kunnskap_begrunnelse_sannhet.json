@@ -1,0 +1,262 @@
+{
+  "schema": "history_go_fagverk_filosofi_article_v1",
+  "version": "1.0.0",
+  "subject_id": "filosofi",
+  "id": "em_filosofi_kunnskap_begrunnelse_sannhet",
+  "title": "Kunnskap, begrunnelse og sannhet",
+  "domain_id": "erkjennelse_sannhet",
+  "area_id": "filosofi_erkjennelse_sannhet",
+  "level": 1,
+  "status": "complete",
+  "editorial_quality": "university_depth_reviewed",
+  "canonical_definition": "Forholdet mellom tro, sannhet, evidens og begrunnelse.",
+  "concept_ids": [
+    "kunnskap",
+    "begrunnelse",
+    "sannhet"
+  ],
+  "method_ids": [
+    "met_filosofi_begrepsanalyse",
+    "met_filosofi_moteksempel",
+    "met_filosofi_standpunktanalyse"
+  ],
+  "theory_hook_ids": [
+    "fil_erkjennelse_sannhet_01"
+  ],
+  "thinker_refs": [
+    "platon",
+    "edmund_gettier",
+    "alvin_goldman"
+  ],
+  "primary_work_refs": [
+    "Theaitetos",
+    "Is Justified True Belief Knowledge?",
+    "Epistemology and Cognition"
+  ],
+  "source_ids": [
+    "sep-epistemology",
+    "sep-skepticism",
+    "sep-testimony"
+  ],
+  "claims": [
+    {
+      "id": "em_filosofi_kunnskap_begrunnelse_sannhet_claim_problem",
+      "type": "problem_framing",
+      "text": "Det klassiske spørsmålet er hvorfor sann tro ikke er nok for kunnskap. Gettier-problemet viser at også begrunnet sann tro kan være sann på en epistemisk tilfeldig måte, mens reliabilistiske teorier forsøker å flytte vekten mot pålitelige sannhetsproduserende prosesser.",
+      "source_ids": [
+        "sep-epistemology",
+        "sep-skepticism",
+        "sep-testimony"
+      ]
+    },
+    {
+      "id": "em_filosofi_kunnskap_begrunnelse_sannhet_claim_argument",
+      "type": "position_reconstruction",
+      "text": "K: En teori om kunnskap må derfor forklare både sannhet, epistemisk støtte og fravær av den typen flaks som gjør en sann tro tilfeldig korrekt.",
+      "source_ids": [
+        "sep-epistemology",
+        "sep-skepticism",
+        "sep-testimony"
+      ]
+    },
+    {
+      "id": "em_filosofi_kunnskap_begrunnelse_sannhet_claim_distinction",
+      "type": "concept_distinction",
+      "text": "P2: Begrunnelse er nødvendig for å skille kunnskap fra heldig gjetning, men Gettier-tilfeller viser at begrunnet sann tro fortsatt kan være sann på grunn av flaks som kobler begrunnelsen fra det som gjør påstanden sann.",
+      "source_ids": [
+        "sep-epistemology",
+        "sep-skepticism",
+        "sep-testimony"
+      ]
+    },
+    {
+      "id": "em_filosofi_kunnskap_begrunnelse_sannhet_claim_rival",
+      "type": "rival_position",
+      "text": "Innvending: Reliabilisme kan tilskrive kunnskap til en person som ikke har noen refleksiv tilgang til hvorfor prosessen er pålitelig, og kan dermed gjøre begrunnelse for ekstern.",
+      "source_ids": [
+        "sep-epistemology",
+        "sep-skepticism",
+        "sep-testimony"
+      ]
+    },
+    {
+      "id": "em_filosofi_kunnskap_begrunnelse_sannhet_claim_reply",
+      "type": "philosophical_argument",
+      "text": "Svar: Det er den reelle striden mellom internalistiske og eksternalistiske teorier. Artikkelen bør derfor ikke late som Gettier-problemet har én standardløsning, men bruke tilfeller til å teste hvor mye intern tilgjengelig begrunnelse og ekstern pålitelighet hver teori krever.",
+      "source_ids": [
+        "sep-epistemology",
+        "sep-skepticism",
+        "sep-testimony"
+      ]
+    },
+    {
+      "id": "em_filosofi_kunnskap_begrunnelse_sannhet_claim_source",
+      "type": "source_boundary",
+      "text": "Primærverk bærer konkrete posisjons- og tekstrekonstruksjoner, mens faglige sekundærkilder brukes til problemhistorie, rivaler og bibliografisk kontroll; empiriske casepåstander krever egne casekilder.",
+      "source_ids": [
+        "sep-epistemology",
+        "sep-skepticism",
+        "sep-testimony"
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "problem",
+      "title": "Problemet",
+      "paragraphs": [
+        "Kunnskap, begrunnelse og sannhet undersøker forholdet mellom tro, sannhet, evidens og begrunnelse. Den sentrale oppgaven er ikke å gjenta definisjoner, men å vise hvilke premisser som skiller de konkurrerende posisjonene og hva som følger når ett premiss forkastes. Det klassiske spørsmålet er hvorfor sann tro ikke er nok for kunnskap. Gettier-problemet viser at også begrunnet sann tro kan være sann på en epistemisk tilfeldig måte, mens reliabilistiske teorier forsøker å flytte vekten mot pålitelige sannhetsproduserende prosesser.",
+        "Emnet hører til Erkjennelse, sannhet og kunnskapsmakt. Her ligger den sentrale spenningen mellom kravet om individuell begrunnelse på den ene siden og sosialt formidlet, feilbarlig kunnskap på den andre. Målet er ikke å fjerne denne spenningen med en rask definisjon, men å vise hvilke påstander som følger av hvilke premisser, hvilke premisser som trenger støtte, og hvilke deler av uenigheten som skyldes ulike begreper eller normative mål."
+      ]
+    },
+    {
+      "id": "begreper",
+      "title": "Begrepene som bærer argumentet",
+      "paragraphs": [
+        "Kunnskap: En epistemisk prestasjon som minst innebærer sannhet og en relevant form for begrunnelse eller pålitelighet. Kunnskap må særlig holdes fra Begrunnelse og Sannhet; relasjonen må prøves i selve argumentet. I analysen av kunnskap, begrunnelse og sannhet skal begrepet gjøre en synlig forskjell: leseren må kunne peke på hvilket premiss, kriterium eller grensetilfelle som endres dersom kunnskap forstås annerledes. I argumentrekonstruksjonen får begrepet en konkret rolle: Kunnskap må være sannhetsrettet: en falsk tro kan være forståelig eller rasjonell, men kan ikke være kunnskap om at det falske forholdet faktisk gjelder.",
+        "Begrunnelse: Grunner, evidens eller pålitelige prosesser som taler for å godta en påstand. Begrunnelse må særlig holdes fra Kunnskap og Sannhet; relasjonen må prøves i selve argumentet. En presis bruk i kunnskap, begrunnelse og sannhet krever derfor et eksempel eller moteksempel som viser når begrunnelse gjelder, og når et nærliggende begrep er bedre. I argumentrekonstruksjonen får begrepet en konkret rolle: Begrunnelse er nødvendig for å skille kunnskap fra heldig gjetning, men Gettier-tilfeller viser at begrunnet sann tro fortsatt kan være sann på grunn av flaks som kobler begrunnelsen fra det som gjør påstanden sann.",
+        "Sannhet: Egenskapen ved en påstand at den forholder seg korrekt til det den handler om, forstått ulikt i ulike sannhetsteorier. Sannhet må særlig holdes fra Kunnskap og Begrunnelse; relasjonen må prøves i selve argumentet. Begrepet er faglig mest nyttig når det kan brukes til å avgjøre en konkret uenighet i kunnskap, begrunnelse og sannhet, ikke når det bare fungerer som navn på temaet. I argumentrekonstruksjonen får begrepet en konkret rolle: Kunnskap må være sannhetsrettet: en falsk tro kan være forståelig eller rasjonell, men kan ikke være kunnskap om at det falske forholdet faktisk gjelder."
+      ]
+    },
+    {
+      "id": "argument",
+      "title": "Argumentrekonstruksjon",
+      "paragraphs": [
+        "P1: Kunnskap må være sannhetsrettet: en falsk tro kan være forståelig eller rasjonell, men kan ikke være kunnskap om at det falske forholdet faktisk gjelder.",
+        "P2: Begrunnelse er nødvendig for å skille kunnskap fra heldig gjetning, men Gettier-tilfeller viser at begrunnet sann tro fortsatt kan være sann på grunn av flaks som kobler begrunnelsen fra det som gjør påstanden sann.",
+        "P3: Goldmans reliabilistiske svar er å kreve en relevant pålitelig forbindelse mellom trosdannelsen og sannheten. Det reduserer Gettier-lignende flaks, men reiser nye spørsmål om hvilke prosesser som teller som pålitelige og hvor mye subjektet selv må kunne redegjøre for dem.",
+        "K: En teori om kunnskap må derfor forklare både sannhet, epistemisk støtte og fravær av den typen flaks som gjør en sann tro tilfeldig korrekt."
+      ]
+    },
+    {
+      "id": "uenighet",
+      "title": "Innvending og svar",
+      "paragraphs": [
+        "Innvending: Reliabilisme kan tilskrive kunnskap til en person som ikke har noen refleksiv tilgang til hvorfor prosessen er pålitelig, og kan dermed gjøre begrunnelse for ekstern.",
+        "Svar: Det er den reelle striden mellom internalistiske og eksternalistiske teorier. Artikkelen bør derfor ikke late som Gettier-problemet har én standardløsning, men bruke tilfeller til å teste hvor mye intern tilgjengelig begrunnelse og ekstern pålitelighet hver teori krever."
+      ]
+    },
+    {
+      "id": "teorihistorie",
+      "title": "Teori og verk",
+      "paragraphs": [
+        "Det klassiske spørsmålet er hvorfor sann tro ikke er nok for kunnskap. Gettier-problemet viser at også begrunnet sann tro kan være sann på en epistemisk tilfeldig måte, mens reliabilistiske teorier forsøker å flytte vekten mot pålitelige sannhetsproduserende prosesser.",
+        "Primærverkankrene er Theaitetos (Platon); Is Justified True Belief Knowledge? (Edmund Gettier); Epistemology and Cognition (Alvin Goldman). De brukes til å kontrollere de navngitte debattaktørenes egne argumenter i artikkelens stridspunkt, ikke som en generell kanonliste. Det klassiske spørsmålet er hvorfor sann tro ikke er nok for kunnskap. Gettier-problemet viser at også begrunnet sann tro kan være sann på en epistemisk tilfeldig måte, mens reliabilistiske teorier forsøker å flytte vekten mot pålitelige sannhetsproduserende prosesser.",
+        "Teorihistoriske verk fungerer som primærfilosofiske kilder til argumenter og begreper, mens Epistemology; Skepticism; Epistemological Problems of Testimony brukes som faglige sekundærkilder til problemhistorie, posisjoner og bibliografisk kontroll. De to kildetypene har forskjellige roller: en sekundærkilde kan hjelpe oss å lokalisere en debatt, men en spesifikk teksttolkning bør så langt mulig kontrolleres mot selve verket eller en pålitelig utgave."
+      ]
+    },
+    {
+      "id": "metode",
+      "title": "Metode og kontrollspørsmål",
+      "paragraphs": [
+        "Begrepsanalyse, Moteksempel, Standpunktanalyse brukes på den eksplisitte argumentrekken, ikke som en løs metodeetikett. Analysen starter med premisset «Kunnskap må være sannhetsrettet: en falsk tro kan være forståelig eller rasjonell, men kan ikke være kunnskap om at det falske forholdet faktisk gjelder.» og følger overgangen fram mot konklusjonen «En teori om kunnskap må derfor forklare både sannhet, epistemisk støtte og fravær av den typen flaks som gjør en sann tro tilfeldig korrekt.». Deretter prøves rekonstruksjonen mot rivalens hovedinnvending: «Reliabilisme kan tilskrive kunnskap til en person som ikke har noen refleksiv tilgang til hvorfor prosessen er pålitelig, og kan dermed gjøre begrunnelse for ekstern.». Målet er å lokalisere uenigheten til et bestemt premiss, begrep eller evidenskrav som leseren selv kan kontrollere.",
+        "Metodebegrensningen følger av samme struktur: et formelt, historisk, normativt eller empirisk premiss kan ikke uten videre gjøre arbeidet til de andre. Når analysen skifter nivå, skal det markeres eksplisitt, og eventuelle casefakta må dokumenteres uavhengig av den filosofiske slutningen."
+      ]
+    },
+    {
+      "id": "case",
+      "title": "Anvendelse på et dokumentert case",
+      "paragraphs": [
+        "Et egnet case er en ekspertuttalelse, arkivkilde eller forskningsrapport der avsender, evidens og institusjonell kvalitet kan vurderes hver for seg. Relevante stedstyper for dette emnet omfatter universitet, bibliotek, arkiv. Caset skal fungere som prøvestein for argumentet: Hvilke trekk er observerbare eller dokumenterte? Hvilke premisser kommer fra kilder? Hvilke normative eller metafysiske slutninger er våre egne?",
+        "Primærverk bærer konkrete posisjons- og tekstrekonstruksjoner, mens faglige sekundærkilder brukes til problemhistorie, rivaler og bibliografisk kontroll; empiriske casepåstander krever egne casekilder. Derfor er et case relevant bare når det dokumenterer premisser som faktisk inngår i artikkelens argument; stedet eller eksemplet er aldri i seg selv bevis for den filosofiske konklusjonen."
+      ]
+    },
+    {
+      "id": "kilder",
+      "title": "Kildebruk og evidensgrenser",
+      "paragraphs": [
+        "De emnespesifikke sekundærkildene i denne artikkelen er Epistemology; Skepticism; Epistemological Problems of Testimony. Epistemology: faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case. Skepticism: faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case. Epistemological Problems of Testimony: faglig sekundærkilde til problemhistorie, posisjoner, innvendinger og bibliografisk kontroll; ikke autoritet for et lokalt empirisk case.",
+        "Primærverkankrene Theaitetos; Is Justified True Belief Knowledge?; Epistemology and Cognition brukes ved konkrete posisjons- og argumentrekonstruksjoner. De emnespesifikke sekundærkildene brukes til problemhistorie, rivaler, fortolkningskontroll og bibliografi; empiriske casepåstander krever egne casekilder."
+      ]
+    },
+    {
+      "id": "avgrensning",
+      "title": "Hva analysen ikke etablerer",
+      "paragraphs": [
+        "Skeptiske argumenter viser hva en teori om kunnskap må kunne svare på, men de beviser ikke i seg selv at hverdagslig eller vitenskapelig kunnskap er umulig. Det betyr at artikkelen kan etablere en presis filosofisk problemstruktur uten å late som om alle empiriske spørsmål er avgjort. Uenighet beholdes når rivalposisjoner har reelle argumenter; en sterk artikkel viser hvor vurderingen står åpen og hva som måtte undersøkes for å komme videre.",
+        "Det åpne kontrollpunktet er rivalens innvending: «Reliabilisme kan tilskrive kunnskap til en person som ikke har noen refleksiv tilgang til hvorfor prosessen er pålitelig, og kan dermed gjøre begrunnelse for ekstern.» Artikkelens svar er «Det er den reelle striden mellom internalistiske og eksternalistiske teorier.» Dette er ikke en påstand om at debatten dermed er lukket. Kvalitetskravet er at leseren kan se hvilke premisser som fortsatt er omstridte, hvilke verk og sekundærkilder som bærer rekonstruksjonen, og hva som måtte undersøkes videre for å styrke eller forkaste konklusjonen."
+      ]
+    }
+  ],
+  "quality": {
+    "word_count": 1339,
+    "section_count": 9,
+    "paragraph_count": 21,
+    "argument_reconstruction": true,
+    "rival_position": true,
+    "method_limit": true,
+    "source_boundaries": true,
+    "concepts_written_out": true,
+    "place_boundary": true,
+    "editorial_polish": true,
+    "tradition_specific_relevance": true,
+    "review_state": "university_depth_reviewed",
+    "reviewed_against_university_gate": true,
+    "substantive_argument_reconstruction": true,
+    "topic_specific_sources": true,
+    "source_integrity": {
+      "state": "reviewed",
+      "standard": "debate_aligned_primary_works_v2",
+      "reviewed_at": "2026-08-17",
+      "debate_actors": [
+        "Platon",
+        "Edmund Gettier",
+        "Alvin Goldman"
+      ],
+      "canonical_thinker_refs": [
+        "platon",
+        "edmund_gettier",
+        "alvin_goldman"
+      ],
+      "primary_work_anchors": [
+        {
+          "actor": "Platon",
+          "canonical_ref": "platon",
+          "work": "Theaitetos"
+        },
+        {
+          "actor": "Edmund Gettier",
+          "canonical_ref": "edmund_gettier",
+          "work": "Is Justified True Belief Knowledge?"
+        },
+        {
+          "actor": "Alvin Goldman",
+          "canonical_ref": "alvin_goldman",
+          "work": "Epistemology and Cognition"
+        }
+      ]
+    }
+  },
+  "university_quality": {
+    "schema": "history_go_filosofi_university_quality_v1",
+    "standard": "substantive_university_philosophy_v2",
+    "review_status": "reviewed",
+    "debate": "Det klassiske spørsmålet er hvorfor sann tro ikke er nok for kunnskap. Gettier-problemet viser at også begrunnet sann tro kan være sann på en epistemisk tilfeldig måte, mens reliabilistiske teorier forsøker å flytte vekten mot pålitelige sannhetsproduserende prosesser.",
+    "debate_thinkers": [
+      "Platon",
+      "Edmund Gettier",
+      "Alvin Goldman"
+    ],
+    "required_anchors": [
+      "Gettier",
+      "begrunnet sann tro",
+      "pålitelighet",
+      "sannhet",
+      "kunnskap"
+    ],
+    "primary_work_count": 3,
+    "secondary_source_count": 3,
+    "review_contract": [
+      "Argumentet rekonstruerer et faktisk filosofisk stridspunkt og kan kritiseres premiss for premiss.",
+      "Rivalen forklarer hva en alternativ posisjon bestrider, ikke bare at uenighet finnes.",
+      "Navngitte tenkere og verk brukes som problem- og argumentankere, ikke som navneliste.",
+      "Fagankere må forekomme i argument, innvending eller teorihistorie og kan ikke bare deklareres i metadata."
+    ],
+    "substantive_argument": true,
+    "real_rival": true,
+    "primary_work_grounding": true,
+    "topic_specific_secondary_sources": true,
+    "generic_template_rejected": true,
+    "final_qa_repaired_at": "2026-08-16"
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "version": "3.0",
+  "status": "canonical_category_profile",
+  "type": "category_quiz_profile",
+  "categoryId": "sport",
+  "title": "Sport & lek",
+  "governance": {
+    "production_standard": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+    "question_schema": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json",
+    "template_registry": "data/quiz/regler/QUIZ_TEMPLATE_REGISTRY_V2.json",
+    "authority": "category_content_only",
+    "may_override_global_rules": false
+  },
+  "required_emne_prefix": "em_sport_",
+  "quality_layer": {
+    "manifest": "data/fag/sport/sport_quality_manifest_v5.json",
+    "theory_hooks": "data/fag/sport/theory_hooks_sport_canonical_v5.json",
+    "thinkers": "data/fag/sport/teoretikere_sport_canonical_v5.json",
+    "concepts": "data/fag/sport/begreper_sport_canonical_v5.json",
+    "methods": "data/fag/sport/methods_sport_quality_v5.json",
+    "curriculum": "data/fag/sport/sportpensum_extension_canonical_v5.json",
+    "compatibility_rule": "Velg fortsatt emne_id fra emner_sport_canonical_v4_5.json. V5-hook, concept_id og analysis_method_v5 brukes til å skjerpe forklaring og kildegrunnlag."
+  },
+  "evidence_layer": {
+    "version": "1.0",
+    "manifest": "data/fag/sport/sport_scientific_evidence_manifest_v1.json",
+    "sources": "data/fag/sport/evidence_registry_sport_v1.json",
+    "claims": "data/fag/sport/claims_sport_canonical_v1.json",
+    "models": "data/fag/sport/models_sport_canonical_v1.json",
+    "source_quality_rubric": "data/fag/sport/source_quality_rubric_sport_v1.json",
+    "measurements": "data/fag/sport/measurement_registry_sport_v1.json",
+    "scientific_method_policy": "data/fag/sport/sport_scientific_method_policy_v1.json",
+    "required_for": [
+      "research_claim",
+      "health_claim",
+      "training_claim",
+      "measurement_claim",
+      "model_claim",
+      "risk_claim",
+      "regulatory_claim"
+    ],
+    "compatibility_rule": "Evidenslaget skjerper forskningsbaserte påstander uten å endre eksisterende emne_id- eller V5-hook-ID-er.",
+    "coverage_status": "partial_until_all_theory_hooks_have_claim_chains",
+    "evidence_packages": "data/fag/sport/evidence_packages_sport_v1.json",
+    "first_priority_protocol": "data/fag/sport/protocols/concussion_acute_safety_protocol_v1.json",
+    "first_priority_search_log": "data/fag/sport/concussion_search_log_sport_v1.json",
+    "review_appraisal_tools": "data/fag/sport/review_appraisal_tools_sport_v1.json",
+    "first_priority_search_strategy": "data/fag/sport/concussion_search_strategy_sport_v2.json",
+    "first_priority_search_runs": "data/fag/sport/concussion_search_runs_sport_v1.json",
+    "first_priority_deduplication_protocol": "data/fag/sport/concussion_deduplication_protocol_sport_v1.json",
+    "first_priority_screening_schema": "data/fag/sport/concussion_screening_schema_sport_v1.json",
+    "first_priority_reviewer_roles": "data/fag/sport/concussion_reviewer_roles_sport_v1.json"
+  },
+  "content_priorities": [
+    "lek, regler, idrettens egenart og fair konkurranse",
+    "idrettshistorie, profesjonalisering, rekorder og olympisme",
+    "arena, anlegg, Groundhopper, stedstilknytning og idrettsminne",
+    "taktikk, spillmodell, kampanalyse og beslutning",
+    "ferdighetslæring, øvelsesdesign og trenerpedagogikk",
+    "treningsfysiologi, biomekanikk, restitusjon og målekvalitet",
+    "motivasjon, press, lagdynamikk og ledelse",
+    "klubb, forbund, frivillighet, økonomi og styring",
+    "supporterkultur, medier, ritual, lokal og global identitet",
+    "kjønn, rasisering, paraidrett, tilgjengelighet og interseksjonalitet",
+    "doping, teknologi, utøverdata, dommeravgjørelser og idrettsetikk",
+    "folkehelse, barns rettigheter, sosial tilgang, lek og miljø"
+  ],
+  "essential_concepts": [
+    "sport",
+    "lek",
+    "konstitutiv regel",
+    "konkurranse",
+    "rekord",
+    "profesjonalisering",
+    "idrettsarena",
+    "stedstilknytning",
+    "groundhopping",
+    "taktikk",
+    "spillmodell",
+    "overgang",
+    "persepsjon–handling",
+    "begrensningsstyrt læring",
+    "treningsbelastning",
+    "periodisering",
+    "målevaliditet",
+    "reliabilitet",
+    "målefeil",
+    "evidensgrad",
+    "kausalitet",
+    "konfundering",
+    "ekstern validitet",
+    "usikkerhet",
+    "mestringstro",
+    "selvbestemmelse",
+    "safeguarding",
+    "medlemsdemokrati",
+    "supporterkultur",
+    "interseksjonalitet",
+    "tilgjengelighet",
+    "fair play",
+    "utøverdata",
+    "fysisk aktivitet",
+    "aktivitetsulikhet",
+    "idrettens klimaavtrykk"
+  ],
+  "preferred_source_types": [
+    "gjeldende regelverk fra forbund og konkurranseorgan",
+    "fagfellevurdert idrettsvitenskap, idrettsmedisin, biomekanikk og idrettspsykologi",
+    "systematiske oversikter, metaanalyser og konsensusdokumenter med eksplisitt metode",
+    "offisielle resultat-, hendelses- og konkurransedata med dokumentert definisjon",
+    "klubb-, forbunds-, kommune-, museum- og arkivkilder",
+    "systematisk kampvideo, feltobservasjon eller treningsdata med eksplisitt metode",
+    "fagfellevurdert idrettshistorie, idrettssosiologi, økonomi, pedagogikk og etikk",
+    "utøver- og supporterintervjuer brukt som situerte kilder og triangulert mot annet materiale"
+  ],
+  "question_quality": {
+    "required": [
+      "konkret sportanker",
+      "gyldig emne_id med prefikset em_sport_",
+      "sporbar kilde eller dokumentert observasjon",
+      "presist begrep eller mekanisme",
+      "knowledge-forklaring som viser hvorfor svaret er riktig",
+      "scientific_evidence-metadata for forsknings-, helse-, trenings-, måle-, modell-, risiko- og regulatoriske påstander",
+      "gyldig V6 theory_unit_id fra emne–teori-matrisen",
+      "hovedteori, rival, mekanisme og bruksgrense ved teoribruk"
+    ],
+    "forbidden": [
+      "Hvem er best?",
+      "Hvilken klubb liker du best?",
+      "ren resultat- eller årstalltrivia uten betydning og kontekst",
+      "teoretikernavn uten verk, problem, begrep eller dokumentert anvendelse",
+      "medisinsk diagnose eller individuell skadeprediksjon",
+      "treningsresept uten målgruppe, forutsetninger, progresjon og sikkerhetsramme",
+      "stereotype forklaringer om kjønn, rase, nasjonalitet eller funksjonsevne",
+      "påstand om at sensor- eller trackingdata er en nøytral fasit",
+      "kausal konklusjon fra korrelasjon alene",
+      "modelloutput uten modellversjon, inputdefinisjon og valideringsnote",
+      "dopingstatus uten gjeldende WADA-kilde og virkningsdato"
+    ],
+    "comparison_rule": "Sammenlign teorier, modeller, spillformer eller perioder bare når sammenligningsgrunnlaget er eksplisitt og caset støttes av sammenlignbar evidens.",
+    "result_rule": "Et resultat eller en rekord kan brukes når spørsmålet også lærer bort vilkår, historisk betydning, målemetode eller mekanisme.",
+    "youth_rule": "Spørsmål om barn og unge skal prioritere trygghet, medvirkning, utvikling og safeguarding.",
+    "science_rule": "Skill korrelasjon fra årsak, gruppefunn fra individ, rapportering fra evidenskvalitet og målbar forskjell fra praktisk relevant endring.",
+    "evidence_rule": "Påstandens språk skal følge claim_type, evidence_grade, uncertainty_note og external_validity_note."
+  },
+  "scientific_evidence_metadata": {
+    "required_fields": [
+      "claim_id",
+      "source_ids",
+      "claim_type",
+      "evidence_grade",
+      "population",
+      "context",
+      "uncertainty_note",
+      "external_validity_note",
+      "research_question_id",
+      "synthesis_id",
+      "certainty_assessment_id"
+    ],
+    "conditional_fields": {
+      "measurement": [
+        "measurement_ids",
+        "instrument_or_provider",
+        "protocol",
+        "unit",
+        "measurement_quality_note"
+      ],
+      "model": [
+        "model_ids",
+        "model_version",
+        "input_definition",
+        "validation_note"
+      ],
+      "regulatory": [
+        "effective_date",
+        "governing_body"
+      ],
+      "clinical": [
+        "guideline_version",
+        "qualified_assessor_boundary",
+        "safety_note"
+      ]
+    },
+    "block_when_missing": true,
+    "candidate_records_forbidden_as_evidence": true
+  },
+  "coverage_targets": {
+    "history_place_and_memory": 0.18,
+    "tactics_skill_and_coaching": 0.22,
+    "physiology_biomechanics_and_data": 0.2,
+    "organization_supporters_and_media": 0.16,
+    "inclusion_ethics_and_safeguarding": 0.14,
+    "health_play_and_environment": 0.1
+  },
+  "category_rules": [
+    "Start med dokumentert stoff fra sporten, ikke med emneetiketten eller teoretikernavnet.",
+    "Bevar relevante faguttrykk i spørsmål, knowledge og metadata.",
+    "Bruk bare emne_id som finnes i kategoriens aktive emnefil.",
+    "Bruk V5-hook og begrepsregister som kvalitetslag, men la globale quizregler styre settrekkefølge og språk.",
+    "Bruk evidenslaget for alle forskningsbaserte påstander, og la aldri påstandens språk være sterkere enn evidensgrunnlaget.",
+    "Roter mellom steder, idretter, kjønn, nivåer, funksjonsevne, geografier og kildetyper.",
+    "Taktikk og treningslære skal ikke dominere på bekostning av historie, lek, samfunn, etikk og tilgang.",
+    "Prefikset em_sport_ beviser ikke teoridekning; emnet må finnes i V6-matrisen.",
+    "Bruk evidenspåstand først etter at teorienheten og dens alternative forklaring er etablert.",
+    "Kandidatposter fra søk kan ikke brukes i knowledge eller quiz før full evidenskjede er godkjent.",
+    "Et låst søk eller en eksport er proveniens, ikke evidens; screening, biasvurdering, syntese og sikkerhetsvurdering kreves fortsatt.",
+    "Avansert systematisk evidenssyntese er utsatt etter FAGPRODUKSJON_CANONICAL.md; dette stopper ikke vanlig kildebelagt fag- og quizproduksjon."
+  ],
+  "example_questions": [
+    {
+      "question": "Hva må undersøkes før en liten endring i trackingdata tolkes som en reell prestasjonsendring?",
+      "options": [
+        "Målefeil, reliabilitet og minste reelle endring",
+        "Bare om tallet er høyere enn forrige kamp",
+        "Bare om utøveren synes økten var god"
+      ],
+      "answer": "Målefeil, reliabilitet og minste reelle endring",
+      "question_type": "method_application",
+      "knowledge": "En numerisk forskjell kan skyldes normal variasjon eller målefeil. Målekvalitet og praktisk betydning må vurderes før tall brukes i beslutninger.",
+      "emne_id": "em_sport_idrettsstatistikk",
+      "quality_hook_id": "hook_sport_prestasjonsdata_validitet",
+      "concept_ids": [
+        "concept_sport_reliabilitet",
+        "concept_sport_minste_reelle_endring"
+      ],
+      "scientific_evidence": {
+        "claim_id": "claim_sport_measurement_change_requires_error_context",
+        "source_ids": [
+          "src_sport_cosmin"
+        ],
+        "claim_type": "methodological",
+        "evidence_grade": "high",
+        "population": "utøvere og gjentatte prestasjonsmålinger",
+        "context": "tracking og monitorering",
+        "uncertainty_note": "Terskler er instrument-, protokoll- og populasjonsspesifikke.",
+        "external_validity_note": "Validering kan ikke automatisk overføres mellom enheter eller idretter.",
+        "measurement_ids": [
+          "measurement_sport_generic_repeated"
+        ]
+      }
+    },
+    {
+      "question": "Hvorfor kan ikke en skadeprosent sammenlignes direkte mellom to lag uten mer informasjon?",
+      "options": [
+        "Fordi skade- og eksponeringsdefinisjonene kan være ulike",
+        "Fordi prosenter aldri kan brukes i idrett",
+        "Fordi bare tabellplassering avgjør skaderisiko"
+      ],
+      "answer": "Fordi skade- og eksponeringsdefinisjonene kan være ulike",
+      "question_type": "epidemiology_application",
+      "knowledge": "Skadeinsidens krever kompatibel teller, eksponeringsnevner, tidsperiode og definisjon. Ulike registreringssystemer kan gi ulike rater.",
+      "emne_id": "em_sport_skadeforebygging",
+      "scientific_evidence": {
+        "claim_id": "claim_sport_injury_rate_requires_exposure",
+        "source_ids": [
+          "src_sport_ioc_injury_2020",
+          "src_sport_para_injury_2021"
+        ],
+        "claim_type": "epidemiological",
+        "evidence_grade": "high",
+        "population": "idrettsdeltakere",
+        "context": "skadeovervåking",
+        "uncertainty_note": "Registreringsmetoder fanger ulike helseproblemer.",
+        "external_validity_note": "Eksponering og klassifikasjon må være sammenlignbare.",
+        "measurement_ids": [
+          "measurement_sport_injury_incidence"
+        ]
+      }
+    }
+  ],
+  "theory_depth_layer": {
+    "version": "6.0",
+    "manifest": "data/fag/sport/sport_theory_depth_manifest_v6.json",
+    "theory_units": "data/fag/sport/theory_units_sport_canonical_v6.json",
+    "emne_coverage_matrix": "data/fag/sport/emne_theory_coverage_sport_v6.json",
+    "required_for_all_sport_questions": true,
+    "rule": "Velg validert emne, primær teorienhet og eksplisitt mekanisme. Ved teorispørsmål kreves rival, kritikk og bruksgrense."
+  },
+  "scientific_pipeline_v2": {
+    "version": "2.0",
+    "manifest": "data/fag/sport/sport_scientific_pipeline_manifest_v2.json",
+    "hook_classification": "data/fag/sport/hook_scientific_classification_sport_v1.json",
+    "research_questions": "data/fag/sport/research_questions_sport_v1.json",
+    "protocols": "data/fag/sport/review_protocols_sport_v1.json",
+    "studies_and_results": "data/fag/sport/study_registry_sport_v1.json",
+    "risk_of_bias": "data/fag/sport/risk_of_bias_sport_v1.json",
+    "syntheses": "data/fag/sport/evidence_syntheses_sport_v1.json",
+    "certainty_assessments": "data/fag/sport/certainty_assessments_sport_v1.json",
+    "validator": "tools/validate-sport-scientific-pipeline-v2.mjs",
+    "required_for_new_or_modified_scientific_content": true,
+    "publication_ready_requires_complete_chain": true,
+    "legacy_claims_are_provisional": true
+  },
+  "production_phase_policy": {
+    "document": "data/fag/FAGPRODUKSJON_CANONICAL.md",
+    "ordinary_quiz_production": "active",
+    "advanced_evidence_execution": "deferred",
+    "full_scientific_coverage_claim": "forbidden_until_pipeline_completed"
+  }
+}

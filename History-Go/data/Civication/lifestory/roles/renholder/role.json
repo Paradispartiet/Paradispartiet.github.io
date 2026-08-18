@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "id": "renholder",
+  "navn": "Renholder",
+  "kjernefantasi": "Du holder bygget hygienisk trygt uten å bli sett — under tidspress, lav status og med kroppen som verktøy.",
+  "arbeidsoppgaver": [
+    "prioritere soner og berøringspunkter",
+    "skille synlig rent fra hygienisk rent",
+    "bruke riktig utstyr og kjemikalier",
+    "melde avvik ved søl, skade, lukt eller fare",
+    "beskytte kroppen gjennom teknikk og pauser"
+  ],
+  "personer": [
+    {
+      "id": "driftsleder",
+      "navn": "Kari, driftslederen",
+      "beskrivelse": "Fordeler rom, tid og avvikstrykk. Vil ha flyt og minst mulig småsaker."
+    },
+    {
+      "id": "erfaren_kollega",
+      "navn": "Amina, erfaren renholder",
+      "beskrivelse": "Oversetter usynlig fagarbeid til metode og prioritering."
+    },
+    {
+      "id": "kontorbruker",
+      "navn": "Sindre, kontoransatt",
+      "beskrivelse": "Vil ha rommet tilgjengelig og rent uten å se arbeidet bak."
+    },
+    {
+      "id": "verneombud",
+      "navn": "Ole, verneombudet",
+      "beskrivelse": "Gjør kropp, kjemi og avvik synlig — også når driften presser."
+    },
+    {
+      "id": "venn",
+      "navn": "Jonas",
+      "beskrivelse": "Vennen din. Har kjent deg lenge nok til å høre forskjell på «det går bra» og «det går bra»."
+    },
+    {
+      "id": "familie",
+      "navn": "Søsteren din",
+      "beskrivelse": "Ringer om hverdagslige ting som aldri bare er hverdagslige."
+    }
+  ],
+  "hovedkonflikter": [
+    "synlig resultat vs usynlig arbeid",
+    "tempo vs grundighet",
+    "hygiene vs tidsbudsjett",
+    "verdighet vs lav status",
+    "HMS vs produksjonspress"
+  ],
+  "endings": [
+    {
+      "id": "fagstolt",
+      "navn": "Fagstolt renholder",
+      "tekst": "Du gjorde usynlig fagarbeid synlig: dokumenterte runden, meldte avvik, prioriterte soner som en proff. Ingen så alt du gjorde — men arbeidet holdt, og du vet det selv.",
+      "kriterier": {
+        "meters": {
+          "integritet": {
+            "min": 70
+          }
+        },
+        "flagg": {
+          "dokumenterte_runden": true,
+          "laerte_soneprioritering": true,
+          "forklarte_hygienisk": true
+        }
+      },
+      "standard": true
+    },
+    {
+      "id": "sliten_kropp",
+      "navn": "Sliten kropp",
+      "tekst": "Du presset kroppen dag etter dag, lovte å være raskere enn den orket. Bygget ble rent — men det gikk på helsa løs, og kroppen fører regnskap.",
+      "kriterier": {
+        "meters": {
+          "energi": {
+            "max": 50
+          },
+          "psyke": {
+            "max": 52
+          }
+        },
+        "flagg": {
+          "presset_kroppen": true,
+          "lovte_aa_vaere_raskere": true
+        }
+      }
+    },
+    {
+      "id": "usynlig_forbigaatt",
+      "navn": "Usynlig og forbigått",
+      "tekst": "Du tonet ned, holdt avstand, lot klagene passere. Arbeidet ble gjort, men ingen så det — og den som ikke gjør seg synlig, blir lett forbigått når det teller.",
+      "kriterier": {
+        "meters": {
+          "synlighet": {
+            "max": 43
+          }
+        },
+        "flagg": {
+          "holdt_avstand": true,
+          "lot_klagen_passere": true,
+          "tonet_ned_soelet": true
+        }
+      }
+    },
+    {
+      "id": "sier_fra",
+      "navn": "Den som sier fra",
+      "tekst": "Du lot ikke urett stå uimotsagt: viste loggen, meldte avvik, sa fra om standarden. Det koster å være den som sier fra — men fagarbeid blir bare synlig når noen tør.",
+      "kriterier": {
+        "meters": {
+          "integritet": {
+            "min": 60
+          }
+        },
+        "flagg": {
+          "meldte_klagen": true,
+          "viste_loggen": true,
+          "sa_fra_om_standard": true
+        }
+      }
+    },
+    {
+      "id": "teamleder_emne",
+      "navn": "Teamleder-emne",
+      "tekst": "Du så mer enn ditt eget rom: foreslo sjekklister, hjalp Amina, gjorde teamet bedre. Sånt legges merke til — det er slik en teamleder blir til.",
+      "kriterier": {
+        "meters": {
+          "synlighet": {
+            "min": 50
+          },
+          "integritet": {
+            "min": 65
+          }
+        },
+        "flagg": {
+          "foreslo_sjekkliste": true,
+          "hjalp_amina": true
+        }
+      }
+    }
+  ],
+  "startState": {
+    "meters": {
+      "penger": 340,
+      "psyke": 60,
+      "energi": 68,
+      "integritet": 52,
+      "synlighet": 28,
+      "handlingsrom": 42
+    },
+    "relasjoner": {
+      "driftsleder": 50,
+      "erfaren_kollega": 55,
+      "kontorbruker": 45,
+      "verneombud": 50,
+      "venn": 60,
+      "familie": 55
+    }
+  },
+  "dagsplan": {
+    "1": [
+      {
+        "klokke": "07:00",
+        "tekst": "Møterom klart før 09"
+      },
+      {
+        "klokke": "11:00",
+        "tekst": "Ekstra sone?"
+      },
+      {
+        "klokke": "14:00",
+        "tekst": "Fellesarealet"
+      }
+    ],
+    "2": [
+      {
+        "klokke": "08:00",
+        "tekst": "Oppfølging avvik"
+      },
+      {
+        "klokke": "13:00",
+        "tekst": "Runde med Amina"
+      }
+    ],
+    "3": [
+      {
+        "klokke": "07:00",
+        "tekst": "Morgenrunden"
+      },
+      {
+        "klokke": "12:00",
+        "tekst": "Rom 204"
+      }
+    ]
+  }
+}

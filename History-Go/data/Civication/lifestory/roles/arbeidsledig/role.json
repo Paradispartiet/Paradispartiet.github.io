@@ -1,0 +1,154 @@
+{
+  "version": 1,
+  "id": "arbeidsledig",
+  "navn": "Arbeidsledig",
+  "kjernefantasi": "Du har ingen jobb — ennå. Dagene må bygges av deg selv: meldekort, søknader, rammer og det du faktisk kan. Kunnskap åpner dører.",
+  "arbeidsoppgaver": [
+    "holde meldekort og dokumentasjon i orden",
+    "søke jobber og stå i selvpresentasjonen",
+    "bygge ramme i dager uten ramme",
+    "bruke tiden på det som faktisk åpner dører: kunnskap"
+  ],
+  "personer": [
+    {
+      "id": "nav_veileder",
+      "navn": "NAV-veilederen",
+      "beskrivelse": "Følger opp meldekort og dokumentasjon. Systemet er firkantet; hun er ikke."
+    },
+    {
+      "id": "bekjent",
+      "navn": "Bekjenten",
+      "beskrivelse": "Kjenner folk. Spør hver gang: «Har du hørt noe?»"
+    },
+    {
+      "id": "venn",
+      "navn": "Jonas",
+      "beskrivelse": "Vennen din. Har kjent deg lenge nok til å høre forskjell på «det går bra» og «det går bra»."
+    },
+    {
+      "id": "familie",
+      "navn": "Søsteren din",
+      "beskrivelse": "Ringer om hverdagslige ting som aldri bare er hverdagslige."
+    }
+  ],
+  "hovedkonflikter": [
+    "systemkrav vs verdighet",
+    "ærlighet vs selvpresentasjon",
+    "struktur vs dager som flyter",
+    "søke bredt vs bygge på det du kan"
+  ],
+  "endings": [
+    {
+      "id": "kom_i_jobb",
+      "navn": "Kom i jobb",
+      "tekst": "Du sto på — søkte bredt, brukte nettverket, holdt selvpresentasjonen oppe. Det er sånn jobber kommer: ikke av å vente, men av å være i bevegelse når sjansen dukker opp.",
+      "kriterier": {
+        "meters": {
+          "synlighet": {
+            "min": 24
+          }
+        },
+        "flagg": {
+          "sokte_tre_nye": true,
+          "delte_lista_med_bekjenten": true,
+          "ba_om_referanse": true
+        }
+      }
+    },
+    {
+      "id": "bygget_kompetanse",
+      "navn": "Bygget kompetanse",
+      "tekst": "Du kom ikke i jobb på tre dager, men du gjorde det som faktisk teller: bygde kompetanse. Merkene og kunnskapen du samlet er dokumentasjon arbeidsgivere ser etter — og de blir liggende, klare til neste sjanse.",
+      "kriterier": {
+        "meters": {
+          "handlingsrom": {
+            "min": 42
+          }
+        },
+        "flagg": {
+          "begynte_aa_tette_hullet": true,
+          "la_laeringsplan": true,
+          "satser_paa_kunnskap": true
+        }
+      }
+    },
+    {
+      "id": "mistet_rytmen",
+      "navn": "Mistet rytmen",
+      "tekst": "Dagene fløt i hverandre og rammen forsvant. Uten et sted å møte opp ble det lett å skyve alt til «i morgen» — og i morgen ble til flere dager som lignet på hverandre.",
+      "kriterier": {
+        "meters": {
+          "psyke": {
+            "max": 46
+          }
+        },
+        "flagg": {
+          "lot_dagen_skli": true,
+          "utsatte_igjen": true,
+          "utsatte_avslaget": true
+        }
+      }
+    },
+    {
+      "id": "sto_i_det",
+      "navn": "Sto i det",
+      "tekst": "Ingen jobb ennå, men du sto i det. Meldekort levert, søknader ute, verdigheten i behold. Noen uker handler om å holde stand — og det gjorde du.",
+      "kriterier": {
+        "flagg": {
+          "sendte_meldekortet": true,
+          "aerlig_om_hullet": true,
+          "pustet_ut": true
+        }
+      },
+      "standard": true
+    }
+  ],
+  "startState": {
+    "meters": {
+      "penger": 240,
+      "psyke": 55,
+      "energi": 65,
+      "integritet": 50,
+      "synlighet": 20,
+      "handlingsrom": 30
+    },
+    "relasjoner": {
+      "nav_veileder": 45,
+      "bekjent": 50,
+      "venn": 60,
+      "familie": 55
+    }
+  },
+  "dagsplan": {
+    "1": [
+      {
+        "klokke": "09:00",
+        "tekst": "Meldekortfristen"
+      },
+      {
+        "klokke": "11:00",
+        "tekst": "Søknaden"
+      },
+      {
+        "klokke": "14:00",
+        "tekst": "Resten av dagen"
+      }
+    ],
+    "2": [
+      {
+        "klokke": "10:00",
+        "tekst": "Veien videre"
+      }
+    ],
+    "3": [
+      {
+        "klokke": "10:00",
+        "tekst": "Svar på søknaden"
+      },
+      {
+        "klokke": "14:00",
+        "tekst": "Det du kan"
+      }
+    ]
+  }
+}

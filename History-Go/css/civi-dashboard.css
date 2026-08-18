@@ -1,0 +1,1077 @@
+/* ============================================================
+   CIVICATION – DASHBOARD LAYOUT V2
+   Hensikt:
+   - Gir Civication tydelig hierarki: situasjon først, systemer etterpå.
+   - Bruker bare Civication-prefiks/ID-er.
+   - Rører ikke History Go app-shell, kart, Nearby eller PlaceCard.
+============================================================ */
+
+:root {
+  --civi-page-max: 1180px;
+  --civi-gap: 16px;
+  --civi-hero-radius: 24px;
+  --civi-card-radius: 18px;
+  --civi-soft-line: rgba(255,255,255,0.12);
+  --civi-soft-line-2: rgba(255,255,255,0.18);
+  --civi-panel-bg: var(--card);
+  --civi-panel-bg-soft: rgba(255,255,255,0.06);
+  --civi-gold: #d6aa3a;
+  --civi-green: #5fb879;
+  --civi-blue: #7fa7d6;
+  --civi-red: #d98282;
+}
+
+body.civi-app {
+  background: var(--bg);
+}
+
+/* Svak vignette – kun litt dybde, skal ikke mørkne kart eller paneler. */
+body.civi-app::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(0,0,0,0.10), transparent 26%, rgba(0,0,0,0.22));
+}
+
+body.civi-app .topbar,
+body.civi-app .civi-footer,
+body.civi-app .civi-panels {
+  position: relative;
+}
+
+body.civi-app .topbar,
+body.civi-app .civi-footer {
+  z-index: 90;
+}
+
+body.civi-app .topbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "left right"
+    "status status";
+  align-items: center;
+  gap: 9px 12px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+body.civi-app .topbar-left {
+  grid-area: left;
+  min-width: 0;
+}
+
+body.civi-app .app-title {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body.civi-app .civi-header-metrics {
+  display: none;
+  grid-area: metrics;
+  min-width: 0;
+}
+
+body.civi-app .civi-lifestory-header-status {
+  grid-area: status;
+  min-width: 0;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  color: var(--ink2);
+  overflow: hidden;
+}
+
+body.civi-app .civi-header-chip {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 26px;
+  padding: 4px 9px;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.055);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+  color: var(--ink2);
+  font-size: var(--civi-text-xs);
+  font-weight: 760;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+body.civi-app .civi-panels,
+body.civi-app .civi-panels *,
+body.civi-app .civi-track-hud * {
+  overflow-wrap: break-word;
+}
+
+body.civi-app .civi-panels h2,
+body.civi-app .civi-inbox-card h4,
+body.civi-app .civi-day-phase-title,
+body.civi-app .civi-day-phase-mail-title {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+body.civi-app .civi-header-chip--role {
+  max-width: min(42ch, 100%);
+  padding-inline: 11px;
+  border-color: var(--civi-accent-border);
+  background: linear-gradient(180deg, rgba(214,170,58,0.18), rgba(214,170,58,0.08));
+  color: #fff3cf;
+}
+
+body.civi-app .civi-header-chip--is-empty {
+  border-color: rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.045);
+  color: var(--ink3);
+}
+
+body.civi-app .civi-header-chip--pc {
+  border-color: rgba(214,170,58,0.45);
+  background: rgba(214,170,58,0.14);
+  color: #ffe37a;
+}
+
+body.civi-app .civi-header-metrics .civi-dashboard-metrics {
+  width: 100%;
+  justify-content: center;
+}
+
+body.civi-app .topbar-right {
+  grid-area: right;
+  min-width: 0;
+  justify-self: end;
+}
+
+body.civi-app .topbar-right .back-link {
+  display: inline-flex;
+  max-width: 36vw;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body.civi-app .civi-panels {
+  z-index: 20;
+  width: min(var(--civi-page-max), calc(100vw - 24px));
+  max-width: var(--civi-page-max);
+  padding: 12px 0 calc(var(--footer-h) + 28px);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--civi-gap);
+  align-items: start;
+}
+
+body.civi-app .civi-panels > section,
+body.civi-app .civi-track-hud {
+  min-width: 0;
+  margin: 0;
+  border-radius: var(--civi-card-radius);
+  background: var(--civi-panel-bg);
+  border: 1px solid color-mix(in srgb, var(--sec-accent, #ffffff) 20%, rgba(255,255,255,0.09));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.045),
+    0 14px 34px rgba(0,0,0,0.24);
+  overflow: hidden;
+}
+
+body.civi-app .civi-panels > section::before {
+  top: 18px;
+  bottom: 18px;
+  width: 4px;
+  opacity: 0.95;
+}
+
+body.civi-app .civi-panels h2 {
+  font-size: var(--civi-text-lg);
+  font-weight: 800;
+  line-height: var(--civi-leading-tight);
+  letter-spacing: var(--civi-label-tracking);
+  margin-bottom: 12px;
+  color: rgba(255,255,255,0.84);
+}
+
+/* ------------------------------------------------------------
+   NY TOPP: SITUASJONSDASHBOARD
+------------------------------------------------------------ */
+
+#civiDashboardSection {
+  order: 0;
+  grid-column: 1 / -1;
+  padding: 10px 14px;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#civiDashboardSection::before {
+  display: none;
+}
+
+.civi-dashboard-copy {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 0;
+}
+
+.civi-dashboard-kicker {
+  width: max-content;
+  max-width: 100%;
+  padding: 3px 8px;
+  margin-bottom: 0;
+  border-radius: 999px;
+  background: rgba(214,170,58,0.16);
+  border: 1px solid rgba(214,170,58,0.26);
+  color: rgba(255,230,160,0.96);
+  font-size: var(--civi-text-xs);
+  font-weight: 850;
+  letter-spacing: var(--civi-label-tracking);
+  text-transform: uppercase;
+}
+
+#civiDashRole {
+  margin: 0;
+  max-width: 260px;
+  font-size: clamp(18px, 2vw, 21px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  font-weight: 780;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#civiDashSummary {
+  margin: 0;
+  max-width: 320px;
+  color: rgba(255,255,255,0.78);
+  font-size: var(--civi-text-base);
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.civi-dashboard-focus {
+  margin-top: 0;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.civi-dashboard-focus-label {
+  margin-bottom: 0;
+  color: var(--ink3);
+  font-size: var(--civi-text-xs);
+  font-weight: 850;
+  letter-spacing: var(--civi-label-tracking);
+  text-transform: uppercase;
+}
+
+#civiDashFocus {
+  color: rgba(255,255,255,0.9);
+  font-size: var(--civi-text-sm);
+  font-weight: 720;
+  white-space: nowrap;
+}
+
+.civi-dashboard-metrics {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.civi-dashboard-metrics::-webkit-scrollbar {
+  display: none;
+}
+
+.civi-dashboard-metric {
+  min-width: 0;
+  min-height: 0;
+  padding: 4px 9px;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.055);
+  border: 1px solid rgba(255,255,255,0.09);
+  flex: 0 0 auto;
+}
+
+.civi-dashboard-metric span {
+  color: var(--ink3);
+  font-size: 12.5px;
+  font-weight: 850;
+  letter-spacing: var(--civi-label-tracking);
+  text-transform: uppercase;
+}
+
+.civi-dashboard-metric strong {
+  margin-top: 0;
+  color: #fff;
+  font-size: clamp(13px, 1.2vw, 14.5px);
+  line-height: 1.05;
+  font-weight: 850;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.civi-dashboard-metric small {
+  margin-top: 0;
+  color: var(--ink3);
+  font-size: 12.5px;
+  line-height: 1.05;
+  white-space: nowrap;
+}
+
+.civi-dashboard-metric.is-primary {
+  background: rgba(214,170,58,0.13);
+  border-color: rgba(214,170,58,0.24);
+}
+
+.civi-dashboard-metric.is-status {
+  background: rgba(127,167,214,0.11);
+  border-color: rgba(127,167,214,0.22);
+}
+
+.civi-dashboard-metric.is-inbox {
+  background: rgba(95,184,121,0.11);
+  border-color: rgba(95,184,121,0.22);
+}
+
+/* ------------------------------------------------------------
+   DAGENS FASE
+------------------------------------------------------------ */
+
+#civiDayPhasePanel {
+  order: 1;
+  grid-column: 1 / -1;
+}
+
+.civi-day-phase-panel {
+  margin: -4px 0 2px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 14px;
+  background: var(--card2);
+  box-shadow: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.civi-day-phase-panel::before {
+  display: none;
+}
+
+.civi-day-phase-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  min-width: 0;
+}
+
+.civi-day-phase-kicker {
+  font-size: var(--civi-text-xs);
+  letter-spacing: var(--civi-label-tracking);
+  text-transform: uppercase;
+  opacity: .7;
+  white-space: nowrap;
+}
+
+.civi-day-phase-title {
+  margin: 0;
+  font-size: var(--civi-text-lg);
+  font-weight: 820;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.civi-day-phase-meta,
+.civi-day-phase-status {
+  margin: 0;
+  font-size: var(--civi-text-sm);
+  color: var(--ink2);
+  opacity: .88;
+}
+
+.civi-day-phase-list {
+  margin: 0;
+  padding-left: 16px;
+  display: grid;
+  gap: 2px;
+  font-size: var(--civi-text-base);
+  line-height: var(--civi-leading-base);
+  opacity: .88;
+}
+
+/* Åpen sak: et lite strukturert kort med gull venstrekant,
+   ikke løse tekstlinjer som flyter i panelet. */
+.civi-day-phase-mail {
+  display: grid;
+  gap: 4px;
+  padding: 11px 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(214,170,58,0.22);
+  border-left: 3px solid var(--civi-gold);
+}
+
+.civi-day-phase-mail-kicker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--civi-text-xs);
+  font-weight: 820;
+  letter-spacing: var(--civi-label-tracking);
+  text-transform: uppercase;
+  color: rgba(255,230,160,0.9);
+}
+
+.civi-day-phase-mail-meta {
+  margin: 0;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--ink3);
+  font-size: 12.5px;
+  letter-spacing: 0.035em;
+}
+
+.civi-day-phase-mail-title {
+  margin: 0;
+  font-size: var(--civi-text-md);
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.civi-day-phase-mail-status,
+.civi-day-phase-mail-count {
+  margin: 0;
+  font-size: var(--civi-text-sm);
+  color: var(--ink2);
+}
+
+.civi-day-phase-actions {
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.civi-day-complete {
+  width: 100%;
+  margin: 2px 0 0;
+  padding: 8px 10px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 10px;
+  background: var(--card2);
+}
+
+.civi-day-complete-title {
+  margin: 0;
+  font-size: var(--civi-text-base);
+  font-weight: 720;
+  color: var(--ink);
+}
+
+.civi-day-complete-text {
+  margin: 2px 0 0;
+  font-size: var(--civi-text-base);
+  line-height: var(--civi-leading-base);
+  color: var(--ink2);
+  opacity: .9;
+}
+
+.civi-day-complete-grid {
+  margin: 7px 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.civi-day-complete-grid div {
+  padding: 5px 7px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.03);
+}
+
+.civi-day-complete-grid dt {
+  margin: 0;
+  font-size: var(--civi-text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--civi-label-tracking);
+  color: var(--ink3);
+}
+
+.civi-day-complete-grid dd {
+  margin: 1px 0 0;
+  font-size: var(--civi-text-base);
+  color: var(--ink);
+}
+
+.civi-outcome-banner {
+  width: 100%;
+  margin: 2px 0 0;
+  padding: 8px 10px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 10px;
+  background: var(--card2);
+}
+
+.civi-outcome-kicker {
+  font-size: var(--civi-text-xs);
+  letter-spacing: var(--civi-label-tracking);
+  text-transform: uppercase;
+  opacity: .7;
+}
+
+.civi-outcome-list {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 5px;
+}
+
+.civi-outcome-indicator {
+  display: grid;
+  gap: 1px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.03);
+  border-left: 3px solid rgba(210,225,240,.25);
+}
+
+.civi-outcome-indicator[data-outcome-kind="promoted"] { border-left-color: #6fd08c; }
+.civi-outcome-indicator[data-outcome-kind="fired"] { border-left-color: #e0786f; }
+.civi-outcome-indicator[data-outcome-kind="stagnated"],
+.civi-outcome-indicator[data-outcome-kind="evening_pressure"],
+.civi-outcome-indicator[data-outcome-kind="morning_choices_expand"] { border-left-color: #e0c06f; }
+
+.civi-outcome-indicator-label {
+  font-size: var(--civi-text-base);
+  font-weight: 720;
+  color: var(--ink);
+}
+
+.civi-outcome-indicator-text {
+  font-size: var(--civi-text-base);
+  line-height: var(--civi-leading-base);
+  color: var(--ink2);
+  opacity: .9;
+}
+
+.civi-learning-banner {
+  width: 100%;
+  margin: 2px 0 0;
+  padding: 8px 10px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 10px;
+  background: var(--card2);
+}
+
+.civi-learning-kicker {
+  font-size: var(--civi-text-xs);
+  letter-spacing: var(--civi-label-tracking);
+  text-transform: uppercase;
+  opacity: .7;
+}
+
+.civi-learning-status {
+  display: grid;
+  gap: 1px;
+  margin: 4px 0 0;
+  padding: 5px 8px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.03);
+  border-left: 3px solid rgba(122,180,255,.5);
+}
+
+.civi-learning-status[data-learning-status="mastered"] { border-left-color: #6fd08c; }
+.civi-learning-status[data-learning-status="still_learning"],
+.civi-learning-status[data-learning-status="nearing_mastery"] { border-left-color: #7ab4ff; }
+.civi-learning-status[data-learning-status="low_value"],
+.civi-learning-status[data-learning-status="routine"] { border-left-color: #e0c06f; }
+
+.civi-learning-label {
+  font-size: var(--civi-text-base);
+  font-weight: 720;
+  color: var(--ink);
+}
+
+.civi-learning-detail {
+  font-size: var(--civi-text-base);
+  line-height: var(--civi-leading-base);
+  color: var(--ink2);
+  opacity: .9;
+}
+
+.civi-reentry-lock-banner {
+  width: 100%;
+  margin: 2px 0 0;
+  padding: 8px 10px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 10px;
+  background: var(--card2);
+}
+
+.civi-reentry-lock-kicker {
+  font-size: var(--civi-text-xs);
+  letter-spacing: var(--civi-label-tracking);
+  text-transform: uppercase;
+  opacity: .7;
+}
+
+.civi-reentry-lock-list {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.civi-reentry-lock-item {
+  display: grid;
+  gap: 1px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.03);
+  border-left: 3px solid #e0c06f;
+}
+
+.civi-reentry-lock-label {
+  font-size: var(--civi-text-base);
+  font-weight: 720;
+  color: var(--ink);
+}
+
+.civi-reentry-lock-detail {
+  font-size: var(--civi-text-base);
+  line-height: var(--civi-leading-base);
+  color: var(--ink2);
+  opacity: .9;
+}
+
+@media (max-width:640px) {
+  .civi-day-phase-panel {
+    gap: 6px 8px;
+  }
+
+  .civi-day-phase-actions {
+    margin-left: 0;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .civi-day-complete-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ------------------------------------------------------------
+   GRID-HIERARKI: VIKTIGST ØVERST
+------------------------------------------------------------ */
+
+#activeJobSection       { order: 2;  grid-column: span 5; }
+#civiWorkdaySection     { order: 3;  grid-column: span 7; }
+#civiInboxSection       { order: 4;  grid-column: span 7; }
+#civiHomeStatus         { order: 5;  grid-column: span 5; }
+#civiOnboardingSection  { order: 6;  grid-column: span 12; }
+.civi-capital           { order: 7;  grid-column: span 6; }
+.civi-psyche            { order: 8;  grid-column: span 6; }
+.civi-identity          { order: 9;  grid-column: span 6; }
+#civiTrackHUD           { order: 10; grid-column: span 6; }
+#civiPublicFeedSection  { order: 11; grid-column: span 6; }
+#civiDebateSection      { order: 12; grid-column: span 6; }
+#civiPeopleSection      { order: 13; grid-column: span 6; }
+#civiStoreSection       { order: 14; grid-column: span 6; }
+
+#activeJobSection,
+#civiWorkdaySection,
+#civiInboxSection,
+#civiHomeStatus {
+  border-color: var(--civi-soft-line-2);
+}
+
+#activeJobSection,
+#civiWorkdaySection,
+#civiInboxSection,
+#civiHomeStatus {
+  background: var(--civi-panel-bg);
+}
+
+/* Gjør hovedkortene mer lesbare uten å endre JS-output. */
+#activeJobCard > div,
+#homeStatusContent > div,
+#civiInbox > div,
+#civiPublicFeed > div,
+#civiOnboardingPanel > div,
+#civiDebatePanel > div,
+#civiPeoplePanel > div,
+#civiStorePanel > div {
+  border-radius: 14px;
+}
+
+#activeJobCard strong,
+#homeStatusContent strong {
+  font-size: var(--civi-text-lg);
+  letter-spacing: -0.02em;
+}
+
+#activeJobCard hr {
+  border-top-color: rgba(255,255,255,0.10) !important;
+}
+
+/* Hvorfor finnes dette jobbtilbudet? Liten knowledge-/learning-gate-forklaring i
+   jobbtilbud-kortet. Gjenbruker job-card-stilen; ikke et nytt panel, ingen redesign. */
+.civi-offer-eligibility {
+  margin: 8px 0 0;
+  display: grid;
+  gap: 4px;
+}
+
+.civi-offer-eligibility-row {
+  display: grid;
+  gap: 1px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.03);
+  border-left: 3px solid rgba(95,184,121,0.55);
+}
+
+.civi-offer-eligibility-row[data-eligibility-kind="blocker"] {
+  border-left-color: #e0c06f;
+}
+
+.civi-offer-eligibility-label {
+  font-size: var(--civi-text-xs);
+  font-weight: 750;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+  opacity: .75;
+}
+
+.civi-offer-eligibility-muted {
+  font-size: var(--civi-text-base);
+  line-height: var(--civi-leading-base);
+  color: var(--ink2);
+}
+
+.civi-career-knowledge-description {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.civi-career-knowledge-description summary {
+  cursor: pointer;
+  font-weight: 750;
+}
+
+.civi-career-knowledge-description section {
+  margin-top: 12px;
+}
+
+.civi-career-knowledge-description h4 {
+  margin: 0 0 5px;
+  font-size: 0.95rem;
+}
+
+.civi-career-knowledge-description ul {
+  margin: 0;
+  padding-left: 19px;
+}
+
+.civi-career-knowledge-description li + li {
+  margin-top: 5px;
+}
+
+.civi-career-knowledge-description li span {
+  display: block;
+  margin-top: 2px;
+  opacity: 0.78;
+}
+
+.civi-career-knowledge-summary {
+  margin: 10px 0 0;
+}
+
+.civi-career-knowledge-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin: 12px 0 8px;
+}
+
+.home-homeless p,
+.home-settled p {
+  margin: 0 0 10px;
+}
+
+#buyDistrictBtn,
+#changeDistrictBtn,
+#identityPerceptionBtn,
+.civi-task-open-btn {
+  min-height: 42px;
+  border-radius: 12px;
+}
+
+/* ------------------------------------------------------------
+   SEKUNDÆRKORT: STRAMMERE, MINDRE ROT
+------------------------------------------------------------ */
+
+.civi-capital .capital-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.capital-item,
+.psyche-item,
+.civi-workday-clock,
+.civi-workday-meta,
+.civi-workday-card,
+.civi-workday-empty,
+.civi-task-box {
+  background: var(--civi-panel-bg-soft);
+  border-color: color-mix(in srgb, var(--sec-accent, #ffffff) 20%, rgba(255,255,255,0.07));
+}
+
+.capital-value,
+.psyche-value,
+.civi-workday-big,
+.civi-workday-time {
+  letter-spacing: -0.035em;
+}
+
+.civi-workday-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.civi-workday-top {
+  grid-template-columns: minmax(150px, 0.62fr) minmax(0, 1fr);
+}
+
+.civi-workday-row {
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.055);
+}
+
+.civi-workday-row:last-child {
+  border-bottom: 0;
+}
+
+.muted,
+.civi-workday-sub,
+.civi-workday-task-desc,
+.civi-feed-time {
+  color: var(--ink3) !important;
+}
+
+/* ------------------------------------------------------------
+   FOOTER: MER APP-NAVIGASJON, MINDRE SYSTEMKNAPPER
+------------------------------------------------------------ */
+
+.civi-footer {
+  min-height: 58px;
+  padding: 8px max(12px, env(safe-area-inset-left)) max(10px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-right));
+  background: rgba(8,8,9,0.82);
+}
+
+.civi-btn {
+  min-height: 46px;
+  max-width: 150px;
+  border-radius: 999px;
+}
+
+/* ------------------------------------------------------------
+   RESPONSIVT: MOBIL = ÉN GOD KOLONNE
+------------------------------------------------------------ */
+
+@media (max-width: 920px) {
+  body.civi-app .topbar {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      "left metrics right"
+      "status status status";
+    align-items: center;
+  }
+
+  body.civi-app #civiDashboardSection .civi-dashboard-copy {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .civi-header-metrics .civi-dashboard-metric small {
+    display: none;
+  }
+
+  body.civi-app .civi-panels {
+    width: min(100vw - 20px, 720px);
+    grid-template-columns: 1fr;
+    padding-top: 14px;
+  }
+
+  #civiDashboardSection,
+  #activeJobSection,
+  #civiWorkdaySection,
+  #civiInboxSection,
+  #civiHomeStatus,
+  #civiOnboardingSection,
+  .civi-capital,
+  .civi-psyche,
+  .civi-identity,
+  #civiTrackHUD,
+  #civiPublicFeedSection,
+  #civiDebateSection,
+  #civiPeopleSection,
+  #civiStoreSection {
+    grid-column: 1 / -1;
+  }
+
+  .civi-dashboard-metrics {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  body.civi-app .topbar {
+    padding: 10px 12px;
+  }
+
+  body.civi-app .civi-panels {
+    width: min(100vw - 16px, 520px);
+    gap: 12px;
+    padding-bottom: calc(82px + env(safe-area-inset-bottom));
+  }
+
+  body.civi-app .civi-panels > section,
+  body.civi-app .civi-track-hud {
+    border-radius: 16px;
+  }
+
+  body.civi-app .topbar {
+    gap: 6px;
+  }
+
+  body.civi-app .app-title,
+  body.civi-app .back-link {
+    font-size: var(--civi-text-xs);
+  }
+
+  .civi-dashboard-metric {
+    padding: 3px 5px;
+    gap: 3px;
+  }
+
+  .civi-dashboard-metric span {
+    font-size: 12.5px;
+  }
+
+  .civi-dashboard-metric strong {
+    font-size: 13px;
+  }
+
+  body.civi-app .topbar-right {
+    justify-self: end;
+  }
+
+  .civi-workday-grid,
+  .civi-psyche .psyche-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .civi-dashboard-metric small {
+    display: none;
+  }
+
+  .civi-capital .capital-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .psyche-item.highlight {
+    grid-column: span 1;
+  }
+
+  .civi-footer {
+    gap: 7px;
+    min-height: 58px;
+  }
+
+  .civi-btn {
+    min-height: 38px;
+    padding-inline: 8px;
+    font-size: var(--civi-text-sm);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body.civi-app .civi-panels > section,
+  body.civi-app .civi-track-hud {
+    transition: transform 140ms ease, border-color 140ms ease, background-color 140ms ease;
+  }
+
+  body.civi-app .civi-panels > section:hover,
+  body.civi-app .civi-track-hud:hover {
+    transform: translateY(-1px);
+    border-color: color-mix(in srgb, var(--sec-accent, #ffffff) 42%, rgba(255,255,255,0.10));
+  }
+}
+
+@media (max-width: 760px) {
+  body.civi-app .topbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px 10px;
+  }
+
+  body.civi-app .topbar-left,
+  body.civi-app .topbar-right {
+    min-width: 0;
+  }
+
+  body.civi-app .civi-lifestory-header-status {
+    gap: 5px;
+  }
+
+  body.civi-app .civi-header-chip {
+    min-height: 24px;
+    padding: 3px 8px;
+    font-size: 12.5px;
+  }
+
+  body.civi-app .civi-header-chip--role {
+    max-width: min(30ch, 100%);
+  }
+}

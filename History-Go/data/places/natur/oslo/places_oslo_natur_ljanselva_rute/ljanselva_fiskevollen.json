@@ -1,0 +1,57 @@
+{
+  "id": "ljanselva_fiskevollen",
+  "name": "Ljanselva ved Fiskevollen",
+  "lat": 59.842638,
+  "lon": 10.7799991,
+  "r": 140,
+  "category": "natur",
+  "desc": "Nedre Ljanselva-korridor mot Fiskevollbukta; den nederste fysiske delen av elva er dokumentert kulvertert.",
+  "tags": [
+    "elv",
+    "fjordnaer",
+    "vatmark",
+    "fugleliv"
+  ],
+  "routeId": "ljanselva_grontdrag",
+  "sourceHint": "Koordinaten er et line-anchor beregnet fra OSM way 156700580, en eksakt navngitt Ljanselva-geometri som kobler Liadalen-segmentet til en delt kystnode i Fiskevollbukta. Geometrien brukes som vassdragskorridor, ikke som bevis for at hele strekningen er synlig åpen elv.",
+  "coordType": "culverted_lower_river_route_anchor",
+  "coordStatus": "verified_geometry",
+  "coordSource": "OpenStreetMap way 156700580 – modellert nedre Ljanselva-korridor til coastline way 4154785, shared node 1689201164",
+  "coordVerifiedAt": "2026-07-22",
+  "popupDesc": "Ved Fiskevollen er Ljanselva i sin nedre korridor mot Fiskevollbukta. Kildene dokumenterer at den nederste delen av elva er lagt i kulvert, så dette stoppet skal ikke leses som et punkt der hele vannløpet ligger synlig i dagen. Kartankeret følger den navngitte Ljanselva-geometrien som binder Liadalen til den dokumenterte munningen i Fiskevollbukta. Stedet viser dermed overgangen fra det åpne dalføret til et skjult, teknisk omformet vassdrag før fjorden.",
+  "nature_profile": {
+    "type": "fjordnær elv / våtmarkspreg / utløpskorridor",
+    "title": "Elv og våtmark i overgangen mot Bunnefjorden",
+    "summary": "Ved Fiskevollen ligger Ljanselva tett på Bunnefjorden, og elvemiljøet får et tydeligere preg av våte kantsoner, åpne vannrom og fjordnær vegetasjon. Dette er fortsatt en del av elveløpet, men vannet nærmer seg et større og mer påvirket kystsystem. Natur-rundingen viser hvordan rennende ferskvann, fuktige bredder, fugleliv og lokale ferdselslinjer møtes i overgangssonen før selve munningen.",
+    "themes": [
+      "fjordnært elveløp",
+      "våtmarkspregede bredder",
+      "overgang mellom ferskvann og fjordlandskap",
+      "fugleliv ved åpne vannflater",
+      "lokale ferdselslinjer langs vannet",
+      "siste elvestrekning før munningen"
+    ],
+    "nearby_place_ids": [
+      "ljanselva_ljan",
+      "ljanselva_bunnefjorden",
+      "ljanselva_hauketo"
+    ]
+  },
+  "underbadge_ids": [
+    "elv",
+    "vatmark",
+    "vannfugl",
+    "kyst_og_fjord"
+  ],
+  "visual": {
+    "designCode": "waterfront_miniature"
+  },
+  "locatorType": "route",
+  "coordNote": "Batch 146 avgrenser Fiskevollen-stoppet som en nedre Ljanselva-korridor, ikke som en påstått åpen elvestrekning. OSM way 156700580 er eksakt navngitt Ljanselva, kobler eksakt oppstrøms til Ljan/Liadalen-way 98539575 og ender i shared node 1689201164 med OSM-kystlinjen way 4154785. Den delte kystnoden ligger innenfor Fiskevollbukta-scope og 113.6 meter fra den uavhengige Fiskevollbukta-referansen. Oslo byleksikon og Ljan skole dokumenterer samtidig at den nederste fysiske delen av Ljanselva er kulvertert. Way-geometrien brukes derfor som semantic line_anchor for den nedre vassdragskorridoren, ikke som bevis for synlig overflatevann eller eksakt tunnelløp. Legacy-punktet 59.8319, 10.8048 brukes ikke; ingen nearest/first-hit-logikk brukes.",
+  "sourceProvider": "osm",
+  "sourceObjectId": "osm-way:156700580",
+  "geocodeAccuracy": "semantic_anchor",
+  "coordRole": "line_anchor",
+  "coordSourceId": "osm-way:156700580",
+  "coordSourceUrl": "https://www.openstreetmap.org/way/156700580"
+}

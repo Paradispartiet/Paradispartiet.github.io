@@ -1,0 +1,97 @@
+{
+  "placeId": "havnelageret",
+  "placeFile": "data/places/naeringsliv/oslo/places_naeringsliv/havnelageret.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.90760281927637,
+    "lon": 10.746880614147818,
+    "r": 60,
+    "coordStatus": "verified",
+    "coordSource": "geonorge_adresser_v1",
+    "coordType": "address_point",
+    "coordNote": "Offisiell adressekoordinat fra Geonorge Adresser API for Langkaia 1, Oslo. Punktet er representasjonspunktet for adressen til Oslo Havnelager / Havnelageret og brukes som display-marker for bygget, ikke som kai-, vei-, vannflate- eller generelt havneområdeanker."
+  },
+  "identity": {
+    "currentName": "Oslo Havnelager",
+    "resolvedIdentity": "Oslo Havnelager / Havnelageret, Langkaia 1, Oslo",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "building",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [
+    "official_address eller official_map",
+    "sourceObjectId eller strukturert address",
+    "geocodeAccuracy rooftop/entrance/building/parcel",
+    "coordRole building_center, entrance eller display_marker med tydelig coordNote"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "official_address",
+      "sourceName": "Geonorge Adresser API v1",
+      "sourceUrl": "https://ws.geonorge.no/adresser/v1/sok?sok=Langkaia%201%20Oslo",
+      "sourceObjectId": "geonorge-adresser-v1:0301:14150:1",
+      "sourceQuality": "official_primary_address",
+      "finding": "Geonorge returnerer ett treff for Langkaia 1, OSLO, kommunenummer 0301, adressekode 14150, nummer 1, postnummer 0150, med representasjonspunkt EPSG:4258 lat 59.90760281927637 lon 10.746880614147818.",
+      "canVerifyCoordinate": true,
+      "reason": "Offisiell adressekilde gir strukturert adresse og representasjonspunkt for Langkaia 1."
+    }
+  ],
+  "addressCandidates": [
+    {
+      "sourceProvider": "official_address",
+      "sourceName": "Geonorge Adresser API v1",
+      "sourceObjectId": "geonorge-adresser-v1:0301:14150:1",
+      "sourceUrl": "https://ws.geonorge.no/adresser/v1/sok?sok=Langkaia%201%20Oslo",
+      "address": {
+        "street": "Langkaia",
+        "number": "1",
+        "postcode": "0150",
+        "city": "Oslo",
+        "country": "NO"
+      },
+      "municipalityNumber": "0301",
+      "municipalityName": "OSLO",
+      "addressCode": "14150",
+      "geocodeAccuracy": "rooftop",
+      "canVerify": true
+    }
+  ],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "official_address",
+      "sourceObjectId": "geonorge-adresser-v1:0301:14150:1",
+      "sourceUrl": "https://ws.geonorge.no/adresser/v1/sok?sok=Langkaia%201%20Oslo",
+      "objectType": "official_address_point",
+      "address": "Langkaia 1, 0150 Oslo, NO",
+      "whyRepresentative": "Geonorge-representasjonspunktet er knyttet til den offisielle adressen Langkaia 1, som brukes for Oslo Havnelager / Havnelageret."
+    }
+  ],
+  "geometryCandidates": [],
+  "coordinateCandidates": [
+    {
+      "lat": 59.90760281927637,
+      "lon": 10.746880614147818,
+      "r": 60,
+      "sourceProvider": "official_address",
+      "sourceObjectId": "geonorge-adresser-v1:0301:14150:1",
+      "geocodeAccuracy": "rooftop",
+      "coordRole": "display_marker",
+      "coordType": "address_point",
+      "canApplyToPlace": true,
+      "reason": "Punktet er offisielt representasjonspunkt for adressen Langkaia 1 og brukes som display-marker for bygget, ikke som bygningsmidtpunkt."
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Place er oppdatert fra Geonorge Adresser API v1 og kan stå som verified etter Coordinate Source Contract v1."
+  },
+  "notes": [
+    "Wikipedia/Wikidata kan brukes som research-spor for navne-/adressehint, men er ikke brukt som primærkilde.",
+    "Geonorge Adresser API v1 er brukt som offisiell adressekilde for Langkaia 1, Oslo.",
+    "Koordinaten representerer offisielt adresserepresentasjonspunkt og er derfor satt som display_marker/address_point, ikke building_center."
+  ]
+}

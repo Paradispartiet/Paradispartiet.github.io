@@ -1,0 +1,3250 @@
+{
+  "schema_version": "1.0.0",
+  "registry_id": "case_evidence_subkultur_canonical_v1",
+  "subject_id": "subkultur",
+  "status": "case_validation_complete",
+  "evidence_boundary": "Teori og canonical place-data kan avgrense et case, men validated_case krever en ready A–H-rapport med miljønær kilde, uavhengig kontroll, caseclaim, etikk og alternativ forklaring.",
+  "cases": [
+    {
+      "evidence_id": "case_evidence_sub_house_of_nerds",
+      "case_id": "case_sub_house_of_nerds",
+      "place_id": "house_of_nerds",
+      "profile_id": "profile_subkultur_oslo",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/house_of_nerds.json",
+      "report_case_id": "case_house_of_nerds_environment",
+      "claim": "Faste spillaktiviteter og arrangementer gjør lokalet til sosial infrastruktur for gamingmiljøer, mens betalings- og bookingmodellen former adgang og deltakelse.",
+      "source_ids": [
+        "source_house_of_nerds_milieu",
+        "source_house_of_nerds_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_house_of_nerds_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_house_of_nerds_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_house_of_nerds_environment.actors",
+            "case_house_of_nerds_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_house_of_nerds_environment.representationAndEthics.selfDefinition",
+            "case_house_of_nerds_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_house_of_nerds_environment.spaceAndPower",
+            "case_house_of_nerds_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_house_of_nerds_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_house_of_nerds_environment.methodAndInference.alternativeExplanations",
+            "case_house_of_nerds_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_sceneanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "En ren «nerdehjem»-fortelling kan romantisere fellesskapet og skjule økonomiske terskler og variasjon i deltakernes erfaringer.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-03"
+    },
+    {
+      "evidence_id": "case_evidence_sub_lisbon_anjos70",
+      "case_id": "case_sub_lisbon_anjos70",
+      "place_id": "lisbon_anjos70",
+      "profile_id": "profile_subkultur_lisboa",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/lisbon_anjos70.json",
+      "report_case_id": "case_lisbon_anjos70_environment",
+      "claim": "Gjentatte markeder, lav terskel og deltakerbasert salg gjør Anjos70 til et flyttbart kreativt miljø snarere enn bare én permanent bygning.",
+      "source_ids": [
+        "source_lisbon_anjos70_milieu",
+        "source_lisbon_anjos70_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_lisbon_anjos70_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_lisbon_anjos70_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_lisbon_anjos70_environment.actors",
+            "case_lisbon_anjos70_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_lisbon_anjos70_environment.representationAndEthics.selfDefinition",
+            "case_lisbon_anjos70_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_anjos70_environment.spaceAndPower",
+            "case_lisbon_anjos70_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_anjos70_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_anjos70_environment.methodAndInference.alternativeExplanations",
+            "case_lisbon_anjos70_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_stedsanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "Merkeordet «alternativt marked» kan bli ren livsstilsbranding dersom arbeid, seleksjon, økonomi og stedsavhengighet ikke synliggjøres.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-03"
+    },
+    {
+      "evidence_id": "case_evidence_sub_lisbon_crew_hassan",
+      "case_id": "case_sub_lisbon_crew_hassan",
+      "place_id": "lisbon_crew_hassan",
+      "profile_id": "profile_subkultur_lisboa",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/lisbon_crew_hassan.json",
+      "report_case_id": "case_lisbon_crew_hassan_environment",
+      "claim": "Kooperativ drift, flerbruksprogram og gjentatt møteaktivitet gjorde Crew Hassan til en sosial og kulturell scene, ikke bare en bar eller arrangementsadresse.",
+      "source_ids": [
+        "source_lisbon_crew_hassan_milieu",
+        "source_lisbon_crew_hassan_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_lisbon_crew_hassan_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_lisbon_crew_hassan_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_lisbon_crew_hassan_environment.actors",
+            "case_lisbon_crew_hassan_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_lisbon_crew_hassan_environment.representationAndEthics.selfDefinition",
+            "case_lisbon_crew_hassan_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_crew_hassan_environment.spaceAndPower",
+            "case_lisbon_crew_hassan_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_crew_hassan_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_crew_hassan_environment.methodAndInference.alternativeExplanations",
+            "case_lisbon_crew_hassan_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_organiseringsanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "Turist- og nattlivsomtaler kan romantisere «alternativ» atmosfære og underkommunisere arbeid, økonomi og interne grenser.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-03"
+    },
+    {
+      "evidence_id": "case_evidence_sub_lisbon_desterro",
+      "case_id": "case_sub_lisbon_desterro",
+      "place_id": "lisbon_desterro",
+      "profile_id": "profile_subkultur_lisboa",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/lisbon_desterro.json",
+      "report_case_id": "case_lisbon_desterro_environment",
+      "claim": "Desterro fungerer som scene fordi foreningen kobler eksperimentell musikk, lydproduksjon, gjentatte arrangementer og deltakende samarbeid i ett sted.",
+      "source_ids": [
+        "source_lisbon_desterro_milieu",
+        "source_lisbon_desterro_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_lisbon_desterro_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_lisbon_desterro_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_lisbon_desterro_environment.actors",
+            "case_lisbon_desterro_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_lisbon_desterro_environment.representationAndEthics.selfDefinition",
+            "case_lisbon_desterro_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_desterro_environment.spaceAndPower",
+            "case_lisbon_desterro_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_desterro_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_desterro_environment.methodAndInference.alternativeExplanations",
+            "case_lisbon_desterro_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_sceneanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "En ren «undergrunnsklubb»-etikett kan skjule foreningsarbeid, tverrfaglighet og de formelle adgangsrammene.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-03"
+    },
+    {
+      "evidence_id": "case_evidence_sub_blitzhuset",
+      "case_id": "case_sub_blitzhuset",
+      "place_id": "blitzhuset",
+      "profile_id": "profile_subkultur_oslo",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/blitzhuset.json",
+      "report_case_id": "case_blitzhuset_environment",
+      "claim": "Selvstyre, gjentatt kollektiv aktivitet og langvarig kamp om huset gjør Blitz til sosial og politisk infrastruktur, ikke bare et konsertsted eller en stilmarkør.",
+      "source_ids": [
+        "source_blitzhuset_milieu",
+        "source_blitzhuset_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_blitzhuset_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_blitzhuset_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_blitzhuset_environment.actors",
+            "case_blitzhuset_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_blitzhuset_environment.representationAndEthics.selfDefinition",
+            "case_blitzhuset_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_blitzhuset_environment.spaceAndPower",
+            "case_blitzhuset_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_blitzhuset_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_blitzhuset_environment.methodAndInference.alternativeExplanations",
+            "case_blitzhuset_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_organiseringsanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "En ren konfliktfortelling kan kriminalisere deltakere, mens en heroisk motkulturfortelling kan skjule intern uenighet, grenser og endring over tid.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_hausmania",
+      "case_id": "case_sub_hausmania",
+      "place_id": "hausmania",
+      "profile_id": "profile_subkultur_oslo",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/hausmania.json",
+      "report_case_id": "case_hausmania_environment",
+      "claim": "Felles arbeidsplikt, kunstnerstyrte rom og rimelig produksjonsinfrastruktur gjør Hausmania til et organisert miljø, ikke bare en alternativ arrangementsadresse.",
+      "source_ids": [
+        "source_hausmania_milieu",
+        "source_hausmania_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_hausmania_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_hausmania_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_hausmania_environment.actors",
+            "case_hausmania_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_hausmania_environment.representationAndEthics.selfDefinition",
+            "case_hausmania_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_hausmania_environment.spaceAndPower",
+            "case_hausmania_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_hausmania_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_hausmania_environment.methodAndInference.alternativeExplanations",
+            "case_hausmania_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_institusjonsanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "Merket «undergrunn» kan romantisere huset og usynliggjøre arbeid, seleksjon, driftsansvar og forskjeller mellom beboelse, produksjon og publikumstilbud.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_xray_ungdomskulturhus",
+      "case_id": "case_sub_xray_ungdomskulturhus",
+      "place_id": "xray_ungdomskulturhus",
+      "profile_id": "profile_subkultur_oslo",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/xray_ungdomskulturhus.json",
+      "report_case_id": "case_xray_ungdomskulturhus_environment",
+      "claim": "Langvarig brukerstyring, gjentatt deltakelse og læring på tvers av uttrykk gjør X-Ray til sosial infrastruktur for ungdomsmiljøer, ikke bare et fritidstilbud.",
+      "source_ids": [
+        "source_xray_ungdomskulturhus_milieu",
+        "source_xray_ungdomskulturhus_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_xray_ungdomskulturhus_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_xray_ungdomskulturhus_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_xray_ungdomskulturhus_environment.actors",
+            "case_xray_ungdomskulturhus_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_xray_ungdomskulturhus_environment.representationAndEthics.selfDefinition",
+            "case_xray_ungdomskulturhus_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_xray_ungdomskulturhus_environment.spaceAndPower",
+            "case_xray_ungdomskulturhus_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_xray_ungdomskulturhus_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_xray_ungdomskulturhus_environment.methodAndInference.alternativeExplanations",
+            "case_xray_ungdomskulturhus_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_deltakelsesanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "Ungdom kan framstilles som enten problemgruppe eller suksesshistorie; rapporten må bevare variasjon, begrense identifisering og skille institusjonens mål fra deltakernes erfaringer.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_svartlamon_trondheim",
+      "case_id": "case_sub_svartlamon_trondheim",
+      "place_id": "svartlamon_trondheim",
+      "profile_id": "profile_subkultur_norge_norden",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/svartlamon_trondheim.json",
+      "report_case_id": "case_svartlamon_trondheim_environment",
+      "claim": "Beboerorganisering, rimelig leie, selvbygging og kollektiv ressursbruk gjør Svartlamon til et sosialt og romlig miljø, ikke bare et område med særpreget arkitektur.",
+      "source_ids": [
+        "source_svartlamon_trondheim_milieu",
+        "source_svartlamon_trondheim_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_svartlamon_trondheim_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_svartlamon_trondheim_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_svartlamon_trondheim_environment.actors",
+            "case_svartlamon_trondheim_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_svartlamon_trondheim_environment.representationAndEthics.selfDefinition",
+            "case_svartlamon_trondheim_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_svartlamon_trondheim_environment.spaceAndPower",
+            "case_svartlamon_trondheim_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_svartlamon_trondheim_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_svartlamon_trondheim_environment.methodAndInference.alternativeExplanations",
+            "case_svartlamon_trondheim_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_romlig_maktanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "Svartlamon kan romantiseres som friksjonsfri utopi eller stemples som avvik; begge deler skjuler intern variasjon, boligprivatliv og institusjonelle avhengigheter.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_hulen_bergen",
+      "case_id": "case_sub_hulen_bergen",
+      "place_id": "hulen_bergen",
+      "profile_id": "profile_subkultur_norge_norden",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/hulen_bergen.json",
+      "report_case_id": "case_hulen_bergen_environment",
+      "claim": "Kontinuerlig frivillig arbeid, rekruttering og konserter siden 1969 gjør Hulen til en institusjonalisert musikkscene, ikke bare et særpreget lokale.",
+      "source_ids": [
+        "source_hulen_bergen_milieu",
+        "source_hulen_bergen_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_hulen_bergen_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_hulen_bergen_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_hulen_bergen_environment.actors",
+            "case_hulen_bergen_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_hulen_bergen_environment.representationAndEthics.selfDefinition",
+            "case_hulen_bergen_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_hulen_bergen_environment.spaceAndPower",
+            "case_hulen_bergen_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_hulen_bergen_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_hulen_bergen_environment.methodAndInference.alternativeExplanations",
+            "case_hulen_bergen_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_sceneanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "En mytisk «rockehule»-fortelling kan skjule arbeidsmengde, aldersgrenser, sikkerhet og forskjellen mellom publikum og organiserende miljø.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_bergen_kjott_kulturhus",
+      "case_id": "case_sub_bergen_kjott_kulturhus",
+      "place_id": "bergen_kjott_kulturhus",
+      "profile_id": "profile_subkultur_norge_norden",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/bergen_kjott_kulturhus.json",
+      "report_case_id": "case_bergen_kjott_kulturhus_environment",
+      "claim": "Faste studioer, residerende produsenter og samarbeid mellom organisasjoner gjør Bergen Kjøtt til et produksjonsmiljø, ikke bare en utleiescene i et industribygg.",
+      "source_ids": [
+        "source_bergen_kjott_kulturhus_milieu",
+        "source_bergen_kjott_kulturhus_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_bergen_kjott_kulturhus_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_bergen_kjott_kulturhus_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_bergen_kjott_kulturhus_environment.actors",
+            "case_bergen_kjott_kulturhus_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_bergen_kjott_kulturhus_environment.representationAndEthics.selfDefinition",
+            "case_bergen_kjott_kulturhus_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_bergen_kjott_kulturhus_environment.spaceAndPower",
+            "case_bergen_kjott_kulturhus_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_bergen_kjott_kulturhus_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_bergen_kjott_kulturhus_environment.methodAndInference.alternativeExplanations",
+            "case_bergen_kjott_kulturhus_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_institusjonsanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "«Rå fabrikk» og «undergrunn» kan bli markedsestetikk som skjuler husets institusjonelle drift, økonomiske terskler og mangfoldet av arbeidspraksiser.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_lisbon_galeria_ze_dos_bois",
+      "case_id": "case_sub_lisbon_galeria_ze_dos_bois",
+      "place_id": "lisbon_galeria_ze_dos_bois",
+      "profile_id": "profile_subkultur_lisboa",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/lisbon_galeria_ze_dos_bois.json",
+      "report_case_id": "case_lisbon_galeria_ze_dos_bois_environment",
+      "claim": "Kunstnerinitiativ, ideell foreningsform og kontinuerlig tverrkunstnerisk produksjon gjør ZDB til et miljø og en infrastruktur, ikke bare et galleri.",
+      "source_ids": [
+        "source_lisbon_galeria_ze_dos_bois_milieu",
+        "source_lisbon_galeria_ze_dos_bois_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_lisbon_galeria_ze_dos_bois_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_lisbon_galeria_ze_dos_bois_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_lisbon_galeria_ze_dos_bois_environment.actors",
+            "case_lisbon_galeria_ze_dos_bois_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_lisbon_galeria_ze_dos_bois_environment.representationAndEthics.selfDefinition",
+            "case_lisbon_galeria_ze_dos_bois_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_galeria_ze_dos_bois_environment.spaceAndPower",
+            "case_lisbon_galeria_ze_dos_bois_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_galeria_ze_dos_bois_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_galeria_ze_dos_bois_environment.methodAndInference.alternativeExplanations",
+            "case_lisbon_galeria_ze_dos_bois_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_institusjonsanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "En fortelling om «edgy» kunst kan romantisere miljøet og skjule kuratorisk makt, profesjonalisering, adgangsgrenser og ulik tilgang til ressurser.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_uffa_huset_trondheim",
+      "case_id": "case_sub_uffa_huset_trondheim",
+      "place_id": "uffa_huset_trondheim",
+      "profile_id": "profile_subkultur_norge_norden",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/uffa_huset_trondheim.json",
+      "report_case_id": "case_uffa_huset_trondheim_environment",
+      "claim": "Selvstyre, frivillig arbeid og gjentatte kultur- og aktivismepraksiser gjør UFFA til sosial infrastruktur, ikke bare en konsertadresse.",
+      "source_ids": [
+        "source_uffa_huset_trondheim_milieu",
+        "source_uffa_huset_trondheim_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_uffa_huset_trondheim_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_uffa_huset_trondheim_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_uffa_huset_trondheim_environment.actors",
+            "case_uffa_huset_trondheim_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_uffa_huset_trondheim_environment.representationAndEthics.selfDefinition",
+            "case_uffa_huset_trondheim_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_uffa_huset_trondheim_environment.spaceAndPower",
+            "case_uffa_huset_trondheim_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_uffa_huset_trondheim_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_uffa_huset_trondheim_environment.methodAndInference.alternativeExplanations",
+            "case_uffa_huset_trondheim_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_organiseringsanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "UFFA kan kriminaliseres som problemhus eller romantiseres som konfliktfritt fristed; begge framstillinger skjuler arbeid, interne grenser og ulike deltakererfaringer.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_tou_stavanger",
+      "case_id": "case_sub_tou_stavanger",
+      "place_id": "tou_stavanger",
+      "profile_id": "profile_subkultur_norge_norden",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/tou_stavanger.json",
+      "report_case_id": "case_tou_stavanger_environment",
+      "claim": "Faste produksjonsrom, lokale aktører og tverrfaglig samarbeid gjør Tou til en kulturell infrastruktur; arrangementsprogrammet alene er ikke kvalifikasjonen.",
+      "source_ids": [
+        "source_tou_stavanger_milieu",
+        "source_tou_stavanger_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_tou_stavanger_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_tou_stavanger_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_tou_stavanger_environment.actors",
+            "case_tou_stavanger_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_tou_stavanger_environment.representationAndEthics.selfDefinition",
+            "case_tou_stavanger_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_tou_stavanger_environment.spaceAndPower",
+            "case_tou_stavanger_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_tou_stavanger_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_tou_stavanger_environment.methodAndInference.alternativeExplanations",
+            "case_tou_stavanger_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_institusjonsanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "Merkeord som «rått» og «uavhengig» kan romantisere stedet og skjule kuratorisk makt, profesjonelle adgangskrav og økonomisk avhengighet.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_trikkestallen_skatepark_trondheim",
+      "case_id": "case_sub_trikkestallen_skatepark_trondheim",
+      "place_id": "trikkestallen_skatepark_trondheim",
+      "profile_id": "profile_subkultur_norge_norden",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/trikkestallen_skatepark_trondheim.json",
+      "report_case_id": "case_trikkestallen_skatepark_trondheim_environment",
+      "claim": "Foreningsdrift, brukermedvirkning og løpende ombygging gjør hallen til et dokumentert praksisfellesskap; rampene alene er ikke nok.",
+      "source_ids": [
+        "source_trikkestallen_skatepark_trondheim_milieu",
+        "source_trikkestallen_skatepark_trondheim_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_trikkestallen_skatepark_trondheim_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_trikkestallen_skatepark_trondheim_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_trikkestallen_skatepark_trondheim_environment.actors",
+            "case_trikkestallen_skatepark_trondheim_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_trikkestallen_skatepark_trondheim_environment.representationAndEthics.selfDefinition",
+            "case_trikkestallen_skatepark_trondheim_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_trikkestallen_skatepark_trondheim_environment.spaceAndPower",
+            "case_trikkestallen_skatepark_trondheim_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_trikkestallen_skatepark_trondheim_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_trikkestallen_skatepark_trondheim_environment.methodAndInference.alternativeExplanations",
+            "case_trikkestallen_skatepark_trondheim_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_romlig_praksisanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "En fortelling om grenseløs ungdomsfrihet kan skjule alders-, pris- og sikkerhetsgrenser og ulik makt mellom brukere, forening og kommune.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_fysak_slettebakken",
+      "case_id": "case_sub_fysak_slettebakken",
+      "place_id": "fysak_slettebakken",
+      "profile_id": "profile_subkultur_norge_norden",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/fysak_slettebakken.json",
+      "report_case_id": "case_fysak_slettebakken_environment",
+      "claim": "Eksisterende skatemiljø, gratis praksisrom og gjentatt egenorganisert bruk gir stedet en dokumenterbar sekundær Subkultur-identitet; aktivitetshuset alene gjør det ikke.",
+      "source_ids": [
+        "source_fysak_slettebakken_milieu",
+        "source_fysak_slettebakken_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_fysak_slettebakken_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_fysak_slettebakken_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_fysak_slettebakken_environment.actors",
+            "case_fysak_slettebakken_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_fysak_slettebakken_environment.representationAndEthics.selfDefinition",
+            "case_fysak_slettebakken_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_fysak_slettebakken_environment.spaceAndPower",
+            "case_fysak_slettebakken_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_fysak_slettebakken_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_fysak_slettebakken_environment.methodAndInference.alternativeExplanations",
+            "case_fysak_slettebakken_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_deltakelsesanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "Ungdom kan framstilles som enten risikogruppe eller kommunal suksesshistorie; analysen må skille brukernes praksis fra institusjonens mål.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_oslo_skatehall",
+      "case_id": "case_sub_oslo_skatehall",
+      "place_id": "oslo_skatehall",
+      "profile_id": "profile_subkultur_oslo",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/oslo_skatehall.json",
+      "report_case_id": "case_oslo_skatehall_environment",
+      "claim": "Langvarig miljøarbeid, skatermedvirkning og gjentatt praksis gjør hallen til mer enn et sportsbygg; institusjonaliseringen er samtidig en sentral del av caset.",
+      "source_ids": [
+        "source_oslo_skatehall_milieu",
+        "source_oslo_skatehall_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_oslo_skatehall_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_oslo_skatehall_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_oslo_skatehall_environment.actors",
+            "case_oslo_skatehall_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_oslo_skatehall_environment.representationAndEthics.selfDefinition",
+            "case_oslo_skatehall_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_oslo_skatehall_environment.spaceAndPower",
+            "case_oslo_skatehall_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_oslo_skatehall_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_oslo_skatehall_environment.methodAndInference.alternativeExplanations",
+            "case_oslo_skatehall_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_romlig_praksisanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "En lineær triumffortelling kan skjule hvem som fortsatt møter pris-, alder- og normterskler, og hvordan institusjonalisering endrer praksisen.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_skur13",
+      "case_id": "case_sub_skur13",
+      "place_id": "skur13",
+      "profile_id": "profile_subkultur_oslo",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/skur13.json",
+      "report_case_id": "case_skur13_environment",
+      "claim": "Foreningsdrift, gjentatt miljøbruk og deling av et spesialisert rom gjør Skur 13 til praksisinfrastruktur; X Games-arven og hallens uttrykk alene er ikke nok.",
+      "source_ids": [
+        "source_skur13_milieu",
+        "source_skur13_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_skur13_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_skur13_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_skur13_environment.actors",
+            "case_skur13_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_skur13_environment.representationAndEthics.selfDefinition",
+            "case_skur13_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_skur13_environment.spaceAndPower",
+            "case_skur13_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_skur13_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_skur13_environment.methodAndInference.alternativeExplanations",
+            "case_skur13_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_stedsanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "«Mekka»-språk kan romantisere hallen og skjule pris-, sikkerhets- og gruppegrenser samt forskjellen mellom nybegynnere og etablerte brukere.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_helvete_neseblod_records",
+      "case_id": "case_sub_helvete_neseblod_records",
+      "place_id": "helvete_neseblod_records",
+      "profile_id": "profile_subkultur_oslo",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/helvete_neseblod_records.json",
+      "report_case_id": "case_helvete_neseblod_records_environment",
+      "claim": "Historisk møtefunksjon, sceneobjekter og videreført spesialbutikk gjør stedet til et miljøminne, men dagens kunder kan ikke behandles som den historiske scenen.",
+      "source_ids": [
+        "source_helvete_neseblod_records_milieu",
+        "source_helvete_neseblod_records_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_helvete_neseblod_records_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_helvete_neseblod_records_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_helvete_neseblod_records_environment.actors",
+            "case_helvete_neseblod_records_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_helvete_neseblod_records_environment.representationAndEthics.selfDefinition",
+            "case_helvete_neseblod_records_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_helvete_neseblod_records_environment.spaceAndPower",
+            "case_helvete_neseblod_records_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_helvete_neseblod_records_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_helvete_neseblod_records_environment.methodAndInference.alternativeExplanations",
+            "case_helvete_neseblod_records_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_stedsminneanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "Kriminalitet, satanisme og vold kan sensasjonaliseres, mens romantisering kan skjule ofre, intern uenighet og mytedannelse; ingen nålevende kunde profileres.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_torggata_blad",
+      "case_id": "case_sub_torggata_blad",
+      "place_id": "torggata_blad",
+      "profile_id": "profile_subkultur_oslo",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/torggata_blad.json",
+      "report_case_id": "case_torggata_blad_environment",
+      "claim": "Vedvarende redaksjonell produksjon og bidragsyterforum gjør Torggata Blad til en uavhengig mediepraksis; kontoradressen alene er ikke et offentlig subkultursted.",
+      "source_ids": [
+        "source_torggata_blad_milieu",
+        "source_torggata_blad_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_torggata_blad_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_torggata_blad_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_torggata_blad_environment.actors",
+            "case_torggata_blad_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_torggata_blad_environment.representationAndEthics.selfDefinition",
+            "case_torggata_blad_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_torggata_blad_environment.spaceAndPower",
+            "case_torggata_blad_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_torggata_blad_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_torggata_blad_environment.methodAndInference.alternativeExplanations",
+            "case_torggata_blad_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_mediearkeologisk_analyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "«Rar» og «kompromissløs» kan bli romantiserende merkevare; rapporten skiller publikasjonens egen stemme fra alle bidragsyteres syn og fra selve adressen.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_arena_bekkestua",
+      "case_id": "case_sub_arena_bekkestua",
+      "place_id": "arena_bekkestua",
+      "profile_id": "profile_subkultur_norge_norden",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/arena_bekkestua.json",
+      "report_case_id": "case_arena_bekkestua_environment",
+      "claim": "Foreningsdrift og ukentlige sesjoner gjør Arena Bekkestua til sosial infrastruktur for rullende ungdomsmiljøer; hallen og rampeanlegget alene er ikke kvalifikasjonen.",
+      "source_ids": [
+        "source_arena_bekkestua_milieu",
+        "source_arena_bekkestua_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_arena_bekkestua_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_arena_bekkestua_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_arena_bekkestua_environment.actors",
+            "case_arena_bekkestua_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_arena_bekkestua_environment.representationAndEthics.selfDefinition",
+            "case_arena_bekkestua_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_arena_bekkestua_environment.spaceAndPower",
+            "case_arena_bekkestua_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_arena_bekkestua_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_arena_bekkestua_environment.methodAndInference.alternativeExplanations",
+            "case_arena_bekkestua_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_deltakelsesanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "Ungdoms- og skatemiljøet må ikke reduseres til risikoadferd eller romantiseres som grenseløst fritt; variasjon, regler og økonomiske terskler skal framgå.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_kafe_x_tromso",
+      "case_id": "case_sub_kafe_x_tromso",
+      "place_id": "kafe_x_tromso",
+      "profile_id": "profile_subkultur_norge_norden",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/kafe_x_tromso.json",
+      "report_case_id": "case_kafe_x_tromso_environment",
+      "claim": "Langvarig brukerstyring og deltakerorganiserte aktiviteter gjør Kafe X til et miljø- og omsorgsanker; kaféservering eller rehabiliteringsspråk alene er ikke kvalifikasjonen.",
+      "source_ids": [
+        "source_kafe_x_tromso_milieu",
+        "source_kafe_x_tromso_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_kafe_x_tromso_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_kafe_x_tromso_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_kafe_x_tromso_environment.actors",
+            "case_kafe_x_tromso_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_kafe_x_tromso_environment.representationAndEthics.selfDefinition",
+            "case_kafe_x_tromso_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_kafe_x_tromso_environment.spaceAndPower",
+            "case_kafe_x_tromso_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_kafe_x_tromso_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_kafe_x_tromso_environment.methodAndInference.alternativeExplanations",
+            "case_kafe_x_tromso_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_omsorgslandskapsanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen bruker organisasjons- og gruppenivå, utelater navn og personhistorier fra reportasjen og trekker ingen slutninger om enkeltgjesters rus- eller helsestatus.",
+        "stigma_and_romanticization_risk": "Deltakere må ikke framstilles som én diagnose- eller problemgruppe, og recovery-fortellinger må ikke brukes til å evaluere eller identifisere enkeltpersoner.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_lisbon_fabrica_braco_de_prata",
+      "case_id": "case_sub_lisbon_fabrica_braco_de_prata",
+      "place_id": "lisbon_fabrica_braco_de_prata",
+      "profile_id": "profile_subkultur_lisboa",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/lisbon_fabrica_braco_de_prata.json",
+      "report_case_id": "case_lisbon_fabrica_braco_de_prata_environment",
+      "claim": "Vedvarende tverrkunstnerisk program og samarbeidspraksis gjør Fábrica til sceneinfrastruktur; industriestetikk og mange rom alene er ikke subkulturbevis.",
+      "source_ids": [
+        "source_lisbon_fabrica_braco_de_prata_milieu",
+        "source_lisbon_fabrica_braco_de_prata_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_lisbon_fabrica_braco_de_prata_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_lisbon_fabrica_braco_de_prata_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_lisbon_fabrica_braco_de_prata_environment.actors",
+            "case_lisbon_fabrica_braco_de_prata_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_lisbon_fabrica_braco_de_prata_environment.representationAndEthics.selfDefinition",
+            "case_lisbon_fabrica_braco_de_prata_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_fabrica_braco_de_prata_environment.spaceAndPower",
+            "case_lisbon_fabrica_braco_de_prata_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_fabrica_braco_de_prata_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_fabrica_braco_de_prata_environment.methodAndInference.alternativeExplanations",
+            "case_lisbon_fabrica_braco_de_prata_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_sceneanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "«Alternativ fabrikk» kan bli en romantiserende merkevare som skjuler kommersiell drift, kuratering og ulik adgang til produksjonsrom.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_lisbon_musicbox",
+      "case_id": "case_sub_lisbon_musicbox",
+      "place_id": "lisbon_musicbox",
+      "profile_id": "profile_subkultur_lisboa",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/lisbon_musicbox.json",
+      "report_case_id": "case_lisbon_musicbox_environment",
+      "claim": "Nitten års tett konsert- og klubbprogram gjorde Musicbox til sceneinfrastruktur; stengingen i 2025 betyr at stedet nå skal analyseres som avsluttet rom og videreført nettverk.",
+      "source_ids": [
+        "source_lisbon_musicbox_milieu",
+        "source_lisbon_musicbox_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_lisbon_musicbox_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_lisbon_musicbox_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_lisbon_musicbox_environment.actors",
+            "case_lisbon_musicbox_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_lisbon_musicbox_environment.representationAndEthics.selfDefinition",
+            "case_lisbon_musicbox_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_musicbox_environment.spaceAndPower",
+            "case_lisbon_musicbox_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_musicbox_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_musicbox_environment.methodAndInference.alternativeExplanations",
+            "case_lisbon_musicbox_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_sceneanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "En nostalgisk «ikonisk klubb»-fortelling kan skjule seleksjon, arbeid, nattøkonomi og at ulike miljøer brukte scenen på forskjellige måter.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_huset_oslo",
+      "case_id": "case_sub_huset_oslo",
+      "place_id": "huset_oslo",
+      "profile_id": "profile_subkultur_oslo",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/huset_oslo.json",
+      "report_case_id": "case_huset_oslo_environment",
+      "claim": "Bærende brukerstemme, deltakeransvar og skadereduksjonspraksis gjør Huset til sosial infrastruktur; målgruppeetikett og servering alene er ikke kvalifikasjonen.",
+      "source_ids": [
+        "source_huset_oslo_milieu",
+        "source_huset_oslo_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_huset_oslo_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_huset_oslo_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_huset_oslo_environment.actors",
+            "case_huset_oslo_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_huset_oslo_environment.representationAndEthics.selfDefinition",
+            "case_huset_oslo_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_huset_oslo_environment.spaceAndPower",
+            "case_huset_oslo_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_huset_oslo_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_huset_oslo_environment.methodAndInference.alternativeExplanations",
+            "case_huset_oslo_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_omsorgslandskapsanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen bruker bare offentlig organisasjonsinformasjon på gruppenivå og identifiserer ikke gjester, helsestatus, behandlingsforløp eller deltakelsesmønster.",
+        "stigma_and_romanticization_risk": "Rusmiddelerfaring må ikke brukes til å definere alle deltakere, og skadereduksjon må ikke framstilles som personlig behandlingsutfall.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_nadheim_oslo",
+      "case_id": "case_sub_nadheim_oslo",
+      "place_id": "nadheim_oslo",
+      "profile_id": "profile_subkultur_oslo",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/nadheim_oslo.json",
+      "report_case_id": "case_nadheim_oslo_environment",
+      "claim": "Anonym drop-in, fellesskap og flerfaglig rettighetsstøtte gjør Nadheim til et omsorgsanker; målgruppeklassifisering alene er ikke subkulturbevis.",
+      "source_ids": [
+        "source_nadheim_oslo_milieu",
+        "source_nadheim_oslo_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_nadheim_oslo_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_nadheim_oslo_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_nadheim_oslo_environment.actors",
+            "case_nadheim_oslo_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_nadheim_oslo_environment.representationAndEthics.selfDefinition",
+            "case_nadheim_oslo_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_nadheim_oslo_environment.spaceAndPower",
+            "case_nadheim_oslo_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_nadheim_oslo_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_nadheim_oslo_environment.methodAndInference.alternativeExplanations",
+            "case_nadheim_oslo_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_omsorgslandskapsanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Ingen gjester, oppmøtemønstre, adresser utover offentlig tilbudsinformasjon, helseforhold, migrasjonsstatus eller erfaringer identifiseres eller utledes.",
+        "stigma_and_romanticization_risk": "Sexarbeid, utnyttelse og menneskehandel må ikke blandes sammen, og personer må ikke omtales med påtvungne merkelapper eller som en homogen sårbar gruppe.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_ressurssenter_kvinner_trondheim",
+      "case_id": "case_sub_ressurssenter_kvinner_trondheim",
+      "place_id": "ressurssenter_kvinner_trondheim",
+      "profile_id": "profile_subkultur_norge_norden",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/ressurssenter_kvinner_trondheim.json",
+      "report_case_id": "case_ressurssenter_kvinner_trondheim_environment",
+      "claim": "Skjermet adgang, dagtilbud og hverdagsnær omsorg gjør Ressurssenteret til et omsorgsanker i randsonen; sårbarhetskategori alene er ikke subkulturbevis.",
+      "source_ids": [
+        "source_ressurssenter_kvinner_trondheim_milieu",
+        "source_ressurssenter_kvinner_trondheim_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_ressurssenter_kvinner_trondheim_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_ressurssenter_kvinner_trondheim_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_ressurssenter_kvinner_trondheim_environment.actors",
+            "case_ressurssenter_kvinner_trondheim_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_ressurssenter_kvinner_trondheim_environment.representationAndEthics.selfDefinition",
+            "case_ressurssenter_kvinner_trondheim_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_ressurssenter_kvinner_trondheim_environment.spaceAndPower",
+            "case_ressurssenter_kvinner_trondheim_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_ressurssenter_kvinner_trondheim_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_ressurssenter_kvinner_trondheim_environment.methodAndInference.alternativeExplanations",
+            "case_ressurssenter_kvinner_trondheim_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_omsorgslandskapsanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen gjengir ingen navn, historier, opphold, rutiner eller kjennetegn som kan identifisere beboere eller brukere av det skjermede tilbudet.",
+        "stigma_and_romanticization_risk": "Kvinner i aktiv rus må ikke reduseres til hjelpeløshet eller voldserfaring, og styrkeformuleringer må ikke romantisere belastning eller frata dem forskjeller og handlingsrom.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_matfellesskap_st_petri_stavanger",
+      "case_id": "case_sub_matfellesskap_st_petri_stavanger",
+      "place_id": "matfellesskap_st_petri_stavanger",
+      "profile_id": "profile_subkultur_norge_norden",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/matfellesskap_st_petri_stavanger.json",
+      "report_case_id": "case_matfellesskap_st_petri_stavanger_environment",
+      "claim": "Gjentatte måltider og møtepraksiser gjør St. Petri til et omsorgsanker for rus- og gatemiljøet; kirkearkitektur eller sosial målgruppe alene er ikke kvalifikasjonen.",
+      "source_ids": [
+        "source_matfellesskap_st_petri_stavanger_milieu",
+        "source_matfellesskap_st_petri_stavanger_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_matfellesskap_st_petri_stavanger_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_matfellesskap_st_petri_stavanger_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_matfellesskap_st_petri_stavanger_environment.actors",
+            "case_matfellesskap_st_petri_stavanger_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_matfellesskap_st_petri_stavanger_environment.representationAndEthics.selfDefinition",
+            "case_matfellesskap_st_petri_stavanger_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_matfellesskap_st_petri_stavanger_environment.spaceAndPower",
+            "case_matfellesskap_st_petri_stavanger_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_matfellesskap_st_petri_stavanger_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_matfellesskap_st_petri_stavanger_environment.methodAndInference.alternativeExplanations",
+            "case_matfellesskap_st_petri_stavanger_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_omsorgslandskapsanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Rapporten omtaler bare det publiserte tilbudet og kollektive praksiser og identifiserer ikke gjester, trosvalg, russtatus eller bruk av andre tjenester.",
+        "stigma_and_romanticization_risk": "Gatamiljø og rus må ikke framstilles som én identitet, og veldedighetsfortellinger må ikke redusere deltakere til mottakere uten egen handlekraft.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_mo_senteret_gyldenpris",
+      "case_id": "case_sub_mo_senteret_gyldenpris",
+      "place_id": "mo_senteret_gyldenpris",
+      "profile_id": "profile_subkultur_norge_norden",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/mo_senteret_gyldenpris.json",
+      "report_case_id": "case_mo_senteret_gyldenpris_environment",
+      "claim": "Tretti års lavterskelpraksis og kombinasjonen av sosial møteplass, brukerrom og overdosestøtte gjør Gyldenpris til et omsorgsanker; tjenestekategori alene er ikke kvalifikasjonen.",
+      "source_ids": [
+        "source_mo_senteret_gyldenpris_milieu",
+        "source_mo_senteret_gyldenpris_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_mo_senteret_gyldenpris_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_mo_senteret_gyldenpris_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_mo_senteret_gyldenpris_environment.actors",
+            "case_mo_senteret_gyldenpris_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_mo_senteret_gyldenpris_environment.representationAndEthics.selfDefinition",
+            "case_mo_senteret_gyldenpris_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_mo_senteret_gyldenpris_environment.spaceAndPower",
+            "case_mo_senteret_gyldenpris_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_mo_senteret_gyldenpris_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_mo_senteret_gyldenpris_environment.methodAndInference.alternativeExplanations",
+            "case_mo_senteret_gyldenpris_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_omsorgslandskapsanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen holder seg på tjeneste- og gruppenivå og identifiserer ikke brukere, oppmøte, helseforhold, rusmidler eller bruk av brukerrommet.",
+        "stigma_and_romanticization_risk": "Rusmiddelavhengighet må ikke gjøres til enhetlig identitet, og skadereduksjon må ikke framstilles som personlig behandlingsresultat eller som toleranse for skade.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_nygardsparken_bergen",
+      "case_id": "case_sub_nygardsparken_bergen",
+      "place_id": "nygardsparken_bergen",
+      "profile_id": "profile_subkultur_norge_norden",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/nygardsparken_bergen.json",
+      "report_case_id": "case_nygardsparken_bergen_environment",
+      "claim": "Langvarig kollektiv bruk og dokumenterte brukererfaringer gjør den historiske russcenen til et sosialt territorium; parken i seg selv og dagens parkbruk er ikke subkulturbevis.",
+      "source_ids": [
+        "source_nygardsparken_bergen_milieu",
+        "source_nygardsparken_bergen_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_nygardsparken_bergen_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_nygardsparken_bergen_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_nygardsparken_bergen_environment.actors",
+            "case_nygardsparken_bergen_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_nygardsparken_bergen_environment.representationAndEthics.selfDefinition",
+            "case_nygardsparken_bergen_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_nygardsparken_bergen_environment.spaceAndPower",
+            "case_nygardsparken_bergen_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_nygardsparken_bergen_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_nygardsparken_bergen_environment.methodAndInference.alternativeExplanations",
+            "case_nygardsparken_bergen_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_romlig_maktanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Rapporten bruker bare historiske og organisatoriske kilder på gruppenivå og identifiserer ikke nålevende personer, oppholdssted eller ruspraksis.",
+        "stigma_and_romanticization_risk": "Kriminalitet og forsøpling kan overskygge tilhørighet og omsorg, mens romantisering kan skjule vold, utnyttelse, helsefare og intern ulikhet.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_gamlebyen_sport_og_fritid",
+      "case_id": "case_sub_gamlebyen_sport_og_fritid",
+      "place_id": "gamlebyen_sport_og_fritid",
+      "profile_id": "profile_subkultur_oslo",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/gamlebyen_sport_og_fritid.json",
+      "report_case_id": "case_gamlebyen_sport_og_fritid_environment",
+      "claim": "Beboerorganisering, tusenvis av dugnadstimer og gjentatt bruk gjør GSF til sosial infrastruktur; skatebowl, graffiti eller pris alene er ikke kvalifikasjonen.",
+      "source_ids": [
+        "source_gamlebyen_sport_og_fritid_milieu",
+        "source_gamlebyen_sport_og_fritid_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_gamlebyen_sport_og_fritid_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_gamlebyen_sport_og_fritid_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_gamlebyen_sport_og_fritid_environment.actors",
+            "case_gamlebyen_sport_og_fritid_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_gamlebyen_sport_og_fritid_environment.representationAndEthics.selfDefinition",
+            "case_gamlebyen_sport_og_fritid_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_gamlebyen_sport_og_fritid_environment.spaceAndPower",
+            "case_gamlebyen_sport_og_fritid_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_gamlebyen_sport_og_fritid_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_gamlebyen_sport_og_fritid_environment.methodAndInference.alternativeExplanations",
+            "case_gamlebyen_sport_og_fritid_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_organiseringsanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "Ungdom og urbane uttrykk må ikke framstilles som problem eller romantisk råskap, og ildsjelhistorien må ikke skjule kollektivt arbeid og adgangsgrenser.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_plata_oslo",
+      "case_id": "case_sub_plata_oslo",
+      "place_id": "plata_oslo",
+      "profile_id": "profile_subkultur_oslo",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/plata_oslo.json",
+      "report_case_id": "case_plata_oslo_environment",
+      "claim": "Gjentatt kollektiv bruk og dokumentert forflytning gjør Plata til et historisk sosialt territorium; narkotikaomsetning eller mediesynlighet alene er ikke kvalifikasjonen.",
+      "source_ids": [
+        "source_plata_oslo_milieu",
+        "source_plata_oslo_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_plata_oslo_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_plata_oslo_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_plata_oslo_environment.actors",
+            "case_plata_oslo_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_plata_oslo_environment.representationAndEthics.selfDefinition",
+            "case_plata_oslo_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_plata_oslo_environment.spaceAndPower",
+            "case_plata_oslo_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_plata_oslo_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_plata_oslo_environment.methodAndInference.alternativeExplanations",
+            "case_plata_oslo_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_romlig_maktanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen bruker historiske gruppedata og identifiserer ikke nålevende personer, roller, helseforhold, rusmidler eller nåværende oppholdssted.",
+        "stigma_and_romanticization_risk": "En kriminalitetsfortelling kan avhumanisere, mens nostalgi kan romantisere vold, utnyttelse, helsefare og usikkerhet.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_brugata_storgata_rusmiljo",
+      "case_id": "case_sub_brugata_storgata_rusmiljo",
+      "place_id": "brugata_storgata_rusmiljo",
+      "profile_id": "profile_subkultur_oslo",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/brugata_storgata_rusmiljo.json",
+      "report_case_id": "case_brugata_storgata_rusmiljo_environment",
+      "claim": "Vedvarende kollektiv bruk, brukerorganisasjonens krav om værested og forskningsbasert kartlegging gjør området til sosialt territorium; synlig rusbruk alene er ikke kvalifikasjonen.",
+      "source_ids": [
+        "source_brugata_storgata_rusmiljo_milieu",
+        "source_brugata_storgata_rusmiljo_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_brugata_storgata_rusmiljo_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_brugata_storgata_rusmiljo_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_brugata_storgata_rusmiljo_environment.actors",
+            "case_brugata_storgata_rusmiljo_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_brugata_storgata_rusmiljo_environment.representationAndEthics.selfDefinition",
+            "case_brugata_storgata_rusmiljo_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_brugata_storgata_rusmiljo_environment.spaceAndPower",
+            "case_brugata_storgata_rusmiljo_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_brugata_storgata_rusmiljo_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_brugata_storgata_rusmiljo_environment.methodAndInference.alternativeExplanations",
+            "case_brugata_storgata_rusmiljo_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_romlig_maktanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Rapporten bruker kartlegging og organisasjonsuttalelser på gruppenivå og identifiserer ikke personer, roller, transaksjoner, helse eller oppholdsmønster.",
+        "stigma_and_romanticization_risk": "Marked, kriminalitet og utrygghet kan overskygge tilhørighet og gjensidig støtte, mens romantisering kan skjule vold, gjeld, utnyttelse og helsefare.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_vaterland_bar_scene",
+      "case_id": "case_sub_vaterland_bar_scene",
+      "place_id": "vaterland_bar_scene",
+      "profile_id": "profile_subkultur_oslo",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/vaterland_bar_scene.json",
+      "report_case_id": "case_vaterland_bar_scene_environment",
+      "claim": "Gjentatt konsertprogram og dokumentert plass i metalmiljøets infrastruktur gjør Vaterland til sceneanker; satanistisk humor, pizza og interiør alene er ikke kvalifikasjonen.",
+      "source_ids": [
+        "source_vaterland_bar_scene_milieu",
+        "source_vaterland_bar_scene_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_vaterland_bar_scene_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_vaterland_bar_scene_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_vaterland_bar_scene_environment.actors",
+            "case_vaterland_bar_scene_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_vaterland_bar_scene_environment.representationAndEthics.selfDefinition",
+            "case_vaterland_bar_scene_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_vaterland_bar_scene_environment.spaceAndPower",
+            "case_vaterland_bar_scene_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_vaterland_bar_scene_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_vaterland_bar_scene_environment.methodAndInference.alternativeExplanations",
+            "case_vaterland_bar_scene_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_sceneanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "Metal- og punkmiljøet må ikke reduseres til mørk estetikk eller satanistisk humor, og kommersiell drift må ikke skjules av undergrunnsmerkevaren.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_sofienbergparken",
+      "case_id": "case_sub_sofienbergparken",
+      "place_id": "sofienbergparken",
+      "profile_id": "profile_subkultur_oslo",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/sofienbergparken.json",
+      "report_case_id": "case_sofienbergparken_environment",
+      "claim": "Samskaping med ungdom, skoler og lokale kulturaktører dokumenterer ett konkret miljølag i Sofienbergparken; generell ungdomsbruk, festival eller parkpopularitet alene er ikke kvalifikasjonen.",
+      "source_ids": [
+        "source_sofienbergparken_milieu",
+        "source_sofienbergparken_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_sofienbergparken_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_sofienbergparken_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_sofienbergparken_environment.actors",
+            "case_sofienbergparken_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_sofienbergparken_environment.representationAndEthics.selfDefinition",
+            "case_sofienbergparken_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_sofienbergparken_environment.spaceAndPower",
+            "case_sofienbergparken_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_sofienbergparken_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_sofienbergparken_environment.methodAndInference.alternativeExplanations",
+            "case_sofienbergparken_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_deltakelsesanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "Ungdom må ikke framstilles som problemgruppe eller som en enhetlig kreativ suksesshistorie, og ordinær parkbruk må ikke feilmerkes som subkultur.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_voldslokka_pumptrack",
+      "case_id": "case_sub_voldslokka_pumptrack",
+      "place_id": "voldslokka_pumptrack",
+      "profile_id": "profile_subkultur_oslo",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/voldslokka_pumptrack.json",
+      "report_case_id": "case_voldslokka_pumptrack_environment",
+      "claim": "Frivillig organisering, ungdomsprioriterte banetider og gjentatt praksis dokumenterer et miljø; asfaltbane, aktivitet og urban estetikk alene er ikke kvalifikasjonen.",
+      "source_ids": [
+        "source_voldslokka_pumptrack_milieu",
+        "source_voldslokka_pumptrack_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_voldslokka_pumptrack_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_voldslokka_pumptrack_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_voldslokka_pumptrack_environment.actors",
+            "case_voldslokka_pumptrack_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_voldslokka_pumptrack_environment.representationAndEthics.selfDefinition",
+            "case_voldslokka_pumptrack_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_voldslokka_pumptrack_environment.spaceAndPower",
+            "case_voldslokka_pumptrack_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_voldslokka_pumptrack_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_voldslokka_pumptrack_environment.methodAndInference.alternativeExplanations",
+            "case_voldslokka_pumptrack_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_organiseringsanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "Ungdom og hjulmiljø må ikke reduseres til risiko eller rå estetikk, og frivillig innsats må ikke gjøre adgangs- og sikkerhetsgrenser usynlige.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_slottsparken",
+      "case_id": "case_sub_slottsparken",
+      "place_id": "slottsparken",
+      "profile_id": "profile_subkultur_oslo",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/slottsparken.json",
+      "report_case_id": "case_slottsparken_environment",
+      "claim": "Gjentatt motkulturell bruk, miljøstemmer og dokumentert forflytning kvalifiserer det historiske Nisseberg-miljøet; dagens parkbruk og ungdomsopphold alene gjør det ikke.",
+      "source_ids": [
+        "source_slottsparken_milieu",
+        "source_slottsparken_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_slottsparken_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_slottsparken_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_slottsparken_environment.actors",
+            "case_slottsparken_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_slottsparken_environment.representationAndEthics.selfDefinition",
+            "case_slottsparken_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_slottsparken_environment.spaceAndPower",
+            "case_slottsparken_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_slottsparken_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_slottsparken_environment.methodAndInference.alternativeExplanations",
+            "case_slottsparken_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_romlig_maktanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Rapporten bruker publiserte historiske miljøstemmer og omtaler ikke nålevende personers helse, nåværende oppholdssted eller ikke-offentlige forhold.",
+        "stigma_and_romanticization_risk": "Rus og opptøyer kan overskygge tilhørighet og politiske krav, mens heroisk motkulturhistorie kan skjule vold, utrygghet og intern ulikhet.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_rock_in_oslo",
+      "case_id": "case_sub_rock_in_oslo",
+      "place_id": "rock_in_oslo",
+      "profile_id": "profile_subkultur_oslo",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/rock_in_oslo.json",
+      "report_case_id": "case_rock_in_oslo_environment",
+      "claim": "Gjentatt konsertproduksjon og dokumentert scenepraksis gjør Rock In til et miljøanker; mørkt interiør, sjangernavn eller barstatus alene er ikke kvalifikasjonen.",
+      "source_ids": [
+        "source_rock_in_oslo_milieu",
+        "source_rock_in_oslo_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_rock_in_oslo_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_rock_in_oslo_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_rock_in_oslo_environment.actors",
+            "case_rock_in_oslo_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_rock_in_oslo_environment.representationAndEthics.selfDefinition",
+            "case_rock_in_oslo_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_rock_in_oslo_environment.spaceAndPower",
+            "case_rock_in_oslo_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_rock_in_oslo_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_rock_in_oslo_environment.methodAndInference.alternativeExplanations",
+            "case_rock_in_oslo_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_sceneanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "Metal- og rockmiljø må ikke reduseres til mørk estetikk, og kommersiell drift må ikke skjules av undergrunnsprofilen.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_brenneriveien_ingens_gate",
+      "case_id": "case_sub_brenneriveien_ingens_gate",
+      "place_id": "brenneriveien_ingens_gate",
+      "profile_id": "profile_subkultur_oslo",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/brenneriveien_ingens_gate.json",
+      "report_case_id": "case_brenneriveien_ingens_gate_environment",
+      "claim": "Sammenfallet mellom løpende sceneprogram og dokumentert gatekunstmiljø kvalifiserer aksen som case; fargerike vegger eller uteliv alene gjør det ikke.",
+      "source_ids": [
+        "source_brenneriveien_ingens_gate_milieu",
+        "source_brenneriveien_ingens_gate_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_brenneriveien_ingens_gate_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_brenneriveien_ingens_gate_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_brenneriveien_ingens_gate_environment.actors",
+            "case_brenneriveien_ingens_gate_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_brenneriveien_ingens_gate_environment.representationAndEthics.selfDefinition",
+            "case_brenneriveien_ingens_gate_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_brenneriveien_ingens_gate_environment.spaceAndPower",
+            "case_brenneriveien_ingens_gate_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_brenneriveien_ingens_gate_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_brenneriveien_ingens_gate_environment.methodAndInference.alternativeExplanations",
+            "case_brenneriveien_ingens_gate_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_stedsanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "Området må ikke romantiseres som friksjonsfri bohemgate eller reduseres til turistvennlig estetikk.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_hausmannsgate_aksen",
+      "case_id": "case_sub_hausmannsgate_aksen",
+      "place_id": "hausmannsgate_aksen",
+      "profile_id": "profile_subkultur_oslo",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/hausmannsgate_aksen.json",
+      "report_case_id": "case_hausmannsgate_aksen_environment",
+      "claim": "Flere dokumenterte, community-drevne praksiser i samme gateakse gjør området til et miljøsystem; Hausmania-navnet, plakater eller alternativ estetikk alene er ikke kvalifikasjonen.",
+      "source_ids": [
+        "source_hausmannsgate_aksen_milieu",
+        "source_hausmannsgate_aksen_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_hausmannsgate_aksen_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_hausmannsgate_aksen_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_hausmannsgate_aksen_environment.actors",
+            "case_hausmannsgate_aksen_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_hausmannsgate_aksen_environment.representationAndEthics.selfDefinition",
+            "case_hausmannsgate_aksen_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_hausmannsgate_aksen_environment.spaceAndPower",
+            "case_hausmannsgate_aksen_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_hausmannsgate_aksen_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_hausmannsgate_aksen_environment.methodAndInference.alternativeExplanations",
+            "case_hausmannsgate_aksen_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_institusjonsanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "Aksen må ikke romantiseres som ensartet autonom sone eller framstilles som uordnet; miljøene har ulike mål, grenser og institusjonelle avhengigheter.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_vaterlandsparken",
+      "case_id": "case_sub_vaterlandsparken",
+      "place_id": "vaterlandsparken",
+      "profile_id": "profile_subkultur_oslo",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/vaterlandsparken.json",
+      "report_case_id": "case_vaterlandsparken_environment",
+      "claim": "Feltkartlegging og miljønær egenrepresentasjon dokumenterer et stedbundet sosialt miljø; synlig rusbruk, arrangement eller parkfunksjon alene er ikke kvalifikasjonen.",
+      "source_ids": [
+        "source_vaterlandsparken_milieu",
+        "source_vaterlandsparken_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_vaterlandsparken_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_vaterlandsparken_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_vaterlandsparken_environment.actors",
+            "case_vaterlandsparken_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_vaterlandsparken_environment.representationAndEthics.selfDefinition",
+            "case_vaterlandsparken_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_vaterlandsparken_environment.spaceAndPower",
+            "case_vaterlandsparken_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_vaterlandsparken_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_vaterlandsparken_environment.methodAndInference.alternativeExplanations",
+            "case_vaterlandsparken_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_romlig_maktanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Rapporten holder seg på gruppe-, kilde- og produksjonsnivå og identifiserer ikke ikke-offentlige personer, helseforhold, transaksjoner eller nåværende rutiner.",
+        "stigma_and_romanticization_risk": "Kriminalitets- og utrygghetsfortellinger kan avhumanisere, mens kulturproduksjon kan romantisere eller gjøre enkelte stemmer representative for alle.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_lisbon_bairro_alto",
+      "case_id": "case_sub_lisbon_bairro_alto",
+      "place_id": "lisbon_bairro_alto",
+      "profile_id": "profile_subkultur_lisboa",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/lisbon_bairro_alto.json",
+      "report_case_id": "case_lisbon_bairro_alto_environment",
+      "claim": "Dokumenterte queer- og musikkscener samt etnografisk kartlagt endring kvalifiserer bydelen som case; bar-tetthet og natteliv alene er ikke kvalifikasjonen.",
+      "source_ids": [
+        "source_lisbon_bairro_alto_milieu",
+        "source_lisbon_bairro_alto_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_lisbon_bairro_alto_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_lisbon_bairro_alto_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_lisbon_bairro_alto_environment.actors",
+            "case_lisbon_bairro_alto_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_lisbon_bairro_alto_environment.representationAndEthics.selfDefinition",
+            "case_lisbon_bairro_alto_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_bairro_alto_environment.spaceAndPower",
+            "case_lisbon_bairro_alto_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_bairro_alto_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_bairro_alto_environment.methodAndInference.alternativeExplanations",
+            "case_lisbon_bairro_alto_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_sceneanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Analysen omtaler organisasjoner og kollektive praksiser og identifiserer ikke sårbare enkeltpersoner.",
+        "stigma_and_romanticization_risk": "Bairro Alto må ikke romantiseres som grenseløs bohemsone eller framstilles som ett queer miljø; turistifisering, kjønn, arbeid og lokale konflikter må med.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    },
+    {
+      "evidence_id": "case_evidence_sub_lisbon_pink_street",
+      "case_id": "case_sub_lisbon_pink_street",
+      "place_id": "lisbon_pink_street",
+      "profile_id": "profile_subkultur_lisboa",
+      "validation_status": "validated_case",
+      "qualification": "qualifying_case",
+      "report_path": "data/places/subkultur-production/lisbon_pink_street.json",
+      "report_case_id": "case_lisbon_pink_street_environment",
+      "claim": "Dokumentert overgang fra marginalt havnenattliv til institusjonalisert Pink Street gjør stedet til et endringscase; rosa dekke, barer eller turistpopularitet alene gjør det ikke.",
+      "source_ids": [
+        "source_lisbon_pink_street_milieu",
+        "source_lisbon_pink_street_outside"
+      ],
+      "environment_near_source_ids": [
+        "source_lisbon_pink_street_milieu"
+      ],
+      "independent_control_source_ids": [
+        "source_lisbon_pink_street_outside"
+      ],
+      "requirement_results": [
+        {
+          "requirement_id": "case_req_sub_environment_practice_position",
+          "status": "PASS",
+          "evidence_paths": [
+            "subculturalIdentity",
+            "case_lisbon_pink_street_environment.actors",
+            "case_lisbon_pink_street_environment.practicesAndCommunity"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_voice_balance",
+          "status": "PASS",
+          "evidence_paths": [
+            "sources",
+            "case_lisbon_pink_street_environment.representationAndEthics.selfDefinition",
+            "case_lisbon_pink_street_environment.representationAndEthics.externalLabels"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_place_change",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_pink_street_environment.spaceAndPower",
+            "case_lisbon_pink_street_environment.changeOverTime",
+            "presentFunction"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_ethics",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_pink_street_environment.representationAndEthics"
+          ]
+        },
+        {
+          "requirement_id": "case_req_sub_negative_case",
+          "status": "PASS",
+          "evidence_paths": [
+            "case_lisbon_pink_street_environment.methodAndInference.alternativeExplanations",
+            "case_lisbon_pink_street_environment.methodAndInference.uncertainty"
+          ]
+        }
+      ],
+      "method_id": "met_sub_institusjonsanalyse",
+      "inference_status": "associational",
+      "ethics_review": {
+        "identification_risk": "Rapporten bruker publiserte områdeanalyser og lokal byomtale og identifiserer ikke sexarbeidere, ansatte eller nattgjester.",
+        "stigma_and_romanticization_risk": "Historisk sexarbeid og marginalitet må ikke brukes som eksotisk bakgrunn, og dagens nattarbeidere eller brukere må ikke homogeniseres eller identifiseres.",
+        "editorial_safeguard": "Teksten skiller observerbare praksiser fra tolkning og synliggjør både miljøets egenpresentasjon og en uavhengig kontrollkilde.",
+        "status": "PASS"
+      },
+      "uncertainty": "Kildene dokumenterer offentlig program og selvforståelse bedre enn uformelle relasjoner og interne uenigheter.",
+      "validated_at": "2026-08-04"
+    }
+  ],
+  "nonqualifying_cases": [
+    {
+      "case_id": "case_sub_hartvig_nissens_skole_skam",
+      "place_id": "hartvig_nissens_skole_skam",
+      "profile_id": "profile_subkultur_oslo",
+      "resulting_category": "film_tv",
+      "reason": "TV-lokasjon og fandom alene dokumenterer ikke et stedbundet subkulturmiljø.",
+      "decision_source": "data/fag/subkultur/subkultur_places_people_audit_v1.json",
+      "qualification_rule": "activity_genre_fandom_or_commercial_branding_alone_is_not_subculture",
+      "validation_status": "rejected_nonqualifying"
+    },
+    {
+      "case_id": "case_sub_lisbon_village_underground",
+      "place_id": "lisbon_village_underground",
+      "profile_id": "profile_subkultur_lisboa",
+      "resulting_category": "naeringsliv",
+      "reason": "Kreativ næringsklynge, arrangementer og alternativ merkevare dokumenterer ikke alene et subkulturmiljø.",
+      "decision_source": "data/fag/subkultur/subkultur_places_people_audit_v1.json",
+      "qualification_rule": "activity_genre_fandom_or_commercial_branding_alone_is_not_subculture",
+      "validation_status": "rejected_nonqualifying"
+    },
+    {
+      "case_id": "case_sub_nybrua_pilarrom",
+      "place_id": "nybrua_pilarrom",
+      "profile_id": "profile_subkultur_oslo",
+      "resulting_category": "subkultur",
+      "reason": "Brogeometri og generell Oslo-graffiti dokumenterer ikke et avgrenset, stedbundet miljø i pilarrommet med miljønær og uavhengig kildebalanse.",
+      "decision_source": "data/fag/subkultur/case_rejection_adjudications_subkultur_v1.json",
+      "qualification_rule": "generic_citywide_scene_evidence_cannot_substitute_place_specific_case_evidence",
+      "validation_status": "rejected_nonqualifying"
+    },
+    {
+      "case_id": "case_sub_gronland_underganger",
+      "place_id": "gronland_underganger",
+      "profile_id": "profile_subkultur_oslo",
+      "resulting_category": "subkultur",
+      "reason": "Undergang som objekttype og visuelle spor dokumenterer ikke ett avgrenset miljø, gjentatt organisering eller stedsspesifikk kildebalanse.",
+      "decision_source": "data/fag/subkultur/case_rejection_adjudications_subkultur_v1.json",
+      "qualification_rule": "urban_form_and_visual_traces_alone_are_not_a_validated_case",
+      "validation_status": "rejected_nonqualifying"
+    },
+    {
+      "case_id": "case_sub_schweigaards_gate_lodalen",
+      "place_id": "schweigaards_gate_lodalen",
+      "profile_id": "profile_subkultur_oslo",
+      "resulting_category": "subkultur",
+      "reason": "Den lange veggaksen er et analytisk aggregat uten tilstrekkelig dokumentasjon av ett sammenhengende miljø eller felles praksis.",
+      "decision_source": "data/fag/subkultur/case_rejection_adjudications_subkultur_v1.json",
+      "qualification_rule": "analytical_area_aggregate_requires_specific_environment_and_common_practice_evidence",
+      "validation_status": "rejected_nonqualifying"
+    },
+    {
+      "case_id": "case_sub_kolstadgata_toyen_vegger",
+      "place_id": "kolstadgata_toyen_vegger",
+      "profile_id": "profile_subkultur_oslo",
+      "resulting_category": "subkultur",
+      "reason": "Tøyens dokumenterte gatekunstscene kan ikke alene bevise et eget miljø knyttet til akkurat Kolstadgata-veggene.",
+      "decision_source": "data/fag/subkultur/case_rejection_adjudications_subkultur_v1.json",
+      "qualification_rule": "neighborhood_scene_evidence_cannot_be_projected_onto_an_unsourced_wall_anchor",
+      "validation_status": "rejected_nonqualifying"
+    },
+    {
+      "case_id": "case_sub_kuba_akselpassasjer",
+      "place_id": "kuba_akselpassasjer",
+      "profile_id": "profile_subkultur_oslo",
+      "resulting_category": "subkultur",
+      "reason": "Passasjer og nattlige veggspor er ikke nok uten uavhengig dokumentasjon av aktører, praksis og kontinuitet ved dette ankeret.",
+      "decision_source": "data/fag/subkultur/case_rejection_adjudications_subkultur_v1.json",
+      "qualification_rule": "night_use_and_visual_traces_alone_are_not_a_validated_environment",
+      "validation_status": "rejected_nonqualifying"
+    },
+    {
+      "case_id": "case_sub_stovnertarnet",
+      "place_id": "stovnertarnet",
+      "profile_id": "profile_subkultur_oslo",
+      "resulting_category": "subkultur",
+      "reason": "Ungdomsmedvirkning, inkluderende landskapsarkitektur og lokal stolthet dokumenterer sosial infrastruktur, men ikke alene et Subkultur-miljø.",
+      "decision_source": "data/fag/subkultur/case_rejection_adjudications_subkultur_v1.json",
+      "qualification_rule": "inclusive_public_infrastructure_and_participation_alone_are_not_subculture",
+      "validation_status": "rejected_nonqualifying"
+    }
+  ],
+  "production_coverage": {
+    "audited_candidates": 50,
+    "eligible_candidates": 42,
+    "validated_cases": 42,
+    "rejected_candidates": 8,
+    "remaining_candidates": 0,
+    "completion_status": "COMPLETE"
+  },
+  "next_gate": "quiz_knowledge_audit"
+}

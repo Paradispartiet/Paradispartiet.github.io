@@ -1,0 +1,76 @@
+{
+  "placeId": "henrik_wergeland_statue",
+  "placeFile": "data/places/litteratur/oslo/places_litteratur/henrik_wergeland_statue.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.914084,
+    "lon": 10.736378,
+    "r": 45,
+    "coordStatus": "verified_geometry",
+    "coordSource": "Oslo Museum OB.A17403 object location; cross-checked with Oslo byleksikon",
+    "coordType": "monument",
+    "coordNote": "Henrik Wergeland-statuen er et monument og skal ikke reduseres til et tilfeldig adressepunkt. Det eksisterende objektpunktet beholdes. Primær kildeidentitet er Oslo Museums stabile aksesjonsnummer OB.A17403; Wikimedia Commons er bare vert for museumsmaterialet. Oslo byleksikon kryssjekker monumentets plassering på Eidsvolls plass mellom Roald Amundsens gate og Spikersuppa."
+  },
+  "identity": {
+    "currentName": "Henrik Wergeland-statuen",
+    "resolvedIdentity": "Henrik Wergeland-statuen på Eidsvolls plass ved Roald Amundsens gate",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "poi",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [
+    "stabil kildeidentitet",
+    "objekttilpasset representasjonsanker",
+    "fysisk avgrensning mot nærliggende canonical steder"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Oslo Museum OB.A17403 – Henrik Wergeland-statuen",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wergeland-statuen_-_1998_-_Jan-Christian_Raastad_-_Oslo_Museum_-_OB.A17403.jpg",
+      "sourceObjectId": "oslo-museum:OB.A17403",
+      "sourceQuality": "museum_object_location",
+      "finding": "Oslo Museum-objektet har stabil aksesjonsidentitet og dokumentert objektplassering for Wergelandmonumentet.",
+      "canVerifyCoordinate": true,
+      "reason": "Henrik Wergeland-statuen er et monument og skal ikke reduseres til et tilfeldig adressepunkt. Det eksisterende objektpunktet beholdes. Primær kildeidentitet er Oslo Museums stabile aksesjonsnummer OB.A17403; Wikimedia Commons er bare vert for museumsmaterialet. Oslo byleksikon kryssjekker monumentets plassering på Eidsvolls plass mellom Roald Amundsens gate og Spikersuppa."
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Oslo byleksikon – Henrik Wergeland-statuen",
+      "sourceUrl": "https://oslobyleksikon.no/index.php/Henrik_Wergeland-statuen",
+      "sourceObjectId": "oslobyleksikon:henrik-wergeland-statuen",
+      "sourceQuality": "documented_monument_identity",
+      "finding": "Oslo byleksikon dokumenterer statuen på Eidsvolls plass mellom Roald Amundsens gate og Spikersuppa.",
+      "canVerifyCoordinate": false,
+      "reason": "Plasserings- og identitetskryssjekk."
+    }
+  ],
+  "addressCandidates": [],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "oslo-museum:OB.A17403",
+      "canApplyToPlace": true
+    }
+  ],
+  "geometryCandidates": [],
+  "coordinateCandidates": [
+    {
+      "lat": 59.914084,
+      "lon": 10.736378,
+      "coordRole": "display_marker",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Museumets stabile objektidentitet er satt som primær kildeidentitet."
+  },
+  "notes": [
+    "Henrik Wergeland-statuen er et monument og skal ikke reduseres til et tilfeldig adressepunkt. Det eksisterende objektpunktet beholdes. Primær kildeidentitet er Oslo Museums stabile aksesjonsnummer OB.A17403; Wikimedia Commons er bare vert for museumsmaterialet. Oslo byleksikon kryssjekker monumentets plassering på Eidsvolls plass mellom Roald Amundsens gate og Spikersuppa."
+  ]
+}

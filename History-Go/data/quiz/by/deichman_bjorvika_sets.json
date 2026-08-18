@@ -1,0 +1,1554 @@
+{
+  "targetId": "deichman_bjorvika",
+  "categoryId": "by",
+  "sources": {
+    "oslo_deichman": "https://www.oslo.kommune.no/etater-foretak-og-ombud/deichman-bibliotek/",
+    "oslo_meeting": "https://magasin.oslo.kommune.no/byplan/biblioteket-en-m%C3%B8teplass-for-alle",
+    "atelier_oslo": "https://atelieroslo.no/project/deichman",
+    "futurebuilt": "https://www.futurebuilt.no/forbildeprosjekter/deichman-bjoervika",
+    "ifla_2021": "https://www.ifla.org/news/new-public-library-world-champion-named/"
+  },
+  "production_context": {
+    "manifest_category": "by",
+    "profile": "rich_5x7",
+    "standard_version": "3.0",
+    "source_brief": "data/quiz/production_briefs/by/deichman_bjorvika.json",
+    "context_artifact": "data/quiz/production_context/by/deichman_bjorvika.json",
+    "resolved_files": {
+      "pensum": "data/fag/by/pensum_by.json",
+      "emner": "data/fag/by/emner_by.json",
+      "fagkart": "data/fag/by/fagkart_by.json",
+      "methods": "data/fag/by/methods_by.json",
+      "supersetQuizMal": "data/fag/by/supersetQUIZMAL_by.json",
+      "quizStandard": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
+      "quizQuestionSchema": "data/quiz/regler/QUIZ_QUESTION_SCHEMA_V2.json"
+    },
+    "required_inputs_loaded": [
+      "pensum",
+      "emner",
+      "fagkart",
+      "methods",
+      "supersetQuizMal",
+      "quizStandard",
+      "quizQuestionSchema"
+    ],
+    "pensum_module_ids": [
+      "kur_by_01_byrom_akser_knutepunkt",
+      "kur_by_06_makt_symboler_og_representasjon"
+    ],
+    "emne_ids": [
+      "em_by_offentlige_rom_motesteder",
+      "em_by_materialitet_og_sanseerfaring",
+      "em_by_symbolsk_makt_og_representasjon"
+    ],
+    "topic_hook_ids": [
+      "byliv_aapne_rom",
+      "ark_materialbruk"
+    ],
+    "method_ids": [
+      "met_feltobservasjon"
+    ],
+    "thinker_ids": [
+      "william_h_whyte",
+      "richard_sennett",
+      "juhani_pallasmaa"
+    ],
+    "works": [
+      "The Social Life of Small Urban Spaces",
+      "The Fall of Public Man",
+      "The Eyes of the Skin"
+    ],
+    "source_review_status": "reviewed",
+    "theory_start_phase": "final",
+    "method_start_phase": "final"
+  },
+  "sets": [
+    {
+      "set_id": "by_deichman_bjorvika_set_1",
+      "level": 1,
+      "order": 1,
+      "phase": "opening",
+      "xp": 50,
+      "questions": [
+        {
+          "id": "deichman_quiz_1",
+          "quiz_id": "by_deichman_bjorvika_set_1_q1",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvem ga boksamlingen som ble grunnlaget for Deichman?",
+          "options": [
+            "Carl Deichman",
+            "Haakon Nyhuus",
+            "Henrik Ibsen"
+          ],
+          "answer": "Carl Deichman",
+          "answerIndex": 0,
+          "knowledge": "Carl Deichman testamenterte boksamlingen sin til innbyggerne i Christiania. Gaven ble grunnlaget for biblioteket som åpnet i 1785.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_by_symbolsk_makt_og_representasjon",
+          "source": [
+            "oslo_deichman",
+            "ifla_2021"
+          ],
+          "primary_knowledge_unit_id": "ku_by_carl_deichman_testamente_75e51871b1",
+          "knowledge_unit_ids": [
+            "ku_by_carl_deichman_testamente_75e51871b1",
+            "ku_by_gaven_ble_grunnlaget_for_5e86107dc0"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_1"
+        },
+        {
+          "id": "deichman_quiz_2",
+          "quiz_id": "by_deichman_bjorvika_set_1_q2",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Omtrent hvor mange bøker besto Carl Deichmans gave av?",
+          "options": [
+            "6 000",
+            "600",
+            "60 000"
+          ],
+          "answer": "6 000",
+          "answerIndex": 0,
+          "knowledge": "Gaven besto av rundt 6 000 bøker og ble starten på det offentlige Deichman-biblioteket.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_by_symbolsk_makt_og_representasjon",
+          "source": [
+            "ifla_2021"
+          ],
+          "primary_knowledge_unit_id": "ku_by_gaven_besto_av_rundt_6_0_4fefa60a20",
+          "knowledge_unit_ids": [
+            "ku_by_gaven_besto_av_rundt_6_0_4fefa60a20"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_2"
+        },
+        {
+          "id": "deichman_quiz_3",
+          "quiz_id": "by_deichman_bjorvika_set_1_q3",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvilket år åpnet biblioteket som bygde på Carl Deichmans gave?",
+          "options": [
+            "1785",
+            "1814",
+            "1933"
+          ],
+          "answer": "1785",
+          "answerIndex": 0,
+          "knowledge": "Deichman åpnet i 1785 og regnes som Norges eldste folkebibliotek.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "year": 1785,
+          "emne_id": "em_by_symbolsk_makt_og_representasjon",
+          "source": [
+            "oslo_deichman",
+            "oslo_meeting"
+          ],
+          "primary_knowledge_unit_id": "ku_by_deichman_apnet_i_1785_og_cceaa459f5",
+          "knowledge_unit_ids": [
+            "ku_by_deichman_apnet_i_1785_og_cceaa459f5"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_3"
+        },
+        {
+          "id": "deichman_quiz_4",
+          "quiz_id": "by_deichman_bjorvika_set_1_q4",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvor lå Oslos hovedbibliotek fra 1933 før flyttingen til Bjørvika?",
+          "options": [
+            "På Hammersborg",
+            "På Tøyen",
+            "På St. Hanshaugen"
+          ],
+          "answer": "På Hammersborg",
+          "answerIndex": 0,
+          "knowledge": "Det gamle hovedbiblioteket åpnet på Hammersborg i 1933 og hadde rollen fram til flyttingen til Bjørvika.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "year": 1933,
+          "emne_id": "em_by_symbolsk_makt_og_representasjon",
+          "source": [
+            "oslo_meeting"
+          ],
+          "primary_knowledge_unit_id": "ku_by_det_gamle_hovedbibliotek_76b3b2d626",
+          "knowledge_unit_ids": [
+            "ku_by_det_gamle_hovedbibliotek_76b3b2d626"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_4"
+        },
+        {
+          "id": "deichman_quiz_5",
+          "quiz_id": "by_deichman_bjorvika_set_1_q5",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvorfor er Deichman et møtested for mange grupper?",
+          "options": [
+            "Huset tilbyr gratis fellesressurser, arbeidsplasser og møtesteder for mange grupper",
+            "Huset organiserer kommersielle tjenester, private kontorer og medlemsområder for utvalgte grupper",
+            "Huset samler lukkede magasiner, administrasjon og tekniske rom uten vanlig publikumsbruk"
+          ],
+          "answer": "Huset tilbyr gratis fellesressurser, arbeidsplasser og møtesteder for mange grupper",
+          "answerIndex": 0,
+          "knowledge": "Sosial infrastruktur er steder og institusjoner som støtter hverdagsliv, læring og møter mellom mennesker. Deichman gjør dette gjennom gratis tilgang til kunnskap, arbeidsplasser, aktiviteter og opphold.",
+          "difficulty": 2,
+          "question_type": "context",
+          "year": null,
+          "emne_id": "em_by_offentlige_rom_motesteder",
+          "core_concepts": [
+            "sosial infrastruktur",
+            "offentlig rom",
+            "møtested"
+          ],
+          "concept_focus": [
+            "sosial infrastruktur"
+          ],
+          "source": [
+            "oslo_meeting",
+            "oslo_deichman"
+          ],
+          "primary_knowledge_unit_id": "ku_by_sosial_infrastruktur_er__7b991b8176",
+          "knowledge_unit_ids": [
+            "ku_by_sosial_infrastruktur_er__7b991b8176",
+            "ku_by_deichman_gj_r_dette_gjen_427303ca65"
+          ],
+          "concept_ids": [
+            "co_by_sosial_infrastruktur_87afeaa8a7",
+            "co_by_offentlig_rom_285913167c",
+            "co_by_m_tested_34ec912441"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_5"
+        },
+        {
+          "id": "deichman_quiz_24",
+          "quiz_id": "by_deichman_bjorvika_set_1_q6",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvilken dato åpnet Deichman Bjørvika for publikum?",
+          "options": [
+            "18. juni 2020",
+            "19. august 2021",
+            "1. november 2013"
+          ],
+          "answer": "18. juni 2020",
+          "answerIndex": 0,
+          "knowledge": "Deichman Bjørvika åpnet for publikum 18. juni 2020. I 2021 mottok biblioteket den internasjonale prisen Public Library of the Year.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "year": 2020,
+          "emne_id": "em_by_symbolsk_makt_og_representasjon",
+          "source": [
+            "atelier_oslo"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Atelier Oslo oppgir at bygget åpnet for publikum 18. juni 2020.",
+          "guidance_basis": [
+            "data/fag/by/pensum_by.json",
+            "data/fag/by/emner_by.json"
+          ],
+          "primary_knowledge_unit_id": "ku_by_deichman_bj_rvika_apnet__5c91b0060e",
+          "knowledge_unit_ids": [
+            "ku_by_deichman_bj_rvika_apnet__5c91b0060e",
+            "ku_by_i_2021_mottok_biblioteke_99be501bbf"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_24"
+        },
+        {
+          "id": "deichman_quiz_25",
+          "quiz_id": "by_deichman_bjorvika_set_1_q7",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvor mange publikumsinnganger fra gateplan har biblioteket?",
+          "options": [
+            "Tre innganger i ulike retninger",
+            "Én inngang mot vest",
+            "Seks innganger, én per etasje"
+          ],
+          "answer": "Tre innganger i ulike retninger",
+          "answerIndex": 0,
+          "knowledge": "Tre likeverdige innganger vender mot ulike deler av byen. Fra hver inngang møter besøkende en diagonal lyssjakt som trekker forbindelsen videre inn i huset.",
+          "difficulty": 1,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_by_offentlige_rom_motesteder",
+          "source": [
+            "atelier_oslo",
+            "futurebuilt"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Atelier Oslo og FutureBuilt beskriver tre publikumsinnganger fra gateplan i ulike retninger.",
+          "guidance_basis": [
+            "data/fag/by/emner_by.json",
+            "data/fag/by/fagkart_by.json"
+          ],
+          "primary_knowledge_unit_id": "ku_by_tre_likeverdige_inngange_ff7dcc81d9",
+          "knowledge_unit_ids": [
+            "ku_by_tre_likeverdige_inngange_ff7dcc81d9",
+            "ku_by_fra_hver_inngang_m_ter_b_85841e4927"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_25"
+        }
+      ]
+    },
+    {
+      "set_id": "by_deichman_bjorvika_set_2",
+      "level": 2,
+      "order": 2,
+      "phase": "middle",
+      "xp": 70,
+      "questions": [
+        {
+          "id": "deichman_quiz_6",
+          "quiz_id": "by_deichman_bjorvika_set_2_q1",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvilke arkitektkontorer tegnet Deichman Bjørvika?",
+          "options": [
+            "Atelier Oslo og Lund Hagem",
+            "Snøhetta og DARK",
+            "Reiulf Ramstad og Helen & Hard"
+          ],
+          "answer": "Atelier Oslo og Lund Hagem",
+          "answerIndex": 0,
+          "knowledge": "Atelier Oslo og Lund Hagem vant plan- og designkonkurransen i 2009 og utviklet bygget sammen.",
+          "difficulty": 2,
+          "question_type": "fact",
+          "year": 2009,
+          "emne_id": "em_by_symbolsk_makt_og_representasjon",
+          "source": [
+            "atelier_oslo",
+            "futurebuilt"
+          ],
+          "primary_knowledge_unit_id": "ku_by_atelier_oslo_og_lund_hag_51591e88c1",
+          "knowledge_unit_ids": [
+            "ku_by_atelier_oslo_og_lund_hag_51591e88c1"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_6"
+        },
+        {
+          "id": "deichman_quiz_7",
+          "quiz_id": "by_deichman_bjorvika_set_2_q2",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvorfor krager deler av biblioteket langt ut over den lille tomten?",
+          "options": [
+            "For å få mer gulvareal uten mange ekstra etasjer",
+            "For å plassere tekniske anlegg utenfor tomtegrensen",
+            "For å bygge lukkede magasiner over hele plassen"
+          ],
+          "answer": "For å få mer gulvareal uten mange ekstra etasjer",
+          "answerIndex": 0,
+          "knowledge": "Utkragingene ga større gulvareal på den lille tomten, samtidig som bygget kunne holdes relativt lavt og siktlinjen mot Operaen ble bevart.",
+          "difficulty": 2,
+          "question_type": "analysis",
+          "year": null,
+          "emne_id": "em_by_materialitet_og_sanseerfaring",
+          "core_concepts": [
+            "utkraging",
+            "siktlinje",
+            "tomteutnyttelse"
+          ],
+          "concept_focus": [
+            "utkraging"
+          ],
+          "source": [
+            "atelier_oslo"
+          ],
+          "primary_knowledge_unit_id": "ku_by_utkragingene_ga_st_rre_g_28080d184b",
+          "knowledge_unit_ids": [
+            "ku_by_utkragingene_ga_st_rre_g_28080d184b"
+          ],
+          "concept_ids": [
+            "co_by_utkraging_1dffbfe435",
+            "co_by_siktlinje_60f97b1e6c",
+            "co_by_tomteutnyttelse_ee658d28d9"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_7"
+        },
+        {
+          "id": "deichman_quiz_8",
+          "quiz_id": "by_deichman_bjorvika_set_2_q3",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvor langt krager den største delen av bygget omtrent ut over plassen?",
+          "options": [
+            "Nesten 20 meter",
+            "Omtrent 5 meter",
+            "Mer enn 50 meter"
+          ],
+          "answer": "Nesten 20 meter",
+          "answerIndex": 0,
+          "knowledge": "Den største utkragingen strekker seg nesten 20 meter ut over plassen ved inngangen.",
+          "difficulty": 2,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_by_materialitet_og_sanseerfaring",
+          "source": [
+            "atelier_oslo"
+          ],
+          "primary_knowledge_unit_id": "ku_by_den_st_rste_utkragingen__db4f9f0872",
+          "knowledge_unit_ids": [
+            "ku_by_den_st_rste_utkragingen__db4f9f0872"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_8"
+        },
+        {
+          "id": "deichman_quiz_9",
+          "quiz_id": "by_deichman_bjorvika_set_2_q4",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hva oppnår de tre diagonale lyssjaktene?",
+          "options": [
+            "De binder etasjene sammen og fører dagslys ned i bygget",
+            "De skiller etasjene fra hverandre og skjermer alt dagslys",
+            "De fører varetransport mellom magasiner og tekniske rom"
+          ],
+          "answer": "De binder etasjene sammen og fører dagslys ned i bygget",
+          "answerIndex": 0,
+          "knowledge": "Lyssjaktene gir innblikk i andre deler av biblioteket og fordeler dagslys fra takvinduene ned gjennom etasjene.",
+          "difficulty": 2,
+          "question_type": "analysis",
+          "year": null,
+          "emne_id": "em_by_materialitet_og_sanseerfaring",
+          "core_concepts": [
+            "lyssjakt",
+            "dagslys",
+            "romlig forbindelse"
+          ],
+          "concept_focus": [
+            "lyssjakt"
+          ],
+          "source": [
+            "atelier_oslo"
+          ],
+          "primary_knowledge_unit_id": "ku_by_lyssjaktene_gir_innblikk_29b8551e58",
+          "knowledge_unit_ids": [
+            "ku_by_lyssjaktene_gir_innblikk_29b8551e58"
+          ],
+          "concept_ids": [
+            "co_by_lyssjakt_8430f125d5",
+            "co_by_dagslys_7ee239fc77",
+            "co_by_romlig_forbindelse_677906fe13"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_9"
+        },
+        {
+          "id": "deichman_quiz_10",
+          "quiz_id": "by_deichman_bjorvika_set_2_q5",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvorfor har taket en markert, foldet form?",
+          "options": [
+            "Foldene gjør takkonstruksjonen sterkere",
+            "Foldene lager et åpent vannbasseng",
+            "Foldene skjuler et stort parkeringsanlegg"
+          ],
+          "answer": "Foldene gjør takkonstruksjonen sterkere",
+          "answerIndex": 0,
+          "knowledge": "Den foldede geometrien gir takkonstruksjonen styrke og er samtidig et tydelig arkitektonisk kjennetegn.",
+          "difficulty": 3,
+          "question_type": "analysis",
+          "year": null,
+          "emne_id": "em_by_materialitet_og_sanseerfaring",
+          "core_concepts": [
+            "foldet konstruksjon",
+            "geometri",
+            "bæreevne"
+          ],
+          "concept_focus": [
+            "foldet konstruksjon"
+          ],
+          "source": [
+            "atelier_oslo"
+          ],
+          "primary_knowledge_unit_id": "ku_by_den_foldede_geometrien_g_661f41eaff",
+          "knowledge_unit_ids": [
+            "ku_by_den_foldede_geometrien_g_661f41eaff"
+          ],
+          "concept_ids": [
+            "co_by_foldet_konstruksjon_65631ba0f6",
+            "co_by_geometri_5bda049c8e",
+            "co_by_b_reevne_0540930dc0"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_10"
+        },
+        {
+          "id": "deichman_quiz_26",
+          "quiz_id": "by_deichman_bjorvika_set_2_q6",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hva kjennetegner fasaden på gateplan?",
+          "options": [
+            "Den er gjennomsiktig og viser biblioteklivet mot byen",
+            "Den er lukket med smale åpninger som skjermer interiøret",
+            "Den består av speilglass som hindrer innsyn fra plassen"
+          ],
+          "answer": "Den er gjennomsiktig og viser biblioteklivet mot byen",
+          "answerIndex": 0,
+          "knowledge": "Fasaden på gateplan er transparent. Det gir innsyn til aktivitetene og gjør forbindelsen mellom biblioteket og byrommet tydelig allerede ved inngangene.",
+          "difficulty": 2,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_by_materialitet_og_sanseerfaring",
+          "source": [
+            "atelier_oslo",
+            "futurebuilt"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Arkitekt- og FutureBuilt-kildene beskriver gatefasaden som transparent.",
+          "guidance_basis": [
+            "data/fag/by/emner_by.json",
+            "data/fag/by/fagkart_by.json"
+          ],
+          "primary_knowledge_unit_id": "ku_by_fasaden_pa_gateplan_er_t_3f8f90d91e",
+          "knowledge_unit_ids": [
+            "ku_by_fasaden_pa_gateplan_er_t_3f8f90d91e",
+            "ku_by_det_gir_innsyn_til_aktiv_261fa41662"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_26"
+        },
+        {
+          "id": "deichman_quiz_27",
+          "quiz_id": "by_deichman_bjorvika_set_2_q7",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvor er mange av de lukkede rommene og nisjene organisert?",
+          "options": [
+            "Rundt tre frittstående boktårn",
+            "Langs hele ytterfasaden",
+            "I ett samlet rom under bakken"
+          ],
+          "answer": "Rundt tre frittstående boktårn",
+          "answerIndex": 0,
+          "knowledge": "Lukkede rom og nisjer ligger rundt tre frittstående boktårn. Dermed holdes fasadene friere, og dagslys kan komme inn fra flere retninger.",
+          "difficulty": 2,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_by_materialitet_og_sanseerfaring",
+          "source": [
+            "atelier_oslo"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Atelier Oslo beskriver hvordan rom og nisjer er organisert rundt tre frittstående boktårn.",
+          "guidance_basis": [
+            "data/fag/by/emner_by.json",
+            "data/fag/by/fagkart_by.json"
+          ],
+          "primary_knowledge_unit_id": "ku_by_lukkede_rom_og_nisjer_li_c894a2566d",
+          "knowledge_unit_ids": [
+            "ku_by_lukkede_rom_og_nisjer_li_c894a2566d",
+            "ku_by_dermed_holdes_fasadene_f_7a3a1c3ac3"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_27"
+        }
+      ]
+    },
+    {
+      "set_id": "by_deichman_bjorvika_set_3",
+      "level": 3,
+      "order": 3,
+      "phase": "middle",
+      "xp": 90,
+      "questions": [
+        {
+          "id": "deichman_quiz_11",
+          "quiz_id": "by_deichman_bjorvika_set_3_q1",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvor mange etasjer med litteratur og kultur har Deichman Bjørvika?",
+          "options": [
+            "Seks",
+            "Tre",
+            "Ti"
+          ],
+          "answer": "Seks",
+          "answerIndex": 0,
+          "knowledge": "Deichman Bjørvika er organisert over seks etasjer med ulike tilbud, arbeidsformer og samlinger.",
+          "difficulty": 2,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_by_offentlige_rom_motesteder",
+          "source": [
+            "ifla_2021",
+            "oslo_meeting"
+          ],
+          "primary_knowledge_unit_id": "ku_by_deichman_bj_rvika_er_org_06273f2fd8",
+          "knowledge_unit_ids": [
+            "ku_by_deichman_bj_rvika_er_org_06273f2fd8"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_11"
+        },
+        {
+          "id": "deichman_quiz_12",
+          "quiz_id": "by_deichman_bjorvika_set_3_q2",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvilken teknisk løsning håndterer innleverte bøker i bygget?",
+          "options": [
+            "Et automatisk boksorteringsanlegg",
+            "Et manuelt heissystem for bokvogner",
+            "Et underjordisk lager med samlebånd"
+          ],
+          "answer": "Et automatisk boksorteringsanlegg",
+          "answerIndex": 0,
+          "knowledge": "Biblioteket har et automatisk sorteringssystem som håndterer innleverte bøker og sender dem videre i bygget.",
+          "difficulty": 2,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_by_offentlige_rom_motesteder",
+          "source": [
+            "ifla_2021"
+          ],
+          "primary_knowledge_unit_id": "ku_by_biblioteket_har_et_autom_c70b0c46ab",
+          "knowledge_unit_ids": [
+            "ku_by_biblioteket_har_et_autom_c70b0c46ab"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_12"
+        },
+        {
+          "id": "deichman_quiz_13",
+          "quiz_id": "by_deichman_bjorvika_set_3_q3",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hva finner du særlig i tredje etasje?",
+          "options": [
+            "Film, musikk, dataspill og digitale verksteder",
+            "Historiske kart, lokalarkiv og stille lesesal",
+            "Fagbøker, slektshistorie og forskerplasser"
+          ],
+          "answer": "Film, musikk, dataspill og digitale verksteder",
+          "answerIndex": 0,
+          "knowledge": "Tredje etasje er viet levende medier og populærkultur, blant annet lyd, film, spill, tegneserier og digitale verksteder.",
+          "difficulty": 2,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_by_offentlige_rom_motesteder",
+          "source": [
+            "futurebuilt"
+          ],
+          "primary_knowledge_unit_id": "ku_by_tredje_etasje_er_viet_le_89dc1523f3",
+          "knowledge_unit_ids": [
+            "ku_by_tredje_etasje_er_viet_le_89dc1523f3"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_13"
+        },
+        {
+          "id": "deichman_quiz_14",
+          "quiz_id": "by_deichman_bjorvika_set_3_q4",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hva er en viktig del av tilbudet i femte etasje?",
+          "options": [
+            "Lesesal, Oslo-litteratur og den opprinnelige Deichman-samlingen",
+            "Filmstudio, dataspill og verksteder for levende medier",
+            "Restaurant, avislesing og service ved hovedinngangen"
+          ],
+          "answer": "Lesesal, Oslo-litteratur og den opprinnelige Deichman-samlingen",
+          "answerIndex": 0,
+          "knowledge": "Femte etasje rommer blant annet lesesal, stille arbeidsplasser, slektshistorie, Oslo-litteratur og den opprinnelige Deichman-samlingen.",
+          "difficulty": 2,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_by_offentlige_rom_motesteder",
+          "source": [
+            "futurebuilt"
+          ],
+          "primary_knowledge_unit_id": "ku_by_femte_etasje_rommer_blan_6ed9edf314",
+          "knowledge_unit_ids": [
+            "ku_by_femte_etasje_rommer_blan_6ed9edf314"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_14"
+        },
+        {
+          "id": "deichman_quiz_15",
+          "quiz_id": "by_deichman_bjorvika_set_3_q5",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hva betyr lav terskel i måten Deichman kan brukes på?",
+          "options": [
+            "Du kan gå inn og bruke mange tilbud uten kjøp eller medlemskap",
+            "Du må bestille besøk og betale for de fleste publikumsområdene",
+            "Du trenger spesialkort for å bruke lesesaler og møteplasser"
+          ],
+          "answer": "Du kan gå inn og bruke mange tilbud uten kjøp eller medlemskap",
+          "answerIndex": 0,
+          "knowledge": "Lav terskel betyr at økonomiske, sosiale og praktiske barrierer er små. På Deichman kan du lese, arbeide, møte andre eller ta en pause uten kjøpspress.",
+          "difficulty": 2,
+          "question_type": "concept",
+          "year": null,
+          "emne_id": "em_by_offentlige_rom_motesteder",
+          "core_concepts": [
+            "lav terskel",
+            "kjøpspress",
+            "offentlighet"
+          ],
+          "concept_focus": [
+            "lav terskel"
+          ],
+          "source": [
+            "oslo_deichman",
+            "oslo_meeting"
+          ],
+          "primary_knowledge_unit_id": "ku_by_lav_terskel_betyr_at_kon_8101de639c",
+          "knowledge_unit_ids": [
+            "ku_by_lav_terskel_betyr_at_kon_8101de639c",
+            "ku_by_pa_deichman_kan_du_lese__3abd42b600"
+          ],
+          "concept_ids": [
+            "co_by_lav_terskel_b770aa832c",
+            "co_by_kj_pspress_8b53c0151e",
+            "co_by_offentlighet_f837f8ac77"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_15"
+        },
+        {
+          "id": "deichman_quiz_28",
+          "quiz_id": "by_deichman_bjorvika_set_3_q6",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hva ligger i etasjen under første etasje?",
+          "options": [
+            "Kinosal, flerbrukssal og bokmagasiner",
+            "Barnesone, kafé og skjønnlitteratur",
+            "Lesesal, kursrom og Oslo-samling"
+          ],
+          "answer": "Kinosal, flerbrukssal og bokmagasiner",
+          "answerIndex": 0,
+          "knowledge": "Underetasjen rommer kinosal, en flerbrukssal for arrangementer og bokmagasiner. Den utvider bibliotekets rolle som kultur- og arrangementssted.",
+          "difficulty": 2,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_by_offentlige_rom_motesteder",
+          "source": [
+            "futurebuilt",
+            "ifla_2021"
+          ],
+          "source_origin": "external",
+          "claim_basis": "FutureBuilt og IFLA beskriver kino, sal og magasiner i etasjen under gateplanet.",
+          "guidance_basis": [
+            "data/fag/by/emner_by.json",
+            "data/fag/by/pensum_by.json"
+          ],
+          "primary_knowledge_unit_id": "ku_by_underetasjen_rommer_kino_4b88171fa7",
+          "knowledge_unit_ids": [
+            "ku_by_underetasjen_rommer_kino_4b88171fa7",
+            "ku_by_den_utvider_bibliotekets_df5bdbb981"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_28"
+        },
+        {
+          "id": "deichman_quiz_29",
+          "quiz_id": "by_deichman_bjorvika_set_3_q7",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvorfor blir biblioteket gradvis roligere oppover i etasjene?",
+          "options": [
+            "Aktive tilbud ligger lavere, mens lese- og arbeidsrom ligger høyere",
+            "Bøkenes alder øker oppover og bestemmer støynivået i hver etasje",
+            "Ventilasjonen blir svakere oppover og krever stillere bruk av rommene"
+          ],
+          "answer": "Aktive tilbud ligger lavere, mens lese- og arbeidsrom ligger høyere",
+          "answerIndex": 0,
+          "knowledge": "De nedre etasjene samler service, barn, medier, verksteder og arrangementer. Høyere oppe ligger lesesaler, studierom og stille arbeidsplasser, slik at aktivitet og ro fordeles gjennom huset.",
+          "difficulty": 2,
+          "question_type": "analysis",
+          "year": null,
+          "emne_id": "em_by_offentlige_rom_motesteder",
+          "source": [
+            "futurebuilt",
+            "ifla_2021"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Etasjeoversiktene viser en overgang fra aktive publikumsfunksjoner nederst til lesing og fordypning øverst.",
+          "guidance_basis": [
+            "data/fag/by/emner_by.json",
+            "data/fag/by/methods_by.json"
+          ],
+          "primary_knowledge_unit_id": "ku_by_de_nedre_etasjene_samler_5814aab971",
+          "knowledge_unit_ids": [
+            "ku_by_de_nedre_etasjene_samler_5814aab971",
+            "ku_by_h_yere_oppe_ligger_leses_358f47dbc1"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_29"
+        }
+      ]
+    },
+    {
+      "set_id": "by_deichman_bjorvika_set_4",
+      "level": 4,
+      "order": 4,
+      "phase": "bridge",
+      "xp": 110,
+      "questions": [
+        {
+          "id": "deichman_quiz_16",
+          "quiz_id": "by_deichman_bjorvika_set_4_q1",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvilken energistandard er Deichman Bjørvika bygget etter?",
+          "options": [
+            "Passivhusstandard",
+            "Lavenergistandard fra 1980",
+            "Standard for uoppvarmede lagerbygg"
+          ],
+          "answer": "Passivhusstandard",
+          "answerIndex": 0,
+          "knowledge": "Biblioteket oppfyller passivhuskriteriene i Norsk Standard 3701.",
+          "difficulty": 2,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_by_materialitet_og_sanseerfaring",
+          "core_concepts": [
+            "passivhusstandard",
+            "energibruk"
+          ],
+          "concept_focus": [
+            "passivhusstandard"
+          ],
+          "source": [
+            "atelier_oslo",
+            "futurebuilt"
+          ],
+          "primary_knowledge_unit_id": "ku_by_biblioteket_oppfyller_pa_0782d4844e",
+          "knowledge_unit_ids": [
+            "ku_by_biblioteket_oppfyller_pa_0782d4844e"
+          ],
+          "concept_ids": [
+            "co_by_passivhusstandard_63c378bb71",
+            "co_by_energibruk_0c629e7aa6"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_16"
+        },
+        {
+          "id": "deichman_quiz_17",
+          "quiz_id": "by_deichman_bjorvika_set_4_q2",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvor mye lavere var de beregnede klimagassutslippene enn for referansebygget?",
+          "options": [
+            "Omtrent 69 prosent",
+            "Omtrent 9 prosent",
+            "Omtrent 29 prosent"
+          ],
+          "answer": "Omtrent 69 prosent",
+          "answerIndex": 0,
+          "knowledge": "FutureBuilt oppgir at det ferdige bygget hadde omtrent 69 prosent lavere beregnede klimagassutslipp enn referansebygget.",
+          "difficulty": 3,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_by_materialitet_og_sanseerfaring",
+          "source": [
+            "futurebuilt"
+          ],
+          "primary_knowledge_unit_id": "ku_by_futurebuilt_oppgir_at_de_a60b3c9e14",
+          "knowledge_unit_ids": [
+            "ku_by_futurebuilt_oppgir_at_de_a60b3c9e14"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_17"
+        },
+        {
+          "id": "deichman_quiz_18",
+          "quiz_id": "by_deichman_bjorvika_set_4_q3",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvordan bidrar de tunge betongdekkene til lavere energibruk?",
+          "options": [
+            "De demper temperatursvingninger og reduserer kjølebehovet",
+            "De produserer elektrisitet når de varmes opp",
+            "De erstatter behovet for all ventilasjon i bygget"
+          ],
+          "answer": "De demper temperatursvingninger og reduserer kjølebehovet",
+          "answerIndex": 0,
+          "knowledge": "Betongens termiske masse tar opp og avgir varme langsomt. Sammen med ventilasjon langs dekkene demper dette temperatursvingninger og reduserer kjølebehovet.",
+          "difficulty": 3,
+          "question_type": "analysis",
+          "year": null,
+          "emne_id": "em_by_materialitet_og_sanseerfaring",
+          "core_concepts": [
+            "termisk masse",
+            "temperatursvingning",
+            "kjølebehov"
+          ],
+          "concept_focus": [
+            "termisk masse"
+          ],
+          "source": [
+            "futurebuilt"
+          ],
+          "primary_knowledge_unit_id": "ku_by_betongens_termiske_masse_e528923aae",
+          "knowledge_unit_ids": [
+            "ku_by_betongens_termiske_masse_e528923aae",
+            "ku_by_sammen_med_ventilasjon_l_b7292df4b1"
+          ],
+          "concept_ids": [
+            "co_by_termisk_masse_d3a52c6955",
+            "co_by_temperatursvingning_90273b2e1b",
+            "co_by_kj_lebehov_2caa3bc627"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_18"
+        },
+        {
+          "id": "deichman_quiz_19",
+          "quiz_id": "by_deichman_bjorvika_set_4_q4",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvilke materialvalg reduserte utslipp fra konstruksjonen?",
+          "options": [
+            "Lavkarbonbetong og resirkulert stål",
+            "Nytt aluminium og kobber",
+            "Importert naturstein og glass"
+          ],
+          "answer": "Lavkarbonbetong og resirkulert stål",
+          "answerIndex": 0,
+          "knowledge": "Bygget bruker blant annet lavkarbonbetong og resirkulert stål for å redusere utslipp fra materialene.",
+          "difficulty": 2,
+          "question_type": "fact",
+          "year": null,
+          "emne_id": "em_by_materialitet_og_sanseerfaring",
+          "core_concepts": [
+            "lavkarbonbetong",
+            "resirkulert stål",
+            "materialutslipp"
+          ],
+          "concept_focus": [
+            "lavkarbonbetong"
+          ],
+          "source": [
+            "futurebuilt"
+          ],
+          "primary_knowledge_unit_id": "ku_by_bygget_bruker_blant_anne_d0a43fe3ee",
+          "knowledge_unit_ids": [
+            "ku_by_bygget_bruker_blant_anne_d0a43fe3ee"
+          ],
+          "concept_ids": [
+            "co_by_lavkarbonbetong_5d5d4b940e",
+            "co_by_resirkulert_stal_c423fb4593",
+            "co_by_materialutslipp_645986c0d4"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_19"
+        },
+        {
+          "id": "deichman_quiz_20",
+          "quiz_id": "by_deichman_bjorvika_set_4_q5",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvilken internasjonal pris vant Deichman Bjørvika i 2021?",
+          "options": [
+            "IFLAs Public Library of the Year",
+            "Pritzker-prisen for arkitektur",
+            "EUs kulturarvpris Europa Nostra"
+          ],
+          "answer": "IFLAs Public Library of the Year",
+          "answerIndex": 0,
+          "knowledge": "IFLA kåret Deichman Bjørvika til verdens beste nye folkebibliotek i 2021.",
+          "difficulty": 2,
+          "question_type": "fact",
+          "year": 2021,
+          "emne_id": "em_by_symbolsk_makt_og_representasjon",
+          "source": [
+            "ifla_2021"
+          ],
+          "primary_knowledge_unit_id": "ku_by_ifla_karet_deichman_bj_r_d6fb77b702",
+          "knowledge_unit_ids": [
+            "ku_by_ifla_karet_deichman_bj_r_d6fb77b702"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_20"
+        },
+        {
+          "id": "deichman_quiz_30",
+          "quiz_id": "by_deichman_bjorvika_set_4_q6",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvorfor inngår fraværet av bilparkering i bibliotekets klimaarbeid?",
+          "options": [
+            "Kollektivnær plassering gjør bilfri tilgang mulig og kutter transportutslipp",
+            "Utearealet må brukes til varelevering og kan derfor ikke ta imot personbiler",
+            "Grunnforholdene i Bjørvika gjør all parkering under kulturbygg teknisk forbudt"
+          ],
+          "answer": "Kollektivnær plassering gjør bilfri tilgang mulig og kutter transportutslipp",
+          "answerIndex": 0,
+          "knowledge": "Deichman ligger ved Norges største kollektivknutepunkt og har ikke parkeringsplasser for ansatte eller besøkende. I klimagassregnskapet er lokalisering og transport derfor en del av miljøstrategien.",
+          "difficulty": 3,
+          "question_type": "analysis",
+          "year": null,
+          "emne_id": "em_by_offentlige_rom_motesteder",
+          "source": [
+            "futurebuilt"
+          ],
+          "source_origin": "external",
+          "claim_basis": "FutureBuilt knytter kollektivnær lokalisering og fravær av bilparkering til prosjektets viktigste klimatiltak.",
+          "guidance_basis": [
+            "data/fag/by/emner_by.json",
+            "data/fag/by/methods_by.json"
+          ],
+          "primary_knowledge_unit_id": "ku_by_deichman_ligger_ved_norg_171634475d",
+          "knowledge_unit_ids": [
+            "ku_by_deichman_ligger_ved_norg_171634475d",
+            "ku_by_i_klimagassregnskapet_er_fbe453989f"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_30"
+        },
+        {
+          "id": "deichman_quiz_31",
+          "quiz_id": "by_deichman_bjorvika_set_4_q7",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvordan kombinerer fasadeglasset dagslys og energieffektivitet?",
+          "options": [
+            "Det sprer lys innover og inngår samtidig i isolasjon og solskjerming",
+            "Det sender lyset ut igjen og erstatter isolasjonen med sterkere oppvarming",
+            "Det speiler omgivelsene og fjerner behovet for både vinduer og innvendig lys"
+          ],
+          "answer": "Det sprer lys innover og inngår samtidig i isolasjon og solskjerming",
+          "answerIndex": 0,
+          "knowledge": "Det frostede innvendige glasset fordeler dagslys dypere i bygget. Sammen med isolerende sjikt og utvendig solskjerming bidrar fasaden også til å begrense varmetap og kjølebehov.",
+          "difficulty": 3,
+          "question_type": "analysis",
+          "year": null,
+          "emne_id": "em_by_materialitet_og_sanseerfaring",
+          "source": [
+            "futurebuilt"
+          ],
+          "source_origin": "external",
+          "claim_basis": "FutureBuilt beskriver en fasade som både sprer dagslys, isolerer og skjermer mot solvarme.",
+          "guidance_basis": [
+            "data/fag/by/emner_by.json",
+            "data/fag/by/fagkart_by.json"
+          ],
+          "primary_knowledge_unit_id": "ku_by_det_frostede_innvendige__8b7337e85a",
+          "knowledge_unit_ids": [
+            "ku_by_det_frostede_innvendige__8b7337e85a",
+            "ku_by_sammen_med_isolerende_sj_a04889920c"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_31"
+        }
+      ]
+    },
+    {
+      "set_id": "by_deichman_bjorvika_set_5",
+      "level": 5,
+      "order": 5,
+      "phase": "final",
+      "xp": 120,
+      "title": "Bibliotekrolle og miljøbegreper",
+      "questions": [
+        {
+          "id": "deichman_quiz_21",
+          "quiz_id": "by_deichman_bjorvika_set_5_q1",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvorfor rommer det moderne hovedbiblioteket både lesing, verksteder, medier og arrangementer?",
+          "options": [
+            "Bibliotekrollen er utvidet fra utlån til læring, kulturproduksjon og møteplass",
+            "Bibliotekrollen er avgrenset fra offentlig bruk til oppbevaring og administrasjon",
+            "Bibliotekrollen er endret fra kunnskapstilbud til kommersielt underholdningssenter"
+          ],
+          "answer": "Bibliotekrollen er utvidet fra utlån til læring, kulturproduksjon og møteplass",
+          "answerIndex": 0,
+          "knowledge": "Deichman viser hvordan folkebiblioteket har utviklet seg fra først og fremst å formidle bøker til også å gi rom for læring, skapende arbeid, arrangementer og sosialt samvær.",
+          "difficulty": 3,
+          "question_type": "analysis",
+          "year": null,
+          "emne_id": "em_by_offentlige_rom_motesteder",
+          "core_concepts": [
+            "folkebibliotek",
+            "møteplass",
+            "kulturproduksjon"
+          ],
+          "concept_focus": [
+            "utvidet bibliotekrolle"
+          ],
+          "source": [
+            "oslo_deichman",
+            "oslo_meeting",
+            "ifla_2021"
+          ],
+          "primary_knowledge_unit_id": "ku_by_deichman_viser_hvordan_f_6b5e53a52f",
+          "knowledge_unit_ids": [
+            "ku_by_deichman_viser_hvordan_f_6b5e53a52f"
+          ],
+          "concept_ids": [
+            "co_by_folkebibliotek_780a7cf21e",
+            "co_by_m_teplass_1f3560f270",
+            "co_by_kulturproduksjon_9b7731da90",
+            "co_by_utvidet_bibliotekrolle_7cc187f2f5"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_21"
+        },
+        {
+          "id": "deichman_quiz_22",
+          "quiz_id": "by_deichman_bjorvika_set_5_q2",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hva betyr termisk masse i Deichmans tunge betongdekker?",
+          "options": [
+            "Materialet tar opp og avgir varme langsomt og jevner ut temperaturen",
+            "Materialet leder all varme raskt ut og gjør overflatene konstant kalde",
+            "Materialet omdanner dagslys direkte til elektrisk energi i konstruksjonen"
+          ],
+          "answer": "Materialet tar opp og avgir varme langsomt og jevner ut temperaturen",
+          "answerIndex": 0,
+          "knowledge": "Termisk masse er et materiales evne til å lagre varme og avgi den senere. Betongdekkene bidrar derfor til jevnere temperatur og lavere kjølebehov.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "year": null,
+          "emne_id": "em_by_materialitet_og_sanseerfaring",
+          "core_concepts": [
+            "termisk masse",
+            "varmelagring",
+            "energibruk"
+          ],
+          "concept_focus": [
+            "termisk masse"
+          ],
+          "source": [
+            "futurebuilt"
+          ],
+          "primary_knowledge_unit_id": "ku_by_termisk_masse_er_et_mate_9262334b33",
+          "knowledge_unit_ids": [
+            "ku_by_termisk_masse_er_et_mate_9262334b33",
+            "ku_by_betongdekkene_bidrar_der_1d66ae1d84"
+          ],
+          "concept_ids": [
+            "co_by_termisk_masse_d3a52c6955",
+            "co_by_varmelagring_a5aa8680cf",
+            "co_by_energibruk_0c629e7aa6"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_22"
+        },
+        {
+          "id": "deichman_quiz_23",
+          "quiz_id": "by_deichman_bjorvika_set_5_q3",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hva betyr lavkarbonbetong i Deichman-prosjektet?",
+          "options": [
+            "Betong produsert med lavere klimagassutslipp enn konvensjonell betong",
+            "Betong uten armering som bare brukes i midlertidige konstruksjoner",
+            "Betong som lagrer elektrisitet og erstatter byggets strømforsyning"
+          ],
+          "answer": "Betong produsert med lavere klimagassutslipp enn konvensjonell betong",
+          "answerIndex": 0,
+          "knowledge": "Lavkarbonbetong er utviklet for å redusere utslippene fra sement og betongproduksjon. I Deichman inngår materialvalget i prosjektets samlede klimaarbeid.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "year": null,
+          "emne_id": "em_by_materialitet_og_sanseerfaring",
+          "core_concepts": [
+            "lavkarbonbetong",
+            "materialutslipp",
+            "klimagass"
+          ],
+          "concept_focus": [
+            "lavkarbonbetong"
+          ],
+          "source": [
+            "futurebuilt"
+          ],
+          "primary_knowledge_unit_id": "ku_by_lavkarbonbetong_er_utvik_3b5576046a",
+          "knowledge_unit_ids": [
+            "ku_by_lavkarbonbetong_er_utvik_3b5576046a",
+            "ku_by_i_deichman_inngar_materi_7292d7da43"
+          ],
+          "concept_ids": [
+            "co_by_lavkarbonbetong_5d5d4b940e",
+            "co_by_materialutslipp_645986c0d4",
+            "co_by_klimagass_98479161b6"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_23"
+        },
+        {
+          "id": "deichman_quiz_32",
+          "quiz_id": "by_deichman_bjorvika_set_5_q4",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hvordan kan du undersøke om Deichman faktisk fungerer som lavterskel møteplass?",
+          "options": [
+            "Observere systematisk hvem som bruker sonene, til hva og hvor lenge",
+            "Spørre bare arkitektene hvilken bruk de planla da huset ble tegnet",
+            "Sammenligne bare bokbestanden uten å undersøke oppholdet i rommene"
+          ],
+          "answer": "Observere systematisk hvem som bruker sonene, til hva og hvor lenge",
+          "answerIndex": 0,
+          "knowledge": "Feltobservasjon skiller planlagt funksjon fra faktisk bruk. Ved å registrere brukere, aktiviteter, soner og varighet kan man undersøke om det åpne biblioteket virkelig gir rom for ulike mennesker og former for opphold.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "year": null,
+          "emne_id": "em_by_offentlige_rom_motesteder",
+          "method_id": "met_feltobservasjon",
+          "core_concepts": [
+            "feltobservasjon",
+            "lavterskel møteplass",
+            "faktisk bruk"
+          ],
+          "concept_focus": [
+            "feltobservasjon"
+          ],
+          "source": [
+            "oslo_meeting",
+            "atelier_oslo"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Kildene beskriver Deichman som åpent offentlig rom med varierte soner og aktiviteter; faktisk bruk må undersøkes empirisk.",
+          "guidance_basis": [
+            "data/fag/by/methods_by.json",
+            "data/fag/by/emner_by.json"
+          ],
+          "primary_knowledge_unit_id": "ku_by_feltobservasjon_skiller__bf62e88038",
+          "knowledge_unit_ids": [
+            "ku_by_feltobservasjon_skiller__bf62e88038",
+            "ku_by_ved_a_registrere_brukere_f7c0d30974"
+          ],
+          "concept_ids": [
+            "co_by_feltobservasjon_913d2e9785",
+            "co_by_lavterskel_m_teplass_54bdc8da3e",
+            "co_by_faktisk_bruk_3eb05b4b46"
+          ],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_32"
+        },
+        {
+          "id": "deichman_quiz_33",
+          "quiz_id": "by_deichman_bjorvika_set_5_q5",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hva vil en Whyte-inspirert feltstudie av Deichmans åpne soner først registrere?",
+          "options": [
+            "Hvilke soner folk faktisk velger, hva de gjør der og hvor lenge de blir",
+            "Hvilken symbolverdi arkitektene ønsket at fasaden skulle få i bybildet",
+            "Hvilke historiske perioder boktitlene i samlingen representerer"
+          ],
+          "answer": "Hvilke soner folk faktisk velger, hva de gjør der og hvor lenge de blir",
+          "answerIndex": 0,
+          "knowledge": "William H. Whyte brukte systematisk observasjon for å vise hvordan mennesker faktisk tar plasser i bruk. På Deichman kan samme grep teste om møbler, åpne soner og nisjer støtter opphold og møter slik bygget er ment å gjøre.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "year": null,
+          "emne_id": "em_by_offentlige_rom_motesteder",
+          "method_id": "met_feltobservasjon",
+          "topic_hook_id": "byliv_aapne_rom",
+          "thinker_id": "william_h_whyte",
+          "thinker_name": "William H. Whyte",
+          "work": "The Social Life of Small Urban Spaces",
+          "theory_focus": "faktisk bruk av åpne soner",
+          "theory_ref": {
+            "topic_hook_id": "byliv_aapne_rom",
+            "thinker_id": "william_h_whyte",
+            "work": "The Social Life of Small Urban Spaces",
+            "why_it_helps": "Whytes observasjonsgrep gjør det mulig å kontrollere om det planlagte offentlige rommet faktisk brukes til opphold og møter."
+          },
+          "source": [
+            "atelier_oslo",
+            "oslo_meeting"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Atelier Oslo beskriver et åpent offentlig interiør med varierte møbler og aktiviteter, mens Oslo kommune beskriver biblioteket som møteplass.",
+          "guidance_basis": [
+            "data/fag/by/fagkart_by.json",
+            "data/fag/by/methods_by.json",
+            "data/fag/by/emner_by.json"
+          ],
+          "primary_knowledge_unit_id": "ku_by_whyte_brukte_systematisk_7db04950de",
+          "knowledge_unit_ids": [
+            "ku_by_whyte_brukte_systematisk_7db04950de",
+            "ku_by_pa_deichman_kan_samme_gr_652f6fc8ff"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_33"
+        },
+        {
+          "id": "deichman_quiz_34",
+          "quiz_id": "by_deichman_bjorvika_set_5_q6",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hva tydeliggjør Richard Sennetts perspektiv når fremmede deler Deichman uten kjøpeplikt?",
+          "options": [
+            "At åpenhet også er å dele rom med fremmede og ulike bruksmåter",
+            "At sosial kvalitet krever én homogen gruppe med samme aktivitet",
+            "At offentlighet avgjøres av monumental form uavhengig av bruk"
+          ],
+          "answer": "At åpenhet også er å dele rom med fremmede og ulike bruksmåter",
+          "answerIndex": 0,
+          "knowledge": "Richard Sennett undersøker offentlig liv som samvær mellom mennesker som ikke nødvendigvis kjenner hverandre. Deichmans gratis og flerfunksjonelle rom viser hvordan et hus kan gi slik sameksistens en konkret plass i sentrum.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "year": null,
+          "emne_id": "em_by_offentlige_rom_motesteder",
+          "topic_hook_id": "byliv_aapne_rom",
+          "thinker_id": "richard_sennett",
+          "thinker_name": "Richard Sennett",
+          "work": "The Fall of Public Man",
+          "theory_focus": "åpenhet og samliv mellom fremmede",
+          "theory_ref": {
+            "topic_hook_id": "byliv_aapne_rom",
+            "thinker_id": "richard_sennett",
+            "work": "The Fall of Public Man",
+            "why_it_helps": "Sennetts perspektiv viser hvorfor gratis tilgang og flerbruk har offentlig verdi utover bibliotekets boktilbud."
+          },
+          "source": [
+            "oslo_deichman",
+            "oslo_meeting"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Oslo kommune beskriver Deichman som gratis møteplass der mennesker kan oppholde seg på lik linje utenfor den kommersielle sfæren.",
+          "guidance_basis": [
+            "data/fag/by/fagkart_by.json",
+            "data/fag/by/emner_by.json"
+          ],
+          "primary_knowledge_unit_id": "ku_by_richard_sennett_unders_k_f0291386d3",
+          "knowledge_unit_ids": [
+            "ku_by_richard_sennett_unders_k_f0291386d3",
+            "ku_by_deichmans_gratis_og_fler_1cc771de99"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_34"
+        },
+        {
+          "id": "deichman_quiz_35",
+          "quiz_id": "by_deichman_bjorvika_set_5_q7",
+          "categoryId": "by",
+          "placeId": "deichman_bjorvika",
+          "targetId": "deichman_bjorvika",
+          "question_scope": "place",
+          "question": "Hva bør en Pallasmaa-inspirert analyse følge gjennom Deichmans lyssjakter og rom?",
+          "options": [
+            "Hvordan lys, materialer, skala og bevegelse virker sammen på kroppen",
+            "Hvordan fasaden kan plasseres i én stil uten å undersøke romopplevelsen",
+            "Hvordan energitall alene kan erstatte observasjon av lys og materialer"
+          ],
+          "answer": "Hvordan lys, materialer, skala og bevegelse virker sammen på kroppen",
+          "answerIndex": 0,
+          "knowledge": "Juhani Pallasmaa legger vekt på kroppslig og sanselig arkitekturerfaring. I Deichman skjerper dette oppmerksomheten mot hvordan dagslys, robuste materialer, utsyn og bevegelse mellom soner gjør bygget lesbart og merkbart.",
+          "difficulty": 3,
+          "question_type": "concept",
+          "year": null,
+          "emne_id": "em_by_materialitet_og_sanseerfaring",
+          "topic_hook_id": "ark_materialbruk",
+          "thinker_id": "juhani_pallasmaa",
+          "thinker_name": "Juhani Pallasmaa",
+          "work": "The Eyes of the Skin",
+          "theory_focus": "kroppslig og sanselig arkitekturerfaring",
+          "theory_ref": {
+            "topic_hook_id": "ark_materialbruk",
+            "thinker_id": "juhani_pallasmaa",
+            "work": "The Eyes of the Skin",
+            "why_it_helps": "Pallasmaas perspektiv kobler de dokumenterte lys- og materialgrepene til hvordan bygget faktisk sanses og orienterer kroppen."
+          },
+          "source": [
+            "atelier_oslo",
+            "futurebuilt"
+          ],
+          "source_origin": "external",
+          "claim_basis": "Arkitekt- og FutureBuilt-kildene dokumenterer lyssjakter, diffust dagslys, robuste materialer og romlige overganger.",
+          "guidance_basis": [
+            "data/fag/by/fagkart_by.json",
+            "data/fag/by/emner_by.json"
+          ],
+          "primary_knowledge_unit_id": "ku_by_juhani_pallasmaa_legger__9c4e171a16",
+          "knowledge_unit_ids": [
+            "ku_by_juhani_pallasmaa_legger__9c4e171a16",
+            "ku_by_i_deichman_skjerper_dett_6faac9b388"
+          ],
+          "concept_ids": [],
+          "term_ids": [],
+          "knowledge_contract_version": 1,
+          "knowledge_link_status": "linked",
+          "claim_id": "claim_deichman_quiz_35"
+        }
+      ]
+    }
+  ]
+}

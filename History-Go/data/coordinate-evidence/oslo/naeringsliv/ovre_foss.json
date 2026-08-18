@@ -1,0 +1,84 @@
+{
+  "placeId": "ovre_foss",
+  "placeFile": "data/places/naeringsliv/oslo/places_naeringsliv/ovre_foss.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.931317,
+    "lon": 10.756994,
+    "r": 180,
+    "coordStatus": "verified_historical_source",
+    "coordSource": "Riksantikvaren/Kulturminnesøk 164747; identity cross-checked with Oslo byleksikon",
+    "coordType": "historical_site",
+    "coordNote": "Geonorge-oppslaget for Sagveien 23 Oslo ble kjørt først og ga flere treff uten entydig match; dette er lagret i batch-24-rapporten. Hjula Væverier er identifisert som kulturminne 164747 og dokumentert i Sagveien 23 av Oslo byleksikon. Det eksisterende punktet beholdes som et semantisk historisk områdeanker inne i Hjula-anlegget, ikke som et påstått offisielt adressepunkt eller eksakt bygningssentrum."
+  },
+  "identity": {
+    "currentName": "Øvre Foss – Hjula Veveri",
+    "resolvedIdentity": "Hjula Væverier ved Hjulafossen / Sagveien 23",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "building",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [
+    "entydig fysisk Hjula-identitet",
+    "navngitt kildeobjekt med koordinat",
+    "overlap-audit mot Sagene-kvernhus-recorden"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Riksantikvaren/Kulturminnesøk – kulturminne 164747",
+      "sourceUrl": "https://www.kulturminnesok.no/",
+      "sourceObjectId": "kulturminnesok:164747",
+      "sourceQuality": "official_cultural_heritage_identity",
+      "finding": "Kulturminne-ID 164747 identifiserer Hjula Væverier som det fysiske kulturminneanlegget.",
+      "canVerifyCoordinate": true,
+      "reason": "Geonorge-oppslaget for Sagveien 23 Oslo ble kjørt først og ga flere treff uten entydig match; dette er lagret i batch-24-rapporten. Hjula Væverier er identifisert som kulturminne 164747 og dokumentert i Sagveien 23 av Oslo byleksikon. Det eksisterende punktet beholdes som et semantisk historisk områdeanker inne i Hjula-anlegget, ikke som et påstått offisielt adressepunkt eller eksakt bygningssentrum."
+    },
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Oslo byleksikon – Hjula Væverier",
+      "sourceUrl": "https://oslobyleksikon.no/side/Hjula_V%C3%A6verier",
+      "sourceObjectId": "oslobyleksikon:hjula-vaeverier",
+      "sourceQuality": "documented_physical_identity",
+      "finding": "Oslo byleksikon dokumenterer Hjula Væverier i Sagveien 23 ved Hjulafossen.",
+      "canVerifyCoordinate": false,
+      "reason": "Identitets- og områdekryssjekk."
+    }
+  ],
+  "addressCandidates": [
+    {
+      "address": "Sagveien 23 Oslo",
+      "sourceProvider": "official_address",
+      "sourceObjectId": null,
+      "canApplyToPlace": false,
+      "reason": "Geonorge returnerte flere treff uten entydig match; oppslaget er lagret i reports/oslo-coordinate-control-batch-24/lookups/ovre_foss-sagveien-23-geonorge.json."
+    }
+  ],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "kulturminnesok:164747",
+      "canApplyToPlace": true
+    }
+  ],
+  "geometryCandidates": [],
+  "coordinateCandidates": [
+    {
+      "lat": 59.931317,
+      "lon": 10.756994,
+      "coordRole": "area_anchor",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Offisiell kulturminneidentitet og eksplisitt semantisk historisk områdeanker er anvendt; tvetydig adresse er dokumentert og ikke gjettet."
+  },
+  "notes": [
+    "Geonorge-oppslaget for Sagveien 23 Oslo ble kjørt først og ga flere treff uten entydig match; dette er lagret i batch-24-rapporten. Hjula Væverier er identifisert som kulturminne 164747 og dokumentert i Sagveien 23 av Oslo byleksikon. Det eksisterende punktet beholdes som et semantisk historisk områdeanker inne i Hjula-anlegget, ikke som et påstått offisielt adressepunkt eller eksakt bygningssentrum."
+  ]
+}

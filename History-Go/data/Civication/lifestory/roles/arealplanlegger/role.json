@@ -1,0 +1,218 @@
+{
+  "version": 1,
+  "id": "arealplanlegger",
+  "navn": "Arealplanlegger",
+  "kjernefantasi": "Du balanserer fag, lovverk, politikk, naboer og utbyggere.",
+  "arbeidsoppgaver": [
+    "lese høringsinnspill",
+    "vurdere reguleringsplaner",
+    "svare på interne avklaringer",
+    "forberede politiske saker",
+    "håndtere utbyggere og naboer"
+  ],
+  "personer": [
+    {
+      "id": "plansjef",
+      "navn": "Plansjefen",
+      "beskrivelse": "Din leder. Vil ha flyt i sakene og minst mulig merarbeid."
+    },
+    {
+      "id": "skolekontakt",
+      "navn": "Skolekontakten",
+      "beskrivelse": "FAU-kontakt ved skolen. Kjenner barnas faktiske skolevei."
+    },
+    {
+      "id": "utbygger",
+      "navn": "Utbyggeren",
+      "beskrivelse": "Vil ha rask avklaring på parkeringskjelleren."
+    },
+    {
+      "id": "utvalgssekretaer",
+      "navn": "Utvalgssekretæren",
+      "beskrivelse": "Holder styr på hva som skal til politisk behandling."
+    },
+    {
+      "id": "nabo",
+      "navn": "Naboen",
+      "beskrivelse": "Skriver lange, detaljerte høringsinnspill."
+    },
+    {
+      "id": "jurist",
+      "navn": "Kommunejuristen",
+      "beskrivelse": "Skiller mellom lovkrav og skjønn."
+    },
+    {
+      "id": "politiker",
+      "navn": "Utvalgslederen",
+      "beskrivelse": "Vil vite hva som egentlig er et politisk valg."
+    },
+    {
+      "id": "venn",
+      "navn": "Jonas",
+      "beskrivelse": "Vennen din. Har kjent deg lenge nok til å høre forskjell på «det går bra» og «det går bra»."
+    },
+    {
+      "id": "familie",
+      "navn": "Søsteren din",
+      "beskrivelse": "Ringer om hverdagslige ting som aldri bare er hverdagslige."
+    }
+  ],
+  "hovedkonflikter": [
+    "faglig integritet vs politisk press",
+    "utbygging vs nærmiljø",
+    "effektivitet vs grundighet",
+    "trafikksikkerhet vs økonomi",
+    "lovverk vs skjønn"
+  ],
+  "endings": [
+    {
+      "id": "faglig_sterk",
+      "navn": "Faglig sterk planlegger",
+      "tekst": "Du sto på faget når presset kom: skrev notatet, trakk faggrensen, ga skriftlige svar med forbehold som holdt vann. Utbyggere og politikere likte det ikke alltid — men de kunne ikke sitere deg på noe du ikke hadde dekning for.",
+      "kriterier": {
+        "meters": {
+          "integritet": {
+            "min": 70
+          }
+        },
+        "flagg": {
+          "skrev_skoleveinotat": true,
+          "trakk_faggrense": true,
+          "ga_skriftlig_svar": true,
+          "sto_faglig_dag2": true
+        }
+      },
+      "standard": true
+    },
+    {
+      "id": "politisk_lydig",
+      "navn": "Politisk lydig saksbehandler",
+      "tekst": "Du ga etter der det var enklest: muntlig ja på telefonen, saker som gled unna, faggrenser som ble utydelige under press. Det holdt freden — men noen andre eier nå referatet av det du sa.",
+      "kriterier": {
+        "meters": {
+          "integritet": {
+            "max": 50
+          }
+        },
+        "flagg": {
+          "ga_muntlig_ja": true,
+          "ga_etter_dag2": true,
+          "minimerte_skolevei_dag2": true
+        }
+      }
+    },
+    {
+      "id": "utbrent",
+      "navn": "Utbrent kommunearbeider",
+      "tekst": "Du presset deg gjennom møter du var for sliten til, la jobben aldri helt fra deg. Sakene ble ferdige — men det gikk på bekostning av deg, og det tar en kommune lang tid å oppdage.",
+      "kriterier": {
+        "meters": {
+          "psyke": {
+            "max": 55
+          },
+          "energi": {
+            "max": 55
+          }
+        },
+        "flagg": {
+          "presset_seg_gjennom_moetet": true,
+          "innroemmet_sliten": true,
+          "grublet_over_saken": true
+        }
+      }
+    },
+    {
+      "id": "varsler",
+      "navn": "Varsler",
+      "tekst": "Du nektet å la faglige forbehold forsvinne i tidspress: sendte saken til politisk behandling framfor å gi et muntlig ja. Det gjør deg ubekvem for noen — og helt nødvendig for byen.",
+      "kriterier": {
+        "meters": {
+          "integritet": {
+            "min": 65
+          }
+        },
+        "flagg": {
+          "sendte_sak_til_politisk_behandling": true,
+          "eskalerte_frist": true,
+          "loeftet_skolevei_til_plansjef": true
+        }
+      }
+    },
+    {
+      "id": "ledertalent",
+      "navn": "Ledertalent",
+      "tekst": "Du løftet blikket over din egen sak: eskalerte riktig, foreslo kompromisser, gjorde plansjefen tryggere. Faglig sterk OG samlende — det er ledertalent.",
+      "kriterier": {
+        "meters": {
+          "synlighet": {
+            "min": 55
+          },
+          "integritet": {
+            "min": 60
+          }
+        },
+        "flagg": {
+          "loeftet_skolevei_til_plansjef": true,
+          "foreslo_kompromiss": true
+        }
+      }
+    }
+  ],
+  "startState": {
+    "meters": {
+      "penger": 420,
+      "psyke": 62,
+      "energi": 71,
+      "integritet": 49,
+      "synlighet": 49,
+      "handlingsrom": 50
+    },
+    "relasjoner": {
+      "plansjef": 45,
+      "skolekontakt": 60,
+      "utbygger": 35,
+      "utvalgssekretaer": 50,
+      "nabo": 50,
+      "jurist": 55,
+      "politiker": 40,
+      "venn": 60,
+      "familie": 55
+    }
+  },
+  "dagsplan": {
+    "1": [
+      {
+        "klokke": "10:00",
+        "tekst": "Intern avklaring"
+      },
+      {
+        "klokke": "13:00",
+        "tekst": "Plansaksmøte"
+      },
+      {
+        "klokke": "17:00",
+        "tekst": "Privat avtale"
+      }
+    ],
+    "2": [
+      {
+        "klokke": "09:00",
+        "tekst": "Oppfølging skolevei"
+      },
+      {
+        "klokke": "14:00",
+        "tekst": "Saksforberedelse"
+      }
+    ],
+    "3": [
+      {
+        "klokke": "09:00",
+        "tekst": "Utbyggeren purrer"
+      },
+      {
+        "klokke": "13:00",
+        "tekst": "Saksbunken"
+      }
+    ]
+  }
+}

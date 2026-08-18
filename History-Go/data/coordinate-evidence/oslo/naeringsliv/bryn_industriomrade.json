@@ -1,0 +1,64 @@
+{
+  "placeId": "bryn_industriomrade",
+  "placeFile": "data/places/naeringsliv/oslo/places_naeringsliv/bryn_industriomrade.json",
+  "evidenceStatus": "needs_research",
+  "coordinateDecision": "needs_geometry",
+  "currentCoordinate": {
+    "lat": 59.9129,
+    "lon": 10.8251,
+    "r": 250,
+    "coordStatus": "needs_source",
+    "coordSource": "manual_research",
+    "coordType": "unverified_area_anchor",
+    "coordNote": "Bredt og uavgrenset industriområde mangler kildebelagt geometri/anchors. Dagens koordinat beholdes kun som redaksjonell områdeproxy og skal ikke tolkes som dokumentert fysisk sentrum. Definer fysisk scope og hent offisiell områdegeometri eller flere kildebelagte area-ankre før canonical koordinat kan godkjennes."
+  },
+  "identity": {
+    "currentName": "Bryn industriområde",
+    "resolvedIdentity": "det brede industri- og boligstrøket Bryn rundt Brynsfossen, Hovedbanen og flere historiske fabrikkmiljøer",
+    "identityStatus": "resolved_broad_area",
+    "identityProblem": "Kildene dokumenterer Bryn som et stort strøk med flere industriområder og virksomheter på tvers av bydeler. Den aktive recorden har bare ett punkt og ingen avgrenset industriområdegeometri.",
+    "locatorTypeCandidate": "linear_area",
+    "requiresSplit": false,
+    "splitReason": "Stedet kan beholdes som område, men må få dokumentert scope og geometri/anchors."
+  },
+  "requiredEvidence": [
+    "avgrensning av hvilket Bryn-industriområde recorden mener",
+    "offisiell områdegeometri eller flere kildebelagte area-ankre",
+    "overlap-audit mot konkrete Bryn-fabrikker og stasjoner"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Oslo byleksikon – Bryn (strøk)",
+      "sourceUrl": "https://oslobyleksikon.no/side/Bryn_%28str%C3%B8k%29",
+      "sourceObjectId": "oslobyleksikon:bryn-strok",
+      "sourceQuality": "documented_area_identity",
+      "finding": "Kilden beskriver Bryn som et stort industri- og boligstrøk i flere bydeler, med industri utviklet rundt Brynsfossen og Hovedbanen.",
+      "canVerifyCoordinate": false,
+      "reason": "Kilden bekrefter bred områdeidentitet, men ikke ett entydig industriområdepolygon eller hovedanker."
+    }
+  ],
+  "addressCandidates": [],
+  "sourceObjectCandidates": [],
+  "geometryCandidates": [],
+  "coordinateCandidates": [
+    {
+      "lat": 59.9129,
+      "lon": 10.8251,
+      "coordRole": "area_anchor",
+      "sourceObjectId": "oslobyleksikon:bryn-strok",
+      "canApplyToPlace": false,
+      "reason": "Redaksjonell områdeproxy uten kildebelagt avgrensning."
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": false,
+    "blockedReason": "Bredt og uavgrenset industriområde mangler kildebelagt geometri/anchors.",
+    "nextAction": "Definer fysisk scope og hent offisiell områdegeometri eller flere kildebelagte area-ankre før canonical koordinat kan godkjennes."
+  },
+  "notes": [
+    "Bredt og uavgrenset industriområde mangler kildebelagt geometri/anchors. Dagens koordinat beholdes kun som redaksjonell områdeproxy og skal ikke tolkes som dokumentert fysisk sentrum. Definer fysisk scope og hent offisiell områdegeometri eller flere kildebelagte area-ankre før canonical koordinat kan godkjennes.",
+    "Statusnormalisering 2026-07-25; ingen koordinatendring."
+  ],
+  "schemaVersion": "1.0"
+}

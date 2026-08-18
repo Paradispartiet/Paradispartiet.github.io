@@ -1,0 +1,695 @@
+{
+  "schema": "history_go_fagverk_claims_v1",
+  "version": "1.0.0",
+  "subject_id": "litteratur",
+  "chapter_id": "eldre_litteratur_antik_middelalder_tidligmoderne",
+  "verified_at": "2026-08-07",
+  "verification_status": "verified",
+  "sources": [
+    {
+      "id": "el01",
+      "label": "Perseus Digital Library",
+      "url": "https://www.perseus.tufts.edu/hopper/",
+      "publisher": "Tufts University",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Samlingens greske og latinske tekstvisninger, oversettelser, morfologi, bibliografi og søk"
+    },
+    {
+      "id": "el02",
+      "label": "Iliad in the Scaife Viewer",
+      "url": "https://scaife-reader.perseus.tufts.edu/reader/urn%3Acts%3AgreekLit%3Atlg0012.tlg001.perseus-eng3%3A1/",
+      "publisher": "Perseus Digital Library",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Iliaden bok 1–24 med versnummer, gresk tekst, engelsk oversettelse og tekstvitne"
+    },
+    {
+      "id": "el03",
+      "label": "The Internet Classics Archive: Poetics",
+      "url": "https://classics.mit.edu/Aristotle/poetics.html",
+      "publisher": "Massachusetts Institute of Technology",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Poetikken kapittel 1–26, særlig mimesis, tragedie, handling, karakter og gjenkjennelse"
+    },
+    {
+      "id": "el04",
+      "label": "The Internet Classics Archive: Rhetoric",
+      "url": "https://classics.mit.edu/Aristotle/rhetoric.html",
+      "publisher": "Massachusetts Institute of Technology",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Retorikken bok I–III om talearter, bevismidler, affekt, stil, disposisjon og framføring"
+    },
+    {
+      "id": "el05",
+      "label": "Western Medieval Manuscripts",
+      "url": "https://digital.bodleian.ox.ac.uk/collections/western-medieval-manuscripts/",
+      "publisher": "Bodleian Libraries",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Samlingens manuskriptvisninger med dateringer, språk, proveniens, foliering og digitale bilder"
+    },
+    {
+      "id": "el06",
+      "label": "Digitised Manuscripts and Archives",
+      "url": "https://www.bl.uk/collection/digitised-manuscripts-archives",
+      "publisher": "British Library",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Katalog- og bildevisningene for middelaldermanuskripter, fragmenter og arkivmateriale"
+    },
+    {
+      "id": "el07",
+      "label": "Beowulf",
+      "url": "https://www.gutenberg.org/ebooks/16328",
+      "publisher": "Project Gutenberg",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Diktets 43 deler med monsterkamper, kongemakt, gaveøkonomi, kristne lag og oversettelsesforord"
+    },
+    {
+      "id": "el08",
+      "label": "Icelandic Saga Database",
+      "url": "https://sagadb.org/",
+      "publisher": "Icelandic Saga Database",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Sagavisningene med norrøn tekst, oversettelser, manuskripthenvisninger og sjangergruppering"
+    },
+    {
+      "id": "el09",
+      "label": "The Divine Comedy",
+      "url": "https://www.gutenberg.org/ebooks/8800",
+      "publisher": "Project Gutenberg",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Inferno, Purgatorio og Paradiso med sanginndeling, allegorisk reise og oversettelsesparatekst"
+    },
+    {
+      "id": "el10",
+      "label": "Shakespeare’s Works",
+      "url": "https://www.folger.edu/explore/shakespeares-works/",
+      "publisher": "Folger Shakespeare Library",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Verksidene for drama, sonetter og dikt med teksthistorie, introduksjon og sceneopplysninger"
+    },
+    {
+      "id": "el11",
+      "label": "Download Shakespeare’s Plays, Sonnets, and Poems",
+      "url": "https://www.folger.edu/explore/shakespeares-works/download/",
+      "publisher": "Folger Shakespeare Library",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Nedlastingssidene med verk, utgavegrunnlag, tekstformat, modernisering og bruksbetingelser"
+    },
+    {
+      "id": "el12",
+      "label": "Utopia",
+      "url": "https://www.gutenberg.org/ebooks/2130",
+      "publisher": "Project Gutenberg",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Bok I–II om reisefortelling, eiendom, arbeid, religion, institusjoner og Utopia-dialogen"
+    },
+    {
+      "id": "el13",
+      "label": "Areopagitica",
+      "url": "https://www.gutenberg.org/ebooks/608",
+      "publisher": "Project Gutenberg",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Hele talen med trykkfrihetsargument, lisenshistorie, klassiske eksempler og parlamentarisk adressat"
+    },
+    {
+      "id": "el14",
+      "label": "Ancient, Medieval and Early Modern Collection",
+      "url": "https://www.bl.uk/collection/explore-the-collection",
+      "publisher": "British Library",
+      "type": "faglig_eller_primar_kilde",
+      "source_location": "Samlingsoversikten for antikke, middelalderske og tidligmoderne bøker, manuskripter og arkiver"
+    }
+  ],
+  "claims": [
+    {
+      "id": "elt-01",
+      "claim": "En faglig analyse av antikk epikk, drama og lyrikk må skille og dokumentere episk sang, påkallelse, handling og heltekollektiv.",
+      "source_ids": [
+        "el01",
+        "el02",
+        "el03",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-02",
+      "claim": "En faglig analyse av antikk epikk, drama og lyrikk må skille og dokumentere hexameter, formel, scene og muntlig-skriftlig komposisjon.",
+      "source_ids": [
+        "el01",
+        "el02",
+        "el03",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-03",
+      "claim": "En faglig analyse av antikk epikk, drama og lyrikk må skille og dokumentere tragediens kor, episode, konflikt og festivalramme.",
+      "source_ids": [
+        "el01",
+        "el02",
+        "el03",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-04",
+      "claim": "En faglig analyse av antikk epikk, drama og lyrikk må skille og dokumentere komediens konkurranse, satire og politiske offentlighet.",
+      "source_ids": [
+        "el01",
+        "el02",
+        "el03",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-05",
+      "claim": "En faglig analyse av antikk epikk, drama og lyrikk må skille og dokumentere lyrisk jeg, framføring, meter og anledning.",
+      "source_ids": [
+        "el01",
+        "el02",
+        "el03",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-06",
+      "claim": "En faglig analyse av antikk epikk, drama og lyrikk må skille og dokumentere sjangerforskjeller mellom greske og romerske tradisjoner.",
+      "source_ids": [
+        "el01",
+        "el02",
+        "el03",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-07",
+      "claim": "En faglig analyse av antikk epikk, drama og lyrikk må skille og dokumentere tekstvitne, oversettelse og moderne rekonstruksjonsgrense.",
+      "source_ids": [
+        "el01",
+        "el02",
+        "el03",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-08",
+      "claim": "En faglig analyse av retorikk, poetikk og klassisk arv må skille og dokumentere mimesis, handling, karakter og sannsynlighet i poetikken.",
+      "source_ids": [
+        "el01",
+        "el03",
+        "el04",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-09",
+      "claim": "En faglig analyse av retorikk, poetikk og klassisk arv må skille og dokumentere ethos, pathos, logos og situert overtalelse.",
+      "source_ids": [
+        "el01",
+        "el03",
+        "el04",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-10",
+      "claim": "En faglig analyse av retorikk, poetikk og klassisk arv må skille og dokumentere inventio, dispositio, elocutio, memoria og actio.",
+      "source_ids": [
+        "el01",
+        "el03",
+        "el04",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-11",
+      "claim": "En faglig analyse av retorikk, poetikk og klassisk arv må skille og dokumentere sjanger, decorum og forholdet mellom form og anledning.",
+      "source_ids": [
+        "el01",
+        "el03",
+        "el04",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-12",
+      "claim": "En faglig analyse av retorikk, poetikk og klassisk arv må skille og dokumentere imitatio, kommentar, skoleøvelse og kreativ omskriving.",
+      "source_ids": [
+        "el01",
+        "el03",
+        "el04",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-13",
+      "claim": "En faglig analyse av retorikk, poetikk og klassisk arv må skille og dokumentere oversettelse og resepsjon av klassiske begreper.",
+      "source_ids": [
+        "el01",
+        "el03",
+        "el04",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-14",
+      "claim": "En faglig analyse av retorikk, poetikk og klassisk arv må skille og dokumentere klassisk arv som selektiv konstruksjon, ikke ubrutt linje.",
+      "source_ids": [
+        "el01",
+        "el03",
+        "el04",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-15",
+      "claim": "En faglig analyse av middelalder, muntlighet og håndskrift må skille og dokumentere samspill mellom muntlig framføring, minne og skriftlig fiksering.",
+      "source_ids": [
+        "el05",
+        "el06",
+        "el07",
+        "el08",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-16",
+      "claim": "En faglig analyse av middelalder, muntlighet og håndskrift må skille og dokumentere kodeks, materiale, legg, hånd og produksjonsmiljø.",
+      "source_ids": [
+        "el05",
+        "el06",
+        "el07",
+        "el08",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-17",
+      "claim": "En faglig analyse av middelalder, muntlighet og håndskrift må skille og dokumentere skriverarbeid, variant, feil, retting og omforming.",
+      "source_ids": [
+        "el05",
+        "el06",
+        "el07",
+        "el08",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-18",
+      "claim": "En faglig analyse av middelalder, muntlighet og håndskrift må skille og dokumentere illuminering, rubrikk, layout og leserute.",
+      "source_ids": [
+        "el05",
+        "el06",
+        "el07",
+        "el08",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-19",
+      "claim": "En faglig analyse av middelalder, muntlighet og håndskrift må skille og dokumentere hoff, kloster, by, skole og patronat.",
+      "source_ids": [
+        "el05",
+        "el06",
+        "el07",
+        "el08",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-20",
+      "claim": "En faglig analyse av middelalder, muntlighet og håndskrift må skille og dokumentere folkespråk, latin, flerspråklighet og oversettelse.",
+      "source_ids": [
+        "el05",
+        "el06",
+        "el07",
+        "el08",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-21",
+      "claim": "En faglig analyse av middelalder, muntlighet og håndskrift må skille og dokumentere fragment, tapt vitne og moderne edisjonsgrense.",
+      "source_ids": [
+        "el05",
+        "el06",
+        "el07",
+        "el08",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-22",
+      "claim": "En faglig analyse av religiøse sjangre og allegori må skille og dokumentere skriftkommentar, eksegese og flere meningsnivåer.",
+      "source_ids": [
+        "el05",
+        "el06",
+        "el09",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-23",
+      "claim": "En faglig analyse av religiøse sjangre og allegori må skille og dokumentere allegori som komposisjon, lesemåte og institusjonell praksis.",
+      "source_ids": [
+        "el05",
+        "el06",
+        "el09",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-24",
+      "claim": "En faglig analyse av religiøse sjangre og allegori må skille og dokumentere hagiografi, mirakel, helgenliv og eksempelfortelling.",
+      "source_ids": [
+        "el05",
+        "el06",
+        "el09",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-25",
+      "claim": "En faglig analyse av religiøse sjangre og allegori må skille og dokumentere preken, hymne, bønn og liturgisk framføring.",
+      "source_ids": [
+        "el05",
+        "el06",
+        "el09",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-26",
+      "claim": "En faglig analyse av religiøse sjangre og allegori må skille og dokumentere visjonslitteratur, apokalypse og reise i hinsidige rom.",
+      "source_ids": [
+        "el05",
+        "el06",
+        "el09",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-27",
+      "claim": "En faglig analyse av religiøse sjangre og allegori må skille og dokumentere ortodoksi, kjetteri, autoritet og religiøs institusjon.",
+      "source_ids": [
+        "el05",
+        "el06",
+        "el09",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-28",
+      "claim": "En faglig analyse av religiøse sjangre og allegori må skille og dokumentere oversettelse og sammenligning mellom ulike religiøse tradisjoner.",
+      "source_ids": [
+        "el05",
+        "el06",
+        "el09",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-29",
+      "claim": "En faglig analyse av renessanse, humanisme og trykk må skille og dokumentere ad fontes, filologi, språkstudium og klassiske tekstvitner.",
+      "source_ids": [
+        "el10",
+        "el11",
+        "el12",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-30",
+      "claim": "En faglig analyse av renessanse, humanisme og trykk må skille og dokumentere humanistbrev, dialog, essay og lærde nettverk.",
+      "source_ids": [
+        "el10",
+        "el11",
+        "el12",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-31",
+      "claim": "En faglig analyse av renessanse, humanisme og trykk må skille og dokumentere trykkpresse, sats, korrektur, opplag og verksted.",
+      "source_ids": [
+        "el10",
+        "el11",
+        "el12",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-32",
+      "claim": "En faglig analyse av renessanse, humanisme og trykk må skille og dokumentere forfatter, skriver, trykker, utgiver, privilegium og patron.",
+      "source_ids": [
+        "el10",
+        "el11",
+        "el12",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-33",
+      "claim": "En faglig analyse av renessanse, humanisme og trykk må skille og dokumentere folkespråk, standardisering, oversettelse og nasjonal kanon.",
+      "source_ids": [
+        "el10",
+        "el11",
+        "el12",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-34",
+      "claim": "En faglig analyse av renessanse, humanisme og trykk må skille og dokumentere paratekst, dedikasjon, forord, marginalia og leserbruk.",
+      "source_ids": [
+        "el10",
+        "el11",
+        "el12",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-35",
+      "claim": "En faglig analyse av renessanse, humanisme og trykk må skille og dokumentere manuskript og trykk som overlappende, ikke lineære systemer.",
+      "source_ids": [
+        "el10",
+        "el11",
+        "el12",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-36",
+      "claim": "En faglig analyse av barokk og tidligmoderne offentlighet må skille og dokumentere barokk kontrast, overdrivelse, concetto og sanselig virkning.",
+      "source_ids": [
+        "el10",
+        "el11",
+        "el13",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-37",
+      "claim": "En faglig analyse av barokk og tidligmoderne offentlighet må skille og dokumentere metafysisk diktning, vidd, argument og hengivenhet.",
+      "source_ids": [
+        "el10",
+        "el11",
+        "el13",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-38",
+      "claim": "En faglig analyse av barokk og tidligmoderne offentlighet må skille og dokumentere emblem, allegorisk bilde og verbal-visuell komposisjon.",
+      "source_ids": [
+        "el10",
+        "el11",
+        "el13",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-39",
+      "claim": "En faglig analyse av barokk og tidligmoderne offentlighet må skille og dokumentere hoff, kirke, teater, salong, kaffehus og byoffentlighet.",
+      "source_ids": [
+        "el10",
+        "el11",
+        "el13",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-40",
+      "claim": "En faglig analyse av barokk og tidligmoderne offentlighet må skille og dokumentere pamflett, nyhetsark, sensur, lisens og polemikk.",
+      "source_ids": [
+        "el10",
+        "el11",
+        "el13",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-41",
+      "claim": "En faglig analyse av barokk og tidligmoderne offentlighet må skille og dokumentere konfesjon, imperium, handel, kjønn og sosial posisjon.",
+      "source_ids": [
+        "el10",
+        "el11",
+        "el13",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "elt-42",
+      "claim": "En faglig analyse av barokk og tidligmoderne offentlighet må skille og dokumentere periodenavnets geografiske skjevhet og alternative kronologier.",
+      "source_ids": [
+        "el10",
+        "el11",
+        "el13",
+        "el14"
+      ],
+      "classification": "historical_literature_full_field",
+      "status": "verified"
+    },
+    {
+      "id": "b7e-19",
+      "claim": "Antikk epikk, drama og lyrikk kan prøves gjennom en kontrollert sammenstilling av Homer: Iliaden, Homer: Odysseen og Sofokles: Antigone. metrisk analyse og formel- og sceneanalyse brukes til å undersøke episk sang, påkallelse, handling og heltekollektiv, hexameter, formel, scene og muntlig-skriftlig komposisjon og tragediens kor, episode, konflikt og festivalramme, mens klassisk poetikk og muntlig-formel-teori organiserer spørsmålene uten å bestemme svaret på forhånd.",
+      "source_ids": [
+        "el01",
+        "el02"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b7e-20",
+      "claim": "Retorikk, poetikk og klassisk arv kan prøves gjennom en kontrollert sammenstilling av Aristoteles: Poetikken, Aristoteles: Retorikken og Horats: Ars Poetica. poetikkhistorisk analyse og retorisk analyse brukes til å undersøke mimesis, handling, karakter og sannsynlighet i poetikken, ethos, pathos, logos og situert overtalelse og inventio, dispositio, elocutio, memoria og actio, mens aristotelisk poetikk og klassisk retorikk organiserer spørsmålene uten å bestemme svaret på forhånd.",
+      "source_ids": [
+        "el01",
+        "el03"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b7e-21",
+      "claim": "Middelalder, muntlighet og håndskrift kan prøves gjennom en kontrollert sammenstilling av Beowulf-manuskriptet, Rolandskvadet i Oxford-manuskriptet og norrøne sagaer i middelalderhåndskrifter.",
+      "source_ids": [
+        "el05",
+        "el06"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b7e-22",
+      "claim": "Religiøse sjangre og allegori kan prøves gjennom en kontrollert sammenstilling av Dante Alighieri: Den guddommelige komedie, Hildegard av Bingen: Scivias og et middelaldersk psalter i Digital Bodleian. flernivåanalyse av allegori og sjanger- og motivanalyse brukes til å undersøke skriftkommentar, eksegese og flere meningsnivåer, allegori som komposisjon, lesemåte og institusjonell praksis og hagiografi, mirakel, helgenliv og eksempelfortelling, mens allegoriteori og eksegeseteori organiserer spørsmålene uten å bestemme svaret på forhånd.",
+      "source_ids": [
+        "el05",
+        "el06"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b7e-23",
+      "claim": "Renessanse, humanisme og trykk kan prøves gjennom en kontrollert sammenstilling av Thomas More: Utopia, Erasmus: humanistiske brev og utgaver og Gutenberg-bibelen som bokobjekt. filologisk kildeanalyse og trykk- og verkstedsanalyse brukes til å undersøke ad fontes, filologi, språkstudium og klassiske tekstvitner, humanistbrev, dialog, essay og lærde nettverk og trykkpresse, sats, korrektur, opplag og verksted, mens humanismeforskning og bokhistorie organiserer spørsmålene uten å bestemme svaret på forhånd.",
+      "source_ids": [
+        "el10",
+        "el11"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    },
+    {
+      "id": "b7e-24",
+      "claim": "Barokk og tidligmoderne offentlighet kan prøves gjennom en kontrollert sammenstilling av John Donne: metafysiske dikt, Pedro Calderón de la Barca: Livet er en drøm og John Milton: Areopagitica. retorisk figuranalyse og emblem- og intermedial analyse brukes til å undersøke barokk kontrast, overdrivelse, concetto og sanselig virkning, metafysisk diktning, vidd, argument og hengivenhet og emblem, allegorisk bilde og verbal-visuell komposisjon, mens barokkteori og retorisk teori organiserer spørsmålene uten å bestemme svaret på forhånd.",
+      "source_ids": [
+        "el10",
+        "el11"
+      ],
+      "classification": "redaksjonell_anvendt_fagpåstand",
+      "status": "verified"
+    }
+  ]
+}

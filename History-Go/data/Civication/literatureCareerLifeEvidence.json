@@ -1,0 +1,122 @@
+{
+  "schema": "civication_literature_career_life_evidence_v2",
+  "version": 2,
+  "reviewed_at": "2026-08-13",
+  "sources": [
+    {
+      "id": "utdanning_forfatter_2025",
+      "publisher": "Utdanning.no",
+      "title": "Forfatter",
+      "url": "https://utdanning.no/yrker/beskrivelse/forfatter",
+      "checked_at": "2026-08-13",
+      "supports": [
+        "Forfatter er et reelt yrke som omfatter blant annet skjønnlitteratur, fagbøker, dikt og teaterstykker.",
+        "Poet og dramatiker er dokumenterte spesifikke yrkestitler innen forfatteryrket.",
+        "Forfatterarbeid utføres i stor grad frilans eller som selvstendig næringsdrivende, slik at profesjonell praksis ikke kan likestilles med en arbeidsgiveransettelse.",
+        "Forfatterinntekt kan variere betydelig over tid."
+      ]
+    },
+    {
+      "id": "utdanning_redaktor_2024",
+      "publisher": "Utdanning.no",
+      "title": "Redaktør",
+      "url": "https://utdanning.no/yrker/beskrivelse/redaktor",
+      "checked_at": "2026-08-13",
+      "supports": [
+        "Redaktør er et reelt yrke med redaksjonelt ansvar.",
+        "Forlag kan ha forlagsredaktører som velger manus, veileder forfattere og arbeider frem mot publisering og markedsføring.",
+        "Redaktør er ikke en beskyttet tittel."
+      ]
+    },
+    {
+      "id": "utdanning_journalist_2026",
+      "publisher": "Utdanning.no",
+      "title": "Journalist",
+      "url": "https://utdanning.no/yrker/beskrivelse/journalist",
+      "checked_at": "2026-08-13",
+      "supports": [
+        "NAV/Aa-registeret bruker blant annet stillingstittelen Kritiker (anmelder).",
+        "Anmelder- og kritikerarbeid kan være reelt arbeidsliv, men Badge-identiteten alene dokumenterer ikke en konkret arbeidsgiverkontrakt."
+      ]
+    },
+    {
+      "id": "forfatterforeningen_vedtekter_2026",
+      "publisher": "Den norske Forfatterforening",
+      "title": "Vedtekter",
+      "url": "https://www.forfatterforeningen.no/vedtekter-2/",
+      "checked_at": "2026-08-13",
+      "supports": [
+        "Forfatterforeningens medlemskap bygger på publisert verk og litterær kvalitetsvurdering, ikke en ny arbeidsgiverstilling.",
+        "Det støtter skillet mellom etablert litterær posisjon og formell ansettelse."
+      ]
+    },
+    {
+      "id": "snl_skald_2024",
+      "publisher": "Store norske leksikon",
+      "title": "skald",
+      "url": "https://snl.no/skald",
+      "checked_at": "2026-08-13",
+      "supports": [
+        "Skald betegner historisk en norrøn dikter og brukes i dag også humoristisk eller høytidelig om diktere.",
+        "Skald passer derfor som historisk og stilistisk livsposisjon i Civication, ikke som en moderne arbeidsgiverstilling."
+      ]
+    }
+  ],
+  "canonical_decision": {
+    "life_position_tiers": [
+      "Leser",
+      "Aktiv leser",
+      "Litteraturinteressert",
+      "Skribent",
+      "Essayist",
+      "Anmelder",
+      "Litteraturkritiker",
+      "Forfatter",
+      "Etablert forfatter",
+      "Poet",
+      "Dramatiker",
+      "Prisvinnende forfatter",
+      "Bestselgerforfatter",
+      "Kanonisert forfatter",
+      "Skald"
+    ],
+    "professional_practice_life_positions": [
+      "Skribent",
+      "Essayist",
+      "Anmelder",
+      "Litteraturkritiker",
+      "Forfatter",
+      "Poet",
+      "Dramatiker"
+    ],
+    "formal_employer_job_tiers": [
+      "Redaksjonsmedarbeider",
+      "Redaktør (bok)"
+    ],
+    "editorial_review_left_open": [],
+    "notes": [
+      "Litteraturmerket skiller nå kunnskaps-/livsprogresjon fra formell jobb gjennom den eksisterende Civication life-position-kontrakten.",
+      "Forfatter, poet, dramatiker, skribent, essayist og kritiker beholdes som reelle profesjonelle praksiser, men Badge-poeng oppretter ikke en arbeidsgiver.",
+      "Redaksjonsmedarbeider og Redaktør (bok) er de to Badge-tierene som kan gi ordinært jobbtilbud i dagens Litteratur-merke.",
+      "Skald er ferdig klassifisert som historisk/stilistisk livsposisjon; ingen Litteratur-tier står lenger til editorial review."
+    ]
+  },
+  "livelihood_bindings": {
+    "principle": "Livsposisjon kan gjøre en eksisterende leveveimulighet relevant, men oppretter aldri inntekt automatisk. Hver betalende strøm må fortsatt ha kildeproveniens og aksepteres i CivicationLivelihoods.",
+    "by_life_position": {
+      "Skribent": ["freelance_assignment", "gig_honorarium"],
+      "Essayist": ["freelance_assignment", "royalty_income", "gig_honorarium"],
+      "Anmelder": ["freelance_assignment", "gig_honorarium"],
+      "Litteraturkritiker": ["freelance_assignment", "gig_honorarium"],
+      "Forfatter": ["royalty_income", "project_grant", "freelance_assignment", "direct_sale", "gig_honorarium"],
+      "Poet": ["royalty_income", "gig_honorarium", "project_grant", "direct_sale"],
+      "Dramatiker": ["royalty_income", "project_grant", "freelance_assignment"]
+    }
+  },
+  "hard_boundaries": [
+    "Badge-poeng kan aldri opprette arbeidsgiver, kontrakt, utgivelse, pris, salg eller annen inntekt alene.",
+    "Profesjonell litterær praksis kan eksistere samtidig med annen formell jobb eller uten formell jobb.",
+    "En konkret redaksjonell ansettelse er separat fra spillerens litterære identitet og forfatterskap.",
+    "Skald gir ingen moderne yrkesmyndighet eller økonomisk særstatus."
+  ]
+}

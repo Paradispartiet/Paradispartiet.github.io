@@ -1,0 +1,66 @@
+{
+  "placeId": "carl_berner_plass",
+  "placeFile": "data/places/by/oslo/places/carl_berner_plass.json",
+  "evidenceStatus": "applied_to_place",
+  "coordinateDecision": "do_not_change_coordinates_yet",
+  "currentCoordinate": {
+    "lat": 59.926111,
+    "lon": 10.775833,
+    "r": 180,
+    "coordStatus": "verified_geometry",
+    "coordSource": "Oslo byleksikon – Carl Berners plass",
+    "coordType": "square_center",
+    "coordNote": "Representativt områdeanker for selve Carl Berners plass som trafikalt plass- og fordelingsrom. Oslo byleksikon dokumenterer plassen ved krysset Christian Michelsens gate, Tromsøgata, Trondheimsveien og Grenseveien. Punktet brukes som area_anchor for plassrommet og holdes adskilt fra T-banestasjonen og holdeplasser med samme navn."
+  },
+  "identity": {
+    "currentName": "Carl Berners plass",
+    "resolvedIdentity": "Carl Berners plass som trafikalt plass- og fordelingsrom",
+    "identityStatus": "resolved",
+    "identityProblem": "",
+    "locatorTypeCandidate": "square",
+    "requiresSplit": false,
+    "splitReason": ""
+  },
+  "requiredEvidence": [
+    "stabil kildeidentitet",
+    "objekttilpasset representasjonsanker",
+    "avgrensning mot nærliggende canonical steder"
+  ],
+  "evidence": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceName": "Oslo byleksikon – Carl Berners plass",
+      "sourceUrl": "https://oslobyleksikon.no/side/Carl_Berners_plass",
+      "sourceObjectId": "oslobyleksikon:carl-berners-plass",
+      "sourceQuality": "documented_place_or_area_definition",
+      "finding": "Oslo byleksikon dokumenterer Carl Berners plass som det navngitte trafikale plassrommet ved krysset Christian Michelsens gate, Tromsøgata, Trondheimsveien og Grenseveien.",
+      "canVerifyCoordinate": true,
+      "reason": "Representativt områdeanker for selve Carl Berners plass som trafikalt plass- og fordelingsrom. Oslo byleksikon dokumenterer plassen ved krysset Christian Michelsens gate, Tromsøgata, Trondheimsveien og Grenseveien. Punktet brukes som area_anchor for plassrommet og holdes adskilt fra T-banestasjonen og holdeplasser med samme navn."
+    }
+  ],
+  "addressCandidates": [],
+  "sourceObjectCandidates": [
+    {
+      "sourceProvider": "manual_research",
+      "sourceObjectId": "oslobyleksikon:carl-berners-plass",
+      "canApplyToPlace": true
+    }
+  ],
+  "geometryCandidates": [],
+  "coordinateCandidates": [
+    {
+      "lat": 59.926111,
+      "lon": 10.775833,
+      "coordRole": "area_anchor",
+      "canApplyToPlace": true
+    }
+  ],
+  "decision": {
+    "canBecomeVerified": true,
+    "blockedReason": "",
+    "nextAction": "Kildekontrakt og representasjonsanker er anvendt på canonical place."
+  },
+  "notes": [
+    "Representativt områdeanker for selve Carl Berners plass som trafikalt plass- og fordelingsrom. Oslo byleksikon dokumenterer plassen ved krysset Christian Michelsens gate, Tromsøgata, Trondheimsveien og Grenseveien. Punktet brukes som area_anchor for plassrommet og holdes adskilt fra T-banestasjonen og holdeplasser med samme navn."
+  ]
+}
