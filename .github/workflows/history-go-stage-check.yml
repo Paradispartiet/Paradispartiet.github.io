@@ -1,0 +1,81 @@
+name: History Go deploy stage check
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  stage-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Clone and build History Go
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 https://github.com/Paradispartiet/History-Go.git history-go-src
+          cd history-go-src
+          npm ci
+          npm run build:web
+          npm run smoke:web
+
+      - name: Stage deploy-only runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          src="$GITHUB_WORKSPACE/history-go-src"
+          out="$GITHUB_WORKSPACE/staged/History-Go"
+          mkdir -p "$out"
+          root_files=(Civication.html emner.html fagverk-forside.html fagverk-sted.html fagverk.html index.html knowledge-profile.html knowledge.html knowledge.js knowledge_by.html manifest.json merke.html notater.html profile.html sw.js)
+          for file in "${root_files[@]}"; do test -f "$src/$file"; cp "$src/$file" "$out/$file"; done
+          runtime_dirs=(assets bilder css data dist games js knowledge merker subpages)
+          for dir in "${runtime_dirs[@]}"; do
+            if [ -d "$src/$dir" ]; then mkdir -p "$out/$dir"; cp -a "$src/$dir/." "$out/$dir/"; fi
+          done
+          find "$out" -type f \( -name '*.ts' -o -name '*.tsx' -o -name '*.map' -o -name '*.md' -o -name '*.markdown' -o -name '*.mjs' -o -name '*.cjs' -o -name '*.py' -o -name '*.sh' \) -delete
+          find "$out" -type d \( -name '__tests__' -o -name 'tests' -o -name 'test' \) -prune -exec rm -rf {} +
+          touch "$out/.nojekyll"
+
+      - name: Verify boundary and precache
+        shell: bash
+        run: |
+          set -euo pipefail
+          out="$GITHUB_WORKSPACE/staged/History-Go"
+          test -f "$out/index.html"
+          test -f "$out/data/places/places_index.json"
+          for path in AGENTS.md CLAUDE.md DOCS.md README.md TYPESCRIPT_MIGRATION.md package.json package-lock.json render.yaml backend build docs reports schemas scripts supabase tests tools AHA BACKLOG README .github .devcontainer; do test ! -e "$out/$path"; done
+          python - <<'PY'
+          import pathlib,re,sys
+          out=pathlib.Path('staged/History-Go')
+          sw=(out/'sw.js').read_text('utf-8')
+          m=re.search(r'const\s+PRECACHE_URLS\s*=\s*\[(.*?)\];',sw,re.S)
+          if not m: raise SystemExit('PRECACHE_URLS not found')
+          vals=re.findall(r'["\']([^"\']+)["\']',m.group(1))
+          missing=[]
+          for v in vals:
+            if v in ('./','/') or v.startswith(('http://','https://','data:','//')): continue
+            rel=v[2:] if v.startswith('./') else v
+            if not (out/rel).exists(): missing.append(rel)
+          print('PRECACHE_COUNT',len(vals))
+          print('MISSING_COUNT',len(missing))
+          for p in missing: print('MISSING',p)
+          if missing: raise SystemExit(1)
+          PY
+          echo "STAGED_SIZE=$(du -sh "$out" | cut -f1)"
+          echo "STAGED_FILES=$(find "$out" -type f | wc -l)"
+
+      - name: Local HTTP smoke
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m http.server 8765 --directory "$GITHUB_WORKSPACE/staged" >/tmp/http.log 2>&1 &
+          pid=$!
+          trap 'kill "$pid" 2>/dev/null || true' EXIT
+          sleep 2
+          for path in History-Go/ History-Go/index.html History-Go/profile.html History-Go/Civication.html History-Go/fagverk.html History-Go/data/places/places_index.json; do
+            curl --fail --silent --show-error --max-time 20 "http://127.0.0.1:8765/$path" >/dev/null
+          done
+          echo HISTORY_GO_STAGE_OK
