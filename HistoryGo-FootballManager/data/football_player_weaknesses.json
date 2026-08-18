@@ -1,0 +1,25 @@
+{
+  "schema": "historygo-football-manager.player-weaknesses.v1",
+  "version": 1,
+  "note": "Svake sider: hvorfor det koster noe å bruke en spiller HER. Ferdighetsvokabularet og posisjonskravene ligger i data/football_attributes.json — denne fila eier bare treningen av dem.",
+  "training": {
+    "maxProgress": 100,
+    "biteReliefCap": 4,
+    "note": "Trening på en svak side gjør ikke spilleren bedre. Den åpner dører: en spiller som har jobbet med førstetouchen kan brukes i roller som krever den, uten at klassen hans er rørt. Uttellingen kommer først når du faktisk bruker ham der."
+  },
+  "difficulty": {
+    "lett": {
+      "growthPerWeek": 9,
+      "note": "Ren repetisjon. Dette flytter seg raskt."
+    },
+    "moderat": {
+      "growthPerWeek": 6,
+      "note": "Tar noen uker, men det kommer."
+    },
+    "hard": {
+      "growthPerWeek": 3,
+      "note": "Fysikk og instinkt flytter seg sakte. Regn med en halv sesong."
+    }
+  },
+  "attributesSource": "data/football_attributes.json"
+}
