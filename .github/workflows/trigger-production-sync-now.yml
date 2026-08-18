@@ -9,7 +9,7 @@ on:
 
 permissions:
   actions: write
-  contents: read
+  contents: write
 
 jobs:
   trigger:
@@ -19,4 +19,12 @@ jobs:
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh workflow run sync-production-sites.yml --ref main
+        run: |
+          set -euo pipefail
+          gh workflow run sync-production-sites.yml --ref main
+          printf 'triggered\nrun=%s\n' "$GITHUB_RUN_ID" > /tmp/triggered
+          encoded="$(base64 -w0 /tmp/triggered)"
+          current="$(gh api "repos/${GITHUB_REPOSITORY}/contents/.production-triggered.txt?ref=main" --jq .sha 2>/dev/null || true)"
+          args=(--method PUT "repos/${GITHUB_REPOSITORY}/contents/.production-triggered.txt" -f message="Record production trigger ${GITHUB_RUN_ID}" -f content="$encoded" -f branch=main)
+          if [[ -n "$current" ]]; then args+=(-f sha="$current"); fi
+          gh api "${args[@]}" >/dev/null
