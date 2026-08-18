@@ -18,6 +18,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      configure_outcome: ${{ steps.configure.outcome }}
     steps:
       - name: Build inactive page
         shell: bash
@@ -28,7 +30,26 @@ jobs:
           EOF
           touch _site/.nojekyll
       - name: Configure Pages
+        id: configure
+        continue-on-error: true
         uses: actions/configure-pages@v5
+      - name: Record configure outcome
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          OUTCOME: ${{ steps.configure.outcome }}
+        run: |
+          set -euo pipefail
+          printf 'configure=%s\nrun_id=%s\n' "$OUTCOME" "$GITHUB_RUN_ID" > /tmp/status
+          encoded="$(base64 -w0 /tmp/status)"
+          current="$(gh api "repos/${GITHUB_REPOSITORY}/contents/.central-retire-diagnostic.txt?ref=main" --jq .sha 2>/dev/null || true)"
+          args=(--method PUT "repos/${GITHUB_REPOSITORY}/contents/.central-retire-diagnostic.txt" -f message="Record central retire diagnostic ${GITHUB_RUN_ID}" -f content="$encoded" -f branch=main)
+          if [[ -n "$current" ]]; then args+=(-f sha="$current"); fi
+          gh api "${args[@]}" >/dev/null
+      - name: Require Pages configuration
+        if: steps.configure.outcome != 'success'
+        run: exit 1
       - name: Upload retired site
         uses: actions/upload-pages-artifact@v4
         with:
