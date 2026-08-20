@@ -1,7 +1,7 @@
 {
   "schema": "history_go_fagverk_registry_v1",
-  "version": "3.13.0",
-  "updatedAt": "2026-08-18",
+  "version": "3.14.0",
+  "updatedAt": "2026-08-21",
   "placePage": {
     "route": "fagverk-sted.html?place={placeId}",
     "genericForAllCanonicalPlaces": true,
@@ -4125,6 +4125,48 @@
         ],
         "nextGate": "maintenance_source_refresh_and_place_case_expansion"
       }
+    },
+    "helse": {
+      "title": "Helse & medisin",
+      "description": "Et kilde- og sikkerhetsstyrt fagverk om kropp, sykdom, klinikk, folkehelse, epidemiologi, infeksjon, legemidler, ernæring, psykisk helse, rehabilitering, helsetjenester, helseøkonomi, medisinsk etikk og evidens. Faget underviser generelle prinsipper og gir aldri individuell diagnose, prognose, triage eller behandlingsanbefaling.",
+      "canonicalModel": {
+        "manifest": "data/fag/fag_manifest.json",
+        "schemaFamily": "foundation_v1",
+        "sourceOfTruth": true,
+        "firstSourceClaimBrief": "data/fag/helse/medical_ethics_evidence_source_claim_brief_v1.json",
+        "note": "To source-first-enheter er dokumentert: medisinsk etikk/evidens er fulltekstmaterialisert, mens anatomi/fysiologi har 14 inspiserte terminologi-, profesjons-, lærebok- og biomedisinske kilder, 8 faglige spor, 6 ikke-individualiserende scenarioer og 32 claimplaner. Anatomi/fysiologi er ikke registrert som kapittel.",
+        "firstFulltextChapter": "data/fagverk/helse/medisinsk-etikk-evidens-og-ansvarlig-beslutning.json",
+        "secondSourceClaimBrief": "data/fag/helse/anatomy_physiology_source_claim_brief_v1.json"
+      },
+      "editorialPlan": {
+        "targetDomainCount": 12,
+        "completedSourceBriefCount": 2,
+        "registeredChapterCount": 1,
+        "completionRequirements": [
+          "all_canonical_domains_covered",
+          "source_first_claim_trace_complete",
+          "clinical_safety_contract_green",
+          "fulltext_and_assessment_audits_green",
+          "strict_theory_integrity_green"
+        ],
+        "nextGate": "produce_full_chapter_claims_and_inspectable_sources_for_anatomi_fysiologi"
+      },
+      "chapters": [
+        {
+          "id": "medisinsk-etikk-evidens-og-ansvarlig-beslutning",
+          "title": "Medisinsk etikk, evidens og ansvarlig beslutning",
+          "subtitle": "Fra informasjon og samtykke til forskningsetikk, evidenssikkerhet, samvalg, prioritering og profesjonsansvar",
+          "file": "data/fagverk/helse/medisinsk-etikk-evidens-og-ansvarlig-beslutning.json",
+          "primary_domain_id": "medisinsk_etikk_evidens",
+          "emne_ids": [
+            "em_helse_medisinsk_etikk_evidens"
+          ],
+          "claimsFile": "data/fagverk/helse/medisinsk-etikk-evidens-og-ansvarlig-beslutning/claims.json",
+          "briefFile": "data/fagverk/helse/medisinsk-etikk-evidens-og-ansvarlig-beslutning/brief.json",
+          "assessmentFile": "data/fagverk/helse/medisinsk-etikk-evidens-og-ansvarlig-beslutning/assessment.json",
+          "safetyContractFile": "data/fag/helse/clinical_safety_contract_helse_v1.json"
+        }
+      ]
     }
   },
   "placeLinks": {

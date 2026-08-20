@@ -9,16 +9,16 @@
   "registry": {
     "path": "data/fagverk/fagverk_registry.json",
     "schema": "history_go_fagverk_registry_v1",
-    "version": "3.13.0",
-    "updated_at": "2026-08-18",
-    "content_sha256": "10ee62cfdff603ec6f0fcc2e555c4449e67b31dd868ec6bc9f1cbbb4c2c43e45"
+    "version": "3.14.0",
+    "updated_at": "2026-08-21",
+    "content_sha256": "778ea9aff76c02dc00627a2497c1a081bc7e3503e9d9c5150ef79446ec5fc56e"
   },
   "subject_inventory": {
     "path": "data/fagverk/subject_inventory.json",
     "schema": "history_go_fagverk_subject_inventory_v1",
     "version": "1.12.0",
     "updated_at": "2026-08-20",
-    "content_sha256": "e89c501d87cbe29753926e823d3072633f4fdc2172b5b3ff5aae6156719ff96a",
+    "content_sha256": "5cefdaa14b36c1c8962b96e132766e0ca4cba8ddfe1e64c079da0935decf2c6f",
     "root_subject_count": 19,
     "specialization_count": 1
   },
@@ -27,18 +27,18 @@
     "schema": null,
     "version": null,
     "updated_at": null,
-    "content_sha256": "30182fad902985905992a7c41fbd6e6562b418c7026adfba51157ea72ab27805"
+    "content_sha256": "9cbf2d7cc808789c4f9b166a354ee128aeedddc428dd8006db7c1d71e53ce02e"
   },
   "summary": {
     "subject_count": 20,
     "root_subject_count": 19,
     "specialization_count": 1,
-    "chapter_subject_count": 15,
-    "chapter_count": 163,
-    "module_file_count": 393,
-    "package_file_count": 220,
-    "chapter_referenced_file_count": 751,
-    "referenced_file_count": 926,
+    "chapter_subject_count": 16,
+    "chapter_count": 164,
+    "module_file_count": 397,
+    "package_file_count": 223,
+    "chapter_referenced_file_count": 758,
+    "referenced_file_count": 935,
     "missing_file_count": 0,
     "optional_gap_count": 1
   },
@@ -997,13 +997,13 @@
       ]
     },
     "helse": {
-      "title": "helse",
+      "title": "Helse & medisin",
       "kind": "subject",
       "parent_subject_id": null,
       "schema_family": "foundation_v1",
       "pilot": false,
       "package_status": "complete",
-      "chapter_status": "not_materialized",
+      "chapter_status": "materialized",
       "required_manifest_fields": [
         "pensum",
         "emner",
@@ -1015,9 +1015,12 @@
         "safetyContract",
         "status",
         "quizStandard",
-        "quizQuestionSchema"
+        "quizQuestionSchema",
+        "sourceClaimBriefs",
+        "chapters"
       ],
       "present_manifest_fields": [
+        "chapters",
         "emner",
         "fagkart",
         "methods",
@@ -1025,14 +1028,27 @@
         "quizQuestionSchema",
         "quizStandard",
         "safetyContract",
+        "sourceClaimBriefs",
         "status",
         "supersetQuizMal"
       ],
       "missing_manifest_fields": [],
-      "package_file_count": 8,
+      "package_file_count": 11,
       "required_package_file_count": 4,
-      "optional_package_file_count": 4,
+      "optional_package_file_count": 7,
       "package_files": [
+        {
+          "path": "data/fag/helse/anatomy_physiology_source_claim_brief_v1.json",
+          "required": false,
+          "fields": [
+            "sourceClaimBriefs"
+          ],
+          "key_paths": [
+            "sourceClaimBriefs[1]"
+          ],
+          "exists": true,
+          "content_sha256": "d605812d16c44c40aa012990192c27ea1478fde4a04e14a40e4337e42e30c16f"
+        },
         {
           "path": "data/fag/helse/clinical_safety_contract_helse_v1.json",
           "required": false,
@@ -1055,7 +1071,7 @@
             "emner"
           ],
           "exists": true,
-          "content_sha256": "ee532dca06a5d1ce25b245e59e441ce248180ed903918696ab69d711d86ff487"
+          "content_sha256": "94135f707f73601e01781bc6e2dacd0aaffcf09f7c1937bef4ab4c275e2bacb4"
         },
         {
           "path": "data/fag/helse/fagkart_helse_canonical_v1.json",
@@ -1079,7 +1095,19 @@
             "pensum"
           ],
           "exists": true,
-          "content_sha256": "c14bf851a4e8afc83227dbd13f16c0bd437df94e75be8f81aff267675116f415"
+          "content_sha256": "f9a224d2ca4046df9563a5a35255a26f880bd149fad9f150442dfbde86e8cca4"
+        },
+        {
+          "path": "data/fag/helse/medical_ethics_evidence_source_claim_brief_v1.json",
+          "required": false,
+          "fields": [
+            "sourceClaimBriefs"
+          ],
+          "key_paths": [
+            "sourceClaimBriefs[0]"
+          ],
+          "exists": true,
+          "content_sha256": "ad8ba8a2bfaaea14d6f26b36c33cb4535b4a870b0c55952abfc83fb587a4346b"
         },
         {
           "path": "data/fag/helse/methods_helse_canonical_v1.json",
@@ -1091,7 +1119,7 @@
             "methods"
           ],
           "exists": true,
-          "content_sha256": "48fdf129d3c710dba6cf596f84e811ad7dfa3b3aaa5dd85d22ae872d875cb432"
+          "content_sha256": "b85307380255f95ed76ae840850a3cc746c57e73a1f401d3727555969967faa2"
         },
         {
           "path": "data/fag/helse/supersetQUIZMAL_helse.json",
@@ -1104,6 +1132,18 @@
           ],
           "exists": true,
           "content_sha256": "7c5dc1a8d0329ba1b5f6adfc2a92c41551e3e5c0cb91493ca6447f1b1ed4215d"
+        },
+        {
+          "path": "data/fagverk/helse/medisinsk-etikk-evidens-og-ansvarlig-beslutning.json",
+          "required": false,
+          "fields": [
+            "chapters"
+          ],
+          "key_paths": [
+            "chapters[0]"
+          ],
+          "exists": true,
+          "content_sha256": "bee7d1170c59236e1a6f333887ae8386ede34a8c2466eef4cc5cc01d9e9a2bfd"
         },
         {
           "path": "data/quiz/regler/QUIZ_PRODUCTION_CANONICAL.md",
@@ -1130,21 +1170,30 @@
           "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
         }
       ],
-      "package_content_sha256": "848141a66e43e00c700dc0d4d04b66dc98ee32b9cf55913b58c063ae2ad35d6b",
-      "chapter_count": 0,
-      "module_file_count": 0,
-      "brief_file_count": 0,
-      "claims_file_count": 0,
-      "chapter_referenced_file_count": 0,
-      "chapter_content_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-      "referenced_file_count": 8,
+      "package_content_sha256": "12dd524f8af42bb2b5484e27f77ef6a517da8b3ff6325a3304e95d2de923ef29",
+      "chapter_count": 1,
+      "module_file_count": 4,
+      "brief_file_count": 1,
+      "claims_file_count": 1,
+      "chapter_referenced_file_count": 7,
+      "chapter_content_sha256": "7ec57b73412098d7aae205cb7c3fe2a79126087e9b2a337c1f6db85030b32bf8",
+      "referenced_file_count": 17,
       "missing_required_files": [],
       "missing_optional_files": [],
       "missing_chapter_files": [],
       "missing_files": [],
-      "structure_sha256": "00e4737d58287636ab7da4ef56650a812cee6c61361770dae69dd73e77387163",
-      "content_sha256": "848141a66e43e00c700dc0d4d04b66dc98ee32b9cf55913b58c063ae2ad35d6b",
-      "chapters": []
+      "structure_sha256": "aeeb2b8351ee9d13382f5adeddd2eb8133ec92e31a7b6fcc6923057bad898282",
+      "content_sha256": "189844a69c669bfda79789453c8ee0667688306ab18a41c1bc14996667580b23",
+      "chapters": [
+        {
+          "chapter_id": "medisinsk-etikk-evidens-og-ansvarlig-beslutning",
+          "title": "Medisinsk etikk, evidens og ansvarlig beslutning",
+          "file": "data/fagverk/helse/medisinsk-etikk-evidens-og-ansvarlig-beslutning.json",
+          "module_file_count": 4,
+          "referenced_file_count": 7,
+          "content_sha256": "7ec57b73412098d7aae205cb7c3fe2a79126087e9b2a337c1f6db85030b32bf8"
+        }
+      ]
     },
     "historie": {
       "title": "Historie",
@@ -5124,5 +5173,5 @@
       ]
     }
   },
-  "release_sha256": "06a1cdea5dd50bbfd1d83fc59d45a4204c0ef0b629cc1cfcb433759297b653f4"
+  "release_sha256": "6085a78a8073d6deea24b944da6d80b5a7ca0233758f7c6a5264a0203debaffe"
 }
