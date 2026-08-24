@@ -554,8 +554,9 @@
       }
       return fallbackColor || "#6c757d";
     }
-    function getPlaceMarkerStrokeWidth() {
-      return isStandardMapStyle() ? 2.4 : 1.8;
+    function getPlaceMarkerStrokeWidth(isArea = false) {
+      if (isArea) return isStandardMapStyle() ? 2.4 : 1.8;
+      return isStandardMapStyle() ? 1.45 : 1.15;
     }
     function getPlaceDetailVisibility() {
       return [
@@ -568,8 +569,62 @@
         1
       ];
     }
+    function getPlaceAreaSquareLayout(isGlow = false) {
+      const size = isGlow ? ["interpolate", ["linear"], ["zoom"], 7, 7, 9.5, 8.5, 12, 10, 16, 12, 18, 14] : [
+        "interpolate",
+        ["linear"],
+        ["zoom"],
+        7,
+        ["+", 5, ["*", 0.2, ["get", "visited"]]],
+        9.5,
+        ["+", 6.2, ["*", 0.25, ["get", "visited"]]],
+        12,
+        ["+", 7.4, ["*", 0.3, ["get", "visited"]]],
+        16,
+        ["+", 9, ["*", 0.4, ["get", "visited"]]],
+        18,
+        ["+", 10.5, ["*", 0.5, ["get", "visited"]]]
+      ];
+      return {
+        "text-field": "\u25A0",
+        "text-font": ["Open Sans Semibold", "Arial Unicode MS Regular"],
+        "text-size": size,
+        "text-allow-overlap": true,
+        "text-ignore-placement": true,
+        "text-pitch-alignment": "viewport",
+        "text-rotation-alignment": "viewport"
+      };
+    }
+    function getPlaceAreaSquarePaint(isGlow = false) {
+      if (isGlow) {
+        return {
+          "text-color": ["get", "fill"],
+          "text-opacity": [
+            "case",
+            ["in", ["get", "coordinateTrust"], ["literal", ["review", "unknown"]]],
+            0.06,
+            0.14
+          ],
+          "text-halo-color": ["get", "fill"],
+          "text-halo-width": isStandardMapStyle() ? 1.4 : 1.1,
+          "text-halo-blur": 1
+        };
+      }
+      return {
+        "text-color": ["get", "fill"],
+        "text-opacity": [
+          "case",
+          ["in", ["get", "coordinateTrust"], ["literal", ["review", "unknown"]]],
+          0.58,
+          1
+        ],
+        "text-halo-color": ["get", "border"],
+        "text-halo-width": isStandardMapStyle() ? 1.2 : 1,
+        "text-halo-blur": 0
+      };
+    }
     function getPlaceGlowPaint(isArea = false) {
-      const radius = isArea ? ["interpolate", ["linear"], ["zoom"], 7, 3.5, 9.5, 6, 12, 8.2, 16, 11.5, 18, 15] : ["interpolate", ["linear"], ["zoom"], 10, 2, 12, 3, 14, 5, 16, 9, 18, 14];
+      const radius = isArea ? ["interpolate", ["linear"], ["zoom"], 7, 3.5, 9.5, 6, 12, 8.2, 16, 11.5, 18, 15] : ["interpolate", ["linear"], ["zoom"], 10, 1.8, 12, 2.5, 14, 3.7, 16, 5.2, 18, 7.4];
       const visibility = isArea ? 1 : getPlaceDetailVisibility();
       if (!isStandardMapStyle()) {
         return {
@@ -580,7 +635,7 @@
         };
       }
       return {
-        "circle-radius": isArea ? radius : ["interpolate", ["linear"], ["zoom"], 10, 5, 12, 7, 14, 9, 16, 13, 18, 18],
+        "circle-radius": isArea ? radius : ["interpolate", ["linear"], ["zoom"], 10, 3, 12, 3.8, 14, 5, 16, 6.8, 18, 9.2],
         "circle-color": ["get", "fill"],
         "circle-opacity": [
           "*",
@@ -655,28 +710,26 @@
           ["linear"],
           ["zoom"],
           10,
-          ["+", 2.1, ["*", 0.4, ["get", "visited"]]],
+          ["+", 1.6, ["*", 0.2, ["get", "visited"]]],
           12,
-          ["+", 2.8, ["*", 0.6, ["get", "visited"]]],
+          ["+", 2.2, ["*", 0.3, ["get", "visited"]]],
           14,
-          ["+", 4.1, ["*", 0.8, ["get", "visited"]]],
+          ["+", 3, ["*", 0.4, ["get", "visited"]]],
           16,
-          ["+", 6.1, ["*", 1, ["get", "visited"]]],
+          ["+", 4, ["*", 0.6, ["get", "visited"]]],
           18,
-          ["+", 8.8, ["*", 1.3, ["get", "visited"]]]
+          ["+", 5.6, ["*", 0.8, ["get", "visited"]]]
         ],
         "circle-color": ["get", "fill"],
         "circle-stroke-color": ["get", "border"],
-        "circle-stroke-width": isArea ? getPlaceMarkerStrokeWidth() + 0.5 : getPlaceMarkerStrokeWidth(),
+        "circle-stroke-width": isArea ? getPlaceMarkerStrokeWidth(true) + 0.5 : getPlaceMarkerStrokeWidth(false),
+        // The layer minzoom already owns when detail markers appear. Do not fade
+        // the actual dot away: once a place label can render, its dot must exist.
         "circle-opacity": [
-          "*",
-          [
-            "case",
-            ["in", ["get", "coordinateTrust"], ["literal", ["review", "unknown"]]],
-            0.58,
-            1
-          ],
-          isArea ? 1 : getPlaceDetailVisibility()
+          "case",
+          ["in", ["get", "coordinateTrust"], ["literal", ["review", "unknown"]]],
+          0.58,
+          1
         ]
       };
     }
@@ -759,9 +812,10 @@
       MAP.addLayer({
         id: L_AREA_GLOW,
         filter: PLACE_AREA_LOD_FILTER,
-        type: "circle",
+        type: "symbol",
         source: SRC,
-        paint: getPlaceGlowPaint(true)
+        layout: getPlaceAreaSquareLayout(true),
+        paint: getPlaceAreaSquarePaint(true)
       });
       MAP.addLayer({
         id: L_GLOW,
@@ -774,9 +828,10 @@
       MAP.addLayer({
         id: L_AREA_DOTS,
         filter: PLACE_AREA_LOD_FILTER,
-        type: "circle",
+        type: "symbol",
         source: SRC,
-        paint: getPlaceDotPaint(true)
+        layout: getPlaceAreaSquareLayout(false),
+        paint: getPlaceAreaSquarePaint(false)
       });
       MAP.addLayer({
         id: L_DOTS,
