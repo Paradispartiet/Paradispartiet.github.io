@@ -294,8 +294,9 @@ body.hg-app.hg-phone #placesLoadingIndicator{
 
 /* ============================================================
    PLACE CARD LAYER
-   Flytende kort over kartet: forankret nederst med luft over
-   footeren, luft på sidene, og aldri helt opp til headeren.
+   PlaceCard starter alltid rett under Utforsk-knappen. Høyden styres
+   fortsatt av innholdet, mens max-height gir fast luft over footeren.
+   Kortet skal ikke strekkes til hele den tilgjengelige skjermhøyden.
    Nearby er en flytende Utforsk-drawer og skyver ikke PlaceCard.
    ============================================================ */
 
@@ -303,21 +304,19 @@ body.hg-app #placeCard{
   position: fixed;
   left: calc(12px + env(safe-area-inset-left, 0px));
   right: calc(12px + env(safe-area-inset-right, 0px));
-  /* Bunnforankret med luft over den faste footeren (som allerede
-     inkluderer env(safe-area-inset-bottom) via --hg-bottom-nav-height).
-     Høyden styres av innholdet opp til max-height; .pc-body scroller
-     internt, så kortet strekker seg aldri fra topp til bunn. */
-  top: auto;
-  bottom: calc(var(--hg-bottom-nav-height) + 14px);
+  /* Utforsk starter 10px under headeren og er omtrent 38px høy.
+     58px gir en liten, stabil luftstripe under knappen. */
+  top: calc(var(--hg-visual-header-height, 74px) + 58px);
+  bottom: auto;
   height: auto;
-  /* 26px = 14px luft over footer + minst 12px luft under header. */
+  /* 72px = 58px toppoffset + 14px luft over footeren. */
   max-height: calc(
     100vh - var(--hg-visual-header-height, 74px) -
-    var(--hg-bottom-nav-height) - 26px
+    var(--hg-bottom-nav-height) - 72px
   );
   max-height: calc(
     100dvh - var(--hg-visual-header-height, 74px) -
-    var(--hg-bottom-nav-height) - 26px
+    var(--hg-bottom-nav-height) - 72px
   );
   /* Desktop/tablett: modal-lignende kort sentrert med begrenset bredde,
      ikke et panel i full bredde. Bredt nok til pc-grid-ens to kolonner. */
