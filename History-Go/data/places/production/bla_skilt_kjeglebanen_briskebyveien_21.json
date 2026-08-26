@@ -1,0 +1,155 @@
+{
+  "schemaVersion": "4.2",
+  "validatorVersion": "4.2.1",
+  "placeId": "bla_skilt_kjeglebanen_briskebyveien_21",
+  "placeFile": "data/places/sport/oslo/bla_skilt/bla_skilt_kjeglebanen_briskebyveien_21.json",
+  "status": "ready_v4_2",
+  "identity": {
+    "status": "resolved",
+    "represents": "Blått skilt: Kjeglebanen som eget fysisk mikrosted ved Briskebyveien 21, 0260 Oslo.",
+    "period": "2026–",
+    "excludes": [
+      "andre steder med samme type",
+      "nærliggende History GO-steder",
+      "andre personer eller tjenester ved samme adresse"
+    ]
+  },
+  "metadataSnapshot": {
+    "name": "Blått skilt: Kjeglebanen",
+    "category": "sport"
+  },
+  "textHashes": {
+    "algorithm": "sha256",
+    "desc": "c52bdadf25bc01cfba902921c59b7db2aa626aac02460af127d1ca924d76f5c7",
+    "popupDesc": "be7add3d615f746c2d52fbe8beb4c02efa1ed0c2fa1d54a68e96249df2621772"
+  },
+  "claims": [
+    {
+      "id": "claim_bla_skilt_kjeglebanen_briskebyveien_21_identity",
+      "claim": "Oslo Byes Vels skiltoversikt knytter Blått skilt: Kjeglebanen til Briskebyveien 21, 0260 Oslo.",
+      "sourceUrl": "https://www.oslobyesvel.no/blaaskilt",
+      "sourceLocation": "Blå skilt-oversikten: skiltets navn og adresse.",
+      "sourceType": "official",
+      "verifiedAt": "2026-08-26",
+      "status": "verified",
+      "claimKind": "identity",
+      "evidenceMode": "direct",
+      "temporalStatus": "current"
+    },
+    {
+      "id": "claim_bla_skilt_kjeglebanen_briskebyveien_21_listing",
+      "claim": "Oslo Byes Vel registrerer et blått skilt for Kjeglebanen i Briskebyveien 21.",
+      "sourceUrl": "https://www.oslobyesvel.no/blaaskilt",
+      "sourceLocation": "Blå skilt-oversikten: aktuell oppføring.",
+      "sourceType": "official",
+      "verifiedAt": "2026-08-26",
+      "status": "verified",
+      "claimKind": "ordinary",
+      "evidenceMode": "direct",
+      "temporalStatus": "current"
+    },
+    {
+      "id": "claim_bla_skilt_kjeglebanen_briskebyveien_21_context",
+      "claim": "Oslo kommune omtaler Kjeglebanen på Langgaardsløkken som den eneste bevarte kjeglebanen i Oslo.",
+      "sourceUrl": "https://www.oslo.kommune.no/natur-kultur-og-fritid/kunst-og-kultur/kultureiendommer/kjeglebanen",
+      "sourceLocation": "Oppslagsartikkel om personen eller stedet som skiltet gjelder.",
+      "sourceType": "official",
+      "verifiedAt": "2026-08-26",
+      "status": "verified",
+      "claimKind": "strong",
+      "evidenceMode": "explicit",
+      "temporalStatus": "current",
+      "independentSourceUrls": [
+        "https://oslobyleksikon.no/side/Langaardsl%C3%B8kken"
+      ]
+    },
+    {
+      "id": "claim_bla_skilt_kjeglebanen_briskebyveien_21_coordinate",
+      "claim": "Kartmarkøren for Blått skilt: Kjeglebanen bruker et verifisert adressepunkt for Briskebyveien 21, 0260 Oslo.",
+      "sourceUrl": "https://ws.geonorge.no/adresser/v1/sok?sok=Briskebyveien%2021%20Oslo",
+      "sourceLocation": "Geonorge Adresser API: representasjonspunkt for Briskebyveien 21.",
+      "sourceType": "official",
+      "verifiedAt": "2026-08-26",
+      "status": "verified",
+      "claimKind": "ordinary",
+      "evidenceMode": "direct",
+      "temporalStatus": "current"
+    }
+  ],
+  "sentenceCoverage": {
+    "desc": [
+      {
+        "sentence": 1,
+        "claimIds": [
+          "claim_bla_skilt_kjeglebanen_briskebyveien_21_identity"
+        ]
+      },
+      {
+        "sentence": 2,
+        "claimIds": [
+          "claim_bla_skilt_kjeglebanen_briskebyveien_21_listing"
+        ]
+      },
+      {
+        "sentence": 3,
+        "claimIds": [
+          "claim_bla_skilt_kjeglebanen_briskebyveien_21_context"
+        ]
+      }
+    ],
+    "popupDesc": [
+      {
+        "sentence": 1,
+        "claimIds": [
+          "claim_bla_skilt_kjeglebanen_briskebyveien_21_identity"
+        ]
+      },
+      {
+        "sentence": 2,
+        "claimIds": [
+          "claim_bla_skilt_kjeglebanen_briskebyveien_21_listing"
+        ]
+      },
+      {
+        "sentence": 3,
+        "claimIds": [
+          "claim_bla_skilt_kjeglebanen_briskebyveien_21_context"
+        ]
+      },
+      {
+        "sentence": 4,
+        "claimIds": [
+          "claim_bla_skilt_kjeglebanen_briskebyveien_21_coordinate"
+        ]
+      }
+    ]
+  },
+  "reviews": {
+    "factual": {
+      "status": "passed",
+      "reviewedAt": "2026-08-26",
+      "reviewer": "History GO independent Oslo Micro Place source and editorial audit"
+    },
+    "editorial": {
+      "status": "passed",
+      "reviewedAt": "2026-08-26",
+      "reviewer": "History GO independent Oslo Micro Place source and editorial audit",
+      "introducedNewFacts": false
+    }
+  },
+  "quizReadiness": {
+    "questions": []
+  },
+  "completion": {
+    "completedUnder": "4.2",
+    "currentStatus": "current",
+    "sourceVerifiedAt": "2026-08-26",
+    "claimsVerified": {
+      "verified": 4,
+      "total": 4
+    },
+    "factualReview": "passed",
+    "editorialReview": "passed",
+    "validatorVersion": "4.2.1"
+  }
+}
