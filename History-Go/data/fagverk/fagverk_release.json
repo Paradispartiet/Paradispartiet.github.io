@@ -11,7 +11,7 @@
     "schema": "history_go_fagverk_registry_v1",
     "version": "3.14.0",
     "updated_at": "2026-08-21",
-    "content_sha256": "35a4874fb2c0dd7b6e93c17f52fa199e0357db1bc224b345c6b3f9aed9092688"
+    "content_sha256": "0b9686abde2570d4dfb8c452ed301d7fa984d364e1ed5abcd1f1decbfe41c366"
   },
   "subject_inventory": {
     "path": "data/fagverk/subject_inventory.json",
@@ -27,18 +27,18 @@
     "schema": null,
     "version": null,
     "updated_at": null,
-    "content_sha256": "2031101c7e3105e0413956932f440c8308a9734a3fd3dc998f7c47fc232c464e"
+    "content_sha256": "ec3fe481ea914776f8582889467752ea6a43d1d9c1acac76cc2562e17c4f76dd"
   },
   "summary": {
     "subject_count": 20,
     "root_subject_count": 19,
     "specialization_count": 1,
     "chapter_subject_count": 17,
-    "chapter_count": 182,
-    "module_file_count": 469,
-    "package_file_count": 292,
-    "chapter_referenced_file_count": 884,
-    "referenced_file_count": 1112,
+    "chapter_count": 184,
+    "module_file_count": 477,
+    "package_file_count": 308,
+    "chapter_referenced_file_count": 898,
+    "referenced_file_count": 1140,
     "missing_file_count": 0,
     "optional_gap_count": 1
   },
@@ -3447,9 +3447,9 @@
         "universityFramework"
       ],
       "missing_manifest_fields": [],
-      "package_file_count": 28,
+      "package_file_count": 40,
       "required_package_file_count": 4,
-      "optional_package_file_count": 24,
+      "optional_package_file_count": 36,
       "package_files": [
         {
           "path": "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
@@ -3632,6 +3632,18 @@
           "content_sha256": "07f7d4df74275325d75a683886beda0d21c3f43a4703d58661a05d767f563b47"
         },
         {
+          "path": "data/quiz/naeringsliv/freia_fabrikken_sets.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.freia_fabrikken.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "bd40f7e7c5542978be3d3b143920dbc4d39d228fe81190711f5b31426b09331a"
+        },
+        {
           "path": "data/quiz/naeringsliv/havnelageret_sets_merged.json",
           "required": false,
           "fields": [
@@ -3642,6 +3654,18 @@
           ],
           "exists": true,
           "content_sha256": "15508c98b148ed60838bd2624a843900aaa1288676d6d81787652694c99845c7"
+        },
+        {
+          "path": "data/quiz/naeringsliv/myrens_verksted_sets.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.myrens_verksted.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "757e59ec0acad2fafc55e0bf8c8c604d9ce47e066ccebebd4530fcb101307656"
         },
         {
           "path": "data/quiz/naeringsliv/oslo_posthus_sets_merged.json",
@@ -3656,6 +3680,30 @@
           "content_sha256": "76917e1ee563e2c64768199041473fab1830432077e54916c4d56c0a4c628ce6"
         },
         {
+          "path": "data/quiz/naeringsliv/ringnes_bryggeri_sets_merged.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.ringnes_bryggeri.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "b9f7bf468f49628e1e3d8f437200e7aa27aaa8a306a7900b75afdb8d53dcc300"
+        },
+        {
+          "path": "data/quiz/naeringsliv/schous_bryggeri_sets_merged.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.schous_bryggeri.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "de6ae26d86310f1055a4d65e5138f954fa20c8fde02e986bc387f564d4d956c8"
+        },
+        {
           "path": "data/quiz/naeringsliv/telegrafbygningen_sets_merged.json",
           "required": false,
           "fields": [
@@ -3666,6 +3714,18 @@
           ],
           "exists": true,
           "content_sha256": "39f8fb6985fe8ee9891959dadb582fc0bf9963b2669319a7ab5b29a34ac526dd"
+        },
+        {
+          "path": "data/quiz/production_briefs/naeringsliv/freia_fabrikken.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.freia_fabrikken.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "508689dbcc81664bf499782674c3e5657a9bc932a671a57fee6c042ab11ec3d5"
         },
         {
           "path": "data/quiz/production_briefs/naeringsliv/havnelageret.json",
@@ -3680,6 +3740,18 @@
           "content_sha256": "e905ac7285377827dc06624dd0d1dc578b1d003329c9430a7ffd220db7b338c7"
         },
         {
+          "path": "data/quiz/production_briefs/naeringsliv/myrens_verksted.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.myrens_verksted.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "fdd387cb996720ecf46f71f813cec9732773a7248a81a60f97567d17076013ad"
+        },
+        {
           "path": "data/quiz/production_briefs/naeringsliv/oslo_posthus.json",
           "required": false,
           "fields": [
@@ -3690,6 +3762,30 @@
           ],
           "exists": true,
           "content_sha256": "c303a57ed0e975cbb1b82b03ec5424b0fa09c7ed893f222f33bcb033124577a6"
+        },
+        {
+          "path": "data/quiz/production_briefs/naeringsliv/ringnes_bryggeri.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.ringnes_bryggeri.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "8ca001a0f34a2305398239c9fa8f07719a564542a5e9d75b31567efe4154413f"
+        },
+        {
+          "path": "data/quiz/production_briefs/naeringsliv/schous_bryggeri.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.schous_bryggeri.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "002b63a1e01bc2d702f3f456e7723199b705b8da7e7b30e58c258e919eeb11bc"
         },
         {
           "path": "data/quiz/production_briefs/naeringsliv/telegrafbygningen.json",
@@ -3704,6 +3800,18 @@
           "content_sha256": "2bfd115a43be6af78830e6e7634154b84c038b2193b4e71a4858578fdc902e4a"
         },
         {
+          "path": "data/quiz/production_context/naeringsliv/freia_fabrikken.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.freia_fabrikken.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "0f2b6e1b2a66d18506ff334c0b4d64100871c337a86bc42fbb6839e3cd4709e1"
+        },
+        {
           "path": "data/quiz/production_context/naeringsliv/havnelageret.json",
           "required": false,
           "fields": [
@@ -3716,6 +3824,18 @@
           "content_sha256": "cf65d9819b08f767bf862f7a7447f4b8f0546c6382c0d3b8a162bd33b5255ae0"
         },
         {
+          "path": "data/quiz/production_context/naeringsliv/myrens_verksted.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.myrens_verksted.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "a4f4c0c736437f1e2e4d8580ab7e09c413056f648f63e7b41aa053ba80e9ac01"
+        },
+        {
           "path": "data/quiz/production_context/naeringsliv/oslo_posthus.json",
           "required": false,
           "fields": [
@@ -3726,6 +3846,30 @@
           ],
           "exists": true,
           "content_sha256": "5a188dec0578c9599220202373f05a155aaf969962abc8680def4a6cc8c35f1a"
+        },
+        {
+          "path": "data/quiz/production_context/naeringsliv/ringnes_bryggeri.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.ringnes_bryggeri.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "816cb1e7b7e9a16ea187a3af251b2419d54684eb9904412dcdbda87405db3754"
+        },
+        {
+          "path": "data/quiz/production_context/naeringsliv/schous_bryggeri.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.schous_bryggeri.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "03027557401a1838aeda98691bba972f9f78ea2d8bfc9650ef3b390bab407a57"
         },
         {
           "path": "data/quiz/production_context/naeringsliv/telegrafbygningen.json",
@@ -3788,20 +3932,20 @@
           "content_sha256": "636265081b34aef4899fb33a8dd8ad7b03233480abdbfb812edced0d6a1a14d5"
         }
       ],
-      "package_content_sha256": "e317d09709e9a5e06be272cf1c9bed10199c86517e07f4c2e642acb5a8778d4f",
+      "package_content_sha256": "9719210193ea0740b1f9b7a983af567e8a39b3f31671a683e61d4a2325b43551",
       "chapter_count": 12,
       "module_file_count": 36,
       "brief_file_count": 12,
       "claims_file_count": 12,
       "chapter_referenced_file_count": 72,
       "chapter_content_sha256": "06d3f52d2c3e2ff12545cbbc2fc0c1a783071c46a79f1e46ae368e44562143d1",
-      "referenced_file_count": 100,
+      "referenced_file_count": 112,
       "missing_required_files": [],
       "missing_optional_files": [],
       "missing_chapter_files": [],
       "missing_files": [],
-      "structure_sha256": "226987d65ef23ec22dddb60dd34256f9be96bda55607c14c84825b337378905f",
-      "content_sha256": "41e35ea18bf69a24149cd42fae09cd0e6d12e9016715b93aa47349548b6a3941",
+      "structure_sha256": "e92edacef4c6f01e8d27ffe5fcce87717ffab48a280d480c2c98375cfd5a4354",
+      "content_sha256": "c221fc3b75211a9e3c17cbf4035d68dbd5c8956d7981eb28107f6ccdaa91aaf2",
       "chapters": [
         {
           "chapter_id": "arbeid-produksjon-verdiskaping",
@@ -5630,9 +5774,9 @@
         "supersetQuizMal"
       ],
       "missing_manifest_fields": [],
-      "package_file_count": 22,
+      "package_file_count": 26,
       "required_package_file_count": 4,
-      "optional_package_file_count": 18,
+      "optional_package_file_count": 22,
       "package_files": [
         {
           "path": "data/fag/utdanning/assessment_educational_measurement_source_claim_brief_v1.json",
@@ -5680,7 +5824,7 @@
             "emner"
           ],
           "exists": true,
-          "content_sha256": "c8dd2e7fbf4ae8b1b617a4b1e46c6bbaf323c17e6909bb4da4ac7417997efec5"
+          "content_sha256": "acb4a5eb460641a6b289e5affa204af543e876a33799b1295ee075301850424d"
         },
         {
           "path": "data/fag/utdanning/fagkart_utdanning_canonical_v1.json",
@@ -5707,6 +5851,30 @@
           "content_sha256": "0e9e9a68e43a537fcee7e71167f5c47c4d828cb5288a03ffc13c75d09707ad37"
         },
         {
+          "path": "data/fag/utdanning/history_of_education_source_claim_brief_v1.json",
+          "required": false,
+          "fields": [
+            "sourceClaimBriefs"
+          ],
+          "key_paths": [
+            "sourceClaimBriefs[9]"
+          ],
+          "exists": true,
+          "content_sha256": "d079ffc9c105759073e70ff0b0b6b107a90bdae58ee90b375968e62979abe15d"
+        },
+        {
+          "path": "data/fag/utdanning/inclusion_adapted_education_source_claim_brief_v1.json",
+          "required": false,
+          "fields": [
+            "sourceClaimBriefs"
+          ],
+          "key_paths": [
+            "sourceClaimBriefs[8]"
+          ],
+          "exists": true,
+          "content_sha256": "e6195e8f025f734599773f9f8757e192fba363acf74a6ca9e8357fcaa6c524bc"
+        },
+        {
           "path": "data/fag/utdanning/methods_utdanning_canonical_v1.json",
           "required": true,
           "fields": [
@@ -5716,7 +5884,7 @@
             "methods"
           ],
           "exists": true,
-          "content_sha256": "d63b8221a215335f1eee9af92342ec10e68bc454ec476f2b5778107359c80eec"
+          "content_sha256": "bc46360ea94634ae20cda3441c2c55f9aeaa8cf3f89449aea2f29ff8ebfe13b7"
         },
         {
           "path": "data/fag/utdanning/pedagogy_learning_theory_source_claim_brief_v1.json",
@@ -5752,7 +5920,7 @@
             "sourceClaimBriefs[7]"
           ],
           "exists": true,
-          "content_sha256": "adcb9f1009946cad476ffd952a6086f2ff9214498a87d04620658dd94c825fc3"
+          "content_sha256": "6db5c65b670d97a91507bc7308e559d70b3e95e609e1299d5f93cd5129731121"
         },
         {
           "path": "data/fag/utdanning/supersetQUIZMAL_utdanning.json",
@@ -5788,7 +5956,7 @@
             "pensum"
           ],
           "exists": true,
-          "content_sha256": "0510e5dcc209d2c3b7956602e05b81ec327d8bfe1f81273c2d4149b8fe3e1567"
+          "content_sha256": "11065787ab90fe59c8428c750d0c6f3f06ae1593b28f47a0f55aff658f0af58f"
         },
         {
           "path": "data/fagverk/utdanning/barnehage-tidlig-laering-lek-sprak-samspill-og-utvikling.json",
@@ -5839,6 +6007,18 @@
           "content_sha256": "a0690c5b82f0165752c580ecd23380645efce62afef02d1f42034c4445ac4de5"
         },
         {
+          "path": "data/fagverk/utdanning/inkludering-tilpasset-opplaering-fellesskap-tilgang-og-progresjon.json",
+          "required": false,
+          "fields": [
+            "chapters"
+          ],
+          "key_paths": [
+            "chapters[8]"
+          ],
+          "exists": true,
+          "content_sha256": "8ba092d647e6a8ffd5a229d8089a71b5767ec875a888c8f30b9ce24ae306643e"
+        },
+        {
           "path": "data/fagverk/utdanning/pedagogikk-laeringsteori-laering-kunnskap-motivasjon-og-selvregulering.json",
           "required": false,
           "fields": [
@@ -5849,6 +6029,18 @@
           ],
           "exists": true,
           "content_sha256": "4ebcc70b3fb863bf7181629e5c000f79570b10ad7c11fc7e6a16f670ccc405ce"
+        },
+        {
+          "path": "data/fagverk/utdanning/spesialpedagogikk-rettigheter-deltakelse-og-malrettet-stotte.json",
+          "required": false,
+          "fields": [
+            "chapters"
+          ],
+          "key_paths": [
+            "chapters[7]"
+          ],
+          "exists": true,
+          "content_sha256": "2c2f4ad05db558dbb5813e654ad5544280f4d4837b71c8cbca3c52c543ca7fc6"
         },
         {
           "path": "data/fagverk/utdanning/videregaende-yrkesfag-overgang-fordypning-og-laering-i-arbeid.json",
@@ -5899,20 +6091,20 @@
           "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
         }
       ],
-      "package_content_sha256": "152c8dea43bc4ad810990b6c53772a536df50e66614b71407d86f7e6fe064cc7",
-      "chapter_count": 7,
-      "module_file_count": 28,
-      "brief_file_count": 7,
-      "claims_file_count": 7,
-      "chapter_referenced_file_count": 49,
-      "chapter_content_sha256": "d16085bd90705d76572330e7c26aff01ae7516f2003a2efddc37dc3d093dcc3e",
-      "referenced_file_count": 64,
+      "package_content_sha256": "8841c00c52a98a2d7328bcfa38f799ad6d4b4392c6802a8d0a17ccaa2117f9ba",
+      "chapter_count": 9,
+      "module_file_count": 36,
+      "brief_file_count": 9,
+      "claims_file_count": 9,
+      "chapter_referenced_file_count": 63,
+      "chapter_content_sha256": "710e140af355476ac2e84d815942afc03e630b234de67379ce044bfcaecfca17",
+      "referenced_file_count": 80,
       "missing_required_files": [],
       "missing_optional_files": [],
       "missing_chapter_files": [],
       "missing_files": [],
-      "structure_sha256": "541764f22cc6fe1a1678451c6dd3af2f8a640479f256107701132279f6481be7",
-      "content_sha256": "c143590f452e451cea8448c10ae5c3adeab1d5a2e43ac07350b2defd93472ca5",
+      "structure_sha256": "e09dfa3782ca44cea4a1812d115d9550b425feabc4349719dd5638da610d1815",
+      "content_sha256": "d5cf78717c2b9f16ddd0a0ee8d9b61bfd29caac6560e87e9e4a0cd3c08474578",
       "chapters": [
         {
           "chapter_id": "pedagogikk-laeringsteori-laering-kunnskap-motivasjon-og-selvregulering",
@@ -5969,6 +6161,22 @@
           "module_file_count": 4,
           "referenced_file_count": 7,
           "content_sha256": "9c97a9614fca063c7a03c1550b69a08a23cd0ab454fbb6bc1145fc2458a648c9"
+        },
+        {
+          "chapter_id": "spesialpedagogikk-rettigheter-deltakelse-og-malrettet-stotte",
+          "title": "Spesialpedagogikk: rettigheter, deltakelse og målrettet støtte",
+          "file": "data/fagverk/utdanning/spesialpedagogikk-rettigheter-deltakelse-og-malrettet-stotte.json",
+          "module_file_count": 4,
+          "referenced_file_count": 7,
+          "content_sha256": "ea6c480a9c145a129acfd8aa0865e2b385aa70e9861f5b269a0ed8fefff9787d"
+        },
+        {
+          "chapter_id": "inkludering-tilpasset-opplaering-fellesskap-tilgang-og-progresjon",
+          "title": "Inkludering og tilpasset opplæring: fellesskap, tilgang og progresjon",
+          "file": "data/fagverk/utdanning/inkludering-tilpasset-opplaering-fellesskap-tilgang-og-progresjon.json",
+          "module_file_count": 4,
+          "referenced_file_count": 7,
+          "content_sha256": "5d653d1ee2afb787a2e4d3cc372b308be78a116600ab27f63fcc0adf4c3dc2a4"
         }
       ]
     },
@@ -6150,5 +6358,5 @@
       ]
     }
   },
-  "release_sha256": "9e399eef3c84683e421b5e85d148ca088a16ee31e4a51861aab43c200ca866a3"
+  "release_sha256": "74f0e3fa77546b0aaa6b61f5f897575c2c4b82371cf037d37ab779445916fcbb"
 }

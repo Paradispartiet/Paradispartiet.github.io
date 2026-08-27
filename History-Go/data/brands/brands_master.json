@@ -52,13 +52,54 @@
     "id": "ringnes",
     "name": "Ringnes",
     "aliases": [
-      "Ringnes reklame"
+      "Ringnes Bryggeri",
+      "Ringnes & Co."
     ],
-    "brand_group": "historic_company",
+    "brand_group": "oslo_origin_brand",
     "brand_type": "historic_company",
-    "brand_kind": "brand",
+    "brand_kind": "producer",
     "sector": "brewery",
-    "state": "borderline"
+    "state": "catalog",
+    "status": "active",
+    "verification": "verified",
+    "verified_at": "2026-08-27",
+    "desc": "Bryggeri- og varemerkeidentiteten som oppstod på Grünerløkka i 1876 og fortsatt brukes av Ringnes AS.",
+    "popupdesc": "Brand-kortet gjelder den selvstendige kommersielle identiteten Ringnes, dokumentert med et autentisk historisk bokølmerke. Brandet og Place-et overlapper i opphav, men er ikke identiske: Brandet fortsatte etter at storskala produksjon flyttet til Gjelleråsen i 2001, mens Place-et er det historiske bryggerianlegget i Thorvald Meyers gate.",
+    "tags": [
+      "brand",
+      "brewery",
+      "beer",
+      "oslo",
+      "legacy"
+    ],
+    "place_ids": [
+      "ringnes_bryggeri"
+    ],
+    "source_urls": [
+      "https://snl.no/Ringnes_AS",
+      "https://ringnes.no/",
+      "https://commons.wikimedia.org/wiki/File:Brevmerke,_Ringnes_bok%C3%B8l.jpg"
+    ],
+    "logo": "bilder/kort/brands/ringnes.webp",
+    "imageMeta": {
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Brevmerke,_Ringnes_bok%C3%B8l.jpg",
+      "creator": "Ukjent",
+      "credit": "Bergen Offentlige Bibliotek / Wikimedia Commons",
+      "rightsBasis": "cc_by_historic_print",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "reviewStatus": "manually_approved",
+      "assetKind": "authentic_historic_product_mark",
+      "sourceForm": "ringnes_bokol_brevmerke",
+      "temporalScope": "historical",
+      "usageContext": "referential_identification",
+      "noEndorsement": true,
+      "generated": false,
+      "reconstructed": false,
+      "transformation": "Historisk trykk proporsjonalt skalert og sentrert på nøytral 900 × 520-flate; ingen rekonstruksjon.",
+      "outputDimensions": "900x520",
+      "reviewedAt": "2026-08-27"
+    }
   },
   {
     "id": "solo",
@@ -488,7 +529,9 @@
     "id": "freia",
     "name": "Freia",
     "aliases": [
-      "Freia-skiltet"
+      "Freia-skiltet",
+      "Freia Chocolade Fabrik",
+      "A/S Freia Chocolade Fabrik"
     ],
     "brand_group": "historic_company",
     "brand_type": "historic_company",
@@ -497,15 +540,51 @@
     "state": "catalog",
     "status": "active",
     "verification": "verified_landmark",
-    "popupdesc": "Landemerke-brand i Oslo gjennom Freia-uret og Freiabutikken på Karl Johan.",
-    "desc": "Landemerke / signage brand",
+    "popupdesc": "Freia er virksomhets- og varemerkeidentiteten som vokste fram fra sjokoladefabrikken på Rodeløkka. Brandet knyttes både til produksjonsstedet og til butikk- og skiltspor på Karl Johan, men fabrikkanlegget forblir et eget historisk Place.",
+    "desc": "Sjokoladeprodusent og varemerke med fabrikkforankring på Rodeløkka siden 1889.",
     "tags": [
       "brand",
-      "landmark",
-      "logo",
+      "historic_company",
+      "food_and_drink",
       "oslo",
-      "signage_brand"
-    ]
+      "rodelokka",
+      "freia_fabrikken"
+    ],
+    "place_ids": [
+      "karl_johan",
+      "freia_fabrikken"
+    ],
+    "source_urls": [
+      "https://snl.no/Freia_-_sjokoladefabrikk",
+      "https://oslobyleksikon.no/side/Freia",
+      "https://commons.wikimedia.org/wiki/File:Freia_Ny-fab.jpg"
+    ],
+    "logo": "bilder/kort/brands/freia_wordmark.webp",
+    "imageMeta": {
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Freia_Ny-fab.jpg",
+      "sourceAsset": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Freia_Ny-fab.jpg",
+      "creator": "Mahlum",
+      "credit": "Mahlum / Wikimedia Commons",
+      "license": "Public domain",
+      "rightsBasis": "public_domain_authentic_factory_wordmark_crop",
+      "reviewStatus": "manually_approved",
+      "assetKind": "authentic_wordmark",
+      "sourceForm": "documentary_photo_crop",
+      "temporalScope": "documented_2007",
+      "usageContext": "referential_identification",
+      "noEndorsement": true,
+      "generated": false,
+      "reconstructed": false,
+      "crop": {
+        "left": 410,
+        "top": 105,
+        "width": 300,
+        "height": 210
+      },
+      "transformation": "Autentisk FREIA-ordmerke og marabustork er beskåret fra et offentlig domene-foto av fabrikkfasaden, skalert og sentrert på 900x520. Merket er ikke rekonstruert eller redesignet.",
+      "outputDimensions": "900x520",
+      "reviewedAt": "2026-08-27"
+    }
   },
   {
     "id": "steen_strom",
@@ -3421,6 +3500,114 @@
       "transformation": "Den offisielle PNG-logoen er proporsjonalt skalert og sentrert på en nøytral 900 × 520-flate, deretter WebP-normalisert.",
       "outputDimensions": "900x520",
       "reviewedAt": "2026-08-26"
+    }
+  },
+  {
+    "id": "schous_bryggeri_historisk",
+    "name": "Schous Bryggeri",
+    "brand_group": "legacy_business_brand",
+    "brand_type": "historic_brewery",
+    "brand_kind": "producer",
+    "sector": "beverages",
+    "state": "catalog",
+    "status": "historical",
+    "verification": "verified",
+    "verified_at": "2026-08-27",
+    "desc": "Historisk bryggeri- og varemerkeidentitet brukt av virksomheten som var i drift 1821–1981.",
+    "popupdesc": "Brand-kortet gjelder den historiske kommersielle identiteten Schous Bryggeri. Den er dokumentert med en bayerøl-etikett gjengitt i bryggeriets hundreårsminneskrift fra 1921. Brandet og Place-et overlapper i navn, men er ikke identiske: Brandet er virksomhets- og vareidentiteten, mens Place-et er industrianlegget på Schousløkken og det senere ombrukte kvartalet.",
+    "tags": [
+      "brand",
+      "historical",
+      "brewery",
+      "beer",
+      "oslo"
+    ],
+    "place_ids": [
+      "schous_bryggeri"
+    ],
+    "source_urls": [
+      "https://snl.no/Schous_Bryggeri",
+      "https://lokalhistoriewiki.no/wiki/Bayer%C3%B8l"
+    ],
+    "logo": "bilder/kort/brands/schous_bryggeri_historisk.webp",
+    "imageMeta": {
+      "sourcePage": "https://lokalhistoriewiki.no/wiki/Bayer%C3%B8l",
+      "sourceAsset": "https://lokalhistoriewiki.no/images/Schous_bryggeri_bayer%C3%B8l_1921.jpg",
+      "creator": "Ukjent; faksimile fra Schous Bryggeris hundreårsminneskrift",
+      "credit": "Schous Bryggeri, 1921 / Lokalhistoriewiki",
+      "rightsBasis": "public_domain_historical_facsimile_review",
+      "license": "Public domain (historical facsimile)",
+      "reviewStatus": "manually_approved",
+      "assetKind": "authentic_historic_product_label",
+      "sourceForm": "1921_bayerol_label",
+      "temporalScope": "historical",
+      "usageContext": "referential_identification",
+      "noEndorsement": true,
+      "generated": false,
+      "reconstructed": false,
+      "transformation": "Historisk etikett proporsjonalt skalert og sentrert på nøytral 900 × 520-flate; ingen rekonstruksjon.",
+      "outputDimensions": "900x520",
+      "reviewedAt": "2026-08-27"
+    }
+  },
+  {
+    "id": "myrens_verksted_company",
+    "name": "Myrens Verksted",
+    "aliases": [
+      "Myrens mekaniske Værksted",
+      "J. & A. Jensen og Dahl, Myrens Verksted",
+      "Myrens Verksted A/S"
+    ],
+    "brand_group": "legacy_brand",
+    "brand_type": "historic_company",
+    "brand_kind": "brand",
+    "sector": "mechanical_industry",
+    "state": "catalog",
+    "status": "historical",
+    "verification": "verified_legacy",
+    "popupdesc": "Myrens Verksted er den historiske virksomhetsidentiteten som fulgte maskiner, eksport og industrikunnskap langt utover fabrikkbygningene ved Akerselva. Industriselskapet ble avviklet i Oslo i 1988, mens navnet og det autentiske M-merket fortsatt brukes som identitet for næringsområdet.",
+    "desc": "Historisk maskinindustrinavn fra 1848, videreført som identitet for næringsområdet ved Akerselva.",
+    "tags": [
+      "brand",
+      "legacy_brand",
+      "mechanical_industry",
+      "oslo",
+      "akerselva",
+      "myrens_verksted"
+    ],
+    "place_ids": [
+      "myrens_verksted"
+    ],
+    "source_urls": [
+      "https://snl.no/Myrens_Verksted",
+      "https://oslobyleksikon.no/side/Myrens_Verksted",
+      "https://myreneiendom.no/om-myrens-verksted/",
+      "https://commons.wikimedia.org/wiki/File:Myrens_Mek_Verksted_164645_IMG_3917.jpg"
+    ],
+    "logo": "bilder/kort/brands/myrens_fasademerke.webp",
+    "imageMeta": {
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Myrens_Mek_Verksted_164645_IMG_3917.jpg",
+      "creator": "Bjoertvedt",
+      "credit": "Bjoertvedt / Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "rightsBasis": "cc_by_sa_authentic_factory_brandmark_crop",
+      "reviewStatus": "manually_approved",
+      "assetKind": "authentic_brandmark",
+      "sourceForm": "documentary_photo_crop",
+      "temporalScope": "documented_2018",
+      "usageContext": "referential_identification",
+      "noEndorsement": true,
+      "generated": false,
+      "reconstructed": false,
+      "crop": {
+        "left": 650,
+        "top": 120,
+        "width": 760,
+        "height": 400
+      },
+      "transformation": "Det autentiske M-merket og fasadeårstallet er beskåret fra et lisensiert dokumentasjonsfoto, skalert og sentrert på 900x520. Merket er ikke rekonstruert eller redesignet.",
+      "outputDimensions": "900x520",
+      "reviewedAt": "2026-08-27"
     }
   }
 ]
