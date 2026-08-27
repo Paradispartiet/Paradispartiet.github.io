@@ -4,7 +4,7 @@
   "generated_by": "scripts/build-civication-history-people-index.mts",
   "source": "data/people/manifest.json",
   "note": "GENERERT FIL – ikke rediger for hånd. Regenerer med npm run civication:history-people:build.",
-  "person_count": 1412,
+  "person_count": 1413,
   "categories": {
     "by": [
       {
@@ -6538,12 +6538,6 @@
         "year": 1968
       },
       {
-        "id": "alf_bjercke_industri_og_kvalitet",
-        "name": "Alf Bjercke",
-        "category": "naeringsliv",
-        "placeId": "lilleborg_fabrikker"
-      },
-      {
         "id": "alvaro_siza_vieira",
         "name": "Álvaro Siza Vieira",
         "category": "naeringsliv",
@@ -6791,9 +6785,11 @@
         "id": "halvor_schou",
         "name": "Halvor Schou",
         "category": "naeringsliv",
-        "desc": "Industrimann som grunnla Hjula Væveri ved Vøyenfallene og bygde et av landets største tekstilforetak.",
+        "desc": "Industrigründeren som etablerte Hjula Væverier og koblet vannkraft, importerte vevstoler, lokal verkstedkompetanse og et stort fabrikkarbeid ved Akerselva.",
         "placeId": "glads_molle",
-        "year": 1823
+        "year": 1823,
+        "image": "bilder/kort/people/halvor_schou.webp",
+        "cardImage": "bilder/kort/people/halvor_schou.webp"
       },
       {
         "id": "heinrich_meldahl",
@@ -7008,6 +7004,16 @@
         "year": 2011
       },
       {
+        "id": "peter_collett_alunverket",
+        "name": "Peter Collett",
+        "category": "naeringsliv",
+        "desc": "Kjøpmannen som sammen med Peder Leuch var hovedmann i interessentskapet som opprettet Christian og Sophia Magdalenas Alunverk i 1737.",
+        "placeId": "alunverket",
+        "year": 1737,
+        "image": "bilder/kort/people/peter_collett_alunverket.webp",
+        "cardImage": "bilder/kort/people/peter_collett_alunverket.webp"
+      },
+      {
         "id": "peter_emil_steen",
         "name": "Peter Emil Steen",
         "category": "naeringsliv",
@@ -7022,6 +7028,16 @@
         "desc": "Generalkonsulen som ledet interessentskapet bak Victoria terrasse.",
         "placeId": "victoria_terrasse",
         "year": 1884
+      },
+      {
+        "id": "peter_wessel_wind_kildal_lilleborg",
+        "name": "Peter Wessel Wind Kildal",
+        "category": "naeringsliv",
+        "desc": "Industrigründeren som overtok fabrikkanlegget ved Akerselva i 1863, konsentrerte driften om lampeolje og såpe og utviklet virksomheten til landets ledende i sitt slag.",
+        "placeId": "lilleborg_fabrikker",
+        "year": 1863,
+        "image": "bilder/kort/people/peter_wessel_wind_kildal_lilleborg.webp",
+        "cardImage": "bilder/kort/people/peter_wessel_wind_kildal_lilleborg.webp"
       },
       {
         "id": "petter_stordalen_hotell_og_service",

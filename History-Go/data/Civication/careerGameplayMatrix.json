@@ -2454,45 +2454,46 @@
         "mail_families": {
           "job": {
             "path": "data/Civication/mailFamilies/film_tv/job/programleder_job.json",
-            "count": 1
+            "count": 2
           },
           "people": {
             "path": "data/Civication/mailFamilies/film_tv/people/programleder_people.json",
-            "count": 1
+            "count": 2
           },
           "conflict": {
             "path": "data/Civication/mailFamilies/film_tv/conflict/programleder_conflict.json",
-            "count": 1
+            "count": 2
           },
           "story": {
             "path": "data/Civication/mailFamilies/film_tv/story/programleder_story.json",
-            "count": 1
+            "count": 2
           },
           "event": {
             "path": "data/Civication/mailFamilies/film_tv/event/programleder_event.json",
-            "count": 1
+            "count": 2
           },
           "micro": {
             "path": "data/Civication/mailFamilies/film_tv/micro/programleder_micro.json",
-            "count": 1
+            "count": 2
           },
           "followup": {
             "path": "data/Civication/mailFamilies/film_tv/followup/programleder_followup.json",
-            "count": 1
+            "count": 2
           },
           "knowledge": {
             "path": "data/Civication/mailFamilies/film_tv/knowledge/programleder_knowledge.json",
-            "count": 1
+            "count": 2
           },
           "consequence": {
             "path": "data/Civication/mailFamilies/film_tv/consequence/programleder_consequence.json",
-            "count": 1
+            "count": 2
           }
         },
         "role_tests": [
           "tests/civication-film-tv-career-architecture.test.js",
           "tests/civication-film-tv-life-career-split.test.js",
-          "tests/civication-film-tv-programleder-playability.test.js"
+          "tests/civication-film-tv-programleder-playability.test.js",
+          "tests/civication-film-tv-programleder-role-world-rollout.test.js"
         ],
         "life_story": null
       },
@@ -2513,7 +2514,8 @@
               "data/Civication/mailPlans/film_tv/programleder_plan.json",
               "tests/civication-film-tv-career-architecture.test.js",
               "tests/civication-film-tv-life-career-split.test.js",
-              "tests/civication-film-tv-programleder-playability.test.js"
+              "tests/civication-film-tv-programleder-playability.test.js",
+              "tests/civication-film-tv-programleder-role-world-rollout.test.js"
             ],
             "note": "Role plan and role-specific test prove a first playable day."
           },
@@ -2525,7 +2527,8 @@
               "data/Civication/workGrammars/film_tv/programleder.json",
               "tests/civication-film-tv-career-architecture.test.js",
               "tests/civication-film-tv-life-career-split.test.js",
-              "tests/civication-film-tv-programleder-playability.test.js"
+              "tests/civication-film-tv-programleder-playability.test.js",
+              "tests/civication-film-tv-programleder-role-world-rollout.test.js"
             ],
             "note": "Repeatable work content is connected to a tested plan."
           },
@@ -2602,7 +2605,8 @@
               "data/Civication/mailFamilies/film_tv/followup/programleder_followup.json",
               "tests/civication-film-tv-career-architecture.test.js",
               "tests/civication-film-tv-life-career-split.test.js",
-              "tests/civication-film-tv-programleder-playability.test.js"
+              "tests/civication-film-tv-programleder-playability.test.js",
+              "tests/civication-film-tv-programleder-role-world-rollout.test.js"
             ],
             "note": "Later consequence/follow-up path is role-tested."
           },
@@ -2613,7 +2617,8 @@
               "tests/civication-career-outcomes.test.js",
               "tests/civication-film-tv-career-architecture.test.js",
               "tests/civication-film-tv-life-career-split.test.js",
-              "tests/civication-film-tv-programleder-playability.test.js"
+              "tests/civication-film-tv-programleder-playability.test.js",
+              "tests/civication-film-tv-programleder-role-world-rollout.test.js"
             ],
             "note": "Positive and negative outcomes are defined and role-tested."
           },
@@ -2748,6 +2753,7 @@
         "role_tests": [
           "tests/civication-film-tv-career-architecture.test.js",
           "tests/civication-film-tv-manusmedarbeider-role-world-rollout.test.js",
+          "tests/civication-film-tv-programleder-role-world-rollout.test.js",
           "tests/civication-film-tv-regissor-playability.test.js",
           "tests/civication-scenekunst-life-career-split.test.js"
         ],
@@ -2770,6 +2776,7 @@
               "data/Civication/mailPlans/film_tv/regissor_plan.json",
               "tests/civication-film-tv-career-architecture.test.js",
               "tests/civication-film-tv-manusmedarbeider-role-world-rollout.test.js",
+              "tests/civication-film-tv-programleder-role-world-rollout.test.js",
               "tests/civication-film-tv-regissor-playability.test.js",
               "tests/civication-scenekunst-life-career-split.test.js"
             ],
@@ -2783,6 +2790,7 @@
               "data/Civication/workGrammars/film_tv/regissor.json",
               "tests/civication-film-tv-career-architecture.test.js",
               "tests/civication-film-tv-manusmedarbeider-role-world-rollout.test.js",
+              "tests/civication-film-tv-programleder-role-world-rollout.test.js",
               "tests/civication-film-tv-regissor-playability.test.js",
               "tests/civication-scenekunst-life-career-split.test.js"
             ],
@@ -2861,6 +2869,7 @@
               "data/Civication/mailFamilies/film_tv/followup/regissor_followup.json",
               "tests/civication-film-tv-career-architecture.test.js",
               "tests/civication-film-tv-manusmedarbeider-role-world-rollout.test.js",
+              "tests/civication-film-tv-programleder-role-world-rollout.test.js",
               "tests/civication-film-tv-regissor-playability.test.js",
               "tests/civication-scenekunst-life-career-split.test.js"
             ],
@@ -2873,6 +2882,7 @@
               "tests/civication-career-outcomes.test.js",
               "tests/civication-film-tv-career-architecture.test.js",
               "tests/civication-film-tv-manusmedarbeider-role-world-rollout.test.js",
+              "tests/civication-film-tv-programleder-role-world-rollout.test.js",
               "tests/civication-film-tv-regissor-playability.test.js",
               "tests/civication-scenekunst-life-career-split.test.js"
             ],
@@ -8582,39 +8592,39 @@
         "mail_families": {
           "job": {
             "path": "data/Civication/mailFamilies/naeringsliv/job/avdelingsleder_job.json",
-            "count": 45
+            "count": 46
           },
           "people": {
             "path": "data/Civication/mailFamilies/naeringsliv/people/avdelingsleder_people.json",
-            "count": 44
+            "count": 45
           },
           "conflict": {
             "path": "data/Civication/mailFamilies/naeringsliv/conflict/avdelingsleder_conflict.json",
-            "count": 1
+            "count": 2
           },
           "story": {
             "path": "data/Civication/mailFamilies/naeringsliv/story/avdelingsleder_story.json",
-            "count": 1
+            "count": 2
           },
           "event": {
             "path": "data/Civication/mailFamilies/naeringsliv/event/avdelingsleder_event.json",
-            "count": 1
+            "count": 2
           },
           "micro": {
             "path": "data/Civication/mailFamilies/naeringsliv/micro/avdelingsleder_micro.json",
-            "count": 6
+            "count": 7
           },
           "followup": {
-            "path": null,
-            "count": 0
+            "path": "data/Civication/mailFamilies/naeringsliv/followup/avdelingsleder_followup.json",
+            "count": 1
           },
           "knowledge": {
-            "path": null,
-            "count": 0
+            "path": "data/Civication/mailFamilies/naeringsliv/knowledge/avdelingsleder_knowledge.json",
+            "count": 1
           },
           "consequence": {
-            "path": null,
-            "count": 0
+            "path": "data/Civication/mailFamilies/naeringsliv/consequence/avdelingsleder_consequence.json",
+            "count": 1
           }
         },
         "role_tests": [
@@ -8623,6 +8633,7 @@
           "tests/civication-avdelingsleder-second-week-praksisfortellinger.test.js",
           "tests/civication-avdelingsleder-two-week-flow.test.js",
           "tests/civication-history-life-career-split.test.js",
+          "tests/civication-naeringsliv-avdelingsleder-role-world-rollout.test.js",
           "tests/civication-naeringsliv-life-career-split.test.js",
           "tests/civication-religion-life-career-split.test.js",
           "tests/civication-renholder-role-package.test.js"
@@ -8649,6 +8660,7 @@
               "tests/civication-avdelingsleder-second-week-praksisfortellinger.test.js",
               "tests/civication-avdelingsleder-two-week-flow.test.js",
               "tests/civication-history-life-career-split.test.js",
+              "tests/civication-naeringsliv-avdelingsleder-role-world-rollout.test.js",
               "tests/civication-naeringsliv-life-career-split.test.js",
               "tests/civication-religion-life-career-split.test.js",
               "tests/civication-renholder-role-package.test.js"
@@ -8667,6 +8679,7 @@
               "tests/civication-avdelingsleder-second-week-praksisfortellinger.test.js",
               "tests/civication-avdelingsleder-two-week-flow.test.js",
               "tests/civication-history-life-career-split.test.js",
+              "tests/civication-naeringsliv-avdelingsleder-role-world-rollout.test.js",
               "tests/civication-naeringsliv-life-career-split.test.js",
               "tests/civication-religion-life-career-split.test.js",
               "tests/civication-renholder-role-package.test.js"
@@ -8706,8 +8719,11 @@
             "level": "complete",
             "evidence": [
               "data/Civication/mailFamilies/naeringsliv/conflict/avdelingsleder_conflict.json",
+              "data/Civication/mailFamilies/naeringsliv/consequence/avdelingsleder_consequence.json",
               "data/Civication/mailFamilies/naeringsliv/event/avdelingsleder_event.json",
+              "data/Civication/mailFamilies/naeringsliv/followup/avdelingsleder_followup.json",
               "data/Civication/mailFamilies/naeringsliv/job/avdelingsleder_job.json",
+              "data/Civication/mailFamilies/naeringsliv/knowledge/avdelingsleder_knowledge.json",
               "data/Civication/mailFamilies/naeringsliv/micro/avdelingsleder_micro.json",
               "data/Civication/mailFamilies/naeringsliv/people/avdelingsleder_people.json",
               "data/Civication/mailFamilies/naeringsliv/story/avdelingsleder_story.json",
@@ -8716,12 +8732,13 @@
               "tests/civication-avdelingsleder-second-week-praksisfortellinger.test.js",
               "tests/civication-avdelingsleder-two-week-flow.test.js"
             ],
-            "note": "6/9 standard mail types plus tested plan/practice coverage."
+            "note": "9/9 standard mail types plus tested plan/practice coverage."
           },
           "knowledge": {
             "level": "complete",
             "evidence": [
               "data/Civication/jobKnowledgeRequirements.json",
+              "data/Civication/mailFamilies/naeringsliv/knowledge/avdelingsleder_knowledge.json",
               "data/Civication/roleModels/naeringsliv/avdelingsleder.json",
               "data/Civication/workGrammars/naeringsliv/naeringsliv_operativ_ledelse.json",
               "data/Civication/workGrammars/naeringsliv/naeringsliv_virksomhetsledelse.json"
@@ -8750,11 +8767,14 @@
           "consequences": {
             "level": "complete",
             "evidence": [
+              "data/Civication/mailFamilies/naeringsliv/consequence/avdelingsleder_consequence.json",
+              "data/Civication/mailFamilies/naeringsliv/followup/avdelingsleder_followup.json",
               "tests/civication-avdelingsleder-first-week-praksisfortellinger.test.js",
               "tests/civication-avdelingsleder-playability.test.js",
               "tests/civication-avdelingsleder-second-week-praksisfortellinger.test.js",
               "tests/civication-avdelingsleder-two-week-flow.test.js",
               "tests/civication-history-life-career-split.test.js",
+              "tests/civication-naeringsliv-avdelingsleder-role-world-rollout.test.js",
               "tests/civication-naeringsliv-life-career-split.test.js",
               "tests/civication-religion-life-career-split.test.js",
               "tests/civication-renholder-role-package.test.js"
@@ -8771,6 +8791,7 @@
               "tests/civication-avdelingsleder-two-week-flow.test.js",
               "tests/civication-career-outcomes.test.js",
               "tests/civication-history-life-career-split.test.js",
+              "tests/civication-naeringsliv-avdelingsleder-role-world-rollout.test.js",
               "tests/civication-naeringsliv-life-career-split.test.js",
               "tests/civication-religion-life-career-split.test.js",
               "tests/civication-renholder-role-package.test.js"
@@ -10035,11 +10056,11 @@
         "mail_families": {
           "job": {
             "path": "data/Civication/mailFamilies/naeringsliv/job/finansanalytiker_job.json",
-            "count": 3
+            "count": 4
           },
           "people": {
             "path": "data/Civication/mailFamilies/naeringsliv/people/finansanalytiker_people.json",
-            "count": 1
+            "count": 2
           },
           "conflict": {
             "path": "data/Civication/mailFamilies/naeringsliv/conflict/finansanalytiker_conflict.json",
@@ -10051,7 +10072,7 @@
           },
           "event": {
             "path": "data/Civication/mailFamilies/naeringsliv/event/finansanalytiker_event.json",
-            "count": 1
+            "count": 2
           },
           "micro": {
             "path": "data/Civication/mailFamilies/naeringsliv/micro/finansanalytiker_micro.json",
@@ -10059,7 +10080,7 @@
           },
           "followup": {
             "path": "data/Civication/mailFamilies/naeringsliv/followup/finansanalytiker_followup.json",
-            "count": 1
+            "count": 2
           },
           "knowledge": {
             "path": "data/Civication/mailFamilies/naeringsliv/knowledge/finansanalytiker_knowledge.json",
@@ -10067,10 +10088,11 @@
           },
           "consequence": {
             "path": "data/Civication/mailFamilies/naeringsliv/consequence/finansanalytiker_consequence.json",
-            "count": 1
+            "count": 2
           }
         },
         "role_tests": [
+          "tests/civication-naeringsliv-finansanalytiker-role-world-rollout.test.js",
           "tests/civication-naeringsliv-finansanalytiker-rollout-playability.test.js",
           "tests/civication-naeringsliv-life-career-split.test.js"
         ],
@@ -10091,6 +10113,7 @@
             "level": "complete",
             "evidence": [
               "data/Civication/mailPlans/naeringsliv/finansanalytiker_plan.json",
+              "tests/civication-naeringsliv-finansanalytiker-role-world-rollout.test.js",
               "tests/civication-naeringsliv-finansanalytiker-rollout-playability.test.js",
               "tests/civication-naeringsliv-life-career-split.test.js"
             ],
@@ -10102,6 +10125,7 @@
               "data/Civication/mailFamilies/naeringsliv/job/finansanalytiker_job.json",
               "data/Civication/mailPlans/naeringsliv/finansanalytiker_plan.json",
               "data/Civication/workGrammars/naeringsliv/finansanalytiker.json",
+              "tests/civication-naeringsliv-finansanalytiker-role-world-rollout.test.js",
               "tests/civication-naeringsliv-finansanalytiker-rollout-playability.test.js",
               "tests/civication-naeringsliv-life-career-split.test.js"
             ],
@@ -10179,6 +10203,7 @@
             "evidence": [
               "data/Civication/mailFamilies/naeringsliv/consequence/finansanalytiker_consequence.json",
               "data/Civication/mailFamilies/naeringsliv/followup/finansanalytiker_followup.json",
+              "tests/civication-naeringsliv-finansanalytiker-role-world-rollout.test.js",
               "tests/civication-naeringsliv-finansanalytiker-rollout-playability.test.js",
               "tests/civication-naeringsliv-life-career-split.test.js"
             ],
@@ -10189,6 +10214,7 @@
             "evidence": [
               "data/Civication/mailPlans/naeringsliv/finansanalytiker_plan.json",
               "tests/civication-career-outcomes.test.js",
+              "tests/civication-naeringsliv-finansanalytiker-role-world-rollout.test.js",
               "tests/civication-naeringsliv-finansanalytiker-rollout-playability.test.js",
               "tests/civication-naeringsliv-life-career-split.test.js"
             ],

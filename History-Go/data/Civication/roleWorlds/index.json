@@ -1,8 +1,8 @@
 {
   "schema": "civication_role_world_index_v1",
   "version": 1,
-  "status": "nine_role_worlds_materialized",
-  "effective_date": "2026-08-26",
+  "status": "ten_role_worlds_materialized",
+  "effective_date": "2026-08-27",
   "roles": [
     {
       "category": "naeringsliv",
@@ -57,6 +57,24 @@
       "role_scope": "produksjonsassistent",
       "status": "role_world_complete",
       "path": "data/Civication/roleWorlds/film_tv/produksjonsassistent.json"
+    },
+    {
+      "category": "film_tv",
+      "role_scope": "programleder",
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/film_tv/programleder.json"
+    },
+    {
+      "category": "naeringsliv",
+      "role_scope": "avdelingsleder",
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/naeringsliv/avdelingsleder.json"
+    },
+    {
+      "category": "naeringsliv",
+      "role_scope": "finansanalytiker",
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/naeringsliv/finansanalytiker.json"
     }
   ],
   "first_reference_world": {
@@ -69,7 +87,7 @@
     "role_scope": "renholder",
     "status": "role_world_complete"
   },
-  "note": "Reference-bølgen og de strukturelle pilotbevisene består uendret. Kurator, manusmedarbeider og produksjonsassistent er de tre første kontrollerte rolle-for-rolle-rolloutene; produksjonsassistenten tilfører et persistent opptaksdagcase, lokasjonshandoff/venting/rework, stedskontekst og audience-spesifikk tillit uten myndighetslekkasje.",
+  "note": "Reference- og pilotbevisene består uendret. Finansanalytiker er materialisert som kontrollert Role World-rollout med ett vedvarende investeringscase, eksplisitt waiting/handoff/rework og audience-spesifikk standing uten at analytisk standing gir kapitalmyndighet.",
   "third_reference_world": {
     "category": "by",
     "role_scope": "by_radgiver_plan",
