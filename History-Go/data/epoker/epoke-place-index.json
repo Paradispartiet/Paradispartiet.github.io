@@ -486,8 +486,21 @@
               "period_cases": [],
               "connections": {
                 "person_ids": [],
-                "works": [],
-                "stories": []
+                "works": [
+                  {
+                    "id": "ekeberg_oppdagelsen_12_september_1915",
+                    "title": "Oppdagelsen 12. september 1915",
+                    "type": "historical_event"
+                  }
+                ],
+                "stories": [
+                  {
+                    "id": "st_ekeberg_helleristninger_sondagsturen_1915",
+                    "title": "Søndagsturen som åpnet bergflaten",
+                    "year": 1915,
+                    "type": "historical_event"
+                  }
+                ]
               }
             },
             {
@@ -3354,6 +3367,58 @@
               }
             },
             {
+              "place_id": "oslo_hospital",
+              "name": "Oslo Hospital",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie_added_batch_01/oslo_hospital.json",
+              "roles": [
+                {
+                  "id": "hverdagsliv_og_velferd",
+                  "label": "Hverdagsliv og velferd"
+                },
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_oslo_hospital_1290_1",
+                  "year": 1290,
+                  "title": "Fransiskanerkloster",
+                  "consequence": "Fransiskanerne etablerte et kloster og omsorgssted ved middelalderbyen.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo Hospital / Oslo byarkiv",
+                      "url": "https://www.oslohospital.no/oslo-hospital-sin-historie",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_oslo_hospital.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "herman_wedel_major"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_oslo_hospital_fra_dollhus_til_lov",
+                    "title": "Fra seksten celler til en ny lov",
+                    "year": 1848,
+                    "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "saxegarden",
               "name": "Saxegården",
               "category": "historie",
@@ -3777,8 +3842,8 @@
               }
             }
           ],
-          "placeCount": 20,
-          "milestoneCount": 63
+          "placeCount": 21,
+          "milestoneCount": 64
         },
         "historie_tidlig_moderne_stat_handel_og_reformasjon": {
           "places": [
@@ -5058,6 +5123,309 @@
               }
             },
             {
+              "place_id": "gamle_radhus",
+              "name": "Gamle rådhus",
+              "category": "by",
+              "source_file": "places/by/oslo/gamle_radhus/gamle_radhus.json",
+              "roles": [
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_gamle_radhus_popup_22",
+                  "year": 1600,
+                  "title": "Det synlige 1600-tallspreget må dermed leses sammen med senere restaureringsvalg.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo kommune – Gamle Rådhus – popup, setning 22",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/kunst-og-kultur/kultureiendommer/gamle-radhus/",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/gamle_radhus.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_gamle_radhus_popup_22",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_gr_1624_1",
+                  "year": 1624,
+                  "title": "Byflytting",
+                  "consequence": "Christian 4 flytter byen til området ved Akershus etter brannen.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo kommune – Gamle Rådhus",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/kunst-og-kultur/kultureiendommer/gamle-radhus/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/by/leksikon_gamle_radhus.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_gamle_radhus_raadet_faar_et_hus_1641",
+                  "year": 1641,
+                  "title": "Da byen fikk et styringsrom",
+                  "consequence": "I 1641 fikk den nye byen et rådhus der styring, rett, borgerskap og arrest ble samlet under samme tak.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo kommune – Gamle Rådhus",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/kunst-og-kultur/kultureiendommer/gamle-radhus/",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Sceneweb – Gamle Raadhus Scene",
+                      "url": "https://sceneweb.no/nb/venue/31901/Gamle_Raadhus%20Scene%20%2F%20R%C3%A5dhussalen%2C%20Oslo",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Oppdag Kvadraturen – Høyesterett",
+                      "url": "https://www.oppdagkvadraturen.no/stoppesteder/hoyesterett",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Oslo byleksikon – Nedre Slottsgate",
+                      "url": "https://oslobyleksikon.no/side/Nedre_Slottsgate",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-003.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_gamle_radhus_raadet_faar_et_hus_1641",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_gamle_radhus_popup_01",
+                  "year": 1641,
+                  "title": "Gamle rådhus sto ferdig i 1641, mindre enn tjue år etter at Christian 4 flyttet byen vestover etter brannen i 1624.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo kommune – Gamle Rådhus – popup, setning 1",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/kunst-og-kultur/kultureiendommer/gamle-radhus/",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/gamle_radhus.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_gamle_radhus_popup_01",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_gamle_radhus_desc_01",
+                  "year": 1641,
+                  "title": "Gamle rådhus sto ferdig ved Christiania torv i 1641 og var byens rådhus til 1733.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo kommune – Gamle Rådhus – desc, setning 1",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/kunst-og-kultur/kultureiendommer/gamle-radhus/",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/gamle_radhus.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_gamle_radhus_desc_01",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_gr_1641_2",
+                  "year": 1641,
+                  "title": "Rådhus",
+                  "consequence": "Gamle rådhus står ferdig og tas i bruk.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo kommune – Gamle Rådhus",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/kunst-og-kultur/kultureiendommer/gamle-radhus/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/by/leksikon_gamle_radhus.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_gamle_radhus_popup_08",
+                  "year": 1686,
+                  "title": "Etter bybrannen i 1686 ble rådhussalen brukt til gudstjenester fordi Hellig Trefoldighets kirke var ødelagt.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo kommune – Gamle Rådhus – popup, setning 8",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/kunst-og-kultur/kultureiendommer/gamle-radhus/",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/gamle_radhus.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_gamle_radhus_popup_08",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_gr_1686_3",
+                  "year": 1686,
+                  "title": "Kirkerom",
+                  "consequence": "Rådhussalen brukes til gudstjenester etter bybrannen.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo kommune – Gamle Rådhus",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/kunst-og-kultur/kultureiendommer/gamle-radhus/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/by/leksikon_gamle_radhus.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_gr_1730_4",
+                  "year": 1730,
+                  "title": "Borgerrepresentasjon",
+                  "consequence": "Tolv eligerte menn blir fast representasjon.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo kommune – Gamle Rådhus",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/kunst-og-kultur/kultureiendommer/gamle-radhus/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/by/leksikon_gamle_radhus.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_gamle_radhus_popup_10",
+                  "year": 1730,
+                  "title": "I 1730 kom en fast borgerrepresentasjon med tolv eligerte menn, men den rakk bare kort tid i huset før rådhusfunksjonen flyttet til Rådhusgata 7 i 1733–1734.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Sceneweb – Gamle Raadhus Scene – popup, setning 10",
+                      "url": "https://sceneweb.no/nb/venue/31901/Gamle_Raadhus%20Scene%20%2F%20R%C3%A5dhussalen%2C%20Oslo",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/gamle_radhus.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_gamle_radhus_popup_10",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_gr_1733_5",
+                  "year": 1733,
+                  "title": "Rådhusperioden slutter",
+                  "consequence": "Administrasjonen flytter til Rådhusgata 7.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo kommune – Gamle Rådhus",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/kunst-og-kultur/kultureiendommer/gamle-radhus/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/by/leksikon_gamle_radhus.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_gr_1785_6",
+                  "year": 1785,
+                  "title": "Frimurerlosje",
+                  "consequence": "St. Olai kjøper bygningen.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo kommune – Gamle Rådhus",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/kunst-og-kultur/kultureiendommer/gamle-radhus/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/by/leksikon_gamle_radhus.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_gamle_radhus_popup_13",
+                  "year": 1785,
+                  "title": "Olai kjøpte bygningen i 1785.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo kommune – Gamle Rådhus – popup, setning 13",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/kunst-og-kultur/kultureiendommer/gamle-radhus/",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/gamle_radhus.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_gamle_radhus_popup_13",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "lars_backer"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_gamle_radhus_raadet_faar_et_hus_1641",
+                    "title": "Da byen fikk et styringsrom",
+                    "year": 1641,
+                    "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "gamlebyen_kirke",
               "name": "Gamlebyen kirke",
               "category": "religion",
@@ -5966,13 +6334,17 @@
             },
             {
               "place_id": "oslo_hospital",
-              "name": "Oslo hospital",
+              "name": "Oslo Hospital",
               "category": "historie",
               "source_file": "places/historie/oslo/places_historie_added_batch_01/oslo_hospital.json",
               "roles": [
                 {
                   "id": "em_his_bruker_tjeneste_forvaltning",
                   "label": "Bruker/tjeneste"
+                },
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
                 },
                 {
                   "id": "em_his_fattigvesen_veldedighet_sosial_kontroll",
@@ -5987,8 +6359,20 @@
                   "label": "Institusjonalisering"
                 },
                 {
+                  "id": "konflikt_og_motstand",
+                  "label": "Konflikt og motstand"
+                },
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                },
+                {
                   "id": "em_his_velferd_hverdagsliv",
                   "label": "Rett/tilgang"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
                 }
               ],
               "milestones": [
@@ -6047,6 +6431,120 @@
                   ]
                 },
                 {
+                  "id": "chrono_oslo_hospital_1538_2",
+                  "year": 1538,
+                  "title": "Hospitalstiftelsen",
+                  "consequence": "Christian 3 ga ordre om at klosterbygningene skulle brukes som hospital for fattige og syke.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo Hospital / Oslo byarkiv",
+                      "url": "https://www.oslohospital.no/oslo-hospital-sin-historie",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_oslo_hospital.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_oslo_hospital_identity",
+                  "year": 1538,
+                  "title": "Oslo Hospital ligger på tomten til fransiskanernes kloster fra omkring 1290 og ble etablert som hospital i 1538.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "innledningen og kronologien",
+                      "url": "https://www.oslohospital.no/oslo-hospital-sin-historie",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/oslo_hospital.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_oslo_hospital_identity",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_oslo_hospital_1567_3",
+                  "year": 1567,
+                  "title": "Brann",
+                  "consequence": "Anlegget brant under krigshandlingene i 1567.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo Hospital / Oslo byarkiv",
+                      "url": "https://www.oslohospital.no/oslo-hospital-sin-historie",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_oslo_hospital.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_oslo_hospital_1648_4",
+                  "year": 1648,
+                  "title": "Jordeboken",
+                  "consequence": "Jordeboken dokumenterer eiendommer og inntekter som finansierte hospitalet.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo Hospital / Oslo byarkiv",
+                      "url": "https://www.oslohospital.no/oslo-hospital-sin-historie",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_oslo_hospital.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_oslo_hospital_economy",
+                  "year": 1648,
+                  "title": "Jordeboken fra 1648 og stiftelsens utlånsvirksomhet dokumenterer eiendom og kapital som økonomisk grunnlag.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "avsnittene om jordebok, gårder og utlån",
+                      "url": "https://blogg.oslobyarkiv.no/blog/2018/12/06/oslo-hospitals-historie/",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/oslo_hospital.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_oslo_hospital_economy",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_oslo_hospital_1736_5",
+                  "year": 1736,
+                  "title": "Birthe Jonsdatter",
+                  "consequence": "Hospitalets egen historikk navngir henne som den første psykiatriske pasienten.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo Hospital / Oslo byarkiv",
+                      "url": "https://www.oslohospital.no/oslo-hospital-sin-historie",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_oslo_hospital.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
                   "id": "claim_claim_his_oslo_hospital_dollhus_psychiatric_institution",
                   "year": 1736,
                   "title": "Helse/epidemi",
@@ -6072,18 +6570,134 @@
                     "Langtidslinjen omfatter skiftende kategorier, lover og behandlingspraksiser; senere terminologi brukes ikke som direkte navn på alle tidligere regimer.",
                     "Profesjonalisering kan beskrive ny ekspertise og behandling, men også sterkere institusjonsmakt og avsondring."
                   ]
+                },
+                {
+                  "id": "production_claim_oslo_hospital_birthe",
+                  "year": 1736,
+                  "title": "Oslo Hospitals egen historikk navngir Birthe Jonsdatter som psykiatrisk pasient i 1736.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "kronologiposten 1736",
+                      "url": "https://www.oslohospital.no/oslo-hospital-sin-historie",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/oslo_hospital.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_oslo_hospital_birthe",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_oslo_hospital_1737_6",
+                  "year": 1737,
+                  "title": "Gråsteinsbygningen",
+                  "consequence": "Den navngitte hospitalbygningen ble oppført i 1730-årene.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo Hospital / Oslo byarkiv",
+                      "url": "https://www.oslohospital.no/oslo-hospital-sin-historie",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_oslo_hospital.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_oslo_hospital_dollhus",
+                  "year": 1777,
+                  "title": "Dollhuset hadde seksten celler og dateres til 1777–1778 i de inspiserte kildene.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "avsnittene om bygningen og cellene",
+                      "url": "https://tidsskriftet.no/2000/11/merkesteiner-i-norsk-medisin/etableringen-av-oslo-hospitals-dollhus",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/oslo_hospital.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_oslo_hospital_dollhus",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_oslo_hospital_1778_7",
+                  "year": 1778,
+                  "title": "Dollhuset",
+                  "consequence": "Byarkivet og Tidsskriftet daterer ferdigstillelse eller åpning til 1778; hospitalets egen side bruker 1777.",
+                  "confidence": "qualified",
+                  "sources": [
+                    {
+                      "title": "Oslo Hospital / Oslo byarkiv",
+                      "url": "https://www.oslohospital.no/oslo-hospital-sin-historie",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_oslo_hospital.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_oslo_hospital_1794_8",
+                  "year": 1794,
+                  "title": "Ny brann",
+                  "consequence": "Brannen ødela blant annet kirken.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo Hospital / Oslo byarkiv",
+                      "url": "https://www.oslohospital.no/oslo-hospital-sin-historie",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_oslo_hospital.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_oslo_hospital_1796_9",
+                  "year": 1796,
+                  "title": "Dagens kirke",
+                  "consequence": "Gamlebyen kirke sto ferdig på hospitaltomten.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo Hospital / Oslo byarkiv",
+                      "url": "https://www.oslohospital.no/oslo-hospital-sin-historie",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_oslo_hospital.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
                 }
               ],
               "period_cases": [],
               "connections": {
-                "person_ids": [],
+                "person_ids": [
+                  "herman_wedel_major"
+                ],
                 "works": [],
                 "stories": [
                   {
-                    "id": "st_oslo_hospital_omsorg_for_velferdsstaten",
-                    "title": "Omsorg før velferdsstaten",
-                    "year": 1538,
-                    "type": "historical_place"
+                    "id": "st_oslo_hospital_fra_dollhus_til_lov",
+                    "title": "Fra seksten celler til en ny lov",
+                    "year": 1848,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -7453,8 +8067,8 @@
               }
             }
           ],
-          "placeCount": 42,
-          "milestoneCount": 81
+          "placeCount": 43,
+          "milestoneCount": 106
         },
         "historie_revolusjoner_industri_og_demokratisering": {
           "places": [
@@ -8565,7 +9179,7 @@
                       "verifiedAt": ""
                     }
                   ],
-                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "source_file": "data/runtime/stories-all/part-005.json",
                   "evidence_type": "canonical_story",
                   "claim_id": "",
                   "story_id": "st_bjoelsenfossen_fossen_som_malte_byens_brod",
@@ -8840,46 +9454,265 @@
               "source_file": "places/historie/oslo/places_historie_added_batch_01/botsfengselet.json",
               "roles": [
                 {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
                   "id": "by_og_infrastruktur",
                   "label": "By og infrastruktur"
+                },
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
                 }
               ],
               "milestones": [
                 {
-                  "id": "story_st_botsfengselet_filadelfiasystemet_1851",
-                  "year": 1851,
-                  "title": "Cellefengselet bygd for total isolasjon",
-                  "consequence": "Botsfengselet på Grønland ble tatt i bruk i 1851 og var bygd etter det strenge filadelfiasystemet, der fangene skulle sone i fullstendig isolasjon.",
+                  "id": "chrono_bots_1837_1",
+                  "year": 1837,
+                  "title": "Kommisjonen",
+                  "consequence": "Straffeanstaltkommisjonen foreslår et nytt cellefengselssystem.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Store norske leksikon – Botsfengselet",
+                      "url": "https://snl.no/Botsfengselet",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_botsfengselet.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_botsfengselet_popup_01",
+                  "year": 1837,
+                  "title": "Straffeanstaltkommisjonen av 1837 foreslo sju nye botsfengsler, men bare anlegget på Åkebergløkken ble bygd.",
+                  "consequence": "",
                   "confidence": "",
                   "sources": [
                     {
-                      "title": "Store norske leksikon: Botsfengselet",
+                      "title": "Store norske leksikon – Botsfengselet – popup, setning 1",
+                      "url": "https://snl.no/Botsfengselet",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/botsfengselet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_botsfengselet_popup_01",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_botsfengselet_popup_02",
+                  "year": 1844,
+                  "title": "Arbeidet startet i 1844, og Botsfengselet åpnet i 1851 som landsfengsel for menn med lange dommer.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Store norske leksikon – Botsfengselet – popup, setning 2",
+                      "url": "https://snl.no/Botsfengselet",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/botsfengselet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_botsfengselet_popup_02",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_bots_1844_2",
+                  "year": 1844,
+                  "title": "Byggestart",
+                  "consequence": "Arbeidet med Schirmers anlegg begynner.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Store norske leksikon – Botsfengselet",
+                      "url": "https://snl.no/Botsfengselet",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_botsfengselet.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_botsfengselet_desc_01",
+                  "year": 1851,
+                  "title": "Botsfengselet åpnet på Grønland i 1851 som landsfengsel for menn med lange dommer.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Store norske leksikon – Botsfengselet – desc, setning 1",
+                      "url": "https://snl.no/Botsfengselet",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/botsfengselet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_botsfengselet_desc_01",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_botsfengselet_apning_1851",
+                  "year": 1851,
+                  "title": "Da forbedring fikk en celleplan",
+                  "consequence": "I 1851 åpnet Botsfengselet som et nytt landsfengsel der enecelle, arbeid og religiøs påvirkning skulle forme den innsatte.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Statsbygg – Botsen, Oslo fengsel avdeling A",
+                      "url": "https://www.statsbygg.no/eiendom/botsen-oslo-fengsel-avdeling-a/",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Store norske leksikon – Botsfengselet",
                       "url": "https://snl.no/Botsfengselet",
                       "verifiedAt": ""
                     },
                     {
-                      "title": "Store norske leksikon: Heinrich Ernst Schirmer",
-                      "url": "https://snl.no/Heinrich_Ernst_Schirmer",
+                      "title": "Oslo byleksikon – Botsfengselet",
+                      "url": "https://oslobyleksikon.no/side/Botsfengselet",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Tidsskriftet – Frederik Holst og fengslene",
+                      "url": "https://tidsskriftet.no/2001/12/medisinsk-historie/frederik-holst-og-fengslene",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Oslo fengsel – historie",
+                      "url": "https://www.oslofengsel.no/historie/",
                       "verifiedAt": ""
                     }
                   ],
-                  "source_file": "data/runtime/stories-all/part-001.json",
+                  "source_file": "data/runtime/stories-all/part-003.json",
                   "evidence_type": "canonical_story",
                   "claim_id": "",
-                  "story_id": "st_botsfengselet_filadelfiasystemet_1851",
+                  "story_id": "st_botsfengselet_apning_1851",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_bots_1851_3",
+                  "year": 1851,
+                  "title": "Åpning",
+                  "consequence": "Botsfengselet tas i bruk som landsfengsel.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Store norske leksikon – Botsfengselet",
+                      "url": "https://snl.no/Botsfengselet",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_botsfengselet.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_bots_1887_4",
+                  "year": 1887,
+                  "title": "Fengselskirke",
+                  "consequence": "Nordans kirkefløy tas i bruk.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Store norske leksikon – Botsfengselet",
+                      "url": "https://snl.no/Botsfengselet",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_botsfengselet.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_botsfengselet_popup_11",
+                  "year": 1887,
+                  "title": "I 1887 kom en egen fengselskirke tegnet av Jacob Wilhelm Nordan, med avskilte båser som lot de innsatte følge gudstjenesten uten vanlig fellesskap.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Store norske leksikon – Botsfengselet – popup, setning 11",
+                      "url": "https://snl.no/Botsfengselet",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/botsfengselet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_botsfengselet_popup_11",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_botsfengselet_popup_13",
+                  "year": 1892,
+                  "title": "Den strengeste isolasjonspraksisen ble forlatt i 1892.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Tidsskriftet – Frederik Holst og fengslene – popup, setning 13",
+                      "url": "https://tidsskriftet.no/2001/12/medisinsk-historie/frederik-holst-og-fengslene",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/botsfengselet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_botsfengselet_popup_13",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_bots_1892_5",
+                  "year": 1892,
+                  "title": "Mindre absolutt isolasjon",
+                  "consequence": "Den strengeste separasjonspraksisen avsluttes.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Store norske leksikon – Botsfengselet",
+                      "url": "https://snl.no/Botsfengselet",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_botsfengselet.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
                   "limitations": []
                 }
               ],
               "period_cases": [],
               "connections": {
-                "person_ids": [],
+                "person_ids": [
+                  "frederik_holst"
+                ],
                 "works": [],
                 "stories": [
                   {
-                    "id": "st_botsfengselet_filadelfiasystemet_1851",
-                    "title": "Cellefengselet bygd for total isolasjon",
+                    "id": "st_botsfengselet_apning_1851",
+                    "title": "Da forbedring fikk en celleplan",
                     "year": 1851,
-                    "type": "historical"
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -9406,6 +10239,98 @@
               }
             },
             {
+              "place_id": "ekebergparken_museum",
+              "name": "Ekebergparken Museum",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie/ekebergparken_museum.json",
+              "roles": [
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_ekebergparken_museum_popup_03",
+                  "year": 1891,
+                  "title": "Lund i 1891, og navnet knytter fortsatt bygningen til den opprinnelige eieren.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Museum og butikk – popup, setning 3",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/ekebergparken_museum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ekebergparken_museum_popup_03",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_ekebergparken_museum_desc_02",
+                  "year": 1891,
+                  "title": "Lund i 1891.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Museum og butikk – desc, setning 2",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/ekebergparken_museum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ekebergparken_museum_desc_02",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_museum_1891_1",
+                  "year": 1891,
+                  "title": "Privat villa",
+                  "consequence": "Anton M. Lund får oppført huset.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Ekebergparken – Museum og butikk",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_ekebergparken_museum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_ekebergparken_museum_apning_2013",
+                    "title": "Da villaen åpnet dørene",
+                    "year": 2013,
+                    "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "ekebergparken",
               "name": "Ekebergparken skulpturpark",
               "category": "kunst",
@@ -9773,6 +10698,115 @@
                 "person_ids": [],
                 "works": [],
                 "stories": []
+              }
+            },
+            {
+              "place_id": "gamle_radhus",
+              "name": "Gamle rådhus",
+              "category": "by",
+              "source_file": "places/by/oslo/gamle_radhus/gamle_radhus.json",
+              "roles": [
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_gamle_radhus_popup_14",
+                  "year": 1815,
+                  "title": "Høyesterett, opprettet i 1815, holdt til i andre etasje her fra 1821 til 1846.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oppdag Kvadraturen – Høyesterett – popup, setning 14",
+                      "url": "https://www.oppdagkvadraturen.no/stoppesteder/hoyesterett",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/gamle_radhus.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_gamle_radhus_popup_14",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_gr_1821_7",
+                  "year": 1821,
+                  "title": "Høyesterett",
+                  "consequence": "Høyesterett flytter inn i andre etasje.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oppdag Kvadraturen – Høyesterett",
+                      "url": "https://www.oppdagkvadraturen.no/stoppesteder/hoyesterett",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/by/leksikon_gamle_radhus.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_gr_1846_8",
+                  "year": 1846,
+                  "title": "Høyesterett flytter",
+                  "consequence": "Domstolen forlater de trange lokalene.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oppdag Kvadraturen – Høyesterett",
+                      "url": "https://www.oppdagkvadraturen.no/stoppesteder/hoyesterett",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/by/leksikon_gamle_radhus.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_gr_1856_9",
+                  "year": 1856,
+                  "title": "Restaurant",
+                  "consequence": "Servering etableres i en ny sidefløy.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo kommune – Gamle Rådhus",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/kunst-og-kultur/kultureiendommer/gamle-radhus/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/by/leksikon_gamle_radhus.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "lars_backer"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_gamle_radhus_raadet_faar_et_hus_1641",
+                    "title": "Da byen fikk et styringsrom",
+                    "year": 1641,
+                    "type": "turning_point"
+                  }
+                ]
               }
             },
             {
@@ -13219,6 +14253,162 @@
                     "title": "Gassen som tente byen",
                     "year": 1848,
                     "type": "industrial"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "oslo_hospital",
+              "name": "Oslo Hospital",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie_added_batch_01/oslo_hospital.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_oslo_hospital_major",
+                  "year": 1847,
+                  "title": "Herman Wedel Major arbeidet ved Oslo Hospital fra 1847 til 1854 og fikk ansvar for Dollhuset.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "avsnittene om Major",
+                      "url": "https://tidsskriftet.no/2000/11/merkesteiner-i-norsk-medisin/etableringen-av-oslo-hospitals-dollhus",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/oslo_hospital.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_oslo_hospital_major",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_oslo_hospital_1847_10",
+                  "year": 1847,
+                  "title": "Major ved hospitalet",
+                  "consequence": "Herman Wedel Major begynte som lege ved Oslo Hospital og fikk ansvar for Dollhuset.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Tidsskrift for Den norske legeforening",
+                      "url": "https://tidsskriftet.no/2000/11/merkesteiner-i-norsk-medisin/etableringen-av-oslo-hospitals-dollhus",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_oslo_hospital.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_oslo_hospital_fra_dollhus_til_lov",
+                  "year": 1848,
+                  "title": "Fra seksten celler til en ny lov",
+                  "consequence": "Herman Wedel Majors møte med Dollhuset ved Oslo Hospital ble del av reformarbeidet som endte i sinnssykeloven av 1848.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Tidsskrift for Den norske legeforening – etableringen av Dollhuset",
+                      "url": "https://tidsskriftet.no/2000/11/merkesteiner-i-norsk-medisin/etableringen-av-oslo-hospitals-dollhus",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Store norske leksikon – Herman Wedel Major",
+                      "url": "https://snl.no/Herman_Wedel_Major",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-003.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_oslo_hospital_fra_dollhus_til_lov",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_oslo_hospital_law",
+                  "year": 1848,
+                  "title": "Lov om sindssyges behandling og forpleining ble vedtatt i 1848.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "avsnittet om loven",
+                      "url": "https://tidsskriftet.no/2000/11/merkesteiner-i-norsk-medisin/etableringen-av-oslo-hospitals-dollhus",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/oslo_hospital.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_oslo_hospital_law",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_oslo_hospital_1848_11",
+                  "year": 1848,
+                  "title": "Sinnssykeloven",
+                  "consequence": "Lov om sindssyges behandling og forpleining ble vedtatt.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Tidsskrift for Den norske legeforening",
+                      "url": "https://tidsskriftet.no/2000/11/merkesteiner-i-norsk-medisin/etableringen-av-oslo-hospitals-dollhus",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_oslo_hospital.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_oslo_hospital_1888_12",
+                  "year": 1888,
+                  "title": "Damehjemmet",
+                  "consequence": "Damehjemmet ble oppført etter tegninger av Ingvar Hjorth.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo Hospital / Oslo byarkiv",
+                      "url": "https://www.oslohospital.no/oslo-hospital-sin-historie",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_oslo_hospital.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "herman_wedel_major"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_oslo_hospital_fra_dollhus_til_lov",
+                    "title": "Fra seksten celler til en ny lov",
+                    "year": 1848,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -17375,8 +18565,8 @@
               }
             }
           ],
-          "placeCount": 92,
-          "milestoneCount": 278
+          "placeCount": 95,
+          "milestoneCount": 301
         },
         "historie_nasjon_massepolitikk_og_moderne_institusjoner": {
           "places": [
@@ -18220,6 +19410,81 @@
                 "person_ids": [],
                 "works": [],
                 "stories": []
+              }
+            },
+            {
+              "place_id": "botsfengselet",
+              "name": "Botsfengselet",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie_added_batch_01/botsfengselet.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_botsfengselet_popup_14",
+                  "year": 1934,
+                  "title": "En ny verkstedfløy kom i 1934, og fotograf Anders Beer Wilse laget samme tiår et presentasjonsalbum med celler, kirke og arbeidsrom.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Preus museum – Wilse-albumet fra Botsfengselet 1935 – popup, setning 14",
+                      "url": "https://commons.wikimedia.org/wiki/Category:Album_from_Oslo_Botsfengsel_by_Anders_Beer_Wilse",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/botsfengselet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_botsfengselet_popup_14",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_bots_1934_6",
+                  "year": 1934,
+                  "title": "Verkstedfløy",
+                  "consequence": "Anlegget utvides med fellesverksteder.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Store norske leksikon – Botsfengselet",
+                      "url": "https://snl.no/Botsfengselet",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_botsfengselet.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "frederik_holst"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_botsfengselet_apning_1851",
+                    "title": "Da forbedring fikk en celleplan",
+                    "year": 1851,
+                    "type": "turning_point"
+                  }
+                ]
               }
             },
             {
@@ -19316,6 +20581,77 @@
               }
             },
             {
+              "place_id": "gamle_radhus",
+              "name": "Gamle rådhus",
+              "category": "by",
+              "source_file": "places/by/oslo/gamle_radhus/gamle_radhus.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_gr_1917_10",
+                  "year": 1917,
+                  "title": "Restaureringsplan",
+                  "consequence": "Lars Backer utarbeider en plan i gammel stil.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo kommune – Gamle Rådhus",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/kunst-og-kultur/kultureiendommer/gamle-radhus/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/by/leksikon_gamle_radhus.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_gr_1926_11",
+                  "year": 1926,
+                  "title": "Restaurant i hovedbygningen",
+                  "consequence": "Carl og Hagbart Berner tegner interiøret.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo kommune – Gamle Rådhus",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/kunst-og-kultur/kultureiendommer/gamle-radhus/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/by/leksikon_gamle_radhus.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "lars_backer"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_gamle_radhus_raadet_faar_et_hus_1641",
+                    "title": "Da byen fikk et styringsrom",
+                    "year": 1641,
+                    "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "gamle_trikkestallen",
               "name": "Gamle trikkestallen på Torshov",
               "category": "by",
@@ -19623,6 +20959,138 @@
               }
             },
             {
+              "place_id": "ekeberg_helleristninger",
+              "name": "Helleristningene på Ekeberg",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie/ekeberg_helleristninger.json",
+              "roles": [
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_ekeberg_helleristninger_desc_02",
+                  "year": 1915,
+                  "title": "Feltet ble oppdaget 12. september 1915.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "desc, setning 2",
+                      "url": "https://lokalhistoriewiki.no/wiki/Helleristningene_i_Familiedalen",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/ekeberg_helleristninger.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ekeberg_helleristninger_desc_02",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_ekeberg_helleristninger_popup_10",
+                  "year": 1915,
+                  "title": "Feltet ble oppdaget søndag 12. september 1915.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "popup, setning 10",
+                      "url": "https://lokalhistoriewiki.no/wiki/Helleristningene_i_Familiedalen",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/ekeberg_helleristninger.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ekeberg_helleristninger_popup_10",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_ekeberg_1915",
+                  "year": 1915,
+                  "title": "Oppdagelse og første kontroll",
+                  "consequence": "Paul Johannessen oppdager furene 12. september; han og Jan Petersen undersøker stedet dagen etter.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Ekebergparken – historisk tidslinje",
+                      "url": "https://ekebergparken.com/historisk-tidslinje",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Lokalhistoriewiki – Helleristningene i Familiedalen",
+                      "url": "https://lokalhistoriewiki.no/wiki/Helleristningene_i_Familiedalen",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_ekeberg_helleristninger.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_ekeberg_helleristninger_sondagsturen_1915",
+                  "year": 1915,
+                  "title": "Søndagsturen som åpnet bergflaten",
+                  "consequence": "Da preparant Paul Johannessen satte seg ved en bergflate i Familiedalen 12. september 1915, oppdaget han furer som førte Jan Petersen og Oldsaksamlingen tilbake dagen etter.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Ekebergparken – historisk tidslinje",
+                      "url": "https://ekebergparken.com/historisk-tidslinje",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Lokalhistoriewiki – Helleristningene i Familiedalen",
+                      "url": "https://lokalhistoriewiki.no/wiki/Helleristningene_i_Familiedalen",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Store norske leksikon – Jan Greve Thaulow Petersen",
+                      "url": "https://snl.no/Jan_Greve_Thaulow_Petersen",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-003.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_ekeberg_helleristninger_sondagsturen_1915",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [
+                  {
+                    "id": "ekeberg_oppdagelsen_12_september_1915",
+                    "title": "Oppdagelsen 12. september 1915",
+                    "type": "historical_event"
+                  }
+                ],
+                "stories": [
+                  {
+                    "id": "st_ekeberg_helleristninger_sondagsturen_1915",
+                    "title": "Søndagsturen som åpnet bergflaten",
+                    "year": 1915,
+                    "type": "historical_event"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "jodisk_museum_oslo",
               "name": "Jødisk Museum i Oslo",
               "category": "historie",
@@ -19903,7 +21371,7 @@
                       "verifiedAt": ""
                     }
                   ],
-                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "source_file": "data/runtime/stories-all/part-005.json",
                   "evidence_type": "canonical_story",
                   "claim_id": "",
                   "story_id": "st_kuba_parken_gassklokken_som_ble_parkspor",
@@ -21378,6 +22846,10 @@
               "source_file": "places/politikk/oslo/places_politikk/oslo_radhus.json",
               "roles": [
                 {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
                   "id": "em_his_1814_statsdannelse_enevelde_og_dansk_norsk_statsutvikling",
                   "label": "Embetsstat og kommunalt selvstyre"
                 },
@@ -21388,6 +22860,10 @@
                 {
                   "id": "makt_og_styring",
                   "label": "Makt og styring"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
                 },
                 {
                   "id": "em_his_sanering_byfornyelse",
@@ -21452,13 +22928,13 @@
                   "confidence": "",
                   "sources": [
                     {
-                      "title": "Store norske leksikon: Oslo rådhus",
-                      "url": "https://snl.no/Oslo_r%C3%A5dhus",
+                      "title": "Kunstsamlingen – Rådhusjubileet 2025",
+                      "url": "https://www.kunstsamlingen.no/aktuelt/radhusjubileet-2025",
                       "verifiedAt": ""
                     },
                     {
-                      "title": "Oslo byleksikon: Rådhuset",
-                      "url": "https://oslobyleksikon.no/index.php/R%C3%A5dhuset",
+                      "title": "Store norske leksikon – Oslo rådhus",
+                      "url": "https://snl.no/Oslo_r%C3%A5dhus",
                       "verifiedAt": ""
                     }
                   ],
@@ -21466,6 +22942,44 @@
                   "evidence_type": "canonical_story",
                   "claim_id": "",
                   "story_id": "st_oslo_radhus_fra_pipervika_til_maktrom",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_oslo_radhus_popup_02",
+                  "year": 1917,
+                  "title": "Arkitektene Arnstein Arneberg og Magnus Poulsson utviklet prosjektet fra konkurransene i 1917–1918 til et monumentalt, moderne kommunalt arbeidsbygg ved fjorden.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kunstsamlingen – Rådhusjubileet 2025 – popup, setning 2",
+                      "url": "https://www.kunstsamlingen.no/aktuelt/radhusjubileet-2025",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/oslo_radhus.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_oslo_radhus_popup_02",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_oslo_radhus_popup_03",
+                  "year": 1931,
+                  "title": "Grunnsteinen ble lagt i 1931.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kunstsamlingen – Rådhusjubileet 2025 – popup, setning 3",
+                      "url": "https://www.kunstsamlingen.no/aktuelt/radhusjubileet-2025",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/oslo_radhus.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_oslo_radhus_popup_03",
+                  "story_id": "",
                   "limitations": []
                 }
               ],
@@ -23679,8 +25193,8 @@
               }
             }
           ],
-          "placeCount": 77,
-          "milestoneCount": 158
+          "placeCount": 80,
+          "milestoneCount": 168
         },
         "historie_krig_okkupasjon_og_etterkrigsoppgjor": {
           "places": [
@@ -24029,6 +25543,102 @@
               }
             },
             {
+              "place_id": "ekebergparken_museum",
+              "name": "Ekebergparken Museum",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie/ekebergparken_museum.json",
+              "roles": [
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "konflikt_og_motstand",
+                  "label": "Konflikt og motstand"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_museum_1942_2",
+                  "year": 1942,
+                  "title": "Kommunalt kjøp og okkupasjonsbruk",
+                  "consequence": "Kommunen kjøper eiendommen; huset blir brukt av tyske offiserer.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Ekebergparken – Museum og butikk",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_ekebergparken_museum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_ekebergparken_museum_popup_06",
+                  "year": 1942,
+                  "title": "Oslo kommune kjøpte eiendommen i 1942 etter Clara Lunds død.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Museum og butikk – popup, setning 6",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/ekebergparken_museum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ekebergparken_museum_popup_06",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_museum_1945_3",
+                  "year": 1945,
+                  "title": "Kommunale leiligheter",
+                  "consequence": "Etter krigen blir interiøret ombygd til fire leiligheter.",
+                  "confidence": "medium",
+                  "sources": [
+                    {
+                      "title": "Ekebergparken – Museum og butikk",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_ekebergparken_museum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_ekebergparken_museum_apning_2013",
+                    "title": "Da villaen åpnet dørene",
+                    "year": 2013,
+                    "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "gamle_aker_kirke",
               "name": "Gamle Aker kirke",
               "category": "religion",
@@ -24185,6 +25795,58 @@
                 "person_ids": [],
                 "works": [],
                 "stories": []
+              }
+            },
+            {
+              "place_id": "gamle_radhus",
+              "name": "Gamle rådhus",
+              "category": "by",
+              "source_file": "places/by/oslo/gamle_radhus/gamle_radhus.json",
+              "roles": [
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_gr_1940_12",
+                  "year": 1940,
+                  "title": "Kommunalt eierskap",
+                  "consequence": "Oslo kommune overtar bygningen.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo kommune – Gamle Rådhus",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/kunst-og-kultur/kultureiendommer/gamle-radhus/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/by/leksikon_gamle_radhus.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "lars_backer"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_gamle_radhus_raadet_faar_et_hus_1641",
+                    "title": "Da byen fikk et styringsrom",
+                    "year": 1641,
+                    "type": "turning_point"
+                  }
+                ]
               }
             },
             {
@@ -26854,8 +28516,8 @@
               }
             }
           ],
-          "placeCount": 38,
-          "milestoneCount": 75
+          "placeCount": 40,
+          "milestoneCount": 79
         },
         "historie_velferdsstat_kald_krig_og_sosialdemokrati": {
           "places": [
@@ -27397,6 +29059,111 @@
                 "person_ids": [],
                 "works": [],
                 "stories": []
+              }
+            },
+            {
+              "place_id": "botsfengselet",
+              "name": "Botsfengselet",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie_added_batch_01/botsfengselet.json",
+              "roles": [
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_botsfengselet_popup_17",
+                  "year": 1970,
+                  "title": "Landsfengselet ble nedlagt i 1970 da Ullersmo overtok langtidsfangene.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Store norske leksikon – Botsfengselet – popup, setning 17",
+                      "url": "https://snl.no/Botsfengselet",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/botsfengselet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_botsfengselet_popup_17",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_bots_1970_7",
+                  "year": 1970,
+                  "title": "Landsfengselet nedlegges",
+                  "consequence": "Ullersmo overtar langtidsfangene.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Store norske leksikon – Botsfengselet",
+                      "url": "https://snl.no/Botsfengselet",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_botsfengselet.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_bots_1975_8",
+                  "year": 1975,
+                  "title": "Avdeling A",
+                  "consequence": "Botsen blir del av Oslo kretsfengsel.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Store norske leksikon – Botsfengselet",
+                      "url": "https://snl.no/Botsfengselet",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_botsfengselet.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_botsfengselet_popup_18",
+                  "year": 1975,
+                  "title": "Etter modernisering ble Botsen i 1975 avdeling A i Oslo kretsfengsel, senere Oslo fengsel.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Store norske leksikon – Botsfengselet – popup, setning 18",
+                      "url": "https://snl.no/Botsfengselet",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/botsfengselet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_botsfengselet_popup_18",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "frederik_holst"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_botsfengselet_apning_1851",
+                    "title": "Da forbedring fikk en celleplan",
+                    "year": 1851,
+                    "type": "turning_point"
+                  }
+                ]
               }
             },
             {
@@ -28334,6 +30101,54 @@
                     "title": "Da dronning Maud ble flyttet til krypten",
                     "year": 1940,
                     "type": "historical_event"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "gamle_radhus",
+              "name": "Gamle rådhus",
+              "category": "by",
+              "source_file": "places/by/oslo/gamle_radhus/gamle_radhus.json",
+              "roles": [
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_gr_1971_13",
+                  "year": 1971,
+                  "title": "Gavlene tilbakeføres",
+                  "consequence": "Trappegavlene restaureres.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo kommune – Gamle Rådhus",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/kunst-og-kultur/kultureiendommer/gamle-radhus/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/by/leksikon_gamle_radhus.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "lars_backer"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_gamle_radhus_raadet_faar_et_hus_1641",
+                    "title": "Da byen fikk et styringsrom",
+                    "year": 1641,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -29746,6 +31561,25 @@
                   ]
                 },
                 {
+                  "id": "production_claim_oslo_radhus_popup_01",
+                  "year": 1950,
+                  "title": "Oslo rådhus åpnet 15. mai 1950 etter en plan- og byggeprosess som strakte seg over flere tiår.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo kommune – Oslo rådhus – popup, setning 1",
+                      "url": "https://www.oslo.kommune.no/radhuset/",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/oslo_radhus.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_oslo_radhus_popup_01",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
                   "id": "story_st_oslo_radhus_innvielsen_1950",
                   "year": 1950,
                   "title": "Rådhuset åpner under byjubileet",
@@ -29753,13 +31587,13 @@
                   "confidence": "",
                   "sources": [
                     {
-                      "title": "Oslo kommune: Oslo rådhus feirer 75 år",
+                      "title": "Oslo kommune – Oslo rådhus fyller 75 år",
                       "url": "https://aktuelt.oslo.kommune.no/oslo-radhus-fyller-75-ar",
                       "verifiedAt": ""
                     },
                     {
-                      "title": "Store norske leksikon: Oslo rådhus",
-                      "url": "https://snl.no/Oslo_r%C3%A5dhus",
+                      "title": "Kunstsamlingen – Rådhusjubileet 2025",
+                      "url": "https://www.kunstsamlingen.no/aktuelt/radhusjubileet-2025",
                       "verifiedAt": ""
                     }
                   ],
@@ -31196,8 +33030,8 @@
               }
             }
           ],
-          "placeCount": 54,
-          "milestoneCount": 104
+          "placeCount": 56,
+          "milestoneCount": 110
         },
         "historie_senmoderne_globalisering_og_markedsvending": {
           "places": [
@@ -33245,6 +35079,54 @@
                     "title": "Groruddalens hockeynode",
                     "year": 1998,
                     "type": "sports_culture"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "gamle_radhus",
+              "name": "Gamle rådhus",
+              "category": "by",
+              "source_file": "places/by/oslo/gamle_radhus/gamle_radhus.json",
+              "roles": [
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_gr_1996_14",
+                  "year": 1996,
+                  "title": "Brann",
+                  "consequence": "Huset skades; 1926-interiøret blir senere gjenskapt.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo kommune – Gamle Rådhus",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/kunst-og-kultur/kultureiendommer/gamle-radhus/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/by/leksikon_gamle_radhus.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "lars_backer"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_gamle_radhus_raadet_faar_et_hus_1641",
+                    "title": "Da byen fikk et styringsrom",
+                    "year": 1641,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -35517,13 +37399,13 @@
                   "confidence": "",
                   "sources": [
                     {
-                      "title": "Nobel Peace Prize: Award ceremony",
-                      "url": "https://www.nobelpeaceprize.org/nobel-peace-prize/about-the-nobel-peace-prize/nobel-peace-prize-celebrations/award-ceremony?instance=0",
+                      "title": "Nobel Peace Prize – Award ceremony",
+                      "url": "https://www.nobelpeaceprize.org/nobel-peace-prize/about-the-nobel-peace-prize/nobel-peace-prize-celebrations/award-ceremony",
                       "verifiedAt": ""
                     },
                     {
-                      "title": "Store norske leksikon: Oslo rådhus",
-                      "url": "https://snl.no/Oslo_r%C3%A5dhus",
+                      "title": "Oslo kommune – Oslo rådhus",
+                      "url": "https://www.oslo.kommune.no/radhuset/",
                       "verifiedAt": ""
                     }
                   ],
@@ -35531,6 +37413,25 @@
                   "evidence_type": "canonical_story",
                   "claim_id": "",
                   "story_id": "st_oslo_radhus_fredsprisseremonien",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_oslo_radhus_popup_18",
+                  "year": 1990,
+                  "title": "Seremonien flyttet hit i 1990 fordi Universitetets aula hadde for liten kapasitet.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Nobel Peace Prize – Award ceremony – popup, setning 18",
+                      "url": "https://www.nobelpeaceprize.org/nobel-peace-prize/about-the-nobel-peace-prize/nobel-peace-prize-celebrations/award-ceremony",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/oslo_radhus.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_oslo_radhus_popup_18",
+                  "story_id": "",
                   "limitations": []
                 }
               ],
@@ -37694,8 +39595,8 @@
               }
             }
           ],
-          "placeCount": 87,
-          "milestoneCount": 153
+          "placeCount": 88,
+          "milestoneCount": 155
         },
         "historie_digital_samtid_kriser_og_ny_offentlighet": {
           "places": [
@@ -39157,6 +41058,96 @@
               }
             },
             {
+              "place_id": "botsfengselet",
+              "name": "Botsfengselet",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie_added_batch_01/botsfengselet.json",
+              "roles": [
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_bots_2014_9",
+                  "year": 2014,
+                  "title": "Fredning",
+                  "consequence": "Anlegget fredes ved forskrift.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Statsbygg – Botsen, Oslo fengsel avdeling A",
+                      "url": "https://www.statsbygg.no/eiendom/botsen-oslo-fengsel-avdeling-a/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_botsfengselet.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_bots_2017_10",
+                  "year": 2017,
+                  "title": "Fraflytting",
+                  "consequence": "Avdeling A stenger på grunn av bygningsmessige utfordringer.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Statsbygg – Botsen, Oslo fengsel avdeling A",
+                      "url": "https://www.statsbygg.no/eiendom/botsen-oslo-fengsel-avdeling-a/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_botsfengselet.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_bots_2026_11",
+                  "year": 2026,
+                  "title": "Oslo fengsel stenger",
+                  "consequence": "Den gjenværende driften i avdeling B avsluttes; Botsen har vært stengt siden 2017.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Statsbygg – Botsen, Oslo fengsel avdeling A",
+                      "url": "https://www.statsbygg.no/eiendom/botsen-oslo-fengsel-avdeling-a/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_botsfengselet.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "frederik_holst"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_botsfengselet_apning_1851",
+                    "title": "Da forbedring fikk en celleplan",
+                    "year": 1851,
+                    "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "brugata_storgata_rusmiljo",
               "name": "Brugata / Storgata – det åpne rusmiljøet",
               "category": "subkultur",
@@ -39530,6 +41521,141 @@
                     "title": "Da lavvoen ble reist foran Stortinget",
                     "year": 1979,
                     "type": "conflict"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "ekebergparken_museum",
+              "name": "Ekebergparken Museum",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie/ekebergparken_museum.json",
+              "roles": [
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "konflikt_og_motstand",
+                  "label": "Konflikt og motstand"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "story_st_ekebergparken_museum_apning_2013",
+                  "year": 2013,
+                  "title": "Da villaen åpnet dørene",
+                  "consequence": "I 2013 åpnet Lunds hus for publikum etter mer enn et århundre med skiftende privat, militær og kommunal bruk.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Ekebergparken – Museum og butikk",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Ekebergparken – historisk tidslinje",
+                      "url": "https://ekebergparken.com/historisk-tidslinje",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Ekebergparken – kulturminner",
+                      "url": "https://ekebergparken.com/kulturminner",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Bekkelagshøgda lokalhistoriske forening – Kongsveien 23",
+                      "url": "https://www.eikaberg.org/h22",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-003.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_ekebergparken_museum_apning_2013",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_ekebergparken_museum_desc_03",
+                  "year": 2013,
+                  "title": "Etter kommunalt kjøp, okkupasjonsbruk og kommunale leiligheter ble huset rehabilitert og åpnet for publikum i 2013.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Museum og butikk – desc, setning 3",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/ekebergparken_museum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ekebergparken_museum_desc_03",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_ekebergparken_museum_popup_11",
+                  "year": 2013,
+                  "title": "Lunds hus ble rehabilitert og åpnet for publikum da Ekebergparken åpnet i 2013.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Museum og butikk – popup, setning 11",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/ekebergparken_museum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ekebergparken_museum_popup_11",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_museum_2013_4",
+                  "year": 2013,
+                  "title": "Museum",
+                  "consequence": "Rehabilitert Lunds hus åpner for publikum.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Ekebergparken – Museum og butikk",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Ekebergparken – historisk tidslinje",
+                      "url": "https://ekebergparken.com/historisk-tidslinje",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_ekebergparken_museum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_ekebergparken_museum_apning_2013",
+                    "title": "Da villaen åpnet dørene",
+                    "year": 2013,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -40002,6 +42128,54 @@
                     "title": "Boksamlingen som ble folkebibliotek",
                     "year": 1785,
                     "type": "historical"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "gamle_radhus",
+              "name": "Gamle rådhus",
+              "category": "by",
+              "source_file": "places/by/oslo/gamle_radhus/gamle_radhus.json",
+              "roles": [
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_gr_2014_15",
+                  "year": 2014,
+                  "title": "Scene",
+                  "consequence": "Gamle Raadhus Scene gjenåpner med Opera til folket som operatør.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Sceneweb – Gamle Raadhus Scene",
+                      "url": "https://sceneweb.no/nb/venue/31901/Gamle_Raadhus%20Scene%20%2F%20R%C3%A5dhussalen%2C%20Oslo",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/by/leksikon_gamle_radhus.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "lars_backer"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_gamle_radhus_raadet_faar_et_hus_1641",
+                    "title": "Da byen fikk et styringsrom",
+                    "year": 1641,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -41366,13 +43540,21 @@
             },
             {
               "place_id": "oslo_hospital",
-              "name": "Oslo hospital",
+              "name": "Oslo Hospital",
               "category": "historie",
               "source_file": "places/historie/oslo/places_historie_added_batch_01/oslo_hospital.json",
               "roles": [
                 {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
                   "id": "em_his_institusjonalisering_avinstitusjonalisering",
                   "label": "Institusjonalisering"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
                 }
               ],
               "milestones": [
@@ -41397,18 +43579,77 @@
                     "Den offisielle siden daterer opphøret; videre konsekvenser for tidligere pasienter dokumenteres ikke.",
                     "Bygningsmessig ombruk kan tolkes som avinstitusjonalisering av stedet, men ikke som mål på tjenesteforløp."
                   ]
+                },
+                {
+                  "id": "chrono_oslo_hospital_2018_13",
+                  "year": 2018,
+                  "title": "Sykehusdriften opphører",
+                  "consequence": "Institusjonsdriften på stedet ble avsluttet.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo Hospital / Oslo byarkiv",
+                      "url": "https://www.oslohospital.no/oslo-hospital-sin-historie",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_oslo_hospital.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_oslo_hospital_closure",
+                  "year": 2018,
+                  "title": "Sykehusdriften på stedet opphørte i 2018.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "slutten av historikksiden",
+                      "url": "https://www.oslohospital.no/oslo-hospital-sin-historie",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/oslo_hospital.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_oslo_hospital_closure",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_oslo_hospital_2026_14",
+                  "year": 2026,
+                  "title": "Nytt arbeids- og møtested",
+                  "consequence": "Det rehabiliterte komplekset åpnet offisielt 20. august.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Allstad",
+                      "url": "https://www.allstad.no/aktuelt/vellykket-åpning-av-oslo-hospital",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_oslo_hospital.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
                 }
               ],
               "period_cases": [],
               "connections": {
-                "person_ids": [],
+                "person_ids": [
+                  "herman_wedel_major"
+                ],
                 "works": [],
                 "stories": [
                   {
-                    "id": "st_oslo_hospital_omsorg_for_velferdsstaten",
-                    "title": "Omsorg før velferdsstaten",
-                    "year": 1538,
-                    "type": "historical_place"
+                    "id": "st_oslo_hospital_fra_dollhus_til_lov",
+                    "title": "Fra seksten celler til en ny lov",
+                    "year": 1848,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -43241,8 +45482,8 @@
               }
             }
           ],
-          "placeCount": 70,
-          "milestoneCount": 134
+          "placeCount": 73,
+          "milestoneCount": 145
         }
       },
       "parallel_tracks": {
@@ -43634,6 +45875,73 @@
               }
             },
             {
+              "place_id": "botsfengselet",
+              "name": "Botsfengselet",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie_added_batch_01/botsfengselet.json",
+              "roles": [
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_bots_1837_1",
+                  "year": 1837,
+                  "title": "Kommisjonen",
+                  "consequence": "Straffeanstaltkommisjonen foreslår et nytt cellefengselssystem.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Store norske leksikon – Botsfengselet",
+                      "url": "https://snl.no/Botsfengselet",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_botsfengselet.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_botsfengselet_popup_01",
+                  "year": 1837,
+                  "title": "Straffeanstaltkommisjonen av 1837 foreslo sju nye botsfengsler, men bare anlegget på Åkebergløkken ble bygd.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Store norske leksikon – Botsfengselet – popup, setning 1",
+                      "url": "https://snl.no/Botsfengselet",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/botsfengselet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_botsfengselet_popup_01",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "frederik_holst"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_botsfengselet_apning_1851",
+                    "title": "Da forbedring fikk en celleplan",
+                    "year": 1851,
+                    "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "central_jam_e_mosque",
               "name": "Central Jam-e-Mosque",
               "category": "religion",
@@ -43868,6 +46176,259 @@
                     "title": "Da lavvoen ble reist foran Stortinget",
                     "year": 1979,
                     "type": "conflict"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "ekebergparken_museum",
+              "name": "Ekebergparken Museum",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie/ekebergparken_museum.json",
+              "roles": [
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "konflikt_og_motstand",
+                  "label": "Konflikt og motstand"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_ekebergparken_museum_popup_03",
+                  "year": 1891,
+                  "title": "Lund i 1891, og navnet knytter fortsatt bygningen til den opprinnelige eieren.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Museum og butikk – popup, setning 3",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/ekebergparken_museum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ekebergparken_museum_popup_03",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_ekebergparken_museum_desc_02",
+                  "year": 1891,
+                  "title": "Lund i 1891.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Museum og butikk – desc, setning 2",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/ekebergparken_museum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ekebergparken_museum_desc_02",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_museum_1891_1",
+                  "year": 1891,
+                  "title": "Privat villa",
+                  "consequence": "Anton M. Lund får oppført huset.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Ekebergparken – Museum og butikk",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_ekebergparken_museum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_museum_1942_2",
+                  "year": 1942,
+                  "title": "Kommunalt kjøp og okkupasjonsbruk",
+                  "consequence": "Kommunen kjøper eiendommen; huset blir brukt av tyske offiserer.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Ekebergparken – Museum og butikk",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_ekebergparken_museum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_ekebergparken_museum_popup_06",
+                  "year": 1942,
+                  "title": "Oslo kommune kjøpte eiendommen i 1942 etter Clara Lunds død.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Museum og butikk – popup, setning 6",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/ekebergparken_museum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ekebergparken_museum_popup_06",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_museum_1945_3",
+                  "year": 1945,
+                  "title": "Kommunale leiligheter",
+                  "consequence": "Etter krigen blir interiøret ombygd til fire leiligheter.",
+                  "confidence": "medium",
+                  "sources": [
+                    {
+                      "title": "Ekebergparken – Museum og butikk",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_ekebergparken_museum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_ekebergparken_museum_apning_2013",
+                  "year": 2013,
+                  "title": "Da villaen åpnet dørene",
+                  "consequence": "I 2013 åpnet Lunds hus for publikum etter mer enn et århundre med skiftende privat, militær og kommunal bruk.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Ekebergparken – Museum og butikk",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Ekebergparken – historisk tidslinje",
+                      "url": "https://ekebergparken.com/historisk-tidslinje",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Ekebergparken – kulturminner",
+                      "url": "https://ekebergparken.com/kulturminner",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Bekkelagshøgda lokalhistoriske forening – Kongsveien 23",
+                      "url": "https://www.eikaberg.org/h22",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-003.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_ekebergparken_museum_apning_2013",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_ekebergparken_museum_desc_03",
+                  "year": 2013,
+                  "title": "Etter kommunalt kjøp, okkupasjonsbruk og kommunale leiligheter ble huset rehabilitert og åpnet for publikum i 2013.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Museum og butikk – desc, setning 3",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/ekebergparken_museum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ekebergparken_museum_desc_03",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_ekebergparken_museum_popup_11",
+                  "year": 2013,
+                  "title": "Lunds hus ble rehabilitert og åpnet for publikum da Ekebergparken åpnet i 2013.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Museum og butikk – popup, setning 11",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/ekebergparken_museum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ekebergparken_museum_popup_11",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_museum_2013_4",
+                  "year": 2013,
+                  "title": "Museum",
+                  "consequence": "Rehabilitert Lunds hus åpner for publikum.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Ekebergparken – Museum og butikk",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Ekebergparken – historisk tidslinje",
+                      "url": "https://ekebergparken.com/historisk-tidslinje",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_ekebergparken_museum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_ekebergparken_museum_apning_2013",
+                    "title": "Da villaen åpnet dørene",
+                    "year": 2013,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -48423,8 +50984,8 @@
               }
             }
           ],
-          "placeCount": 55,
-          "milestoneCount": 121
+          "placeCount": 57,
+          "milestoneCount": 133
         },
         "historie_migrasjon_minoritet_og_tilhorighet": {
           "places": [
@@ -51264,6 +53825,259 @@
               }
             },
             {
+              "place_id": "ekebergparken_museum",
+              "name": "Ekebergparken Museum",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie/ekebergparken_museum.json",
+              "roles": [
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "konflikt_og_motstand",
+                  "label": "Konflikt og motstand"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_ekebergparken_museum_popup_03",
+                  "year": 1891,
+                  "title": "Lund i 1891, og navnet knytter fortsatt bygningen til den opprinnelige eieren.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Museum og butikk – popup, setning 3",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/ekebergparken_museum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ekebergparken_museum_popup_03",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_ekebergparken_museum_desc_02",
+                  "year": 1891,
+                  "title": "Lund i 1891.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Museum og butikk – desc, setning 2",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/ekebergparken_museum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ekebergparken_museum_desc_02",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_museum_1891_1",
+                  "year": 1891,
+                  "title": "Privat villa",
+                  "consequence": "Anton M. Lund får oppført huset.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Ekebergparken – Museum og butikk",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_ekebergparken_museum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_museum_1942_2",
+                  "year": 1942,
+                  "title": "Kommunalt kjøp og okkupasjonsbruk",
+                  "consequence": "Kommunen kjøper eiendommen; huset blir brukt av tyske offiserer.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Ekebergparken – Museum og butikk",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_ekebergparken_museum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_ekebergparken_museum_popup_06",
+                  "year": 1942,
+                  "title": "Oslo kommune kjøpte eiendommen i 1942 etter Clara Lunds død.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Museum og butikk – popup, setning 6",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/ekebergparken_museum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ekebergparken_museum_popup_06",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_museum_1945_3",
+                  "year": 1945,
+                  "title": "Kommunale leiligheter",
+                  "consequence": "Etter krigen blir interiøret ombygd til fire leiligheter.",
+                  "confidence": "medium",
+                  "sources": [
+                    {
+                      "title": "Ekebergparken – Museum og butikk",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_ekebergparken_museum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_ekebergparken_museum_apning_2013",
+                  "year": 2013,
+                  "title": "Da villaen åpnet dørene",
+                  "consequence": "I 2013 åpnet Lunds hus for publikum etter mer enn et århundre med skiftende privat, militær og kommunal bruk.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Ekebergparken – Museum og butikk",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Ekebergparken – historisk tidslinje",
+                      "url": "https://ekebergparken.com/historisk-tidslinje",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Ekebergparken – kulturminner",
+                      "url": "https://ekebergparken.com/kulturminner",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Bekkelagshøgda lokalhistoriske forening – Kongsveien 23",
+                      "url": "https://www.eikaberg.org/h22",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-003.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_ekebergparken_museum_apning_2013",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_ekebergparken_museum_desc_03",
+                  "year": 2013,
+                  "title": "Etter kommunalt kjøp, okkupasjonsbruk og kommunale leiligheter ble huset rehabilitert og åpnet for publikum i 2013.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Museum og butikk – desc, setning 3",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/ekebergparken_museum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ekebergparken_museum_desc_03",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_ekebergparken_museum_popup_11",
+                  "year": 2013,
+                  "title": "Lunds hus ble rehabilitert og åpnet for publikum da Ekebergparken åpnet i 2013.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Museum og butikk – popup, setning 11",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/ekebergparken_museum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ekebergparken_museum_popup_11",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_museum_2013_4",
+                  "year": 2013,
+                  "title": "Museum",
+                  "consequence": "Rehabilitert Lunds hus åpner for publikum.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Ekebergparken – Museum og butikk",
+                      "url": "https://ekebergparken.com/besok-oss/museum-og-butikk",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Ekebergparken – historisk tidslinje",
+                      "url": "https://ekebergparken.com/historisk-tidslinje",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_ekebergparken_museum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_ekebergparken_museum_apning_2013",
+                    "title": "Da villaen åpnet dørene",
+                    "year": 2013,
+                    "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "forsvarsmuseet",
               "name": "Forsvarsmuseet",
               "category": "historie",
@@ -51583,8 +54397,21 @@
               "period_cases": [],
               "connections": {
                 "person_ids": [],
-                "works": [],
-                "stories": []
+                "works": [
+                  {
+                    "id": "ekeberg_oppdagelsen_12_september_1915",
+                    "title": "Oppdagelsen 12. september 1915",
+                    "type": "historical_event"
+                  }
+                ],
+                "stories": [
+                  {
+                    "id": "st_ekeberg_helleristninger_sondagsturen_1915",
+                    "title": "Søndagsturen som åpnet bergflaten",
+                    "year": 1915,
+                    "type": "historical_event"
+                  }
+                ]
               }
             },
             {
@@ -53307,6 +56134,10 @@
               "source_file": "places/politikk/oslo/places_politikk/oslo_radhus.json",
               "roles": [
                 {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
                   "id": "em_his_1814_statsdannelse_enevelde_og_dansk_norsk_statsutvikling",
                   "label": "Embetsstat og kommunalt selvstyre"
                 },
@@ -53360,6 +56191,25 @@
                   ]
                 },
                 {
+                  "id": "production_claim_oslo_radhus_popup_02",
+                  "year": 1917,
+                  "title": "Arkitektene Arnstein Arneberg og Magnus Poulsson utviklet prosjektet fra konkurransene i 1917–1918 til et monumentalt, moderne kommunalt arbeidsbygg ved fjorden.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kunstsamlingen – Rådhusjubileet 2025 – popup, setning 2",
+                      "url": "https://www.kunstsamlingen.no/aktuelt/radhusjubileet-2025",
+                      "verifiedAt": "2026-08-28"
+                    }
+                  ],
+                  "source_file": "data/places/production/oslo_radhus.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_oslo_radhus_popup_02",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
                   "id": "claim_claim_his_oslo_radhus_opened_1950_05_15",
                   "year": 1950,
                   "title": "Embetsstat og kommunalt selvstyre",
@@ -53394,13 +56244,13 @@
                   "confidence": "",
                   "sources": [
                     {
-                      "title": "Oslo kommune: Oslo rådhus feirer 75 år",
+                      "title": "Oslo kommune – Oslo rådhus fyller 75 år",
                       "url": "https://aktuelt.oslo.kommune.no/oslo-radhus-fyller-75-ar",
                       "verifiedAt": ""
                     },
                     {
-                      "title": "Store norske leksikon: Oslo rådhus",
-                      "url": "https://snl.no/Oslo_r%C3%A5dhus",
+                      "title": "Kunstsamlingen – Rådhusjubileet 2025",
+                      "url": "https://www.kunstsamlingen.no/aktuelt/radhusjubileet-2025",
                       "verifiedAt": ""
                     }
                   ],
@@ -54456,23 +57306,23 @@
               }
             }
           ],
-          "placeCount": 42,
-          "milestoneCount": 95
+          "placeCount": 43,
+          "milestoneCount": 106
         }
       },
       "oslo_coverage": {
         "contract": "oslo-history-coverage-v1",
         "canonical_place_count": 584,
-        "dated_evidence_place_count": 214,
+        "dated_evidence_place_count": 216,
         "documented_case_place_count": 2,
-        "awaiting_source_backed_history_count": 368,
+        "awaiting_source_backed_history_count": 366,
         "categories": [
           {
             "category": "by",
             "total": 96,
-            "dated_evidence": 40,
+            "dated_evidence": 41,
             "documented_case": 0,
-            "awaiting_source_backed_history": 56
+            "awaiting_source_backed_history": 55
           },
           {
             "category": "film_tv",
@@ -54491,9 +57341,9 @@
           {
             "category": "historie",
             "total": 93,
-            "dated_evidence": 45,
+            "dated_evidence": 46,
             "documented_case": 1,
-            "awaiting_source_backed_history": 47
+            "awaiting_source_backed_history": 46
           },
           {
             "category": "kunst",
@@ -55524,7 +58374,7 @@
             "name": "Ekebergparken Museum",
             "category": "historie",
             "source_file": "places/historie/oslo/places_historie/ekebergparken_museum.json",
-            "status": "awaiting_source_backed_history"
+            "status": "dated_evidence"
           },
           {
             "place_id": "ekebergparken",
@@ -55846,7 +58696,7 @@
             "name": "Gamle rådhus",
             "category": "by",
             "source_file": "places/by/oslo/gamle_radhus/gamle_radhus.json",
-            "status": "awaiting_source_backed_history"
+            "status": "dated_evidence"
           },
           {
             "place_id": "gamle_trikkestallen",
@@ -57334,7 +60184,7 @@
           },
           {
             "place_id": "oslo_hospital",
-            "name": "Oslo hospital",
+            "name": "Oslo Hospital",
             "category": "historie",
             "source_file": "places/historie/oslo/places_historie_added_batch_01/oslo_hospital.json",
             "status": "dated_evidence"
@@ -69801,14 +72651,14 @@
     "canonical_source_count": 256,
     "place_evidence_link_count": 325,
     "period_case_count": 9,
-    "connected_people_count": 42,
-    "connected_work_count": 163,
-    "connected_story_count": 212,
-    "canonical_story_milestone_count": 180,
-    "verified_place_production_milestone_count": 186,
-    "indexed_place_count": 260,
-    "epoch_place_relations": 504,
-    "milestone_count": 1077
+    "connected_people_count": 45,
+    "connected_work_count": 164,
+    "connected_story_count": 215,
+    "canonical_story_milestone_count": 184,
+    "verified_place_production_milestone_count": 219,
+    "indexed_place_count": 262,
+    "epoch_place_relations": 520,
+    "milestone_count": 1159
   },
   "warnings": {
     "missing_source_files": [
@@ -69840,7 +72690,7 @@
     "unknown_evidence_place_ids": [],
     "missing_claim_ids": [],
     "skipped_undated": 0,
-    "skipped_without_url_sources": 566,
+    "skipped_without_url_sources": 571,
     "skipped_evidence_without_sources": 0
   }
 }

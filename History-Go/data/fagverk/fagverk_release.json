@@ -27,7 +27,7 @@
     "schema": null,
     "version": null,
     "updated_at": null,
-    "content_sha256": "4121591d02169c4394957d249c83afa6ec973c5f12da83dc064720c17fa4986d"
+    "content_sha256": "400ac11093e7d8e884e6823997b92134c99329b99b580710bf85616dd816e8d5"
   },
   "summary": {
     "subject_count": 20,
@@ -36,9 +36,9 @@
     "chapter_subject_count": 17,
     "chapter_count": 189,
     "module_file_count": 497,
-    "package_file_count": 329,
+    "package_file_count": 344,
     "chapter_referenced_file_count": 933,
-    "referenced_file_count": 1191,
+    "referenced_file_count": 1206,
     "missing_file_count": 0,
     "optional_gap_count": 1
   },
@@ -591,14 +591,14 @@
       "brief_file_count": 17,
       "claims_file_count": 17,
       "chapter_referenced_file_count": 102,
-      "chapter_content_sha256": "21ed783bb2d9f06494fa9a56eb60af89e5d8c8225a51d930eebddf35203dd283",
+      "chapter_content_sha256": "38e5be5259e0aa3d733f4ddeeb46df87769c935ad9dd76cd175f8bb645ee79fa",
       "referenced_file_count": 144,
       "missing_required_files": [],
       "missing_optional_files": [],
       "missing_chapter_files": [],
       "missing_files": [],
       "structure_sha256": "9094647d69b78a9074336361fe2dc577c04ebb958221beff983b50f83a99b482",
-      "content_sha256": "4f92bbc331e23ad44b81c91d38568a4b116f9750b6d18519a22597b463b26f2a",
+      "content_sha256": "71b527bf9929c8238a1f3b1483d55d1beefaed56297701da6dee90777642e76e",
       "chapters": [
         {
           "chapter_id": "byliv-offentlige-rom",
@@ -646,7 +646,7 @@
           "file": "data/fagverk/by/arkitektur-type-skala-byform.json",
           "module_file_count": 3,
           "referenced_file_count": 6,
-          "content_sha256": "e03af23bf9d7188994d6d824ebef649a1763bade749039c2d68ee4fcc69531bd"
+          "content_sha256": "6582c0d14c9794bd022d2101d65464c75e4ba57a7f88c9b72c4ea4051da27159"
         },
         {
           "chapter_id": "arkitektur-gatekant-makt-ombruk",
@@ -1912,9 +1912,9 @@
         "version"
       ],
       "missing_manifest_fields": [],
-      "package_file_count": 38,
+      "package_file_count": 53,
       "required_package_file_count": 4,
-      "optional_package_file_count": 34,
+      "optional_package_file_count": 49,
       "package_files": [
         {
           "path": "data/fag/historie/case_requirements_historie_canonical_v1.json",
@@ -2073,6 +2073,42 @@
           "content_sha256": "cd0ecf17487c6c31811ea2d857a3f60c0b757a3e71652af438cdadb597442606"
         },
         {
+          "path": "data/quiz/historie/botsfengselet_sets.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.botsfengselet.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "032890db095ca6d68bb05afc49e996395a1760efa14faa92f2486187a01ae36c"
+        },
+        {
+          "path": "data/quiz/historie/ekeberg_helleristninger_sets.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.ekeberg_helleristninger.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "736d6997aaafbf362d9208d1fb6e8a9ce77610132115940fc0c6fe2665015213"
+        },
+        {
+          "path": "data/quiz/historie/ekebergparken_museum_sets.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.ekebergparken_museum.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "2fdf15d19d96019286a148ca045f8c0e180fa8d1e9e13647e52278e73854f405"
+        },
+        {
           "path": "data/quiz/historie/gamle_aker_kirke_sets.json",
           "required": false,
           "fields": [
@@ -2083,6 +2119,18 @@
           ],
           "exists": true,
           "content_sha256": "631d0fcaa02bb2e84372d50cdfac065d998fa6d2452516338851c37dd1c8274f"
+        },
+        {
+          "path": "data/quiz/historie/gamle_radhus_sets.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.gamle_radhus.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "366ff6cc597c4fe21227b51b310dde9bf5a3f2e64514aaff340199bff327b05c"
         },
         {
           "path": "data/quiz/historie/grindheim_runestein_sets.json",
@@ -2133,6 +2181,18 @@
           "content_sha256": "03b329a3d5754efcf3f9248ea677e9ca269cbc8f76b0e850e626aff47e1e2f59"
         },
         {
+          "path": "data/quiz/historie/oslo_hospital_sets.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.oslo_hospital.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "d546f090715d5952aaad4bfc8f3e950ad30b1ec3d5ed5fb898cf6ac741e333de"
+        },
+        {
           "path": "data/quiz/historie/paulus_kirke_sets.json",
           "required": false,
           "fields": [
@@ -2157,6 +2217,42 @@
           "content_sha256": "786ad31de8d175c5805640428c00ed5371f1935fbd077ab15bea7ae6f2be5217"
         },
         {
+          "path": "data/quiz/production_briefs/historie/botsfengselet.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.botsfengselet.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "3796103aa364ec4383b277b9f035e2678b568fb3a5015e2b98d46375c3474bb4"
+        },
+        {
+          "path": "data/quiz/production_briefs/historie/ekeberg_helleristninger.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.ekeberg_helleristninger.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "c2e863edc06c8afc7dc2a1c7b1753936536983877738f9bac98927693b580ea2"
+        },
+        {
+          "path": "data/quiz/production_briefs/historie/ekebergparken_museum.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.ekebergparken_museum.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "755566f90b1a459c5b551c7b79a5d782feaa2b0ca7274989ceac9cca309ec74e"
+        },
+        {
           "path": "data/quiz/production_briefs/historie/gamle_aker_kirke.json",
           "required": false,
           "fields": [
@@ -2167,6 +2263,18 @@
           ],
           "exists": true,
           "content_sha256": "3ba29615082b553e51e80c47374e3e69c143510b2a6898acb50270e4de679a00"
+        },
+        {
+          "path": "data/quiz/production_briefs/historie/gamle_radhus.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.gamle_radhus.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "47b813e6676e707419a02cee04a97623f95899ff9acaaa1be9ac72f38a152d92"
         },
         {
           "path": "data/quiz/production_briefs/historie/grindheim_runestein.json",
@@ -2217,6 +2325,18 @@
           "content_sha256": "309ed881d26d29421f1b6442e2c892e021cbf55789ed1a3eb1b41723bc6127a5"
         },
         {
+          "path": "data/quiz/production_briefs/historie/oslo_hospital.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.oslo_hospital.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "c0524ec3708dc618bfd80a7dfdad2e9cf14b696a487df9f1aefbcb2554df4462"
+        },
+        {
           "path": "data/quiz/production_briefs/historie/paulus_kirke.json",
           "required": false,
           "fields": [
@@ -2241,6 +2361,42 @@
           "content_sha256": "62489fc800124b1a577dd709b0e554158aa5c31eb718441d67e8bd49024df7e1"
         },
         {
+          "path": "data/quiz/production_context/historie/botsfengselet.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.botsfengselet.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "96095bfb353f9f11325d6f34e1ee7bfac17dafc4b249765ce8edc622f0628298"
+        },
+        {
+          "path": "data/quiz/production_context/historie/ekeberg_helleristninger.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.ekeberg_helleristninger.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "b35b5b797499b582e3aedb43c11450c7f1a5f4aa77bd11fe179bdd282844e110"
+        },
+        {
+          "path": "data/quiz/production_context/historie/ekebergparken_museum.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.ekebergparken_museum.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "38ac696b1b36535dfca0ad9f50a15ae001c962f415e2677716a66a8575051533"
+        },
+        {
           "path": "data/quiz/production_context/historie/gamle_aker_kirke.json",
           "required": false,
           "fields": [
@@ -2251,6 +2407,18 @@
           ],
           "exists": true,
           "content_sha256": "5c8c3cf9ec9691a5c9def34e3420c6e4eeea90a3c0e0e8b3c941e25fceb553b1"
+        },
+        {
+          "path": "data/quiz/production_context/historie/gamle_radhus.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.gamle_radhus.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "27454b48f574a902df04218ec8ab76e288b42ead76c6927784e298df844fac3f"
         },
         {
           "path": "data/quiz/production_context/historie/grindheim_runestein.json",
@@ -2299,6 +2467,18 @@
           ],
           "exists": true,
           "content_sha256": "4b5adc965f5b3d481b65d124914493f87415ce649ff0852e149988088bd0966b"
+        },
+        {
+          "path": "data/quiz/production_context/historie/oslo_hospital.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.oslo_hospital.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "d022459c4d0f7db7f1887618940beca211fc58a25eb91d21bceb7f93690e73db"
         },
         {
           "path": "data/quiz/production_context/historie/paulus_kirke.json",
@@ -2373,20 +2553,20 @@
           "content_sha256": "636265081b34aef4899fb33a8dd8ad7b03233480abdbfb812edced0d6a1a14d5"
         }
       ],
-      "package_content_sha256": "967e1a33c0bae5b12018a0e20abe4338bdf10947921c3bfaa7008bc4d446bead",
+      "package_content_sha256": "591d690ff5562a742bb5ee3ca8dbfa67b8e92ac1964059f3a423af1905034721",
       "chapter_count": 23,
       "module_file_count": 69,
       "brief_file_count": 0,
       "claims_file_count": 0,
       "chapter_referenced_file_count": 92,
       "chapter_content_sha256": "bedfd019dc2fa60ba92a540bf6b9f2504e0f6b1680350762a5fe074e82153148",
-      "referenced_file_count": 130,
+      "referenced_file_count": 145,
       "missing_required_files": [],
       "missing_optional_files": [],
       "missing_chapter_files": [],
       "missing_files": [],
-      "structure_sha256": "4c0b73d756558f524df7aa7743d177d3f7b37dbfd0608e7bd2e23dcb35631146",
-      "content_sha256": "c2b07de53311281c310075ce92bde6f26beef2741d58d6b9d334aaaf3a56d809",
+      "structure_sha256": "fd167bc58ede3d13d6b36aea34940d558f843bd66ce7ab10d231b029600fc1b1",
+      "content_sha256": "6aa5dada8ead6c0e28824f967a84aabd9d7a6a2af8f553aaaebb3f0747c72fe5",
       "chapters": [
         {
           "chapter_id": "historisk_tid_periodisering",
@@ -2634,7 +2814,7 @@
             "emner"
           ],
           "exists": true,
-          "content_sha256": "714648b5e9dd59d7b37e9388b175bacb476ea08ceeaa5a3ba01fbb745d860c15"
+          "content_sha256": "5cb81cefe658d88488de07c49e4e5b3fd67a8865721fbbf28e47a430c5ebeca6"
         },
         {
           "path": "data/fag/kunst/fagkart_kunst_canonical_v4_5.json",
@@ -2709,7 +2889,7 @@
           "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
         }
       ],
-      "package_content_sha256": "7508fbcc72de7396b7d19efaeb03802a650e580af4678f757db3bdee82683eda",
+      "package_content_sha256": "719e148364735ee8eef7f079f4ed10dd90961f6d74143f65ece0b6baec35bd28",
       "chapter_count": 6,
       "module_file_count": 18,
       "brief_file_count": 6,
@@ -2722,7 +2902,7 @@
       "missing_chapter_files": [],
       "missing_files": [],
       "structure_sha256": "a5177ca482e3f523073224eee8a5b40e26aef6639342b4a29da15cd8605e03e8",
-      "content_sha256": "9eac0e2d8b2a30c696808360730d895823f9639479458bb09a61c664679fa07d",
+      "content_sha256": "f50ae3879eae3df571458e2a9e63067e9d085f8a9b3a26ea10953a3678c2fd79",
       "chapters": [
         {
           "chapter_id": "felt-og-institusjon",
@@ -6650,5 +6830,5 @@
       ]
     }
   },
-  "release_sha256": "9ac9ad4a28510575e7790a9f668fad07f84c50690f3dcf7c2371bcd24df73013"
+  "release_sha256": "e8b3873b39d821d1072ae4b28a0069ccdb5f59da5b2ef9ad84ed5a0323aac97c"
 }

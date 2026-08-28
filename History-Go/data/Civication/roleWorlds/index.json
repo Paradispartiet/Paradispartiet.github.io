@@ -1,8 +1,8 @@
 {
   "schema": "civication_role_world_index_v1",
   "version": 1,
-  "status": "ten_role_worlds_materialized",
-  "effective_date": "2026-08-27",
+  "status": "thirty_four_role_worlds_materialized",
+  "effective_date": "2026-08-28",
   "roles": [
     {
       "category": "naeringsliv",
@@ -93,6 +93,114 @@
       "role_scope": "regissor",
       "status": "role_world_complete",
       "path": "data/Civication/roleWorlds/film_tv/regissor.json"
+    },
+    {
+      "category": "film_tv",
+      "role_scope": "serieskaper",
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/film_tv/serieskaper.json"
+    },
+    {
+      "category": "litteratur",
+      "role_scope": "redaksjonsmedarbeider",
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/litteratur/redaksjonsmedarbeider.json"
+    },
+    {
+      "category": "media",
+      "role_scope": "media_redaksjonell_ledelse",
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/media/media_redaksjonell_ledelse.json"
+    },
+    {
+      "category": "subkultur",
+      "role_scope": "subkultur_arrangementsdrift",
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/subkultur/subkultur_arrangementsdrift.json"
+    },
+    {
+      "category": "psykologi",
+      "role_scope": "fagansvarlig",
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/psykologi/fagansvarlig.json"
+    },
+    {
+      "category": "psykologi",
+      "role_scope": "forsker_psykologi",
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/psykologi/forsker_psykologi.json"
+    },
+    {
+      "category": "psykologi",
+      "role_scope": "professor_psykologi",
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/psykologi/professor_psykologi.json"
+    },
+    {
+      "category": "psykologi",
+      "role_scope": "psykolog",
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/psykologi/psykolog.json"
+    },
+    {
+      "category": "psykologi",
+      "role_scope": "psykologi_miljoarbeid",
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/psykologi/psykologi_miljoarbeid.json"
+    },
+    {
+      "category": "sport",
+      "role_scope": "sport_sportsledelse",
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/sport/sport_sportsledelse.json"
+    },
+    {
+      "category": "by",
+      "role_scope": "by_arkitekt",
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/by/by_arkitekt.json"
+    },
+    {
+      "category": "by",
+      "role_scope": "by_assistent",
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/by/by_assistent.json"
+    },
+    {
+      "category": "by",
+      "role_scope": "by_prosjektleder",
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/by/by_prosjektleder.json"
+    },
+    {
+      "category": "by",
+      "role_scope": "by_saksbehandler",
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/by/by_saksbehandler.json"
+    },
+    {
+      "category": "filosofi",
+      "role_scope": "filosofi_forskning_og_formidling",
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/filosofi/filosofi_forskning_og_formidling.json"
+    },
+    {
+      "category": "filosofi",
+      "role_scope": "filosofi_undervisning_og_akademia",
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/filosofi/filosofi_undervisning_og_akademia.json"
+    },
+    {
+      "category": "litteratur",
+      "role_scope": "redaktor_bok",
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/litteratur/redaktor_bok.json"
+    },
+    {
+      "category": "religion",
+      "role_scope": "religion_forskning",
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/religion/religion_forskning.json"
     }
   ],
   "first_reference_world": {
@@ -105,7 +213,7 @@
     "role_scope": "renholder",
     "status": "role_world_complete"
   },
-  "note": "Reference- og pilotbevisene består uendret. Finansdirektør er materialisert som kontrollert Role World-rollout med ett vedvarende refinansieringscase, eksplisitt waiting/handoff/rework og audience-spesifikk standing uten at CFO-standing kan erstatte bankens kredittprosess eller styrets bindende kapitalmyndighet.",
+  "note": "Reference- og pilotbevisene består uendret. Sport Sportsledelse er materialisert med sportslig beslutningsspor, eksplisitt waiting/handoff/rework og audience-spesifikk standing; kontrakt, budsjett, arbeidsgiverfullmakt og medisinsk ansvar forblir hos faktisk eier.",
   "third_reference_world": {
     "category": "by",
     "role_scope": "by_radgiver_plan",

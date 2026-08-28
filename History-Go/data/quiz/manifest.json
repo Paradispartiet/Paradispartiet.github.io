@@ -349,10 +349,6 @@
       "file": "data/quiz/historie/galgeberg_sets.json"
     },
     {
-      "targetId": "oslo_hospital",
-      "file": "data/quiz/historie/oslo_hospital_sets.json"
-    },
-    {
       "targetId": "botsfengselet",
       "file": "data/quiz/historie/botsfengselet_sets.json"
     },
@@ -1459,6 +1455,18 @@
     {
       "targetId": "gamle_trikkestallen",
       "file": "data/quiz/by/gamle_trikkestallen_sets.json"
+    },
+    {
+      "targetId": "oslo_hospital",
+      "file": "data/quiz/historie/oslo_hospital_sets.json"
+    },
+    {
+      "targetId": "ekebergparken_museum",
+      "file": "data/quiz/historie/ekebergparken_museum_sets.json"
+    },
+    {
+      "targetId": "ekeberg_helleristninger",
+      "file": "data/quiz/historie/ekeberg_helleristninger_sets.json"
     }
   ],
   "subjectPackages": [
@@ -1496,5 +1504,12 @@
       "parentSubjectId": "vitenskap",
       "specializationId": "teknologi"
     }
-  ]
+  ],
+  "historie": {
+    "botsfengselet": "historie/botsfengselet_sets.json",
+    "gamle_radhus": "historie/gamle_radhus_sets.json"
+  },
+  "politikk": {
+    "oslo_radhus": "politikk/oslo_radhus_sets.json"
+  }
 }

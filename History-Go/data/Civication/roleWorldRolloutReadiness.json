@@ -33,11 +33,11 @@
       "needs_role_authored_work": 48,
       "blocked": 2
     },
-    "role_world_complete_or_pilot": 16,
-    "rollout_queue_roles": 69,
-    "first_wave_candidate_count": 3,
+    "role_world_complete_or_pilot": 34,
+    "rollout_queue_roles": 51,
+    "first_wave_candidate_count": 1,
     "role_level_blocked_count": 2,
-    "structural_families_in_queue": 9
+    "structural_families_in_queue": 8
   },
   "gate": {
     "locked_matrix_dimensions_reference_proven": true,
@@ -51,46 +51,18 @@
     "gate_pass": true,
     "broad_rollout_allowed_now": true,
     "policy_recommendation": "controlled_rollout_open_with_role_level_gates",
-    "next_required_pr": "Role World rollout: film_tv/serieskaper",
+    "next_required_pr": "Role World rollout: sport/sport_trener",
     "rule": "A green readiness gate proves the program can safely begin controlled rollout. It does not make every role rollout_ready and it does not itself flip broad_rollout_allowed."
   },
   "first_wave_candidates": [
     {
       "rank": 1,
-      "key": "film_tv/serieskaper",
+      "key": "sport/sport_trener",
       "classification": "rollout_ready",
-      "structural_family": "creative_production",
-      "priority_score": 1285,
+      "structural_family": "sport_performance",
+      "priority_score": 1260,
       "blockers": [],
       "authored_work_required": [
-        "rhythm_waiting_handoff_rework",
-        "situated_reputation"
-      ],
-      "cross_role_need": "not_required_for_rollout"
-    },
-    {
-      "rank": 4,
-      "key": "psykologi/fagansvarlig",
-      "classification": "rollout_ready",
-      "structural_family": "care_professional",
-      "priority_score": 1285,
-      "blockers": [],
-      "authored_work_required": [
-        "rhythm_waiting_handoff_rework",
-        "situated_reputation"
-      ],
-      "cross_role_need": "not_required_for_rollout"
-    },
-    {
-      "rank": 9,
-      "key": "sport/sport_sportsledelse",
-      "classification": "rollout_ready",
-      "structural_family": "event_operational",
-      "priority_score": 1285,
-      "blockers": [],
-      "authored_work_required": [
-        "persistent_work_object",
-        "rhythm_waiting_handoff_rework",
         "situated_reputation"
       ],
       "cross_role_need": "candidate_when_shared_work_is_real"
@@ -99,233 +71,6 @@
   "rollout_queue": [
     {
       "rank": 1,
-      "key": "film_tv/serieskaper",
-      "classification": "rollout_ready",
-      "structural_family": "creative_production",
-      "priority_score": 1285,
-      "blockers": [],
-      "authored_work_required": [
-        "rhythm_waiting_handoff_rework",
-        "situated_reputation"
-      ],
-      "cross_role_need": "not_required_for_rollout"
-    },
-    {
-      "rank": 2,
-      "key": "litteratur/redaksjonsmedarbeider",
-      "classification": "rollout_ready",
-      "structural_family": "creative_production",
-      "priority_score": 1285,
-      "blockers": [],
-      "authored_work_required": [
-        "persistent_work_object",
-        "situated_reputation"
-      ],
-      "cross_role_need": "candidate_when_shared_work_is_real"
-    },
-    {
-      "rank": 3,
-      "key": "media/media_redaksjonell_ledelse",
-      "classification": "rollout_ready",
-      "structural_family": "creative_production",
-      "priority_score": 1285,
-      "blockers": [],
-      "authored_work_required": [
-        "situated_reputation"
-      ],
-      "cross_role_need": "proven_when_shared_work_is_material"
-    },
-    {
-      "rank": 4,
-      "key": "psykologi/fagansvarlig",
-      "classification": "rollout_ready",
-      "structural_family": "care_professional",
-      "priority_score": 1285,
-      "blockers": [],
-      "authored_work_required": [
-        "rhythm_waiting_handoff_rework",
-        "situated_reputation"
-      ],
-      "cross_role_need": "not_required_for_rollout"
-    },
-    {
-      "rank": 5,
-      "key": "psykologi/forsker_psykologi",
-      "classification": "rollout_ready",
-      "structural_family": "care_professional",
-      "priority_score": 1285,
-      "blockers": [],
-      "authored_work_required": [
-        "situated_reputation"
-      ],
-      "cross_role_need": "not_required_for_rollout"
-    },
-    {
-      "rank": 6,
-      "key": "psykologi/professor_psykologi",
-      "classification": "rollout_ready",
-      "structural_family": "care_professional",
-      "priority_score": 1285,
-      "blockers": [],
-      "authored_work_required": [
-        "rhythm_waiting_handoff_rework",
-        "situated_reputation"
-      ],
-      "cross_role_need": "not_required_for_rollout"
-    },
-    {
-      "rank": 7,
-      "key": "psykologi/psykolog",
-      "classification": "rollout_ready",
-      "structural_family": "care_professional",
-      "priority_score": 1285,
-      "blockers": [],
-      "authored_work_required": [
-        "rhythm_waiting_handoff_rework",
-        "situated_reputation"
-      ],
-      "cross_role_need": "not_required_for_rollout"
-    },
-    {
-      "rank": 8,
-      "key": "psykologi/psykologi_miljoarbeid",
-      "classification": "rollout_ready",
-      "structural_family": "care_professional",
-      "priority_score": 1285,
-      "blockers": [],
-      "authored_work_required": [
-        "persistent_work_object",
-        "situated_reputation"
-      ],
-      "cross_role_need": "candidate_when_shared_work_is_real"
-    },
-    {
-      "rank": 9,
-      "key": "sport/sport_sportsledelse",
-      "classification": "rollout_ready",
-      "structural_family": "event_operational",
-      "priority_score": 1285,
-      "blockers": [],
-      "authored_work_required": [
-        "persistent_work_object",
-        "rhythm_waiting_handoff_rework",
-        "situated_reputation"
-      ],
-      "cross_role_need": "candidate_when_shared_work_is_real"
-    },
-    {
-      "rank": 10,
-      "key": "subkultur/subkultur_arrangementsdrift",
-      "classification": "rollout_ready",
-      "structural_family": "creative_production",
-      "priority_score": 1285,
-      "blockers": [],
-      "authored_work_required": [
-        "situated_reputation"
-      ],
-      "cross_role_need": "candidate_when_shared_work_is_real"
-    },
-    {
-      "rank": 11,
-      "key": "by/by_arkitekt",
-      "classification": "rollout_ready",
-      "structural_family": "public_administration",
-      "priority_score": 1260,
-      "blockers": [],
-      "authored_work_required": [
-        "rhythm_waiting_handoff_rework",
-        "situated_reputation"
-      ],
-      "cross_role_need": "not_required_for_rollout"
-    },
-    {
-      "rank": 12,
-      "key": "by/by_assistent",
-      "classification": "rollout_ready",
-      "structural_family": "public_administration",
-      "priority_score": 1260,
-      "blockers": [],
-      "authored_work_required": [
-        "situated_reputation"
-      ],
-      "cross_role_need": "candidate_when_shared_work_is_real"
-    },
-    {
-      "rank": 13,
-      "key": "by/by_prosjektleder",
-      "classification": "rollout_ready",
-      "structural_family": "public_administration",
-      "priority_score": 1260,
-      "blockers": [],
-      "authored_work_required": [
-        "situated_reputation"
-      ],
-      "cross_role_need": "candidate_when_shared_work_is_real"
-    },
-    {
-      "rank": 14,
-      "key": "by/by_saksbehandler",
-      "classification": "rollout_ready",
-      "structural_family": "public_administration",
-      "priority_score": 1260,
-      "blockers": [],
-      "authored_work_required": [
-        "situated_reputation"
-      ],
-      "cross_role_need": "candidate_when_shared_work_is_real"
-    },
-    {
-      "rank": 15,
-      "key": "filosofi/filosofi_forskning_og_formidling",
-      "classification": "rollout_ready",
-      "structural_family": "research_education",
-      "priority_score": 1260,
-      "blockers": [],
-      "authored_work_required": [
-        "rhythm_waiting_handoff_rework",
-        "situated_reputation"
-      ],
-      "cross_role_need": "not_required_for_rollout"
-    },
-    {
-      "rank": 16,
-      "key": "filosofi/filosofi_undervisning_og_akademia",
-      "classification": "rollout_ready",
-      "structural_family": "research_education",
-      "priority_score": 1260,
-      "blockers": [],
-      "authored_work_required": [
-        "situated_reputation"
-      ],
-      "cross_role_need": "not_required_for_rollout"
-    },
-    {
-      "rank": 17,
-      "key": "litteratur/redaktor_bok",
-      "classification": "rollout_ready",
-      "structural_family": "media_editorial",
-      "priority_score": 1260,
-      "blockers": [],
-      "authored_work_required": [
-        "rhythm_waiting_handoff_rework",
-        "situated_reputation"
-      ],
-      "cross_role_need": "candidate_when_shared_work_is_real"
-    },
-    {
-      "rank": 18,
-      "key": "religion/religion_forskning",
-      "classification": "rollout_ready",
-      "structural_family": "research_education",
-      "priority_score": 1260,
-      "blockers": [],
-      "authored_work_required": [
-        "situated_reputation"
-      ],
-      "cross_role_need": "not_required_for_rollout"
-    },
-    {
-      "rank": 19,
       "key": "sport/sport_trener",
       "classification": "rollout_ready",
       "structural_family": "sport_performance",
@@ -337,7 +82,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 20,
+      "rank": 2,
       "key": "naeringsliv/administrasjonsmedarbeider",
       "classification": "needs_role_authored_work",
       "structural_family": "economy_business",
@@ -351,7 +96,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 21,
+      "rank": 3,
       "key": "naeringsliv/fagarbeider",
       "classification": "needs_role_authored_work",
       "structural_family": "economy_business",
@@ -365,7 +110,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 22,
+      "rank": 4,
       "key": "naeringsliv/formann",
       "classification": "needs_role_authored_work",
       "structural_family": "economy_business",
@@ -379,7 +124,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 23,
+      "rank": 5,
       "key": "naeringsliv/lager_og_driftsmedarbeider",
       "classification": "needs_role_authored_work",
       "structural_family": "economy_business",
@@ -393,7 +138,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 24,
+      "rank": 6,
       "key": "naeringsliv/mellomleder",
       "classification": "needs_role_authored_work",
       "structural_family": "economy_business",
@@ -407,7 +152,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 25,
+      "rank": 7,
       "key": "kunst/kunst_kunstnerisk_ledelse",
       "classification": "needs_role_authored_work",
       "structural_family": "creative_production",
@@ -429,7 +174,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 26,
+      "rank": 8,
       "key": "kunst/kunst_utstillingsproduksjon",
       "classification": "needs_role_authored_work",
       "structural_family": "creative_production",
@@ -451,7 +196,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 27,
+      "rank": 9,
       "key": "psykologi/klinikkleder",
       "classification": "needs_role_authored_work",
       "structural_family": "care_professional",
@@ -473,7 +218,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 28,
+      "rank": 10,
       "key": "psykologi/psykologi_arbeids_og_karriereveiledning",
       "classification": "needs_role_authored_work",
       "structural_family": "care_professional",
@@ -495,7 +240,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 29,
+      "rank": 11,
       "key": "psykologi/spesialistpsykolog",
       "classification": "needs_role_authored_work",
       "structural_family": "care_professional",
@@ -517,7 +262,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 30,
+      "rank": 12,
       "key": "scenekunst/scenekunst_dramaturgi_og_utvikling",
       "classification": "needs_role_authored_work",
       "structural_family": "creative_production",
@@ -539,7 +284,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 31,
+      "rank": 13,
       "key": "scenekunst/scenekunst_institusjonsledelse",
       "classification": "needs_role_authored_work",
       "structural_family": "creative_production",
@@ -561,7 +306,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 32,
+      "rank": 14,
       "key": "scenekunst/scenekunst_program_og_kuratering",
       "classification": "needs_role_authored_work",
       "structural_family": "creative_production",
@@ -583,7 +328,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 33,
+      "rank": 15,
       "key": "scenekunst/scenekunst_regi_og_koreografi",
       "classification": "needs_role_authored_work",
       "structural_family": "creative_production",
@@ -605,7 +350,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 34,
+      "rank": 16,
       "key": "scenekunst/scenekunst_scene_og_produksjon",
       "classification": "needs_role_authored_work",
       "structural_family": "creative_production",
@@ -627,7 +372,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 35,
+      "rank": 17,
       "key": "scenekunst/scenekunst_utoving_og_ensemble",
       "classification": "needs_role_authored_work",
       "structural_family": "creative_production",
@@ -649,7 +394,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 36,
+      "rank": 18,
       "key": "subkultur/subkultur_kulturarena_ledelse",
       "classification": "needs_role_authored_work",
       "structural_family": "event_operational",
@@ -671,7 +416,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 37,
+      "rank": 19,
       "key": "subkultur/subkultur_produksjon_og_prosjekt",
       "classification": "needs_role_authored_work",
       "structural_family": "creative_production",
@@ -693,7 +438,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 38,
+      "rank": 20,
       "key": "subkultur/subkultur_produksjonsledelse",
       "classification": "needs_role_authored_work",
       "structural_family": "creative_production",
@@ -715,7 +460,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 39,
+      "rank": 21,
       "key": "subkultur/subkultur_program_og_koordinering",
       "classification": "needs_role_authored_work",
       "structural_family": "event_operational",
@@ -737,7 +482,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 40,
+      "rank": 22,
       "key": "historie/historie_fagledelse",
       "classification": "needs_role_authored_work",
       "structural_family": "other",
@@ -759,7 +504,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 41,
+      "rank": 23,
       "key": "historie/historie_forskning_og_akademia",
       "classification": "needs_role_authored_work",
       "structural_family": "research_education",
@@ -781,7 +526,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 42,
+      "rank": 24,
       "key": "historie/historie_forvaltning_og_radgivning",
       "classification": "needs_role_authored_work",
       "structural_family": "public_administration",
@@ -803,7 +548,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 43,
+      "rank": 25,
       "key": "historie/historie_institusjonsledelse",
       "classification": "needs_role_authored_work",
       "structural_family": "other",
@@ -825,7 +570,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 44,
+      "rank": 26,
       "key": "historie/historie_museum_og_samling",
       "classification": "needs_role_authored_work",
       "structural_family": "other",
@@ -847,7 +592,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 45,
+      "rank": 27,
       "key": "kunst/kunst_konservering_og_samling",
       "classification": "needs_role_authored_work",
       "structural_family": "other",
@@ -869,7 +614,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 46,
+      "rank": 28,
       "key": "kunst/kunst_kuratering_og_program",
       "classification": "needs_role_authored_work",
       "structural_family": "other",
@@ -891,7 +636,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 47,
+      "rank": 29,
       "key": "kunst/kunst_museumsledelse",
       "classification": "needs_role_authored_work",
       "structural_family": "other",
@@ -913,7 +658,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 48,
+      "rank": 30,
       "key": "kunst/kunst_publikum_og_formidling",
       "classification": "needs_role_authored_work",
       "structural_family": "other",
@@ -935,7 +680,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 49,
+      "rank": 31,
       "key": "natur/natur_biologi_og_forskning",
       "classification": "needs_role_authored_work",
       "structural_family": "research_education",
@@ -957,7 +702,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 50,
+      "rank": 32,
       "key": "natur/natur_felt_og_formidling",
       "classification": "needs_role_authored_work",
       "structural_family": "other",
@@ -979,7 +724,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 51,
+      "rank": 33,
       "key": "natur/natur_forvaltning_og_radgivning",
       "classification": "needs_role_authored_work",
       "structural_family": "public_administration",
@@ -1001,7 +746,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 52,
+      "rank": 34,
       "key": "natur/natur_miljoledelse",
       "classification": "needs_role_authored_work",
       "structural_family": "other",
@@ -1023,7 +768,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 53,
+      "rank": 35,
       "key": "natur/natur_politisk_myndighet",
       "classification": "needs_role_authored_work",
       "structural_family": "other",
@@ -1045,7 +790,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 54,
+      "rank": 36,
       "key": "politikk/politikk_kommunal_ledelse",
       "classification": "needs_role_authored_work",
       "structural_family": "public_administration",
@@ -1067,7 +812,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 55,
+      "rank": 37,
       "key": "politikk/politikk_organisasjonsarbeid",
       "classification": "needs_role_authored_work",
       "structural_family": "public_administration",
@@ -1089,7 +834,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 56,
+      "rank": 38,
       "key": "politikk/politikk_parlamentarisk_arbeid",
       "classification": "needs_role_authored_work",
       "structural_family": "public_administration",
@@ -1111,7 +856,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 57,
+      "rank": 39,
       "key": "politikk/politikk_politisk_radgivning",
       "classification": "needs_role_authored_work",
       "structural_family": "public_administration",
@@ -1133,7 +878,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 58,
+      "rank": 40,
       "key": "politikk/politikk_regjeringsledelse",
       "classification": "needs_role_authored_work",
       "structural_family": "public_administration",
@@ -1155,7 +900,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 59,
+      "rank": 41,
       "key": "religion/religion_fagledelse",
       "classification": "needs_role_authored_work",
       "structural_family": "other",
@@ -1177,7 +922,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 60,
+      "rank": 42,
       "key": "religion/religion_formidling_og_kulturarv",
       "classification": "needs_role_authored_work",
       "structural_family": "other",
@@ -1199,7 +944,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 61,
+      "rank": 43,
       "key": "religion/religion_utredning_og_radgivning",
       "classification": "needs_role_authored_work",
       "structural_family": "public_administration",
@@ -1221,7 +966,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 62,
+      "rank": 44,
       "key": "vitenskap/vitenskap_assistent_og_laboratorium",
       "classification": "needs_role_authored_work",
       "structural_family": "research_education",
@@ -1243,7 +988,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 63,
+      "rank": 45,
       "key": "vitenskap/vitenskap_doktorlop_og_postdoktor",
       "classification": "needs_role_authored_work",
       "structural_family": "research_education",
@@ -1265,7 +1010,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 64,
+      "rank": 46,
       "key": "vitenskap/vitenskap_forskning",
       "classification": "needs_role_authored_work",
       "structural_family": "research_education",
@@ -1287,7 +1032,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 65,
+      "rank": 47,
       "key": "vitenskap/vitenskap_forskningsledelse",
       "classification": "needs_role_authored_work",
       "structural_family": "research_education",
@@ -1309,7 +1054,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 66,
+      "rank": 48,
       "key": "vitenskap/vitenskap_institusjonsledelse",
       "classification": "needs_role_authored_work",
       "structural_family": "research_education",
@@ -1331,7 +1076,7 @@
       "cross_role_need": "candidate_when_shared_work_is_real"
     },
     {
-      "rank": 67,
+      "rank": 49,
       "key": "vitenskap/vitenskap_undervisning_og_forskning",
       "classification": "needs_role_authored_work",
       "structural_family": "research_education",
@@ -1353,7 +1098,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 68,
+      "rank": 50,
       "key": "musikk/musikk_scene_og_produksjon",
       "classification": "blocked",
       "structural_family": "creative_production",
@@ -1378,7 +1123,7 @@
       "cross_role_need": "not_required_for_rollout"
     },
     {
-      "rank": 69,
+      "rank": 51,
       "key": "musikk/musikk_utoving_og_ensemble",
       "classification": "blocked",
       "structural_family": "other",
@@ -1447,15 +1192,16 @@
       ],
       "career_status": "playable",
       "runtime_gate": true,
-      "role_world_status": "role_world_not_started",
+      "role_world_status": "role_world_complete",
       "structural_family": "public_administration",
       "classification": "rollout_ready",
-      "priority_score": 1260,
+      "priority_score": 910,
       "dimensions": {
         "persistent_work_object": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/by/job/by_arkitekt_job.json",
+            "data/Civication/roleWorlds/by/by_arkitekt.json",
             "data/Civication/workGrammars/by/by_arkitekt.json"
           ],
           "rationale": "Existing work content carries stable object/case/project signals and a complete workday loop; the rollout PR must bind them explicitly to the locked persistent-work contract."
@@ -1469,13 +1215,14 @@
           "rationale": "Existing authored sources already expose institutional/authority language; rollout must preserve direct, approval, escalation and forbidden-action boundaries."
         },
         "rhythm_waiting_handoff_rework": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/by/job/by_arkitekt_job.json",
             "data/Civication/mailPlans/by/by_arkitekt_plan.json",
+            "data/Civication/roleWorlds/by/by_arkitekt.json",
             "data/Civication/workGrammars/by/by_arkitekt.json"
           ],
-          "rationale": "Waiting, handoff, interruption or rework is not yet explicit enough to prove a distinct role rhythm."
+          "rationale": "The current runtime-authored role already exposes deadline/rework/handoff signals; rollout must make the rhythm role-specific and persistent."
         },
         "history_go_affordance": {
           "status": "foundation_ready",
@@ -1483,23 +1230,26 @@
             "data/Civication/jobKnowledgeRequirements.json",
             "data/Civication/mailFamilies/by/knowledge/by_arkitekt_knowledge.json",
             "data/Civication/roleModels/by/arkitekt.json",
+            "data/Civication/roleWorlds/by/by_arkitekt.json",
             "data/Civication/workGrammars/by/by_arkitekt.json"
           ],
           "rationale": "Career knowledge integration is complete; the rollout PR must author a concrete better-choice affordance while keeping authority independent from knowledge."
         },
         "situated_reputation": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/by/job/by_arkitekt_job.json",
-            "data/Civication/mailPlans/by/by_arkitekt_plan.json"
+            "data/Civication/mailPlans/by/by_arkitekt_plan.json",
+            "data/Civication/roleWorlds/by/by_arkitekt.json"
           ],
-          "rationale": "Situated reputation audiences are not yet explicit for this role; do not substitute the legacy/global reputation summary."
+          "rationale": "Role-authored sources already contain situated audience/standing signals; rollout must bind only bounded authored audience IDs."
         },
         "people_places_integrity": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/by/people/by_arkitekt_people.json",
             "data/Civication/roleModels/by/arkitekt.json",
+            "data/Civication/roleWorlds/by/by_arkitekt.json",
             "data/Civication/workGrammars/by/by_arkitekt.json"
           ],
           "rationale": "Career People and Places coverage is complete; rollout still must verify factual canonical references and keep invented workplace drama explicitly fictional."
@@ -1509,7 +1259,9 @@
           "evidence": [
             "data/Civication/mailFamilies/by/job/by_arkitekt_job.json",
             "data/Civication/mailPlans/by/by_arkitekt_plan.json",
+            "data/Civication/roleWorlds/by/by_arkitekt.json",
             "data/Civication/workGrammars/by/by_arkitekt.json",
+            "tests/civication-by-arkitekt-role-world-rollout.test.js",
             "tests/civication-by-arkitekt-rollout-playability.test.js",
             "tests/civication-by-career-architecture.test.js",
             "tests/civication-role-pack-depth.test.js"
@@ -1523,19 +1275,18 @@
         "rationale": "Cross-role linkage is optional and must only be authored where the work itself is genuinely shared."
       },
       "blockers": [],
-      "authored_work_required": [
-        "rhythm_waiting_handoff_rework",
-        "situated_reputation"
-      ],
+      "authored_work_required": [],
       "source_refs": [
         "data/Civication/mailFamilies/by/job/by_arkitekt_job.json",
         "data/Civication/mailPlans/by/by_arkitekt_plan.json",
+        "data/Civication/roleWorlds/by/by_arkitekt.json",
         "data/Civication/workGrammars/by/by_arkitekt.json",
+        "tests/civication-by-arkitekt-role-world-rollout.test.js",
         "tests/civication-by-arkitekt-rollout-playability.test.js",
         "tests/civication-by-career-architecture.test.js",
         "tests/civication-role-pack-depth.test.js"
       ],
-      "already_reference_or_pilot": false
+      "already_reference_or_pilot": true
     },
     {
       "key": "by/by_assistent",
@@ -1548,15 +1299,16 @@
       ],
       "career_status": "playable",
       "runtime_gate": true,
-      "role_world_status": "role_world_not_started",
+      "role_world_status": "role_world_complete",
       "structural_family": "public_administration",
       "classification": "rollout_ready",
-      "priority_score": 1260,
+      "priority_score": 910,
       "dimensions": {
         "persistent_work_object": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/by/job/by_assistent_job.json",
+            "data/Civication/roleWorlds/by/by_assistent.json",
             "data/Civication/workGrammars/by/by_assistent.json"
           ],
           "rationale": "Existing work content carries stable object/case/project signals and a complete workday loop; the rollout PR must bind them explicitly to the locked persistent-work contract."
@@ -1574,6 +1326,7 @@
           "evidence": [
             "data/Civication/mailFamilies/by/job/by_assistent_job.json",
             "data/Civication/mailPlans/by/by_assistent_plan.json",
+            "data/Civication/roleWorlds/by/by_assistent.json",
             "data/Civication/workGrammars/by/by_assistent.json"
           ],
           "rationale": "The current runtime-authored role already exposes deadline/rework/handoff signals; rollout must make the rhythm role-specific and persistent."
@@ -1584,23 +1337,26 @@
             "data/Civication/jobKnowledgeRequirements.json",
             "data/Civication/mailFamilies/by/knowledge/by_assistent_knowledge.json",
             "data/Civication/roleModels/by/studentassistent.json",
+            "data/Civication/roleWorlds/by/by_assistent.json",
             "data/Civication/workGrammars/by/by_assistent.json"
           ],
           "rationale": "Career knowledge integration is complete; the rollout PR must author a concrete better-choice affordance while keeping authority independent from knowledge."
         },
         "situated_reputation": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/by/job/by_assistent_job.json",
-            "data/Civication/mailPlans/by/by_assistent_plan.json"
+            "data/Civication/mailPlans/by/by_assistent_plan.json",
+            "data/Civication/roleWorlds/by/by_assistent.json"
           ],
-          "rationale": "Situated reputation audiences are not yet explicit for this role; do not substitute the legacy/global reputation summary."
+          "rationale": "Role-authored sources already contain situated audience/standing signals; rollout must bind only bounded authored audience IDs."
         },
         "people_places_integrity": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/by/people/by_assistent_people.json",
             "data/Civication/roleModels/by/studentassistent.json",
+            "data/Civication/roleWorlds/by/by_assistent.json",
             "data/Civication/workGrammars/by/by_assistent.json"
           ],
           "rationale": "Career People and Places coverage is complete; rollout still must verify factual canonical references and keep invented workplace drama explicitly fictional."
@@ -1610,7 +1366,9 @@
           "evidence": [
             "data/Civication/mailFamilies/by/job/by_assistent_job.json",
             "data/Civication/mailPlans/by/by_assistent_plan.json",
+            "data/Civication/roleWorlds/by/by_assistent.json",
             "data/Civication/workGrammars/by/by_assistent.json",
+            "tests/civication-by-assistent-role-world-rollout.test.js",
             "tests/civication-by-assistent-rollout-playability.test.js",
             "tests/civication-by-career-architecture.test.js"
           ],
@@ -1626,17 +1384,17 @@
         "rationale": "This role has plausible same-domain handoff or leadership counterparts; a shared object is a design candidate, not a mandatory gate."
       },
       "blockers": [],
-      "authored_work_required": [
-        "situated_reputation"
-      ],
+      "authored_work_required": [],
       "source_refs": [
         "data/Civication/mailFamilies/by/job/by_assistent_job.json",
         "data/Civication/mailPlans/by/by_assistent_plan.json",
+        "data/Civication/roleWorlds/by/by_assistent.json",
         "data/Civication/workGrammars/by/by_assistent.json",
+        "tests/civication-by-assistent-role-world-rollout.test.js",
         "tests/civication-by-assistent-rollout-playability.test.js",
         "tests/civication-by-career-architecture.test.js"
       ],
-      "already_reference_or_pilot": false
+      "already_reference_or_pilot": true
     },
     {
       "key": "by/by_prosjektleder",
@@ -1650,15 +1408,16 @@
       ],
       "career_status": "playable",
       "runtime_gate": true,
-      "role_world_status": "role_world_not_started",
+      "role_world_status": "role_world_complete",
       "structural_family": "public_administration",
       "classification": "rollout_ready",
-      "priority_score": 1260,
+      "priority_score": 910,
       "dimensions": {
         "persistent_work_object": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/by/job/by_prosjektleder_job.json",
+            "data/Civication/roleWorlds/by/by_prosjektleder.json",
             "data/Civication/workGrammars/by/by_prosjektleder.json"
           ],
           "rationale": "Existing work content carries stable object/case/project signals and a complete workday loop; the rollout PR must bind them explicitly to the locked persistent-work contract."
@@ -1676,6 +1435,7 @@
           "evidence": [
             "data/Civication/mailFamilies/by/job/by_prosjektleder_job.json",
             "data/Civication/mailPlans/by/by_prosjektleder_plan.json",
+            "data/Civication/roleWorlds/by/by_prosjektleder.json",
             "data/Civication/workGrammars/by/by_prosjektleder.json"
           ],
           "rationale": "The current runtime-authored role already exposes deadline/rework/handoff signals; rollout must make the rhythm role-specific and persistent."
@@ -1686,23 +1446,26 @@
             "data/Civication/jobKnowledgeRequirements.json",
             "data/Civication/mailFamilies/by/knowledge/by_prosjektleder_knowledge.json",
             "data/Civication/roleModels/by/prosjektleder_byutvikling.json",
+            "data/Civication/roleWorlds/by/by_prosjektleder.json",
             "data/Civication/workGrammars/by/by_prosjektleder.json"
           ],
           "rationale": "Career knowledge integration is complete; the rollout PR must author a concrete better-choice affordance while keeping authority independent from knowledge."
         },
         "situated_reputation": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/by/job/by_prosjektleder_job.json",
-            "data/Civication/mailPlans/by/by_prosjektleder_plan.json"
+            "data/Civication/mailPlans/by/by_prosjektleder_plan.json",
+            "data/Civication/roleWorlds/by/by_prosjektleder.json"
           ],
-          "rationale": "Situated reputation audiences are not yet explicit for this role; do not substitute the legacy/global reputation summary."
+          "rationale": "Role-authored sources already contain situated audience/standing signals; rollout must bind only bounded authored audience IDs."
         },
         "people_places_integrity": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/by/people/by_prosjektleder_people.json",
             "data/Civication/roleModels/by/prosjektleder_byutvikling.json",
+            "data/Civication/roleWorlds/by/by_prosjektleder.json",
             "data/Civication/workGrammars/by/by_prosjektleder.json"
           ],
           "rationale": "Career People and Places coverage is complete; rollout still must verify factual canonical references and keep invented workplace drama explicitly fictional."
@@ -1712,8 +1475,10 @@
           "evidence": [
             "data/Civication/mailFamilies/by/job/by_prosjektleder_job.json",
             "data/Civication/mailPlans/by/by_prosjektleder_plan.json",
+            "data/Civication/roleWorlds/by/by_prosjektleder.json",
             "data/Civication/workGrammars/by/by_prosjektleder.json",
             "tests/civication-by-career-architecture.test.js",
+            "tests/civication-by-prosjektleder-role-world-rollout.test.js",
             "tests/civication-by-prosjektleder-rollout-playability.test.js"
           ],
           "rationale": "Role-specific tests and authored source paths exist; rollout must add strict scene-registry parity and source provenance for new realism scenes."
@@ -1728,17 +1493,17 @@
         "rationale": "This role has plausible same-domain handoff or leadership counterparts; a shared object is a design candidate, not a mandatory gate."
       },
       "blockers": [],
-      "authored_work_required": [
-        "situated_reputation"
-      ],
+      "authored_work_required": [],
       "source_refs": [
         "data/Civication/mailFamilies/by/job/by_prosjektleder_job.json",
         "data/Civication/mailPlans/by/by_prosjektleder_plan.json",
+        "data/Civication/roleWorlds/by/by_prosjektleder.json",
         "data/Civication/workGrammars/by/by_prosjektleder.json",
         "tests/civication-by-career-architecture.test.js",
+        "tests/civication-by-prosjektleder-role-world-rollout.test.js",
         "tests/civication-by-prosjektleder-rollout-playability.test.js"
       ],
-      "already_reference_or_pilot": false
+      "already_reference_or_pilot": true
     },
     {
       "key": "by/by_radgiver_plan",
@@ -1895,15 +1660,16 @@
       ],
       "career_status": "playable",
       "runtime_gate": true,
-      "role_world_status": "role_world_not_started",
+      "role_world_status": "role_world_complete",
       "structural_family": "public_administration",
       "classification": "rollout_ready",
-      "priority_score": 1260,
+      "priority_score": 910,
       "dimensions": {
         "persistent_work_object": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/by/job/by_saksbehandler_job.json",
+            "data/Civication/roleWorlds/by/by_saksbehandler.json",
             "data/Civication/workGrammars/by/by_saksbehandler.json"
           ],
           "rationale": "Existing work content carries stable object/case/project signals and a complete workday loop; the rollout PR must bind them explicitly to the locked persistent-work contract."
@@ -1921,6 +1687,7 @@
           "evidence": [
             "data/Civication/mailFamilies/by/job/by_saksbehandler_job.json",
             "data/Civication/mailPlans/by/by_saksbehandler_plan.json",
+            "data/Civication/roleWorlds/by/by_saksbehandler.json",
             "data/Civication/workGrammars/by/by_saksbehandler.json"
           ],
           "rationale": "The current runtime-authored role already exposes deadline/rework/handoff signals; rollout must make the rhythm role-specific and persistent."
@@ -1931,23 +1698,26 @@
             "data/Civication/jobKnowledgeRequirements.json",
             "data/Civication/mailFamilies/by/knowledge/by_saksbehandler_knowledge.json",
             "data/Civication/roleModels/by/saksbehandler_plan_bygg.json",
+            "data/Civication/roleWorlds/by/by_saksbehandler.json",
             "data/Civication/workGrammars/by/by_saksbehandler.json"
           ],
           "rationale": "Career knowledge integration is complete; the rollout PR must author a concrete better-choice affordance while keeping authority independent from knowledge."
         },
         "situated_reputation": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/by/job/by_saksbehandler_job.json",
-            "data/Civication/mailPlans/by/by_saksbehandler_plan.json"
+            "data/Civication/mailPlans/by/by_saksbehandler_plan.json",
+            "data/Civication/roleWorlds/by/by_saksbehandler.json"
           ],
-          "rationale": "Situated reputation audiences are not yet explicit for this role; do not substitute the legacy/global reputation summary."
+          "rationale": "Role-authored sources already contain situated audience/standing signals; rollout must bind only bounded authored audience IDs."
         },
         "people_places_integrity": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/by/people/by_saksbehandler_people.json",
             "data/Civication/roleModels/by/saksbehandler_plan_bygg.json",
+            "data/Civication/roleWorlds/by/by_saksbehandler.json",
             "data/Civication/workGrammars/by/by_saksbehandler.json"
           ],
           "rationale": "Career People and Places coverage is complete; rollout still must verify factual canonical references and keep invented workplace drama explicitly fictional."
@@ -1957,8 +1727,10 @@
           "evidence": [
             "data/Civication/mailFamilies/by/job/by_saksbehandler_job.json",
             "data/Civication/mailPlans/by/by_saksbehandler_plan.json",
+            "data/Civication/roleWorlds/by/by_saksbehandler.json",
             "data/Civication/workGrammars/by/by_saksbehandler.json",
             "tests/civication-by-career-architecture.test.js",
+            "tests/civication-by-saksbehandler-role-world-rollout.test.js",
             "tests/civication-by-saksbehandler-rollout-playability.test.js"
           ],
           "rationale": "Role-specific tests and authored source paths exist; rollout must add strict scene-registry parity and source provenance for new realism scenes."
@@ -1973,17 +1745,17 @@
         "rationale": "This role has plausible same-domain handoff or leadership counterparts; a shared object is a design candidate, not a mandatory gate."
       },
       "blockers": [],
-      "authored_work_required": [
-        "situated_reputation"
-      ],
+      "authored_work_required": [],
       "source_refs": [
         "data/Civication/mailFamilies/by/job/by_saksbehandler_job.json",
         "data/Civication/mailPlans/by/by_saksbehandler_plan.json",
+        "data/Civication/roleWorlds/by/by_saksbehandler.json",
         "data/Civication/workGrammars/by/by_saksbehandler.json",
         "tests/civication-by-career-architecture.test.js",
+        "tests/civication-by-saksbehandler-role-world-rollout.test.js",
         "tests/civication-by-saksbehandler-rollout-playability.test.js"
       ],
-      "already_reference_or_pilot": false
+      "already_reference_or_pilot": true
     },
     {
       "key": "film_tv/kurator_film_tv",
@@ -2528,15 +2300,16 @@
       ],
       "career_status": "playable",
       "runtime_gate": true,
-      "role_world_status": "role_world_not_started",
+      "role_world_status": "role_world_complete",
       "structural_family": "creative_production",
       "classification": "rollout_ready",
-      "priority_score": 1285,
+      "priority_score": 935,
       "dimensions": {
         "persistent_work_object": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/film_tv/job/serieskaper_job.json",
+            "data/Civication/roleWorlds/film_tv/serieskaper.json",
             "data/Civication/workGrammars/film_tv/serieskaper.json"
           ],
           "rationale": "Existing work content carries stable object/case/project signals and a complete workday loop; the rollout PR must bind them explicitly to the locked persistent-work contract."
@@ -2550,36 +2323,40 @@
           "rationale": "Existing authored sources already expose institutional/authority language; rollout must preserve direct, approval, escalation and forbidden-action boundaries."
         },
         "rhythm_waiting_handoff_rework": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/film_tv/job/serieskaper_job.json",
             "data/Civication/mailPlans/film_tv/serieskaper_plan.json",
+            "data/Civication/roleWorlds/film_tv/serieskaper.json",
             "data/Civication/workGrammars/film_tv/serieskaper.json"
           ],
-          "rationale": "Waiting, handoff, interruption or rework is not yet explicit enough to prove a distinct role rhythm."
+          "rationale": "The current runtime-authored role already exposes deadline/rework/handoff signals; rollout must make the rhythm role-specific and persistent."
         },
         "history_go_affordance": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/film_tv/knowledge/serieskaper_knowledge.json",
             "data/Civication/roleModels/film_tv/serieskaper.json",
+            "data/Civication/roleWorlds/film_tv/serieskaper.json",
             "data/Civication/workGrammars/film_tv/serieskaper.json"
           ],
           "rationale": "Career knowledge integration is complete; the rollout PR must author a concrete better-choice affordance while keeping authority independent from knowledge."
         },
         "situated_reputation": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/film_tv/job/serieskaper_job.json",
-            "data/Civication/mailPlans/film_tv/serieskaper_plan.json"
+            "data/Civication/mailPlans/film_tv/serieskaper_plan.json",
+            "data/Civication/roleWorlds/film_tv/serieskaper.json"
           ],
-          "rationale": "Situated reputation audiences are not yet explicit for this role; do not substitute the legacy/global reputation summary."
+          "rationale": "Role-authored sources already contain situated audience/standing signals; rollout must bind only bounded authored audience IDs."
         },
         "people_places_integrity": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/film_tv/people/serieskaper_people.json",
             "data/Civication/roleModels/film_tv/serieskaper.json",
+            "data/Civication/roleWorlds/film_tv/serieskaper.json",
             "data/Civication/workGrammars/film_tv/serieskaper.json"
           ],
           "rationale": "Career People and Places coverage is complete; rollout still must verify factual canonical references and keep invented workplace drama explicitly fictional."
@@ -2589,10 +2366,12 @@
           "evidence": [
             "data/Civication/mailFamilies/film_tv/job/serieskaper_job.json",
             "data/Civication/mailPlans/film_tv/serieskaper_plan.json",
+            "data/Civication/roleWorlds/film_tv/serieskaper.json",
             "data/Civication/workGrammars/film_tv/serieskaper.json",
             "tests/civication-film-tv-career-architecture.test.js",
             "tests/civication-film-tv-life-career-split.test.js",
-            "tests/civication-film-tv-serieskaper-playability.test.js"
+            "tests/civication-film-tv-serieskaper-playability.test.js",
+            "tests/civication-film-tv-serieskaper-role-world-rollout.test.js"
           ],
           "rationale": "Role-specific tests and authored source paths exist; rollout must add strict scene-registry parity and source provenance for new realism scenes."
         }
@@ -2603,19 +2382,18 @@
         "rationale": "Cross-role linkage is optional and must only be authored where the work itself is genuinely shared."
       },
       "blockers": [],
-      "authored_work_required": [
-        "rhythm_waiting_handoff_rework",
-        "situated_reputation"
-      ],
+      "authored_work_required": [],
       "source_refs": [
         "data/Civication/mailFamilies/film_tv/job/serieskaper_job.json",
         "data/Civication/mailPlans/film_tv/serieskaper_plan.json",
+        "data/Civication/roleWorlds/film_tv/serieskaper.json",
         "data/Civication/workGrammars/film_tv/serieskaper.json",
         "tests/civication-film-tv-career-architecture.test.js",
         "tests/civication-film-tv-life-career-split.test.js",
-        "tests/civication-film-tv-serieskaper-playability.test.js"
+        "tests/civication-film-tv-serieskaper-playability.test.js",
+        "tests/civication-film-tv-serieskaper-role-world-rollout.test.js"
       ],
-      "already_reference_or_pilot": false
+      "already_reference_or_pilot": true
     },
     {
       "key": "filosofi/filosofi_forskning_og_formidling",
@@ -2627,15 +2405,16 @@
       ],
       "career_status": "playable",
       "runtime_gate": true,
-      "role_world_status": "role_world_not_started",
+      "role_world_status": "role_world_complete",
       "structural_family": "research_education",
       "classification": "rollout_ready",
-      "priority_score": 1260,
+      "priority_score": 910,
       "dimensions": {
         "persistent_work_object": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/filosofi/job/filosofi_forskning_og_formidling_job.json",
+            "data/Civication/roleWorlds/filosofi/filosofi_forskning_og_formidling.json",
             "data/Civication/workGrammars/filosofi/filosofi_forskning_og_formidling.json"
           ],
           "rationale": "Existing work content carries stable object/case/project signals and a complete workday loop; the rollout PR must bind them explicitly to the locked persistent-work contract."
@@ -2649,36 +2428,40 @@
           "rationale": "Existing authored sources already expose institutional/authority language; rollout must preserve direct, approval, escalation and forbidden-action boundaries."
         },
         "rhythm_waiting_handoff_rework": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/filosofi/job/filosofi_forskning_og_formidling_job.json",
             "data/Civication/mailPlans/filosofi/filosofi_forskning_og_formidling_plan.json",
+            "data/Civication/roleWorlds/filosofi/filosofi_forskning_og_formidling.json",
             "data/Civication/workGrammars/filosofi/filosofi_forskning_og_formidling.json"
           ],
-          "rationale": "Waiting, handoff, interruption or rework is not yet explicit enough to prove a distinct role rhythm."
+          "rationale": "The current runtime-authored role already exposes deadline/rework/handoff signals; rollout must make the rhythm role-specific and persistent."
         },
         "history_go_affordance": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/filosofi/knowledge/filosofi_forskning_og_formidling_knowledge.json",
             "data/Civication/roleModels/filosofi/filosofi_forskning_og_formidling.json",
+            "data/Civication/roleWorlds/filosofi/filosofi_forskning_og_formidling.json",
             "data/Civication/workGrammars/filosofi/filosofi_forskning_og_formidling.json"
           ],
           "rationale": "Career knowledge integration is complete; the rollout PR must author a concrete better-choice affordance while keeping authority independent from knowledge."
         },
         "situated_reputation": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/filosofi/job/filosofi_forskning_og_formidling_job.json",
-            "data/Civication/mailPlans/filosofi/filosofi_forskning_og_formidling_plan.json"
+            "data/Civication/mailPlans/filosofi/filosofi_forskning_og_formidling_plan.json",
+            "data/Civication/roleWorlds/filosofi/filosofi_forskning_og_formidling.json"
           ],
-          "rationale": "Situated reputation audiences are not yet explicit for this role; do not substitute the legacy/global reputation summary."
+          "rationale": "Role-authored sources already contain situated audience/standing signals; rollout must bind only bounded authored audience IDs."
         },
         "people_places_integrity": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/filosofi/people/filosofi_forskning_og_formidling_people.json",
             "data/Civication/roleModels/filosofi/filosofi_forskning_og_formidling.json",
+            "data/Civication/roleWorlds/filosofi/filosofi_forskning_og_formidling.json",
             "data/Civication/workGrammars/filosofi/filosofi_forskning_og_formidling.json"
           ],
           "rationale": "Career People and Places coverage is complete; rollout still must verify factual canonical references and keep invented workplace drama explicitly fictional."
@@ -2688,8 +2471,10 @@
           "evidence": [
             "data/Civication/mailFamilies/filosofi/job/filosofi_forskning_og_formidling_job.json",
             "data/Civication/mailPlans/filosofi/filosofi_forskning_og_formidling_plan.json",
+            "data/Civication/roleWorlds/filosofi/filosofi_forskning_og_formidling.json",
             "data/Civication/workGrammars/filosofi/filosofi_forskning_og_formidling.json",
             "tests/civication-filosofi-forskning-formidling-playability.test.js",
+            "tests/civication-filosofi-forskning-formidling-role-world-rollout.test.js",
             "tests/civication-philosophy-life-career-split.test.js"
           ],
           "rationale": "Role-specific tests and authored source paths exist; rollout must add strict scene-registry parity and source provenance for new realism scenes."
@@ -2701,18 +2486,17 @@
         "rationale": "Cross-role linkage is optional and must only be authored where the work itself is genuinely shared."
       },
       "blockers": [],
-      "authored_work_required": [
-        "rhythm_waiting_handoff_rework",
-        "situated_reputation"
-      ],
+      "authored_work_required": [],
       "source_refs": [
         "data/Civication/mailFamilies/filosofi/job/filosofi_forskning_og_formidling_job.json",
         "data/Civication/mailPlans/filosofi/filosofi_forskning_og_formidling_plan.json",
+        "data/Civication/roleWorlds/filosofi/filosofi_forskning_og_formidling.json",
         "data/Civication/workGrammars/filosofi/filosofi_forskning_og_formidling.json",
         "tests/civication-filosofi-forskning-formidling-playability.test.js",
+        "tests/civication-filosofi-forskning-formidling-role-world-rollout.test.js",
         "tests/civication-philosophy-life-career-split.test.js"
       ],
-      "already_reference_or_pilot": false
+      "already_reference_or_pilot": true
     },
     {
       "key": "filosofi/filosofi_undervisning_og_akademia",
@@ -2724,15 +2508,16 @@
       ],
       "career_status": "playable",
       "runtime_gate": true,
-      "role_world_status": "role_world_not_started",
+      "role_world_status": "role_world_complete",
       "structural_family": "research_education",
       "classification": "rollout_ready",
-      "priority_score": 1260,
+      "priority_score": 910,
       "dimensions": {
         "persistent_work_object": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/filosofi/job/filosofi_undervisning_og_akademia_job.json",
+            "data/Civication/roleWorlds/filosofi/filosofi_undervisning_og_akademia.json",
             "data/Civication/workGrammars/filosofi/filosofi_undervisning_og_akademia.json"
           ],
           "rationale": "Existing work content carries stable object/case/project signals and a complete workday loop; the rollout PR must bind them explicitly to the locked persistent-work contract."
@@ -2750,6 +2535,7 @@
           "evidence": [
             "data/Civication/mailFamilies/filosofi/job/filosofi_undervisning_og_akademia_job.json",
             "data/Civication/mailPlans/filosofi/filosofi_undervisning_og_akademia_plan.json",
+            "data/Civication/roleWorlds/filosofi/filosofi_undervisning_og_akademia.json",
             "data/Civication/workGrammars/filosofi/filosofi_undervisning_og_akademia.json"
           ],
           "rationale": "The current runtime-authored role already exposes deadline/rework/handoff signals; rollout must make the rhythm role-specific and persistent."
@@ -2759,23 +2545,26 @@
           "evidence": [
             "data/Civication/mailFamilies/filosofi/knowledge/filosofi_undervisning_og_akademia_knowledge.json",
             "data/Civication/roleModels/filosofi/filosofi_undervisning_og_akademia.json",
+            "data/Civication/roleWorlds/filosofi/filosofi_undervisning_og_akademia.json",
             "data/Civication/workGrammars/filosofi/filosofi_undervisning_og_akademia.json"
           ],
           "rationale": "Career knowledge integration is complete; the rollout PR must author a concrete better-choice affordance while keeping authority independent from knowledge."
         },
         "situated_reputation": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/filosofi/job/filosofi_undervisning_og_akademia_job.json",
-            "data/Civication/mailPlans/filosofi/filosofi_undervisning_og_akademia_plan.json"
+            "data/Civication/mailPlans/filosofi/filosofi_undervisning_og_akademia_plan.json",
+            "data/Civication/roleWorlds/filosofi/filosofi_undervisning_og_akademia.json"
           ],
-          "rationale": "Situated reputation audiences are not yet explicit for this role; do not substitute the legacy/global reputation summary."
+          "rationale": "Role-authored sources already contain situated audience/standing signals; rollout must bind only bounded authored audience IDs."
         },
         "people_places_integrity": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/filosofi/people/filosofi_undervisning_og_akademia_people.json",
             "data/Civication/roleModels/filosofi/filosofi_undervisning_og_akademia.json",
+            "data/Civication/roleWorlds/filosofi/filosofi_undervisning_og_akademia.json",
             "data/Civication/workGrammars/filosofi/filosofi_undervisning_og_akademia.json"
           ],
           "rationale": "Career People and Places coverage is complete; rollout still must verify factual canonical references and keep invented workplace drama explicitly fictional."
@@ -2785,8 +2574,10 @@
           "evidence": [
             "data/Civication/mailFamilies/filosofi/job/filosofi_undervisning_og_akademia_job.json",
             "data/Civication/mailPlans/filosofi/filosofi_undervisning_og_akademia_plan.json",
+            "data/Civication/roleWorlds/filosofi/filosofi_undervisning_og_akademia.json",
             "data/Civication/workGrammars/filosofi/filosofi_undervisning_og_akademia.json",
             "tests/civication-filosofi-undervisning-akademia-playability.test.js",
+            "tests/civication-filosofi-undervisning-akademia-role-world-rollout.test.js",
             "tests/civication-philosophy-life-career-split.test.js"
           ],
           "rationale": "Role-specific tests and authored source paths exist; rollout must add strict scene-registry parity and source provenance for new realism scenes."
@@ -2798,17 +2589,17 @@
         "rationale": "Cross-role linkage is optional and must only be authored where the work itself is genuinely shared."
       },
       "blockers": [],
-      "authored_work_required": [
-        "situated_reputation"
-      ],
+      "authored_work_required": [],
       "source_refs": [
         "data/Civication/mailFamilies/filosofi/job/filosofi_undervisning_og_akademia_job.json",
         "data/Civication/mailPlans/filosofi/filosofi_undervisning_og_akademia_plan.json",
+        "data/Civication/roleWorlds/filosofi/filosofi_undervisning_og_akademia.json",
         "data/Civication/workGrammars/filosofi/filosofi_undervisning_og_akademia.json",
         "tests/civication-filosofi-undervisning-akademia-playability.test.js",
+        "tests/civication-filosofi-undervisning-akademia-role-world-rollout.test.js",
         "tests/civication-philosophy-life-career-split.test.js"
       ],
-      "already_reference_or_pilot": false
+      "already_reference_or_pilot": true
     },
     {
       "key": "historie/historie_arkiv_og_dokumentasjon",
@@ -3887,18 +3678,19 @@
       ],
       "career_status": "playable",
       "runtime_gate": true,
-      "role_world_status": "role_world_not_started",
+      "role_world_status": "role_world_complete",
       "structural_family": "creative_production",
       "classification": "rollout_ready",
-      "priority_score": 1285,
+      "priority_score": 935,
       "dimensions": {
         "persistent_work_object": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/litteratur/job/redaksjonsmedarbeider_job.json",
+            "data/Civication/roleWorlds/litteratur/redaksjonsmedarbeider.json",
             "data/Civication/workGrammars/litteratur/redaksjonsmedarbeider.json"
           ],
-          "rationale": "The current career foundation does not yet prove a stable persistent work object across later scenes."
+          "rationale": "Existing work content carries stable object/case/project signals and a complete workday loop; the rollout PR must bind them explicitly to the locked persistent-work contract."
         },
         "institution_authority": {
           "status": "foundation_ready",
@@ -3913,6 +3705,7 @@
           "evidence": [
             "data/Civication/mailFamilies/litteratur/job/redaksjonsmedarbeider_job.json",
             "data/Civication/mailPlans/litteratur/redaksjonsmedarbeider_plan.json",
+            "data/Civication/roleWorlds/litteratur/redaksjonsmedarbeider.json",
             "data/Civication/workGrammars/litteratur/redaksjonsmedarbeider.json"
           ],
           "rationale": "The current runtime-authored role already exposes deadline/rework/handoff signals; rollout must make the rhythm role-specific and persistent."
@@ -3922,6 +3715,7 @@
           "evidence": [
             "data/Civication/mailFamilies/litteratur/knowledge/redaksjonsmedarbeider_knowledge.json",
             "data/Civication/roleModels/litteratur/redaksjonsmedarbeider.json",
+            "data/Civication/roleWorlds/litteratur/redaksjonsmedarbeider.json",
             "data/Civication/workGrammars/litteratur/redaksjonsmedarbeider.json"
           ],
           "rationale": "Career knowledge integration is complete; the rollout PR must author a concrete better-choice affordance while keeping authority independent from knowledge."
@@ -3930,7 +3724,8 @@
           "status": "needs_role_authored_work",
           "evidence": [
             "data/Civication/mailFamilies/litteratur/job/redaksjonsmedarbeider_job.json",
-            "data/Civication/mailPlans/litteratur/redaksjonsmedarbeider_plan.json"
+            "data/Civication/mailPlans/litteratur/redaksjonsmedarbeider_plan.json",
+            "data/Civication/roleWorlds/litteratur/redaksjonsmedarbeider.json"
           ],
           "rationale": "Situated reputation audiences are not yet explicit for this role; do not substitute the legacy/global reputation summary."
         },
@@ -3939,6 +3734,7 @@
           "evidence": [
             "data/Civication/mailFamilies/litteratur/people/redaksjonsmedarbeider_people.json",
             "data/Civication/roleModels/litteratur/redaksjonsmedarbeider.json",
+            "data/Civication/roleWorlds/litteratur/redaksjonsmedarbeider.json",
             "data/Civication/workGrammars/litteratur/redaksjonsmedarbeider.json"
           ],
           "rationale": "Career People and Places coverage is complete; rollout still must verify factual canonical references and keep invented workplace drama explicitly fictional."
@@ -3948,12 +3744,12 @@
           "evidence": [
             "data/Civication/mailFamilies/litteratur/job/redaksjonsmedarbeider_job.json",
             "data/Civication/mailPlans/litteratur/redaksjonsmedarbeider_plan.json",
+            "data/Civication/roleWorlds/litteratur/redaksjonsmedarbeider.json",
             "data/Civication/workGrammars/litteratur/redaksjonsmedarbeider.json",
             "tests/civication-life-status-economy-guard.test.js",
             "tests/civication-literature-life-career-split.test.js",
             "tests/civication-literature-life-status-split.test.js",
-            "tests/civication-litteratur-redaksjonsmedarbeider-rollout-playability.test.js",
-            "tests/civication-media-life-career-split.test.js"
+            "tests/civication-litteratur-redaksjonsmedarbeider-role-world-rollout.test.js"
           ],
           "rationale": "Role-specific tests and authored source paths exist; rollout must add strict scene-registry parity and source provenance for new realism scenes."
         }
@@ -3967,21 +3763,22 @@
       },
       "blockers": [],
       "authored_work_required": [
-        "persistent_work_object",
         "situated_reputation"
       ],
       "source_refs": [
         "data/Civication/mailFamilies/litteratur/job/redaksjonsmedarbeider_job.json",
         "data/Civication/mailPlans/litteratur/redaksjonsmedarbeider_plan.json",
+        "data/Civication/roleWorlds/litteratur/redaksjonsmedarbeider.json",
         "data/Civication/workGrammars/litteratur/redaksjonsmedarbeider.json",
         "tests/civication-life-status-economy-guard.test.js",
         "tests/civication-literature-life-career-split.test.js",
         "tests/civication-literature-life-status-split.test.js",
+        "tests/civication-litteratur-redaksjonsmedarbeider-role-world-rollout.test.js",
         "tests/civication-litteratur-redaksjonsmedarbeider-rollout-playability.test.js",
         "tests/civication-media-life-career-split.test.js",
         "tests/civication-media-redaksjon-rollout-playability.test.js"
       ],
-      "already_reference_or_pilot": false
+      "already_reference_or_pilot": true
     },
     {
       "key": "litteratur/redaktor_bok",
@@ -3992,15 +3789,16 @@
       ],
       "career_status": "playable",
       "runtime_gate": true,
-      "role_world_status": "role_world_not_started",
+      "role_world_status": "role_world_complete",
       "structural_family": "media_editorial",
       "classification": "rollout_ready",
-      "priority_score": 1260,
+      "priority_score": 910,
       "dimensions": {
         "persistent_work_object": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/litteratur/job/redaktor_bok_job.json",
+            "data/Civication/roleWorlds/litteratur/redaktor_bok.json",
             "data/Civication/workGrammars/litteratur/redaktor_bok.json"
           ],
           "rationale": "Existing work content carries stable object/case/project signals and a complete workday loop; the rollout PR must bind them explicitly to the locked persistent-work contract."
@@ -4014,36 +3812,40 @@
           "rationale": "Existing authored sources already expose institutional/authority language; rollout must preserve direct, approval, escalation and forbidden-action boundaries."
         },
         "rhythm_waiting_handoff_rework": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/litteratur/job/redaktor_bok_job.json",
             "data/Civication/mailPlans/litteratur/redaktor_bok_plan.json",
+            "data/Civication/roleWorlds/litteratur/redaktor_bok.json",
             "data/Civication/workGrammars/litteratur/redaktor_bok.json"
           ],
-          "rationale": "Waiting, handoff, interruption or rework is not yet explicit enough to prove a distinct role rhythm."
+          "rationale": "The current runtime-authored role already exposes deadline/rework/handoff signals; rollout must make the rhythm role-specific and persistent."
         },
         "history_go_affordance": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/litteratur/knowledge/redaktor_bok_knowledge.json",
             "data/Civication/roleModels/litteratur/redaktor_bok.json",
+            "data/Civication/roleWorlds/litteratur/redaktor_bok.json",
             "data/Civication/workGrammars/litteratur/redaktor_bok.json"
           ],
           "rationale": "Career knowledge integration is complete; the rollout PR must author a concrete better-choice affordance while keeping authority independent from knowledge."
         },
         "situated_reputation": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/litteratur/job/redaktor_bok_job.json",
-            "data/Civication/mailPlans/litteratur/redaktor_bok_plan.json"
+            "data/Civication/mailPlans/litteratur/redaktor_bok_plan.json",
+            "data/Civication/roleWorlds/litteratur/redaktor_bok.json"
           ],
-          "rationale": "Situated reputation audiences are not yet explicit for this role; do not substitute the legacy/global reputation summary."
+          "rationale": "Role-authored sources already contain situated audience/standing signals; rollout must bind only bounded authored audience IDs."
         },
         "people_places_integrity": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/litteratur/people/redaktor_bok_people.json",
             "data/Civication/roleModels/litteratur/redaktor_bok.json",
+            "data/Civication/roleWorlds/litteratur/redaktor_bok.json",
             "data/Civication/workGrammars/litteratur/redaktor_bok.json"
           ],
           "rationale": "Career People and Places coverage is complete; rollout still must verify factual canonical references and keep invented workplace drama explicitly fictional."
@@ -4053,7 +3855,9 @@
           "evidence": [
             "data/Civication/mailFamilies/litteratur/job/redaktor_bok_job.json",
             "data/Civication/mailPlans/litteratur/redaktor_bok_plan.json",
+            "data/Civication/roleWorlds/litteratur/redaktor_bok.json",
             "data/Civication/workGrammars/litteratur/redaktor_bok.json",
+            "tests/civication-litteratur-redaktor-bok-role-world-rollout.test.js",
             "tests/civication-litteratur-redaktor-bok-rollout-playability.test.js"
           ],
           "rationale": "Role-specific tests and authored source paths exist; rollout must add strict scene-registry parity and source provenance for new realism scenes."
@@ -4067,17 +3871,16 @@
         "rationale": "This role has plausible same-domain handoff or leadership counterparts; a shared object is a design candidate, not a mandatory gate."
       },
       "blockers": [],
-      "authored_work_required": [
-        "rhythm_waiting_handoff_rework",
-        "situated_reputation"
-      ],
+      "authored_work_required": [],
       "source_refs": [
         "data/Civication/mailFamilies/litteratur/job/redaktor_bok_job.json",
         "data/Civication/mailPlans/litteratur/redaktor_bok_plan.json",
+        "data/Civication/roleWorlds/litteratur/redaktor_bok.json",
         "data/Civication/workGrammars/litteratur/redaktor_bok.json",
+        "tests/civication-litteratur-redaktor-bok-role-world-rollout.test.js",
         "tests/civication-litteratur-redaktor-bok-rollout-playability.test.js"
       ],
-      "already_reference_or_pilot": false
+      "already_reference_or_pilot": true
     },
     {
       "key": "media/media_redaksjon",
@@ -4202,6 +4005,7 @@
         "tests/civication-media-life-career-split.test.js",
         "tests/civication-media-redaksjon-role-world-realism-pilot.test.js",
         "tests/civication-media-redaksjon-rollout-playability.test.js",
+        "tests/civication-media-redaksjonell-ledelse-role-world-rollout.test.js",
         "tests/civication-media-redaksjonell-ledelse-rollout-playability.test.js",
         "tests/civication-role-world-contract.test.js"
       ],
@@ -4218,15 +4022,16 @@
       ],
       "career_status": "playable",
       "runtime_gate": true,
-      "role_world_status": "role_world_not_started",
+      "role_world_status": "role_world_complete",
       "structural_family": "creative_production",
       "classification": "rollout_ready",
-      "priority_score": 1285,
+      "priority_score": 935,
       "dimensions": {
         "persistent_work_object": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/media/job/media_redaksjonell_ledelse_job.json",
+            "data/Civication/roleWorlds/media/media_redaksjonell_ledelse.json",
             "data/Civication/workGrammars/media/media_redaksjonell_ledelse.json"
           ],
           "rationale": "Existing work content carries stable object/case/project signals and a complete workday loop; the rollout PR must bind them explicitly to the locked persistent-work contract."
@@ -4246,6 +4051,7 @@
           "evidence": [
             "data/Civication/mailFamilies/media/job/media_redaksjonell_ledelse_job.json",
             "data/Civication/mailPlans/media/media_redaksjonell_ledelse_plan.json",
+            "data/Civication/roleWorlds/media/media_redaksjonell_ledelse.json",
             "data/Civication/workGrammars/media/media_redaksjonell_ledelse.json"
           ],
           "rationale": "The current runtime-authored role already exposes deadline/rework/handoff signals; rollout must make the rhythm role-specific and persistent."
@@ -4258,17 +4064,19 @@
             "data/Civication/roleModels/media/nyhetsleder.json",
             "data/Civication/roleModels/media/redaktor.json",
             "data/Civication/roleModels/media/sjefredaktor.json",
+            "data/Civication/roleWorlds/media/media_redaksjonell_ledelse.json",
             "data/Civication/workGrammars/media/media_redaksjonell_ledelse.json"
           ],
           "rationale": "Career knowledge integration is complete; the rollout PR must author a concrete better-choice affordance while keeping authority independent from knowledge."
         },
         "situated_reputation": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/media/job/media_redaksjonell_ledelse_job.json",
-            "data/Civication/mailPlans/media/media_redaksjonell_ledelse_plan.json"
+            "data/Civication/mailPlans/media/media_redaksjonell_ledelse_plan.json",
+            "data/Civication/roleWorlds/media/media_redaksjonell_ledelse.json"
           ],
-          "rationale": "Situated reputation audiences are not yet explicit for this role; do not substitute the legacy/global reputation summary."
+          "rationale": "Role-authored sources already contain situated audience/standing signals; rollout must bind only bounded authored audience IDs."
         },
         "people_places_integrity": {
           "status": "foundation_ready",
@@ -4277,6 +4085,7 @@
             "data/Civication/roleModels/media/nyhetsleder.json",
             "data/Civication/roleModels/media/redaktor.json",
             "data/Civication/roleModels/media/sjefredaktor.json",
+            "data/Civication/roleWorlds/media/media_redaksjonell_ledelse.json",
             "data/Civication/workGrammars/media/media_redaksjonell_ledelse.json"
           ],
           "rationale": "Career People and Places coverage is complete; rollout still must verify factual canonical references and keep invented workplace drama explicitly fictional."
@@ -4286,8 +4095,10 @@
           "evidence": [
             "data/Civication/mailFamilies/media/job/media_redaksjonell_ledelse_job.json",
             "data/Civication/mailPlans/media/media_redaksjonell_ledelse_plan.json",
+            "data/Civication/roleWorlds/media/media_redaksjonell_ledelse.json",
             "data/Civication/workGrammars/media/media_redaksjonell_ledelse.json",
             "tests/civication-media-life-career-split.test.js",
+            "tests/civication-media-redaksjonell-ledelse-role-world-rollout.test.js",
             "tests/civication-media-redaksjonell-ledelse-rollout-playability.test.js"
           ],
           "rationale": "Role-specific tests and authored source paths exist; rollout must add strict scene-registry parity and source provenance for new realism scenes."
@@ -4301,17 +4112,17 @@
         "rationale": "Existing cross-role proof demonstrates a shared work object with distinct lenses and authority without privilege leakage."
       },
       "blockers": [],
-      "authored_work_required": [
-        "situated_reputation"
-      ],
+      "authored_work_required": [],
       "source_refs": [
         "data/Civication/mailFamilies/media/job/media_redaksjonell_ledelse_job.json",
         "data/Civication/mailPlans/media/media_redaksjonell_ledelse_plan.json",
+        "data/Civication/roleWorlds/media/media_redaksjonell_ledelse.json",
         "data/Civication/workGrammars/media/media_redaksjonell_ledelse.json",
         "tests/civication-media-life-career-split.test.js",
+        "tests/civication-media-redaksjonell-ledelse-role-world-rollout.test.js",
         "tests/civication-media-redaksjonell-ledelse-rollout-playability.test.js"
       ],
-      "already_reference_or_pilot": false
+      "already_reference_or_pilot": true
     },
     {
       "key": "musikk/musikk_scene_og_produksjon",
@@ -6806,15 +6617,16 @@
       ],
       "career_status": "playable",
       "runtime_gate": true,
-      "role_world_status": "role_world_not_started",
+      "role_world_status": "role_world_complete",
       "structural_family": "care_professional",
       "classification": "rollout_ready",
-      "priority_score": 1285,
+      "priority_score": 935,
       "dimensions": {
         "persistent_work_object": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/psykologi/job/fagansvarlig_job.json",
+            "data/Civication/roleWorlds/psykologi/fagansvarlig.json",
             "data/Civication/workGrammars/psykologi/fagansvarlig.json"
           ],
           "rationale": "Existing work content carries stable object/case/project signals and a complete workday loop; the rollout PR must bind them explicitly to the locked persistent-work contract."
@@ -6828,30 +6640,33 @@
           "rationale": "Existing authored sources already expose institutional/authority language; rollout must preserve direct, approval, escalation and forbidden-action boundaries."
         },
         "rhythm_waiting_handoff_rework": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/psykologi/job/fagansvarlig_job.json",
             "data/Civication/mailPlans/psykologi/fagansvarlig_plan.json",
+            "data/Civication/roleWorlds/psykologi/fagansvarlig.json",
             "data/Civication/workGrammars/psykologi/fagansvarlig.json"
           ],
-          "rationale": "Waiting, handoff, interruption or rework is not yet explicit enough to prove a distinct role rhythm."
+          "rationale": "The current runtime-authored role already exposes deadline/rework/handoff signals; rollout must make the rhythm role-specific and persistent."
         },
         "history_go_affordance": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/psykologi/knowledge/fagansvarlig_knowledge.json",
             "data/Civication/roleModels/psykologi/fagansvarlig.json",
+            "data/Civication/roleWorlds/psykologi/fagansvarlig.json",
             "data/Civication/workGrammars/psykologi/fagansvarlig.json"
           ],
           "rationale": "Career knowledge integration is complete; the rollout PR must author a concrete better-choice affordance while keeping authority independent from knowledge."
         },
         "situated_reputation": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/psykologi/job/fagansvarlig_job.json",
-            "data/Civication/mailPlans/psykologi/fagansvarlig_plan.json"
+            "data/Civication/mailPlans/psykologi/fagansvarlig_plan.json",
+            "data/Civication/roleWorlds/psykologi/fagansvarlig.json"
           ],
-          "rationale": "Situated reputation audiences are not yet explicit for this role; do not substitute the legacy/global reputation summary."
+          "rationale": "Role-authored sources already contain situated audience/standing signals; rollout must bind only bounded authored audience IDs."
         },
         "people_places_integrity": {
           "status": "foundation_ready",
@@ -6861,6 +6676,7 @@
             "data/Civication/lifestory/roles/fagansvarlig/threads.json",
             "data/Civication/mailFamilies/psykologi/people/fagansvarlig_people.json",
             "data/Civication/roleModels/psykologi/fagansvarlig.json",
+            "data/Civication/roleWorlds/psykologi/fagansvarlig.json",
             "data/Civication/workGrammars/psykologi/fagansvarlig.json"
           ],
           "rationale": "Career People and Places coverage is complete; rollout still must verify factual canonical references and keep invented workplace drama explicitly fictional."
@@ -6870,12 +6686,12 @@
           "evidence": [
             "data/Civication/mailFamilies/psykologi/job/fagansvarlig_job.json",
             "data/Civication/mailPlans/psykologi/fagansvarlig_plan.json",
+            "data/Civication/roleWorlds/psykologi/fagansvarlig.json",
             "data/Civication/workGrammars/psykologi/fagansvarlig.json",
             "tests/civication-psychology-academic-career-ladder.test.js",
             "tests/civication-psychology-career-contract.test.js",
             "tests/civication-psychology-clinical-career-ladder.test.js",
-            "tests/civication-psykologi-fagansvarlig-rollout-playability.test.js",
-            "tests/civication-religion-life-career-split.test.js"
+            "tests/civication-psykologi-fagansvarlig-role-world-rollout.test.js"
           ],
           "rationale": "Role-specific tests and authored source paths exist; rollout must add strict scene-registry parity and source provenance for new realism scenes."
         }
@@ -6886,21 +6702,20 @@
         "rationale": "Cross-role linkage is optional and must only be authored where the work itself is genuinely shared."
       },
       "blockers": [],
-      "authored_work_required": [
-        "rhythm_waiting_handoff_rework",
-        "situated_reputation"
-      ],
+      "authored_work_required": [],
       "source_refs": [
         "data/Civication/mailFamilies/psykologi/job/fagansvarlig_job.json",
         "data/Civication/mailPlans/psykologi/fagansvarlig_plan.json",
+        "data/Civication/roleWorlds/psykologi/fagansvarlig.json",
         "data/Civication/workGrammars/psykologi/fagansvarlig.json",
         "tests/civication-psychology-academic-career-ladder.test.js",
         "tests/civication-psychology-career-contract.test.js",
         "tests/civication-psychology-clinical-career-ladder.test.js",
+        "tests/civication-psykologi-fagansvarlig-role-world-rollout.test.js",
         "tests/civication-psykologi-fagansvarlig-rollout-playability.test.js",
         "tests/civication-religion-life-career-split.test.js"
       ],
-      "already_reference_or_pilot": false
+      "already_reference_or_pilot": true
     },
     {
       "key": "psykologi/forsker_psykologi",
@@ -6911,15 +6726,16 @@
       ],
       "career_status": "playable",
       "runtime_gate": true,
-      "role_world_status": "role_world_not_started",
+      "role_world_status": "role_world_complete",
       "structural_family": "care_professional",
       "classification": "rollout_ready",
-      "priority_score": 1285,
+      "priority_score": 935,
       "dimensions": {
         "persistent_work_object": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/psykologi/job/forsker_psykologi_job.json",
+            "data/Civication/roleWorlds/psykologi/forsker_psykologi.json",
             "data/Civication/workGrammars/psykologi/forsker_psykologi.json"
           ],
           "rationale": "Existing work content carries stable object/case/project signals and a complete workday loop; the rollout PR must bind them explicitly to the locked persistent-work contract."
@@ -6930,13 +6746,14 @@
             "data/Civication/roleModels/psykologi/forsker_psykologi.json",
             "data/Civication/workGrammars/psykologi/forsker_psykologi.json"
           ],
-          "rationale": "Career Matrix already proves an explicit authority boundary; rollout must author the richer institution/approval/escalation surface without changing the authority contract."
+          "rationale": "Existing authored sources already expose institutional/authority language; rollout must preserve direct, approval, escalation and forbidden-action boundaries."
         },
         "rhythm_waiting_handoff_rework": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/psykologi/job/forsker_psykologi_job.json",
             "data/Civication/mailPlans/psykologi/forsker_psykologi_plan.json",
+            "data/Civication/roleWorlds/psykologi/forsker_psykologi.json",
             "data/Civication/workGrammars/psykologi/forsker_psykologi.json"
           ],
           "rationale": "The current runtime-authored role already exposes deadline/rework/handoff signals; rollout must make the rhythm role-specific and persistent."
@@ -6946,17 +6763,19 @@
           "evidence": [
             "data/Civication/mailFamilies/psykologi/knowledge/forsker_psykologi_knowledge.json",
             "data/Civication/roleModels/psykologi/forsker_psykologi.json",
+            "data/Civication/roleWorlds/psykologi/forsker_psykologi.json",
             "data/Civication/workGrammars/psykologi/forsker_psykologi.json"
           ],
           "rationale": "Career knowledge integration is complete; the rollout PR must author a concrete better-choice affordance while keeping authority independent from knowledge."
         },
         "situated_reputation": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/psykologi/job/forsker_psykologi_job.json",
-            "data/Civication/mailPlans/psykologi/forsker_psykologi_plan.json"
+            "data/Civication/mailPlans/psykologi/forsker_psykologi_plan.json",
+            "data/Civication/roleWorlds/psykologi/forsker_psykologi.json"
           ],
-          "rationale": "Situated reputation audiences are not yet explicit for this role; do not substitute the legacy/global reputation summary."
+          "rationale": "Role-authored sources already contain situated audience/standing signals; rollout must bind only bounded authored audience IDs."
         },
         "people_places_integrity": {
           "status": "foundation_ready",
@@ -6966,6 +6785,7 @@
             "data/Civication/lifestory/roles/forsker_psykologi/threads.json",
             "data/Civication/mailFamilies/psykologi/people/forsker_psykologi_people.json",
             "data/Civication/roleModels/psykologi/forsker_psykologi.json",
+            "data/Civication/roleWorlds/psykologi/forsker_psykologi.json",
             "data/Civication/workGrammars/psykologi/forsker_psykologi.json"
           ],
           "rationale": "Career People and Places coverage is complete; rollout still must verify factual canonical references and keep invented workplace drama explicitly fictional."
@@ -6975,10 +6795,12 @@
           "evidence": [
             "data/Civication/mailFamilies/psykologi/job/forsker_psykologi_job.json",
             "data/Civication/mailPlans/psykologi/forsker_psykologi_plan.json",
+            "data/Civication/roleWorlds/psykologi/forsker_psykologi.json",
             "data/Civication/workGrammars/psykologi/forsker_psykologi.json",
             "tests/civication-psychology-academic-career-ladder.test.js",
             "tests/civication-psychology-career-contract.test.js",
-            "tests/civication-psykologi-forsker_psykologi-rollout-playability.test.js"
+            "tests/civication-psykologi-forsker_psykologi-rollout-playability.test.js",
+            "tests/civication-psykologi-forsker-psykologi-role-world-rollout.test.js"
           ],
           "rationale": "Role-specific tests and authored source paths exist; rollout must add strict scene-registry parity and source provenance for new realism scenes."
         }
@@ -6989,18 +6811,18 @@
         "rationale": "Cross-role linkage is optional and must only be authored where the work itself is genuinely shared."
       },
       "blockers": [],
-      "authored_work_required": [
-        "situated_reputation"
-      ],
+      "authored_work_required": [],
       "source_refs": [
         "data/Civication/mailFamilies/psykologi/job/forsker_psykologi_job.json",
         "data/Civication/mailPlans/psykologi/forsker_psykologi_plan.json",
+        "data/Civication/roleWorlds/psykologi/forsker_psykologi.json",
         "data/Civication/workGrammars/psykologi/forsker_psykologi.json",
         "tests/civication-psychology-academic-career-ladder.test.js",
         "tests/civication-psychology-career-contract.test.js",
-        "tests/civication-psykologi-forsker_psykologi-rollout-playability.test.js"
+        "tests/civication-psykologi-forsker_psykologi-rollout-playability.test.js",
+        "tests/civication-psykologi-forsker-psykologi-role-world-rollout.test.js"
       ],
-      "already_reference_or_pilot": false
+      "already_reference_or_pilot": true
     },
     {
       "key": "psykologi/klinikkleder",
@@ -7112,15 +6934,16 @@
       ],
       "career_status": "playable",
       "runtime_gate": true,
-      "role_world_status": "role_world_not_started",
+      "role_world_status": "role_world_complete",
       "structural_family": "care_professional",
       "classification": "rollout_ready",
-      "priority_score": 1285,
+      "priority_score": 935,
       "dimensions": {
         "persistent_work_object": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/psykologi/job/professor_psykologi_job.json",
+            "data/Civication/roleWorlds/psykologi/professor_psykologi.json",
             "data/Civication/workGrammars/psykologi/professor_psykologi.json"
           ],
           "rationale": "Existing work content carries stable object/case/project signals and a complete workday loop; the rollout PR must bind them explicitly to the locked persistent-work contract."
@@ -7134,30 +6957,33 @@
           "rationale": "Existing authored sources already expose institutional/authority language; rollout must preserve direct, approval, escalation and forbidden-action boundaries."
         },
         "rhythm_waiting_handoff_rework": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/psykologi/job/professor_psykologi_job.json",
             "data/Civication/mailPlans/psykologi/professor_psykologi_plan.json",
+            "data/Civication/roleWorlds/psykologi/professor_psykologi.json",
             "data/Civication/workGrammars/psykologi/professor_psykologi.json"
           ],
-          "rationale": "Waiting, handoff, interruption or rework is not yet explicit enough to prove a distinct role rhythm."
+          "rationale": "The current runtime-authored role already exposes deadline/rework/handoff signals; rollout must make the rhythm role-specific and persistent."
         },
         "history_go_affordance": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/psykologi/knowledge/professor_psykologi_knowledge.json",
             "data/Civication/roleModels/psykologi/professor_psykologi.json",
+            "data/Civication/roleWorlds/psykologi/professor_psykologi.json",
             "data/Civication/workGrammars/psykologi/professor_psykologi.json"
           ],
           "rationale": "Career knowledge integration is complete; the rollout PR must author a concrete better-choice affordance while keeping authority independent from knowledge."
         },
         "situated_reputation": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/psykologi/job/professor_psykologi_job.json",
-            "data/Civication/mailPlans/psykologi/professor_psykologi_plan.json"
+            "data/Civication/mailPlans/psykologi/professor_psykologi_plan.json",
+            "data/Civication/roleWorlds/psykologi/professor_psykologi.json"
           ],
-          "rationale": "Situated reputation audiences are not yet explicit for this role; do not substitute the legacy/global reputation summary."
+          "rationale": "Role-authored sources already contain situated audience/standing signals; rollout must bind only bounded authored audience IDs."
         },
         "people_places_integrity": {
           "status": "foundation_ready",
@@ -7167,6 +6993,7 @@
             "data/Civication/lifestory/roles/professor_psykologi/threads.json",
             "data/Civication/mailFamilies/psykologi/people/professor_psykologi_people.json",
             "data/Civication/roleModels/psykologi/professor_psykologi.json",
+            "data/Civication/roleWorlds/psykologi/professor_psykologi.json",
             "data/Civication/workGrammars/psykologi/professor_psykologi.json"
           ],
           "rationale": "Career People and Places coverage is complete; rollout still must verify factual canonical references and keep invented workplace drama explicitly fictional."
@@ -7176,10 +7003,12 @@
           "evidence": [
             "data/Civication/mailFamilies/psykologi/job/professor_psykologi_job.json",
             "data/Civication/mailPlans/psykologi/professor_psykologi_plan.json",
+            "data/Civication/roleWorlds/psykologi/professor_psykologi.json",
             "data/Civication/workGrammars/psykologi/professor_psykologi.json",
             "tests/civication-psychology-academic-career-ladder.test.js",
             "tests/civication-psychology-career-contract.test.js",
-            "tests/civication-psykologi-professor_psykologi-rollout-playability.test.js"
+            "tests/civication-psykologi-professor_psykologi-rollout-playability.test.js",
+            "tests/civication-psykologi-professor-psykologi-role-world-rollout.test.js"
           ],
           "rationale": "Role-specific tests and authored source paths exist; rollout must add strict scene-registry parity and source provenance for new realism scenes."
         }
@@ -7190,19 +7019,18 @@
         "rationale": "Cross-role linkage is optional and must only be authored where the work itself is genuinely shared."
       },
       "blockers": [],
-      "authored_work_required": [
-        "rhythm_waiting_handoff_rework",
-        "situated_reputation"
-      ],
+      "authored_work_required": [],
       "source_refs": [
         "data/Civication/mailFamilies/psykologi/job/professor_psykologi_job.json",
         "data/Civication/mailPlans/psykologi/professor_psykologi_plan.json",
+        "data/Civication/roleWorlds/psykologi/professor_psykologi.json",
         "data/Civication/workGrammars/psykologi/professor_psykologi.json",
         "tests/civication-psychology-academic-career-ladder.test.js",
         "tests/civication-psychology-career-contract.test.js",
-        "tests/civication-psykologi-professor_psykologi-rollout-playability.test.js"
+        "tests/civication-psykologi-professor_psykologi-rollout-playability.test.js",
+        "tests/civication-psykologi-professor-psykologi-role-world-rollout.test.js"
       ],
-      "already_reference_or_pilot": false
+      "already_reference_or_pilot": true
     },
     {
       "key": "psykologi/psykolog",
@@ -7213,15 +7041,16 @@
       ],
       "career_status": "playable",
       "runtime_gate": true,
-      "role_world_status": "role_world_not_started",
+      "role_world_status": "role_world_complete",
       "structural_family": "care_professional",
       "classification": "rollout_ready",
-      "priority_score": 1285,
+      "priority_score": 935,
       "dimensions": {
         "persistent_work_object": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/psykologi/job/psykolog_job.json",
+            "data/Civication/roleWorlds/psykologi/psykolog.json",
             "data/Civication/workGrammars/psykologi/psykolog.json"
           ],
           "rationale": "Existing work content carries stable object/case/project signals and a complete workday loop; the rollout PR must bind them explicitly to the locked persistent-work contract."
@@ -7232,33 +7061,36 @@
             "data/Civication/roleModels/psykologi/psykolog.json",
             "data/Civication/workGrammars/psykologi/psykolog.json"
           ],
-          "rationale": "Career Matrix already proves an explicit authority boundary; rollout must author the richer institution/approval/escalation surface without changing the authority contract."
+          "rationale": "Existing authored sources already expose institutional/authority language; rollout must preserve direct, approval, escalation and forbidden-action boundaries."
         },
         "rhythm_waiting_handoff_rework": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/psykologi/job/psykolog_job.json",
             "data/Civication/mailPlans/psykologi/psykolog_plan.json",
+            "data/Civication/roleWorlds/psykologi/psykolog.json",
             "data/Civication/workGrammars/psykologi/psykolog.json"
           ],
-          "rationale": "Waiting, handoff, interruption or rework is not yet explicit enough to prove a distinct role rhythm."
+          "rationale": "The current runtime-authored role already exposes deadline/rework/handoff signals; rollout must make the rhythm role-specific and persistent."
         },
         "history_go_affordance": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/psykologi/knowledge/psykolog_knowledge.json",
             "data/Civication/roleModels/psykologi/psykolog.json",
+            "data/Civication/roleWorlds/psykologi/psykolog.json",
             "data/Civication/workGrammars/psykologi/psykolog.json"
           ],
           "rationale": "Career knowledge integration is complete; the rollout PR must author a concrete better-choice affordance while keeping authority independent from knowledge."
         },
         "situated_reputation": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/psykologi/job/psykolog_job.json",
-            "data/Civication/mailPlans/psykologi/psykolog_plan.json"
+            "data/Civication/mailPlans/psykologi/psykolog_plan.json",
+            "data/Civication/roleWorlds/psykologi/psykolog.json"
           ],
-          "rationale": "Situated reputation audiences are not yet explicit for this role; do not substitute the legacy/global reputation summary."
+          "rationale": "Role-authored sources already contain situated audience/standing signals; rollout must bind only bounded authored audience IDs."
         },
         "people_places_integrity": {
           "status": "foundation_ready",
@@ -7268,6 +7100,7 @@
             "data/Civication/lifestory/roles/psykolog/threads.json",
             "data/Civication/mailFamilies/psykologi/people/psykolog_people.json",
             "data/Civication/roleModels/psykologi/psykolog.json",
+            "data/Civication/roleWorlds/psykologi/psykolog.json",
             "data/Civication/workGrammars/psykologi/psykolog.json"
           ],
           "rationale": "Career People and Places coverage is complete; rollout still must verify factual canonical references and keep invented workplace drama explicitly fictional."
@@ -7277,12 +7110,12 @@
           "evidence": [
             "data/Civication/mailFamilies/psykologi/job/psykolog_job.json",
             "data/Civication/mailPlans/psykologi/psykolog_plan.json",
+            "data/Civication/roleWorlds/psykologi/psykolog.json",
             "data/Civication/workGrammars/psykologi/psykolog.json",
             "tests/civication-badge-career-matrix.test.js",
             "tests/civication-city-map-node-roles.test.js",
             "tests/civication-psychology-academic-career-ladder.test.js",
-            "tests/civication-psychology-career-contract.test.js",
-            "tests/civication-psychology-clinical-career-ladder.test.js"
+            "tests/civication-psychology-career-contract.test.js"
           ],
           "rationale": "Role-specific tests and authored source paths exist; rollout must add strict scene-registry parity and source provenance for new realism scenes."
         }
@@ -7293,13 +7126,11 @@
         "rationale": "Cross-role linkage is optional and must only be authored where the work itself is genuinely shared."
       },
       "blockers": [],
-      "authored_work_required": [
-        "rhythm_waiting_handoff_rework",
-        "situated_reputation"
-      ],
+      "authored_work_required": [],
       "source_refs": [
         "data/Civication/mailFamilies/psykologi/job/psykolog_job.json",
         "data/Civication/mailPlans/psykologi/psykolog_plan.json",
+        "data/Civication/roleWorlds/psykologi/psykolog.json",
         "data/Civication/workGrammars/psykologi/psykolog.json",
         "tests/civication-badge-career-matrix.test.js",
         "tests/civication-city-map-node-roles.test.js",
@@ -7309,13 +7140,18 @@
         "tests/civication-psychology-entry-career-ladder.test.js",
         "tests/civication-psychology-guidance-career-ladder.test.js",
         "tests/civication-psykolog-rollout-playability.test.js",
+        "tests/civication-psykologi-fagansvarlig-role-world-rollout.test.js",
         "tests/civication-psykologi-fagansvarlig-rollout-playability.test.js",
         "tests/civication-psykologi-forsker_psykologi-rollout-playability.test.js",
+        "tests/civication-psykologi-forsker-psykologi-role-world-rollout.test.js",
         "tests/civication-psykologi-miljoarbeid-playability.test.js",
+        "tests/civication-psykologi-miljoarbeid-role-world-rollout.test.js",
         "tests/civication-psykologi-professor_psykologi-rollout-playability.test.js",
+        "tests/civication-psykologi-professor-psykologi-role-world-rollout.test.js",
+        "tests/civication-psykologi-psykolog-role-world-rollout.test.js",
         "tests/civication-social-encounters.test.js"
       ],
-      "already_reference_or_pilot": false
+      "already_reference_or_pilot": true
     },
     {
       "key": "psykologi/psykologi_arbeids_og_karriereveiledning",
@@ -7435,18 +7271,19 @@
       ],
       "career_status": "playable",
       "runtime_gate": true,
-      "role_world_status": "role_world_not_started",
+      "role_world_status": "role_world_complete",
       "structural_family": "care_professional",
       "classification": "rollout_ready",
-      "priority_score": 1285,
+      "priority_score": 935,
       "dimensions": {
         "persistent_work_object": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/psykologi/job/psykologi_miljoarbeid_job.json",
+            "data/Civication/roleWorlds/psykologi/psykologi_miljoarbeid.json",
             "data/Civication/workGrammars/psykologi/psykologi_miljoarbeid.json"
           ],
-          "rationale": "The current career foundation does not yet prove a stable persistent work object across later scenes."
+          "rationale": "Existing work content carries stable object/case/project signals and a complete workday loop; the rollout PR must bind them explicitly to the locked persistent-work contract."
         },
         "institution_authority": {
           "status": "foundation_ready",
@@ -7465,6 +7302,7 @@
           "evidence": [
             "data/Civication/mailFamilies/psykologi/job/psykologi_miljoarbeid_job.json",
             "data/Civication/mailPlans/psykologi/psykologi_miljoarbeid_plan.json",
+            "data/Civication/roleWorlds/psykologi/psykologi_miljoarbeid.json",
             "data/Civication/workGrammars/psykologi/psykologi_miljoarbeid.json"
           ],
           "rationale": "The current runtime-authored role already exposes deadline/rework/handoff signals; rollout must make the rhythm role-specific and persistent."
@@ -7477,17 +7315,19 @@
             "data/Civication/roleModels/psykologi/atferdsobservator.json",
             "data/Civication/roleModels/psykologi/psykologi_miljoarbeid.json",
             "data/Civication/roleModels/psykologi/samtalepartner.json",
-            "data/Civication/roleModels/psykologi/titter.json"
+            "data/Civication/roleModels/psykologi/titter.json",
+            "data/Civication/roleWorlds/psykologi/psykologi_miljoarbeid.json"
           ],
           "rationale": "Career knowledge integration is complete; the rollout PR must author a concrete better-choice affordance while keeping authority independent from knowledge."
         },
         "situated_reputation": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/psykologi/job/psykologi_miljoarbeid_job.json",
-            "data/Civication/mailPlans/psykologi/psykologi_miljoarbeid_plan.json"
+            "data/Civication/mailPlans/psykologi/psykologi_miljoarbeid_plan.json",
+            "data/Civication/roleWorlds/psykologi/psykologi_miljoarbeid.json"
           ],
-          "rationale": "Situated reputation audiences are not yet explicit for this role; do not substitute the legacy/global reputation summary."
+          "rationale": "Role-authored sources already contain situated audience/standing signals; rollout must bind only bounded authored audience IDs."
         },
         "people_places_integrity": {
           "status": "foundation_ready",
@@ -7498,7 +7338,8 @@
             "data/Civication/mailFamilies/psykologi/people/psykologi_miljoarbeid_people.json",
             "data/Civication/roleModels/psykologi/analytiker.json",
             "data/Civication/roleModels/psykologi/atferdsobservator.json",
-            "data/Civication/roleModels/psykologi/psykologi_miljoarbeid.json"
+            "data/Civication/roleModels/psykologi/psykologi_miljoarbeid.json",
+            "data/Civication/roleWorlds/psykologi/psykologi_miljoarbeid.json"
           ],
           "rationale": "Career People and Places coverage is complete; rollout still must verify factual canonical references and keep invented workplace drama explicitly fictional."
         },
@@ -7507,6 +7348,7 @@
           "evidence": [
             "data/Civication/mailFamilies/psykologi/job/psykologi_miljoarbeid_job.json",
             "data/Civication/mailPlans/psykologi/psykologi_miljoarbeid_plan.json",
+            "data/Civication/roleWorlds/psykologi/psykologi_miljoarbeid.json",
             "data/Civication/workGrammars/psykologi/psykologi_miljoarbeid.json",
             "tests/civication-badge-career-matrix.test.js",
             "tests/civication-psychology-career-contract.test.js",
@@ -7525,20 +7367,19 @@
         "rationale": "This role has plausible same-domain handoff or leadership counterparts; a shared object is a design candidate, not a mandatory gate."
       },
       "blockers": [],
-      "authored_work_required": [
-        "persistent_work_object",
-        "situated_reputation"
-      ],
+      "authored_work_required": [],
       "source_refs": [
         "data/Civication/mailFamilies/psykologi/job/psykologi_miljoarbeid_job.json",
         "data/Civication/mailPlans/psykologi/psykologi_miljoarbeid_plan.json",
+        "data/Civication/roleWorlds/psykologi/psykologi_miljoarbeid.json",
         "data/Civication/workGrammars/psykologi/psykologi_miljoarbeid.json",
         "tests/civication-badge-career-matrix.test.js",
         "tests/civication-psychology-career-contract.test.js",
         "tests/civication-psychology-entry-career-ladder.test.js",
-        "tests/civication-psykologi-miljoarbeid-playability.test.js"
+        "tests/civication-psykologi-miljoarbeid-playability.test.js",
+        "tests/civication-psykologi-miljoarbeid-role-world-rollout.test.js"
       ],
-      "already_reference_or_pilot": false
+      "already_reference_or_pilot": true
     },
     {
       "key": "psykologi/spesialistpsykolog",
@@ -7825,15 +7666,16 @@
       ],
       "career_status": "playable",
       "runtime_gate": true,
-      "role_world_status": "role_world_not_started",
+      "role_world_status": "role_world_complete",
       "structural_family": "research_education",
       "classification": "rollout_ready",
-      "priority_score": 1260,
+      "priority_score": 910,
       "dimensions": {
         "persistent_work_object": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/religion/job/religion_forskning_job.json",
+            "data/Civication/roleWorlds/religion/religion_forskning.json",
             "data/Civication/workGrammars/religion/religion_forskning.json"
           ],
           "rationale": "Existing work content carries stable object/case/project signals and a complete workday loop; the rollout PR must bind them explicitly to the locked persistent-work contract."
@@ -7844,13 +7686,14 @@
             "data/Civication/roleModels/religion/religion_forskning.json",
             "data/Civication/workGrammars/religion/religion_forskning.json"
           ],
-          "rationale": "Career Matrix already proves an explicit authority boundary; rollout must author the richer institution/approval/escalation surface without changing the authority contract."
+          "rationale": "Existing authored sources already expose institutional/authority language; rollout must preserve direct, approval, escalation and forbidden-action boundaries."
         },
         "rhythm_waiting_handoff_rework": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/religion/job/religion_forskning_job.json",
             "data/Civication/mailPlans/religion/religion_forskning_plan.json",
+            "data/Civication/roleWorlds/religion/religion_forskning.json",
             "data/Civication/workGrammars/religion/religion_forskning.json"
           ],
           "rationale": "The current runtime-authored role already exposes deadline/rework/handoff signals; rollout must make the rhythm role-specific and persistent."
@@ -7860,23 +7703,26 @@
           "evidence": [
             "data/Civication/mailFamilies/religion/knowledge/religion_forskning_knowledge.json",
             "data/Civication/roleModels/religion/religion_forskning.json",
+            "data/Civication/roleWorlds/religion/religion_forskning.json",
             "data/Civication/workGrammars/religion/religion_forskning.json"
           ],
           "rationale": "Career knowledge integration is complete; the rollout PR must author a concrete better-choice affordance while keeping authority independent from knowledge."
         },
         "situated_reputation": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/religion/job/religion_forskning_job.json",
-            "data/Civication/mailPlans/religion/religion_forskning_plan.json"
+            "data/Civication/mailPlans/religion/religion_forskning_plan.json",
+            "data/Civication/roleWorlds/religion/religion_forskning.json"
           ],
-          "rationale": "Situated reputation audiences are not yet explicit for this role; do not substitute the legacy/global reputation summary."
+          "rationale": "Role-authored sources already contain situated audience/standing signals; rollout must bind only bounded authored audience IDs."
         },
         "people_places_integrity": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/religion/people/religion_forskning_people.json",
             "data/Civication/roleModels/religion/religion_forskning.json",
+            "data/Civication/roleWorlds/religion/religion_forskning.json",
             "data/Civication/workGrammars/religion/religion_forskning.json"
           ],
           "rationale": "Career People and Places coverage is complete; rollout still must verify factual canonical references and keep invented workplace drama explicitly fictional."
@@ -7886,9 +7732,11 @@
           "evidence": [
             "data/Civication/mailFamilies/religion/job/religion_forskning_job.json",
             "data/Civication/mailPlans/religion/religion_forskning_plan.json",
+            "data/Civication/roleWorlds/religion/religion_forskning.json",
             "data/Civication/workGrammars/religion/religion_forskning.json",
             "tests/civication-career-knowledge-bridge.test.js",
             "tests/civication-religion-forskning-playability.test.js",
+            "tests/civication-religion-forskning-role-world-rollout.test.js",
             "tests/civication-religion-life-career-split.test.js"
           ],
           "rationale": "Role-specific tests and authored source paths exist; rollout must add strict scene-registry parity and source provenance for new realism scenes."
@@ -7900,18 +7748,18 @@
         "rationale": "Cross-role linkage is optional and must only be authored where the work itself is genuinely shared."
       },
       "blockers": [],
-      "authored_work_required": [
-        "situated_reputation"
-      ],
+      "authored_work_required": [],
       "source_refs": [
         "data/Civication/mailFamilies/religion/job/religion_forskning_job.json",
         "data/Civication/mailPlans/religion/religion_forskning_plan.json",
+        "data/Civication/roleWorlds/religion/religion_forskning.json",
         "data/Civication/workGrammars/religion/religion_forskning.json",
         "tests/civication-career-knowledge-bridge.test.js",
         "tests/civication-religion-forskning-playability.test.js",
+        "tests/civication-religion-forskning-role-world-rollout.test.js",
         "tests/civication-religion-life-career-split.test.js"
       ],
-      "already_reference_or_pilot": false
+      "already_reference_or_pilot": true
     },
     {
       "key": "religion/religion_utredning_og_radgivning",
@@ -8526,18 +8374,19 @@
       ],
       "career_status": "playable",
       "runtime_gate": true,
-      "role_world_status": "role_world_not_started",
+      "role_world_status": "role_world_complete",
       "structural_family": "event_operational",
       "classification": "rollout_ready",
-      "priority_score": 1285,
+      "priority_score": 935,
       "dimensions": {
         "persistent_work_object": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/sport/job/sport_sportsledelse_job.json",
+            "data/Civication/roleWorlds/sport/sport_sportsledelse.json",
             "data/Civication/workGrammars/sport/sport_sportsledelse.json"
           ],
-          "rationale": "The current career foundation does not yet prove a stable persistent work object across later scenes."
+          "rationale": "Existing work content carries stable object/case/project signals and a complete workday loop; the rollout PR must bind them explicitly to the locked persistent-work contract."
         },
         "institution_authority": {
           "status": "foundation_ready",
@@ -8548,36 +8397,40 @@
           "rationale": "Existing authored sources already expose institutional/authority language; rollout must preserve direct, approval, escalation and forbidden-action boundaries."
         },
         "rhythm_waiting_handoff_rework": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/sport/job/sport_sportsledelse_job.json",
             "data/Civication/mailPlans/sport/sport_sportsledelse_plan.json",
+            "data/Civication/roleWorlds/sport/sport_sportsledelse.json",
             "data/Civication/workGrammars/sport/sport_sportsledelse.json"
           ],
-          "rationale": "Waiting, handoff, interruption or rework is not yet explicit enough to prove a distinct role rhythm."
+          "rationale": "The current runtime-authored role already exposes deadline/rework/handoff signals; rollout must make the rhythm role-specific and persistent."
         },
         "history_go_affordance": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/sport/knowledge/sport_sportsledelse_knowledge.json",
             "data/Civication/roleModels/sport/sportssjef.json",
+            "data/Civication/roleWorlds/sport/sport_sportsledelse.json",
             "data/Civication/workGrammars/sport/sport_sportsledelse.json"
           ],
           "rationale": "Career knowledge integration is complete; the rollout PR must author a concrete better-choice affordance while keeping authority independent from knowledge."
         },
         "situated_reputation": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/sport/job/sport_sportsledelse_job.json",
-            "data/Civication/mailPlans/sport/sport_sportsledelse_plan.json"
+            "data/Civication/mailPlans/sport/sport_sportsledelse_plan.json",
+            "data/Civication/roleWorlds/sport/sport_sportsledelse.json"
           ],
-          "rationale": "Situated reputation audiences are not yet explicit for this role; do not substitute the legacy/global reputation summary."
+          "rationale": "Role-authored sources already contain situated audience/standing signals; rollout must bind only bounded authored audience IDs."
         },
         "people_places_integrity": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/sport/people/sport_sportsledelse_people.json",
             "data/Civication/roleModels/sport/sportssjef.json",
+            "data/Civication/roleWorlds/sport/sport_sportsledelse.json",
             "data/Civication/workGrammars/sport/sport_sportsledelse.json"
           ],
           "rationale": "Career People and Places coverage is complete; rollout still must verify factual canonical references and keep invented workplace drama explicitly fictional."
@@ -8587,8 +8440,10 @@
           "evidence": [
             "data/Civication/mailFamilies/sport/job/sport_sportsledelse_job.json",
             "data/Civication/mailPlans/sport/sport_sportsledelse_plan.json",
+            "data/Civication/roleWorlds/sport/sport_sportsledelse.json",
             "data/Civication/workGrammars/sport/sport_sportsledelse.json",
             "tests/civication-sport-life-career-split.test.js",
+            "tests/civication-sport-sportsledelse-role-world-rollout.test.js",
             "tests/civication-sport-sportsledelse-rollout-playability.test.js"
           ],
           "rationale": "Role-specific tests and authored source paths exist; rollout must add strict scene-registry parity and source provenance for new realism scenes."
@@ -8602,19 +8457,17 @@
         "rationale": "This role has plausible same-domain handoff or leadership counterparts; a shared object is a design candidate, not a mandatory gate."
       },
       "blockers": [],
-      "authored_work_required": [
-        "persistent_work_object",
-        "rhythm_waiting_handoff_rework",
-        "situated_reputation"
-      ],
+      "authored_work_required": [],
       "source_refs": [
         "data/Civication/mailFamilies/sport/job/sport_sportsledelse_job.json",
         "data/Civication/mailPlans/sport/sport_sportsledelse_plan.json",
+        "data/Civication/roleWorlds/sport/sport_sportsledelse.json",
         "data/Civication/workGrammars/sport/sport_sportsledelse.json",
         "tests/civication-sport-life-career-split.test.js",
+        "tests/civication-sport-sportsledelse-role-world-rollout.test.js",
         "tests/civication-sport-sportsledelse-rollout-playability.test.js"
       ],
-      "already_reference_or_pilot": false
+      "already_reference_or_pilot": true
     },
     {
       "key": "sport/sport_trener",
@@ -8860,15 +8713,16 @@
       ],
       "career_status": "playable",
       "runtime_gate": true,
-      "role_world_status": "role_world_not_started",
+      "role_world_status": "role_world_complete",
       "structural_family": "creative_production",
       "classification": "rollout_ready",
-      "priority_score": 1285,
+      "priority_score": 935,
       "dimensions": {
         "persistent_work_object": {
           "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/subkultur/job/subkultur_arrangementsdrift_job.json",
+            "data/Civication/roleWorlds/subkultur/subkultur_arrangementsdrift.json",
             "data/Civication/workGrammars/subkultur/subkultur_arrangementsdrift.json"
           ],
           "rationale": "Existing work content carries stable object/case/project signals and a complete workday loop; the rollout PR must bind them explicitly to the locked persistent-work contract."
@@ -8890,6 +8744,7 @@
           "evidence": [
             "data/Civication/mailFamilies/subkultur/job/subkultur_arrangementsdrift_job.json",
             "data/Civication/mailPlans/subkultur/subkultur_arrangementsdrift_plan.json",
+            "data/Civication/roleWorlds/subkultur/subkultur_arrangementsdrift.json",
             "data/Civication/workGrammars/subkultur/subkultur_arrangementsdrift.json"
           ],
           "rationale": "The current runtime-authored role already exposes deadline/rework/handoff signals; rollout must make the rhythm role-specific and persistent."
@@ -8902,17 +8757,19 @@
             "data/Civication/roleModels/subkultur/gatesmart.json",
             "data/Civication/roleModels/subkultur/hakkekylling.json",
             "data/Civication/roleModels/subkultur/observor.json",
-            "data/Civication/roleModels/subkultur/subkultur_arrangementsdrift.json"
+            "data/Civication/roleModels/subkultur/subkultur_arrangementsdrift.json",
+            "data/Civication/roleWorlds/subkultur/subkultur_arrangementsdrift.json"
           ],
           "rationale": "Career knowledge integration is complete; the rollout PR must author a concrete better-choice affordance while keeping authority independent from knowledge."
         },
         "situated_reputation": {
-          "status": "needs_role_authored_work",
+          "status": "foundation_ready",
           "evidence": [
             "data/Civication/mailFamilies/subkultur/job/subkultur_arrangementsdrift_job.json",
-            "data/Civication/mailPlans/subkultur/subkultur_arrangementsdrift_plan.json"
+            "data/Civication/mailPlans/subkultur/subkultur_arrangementsdrift_plan.json",
+            "data/Civication/roleWorlds/subkultur/subkultur_arrangementsdrift.json"
           ],
-          "rationale": "Situated reputation audiences are not yet explicit for this role; do not substitute the legacy/global reputation summary."
+          "rationale": "Role-authored sources already contain situated audience/standing signals; rollout must bind only bounded authored audience IDs."
         },
         "people_places_integrity": {
           "status": "foundation_ready",
@@ -8923,6 +8780,7 @@
             "data/Civication/roleModels/subkultur/hakkekylling.json",
             "data/Civication/roleModels/subkultur/observor.json",
             "data/Civication/roleModels/subkultur/subkultur_arrangementsdrift.json",
+            "data/Civication/roleWorlds/subkultur/subkultur_arrangementsdrift.json",
             "data/Civication/workGrammars/subkultur/subkultur_arrangementsdrift.json"
           ],
           "rationale": "Career People and Places coverage is complete; rollout still must verify factual canonical references and keep invented workplace drama explicitly fictional."
@@ -8932,9 +8790,11 @@
           "evidence": [
             "data/Civication/mailFamilies/subkultur/job/subkultur_arrangementsdrift_job.json",
             "data/Civication/mailPlans/subkultur/subkultur_arrangementsdrift_plan.json",
+            "data/Civication/roleWorlds/subkultur/subkultur_arrangementsdrift.json",
             "data/Civication/workGrammars/subkultur/subkultur_arrangementsdrift.json",
             "tests/civication-life-position-career-split.test.js",
             "tests/civication-subkultur-arrangementsdrift-playability.test.js",
+            "tests/civication-subkultur-arrangementsdrift-role-world-rollout.test.js",
             "tests/civication-subkultur-career-architecture.test.js"
           ],
           "rationale": "Role-specific tests and authored source paths exist; rollout must add strict scene-registry parity and source provenance for new realism scenes."
@@ -8951,18 +8811,18 @@
         "rationale": "This role has plausible same-domain handoff or leadership counterparts; a shared object is a design candidate, not a mandatory gate."
       },
       "blockers": [],
-      "authored_work_required": [
-        "situated_reputation"
-      ],
+      "authored_work_required": [],
       "source_refs": [
         "data/Civication/mailFamilies/subkultur/job/subkultur_arrangementsdrift_job.json",
         "data/Civication/mailPlans/subkultur/subkultur_arrangementsdrift_plan.json",
+        "data/Civication/roleWorlds/subkultur/subkultur_arrangementsdrift.json",
         "data/Civication/workGrammars/subkultur/subkultur_arrangementsdrift.json",
         "tests/civication-life-position-career-split.test.js",
         "tests/civication-subkultur-arrangementsdrift-playability.test.js",
+        "tests/civication-subkultur-arrangementsdrift-role-world-rollout.test.js",
         "tests/civication-subkultur-career-architecture.test.js"
       ],
-      "already_reference_or_pilot": false
+      "already_reference_or_pilot": true
     },
     {
       "key": "subkultur/subkultur_kulturarena_ledelse",
