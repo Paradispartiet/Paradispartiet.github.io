@@ -1635,6 +1635,10 @@
                 {
                   "id": "em_his_krig_okkupasjon_krig_mobilisering_og_statsdannelse",
                   "label": "Okkupasjon, samarbeid, tilpasning og motstand"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
                 }
               ],
               "milestones": [
@@ -1659,18 +1663,138 @@
                     "Hovedforløpet er godt dokumentert, men den eksakte byggestarten og fasene i den tidlige borgen angis ofte omtrentlig.",
                     "Festningen kan leses både som vern av byen og som en materiell demonstrasjon av kongemakt, skattlegging og kontroll."
                   ]
+                },
+                {
+                  "id": "production_claim_akershus_festning_popup_01",
+                  "year": 1299,
+                  "title": "Akershus ble sannsynligvis påbegynt av Håkon 5. i perioden 1299–1304.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Identity, building phases, 1716, occupation, 42 executions, current use and management. – popup, setning 1",
+                      "url": "https://www.forsvarsbygg.no/eiendomsforvaltning/festningene/akershus-festning",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/akershus_festning.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_akershus_festning_popup_01",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_akershus_festning_popup_03",
+                  "year": 1308,
+                  "title": "Allerede i 1308 kunne den nye borgen motstå hertug Erik Magnussons angrep. `year: 1299` beholdes som teknisk tidsanker i steddataene, men kildene støtter ikke ett sikkert byggeår.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Identity, building phases, 1716, occupation, 42 executions, current use and management. – popup, setning 3",
+                      "url": "https://www.forsvarsbygg.no/eiendomsforvaltning/festningene/akershus-festning",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/akershus_festning.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_akershus_festning_popup_03",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_akershus_1308_borgen_holder",
+                  "year": 1308,
+                  "title": "Borgen holder i 1308",
+                  "consequence": "Den nyanlagte borgen ble satt på sin første store prøve da hertug Erik Magnusson angrep.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "SNL – Akershus slott og festning",
+                      "url": "https://snl.no/Akershus_slott_og_festning",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Forsvarsbygg – Akershus festning",
+                      "url": "https://www.forsvarsbygg.no/eiendomsforvaltning/festningene/akershus-festning",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_akershus_1308_borgen_holder",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_akershus_1_1308",
+                  "year": 1308,
+                  "title": "Første dokumenterte store angrep",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Første dokumenterte store angrep",
+                      "url": "https://snl.no/Akershus_slott_og_festning",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_akershus_festning.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_akershus_festning_popup_05",
+                  "year": 1500,
+                  "title": "På 1500- og 1600-tallet ble Akershus modernisert etter europeiske prinsipper for artilleriforsvar.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Identity, building phases, 1716, occupation, 42 executions, current use and management. – popup, setning 5",
+                      "url": "https://www.forsvarsbygg.no/eiendomsforvaltning/festningene/akershus-festning",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/akershus_festning.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_akershus_festning_popup_05",
+                  "story_id": "",
+                  "limitations": []
                 }
               ],
               "period_cases": [],
               "connections": {
-                "person_ids": [],
+                "person_ids": [
+                  "hannibal_sehested"
+                ],
                 "works": [],
                 "stories": [
                   {
-                    "id": "st_akershus_terboven_1940",
-                    "title": "Terboven tar over Akershus, september 1940",
-                    "year": 1940,
-                    "type": "historical"
+                    "id": "st_akershus_1308_borgen_holder",
+                    "title": "Borgen holder i 1308",
+                    "year": 1308,
+                    "type": "turning_point"
+                  },
+                  {
+                    "id": "st_akershus_1716_beleiringen",
+                    "title": "39 dager foran Akershus",
+                    "year": 1716,
+                    "type": "conflict"
+                  },
+                  {
+                    "id": "st_akershus_slaveriet_1739",
+                    "title": "Da festningsarbeid ble straff",
+                    "year": 1739,
+                    "type": "historical_event"
+                  },
+                  {
+                    "id": "st_akershus_11_mai_1945",
+                    "title": "Akershus skifter hender",
+                    "year": 1945,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -3843,7 +3967,7 @@
             }
           ],
           "placeCount": 21,
-          "milestoneCount": 64
+          "milestoneCount": 69
         },
         "historie_tidlig_moderne_stat_handel_og_reformasjon": {
           "places": [
@@ -3854,12 +3978,28 @@
               "source_file": "places/historie/oslo/places_historie/akershus_festning.json",
               "roles": [
                 {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
                   "id": "em_his_embetsstat_forvaltning",
                   "label": "Embetsstat"
                 },
                 {
+                  "id": "konflikt_og_motstand",
+                  "label": "Konflikt og motstand"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
                   "id": "em_his_stat_institusjoner",
                   "label": "Stat/institusjon"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
                 }
               ],
               "milestones": [
@@ -3884,18 +4024,219 @@
                     "Kilden beskriver oppgavemessig kontinuitet og lokaliserer kanselliet ved Akershus, men omtrent år 1600 er en bred tidsangivelse for tidlig 1600-tall og sier ikke at organisasjon, personale eller rutiner var uendret.",
                     "Kontinuiteten kan forstås som institusjonell arv i sekretariatsoppgaver, men 1814 var samtidig et statsrettslig og organisatorisk brudd som skapte nye norske departementer."
                   ]
+                },
+                {
+                  "id": "production_claim_akershus_festning_popup_07",
+                  "year": 1642,
+                  "title": "Hannibal Sehested bodde her som stattholder fra 1642, mens store arbeider gjorde festningen til et tydeligere militært og administrativt maktsentrum.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Retterstedet: 42 victims, execution dates and 1949 memorial unveiling. – popup, setning 7",
+                      "url": "https://www.forsvarsbygg.no/globalassets/festningene/akershus-festning/akershus-festning.pdf",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/akershus_festning.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_akershus_festning_popup_07",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_akershus_2_1642",
+                  "year": 1642,
+                  "title": "Hannibal Sehested på Akershus",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Hannibal Sehested på Akershus",
+                      "url": "https://snl.no/Hannibal_Sehested",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_akershus_festning.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_akershus_1716_beleiringen",
+                  "year": 1716,
+                  "title": "39 dager foran Akershus",
+                  "consequence": "Karl 12. tok Christiania, men festningen gjorde okkupasjonen av byen strategisk usikker.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "SNL – beleiringen av Akershus festning 1716",
+                      "url": "https://snl.no/beleiringen_av_Akershus_festning_-_1716",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "SNL – den svenske invasjonen av Norge i 1716",
+                      "url": "https://snl.no/den_svenske_invasjonen_av_Norge_i_1716",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_akershus_1716_beleiringen",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_akershus_festning_desc_03",
+                  "year": 1716,
+                  "title": "Anlegget motsto beleiringer, blant annet Karl 12.s angrep i 1716.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "1716 chronology, garrison, Swedish limitations and withdrawal. – desc, setning 3",
+                      "url": "https://snl.no/beleiringen_av_Akershus_festning_-_1716",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/akershus_festning.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_akershus_festning_desc_03",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_akershus_festning_popup_08",
+                  "year": 1716,
+                  "title": "I 1716 inntok Karl 12.s svenske hær Christiania, men ikke Akershus.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "1716 chronology, garrison, Swedish limitations and withdrawal. – popup, setning 8",
+                      "url": "https://snl.no/beleiringen_av_Akershus_festning_-_1716",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/akershus_festning.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_akershus_festning_popup_08",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_akershus_3_1716",
+                  "year": 1716,
+                  "title": "Karl 12. beleirer Akershus",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Karl 12. beleirer Akershus",
+                      "url": "https://snl.no/beleiringen_av_Akershus_festning_-_1716",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_akershus_festning.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_akershus_4_1739",
+                  "year": 1739,
+                  "title": "Akershus festnings slaveri",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Akershus festnings slaveri",
+                      "url": "https://snl.no/Akershus_landsfengsel",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_akershus_festning.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_akershus_slaveriet_1739",
+                  "year": 1739,
+                  "title": "Da festningsarbeid ble straff",
+                  "consequence": "Akershus festnings slaveri bandt straff, tvangsarbeid og festningens vedlikehold sammen.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "SNL – Akershus landsfengsel",
+                      "url": "https://snl.no/Akershus_landsfengsel",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "SNL – Akershus slott og festning",
+                      "url": "https://snl.no/Akershus_slott_og_festning",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_akershus_slaveriet_1739",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_akershus_festning_popup_13",
+                  "year": 1814,
+                  "title": "Etter 1814 ble Akershus gradvis mindre viktig som aktivt forsvarsverk, men området mistet ikke funksjon.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Identity, building phases, 1716, occupation, 42 executions, current use and management. – popup, setning 13",
+                      "url": "https://www.forsvarsbygg.no/eiendomsforvaltning/festningene/akershus-festning",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/akershus_festning.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_akershus_festning_popup_13",
+                  "story_id": "",
+                  "limitations": []
                 }
               ],
               "period_cases": [],
               "connections": {
-                "person_ids": [],
+                "person_ids": [
+                  "hannibal_sehested"
+                ],
                 "works": [],
                 "stories": [
                   {
-                    "id": "st_akershus_terboven_1940",
-                    "title": "Terboven tar over Akershus, september 1940",
-                    "year": 1940,
-                    "type": "historical"
+                    "id": "st_akershus_1308_borgen_holder",
+                    "title": "Borgen holder i 1308",
+                    "year": 1308,
+                    "type": "turning_point"
+                  },
+                  {
+                    "id": "st_akershus_1716_beleiringen",
+                    "title": "39 dager foran Akershus",
+                    "year": 1716,
+                    "type": "conflict"
+                  },
+                  {
+                    "id": "st_akershus_slaveriet_1739",
+                    "title": "Da festningsarbeid ble straff",
+                    "year": 1739,
+                    "type": "historical_event"
+                  },
+                  {
+                    "id": "st_akershus_11_mai_1945",
+                    "title": "Akershus skifter hender",
+                    "year": 1945,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -8088,7 +8429,7 @@
             }
           ],
           "placeCount": 43,
-          "milestoneCount": 106
+          "milestoneCount": 115
         },
         "historie_revolusjoner_industri_og_demokratisering": {
           "places": [
@@ -8235,6 +8576,110 @@
                     "title": "Elva som ikke slutter ved kartkanten",
                     "year": 2014,
                     "type": "environmental"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "akershus_festning",
+              "name": "Akershus festning",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie/akershus_festning.json",
+              "roles": [
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_akershus_5_1854",
+                  "year": 1854,
+                  "title": "Akershus straffeanstalt",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Akershus straffeanstalt",
+                      "url": "https://snl.no/Akershus_landsfengsel",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_akershus_festning.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_akershus_6_1900",
+                  "year": 1900,
+                  "title": "Akershus landsfengsel",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Akershus landsfengsel",
+                      "url": "https://snl.no/Akershus_landsfengsel",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_akershus_festning.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_akershus_7_1905",
+                  "year": 1905,
+                  "title": "Restaureringsundersøkelser",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Restaureringsundersøkelser",
+                      "url": "https://snl.no/Akershus_slott_og_festning",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_akershus_festning.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "hannibal_sehested"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_akershus_1308_borgen_holder",
+                    "title": "Borgen holder i 1308",
+                    "year": 1308,
+                    "type": "turning_point"
+                  },
+                  {
+                    "id": "st_akershus_1716_beleiringen",
+                    "title": "39 dager foran Akershus",
+                    "year": 1716,
+                    "type": "conflict"
+                  },
+                  {
+                    "id": "st_akershus_slaveriet_1739",
+                    "title": "Da festningsarbeid ble straff",
+                    "year": 1739,
+                    "type": "historical_event"
+                  },
+                  {
+                    "id": "st_akershus_11_mai_1945",
+                    "title": "Akershus skifter hender",
+                    "year": 1945,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -9385,7 +9830,7 @@
                       "verifiedAt": ""
                     }
                   ],
-                  "source_file": "data/runtime/stories-all/part-003.json",
+                  "source_file": "data/runtime/stories-all/part-002.json",
                   "evidence_type": "canonical_story",
                   "claim_id": "",
                   "story_id": "st_bla_skilt_helverschous_fra_lokke_til_minneskilt",
@@ -10870,6 +11315,18 @@
               "source_file": "places/historie/oslo/places_historie_atlas_obscura_museum_batch_06/forsvarsmuseet.json",
               "roles": [
                 {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                },
+                {
                   "id": "em_his_vitenskap_teknologi_profesjoner_standardisering_og_autoritet",
                   "label": "Profesjoner, standardisering og autoritet"
                 },
@@ -10904,13 +11361,60 @@
                     "Katalogposten er presis om objekt, produsent, år og prøveformål, men gir ikke en komplett anskaffelses-, test- eller produksjonskjede.",
                     "Forsøksobjektet kan leses som militær etterspørsel etter teknisk utvikling, men også som et forkastet eller begrenset prøveforløp uten dokumentert serieanskaffelse."
                   ]
+                },
+                {
+                  "id": "chrono_forsvarsmuseet_1_1860",
+                  "year": 1860,
+                  "title": "Modellkammeret opprettes",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Modellkammeret opprettes",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_forsvarsmuseet.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_forsvarsmuseet_popup_03",
+                  "year": 1860,
+                  "title": "Museumshistorien begynner med Artillerimuseets modellkammer fra 1860, som senere fikk våpen, faner, uniformer og musikkinstrumenter i samlingen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Institution chronology, occupation losses and 1978 opening. – popup, setning 3",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/forsvarsmuseet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_forsvarsmuseet_popup_03",
+                  "story_id": "",
+                  "limitations": []
                 }
               ],
               "period_cases": [],
               "connections": {
-                "person_ids": [],
+                "person_ids": [
+                  "olav_v"
+                ],
                 "works": [],
-                "stories": []
+                "stories": [
+                  {
+                    "id": "st_forsvarsmuseet_samlingen_som_matte_reddes",
+                    "title": "Samlingen som måtte reddes",
+                    "year": 1941,
+                    "type": "conflict"
+                  }
+                ]
               }
             },
             {
@@ -16149,7 +16653,7 @@
                       "verifiedAt": ""
                     }
                   ],
-                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "source_file": "data/runtime/stories-all/part-003.json",
                   "evidence_type": "canonical_story",
                   "claim_id": "",
                   "story_id": "st_slottsplassen_monument_1875",
@@ -16173,7 +16677,7 @@
                       "verifiedAt": ""
                     }
                   ],
-                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "source_file": "data/runtime/stories-all/part-003.json",
                   "evidence_type": "canonical_story",
                   "claim_id": "",
                   "story_id": "st_slottsplassen_garden_1888",
@@ -19391,8 +19895,8 @@
               }
             }
           ],
-          "placeCount": 98,
-          "milestoneCount": 330
+          "placeCount": 99,
+          "milestoneCount": 335
         },
         "historie_nasjon_massepolitikk_og_moderne_institusjoner": {
           "places": [
@@ -19438,6 +19942,72 @@
                     "title": "Elva som ikke slutter ved kartkanten",
                     "year": 2014,
                     "type": "environmental"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "akershus_festning",
+              "name": "Akershus festning",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie/akershus_festning.json",
+              "roles": [
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_akershus_8_1929",
+                  "year": 1929,
+                  "title": "Arneberg får restaureringsoppdrag",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Arneberg får restaureringsoppdrag",
+                      "url": "https://snl.no/Akershus_slott_og_festning",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_akershus_festning.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "hannibal_sehested"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_akershus_1308_borgen_holder",
+                    "title": "Borgen holder i 1308",
+                    "year": 1308,
+                    "type": "turning_point"
+                  },
+                  {
+                    "id": "st_akershus_1716_beleiringen",
+                    "title": "39 dager foran Akershus",
+                    "year": 1716,
+                    "type": "conflict"
+                  },
+                  {
+                    "id": "st_akershus_slaveriet_1739",
+                    "title": "Da festningsarbeid ble straff",
+                    "year": 1739,
+                    "type": "historical_event"
+                  },
+                  {
+                    "id": "st_akershus_11_mai_1945",
+                    "title": "Akershus skifter hender",
+                    "year": 1945,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -20152,7 +20722,7 @@
                       "verifiedAt": ""
                     }
                   ],
-                  "source_file": "data/runtime/stories-all/part-003.json",
+                  "source_file": "data/runtime/stories-all/part-002.json",
                   "evidence_type": "canonical_story",
                   "claim_id": "",
                   "story_id": "st_bla_skilt_hornsrud_fra_hjem_til_statsministerhistorie",
@@ -20707,7 +21277,7 @@
                       "verifiedAt": ""
                     }
                   ],
-                  "source_file": "data/runtime/stories-all/part-002.json",
+                  "source_file": "data/runtime/stories-all/part-001.json",
                   "evidence_type": "canonical_story",
                   "claim_id": "",
                   "story_id": "st_folketeateret_folkets_scene",
@@ -20905,8 +21475,16 @@
               "source_file": "places/historie/oslo/places_historie_atlas_obscura_museum_batch_06/forsvarsmuseet.json",
               "roles": [
                 {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
                   "id": "em_his_vitenskap_teknologi_profesjoner_standardisering_og_autoritet",
                   "label": "Profesjoner, standardisering og autoritet"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
                 },
                 {
                   "id": "em_his_vitenskap_teknologi_teknologi_infrastruktur_og_samfunn",
@@ -20939,13 +21517,79 @@
                     "Objektposten dokumenterer produsent, produksjonsår, kontrollmerking og prøveformål, men ikke hele krav-, beslutnings- eller resultatforløpet.",
                     "Kontroll og utprøving kan forstås som kvalitetssikring og brukerorientert utvikling, men viser også hvordan militære prioriteringer avgrenset hvilke tekniske løsninger industrien skulle prøve."
                   ]
+                },
+                {
+                  "id": "production_claim_forsvarsmuseet_popup_04",
+                  "year": 1928,
+                  "title": "Intendanturmuseet ble opprettet i 1928 med blant annet faner, uniformer og utrustningsgjenstander.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Institution chronology, occupation losses and 1978 opening. – popup, setning 4",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/forsvarsmuseet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_forsvarsmuseet_popup_04",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_forsvarsmuseet_2_1928",
+                  "year": 1928,
+                  "title": "Intendanturmuseet opprettes",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Intendanturmuseet opprettes",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_forsvarsmuseet.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_forsvarsmuseet_3_1934",
+                  "year": 1934,
+                  "title": "Komité for Hærmuseet",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Komité for Hærmuseet",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_forsvarsmuseet.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
                 }
               ],
               "period_cases": [],
               "connections": {
-                "person_ids": [],
+                "person_ids": [
+                  "olav_v"
+                ],
                 "works": [],
-                "stories": []
+                "stories": [
+                  {
+                    "id": "st_forsvarsmuseet_samlingen_som_matte_reddes",
+                    "title": "Samlingen som måtte reddes",
+                    "year": 1941,
+                    "type": "conflict"
+                  }
+                ]
               }
             },
             {
@@ -26334,8 +26978,8 @@
               }
             }
           ],
-          "placeCount": 82,
-          "milestoneCount": 178
+          "placeCount": 83,
+          "milestoneCount": 182
         },
         "historie_krig_okkupasjon_og_etterkrigsoppgjor": {
           "places": [
@@ -26441,6 +27085,10 @@
                   "label": "Makt og styring"
                 },
                 {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                },
+                {
                   "id": "em_his_minnesteder_historiebruk",
                   "label": "Minnesteder"
                 },
@@ -26459,6 +27107,10 @@
                 {
                   "id": "em_his_stat_institusjoner",
                   "label": "Stat/institusjon"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
                 }
               ],
               "milestones": [
@@ -26490,22 +27142,103 @@
                   ]
                 },
                 {
-                  "id": "story_st_akershus_terboven_1940",
+                  "id": "production_claim_akershus_festning_popup_21",
                   "year": 1940,
-                  "title": "Terboven tar over Akershus, september 1940",
-                  "consequence": "I september 1940 erklærte Reichskommissar Josef Terboven at den norske regjeringen og kongen var avsatt. Akershus ble sentral arena.",
+                  "title": "Under den tyske okkupasjonen 1940–1945 ble Akershus brukt som forlegning, fengsel og rettersted.",
+                  "consequence": "",
                   "confidence": "",
                   "sources": [
                     {
-                      "title": "SNL: Josef Terboven",
-                      "url": "https://snl.no/Josef_Terboven",
+                      "title": "Slaveriet, straffeanstalt, landsfengsel and institutional chronology. – popup, setning 21",
+                      "url": "https://snl.no/Akershus_landsfengsel",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/akershus_festning.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_akershus_festning_popup_21",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_akershus_11_mai_1945",
+                  "year": 1945,
+                  "title": "Akershus skifter hender",
+                  "consequence": "11. mai 1945 overtok norske hjemmestyrker festningen fra de tyske styrkene.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "SNL – Terje Rollem",
+                      "url": "https://snl.no/Terje_Rollem",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "SNL – Festningsplassen",
+                      "url": "https://snl.no/Festningsplassen",
                       "verifiedAt": ""
                     }
                   ],
-                  "source_file": "data/runtime/stories-all/part-001.json",
+                  "source_file": "data/runtime/stories-all/part-004.json",
                   "evidence_type": "canonical_story",
                   "claim_id": "",
-                  "story_id": "st_akershus_terboven_1940",
+                  "story_id": "st_akershus_11_mai_1945",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_akershus_10_1945",
+                  "year": 1945,
+                  "title": "Akershus tilbake på norske hender",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Akershus tilbake på norske hender",
+                      "url": "https://snl.no/Terje_Rollem",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_akershus_festning.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_akershus_festning_popup_25",
+                  "year": 1945,
+                  "title": "Den 11. mai 1945 overtok norske hjemmestyrker festningen fra de tyske styrkene, en hendelse som senere ble et sterkt frigjøringssymbol.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "11 May 1945 transfer to Norwegian home forces. – popup, setning 25",
+                      "url": "https://snl.no/Terje_Rollem",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/akershus_festning.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_akershus_festning_popup_25",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_akershus_9_1945",
+                  "year": 1945,
+                  "title": "Henrettelser ved Retterstedet",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Henrettelser ved Retterstedet",
+                      "url": "https://www.forsvarsbygg.no/globalassets/festningene/akershus-festning/akershus-festning.pdf",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_akershus_festning.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
                   "limitations": []
                 },
                 {
@@ -26531,6 +27264,25 @@
                   ]
                 },
                 {
+                  "id": "production_claim_akershus_festning_popup_22",
+                  "year": 1945,
+                  "title": "På eksekusjonsplassen ble 42 nordmenn henrettet 9. og 10. februar og 17. mars 1945.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Retterstedet: 42 victims, execution dates and 1949 memorial unveiling. – popup, setning 22",
+                      "url": "https://www.forsvarsbygg.no/globalassets/festningene/akershus-festning/akershus-festning.pdf",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/akershus_festning.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_akershus_festning_popup_22",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
                   "id": "claim_claim_his_akershus_postwar_mobilization_operations_planning_1947_1970",
                   "year": 1947,
                   "title": "Okkupasjon, samarbeid, tilpasning og motstand",
@@ -26551,18 +27303,76 @@
                     "Kilden dokumenterer formell struktur, oppgaver og lokalisering, men ikke de konkrete operative planenes innhold, ressurser, øvelsesfrekvens eller samtidige trusselanslag.",
                     "Planleggingsansvaret viser varig institusjonalisert beredskap, men er ikke et direkte mål på hvor sannsynlig myndighetene vurderte krig i hvert enkelt år."
                   ]
+                },
+                {
+                  "id": "production_claim_akershus_festning_popup_24",
+                  "year": 1949,
+                  "title": "8. mai 1949.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Retterstedet: 42 victims, execution dates and 1949 memorial unveiling. – popup, setning 24",
+                      "url": "https://www.forsvarsbygg.no/globalassets/festningene/akershus-festning/akershus-festning.pdf",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/akershus_festning.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_akershus_festning_popup_24",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_akershus_11_1949",
+                  "year": 1949,
+                  "title": "Minnesmerket avdukes",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Minnesmerket avdukes",
+                      "url": "https://www.forsvarsbygg.no/globalassets/festningene/akershus-festning/akershus-festning.pdf",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_akershus_festning.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
                 }
               ],
               "period_cases": [],
               "connections": {
-                "person_ids": [],
+                "person_ids": [
+                  "hannibal_sehested"
+                ],
                 "works": [],
                 "stories": [
                   {
-                    "id": "st_akershus_terboven_1940",
-                    "title": "Terboven tar over Akershus, september 1940",
-                    "year": 1940,
-                    "type": "historical"
+                    "id": "st_akershus_1308_borgen_holder",
+                    "title": "Borgen holder i 1308",
+                    "year": 1308,
+                    "type": "turning_point"
+                  },
+                  {
+                    "id": "st_akershus_1716_beleiringen",
+                    "title": "39 dager foran Akershus",
+                    "year": 1716,
+                    "type": "conflict"
+                  },
+                  {
+                    "id": "st_akershus_slaveriet_1739",
+                    "title": "Da festningsarbeid ble straff",
+                    "year": 1739,
+                    "type": "historical_event"
+                  },
+                  {
+                    "id": "st_akershus_11_mai_1945",
+                    "title": "Akershus skifter hender",
+                    "year": 1945,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -26970,6 +27780,170 @@
                     "title": "Åtte jentelag på startstreken",
                     "year": 1972,
                     "type": "historical_event"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "forsvarsmuseet",
+              "name": "Forsvarsmuseet",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie_atlas_obscura_museum_batch_06/forsvarsmuseet.json",
+              "roles": [
+                {
+                  "id": "konflikt_og_motstand",
+                  "label": "Konflikt og motstand"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_forsvarsmuseet_4_1940",
+                  "year": 1940,
+                  "title": "Hærmuseet opprettes",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Hærmuseet opprettes",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_forsvarsmuseet.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_forsvarsmuseet_popup_07",
+                  "year": 1941,
+                  "title": "Museumskomiteen ble oppløst av nazistyret i 1941.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Institution chronology, occupation losses and 1978 opening. – popup, setning 7",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/forsvarsmuseet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_forsvarsmuseet_popup_07",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_forsvarsmuseet_5_1941",
+                  "year": 1941,
+                  "title": "Planleggingen avbrytes",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Planleggingen avbrytes",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_forsvarsmuseet.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_forsvarsmuseet_samlingen_som_matte_reddes",
+                  "year": 1941,
+                  "title": "Samlingen som måtte reddes",
+                  "consequence": "Okkupasjonen stanset museumsplanen, spredte samlingene og kostet tusenvis av gjenstander.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "SNL – Forsvarshistorisk museum",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Sikt – Forsvarsmuseets endringshistorie",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/57606/endringshistorie",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_forsvarsmuseet_samlingen_som_matte_reddes",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_forsvarsmuseet_popup_09",
+                  "year": 1946,
+                  "title": "Samlingene kom tilbake til Akershus i 1946, men ble flyttet mellom ulike lokaler.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Institution chronology, occupation losses and 1978 opening. – popup, setning 9",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/forsvarsmuseet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_forsvarsmuseet_popup_09",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_forsvarsmuseet_6_1946",
+                  "year": 1946,
+                  "title": "Samlingene vender tilbake",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Samlingene vender tilbake",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_forsvarsmuseet.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "olav_v"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_forsvarsmuseet_samlingen_som_matte_reddes",
+                    "title": "Samlingen som måtte reddes",
+                    "year": 1941,
+                    "type": "conflict"
                   }
                 ]
               }
@@ -28239,6 +29213,62 @@
                     "title": "Hvem skulle få åpne Nationaltheatret?",
                     "year": 1899,
                     "type": "cultural"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "norges_hjemmefrontmuseum",
+              "name": "Norges Hjemmefrontmuseum",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie_atlas_obscura_museum_batch_06/norges_hjemmefrontmuseum.json",
+              "roles": [
+                {
+                  "id": "konflikt_og_motstand",
+                  "label": "Konflikt og motstand"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_norges_hjemmefrontmuseum_desc_03",
+                  "year": 1940,
+                  "title": "Samlingene dokumenterer okkupasjonen og motstanden 1940–1945 gjennom autentiske gjenstander, fotografier, dokumenter og mer enn 600 hyllemeter arkiver.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Current identity, collection scope and archive scale. – desc, setning 3",
+                      "url": "https://www.forsvarshistoriskmuseum.no/norges-hjemmefrontmuseum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/norges_hjemmefrontmuseum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norges_hjemmefrontmuseum_desc_03",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "harald_v"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_norges_hjemmefrontmuseum_fra_motstandserfaring_til_museum",
+                    "title": "Fra motstandserfaring til museum",
+                    "year": 1962,
+                    "type": "historical_event"
                   }
                 ]
               }
@@ -29854,8 +30884,8 @@
               }
             }
           ],
-          "placeCount": 41,
-          "milestoneCount": 86
+          "placeCount": 43,
+          "milestoneCount": 100
         },
         "historie_velferdsstat_kald_krig_og_sosialdemokrati": {
           "places": [
@@ -29947,6 +30977,72 @@
                     "title": "Elva som ikke slutter ved kartkanten",
                     "year": 2014,
                     "type": "environmental"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "akershus_festning",
+              "name": "Akershus festning",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie/akershus_festning.json",
+              "roles": [
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_akershus_12_1950",
+                  "year": 1950,
+                  "title": "Landsfengselet nedlegges",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Landsfengselet nedlegges",
+                      "url": "https://snl.no/Akershus_landsfengsel",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_akershus_festning.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "hannibal_sehested"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_akershus_1308_borgen_holder",
+                    "title": "Borgen holder i 1308",
+                    "year": 1308,
+                    "type": "turning_point"
+                  },
+                  {
+                    "id": "st_akershus_1716_beleiringen",
+                    "title": "39 dager foran Akershus",
+                    "year": 1716,
+                    "type": "conflict"
+                  },
+                  {
+                    "id": "st_akershus_slaveriet_1739",
+                    "title": "Da festningsarbeid ble straff",
+                    "year": 1739,
+                    "type": "historical_event"
+                  },
+                  {
+                    "id": "st_akershus_11_mai_1945",
+                    "title": "Akershus skifter hender",
+                    "year": 1945,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -31527,6 +32623,108 @@
               }
             },
             {
+              "place_id": "forsvarsmuseet",
+              "name": "Forsvarsmuseet",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie_atlas_obscura_museum_batch_06/forsvarsmuseet.json",
+              "roles": [
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_forsvarsmuseet_popup_10",
+                  "year": 1978,
+                  "title": "Den omflakkende perioden tok slutt da kong Olav V åpnet Forsvarsmuseet i den renoverte bygningen 22. august 1978.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Institution chronology, occupation losses and 1978 opening. – popup, setning 10",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/forsvarsmuseet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_forsvarsmuseet_popup_10",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_forsvarsmuseet_7_1978",
+                  "year": 1978,
+                  "title": "Forsvarsmuseet åpner",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Forsvarsmuseet åpner",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_forsvarsmuseet.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_forsvarsmuseet_desc_03",
+                  "year": 1978,
+                  "title": "Museet åpnet i det renoverte arsenalbygget 22. august 1978 og er et eget besøkssted, ikke hele Akershus festning eller Norges Hjemmefrontmuseum.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Institution chronology, occupation losses and 1978 opening. – desc, setning 3",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/forsvarsmuseet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_forsvarsmuseet_desc_03",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "olav_v"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_forsvarsmuseet_samlingen_som_matte_reddes",
+                    "title": "Samlingen som måtte reddes",
+                    "year": 1941,
+                    "type": "conflict"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "frette_kapell",
               "name": "Frette kapell",
               "category": "religion",
@@ -32722,6 +33920,285 @@
                     "title": "Skeids hjem på Nordre Åsen",
                     "year": 1950,
                     "type": "sporting"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "norges_hjemmefrontmuseum",
+              "name": "Norges Hjemmefrontmuseum",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie_atlas_obscura_museum_batch_06/norges_hjemmefrontmuseum.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "konflikt_og_motstand",
+                  "label": "Konflikt og motstand"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "story_st_norges_hjemmefrontmuseum_fra_motstandserfaring_til_museum",
+                  "year": 1962,
+                  "title": "Fra motstandserfaring til museum",
+                  "consequence": "En komité fikk oppgaven med å gjøre ulike motstandserfaringer, gjenstander og arkiver til en offentlig museumsfortelling.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Sikt – Norges Hjemmefrontmuseum",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Kongehuset – Besøkte krigsveteraner",
+                      "url": "https://www.kongehuset.no/nyheter/besokte-krigsveteraner",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "SNL – Norges Hjemmefrontmuseum",
+                      "url": "https://snl.no/Norges_Hjemmefrontmuseum",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_norges_hjemmefrontmuseum_fra_motstandserfaring_til_museum",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_norges_hjemmefrontmuseum_1_1962",
+                  "year": 1962,
+                  "title": "Museumsplanen besluttes",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Museumsplanen besluttes",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_norges_hjemmefrontmuseum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norges_hjemmefrontmuseum_popup_03",
+                  "year": 1962,
+                  "title": "Planene ble besluttet på et møte i juni 1962 med representanter for norsk motstandsbevegelse.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Decision in 1962, committee support, foundation in 1966, opening and institutional transfer in 1995. – popup, setning 3",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/norges_hjemmefrontmuseum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norges_hjemmefrontmuseum_popup_03",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norges_hjemmefrontmuseum_popup_04",
+                  "year": 1963,
+                  "title": "En komité skulle arbeide videre, og fra september 1963 fikk den lønnsmidler gjennom Forsvarsdepartementet.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Decision in 1962, committee support, foundation in 1966, opening and institutional transfer in 1995. – popup, setning 4",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/norges_hjemmefrontmuseum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norges_hjemmefrontmuseum_popup_04",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_norges_hjemmefrontmuseum_2_1963",
+                  "year": 1963,
+                  "title": "Komiteen får driftsmidler",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Komiteen får driftsmidler",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_norges_hjemmefrontmuseum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norges_hjemmefrontmuseum_desc_02",
+                  "year": 1966,
+                  "title": "Museet ble etablert som egen stiftelse våren 1966 og åpnet for publikum 7. mai 1970 ved daværende kronprins Harald.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Public opening by Crown Prince Harald on 7 May 1970. – desc, setning 2",
+                      "url": "https://www.kongehuset.no/nyheter/besokte-krigsveteraner",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/norges_hjemmefrontmuseum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norges_hjemmefrontmuseum_desc_02",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norges_hjemmefrontmuseum_popup_06",
+                  "year": 1966,
+                  "title": "Norges Hjemmefrontmuseum ble etablert som egen stiftelse våren 1966.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Decision in 1962, committee support, foundation in 1966, opening and institutional transfer in 1995. – popup, setning 6",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/norges_hjemmefrontmuseum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norges_hjemmefrontmuseum_popup_06",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_norges_hjemmefrontmuseum_3_1966",
+                  "year": 1966,
+                  "title": "Stiftelsen etableres",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Stiftelsen etableres",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_norges_hjemmefrontmuseum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norges_hjemmefrontmuseum_popup_07",
+                  "year": 1967,
+                  "title": "Bindingsverkshuset og hvelvene i Det dobbelte batteri ble restaurert for museumsbruk i 1967–1968.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Building plaque documents restoration in 1967–1968 and opening in 1970. – popup, setning 7",
+                      "url": "https://commons.wikimedia.org/wiki/File:Norway%27s_WW2_Resistance_Museum,_Oslo_(Hjemmefrontmuseet)._History_of_building_on_plaque_(Det_dobbelte_batteri,_bindingsverkhuset,_restaurering_1967%E2%80%9368,_%C3%A5pning_1970)._Photo_2017-11-30.jpg",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/norges_hjemmefrontmuseum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norges_hjemmefrontmuseum_popup_07",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_norges_hjemmefrontmuseum_4_1968",
+                  "year": 1968,
+                  "title": "Restaureringen fullføres",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Restaureringen fullføres",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_norges_hjemmefrontmuseum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norges_hjemmefrontmuseum_popup_08",
+                  "year": 1970,
+                  "title": "Daværende kronprins Harald åpnet museet for publikum 7. mai 1970, dagen før 25-årsdagen for frigjøringen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Public opening by Crown Prince Harald on 7 May 1970. – popup, setning 8",
+                      "url": "https://www.kongehuset.no/nyheter/besokte-krigsveteraner",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/norges_hjemmefrontmuseum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norges_hjemmefrontmuseum_popup_08",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_norges_hjemmefrontmuseum_5_1970",
+                  "year": 1970,
+                  "title": "Museet åpner",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Museet åpner",
+                      "url": "https://www.kongehuset.no/nyheter/besokte-krigsveteraner",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_norges_hjemmefrontmuseum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "harald_v"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_norges_hjemmefrontmuseum_fra_motstandserfaring_til_museum",
+                    "title": "Fra motstandserfaring til museum",
+                    "year": 1962,
+                    "type": "historical_event"
                   }
                 ]
               }
@@ -34691,8 +36168,8 @@
               }
             }
           ],
-          "placeCount": 57,
-          "milestoneCount": 122
+          "placeCount": 60,
+          "milestoneCount": 138
         },
         "historie_senmoderne_globalisering_og_markedsvending": {
           "places": [
@@ -38477,6 +39954,62 @@
               }
             },
             {
+              "place_id": "norges_hjemmefrontmuseum",
+              "name": "Norges Hjemmefrontmuseum",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie_atlas_obscura_museum_batch_06/norges_hjemmefrontmuseum.json",
+              "roles": [
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_norges_hjemmefrontmuseum_6_1995",
+                  "year": 1995,
+                  "title": "Museet blir statlig",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Museet blir statlig",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_norges_hjemmefrontmuseum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "harald_v"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_norges_hjemmefrontmuseum_fra_motstandserfaring_til_museum",
+                    "title": "Fra motstandserfaring til museum",
+                    "year": 1962,
+                    "type": "historical_event"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "norsk_folkemuseum",
               "name": "Norsk Folkemuseum",
               "category": "historie",
@@ -41258,8 +42791,8 @@
               }
             }
           ],
-          "placeCount": 88,
-          "milestoneCount": 155
+          "placeCount": 89,
+          "milestoneCount": 156
         },
         "historie_digital_samtid_kriser_og_ny_offentlighet": {
           "places": [
@@ -41728,14 +43261,34 @@
               ],
               "period_cases": [],
               "connections": {
-                "person_ids": [],
+                "person_ids": [
+                  "hannibal_sehested"
+                ],
                 "works": [],
                 "stories": [
                   {
-                    "id": "st_akershus_terboven_1940",
-                    "title": "Terboven tar over Akershus, september 1940",
-                    "year": 1940,
-                    "type": "historical"
+                    "id": "st_akershus_1308_borgen_holder",
+                    "title": "Borgen holder i 1308",
+                    "year": 1308,
+                    "type": "turning_point"
+                  },
+                  {
+                    "id": "st_akershus_1716_beleiringen",
+                    "title": "39 dager foran Akershus",
+                    "year": 1716,
+                    "type": "conflict"
+                  },
+                  {
+                    "id": "st_akershus_slaveriet_1739",
+                    "title": "Da festningsarbeid ble straff",
+                    "year": 1739,
+                    "type": "historical_event"
+                  },
+                  {
+                    "id": "st_akershus_11_mai_1945",
+                    "title": "Akershus skifter hender",
+                    "year": 1945,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -48603,6 +50156,18 @@
               "source_file": "places/historie/oslo/places_historie_atlas_obscura_museum_batch_06/forsvarsmuseet.json",
               "roles": [
                 {
+                  "id": "konflikt_og_motstand",
+                  "label": "Konflikt og motstand"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                },
+                {
                   "id": "em_his_vitenskap_teknologi_profesjoner_standardisering_og_autoritet",
                   "label": "Profesjoner, standardisering og autoritet"
                 },
@@ -48639,6 +50204,25 @@
                   ]
                 },
                 {
+                  "id": "production_claim_forsvarsmuseet_popup_03",
+                  "year": 1860,
+                  "title": "Museumshistorien begynner med Artillerimuseets modellkammer fra 1860, som senere fikk våpen, faner, uniformer og musikkinstrumenter i samlingen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Institution chronology, occupation losses and 1978 opening. – popup, setning 3",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/forsvarsmuseet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_forsvarsmuseet_popup_03",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
                   "id": "claim_claim_his_forsvarsmuseet_krag_cavalry_trial_carbine_1911_1912",
                   "year": 1911,
                   "title": "Profesjoner, standardisering og autoritet",
@@ -48659,13 +50243,84 @@
                     "Objektposten dokumenterer produsent, produksjonsår, kontrollmerking og prøveformål, men ikke hele krav-, beslutnings- eller resultatforløpet.",
                     "Kontroll og utprøving kan forstås som kvalitetssikring og brukerorientert utvikling, men viser også hvordan militære prioriteringer avgrenset hvilke tekniske løsninger industrien skulle prøve."
                   ]
+                },
+                {
+                  "id": "production_claim_forsvarsmuseet_popup_07",
+                  "year": 1941,
+                  "title": "Museumskomiteen ble oppløst av nazistyret i 1941.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Institution chronology, occupation losses and 1978 opening. – popup, setning 7",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/forsvarsmuseet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_forsvarsmuseet_popup_07",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_forsvarsmuseet_samlingen_som_matte_reddes",
+                  "year": 1941,
+                  "title": "Samlingen som måtte reddes",
+                  "consequence": "Okkupasjonen stanset museumsplanen, spredte samlingene og kostet tusenvis av gjenstander.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "SNL – Forsvarshistorisk museum",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Sikt – Forsvarsmuseets endringshistorie",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/57606/endringshistorie",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_forsvarsmuseet_samlingen_som_matte_reddes",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_forsvarsmuseet_desc_03",
+                  "year": 1978,
+                  "title": "Museet åpnet i det renoverte arsenalbygget 22. august 1978 og er et eget besøkssted, ikke hele Akershus festning eller Norges Hjemmefrontmuseum.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Institution chronology, occupation losses and 1978 opening. – desc, setning 3",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/forsvarsmuseet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_forsvarsmuseet_desc_03",
+                  "story_id": "",
+                  "limitations": []
                 }
               ],
               "period_cases": [],
               "connections": {
-                "person_ids": [],
+                "person_ids": [
+                  "olav_v"
+                ],
                 "works": [],
-                "stories": []
+                "stories": [
+                  {
+                    "id": "st_forsvarsmuseet_samlingen_som_matte_reddes",
+                    "title": "Samlingen som måtte reddes",
+                    "year": 1941,
+                    "type": "conflict"
+                  }
+                ]
               }
             },
             {
@@ -50059,6 +51714,327 @@
                 "person_ids": [],
                 "works": [],
                 "stories": []
+              }
+            },
+            {
+              "place_id": "norges_hjemmefrontmuseum",
+              "name": "Norges Hjemmefrontmuseum",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie_atlas_obscura_museum_batch_06/norges_hjemmefrontmuseum.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "konflikt_og_motstand",
+                  "label": "Konflikt og motstand"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_norges_hjemmefrontmuseum_desc_03",
+                  "year": 1940,
+                  "title": "Samlingene dokumenterer okkupasjonen og motstanden 1940–1945 gjennom autentiske gjenstander, fotografier, dokumenter og mer enn 600 hyllemeter arkiver.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Current identity, collection scope and archive scale. – desc, setning 3",
+                      "url": "https://www.forsvarshistoriskmuseum.no/norges-hjemmefrontmuseum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/norges_hjemmefrontmuseum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norges_hjemmefrontmuseum_desc_03",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_norges_hjemmefrontmuseum_fra_motstandserfaring_til_museum",
+                  "year": 1962,
+                  "title": "Fra motstandserfaring til museum",
+                  "consequence": "En komité fikk oppgaven med å gjøre ulike motstandserfaringer, gjenstander og arkiver til en offentlig museumsfortelling.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Sikt – Norges Hjemmefrontmuseum",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Kongehuset – Besøkte krigsveteraner",
+                      "url": "https://www.kongehuset.no/nyheter/besokte-krigsveteraner",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "SNL – Norges Hjemmefrontmuseum",
+                      "url": "https://snl.no/Norges_Hjemmefrontmuseum",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_norges_hjemmefrontmuseum_fra_motstandserfaring_til_museum",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_norges_hjemmefrontmuseum_1_1962",
+                  "year": 1962,
+                  "title": "Museumsplanen besluttes",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Museumsplanen besluttes",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_norges_hjemmefrontmuseum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norges_hjemmefrontmuseum_popup_03",
+                  "year": 1962,
+                  "title": "Planene ble besluttet på et møte i juni 1962 med representanter for norsk motstandsbevegelse.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Decision in 1962, committee support, foundation in 1966, opening and institutional transfer in 1995. – popup, setning 3",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/norges_hjemmefrontmuseum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norges_hjemmefrontmuseum_popup_03",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norges_hjemmefrontmuseum_popup_04",
+                  "year": 1963,
+                  "title": "En komité skulle arbeide videre, og fra september 1963 fikk den lønnsmidler gjennom Forsvarsdepartementet.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Decision in 1962, committee support, foundation in 1966, opening and institutional transfer in 1995. – popup, setning 4",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/norges_hjemmefrontmuseum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norges_hjemmefrontmuseum_popup_04",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_norges_hjemmefrontmuseum_2_1963",
+                  "year": 1963,
+                  "title": "Komiteen får driftsmidler",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Komiteen får driftsmidler",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_norges_hjemmefrontmuseum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norges_hjemmefrontmuseum_desc_02",
+                  "year": 1966,
+                  "title": "Museet ble etablert som egen stiftelse våren 1966 og åpnet for publikum 7. mai 1970 ved daværende kronprins Harald.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Public opening by Crown Prince Harald on 7 May 1970. – desc, setning 2",
+                      "url": "https://www.kongehuset.no/nyheter/besokte-krigsveteraner",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/norges_hjemmefrontmuseum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norges_hjemmefrontmuseum_desc_02",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norges_hjemmefrontmuseum_popup_06",
+                  "year": 1966,
+                  "title": "Norges Hjemmefrontmuseum ble etablert som egen stiftelse våren 1966.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Decision in 1962, committee support, foundation in 1966, opening and institutional transfer in 1995. – popup, setning 6",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/norges_hjemmefrontmuseum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norges_hjemmefrontmuseum_popup_06",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_norges_hjemmefrontmuseum_3_1966",
+                  "year": 1966,
+                  "title": "Stiftelsen etableres",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Stiftelsen etableres",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_norges_hjemmefrontmuseum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norges_hjemmefrontmuseum_popup_07",
+                  "year": 1967,
+                  "title": "Bindingsverkshuset og hvelvene i Det dobbelte batteri ble restaurert for museumsbruk i 1967–1968.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Building plaque documents restoration in 1967–1968 and opening in 1970. – popup, setning 7",
+                      "url": "https://commons.wikimedia.org/wiki/File:Norway%27s_WW2_Resistance_Museum,_Oslo_(Hjemmefrontmuseet)._History_of_building_on_plaque_(Det_dobbelte_batteri,_bindingsverkhuset,_restaurering_1967%E2%80%9368,_%C3%A5pning_1970)._Photo_2017-11-30.jpg",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/norges_hjemmefrontmuseum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norges_hjemmefrontmuseum_popup_07",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_norges_hjemmefrontmuseum_4_1968",
+                  "year": 1968,
+                  "title": "Restaureringen fullføres",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Restaureringen fullføres",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_norges_hjemmefrontmuseum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norges_hjemmefrontmuseum_popup_08",
+                  "year": 1970,
+                  "title": "Daværende kronprins Harald åpnet museet for publikum 7. mai 1970, dagen før 25-årsdagen for frigjøringen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Public opening by Crown Prince Harald on 7 May 1970. – popup, setning 8",
+                      "url": "https://www.kongehuset.no/nyheter/besokte-krigsveteraner",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/norges_hjemmefrontmuseum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norges_hjemmefrontmuseum_popup_08",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_norges_hjemmefrontmuseum_5_1970",
+                  "year": 1970,
+                  "title": "Museet åpner",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Museet åpner",
+                      "url": "https://www.kongehuset.no/nyheter/besokte-krigsveteraner",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_norges_hjemmefrontmuseum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_norges_hjemmefrontmuseum_6_1995",
+                  "year": 1995,
+                  "title": "Museet blir statlig",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Museet blir statlig",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_norges_hjemmefrontmuseum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "harald_v"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_norges_hjemmefrontmuseum_fra_motstandserfaring_til_museum",
+                    "title": "Fra motstandserfaring til museum",
+                    "year": 1962,
+                    "type": "historical_event"
+                  }
+                ]
               }
             },
             {
@@ -52870,8 +54846,8 @@
               }
             }
           ],
-          "placeCount": 57,
-          "milestoneCount": 133
+          "placeCount": 58,
+          "milestoneCount": 151
         },
         "historie_migrasjon_minoritet_og_tilhorighet": {
           "places": [
@@ -55038,6 +57014,10 @@
                   "label": "Kald krig, beredskap og sikkerhetsstat"
                 },
                 {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                },
+                {
                   "id": "em_his_minnesteder_historiebruk",
                   "label": "Minnesteder"
                 },
@@ -55095,6 +57075,25 @@
                     "Den offisielle koblingen dokumenterer anerkjennelsespolitikk, men ikke at alle veteraner identifiserer seg med samme historiske fortelling.",
                     "Sammenkoblingen kan styrke kontinuitet og anerkjennelse, men kan også overskygge forskjeller mellom okkupasjonserfaring, internasjonale operasjoner og hjemkomst."
                   ]
+                },
+                {
+                  "id": "chrono_akershus_11_1949",
+                  "year": 1949,
+                  "title": "Minnesmerket avdukes",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Minnesmerket avdukes",
+                      "url": "https://www.forsvarsbygg.no/globalassets/festningene/akershus-festning/akershus-festning.pdf",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_akershus_festning.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
                 },
                 {
                   "id": "claim_claim_his_akershus_2018_medal_recipient_experiences",
@@ -55175,14 +57174,34 @@
               ],
               "period_cases": [],
               "connections": {
-                "person_ids": [],
+                "person_ids": [
+                  "hannibal_sehested"
+                ],
                 "works": [],
                 "stories": [
                   {
-                    "id": "st_akershus_terboven_1940",
-                    "title": "Terboven tar over Akershus, september 1940",
-                    "year": 1940,
-                    "type": "historical"
+                    "id": "st_akershus_1308_borgen_holder",
+                    "title": "Borgen holder i 1308",
+                    "year": 1308,
+                    "type": "turning_point"
+                  },
+                  {
+                    "id": "st_akershus_1716_beleiringen",
+                    "title": "39 dager foran Akershus",
+                    "year": 1716,
+                    "type": "conflict"
+                  },
+                  {
+                    "id": "st_akershus_slaveriet_1739",
+                    "title": "Da festningsarbeid ble straff",
+                    "year": 1739,
+                    "type": "historical_event"
+                  },
+                  {
+                    "id": "st_akershus_11_mai_1945",
+                    "title": "Akershus skifter hender",
+                    "year": 1945,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -56063,6 +58082,18 @@
               "source_file": "places/historie/oslo/places_historie_atlas_obscura_museum_batch_06/forsvarsmuseet.json",
               "roles": [
                 {
+                  "id": "konflikt_og_motstand",
+                  "label": "Konflikt og motstand"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                },
+                {
                   "id": "em_his_vitenskap_teknologi_profesjoner_standardisering_og_autoritet",
                   "label": "Profesjoner, standardisering og autoritet"
                 },
@@ -56099,6 +58130,25 @@
                   ]
                 },
                 {
+                  "id": "production_claim_forsvarsmuseet_popup_03",
+                  "year": 1860,
+                  "title": "Museumshistorien begynner med Artillerimuseets modellkammer fra 1860, som senere fikk våpen, faner, uniformer og musikkinstrumenter i samlingen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Institution chronology, occupation losses and 1978 opening. – popup, setning 3",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/forsvarsmuseet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_forsvarsmuseet_popup_03",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
                   "id": "claim_claim_his_forsvarsmuseet_krag_cavalry_trial_carbine_1911_1912",
                   "year": 1911,
                   "title": "Profesjoner, standardisering og autoritet",
@@ -56119,13 +58169,84 @@
                     "Objektposten dokumenterer produsent, produksjonsår, kontrollmerking og prøveformål, men ikke hele krav-, beslutnings- eller resultatforløpet.",
                     "Kontroll og utprøving kan forstås som kvalitetssikring og brukerorientert utvikling, men viser også hvordan militære prioriteringer avgrenset hvilke tekniske løsninger industrien skulle prøve."
                   ]
+                },
+                {
+                  "id": "production_claim_forsvarsmuseet_popup_07",
+                  "year": 1941,
+                  "title": "Museumskomiteen ble oppløst av nazistyret i 1941.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Institution chronology, occupation losses and 1978 opening. – popup, setning 7",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/forsvarsmuseet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_forsvarsmuseet_popup_07",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_forsvarsmuseet_samlingen_som_matte_reddes",
+                  "year": 1941,
+                  "title": "Samlingen som måtte reddes",
+                  "consequence": "Okkupasjonen stanset museumsplanen, spredte samlingene og kostet tusenvis av gjenstander.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "SNL – Forsvarshistorisk museum",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Sikt – Forsvarsmuseets endringshistorie",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/57606/endringshistorie",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_forsvarsmuseet_samlingen_som_matte_reddes",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_forsvarsmuseet_desc_03",
+                  "year": 1978,
+                  "title": "Museet åpnet i det renoverte arsenalbygget 22. august 1978 og er et eget besøkssted, ikke hele Akershus festning eller Norges Hjemmefrontmuseum.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Institution chronology, occupation losses and 1978 opening. – desc, setning 3",
+                      "url": "https://snl.no/Forsvarshistorisk_museum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/forsvarsmuseet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_forsvarsmuseet_desc_03",
+                  "story_id": "",
+                  "limitations": []
                 }
               ],
               "period_cases": [],
               "connections": {
-                "person_ids": [],
+                "person_ids": [
+                  "olav_v"
+                ],
                 "works": [],
-                "stories": []
+                "stories": [
+                  {
+                    "id": "st_forsvarsmuseet_samlingen_som_matte_reddes",
+                    "title": "Samlingen som måtte reddes",
+                    "year": 1941,
+                    "type": "conflict"
+                  }
+                ]
               }
             },
             {
@@ -57127,6 +59248,327 @@
                     "title": "Fossilet Ida blir verdensnyhet",
                     "year": 2009,
                     "type": "natural_history"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "norges_hjemmefrontmuseum",
+              "name": "Norges Hjemmefrontmuseum",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie_atlas_obscura_museum_batch_06/norges_hjemmefrontmuseum.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "konflikt_og_motstand",
+                  "label": "Konflikt og motstand"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_norges_hjemmefrontmuseum_desc_03",
+                  "year": 1940,
+                  "title": "Samlingene dokumenterer okkupasjonen og motstanden 1940–1945 gjennom autentiske gjenstander, fotografier, dokumenter og mer enn 600 hyllemeter arkiver.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Current identity, collection scope and archive scale. – desc, setning 3",
+                      "url": "https://www.forsvarshistoriskmuseum.no/norges-hjemmefrontmuseum",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/norges_hjemmefrontmuseum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norges_hjemmefrontmuseum_desc_03",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_norges_hjemmefrontmuseum_fra_motstandserfaring_til_museum",
+                  "year": 1962,
+                  "title": "Fra motstandserfaring til museum",
+                  "consequence": "En komité fikk oppgaven med å gjøre ulike motstandserfaringer, gjenstander og arkiver til en offentlig museumsfortelling.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Sikt – Norges Hjemmefrontmuseum",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Kongehuset – Besøkte krigsveteraner",
+                      "url": "https://www.kongehuset.no/nyheter/besokte-krigsveteraner",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "SNL – Norges Hjemmefrontmuseum",
+                      "url": "https://snl.no/Norges_Hjemmefrontmuseum",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_norges_hjemmefrontmuseum_fra_motstandserfaring_til_museum",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_norges_hjemmefrontmuseum_1_1962",
+                  "year": 1962,
+                  "title": "Museumsplanen besluttes",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Museumsplanen besluttes",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_norges_hjemmefrontmuseum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norges_hjemmefrontmuseum_popup_03",
+                  "year": 1962,
+                  "title": "Planene ble besluttet på et møte i juni 1962 med representanter for norsk motstandsbevegelse.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Decision in 1962, committee support, foundation in 1966, opening and institutional transfer in 1995. – popup, setning 3",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/norges_hjemmefrontmuseum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norges_hjemmefrontmuseum_popup_03",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norges_hjemmefrontmuseum_popup_04",
+                  "year": 1963,
+                  "title": "En komité skulle arbeide videre, og fra september 1963 fikk den lønnsmidler gjennom Forsvarsdepartementet.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Decision in 1962, committee support, foundation in 1966, opening and institutional transfer in 1995. – popup, setning 4",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/norges_hjemmefrontmuseum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norges_hjemmefrontmuseum_popup_04",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_norges_hjemmefrontmuseum_2_1963",
+                  "year": 1963,
+                  "title": "Komiteen får driftsmidler",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Komiteen får driftsmidler",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_norges_hjemmefrontmuseum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norges_hjemmefrontmuseum_desc_02",
+                  "year": 1966,
+                  "title": "Museet ble etablert som egen stiftelse våren 1966 og åpnet for publikum 7. mai 1970 ved daværende kronprins Harald.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Public opening by Crown Prince Harald on 7 May 1970. – desc, setning 2",
+                      "url": "https://www.kongehuset.no/nyheter/besokte-krigsveteraner",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/norges_hjemmefrontmuseum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norges_hjemmefrontmuseum_desc_02",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norges_hjemmefrontmuseum_popup_06",
+                  "year": 1966,
+                  "title": "Norges Hjemmefrontmuseum ble etablert som egen stiftelse våren 1966.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Decision in 1962, committee support, foundation in 1966, opening and institutional transfer in 1995. – popup, setning 6",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/norges_hjemmefrontmuseum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norges_hjemmefrontmuseum_popup_06",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_norges_hjemmefrontmuseum_3_1966",
+                  "year": 1966,
+                  "title": "Stiftelsen etableres",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Stiftelsen etableres",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_norges_hjemmefrontmuseum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norges_hjemmefrontmuseum_popup_07",
+                  "year": 1967,
+                  "title": "Bindingsverkshuset og hvelvene i Det dobbelte batteri ble restaurert for museumsbruk i 1967–1968.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Building plaque documents restoration in 1967–1968 and opening in 1970. – popup, setning 7",
+                      "url": "https://commons.wikimedia.org/wiki/File:Norway%27s_WW2_Resistance_Museum,_Oslo_(Hjemmefrontmuseet)._History_of_building_on_plaque_(Det_dobbelte_batteri,_bindingsverkhuset,_restaurering_1967%E2%80%9368,_%C3%A5pning_1970)._Photo_2017-11-30.jpg",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/norges_hjemmefrontmuseum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norges_hjemmefrontmuseum_popup_07",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_norges_hjemmefrontmuseum_4_1968",
+                  "year": 1968,
+                  "title": "Restaureringen fullføres",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Restaureringen fullføres",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_norges_hjemmefrontmuseum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norges_hjemmefrontmuseum_popup_08",
+                  "year": 1970,
+                  "title": "Daværende kronprins Harald åpnet museet for publikum 7. mai 1970, dagen før 25-årsdagen for frigjøringen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Public opening by Crown Prince Harald on 7 May 1970. – popup, setning 8",
+                      "url": "https://www.kongehuset.no/nyheter/besokte-krigsveteraner",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/norges_hjemmefrontmuseum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norges_hjemmefrontmuseum_popup_08",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_norges_hjemmefrontmuseum_5_1970",
+                  "year": 1970,
+                  "title": "Museet åpner",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Museet åpner",
+                      "url": "https://www.kongehuset.no/nyheter/besokte-krigsveteraner",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_norges_hjemmefrontmuseum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_norges_hjemmefrontmuseum_6_1995",
+                  "year": 1995,
+                  "title": "Museet blir statlig",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Museet blir statlig",
+                      "url": "https://forvaltningsdatabasen.sikt.no/data/enhet/53012/endringshistorie",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/historie/leksikon_norges_hjemmefrontmuseum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "harald_v"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_norges_hjemmefrontmuseum_fra_motstandserfaring_til_museum",
+                    "title": "Fra motstandserfaring til museum",
+                    "year": 1962,
+                    "type": "historical_event"
                   }
                 ]
               }
@@ -58595,7 +61037,7 @@
                       "verifiedAt": ""
                     }
                   ],
-                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "source_file": "data/runtime/stories-all/part-003.json",
                   "evidence_type": "canonical_story",
                   "claim_id": "",
                   "story_id": "st_slottsplassen_monument_1875",
@@ -59610,16 +62052,16 @@
               }
             }
           ],
-          "placeCount": 45,
-          "milestoneCount": 118
+          "placeCount": 46,
+          "milestoneCount": 137
         }
       },
       "oslo_coverage": {
         "contract": "oslo-history-coverage-v1",
         "canonical_place_count": 584,
-        "dated_evidence_place_count": 218,
+        "dated_evidence_place_count": 219,
         "documented_case_place_count": 2,
-        "awaiting_source_backed_history_count": 364,
+        "awaiting_source_backed_history_count": 363,
         "categories": [
           {
             "category": "by",
@@ -59645,9 +62087,9 @@
           {
             "category": "historie",
             "total": 93,
-            "dated_evidence": 46,
+            "dated_evidence": 47,
             "documented_case": 1,
-            "awaiting_source_backed_history": 46
+            "awaiting_source_backed_history": 45
           },
           {
             "category": "kunst",
@@ -62302,7 +64744,7 @@
             "name": "Norges Hjemmefrontmuseum",
             "category": "historie",
             "source_file": "places/historie/oslo/places_historie_atlas_obscura_museum_batch_06/norges_hjemmefrontmuseum.json",
-            "status": "awaiting_source_backed_history"
+            "status": "dated_evidence"
           },
           {
             "place_id": "norges_varemesse",
@@ -74955,14 +77397,14 @@
     "canonical_source_count": 256,
     "place_evidence_link_count": 325,
     "period_case_count": 9,
-    "connected_people_count": 49,
+    "connected_people_count": 52,
     "connected_work_count": 164,
-    "connected_story_count": 230,
-    "canonical_story_milestone_count": 199,
-    "verified_place_production_milestone_count": 259,
-    "indexed_place_count": 264,
-    "epoch_place_relations": 529,
-    "milestone_count": 1222
+    "connected_story_count": 235,
+    "canonical_story_milestone_count": 204,
+    "verified_place_production_milestone_count": 283,
+    "indexed_place_count": 265,
+    "epoch_place_relations": 537,
+    "milestone_count": 1276
   },
   "warnings": {
     "missing_source_files": [

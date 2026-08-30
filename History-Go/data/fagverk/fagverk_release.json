@@ -18,7 +18,7 @@
     "schema": "history_go_fagverk_subject_inventory_v1",
     "version": "1.12.0",
     "updated_at": "2026-08-20",
-    "content_sha256": "ffeac66504a3ddd98ca52d9f344f9e103affac4abddc8cc73b1e2adc98933680",
+    "content_sha256": "1cdf54ba9dc36ffb21da65a7f01f547953afa13a13da52d189f1b0f83975fd2b",
     "root_subject_count": 19,
     "specialization_count": 1
   },
@@ -27,7 +27,7 @@
     "schema": null,
     "version": null,
     "updated_at": null,
-    "content_sha256": "109e030618ed6e42bc461785c86e8e557ba02810ffc0def5b6d1a465bb6cfc3e"
+    "content_sha256": "ae73e20465d7e42a47b5833f4e970c3ca17f2f20fec7234a23a52813e3d818c1"
   },
   "summary": {
     "subject_count": 20,
@@ -36,9 +36,9 @@
     "chapter_subject_count": 17,
     "chapter_count": 189,
     "module_file_count": 497,
-    "package_file_count": 347,
+    "package_file_count": 357,
     "chapter_referenced_file_count": 933,
-    "referenced_file_count": 1209,
+    "referenced_file_count": 1219,
     "missing_file_count": 0,
     "optional_gap_count": 1
   },
@@ -1948,9 +1948,9 @@
         "version"
       ],
       "missing_manifest_fields": [],
-      "package_file_count": 53,
+      "package_file_count": 62,
       "required_package_file_count": 4,
-      "optional_package_file_count": 49,
+      "optional_package_file_count": 58,
       "package_files": [
         {
           "path": "data/fag/historie/case_requirements_historie_canonical_v1.json",
@@ -2109,6 +2109,18 @@
           "content_sha256": "cd0ecf17487c6c31811ea2d857a3f60c0b757a3e71652af438cdadb597442606"
         },
         {
+          "path": "data/quiz/historie/akershus_festning_sets.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.akershus_festning.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "f9a2e16e23d6fa4e3d542608af68dd8c3e027f604bcdfd0b633c9b66f6f4b75e"
+        },
+        {
           "path": "data/quiz/historie/botsfengselet_sets.json",
           "required": false,
           "fields": [
@@ -2143,6 +2155,18 @@
           ],
           "exists": true,
           "content_sha256": "2fdf15d19d96019286a148ca045f8c0e180fa8d1e9e13647e52278e73854f405"
+        },
+        {
+          "path": "data/quiz/historie/forsvarsmuseet_sets.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.forsvarsmuseet.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "49bc83d6e225914562d67faf1cebe0dc08b03e78feccdd970347e5bdcd187a1b"
         },
         {
           "path": "data/quiz/historie/gamle_aker_kirke_sets.json",
@@ -2217,6 +2241,18 @@
           "content_sha256": "03b329a3d5754efcf3f9248ea677e9ca269cbc8f76b0e850e626aff47e1e2f59"
         },
         {
+          "path": "data/quiz/historie/norges_hjemmefrontmuseum_sets.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.norges_hjemmefrontmuseum.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "19b5b3ea6c254985f0fc7fac61d6764d86859edfab35eb68eb58c4cdc860bdfe"
+        },
+        {
           "path": "data/quiz/historie/oslo_hospital_sets.json",
           "required": false,
           "fields": [
@@ -2253,6 +2289,18 @@
           "content_sha256": "786ad31de8d175c5805640428c00ed5371f1935fbd077ab15bea7ae6f2be5217"
         },
         {
+          "path": "data/quiz/production_briefs/historie/akershus_festning.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.akershus_festning.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "118bd9d7daa2182876652c3768958275ce19de7d279efb7884fe94ed84e737de"
+        },
+        {
           "path": "data/quiz/production_briefs/historie/botsfengselet.json",
           "required": false,
           "fields": [
@@ -2287,6 +2335,18 @@
           ],
           "exists": true,
           "content_sha256": "755566f90b1a459c5b551c7b79a5d782feaa2b0ca7274989ceac9cca309ec74e"
+        },
+        {
+          "path": "data/quiz/production_briefs/historie/forsvarsmuseet.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.forsvarsmuseet.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "63e9866b780d4f6248fe552a43ed41567728791153c6246386b34f826e58a452"
         },
         {
           "path": "data/quiz/production_briefs/historie/gamle_aker_kirke.json",
@@ -2361,6 +2421,18 @@
           "content_sha256": "309ed881d26d29421f1b6442e2c892e021cbf55789ed1a3eb1b41723bc6127a5"
         },
         {
+          "path": "data/quiz/production_briefs/historie/norges_hjemmefrontmuseum.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.norges_hjemmefrontmuseum.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "c97326de463dc1ee63bb201241cb3a917afe5c37d01623eb89341e1e04757642"
+        },
+        {
           "path": "data/quiz/production_briefs/historie/oslo_hospital.json",
           "required": false,
           "fields": [
@@ -2397,6 +2469,18 @@
           "content_sha256": "62489fc800124b1a577dd709b0e554158aa5c31eb718441d67e8bd49024df7e1"
         },
         {
+          "path": "data/quiz/production_context/historie/akershus_festning.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.akershus_festning.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "14d9e03ecb02968d41299c9c6ca98a6ce33fc79491c138815c673de9e5ecdd2d"
+        },
+        {
           "path": "data/quiz/production_context/historie/botsfengselet.json",
           "required": false,
           "fields": [
@@ -2431,6 +2515,18 @@
           ],
           "exists": true,
           "content_sha256": "c54aec0ac802cfd84e04fda00e337bca2f627630361acc23d3b3102e0adc24a0"
+        },
+        {
+          "path": "data/quiz/production_context/historie/forsvarsmuseet.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.forsvarsmuseet.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "522d68e7e8538396f3ba23ab90ae729e86d3f273d9f9b39e32927cf165dc00b1"
         },
         {
           "path": "data/quiz/production_context/historie/gamle_aker_kirke.json",
@@ -2503,6 +2599,18 @@
           ],
           "exists": true,
           "content_sha256": "a3b26bffad2215955e0b5b6864b009a4c47dfd014dd55994b05c7aa2f51f4a32"
+        },
+        {
+          "path": "data/quiz/production_context/historie/norges_hjemmefrontmuseum.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.norges_hjemmefrontmuseum.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "5b0c820a66beff4e1e6089d660f2502cdb85f7ce67112891f80a4a0cdfc0b54a"
         },
         {
           "path": "data/quiz/production_context/historie/oslo_hospital.json",
@@ -2589,20 +2697,20 @@
           "content_sha256": "636265081b34aef4899fb33a8dd8ad7b03233480abdbfb812edced0d6a1a14d5"
         }
       ],
-      "package_content_sha256": "c3be57e3a8e8e92e5684a6fa539c3930629073764b259c53beeb80536f22e972",
+      "package_content_sha256": "c9d2cb985da5c5e5fbd615751836c7840b0f8473b887dcfdc1472ad3d308b05a",
       "chapter_count": 23,
       "module_file_count": 69,
       "brief_file_count": 0,
       "claims_file_count": 0,
       "chapter_referenced_file_count": 92,
       "chapter_content_sha256": "bedfd019dc2fa60ba92a540bf6b9f2504e0f6b1680350762a5fe074e82153148",
-      "referenced_file_count": 145,
+      "referenced_file_count": 154,
       "missing_required_files": [],
       "missing_optional_files": [],
       "missing_chapter_files": [],
       "missing_files": [],
-      "structure_sha256": "fd167bc58ede3d13d6b36aea34940d558f843bd66ce7ab10d231b029600fc1b1",
-      "content_sha256": "0d5edd7e832fce1aabb3242063fac16c560f112f2ef868b33d0b3feddeaec191",
+      "structure_sha256": "59720635918d177b154294db18cfb7781c6e56f73e62781636f1cd1eb7ec4eb1",
+      "content_sha256": "4054aa93ffd6f689b8bc399d49db6fc9bc50ad15e3c08b6e9a00167cf92e9fb7",
       "chapters": [
         {
           "chapter_id": "historisk_tid_periodisering",
@@ -4653,6 +4761,7 @@
       "optional_manifest_fields": [
         "curriculum",
         "concepts",
+        "runtimeManifest",
         "supersetQuizMal",
         "quizStandard",
         "quizQuestionSchema"
@@ -4666,12 +4775,13 @@
         "pensum",
         "quizQuestionSchema",
         "quizStandard",
+        "runtimeManifest",
         "supersetQuizMal"
       ],
       "missing_manifest_fields": [],
-      "package_file_count": 9,
+      "package_file_count": 10,
       "required_package_file_count": 4,
-      "optional_package_file_count": 5,
+      "optional_package_file_count": 6,
       "package_files": [
         {
           "path": "data/fag/politikk/concepts_politikk_canonical_v1.json",
@@ -4734,6 +4844,18 @@
           "content_sha256": "2ff2f66cd86dcee12924fcb778d435955dea5638714d1b45595cc5a6e9ad8e13"
         },
         {
+          "path": "data/fag/politikk/politikk_runtime_manifest.json",
+          "required": false,
+          "fields": [
+            "runtimeManifest"
+          ],
+          "key_paths": [
+            "runtimeManifest"
+          ],
+          "exists": true,
+          "content_sha256": "b611c0ab7e7cd4eb45f1203aa2e160b133e26fb185d7b7e7260cea1cec0a5fb6"
+        },
+        {
           "path": "data/fag/politikk/politikkpensum_canonical_v4_5.json",
           "required": true,
           "fields": [
@@ -4782,20 +4904,20 @@
           "content_sha256": "f16c375238d416b175a744c9f0e36b621cd3b0a92686f30a111a15b72c836c46"
         }
       ],
-      "package_content_sha256": "bd9fe460ae613ad028ffbdb3827e5357f8bf197caf18054a3e4febf6079b9f54",
+      "package_content_sha256": "9dc5cd872d02f04a7b822fd3af5a2649b8dd501282260a729ef37fea66c5cdb1",
       "chapter_count": 13,
       "module_file_count": 39,
       "brief_file_count": 13,
       "claims_file_count": 13,
       "chapter_referenced_file_count": 78,
       "chapter_content_sha256": "49a9ecd379041fe7827b0fd0386c66cf5f91e4fa547b8fbef04a07ae12ad582d",
-      "referenced_file_count": 87,
+      "referenced_file_count": 88,
       "missing_required_files": [],
       "missing_optional_files": [],
       "missing_chapter_files": [],
       "missing_files": [],
-      "structure_sha256": "55e818cf86a82450dfe365ef47a56bd3ce2ecd2159c8325a09cb7c6b669833ad",
-      "content_sha256": "f81ac063c10c9b15699196914be0c008de18fa446358c5f13342d5ade606f035",
+      "structure_sha256": "d3e22b0239edea8db974c6f4bac304fbd47a9e63ba5c76a7bbfc5a63441f09c6",
+      "content_sha256": "beeed0ac57d2ecab595c747148dfe5d2bc860e20f91b8274134c9bf4421c8767",
       "chapters": [
         {
           "chapter_id": "forvaltning",
@@ -6866,5 +6988,5 @@
       ]
     }
   },
-  "release_sha256": "6ed0fe2b34b83cf09f2769aaf7868c20e6afed5f6a3ce36c95f08c7a72243de6"
+  "release_sha256": "9d6527957dcc755edc1250641030a459ce744cf2cd8cced62ec92399e9fc1752"
 }
