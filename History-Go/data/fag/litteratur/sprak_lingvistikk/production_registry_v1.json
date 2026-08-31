@@ -4,8 +4,12 @@
   "updated_at": "2026-08-31",
   "owner_subject_id": "litteratur",
   "canonical_subcategory_id": "sprak_lingvistikk",
-  "status": "domains_1_2_3_4_5_6_materialized_domain_7_source_first_ready",
-  "progress": {"materializedDomains":6,"totalDomains":12,"strictCompletionProven":false},
+  "status": "strict_completion_proven",
+  "progress": {
+    "materializedDomains": 12,
+    "totalDomains": 12,
+    "strictCompletionProven": true
+  },
   "rules": {
     "subcategory_is_not_top_level_subject": true,
     "existing_owner_content_is_not_moved_or_deleted": true,
@@ -17,7 +21,7 @@
     "writing_is_not_equivalent_to_language": true,
     "prescriptive_norms_do_not_substitute_for_descriptive_evidence": true
   },
-  "next_gate": "pragmatics_discourse_conversation_context_fulltext",
+  "next_gate": "maintenance_source_refresh_and_case_expansion",
   "materialized": [
     {
       "ordinal": 1,
@@ -78,6 +82,66 @@
       "audit": "reports/fagverk/sprak-lingvistikk-semantics-meaning-reference-compositionality-fulltext-v1-audit.json",
       "source_brief": "data/fag/litteratur/sprak_lingvistikk/semantics_meaning_reference_compositionality_source_claim_brief_v1.json",
       "source_brief_audit": "reports/fagverk/sprak-lingvistikk-semantics-meaning-reference-compositionality-source-brief-v1-audit.json"
+    },
+    {
+      "ordinal": 7,
+      "domain_id": "pragmatikk_diskurs_samtale_kontekst",
+      "chapter": "data/fagverk/litteratur/sprak_lingvistikk/pragmatikk-diskurs-samtale-og-kontekst.json",
+      "claims": "data/fagverk/litteratur/sprak_lingvistikk/pragmatikk-diskurs-samtale-og-kontekst/claims.json",
+      "assessment": "data/fagverk/litteratur/sprak_lingvistikk/pragmatikk-diskurs-samtale-og-kontekst/assessment.json",
+      "audit": "reports/fagverk/sprak-lingvistikk-pragmatics-discourse-conversation-context-fulltext-v1-audit.json",
+      "source_brief": "data/fag/litteratur/sprak_lingvistikk/pragmatics_discourse_conversation_context_source_claim_brief_v1.json",
+      "source_brief_audit": "reports/fagverk/sprak-lingvistikk-pragmatics-discourse-conversation-context-source-brief-v1-audit.json"
+    },
+    {
+      "ordinal": 8,
+      "domain_id": "sosiolingvistikk_variasjon_flerspraklighet_sprakmakt",
+      "chapter": "data/fagverk/litteratur/sprak_lingvistikk/sosiolingvistikk-variasjon-flerspraklighet-og-sprakmakt.json",
+      "claims": "data/fagverk/litteratur/sprak_lingvistikk/sosiolingvistikk-variasjon-flerspraklighet-og-sprakmakt/claims.json",
+      "assessment": "data/fagverk/litteratur/sprak_lingvistikk/sosiolingvistikk-variasjon-flerspraklighet-og-sprakmakt/assessment.json",
+      "audit": "reports/fagverk/sprak-lingvistikk-sociolinguistics-variation-multilingualism-language-power-fulltext-v1-audit.json",
+      "source_brief": "data/fag/litteratur/sprak_lingvistikk/sociolinguistics_variation_multilingualism_language_power_source_claim_brief_v1.json",
+      "source_brief_audit": "reports/fagverk/sprak-lingvistikk-sociolinguistics-variation-multilingualism-language-power-source-brief-v1-audit.json"
+    },
+    {
+      "ordinal": 9,
+      "domain_id": "historisk_lingvistikk_sprakendring_slektskap_kontakt",
+      "chapter": "data/fagverk/litteratur/sprak_lingvistikk/historisk-lingvistikk-sprakendring-slektskap-og-kontakt.json",
+      "claims": "data/fagverk/litteratur/sprak_lingvistikk/historisk-lingvistikk-sprakendring-slektskap-og-kontakt/claims.json",
+      "assessment": "data/fagverk/litteratur/sprak_lingvistikk/historisk-lingvistikk-sprakendring-slektskap-og-kontakt/assessment.json",
+      "audit": "reports/fagverk/sprak-lingvistikk-historical-linguistics-language-change-genealogy-contact-fulltext-v1-audit.json",
+      "source_brief": "data/fag/litteratur/sprak_lingvistikk/historical_linguistics_language_change_genealogy_contact_source_claim_brief_v1.json",
+      "source_brief_audit": "reports/fagverk/sprak-lingvistikk-historical-linguistics-language-change-genealogy-contact-source-brief-v1-audit.json"
+    },
+    {
+      "ordinal": 10,
+      "domain_id": "spraktypologi_universaler_mangfold",
+      "chapter": "data/fagverk/litteratur/sprak_lingvistikk/spraktypologi-universaler-og-sprakmangfold.json",
+      "claims": "data/fagverk/litteratur/sprak_lingvistikk/spraktypologi-universaler-og-sprakmangfold/claims.json",
+      "assessment": "data/fagverk/litteratur/sprak_lingvistikk/spraktypologi-universaler-og-sprakmangfold/assessment.json",
+      "audit": "reports/fagverk/sprak-lingvistikk-language-typology-universals-diversity-fulltext-v1-audit.json",
+      "source_brief": "data/fag/litteratur/sprak_lingvistikk/language_typology_universals_diversity_source_claim_brief_v1.json",
+      "source_brief_audit": "reports/fagverk/sprak-lingvistikk-language-typology-universals-diversity-source-brief-v1-audit.json"
+    },
+    {
+      "ordinal": 11,
+      "domain_id": "psykolingvistikk_spraktilegnelse_prosessering",
+      "chapter": "data/fagverk/litteratur/sprak_lingvistikk/psykolingvistikk-spraktilegnelse-og-prosessering.json",
+      "claims": "data/fagverk/litteratur/sprak_lingvistikk/psykolingvistikk-spraktilegnelse-og-prosessering/claims.json",
+      "assessment": "data/fagverk/litteratur/sprak_lingvistikk/psykolingvistikk-spraktilegnelse-og-prosessering/assessment.json",
+      "audit": "reports/fagverk/sprak-lingvistikk-psycholinguistics-language-acquisition-processing-fulltext-v1-audit.json",
+      "source_brief": "data/fag/litteratur/sprak_lingvistikk/psycholinguistics_language_acquisition_processing_source_claim_brief_v1.json",
+      "source_brief_audit": "reports/fagverk/sprak-lingvistikk-psycholinguistics-language-acquisition-processing-source-brief-v1-audit.json"
+    },
+    {
+      "ordinal": 12,
+      "domain_id": "korpuslingvistikk_feltdokumentasjon_sprakressurser_reproduserbarhet",
+      "chapter": "data/fagverk/litteratur/sprak_lingvistikk/korpuslingvistikk-feltdokumentasjon-sprakressurser-og-reproduserbarhet.json",
+      "claims": "data/fagverk/litteratur/sprak_lingvistikk/korpuslingvistikk-feltdokumentasjon-sprakressurser-og-reproduserbarhet/claims.json",
+      "assessment": "data/fagverk/litteratur/sprak_lingvistikk/korpuslingvistikk-feltdokumentasjon-sprakressurser-og-reproduserbarhet/assessment.json",
+      "audit": "reports/fagverk/sprak-lingvistikk-corpus-field-documentation-language-resources-reproducibility-fulltext-v1-audit.json",
+      "source_brief": "data/fag/litteratur/sprak_lingvistikk/corpus_field_documentation_language_resources_reproducibility_source_claim_brief_v1.json",
+      "source_brief_audit": "reports/fagverk/sprak-lingvistikk-corpus-field-documentation-language-resources-reproducibility-source-brief-v1-audit.json"
     }
   ]
 }
