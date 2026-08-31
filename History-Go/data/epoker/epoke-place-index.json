@@ -1968,6 +1968,75 @@
               }
             },
             {
+              "place_id": "akershus_slottskirke",
+              "name": "Akershus slottskirke",
+              "category": "religion",
+              "source_file": "places/religion/oslo/akershus_slottskirke/akershus_slottskirke.json",
+              "roles": [
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_akershus_slottskirke_text_09",
+                  "year": 1527,
+                  "title": "Etter brannen i 1527 ble en del av første etasje i sørfløyen tatt i bruk som kirke, og mot slutten av 1500-tallet omfattet kirkerommet hele etasjen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kildegrunnlag for popupDesc, setning 9",
+                      "url": "https://snl.no/Akershus_slottskirke",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/akershus_slottskirke.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_akershus_slottskirke_text_09",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_akershus_slottskirke_1_1527",
+                  "year": 1527,
+                  "title": "Kirkerom etter brannen",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "SNL – Akershus slottskirke",
+                      "url": "https://snl.no/Akershus_slottskirke",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_akershus_slottskirke.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "arnstein_arneberg",
+                  "christian_iv",
+                  "olav_v"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_akershus_slottskirke_olav_v_1991",
+                    "title": "Fra domkirken til slottskirken",
+                    "year": 1991,
+                    "type": "historical_event"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "alna_utlop_bjorvika",
               "name": "Alnas historiske utløp ved Vannspeilet",
               "category": "natur",
@@ -4134,8 +4203,8 @@
               }
             }
           ],
-          "placeCount": 22,
-          "milestoneCount": 76
+          "placeCount": 23,
+          "milestoneCount": 78
         },
         "historie_tidlig_moderne_stat_handel_og_reformasjon": {
           "places": [
@@ -4478,6 +4547,132 @@
                     "title": "Hvilket Akershus skulle bevares?",
                     "year": 1905,
                     "type": "conflict"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "akershus_slottskirke",
+              "name": "Akershus slottskirke",
+              "category": "religion",
+              "source_file": "places/religion/oslo/akershus_slottskirke/akershus_slottskirke.json",
+              "roles": [
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_akershus_slottskirke_2_1590",
+                  "year": 1590,
+                  "title": "Kirken fyller sørfløyens første etasje",
+                  "consequence": "",
+                  "confidence": "medium",
+                  "sources": [
+                    {
+                      "title": "SNL – Akershus slottskirke",
+                      "url": "https://snl.no/Akershus_slottskirke",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_akershus_slottskirke.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_akershus_slottskirke_text_10",
+                  "year": 1738,
+                  "title": "En stor ombygging mellom 1738 og 1741 flyttet koret og alteret mot øst og ga rommet nytt inventar.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kildegrunnlag for popupDesc, setning 10",
+                      "url": "https://snl.no/Akershus_slottskirke",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/akershus_slottskirke.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_akershus_slottskirke_text_10",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_akershus_slottskirke_text_11",
+                  "year": 1742,
+                  "title": "Kirken ble innviet i 1742.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kildegrunnlag for popupDesc, setning 11",
+                      "url": "https://snl.no/Akershus_slottskirke",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/akershus_slottskirke.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_akershus_slottskirke_text_11",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_akershus_slottskirke_text_02",
+                  "year": 1742,
+                  "title": "Kirkerommet ble innviet i 1742 etter en omfattende ombygging, men religiøs bruk på stedet går tilbake til middelalderen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kildegrunnlag for desc, setning 2",
+                      "url": "https://snl.no/Akershus_slottskirke",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/akershus_slottskirke.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_akershus_slottskirke_text_02",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_akershus_slottskirke_3_1742",
+                  "year": 1742,
+                  "title": "Slottskirken innvies",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "SNL – Akershus slottskirke",
+                      "url": "https://snl.no/Akershus_slottskirke",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_akershus_slottskirke.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "arnstein_arneberg",
+                  "christian_iv",
+                  "olav_v"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_akershus_slottskirke_olav_v_1991",
+                    "title": "Fra domkirken til slottskirken",
+                    "year": 1991,
+                    "type": "historical_event"
                   }
                 ]
               }
@@ -6501,6 +6696,103 @@
                     "title": "Klosteret finansiert av imperiet",
                     "year": 1502,
                     "type": "history_place"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "myntgatakvartalet",
+              "name": "Myntgatakvartalet",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie_oslo_oppdag_kvadraturen_batch_02/myntgatakvartalet.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_myntgatakvartalet_popup_02",
+                  "year": 1628,
+                  "title": "Christian IV anla et kongelig myntverk ved Akershus i 1628 for å utmynte sølv fra Kongsberg.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "popup, setning 2",
+                      "url": "https://www.oppdagkvadraturen.no/stoppesteder/myntgata-2-myntgatakvartalet",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/places/production/myntgatakvartalet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_myntgatakvartalet_popup_02",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_myntgatakvartalet_brannen_1686",
+                  "year": 1686,
+                  "title": "Brannen som gjorde myntverk til festningsterreng",
+                  "consequence": "Etter bybrannen i 1686 ble myntproduksjonen flyttet og tomten tatt inn i Akershus festnings ytre forsvarsverk.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oppdag Kvadraturen – Myntgatakvartalet",
+                      "url": "https://www.oppdagkvadraturen.no/stoppesteder/myntgata-2-myntgatakvartalet",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Norges Bank – Christiania-mynten",
+                      "url": "https://www.norges-bank.no/tema/Om-Norges-Bank/historie/norges-banks-historie/Epoke1-teaser/1625-/1625-utdyping-om-christiania-myntverk/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_myntgatakvartalet_brannen_1686",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_myntgatakvartalet_popup_04",
+                  "year": 1686,
+                  "title": "Bybrannen i 1686 ble et tydelig brudd.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "popup, setning 4",
+                      "url": "https://www.oppdagkvadraturen.no/stoppesteder/myntgata-2-myntgatakvartalet",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/places/production/myntgatakvartalet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_myntgatakvartalet_popup_04",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_myntgatakvartalet_brannen_1686",
+                    "title": "Brannen som gjorde myntverk til festningsterreng",
+                    "year": 1686,
+                    "type": "historical_event"
                   }
                 ]
               }
@@ -8719,8 +9011,8 @@
               }
             }
           ],
-          "placeCount": 45,
-          "milestoneCount": 119
+          "placeCount": 47,
+          "milestoneCount": 127
         },
         "historie_revolusjoner_industri_og_demokratisering": {
           "places": [
@@ -9076,6 +9368,79 @@
                     "title": "Hvilket Akershus skulle bevares?",
                     "year": 1905,
                     "type": "conflict"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "akershus_slottskirke",
+              "name": "Akershus slottskirke",
+              "category": "religion",
+              "source_file": "places/religion/oslo/akershus_slottskirke/akershus_slottskirke.json",
+              "roles": [
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_akershus_slottskirke_4_1860",
+                  "year": 1860,
+                  "title": "Garnisonsmenigheten opprettes",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "SNL – Akershus slottskirke",
+                      "url": "https://snl.no/Akershus_slottskirke",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_akershus_slottskirke.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_akershus_slottskirke_5_1905",
+                  "year": 1905,
+                  "title": "To nye klokker innvies",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "SNL – Akershus slottskirke",
+                      "url": "https://snl.no/Akershus_slottskirke",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_akershus_slottskirke.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "arnstein_arneberg",
+                  "christian_iv",
+                  "olav_v"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_akershus_slottskirke_olav_v_1991",
+                    "title": "Fra domkirken til slottskirken",
+                    "year": 1991,
+                    "type": "historical_event"
                   }
                 ]
               }
@@ -10924,6 +11289,63 @@
                     "title": "Bankplassen og den nye statens kapital",
                     "year": 1828,
                     "type": "economic"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "det_kongelige_mausoleum",
+              "name": "Det kongelige mausoleum",
+              "category": "religion",
+              "source_file": "places/religion/oslo/det_kongelige_mausoleum/det_kongelige_mausoleum.json",
+              "roles": [
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_det_kongelige_mausoleum_text_03",
+                  "year": 1905,
+                  "title": "Bygningen og sarkofagene gjør den kongelige gravtradisjonen etter 1905 fysisk lesbar på Akershus.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kildegrunnlag for desc, setning 3",
+                      "url": "https://www.kongehuset.no/historie/alt-for-norge/det-kongelige-mausoleum-og-sarkofagene",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/places/production/det_kongelige_mausoleum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_det_kongelige_mausoleum_text_03",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "arnstein_arneberg",
+                  "olav_v"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_det_kongelige_mausoleum_maud_1938_1949",
+                    "title": "Kisten som måtte skjules før gravstedet var ferdig",
+                    "year": 1940,
+                    "type": "historical_event"
                   }
                 ]
               }
@@ -14009,6 +14431,71 @@
                     "title": "Været blir en nasjonal datainfrastruktur",
                     "year": 1866,
                     "type": "scientific"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "myntgatakvartalet",
+              "name": "Myntgatakvartalet",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie_oslo_oppdag_kvadraturen_batch_02/myntgatakvartalet.json",
+              "roles": [
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_myntgatakvartalet_popup_08",
+                  "year": 1861,
+                  "title": "Artilleristallen ble oppført i 1861 og Kavalleristallen i 1867.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "popup, setning 8",
+                      "url": "https://magasin.oslo.kommune.no/byplan/alle-vil-til-myntgata",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/places/production/myntgatakvartalet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_myntgatakvartalet_popup_08",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_myntgatakvartalet_desc_01",
+                  "year": 1861,
+                  "title": "Myntgatakvartalet er det fredede stall- og kaserneanlegget i Myntgata 2, reist fra 1861 på en tomt som tidligere rommet Christian IVs myntverk og festningens ytre forsvarsverk.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "desc, setning 1",
+                      "url": "https://www.oppdagkvadraturen.no/stoppesteder/myntgata-2-myntgatakvartalet",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/places/production/myntgatakvartalet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_myntgatakvartalet_desc_01",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_myntgatakvartalet_brannen_1686",
+                    "title": "Brannen som gjorde myntverk til festningsterreng",
+                    "year": 1686,
+                    "type": "historical_event"
                   }
                 ]
               }
@@ -20727,8 +21214,8 @@
               }
             }
           ],
-          "placeCount": 101,
-          "milestoneCount": 357
+          "placeCount": 104,
+          "milestoneCount": 362
         },
         "historie_nasjon_massepolitikk_og_moderne_institusjoner": {
           "places": [
@@ -20840,6 +21327,98 @@
                     "title": "Akershus skifter hender",
                     "year": 1945,
                     "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "akershus_slottskirke",
+              "name": "Akershus slottskirke",
+              "category": "religion",
+              "source_file": "places/religion/oslo/akershus_slottskirke/akershus_slottskirke.json",
+              "roles": [
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_akershus_slottskirke_6_1911",
+                  "year": 1911,
+                  "title": "Restaurering under Sinding-Larsen",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "SNL – Akershus slottskirke",
+                      "url": "https://snl.no/Akershus_slottskirke",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_akershus_slottskirke.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_akershus_slottskirke_text_22",
+                  "year": 1938,
+                  "title": "Fotografiet av dronning Mauds båre i kirken i 1938 viser den samme forbindelsen mellom kirkerom, kongehus og gravritual.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kildegrunnlag for popupDesc, setning 22",
+                      "url": "https://snl.no/Akershus_slottskirke",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/akershus_slottskirke.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_akershus_slottskirke_text_22",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_akershus_slottskirke_7_1938",
+                  "year": 1938,
+                  "title": "Garnisonsmenigheten oppløses",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "SNL – Akershus slottskirke",
+                      "url": "https://snl.no/Akershus_slottskirke",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_akershus_slottskirke.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "arnstein_arneberg",
+                  "christian_iv",
+                  "olav_v"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_akershus_slottskirke_olav_v_1991",
+                    "title": "Fra domkirken til slottskirken",
+                    "year": 1991,
+                    "type": "historical_event"
                   }
                 ]
               }
@@ -21783,6 +22362,78 @@
                     "title": "Bydelsbiblioteket som scene",
                     "year": 1914,
                     "type": "cultural"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "det_kongelige_mausoleum",
+              "name": "Det kongelige mausoleum",
+              "category": "religion",
+              "source_file": "places/religion/oslo/det_kongelige_mausoleum/det_kongelige_mausoleum.json",
+              "roles": [
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_det_kongelige_mausoleum_text_12",
+                  "year": 1938,
+                  "title": "Dronning Maud døde i 1938, før mausoleet var ferdig.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kildegrunnlag for popupDesc, setning 12",
+                      "url": "https://www.kongehuset.no/historie/alt-for-norge/det-kongelige-mausoleum-og-sarkofagene",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/places/production/det_kongelige_mausoleum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_det_kongelige_mausoleum_text_12",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_det_kongelige_mausoleum_1_1938",
+                  "year": 1938,
+                  "title": "Dronning Maud dør",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Kongehuset – Det kongelige mausoleum",
+                      "url": "https://www.kongehuset.no/historie/alt-for-norge/det-kongelige-mausoleum-og-sarkofagene",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_det_kongelige_mausoleum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "arnstein_arneberg",
+                  "olav_v"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_det_kongelige_mausoleum_maud_1938_1949",
+                    "title": "Kisten som måtte skjules før gravstedet var ferdig",
+                    "year": 1940,
+                    "type": "historical_event"
                   }
                 ]
               }
@@ -27797,8 +28448,8 @@
               }
             }
           ],
-          "placeCount": 83,
-          "milestoneCount": 184
+          "placeCount": 85,
+          "milestoneCount": 189
         },
         "historie_krig_okkupasjon_og_etterkrigsoppgjor": {
           "places": [
@@ -28308,6 +28959,167 @@
                     "title": "Messingsteinen ved nummer 2",
                     "year": 1942,
                     "type": "person_at_place"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "det_kongelige_mausoleum",
+              "name": "Det kongelige mausoleum",
+              "category": "religion",
+              "source_file": "places/religion/oslo/det_kongelige_mausoleum/det_kongelige_mausoleum.json",
+              "roles": [
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "konflikt_og_motstand",
+                  "label": "Konflikt og motstand"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_det_kongelige_mausoleum_2_1940",
+                  "year": 1940,
+                  "title": "Kisten flyttes under krigen",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Kongehuset – Det kongelige mausoleum",
+                      "url": "https://www.kongehuset.no/historie/alt-for-norge/det-kongelige-mausoleum-og-sarkofagene",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_det_kongelige_mausoleum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_det_kongelige_mausoleum_maud_1938_1949",
+                  "year": 1940,
+                  "title": "Kisten som måtte skjules før gravstedet var ferdig",
+                  "consequence": "Dronning Mauds kiste kunne ikke få sitt endelige hvilested i det uferdige mausoleet og ble under okkupasjonen flyttet til krypten i Gamle Aker kirke før tilbakeføringen i 1949.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kongehuset – Det kongelige mausoleum",
+                      "url": "https://www.kongehuset.no/historie/alt-for-norge/det-kongelige-mausoleum-og-sarkofagene",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Store norske leksikon – Gamle Aker kirke",
+                      "url": "https://snl.no/Gamle_Aker_kirke",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_det_kongelige_mausoleum_maud_1938_1949",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_det_kongelige_mausoleum_text_23",
+                  "year": 1949,
+                  "title": "Bygningen fra 1949 kombinerer moderne byggetid med gotiske vindusformer.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kildegrunnlag for popupDesc, setning 23",
+                      "url": "https://snl.no/Det_kongelige_mausoleum",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/places/production/det_kongelige_mausoleum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_det_kongelige_mausoleum_text_23",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_det_kongelige_mausoleum_text_14",
+                  "year": 1949,
+                  "title": "I desember 1949 fikk hun sitt endelige hvilested i den hvite dobbeltsarkofagen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kildegrunnlag for popupDesc, setning 14",
+                      "url": "https://www.kongehuset.no/historie/alt-for-norge/det-kongelige-mausoleum-og-sarkofagene",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/places/production/det_kongelige_mausoleum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_det_kongelige_mausoleum_text_14",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_det_kongelige_mausoleum_text_06",
+                  "year": 1949,
+                  "title": "Kapellet ble innviet 16. desember 1949.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kildegrunnlag for popupDesc, setning 6",
+                      "url": "https://snl.no/Det_kongelige_mausoleum",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/places/production/det_kongelige_mausoleum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_det_kongelige_mausoleum_text_06",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_det_kongelige_mausoleum_3_1949",
+                  "year": 1949,
+                  "title": "Mausoleet innvies",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Kongehuset – Det kongelige mausoleum",
+                      "url": "https://www.kongehuset.no/historie/alt-for-norge/det-kongelige-mausoleum-og-sarkofagene",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_det_kongelige_mausoleum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "arnstein_arneberg",
+                  "olav_v"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_det_kongelige_mausoleum_maud_1938_1949",
+                    "title": "Kisten som måtte skjules før gravstedet var ferdig",
+                    "year": 1940,
+                    "type": "historical_event"
                   }
                 ]
               }
@@ -31753,8 +32565,8 @@
               }
             }
           ],
-          "placeCount": 44,
-          "milestoneCount": 101
+          "placeCount": 45,
+          "milestoneCount": 107
         },
         "historie_velferdsstat_kald_krig_og_sosialdemokrati": {
           "places": [
@@ -32000,6 +32812,56 @@
                     "title": "Hvilket Akershus skulle bevares?",
                     "year": 1905,
                     "type": "conflict"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "akershus_slottskirke",
+              "name": "Akershus slottskirke",
+              "category": "religion",
+              "source_file": "places/religion/oslo/akershus_slottskirke/akershus_slottskirke.json",
+              "roles": [
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_akershus_slottskirke_8_1953",
+                  "year": 1953,
+                  "title": "Arnebergs restaurering starter",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "SNL – Akershus slottskirke",
+                      "url": "https://snl.no/Akershus_slottskirke",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_akershus_slottskirke.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "arnstein_arneberg",
+                  "christian_iv",
+                  "olav_v"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_akershus_slottskirke_olav_v_1991",
+                    "title": "Fra domkirken til slottskirken",
+                    "year": 1991,
+                    "type": "historical_event"
                   }
                 ]
               }
@@ -32775,6 +33637,78 @@
                     "title": "Kuppelen som falt i brannen",
                     "year": 1963,
                     "type": "accident"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "det_kongelige_mausoleum",
+              "name": "Det kongelige mausoleum",
+              "category": "religion",
+              "source_file": "places/religion/oslo/det_kongelige_mausoleum/det_kongelige_mausoleum.json",
+              "roles": [
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_det_kongelige_mausoleum_text_16",
+                  "year": 1957,
+                  "title": "Haakon VII ble stedt til hvile i mausoleet 1. oktober 1957.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kildegrunnlag for popupDesc, setning 16",
+                      "url": "https://www.kongehuset.no/historie/alt-for-norge/det-kongelige-mausoleum-og-sarkofagene",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/places/production/det_kongelige_mausoleum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_det_kongelige_mausoleum_text_16",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_det_kongelige_mausoleum_4_1957",
+                  "year": 1957,
+                  "title": "Haakon VII gravlegges",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Kongehuset – Det kongelige mausoleum",
+                      "url": "https://www.kongehuset.no/historie/alt-for-norge/det-kongelige-mausoleum-og-sarkofagene",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_det_kongelige_mausoleum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "arnstein_arneberg",
+                  "olav_v"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_det_kongelige_mausoleum_maud_1938_1949",
+                    "title": "Kisten som måtte skjules før gravstedet var ferdig",
+                    "year": 1940,
+                    "type": "historical_event"
                   }
                 ]
               }
@@ -37125,8 +38059,8 @@
               }
             }
           ],
-          "placeCount": 61,
-          "milestoneCount": 141
+          "placeCount": 63,
+          "milestoneCount": 144
         },
         "historie_senmoderne_globalisering_og_markedsvending": {
           "places": [
@@ -37163,9 +38097,25 @@
                 }
               ],
               "connections": {
-                "person_ids": [],
+                "person_ids": [
+                  "alexandra_europa_perez_seoane",
+                  "lena_fahre"
+                ],
                 "works": [],
-                "stories": []
+                "stories": [
+                  {
+                    "id": "st_22_juli_senteret_spor_blir_kilder",
+                    "title": "Når spor blir offentlig kunnskap",
+                    "year": 2015,
+                    "type": "cultural"
+                  },
+                  {
+                    "id": "st_22_juli_senteret_fra_midlertidig_til_permanent",
+                    "title": "Et senter som måtte flytte mens oppgaven besto",
+                    "year": 2019,
+                    "type": "turning_point"
+                  }
+                ]
               }
             },
             {
@@ -37469,6 +38419,103 @@
                     "title": "Elva som ikke slutter ved kartkanten",
                     "year": 2014,
                     "type": "environmental"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "akershus_slottskirke",
+              "name": "Akershus slottskirke",
+              "category": "religion",
+              "source_file": "places/religion/oslo/akershus_slottskirke/akershus_slottskirke.json",
+              "roles": [
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_akershus_slottskirke_text_21",
+                  "year": 1991,
+                  "title": "Etter kong Olav Vs gravferd i Oslo domkirke i 1991 ble båren ført til slottskirken, der jordpåkastelsen fant sted før kisten ble brakt videre til mausoleet.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kildegrunnlag for popupDesc, setning 21",
+                      "url": "https://www.kongehuset.no/nyheter/tronskiftet-1991",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/akershus_slottskirke.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_akershus_slottskirke_text_21",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_akershus_slottskirke_olav_v_1991",
+                  "year": 1991,
+                  "title": "Fra domkirken til slottskirken",
+                  "consequence": "Etter Olav Vs gravferd i Oslo domkirke fortsatte det kongelige gravritualet i Akershus slottskirke før kisten ble ført til mausoleet.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kongehuset – tronskiftet 1991",
+                      "url": "https://www.kongehuset.no/nyheter/tronskiftet-1991",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Kongehuset – Det kongelige mausoleum",
+                      "url": "https://www.kongehuset.no/historie/alt-for-norge/det-kongelige-mausoleum-og-sarkofagene",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_akershus_slottskirke_olav_v_1991",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_akershus_slottskirke_9_1991",
+                  "year": 1991,
+                  "title": "Olav Vs jordpåkastelse",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Kongehuset – tronskiftet 1991",
+                      "url": "https://www.kongehuset.no/nyheter/tronskiftet-1991",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_akershus_slottskirke.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "arnstein_arneberg",
+                  "christian_iv",
+                  "olav_v"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_akershus_slottskirke_olav_v_1991",
+                    "title": "Fra domkirken til slottskirken",
+                    "year": 1991,
+                    "type": "historical_event"
                   }
                 ]
               }
@@ -38845,6 +39892,78 @@
                 "person_ids": [],
                 "works": [],
                 "stories": []
+              }
+            },
+            {
+              "place_id": "det_kongelige_mausoleum",
+              "name": "Det kongelige mausoleum",
+              "category": "religion",
+              "source_file": "places/religion/oslo/det_kongelige_mausoleum/det_kongelige_mausoleum.json",
+              "roles": [
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_det_kongelige_mausoleum_text_18",
+                  "year": 1991,
+                  "title": "Da Olav V døde i 1991, gikk gravferdsforløpet fra Oslo domkirke til jordpåkastelse i Akershus slottskirke og deretter til mausoleet.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kildegrunnlag for popupDesc, setning 18",
+                      "url": "https://www.kongehuset.no/historie/alt-for-norge/det-kongelige-mausoleum-og-sarkofagene",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/places/production/det_kongelige_mausoleum.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_det_kongelige_mausoleum_text_18",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_det_kongelige_mausoleum_5_1991",
+                  "year": 1991,
+                  "title": "Olav V gravlegges",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Kongehuset – Det kongelige mausoleum",
+                      "url": "https://www.kongehuset.no/historie/alt-for-norge/det-kongelige-mausoleum-og-sarkofagene",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_det_kongelige_mausoleum.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "arnstein_arneberg",
+                  "olav_v"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_det_kongelige_mausoleum_maud_1938_1949",
+                    "title": "Kisten som måtte skjules før gravstedet var ferdig",
+                    "year": 1940,
+                    "type": "historical_event"
+                  }
+                ]
               }
             },
             {
@@ -43839,8 +44958,8 @@
               }
             }
           ],
-          "placeCount": 90,
-          "milestoneCount": 158
+          "placeCount": 92,
+          "milestoneCount": 163
         },
         "historie_digital_samtid_kriser_og_ny_offentlighet": {
           "places": [
@@ -43850,6 +44969,10 @@
               "category": "politikk",
               "source_file": "places/politikk/oslo/places_politikk/22_juli_senteret.json",
               "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
                 {
                   "id": "em_his_branner_ulykker_brudd",
                   "label": "Branner/ulykker"
@@ -43871,12 +44994,24 @@
                   "label": "Kildekritikk"
                 },
                 {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
                   "id": "em_his_katastrofer_brudd_beredskap_kriseledelse_og_institusjonell_laering",
                   "label": "Langsomme katastrofer og miljøskade"
                 },
                 {
                   "id": "em_his_katastrofer_brudd_skyld_ansvar_gransking_og_rett",
                   "label": "Langsomme katastrofer, miljøskade og ulik eksponering"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
                 },
                 {
                   "id": "em_his_minnesteder_historiebruk",
@@ -43892,6 +45027,25 @@
                 }
               ],
               "milestones": [
+                {
+                  "id": "production_claim_22_juli_senteret_desc_01",
+                  "year": 2011,
+                  "title": "22. juli-senteret er Norges nasjonale minne- og læringssenter om terrorangrepene 22. juli 2011.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "desc setning 1",
+                      "url": "https://www.22julisenteret.no/no/om-senteret/historikk",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/places/production/22_juli_senteret.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_22_juli_senteret_desc_01",
+                  "story_id": "",
+                  "limitations": []
+                },
                 {
                   "id": "claim_claim_his_22_juli_center_documents_attacks_and_democracy",
                   "year": 2011,
@@ -43991,6 +45145,226 @@
                   ]
                 },
                 {
+                  "id": "production_claim_22_juli_senteret_desc_02",
+                  "year": 2015,
+                  "title": "Institusjonen ble etablert i 2015 og åpnet sitt permanente senter i Akersgata 42 den 22. juli 2026.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "desc setning 2",
+                      "url": "https://presse.22julisenteret.no/pressreleases/15-aar-etter-22-juli-aapner-europas-stoerste-minne-og-laeringssenter-om-terror-3459090",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/places/production/22_juli_senteret.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_22_juli_senteret_desc_02",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_22_juli_senteret_1_2015",
+                  "year": 2015,
+                  "title": "Midlertidig senter åpner",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "22. juli-senteret – historikk",
+                      "url": "https://www.22julisenteret.no/no/om-senteret/historikk",
+                      "verifiedAt": "2026-08-31"
+                    },
+                    {
+                      "title": "22. juli-senteret – åpning 2026",
+                      "url": "https://presse.22julisenteret.no/pressreleases/15-aar-etter-22-juli-aapner-europas-stoerste-minne-og-laeringssenter-om-terror-3459090",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/politikk/leksikon_22_juli_senteret.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_22_juli_senteret_spor_blir_kilder",
+                  "year": 2015,
+                  "title": "Når spor blir offentlig kunnskap",
+                  "consequence": "AUF og støttegruppen tok initiativ til den første utstillingen, og senteret utviklet et arbeid der gjenstander, fotografier og vitnesbyrd ble bevart og satt inn i en offentlig læringssammenheng.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "22. juli-senteret – historikk",
+                      "url": "https://www.22julisenteret.no/no/om-senteret/historikk",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "22. juli-senteret – samarbeidspartnere",
+                      "url": "https://www.22julisenteret.no/no/om-senteret/vare-samarbeidspartnare",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "22. juli-senteret – åpning 2026",
+                      "url": "https://presse.22julisenteret.no/pressreleases/15-aar-etter-22-juli-aapner-europas-stoerste-minne-og-laeringssenter-om-terror-3459090",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_22_juli_senteret_spor_blir_kilder",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_22_juli_senteret_popup_04",
+                  "year": 2015,
+                  "title": "Senteret begynte som et midlertidig informasjonssenter i Høyblokka 22. juli 2015.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "popupDesc setning 4",
+                      "url": "https://www.22julisenteret.no/no/om-senteret/historikk",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/places/production/22_juli_senteret.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_22_juli_senteret_popup_04",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_22_juli_senteret_fra_midlertidig_til_permanent",
+                  "year": 2019,
+                  "title": "Et senter som måtte flytte mens oppgaven besto",
+                  "consequence": "Da Høyblokka måtte stenge, fortsatte 22. juli-senteret i Teatergata mens det permanente senteret ble utviklet for tilbakekomsten til Regjeringskvartalet.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "22. juli-senteret – historikk",
+                      "url": "https://www.22julisenteret.no/no/om-senteret/historikk",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "22. juli-senteret – åpning 2026",
+                      "url": "https://presse.22julisenteret.no/pressreleases/15-aar-etter-22-juli-aapner-europas-stoerste-minne-og-laeringssenter-om-terror-3459090",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_22_juli_senteret_fra_midlertidig_til_permanent",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_22_juli_senteret_popup_07",
+                  "year": 2019,
+                  "title": "Høyblokka stengte som publikumslokale 15. desember 2019 på grunn av rehabiliteringen av Regjeringskvartalet.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "popupDesc setning 7",
+                      "url": "https://www.22julisenteret.no/no/om-senteret/historikk",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/places/production/22_juli_senteret.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_22_juli_senteret_popup_07",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_22_juli_senteret_2_2019",
+                  "year": 2019,
+                  "title": "Ny organisatorisk plassering",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "22. juli-senteret – historikk",
+                      "url": "https://www.22julisenteret.no/no/om-senteret/historikk",
+                      "verifiedAt": "2026-08-31"
+                    },
+                    {
+                      "title": "22. juli-senteret – åpning 2026",
+                      "url": "https://presse.22julisenteret.no/pressreleases/15-aar-etter-22-juli-aapner-europas-stoerste-minne-og-laeringssenter-om-terror-3459090",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/politikk/leksikon_22_juli_senteret.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_22_juli_senteret_popup_06",
+                  "year": 2019,
+                  "title": "Senteret lå under Departementenes sikkerhets- og serviceorganisasjon fram til 2019 og ble lagt under Kunnskapsdepartementet fra 1. juli samme år.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "popupDesc setning 6",
+                      "url": "https://www.22julisenteret.no/no/om-senteret/historikk",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/places/production/22_juli_senteret.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_22_juli_senteret_popup_06",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_22_juli_senteret_popup_08",
+                  "year": 2020,
+                  "title": "Den 27. juni 2020 åpnet senteret igjen i midlertidige lokaler i Teatergata 10.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "popupDesc setning 8",
+                      "url": "https://www.22julisenteret.no/no/om-senteret/historikk",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/places/production/22_juli_senteret.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_22_juli_senteret_popup_08",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_22_juli_senteret_3_2020",
+                  "year": 2020,
+                  "title": "Midlertidig gjenåpning",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "22. juli-senteret – historikk",
+                      "url": "https://www.22julisenteret.no/no/om-senteret/historikk",
+                      "verifiedAt": "2026-08-31"
+                    },
+                    {
+                      "title": "22. juli-senteret – åpning 2026",
+                      "url": "https://presse.22julisenteret.no/pressreleases/15-aar-etter-22-juli-aapner-europas-stoerste-minne-og-laeringssenter-om-terror-3459090",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/politikk/leksikon_22_juli_senteret.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
                   "id": "claim_claim_his_22juli_video_method_open_questions_minimal_editing",
                   "year": 2022,
                   "title": "Kildekritikk",
@@ -44011,6 +45385,68 @@
                     "Senterets metodebeskrivelse dokumenterer produksjonsvalgene, men ikke hvordan hvert opptak faktisk ble opplevd av fortelleren.",
                     "Minimal redigering kan styrke innsyn i fortellerforløpet, men kameraramme, spørsmål og publiseringsvalg former fortsatt kilden."
                   ]
+                },
+                {
+                  "id": "production_claim_22_juli_senteret_popup_17",
+                  "year": 2026,
+                  "title": "Den midlertidige utstillingen «Radikalisering» åpnet sammen med det permanente senteret i 2026.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "popupDesc setning 17",
+                      "url": "https://presse.22julisenteret.no/pressreleases/15-aar-etter-22-juli-aapner-europas-stoerste-minne-og-laeringssenter-om-terror-3459090",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/places/production/22_juli_senteret.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_22_juli_senteret_popup_17",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_22_juli_senteret_popup_02",
+                  "year": 2026,
+                  "title": "Det permanente senteret åpnet 22. juli 2026, femten år etter terrorangrepene.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "popupDesc setning 2",
+                      "url": "https://presse.22julisenteret.no/pressreleases/15-aar-etter-22-juli-aapner-europas-stoerste-minne-og-laeringssenter-om-terror-3459090",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/places/production/22_juli_senteret.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_22_juli_senteret_popup_02",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_22_juli_senteret_4_2026",
+                  "year": 2026,
+                  "title": "Permanent senter åpner",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "22. juli-senteret – historikk",
+                      "url": "https://www.22julisenteret.no/no/om-senteret/historikk",
+                      "verifiedAt": "2026-08-31"
+                    },
+                    {
+                      "title": "22. juli-senteret – åpning 2026",
+                      "url": "https://presse.22julisenteret.no/pressreleases/15-aar-etter-22-juli-aapner-europas-stoerste-minne-og-laeringssenter-om-terror-3459090",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/politikk/leksikon_22_juli_senteret.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
                 }
               ],
               "period_cases": [
@@ -44034,9 +45470,25 @@
                 }
               ],
               "connections": {
-                "person_ids": [],
+                "person_ids": [
+                  "alexandra_europa_perez_seoane",
+                  "lena_fahre"
+                ],
                 "works": [],
-                "stories": []
+                "stories": [
+                  {
+                    "id": "st_22_juli_senteret_spor_blir_kilder",
+                    "title": "Når spor blir offentlig kunnskap",
+                    "year": 2015,
+                    "type": "cultural"
+                  },
+                  {
+                    "id": "st_22_juli_senteret_fra_midlertidig_til_permanent",
+                    "title": "Et senter som måtte flytte mens oppgaven besto",
+                    "year": 2019,
+                    "type": "turning_point"
+                  }
+                ]
               }
             },
             {
@@ -44387,6 +45839,75 @@
                     "title": "Hvilket Akershus skulle bevares?",
                     "year": 1905,
                     "type": "conflict"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "akershus_slottskirke",
+              "name": "Akershus slottskirke",
+              "category": "religion",
+              "source_file": "places/religion/oslo/akershus_slottskirke/akershus_slottskirke.json",
+              "roles": [
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_akershus_slottskirke_text_17",
+                  "year": 2024,
+                  "title": "Et nytt orgel fra Weimbs Orgelbau ble innviet i 2024 etter et prosjekt ledet av Forsvarsbygg.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kildegrunnlag for popupDesc, setning 17",
+                      "url": "https://www.forsvarsbygg.no/contentassets/c2566b5e6ff243088d6473664b43a5c6/brosjyre-akershus-slottskirke-nytt-orgel.pdf",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/akershus_slottskirke.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_akershus_slottskirke_text_17",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_akershus_slottskirke_10_2024",
+                  "year": 2024,
+                  "title": "Nytt orgel innvies",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Forsvarsbygg – nytt orgel",
+                      "url": "https://www.forsvarsbygg.no/contentassets/c2566b5e6ff243088d6473664b43a5c6/brosjyre-akershus-slottskirke-nytt-orgel.pdf",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_akershus_slottskirke.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "arnstein_arneberg",
+                  "christian_iv",
+                  "olav_v"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_akershus_slottskirke_olav_v_1991",
+                    "title": "Fra domkirken til slottskirken",
+                    "year": 1991,
+                    "type": "historical_event"
                   }
                 ]
               }
@@ -47706,6 +49227,75 @@
               }
             },
             {
+              "place_id": "myntgatakvartalet",
+              "name": "Myntgatakvartalet",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie_oslo_oppdag_kvadraturen_batch_02/myntgatakvartalet.json",
+              "roles": [
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_myntgatakvartalet_popup_14",
+                  "year": 2017,
+                  "title": "Oslo kommune kjøpte eiendommen av Forsvarsbygg i 2017.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "popup, setning 14",
+                      "url": "https://www.oslo.kommune.no/slik-bygger-vi-oslo/myntgata-2/",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/places/production/myntgatakvartalet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_myntgatakvartalet_popup_14",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_myntgatakvartalet_popup_15",
+                  "year": 2024,
+                  "title": "Gårdsrommet ble åpnet for publikum året etter, og Oslobygg overtok forvaltningen i 2024.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "popup, setning 15",
+                      "url": "https://www.oslo.kommune.no/slik-bygger-vi-oslo/myntgata-2/",
+                      "verifiedAt": "2026-08-31"
+                    }
+                  ],
+                  "source_file": "data/places/production/myntgatakvartalet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_myntgatakvartalet_popup_15",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_myntgatakvartalet_brannen_1686",
+                    "title": "Brannen som gjorde myntverk til festningsterreng",
+                    "year": 1686,
+                    "type": "historical_event"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "nasjonalmuseet",
               "name": "Nasjonalmuseet",
               "category": "kunst",
@@ -50161,8 +51751,8 @@
               }
             }
           ],
-          "placeCount": 78,
-          "milestoneCount": 155
+          "placeCount": 80,
+          "milestoneCount": 173
         }
       },
       "parallel_tracks": {
@@ -50213,9 +51803,25 @@
               ],
               "period_cases": [],
               "connections": {
-                "person_ids": [],
+                "person_ids": [
+                  "alexandra_europa_perez_seoane",
+                  "lena_fahre"
+                ],
                 "works": [],
-                "stories": []
+                "stories": [
+                  {
+                    "id": "st_22_juli_senteret_spor_blir_kilder",
+                    "title": "Når spor blir offentlig kunnskap",
+                    "year": 2015,
+                    "type": "cultural"
+                  },
+                  {
+                    "id": "st_22_juli_senteret_fra_midlertidig_til_permanent",
+                    "title": "Et senter som måtte flytte mens oppgaven besto",
+                    "year": 2019,
+                    "type": "turning_point"
+                  }
+                ]
               }
             },
             {
@@ -58373,9 +59979,25 @@
               ],
               "period_cases": [],
               "connections": {
-                "person_ids": [],
+                "person_ids": [
+                  "alexandra_europa_perez_seoane",
+                  "lena_fahre"
+                ],
                 "works": [],
-                "stories": []
+                "stories": [
+                  {
+                    "id": "st_22_juli_senteret_spor_blir_kilder",
+                    "title": "Når spor blir offentlig kunnskap",
+                    "year": 2015,
+                    "type": "cultural"
+                  },
+                  {
+                    "id": "st_22_juli_senteret_fra_midlertidig_til_permanent",
+                    "title": "Et senter som måtte flytte mens oppgaven besto",
+                    "year": 2019,
+                    "type": "turning_point"
+                  }
+                ]
               }
             },
             {
@@ -58581,6 +60203,84 @@
                     "title": "Akershus skifter hender",
                     "year": 1945,
                     "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "akershus_slottskirke",
+              "name": "Akershus slottskirke",
+              "category": "religion",
+              "source_file": "places/religion/oslo/akershus_slottskirke/akershus_slottskirke.json",
+              "roles": [
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_akershus_slottskirke_text_22",
+                  "year": 1938,
+                  "title": "Fotografiet av dronning Mauds båre i kirken i 1938 viser den samme forbindelsen mellom kirkerom, kongehus og gravritual.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kildegrunnlag for popupDesc, setning 22",
+                      "url": "https://snl.no/Akershus_slottskirke",
+                      "verifiedAt": "2026-08-30"
+                    }
+                  ],
+                  "source_file": "data/places/production/akershus_slottskirke.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_akershus_slottskirke_text_22",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_akershus_slottskirke_olav_v_1991",
+                  "year": 1991,
+                  "title": "Fra domkirken til slottskirken",
+                  "consequence": "Etter Olav Vs gravferd i Oslo domkirke fortsatte det kongelige gravritualet i Akershus slottskirke før kisten ble ført til mausoleet.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kongehuset – tronskiftet 1991",
+                      "url": "https://www.kongehuset.no/nyheter/tronskiftet-1991",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Kongehuset – Det kongelige mausoleum",
+                      "url": "https://www.kongehuset.no/historie/alt-for-norge/det-kongelige-mausoleum-og-sarkofagene",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_akershus_slottskirke_olav_v_1991",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "arnstein_arneberg",
+                  "christian_iv",
+                  "olav_v"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_akershus_slottskirke_olav_v_1991",
+                    "title": "Fra domkirken til slottskirken",
+                    "year": 1991,
+                    "type": "historical_event"
                   }
                 ]
               }
@@ -63599,16 +65299,16 @@
               }
             }
           ],
-          "placeCount": 47,
-          "milestoneCount": 142
+          "placeCount": 48,
+          "milestoneCount": 144
         }
       },
       "oslo_coverage": {
         "contract": "oslo-history-coverage-v1",
-        "canonical_place_count": 585,
-        "dated_evidence_place_count": 221,
+        "canonical_place_count": 587,
+        "dated_evidence_place_count": 224,
         "documented_case_place_count": 2,
-        "awaiting_source_backed_history_count": 362,
+        "awaiting_source_backed_history_count": 361,
         "categories": [
           {
             "category": "by",
@@ -63634,9 +65334,9 @@
           {
             "category": "historie",
             "total": 94,
-            "dated_evidence": 48,
+            "dated_evidence": 49,
             "documented_case": 1,
-            "awaiting_source_backed_history": 45
+            "awaiting_source_backed_history": 44
           },
           {
             "category": "kunst",
@@ -63696,8 +65396,8 @@
           },
           {
             "category": "religion",
-            "total": 15,
-            "dated_evidence": 7,
+            "total": 17,
+            "dated_evidence": 9,
             "documented_case": 0,
             "awaiting_source_backed_history": 8
           },
@@ -63813,6 +65513,13 @@
             "name": "Akershus slott",
             "category": "historie",
             "source_file": "places/historie/oslo/places_historie/akershus_slott.json",
+            "status": "dated_evidence"
+          },
+          {
+            "place_id": "akershus_slottskirke",
+            "name": "Akershus slottskirke",
+            "category": "religion",
+            "source_file": "places/religion/oslo/akershus_slottskirke/akershus_slottskirke.json",
             "status": "dated_evidence"
           },
           {
@@ -64598,6 +66305,13 @@
             "category": "kunst",
             "source_file": "places/kunst/oslo/places_kunst/det_internasjonale_barnekunstmuseet.json",
             "status": "awaiting_source_backed_history"
+          },
+          {
+            "place_id": "det_kongelige_mausoleum",
+            "name": "Det kongelige mausoleum",
+            "category": "religion",
+            "source_file": "places/religion/oslo/det_kongelige_mausoleum/det_kongelige_mausoleum.json",
+            "status": "dated_evidence"
           },
           {
             "place_id": "slottet",
@@ -66109,7 +67823,7 @@
             "name": "Myntgatakvartalet",
             "category": "historie",
             "source_file": "places/historie/oslo/places_historie_oslo_oppdag_kvadraturen_batch_02/myntgatakvartalet.json",
-            "status": "awaiting_source_backed_history"
+            "status": "dated_evidence"
           },
           {
             "place_id": "myralokka",
@@ -78563,13 +80277,27 @@
         "city_id": "oslo",
         "city_label": "Oslo",
         "source": "canonical_source_path"
+      },
+      "akershus_slottskirke": {
+        "country_id": "no",
+        "country_label": "Norge",
+        "city_id": "oslo",
+        "city_label": "Oslo",
+        "source": "canonical_source_path"
+      },
+      "det_kongelige_mausoleum": {
+        "country_id": "no",
+        "country_label": "Norge",
+        "city_id": "oslo",
+        "city_label": "Oslo",
+        "source": "canonical_source_path"
       }
     },
     "countries": [
       {
         "id": "no",
         "label": "Norge",
-        "place_count": 1351,
+        "place_count": 1353,
         "cities": [
           {
             "id": "asker",
@@ -78804,7 +80532,7 @@
           {
             "id": "oslo",
             "label": "Oslo",
-            "place_count": 585
+            "place_count": 587
           },
           {
             "id": "porsgrunn",
@@ -78951,21 +80679,21 @@
     "unknown_place_ids": []
   },
   "stats": {
-    "canonical_place_count": 1532,
-    "located_place_count": 1532,
-    "city_located_place_count": 954,
+    "canonical_place_count": 1534,
+    "located_place_count": 1534,
+    "city_located_place_count": 956,
     "canonical_claim_count": 315,
     "canonical_source_count": 256,
     "place_evidence_link_count": 325,
     "period_case_count": 9,
-    "connected_people_count": 55,
+    "connected_people_count": 57,
     "connected_work_count": 157,
-    "connected_story_count": 240,
-    "canonical_story_milestone_count": 209,
-    "verified_place_production_milestone_count": 304,
-    "indexed_place_count": 267,
-    "epoch_place_relations": 548,
-    "milestone_count": 1322
+    "connected_story_count": 245,
+    "canonical_story_milestone_count": 214,
+    "verified_place_production_milestone_count": 332,
+    "indexed_place_count": 270,
+    "epoch_place_relations": 563,
+    "milestone_count": 1374
   },
   "warnings": {
     "missing_source_files": [
