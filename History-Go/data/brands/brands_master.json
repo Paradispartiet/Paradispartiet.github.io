@@ -62,23 +62,27 @@
     "state": "catalog",
     "status": "active",
     "verification": "verified",
-    "verified_at": "2026-08-27",
+    "verified_at": "2026-09-01",
     "desc": "Bryggeri- og varemerkeidentiteten som oppstod på Grünerløkka i 1876 og fortsatt brukes av Ringnes AS.",
-    "popupdesc": "Brand-kortet gjelder den selvstendige kommersielle identiteten Ringnes, dokumentert med et autentisk historisk bokølmerke. Brandet og Place-et overlapper i opphav, men er ikke identiske: Brandet fortsatte etter at storskala produksjon flyttet til Gjelleråsen i 2001, mens Place-et er det historiske bryggerianlegget i Thorvald Meyers gate.",
+    "popupdesc": "Brand-kortet gjelder den selvstendige kommersielle identiteten Ringnes, dokumentert med et autentisk historisk bokølmerke. Identiteten har opphav i Ringnes Bryggeri, mens The Mini Bottle Gallery har en egen direkte forbindelse gjennom romnavnet Ringnes Ølhall og institusjonens samlerhistorie. Brandet, bryggerianlegget og museet er ikke samme enhet, og museets «kanskje»-formulering brukes ikke som bevis for at bryggeriet forårsaket samlerinteressen.",
     "tags": [
       "brand",
       "brewery",
       "beer",
       "oslo",
-      "legacy"
+      "legacy",
+      "the_mini_bottle_gallery"
     ],
     "place_ids": [
-      "ringnes_bryggeri"
+      "ringnes_bryggeri",
+      "the_mini_bottle_gallery"
     ],
     "source_urls": [
       "https://snl.no/Ringnes_AS",
       "https://ringnes.no/",
-      "https://commons.wikimedia.org/wiki/File:Brevmerke,_Ringnes_bok%C3%B8l.jpg"
+      "https://commons.wikimedia.org/wiki/File:Brevmerke,_Ringnes_bok%C3%B8l.jpg",
+      "https://www.minibottlegallery.com/?kategori=museum",
+      "https://www.minibottlegallery.com/?kategori=rom&language=english"
     ],
     "logo": "bilder/kort/brands/ringnes.webp",
     "imageMeta": {
@@ -4286,6 +4290,55 @@
       "generated": false,
       "reconstructed": false,
       "transformation": "Originalt ordmerke proporsjonalt tilpasset på transparent kortflate.",
+      "reviewedAt": "2026-09-01"
+    }
+  },
+  {
+    "id": "obos",
+    "name": "OBOS",
+    "brand_group": "housing_cooperative_brand",
+    "brand_type": "institution_brand",
+    "brand_kind": "housing_cooperative",
+    "sector": "housing_and_property",
+    "state": "catalog",
+    "status": "current",
+    "verification": "verified",
+    "verified_at": "2026-09-01",
+    "desc": "Boligbyggelaget som fikk hovedkontoranlegget i Hammersborg torg 1 oppført i 1963–64.",
+    "popupdesc": "OBOS er direkte knyttet til Hammersborg torg gjennom hovedkontoranlegget fra 1963–64 og den dokumenterte ombyggingen etter utflyttingen i 2025. Kortet bruker et autentisk enkelt ordmerke for referensiell identifikasjon og innebærer ingen godkjenning eller tilknytning.",
+    "tags": [
+      "brand",
+      "housing",
+      "Hammersborg",
+      "current"
+    ],
+    "place_ids": [
+      "hammersborg_torg"
+    ],
+    "source_urls": [
+      "https://oslobyleksikon.no/side/Hammersborg_Torg",
+      "https://www.obos.no/naringseiendom/eiendommer/hammersborg-torg",
+      "https://grunnmuren.obos.no/logo",
+      "https://commons.wikimedia.org/wiki/File:Obos_logo.png"
+    ],
+    "logo": "bilder/kort/brands/obos.webp",
+    "imageMeta": {
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Obos_logo.png",
+      "sourceAsset": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Obos_logo.png",
+      "officialReference": "https://grunnmuren.obos.no/logo",
+      "creator": "OBOS",
+      "credit": "OBOS",
+      "license": "Public domain (simple text logo); trademarked",
+      "rightsBasis": "simple_wordmark_referential_identification",
+      "reviewStatus": "manually_approved",
+      "assetKind": "official_wordmark",
+      "temporalScope": "current",
+      "usageContext": "referential_identification",
+      "noEndorsement": true,
+      "generated": false,
+      "reconstructed": false,
+      "transformation": "Autentisk PNG-ordmerke er proporsjonalt innpasset på 900 × 520; ingen rekonstruksjon.",
+      "outputDimensions": "900x520",
       "reviewedAt": "2026-09-01"
     }
   }
