@@ -10630,7 +10630,7 @@
                       "verifiedAt": ""
                     }
                   ],
-                  "source_file": "data/runtime/stories-all/part-003.json",
+                  "source_file": "data/runtime/stories-all/part-002.json",
                   "evidence_type": "canonical_story",
                   "claim_id": "",
                   "story_id": "st_bla_skilt_enerhaugen_samfund_fra_bedehus_til_sanert_by",
@@ -12472,6 +12472,73 @@
                     "id": "st_freia_spisesalen_ble_kunsterom_1934",
                     "title": "Da spisesalen ble et kunsterom",
                     "year": 1934,
+                    "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "norske_grafikere",
+              "name": "Galleri Norske Grafikere",
+              "category": "kunst",
+              "source_file": "places/kunst/oslo/places_kunst/norske_grafikere.json",
+              "roles": [
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_norske_grafikere_school",
+                  "year": 1899,
+                  "title": "Johan Nordhagens Radérklasse fra 1899 preget miljøet bak stiftelsen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "historikkdelen",
+                      "url": "https://norske-grafikere.no/norske-grafikere/om-oss/",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/norske_grafikere.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norske_grafikere_school",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_norske_grafikere_1899_1",
+                  "year": 1899,
+                  "title": "Radérklassen",
+                  "consequence": "Johan Nordhagen tok imot de første elevene ved Radérklassen.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Norske Grafikere",
+                      "url": "https://norske-grafikere.no/norske-grafikere/om-oss/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/kunst/leksikon_norske_grafikere.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "johan_nordhagen"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_norske_grafikere_53_ar_til_galleri",
+                    "title": "53 år til et eget galleri",
+                    "year": 1972,
                     "type": "turning_point"
                   }
                 ]
@@ -14888,33 +14955,97 @@
               "source_file": "places/historie/oslo/places_historie/mollergata_19.json",
               "roles": [
                 {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
                   "id": "makt_og_styring",
                   "label": "Makt og styring"
+                },
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
                 }
               ],
               "milestones": [
                 {
-                  "id": "story_st_mollergata_19_politi_rett_fengsel",
-                  "year": 1866,
-                  "title": "Politi, rett og fengsel i samme anlegg",
-                  "consequence": "Møllergata 19 ble reist som et moderne institusjonsanlegg for hovedstadens politi, domstol og varetektsfengsel.",
+                  "id": "production_claim_mollergata_19_popup_01",
+                  "year": 1862,
+                  "title": "Christiania bystyre vedtok 15. november 1862 å bygge et nytt politi-, retts- og fengselsanlegg i Møllergata.",
+                  "consequence": "",
                   "confidence": "",
                   "sources": [
                     {
-                      "title": "Store norske leksikon: Møllergata 19",
+                      "title": "popup, setning 1",
                       "url": "https://snl.no/M%C3%B8llergata_19",
-                      "verifiedAt": ""
-                    },
-                    {
-                      "title": "Oslo byleksikon: Møllergata 19",
-                      "url": "https://oslobyleksikon.no/side/M%C3%B8llergata_19",
-                      "verifiedAt": ""
+                      "verifiedAt": "2026-09-01"
                     }
                   ],
-                  "source_file": "data/runtime/stories-all/part-001.json",
-                  "evidence_type": "canonical_story",
-                  "claim_id": "",
-                  "story_id": "st_mollergata_19_politi_rett_fengsel",
+                  "source_file": "data/places/production/mollergata_19.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_mollergata_19_popup_01",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_mollergata_19_desc_01",
+                  "year": 1862,
+                  "title": "Møllergata 19 ble oppført 1862–1866 etter tegninger av Jacob Wilhelm Nordan som Christianias nye hovedpolitistasjon med rettslokaler og fengsel.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "desc, setning 1",
+                      "url": "https://snl.no/M%C3%B8llergata_19",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/mollergata_19.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_mollergata_19_desc_01",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_mollergata_19_popup_02",
+                  "year": 1866,
+                  "title": "Jacob Wilhelm Nordan tegnet bygningen, som åpnet 1. juli 1866 på området etter den tidligere Vaterlands kirkegård.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "popup, setning 2",
+                      "url": "https://snl.no/M%C3%B8llergata_19",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/mollergata_19.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_mollergata_19_popup_02",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_mollergata_19_popup_07",
+                  "year": 1900,
+                  "title": "En egen kvinneavdeling åpnet i juli 1900.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "popup, setning 7",
+                      "url": "https://snl.no/M%C3%B8llergata_19",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/mollergata_19.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_mollergata_19_popup_07",
+                  "story_id": "",
                   "limitations": []
                 }
               ],
@@ -14949,22 +15080,10 @@
                 ],
                 "stories": [
                   {
-                    "id": "st_mollergata_19_politi_rett_fengsel",
-                    "title": "Politi, rett og fengsel i samme anlegg",
-                    "year": 1866,
-                    "type": "institutional_history"
-                  },
-                  {
                     "id": "st_mollergata_19_petter_moens_dagbok",
                     "title": "Dagboken under cellegulvet",
                     "year": 1944,
-                    "type": "wartime_testimony"
-                  },
-                  {
-                    "id": "st_mollergata_19_quisling_1945",
-                    "title": "Fra okkupasjonsfengsel til rettsoppgjør",
-                    "year": 1945,
-                    "type": "wartime"
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -21465,8 +21584,8 @@
               }
             }
           ],
-          "placeCount": 105,
-          "milestoneCount": 366
+          "placeCount": 106,
+          "milestoneCount": 371
         },
         "historie_nasjon_massepolitikk_og_moderne_institusjoner": {
           "places": [
@@ -23027,7 +23146,7 @@
                       "verifiedAt": ""
                     }
                   ],
-                  "source_file": "data/runtime/stories-all/part-002.json",
+                  "source_file": "data/runtime/stories-all/part-001.json",
                   "evidence_type": "canonical_story",
                   "claim_id": "",
                   "story_id": "st_folketeateret_kino_teater_opera_musikal",
@@ -23051,7 +23170,7 @@
                       "verifiedAt": ""
                     }
                   ],
-                  "source_file": "data/runtime/stories-all/part-002.json",
+                  "source_file": "data/runtime/stories-all/part-001.json",
                   "evidence_type": "canonical_story",
                   "claim_id": "",
                   "story_id": "st_folketeateret_passasjen_og_blandingsbygget",
@@ -23710,6 +23829,96 @@
                     "title": "Straffen som stedsnavn",
                     "year": 1600,
                     "type": "historical_place"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "norske_grafikere",
+              "name": "Galleri Norske Grafikere",
+              "category": "kunst",
+              "source_file": "places/kunst/oslo/places_kunst/norske_grafikere.json",
+              "roles": [
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_norske_grafikere_1919_2",
+                  "year": 1919,
+                  "title": "Foreningen stiftes",
+                  "consequence": "Norske Grafikere ble stiftet 15. november med 30 medlemmer.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Norske Grafikere",
+                      "url": "https://norske-grafikere.no/norske-grafikere/om-oss/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/kunst/leksikon_norske_grafikere.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norske_grafikere_identity",
+                  "year": 1919,
+                  "title": "Norske Grafikere ble stiftet 15. november 1919.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "stiftelsesavsnittet",
+                      "url": "https://norske-grafikere.no/norske-grafikere/om-oss/",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/norske_grafikere.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norske_grafikere_identity",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_norske_grafikere_1930_3",
+                  "year": 1930,
+                  "title": "Egen jury",
+                  "consequence": "Grafikerne fikk egen jury da Høstutstillingen ble opprettet.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Norske Grafikere",
+                      "url": "https://norske-grafikere.no/norske-grafikere/om-oss/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/kunst/leksikon_norske_grafikere.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "johan_nordhagen"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_norske_grafikere_53_ar_til_galleri",
+                    "title": "53 år til et eget galleri",
+                    "year": 1972,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -28745,8 +28954,8 @@
               }
             }
           ],
-          "placeCount": 86,
-          "milestoneCount": 190
+          "placeCount": 87,
+          "milestoneCount": 193
         },
         "historie_krig_okkupasjon_og_etterkrigsoppgjor": {
           "places": [
@@ -30880,6 +31089,10 @@
                 {
                   "id": "em_his_okkupasjon_motstand",
                   "label": "Okkupasjon"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
                 }
               ],
               "milestones": [
@@ -30928,25 +31141,44 @@
                   ]
                 },
                 {
-                  "id": "story_st_mollergata_19_petter_moens_dagbok",
-                  "year": 1944,
-                  "title": "Dagboken under cellegulvet",
-                  "consequence": "Petter Moen skrev en hemmelig dagbok på toalettpapir mens han satt fengslet i Møllergata 19.",
+                  "id": "production_claim_mollergata_19_popup_10",
+                  "year": 1940,
+                  "title": "Under okkupasjonen tok det tyske sikkerhetspolitiet hele fengselet i bruk 13. september 1940.",
+                  "consequence": "",
                   "confidence": "",
                   "sources": [
                     {
-                      "title": "Store norske leksikon: Petter Moen",
+                      "title": "popup, setning 10",
+                      "url": "https://www.fanger.no/prisoncamps/664",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/mollergata_19.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_mollergata_19_popup_10",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_mollergata_19_petter_moens_dagbok",
+                  "year": 1944,
+                  "title": "Dagboken under cellegulvet",
+                  "consequence": "Petter Moen perforerte en hemmelig dagbok på toalettpapir i Møllergata 19 og skjulte rullene slik at de kunne finnes etter krigen.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Store norske leksikon – Petter Moen",
                       "url": "https://snl.no/Petter_Moen",
                       "verifiedAt": ""
                     },
                     {
-                      "title": "Store norske leksikon: dagbok – litteratur",
-                      "url": "https://snl.no/dagbok_-_litteratur",
+                      "title": "Store norske leksikon – Møllergata 19",
+                      "url": "https://snl.no/M%C3%B8llergata_19",
                       "verifiedAt": ""
                     },
                     {
-                      "title": "Oslo byleksikon: Møllergata 19",
-                      "url": "https://oslobyleksikon.no/side/M%C3%B8llergata_19",
+                      "title": "Fanger.no – Møllergata 19",
+                      "url": "https://www.fanger.no/prisoncamps/664",
                       "verifiedAt": ""
                     }
                   ],
@@ -30957,32 +31189,79 @@
                   "limitations": []
                 },
                 {
-                  "id": "story_st_mollergata_19_quisling_1945",
-                  "year": 1945,
-                  "title": "Fra okkupasjonsfengsel til rettsoppgjør",
-                  "consequence": "Etter frigjøringen skiftet Møllergata 19 rolle fra okkupasjonsmaktens fengsel til varetekt for personer i det norske rettsoppgjøret.",
+                  "id": "production_claim_mollergata_19_popup_13",
+                  "year": 1944,
+                  "title": "Petter Moen ble arrestert 3. februar 1944.",
+                  "consequence": "",
                   "confidence": "",
                   "sources": [
                     {
-                      "title": "Store norske leksikon: Møllergata 19",
-                      "url": "https://snl.no/M%C3%B8llergata_19",
-                      "verifiedAt": ""
-                    },
-                    {
-                      "title": "Norsk digitalt fangearkiv 1940–1945: Møllergata 19",
-                      "url": "https://www.fanger.no/prisoncamps/664",
-                      "verifiedAt": ""
-                    },
-                    {
-                      "title": "Oslo byleksikon: Møllergata 19",
-                      "url": "https://oslobyleksikon.no/side/M%C3%B8llergata_19",
-                      "verifiedAt": ""
+                      "title": "popup, setning 13",
+                      "url": "https://snl.no/Petter_Moen",
+                      "verifiedAt": "2026-09-01"
                     }
                   ],
-                  "source_file": "data/runtime/stories-all/part-001.json",
-                  "evidence_type": "canonical_story",
-                  "claim_id": "",
-                  "story_id": "st_mollergata_19_quisling_1945",
+                  "source_file": "data/places/production/mollergata_19.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_mollergata_19_popup_13",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_mollergata_19_desc_02",
+                  "year": 1944,
+                  "title": "Under okkupasjonen brukte det tyske sikkerhetspolitiet fengselet som sentralfengsel for politiske fanger, og Petter Moen skrev sin skjulte dagbok her i 1944.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "desc, setning 2",
+                      "url": "https://snl.no/Petter_Moen",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/mollergata_19.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_mollergata_19_desc_02",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_mollergata_19_popup_17",
+                  "year": 1945,
+                  "title": "Vidkun Quisling meldte seg for politiet på trappen i 1945, og fengselet ble brukt under rettsoppgjøret.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "popup, setning 17",
+                      "url": "https://oslobyleksikon.no/side/M%C3%B8llergata_19",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/mollergata_19.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_mollergata_19_popup_17",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_mollergata_19_popup_15",
+                  "year": 1949,
+                  "title": "Notatene ble funnet etter krigen og utgitt i 1949.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "popup, setning 15",
+                      "url": "https://snl.no/Petter_Moen",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/mollergata_19.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_mollergata_19_popup_15",
+                  "story_id": "",
                   "limitations": []
                 }
               ],
@@ -31017,22 +31296,10 @@
                 ],
                 "stories": [
                   {
-                    "id": "st_mollergata_19_politi_rett_fengsel",
-                    "title": "Politi, rett og fengsel i samme anlegg",
-                    "year": 1866,
-                    "type": "institutional_history"
-                  },
-                  {
                     "id": "st_mollergata_19_petter_moens_dagbok",
                     "title": "Dagboken under cellegulvet",
                     "year": 1944,
-                    "type": "wartime_testimony"
-                  },
-                  {
-                    "id": "st_mollergata_19_quisling_1945",
-                    "title": "Fra okkupasjonsfengsel til rettsoppgjør",
-                    "year": 1945,
-                    "type": "wartime"
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -32863,7 +33130,7 @@
             }
           ],
           "placeCount": 45,
-          "milestoneCount": 107
+          "milestoneCount": 111
         },
         "historie_velferdsstat_kald_krig_og_sosialdemokrati": {
           "places": [
@@ -35015,6 +35282,143 @@
               }
             },
             {
+              "place_id": "norske_grafikere",
+              "name": "Galleri Norske Grafikere",
+              "category": "kunst",
+              "source_file": "places/kunst/oslo/places_kunst/norske_grafikere.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_norske_grafikere_1971_4",
+                  "year": 1971,
+                  "title": "Eget kontor",
+                  "consequence": "Anne Breivik ledet arbeidet med å etablere foreningens eget kontor.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Norske Grafikere",
+                      "url": "https://norske-grafikere.no/norske-grafikere/om-oss/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/kunst/leksikon_norske_grafikere.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norske_grafikere_office",
+                  "year": 1971,
+                  "title": "Eget kontor ble etablert i 1971 med Anne Breivik som styreleder.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "avsnittet om 1971",
+                      "url": "https://norske-grafikere.no/norske-grafikere/om-oss/",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/norske_grafikere.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norske_grafikere_office",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_norske_grafikere_53_ar_til_galleri",
+                  "year": 1972,
+                  "title": "53 år til et eget galleri",
+                  "consequence": "Fra stiftelsesprotokollen i 1919 tok det 53 år før Norske Grafikere åpnet sitt eget kunstnerstyrte galleri.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Norske Grafikere – om oss",
+                      "url": "https://norske-grafikere.no/norske-grafikere/om-oss/",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Norske Grafikeres galleri fyller 50 år",
+                      "url": "https://norske-grafikere.no/norske-grafikeres-galleri-fyller-50-ar/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_norske_grafikere_53_ar_til_galleri",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norske_grafikere_gallery",
+                  "year": 1972,
+                  "title": "Det kunstnerstyrte galleriet med statlig støtte åpnet i 1972.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "avsnittet om 1972",
+                      "url": "https://norske-grafikere.no/norske-grafikere/om-oss/",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/norske_grafikere.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norske_grafikere_gallery",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_norske_grafikere_1972_5",
+                  "year": 1972,
+                  "title": "Kunstnerstyrt galleri",
+                  "consequence": "Foreningen åpnet sitt eget galleri med statlig støtte i Hegdehaugsveien.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Norske Grafikere",
+                      "url": "https://norske-grafikere.no/norske-grafikere/om-oss/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/kunst/leksikon_norske_grafikere.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "johan_nordhagen"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_norske_grafikere_53_ar_til_galleri",
+                    "title": "53 år til et eget galleri",
+                    "year": 1972,
+                    "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "gamle_aker_kirke",
               "name": "Gamle Aker kirke",
               "category": "religion",
@@ -35990,6 +36394,104 @@
                     "id": "st_myrens_turbinen_apnet_markedet_1850",
                     "title": "Turbinen som åpnet et marked",
                     "year": 1850,
+                    "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "mollergata_19",
+              "name": "Møllergata 19",
+              "category": "historie",
+              "source_file": "places/historie/oslo/places_historie/mollergata_19.json",
+              "roles": [
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_mollergata_19_popup_19",
+                  "year": 1975,
+                  "title": "Fengselet stengte i 1975 og ble revet i 1976.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "popup, setning 19",
+                      "url": "https://snl.no/M%C3%B8llergata_19",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/mollergata_19.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_mollergata_19_popup_19",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_mollergata_19_desc_03",
+                  "year": 1976,
+                  "title": "Fengselsbygningen ble revet i 1976; den bevarte politistasjonsbygningen inngår i regjeringskvartalet.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "desc, setning 3",
+                      "url": "https://snl.no/M%C3%B8llergata_19",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/mollergata_19.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_mollergata_19_desc_03",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "jacob_wilhelm_nordan",
+                  "petter_moen",
+                  "vidkun_quisling"
+                ],
+                "works": [
+                  {
+                    "id": "rets_og_politikammerbygningen",
+                    "title": "Rets- og politikammerbygningen",
+                    "type": "arkitekturverk"
+                  },
+                  {
+                    "id": "fengselsbygningen_og_luftegaardene",
+                    "title": "Fengselsbygningen og luftegårdene",
+                    "type": "historisk_bygningsanlegg"
+                  },
+                  {
+                    "id": "petter_moens_dagbok",
+                    "title": "Petter Moens dagbok",
+                    "type": "dagbok_og_fangedokument"
+                  },
+                  {
+                    "id": "blaaskiltet_mollergata_19",
+                    "title": "Det blå historieskiltet",
+                    "type": "minneskilt"
+                  }
+                ],
+                "stories": [
+                  {
+                    "id": "st_mollergata_19_petter_moens_dagbok",
+                    "title": "Dagboken under cellegulvet",
+                    "year": 1944,
                     "type": "turning_point"
                   }
                 ]
@@ -37208,7 +37710,7 @@
                       "verifiedAt": ""
                     }
                   ],
-                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "source_file": "data/runtime/stories-all/part-003.json",
                   "evidence_type": "canonical_story",
                   "claim_id": "",
                   "story_id": "st_slottsplassen_vaktparade_1958",
@@ -38356,8 +38858,8 @@
               }
             }
           ],
-          "placeCount": 63,
-          "milestoneCount": 144
+          "placeCount": 65,
+          "milestoneCount": 151
         },
         "historie_senmoderne_globalisering_og_markedsvending": {
           "places": [
@@ -40590,6 +41092,96 @@
                     "title": "Groruddalens hockeynode",
                     "year": 1998,
                     "type": "sports_culture"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "norske_grafikere",
+              "name": "Galleri Norske Grafikere",
+              "category": "kunst",
+              "source_file": "places/kunst/oslo/places_kunst/norske_grafikere.json",
+              "roles": [
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_norske_grafikere_1987_6",
+                  "year": 1987,
+                  "title": "Bibliotekvederlagsfond",
+                  "consequence": "Norske Grafikeres Fond bygger på loven om bibliotekvederlag.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Norske Grafikere",
+                      "url": "https://norske-grafikere.no/norske-grafikeres-fond/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/kunst/leksikon_norske_grafikere.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_norske_grafikere_address",
+                  "year": 2002,
+                  "title": "Norske Grafikere flyttet til Tollbugata 24 i 2002.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "adressehistorikken",
+                      "url": "https://norske-grafikere.no/norske-grafikere/om-oss/",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/norske_grafikere.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_norske_grafikere_address",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_norske_grafikere_2002_7",
+                  "year": 2002,
+                  "title": "Tollbugata 24",
+                  "consequence": "Foreningen flyttet til dagens adresse.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Norske Grafikere",
+                      "url": "https://norske-grafikere.no/norske-grafikere/om-oss/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/kunst/leksikon_norske_grafikere.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "johan_nordhagen"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_norske_grafikere_53_ar_til_galleri",
+                    "title": "53 år til et eget galleri",
+                    "year": 1972,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -45255,8 +45847,8 @@
               }
             }
           ],
-          "placeCount": 92,
-          "milestoneCount": 163
+          "placeCount": 93,
+          "milestoneCount": 166
         },
         "historie_digital_samtid_kriser_og_ny_offentlighet": {
           "places": [
@@ -48320,6 +48912,54 @@
               }
             },
             {
+              "place_id": "norske_grafikere",
+              "name": "Galleri Norske Grafikere",
+              "category": "kunst",
+              "source_file": "places/kunst/oslo/places_kunst/norske_grafikere.json",
+              "roles": [
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_norske_grafikere_2026_8",
+                  "year": 2026,
+                  "title": "Bredt grafikkprogram",
+                  "consequence": "Programmet viste blant annet litografi, karbontrykk og pigmenttrykk på bomull.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Norske Grafikere",
+                      "url": "https://norske-grafikere.no/programlansering-norske-grafikeres-utstillingsprogram-2026/",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/kunst/leksikon_norske_grafikere.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "johan_nordhagen"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_norske_grafikere_53_ar_til_galleri",
+                    "title": "53 år til et eget galleri",
+                    "year": 1972,
+                    "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "gamle_aker_kirke",
               "name": "Gamle Aker kirke",
               "category": "religion",
@@ -50641,6 +51281,276 @@
               }
             },
             {
+              "place_id": "skulptursonen_ovre_slottsgate",
+              "name": "Skulptursonen i Øvre Slottsgate",
+              "category": "kunst",
+              "source_file": "places/kunst/oslo/places_kunst_oslo_oppdag_kvadraturen_art_sites_batch_01/skulptursonen_ovre_slottsgate.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "story_st_skulptursonen_fem_felt_i_gaten",
+                  "year": 2019,
+                  "title": "Fem kunstfelt i gågaten",
+                  "consequence": "Da Øvre Slottsgate ble gågate i 2019, ble fem kunstfelt bygget inn i strekningen mellom Tollbugata og Prinsens gate.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Norsk Billedhoggerforening – Øvre Slottsgate",
+                      "url": "https://www.norskbilledhoggerforening.no/overe-slottsgate",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Oppdag Kvadraturen – Skulptursonen",
+                      "url": "https://www.oppdagkvadraturen.no/stoppesteder/skulptursonen-i-ovre-slottsgate",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_skulptursonen_fem_felt_i_gaten",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_skulptursonen_popup_09",
+                  "year": 2019,
+                  "title": "Norsk Billedhoggerforening oppgir prosjektperioden som 2019–2024.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "prosjektoverskriften og periodeangivelsen",
+                      "url": "https://www.norskbilledhoggerforening.no/overe-slottsgate",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/skulptursonen_ovre_slottsgate.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_skulptursonen_popup_09",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_skulptursonen_popup_01",
+                  "year": 2019,
+                  "title": "Skulptursonen ble lansert i august 2019, da Øvre Slottsgate var nyetablert som gågate.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "innledningen om lanseringen",
+                      "url": "https://www.norskbilledhoggerforening.no/overe-slottsgate",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/skulptursonen_ovre_slottsgate.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_skulptursonen_popup_01",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_skulptursonen_desc_01",
+                  "year": 2019,
+                  "title": "Skulptursonen i Øvre Slottsgate var et tidsavgrenset offentlig kunstprosjekt i gågaten mellom Tollbugata og Prinsens gate fra 2019 til 2024.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "prosjektoverskriften, innledningen og periodeangivelsen",
+                      "url": "https://www.norskbilledhoggerforening.no/overe-slottsgate",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/skulptursonen_ovre_slottsgate.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_skulptursonen_desc_01",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_skulptursonen_2019_1",
+                  "year": 2019,
+                  "title": "Skulptursonen lanseres",
+                  "consequence": "Prosjektet ble lansert i august da Øvre Slottsgate var nyetablert som gågate.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Norsk Billedhoggerforening",
+                      "url": "https://www.norskbilledhoggerforening.no/overe-slottsgate",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/kunst/leksikon_skulptursonen_ovre_slottsgate.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_skulptursonen_popup_10",
+                  "year": 2020,
+                  "title": "Den offisielle oversikten har separate verkgrupper for 2020, 2022 og 2023.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "verkoversikten for 2020, 2022 og 2023",
+                      "url": "https://www.norskbilledhoggerforening.no/overe-slottsgate",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/skulptursonen_ovre_slottsgate.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_skulptursonen_popup_10",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_skulptursonen_2020_2",
+                  "year": 2020,
+                  "title": "Dokumentert utstillingsrunde",
+                  "consequence": "Prosjektkatalogen viser fem verk fra 2020.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Norsk Billedhoggerforening",
+                      "url": "https://www.norskbilledhoggerforening.no/overe-slottsgate",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/kunst/leksikon_skulptursonen_ovre_slottsgate.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_skulptursonen_2022_3",
+                  "year": 2022,
+                  "title": "Ny runde i de fem feltene",
+                  "consequence": "Prosjektkatalogen dokumenterer fem verk i 2022-runden.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Norsk Billedhoggerforening",
+                      "url": "https://www.norskbilledhoggerforening.no/overe-slottsgate",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/kunst/leksikon_skulptursonen_ovre_slottsgate.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_skulptursonen_2023_4",
+                  "year": 2023,
+                  "title": "Fem nye verk",
+                  "consequence": "Solvik, Harr, Stav, Tandberg og Calderon viste hvert sitt verk.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Norsk Billedhoggerforening",
+                      "url": "https://www.norskbilledhoggerforening.no/overe-slottsgate",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/kunst/leksikon_skulptursonen_ovre_slottsgate.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_skulptursonen_popup_13",
+                  "year": 2023,
+                  "title": "Runden i 2023 omfattet Ingrid Solvik, Gisle Harr, Aleksander Stav, Vibeke Tandberg og Yamile Calderon.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "verkoversikten for 2023",
+                      "url": "https://www.norskbilledhoggerforening.no/overe-slottsgate",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/skulptursonen_ovre_slottsgate.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_skulptursonen_popup_13",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_skulptursonen_popup_12",
+                  "year": 2023,
+                  "title": "Verkene fra 2023 vises som historiske produksjoner, ikke som en påstand om dagens installasjon.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "de daterte verkgruppene og periodeangivelsen",
+                      "url": "https://www.norskbilledhoggerforening.no/overe-slottsgate",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/skulptursonen_ovre_slottsgate.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_skulptursonen_popup_12",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_skulptursonen_2024_5",
+                  "year": 2024,
+                  "title": "Prosjektperiodens sluttår",
+                  "consequence": "Norsk Billedhoggerforening oppgir prosjektperioden som 2019–2024.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Norsk Billedhoggerforening",
+                      "url": "https://www.norskbilledhoggerforening.no/overe-slottsgate",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/kunst/leksikon_skulptursonen_ovre_slottsgate.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "vibeke_tandberg"
+                ],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_skulptursonen_fem_felt_i_gaten",
+                    "title": "Fem kunstfelt i gågaten",
+                    "year": 2019,
+                    "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "skur13",
               "name": "Skur 13",
               "category": "subkultur",
@@ -52048,8 +52958,8 @@
               }
             }
           ],
-          "placeCount": 80,
-          "milestoneCount": 173
+          "placeCount": 82,
+          "milestoneCount": 186
         }
       },
       "parallel_tracks": {
@@ -53119,7 +54029,7 @@
                       "verifiedAt": ""
                     }
                   ],
-                  "source_file": "data/runtime/stories-all/part-002.json",
+                  "source_file": "data/runtime/stories-all/part-001.json",
                   "evidence_type": "canonical_story",
                   "claim_id": "",
                   "story_id": "st_folketeateret_passasjen_og_blandingsbygget",
@@ -65603,9 +66513,9 @@
       "oslo_coverage": {
         "contract": "oslo-history-coverage-v1",
         "canonical_place_count": 586,
-        "dated_evidence_place_count": 225,
+        "dated_evidence_place_count": 227,
         "documented_case_place_count": 2,
-        "awaiting_source_backed_history_count": 359,
+        "awaiting_source_backed_history_count": 357,
         "categories": [
           {
             "category": "by",
@@ -65638,9 +66548,9 @@
           {
             "category": "kunst",
             "total": 42,
-            "dated_evidence": 7,
+            "dated_evidence": 9,
             "documented_case": 0,
-            "awaiting_source_backed_history": 35
+            "awaiting_source_backed_history": 33
           },
           {
             "category": "litteratur",
@@ -66979,7 +67889,7 @@
             "name": "Galleri Norske Grafikere",
             "category": "kunst",
             "source_file": "places/kunst/oslo/places_kunst/norske_grafikere.json",
-            "status": "awaiting_source_backed_history"
+            "status": "dated_evidence"
           },
           {
             "place_id": "galleri_schaeffers_gate_5",
@@ -68932,7 +69842,7 @@
             "name": "Skulptursonen i Øvre Slottsgate",
             "category": "kunst",
             "source_file": "places/kunst/oslo/places_kunst_oslo_oppdag_kvadraturen_art_sites_batch_01/skulptursonen_ovre_slottsgate.json",
-            "status": "awaiting_source_backed_history"
+            "status": "dated_evidence"
           },
           {
             "place_id": "skur13",
@@ -80969,14 +81879,14 @@
     "canonical_source_count": 256,
     "place_evidence_link_count": 325,
     "period_case_count": 9,
-    "connected_people_count": 57,
+    "connected_people_count": 59,
     "connected_work_count": 157,
     "connected_story_count": 246,
     "canonical_story_milestone_count": 215,
-    "verified_place_production_milestone_count": 341,
-    "indexed_place_count": 271,
-    "epoch_place_relations": 566,
-    "milestone_count": 1384
+    "verified_place_production_milestone_count": 363,
+    "indexed_place_count": 273,
+    "epoch_place_relations": 573,
+    "milestone_count": 1419
   },
   "warnings": {
     "missing_source_files": [
@@ -81008,7 +81918,7 @@
     "unknown_evidence_place_ids": [],
     "missing_claim_ids": [],
     "skipped_undated": 0,
-    "skipped_without_url_sources": 619,
+    "skipped_without_url_sources": 627,
     "skipped_evidence_without_sources": 0
   }
 }

@@ -4086,7 +4086,7 @@
     "sector": "culture",
     "state": "verified",
     "desc": "Byhistorisk forening som dokumenterer og markerer steder i Oslo gjennom blå skilt.",
-    "popupdesc": "Selskabet for Oslo Byes Vel har satt opp et blått historieskilt på Ankerbrua. Brand-koblingen gjelder den dokumenterte skiltrollen; den offisielle logoen brukes bare til refererende identifikasjon og innebærer ingen tilslutning.",
+    "popupdesc": "Selskabet for Oslo Byes Vel står bak Oslos blå historieskilt. Foreningen er koblet til Møllergata 19 gjennom skiltet ved den gamle hovedinngangen og til Ankerbrua gjennom et eget skilt. Den offisielle logoen brukes bare til refererende identifikasjon og innebærer ingen tilslutning.",
     "image": "bilder/kort/brands/selskabet_for_oslo_byes_vel.webp",
     "cardImage": "bilder/kort/brands/selskabet_for_oslo_byes_vel.webp",
     "imageMeta": {
@@ -4106,16 +4106,19 @@
     "tags": [
       "ankerbrua",
       "blaaskilt",
-      "byhistorie"
+      "byhistorie",
+      "mollergata_19"
     ],
     "place_ids": [
-      "ankerbrua"
+      "ankerbrua",
+      "mollergata_19"
     ],
     "source_urls": [
       "https://www.oslobyesvel.no/blaaskilt",
-      "https://www.oslobyesvel.no/kalender/avduking-av-bl-skilt-og-guidet-tur-over-broer-langs-nedre-akerselva/10"
+      "https://www.oslobyesvel.no/kalender/avduking-av-bl-skilt-og-guidet-tur-over-broer-langs-nedre-akerselva/10",
+      "https://oslobyleksikon.no/side/M%C3%B8llergata_19"
     ],
-    "verified_at": "2026-08-30"
+    "verified_at": "2026-09-01"
   },
   {
     "id": "vi_vii",
@@ -4192,6 +4195,98 @@
       "date": "1833-10-18",
       "transformation": "Mastheaden er beskåret fra den public-domain-merkede utgaven 18. oktober 1833; bokstavformen er ikke rekonstruert.",
       "verifiedAt": "2026-08-31"
+    }
+  },
+  {
+    "id": "norske_grafikeres_fond",
+    "name": "Norske Grafikeres Fond",
+    "aliases": [
+      "NGF"
+    ],
+    "brand_group": "institutional_brand",
+    "brand_type": "fund",
+    "brand_kind": "brand",
+    "sector": "art_funding",
+    "state": "catalog",
+    "status": "current",
+    "verification": "verified_current",
+    "popupdesc": "Norske Grafikeres Fond bygger på bibliotekvederlagsloven fra 1987. Fondet deler ut stipend og prosjektmidler og forvalter en årlig grafikkpris. Styret velges av Norske Grafikeres generalforsamling, men fondet vises som egen aktør og ikke som foreningens selv-brand.",
+    "desc": "Fond for stipend, prosjektmidler og grafikkpris, knyttet til men adskilt fra Norske Grafikere.",
+    "tags": [
+      "brand",
+      "fund",
+      "art",
+      "grants",
+      "oslo",
+      "norske_grafikere"
+    ],
+    "place_ids": [
+      "norske_grafikere"
+    ],
+    "source_urls": [
+      "https://norske-grafikere.no/norske-grafikeres-fond/"
+    ],
+    "logo": "bilder/kort/brands/norske_grafikeres_fond.webp",
+    "imageMeta": {
+      "sourcePage": "https://norske-grafikere.no/norske-grafikeres-fond/",
+      "assetUrl": "https://norske-grafikere.no/wp-content/uploads/NGF-logo-liggende-sort.png",
+      "creator": "Norske Grafikeres Fond",
+      "credit": "Norske Grafikeres Fond",
+      "license": "Official brand asset; referential identification",
+      "rightsBasis": "official_brand_site_referential_identification",
+      "reviewStatus": "manually_approved",
+      "assetKind": "official_wordmark",
+      "noEndorsement": true,
+      "generated": false,
+      "reconstructed": false,
+      "transformation": "Originalt ordmerke proporsjonalt tilpasset på transparent kortflate.",
+      "reviewedAt": "2026-09-01"
+    }
+  },
+  {
+    "id": "norsk_billedhoggerforening",
+    "name": "Norsk Billedhoggerforening",
+    "aliases": [
+      "NBF"
+    ],
+    "brand_group": "institutional_brand",
+    "brand_type": "artist_association",
+    "brand_kind": "brand",
+    "sector": "visual_art",
+    "state": "catalog",
+    "status": "current",
+    "verification": "verified_current",
+    "popupdesc": "Norsk Billedhoggerforening var prosjektpart for Skulptursonen sammen med Kulturetaten og Bymiljøetaten. Foreningen publiserer den offisielle prosjektoversikten og katalogen over de dokumenterte utstillingsrundene. Den vises som en selvstendig institusjonell identitet, ikke som et navn på selve gatestrekket.",
+    "desc": "Kunstnerorganisasjonen som samarbeidet med Kulturetaten og Bymiljøetaten om Skulptursonen.",
+    "tags": [
+      "brand",
+      "artist_association",
+      "sculpture",
+      "public_art",
+      "oslo",
+      "skulptursonen_ovre_slottsgate"
+    ],
+    "place_ids": [
+      "skulptursonen_ovre_slottsgate"
+    ],
+    "source_urls": [
+      "https://www.norskbilledhoggerforening.no/overe-slottsgate"
+    ],
+    "logo": "bilder/kort/brands/norsk_billedhoggerforening.webp",
+    "imageMeta": {
+      "sourcePage": "https://www.norskbilledhoggerforening.no/overe-slottsgate",
+      "assetUrl": "https://images.squarespace-cdn.com/content/v1/68ece7d2bffbc34e2c5f301c/e62e73fb-e850-4431-8b2a-a23772d60006/NBF-LOGO_web+Background+Removed.png",
+      "creator": "Norsk Billedhoggerforening",
+      "credit": "Norsk Billedhoggerforening",
+      "license": "Official brand asset; referential identification",
+      "rightsBasis": "official_brand_site_referential_identification",
+      "reviewStatus": "manually_approved",
+      "assetKind": "official_wordmark",
+      "noEndorsement": true,
+      "generated": false,
+      "reconstructed": false,
+      "transformation": "Originalt ordmerke proporsjonalt tilpasset på transparent kortflate.",
+      "reviewedAt": "2026-09-01"
     }
   }
 ]
