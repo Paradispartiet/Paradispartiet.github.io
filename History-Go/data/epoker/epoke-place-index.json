@@ -8382,7 +8382,7 @@
               "place_id": "trefoldighetskirken",
               "name": "Trefoldighetskirken",
               "category": "religion",
-              "source_file": "places/by/oslo/trefoldighetskirken/trefoldighetskirken.json",
+              "source_file": "places/religion/oslo/trefoldighetskirken/trefoldighetskirken.json",
               "roles": [
                 {
                   "id": "em_his_religion_reformasjon_pietisme_vekkelse_og_lekmannsbevegelse",
@@ -8428,7 +8428,9 @@
               ],
               "period_cases": [],
               "connections": {
-                "person_ids": [],
+                "person_ids": [
+                  "alexis_de_chateauneuf"
+                ],
                 "works": [],
                 "stories": []
               }
@@ -19297,11 +19299,15 @@
               "place_id": "trefoldighetskirken",
               "name": "Trefoldighetskirken",
               "category": "religion",
-              "source_file": "places/by/oslo/trefoldighetskirken/trefoldighetskirken.json",
+              "source_file": "places/religion/oslo/trefoldighetskirken/trefoldighetskirken.json",
               "roles": [
                 {
                   "id": "em_his_religion_reformasjon_pietisme_vekkelse_og_lekmannsbevegelse",
                   "label": "Pietisme, vekkelse og lekmannsbevegelse"
+                },
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
                 },
                 {
                   "id": "em_his_religion_reformasjon_religion_migrasjon_og_transnasjonale_nettverk",
@@ -19313,6 +19319,44 @@
                 }
               ],
               "milestones": [
+                {
+                  "id": "production_claim_trefoldighetskirken_text_07",
+                  "year": 1849,
+                  "title": "Alexis de Chateauneuf vant arkitektkonkurransen i 1849.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kildegrunnlag for popupDesc, setning 4",
+                      "url": "https://oslobyleksikon.no/side/Trefoldighetskirken",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/trefoldighetskirken.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_trefoldighetskirken_text_07",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_trefoldighetskirken_1_1849",
+                  "year": 1849,
+                  "title": "Chateauneuf vinner konkurransen",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon – Trefoldighetskirken",
+                      "url": "https://oslobyleksikon.no/side/Trefoldighetskirken",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_trefoldighetskirken.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
                 {
                   "id": "claim_claim_his_trinity_urban_church_building_1849_1858",
                   "year": 1849,
@@ -19339,11 +19383,108 @@
                     "Kildene dokumenterer bygg, arkitektur og bred befolkningskontekst, men ikke menighetens sosiale sammensetning eller faktisk belegg.",
                     "Kirken kan leses som svar på befolkningsvekst, representativ monumentalitet og liturgisk reform samtidig."
                   ]
+                },
+                {
+                  "id": "chrono_trefoldighetskirken_2_1858",
+                  "year": 1858,
+                  "title": "Kirken innvies",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon – Trefoldighetskirken",
+                      "url": "https://oslobyleksikon.no/side/Trefoldighetskirken",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_trefoldighetskirken.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_trefoldighetskirken_text_01",
+                  "year": 1858,
+                  "title": "Trefoldighetskirken er et kirkebygg i Akersgata 60, innviet i 1858 etter tegninger av Alexis de Chateauneuf og ferdigstilling under Wilhelm von Hanno.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kildegrunnlag for desc, setning 1",
+                      "url": "https://oslobyleksikon.no/side/Trefoldighetskirken",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/trefoldighetskirken.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_trefoldighetskirken_text_01",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_trefoldighetskirken_text_13",
+                  "year": 1863,
+                  "title": "Kobbertekkingen på kuppelen kom i 1863, og trappene foran hovedinngangen i 1883.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kildegrunnlag for popupDesc, setning 10",
+                      "url": "https://oslobyleksikon.no/side/Trefoldighetskirken",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/trefoldighetskirken.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_trefoldighetskirken_text_13",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_trefoldighetskirken_3_1863",
+                  "year": 1863,
+                  "title": "Kuppelen får kobber",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon – Trefoldighetskirken",
+                      "url": "https://oslobyleksikon.no/side/Trefoldighetskirken",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_trefoldighetskirken.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_trefoldighetskirken_4_1883",
+                  "year": 1883,
+                  "title": "Trappene bygges",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon – Trefoldighetskirken",
+                      "url": "https://oslobyleksikon.no/side/Trefoldighetskirken",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_trefoldighetskirken.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
                 }
               ],
               "period_cases": [],
               "connections": {
-                "person_ids": [],
+                "person_ids": [
+                  "alexis_de_chateauneuf"
+                ],
                 "works": [],
                 "stories": []
               }
@@ -21715,7 +21856,7 @@
             }
           ],
           "placeCount": 107,
-          "milestoneCount": 376
+          "milestoneCount": 383
         },
         "historie_nasjon_massepolitikk_og_moderne_institusjoner": {
           "places": [
@@ -28003,6 +28144,66 @@
               }
             },
             {
+              "place_id": "trefoldighetskirken",
+              "name": "Trefoldighetskirken",
+              "category": "religion",
+              "source_file": "places/religion/oslo/trefoldighetskirken/trefoldighetskirken.json",
+              "roles": [
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_trefoldighetskirken_text_18",
+                  "year": 1923,
+                  "title": "Julius Middelthuns marmorskulptur bærer døpefatet, mens Emanuel Vigelands lysekrone fra 1923 organiserer lys og blikk i rommet.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Kildegrunnlag for popupDesc, setning 15",
+                      "url": "https://oslobyleksikon.no/side/Trefoldighetskirken",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/trefoldighetskirken.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_trefoldighetskirken_text_18",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_trefoldighetskirken_5_1923",
+                  "year": 1923,
+                  "title": "Vigelands lysekrone",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon – Trefoldighetskirken",
+                      "url": "https://oslobyleksikon.no/side/Trefoldighetskirken",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_trefoldighetskirken.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "alexis_de_chateauneuf"
+                ],
+                "works": [],
+                "stories": []
+              }
+            },
+            {
               "place_id": "ullevål_hageby",
               "name": "Ullevål Hageby",
               "category": "by",
@@ -29149,8 +29350,8 @@
               }
             }
           ],
-          "placeCount": 88,
-          "milestoneCount": 195
+          "placeCount": 89,
+          "milestoneCount": 197
         },
         "historie_krig_okkupasjon_og_etterkrigsoppgjor": {
           "places": [
@@ -38615,6 +38816,47 @@
               }
             },
             {
+              "place_id": "trefoldighetskirken",
+              "name": "Trefoldighetskirken",
+              "category": "religion",
+              "source_file": "places/religion/oslo/trefoldighetskirken/trefoldighetskirken.json",
+              "roles": [
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_trefoldighetskirken_6_1956",
+                  "year": 1956,
+                  "title": "Ny restaureringsfase",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon – Trefoldighetskirken",
+                      "url": "https://oslobyleksikon.no/side/Trefoldighetskirken",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_trefoldighetskirken.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "alexis_de_chateauneuf"
+                ],
+                "works": [],
+                "stories": []
+              }
+            },
+            {
               "place_id": "tronsmo_bokhandel",
               "name": "Tronsmo Bokhandel",
               "category": "litteratur",
@@ -39237,8 +39479,8 @@
               }
             }
           ],
-          "placeCount": 67,
-          "milestoneCount": 157
+          "placeCount": 68,
+          "milestoneCount": 158
         },
         "historie_senmoderne_globalisering_og_markedsvending": {
           "places": [
@@ -45541,6 +45783,47 @@
               }
             },
             {
+              "place_id": "trefoldighetskirken",
+              "name": "Trefoldighetskirken",
+              "category": "religion",
+              "source_file": "places/religion/oslo/trefoldighetskirken/trefoldighetskirken.json",
+              "roles": [
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_trefoldighetskirken_7_1997",
+                  "year": 1997,
+                  "title": "Kirken gjenåpnes",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon – Trefoldighetskirken",
+                      "url": "https://oslobyleksikon.no/side/Trefoldighetskirken",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_trefoldighetskirken.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "alexis_de_chateauneuf"
+                ],
+                "works": [],
+                "stories": []
+              }
+            },
+            {
               "place_id": "tullin",
               "name": "Tullin",
               "category": "by",
@@ -45626,6 +45909,71 @@
                     "id": "st_tullin_fra_kunsthall_til_park_2011",
                     "title": "Fra midlertidig kunsthall til park",
                     "year": 2011,
+                    "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "toyen_torg",
+              "name": "Tøyen torg",
+              "category": "by",
+              "source_file": "places/by/oslo/places/toyen_torg.json",
+              "roles": [
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_toyen_torg_viewpoint_caveat",
+                  "year": 2006,
+                  "title": "Førbildet fra 2006 og Grindakers prosjektfoto er tatt fra ulike ståsteder og kan bare brukes til overordnet sammenligning.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Visuell og redaksjonell kontroll av bildepunktene",
+                      "url": "https://commons.wikimedia.org/wiki/File:Toyen_senter.jpg",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/toyen_torg.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_toyen_torg_viewpoint_caveat",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_toyen_torg_before_photo",
+                  "year": 2006,
+                  "title": "Mahlums fotografi dokumenterer Tøyen senter i 2006, før den permanente ombyggingen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Commons-metadata",
+                      "url": "https://commons.wikimedia.org/wiki/File:Toyen_senter.jpg",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/toyen_torg.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_toyen_torg_before_photo",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_toyen_torg_venteplassen_2015",
+                    "title": "Torget som ble en prøveplass",
+                    "year": 2015,
                     "type": "turning_point"
                   }
                 ]
@@ -46451,8 +46799,8 @@
               }
             }
           ],
-          "placeCount": 95,
-          "milestoneCount": 174
+          "placeCount": 97,
+          "milestoneCount": 177
         },
         "historie_digital_samtid_kriser_og_ny_offentlighet": {
           "places": [
@@ -52910,6 +53258,85 @@
               }
             },
             {
+              "place_id": "trefoldighetskirken",
+              "name": "Trefoldighetskirken",
+              "category": "religion",
+              "source_file": "places/religion/oslo/trefoldighetskirken/trefoldighetskirken.json",
+              "roles": [
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_trefoldighetskirken_8_2020",
+                  "year": 2020,
+                  "title": "Freds- og forsoningsoppdrag",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Den norske kirke – Trefoldighetskirken",
+                      "url": "https://www.kirken.no/nb-NO/fellesrad/kirkeneioslo/menigheter/trefoldighetskirken/om-domkirken/",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_trefoldighetskirken.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_trefoldighetskirken_9_2024",
+                  "year": 2024,
+                  "title": "Renovering dokumenteres",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Den norske kirke – Trefoldighetskirken",
+                      "url": "https://www.kirken.no/nb-NO/fellesrad/kirkeneioslo/menigheter/trefoldighetskirken/aktuelle/2024-05-22/",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_trefoldighetskirken.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_trefoldighetskirken_10_2026",
+                  "year": 2026,
+                  "title": "Kirkesenteret åpner",
+                  "consequence": "",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Den norske kirke – Trefoldighetskirken",
+                      "url": "https://www.kirken.no/nb-NO/fellesrad/kirkeneioslo/menigheter/trefoldighetskirken/om-domkirken/",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/religion/leksikon_trefoldighetskirken.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [
+                  "alexis_de_chateauneuf"
+                ],
+                "works": [],
+                "stories": []
+              }
+            },
+            {
               "place_id": "tullin",
               "name": "Tullin",
               "category": "by",
@@ -53034,38 +53461,95 @@
               "source_file": "places/by/oslo/places/toyen_torg.json",
               "roles": [
                 {
-                  "id": "hverdagsliv_og_velferd",
-                  "label": "Hverdagsliv og velferd"
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
                 }
               ],
               "milestones": [
                 {
-                  "id": "story_st_toyen_torg_omradeloft_moteplass_2014",
-                  "year": 2014,
-                  "title": "Fra Tøyensenteret til nabolagets åpne stue",
-                  "consequence": "Tøyen torg ble et synlig punkt i Tøyenløftet, der et 1970-tallssenter ble oppgradert og ladet med nye forventninger om trygghet, møteplasser og lokalt byliv.",
+                  "id": "production_claim_toyen_torg_2013_allocation",
+                  "year": 2013,
+                  "title": "I 2013 fikk Tøyen torg hele årets kommunale pott fra programmet for torg og møteplasser som del av områdeløftet etter Tøyenavtalen.",
+                  "consequence": "",
                   "confidence": "",
                   "sources": [
                     {
-                      "title": "Oslo kommune: Om Områdeløft Grønland og Tøyen",
-                      "url": "https://www.oslo.kommune.no/byutvikling/omradesatsingene-i-oslo/omradeloft-gronland-og-toyen/om-omradeloftet/",
+                      "title": "Avsnittet om Tøyen torg",
+                      "url": "https://magasin.oslo.kommune.no/byplan/gode-ideer-gir-gode-moteplasser",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/toyen_torg.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_toyen_torg_2013_allocation",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_toyen_torg_venteplassen",
+                  "year": 2015,
+                  "title": "Byverkstedet prøvde ut midlertidige installasjoner og flerbruksmøbler i Venteplassen i 2015, og Grindaker oppgir at erfaringer ble tatt videre i møbleringen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Avsnittet om Venteplassen",
+                      "url": "https://grindaker.no/projects/toyen-torg/",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/toyen_torg.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_toyen_torg_venteplassen",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_toyen_torg_venteplassen_2015",
+                  "year": 2015,
+                  "title": "Torget som ble en prøveplass",
+                  "consequence": "I 2015 ble Venteplassen brukt til å teste midlertidige installasjoner og flerbruksmøbler på Tøyen torg før den permanente planen ble bygget.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Katja Bratseth: Antropologi som instrument i improviserende stedsutvikling",
+                      "url": "https://scandinavianacademicpress.no/wp-content/uploads/sites/7/2025/03/03006_Improvisasjon_Innmat-OA_Bratseth.pdf",
                       "verifiedAt": ""
                     },
                     {
-                      "title": "Aftenposten: Forvandlingen av Tøyensenteret har startet",
-                      "url": "https://www.aftenposten.no/oslo/i/6nJBo/forvandlingen-av-toeyensenteret-har-startet",
+                      "title": "Grindaker – Tøyen Torg",
+                      "url": "https://grindaker.no/projects/toyen-torg/",
                       "verifiedAt": ""
                     },
                     {
-                      "title": "Tidsskriftet Michael: Grå-grønn bærekraft – Tøyen som eksempel fra Oslo",
-                      "url": "https://www.michaeljournal.no/article/2019/12/Gra-gronn-berekraft-%25E2%2580%2593-Toyen-som-eksempel-fra-Oslo",
+                      "title": "Oslo kommune – Gode idéer gir gode møteplasser",
+                      "url": "https://magasin.oslo.kommune.no/byplan/gode-ideer-gir-gode-moteplasser",
                       "verifiedAt": ""
                     }
                   ],
                   "source_file": "data/runtime/stories-all/part-001.json",
                   "evidence_type": "canonical_story",
                   "claim_id": "",
-                  "story_id": "st_toyen_torg_omradeloft_moteplass_2014",
+                  "story_id": "st_toyen_torg_venteplassen_2015",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_toyen_torg_project_period",
+                  "year": 2016,
+                  "title": "Grindaker detaljprosjekterte det permanente Tøyen torg for Bymiljøetaten i 2016–18 etter et skisseprosjekt utviklet med Lala Tøyen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Prosjektfakta",
+                      "url": "https://grindaker.no/projects/toyen-torg/",
+                      "verifiedAt": "2026-09-01"
+                    }
+                  ],
+                  "source_file": "data/places/production/toyen_torg.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_toyen_torg_project_period",
+                  "story_id": "",
                   "limitations": []
                 }
               ],
@@ -53075,10 +53559,10 @@
                 "works": [],
                 "stories": [
                   {
-                    "id": "st_toyen_torg_omradeloft_moteplass_2014",
-                    "title": "Fra Tøyensenteret til nabolagets åpne stue",
-                    "year": 2014,
-                    "type": "urban_change"
+                    "id": "st_toyen_torg_venteplassen_2015",
+                    "title": "Torget som ble en prøveplass",
+                    "year": 2015,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -53608,8 +54092,8 @@
               }
             }
           ],
-          "placeCount": 83,
-          "milestoneCount": 187
+          "placeCount": 84,
+          "milestoneCount": 193
         }
       },
       "parallel_tracks": {
@@ -58971,7 +59455,7 @@
               "place_id": "trefoldighetskirken",
               "name": "Trefoldighetskirken",
               "category": "religion",
-              "source_file": "places/by/oslo/trefoldighetskirken/trefoldighetskirken.json",
+              "source_file": "places/religion/oslo/trefoldighetskirken/trefoldighetskirken.json",
               "roles": [
                 {
                   "id": "em_his_religion_reformasjon_pietisme_vekkelse_og_lekmannsbevegelse",
@@ -59017,7 +59501,9 @@
               ],
               "period_cases": [],
               "connections": {
-                "person_ids": [],
+                "person_ids": [
+                  "alexis_de_chateauneuf"
+                ],
                 "works": [],
                 "stories": []
               }
@@ -61627,7 +62113,7 @@
               "place_id": "trefoldighetskirken",
               "name": "Trefoldighetskirken",
               "category": "religion",
-              "source_file": "places/by/oslo/trefoldighetskirken/trefoldighetskirken.json",
+              "source_file": "places/religion/oslo/trefoldighetskirken/trefoldighetskirken.json",
               "roles": [
                 {
                   "id": "em_his_religion_reformasjon_pietisme_vekkelse_og_lekmannsbevegelse",
@@ -61673,65 +62159,11 @@
               ],
               "period_cases": [],
               "connections": {
-                "person_ids": [],
+                "person_ids": [
+                  "alexis_de_chateauneuf"
+                ],
                 "works": [],
                 "stories": []
-              }
-            },
-            {
-              "place_id": "toyen_torg",
-              "name": "Tøyen torg",
-              "category": "by",
-              "source_file": "places/by/oslo/places/toyen_torg.json",
-              "roles": [
-                {
-                  "id": "hverdagsliv_og_velferd",
-                  "label": "Hverdagsliv og velferd"
-                }
-              ],
-              "milestones": [
-                {
-                  "id": "story_st_toyen_torg_omradeloft_moteplass_2014",
-                  "year": 2014,
-                  "title": "Fra Tøyensenteret til nabolagets åpne stue",
-                  "consequence": "Tøyen torg ble et synlig punkt i Tøyenløftet, der et 1970-tallssenter ble oppgradert og ladet med nye forventninger om trygghet, møteplasser og lokalt byliv.",
-                  "confidence": "",
-                  "sources": [
-                    {
-                      "title": "Oslo kommune: Om Områdeløft Grønland og Tøyen",
-                      "url": "https://www.oslo.kommune.no/byutvikling/omradesatsingene-i-oslo/omradeloft-gronland-og-toyen/om-omradeloftet/",
-                      "verifiedAt": ""
-                    },
-                    {
-                      "title": "Aftenposten: Forvandlingen av Tøyensenteret har startet",
-                      "url": "https://www.aftenposten.no/oslo/i/6nJBo/forvandlingen-av-toeyensenteret-har-startet",
-                      "verifiedAt": ""
-                    },
-                    {
-                      "title": "Tidsskriftet Michael: Grå-grønn bærekraft – Tøyen som eksempel fra Oslo",
-                      "url": "https://www.michaeljournal.no/article/2019/12/Gra-gronn-berekraft-%25E2%2580%2593-Toyen-som-eksempel-fra-Oslo",
-                      "verifiedAt": ""
-                    }
-                  ],
-                  "source_file": "data/runtime/stories-all/part-001.json",
-                  "evidence_type": "canonical_story",
-                  "claim_id": "",
-                  "story_id": "st_toyen_torg_omradeloft_moteplass_2014",
-                  "limitations": []
-                }
-              ],
-              "period_cases": [],
-              "connections": {
-                "person_ids": [],
-                "works": [],
-                "stories": [
-                  {
-                    "id": "st_toyen_torg_omradeloft_moteplass_2014",
-                    "title": "Fra Tøyensenteret til nabolagets åpne stue",
-                    "year": 2014,
-                    "type": "urban_change"
-                  }
-                ]
               }
             },
             {
@@ -61850,8 +62282,8 @@
               }
             }
           ],
-          "placeCount": 19,
-          "milestoneCount": 50
+          "placeCount": 18,
+          "milestoneCount": 49
         },
         "historie_minnekultur_og_historiebruk": {
           "places": [
@@ -71123,7 +71555,7 @@
             "place_id": "trefoldighetskirken",
             "name": "Trefoldighetskirken",
             "category": "religion",
-            "source_file": "places/by/oslo/trefoldighetskirken/trefoldighetskirken.json",
+            "source_file": "places/religion/oslo/trefoldighetskirken/trefoldighetskirken.json",
             "status": "dated_evidence"
           },
           {
@@ -72149,13 +72581,6 @@
         "source": "canonical_place_fields"
       },
       "sofienberg_kirke": {
-        "country_id": "no",
-        "country_label": "Norge",
-        "city_id": "oslo",
-        "city_label": "Oslo",
-        "source": "canonical_place_fields"
-      },
-      "trefoldighetskirken": {
         "country_id": "no",
         "country_label": "Norge",
         "city_id": "oslo",
@@ -82346,6 +82771,13 @@
         "city_id": "oslo",
         "city_label": "Oslo",
         "source": "canonical_source_path"
+      },
+      "trefoldighetskirken": {
+        "country_id": "no",
+        "country_label": "Norge",
+        "city_id": "oslo",
+        "city_label": "Oslo",
+        "source": "canonical_place_fields"
       }
     },
     "countries": [
@@ -82741,14 +83173,14 @@
     "canonical_source_count": 256,
     "place_evidence_link_count": 325,
     "period_case_count": 9,
-    "connected_people_count": 60,
+    "connected_people_count": 61,
     "connected_work_count": 157,
     "connected_story_count": 248,
     "canonical_story_milestone_count": 217,
-    "verified_place_production_milestone_count": 379,
+    "verified_place_production_milestone_count": 388,
     "indexed_place_count": 275,
-    "epoch_place_relations": 580,
-    "milestone_count": 1441
+    "epoch_place_relations": 585,
+    "milestone_count": 1460
   },
   "warnings": {
     "missing_source_files": [
@@ -82780,7 +83212,7 @@
     "unknown_evidence_place_ids": [],
     "missing_claim_ids": [],
     "skipped_undated": 0,
-    "skipped_without_url_sources": 637,
+    "skipped_without_url_sources": 641,
     "skipped_evidence_without_sources": 0
   }
 }
