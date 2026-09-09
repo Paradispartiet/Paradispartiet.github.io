@@ -152,6 +152,13 @@
   }
 
   function popupText(place) {
+    const shared = global.HGPlaceSheetSections?.about?.text;
+    if (typeof shared === "function") {
+      try {
+        const value = text(shared(place));
+        if (value) return value;
+      } catch {}
+    }
     return firstText(
       place?.popupDesc,
       place?.popupdesc,
@@ -170,6 +177,24 @@
       .filter(Boolean)
       .map(paragraph => `<p>${escapeHtml(paragraph).replaceAll("\n", "<br>")}</p>`)
       .join("");
+  }
+
+  function renderStandardAboutSection(place, options) {
+    if (options && typeof options === "object" && options.suppressPlaceAbout === true) return "";
+    const shared = global.HGPlaceSheetSections?.about?.renderHtml;
+    if (typeof shared === "function") {
+      try {
+        const html = String(shared(place) || "");
+        if (html) return html;
+      } catch {}
+    }
+    const fullText = popupText(place);
+    return fullText ? `
+      <section class="hg-section hg-place-section hg-place-about-section">
+        <h3>Om stedet</h3>
+        <div class="hg-place-longread">${renderParagraphs(fullText)}</div>
+      </section>
+    ` : "";
   }
 
   function uniqueStrings(values) {
@@ -421,6 +446,14 @@
   }
 
   function renderHistoryTimeline(place) {
+    const shared = global.HGPlaceSheetSections?.history?.renderHtml;
+    if (typeof shared === "function") {
+      try {
+        const html = String(shared(place) || "");
+        if (html) return html;
+      } catch {}
+    }
+
     const layers = list(place?.history_layers)
       .map((item, index) => ({ item, index }))
       .filter(({ item }) => item && typeof item === "object")
@@ -449,6 +482,11 @@
         </div>
       </section>
     `;
+  }
+
+  function renderStandardHistorySection(place, options) {
+    if (options && typeof options === "object" && options.suppressPlaceHistory === true) return "";
+    return renderHistoryTimeline(place);
   }
 
   function renderChips(values, maxItems = 18) {
@@ -674,7 +712,7 @@
     loadNext();
   }
 
-  async function showPlacePopupV2(inputPlace) {
+  async function showPlacePopupV2(inputPlace, options = null) {
     if (!inputPlace) return;
     if (global.HGPlaceOpen?.ensure && !global.HGPlaceOpen.has?.(inputPlace)) {
       inputPlace = await global.HGPlaceOpen.ensure(inputPlace) || inputPlace;
@@ -756,16 +794,11 @@
             </div>
           </section>
 
-          ${fullText ? `
-            <section class="hg-section hg-place-section hg-place-about-section">
-              <h3>Om stedet</h3>
-              <div class="hg-place-longread">${renderParagraphs(fullText)}</div>
-            </section>
-          ` : ""}
+          ${renderStandardAboutSection(place, options)}
 
           ${renderSpatialSection(place, routeLength)}
           ${renderSubplacesSection(place)}
-          ${renderHistoryTimeline(place)}
+          ${renderStandardHistorySection(place, options)}
           ${renderNatureLandscape(place)}
 
           <div class="hg-place-context-grid">
@@ -786,9 +819,33 @@
       </article>
     `;
 
-    makePopup(html, "place-popup place-popup-v2");
-
-    const popup = document.querySelector(".hg-popup.place-popup-v2");
+    const unifiedHost = options && typeof options === "object" ? options.unifiedHost : null;
+    let popup = null;
+    if (unifiedHost && typeof unifiedHost.replaceChildren === "function") {
+      // Explicit Place Sheet target: keep the canonical renderer, but do not
+      // instantiate a standalone modal first. The compatibility shell remains
+      // until the Unified adapter no longer needs the legacy popup CSS contract.
+      try { helper("closePopup")?.(); } catch {}
+      const shell = document.createElement("div");
+      shell.className = "hg-popup place-popup place-popup-v2";
+      shell.dataset.hgUnifiedDirectHost = "1";
+      shell.innerHTML = `
+        <div class="hg-popup-inner hg-modal-card">
+          <button class="hg-popup-close hg-modal-close" data-close-popup hidden aria-hidden="true" tabindex="-1">✕</button>
+          ${html}
+        </div>
+      `;
+      unifiedHost.replaceChildren(shell);
+      popup = shell;
+      try {
+        global.dispatchEvent?.(new CustomEvent("hg:place-unified-host-rendered", {
+          detail: { placeId: String(place?.id || "") }
+        }));
+      } catch {}
+    } else {
+      makePopup(html, "place-popup place-popup-v2");
+      popup = document.querySelector(".hg-popup.place-popup-v2");
+    }
     attachHeroImage(popup, candidates);
 
     const quizButton = popup?.querySelector?.(`[data-quiz="${global.CSS?.escape ? global.CSS.escape(String(place?.id || "")) : String(place?.id || "")}"]`)
