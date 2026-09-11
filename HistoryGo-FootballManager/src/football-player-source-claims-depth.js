@@ -148,6 +148,70 @@ const documented = [
     claim: "«enorme éin-mot-éin-ferdigheiter, fart og offensive kraft»",
     source: "https://brattvag-il.no/herrelag/herrelaget/fire-nysigneringer",
     sourceKind: "club"
+  },
+  {
+    playerId: "joachim_lundhagebakken",
+    clubId: "eik_tonsberg",
+    strengths: ["strength", "pace"],
+    claim: "«en fysisk sterk spiller med god fart»",
+    source: "https://elverumfotball.no/nyheter/joachim-21-klar-for-elverum",
+    sourceKind: "club"
+  },
+  {
+    playerId: "adam_tamrat_vik",
+    clubId: "follo",
+    strengths: ["shot_stopping"],
+    claim: "«god til å stoppe skudd»",
+    source: "https://www.vartoslo.no/adam-tamrat-vik-bydel-sagene-emil-tjostheim/skeids-nye-keeper-adam-tamrat-vik-19-sikter-mot-manchester-united/270601",
+    sourceKind: "press"
+  },
+  {
+    playerId: "mads_fagerli_halsoy",
+    clubId: "junkeren",
+    strengths: ["finishing"],
+    claim: "«Mads Fagerli Halsøy satt ballen strålende opp i hjørnet.»",
+    source: "https://www.fotball.no/landslag/norge-gutter-17/2019/g17-avsluttet-med-seier---en-kanonsterk-turnering/",
+    sourceKind: "press"
+  },
+  {
+    playerId: "oystein_lundblad_naesheim",
+    clubId: "kvik_halden",
+    strengths: ["set_pieces"],
+    claim: "«på grunn av en vanvittig corner- fot fra Øystein Lundblad Næsheim»",
+    source: "https://www.sprintjeloy.no/2019/05/14/poengdeling-mot-kvik-halden-2/",
+    sourceKind: "club"
+  },
+  {
+    playerId: "jonah_disch_lindvig",
+    clubId: "pors",
+    strengths: ["work_rate"],
+    claim: "«Treningsiver: Jonah Disch Lindvig.»",
+    source: "https://www.odd.no/sok/_/attachment/download/d3056c9d-1b57-4adb-ae0d-a6804bfb331b%3Ad12abc9ce82514a608562e07d3b23bf05bfb9f27/260217%20Odd%20%C3%85rsberetning%202025%20W.pdf",
+    sourceKind: "club"
+  },
+  {
+    playerId: "brede_froysa",
+    clubId: "rana",
+    strengths: ["work_rate"],
+    claim: "«hardtarbeidende nøkkelspiller for A-laget»",
+    source: "https://www.ranafk.no/barn-og-ungdom/",
+    sourceKind: "club"
+  },
+  {
+    playerId: "bendik_august_engen",
+    clubId: "sandviken",
+    strengths: ["pace", "work_rate"],
+    claim: "«Med fart og rykk» og «En ærlig og hardtarbeidende spiller»",
+    source: "https://fanafotball.no/fotballutdanning/seniorfotball/representasjonslag/herrelaget/bendik-august-engen-ny-fana-spiller/",
+    sourceKind: "club"
+  },
+  {
+    playerId: "morten_grasmo",
+    clubId: "sotra",
+    strengths: ["shot_stopping"],
+    claim: "«en fantastisk redning av Sotras keeper hindret scoring»",
+    source: "https://www.brann.no/nyheter/sloste-med-sjansene-mot-sotra",
+    sourceKind: "club"
   }
 ];
 

@@ -1,7 +1,7 @@
 {
   "schema": "civication_role_world_index_v1",
   "version": 1,
-  "status": "87_role_worlds_materialized",
+  "status": "92_role_worlds_materialized",
   "effective_date": "2026-09-11",
   "roles": [
     {
@@ -539,6 +539,71 @@
       "status": "role_world_complete",
       "path": "data/Civication/roleWorlds/by/by_nabolagskjenner.json",
       "life_position_key": "by/nabolagskjenner"
+    },
+    {
+      "category": "film_tv",
+      "role_scope": "film_tv_filmklubbmenneske",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "film_tv",
+        "id": "filmklubbmenneske",
+        "label": "Filmklubbmenneske"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/film_tv/film_tv_filmklubbmenneske.json",
+      "life_position_key": "film_tv/filmklubbmenneske"
+    },
+    {
+      "category": "filosofi",
+      "role_scope": "filosofi_sofafilosof",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "filosofi",
+        "id": "sofafilosof",
+        "label": "Sofafilosof"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/filosofi/filosofi_sofafilosof.json",
+      "life_position_key": "filosofi/sofafilosof"
+    },
+    {
+      "category": "historie",
+      "role_scope": "historie_historievandrer",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "historie",
+        "id": "historievandrer",
+        "label": "Historievandrer"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/historie/historie_historievandrer.json",
+      "life_position_key": "historie/historievandrer"
+    },
+    {
+      "category": "kunst",
+      "role_scope": "kunst_gallerivanker",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "kunst",
+        "id": "gallerivanker",
+        "label": "Gallerivanker"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/kunst/kunst_gallerivanker.json",
+      "life_position_key": "kunst/gallerivanker"
+    },
+    {
+      "category": "litteratur",
+      "role_scope": "litteratur_skrivebordspoet",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "litteratur",
+        "id": "skrivebordspoet",
+        "label": "Skrivebordspoet"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/litteratur/litteratur_skrivebordspoet.json",
+      "life_position_key": "litteratur/skrivebordspoet"
     }
   ],
   "first_reference_world": {
@@ -574,10 +639,10 @@
     "focus": "kilder, publikum, profesjonskultur, feedback, rework og redaktørmyndighet"
   },
   "summary": {
-    "role_worlds_total": 87,
+    "role_worlds_total": 92,
     "career_role_worlds": 85,
-    "life_position_role_worlds": 2
+    "life_position_role_worlds": 7
   },
   "career_role_world_count": 85,
-  "life_position_role_world_count": 2
+  "life_position_role_world_count": 7
 }

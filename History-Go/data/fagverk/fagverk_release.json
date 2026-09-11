@@ -10,8 +10,8 @@
     "path": "data/fagverk/fagverk_registry.json",
     "schema": "history_go_fagverk_registry_v1",
     "version": "3.15.0",
-    "updated_at": "2026-09-08",
-    "content_sha256": "2cfacafbd2488dcf5c1993896a9544c1e7f55cfe0e5c99503557039b6caca2a9"
+    "updated_at": "2026-09-11",
+    "content_sha256": "64d65a89c0595c3695f08e33340b535e1915fe63f7fe69899362bad2dc92da58"
   },
   "subject_inventory": {
     "path": "data/fagverk/subject_inventory.json",
@@ -27,7 +27,7 @@
     "schema": null,
     "version": null,
     "updated_at": null,
-    "content_sha256": "1e7169983a5761766e343efb7d0ed502fa478e219e0a73e4a38d16573556575b"
+    "content_sha256": "dbd3e931624fd044b8915cc7e7642663d8e3d8fe1fdad0c5320e19aee2d166cd"
   },
   "summary": {
     "subject_count": 20,
@@ -36,9 +36,9 @@
     "chapter_subject_count": 18,
     "chapter_count": 190,
     "module_file_count": 497,
-    "package_file_count": 432,
+    "package_file_count": 438,
     "chapter_referenced_file_count": 934,
-    "referenced_file_count": 1295,
+    "referenced_file_count": 1301,
     "missing_file_count": 0,
     "optional_gap_count": 1
   },
@@ -76,9 +76,9 @@
         "supersetQuizMal"
       ],
       "missing_manifest_fields": [],
-      "package_file_count": 93,
+      "package_file_count": 96,
       "required_package_file_count": 4,
-      "optional_package_file_count": 89,
+      "optional_package_file_count": 92,
       "package_files": [
         {
           "path": "data/fag/by/emner_by.json",
@@ -235,6 +235,18 @@
           ],
           "exists": true,
           "content_sha256": "fabb8ad54d44905e196e88ebf1513f4615b5785e6ce280554b89bd9c8a772dd3"
+        },
+        {
+          "path": "data/quiz/by/hausmannsbrua_sets.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.hausmannsbrua.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "e33a11dd840ef3b9b4a6f8e2af3f3ba553d1a9944e66f0005d0a9da04f9b57ab"
         },
         {
           "path": "data/quiz/by/helsfyr_sets.json",
@@ -573,6 +585,18 @@
           "content_sha256": "8779e99bb6e013a03fe810a915642566a66ef640b534717a39efc697394bb4b8"
         },
         {
+          "path": "data/quiz/production_briefs/by/hausmannsbrua.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.hausmannsbrua.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "9d6cc44d1b5da8aa33ce2c47932840bd5f9af3bb20698f0cb6a94d2c535a26df"
+        },
+        {
           "path": "data/quiz/production_briefs/by/helsfyr.json",
           "required": false,
           "fields": [
@@ -909,6 +933,18 @@
           "content_sha256": "6b3915ec3f2ec3aa02b20b079b103084bd8b056c89dfd601cc36fb49f39e17fb"
         },
         {
+          "path": "data/quiz/production_context/by/hausmannsbrua.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.hausmannsbrua.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "ff5889a9d3fe21ad937cf52a65908bd811dba7c9fb3a9fc9e74fb73e3d705569"
+        },
+        {
           "path": "data/quiz/production_context/by/helsfyr.json",
           "required": false,
           "fields": [
@@ -1197,20 +1233,20 @@
           "content_sha256": "636265081b34aef4899fb33a8dd8ad7b03233480abdbfb812edced0d6a1a14d5"
         }
       ],
-      "package_content_sha256": "f2a6f65f1b86d59d0bd1eb87a44b9fe86657caa4a93789d599e3f97f38784cb1",
+      "package_content_sha256": "3e26cf3113e430238c89e2a927219eed33860885e97b3dac9baf121e63bb3bfd",
       "chapter_count": 17,
       "module_file_count": 51,
       "brief_file_count": 17,
       "claims_file_count": 17,
       "chapter_referenced_file_count": 102,
       "chapter_content_sha256": "38e5be5259e0aa3d733f4ddeeb46df87769c935ad9dd76cd175f8bb645ee79fa",
-      "referenced_file_count": 195,
+      "referenced_file_count": 198,
       "missing_required_files": [],
       "missing_optional_files": [],
       "missing_chapter_files": [],
       "missing_files": [],
-      "structure_sha256": "f07e0bda80c6d89f8d1ad167563ec61b1c5c8a14796a071cd0bfa1b350c6597a",
-      "content_sha256": "4d637605733bfa58a95dcf76333ace0ae4feaa04c974667697e096853521197c",
+      "structure_sha256": "097981e32c40054f3fd8aac7d110d42898b3dfa4c7f4de0424d28d5b171453f5",
+      "content_sha256": "be9ed448964cb78cadcfee9cb4757d92677eea0f570673aa0f5cb54ae3ca68bb",
       "chapters": [
         {
           "chapter_id": "byliv-offentlige-rom",
@@ -2524,9 +2560,9 @@
         "version"
       ],
       "missing_manifest_fields": [],
-      "package_file_count": 86,
+      "package_file_count": 89,
       "required_package_file_count": 4,
-      "optional_package_file_count": 82,
+      "optional_package_file_count": 85,
       "package_files": [
         {
           "path": "data/fag/historie/case_requirements_historie_canonical_v1.json",
@@ -2925,6 +2961,18 @@
           "content_sha256": "6bdf6c873383038e72411283530ee0b7c5e314f2154f5bd724f9b844c9a82f60"
         },
         {
+          "path": "data/quiz/historie/prinds_christian_augusts_minde_sets.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.prinds_christian_augusts_minde.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "d7c5988286a38aec9f5a7e3432f31ce018b29e00511bd45995bd67f4e6d0d9a9"
+        },
+        {
           "path": "data/quiz/historie/the_mini_bottle_gallery_sets.json",
           "required": false,
           "fields": [
@@ -3199,6 +3247,18 @@
           ],
           "exists": true,
           "content_sha256": "7282684c51f769e9565eb00dc14141c9d5c81373a03f0cc0402f0e78a521746d"
+        },
+        {
+          "path": "data/quiz/production_briefs/historie/prinds_christian_augusts_minde.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.prinds_christian_augusts_minde.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "7d552df173bedb3a2a62e49efa066448f32849933a7063b2434098f0b910c18b"
         },
         {
           "path": "data/quiz/production_briefs/historie/the_mini_bottle_gallery.json",
@@ -3477,6 +3537,18 @@
           "content_sha256": "0a94290b2fc01196c6a1e2e1f59ed1ac7714ec20da66c6ed34f2073c385c38d2"
         },
         {
+          "path": "data/quiz/production_context/historie/prinds_christian_augusts_minde.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.prinds_christian_augusts_minde.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "02ced56e005758f2ac5d60ee92a3ffecd21569f141f47e1f5b59ce6b6a91187b"
+        },
+        {
           "path": "data/quiz/production_context/historie/the_mini_bottle_gallery.json",
           "required": false,
           "fields": [
@@ -3561,20 +3633,20 @@
           "content_sha256": "636265081b34aef4899fb33a8dd8ad7b03233480abdbfb812edced0d6a1a14d5"
         }
       ],
-      "package_content_sha256": "7a33f2ca44a5e638d8da4cef519cc520ec1b1dbbe36ed2be2b9eb2593125bf53",
+      "package_content_sha256": "dd8616a5b9359b16a14ea5eaaf86f421fbe0ecd535c863e6ac4f654787ffcc59",
       "chapter_count": 23,
       "module_file_count": 69,
       "brief_file_count": 0,
       "claims_file_count": 0,
       "chapter_referenced_file_count": 92,
       "chapter_content_sha256": "bedfd019dc2fa60ba92a540bf6b9f2504e0f6b1680350762a5fe074e82153148",
-      "referenced_file_count": 178,
+      "referenced_file_count": 181,
       "missing_required_files": [],
       "missing_optional_files": [],
       "missing_chapter_files": [],
       "missing_files": [],
-      "structure_sha256": "c1afb807300e9794c5cdbadbb49afe9db9dea6e5468b65fcdbea672c54987f37",
-      "content_sha256": "77df0c6771450ba4ce2a5b0c970334f28724a8023dffd7610cd8a1d6fa41c617",
+      "structure_sha256": "ca64d0e5926b537e2ea52fd362e3575621cccc4a9c4fe0d72bf8067c0c42c388",
+      "content_sha256": "85316e3aa55f22d72617262520be6c23c214b4da9881bab06b787394b6bf1148",
       "chapters": [
         {
           "chapter_id": "historisk_tid_periodisering",
@@ -4077,7 +4149,7 @@
             "scientificPackage"
           ],
           "exists": true,
-          "content_sha256": "3d2c7320ff7958f54e3c7489a4e22cedff8a81f5ea13f6497913c599231be98e"
+          "content_sha256": "bd89665f139d5cc735a2c89c9173ce4a5b070eae6b7a244893e2d9abc03d95a5"
         },
         {
           "path": "data/fag/litteratur/litteraturvitenskap_canonical_v1/topic_foundations_v1.json",
@@ -4089,7 +4161,7 @@
             "topicFoundations"
           ],
           "exists": true,
-          "content_sha256": "b4f6e4a4d93e6c09f771ed882280796be31f066038b4723752f03f3eb36ee28e"
+          "content_sha256": "5375befcbf4fac008f8f3274b8889b5b20dc91ab0c72e4268f37ec8e6f207f34"
         },
         {
           "path": "data/fag/litteratur/methods_litteratur_canonical_v4_5.json",
@@ -4164,7 +4236,7 @@
           "content_sha256": "f19ed931d5a47c3969551cf58d9895049a399aff71dc397a3ea63ac76e31d2c5"
         }
       ],
-      "package_content_sha256": "036a2492f58a56b8df9cc00c6d11a4e124a258e16cd5320d4f22795f050b5fa7",
+      "package_content_sha256": "84a1b17bdaed0a86fbd884a4c6050df49c5728520c1221a1b76b75424f4c3c40",
       "chapter_count": 1,
       "module_file_count": 0,
       "brief_file_count": 0,
@@ -4177,7 +4249,7 @@
       "missing_chapter_files": [],
       "missing_files": [],
       "structure_sha256": "ec24aaf3be5c1dc7c7d48c397759450338513624c105a3e1779c53c545d445e7",
-      "content_sha256": "a0a8be74ca6298c114763664842c10f25c2eab4c6e265762ee91941d1ef7d0e2",
+      "content_sha256": "f783954b17e8af28cd5c262b32fa2f4e871b5101ca42ab8a0f9b8e31af776fca",
       "chapters": [
         {
           "chapter_id": "lesekultur_bokdeling_offentlighet",
@@ -7897,5 +7969,5 @@
       ]
     }
   },
-  "release_sha256": "c461777dcd0f2e07aa31d5bda8e6ec64b416625b2732ee1291fd2729ef621eea"
+  "release_sha256": "e4e09145d31e8fc177820c9b7c67c3c3a8aaf5e83e9b43dca1a992ff841e683b"
 }
