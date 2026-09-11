@@ -11,7 +11,7 @@
     "schema": "history_go_fagverk_registry_v1",
     "version": "3.15.0",
     "updated_at": "2026-09-08",
-    "content_sha256": "74c36af03c05fbe6543995531284bb31048e3acb5160daea18113d62052d5027"
+    "content_sha256": "2cfacafbd2488dcf5c1993896a9544c1e7f55cfe0e5c99503557039b6caca2a9"
   },
   "subject_inventory": {
     "path": "data/fagverk/subject_inventory.json",
@@ -27,7 +27,7 @@
     "schema": null,
     "version": null,
     "updated_at": null,
-    "content_sha256": "6ffb269d46a930acd1d5884f9b11c37fb3b6ee32ba03e1a5707517cbf88de81a"
+    "content_sha256": "1e7169983a5761766e343efb7d0ed502fa478e219e0a73e4a38d16573556575b"
   },
   "summary": {
     "subject_count": 20,
@@ -36,9 +36,9 @@
     "chapter_subject_count": 18,
     "chapter_count": 190,
     "module_file_count": 497,
-    "package_file_count": 423,
+    "package_file_count": 432,
     "chapter_referenced_file_count": 934,
-    "referenced_file_count": 1286,
+    "referenced_file_count": 1295,
     "missing_file_count": 0,
     "optional_gap_count": 1
   },
@@ -76,9 +76,9 @@
         "supersetQuizMal"
       ],
       "missing_manifest_fields": [],
-      "package_file_count": 87,
+      "package_file_count": 93,
       "required_package_file_count": 4,
-      "optional_package_file_count": 83,
+      "optional_package_file_count": 89,
       "package_files": [
         {
           "path": "data/fag/by/emner_by.json",
@@ -357,6 +357,18 @@
           "content_sha256": "03cef357d71c2c216c1cada6007af592ae272d9f2c054a61336c00e488ad12d2"
         },
         {
+          "path": "data/quiz/by/stortorget_sets.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.stortorget.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "90e27f333edb36d1ed5d8de2a5d2bf367e58adc7e7365b58c82f0a6045a8bf77"
+        },
+        {
           "path": "data/quiz/by/torggata_sets.json",
           "required": false,
           "fields": [
@@ -427,6 +439,18 @@
           ],
           "exists": true,
           "content_sha256": "33c886678ecb89648f4a899f055b668e3edd9dee89b24f17dc67174701653963"
+        },
+        {
+          "path": "data/quiz/by/vaterlandsparken_sets.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.vaterlandsparken.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "d3204baaf3014b71d3305b01946ec9671cdfe917879304772568a5ab1898cb86"
         },
         {
           "path": "data/quiz/by/vinderen_sets.json",
@@ -669,6 +693,18 @@
           "content_sha256": "8b13e68da3e231ea14d62fefd80f9a6f5f4cac54c85b192dc4bf3d0e8c304f7d"
         },
         {
+          "path": "data/quiz/production_briefs/by/stortorget.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.stortorget.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "0c9bcd2ecad70ad542db911e61ed418f5d855ad05040bbf984c482534f8478c5"
+        },
+        {
           "path": "data/quiz/production_briefs/by/torggata.json",
           "required": false,
           "fields": [
@@ -739,6 +775,18 @@
           ],
           "exists": true,
           "content_sha256": "996c1384ecfe64ba0ac5a904d5e8fc9277b5cf976c312988292dd8e175731028"
+        },
+        {
+          "path": "data/quiz/production_briefs/by/vaterlandsparken.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.vaterlandsparken.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "19e1d5c54119d633136ab71cfded069c2edad0f833f43c032a5a687d5286990e"
         },
         {
           "path": "data/quiz/production_briefs/by/vinderen.json",
@@ -981,6 +1029,18 @@
           "content_sha256": "21a89402147507123c07eca9fd2906c82e877e5ec5025c67cdcfcc757f99c02f"
         },
         {
+          "path": "data/quiz/production_context/by/stortorget.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.stortorget.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "3a5b7da445f70786f687c7a61021dbee2186d81d048c5c1666aebcc865fdc8ae"
+        },
+        {
           "path": "data/quiz/production_context/by/torggata.json",
           "required": false,
           "fields": [
@@ -1051,6 +1111,18 @@
           ],
           "exists": true,
           "content_sha256": "ff484fe16ec10c53c63572c2dbc5b18a4a58a6844485d317129fb8b67ba5ea15"
+        },
+        {
+          "path": "data/quiz/production_context/by/vaterlandsparken.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.vaterlandsparken.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "7b06c6c8df568f95a54efff7e5f243336a29500346c0e71c4d7c0fc31de36553"
         },
         {
           "path": "data/quiz/production_context/by/vinderen.json",
@@ -1125,20 +1197,20 @@
           "content_sha256": "636265081b34aef4899fb33a8dd8ad7b03233480abdbfb812edced0d6a1a14d5"
         }
       ],
-      "package_content_sha256": "9842a379951cdab4dfb4391d49ac9ec4c62283afc4a25d3cf43d66deb28bfe05",
+      "package_content_sha256": "f2a6f65f1b86d59d0bd1eb87a44b9fe86657caa4a93789d599e3f97f38784cb1",
       "chapter_count": 17,
       "module_file_count": 51,
       "brief_file_count": 17,
       "claims_file_count": 17,
       "chapter_referenced_file_count": 102,
       "chapter_content_sha256": "38e5be5259e0aa3d733f4ddeeb46df87769c935ad9dd76cd175f8bb645ee79fa",
-      "referenced_file_count": 189,
+      "referenced_file_count": 195,
       "missing_required_files": [],
       "missing_optional_files": [],
       "missing_chapter_files": [],
       "missing_files": [],
-      "structure_sha256": "1acd113152c70682fac962362c3a97ac6fa1ee8c7c4e4aa2e0e89474d8f7be7d",
-      "content_sha256": "639b5a8fbd05349ca9da001f6eaf983b65a22610721068b36ed22b480d50580e",
+      "structure_sha256": "f07e0bda80c6d89f8d1ad167563ec61b1c5c8a14796a071cd0bfa1b350c6597a",
+      "content_sha256": "4d637605733bfa58a95dcf76333ace0ae4feaa04c974667697e096853521197c",
       "chapters": [
         {
           "chapter_id": "byliv-offentlige-rom",
@@ -4608,9 +4680,9 @@
         "universityFramework"
       ],
       "missing_manifest_fields": [],
-      "package_file_count": 49,
+      "package_file_count": 52,
       "required_package_file_count": 4,
-      "optional_package_file_count": 45,
+      "optional_package_file_count": 48,
       "package_files": [
         {
           "path": "data/fag/naeringsliv/emner_naeringsliv_canonical_v4_5.json",
@@ -4805,6 +4877,18 @@
           "content_sha256": "b81c74cc303b147f6febf519a439cc3cac4a08ce4f552bdfd1a43a4488c9d0c9"
         },
         {
+          "path": "data/quiz/naeringsliv/borsen_oslo_sets.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.borsen_oslo.quiz_file"
+          ],
+          "exists": true,
+          "content_sha256": "a4d88deb08785c0f2518e137f32ee7e49efc3d6866f27d116580153b85c3cce9"
+        },
+        {
           "path": "data/quiz/naeringsliv/freia_fabrikken_sets.json",
           "required": false,
           "fields": [
@@ -4925,6 +5009,18 @@
           "content_sha256": "0266a328ca8e93aac5a4c0750b68566375625de6be5ce2f83e27551b3c21c3da"
         },
         {
+          "path": "data/quiz/production_briefs/naeringsliv/borsen_oslo.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.borsen_oslo.source_brief"
+          ],
+          "exists": true,
+          "content_sha256": "358aa30d7fa01e7b6ae23827037e96e6841d824d154cdc664b0bf1963e2973e9"
+        },
+        {
           "path": "data/quiz/production_briefs/naeringsliv/freia_fabrikken.json",
           "required": false,
           "fields": [
@@ -5043,6 +5139,18 @@
           ],
           "exists": true,
           "content_sha256": "073361731d5d2a2c3ac501bcd942a170dfd1fc52485bf979e8634ee174eac041"
+        },
+        {
+          "path": "data/quiz/production_context/naeringsliv/borsen_oslo.json",
+          "required": false,
+          "fields": [
+            "quizProduction"
+          ],
+          "key_paths": [
+            "quizProduction.targets.borsen_oslo.context_artifact"
+          ],
+          "exists": true,
+          "content_sha256": "9f2e0938fbee5b9ff713e129231d62f9bd91fd5e739fbb378d98516de06143b2"
         },
         {
           "path": "data/quiz/production_context/naeringsliv/freia_fabrikken.json",
@@ -5201,20 +5309,20 @@
           "content_sha256": "636265081b34aef4899fb33a8dd8ad7b03233480abdbfb812edced0d6a1a14d5"
         }
       ],
-      "package_content_sha256": "e3f51db80064c4df98a62af38384650bb92dcede511ca09aea9b9f2a1dd152e5",
+      "package_content_sha256": "90c90baae6c7141c1af23c35f3b54eb38b8c48f6c869f8082cc762190d387e5f",
       "chapter_count": 12,
       "module_file_count": 36,
       "brief_file_count": 12,
       "claims_file_count": 12,
       "chapter_referenced_file_count": 72,
       "chapter_content_sha256": "06d3f52d2c3e2ff12545cbbc2fc0c1a783071c46a79f1e46ae368e44562143d1",
-      "referenced_file_count": 121,
+      "referenced_file_count": 124,
       "missing_required_files": [],
       "missing_optional_files": [],
       "missing_chapter_files": [],
       "missing_files": [],
-      "structure_sha256": "95b859641928712614633e334d26129f70839ee08ca88adbcebb264b76b53032",
-      "content_sha256": "6e6593981523040ac88c7b4ea937a25fa54c0c57387d4acaf1de93189ef4b609",
+      "structure_sha256": "4b9b33de896119b945778d021ffbb0608cd2a0a8ce170ae45b5198987207af73",
+      "content_sha256": "b7daaa5424f26ecfc52bcbf0392f17a20d8346eec9cece74a4232d2c3e1c642c",
       "chapters": [
         {
           "chapter_id": "arbeid-produksjon-verdiskaping",
@@ -7789,5 +7897,5 @@
       ]
     }
   },
-  "release_sha256": "bb1614b0e0938f2612e6fc3bdd488fffd045bc3f36886aeffe4d040900c0a6d3"
+  "release_sha256": "c461777dcd0f2e07aa31d5bda8e6ec64b416625b2732ee1291fd2729ef621eea"
 }

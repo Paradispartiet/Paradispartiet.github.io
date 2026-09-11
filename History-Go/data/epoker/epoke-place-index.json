@@ -8490,6 +8490,104 @@
               }
             },
             {
+              "place_id": "stortorget",
+              "name": "Stortorget",
+              "category": "by",
+              "source_file": "places/by/oslo/places_by_oslo_oppdag_kvadraturen_batch_03/stortorget.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "story_st_stortorget_hovedmarked_1737",
+                  "year": 1737,
+                  "title": "Markedet flytter ut av den gamle byen",
+                  "consequence": "Da markedet ble flyttet fra Christiania Torv i 1737, ble Stortorget det nye hovedtorget ved byens tidligere port og domkirken.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo kommune – Stortorvet",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/tur-og-friluftsliv/parker-og-lekeplasser/stortorget",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Oppdag Kvadraturen – Stortorget",
+                      "url": "https://www.oppdagkvadraturen.no/stoppesteder/stortorget",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Oslo byleksikon – Stortorvet",
+                      "url": "https://oslobyleksikon.no/side/Stortorvet",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_stortorget_hovedmarked_1737",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_stortorget_popup_01",
+                  "year": 1737,
+                  "title": "Stortorget ble Christianias hovedtorg i 1737 da markedet ble flyttet fra Christiania Torv til området ved domkirken.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Stortorvet – sted, historie og bruk",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/tur-og-friluftsliv/parker-og-lekeplasser/stortorget",
+                      "verifiedAt": "2026-09-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/stortorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_stortorget_popup_01",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_stortorget_desc_01",
+                  "year": 1737,
+                  "title": "Stortorget ble Christianias hovedtorg i 1737, da markedet ble flyttet hit fra Christiania Torv.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Stortorvet – sted, historie og bruk",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/tur-og-friluftsliv/parker-og-lekeplasser/stortorget",
+                      "verifiedAt": "2026-09-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/stortorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_stortorget_desc_01",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_stortorget_hovedmarked_1737",
+                    "title": "Markedet flytter ut av den gamle byen",
+                    "year": 1737,
+                    "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "svartdalen",
               "name": "Svartdalen",
               "category": "natur",
@@ -8913,78 +9011,6 @@
               }
             },
             {
-              "place_id": "vaterlandsparken",
-              "name": "Vaterlandsparken",
-              "category": "by",
-              "source_file": "places/natur/oslo/places_oslo_natur_akerselvarute/vaterlandsparken.json",
-              "roles": [
-                {
-                  "id": "by_og_infrastruktur",
-                  "label": "By og infrastruktur"
-                }
-              ],
-              "milestones": [
-                {
-                  "id": "chrono_vaterlandsparken_01",
-                  "year": 1700,
-                  "title": "Fjord, sump og tømmer",
-                  "consequence": "Området er fortsatt preget av vann og tømmertransport før den senere utfyllingen.",
-                  "confidence": "medium",
-                  "sources": [
-                    {
-                      "title": "Oslo kommune – Vaterlandsparken",
-                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/tur-og-friluftsliv/parker-og-lekeplasser/vaterlandsparken/",
-                      "verifiedAt": ""
-                    }
-                  ],
-                  "source_file": "data/leksikon/places/oslo/natur/leksikon_oslo_natur_batch4.json",
-                  "evidence_type": "leksikon_chronology",
-                  "claim_id": "",
-                  "story_id": "",
-                  "limitations": []
-                }
-              ],
-              "period_cases": [],
-              "connections": {
-                "person_ids": [],
-                "works": [
-                  {
-                    "id": "vaterlandsparken_anlegg_1993_94",
-                    "title": "Vaterlandsparken 1993–94",
-                    "type": "landskapsarkitektur"
-                  },
-                  {
-                    "id": "vaterlandsparken_olafia_byste",
-                    "title": "Bysten av Ólafia Jóhannsdóttir",
-                    "type": "skulptur"
-                  },
-                  {
-                    "id": "vaterlandsparken_stupere",
-                    "title": "Dykkar Installasjon («Stupere»)",
-                    "type": "skulpturinstallasjon"
-                  },
-                  {
-                    "id": "vaterlandsparken_mosketomta",
-                    "title": "Moskétomta som byhistorisk lag",
-                    "type": "byplanhistorie"
-                  },
-                  {
-                    "id": "vaterlandsparken_waterland",
-                    "title": "Waterland-landskapet",
-                    "type": "landskapshistorie"
-                  }
-                ],
-                "stories": [
-                  {
-                    "id": "st_vaterlandsparken_waterland_til_park",
-                    "title": "Fra Waterland til offentlig park",
-                    "year": 1993,
-                    "type": "wetland_sanitation_park_and_public_art"
-                  }
-                ]
-              }
-            },
-            {
               "place_id": "voien_gard_voienvolden",
               "name": "Vøienvolden gård",
               "category": "historie",
@@ -9356,7 +9382,7 @@
             }
           ],
           "placeCount": 51,
-          "milestoneCount": 138
+          "milestoneCount": 140
         },
         "historie_revolusjoner_industri_og_demokratisering": {
           "places": [
@@ -17269,12 +17295,28 @@
               "source_file": "places/naeringsliv/oslo/places_naeringsliv_oslo_oppdag_kvadraturen_batch_01/borsen_oslo.json",
               "roles": [
                 {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
                   "id": "em_his_okonomi_handel_handel_sjofart_og_kommersielle_nettverk",
                   "label": "Handel, sjøfart og kommersielle nettverk"
                 },
                 {
+                  "id": "konflikt_og_motstand",
+                  "label": "Konflikt og motstand"
+                },
+                {
                   "id": "em_his_okonomi_handel_kriser_konjunkturer_og_global_arbeidsdeling",
                   "label": "Kriser, konjunkturer og global arbeidsdeling"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
                 },
                 {
                   "id": "em_his_okonomi_handel_markeder_og_markedsintegrasjon",
@@ -17285,11 +17327,72 @@
                   "label": "Penger, kreditt, bank og finans"
                 },
                 {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                },
+                {
                   "id": "em_his_okonomi_handel_teknologi_produktivitet_og_materielle_standarder",
                   "label": "Teknologi, produktivitet og materielle standarder"
                 }
               ],
               "milestones": [
+                {
+                  "id": "chrono_borsen_1818",
+                  "year": 1818,
+                  "title": "Den første børsloven",
+                  "consequence": "Lovgrunnlaget for Christiania Børs ble sanksjonert i september 1818.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/naeringsliv/leksikon_borsen_oslo.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_borsen_1819",
+                  "year": 1819,
+                  "title": "Børsen åpner",
+                  "consequence": "Christiania Børs åpnet 15. april i leide lokaler.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/naeringsliv/leksikon_borsen_oslo.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_borsen_oslo_popup_01",
+                  "year": 1819,
+                  "title": "Christiania Børs åpnet 15. april 1819 etter at den første børsloven var blitt sanksjonert i 1818.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "historikk og bygg – popup setning 1",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": "2026-09-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/borsen_oslo.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_borsen_oslo_popup_01",
+                  "story_id": "",
+                  "limitations": []
+                },
                 {
                   "id": "claim_claim_his_oslo_bors_market_scope_transition_1819_1895",
                   "year": 1819,
@@ -17323,6 +17426,144 @@
                   ]
                 },
                 {
+                  "id": "production_claim_borsen_oslo_desc_01",
+                  "year": 1819,
+                  "title": "Oslo Børs er Norges historiske børsinstitusjon, åpnet som Christiania Børs i 1819 og siden 1828 knyttet til Groschs børsbygning i Tollbugata 2.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "historikk og bygg – desc setning 1",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": "2026-09-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/borsen_oslo.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_borsen_oslo_desc_01",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_borsen_oslo_popup_05",
+                  "year": 1826,
+                  "title": "Christian Heinrich Grosch tegnet bygningen, som ble oppført i 1826–1828 i streng empirestil.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "historikk og bygg – popup setning 5",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": "2026-09-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/borsen_oslo.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_borsen_oslo_popup_05",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_borsen_1826",
+                  "year": 1826,
+                  "title": "Egen børsbygning påbegynnes",
+                  "consequence": "Etter Thor Olsens initiativ startet byggingen i Grønningen.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/naeringsliv/leksikon_borsen_oslo.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_borsen_1828",
+                  "year": 1828,
+                  "title": "Groschs bygning står ferdig",
+                  "consequence": "Den klassisistiske børsbygningen i Tollbugata 2 ble fullført.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Oppdag Kvadraturen",
+                      "url": "https://www.oppdagkvadraturen.no/stoppesteder/tollbugata-2-borsen",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/naeringsliv/leksikon_borsen_oslo.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_borsen_oslo_popup_07",
+                  "year": 1880,
+                  "title": "Bystyret brukte også bygningen fram til 1880.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "historikk og bygg – popup setning 7",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": "2026-09-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/borsen_oslo.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_borsen_oslo_popup_07",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_borsen_1881",
+                  "year": 1881,
+                  "title": "Fonds- og verdipapirbørs",
+                  "consequence": "Børsens rolle som organisert marked for verdipapirer ble tydeligere.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Lokalhistoriewiki",
+                      "url": "https://lokalhistoriewiki.no/wiki/Oslo_B%C3%B8rs",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/naeringsliv/leksikon_borsen_oslo.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_borsen_oslo_popup_08",
+                  "year": 1881,
+                  "title": "Fra 1881 ble børsen en fonds- og verdipapirbørs.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "historikk og bygg – popup setning 8",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": "2026-09-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/borsen_oslo.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_borsen_oslo_popup_08",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
                   "id": "claim_claim_his_oslo_bors_crisis_regulation_electronic_trade_1895_1999",
                   "year": 1895,
                   "title": "Markeder og markedsintegrasjon",
@@ -17343,13 +17584,82 @@
                     "Kilden daterer skiftene, men mangler sammenlignbare mål for likviditet, kostnader, tilgang, volatilitet og produktivitet før og etter hvert inngrep.",
                     "Elektronisk handel kan ses som produktivitets- og standardiseringsskifte, men utflytting fra børssalen kan også forstås som romlig omorganisering uten at markedsmakt eller risiko nødvendigvis ble jevnere fordelt."
                   ]
+                },
+                {
+                  "id": "story_st_borsen_jobbetiden_1899",
+                  "year": 1899,
+                  "title": "Da jobbetiden sprakk",
+                  "consequence": "Et spekulasjonsdrevet marked i 1890-årene endte i krakk og gjorde forskjellen mellom stigende priser og varig verdi brutal.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oppdag Kvadraturen – Børsen",
+                      "url": "https://www.oppdagkvadraturen.no/stoppesteder/tollbugata-2-borsen",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Oslo byleksikon – Børsen",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_borsen_jobbetiden_1899",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_borsen_oslo_popup_11",
+                  "year": 1899,
+                  "title": "Den første store jobbetiden på 1890-tallet endte med krakket i 1899; under første verdenskrig kom en ny spekulasjonsbølge, særlig knyttet til skipsfart og høye fraktrater.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "jobbetider og stedshistorie – popup setning 11",
+                      "url": "https://www.oppdagkvadraturen.no/stoppesteder/tollbugata-2-borsen",
+                      "verifiedAt": "2026-09-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/borsen_oslo.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_borsen_oslo_popup_11",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_borsen_1899",
+                  "year": 1899,
+                  "title": "Jobbetiden ender i krakk",
+                  "consequence": "Spekulasjonen i 1890-årene ble avløst av et markant krakk.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oppdag Kvadraturen",
+                      "url": "https://www.oppdagkvadraturen.no/stoppesteder/tollbugata-2-borsen",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/naeringsliv/leksikon_borsen_oslo.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
                 }
               ],
               "period_cases": [],
               "connections": {
                 "person_ids": [],
                 "works": [],
-                "stories": []
+                "stories": [
+                  {
+                    "id": "st_borsen_jobbetiden_1899",
+                    "title": "Da jobbetiden sprakk",
+                    "year": 1899,
+                    "type": "turning_point"
+                  }
+                ]
               }
             },
             {
@@ -20271,6 +20581,98 @@
                     "id": "st_stortinget_forste_mote_etter_frigjoringen_1945",
                     "title": "Da folkestyret måtte settes i gang igjen",
                     "year": 1945,
+                    "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "stortorget",
+              "name": "Stortorget",
+              "category": "by",
+              "source_file": "places/by/oslo/places_by_oslo_oppdag_kvadraturen_batch_03/stortorget.json",
+              "roles": [
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_stortorget_popup_07",
+                  "year": 1848,
+                  "title": "I 1848 ble gasskandelaberen Fiat Lux tent på Stortorget og ga plassen et nytt teknisk lag.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Stortorget – historiske lag, marked og ferdsel",
+                      "url": "https://www.oppdagkvadraturen.no/stoppesteder/stortorget",
+                      "verifiedAt": "2026-09-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/stortorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_stortorget_popup_07",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_stortorget_popup_10",
+                  "year": 1878,
+                  "title": "Carl Ludvig Jacobsen vant konkurransen om et monument over Christian IV, og bronsefiguren ble ferdig i 1878.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Stortorvet – Christian IV-monumentet",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/tur-og-friluftsliv/parker-og-lekeplasser/stortorget",
+                      "verifiedAt": "2026-09-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/stortorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_stortorget_popup_10",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_stortorget_popup_11",
+                  "year": 1880,
+                  "title": "Monumentet ble avduket på Stortorget 28. september 1880 og står som et tydelig lag fra den periodens offentlige bykunst.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Stortorvet – Christian IV-monumentet",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/tur-og-friluftsliv/parker-og-lekeplasser/stortorget",
+                      "verifiedAt": "2026-09-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/stortorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_stortorget_popup_11",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_stortorget_hovedmarked_1737",
+                    "title": "Markedet flytter ut av den gamle byen",
+                    "year": 1737,
                     "type": "turning_point"
                   }
                 ]
@@ -23562,8 +23964,8 @@
               }
             }
           ],
-          "placeCount": 117,
-          "milestoneCount": 440
+          "placeCount": 118,
+          "milestoneCount": 456
         },
         "historie_nasjon_massepolitikk_og_moderne_institusjoner": {
           "places": [
@@ -28516,6 +28918,159 @@
               }
             },
             {
+              "place_id": "borsen_oslo",
+              "name": "Oslo Børs",
+              "category": "naeringsliv",
+              "source_file": "places/naeringsliv/oslo/places_naeringsliv_oslo_oppdag_kvadraturen_batch_01/borsen_oslo.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "konflikt_og_motstand",
+                  "label": "Konflikt og motstand"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_borsen_oslo_popup_12",
+                  "year": 1909,
+                  "title": "Bygningen ble utvidet i 1909–1910 etter Carl Michalsens planer.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "historikk og bygg – popup setning 12",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": "2026-09-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/borsen_oslo.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_borsen_oslo_popup_12",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_borsen_1910",
+                  "year": 1910,
+                  "title": "Børsbygningen utvides",
+                  "consequence": "Carl Michalsens utvidelser fra 1909–1910 omsluttet gårdsrommet.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/naeringsliv/leksikon_borsen_oslo.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_borsen_oslo_popup_13",
+                  "year": 1911,
+                  "title": "Merkurfiguren kom på plass i 1911, og Gerhard Munthes veggmalerier «Handelen» og «Sjøfarten» i 1912.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "historikk og bygg – popup setning 13",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": "2026-09-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/borsen_oslo.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_borsen_oslo_popup_13",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_borsen_1911",
+                  "year": 1911,
+                  "title": "Merkurfiguren settes opp",
+                  "consequence": "Merkurfiguren ble plassert ved Børsen.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/naeringsliv/leksikon_borsen_oslo.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_borsen_1912",
+                  "year": 1912,
+                  "title": "Munthe-maleri i Børsen",
+                  "consequence": "Gerhard Munthes «Handelen» og «Sjøfarten» kom i bygningen.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/naeringsliv/leksikon_borsen_oslo.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_borsen_1918",
+                  "year": 1918,
+                  "title": "Ny jobbetid under verdenskrigen",
+                  "consequence": "Høye fraktrater og skipsaksjer drev spekulasjon før etterkrigsfallet.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oppdag Kvadraturen",
+                      "url": "https://www.oppdagkvadraturen.no/stoppesteder/tollbugata-2-borsen",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/naeringsliv/leksikon_borsen_oslo.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_borsen_jobbetiden_1899",
+                    "title": "Da jobbetiden sprakk",
+                    "year": 1899,
+                    "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "havnelageret",
               "name": "Oslo Havnelager",
               "category": "naeringsliv",
@@ -29121,7 +29676,7 @@
                       "verifiedAt": ""
                     }
                   ],
-                  "source_file": "data/runtime/stories-all/part-005.json",
+                  "source_file": "data/runtime/stories-all/part-006.json",
                   "evidence_type": "canonical_story",
                   "claim_id": "",
                   "story_id": "st_radiumhospitalet_kreftforskning_som_spesialmiljo",
@@ -31651,78 +32206,6 @@
               }
             },
             {
-              "place_id": "vaterlandsparken",
-              "name": "Vaterlandsparken",
-              "category": "by",
-              "source_file": "places/natur/oslo/places_oslo_natur_akerselvarute/vaterlandsparken.json",
-              "roles": [
-                {
-                  "id": "by_og_infrastruktur",
-                  "label": "By og infrastruktur"
-                }
-              ],
-              "milestones": [
-                {
-                  "id": "chrono_vaterlandsparken_02",
-                  "year": 1930,
-                  "title": "Ólafia-bysten",
-                  "consequence": "Kristinn Pjetursson utfører bysten av Ólafia Jóhannsdóttir.",
-                  "confidence": "high",
-                  "sources": [
-                    {
-                      "title": "Oslo byleksikon – Vaterlandsparken",
-                      "url": "https://oslobyleksikon.no/side/Vaterlandsparken",
-                      "verifiedAt": ""
-                    }
-                  ],
-                  "source_file": "data/leksikon/places/oslo/natur/leksikon_oslo_natur_batch4.json",
-                  "evidence_type": "leksikon_chronology",
-                  "claim_id": "",
-                  "story_id": "",
-                  "limitations": []
-                }
-              ],
-              "period_cases": [],
-              "connections": {
-                "person_ids": [],
-                "works": [
-                  {
-                    "id": "vaterlandsparken_anlegg_1993_94",
-                    "title": "Vaterlandsparken 1993–94",
-                    "type": "landskapsarkitektur"
-                  },
-                  {
-                    "id": "vaterlandsparken_olafia_byste",
-                    "title": "Bysten av Ólafia Jóhannsdóttir",
-                    "type": "skulptur"
-                  },
-                  {
-                    "id": "vaterlandsparken_stupere",
-                    "title": "Dykkar Installasjon («Stupere»)",
-                    "type": "skulpturinstallasjon"
-                  },
-                  {
-                    "id": "vaterlandsparken_mosketomta",
-                    "title": "Moskétomta som byhistorisk lag",
-                    "type": "byplanhistorie"
-                  },
-                  {
-                    "id": "vaterlandsparken_waterland",
-                    "title": "Waterland-landskapet",
-                    "type": "landskapshistorie"
-                  }
-                ],
-                "stories": [
-                  {
-                    "id": "st_vaterlandsparken_waterland_til_park",
-                    "title": "Fra Waterland til offentlig park",
-                    "year": 1993,
-                    "type": "wetland_sanitation_park_and_public_art"
-                  }
-                ]
-              }
-            },
-            {
               "place_id": "vigelandsparken",
               "name": "Vigelandsparken",
               "category": "by",
@@ -32273,7 +32756,7 @@
             }
           ],
           "placeCount": 98,
-          "milestoneCount": 243
+          "milestoneCount": 248
         },
         "historie_krig_okkupasjon_og_etterkrigsoppgjor": {
           "places": [
@@ -44915,7 +45398,7 @@
                       "verifiedAt": ""
                     }
                   ],
-                  "source_file": "data/runtime/stories-all/part-005.json",
+                  "source_file": "data/runtime/stories-all/part-006.json",
                   "evidence_type": "canonical_story",
                   "claim_id": "",
                   "story_id": "st_bi_nydalen_okonomi_som_kunnskapsfelt",
@@ -48854,6 +49337,113 @@
               }
             },
             {
+              "place_id": "borsen_oslo",
+              "name": "Oslo Børs",
+              "category": "naeringsliv",
+              "source_file": "places/naeringsliv/oslo/places_naeringsliv_oslo_oppdag_kvadraturen_batch_01/borsen_oslo.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_borsen_oslo_popup_14",
+                  "year": 1988,
+                  "title": "I 1988 fikk den tidligere gårdsplassen glasstak og ny handelssal.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "historikk og bygg – popup setning 14",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": "2026-09-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/borsen_oslo.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_borsen_oslo_popup_14",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_borsen_1988",
+                  "year": 1988,
+                  "title": "Ny handelssal",
+                  "consequence": "Den tidligere gårdsplassen fikk glasstak og ble handelssal.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/naeringsliv/leksikon_borsen_oslo.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_borsen_1991",
+                  "year": 1991,
+                  "title": "Valutanotering flyttes",
+                  "consequence": "Valutakursnoteringen ble overtatt av Norges Bank.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Lokalhistoriewiki",
+                      "url": "https://lokalhistoriewiki.no/wiki/Oslo_B%C3%B8rs",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/naeringsliv/leksikon_borsen_oslo.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_borsen_oslo_popup_15",
+                  "year": 1991,
+                  "title": "Valutanoteringen ble flyttet til Norges Bank i 1991, mens elektronisk handel gradvis endret hvordan børsmarkedet fungerte fysisk.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "historikk og bygg – popup setning 15",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": "2026-09-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/borsen_oslo.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_borsen_oslo_popup_15",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_borsen_jobbetiden_1899",
+                    "title": "Da jobbetiden sprakk",
+                    "year": 1899,
+                    "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "oslo_posthus",
               "name": "Oslo Posthus",
               "category": "naeringsliv",
@@ -51503,21 +52093,21 @@
               ],
               "milestones": [
                 {
-                  "id": "chrono_vaterlandsparken_03",
+                  "id": "production_claim_vaterlandsparken_popupDesc_12",
                   "year": 1990,
-                  "title": "Stupere",
-                  "consequence": "Ola Enstads hengende installasjon settes opp over Akerselva.",
-                  "confidence": "high",
+                  "title": "Oslo byleksikon daterer installasjonen til 1990.",
+                  "consequence": "",
+                  "confidence": "",
                   "sources": [
                     {
-                      "title": "Oslo byleksikon – Vaterlandsparken",
+                      "title": "popupDesc, setning 12",
                       "url": "https://oslobyleksikon.no/side/Vaterlandsparken",
-                      "verifiedAt": ""
+                      "verifiedAt": "2026-09-11"
                     }
                   ],
-                  "source_file": "data/leksikon/places/oslo/natur/leksikon_oslo_natur_batch4.json",
-                  "evidence_type": "leksikon_chronology",
-                  "claim_id": "",
+                  "source_file": "data/places/production/vaterlandsparken.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_vaterlandsparken_popupDesc_12",
                   "story_id": "",
                   "limitations": []
                 },
@@ -51544,7 +52134,7 @@
                       "verifiedAt": ""
                     },
                     {
-                      "title": "Store norske leksikon – 13.3 Landskapsarkitekter",
+                      "title": "SNL – 13.3 Landskapsarkitekter",
                       "url": "https://snl.no/13.3_Landskapsarkitekter",
                       "verifiedAt": ""
                     }
@@ -51556,45 +52146,40 @@
                   "limitations": []
                 },
                 {
-                  "id": "chrono_vaterlandsparken_04",
+                  "id": "production_claim_vaterlandsparken_popupDesc_02",
                   "year": 1993,
-                  "title": "Parken opparbeides",
-                  "consequence": "Oslo kommune opparbeider parken i 1993–94.",
-                  "confidence": "high",
+                  "title": "Oslo kommune opparbeidet parken i 1993–94 etter planer fra 13.3 Landskapsarkitekter og A.",
+                  "consequence": "",
+                  "confidence": "",
                   "sources": [
                     {
-                      "title": "Oslo byleksikon – Vaterlandsparken",
+                      "title": "popupDesc, setning 2",
                       "url": "https://oslobyleksikon.no/side/Vaterlandsparken",
-                      "verifiedAt": ""
-                    },
-                    {
-                      "title": "Lokalhistoriewiki – Vaterlandsparken",
-                      "url": "https://lokalhistoriewiki.no/Vaterlandsparken",
-                      "verifiedAt": ""
+                      "verifiedAt": "2026-09-11"
                     }
                   ],
-                  "source_file": "data/leksikon/places/oslo/natur/leksikon_oslo_natur_batch4.json",
-                  "evidence_type": "leksikon_chronology",
-                  "claim_id": "",
+                  "source_file": "data/places/production/vaterlandsparken.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_vaterlandsparken_popupDesc_02",
                   "story_id": "",
                   "limitations": []
                 },
                 {
-                  "id": "chrono_vaterlandsparken_05",
-                  "year": 2004,
-                  "title": "Ólafia-bysten i parken",
-                  "consequence": "Bysten får sin nåværende plassering i Vaterlandsparken.",
-                  "confidence": "high",
+                  "id": "production_claim_vaterlandsparken_desc_01",
+                  "year": 1993,
+                  "title": "Vaterlandsparken er en offentlig elvepark ved Akerselva, opparbeidet i 1993–94 etter planer fra 13.3 Landskapsarkitekter og A.",
+                  "consequence": "",
+                  "confidence": "",
                   "sources": [
                     {
-                      "title": "Lokalhistoriewiki – Vaterlandsparken",
-                      "url": "https://lokalhistoriewiki.no/Vaterlandsparken",
-                      "verifiedAt": ""
+                      "title": "desc, setning 1",
+                      "url": "https://oslobyleksikon.no/side/Vaterlandsparken",
+                      "verifiedAt": "2026-09-11"
                     }
                   ],
-                  "source_file": "data/leksikon/places/oslo/natur/leksikon_oslo_natur_batch4.json",
-                  "evidence_type": "leksikon_chronology",
-                  "claim_id": "",
+                  "source_file": "data/places/production/vaterlandsparken.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_vaterlandsparken_desc_01",
                   "story_id": "",
                   "limitations": []
                 }
@@ -51634,7 +52219,7 @@
                     "id": "st_vaterlandsparken_waterland_til_park",
                     "title": "Fra Waterland til offentlig park",
                     "year": 1993,
-                    "type": "wetland_sanitation_park_and_public_art"
+                    "type": "historical_event"
                   }
                 ]
               }
@@ -52430,8 +53015,8 @@
               }
             }
           ],
-          "placeCount": 109,
-          "milestoneCount": 224
+          "placeCount": 110,
+          "milestoneCount": 228
         },
         "historie_digital_samtid_kriser_og_ny_offentlighet": {
           "places": [
@@ -57518,6 +58103,52 @@
               }
             },
             {
+              "place_id": "borsen_oslo",
+              "name": "Oslo Børs",
+              "category": "naeringsliv",
+              "source_file": "places/naeringsliv/oslo/places_naeringsliv_oslo_oppdag_kvadraturen_batch_01/borsen_oslo.json",
+              "roles": [
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "chrono_borsen_2019",
+                  "year": 2019,
+                  "title": "Integrert i Euronext",
+                  "consequence": "Oslo Børs ble del av Euronext-gruppen.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Euronext",
+                      "url": "https://www.euronext.com/en/about/our-organisation",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/naeringsliv/leksikon_borsen_oslo.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_borsen_jobbetiden_1899",
+                    "title": "Da jobbetiden sprakk",
+                    "year": 1899,
+                    "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "oslo_hospital",
               "name": "Oslo Hospital",
               "category": "historie",
@@ -60351,8 +60982,8 @@
               }
             }
           ],
-          "placeCount": 93,
-          "milestoneCount": 211
+          "placeCount": 94,
+          "milestoneCount": 212
         }
       },
       "parallel_tracks": {
@@ -64742,6 +65373,14 @@
               "source_file": "places/naeringsliv/oslo/places_naeringsliv_oslo_oppdag_kvadraturen_batch_01/borsen_oslo.json",
               "roles": [
                 {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
                   "id": "em_his_okonomi_handel_handel_sjofart_og_kommersielle_nettverk",
                   "label": "Handel, sjøfart og kommersielle nettverk"
                 },
@@ -64756,6 +65395,10 @@
                 {
                   "id": "em_his_okonomi_handel_penger_kreditt_bank_og_finans",
                   "label": "Penger, kreditt, bank og finans"
+                },
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
                 },
                 {
                   "id": "em_his_okonomi_handel_teknologi_produktivitet_og_materielle_standarder",
@@ -64816,13 +65459,115 @@
                     "Kilden daterer skiftene, men mangler sammenlignbare mål for likviditet, kostnader, tilgang, volatilitet og produktivitet før og etter hvert inngrep.",
                     "Elektronisk handel kan ses som produktivitets- og standardiseringsskifte, men utflytting fra børssalen kan også forstås som romlig omorganisering uten at markedsmakt eller risiko nødvendigvis ble jevnere fordelt."
                   ]
+                },
+                {
+                  "id": "production_claim_borsen_oslo_popup_13",
+                  "year": 1911,
+                  "title": "Merkurfiguren kom på plass i 1911, og Gerhard Munthes veggmalerier «Handelen» og «Sjøfarten» i 1912.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "historikk og bygg – popup setning 13",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": "2026-09-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/borsen_oslo.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_borsen_oslo_popup_13",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_borsen_1912",
+                  "year": 1912,
+                  "title": "Munthe-maleri i Børsen",
+                  "consequence": "Gerhard Munthes «Handelen» og «Sjøfarten» kom i bygningen.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/naeringsliv/leksikon_borsen_oslo.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_borsen_oslo_popup_14",
+                  "year": 1988,
+                  "title": "I 1988 fikk den tidligere gårdsplassen glasstak og ny handelssal.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "historikk og bygg – popup setning 14",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": "2026-09-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/borsen_oslo.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_borsen_oslo_popup_14",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "chrono_borsen_1988",
+                  "year": 1988,
+                  "title": "Ny handelssal",
+                  "consequence": "Den tidligere gårdsplassen fikk glasstak og ble handelssal.",
+                  "confidence": "high",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/leksikon/places/oslo/naeringsliv/leksikon_borsen_oslo.json",
+                  "evidence_type": "leksikon_chronology",
+                  "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_borsen_oslo_popup_15",
+                  "year": 1991,
+                  "title": "Valutanoteringen ble flyttet til Norges Bank i 1991, mens elektronisk handel gradvis endret hvordan børsmarkedet fungerte fysisk.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "historikk og bygg – popup setning 15",
+                      "url": "https://oslobyleksikon.no/side/B%C3%B8rsen",
+                      "verifiedAt": "2026-09-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/borsen_oslo.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_borsen_oslo_popup_15",
+                  "story_id": "",
+                  "limitations": []
                 }
               ],
               "period_cases": [],
               "connections": {
                 "person_ids": [],
                 "works": [],
-                "stories": []
+                "stories": [
+                  {
+                    "id": "st_borsen_jobbetiden_1899",
+                    "title": "Da jobbetiden sprakk",
+                    "year": 1899,
+                    "type": "turning_point"
+                  }
+                ]
               }
             },
             {
@@ -65554,6 +66299,66 @@
                     "id": "st_stortinget_forste_mote_etter_frigjoringen_1945",
                     "title": "Da folkestyret måtte settes i gang igjen",
                     "year": 1945,
+                    "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "stortorget",
+              "name": "Stortorget",
+              "category": "by",
+              "source_file": "places/by/oslo/places_by_oslo_oppdag_kvadraturen_batch_03/stortorget.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "religion_og_livssyn",
+                  "label": "Religion og livssyn"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "story_st_stortorget_hovedmarked_1737",
+                  "year": 1737,
+                  "title": "Markedet flytter ut av den gamle byen",
+                  "consequence": "Da markedet ble flyttet fra Christiania Torv i 1737, ble Stortorget det nye hovedtorget ved byens tidligere port og domkirken.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo kommune – Stortorvet",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/tur-og-friluftsliv/parker-og-lekeplasser/stortorget",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Oppdag Kvadraturen – Stortorget",
+                      "url": "https://www.oppdagkvadraturen.no/stoppesteder/stortorget",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Oslo byleksikon – Stortorvet",
+                      "url": "https://oslobyleksikon.no/side/Stortorvet",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_stortorget_hovedmarked_1737",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_stortorget_hovedmarked_1737",
+                    "title": "Markedet flytter ut av den gamle byen",
+                    "year": 1737,
                     "type": "turning_point"
                   }
                 ]
@@ -66960,8 +67765,8 @@
               }
             }
           ],
-          "placeCount": 64,
-          "milestoneCount": 171
+          "placeCount": 65,
+          "milestoneCount": 177
         },
         "historie_migrasjon_minoritet_og_tilhorighet": {
           "places": [
@@ -73686,6 +74491,75 @@
               }
             },
             {
+              "place_id": "stortorget",
+              "name": "Stortorget",
+              "category": "by",
+              "source_file": "places/by/oslo/places_by_oslo_oppdag_kvadraturen_batch_03/stortorget.json",
+              "roles": [
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_stortorget_popup_10",
+                  "year": 1878,
+                  "title": "Carl Ludvig Jacobsen vant konkurransen om et monument over Christian IV, og bronsefiguren ble ferdig i 1878.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Stortorvet – Christian IV-monumentet",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/tur-og-friluftsliv/parker-og-lekeplasser/stortorget",
+                      "verifiedAt": "2026-09-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/stortorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_stortorget_popup_10",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_stortorget_popup_11",
+                  "year": 1880,
+                  "title": "Monumentet ble avduket på Stortorget 28. september 1880 og står som et tydelig lag fra den periodens offentlige bykunst.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Stortorvet – Christian IV-monumentet",
+                      "url": "https://www.oslo.kommune.no/natur-kultur-og-fritid/tur-og-friluftsliv/parker-og-lekeplasser/stortorget",
+                      "verifiedAt": "2026-09-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/stortorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_stortorget_popup_11",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_stortorget_hovedmarked_1737",
+                    "title": "Markedet flytter ut av den gamle byen",
+                    "year": 1737,
+                    "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "the_mini_bottle_gallery",
               "name": "The Mini Bottle Gallery",
               "category": "historie",
@@ -74818,23 +75692,23 @@
               }
             }
           ],
-          "placeCount": 54,
-          "milestoneCount": 157
+          "placeCount": 55,
+          "milestoneCount": 159
         }
       },
       "oslo_coverage": {
         "contract": "oslo-history-coverage-v1",
         "canonical_place_count": 587,
-        "dated_evidence_place_count": 242,
+        "dated_evidence_place_count": 243,
         "documented_case_place_count": 2,
-        "awaiting_source_backed_history_count": 343,
+        "awaiting_source_backed_history_count": 342,
         "categories": [
           {
             "category": "by",
             "total": 97,
-            "dated_evidence": 51,
+            "dated_evidence": 52,
             "documented_case": 0,
-            "awaiting_source_backed_history": 46
+            "awaiting_source_backed_history": 45
           },
           {
             "category": "film_tv",
@@ -78385,7 +79259,7 @@
             "name": "Stortorget",
             "category": "by",
             "source_file": "places/by/oslo/places_by_oslo_oppdag_kvadraturen_batch_03/stortorget.json",
-            "status": "awaiting_source_backed_history"
+            "status": "dated_evidence"
           },
           {
             "place_id": "stovnertarnet",
@@ -90207,12 +91081,12 @@
     "period_case_count": 9,
     "connected_people_count": 65,
     "connected_work_count": 157,
-    "connected_story_count": 268,
-    "canonical_story_milestone_count": 237,
-    "verified_place_production_milestone_count": 516,
-    "indexed_place_count": 288,
-    "epoch_place_relations": 641,
-    "milestone_count": 1680
+    "connected_story_count": 270,
+    "canonical_story_milestone_count": 239,
+    "verified_place_production_milestone_count": 534,
+    "indexed_place_count": 289,
+    "epoch_place_relations": 644,
+    "milestone_count": 1708
   },
   "warnings": {
     "missing_source_files": [
@@ -90245,7 +91119,7 @@
     "unknown_evidence_place_ids": [],
     "missing_claim_ids": [],
     "skipped_undated": 0,
-    "skipped_without_url_sources": 733,
+    "skipped_without_url_sources": 746,
     "skipped_evidence_without_sources": 0
   }
 }

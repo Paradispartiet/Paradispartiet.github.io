@@ -84,6 +84,70 @@ const documented = [
     claim: "«flink til å bevege seg mye i de riktige rommene»",
     source: "https://agent1.no/agent1-spar-norges-lag-til-unionsduellen/",
     sourceKind: "football_editorial"
+  },
+  {
+    playerId: "dharmesh_navaratnam",
+    clubId: "rana",
+    strengths: ["work_rate"],
+    claim: "«alltid gir 100%»",
+    source: "https://www.strommen-if.no/nyheter/solberg-og-navaratnam-tar-ferden-videre",
+    sourceKind: "club"
+  },
+  {
+    playerId: "nicholas_marthinussen",
+    clubId: "sandviken",
+    strengths: ["duels"],
+    claim: "«Duellsterk spiller, flink å kommunisere, god med ball.»",
+    source: "https://www.brann.no/nyheter/disse-er-pa-varens-b-liste",
+    sourceKind: "club"
+  },
+  {
+    playerId: "steffen_lie_skalevik",
+    clubId: "sotra",
+    strengths: ["work_rate"],
+    claim: "«Den hardtarbeidende midtspissen»",
+    source: "https://historie.brann.no/spillere/steffen-lie-skaalevik/",
+    sourceKind: "club"
+  },
+  {
+    playerId: "ola_johannes_elvedahl",
+    clubId: "trygg_lade",
+    strengths: ["stamina"],
+    claim: "«Voldsom løpskapasitet, og nesten umulig å gå forbi en mot en.»",
+    source: "https://www.dagbladet.no/tema/karing-arets-lag-i-3-divisjon/84048919",
+    sourceKind: "press"
+  },
+  {
+    playerId: "nikolai_eide_ohr",
+    clubId: "traff",
+    strengths: ["stamina", "work_rate"],
+    claim: "«Med stor løpskraft» og «en lojal, hardtarbeidende back»",
+    source: "https://www.strommen-if.no/nyheter/to-nysigneringer-klare",
+    sourceKind: "club"
+  },
+  {
+    playerId: "mathias_tjoland",
+    clubId: "vidar",
+    strengths: ["work_rate", "finishing"],
+    claim: "«en sterk arbeidsinnsats» og «en målscorer med stort reportoar og avslutninger»",
+    source: "https://www.fkh.no/nyheter/heder-og-aere-i-akademiet",
+    sourceKind: "club"
+  },
+  {
+    playerId: "jacob_jorgensen",
+    clubId: "bjarg",
+    strengths: ["stamina"],
+    claim: "«løpt inn over 11 km i snitt per kamp, ofte med siste energi i sluttminuttene»",
+    source: "https://www.451.no/bredderykter-rett-fra-brattvag-til-serie-b/",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "jorgen_galta",
+    clubId: "brattvag",
+    strengths: ["one_vs_one", "pace"],
+    claim: "«enorme éin-mot-éin-ferdigheiter, fart og offensive kraft»",
+    source: "https://brattvag-il.no/herrelag/herrelaget/fire-nysigneringer",
+    sourceKind: "club"
   }
 ];
 
