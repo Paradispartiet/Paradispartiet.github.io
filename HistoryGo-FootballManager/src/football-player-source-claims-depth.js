@@ -36,6 +36,54 @@ const documented = [
     claim: "«Er intensiv i spillestilen, jobber hardt og kriger for laget. ... Haughom er smart, flink til å time løpene og en skarpskytter!»",
     source: "https://fkvidar.no/her-er-de-beste-spillerne-i-alle-divisjoner-i-lokalfotballen-aftenbladet/",
     sourceKind: "club"
+  },
+  {
+    playerId: "axel_ahlander",
+    clubId: "bjarg",
+    strengths: ["vision", "decisions"],
+    claim: "«God med ball, god fotballforståelse og gjør mange kloke valg gjennom hele kampen.»",
+    source: "https://www.dagbladet.no/tema/karing-arets-lag-i-3-divisjon/84048919",
+    sourceKind: "press"
+  },
+  {
+    playerId: "tobias_flem",
+    clubId: "brattvag",
+    strengths: ["pace"],
+    claim: "«I tillegg er han hurtig og går gjerne på løp inn i boksen»",
+    source: "https://www.miffotball.no/nyheter/tobias-flem-er-mif-spiller",
+    sourceKind: "club"
+  },
+  {
+    playerId: "albert_braut_tjaland",
+    clubId: "follo",
+    strengths: ["strength"],
+    claim: "«målfarlig, stor og sterk»",
+    source: "https://www.aftenposten.no/sport/fotball/i/qLaXXO/dette-stortalentet-er-erling-haalands-fetter-naa-kan-han-bli-molde-spiller",
+    sourceKind: "press"
+  },
+  {
+    playerId: "sidad_najah_chooly",
+    clubId: "junkeren",
+    strengths: ["set_pieces"],
+    claim: "«setter innsiden av venstrebeinet til! Ballen skrus eksemplarisk over muren»",
+    source: "https://vglive.vg.no/fotball/junkeren-bod%C3%B8-glimt/692798/rapport",
+    sourceKind: "press"
+  },
+  {
+    playerId: "dardan_saeter_mehmeti",
+    clubId: "kvik_halden",
+    strengths: ["leadership"],
+    claim: "«kontinuitet, profesjonalitet og lederskap»",
+    source: "https://www.kvikhalden.no/news-article/1B94C429DDE44F6CB35A08083B271B8A",
+    sourceKind: "club"
+  },
+  {
+    playerId: "oskar_sundland_johnsen",
+    clubId: "pors",
+    strengths: ["movement"],
+    claim: "«flink til å bevege seg mye i de riktige rommene»",
+    source: "https://agent1.no/agent1-spar-norges-lag-til-unionsduellen/",
+    sourceKind: "football_editorial"
   }
 ];
 
