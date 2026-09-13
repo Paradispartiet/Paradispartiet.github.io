@@ -1,7 +1,7 @@
 {
   "schema": "civication_role_world_index_v1",
   "version": 1,
-  "status": "104_role_worlds_materialized",
+  "status": "108_role_worlds_materialized",
   "effective_date": "2026-09-11",
   "roles": [
     {
@@ -760,6 +760,58 @@
       "status": "role_world_complete",
       "path": "data/Civication/roleWorlds/liv_bosituasjon/liv_bosituasjon_uteligger.json",
       "life_position_key": "liv_bosituasjon/uteligger"
+    },
+    {
+      "category": "liv_lovsbane",
+      "role_scope": "liv_lovsbane_kriminell",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "liv_lovsbane",
+        "id": "kriminell",
+        "label": "Kriminell"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/liv_lovsbane/liv_lovsbane_kriminell.json",
+      "life_position_key": "liv_lovsbane/kriminell"
+    },
+    {
+      "category": "naeringsliv",
+      "role_scope": "naeringsliv_frilanser",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "naeringsliv",
+        "id": "frilanser",
+        "label": "Frilanser"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/naeringsliv/naeringsliv_frilanser.json",
+      "life_position_key": "naeringsliv/frilanser"
+    },
+    {
+      "category": "by",
+      "role_scope": "by_byvandrer",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "by",
+        "id": "byvandrer",
+        "label": "Byvandrer"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/by/by_byvandrer.json",
+      "life_position_key": "by/byvandrer"
+    },
+    {
+      "category": "by",
+      "role_scope": "by_urbanist",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "by",
+        "id": "urbanist",
+        "label": "Urbanist"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/by/by_urbanist.json",
+      "life_position_key": "by/urbanist"
     }
   ],
   "first_reference_world": {
@@ -795,10 +847,10 @@
     "focus": "kilder, publikum, profesjonskultur, feedback, rework og redaktørmyndighet"
   },
   "summary": {
-    "role_worlds_total": 104,
+    "role_worlds_total": 108,
     "career_role_worlds": 85,
-    "life_position_role_worlds": 19
+    "life_position_role_worlds": 23
   },
   "career_role_world_count": 85,
-  "life_position_role_world_count": 19
+  "life_position_role_world_count": 23
 }
