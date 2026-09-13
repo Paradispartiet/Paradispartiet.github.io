@@ -1,7 +1,7 @@
 {
   "schema": "civication_role_world_index_v1",
   "version": 1,
-  "status": "96_role_worlds_materialized",
+  "status": "102_role_worlds_materialized",
   "effective_date": "2026-09-11",
   "roles": [
     {
@@ -656,6 +656,84 @@
       "status": "role_world_complete",
       "path": "data/Civication/roleWorlds/by/by_flanor.json",
       "life_position_key": "by/byflanor"
+    },
+    {
+      "category": "scenekunst",
+      "role_scope": "scenekunst_scenehenger",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "scenekunst",
+        "id": "scenehenger",
+        "label": "Scenehenger"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/scenekunst/scenekunst_scenehenger.json",
+      "life_position_key": "scenekunst/scenehenger"
+    },
+    {
+      "category": "sport",
+      "role_scope": "sport_klubbmenneske",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "sport",
+        "id": "klubbmenneske",
+        "label": "Klubbmenneske"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/sport/sport_klubbmenneske.json",
+      "life_position_key": "sport/klubbmenneske"
+    },
+    {
+      "category": "vitenskap",
+      "role_scope": "vitenskap_maker",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "vitenskap",
+        "id": "maker",
+        "label": "Maker"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/vitenskap/vitenskap_maker.json",
+      "life_position_key": "vitenskap/maker"
+    },
+    {
+      "category": "subkultur",
+      "role_scope": "subkultur_gangster",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "subkultur",
+        "id": null,
+        "label": "Gangster"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/subkultur/subkultur_gangster.json",
+      "life_position_key": "subkultur/gangster"
+    },
+    {
+      "category": "liv_alternativ",
+      "role_scope": "liv_alternativ_bohem",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "liv_alternativ",
+        "id": "bohem",
+        "label": "Bohem"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/liv_alternativ/liv_alternativ_bohem.json",
+      "life_position_key": "liv_alternativ/bohem"
+    },
+    {
+      "category": "liv_alternativ",
+      "role_scope": "liv_alternativ_nomade",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "liv_alternativ",
+        "id": "nomade",
+        "label": "Nomade"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/liv_alternativ/liv_alternativ_nomade.json",
+      "life_position_key": "liv_alternativ/nomade"
     }
   ],
   "first_reference_world": {
@@ -691,10 +769,10 @@
     "focus": "kilder, publikum, profesjonskultur, feedback, rework og redaktørmyndighet"
   },
   "summary": {
-    "role_worlds_total": 96,
+    "role_worlds_total": 102,
     "career_role_worlds": 85,
-    "life_position_role_worlds": 11
+    "life_position_role_worlds": 17
   },
   "career_role_world_count": 85,
-  "life_position_role_world_count": 11
+  "life_position_role_world_count": 17
 }
