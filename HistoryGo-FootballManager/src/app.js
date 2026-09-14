@@ -116,7 +116,12 @@ import {
 } from "./football-opponent-analysis.js";
 import { registerOpponentAnalysisBridge } from "./football-opponent-analysis-bridge.js";
 import { judgeClubTradition, buildTraditionThresholds } from "./football-club-tradition.js";
-import { resolveClubSquadAccess, reconcileClubBaseSquadSave, listClubHeritagePlayers } from "./football-club-squad.js";
+import {
+  CLUB_BASE_SQUAD_TARGET,
+  resolveClubSquadAccess,
+  reconcileClubBaseSquadSave,
+  listClubHeritagePlayers
+} from "./football-club-squad.js";
 import {
   normalizeAttributeCatalogue,
   derivePlayerAttributeIndex,
@@ -1401,10 +1406,13 @@ function normalizeNearbyFavorites(value) {
 
 function normalizeLocalStart(value) {
   const base = value && typeof value === "object" && !Array.isArray(value) ? value : {};
+  const localStartLimit = base.generatedFrom === "club_pool"
+    ? CLUB_BASE_SQUAD_TARGET
+    : REQUIRED_SQUAD_SIZE;
   const playerIds = Array.isArray(base.playerIds)
     ? [...new Set(base.playerIds.filter((playerId) => typeof playerId === "string").map((playerId) => playerId.trim()))]
         .filter(Boolean)
-        .slice(0, REQUIRED_SQUAD_SIZE)
+        .slice(0, localStartLimit)
     : [];
 
   return {
@@ -2104,9 +2112,12 @@ function activateStarterSquad(chosenPlayerIds = null, metadata = null) {
     return;
   }
 
-  // Draften sender spillerens eget utvalg; ellers bygges en balansert tropp.
+  // Draft/egen klubb beholder 15-spillers spillbarhetsgulvet. En takeover-
+  // grunntropp er allerede validert av club-squad-motoren og kan være opptil
+  // CLUB_BASE_SQUAD_TARGET, slik at rotasjonsdybden ikke kappes bort i state.
+  const clubPoolStart = metadata?.generatedFrom === "club_pool";
   const playerIds = Array.isArray(chosenPlayerIds) && chosenPlayerIds.length
-    ? chosenPlayerIds.slice(0, REQUIRED_SQUAD_SIZE)
+    ? chosenPlayerIds.slice(0, clubPoolStart ? CLUB_BASE_SQUAD_TARGET : REQUIRED_SQUAD_SIZE)
     : getStarterSquadPlayerIds(REQUIRED_SQUAD_SIZE);
   if (!playerIds.length) {
     state.localStartMessage = "Fant ingen spillere å fylle troppen med.";
@@ -4392,6 +4403,13 @@ function playMatchday() {
     ).metricBonusDelta
   });
 
+  const analysisFixture = isLeagueModeActive() ? getOpponentAnalysisFixtures()[0] || null : null;
+  const normalizedAnalysisPlan = normalizeOpponentAnalysisPlan(state.opponentAnalysisPlan);
+  const activeAnalysisPlan =
+    analysisFixture && isOpponentAnalysisPlanForFixture(normalizedAnalysisPlan, analysisFixture.fixtureId)
+      ? normalizedAnalysisPlan
+      : null;
+
   state.matchday.session = createMatchdaySession({
     teamFit,
     formation,
@@ -4403,6 +4421,7 @@ function playMatchday() {
     // tilfeldig motstander som før (testkamp).
     opponent,
     trainingFocus,
+    opponentAnalysisPlan: activeAnalysisPlan,
     // Formation Knowledge Engine: valgt formasjons kunnskapsoppslag (hvis dekket)
     // lar kampmotoren beregne formasjons-matchup mot motstanderens spillestil.
     formationKnowledge: state.formationKnowledgeById[formation?.id] || null,
@@ -4427,18 +4446,6 @@ function playMatchday() {
     // Svakhetstrening betaler kun når spilleren står i rollen han trente seg til.
     weaknessWorkBonus: getLineupWeaknessWork(teamFit).bonus
   });
-
-  const analysisFixture = isLeagueModeActive() ? getOpponentAnalysisFixtures()[0] || null : null;
-  const analysisPlan = normalizeOpponentAnalysisPlan(state.opponentAnalysisPlan);
-  if (
-    state.matchday.session &&
-    analysisFixture &&
-    isOpponentAnalysisPlanForFixture(analysisPlan, analysisFixture.fixtureId)
-  ) {
-    // Snapshotet følger kampbriefen og sluttrapporten, men endrer ingen tall i
-    // kampmotoren. Det er managerens hypotese og observasjonspunkt, ikke bonus.
-    state.matchday.session.opponentAnalysisPlan = analysisPlan;
-  }
 
   const exerciseHypothesis = state.trainingExerciseHypothesis;
   if (
@@ -4549,6 +4556,16 @@ function chooseMatchdayDecision(optionId) {
           // Forklaringen finnes bare når kampmotoren selv registrerte et
           // relevant treningssignal på dette grepet.
           explanation: `Kampmotoren registrerte hendelsen som relevant for ${resolution.trainingImpact.focusName.toLowerCase()}.`
+        }
+      : null,
+    analysisObservation: event.analysisPreparation
+      ? {
+          focusLabel: event.analysisPreparation.focusLabel,
+          countermeasureLabel: event.analysisPreparation.countermeasureLabel,
+          watch: event.analysisPreparation.watch,
+          action: option.label,
+          consequence: resolution.feedback,
+          explanation: "Denne situasjonen ble prioritert fordi den traff ukas analysefokus. Konsekvensen kommer fortsatt fra kampgrepet ditt."
         }
       : null
   });
@@ -8242,8 +8259,7 @@ function renderDirectLineupEditor() {
   const available = getUnlockedPlayers();
   const current = available.find((player) => player.id === slotState.playerId);
   const choices = [current, ...available.filter((player) => player.id !== current?.id)]
-    .filter(Boolean)
-    .slice(0, 16);
+    .filter(Boolean);
 
   playerHost.replaceChildren();
   choices.forEach((player) => {
@@ -8251,7 +8267,10 @@ function renderDirectLineupEditor() {
     button.type = "button";
     button.className = `lineup-player-card${player.id === slotState.playerId ? " is-selected" : ""}`;
     button.disabled = usedPlayerIds.has(player.id);
-    const positions = Array.isArray(player.naturalPositions) ? player.naturalPositions.join(" / ") : "–";
+    const positions = [...new Set([
+      ...(Array.isArray(player.naturalPositions) ? player.naturalPositions : []),
+      ...(Array.isArray(player.usablePositions) ? player.usablePositions : [])
+    ])].join(" / ") || "–";
     button.innerHTML = `<strong>${player.name || player.id}</strong><span>${positions}</span>`;
     button.addEventListener("click", () => setSelectedSlotPlayer(player.id));
     playerHost.append(button);
@@ -10256,6 +10275,19 @@ function appendMatchdayDecisionLog(parent, decisions, heading) {
       entry.append(observation);
     }
 
+    if (decision.analysisObservation) {
+      const observation = document.createElement("div");
+      observation.className = "matchday-training-observation-result";
+      observation.innerHTML = `
+        <p><b>Analysefokus:</b> ${escapeHtml(decision.analysisObservation.focusLabel)}</p>
+        <p><b>Planlagt motgrep:</b> ${escapeHtml(decision.analysisObservation.countermeasureLabel || "Observér og reager")}</p>
+        <p><b>Se etter:</b> ${escapeHtml(decision.analysisObservation.watch || "")}</p>
+        <p><b>Handling:</b> ${escapeHtml(decision.analysisObservation.action)}</p>
+        <p><b>Konsekvens:</b> ${escapeHtml(decision.analysisObservation.consequence)}</p>
+        <p><b>Forklaring:</b> ${escapeHtml(decision.analysisObservation.explanation)}</p>`;
+      entry.append(observation);
+    }
+
     parent.append(entry);
   });
 }
@@ -10561,6 +10593,16 @@ function renderMatchdaySessionEvent(container, session, eventIndex) {
   pressure.className = "matchday-event-pressure";
   pressure.textContent = MATCHDAY_PRESSURE_LABELS[event.pressure] || MATCHDAY_PRESSURE_LABELS.medium;
   eventCard.append(pressure);
+
+  if (event.analysisPreparation) {
+    const prepared = document.createElement("p");
+    prepared.className = "matchday-meta";
+    const countermeasure = event.analysisPreparation.countermeasureLabel
+      ? ` · planlagt motgrep: ${event.analysisPreparation.countermeasureLabel}`
+      : "";
+    prepared.textContent = `Analyseplanen traff denne situasjonen · ${event.analysisPreparation.focusLabel}${countermeasure}`;
+    eventCard.append(prepared);
+  }
 
   const title = document.createElement("h4");
   title.className = "matchday-event-title";
