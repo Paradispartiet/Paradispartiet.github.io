@@ -17,6 +17,10 @@ import { createOfficeSceneModel, renderOfficeCommand } from "./ui/manager-office
 import { createManagerTrainingSceneModel, renderManagerTrainingCommand } from "./ui/manager-training-presentation.js";
 import { getTacticalKnowledgeForTactic } from "./football-tactical-knowledge.js";
 import { calculateTeamFit } from "./football-team-fit-engine.js";
+import {
+  normalizePlayerPartnerships,
+  recordPlayerPartnerships
+} from "./football-relationship-engine.js";
 import { calculateBadgeMetricEffects } from "./football-badge-effect-engine.js";
 import {
   createMatchReport,
@@ -347,8 +351,8 @@ const DATA_PATHS = {
   // Stedsrapporter (v1): forklarer hva hvert sportsted gir manageren. Rent
   // UI-/forklaringslag – ingen unlock-, fit- eller badgeeffektmotor-effekt.
   placeReports: "data/football_place_reports.json",
-  // V1 bruker example-filen som midlertidig lag-/demostate (unlockedPlaceIds,
-  // hiredStaffIds, earnedBadgeIds osv.). Flyttes til save-system senere.
+  // Blank startshape for team merits. History Go-progresjon kommer bare fra
+  // faktisk lagret save eller ekte History Go-sync, aldri fra demo-unlocks.
   teamMerits: "data/football_team_merits.example.json"
 };
 
@@ -377,8 +381,9 @@ const INDIVIDUAL_TRAINING_KEY = "hgfm.individualTraining.v1";
 const CLUB_WEEK_STATE_KEY = "hgfm.clubWeekState.v1";
 const CLUB_WEEK_FEEDBACK_KEY = "hgfm.clubWeekFeedback.v1";
 const CLUB_WEEK_EVENT_LOG_KEY = "hgfm.clubWeekEventLog.v1";
-// History Go-lagprogresjon (team merits) i localStorage. Seedes fra example-filen
-// ved første lasting, deretter persisteres brukerens egne endringer her.
+// Manager-/History Go-progresjon (team merits) i localStorage. Nye saves
+// seedes kun med en blank struktur; faktisk progresjon kommer fra brukerens
+// save og History Go-sync.
 const TEAM_MERITS_KEY = "hgfm.teamMerits.v1";
 // Innboks-tråder: leste og leverte meldings-id-er (kun UI/progresjon).
 const READ_INBOX_MESSAGE_IDS_KEY = "hgfm.readInboxMessageIds.v1";
@@ -564,8 +569,8 @@ const state = {
   // Stedsrapporter (v1): forklaringskort per sportsted. Kun visning – ingen
   // effekt på unlock-, fit- eller badgeeffektmotor.
   placeReports: { placeReports: [] },
-  // Midlertidig lag-/demostate fra example-filen (unlockedPlaceIds, hiredStaffIds,
-  // unlockedExpertiseIds, earnedBadgeIds, badgeProgress, activeClassifications).
+  // Canonical managerprogresjon. Example-filen gir bare en blank startshape;
+  // ingen steder, ekspertiser, badges eller klassifiseringer er forhåndsåpnet.
   teamMerits: null,
   // Midlertidig UI-melding for geolokasjon/aktivering. Selve valget persisteres
   // under teamMerits.localStart; denne teksten er kun status i gjeldende økt.
@@ -1474,6 +1479,9 @@ function normalizeTeamMerits(merits) {
     // ved RIKTIG bruk over kamper. Bor i manager-staten (teamMerits), aldri i
     // History Go-progresjonen. Robust mot gamle/korrupte data.
     roleFamiliarity: normalizeRoleFamiliarity(base.roleFamiliarity),
+    // Spillerrelasjoner: antall felles starter per spillerpar. Samme manager-state
+    // som rollefortrolighet; aldri History Go-progresjon.
+    playerPartnerships: normalizePlayerPartnerships(base.playerPartnerships),
     // Framgang på svake sider, spiller×attributt → 0–100. Persisteres sammen med
     // rollefortroligheten, aldri i History Go-progresjonen.
     weaknessProgress: normalizeWeaknessProgress(base.weaknessProgress),
@@ -1629,8 +1637,8 @@ function recomputeActiveClassifications() {
 // ----------------------------------------------------------------------------
 // Ekte History Go-sync (v1)
 // Football Manager leser History Go sin egen localStorage-progresjon og bruker
-// faktisk besøkte sportsteder som grunnlag for unlocks. Dette legges som et lag
-// oppå demo-/lagstaten i hgfm.teamMerits.v1 – det erstatter den ikke.
+// faktisk besøkte sportsteder som grunnlag for unlocks. Dette legges oppå
+// managerens eksisterende save-state; nye saves starter uten demo-unlocks.
 // ----------------------------------------------------------------------------
 
 // Trygg JSON-lesing fra localStorage. Krasjer aldri: returnerer fallback ved
@@ -1772,7 +1780,7 @@ function syncUnlockedPlacesFromHistoryGo() {
     ? state.teamMerits.unlockedPlaceIds.filter((id) => typeof id === "string" && id)
     : [];
 
-  // Ingen ekte History Go-steder: ikke rør eksisterende demo-/lagstate.
+  // Ingen ekte History Go-steder: ikke rør eksisterende save-state.
   if (collected.size === 0) {
     state.teamMerits.unlockedPlaceIds = Array.from(new Set(existing));
     return;
@@ -3917,6 +3925,25 @@ function recordRoleFamiliarityFromMatch(teamFit) {
   saveTeamMerits();
 }
 
+function getPlayerPartnershipStore() {
+  return state.teamMerits?.playerPartnerships && typeof state.teamMerits.playerPartnerships === "object"
+    ? state.teamMerits.playerPartnerships
+    : {};
+}
+
+// Samme startellever som rollefortroligheten bruker, men spiller×spiller:
+// hvert par får én felles start når kampen faktisk er fullført. Ingen straff
+// for nye par; kontinuitetsbonusen beregnes først ved neste teamFit.
+function recordPlayerPartnershipsFromMatch(teamFit) {
+  if (!state.teamMerits) return;
+  const assignments = Array.isArray(teamFit?.assignments)
+    ? teamFit.assignments.filter((item) => item?.isComplete && item?.player?.id)
+    : [];
+  if (assignments.length < 2) return;
+  state.teamMerits.playerPartnerships = recordPlayerPartnerships(getPlayerPartnershipStore(), assignments);
+  saveTeamMerits();
+}
+
 // Bygg coachContext fra ansatt stab, staffRoles, valgt formasjon og team merits.
 // Alltid gyldig og nøytral/lav selv uten ansatt stab (ingen null-krasj).
 function getCoachContext() {
@@ -3944,7 +3971,8 @@ function getTeamFit() {
     roles: state.roles,
     earnedBadgeIds: state.teamMerits?.earnedBadgeIds || [],
     trainingBadges: state.trainingBadges,
-    coachContext: getCoachContext()
+    coachContext: getCoachContext(),
+    playerPartnerships: getPlayerPartnershipStore()
   };
 
   // Steg 7b: TS-motoren eier teamFit-beregningen når den er lastet. Outputen er
@@ -4629,7 +4657,9 @@ function chooseMatchdayDecision(optionId) {
     // bruk (forvitre litt ved feilbruk). Startelleveren er låst gjennom sesjonen,
     // så gjeldende teamFit speiler laget som spilte. Kjøres én gang per kamp
     // (denne grenen treffes bare når siste hendelse er besvart).
-    recordRoleFamiliarityFromMatch(getTeamFit());
+    const completedTeamFit = getTeamFit();
+    recordRoleFamiliarityFromMatch(completedTeamFit);
+    recordPlayerPartnershipsFromMatch(completedTeamFit);
     state.matchday.session = null;
     matchJustFinished = true;
   }
@@ -9684,7 +9714,20 @@ function renderRelationships(teamFit) {
   positives.forEach((relation) => appendRelation(relation, "positive", "+"));
   negatives.forEach((relation) => appendRelation(relation, "negative", "−"));
 
-  if (positives.length === 0 && negatives.length === 0) {
+  const continuity = relationships.partnershipContinuity;
+  if (continuity?.bonus > 0) {
+    appendRelation(
+      {
+        title: "Samspillskontinuitet",
+        points: continuity.bonus,
+        explanation: `${continuity.establishedPairs} spillerpar har minst fem felles starter. Snittet i denne elleveren er ${continuity.averageSharedStarts} felles starter.`
+      },
+      "positive",
+      "+"
+    );
+  }
+
+  if (positives.length === 0 && negatives.length === 0 && !(continuity?.bonus > 0)) {
     const entry = document.createElement("p");
     entry.className = "relationship-explanation muted-text";
     entry.textContent = "Ingen tydelige relasjoner mellom rollene ennå.";

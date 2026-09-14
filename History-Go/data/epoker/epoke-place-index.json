@@ -20780,6 +20780,10 @@
                   "label": "Skatt, offentlig økonomi og infrastruktur"
                 },
                 {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                },
+                {
                   "id": "em_his_okonomi_handel_teknologi_produktivitet_og_materielle_standarder",
                   "label": "Teknologi, produktivitet og materielle standarder"
                 }
@@ -20806,6 +20810,25 @@
                     "Kilden dokumenterer kapasitetsendring og funksjonsflytting, men kvantifiserer ikke årlige volum, transportkostnader, smugling eller vareflyt gjennom andre havner.",
                     "Lagervekst kan tolkes som handelsvekst, men også som endret kontrollintensitet eller treg ekspedisjon; avlastning etter 1921 kan skyldes havnegeografi og logistikk, ikke fallende handel."
                   ]
+                },
+                {
+                  "id": "production_claim_tollboden_identity",
+                  "year": 1891,
+                  "title": "Tollboden i Tollbugata 1A ble oppført 1891–1896 etter tegninger av Adolf Schirmer som administrasjonsbygg for Tollvesenet.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Tollboden – historikk, arkitekt og opprinnelig funksjon",
+                      "url": "https://riksantikvaren.no/content/uploads/2019/10/tollbugata1a252coslotollbod.pdf",
+                      "verifiedAt": "2026-09-12"
+                    }
+                  ],
+                  "source_file": "data/places/production/tollboden_oslo.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_tollboden_identity",
+                  "story_id": "",
+                  "limitations": []
                 }
               ],
               "period_cases": [],
@@ -24045,7 +24068,7 @@
             }
           ],
           "placeCount": 119,
-          "milestoneCount": 460
+          "milestoneCount": 461
         },
         "historie_nasjon_massepolitikk_og_moderne_institusjoner": {
           "places": [
@@ -27554,6 +27577,129 @@
                     "type": "urban_nature_history"
                   }
                 ]
+              }
+            },
+            {
+              "place_id": "kunstnerforbundet",
+              "name": "Kunstnerforbundet",
+              "category": "kunst",
+              "source_file": "places/kunst/oslo/places_kunst/kunstnerforbundet.json",
+              "roles": [
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_kunstnerforbundet_december_1910_exhibition",
+                  "year": 1910,
+                  "title": "En Kunstnerforbundet-utstilling åpnet 11. desember 1910.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "jubileumstekstens omtale av utstillingen 11. desember 1910",
+                      "url": "https://kunstnerforbundet.no/utstillinger/964/jubileumsutstillingen-hundre",
+                      "verifiedAt": "2026-09-13"
+                    }
+                  ],
+                  "source_file": "data/places/production/kunstnerforbundet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_kunstnerforbundet_december_1910_exhibition",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_kunstnerforbundet_identity",
+                  "year": 1910,
+                  "title": "Kunstnerforbundet ble opprettet i 1910 av yngre kunstnere.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "jubileumstekstens innledning og historikk om opprettelsen",
+                      "url": "https://kunstnerforbundet.no/utstillinger/964/jubileumsutstillingen-hundre",
+                      "verifiedAt": "2026-09-13"
+                    }
+                  ],
+                  "source_file": "data/places/production/kunstnerforbundet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_kunstnerforbundet_identity",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_kunstnerforbundet_address",
+                  "year": 1917,
+                  "title": "Kunstnerforbundet har siden 1917 holdt til i Kjeld Stubs gate 3.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "avsnittet om institusjonens tilhold i Kjeld Stubs gate 3 siden 1917",
+                      "url": "https://kunstnerforbundet.no/nyheter/nerver-spenning-og-glede",
+                      "verifiedAt": "2026-09-13"
+                    }
+                  ],
+                  "source_file": "data/places/production/kunstnerforbundet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_kunstnerforbundet_address",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_kunstnerforbundet_overlyssalen_1918",
+                  "year": 1918,
+                  "title": "Gudolf Blakstad og Herman Munthe-Kaas fikk i 1918 oppdraget med å tegne Overlyssalen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "historikkavsnittet om oppdraget til Blakstad og Munthe-Kaas i 1918",
+                      "url": "https://kunstnerforbundet.no/utstillinger/964/jubileumsutstillingen-hundre",
+                      "verifiedAt": "2026-09-13"
+                    }
+                  ],
+                  "source_file": "data/places/production/kunstnerforbundet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_kunstnerforbundet_overlyssalen_1918",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_kunstnerforbundet_wold_torne_1919",
+                  "year": 1919,
+                  "title": "Oluf Wold-Torne ble vist i Overlyssalen i mars 1919.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "utstillingstekstens historiske omtale av Overlyssalen og mars 1919",
+                      "url": "https://kunstnerforbundet.no/utstillinger/1404",
+                      "verifiedAt": "2026-09-13"
+                    }
+                  ],
+                  "source_file": "data/places/production/kunstnerforbundet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_kunstnerforbundet_wold_torne_1919",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
               }
             },
             {
@@ -32924,8 +33070,8 @@
               }
             }
           ],
-          "placeCount": 100,
-          "milestoneCount": 250
+          "placeCount": 101,
+          "milestoneCount": 255
         },
         "historie_krig_okkupasjon_og_etterkrigsoppgjor": {
           "places": [
@@ -43521,6 +43667,45 @@
               }
             },
             {
+              "place_id": "tollboden_oslo",
+              "name": "Tollboden",
+              "category": "naeringsliv",
+              "source_file": "places/naeringsliv/oslo/places_naeringsliv_oslo_oppdag_kvadraturen_batch_04/tollboden_oslo.json",
+              "roles": [
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_tollboden_1979",
+                  "year": 1979,
+                  "title": "I 1979 ble deler av Tollboden bygget om med blant annet kantine og kontorer for Oslo Byskriverembete, før arealer senere igjen ble tatt i bruk av Tollvesenet.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Tollboden – endringer fra 1979",
+                      "url": "https://riksantikvaren.no/content/uploads/2019/10/tollbugata1a252coslotollbod.pdf",
+                      "verifiedAt": "2026-09-12"
+                    }
+                  ],
+                  "source_file": "data/places/production/tollboden_oslo.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_tollboden_1979",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
+              }
+            },
+            {
               "place_id": "tollpakkhuset",
               "name": "Tollpakkhuset",
               "category": "naeringsliv",
@@ -44490,8 +44675,8 @@
               }
             }
           ],
-          "placeCount": 79,
-          "milestoneCount": 198
+          "placeCount": 80,
+          "milestoneCount": 199
         },
         "historie_senmoderne_globalisering_og_markedsvending": {
           "places": [
@@ -57756,6 +57941,45 @@
               }
             },
             {
+              "place_id": "kunstnerforbundet",
+              "name": "Kunstnerforbundet",
+              "category": "kunst",
+              "source_file": "places/kunst/oslo/places_kunst/kunstnerforbundet.json",
+              "roles": [
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_kunstnerforbundet_atelier_2018",
+                  "year": 2018,
+                  "title": "Atelier Kunstnerforbundet startet i 2018 i samme bygård og disponerer 287 kvadratmeter med fire atelierer, fellesrom og loft.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "atelierpresentasjonen om oppstart, plassering og areal/programrom",
+                      "url": "https://kunstnerforbundet.no/atelier",
+                      "verifiedAt": "2026-09-13"
+                    }
+                  ],
+                  "source_file": "data/places/production/kunstnerforbundet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_kunstnerforbundet_atelier_2018",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
+              }
+            },
+            {
               "place_id": "kvaernerbyen_alna",
               "name": "Kværnerbyen ved Alna",
               "category": "natur",
@@ -60194,6 +60418,45 @@
               }
             },
             {
+              "place_id": "tollboden_oslo",
+              "name": "Tollboden",
+              "category": "naeringsliv",
+              "source_file": "places/naeringsliv/oslo/places_naeringsliv_oslo_oppdag_kvadraturen_batch_04/tollboden_oslo.json",
+              "roles": [
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_tollboden_toll_use_2016",
+                  "year": 2016,
+                  "title": "De historiske tollbygningene var i tollbruk frem til 2016.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Rehabiliteringsomtale – bruk frem til 2016",
+                      "url": "https://riksantikvaren.no/eksempelsamling/to-fredede-bygninger-blir-til-tolldirektorates-hovedkontor/",
+                      "verifiedAt": "2026-09-12"
+                    }
+                  ],
+                  "source_file": "data/places/production/tollboden_oslo.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_tollboden_toll_use_2016",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
+              }
+            },
+            {
               "place_id": "torggata",
               "name": "Torggata",
               "category": "by",
@@ -61293,8 +61556,8 @@
               }
             }
           ],
-          "placeCount": 94,
-          "milestoneCount": 212
+          "placeCount": 96,
+          "milestoneCount": 214
         }
       },
       "parallel_tracks": {
@@ -76142,9 +76405,9 @@
       "oslo_coverage": {
         "contract": "oslo-history-coverage-v1",
         "canonical_place_count": 586,
-        "dated_evidence_place_count": 244,
+        "dated_evidence_place_count": 245,
         "documented_case_place_count": 2,
-        "awaiting_source_backed_history_count": 340,
+        "awaiting_source_backed_history_count": 339,
         "categories": [
           {
             "category": "by",
@@ -76177,9 +76440,9 @@
           {
             "category": "kunst",
             "total": 42,
-            "dated_evidence": 9,
+            "dated_evidence": 10,
             "documented_case": 0,
-            "awaiting_source_backed_history": 33
+            "awaiting_source_backed_history": 32
           },
           {
             "category": "litteratur",
@@ -78225,7 +78488,7 @@
             "name": "Kunstnerforbundet",
             "category": "kunst",
             "source_file": "places/kunst/oslo/places_kunst/kunstnerforbundet.json",
-            "status": "awaiting_source_backed_history"
+            "status": "dated_evidence"
           },
           {
             "place_id": "kunstnernes_hus",
@@ -91512,10 +91775,10 @@
     "connected_work_count": 150,
     "connected_story_count": 270,
     "canonical_story_milestone_count": 239,
-    "verified_place_production_milestone_count": 549,
-    "indexed_place_count": 290,
-    "epoch_place_relations": 649,
-    "milestone_count": 1723
+    "verified_place_production_milestone_count": 558,
+    "indexed_place_count": 291,
+    "epoch_place_relations": 653,
+    "milestone_count": 1732
   },
   "warnings": {
     "missing_source_files": [

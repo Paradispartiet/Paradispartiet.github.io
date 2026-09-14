@@ -239,6 +239,9 @@ function buildTeamReport(input) {
     relationships.negativeRelations.slice(0, 4).forEach((relation) => {
         issues.push(`${relation.title}: ${relation.explanation}`);
     });
+    if (relationships.partnershipContinuity.bonus > 0) {
+        strengths.push(`Samspillskontinuitet: ${relationships.partnershipContinuity.establishedPairs} etablerte spillerpar gir +${relationships.partnershipContinuity.bonus} relasjonspoeng.`);
+    }
     duplicatePlayers.forEach((player) => {
         issues.push(`${player.name} er brukt flere steder i samme ellever. Hver spiller bør bare brukes én gang.`);
     });
@@ -274,15 +277,17 @@ export function calculateTeamFit(input) {
     const earnedBadgeIds = input.earnedBadgeIds ?? [];
     const trainingBadges = input.trainingBadges ?? null;
     const coachContext = input.coachContext ?? null;
+    const playerPartnerships = input.playerPartnerships ?? {};
     const assignmentResults = buildAssignmentResults(lineup, formation, tactic, players, roles);
     const completeAssignments = assignmentResults.filter(isCompleteAssignment);
     const duplicatePlayers = getDuplicatePlayers(completeAssignments);
     const relationshipAssignments = completeAssignments.map((assignment) => ({
+        playerId: assignment.player.id,
         roleId: assignment.role.id,
         position: assignment.slot.position,
         playerName: assignment.player.name || assignment.role.name || assignment.slot.label,
     }));
-    const relationships = calculateRoleRelationships(relationshipAssignments, tactic);
+    const relationships = calculateRoleRelationships(relationshipAssignments, tactic, playerPartnerships);
     const individualScores = completeAssignments.map((assignment) => assignment.fit.matchScore);
     const roleFits = completeAssignments.map((assignment) => assignment.fit.roleFit);
     const tacticFits = completeAssignments.map((assignment) => assignment.fit.tacticFit);
