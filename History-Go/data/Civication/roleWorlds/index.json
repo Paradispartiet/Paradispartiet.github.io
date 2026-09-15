@@ -1,7 +1,7 @@
 {
   "schema": "civication_role_world_index_v1",
   "version": 1,
-  "status": "116_role_worlds_materialized",
+  "status": "126_role_worlds_materialized",
   "effective_date": "2026-09-11",
   "roles": [
     {
@@ -916,6 +916,136 @@
       "status": "role_world_complete",
       "path": "data/Civication/roleWorlds/film_tv/film_tv_seriesluker.json",
       "life_position_key": "film_tv/seriesluker"
+    },
+    {
+      "category": "filosofi",
+      "role_scope": "filosofi_lesesirkelmenneske",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "filosofi",
+        "id": "lesesirkelmenneske",
+        "label": "Lesesirkelmenneske"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/filosofi/filosofi_lesesirkelmenneske.json",
+      "life_position_key": "filosofi/lesesirkelmenneske"
+    },
+    {
+      "category": "filosofi",
+      "role_scope": "filosofi_livsgrubler",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "filosofi",
+        "id": "livsgrubler",
+        "label": "Livsgrubler"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/filosofi/filosofi_livsgrubler.json",
+      "life_position_key": "filosofi/livsgrubler"
+    },
+    {
+      "category": "helse",
+      "role_scope": "helse_evidensleser",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "helse",
+        "id": "evidensleser",
+        "label": "Evidensleser"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/helse/helse_evidensleser.json",
+      "life_position_key": "helse/evidensleser"
+    },
+    {
+      "category": "helse",
+      "role_scope": "helse_folkehelseblikk",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "helse",
+        "id": "folkehelseblikk",
+        "label": "Folkehelseblikk"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/helse/helse_folkehelseblikk.json",
+      "life_position_key": "helse/folkehelseblikk"
+    },
+    {
+      "category": "helse",
+      "role_scope": "helse_helseutforsker",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "helse",
+        "id": "helseutforsker",
+        "label": "Helseutforsker"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/helse/helse_helseutforsker.json",
+      "life_position_key": "helse/helseutforsker"
+    },
+    {
+      "category": "helse",
+      "role_scope": "helse_omsorgsetiker",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "helse",
+        "id": "omsorgsetiker",
+        "label": "Omsorgsetiker"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/helse/helse_omsorgsetiker.json",
+      "life_position_key": "helse/omsorgsetiker"
+    },
+    {
+      "category": "historie",
+      "role_scope": "historie_arkivrotte",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "historie",
+        "id": "arkivrotte",
+        "label": "Arkivrotte"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/historie/historie_arkivrotte.json",
+      "life_position_key": "historie/arkivrotte"
+    },
+    {
+      "category": "historie",
+      "role_scope": "historie_lokalhistoriker",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "historie",
+        "id": "lokalhistoriker",
+        "label": "Lokalhistoriker"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/historie/historie_lokalhistoriker.json",
+      "life_position_key": "historie/lokalhistoriker"
+    },
+    {
+      "category": "kunst",
+      "role_scope": "kunst_ateliermenneske",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "kunst",
+        "id": "ateliermenneske",
+        "label": "Ateliermenneske"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/kunst/kunst_ateliermenneske.json",
+      "life_position_key": "kunst/ateliermenneske"
+    },
+    {
+      "category": "kunst",
+      "role_scope": "kunst_gatekunstjeger",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "kunst",
+        "id": "gatekunstjeger",
+        "label": "Gatekunstjeger"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/kunst/kunst_gatekunstjeger.json",
+      "life_position_key": "kunst/gatekunstjeger"
     }
   ],
   "first_reference_world": {
@@ -951,10 +1081,10 @@
     "focus": "kilder, publikum, profesjonskultur, feedback, rework og redaktørmyndighet"
   },
   "summary": {
-    "role_worlds_total": 116,
+    "role_worlds_total": 126,
     "career_role_worlds": 85,
-    "life_position_role_worlds": 31
+    "life_position_role_worlds": 41
   },
   "career_role_world_count": 85,
-  "life_position_role_world_count": 31
+  "life_position_role_world_count": 41
 }
