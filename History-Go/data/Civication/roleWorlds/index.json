@@ -1,7 +1,7 @@
 {
   "schema": "civication_role_world_index_v1",
   "version": 1,
-  "status": "160_role_worlds_materialized",
+  "status": "170_role_worlds_materialized",
   "effective_date": "2026-09-11",
   "roles": [
     {
@@ -1488,6 +1488,136 @@
       "status": "role_world_complete",
       "path": "data/Civication/roleWorlds/sport/sport_sondagsutover.json",
       "life_position_key": "sport/sondagsutover"
+    },
+    {
+      "category": "sport",
+      "role_scope": "sport_tribunesliter",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "sport",
+        "id": "tribunesliter",
+        "label": "Tribunesliter"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/sport/sport_tribunesliter.json",
+      "life_position_key": "sport/tribunesliter"
+    },
+    {
+      "category": "utdanning",
+      "role_scope": "utdanning_didaktisk_tenker",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "utdanning",
+        "id": "didaktisk_tenker",
+        "label": "Didaktisk tenker"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/utdanning/utdanning_didaktisk_tenker.json",
+      "life_position_key": "utdanning/didaktisk_tenker"
+    },
+    {
+      "category": "utdanning",
+      "role_scope": "utdanning_klasseromsobservator",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "utdanning",
+        "id": "klasseromsobservator",
+        "label": "Klasseromsobservatør"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/utdanning/utdanning_klasseromsobservator.json",
+      "life_position_key": "utdanning/klasseromsobservator"
+    },
+    {
+      "category": "utdanning",
+      "role_scope": "utdanning_laeringsutforsker",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "utdanning",
+        "id": "laeringsutforsker",
+        "label": "Læringsutforsker"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/utdanning/utdanning_laeringsutforsker.json",
+      "life_position_key": "utdanning/laeringsutforsker"
+    },
+    {
+      "category": "utdanning",
+      "role_scope": "utdanning_utdanningskritiker",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "utdanning",
+        "id": "utdanningskritiker",
+        "label": "Utdanningskritiker"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/utdanning/utdanning_utdanningskritiker.json",
+      "life_position_key": "utdanning/utdanningskritiker"
+    },
+    {
+      "category": "vitenskap",
+      "role_scope": "vitenskap_folkeforsker",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "vitenskap",
+        "id": "folkeforsker",
+        "label": "Folkeforsker"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/vitenskap/vitenskap_folkeforsker.json",
+      "life_position_key": "vitenskap/folkeforsker"
+    },
+    {
+      "category": "vitenskap",
+      "role_scope": "vitenskap_labnerd",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "vitenskap",
+        "id": "labnerd",
+        "label": "Labnerd"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/vitenskap/vitenskap_labnerd.json",
+      "life_position_key": "vitenskap/labnerd"
+    },
+    {
+      "category": "vitenskap",
+      "role_scope": "vitenskap_stjernekikker",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "vitenskap",
+        "id": "stjernekikker",
+        "label": "Stjernekikker"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/vitenskap/vitenskap_stjernekikker.json",
+      "life_position_key": "vitenskap/stjernekikker"
+    },
+    {
+      "category": "vitenskap",
+      "role_scope": "vitenskap_teknologibygger",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "vitenskap",
+        "id": "teknologibygger",
+        "label": "Teknologibygger"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/vitenskap/vitenskap_teknologibygger.json",
+      "life_position_key": "vitenskap/teknologibygger"
+    },
+    {
+      "category": "filosofi",
+      "role_scope": "filosofi_argumentbygger",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "filosofi",
+        "id": "argumentbygger",
+        "label": "Argumentbygger"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/filosofi/filosofi_argumentbygger.json",
+      "life_position_key": "filosofi/argumentbygger"
     }
   ],
   "first_reference_world": {
@@ -1523,10 +1653,10 @@
     "focus": "kilder, publikum, profesjonskultur, feedback, rework og redaktørmyndighet"
   },
   "summary": {
-    "role_worlds_total": 160,
+    "role_worlds_total": 170,
     "career_role_worlds": 85,
-    "life_position_role_worlds": 75
+    "life_position_role_worlds": 85
   },
   "career_role_world_count": 85,
-  "life_position_role_world_count": 75
+  "life_position_role_world_count": 85
 }
