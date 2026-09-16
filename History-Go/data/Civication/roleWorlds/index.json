@@ -1,7 +1,7 @@
 {
   "schema": "civication_role_world_index_v1",
   "version": 1,
-  "status": "140_role_worlds_materialized",
+  "status": "151_role_worlds_materialized",
   "effective_date": "2026-09-11",
   "roles": [
     {
@@ -1228,6 +1228,149 @@
       "status": "role_world_complete",
       "path": "data/Civication/roleWorlds/naeringsliv/naeringsliv_smasparer.json",
       "life_position_key": "naeringsliv/smasparer"
+    },
+    {
+      "category": "natur",
+      "role_scope": "natur_fuglekikker",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "natur",
+        "id": "fuglekikker",
+        "label": "Fuglekikker"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/natur/natur_fuglekikker.json",
+      "life_position_key": "natur/fuglekikker"
+    },
+    {
+      "category": "natur",
+      "role_scope": "natur_sanker",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "natur",
+        "id": "sanker",
+        "label": "Sanker"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/natur/natur_sanker.json",
+      "life_position_key": "natur/sanker"
+    },
+    {
+      "category": "natur",
+      "role_scope": "natur_turgaer",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "natur",
+        "id": "turgaer",
+        "label": "Turgåer"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/natur/natur_turgaer.json",
+      "life_position_key": "natur/turgaer"
+    },
+    {
+      "category": "politikk",
+      "role_scope": "politikk_grasrotbygger",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "politikk",
+        "id": "grasrotbygger",
+        "label": "Grasrotbygger"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/politikk/politikk_grasrotbygger.json",
+      "life_position_key": "politikk/grasrotbygger"
+    },
+    {
+      "category": "politikk",
+      "role_scope": "politikk_kampanjemenneske",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "politikk",
+        "id": "kampanjemenneske",
+        "label": "Kampanjemenneske"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/politikk/politikk_kampanjemenneske.json",
+      "life_position_key": "politikk/kampanjemenneske"
+    },
+    {
+      "category": "politikk",
+      "role_scope": "politikk_motesliter",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "politikk",
+        "id": "motesliter",
+        "label": "Møtesliter"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/politikk/politikk_motesliter.json",
+      "life_position_key": "politikk/motesliter"
+    },
+    {
+      "category": "politikk",
+      "role_scope": "politikk_organisasjonsmenneske",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "politikk",
+        "id": "organisasjonsmenneske",
+        "label": "Organisasjonsmenneske"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/politikk/politikk_organisasjonsmenneske.json",
+      "life_position_key": "politikk/organisasjonsmenneske"
+    },
+    {
+      "category": "psykologi",
+      "role_scope": "psykologi_monsterjeger",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "psykologi",
+        "id": "monsterjeger",
+        "label": "Mønsterjeger"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/psykologi/psykologi_monsterjeger.json",
+      "life_position_key": "psykologi/monsterjeger"
+    },
+    {
+      "category": "psykologi",
+      "role_scope": "psykologi_psykologientusiast",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "psykologi",
+        "id": "psykologientusiast",
+        "label": "Psykologientusiast"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/psykologi/psykologi_psykologientusiast.json",
+      "life_position_key": "psykologi/psykologientusiast"
+    },
+    {
+      "category": "psykologi",
+      "role_scope": "psykologi_relasjonsbygger",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "psykologi",
+        "id": "relasjonsbygger",
+        "label": "Relasjonsbygger"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/psykologi/psykologi_relasjonsbygger.json",
+      "life_position_key": "psykologi/relasjonsbygger"
+    },
+    {
+      "category": "psykologi",
+      "role_scope": "psykologi_selvgransker",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "psykologi",
+        "id": "selvgransker",
+        "label": "Selvgransker"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/psykologi/psykologi_selvgransker.json",
+      "life_position_key": "psykologi/selvgransker"
     }
   ],
   "first_reference_world": {
@@ -1263,10 +1406,10 @@
     "focus": "kilder, publikum, profesjonskultur, feedback, rework og redaktørmyndighet"
   },
   "summary": {
-    "role_worlds_total": 140,
+    "role_worlds_total": 151,
     "career_role_worlds": 85,
-    "life_position_role_worlds": 55
+    "life_position_role_worlds": 66
   },
   "career_role_world_count": 85,
-  "life_position_role_world_count": 55
+  "life_position_role_world_count": 66
 }
