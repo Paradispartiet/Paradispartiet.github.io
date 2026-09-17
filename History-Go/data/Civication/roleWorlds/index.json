@@ -1,7 +1,7 @@
 {
   "schema": "civication_role_world_index_v1",
   "version": 1,
-  "status": "185_role_worlds_materialized",
+  "status": "190_role_worlds_materialized",
   "effective_date": "2026-09-11",
   "roles": [
     {
@@ -1813,6 +1813,71 @@
       "status": "role_world_complete",
       "path": "data/Civication/roleWorlds/litteratur/litteratur_litteraturinteressert.json",
       "life_position_key": "litteratur/litteraturinteressert"
+    },
+    {
+      "category": "litteratur",
+      "role_scope": "litteratur_litteraturkritiker",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "litteratur",
+        "id": "litteraturkritiker",
+        "label": "Litteraturkritiker"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/litteratur/litteratur_litteraturkritiker.json",
+      "life_position_key": "litteratur/litteraturkritiker"
+    },
+    {
+      "category": "litteratur",
+      "role_scope": "litteratur_poet",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "litteratur",
+        "id": "poet",
+        "label": "Poet"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/litteratur/litteratur_poet.json",
+      "life_position_key": "litteratur/poet"
+    },
+    {
+      "category": "litteratur",
+      "role_scope": "litteratur_skald",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "litteratur",
+        "id": "skald",
+        "label": "Skald"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/litteratur/litteratur_skald.json",
+      "life_position_key": "litteratur/skald"
+    },
+    {
+      "category": "litteratur",
+      "role_scope": "litteratur_skribent",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "litteratur",
+        "id": "skribent",
+        "label": "Skribent"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/litteratur/litteratur_skribent.json",
+      "life_position_key": "litteratur/skribent"
+    },
+    {
+      "category": "media",
+      "role_scope": "media_bidragsyter",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "media",
+        "id": "bidragsyter",
+        "label": "Bidragsyter"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/media/media_bidragsyter.json",
+      "life_position_key": "media/bidragsyter"
     }
   ],
   "first_reference_world": {
@@ -1848,10 +1913,10 @@
     "focus": "kilder, publikum, profesjonskultur, feedback, rework og redaktørmyndighet"
   },
   "summary": {
-    "role_worlds_total": 185,
+    "role_worlds_total": 190,
     "career_role_worlds": 85,
-    "life_position_role_worlds": 100
+    "life_position_role_worlds": 105
   },
   "career_role_world_count": 85,
-  "life_position_role_world_count": 100
+  "life_position_role_world_count": 105
 }
