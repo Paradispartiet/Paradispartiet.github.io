@@ -1,7 +1,7 @@
 {
   "schema": "civication_role_world_index_v1",
   "version": 1,
-  "status": "177_role_worlds_materialized",
+  "status": "185_role_worlds_materialized",
   "effective_date": "2026-09-11",
   "roles": [
     {
@@ -1709,6 +1709,110 @@
       "status": "role_world_complete",
       "path": "data/Civication/roleWorlds/filosofi/filosofi_sporrer.json",
       "life_position_key": "filosofi/sporrer"
+    },
+    {
+      "category": "kunst",
+      "role_scope": "kunst_gallerist",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "kunst",
+        "id": "gallerist",
+        "label": "Gallerist"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/kunst/kunst_gallerist.json",
+      "life_position_key": "kunst/gallerist"
+    },
+    {
+      "category": "litteratur",
+      "role_scope": "litteratur_aktiv_leser",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "litteratur",
+        "id": "aktiv_leser",
+        "label": "Aktiv leser"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/litteratur/litteratur_aktiv_leser.json",
+      "life_position_key": "litteratur/aktiv_leser"
+    },
+    {
+      "category": "litteratur",
+      "role_scope": "litteratur_anmelder",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "litteratur",
+        "id": "anmelder",
+        "label": "Anmelder"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/litteratur/litteratur_anmelder.json",
+      "life_position_key": "litteratur/anmelder"
+    },
+    {
+      "category": "litteratur",
+      "role_scope": "litteratur_dramatiker",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "litteratur",
+        "id": "dramatiker",
+        "label": "Dramatiker"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/litteratur/litteratur_dramatiker.json",
+      "life_position_key": "litteratur/dramatiker"
+    },
+    {
+      "category": "litteratur",
+      "role_scope": "litteratur_essayist",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "litteratur",
+        "id": "essayist",
+        "label": "Essayist"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/litteratur/litteratur_essayist.json",
+      "life_position_key": "litteratur/essayist"
+    },
+    {
+      "category": "litteratur",
+      "role_scope": "litteratur_forfatter",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "litteratur",
+        "id": "forfatter",
+        "label": "Forfatter"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/litteratur/litteratur_forfatter.json",
+      "life_position_key": "litteratur/forfatter"
+    },
+    {
+      "category": "litteratur",
+      "role_scope": "litteratur_leser",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "litteratur",
+        "id": "leser",
+        "label": "Leser"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/litteratur/litteratur_leser.json",
+      "life_position_key": "litteratur/leser"
+    },
+    {
+      "category": "litteratur",
+      "role_scope": "litteratur_litteraturinteressert",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "litteratur",
+        "id": "litteraturinteressert",
+        "label": "Litteraturinteressert"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/litteratur/litteratur_litteraturinteressert.json",
+      "life_position_key": "litteratur/litteraturinteressert"
     }
   ],
   "first_reference_world": {
@@ -1744,10 +1848,10 @@
     "focus": "kilder, publikum, profesjonskultur, feedback, rework og redaktørmyndighet"
   },
   "summary": {
-    "role_worlds_total": 177,
+    "role_worlds_total": 185,
     "career_role_worlds": 85,
-    "life_position_role_worlds": 92
+    "life_position_role_worlds": 100
   },
   "career_role_world_count": 85,
-  "life_position_role_world_count": 92
+  "life_position_role_world_count": 100
 }
