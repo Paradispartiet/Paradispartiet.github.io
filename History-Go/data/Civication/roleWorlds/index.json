@@ -1,7 +1,7 @@
 {
   "schema": "civication_role_world_index_v1",
   "version": 1,
-  "status": "190_role_worlds_materialized",
+  "status": "197_role_worlds_materialized",
   "effective_date": "2026-09-11",
   "roles": [
     {
@@ -1878,6 +1878,97 @@
       "status": "role_world_complete",
       "path": "data/Civication/roleWorlds/media/media_bidragsyter.json",
       "life_position_key": "media/bidragsyter"
+    },
+    {
+      "category": "media",
+      "role_scope": "media_folger",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "media",
+        "id": "folger",
+        "label": "Følger"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/media/media_folger.json",
+      "life_position_key": "media/folger"
+    },
+    {
+      "category": "media",
+      "role_scope": "media_frilansjournalist",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "media",
+        "id": "frilansjournalist",
+        "label": "Frilansjournalist"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/media/media_frilansjournalist.json",
+      "life_position_key": "media/frilansjournalist"
+    },
+    {
+      "category": "media",
+      "role_scope": "media_kommentator_felt",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "media",
+        "id": "kommentator_felt",
+        "label": "Kommentator (felt)"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/media/media_kommentator_felt.json",
+      "life_position_key": "media/kommentator_felt"
+    },
+    {
+      "category": "media",
+      "role_scope": "media_leser",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "media",
+        "id": "leser",
+        "label": "Leser"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/media/media_leser.json",
+      "life_position_key": "media/leser"
+    },
+    {
+      "category": "musikk",
+      "role_scope": "musikk_plateartist",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "musikk",
+        "id": "plateartist",
+        "label": "Plateartist"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/musikk/musikk_plateartist.json",
+      "life_position_key": "musikk/plateartist"
+    },
+    {
+      "category": "musikk",
+      "role_scope": "musikk_publikum_deltaker",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "musikk",
+        "id": "publikum_deltaker",
+        "label": "Publikum / deltaker"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/musikk/musikk_publikum_deltaker.json",
+      "life_position_key": "musikk/publikum_deltaker"
+    },
+    {
+      "category": "musikk",
+      "role_scope": "musikk_solist",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "musikk",
+        "id": "solist",
+        "label": "Solist"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/musikk/musikk_solist.json",
+      "life_position_key": "musikk/solist"
     }
   ],
   "first_reference_world": {
@@ -1913,10 +2004,10 @@
     "focus": "kilder, publikum, profesjonskultur, feedback, rework og redaktørmyndighet"
   },
   "summary": {
-    "role_worlds_total": 190,
+    "role_worlds_total": 197,
     "career_role_worlds": 85,
-    "life_position_role_worlds": 105
+    "life_position_role_worlds": 112
   },
   "career_role_world_count": 85,
-  "life_position_role_world_count": 105
+  "life_position_role_world_count": 112
 }
