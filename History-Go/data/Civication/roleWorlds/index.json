@@ -1,7 +1,7 @@
 {
   "schema": "civication_role_world_index_v1",
   "version": 1,
-  "status": "198_role_worlds_materialized",
+  "status": "204_role_worlds_materialized",
   "effective_date": "2026-09-11",
   "roles": [
     {
@@ -1982,6 +1982,84 @@
       "status": "role_world_complete",
       "path": "data/Civication/roleWorlds/musikk/musikk_utovende_musiker.json",
       "life_position_key": "musikk/utovende_musiker"
+    },
+    {
+      "category": "natur",
+      "role_scope": "natur_artsobservator",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "natur",
+        "id": "artsobservator",
+        "label": "Artsobservatør"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/natur/natur_artsobservator.json",
+      "life_position_key": "natur/artsobservator"
+    },
+    {
+      "category": "natur",
+      "role_scope": "natur_feltobservator",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "natur",
+        "id": "feltobservator",
+        "label": "Feltobservatør"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/natur/natur_feltobservator.json",
+      "life_position_key": "natur/feltobservator"
+    },
+    {
+      "category": "natur",
+      "role_scope": "natur_naturinteressert",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "natur",
+        "id": "naturinteressert",
+        "label": "Naturinteressert"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/natur/natur_naturinteressert.json",
+      "life_position_key": "natur/naturinteressert"
+    },
+    {
+      "category": "politikk",
+      "role_scope": "politikk_aktivisme_praksis",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "politikk",
+        "id": "aktivist",
+        "label": "Aktivist"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/politikk/politikk_aktivisme_praksis.json",
+      "life_position_key": "politikk/aktivist"
+    },
+    {
+      "category": "politikk",
+      "role_scope": "politikk_demokratianalyse",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "politikk",
+        "id": "demokratianalytiker",
+        "label": "Demokratianalytiker"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/politikk/politikk_demokratianalyse.json",
+      "life_position_key": "politikk/demokratianalytiker"
+    },
+    {
+      "category": "politikk",
+      "role_scope": "politikk_samfunnsdeltakelse",
+      "subject_type": "life_position",
+      "life_position_ref": {
+        "badge_id": "politikk",
+        "id": "samfunnsengasjert_borger",
+        "label": "Samfunnsengasjert borger"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/politikk/politikk_samfunnsdeltakelse.json",
+      "life_position_key": "politikk/samfunnsengasjert_borger"
     }
   ],
   "first_reference_world": {
@@ -2017,10 +2095,10 @@
     "focus": "kilder, publikum, profesjonskultur, feedback, rework og redaktørmyndighet"
   },
   "summary": {
-    "role_worlds_total": 198,
+    "role_worlds_total": 204,
     "career_role_worlds": 85,
-    "life_position_role_worlds": 113
+    "life_position_role_worlds": 119
   },
   "career_role_world_count": 85,
-  "life_position_role_world_count": 113
+  "life_position_role_world_count": 119
 }
