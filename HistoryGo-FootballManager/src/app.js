@@ -5194,6 +5194,10 @@ function isLeaguePreseason() {
   return isLeagueModeActive() && !isLeagueSeasonActive();
 }
 
+function isLeagueInitialPreseason() {
+  return isLeagueModeActive() && !state.leagueSeason;
+}
+
 function getLeagueStatusLabel(status = state.gameStartState?.leagueSeasonStatus, season = state.leagueSeason) {
   if (status === "completed" || season?.status === "completed") return "Fullført sesong";
   if (status === "active" && season?.status === "active") return "Aktiv sesong";
@@ -5279,7 +5283,7 @@ function activateRecommendedLeagueTab(teamFit = null) {
   // Før seriestart er onboarding-rekkefølgen autoritativ. Den gamle snarveien
   // så bare på spiller-/lag-/treningsstate og kunne derfor sende en ny manager
   // rett til Trening mens seks påkrevde stabsroller fortsatt manglet.
-  if (isLeaguePreseason()) {
+  if (isLeagueInitialPreseason()) {
     const nextStep = getLeagueOnboardingSteps(teamFit).find((step) => !step.done) || null;
     if (nextStep && nextStep.id !== "sesong") {
       activateLeagueOnboardingTarget(nextStep);
@@ -5395,7 +5399,7 @@ function renderLeagueOnboarding(teamFit) {
   const panel = elements.leagueOnboardingPanel;
   const list = elements.leagueOnboardingSteps;
   if (!panel || !list) return;
-  const active = isLeagueModeActive();
+  const active = isLeagueInitialPreseason();
   const steps = getLeagueOnboardingSteps(teamFit);
   const complete = steps.filter((step) => step.done).length;
   const done = complete === steps.length;
@@ -6194,7 +6198,7 @@ function getClubExpectation() {
 // Etter fullført ligasesong: legg den bak deg og start neste. Rører kun
 // mini-sesong-state — aldri History Go-unlocks, merits eller Club Week.
 function startLeagueSeasonFromOnboarding() {
-  if (!isLeagueModeActive() || state.leagueSeason?.status === "active") {
+  if (!isLeagueInitialPreseason()) {
     return;
   }
   if (!isLeaguePreseasonReady(getTeamFit())) {
@@ -6228,15 +6232,45 @@ function loadSeasonArchive() {
 }
 
 function saveSeasonArchive() {
+  const archive = normalizeSeasonArchive(state.seasonArchive);
   try {
-    localStorage.setItem(SEASON_ARCHIVE_KEY, JSON.stringify(normalizeSeasonArchive(state.seasonArchive)));
+    localStorage.setItem(SEASON_ARCHIVE_KEY, JSON.stringify(archive));
   } catch (error) {
     console.error("Kunne ikke lagre merittlista", error);
+  }
+
+  // Mode Isolation eier league-snapshoten ved reload. Hold den canonical
+  // merittlista synkronisert her, ellers kan et eldre snapshot vinne over
+  // hgfm.seasonArchive.v1 og glemme en avskjedsdom etter omlasting.
+  if (state.modeEnvelope && isLeagueModeActive()) {
+    state.modeEnvelope.sessions.league = {
+      ...state.modeEnvelope.sessions.league,
+      seasonArchive: archive
+    };
+    try {
+      state.modeEnvelope = persistModeEnvelope(localStorage, state.modeEnvelope);
+    } catch (_) {
+      // Legacy-lagringen over er fortsatt best effort i privat modus.
+    }
   }
 }
 
 function getSeasonArchive() {
   return normalizeSeasonArchive(state.seasonArchive);
+}
+
+function isCurrentLeagueManagerDismissed() {
+  const seasonNumber = Number(state.leagueSeason?.seasonNumber);
+  if (!Number.isFinite(seasonNumber)) return false;
+  if (
+    Number(state.seasonReview?.seasonNumber) === seasonNumber &&
+    state.seasonReview?.sacked === true
+  ) {
+    return true;
+  }
+  return getSeasonArchive().some(
+    (entry) => Number(entry?.seasonNumber) === seasonNumber && entry?.sacked === true
+  );
 }
 
 // Målet styret setter for inneværende sesong: en tabellplass, avledet av der du
@@ -6337,6 +6371,10 @@ function startNewLeagueSeason() {
   // Sørg for at sesongen som avsluttes faktisk er dømt og arkivert før vi
   // ruller videre — ellers ville en sesong kunne forsvinne uten spor.
   registerSeasonReview(state.leagueSeason);
+  if (isCurrentLeagueManagerDismissed()) {
+    renderApp();
+    return;
+  }
 
   state.gameStartState = normalizeGameStartState({ ...state.gameStartState, ...createLeagueSaveExtras() });
   saveGameStartState();
@@ -9332,7 +9370,7 @@ function buildNextActionContext(teamFit) {
   const gate = getClubWeekMatchdayGate();
   const clubWeekState = state.clubWeekState || null;
 
-  const leaguePreseasonStep = isLeagueModeActive() && !isLeagueSeasonActive()
+  const leaguePreseasonStep = isLeagueInitialPreseason()
     ? getLeagueOnboardingSteps(teamFit).find((step) => !step.done) || null
     : null;
   return {
@@ -13005,7 +13043,7 @@ function renderLeagueSeason() {
   });
 
   if (newSeasonButton) {
-    newSeasonButton.hidden = season?.status !== "completed";
+    newSeasonButton.hidden = season?.status !== "completed" || isCurrentLeagueManagerDismissed();
   }
 
   if (statusEl) {
