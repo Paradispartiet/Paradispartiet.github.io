@@ -4269,7 +4269,7 @@ function getMatchdayReadiness(teamFit) {
   const assignments = Array.isArray(teamFit?.assignments) ? teamFit.assignments : [];
   const selectedMode = state.gameStartState?.selectedMode || state.modeEnvelope?.activeMode || null;
   const hasPlayableMatch = isLeagueModeActive()
-    ? isLeagueSeasonActive()
+    ? isLeaguePlayableMatchActive()
     : isScenarioModeActive()
       ? state.miniSeason?.status === "active"
       : isNationalModeActive()
@@ -4308,7 +4308,7 @@ function getMatchdayReadiness(teamFit) {
     opponentName: analysisFixture?.opponent?.name || "neste motstander",
     selectedMode,
     hasPlayableMatch,
-    leagueSeasonActive: !isLeagueModeActive() || isLeagueSeasonActive(),
+    leagueSeasonActive: !isLeagueModeActive() || isLeaguePlayableMatchActive(),
     clubWeekBlocked,
     clubWeekReason: clubWeekBlocked
       ? `Klubbuka står i «${CLUB_WEEK_PHASE_LABELS[clubWeekPhase] || clubWeekPhase}». Gå videre til kampdag.`
@@ -5190,8 +5190,16 @@ function isLeagueSeasonActive() {
     state.leagueSeason?.status === "active";
 }
 
+function isLeaguePlayableMatchActive() {
+  return isLeagueSeasonActive() || (
+    isLeagueModeActive() &&
+    state.leaguePlayoff?.status === "active" &&
+    Boolean(getPlayoffMatchdayOpponent(state.leaguePlayoff))
+  );
+}
+
 function isLeaguePreseason() {
-  return isLeagueModeActive() && !isLeagueSeasonActive();
+  return isLeagueModeActive() && !isLeaguePlayableMatchActive();
 }
 
 function isLeagueInitialPreseason() {
@@ -6645,6 +6653,11 @@ function registerMatchInMiniSeason(lastMatch) {
         phaseLabel: "Kvalifisering",
         message: `${described.headline} ${described.detail}`
       });
+      // Sesongen er først endelig avgjort når siste kvalikkamp er ferdig.
+      // Vent derfor med styredom/arkivering til playoffen er terminal.
+      if (updatedPlayoff.status !== "active") {
+        registerSeasonReview(state.leagueSeason);
+      }
       window.dispatchEvent(new Event("updateProfile"));
     }
     return;
@@ -6656,13 +6669,15 @@ function registerMatchInMiniSeason(lastMatch) {
       state.leagueSeason = updated;
       if (updated.status === "completed") {
         state.gameStartState.leagueSeasonStatus = "completed";
-        // Styret gjør opp regnskapet. Før sa statuslinja bare hvem som ble
-        // seriemester — forventningen de satte da klubben ble opprettet ble
-        // aldri målt mot noe.
-        registerSeasonReview(updated);
-        // Endte sesongen på en kvalifiseringsplass, skal kampene spilles før
-        // noen ny sesong kan starte.
+        // Endte sesongen på en kvalifiseringsplass, er den sportslige sesongen
+        // ikke avgjort før kvalikken er spilt. Opprett derfor playoffen før
+        // styret registrerer sesongdommen.
         ensureLeaguePlayoff();
+        if (state.leaguePlayoff?.status !== "active") {
+          // Ingen kvalifisering gjenstår: da kan sesongen dømmes og arkiveres
+          // med en gang, som før.
+          registerSeasonReview(updated);
+        }
       }
       saveLeagueSeason(); saveGameStartState();
       addClubWeekEvent({ id: `league-r${previousRound}`, week: previousRound, phase: "matchday", phaseLabel: "Ligaspill", message: `Serierunde ${previousRound} er ferdig. Alle fire resultater er registrert.` });
@@ -9404,9 +9419,9 @@ function buildNextActionContext(teamFit) {
     matchdayReady: Boolean(readiness.canStartMatch),
     unreadThreads: getInboxAttentionCount(),
     hasUnseenReport: hasUnseenMatchReport(),
-    miniSeasonActive: isScenarioModeActive() && state.miniSeason?.status === "active" || isLeagueModeActive() && state.leagueSeason?.status === "active",
+    miniSeasonActive: isScenarioModeActive() && state.miniSeason?.status === "active" || isLeaguePlayableMatchActive(),
     leagueModeActive: isLeagueModeActive(),
-    leagueSeasonActive: isLeagueSeasonActive(),
+    leagueSeasonActive: isLeaguePlayableMatchActive(),
     leaguePreseasonReady: isLeagueModeActive() ? isLeaguePreseasonReady(teamFit) : true,
     leaguePreseasonStep,
     scenarioModeActive: isScenarioModeActive(),
@@ -13029,11 +13044,14 @@ function renderLeagueSeason() {
   const newSeasonButton = elements.startNewLeagueSeasonButton;
   const table = season ? createLeagueTable(season) : [];
   const managerRow = table.find((row) => row.isManager);
-  const nextMatch = season?.status === "active" ? getNextLeagueOpponent(season) : null;
+  const playoffDescription = describePlayoff(state.leaguePlayoff);
+  const playoffOpponent = getPlayoffMatchdayOpponent(state.leaguePlayoff);
+  const nextMatch = playoffOpponent || (season?.status === "active" ? getNextLeagueOpponent(season) : null);
   const scene = createSeasonSceneModel({
     season,
     table,
     nextMatch,
+    playoff: playoffDescription,
     boardExpectation: getLeagueSaveModel().boardExpectation
   });
 
@@ -13043,12 +13061,17 @@ function renderLeagueSeason() {
   });
 
   if (newSeasonButton) {
-    newSeasonButton.hidden = season?.status !== "completed" || isCurrentLeagueManagerDismissed();
+    newSeasonButton.hidden =
+      season?.status !== "completed" ||
+      state.leaguePlayoff?.status === "active" ||
+      isCurrentLeagueManagerDismissed();
   }
 
   if (statusEl) {
     if (!season) {
       statusEl.textContent = "Sesongkontrollen åpner når før-sesongen er bekreftet: klubbanker, tropp, stab, ellever, formasjon og trening.";
+    } else if (playoffDescription?.active && playoffOpponent) {
+      statusEl.textContent = `${playoffDescription.headline} mot ${playoffDescription.opponentName}. ${playoffDescription.detail}`;
     } else if (season.status === "completed") {
       statusEl.textContent = `${table[0]?.club || "Ligamesteren"} er seriemester. ${managerRow?.club || "Managerklubben"} endte på ${managerRow?.position || "–"}. plass med ${managerRow?.points || 0} poeng.`;
     } else {

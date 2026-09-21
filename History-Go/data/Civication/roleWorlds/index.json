@@ -1,7 +1,7 @@
 {
   "schema": "civication_role_world_index_v1",
   "version": 1,
-  "status": "220_role_worlds_materialized",
+  "status": "227_role_worlds_materialized",
   "effective_date": "2026-09-11",
   "roles": [
     {
@@ -695,6 +695,84 @@
       "status": "role_world_complete",
       "path": "data/Civication/roleWorlds/vitenskap/vitenskap_maker.json",
       "life_position_key": "vitenskap/maker"
+    },
+    {
+      "category": "subkultur",
+      "role_scope": "subkultur_crew",
+      "subject_type": "life_position",
+      "life_position_key": "subkultur/crew",
+      "life_position_ref": {
+        "badge_id": "subkultur",
+        "id": null,
+        "label": "Crew"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/subkultur/subkultur_crew.json"
+    },
+    {
+      "category": "subkultur",
+      "role_scope": "subkultur_dandy",
+      "subject_type": "life_position",
+      "life_position_key": "subkultur/dandy",
+      "life_position_ref": {
+        "badge_id": "subkultur",
+        "id": null,
+        "label": "Dandy"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/subkultur/subkultur_dandy.json"
+    },
+    {
+      "category": "subkultur",
+      "role_scope": "subkultur_deltaker",
+      "subject_type": "life_position",
+      "life_position_key": "subkultur/deltaker",
+      "life_position_ref": {
+        "badge_id": "subkultur",
+        "id": null,
+        "label": "Deltaker"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/subkultur/subkultur_deltaker.json"
+    },
+    {
+      "category": "subkultur",
+      "role_scope": "subkultur_gatesmart",
+      "subject_type": "life_position",
+      "life_position_key": "subkultur/gatesmart",
+      "life_position_ref": {
+        "badge_id": "subkultur",
+        "id": null,
+        "label": "Gatesmart"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/subkultur/subkultur_gatesmart.json"
+    },
+    {
+      "category": "subkultur",
+      "role_scope": "subkultur_hakkekylling",
+      "subject_type": "life_position",
+      "life_position_key": "subkultur/hakkekylling",
+      "life_position_ref": {
+        "badge_id": "subkultur",
+        "id": null,
+        "label": "Hakkekylling"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/subkultur/subkultur_hakkekylling.json"
+    },
+    {
+      "category": "subkultur",
+      "role_scope": "subkultur_observor",
+      "subject_type": "life_position",
+      "life_position_key": "subkultur/observ_r",
+      "life_position_ref": {
+        "badge_id": "subkultur",
+        "id": null,
+        "label": "Observør"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/subkultur/subkultur_observor.json"
     },
     {
       "category": "subkultur",
@@ -1724,6 +1802,19 @@
       "life_position_key": "kunst/gallerist"
     },
     {
+      "category": "kunst",
+      "role_scope": "kunst_kunstsamler",
+      "subject_type": "life_position",
+      "life_position_key": "kunst/kunstsamler",
+      "life_position_ref": {
+        "badge_id": "kunst",
+        "id": "kunstsamler",
+        "label": "Kunstsamler"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/kunst/kunst_kunstsamler.json"
+    },
+    {
       "category": "litteratur",
       "role_scope": "litteratur_aktiv_leser",
       "subject_type": "life_position",
@@ -2303,10 +2394,10 @@
     "focus": "kilder, publikum, profesjonskultur, feedback, rework og redaktørmyndighet"
   },
   "summary": {
-    "role_worlds_total": 220,
+    "role_worlds_total": 227,
     "career_role_worlds": 85,
-    "life_position_role_worlds": 135
+    "life_position_role_worlds": 142
   },
   "career_role_world_count": 85,
-  "life_position_role_world_count": 135
+  "life_position_role_world_count": 142
 }
