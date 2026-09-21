@@ -1,7 +1,7 @@
 {
   "schema": "civication_role_world_index_v1",
   "version": 1,
-  "status": "227_role_worlds_materialized",
+  "status": "230_role_worlds_materialized",
   "effective_date": "2026-09-11",
   "roles": [
     {
@@ -578,6 +578,19 @@
       "status": "role_world_complete",
       "path": "data/Civication/roleWorlds/historie/historie_historievandrer.json",
       "life_position_key": "historie/historievandrer"
+    },
+    {
+      "category": "historie",
+      "role_scope": "historie_doktorgradsstudent_historie",
+      "subject_type": "life_position",
+      "life_position_key": "historie/doktorgradsstudent_historie",
+      "life_position_ref": {
+        "badge_id": "historie",
+        "id": "doktorgradsstudent_historie",
+        "label": "Doktorgradsstudent"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/historie/historie_doktorgradsstudent_historie.json"
     },
     {
       "category": "kunst",
@@ -1308,6 +1321,19 @@
       "life_position_key": "naeringsliv/smasparer"
     },
     {
+      "category": "naeringsliv",
+      "role_scope": "naeringsliv_sideprosjektbygger",
+      "subject_type": "life_position",
+      "life_position_key": "naeringsliv/sideprosjektbygger",
+      "life_position_ref": {
+        "badge_id": "naeringsliv",
+        "id": "sideprosjektbygger",
+        "label": "Sideprosjektbygger"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/naeringsliv/naeringsliv_sideprosjektbygger.json"
+    },
+    {
       "category": "natur",
       "role_scope": "natur_fuglekikker",
       "subject_type": "life_position",
@@ -1722,6 +1748,19 @@
       "status": "role_world_complete",
       "path": "data/Civication/roleWorlds/filosofi/filosofi_fagfilosof.json",
       "life_position_key": "filosofi/fagfilosof"
+    },
+    {
+      "category": "filosofi",
+      "role_scope": "filosofi_filosofistudent",
+      "subject_type": "life_position",
+      "life_position_key": "filosofi/filosofistudent",
+      "life_position_ref": {
+        "badge_id": "filosofi",
+        "id": "filosofistudent",
+        "label": "Filosofistudent"
+      },
+      "status": "role_world_complete",
+      "path": "data/Civication/roleWorlds/filosofi/filosofi_filosofistudent.json"
     },
     {
       "category": "filosofi",
@@ -2394,10 +2433,10 @@
     "focus": "kilder, publikum, profesjonskultur, feedback, rework og redaktørmyndighet"
   },
   "summary": {
-    "role_worlds_total": 227,
+    "role_worlds_total": 230,
     "career_role_worlds": 85,
-    "life_position_role_worlds": 142
+    "life_position_role_worlds": 145
   },
   "career_role_world_count": 85,
-  "life_position_role_world_count": 142
+  "life_position_role_world_count": 145
 }
