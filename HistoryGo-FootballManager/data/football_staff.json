@@ -1482,6 +1482,709 @@
         "goalkeeper_development"
       ],
       "warningWhenMisused": "Dokumentert som keepertrener i Tromsøs A-lagsapparat; profilen brukes kun i keepertrenerrollen."
+    },
+    {
+      "id": "geir_frigard_staff",
+      "name": "Geir Frigård",
+      "staffType": "assistant_coach",
+      "canBeHiredAs": [
+        "assistant_coach",
+        "coach"
+      ],
+      "starterClubIds": [
+        "aalesund"
+      ],
+      "sourcePlaceIds": [
+        "color_line_stadion"
+      ],
+      "sourceUrl": "https://www.aafk.no/om-klubben/ansatte-i-aafk",
+      "profileSourceUrl": "https://www.aafk.no/lag",
+      "expertiseIds": [],
+      "roles": [
+        "assistant_coach"
+      ],
+      "warningWhenMisused": "Dokumentert som assistenttrener for AaFK Herre; profilen tillegges ingen ekstra taktisk spesialisering uten egen kilde."
+    },
+    {
+      "id": "tor_hogne_aaroy_staff",
+      "name": "Tor Hogne Aarøy",
+      "staffType": "assistant_coach",
+      "canBeHiredAs": [
+        "assistant_coach",
+        "coach"
+      ],
+      "starterClubIds": [
+        "aalesund"
+      ],
+      "sourcePlaceIds": [
+        "color_line_stadion"
+      ],
+      "sourceUrl": "https://www.aafk.no/om-klubben/ansatte-i-aafk",
+      "profileSourceUrl": "https://www.aafk.no/lag",
+      "expertiseIds": [],
+      "roles": [
+        "assistant_coach"
+      ],
+      "warningWhenMisused": "Dokumentert som assistenttrener for AaFK Herre; profilen kan dekke en trenerkapasitet i managerlaget uten at kildens rolle omskrives."
+    },
+    {
+      "id": "sindre_eid_staff",
+      "name": "Sindre Eid",
+      "staffType": "coach",
+      "canBeHiredAs": [
+        "coach"
+      ],
+      "starterClubIds": [
+        "aalesund"
+      ],
+      "sourcePlaceIds": [
+        "color_line_stadion"
+      ],
+      "sourceUrl": "https://www.aafk.no/lag",
+      "expertiseIds": [],
+      "roles": [
+        "player_development_coach"
+      ],
+      "warningWhenMisused": "Dokumentert som toppspillerutvikler i AaFKs herreapparat; profilen brukes som trener uten oppdiktede taktiske ekspertiser."
+    },
+    {
+      "id": "fredrick_pettersen_staff",
+      "name": "Fredrick Pettersen",
+      "staffType": "physio",
+      "canBeHiredAs": [
+        "physio"
+      ],
+      "starterClubIds": [
+        "aalesund"
+      ],
+      "sourcePlaceIds": [
+        "color_line_stadion"
+      ],
+      "sourceUrl": "https://www.aafk.no/lag",
+      "profileSourceUrl": "https://www.aafk.no/nyheter/pettersen-ny-fysio-pa-plass",
+      "expertiseIds": [],
+      "roles": [
+        "first_team_physio"
+      ],
+      "warningWhenMisused": "Dokumentert som fysioterapeut i AaFKs herreapparat; profilen tillegges ingen ekstra medisinsk rating."
+    },
+    {
+      "id": "odd_einar_hatloy_staff",
+      "name": "Odd Einar Hatløy",
+      "staffType": "goalkeeper_coach",
+      "canBeHiredAs": [
+        "goalkeeper_coach"
+      ],
+      "starterClubIds": [
+        "aalesund"
+      ],
+      "sourcePlaceIds": [
+        "color_line_stadion"
+      ],
+      "sourceUrl": "https://www.aafk.no/lag",
+      "expertiseIds": [
+        "goalkeeper_training"
+      ],
+      "roles": [
+        "goalkeeper_development"
+      ],
+      "warningWhenMisused": "Dokumentert som keepertrener i AaFKs herreapparat; profilen brukes kun i keepertrenerrollen."
+    },
+    {
+      "id": "lars_brotangen_staff",
+      "name": "Lars Brotangen",
+      "staffType": "assistant_coach",
+      "canBeHiredAs": [
+        "assistant_coach",
+        "coach"
+      ],
+      "starterClubIds": [
+        "hamkam"
+      ],
+      "sourcePlaceIds": [
+        "briskeby_stadion"
+      ],
+      "sourceUrl": "https://www.hamkam.no/om-klubben/administrasjon",
+      "profileSourceUrl": "https://www.hamkam.no/lag",
+      "expertiseIds": [],
+      "roles": [
+        "assistant_coach"
+      ],
+      "warningWhenMisused": "Dokumentert som assistenttrener for HamKams herrelag; profilen tillegges ingen ekstra taktisk spesialisering uten egen kilde."
+    },
+    {
+      "id": "hakon_t_kristiansen_staff",
+      "name": "Håkon T. Kristiansen",
+      "staffType": "coach",
+      "canBeHiredAs": [
+        "coach"
+      ],
+      "starterClubIds": [
+        "hamkam"
+      ],
+      "sourcePlaceIds": [
+        "briskeby_stadion"
+      ],
+      "sourceUrl": "https://www.hamkam.no/lag",
+      "expertiseIds": [],
+      "roles": [
+        "player_development_coach"
+      ],
+      "warningWhenMisused": "Dokumentert som toppspillerutvikler i HamKams A-lagsstøtteapparat; profilen brukes som trener uten oppdiktede taktiske ekspertiser."
+    },
+    {
+      "id": "jacob_mollatt_staff",
+      "name": "Jacob Mollatt",
+      "staffType": "physical_coach",
+      "canBeHiredAs": [
+        "physical_coach",
+        "coach"
+      ],
+      "starterClubIds": [
+        "hamkam"
+      ],
+      "sourcePlaceIds": [
+        "briskeby_stadion"
+      ],
+      "sourceUrl": "https://www.hamkam.no/nyheter/forlenger-ut-2028",
+      "profileSourceUrl": "https://www.hamkam.no/lag",
+      "expertiseIds": [
+        "physical_preparation"
+      ],
+      "roles": [
+        "physical_preparation_coach"
+      ],
+      "warningWhenMisused": "Dokumentert som ansvarlig for det fysiske på HamKams A-lag; bare fysisk grunntrening er lagt til som canonical ekspertise."
+    },
+    {
+      "id": "magnus_jordet_nilsen_staff",
+      "name": "Magnus Jordet-Nilsen",
+      "staffType": "physio",
+      "canBeHiredAs": [
+        "physio"
+      ],
+      "starterClubIds": [
+        "hamkam"
+      ],
+      "sourcePlaceIds": [
+        "briskeby_stadion"
+      ],
+      "sourceUrl": "https://www.hamkam.no/nyheter/blitt-min-favorittklubb-og-livstil",
+      "profileSourceUrl": "https://www.hamkam.no/om-klubben/administrasjon",
+      "expertiseIds": [],
+      "roles": [
+        "first_team_physio"
+      ],
+      "warningWhenMisused": "Dokumentert som fysioterapeut for HamKams herrelag; profilen tillegges ingen ekstra medisinsk rating."
+    },
+    {
+      "id": "yngve_sandbulokken_staff",
+      "name": "Yngve Sandbuløkken",
+      "staffType": "goalkeeper_coach",
+      "canBeHiredAs": [
+        "goalkeeper_coach"
+      ],
+      "starterClubIds": [
+        "hamkam"
+      ],
+      "sourcePlaceIds": [
+        "briskeby_stadion"
+      ],
+      "sourceUrl": "https://www.hamkam.no/om-klubben/administrasjon",
+      "profileSourceUrl": "https://www.hamkam.no/lag",
+      "expertiseIds": [
+        "goalkeeper_training"
+      ],
+      "roles": [
+        "goalkeeper_development"
+      ],
+      "warningWhenMisused": "Dokumentert som keepertrener for HamKams herrelag; profilen brukes kun i keepertrenerrollen."
+    },
+    {
+      "id": "karl_oskar_fjortoft_staff",
+      "name": "Karl Oskar Fjørtoft",
+      "staffType": "assistant_coach",
+      "canBeHiredAs": [
+        "assistant_coach",
+        "coach"
+      ],
+      "starterClubIds": [
+        "kristiansund"
+      ],
+      "sourcePlaceIds": [
+        "nordmore_stadion"
+      ],
+      "sourceUrl": "https://www.kristiansundbk.no/lag",
+      "expertiseIds": [],
+      "roles": [
+        "assistant_coach"
+      ],
+      "warningWhenMisused": "Dokumentert som assistenttrener i Kristiansund BKs herrestab; ingen ekstra taktisk spesialisering er lagt til."
+    },
+    {
+      "id": "andreas_eines_hopmark_staff",
+      "name": "Andreas Eines Hopmark",
+      "staffType": "coach",
+      "canBeHiredAs": [
+        "coach"
+      ],
+      "starterClubIds": [
+        "kristiansund"
+      ],
+      "sourcePlaceIds": [
+        "nordmore_stadion"
+      ],
+      "sourceUrl": "https://www.kristiansundbk.no/lag",
+      "expertiseIds": [],
+      "roles": [
+        "player_development_coach"
+      ],
+      "warningWhenMisused": "Dokumentert som toppspillerutvikler i KBKs herrestab; profilen brukes som trener uten udokumenterte taktiske ekspertiser."
+    },
+    {
+      "id": "eirik_andersen_staff",
+      "name": "Eirik Andersen",
+      "staffType": "physical_coach",
+      "canBeHiredAs": [
+        "physical_coach",
+        "coach"
+      ],
+      "starterClubIds": [
+        "kristiansund"
+      ],
+      "sourcePlaceIds": [
+        "nordmore_stadion"
+      ],
+      "sourceUrl": "https://www.kristiansundbk.no/lag",
+      "expertiseIds": [
+        "physical_preparation"
+      ],
+      "roles": [
+        "physical_preparation_coach"
+      ],
+      "warningWhenMisused": "Dokumentert som fysisk trener i KBKs herrestab; bare fysisk forberedelse er lagt til som canonical ekspertise."
+    },
+    {
+      "id": "eirik_rundberg_staff",
+      "name": "Eirik Rundberg",
+      "staffType": "physio",
+      "canBeHiredAs": [
+        "physio"
+      ],
+      "starterClubIds": [
+        "kristiansund"
+      ],
+      "sourcePlaceIds": [
+        "nordmore_stadion"
+      ],
+      "sourceUrl": "https://www.kristiansundbk.no/lag",
+      "expertiseIds": [],
+      "roles": [
+        "first_team_physio"
+      ],
+      "warningWhenMisused": "Dokumentert som fysioterapeut for KBKs herrelag; ingen ytterligere medisinsk vurdering eller rating er tillagt."
+    },
+    {
+      "id": "conny_mansson_staff",
+      "name": "Conny Månsson",
+      "staffType": "goalkeeper_coach",
+      "canBeHiredAs": [
+        "goalkeeper_coach"
+      ],
+      "starterClubIds": [
+        "kristiansund"
+      ],
+      "sourcePlaceIds": [
+        "nordmore_stadion"
+      ],
+      "sourceUrl": "https://www.kristiansundbk.no/lag",
+      "expertiseIds": [
+        "goalkeeper_training"
+      ],
+      "roles": [
+        "goalkeeper_development"
+      ],
+      "warningWhenMisused": "Dokumentert som keepertrener/materialforvalter i KBKs herrestab; starterprofilen dekker bare keepertrenerplassen."
+    },
+    {
+      "id": "per_verner_ronning_staff",
+      "name": "Per Verner Rønning",
+      "staffType": "assistant_coach",
+      "canBeHiredAs": [
+        "assistant_coach",
+        "coach"
+      ],
+      "starterClubIds": [
+        "sandefjord"
+      ],
+      "sourcePlaceIds": [
+        "jotun_arena"
+      ],
+      "sourceUrl": "https://www.sandefjordfotball.no/lag",
+      "expertiseIds": [],
+      "roles": [
+        "assistant_coach"
+      ],
+      "warningWhenMisused": "Dokumentert som assistenttrener på Sandefjord Fotballs herrelag; ingen egen taktisk spesialisering eller vurdering er tillagt."
+    },
+    {
+      "id": "henrik_gustavsen_staff",
+      "name": "Henrik Gustavsen",
+      "staffType": "coach",
+      "canBeHiredAs": [
+        "coach"
+      ],
+      "starterClubIds": [
+        "sandefjord"
+      ],
+      "sourcePlaceIds": [
+        "jotun_arena"
+      ],
+      "sourceUrl": "https://www.sandefjordfotball.no/lag",
+      "expertiseIds": [],
+      "roles": [
+        "player_development_coach"
+      ],
+      "warningWhenMisused": "Dokumentert som toppspillerutvikler i Sandefjord; profilen dekker trenerkapasitet uten udokumentert taktisk ekspertise."
+    },
+    {
+      "id": "arnor_snaer_gudmundsson_staff",
+      "name": "Arnor Snær Gudmundsson",
+      "staffType": "physical_coach",
+      "canBeHiredAs": [
+        "physical_coach",
+        "coach"
+      ],
+      "starterClubIds": [
+        "sandefjord"
+      ],
+      "sourcePlaceIds": [
+        "jotun_arena"
+      ],
+      "sourceUrl": "https://www.sandefjordfotball.no/lag",
+      "expertiseIds": [
+        "physical_preparation"
+      ],
+      "roles": [
+        "physical_preparation_coach"
+      ],
+      "warningWhenMisused": "Dokumentert som fysisk trener i Sandefjords støtteapparat; bare fysisk forberedelse er lagt til som ekspertise."
+    },
+    {
+      "id": "ola_olsen_staff",
+      "name": "Ola Olsen",
+      "staffType": "physio",
+      "canBeHiredAs": [
+        "physio"
+      ],
+      "starterClubIds": [
+        "sandefjord"
+      ],
+      "sourcePlaceIds": [
+        "jotun_arena"
+      ],
+      "sourceUrl": "https://www.sandefjordfotball.no/lag",
+      "expertiseIds": [],
+      "roles": [
+        "first_team_physio"
+      ],
+      "warningWhenMisused": "Dokumentert som fysioterapeut i Sandefjords A-lagsoversikt; ingen ekstra medisinsk vurdering eller rating er tillagt."
+    },
+    {
+      "id": "jordi_cumelles_comas_staff",
+      "name": "Jordi Cumelles Comas",
+      "staffType": "goalkeeper_coach",
+      "canBeHiredAs": [
+        "goalkeeper_coach"
+      ],
+      "starterClubIds": [
+        "sandefjord"
+      ],
+      "sourcePlaceIds": [
+        "jotun_arena"
+      ],
+      "sourceUrl": "https://www.sandefjordfotball.no/lag",
+      "expertiseIds": [
+        "goalkeeper_training"
+      ],
+      "roles": [
+        "goalkeeper_development"
+      ],
+      "warningWhenMisused": "Dokumentert som keepertrener i Sandefjords A-lagsoversikt; profilen brukes kun som keepertrener."
+    },
+    {
+      "id": "stig_vik_nedrebo_staff",
+      "name": "Stig Vik Nedrebø",
+      "staffType": "assistant_coach",
+      "canBeHiredAs": [
+        "assistant_coach",
+        "coach"
+      ],
+      "starterClubIds": [
+        "viking"
+      ],
+      "sourcePlaceIds": [
+        "lyse_arena"
+      ],
+      "sourceUrl": "https://www.vikingfotball.no/lag",
+      "expertiseIds": [],
+      "roles": [
+        "assistant_coach"
+      ],
+      "warningWhenMisused": "Dokumentert som assistenttrener og analyseansvarlig i Vikings herrelagsoversikt; profilen tillegges ingen udokumentert taktisk ekspertise eller rating."
+    },
+    {
+      "id": "rune_repvik_staff",
+      "name": "Rune Repvik",
+      "staffType": "coach",
+      "canBeHiredAs": [
+        "coach"
+      ],
+      "starterClubIds": [
+        "viking"
+      ],
+      "sourcePlaceIds": [
+        "lyse_arena"
+      ],
+      "sourceUrl": "https://www.vikingfotball.no/lag",
+      "expertiseIds": [],
+      "roles": [
+        "player_development_coach"
+      ],
+      "warningWhenMisused": "Dokumentert som toppspillerutvikler i Vikings herrestab; bruker trenerkapasitet uten oppdiktet taktisk spesialisering."
+    },
+    {
+      "id": "halvard_oen_grova_staff",
+      "name": "Halvard Øen Grova",
+      "staffType": "physio",
+      "canBeHiredAs": [
+        "physio"
+      ],
+      "starterClubIds": [
+        "viking"
+      ],
+      "sourcePlaceIds": [
+        "lyse_arena"
+      ],
+      "sourceUrl": "https://www.vikingfotball.no/lag",
+      "expertiseIds": [],
+      "roles": [
+        "first_team_physio"
+      ],
+      "warningWhenMisused": "Dokumentert som fysioterapeut for Vikings herrelag; ingen medisinsk rating eller annet ansvar er lagt til."
+    },
+    {
+      "id": "jason_wyn_jones_staff",
+      "name": "Jason Wyn-Jones",
+      "staffType": "goalkeeper_coach",
+      "canBeHiredAs": [
+        "goalkeeper_coach"
+      ],
+      "starterClubIds": [
+        "viking"
+      ],
+      "sourcePlaceIds": [
+        "lyse_arena"
+      ],
+      "sourceUrl": "https://www.vikingfotball.no/lag",
+      "expertiseIds": [
+        "goalkeeper_training"
+      ],
+      "roles": [
+        "goalkeeper_development"
+      ],
+      "warningWhenMisused": "Dokumentert som keepertrener for Vikings herrelag; profilen brukes kun som keepertrener."
+    },
+    {
+      "id": "thomas_holm_kfum_staff",
+      "name": "Thomas Holm",
+      "staffType": "assistant_coach",
+      "canBeHiredAs": [
+        "assistant_coach",
+        "coach"
+      ],
+      "starterClubIds": [
+        "kfum"
+      ],
+      "sourcePlaceIds": [
+        "kfum_arena"
+      ],
+      "sourceUrl": "https://www.kaaffa.no/lag",
+      "expertiseIds": [],
+      "roles": [
+        "assistant_coach"
+      ],
+      "warningWhenMisused": "Dokumentert som assistenttrener for KFUMs A-lag; profilens aktive trenerplass er en kapasitetsfordeling, ikke en ny påstand om stillingstittel."
+    },
+    {
+      "id": "moa_dajani_staff",
+      "name": "Moa Dajani",
+      "staffType": "assistant_coach",
+      "canBeHiredAs": [
+        "assistant_coach",
+        "coach"
+      ],
+      "starterClubIds": [
+        "kfum"
+      ],
+      "sourcePlaceIds": [
+        "kfum_arena"
+      ],
+      "sourceUrl": "https://www.kaaffa.no/lag",
+      "expertiseIds": [],
+      "roles": [
+        "assistant_coach"
+      ],
+      "warningWhenMisused": "Dokumentert som assistenttrener i KFUMs A-lagsoversikt; profilen kan fylle ledig trenerkapasitet uten å omskrive kildens stillingstittel."
+    },
+    {
+      "id": "fredrik_talsnes_staff",
+      "name": "Fredrik Talsnes",
+      "staffType": "physio",
+      "canBeHiredAs": [
+        "physio"
+      ],
+      "starterClubIds": [
+        "kfum"
+      ],
+      "sourcePlaceIds": [
+        "kfum_arena"
+      ],
+      "sourceUrl": "https://www.kaaffa.no/lag",
+      "expertiseIds": [],
+      "roles": [
+        "first_team_physio"
+      ],
+      "warningWhenMisused": "Dokumentert som fysioterapeut for KFUMs herrelag; ingen ekstra medisinsk kompetanserating er konstruert."
+    },
+    {
+      "id": "kamil_olsztynski_staff",
+      "name": "Kamil Olsztynski",
+      "staffType": "goalkeeper_coach",
+      "canBeHiredAs": [
+        "goalkeeper_coach"
+      ],
+      "starterClubIds": [
+        "kfum"
+      ],
+      "sourcePlaceIds": [
+        "kfum_arena"
+      ],
+      "sourceUrl": "https://www.kaaffa.no/lag",
+      "expertiseIds": [
+        "goalkeeper_training"
+      ],
+      "roles": [
+        "goalkeeper_development"
+      ],
+      "warningWhenMisused": "Dokumentert som keepertrener i KFUMs oppdaterte A-lagsoversikt; tidligere keeperskapende profiler fra 2025 brukes ikke."
+    },
+    {
+      "id": "martin_reier_staff",
+      "name": "Martin Reier",
+      "staffType": "coach",
+      "canBeHiredAs": [
+        "coach"
+      ],
+      "starterClubIds": [
+        "bodo_glimt"
+      ],
+      "sourcePlaceIds": [
+        "aspmyra_stadion"
+      ],
+      "sourceUrl": "https://www.glimt.no/om-klubben/ansatte",
+      "expertiseIds": [],
+      "roles": [
+        "first_team_coach"
+      ],
+      "warningWhenMisused": "Oppført som trener i Bodø/Glimts offisielle 2026-ansattoversikt; ingen spesialkompetanse eller assistenttittel er konstruert."
+    },
+    {
+      "id": "eirik_kolstad_staff",
+      "name": "Eirik Kolstad",
+      "staffType": "coach",
+      "canBeHiredAs": [
+        "coach"
+      ],
+      "starterClubIds": [
+        "bodo_glimt"
+      ],
+      "sourcePlaceIds": [
+        "aspmyra_stadion"
+      ],
+      "sourceUrl": "https://www.glimt.no/om-klubben/ansatte",
+      "expertiseIds": [],
+      "roles": [
+        "first_team_coach"
+      ],
+      "warningWhenMisused": "Oppført som trener for Bodø/Glimts herrelag; ingen ekstra taktisk ekspertise eller assistenttittel er lagt til."
+    },
+    {
+      "id": "orjan_nygard_staff",
+      "name": "Ørjan Nygård",
+      "staffType": "physical_coach",
+      "canBeHiredAs": [
+        "physical_coach",
+        "coach"
+      ],
+      "starterClubIds": [
+        "bodo_glimt"
+      ],
+      "sourcePlaceIds": [
+        "aspmyra_stadion"
+      ],
+      "sourceUrl": "https://www.glimt.no/om-klubben/ansatte",
+      "expertiseIds": [
+        "physical_preparation"
+      ],
+      "roles": [
+        "physical_preparation_coach"
+      ],
+      "warningWhenMisused": "Oppført som trener/fysisk trener på klubbens 2026-liste; aktiv trenerkapasitet bygger på den dokumenterte fysiske rollen."
+    },
+    {
+      "id": "jonas_ueland_kolstad_staff",
+      "name": "Jonas Ueland Kolstad",
+      "staffType": "coach",
+      "canBeHiredAs": [
+        "coach",
+        "goalkeeper_coach"
+      ],
+      "starterClubIds": [
+        "bodo_glimt"
+      ],
+      "sourcePlaceIds": [
+        "aspmyra_stadion"
+      ],
+      "sourceUrl": "https://www.glimt.no/om-klubben/ansatte",
+      "profileSourceUrl": "https://www.glimt.no/lag/jonas-uelandkolstad",
+      "expertiseIds": [
+        "goalkeeper_training"
+      ],
+      "roles": [
+        "goalkeeper_development"
+      ],
+      "warningWhenMisused": "Dagens ansatteoversikt kaller Kolstad trener; klubbens egen profil dokumenterer keepertrenerkompetanse. Aktiv keepertrenerplass er rollekompatibilitet, ikke en ny påstand om hans 2026-stillingstittel."
+    },
+    {
+      "id": "anders_braastad_staff",
+      "name": "Anders Braastad",
+      "staffType": "physio",
+      "canBeHiredAs": [
+        "physio"
+      ],
+      "starterClubIds": [
+        "bodo_glimt"
+      ],
+      "sourcePlaceIds": [
+        "aspmyra_stadion"
+      ],
+      "sourceUrl": "https://www.glimt.no/om-klubben/ansatte",
+      "expertiseIds": [],
+      "roles": [
+        "first_team_physio"
+      ],
+      "warningWhenMisused": "Oppført som fysioterapeut under sport A-lag herrer hos Bodø/Glimt; ingen ekstra medisinsk rating er konstruert."
     }
   ]
 }
