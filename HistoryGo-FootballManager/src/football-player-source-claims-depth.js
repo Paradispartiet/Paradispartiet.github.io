@@ -410,6 +410,22 @@ const documented = [
     claim: "Sandefjords tidligere trener Tom Nordlie sier til Stavanger Aftenblad 25.10.2005 at Fevang er «god i lufta, kreativ» og teknisk/taktisk dyktig. Luftspill føres som heading, kreativitet som chance_creation i tråd med ferdighetsvokabularet; vision kan ikke utledes av formuleringen, og målstatistikk gir ingen avslutningsstyrke.",
     source: "https://www.aftenbladet.no/sport/i/pLLKnW/nordlie-henter-ny-sandefjord-spiller",
     sourceKind: "press"
+  },
+  {
+    playerId: "olav_zanetti",
+    clubId: "sandefjord",
+    strengths: ["crossing"],
+    claim: "Samtidig kampreferat fra Brann–Sandefjord i mars 2010 sier: «Olav Zanetti fosset frem på høyre og la et hardt og lavt innlegg». Bare det dokumenterte innlegget føres som crossing; fart eller avslutningsevne utledes ikke.",
+    source: "https://www.aftenbladet.no/sport/i/xR1y98/innbytter-guastavino-snudde-kampen",
+    sourceKind: "press"
+  },
+  {
+    playerId: "magne_sturod",
+    clubId: "sandefjord",
+    strengths: ["work_rate"],
+    claim: "NTBs samtidige kampreferat fra Vard-Haugesund–Sandefjord 02.05.2004, gjengitt i Nettavisen: «Målscorer Magne Sturød jobbet godt gjennom store deler av kampen». Denne konkrete individuelle vurderingen dokumenterer bare arbeidsinnsats (work_rate); mål, spilleminutter og poeng gir ingen andre styrker.",
+    source: "https://www.nettavisen.no/artikkel/start-kil-og-moss-vant-igjen/s/12-95-220771",
+    sourceKind: "press"
   }
 ];
 

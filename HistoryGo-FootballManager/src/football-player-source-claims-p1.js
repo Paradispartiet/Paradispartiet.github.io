@@ -495,6 +495,121 @@ const documented = [
     strengths: ["work_rate", "tackling", "interceptions"],
     claim: "Foroyaa 07.05.2020 beskriver Ebrima Sohna individuelt med «workaholic approach, tackles and interceptions» og som spesialist på duellpreget fotball. Arbeidsinnsats, taklinger og brudd føres som work_rate, tackling og interceptions; pasningsspill, teknikk og generell fysikk utledes ikke.",
     source: "https://foroyaa.net/14-years-after-conquering-africa-bare-truth-of-what-became-of-the-2005-baby-scorpions/"
+  },
+  {
+    playerId: "peter_skov_jensen",
+    placeId: "jotun_arena",
+    strengths: ["shot_stopping"],
+    claim: "Aftenpostens samtidige referat fra Rosenborg–Sandefjord 23.09.2007 beskriver at Peter Skov-Jensen bokset unna et frispark fra Marek Sapara og fistet et skudd fra Mikael Dorsin over mål. Kun de konkrete redningene føres som shot_stopping; ingen generell rangering eller reaksjonsevne utledes.",
+    source: "https://www.aftenposten.no/sport/fotball/i/50j0kO/komfortabelt"
+  },
+  {
+    playerId: "marc_vales",
+    placeId: "jotun_arena",
+    strengths: ["heading"],
+    claim: "Molde FK beskriver i sitt kampreferat fra Molde–Sandefjord 0–1 i 2020 at Marc Vales headet inn Sandefjords mål etter en corner fra Vidar Ari Jónsson i det sjette minuttet. Kun heading føres; ingen andre tekniske egenskaper utledes.",
+    source: "https://www.moldefk.no/om-klubben/var-historie/2020-2023/2020/eliteserien-2020/ni-mann-med-2-pa-borsen"
+  },
+  {
+    playerId: "daniel_seland_karlsbakk",
+    placeId: "jotun_arena",
+    strengths: ["heading"],
+    claim: "Norges Fotballforbunds kampreferat fra G19-kampen mot Serbia 07.06.2022 sier at Daniel Seland Karlsbakk headet inn Norges 2–3-redusering i det 82. minutt. Kun dokumentert heading føres; handlingen fant sted på landslaget, men gjelder samme spiller.",
+    source: "https://www.fotball.no/landslag/norge-gutter-19/2022/g19---vi-er-veldig-skuffa-over-at-vi-ikke-klarte-det/"
+  },
+  {
+    playerId: "jan_fredrik_bjorntvedt",
+    placeId: "jotun_arena",
+    strengths: ["heading"],
+    claim: "VG 07.07.2002 dokumenterer vinnermålet i Sandefjord–Tromsø 3–2: «to minutter på overtid headet Jan Fredrik Bjørntvedt 3-2 etter et innøvd frispark». Bare det eksplisitt dokumenterte hodespillet føres; ingen øvrige egenskaper utledes fra målet.",
+    source: "https://www.vg.no/sport/i/L00QR4/foerste-serietap-for-tromsoe"
+  },
+  {
+    playerId: "christer_reppesgard_hansen",
+    placeId: "jotun_arena",
+    strengths: ["passing_range"],
+    claim: "Dagsavisens samtidige Sandnes Ulf–Strømmen-referat 28.10.2020 beskriver en presis spillvending fra Reppesgård Hansen til kantspiller Jonsson: «Reppersgård Hansen vender spillet strålende til Jonsson». Dette bærer bare passing_range (vending av spillet); ingen generell oversikt, fart eller andre pasningsstyrker utledes fra enkelthendelsen.",
+    source: "https://www.dagsavisen.no/sport/sandnes-ulf-kan-skyte-seg-tilbake-pa-kvalikplass/7113489"
+  },
+  {
+    playerId: "tor_hogne_aaroy",
+    placeId: "color_line_stadion",
+    strengths: [
+      "heading"
+    ],
+    claim: "Start-trener Knut Tørum pekte 30.04.2010 konkret på at Tor Hogne Aarøy var spesielt farlig i hodespillet, og Start-spiller Ole Martin Årst beskrev ham som god i lufta. Fører heading; 203 cm høyde og målstatistikk gir ingen andre attributter.",
+    source: "https://www.aftenbladet.no/sport/i/ng5JjJ/toerum-maa-ikke-la-oss-blende-av-aaroey"
+  },
+  {
+    playerId: "sten_grytebust",
+    placeId: "color_line_stadion",
+    strengths: [
+      "shot_stopping"
+    ],
+    claim: "Aftenpostens samtidige Stabæk–Aalesund-referat 14.06.2011 dokumenterer flere klasseredninger fra Sten Grytebust, omtalt individuelt også av Stabæk-trener Jörgen Lennartsson og landslagskeeper Jon Knudsen. Fører bare shot_stopping, ikke en generell keepertotal.",
+    source: "https://www.aftenposten.no/sport/fotball/i/4qLd1G/rekdal-norges-neste-landslagskeeper"
+  },
+  {
+    playerId: "michael_barrantes",
+    placeId: "color_line_stadion",
+    strengths: [
+      "set_pieces"
+    ],
+    claim: "Samtidig Aalesund–Brann-referat 06.03.2011 beskriver at Michael Barrantes slo en presis corner på bakerste stolpe til Ville Jalastos heading og utførte et farlig frispark tidlig i kampen. Fører bare set_pieces, ikke pasningsregister eller skuddkraft.",
+    source: "https://www.aftenbladet.no/sport/i/xRxl38/sen-scoring-avgjorde-for-aafk"
+  },
+  {
+    playerId: "leke_james",
+    placeId: "color_line_stadion",
+    strengths: [
+      "work_rate"
+    ],
+    claim: "Trener Trond Fredriksen fortalte 07.07.2015 at Leke James tidligere i sesongen hadde tatt mye av den defensive grovjobben og trengte å fordele arbeidsoppgavene for å være uthvilt i angrep; James bekreftet selv at han jobbet mye for laget. Fører work_rate, ikke finishing eller stamina.",
+    source: "https://www.bt.no/sport/i/e8J8Al/leke-james-jeg-har-vaert-frustrert"
+  },
+  {
+    playerId: "daniel_arnefjord",
+    placeId: "color_line_stadion",
+    strengths: [
+      "heading"
+    ],
+    claim: "Bergens Tidendes samtidige referat fra Aalesund–Start 21.04.2014 dokumenterer at Daniel Arnefjord møtte Michael Barrantes' frispark og headet fra sju meter i mål. Fører kun heading som eksplisitt utført teknisk handling, ikke duellstyrke eller posisjonering.",
+    source: "https://www.bt.no/sport/i/50G0xK/start-straffet-tafatt-aalesund"
+  },
+  {
+    playerId: "anders_lindegaard",
+    placeId: "color_line_stadion",
+    strengths: ["shot_stopping"],
+    claim: "Sunnmørspostens samtidige Rosenborg–Aalesund-omtale publisert 26.10.2009 beskriver flere sterke reaksjonsredninger fra Anders Lindegaard, spesielt at han slo et hardt, lavt skudd fra Rade Prica til corner. Bare konkret shot_stopping føres.",
+    source: "https://www.aftenbladet.no/sport/i/pL64G6/lindegaard-med-frysninger"
+  },
+  {
+    playerId: "peter_orry_larsen",
+    placeId: "color_line_stadion",
+    strengths: ["long_shots"],
+    claim: "Sunnmørspostens kampreferat publisert 03.04.2016 beskriver at Peter Orry Larsen scoret med et hardt og velplassert skudd fra rundt 18 meter mot Brann. Dette dokumenterer long_shots fra et konkret distanseforsøk, ikke et generelt målscorertalent.",
+    source: "https://www.aftenbladet.no/sport/i/p6J0LV/scoring-fattig-troest-for-orry-larsen-hadde-smakt-bedre-med-seier"
+  },
+  {
+    playerId: "andreas_lie",
+    placeId: "color_line_stadion",
+    strengths: ["shot_stopping"],
+    claim: "Aalesunds FKs samtidige kampreferat fra 2017 mot Tromsø beskriver at Andreas Lie avverget et tidlig frispark og senere beveget seg godt på streken for å slå Gjermund Åsens frispark på vei mot krysset unna. Fører bare shot_stopping, ikke reaksjonsfart som eget token.",
+    source: "https://www.aafk.no/nyheter/solid-snuoperasjon-gir-tre-poeng"
+  },
+  {
+    playerId: "enar_jaager",
+    placeId: "color_line_stadion",
+    strengths: ["set_pieces"],
+    claim: "Stavanger Aftenblads samtidige Aalesund–Rosenborg-referat 27.04.2012 beskriver at Enar Jääger slo et frispark fra midtbanen inn i feltet som Lars Fuhre styrte i mål. Fører konkret set_pieces, ikke generell pasningspresisjon eller crossing.",
+    source: "https://www.aftenbladet.no/sport/i/L0yMKx/dramaet-i-aalesund-endte-uavgjort"
+  },
+  {
+    playerId: "magnus_sylling_olsen",
+    placeId: "color_line_stadion",
+    strengths: ["finishing"],
+    claim: "Rosenborgs historiske kampreferat om avslutningen på Tippeligaen 2010 beskriver at Magnus Sylling Olsen kom gjennom fra venstresiden og banket ballen kontant i mål i siste ordinære minutt. Dette er en eksplisitt vellykket avslutning (finishing); ingen egenskap utledes av totalscoring.",
+    source: "https://www.rbk.no/nyheter/rbk-ubeseiret-i-2010"
   }
 ];
 
