@@ -373,8 +373,44 @@ const documented = [
     claim: "Vålerenga-trener Petter Myhre: «Han er en hardtarbeidende og løpssterk midtbanespiller som er flink til å komme inn i boksen og målfarlig».",
     source: "https://www.nettavisen.no/sentrale-spillere-ute-mot-nybergsund/s/12-95-1245039",
     sourceKind: "press"
-  }
+  },
 
+  // --- Sandefjord base squad: club-documented direct free kick, 2025 --------
+  {
+    playerId: "martin_torp",
+    clubId: "sandefjord",
+    strengths: ["set_pieces"],
+    claim: "Sandefjord Fotball skildrer Eik-spillerens direkte frispark i 2025: «Sverre Martin Torp, skrur ballen rundt muren og rett i nettmaskene». Kun den observerte dødballutførelsen føres.",
+    source: "https://www.sandefjordfotball.no/nyheter/det-endte-med-uavgjort-mot-fk-eik-tonsberg-871",
+    sourceKind: "club"
+  },
+  // --- Sandefjord 2003: contemporary match report ---------------------------
+  {
+    playerId: "trym_bergman",
+    clubId: "sandefjord",
+    strengths: ["heading"],
+    claim: "Bergens Tidende beskriver første Sandefjord-målet mot Vålerenga 22.11.2003 som «en heading i krysset fra Trym Bergman» etter corner fra Frode Fredriksen. Kun det dokumenterte hodespillet føres.",
+    source: "https://www.bt.no/sport/i/K3pmRy/som-en-orgasme",
+    sourceKind: "press"
+  },
+  // --- Sandefjord 2008: documented headed injury-time winner ---------------
+  {
+    playerId: "espen_nystuen",
+    clubId: "sandefjord",
+    strengths: ["heading"],
+    claim: "Stavanger Aftenblad 12.04.2008 beskriver Sandefjords seiersmål mot Sandnes Ulf: «Tre minutter på overtid satte Espen Nystuen inn seiersmålet med pannebrasken». Bare det dokumenterte hodespillet føres.",
+    source: "https://www.aftenbladet.no/sport/i/G1vk9q/sandnes-tap-paa-overtid",
+    sourceKind: "press"
+  },
+  // --- Sandefjord 2005: coach's individual evaluation -----------------------
+  {
+    playerId: "geir_ludvig_fevang",
+    clubId: "sandefjord",
+    strengths: ["heading", "chance_creation"],
+    claim: "Sandefjords tidligere trener Tom Nordlie sier til Stavanger Aftenblad 25.10.2005 at Fevang er «god i lufta, kreativ» og teknisk/taktisk dyktig. Luftspill føres som heading, kreativitet som chance_creation i tråd med ferdighetsvokabularet; vision kan ikke utledes av formuleringen, og målstatistikk gir ingen avslutningsstyrke.",
+    source: "https://www.aftenbladet.no/sport/i/pLLKnW/nordlie-henter-ny-sandefjord-spiller",
+    sourceKind: "press"
+  }
 ];
 
 export const SOURCE_DEPTH_DOCUMENTED = Object.freeze(documented.map((entry) => Object.freeze({
