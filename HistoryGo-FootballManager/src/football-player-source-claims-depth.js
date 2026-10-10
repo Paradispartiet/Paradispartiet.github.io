@@ -221,7 +221,160 @@ const documented = [
     claim: "«Harmeet er en klassespiller. Samtidig er han en rollemodell for de yngre spillerne våre, en leder på og utenfor banen», sier daglig leder Espen Bugge Pettersen.",
     source: "https://www.sandefjordfotball.no/nyheter/harmeet-i-to-nye-ar--gleder-meg-til-a-fortsette-her",
     sourceKind: "club"
+  },
+  {
+    // Sandefjord-pilot: eksplisitte spilleregenskaper fra hovedtreneren.
+    playerId: "lars_grorud",
+    clubId: "sandefjord",
+    strengths: ["duels", "leadership"],
+    claim: "«strong in duels» og «He is a leader in the dressing room»",
+    source: "https://www.sandefjordfotball.no/nyheter/grorud-blir-med-videre",
+    sourceKind: "club"
+  },
+  {
+    // Sandefjord 09.07.2021: club explicitly describes his pace.
+    playerId: "brice_wembangomo",
+    clubId: "sandefjord",
+    strengths: ["pace"],
+    claim: "Sandefjord Fotball omtaler Brice Wembangomo som «den hurtige høyrebacken». Bare hurtighet registreres som individuelt dokumentert styrke.",
+    source: "https://www.sandefjordfotball.no/nyheter/brice-veldig-glad-i-sandefjord",
+    sourceKind: "club"
+  },
+  {
+    // Sandefjord: Aftenposten described the player as a fast right-back/winger.
+    playerId: "vidar_ari_jonsson",
+    clubId: "sandefjord",
+    strengths: ["pace"],
+    claim: "Aftenposten omtaler Vidar Ari Jónsson som «en hurtig høyreback/kantspiller». Kun hurtighet er ført som individuelt dokumentert styrke.",
+    source: "https://www.aftenposten.no/sport/fotball/i/GGjLeV/tromsoe-tester-to-islendinger-vi-har-faatt-veldig-bra-rapporter-paa-dem",
+    sourceKind: "press"
+  },
+  {
+    // Emil Dahle assessed Kirkevold's speed and strength in April 2015.
+    playerId: "pal_alexander_kirkevold",
+    clubId: "sandefjord",
+    strengths: ["pace", "strength"],
+    claim: "Emil Dahle: «han er ganske rask og sterk».",
+    source: "https://www.aftenbladet.no/sport/i/kJa0Ov/kompisduell-paa-soer-arena",
+    sourceKind: "press"
+  },
+  {
+    // 2018: Sarpsborg 08 quotes Ruud Tveter and its director on individual traits.
+    playerId: "alexander_ruud_tveter",
+    clubId: "sandefjord",
+    strengths: ["strength", "hold_up_play", "pace"],
+    claim: "Ruud Tveter: «en stor, sterk spiss som er god til å holde på ballen»; sportssjef Berntsen: «sterk, rask».",
+    source: "https://www.sarpsborg08.no/nyheter/siste-spissbrikke-pa-plass",
+    sourceKind: "club"
+  },
+  {
+    // 2022: editorial explicitly characterizes Høibråten's defending in duels.
+    playerId: "marius_hoibraten",
+    clubId: "sandefjord",
+    strengths: ["duels"],
+    claim: "Eurosport beskriver Marius Høibråten som «Kompromissløs duellstopper».",
+    source: "https://www.eurosport.no/fotball/eliteserien/2021/se-hele-listen-dette-var-eliteseriens-50-beste-spillere-i-2022_sto9292645/story.shtml",
+    sourceKind: "press"
+  },
+  {
+    // 2008: Bjørn Tore Kvarme describes Demidov's strength in direct contests.
+    playerId: "vadim_demidov",
+    clubId: "sandefjord",
+    strengths: ["duels"],
+    claim: "Bjørn Tore Kvarme om Demidov: «Han er sterk i duellspillet».",
+    source: "https://www.aftenposten.no/sport/fotball/i/4qbgBe/imponert-over-demidov",
+    sourceKind: "press"
+  },
+  {
+    // 2006: long-range volley after which Knarvik described his own repeatable skill.
+    playerId: "tommy_knarvik",
+    clubId: "sandefjord",
+    strengths: ["long_shots"],
+    claim: "Etter volley fra rundt 25 meter sa Knarvik: «Jeg står alltid i returrommet på cornere, og bruker å være flink til å komme til slike avlutninger».",
+    source: "https://www.nettavisen.no/sport/dromme-scoringen-var-planlagt/s/12-95-715467",
+    sourceKind: "press"
+  },
+  {
+    playerId: "iven_austbo",
+    clubId: "sandefjord",
+    strengths: ["command_of_area"],
+    claim: "Keepertrener Kurt Hegre: «Iven tar mye i feltet. Han har vist at han behersker den delen av spillet».",
+    source: "https://www.bt.no/sport/i/kJJn4k/austboe-forberedt-paa-keeperkrig-i-1-divisjon",
+    sourceKind: "press"
+  },
+  {
+    playerId: "kristoffer_normann_hansen",
+    clubId: "sandefjord",
+    strengths: ["finishing", "movement"],
+    claim: "Eurosport: «Er en fantastisk avslutter og er flink til å komme i avslutningsposisjon».",
+    source: "https://www.eurosport.no/fotball/obos-ligaen/2018/arets-lag-i-obos-ligaen-kanskje-ikke-den-kjekkeste-men-en-av-de-viktigstefot_sto7033434/story.shtml",
+    sourceKind: "press"
+  },
+  {
+    playerId: "kjell_rune_sellin",
+    clubId: "sandefjord",
+    strengths: ["pace", "finishing"],
+    claim: "Kongsvingers sportslige leder beskriver Sellin som «en gjennombruddshissig, hurtig spiss med gode avslutteregenskaper».",
+    source: "https://www.dagsavisen.no/sport/rbk-leier-ut/8323110",
+    sourceKind: "press"
+  },
+  {
+    playerId: "jorgen_jalland",
+    clubId: "sandefjord",
+    strengths: ["movement"],
+    claim: "Bergens Tidende om Jalland: «Søker mye inn i mellomrommet, og blir mer oppspillpunkt enn pasningsspiller».",
+    source: "https://www.bt.no/sport/i/Op3Oll/usikker-paa-fire-plasser",
+    sourceKind: "press"
+  },
+  {
+    playerId: "abdoulaye_seck",
+    clubId: "sandefjord",
+    strengths: ["strength"],
+    claim: "VG Live om Seck: «senegaleseren har en vanvittig fysikk».",
+    source: "https://vglive.vg.no/fotball/sandefjord-molde/6437/rapport",
+    sourceKind: "press"
+  },
+  {
+    playerId: "espen_bugge_pettersen",
+    clubId: "sandefjord",
+    strengths: ["reflexes", "shot_stopping", "command_of_area"],
+    claim: "Lars Tjærnås: «Har hurtige reflekser, og er mest av alt en meget god skuddstopper. Har blitt flinkere til å time i feltarbeidet».",
+    source: "https://www.aftenbladet.no/sport/i/G1vyqx/lars-tjaernaas-kaarer-aarets-lag-i-eliteserien",
+    sourceKind: "press"
+  },
+  {
+    playerId: "andreas_augustsson",
+    clubId: "sandefjord",
+    strengths: ["strength", "duels", "simple_passing"],
+    claim: "Sandefjord-trener Tor Thodesen: «Han har alt; sterk fysikk, god i dueller og fine pasninger».",
+    source: "https://www.bt.no/sport/i/Addy2E/viking-saa-sandefjord-stopper-augustsson",
+    sourceKind: "press"
+  },
+  {
+    playerId: "lars_iver_strand",
+    clubId: "sandefjord",
+    strengths: ["stamina"],
+    claim: "Etter en løpstest: «På en såkalt jojotest (en løpstest lik blip-testen) for to uker siden var han best på laget».",
+    source: "https://www.bt.no/sport/i/2G833B/droemmejobb-for-strand",
+    sourceKind: "press"
+  },
+  {
+    playerId: "fredrik_thorsen",
+    clubId: "sandefjord",
+    strengths: ["pressing"],
+    claim: "ffksupporter.net beskriver Thorsen som «Norges beste defensive spiss» og fremhever at han fungerer som «førsteforsvarer».",
+    source: "https://ffksupporter.net/nyheter/1165-det-lekne-andreaaret/",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "havard_storbaek",
+    clubId: "sandefjord",
+    strengths: ["work_rate", "stamina", "late_runs"],
+    claim: "Vålerenga-trener Petter Myhre: «Han er en hardtarbeidende og løpssterk midtbanespiller som er flink til å komme inn i boksen og målfarlig».",
+    source: "https://www.nettavisen.no/sentrale-spillere-ute-mot-nybergsund/s/12-95-1245039",
+    sourceKind: "press"
   }
+
 ];
 
 export const SOURCE_DEPTH_DOCUMENTED = Object.freeze(documented.map((entry) => Object.freeze({

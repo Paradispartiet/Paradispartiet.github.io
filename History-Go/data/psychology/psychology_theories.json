@@ -1,0 +1,732 @@
+{
+  "schema": "history_go_psychology_theory_room_v1",
+  "version": "1.0.0",
+  "fagverk_subject": "psykologi",
+  "introduction": "Teorikort gir en orientering. Fagverkets kapitler og kilder er autoritativ fordypning. Modeller er verktøy for å analysere fenomener, ikke for å diagnostisere personer.",
+  "safety_note": "Undervisningseksemplene er hypotetiske, ikke dokumenterte pasienthistorier eller selvtester. Psykologrommet gir ikke kliniske vurderinger.",
+  "chapters": [
+    {
+      "id": "fagtradisjoner-teori-og-sinnet",
+      "title": "Fagtradisjoner og teorier"
+    },
+    {
+      "id": "kognisjon-folelser-og-atferd",
+      "title": "Kognisjon, følelser og atferd"
+    },
+    {
+      "id": "utvikling-oppvekst-og-laring",
+      "title": "Utvikling og læring"
+    },
+    {
+      "id": "sosialpsykologi-normalitet-og-stigma",
+      "title": "Sosialpsykologi"
+    },
+    {
+      "id": "traume-krise-resiliens-og-omsorg",
+      "title": "Krise og resiliens"
+    },
+    {
+      "id": "psykisk-helse-institusjoner-og-behandling",
+      "title": "Psykisk helse og behandling"
+    }
+  ],
+  "theories": [
+    {
+      "id": "psykoanalyse",
+      "title": "Psykoanalyse",
+      "chapter_id": "fagtradisjoner-teori-og-sinnet",
+      "emne_id": "em_psy_psykoanalyse",
+      "founders": "Sigmund Freud og senere psykodynamiske tradisjoner",
+      "period": "Fra 1890-årene",
+      "idea": "Psykoanalysen er en historisk fortolknings- og behandlingstradisjon der Freud knyttet symptomer og drømmer til ubevisste konflikter og tidligere relasjoner. Dette er teoripåstander, ikke påviste universelle årsaker.",
+      "method": "Historisk tekstkritikk, kliniske kasus og fortolkende samtale; bestemte hypoteser kan undersøkes empirisk, men ikke alle begrepene er lett operasjonaliserbare.",
+      "limit": "Historisk innflytelse og kliniske fortellinger viser ikke i seg selv at symbolske tolkninger eller bestemte ubevisste mekanismer er empirisk bekreftet. Effekten av ulike psykodynamiske behandlingsformer må vurderes i egne behandlingsstudier.",
+      "example": "Undervisningsscenario: En student blir nervøs før muntlig prøve. En psykodynamisk tilnærming spør hva situasjonen minner om og hvilke relasjonelle forventninger som aktiveres.",
+      "example_secondary": "Undervisningsscenario: En forsker leser en anonymisert historisk kasusbeskrivelse fra tidlig psykoanalyse og skiller pasientens egne utsagn fra analytikerens etterfølgende tolkninger. Gruppen drøfter hvilke påstander som kan etterprøves uavhengig.",
+      "contrast": "Kognitiv psykologi undersøker oppmerksomhet, minne og informasjonsbearbeiding ved operasjonaliserbare hypoteser og eksperimenter; funn om automatisk bearbeiding verifiserer ikke dermed Freuds dynamiske ubevisste.",
+      "compare_with": "kognitiv_psykologi",
+      "related_phenomena": [
+        "ruminasjon"
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "reference_links": [
+        {
+          "title": "Freud Museum – historisk grunnlegger og museumsarkiv",
+          "url": "https://www.freud.org.uk/about-us/",
+          "supports": "Historisk identitet og fagets arv; ikke klinisk effekt.",
+          "canonical_claim_ids": [
+            "fti-08"
+          ],
+          "canonical_source_ids": [
+            "src-freud-museum-about"
+          ]
+        },
+        {
+          "title": "Library of Congress – Die Traumdeutung (1900-utgave)",
+          "url": "https://www.loc.gov/item/77450592/",
+          "supports": "Originalverkets bibliografi og utgivelseshistorie; verifiserer ikke modellens gyldighet.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Freud Museum – fagkritisk undervisningsopplegg",
+          "url": "https://www.freud.org.uk/education/higher-education/freud-and-his-legacy-therapy-psychology-neuroscience/",
+          "supports": "Hvorfor historisk betydning, forskningsstatus og begrensninger må vurderes separat.",
+          "canonical_claim_ids": [
+            "fti-09"
+          ],
+          "canonical_source_ids": [
+            "src-freud-legacy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "behaviorisme",
+      "title": "Behaviorisme og operant læring",
+      "chapter_id": "fagtradisjoner-teori-og-sinnet",
+      "emne_id": "em_psy_betinging_vaner",
+      "founders": "John B. Watson og B. F. Skinner",
+      "period": "Fra 1913; særlig 1930–1960-årene",
+      "idea": "Watsons metodiske behaviorisme gjorde observerbar atferd til forskningsobjekt; Skinner videreutviklet operant analyse, der konsekvenser og forsterkningsbetingelser påvirker hvor ofte handlinger gjentas. Negativ forsterkning er ikke det samme som straff.",
+      "method": "Kontrollerte læringsforsøk, systematisk observasjon og måling av atferdsfrekvens.",
+      "limit": "Eksperimentelle læringsprinsipper kan beskrive atferd under bestemte betingelser, men gir ikke alene full informasjon om subjektiv opplevelse, biologiske forutsetninger eller sosial kontekst; generalisering krever undersøkelser.",
+      "example": "Undervisningsscenario: Et varsel avbryter lesing. En atferdsanalyse undersøker hva som skjer rett før og etter at telefonen åpnes.",
+      "example_secondary": "Undervisningsscenario: I en kontrollert læringsoppgave fjernes en plagsom lyd når en deltaker utfører en bestemt handling. Studentene analyserer om økt handlingsfrekvens viser negativ forsterkning, og hvorfor dette ikke er straff.",
+      "contrast": "Sosial læringsteori legger til at mennesker kan lære ved å observere andre, også uten å utføre handlingen selv.",
+      "compare_with": "sosial_laring",
+      "related_phenomena": [
+        "unngaelsesforsterkning"
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "reference_links": [
+        {
+          "title": "Watson (1913) – Psychology as the Behaviorist Views It",
+          "url": "https://doi.org/10.1037/h0074428",
+          "supports": "Primærtekst om objektiv atferdsforskning; publikasjonsår og tidlig behaviorisme.",
+          "canonical_claim_ids": [
+            "fti-10"
+          ],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Harvard – B. F. Skinners operante forskning",
+          "url": "https://psychology.fas.harvard.edu/people/b-f-skinner",
+          "supports": "Eksperimentelle læringsbetingelser, forsterkning, atferdsregistrering og historisk bakgrunn.",
+          "canonical_claim_ids": [
+            "fti-11",
+            "fti-12"
+          ],
+          "canonical_source_ids": [
+            "src-harvard-skinner"
+          ]
+        },
+        {
+          "title": "B. F. Skinner Foundation – Science and Human Behavior (1953)",
+          "url": "https://www.bfskinner.org/publications/books/",
+          "supports": "Bibliografisk verifikasjon av forskerens sentrale bok, ikke selvstendig effektbevis.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        }
+      ],
+      "related_emne_links": [
+        {
+          "emne_id": "em_psy_atferd_laring",
+          "title": "Atferd og læring",
+          "why": "Behaviorisme og operant betinging er en del av dette emnets dokumenterte teori- og metodegrunnlag; subjektiv opplevelse krever andre forklaringsnivåer.",
+          "claim_ids": [
+            "fti-10",
+            "fti-11"
+          ],
+          "source_ids": [
+            "src-apa-behaviorism",
+            "src-harvard-skinner"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kognitiv_psykologi",
+      "title": "Kognitiv psykologi",
+      "chapter_id": "fagtradisjoner-teori-og-sinnet",
+      "emne_id": "em_psy_hjerne_kognisjon",
+      "founders": "Ulric Neisser og forskere i den kognitive vendingen",
+      "period": "Særlig fra 1950- og 1960-årene",
+      "idea": "Persepsjon, hukommelse, språk og problemløsning undersøkes som informasjonsbearbeiding og mentale representasjoner.",
+      "method": "Reaksjonstidseksperimenter, hukommelses- og oppmerksomhetsoppgaver og sammenligning av eksplisitte prosessmodeller med data; mentale representasjoner er teoretiske størrelser som undersøkes indirekte.",
+      "limit": "At en prosessmodell passer en eksperimentell oppgave, beviser ikke at den er eneste mulige mekanisme eller beskriver hele en persons tenkning. Ulike oppgaver og konkurrerende modeller må prøves.",
+      "example": "Undervisningsscenario: To personer husker ulike detaljer fra samme forelesning. Man varierer oppmerksomhetskrav og gjenkalling i en kontrollert oppgave.",
+      "example_secondary": "Undervisningsscenario: To forsøksgrupper gjenkaller ord fra den samme listen, men bare én får en distraksjonsoppgave mellom innlæring og test. Studentene skiller observasjonen fra konkurrerende teorier om hukommelse.",
+      "contrast": "Behaviorismen prioriterer observerbar handling og læringsbetingelser; kognitiv teori tester også modeller for intern bearbeiding.",
+      "compare_with": "behaviorisme",
+      "related_phenomena": [
+        "arbeidsminne",
+        "oppmerksomhetsbias"
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "reference_links": [
+        {
+          "title": "Stanford Encyclopedia of Philosophy – Cognitive Science",
+          "url": "https://plato.stanford.edu/archives/spr2026/entries/cognitive-science/",
+          "supports": "Historisk kognitiv vending, mentale representasjoner, eksperimenter og modelltesting.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Salk Library – Neisser, Cognitive Psychology (1967)",
+          "url": "https://jonas.salk.edu/cgi-bin/koha/opac-detail.pl?biblionumber=4239",
+          "supports": "Bibliografisk dokumentasjon av Neissers sentrale verk; ikke effektbevis.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "humanistisk_psykologi",
+      "title": "Humanistisk psykologi",
+      "chapter_id": "fagtradisjoner-teori-og-sinnet",
+      "emne_id": "em_psy_selv_utvikling_mening",
+      "founders": "Carl Rogers og Abraham Maslow",
+      "period": "Særlig fra 1950-årene",
+      "idea": "Rogers' personsentrerte perspektiv fremhever subjektiv erfaring, empati og terapeutisk relasjon; Maslows motivasjonsteori fremhever behov og utviklingsmuligheter. Dette er beslektede, men ikke identiske bidrag.",
+      "method": "Begreps- og teorihistorisk analyse, kvalitative beskrivelser og forskning på relasjoner og motivasjon. Rogers' forslag til terapeutiske betingelser er hypoteser som må skilles fra senere empiriske effektstudier.",
+      "limit": "Rogers' seks betingelser fra 1957 er en teoretisk påstand om terapeutisk endring, ikke dokumentasjon for at betingelsene alltid er tilstrekkelige. Maslows behovshierarki fra 1943 gir heller ikke en universell, empirisk fastlagt trapp for alle mennesker. Begreper som vekst må operasjonaliseres.",
+      "example": "Undervisningsscenario: En elev velger mellom en trygg studieretning og et sterkt faglig engasjement. Spørsmålet er hvordan valget oppleves og begrunnes.",
+      "example_secondary": "Undervisningsscenario: To studenter sammenligner Rogers' seks foreslåtte betingelser for terapeutisk endring med Maslows behovsteori. De utleder målbare hypoteser og markerer hva teorienes historiske originaltekster ikke dokumenterer.",
+      "contrast": "Behaviorisme analyserer primært observerbare læringsbetingelser og konsekvenser; humanistiske perspektiver vektlegger selvfortolkning, mening og relasjon. De belyser ulike sider og må undersøkes med ulike metoder.",
+      "compare_with": "behaviorisme",
+      "related_phenomena": [],
+      "reference_links": [
+        {
+          "title": "APA Dictionary – humanistisk perspektiv (Maslow og Rogers)",
+          "url": "https://dictionary.apa.org/humanistic-perspective",
+          "supports": "Beskriver humanistiske antakelser om erfaring, valgfrihet og vekst, og knytter Maslow og Rogers til tradisjonen. Dette er en fagdefinisjon, ikke dokumentasjon på klinisk effekt.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Carl Rogers (1957) – The Necessary and Sufficient Conditions of Therapeutic Personality Change",
+          "url": "https://doi.org/10.1037/h0045357",
+          "supports": "Originalartikkel om Rogers' hypotese om empati, ubetinget positiv aktelse og terapeutisk relasjon; en historisk teoripåstand, ikke endelig effektbevis.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Abraham Maslow (1943) – A Theory of Human Motivation",
+          "url": "https://doi.org/10.1037/h0054346",
+          "supports": "Primærpublikasjon for Maslows motivasjonsteori. Årstallet og verket er etterprøvbart; en universell behovstrapp eller klinisk virkning følger ikke av bibliografien.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "APA Handbook of Humanistic and Existential Psychology (2026)",
+          "url": "https://www.apa.org/pubs/books/apa-handbook-humanistic-existential-psychology",
+          "supports": "Dokumenterer et aktivt forskningsfelt med historiske, teoretiske, kvalitative og anvendte perspektiver; publiseringen beviser ikke at alle humanistiske hypoteser er riktige.",
+          "canonical_claim_ids": [
+            "fti-16"
+          ],
+          "canonical_source_ids": [
+            "src-apa-humanistic-handbook"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review"
+    },
+    {
+      "id": "femfaktormodellen",
+      "title": "Femfaktormodellen (Big Five)",
+      "chapter_id": "fagtradisjoner-teori-og-sinnet",
+      "emne_id": "em_psy_personlighet_individ",
+      "founders": "Lewis Goldberg, Paul Costa og Robert McCrae",
+      "period": "Utviklet gjennom trekkforskning på 1900-tallet",
+      "idea": "Femfaktormodellen beskriver personlighet langs fem kontinuerlige trekk: ekstraversjon, omgjengelighet, planmessighet, nevrotisisme (emosjonell ustabilitet) og åpenhet for erfaring. Dette er statistiske dimensjoner, ikke fem faste mennesketyper.",
+      "method": "Faktoranalyse av personbeskrivelser og spørreskjemadata, med kontroller av reliabilitet, konstruktvaliditet, informantforskjeller og om trekkstrukturen kan gjenfinnes i ulike utvalg.",
+      "limit": "Trekk er statistiske beskrivelser. En score er ingen diagnose og forklarer ikke alene atferd i en konkret situasjon.",
+      "example": "Undervisningsscenario: En forsker sammenligner selvrapporter over tid og kontrollerer målefeil i stedet for å plassere mennesker i typer.",
+      "example_secondary": "Undervisningsscenario: En og samme elev skårer ulikt på selvrapport og lærerrapport om planmessighet. Klassen diskuterer målefeil og situasjonsforskjeller, og hvorfor en trekkprofil ikke er en diagnose.",
+      "contrast": "HEXACO-modellen tester en alternativ seksdimensjonal trekkstruktur med ærlighet–ydmykhet-dimensjon. Sosial identitetsteori, som kan åpnes herfra, studerer gruppe- og situasjonseffekter snarere enn stabile individuelle trekk.",
+      "compare_with": "sosial_identitet",
+      "related_phenomena": [],
+      "reference_links": [
+        {
+          "title": "McCrae og John (1992) – An Introduction to the Five-Factor Model and Its Applications",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/1635039/",
+          "supports": "Fagfellevurdert artikkel om fem brede dimensjoner, trekkstruktur, faktoranalyse og modellens teoretiske rekkevidde; beskriver dimensjoner, ikke fem personlighetstyper.",
+          "canonical_claim_ids": [
+            "fti-21",
+            "fti-22"
+          ],
+          "canonical_source_ids": [
+            "src-pubmed-ffm"
+          ]
+        },
+        {
+          "title": "Widiger og Crego (2019) – The Five Factor Model of Personality Structure: An Update",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6732674/",
+          "supports": "Fagfellevurdert oppdatering av de fem trekkdomenene og deres nyanser. Støtter dimensjonsmodellen, ikke diagnostisering eller merking av enkeltpersoner.",
+          "canonical_claim_ids": [
+            "fti-21",
+            "fti-22"
+          ],
+          "canonical_source_ids": [
+            "src-pmc-ffm"
+          ]
+        },
+        {
+          "title": "Ashton og Lee (2007) – HEXACO som alternativ til femfaktormodellen",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18453460/",
+          "supports": "Fagfellevurdert drøfting av seksfaktormodellens struktur og påståtte forklaringsfordeler; dokumenterer en relevant alternativ modell, ikke at HEXACO alltid er best.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        }
+      ],
+      "source_review_state": "partial_historical_method_review"
+    },
+    {
+      "id": "heuristikker",
+      "title": "Heuristikker og kognitive skjevheter",
+      "chapter_id": "kognisjon-folelser-og-atferd",
+      "emne_id": "em_psy_kognitive_bias",
+      "founders": "Amos Tversky og Daniel Kahneman",
+      "period": "1970-årene og videre",
+      "idea": "Tversky og Kahneman viste hvordan tilgjengelighet, representativitet og ankring kan gi systematiske vurderingsskjevheter i bestemte oppgaver. Andre forskningsprogrammer undersøker når enkle heuristikker kan være presise og adaptive.",
+      "method": "Kontrollerte vurderings- og beslutningseksperimenter med spesifiserte normmodeller, ankerverdier eller alternative beskrivelser; funn må sammenholdes med målereliabilitet og de faktiske beslutningsmiljøene.",
+      "limit": "Effekter av ankring og innramming avhenger av oppgave, utvalg og beslutningsmiljø. At en gruppestudie finner en systematisk skjevhet, gir ikke grunnlag for å stemple en enkeltpersons meninger som irrasjonelle eller anta at enkle heuristikker alltid er feil.",
+      "example": "Undervisningsscenario: To tilfeldig fordelte grupper får to formuleringer av den samme beslutningen, én med vekt på mulige gevinster og én på tap. Forskerne sammenligner svarfordelingene uten å diagnostisere enkeltpersoners dømmekraft.",
+      "example_secondary": "Undervisningsscenario: Et annet forsøk varierer en tilfeldig tallverdi før deltakere anslår en ukjent størrelse. Forskerne undersøker ankring separat fra innramming, og sammenligner oppgavene med teorier om adaptive heuristikker.",
+      "contrast": "Økologisk rasjonalitet (Gigerenzer og Gaissmaier) undersøker når enkle heuristikker fungerer godt. Sosial identitetsteori, som kan åpnes herfra, forklarer i stedet hvordan gruppetilhørighet og normer påvirker vurderinger.",
+      "compare_with": "sosial_identitet",
+      "related_phenomena": [
+        "bekreftelsesbias",
+        "katastrofetanke"
+      ],
+      "reference_links": [
+        {
+          "title": "Tversky og Kahneman (1974) – Judgment under Uncertainty: Heuristics and Biases",
+          "url": "https://doi.org/10.1126/science.185.4157.1124",
+          "supports": "Primærartikkel om tilgjengelighet, representativitet og ankereffekter ved vurdering under usikkerhet; funn gjelder definerte eksperimentelle oppgaver.",
+          "canonical_claim_ids": [
+            "kfa-13"
+          ],
+          "canonical_source_ids": [
+            "src-judgment-uncertainty"
+          ]
+        },
+        {
+          "title": "Berthet (2021) – The Measurement of Individual Differences in Cognitive Biases",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7930832/",
+          "supports": "Review og empiriske studier om reliabilitetsutfordringer og kontekst i individuelle biasmål; støtter varsomhet med personslutninger fra enkeltoppgaver.",
+          "canonical_claim_ids": [
+            "kfa-14"
+          ],
+          "canonical_source_ids": [
+            "src-bias-measurement"
+          ]
+        },
+        {
+          "title": "Tversky og Kahneman (1981) – The Framing of Decisions and the Psychology of Choice",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/7455683/",
+          "supports": "Primærartikkel om framing og preferanseendring under forskjellig presentasjon av beslutninger; er belegg for det hypotetiske framing-eksemplets teoretiske tilknytning.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Gigerenzer og Gaissmaier (2011) – Heuristic Decision Making",
+          "url": "https://doi.org/10.1146/annurev-psych-120709-145346",
+          "supports": "Fagfellevurdert oversikt over adaptive heuristikker og økologisk rasjonalitet som alternativt forskningsprogram; gir ikke én generell overlegenhetsregel.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "related_emne_links": [
+        {
+          "emne_id": "em_psy_beslutning_valg",
+          "title": "Beslutning og valg",
+          "why": "Heuristikker inngår i beslutningsforskningen, men må skilles fra framing og teorier om økologisk rasjonalitet.",
+          "claim_ids": [
+            "kfa-13"
+          ],
+          "source_ids": [
+            "src-judgment-uncertainty"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stressvurdering",
+      "title": "Stress og kognitiv vurdering",
+      "chapter_id": "kognisjon-folelser-og-atferd",
+      "emne_id": "em_psy_stress_belastning",
+      "founders": "Richard Lazarus og Susan Folkman",
+      "period": "Særlig fra 1960- til 1980-årene",
+      "idea": "I Lazarus og Folkmans transaksjonelle modell knyttes stress og mestring til vurdering av hva som står på spill (primær vurdering), hvilke handlingsmuligheter man ser (sekundær vurdering), og situasjonens faktiske krav.",
+      "method": "Dagbok- og spørreskjemastudier samt analyser innen samme person av sammenhenger mellom situasjonsvurdering, mestringsstrategier og utfall; sammenhenger er ikke automatisk kausale effekter.",
+      "limit": "Vurderingsmodellen erstatter ikke fysiologisk stressforskning og betyr ikke at belastning er «bare en tanke».",
+      "example": "Undervisningsscenario: To deltakere får samme krevende oppgave, men ulik informasjon om tilgjengelig støtte.",
+      "example_secondary": "Undervisningsscenario: En dagbokstudie følger hvordan den samme personen vurderer krav, støtte og handlemuligheter i ulike studiesituasjoner. Sammenhenger mellom vurdering og rapportert stress tolkes uten automatisk kausal konklusjon.",
+      "contrast": "Fysiologiske modeller måler kroppslige stressprosesser. Resiliensforskning, som kan åpnes herfra, følger dessuten tilpasning og beskyttelsesfaktorer over tid; stressvurdering undersøker situasjonens krav og mestringsmuligheter.",
+      "compare_with": "resiliens",
+      "related_phenomena": [
+        "stressrespons"
+      ],
+      "reference_links": [
+        {
+          "title": "Folkman, Lazarus mfl. (1986) – Dynamics of a Stressful Encounter",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/3712234/",
+          "supports": "Primærstudie som undersøker sammenhengen mellom primær vurdering, opplevde mestringsalternativer, coping og utfall. Støtter transaksjonell stressvurdering innenfor studiens design.",
+          "canonical_claim_ids": [
+            "kfa-26"
+          ],
+          "canonical_source_ids": [
+            "src-stress-appraisal"
+          ]
+        },
+        {
+          "title": "WHO – Stress (helseinformasjon)",
+          "url": "https://www.who.int/news-room/questions-and-answers/item/stress",
+          "supports": "Profesjonell innføring i kroppslige og psykiske stressreaksjoner og variasjon mellom mennesker. WHO-siden dokumenterer ikke én bestemt teoretisk mekanisme.",
+          "canonical_claim_ids": [
+            "kfa-25"
+          ],
+          "canonical_source_ids": [
+            "src-who-stress"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review"
+    },
+    {
+      "id": "tilknytning",
+      "title": "Tilknytningsteori",
+      "chapter_id": "utvikling-oppvekst-og-laring",
+      "emne_id": "em_psy_tilknytning_relasjon",
+      "founders": "John Bowlby og Mary Ainsworth",
+      "period": "Fra 1950-årene",
+      "idea": "Tidlige omsorgsrelasjoner kan forme forventninger om nærhet og trygghet, i samspill med senere erfaring og kontekst.",
+      "method": "Bowlbys teoretiske arbeid og Ainsworths feltobservasjoner, Baltimore-studier og strukturerte Strange Situation-prosedyre; senere longitudinelle studier og metaanalyser vurderer stabilitet og variasjon.",
+      "limit": "Tilknytningsklassifikasjoner gjelder relasjonelle mønstre under bestemte observasjonsprosedyrer, ikke diagnoser eller varige barnetyper. Metaanalysen av tidlig barndom rapporterte begrenset stabilitet (blant annet r = 0,28 for trygg/utrygg klassifikasjon) og tegn til publiseringsskjevhet. Gruppefunn kan ikke gi sikker prognose for et enkelt barn.",
+      "example": "Undervisningsscenario: Forskere analyserer observasjoner fra en standardisert, kort separasjons- og gjenforeningssituasjon, men trekker ingen slutning om enkeltbarnets omsorgshistorie fra én økt.",
+      "example_secondary": "Undervisningsscenario: Et metodekurs sammenligner en standardisert Strange Situation-klassifikasjon med en uavhengig oppfølgingsmåling senere i barndommen. Studentene vurderer stabilitet på gruppenivå, publiseringsskjevhet og hvorfor et enkelt barn ikke kan prognostiseres.",
+      "contrast": "Sosial læringsteori forklarer mer direkte hvordan observerte modeller og forventede konsekvenser kan påvirke handling.",
+      "compare_with": "sosial_laring",
+      "related_phenomena": [
+        "trygghetssokende_atferd"
+      ],
+      "reference_links": [
+        {
+          "title": "Early Childhood Attachment Stability and Change – metaanalyse (2020)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32772822/",
+          "supports": "Opie mfl.: publisert elektronisk i 2020, i tidsskriftets 2021-årgang. Metaanalyse av Strange Situation-baserte målinger i tidlig barndom (trygg/utrygg stabilitet r = 0,28; fireveis kappa = 0,23), med indikasjoner på publiseringsskjevhet. Kan ikke brukes til individklassifikasjon fra en enkelt hendelse.",
+          "canonical_claim_ids": [
+            "uol-04",
+            "uol-05",
+            "uol-06"
+          ],
+          "canonical_source_ids": [
+            "src-attachment-early-meta"
+          ]
+        },
+        {
+          "title": "Pinquart, Feussner og Ahnert (2013) – Meta-analytic Evidence for Stability in Attachments",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23210665/",
+          "supports": "Metaanalyse over barndom til tidlig voksenliv (rundt 21 000 tilknytningsmålinger) som viser moderat stabilitet og store tids- og kontekstforskjeller; ikke en skjebneprognose.",
+          "canonical_claim_ids": [
+            "uol-05",
+            "uol-26"
+          ],
+          "canonical_source_ids": [
+            "src-attachment-lifespan-meta"
+          ]
+        },
+        {
+          "title": "Rosmalen mfl. (2015) – opprinnelsen til Ainsworths Strange Situation",
+          "url": "https://doi.org/10.1002/jhbs.21729",
+          "supports": "Faghistorisk artikkel om instrumentets utvikling, forløpere og forskningskontekst; supplerer metaanalysene om stabilitet, men er ikke personlig diagnostikk.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        }
+      ],
+      "source_review_state": "partial_historical_method_review"
+    },
+    {
+      "id": "sosial_laring",
+      "title": "Sosial læring og mestringstro",
+      "chapter_id": "utvikling-oppvekst-og-laring",
+      "emne_id": "em_psy_sosial_utvikling",
+      "founders": "Albert Bandura",
+      "period": "Fra 1960-årene",
+      "idea": "Banduras observasjonslæring beskriver hvordan modeller kan påvirke læring uten at observatøren selv først belønnes; mestringstro betegner forventninger om egen evne til å utføre bestemte handlinger.",
+      "method": "Banduras modellæringsforsøk fra 1961 undersøkte barns imitasjon av bestemte voksne modeller under avgrensede betingelser. Mestringstro ble senere formulert som et eget teoretisk begrep (1977) som krever oppgavespesifikk måling; de to forskningsbidragene må ikke behandles som samme eksperiment.",
+      "limit": "Et laboratoriefunn om imitasjon viser ikke at barn automatisk kopierer observert atferd i andre sammenhenger. Mestringstro avhenger av oppgave, erfaring og kontekst og er ikke et generelt personlighetstrekk.",
+      "example": "Undervisningsscenario: En ny elev ser en medelev løse et vanskelig problem før eleven prøver selv.",
+      "example_secondary": "Undervisningsscenario: I to undervisningsgrupper demonstrerer en medstudent samme løsningsmetode, men det varierer om forsøksdeltakerne selv utfører oppgaven. Klassen skiller observasjonslæring fra selvrapportert mestringstro.",
+      "contrast": "Operant læring fokuserer på konsekvensene av egne handlinger; sosial læring inkluderer indirekte læring fra andres handlinger.",
+      "compare_with": "behaviorisme",
+      "related_phenomena": [
+        "laert_hjelpeloshet"
+      ],
+      "reference_links": [
+        {
+          "title": "Bandura, Ross og Ross (1961) – Transmission of Aggression Through Imitation",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/13864605/",
+          "supports": "Primærstudie om barns observasjon og imitasjon i et avgrenset forsøk. Den dokumenterer historisk modellæring, men ikke automatisk effekter i alle skole- og familiekontekster.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Bandura (1977) – Self-efficacy: Toward a Unifying Theory of Behavioral Change",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/847061/",
+          "supports": "Originalartikkel om mestringstro som teoretisk mekanisme. Publikasjonen alene dokumenterer ikke prediksjon eller kausalitet for alle individuelle handlinger.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        }
+      ],
+      "source_review_state": "partial_historical_method_review"
+    },
+    {
+      "id": "sosial_identitet",
+      "title": "Sosial identitetsteori",
+      "chapter_id": "sosialpsykologi-normalitet-og-stigma",
+      "emne_id": "em_psy_grupper_roller",
+      "founders": "Henri Tajfel og John Turner",
+      "period": "Fra 1970-årene",
+      "idea": "Sosial identitetsteori undersøker hvordan sosial kategorisering og identifikasjon kan påvirke vurderinger av egen- og utgrupper; minimumsgruppeforskning viser at kategorisering kan spille en rolle også uten langvarig rivalisering.",
+      "method": "Minimalgruppeeksperimenter undersøker hvordan vilkårlig kategorisering kan påvirke fordeling av belønning mellom egen- og utgruppe. Feltstudier og spørreundersøkelser prøver gruppeidentifikasjon og normer i andre situasjoner; denne generaliseringen må etterprøves separat.",
+      "limit": "Gruppeeffekter er kontekstuelle; teori om gruppeprosesser legitimerer ikke stereotypier om enkeltpersoner.",
+      "example": "Undervisningsscenario: To tilfeldig fordelte studentgrupper vurderer de samme forslagene under ulike gruppemerker.",
+      "example_secondary": "Undervisningsscenario: En klasse får to tilfeldige gruppeetiketter og fordeler poeng mellom anonyme mottakere. Studentene vurderer om fordelingene støtter en minimalgruppeeffekt uten å slutte at virkelig gruppekonflikt alltid har samme årsak.",
+      "contrast": "Realistisk konfliktteori (Sherif) fremhever konkurranse og felles mål som gruppeprosesser; sosial identitet fremhever også kategorisering uten ressurskonflikt. Femfaktormodellen, som kan åpnes herfra, beskriver individuelle trekk på et annet nivå.",
+      "compare_with": "femfaktormodellen",
+      "related_phenomena": [
+        "sosial_sammenligning"
+      ],
+      "reference_links": [
+        {
+          "title": "Tajfel, Billig, Bundy og Flament (1971) – Social Categorization and Intergroup Behaviour",
+          "url": "https://doi.org/10.1002/ejsp.2420010202",
+          "supports": "Originalstudier av kategorisering og inngruppefavorisering i minimalistiske fordelingsoppgaver. Et historisk forløperbidrag, ikke belegg for alle senere påstander i sosial identitetsteori.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Spears (2021) – Social Influence and Group Identity",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32931718/",
+          "supports": "Fagfellevurdert oversikt over normer, gruppeidentifikasjon og sosial påvirkning, med kontekstuelle moderatorer. Støtter ikke å stereotypisere enkeltpersoner.",
+          "canonical_claim_ids": [
+            "sns-01"
+          ],
+          "canonical_source_ids": [
+            "src-social-identity-influence"
+          ]
+        },
+        {
+          "title": "Sherif mfl. (1954/1961) – Intergroup Conflict and Cooperation, forskningsdesign",
+          "url": "https://www.yorku.ca/pclassic/Sherif/chap2.htm",
+          "supports": "Digitalisert primærverk fra intergruppeforskning om konflikt, samarbeid og konkurrerende mål; dokumenterer et annet analytisk forskningsprogram, ikke resultatet for enhver gruppe.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        }
+      ],
+      "source_review_state": "partial_historical_method_review"
+    },
+    {
+      "id": "konformitet",
+      "title": "Konformitet og sosial påvirkning",
+      "chapter_id": "sosialpsykologi-normalitet-og-stigma",
+      "emne_id": "em_psy_sosial_pavirkning",
+      "founders": "Solomon Asch og senere sosialpsykologer",
+      "period": "Særlig fra 1950-årene",
+      "idea": "Gruppenormer og opplevd sosialt press kan påvirke svar og beslutninger, også når oppgaven virker enkel.",
+      "method": "Asch-lignende laboratorieforsøk måler svar under et enstemmig flertall. Bond og Smith (1996) samlet 133 sammenlignbare oppgavesett fra 17 land og analyserte tids- og kulturvariasjon; dette er ikke alle former for lydighet eller sosial påvirkning.",
+      "limit": "Aschs klassiske resultater kan ikke brukes som en fast, universell konformitetsrate. Metaanalyser av Asch-lignende oppgaver finner variasjon mellom land og perioder; gruppefunn beskriver ikke enkeltpersoner.",
+      "example": "Undervisningsscenario: En deltaker hører flere andre gi samme åpenbart feilaktige svar før det er egen tur.",
+      "example_secondary": "Undervisningsscenario: En replikasjonsøvelse sammenligner svar på en enkel linjeoppgave når flertallet svarer høyt eller anonymt. Studentene undersøker gruppesammensetning og måleopplegg fremfor å beregne en universell lydighetsprosent.",
+      "contrast": "Sosial identitetsteori undersøker hvorfor gruppen betyr noe for selvforståelsen, mens konformitetsstudier måler påvirkning i konkrete situasjoner.",
+      "compare_with": "sosial_identitet",
+      "related_phenomena": [
+        "fundamental_attribusjonsfeil"
+      ],
+      "reference_links": [
+        {
+          "title": "Solomon Asch (1956) – Studies of Independence and Conformity",
+          "url": "https://doi.org/10.1037/h0093718",
+          "supports": "Originaleksperimenter om gruppetrykk og svar under avgrensede laboratoriebetingelser. Replikasjon, kulturell generalisering og moderne online-kontekster trenger egen litteratur.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Spears (2021) – Social Influence and Group Identity",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32931718/",
+          "supports": "Review som sammenligner sosial identitet med normativ og informativ påvirkning og drøfter anonymitet og kontekst. Støtter gruppeidentifikasjon som moderator, ikke universell lydighet.",
+          "canonical_claim_ids": [
+            "sns-06"
+          ],
+          "canonical_source_ids": [
+            "src-social-identity-influence"
+          ]
+        },
+        {
+          "title": "Bond og Smith (1996) – Culture and Conformity, metaanalyse",
+          "url": "https://doi.org/10.1037/0033-2909.119.1.111",
+          "supports": "Metaanalyse av 133 Asch-lignende studier fra 17 land, som undersøker tids- og kulturvariasjon; studiene gjelder bestemte oppgaver, ikke universelle individrater.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "related_emne_links": [
+        {
+          "emne_id": "em_psy_sosial_kontroll",
+          "title": "Sosial kontroll",
+          "why": "Konformitet er ett fenomen under uformell sosial påvirkning og gruppenormer; emnet omfatter også formell kontroll og strukturelle forhold.",
+          "claim_ids": [
+            "sns-04"
+          ],
+          "source_ids": [
+            "src-norm-psychology"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "resiliens",
+      "title": "Resiliens og beskyttelsesfaktorer",
+      "chapter_id": "traume-krise-resiliens-og-omsorg",
+      "emne_id": "em_psy_resiliens_mestring",
+      "founders": "Ann Masten og utviklingspsykologisk resiliensforskning",
+      "period": "Fra slutten av 1900-tallet",
+      "idea": "Utviklingspsykologisk resiliens betegner observerte tilpasningsforløp under betydelig belastning, i samspill mellom individ, relasjoner, beskyttende utviklingssystemer og sosiale ressurser, ikke en fast moralsk egenskap.",
+      "method": "Utviklingspsykologisk resiliens undersøkes i langsgående studier av tilpasning under belastning og kontekstuelle beskyttelsesfaktorer. Metaanalysen om sosial støtte og PTSD-symptomer gjelder i stedet selvrapportering hos traumeeksponerte voksne, og er et tilgrensende korrelasjonsbelegg – ikke et direkte mål på barns resiliens.",
+      "limit": "Zalta mfl. finner sammenheng mellom sosial støtte og færre selvrapporterte PTSD-symptomer hos voksne, men stor variasjon mellom studiene og korrelasjonsdesign utelukker enkel årsakstolkning. Dette må ikke forveksles med utviklingsstudier av barn. Resiliens er ingen moralsk plikt, diagnose eller personlig prognose.",
+      "example": "Undervisningsscenario: En studie følger hvordan skolemiljø og støtte fra voksne samvarierer med utvikling etter en belastende hendelse.",
+      "example_secondary": "Undervisningsscenario: I en hypotetisk longitudinell skoleundersøkelse følges både belastningsgrad og tilgjengelig voksenstøtte. Studentene skiller utviklingsutfall fra mål på voksnes selvrapporterte PTSD-symptomer og diskuterer mulige konfunderende faktorer.",
+      "contrast": "Stressvurderingsmodellen undersøker fortolkningen av krav og ressurser; resiliensstudier følger ofte tilpasning over lengre tid.",
+      "compare_with": "stressvurdering",
+      "related_phenomena": [
+        "affektregulering"
+      ],
+      "reference_links": [
+        {
+          "title": "Ann S. Masten (2001) – Ordinary Magic: Resilience Processes in Development",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11315249/",
+          "supports": "Historisk fagartikkel om beskyttende utviklingssystemer og resiliens som vanlige adaptive prosesser, ikke moralsk styrke eller uovervinnelighet.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Zalta mfl. (2021) – Social Support and Self-Reported PTSD Symptoms: Meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33271023/",
+          "supports": "Metaanalyse om sammenheng mellom sosial støtte og selvrapporterte PTSD-symptomer blant traumeeksponerte voksne; heterogenitet og studiedesign begrenser kausale og individuelle slutninger.",
+          "canonical_claim_ids": [
+            "tkr-20",
+            "tkr-24"
+          ],
+          "canonical_source_ids": [
+            "src-social-support-meta"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "related_emne_links": [
+        {
+          "emne_id": "em_psy_risiko_beskyttelse",
+          "title": "Risiko og beskyttelse",
+          "why": "Sosial støtte og beskyttelsesfaktorer inngår i resiliensforskning, men gruppesammenhenger er ikke sikre prognoser for enkeltpersoner.",
+          "claim_ids": [
+            "tkr-20"
+          ],
+          "source_ids": [
+            "src-social-support-meta"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kognitiv_terapi",
+      "title": "Kognitiv terapi og kognitiv atferdsterapi",
+      "chapter_id": "psykisk-helse-institusjoner-og-behandling",
+      "emne_id": "em_psy_behandlingsformer",
+      "founders": "Aaron T. Beck og Albert Ellis",
+      "period": "Fra 1950- og 1960-årene",
+      "idea": "Becks kognitive terapi undersøker forbindelser mellom fortolkning, følelser og handling; Ellis utviklet en beslektet, men egen rasjonell-emotiv terapitradisjon. Kognitiv atferdsterapi kombinerer ulike kognitive og atferdsrettede metoder.",
+      "method": "Randomiserte, indikasjonsspesifikke behandlingsstudier og metaanalyser med definerte sammenligningsgrupper og utfallsmål, kombinert med klinisk vurdering og oppfølging; bokhistorie alene er ikke effektbelegg.",
+      "limit": "Cuijpers mfl. (2023) fant effekt av CBT for depresjon mot kontrollbetingelser. Mot andre psykoterapier var hovedforskjellen svært liten (g = 0,06) og statistisk signifikant i hovedanalysen, men ikke robust i de fleste sensitivitetsanalysene. Funn om behandlet depresjon kan ikke overføres direkte til alle diagnoser, enkeltpasienter eller øvelser i History Go.",
+      "example": "Undervisningsscenario: En student tester alternative forklaringer på én konkret studiesituasjon, uten å trekke konklusjoner om diagnose.",
+      "example_secondary": "Undervisningsscenario: I en metodeøvelse sammenlignes to publiserte randomiserte depresjonsstudier med ulike kontrollgrupper. Studentene undersøker hvordan risiko for skjevhet og sammenligningsbehandling påvirker metaanalysens effektanslag, uten å gi behandlingsråd.",
+      "contrast": "Psykodynamiske terapier vektlegger ofte relasjonelle mønstre og fortolkning; kognitiv atferdsterapi prioriterer gjerne strukturerte mål og øvelser. Forskjell i teori betyr ikke dokumentert generell forskjell i behandlingseffekt.",
+      "compare_with": "psykoanalyse",
+      "related_phenomena": [
+        "alt_eller_ingenting_tenkning",
+        "ruminasjon"
+      ],
+      "reference_links": [
+        {
+          "title": "Beck, Rush, Shaw og Emery (1979) – Cognitive Therapy of Depression",
+          "url": "https://www.guilford.com/books/Cognitive-Therapy-of-Depression/Beck-Rush-Shaw-Emery/9781572305823/prior-editions",
+          "supports": "Forlagets bibliografiske dokumentasjon av den originale 1979-utgaven og kognitiv terapis fagtradisjon; bokkatalogen alene dokumenterer ikke behandlingsstørrelser.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Helsenorge – veiledet eBehandling basert på kognitiv atferdsterapi",
+          "url": "https://www.helsenorge.no/psykisk-helse/hjelp-og-behandling/ebehandling/",
+          "supports": "Autoritativ beskrivelse av et faktisk norsk behandlingsopplegg med henvisning og terapeutoppfølging. Ikke evidens for at et selvhjelpsverktøy i History Go er behandling.",
+          "canonical_claim_ids": [
+            "phi-07"
+          ],
+          "canonical_source_ids": [
+            "src-helsenorge-ebehandling"
+          ]
+        },
+        {
+          "title": "Cuijpers mfl. (2023) – CBT for depresjon, metaanalyse av 409 studier",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36640411/",
+          "supports": "Cuijpers mfl. (2023): 409 randomiserte studier, 518 sammenligninger og 52 702 deltakere. CBT viste effekt ved depresjon versus kontroll; versus andre psykoterapier var hovedforskjellen g = 0,06, men forsvant i de fleste sensitivitetsanalysene. Ingen generell effektpåstand for andre diagnoser eller History Go.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        }
+      ],
+      "source_review_state": "partial_historical_method_review"
+    },
+    {
+      "id": "biopsykososial_modell",
+      "title": "Biopsykososial modell",
+      "chapter_id": "psykisk-helse-institusjoner-og-behandling",
+      "emne_id": "em_psy_psykisk_helse",
+      "founders": "George L. Engel",
+      "period": "Fra 1977",
+      "idea": "Engels biopsykososiale modell er et integrerende medisinsk perspektiv der biologiske, psykologiske og sosiale forhold vurderes i sammenheng. Den er et rammeverk for spørsmål og analyser, ikke en enkelt testet årsakslov.",
+      "method": "Tverrfaglig vurdering og studier som måler spesifikke biologiske, psykologiske og sosiale variabler; rammeverket må omsettes til etterprøvbare hypoteser før det kan testes empirisk.",
+      "limit": "Engels originalartikkel (1977) foreslår et integrerende forsknings- og klinisk rammeverk, ikke en dokumentert årsaksfordeling mellom biologiske, psykologiske og sosiale faktorer. Hver konkret årsaks- eller behandlingspåstand trenger egne data og avgrenset modelltest.",
+      "example": "Undervisningsscenario: En forsker undersøker hvordan søvnmønster, arbeidssituasjon og sosial støtte kan påvirke samme rapporterte problem.",
+      "example_secondary": "Undervisningsscenario: To forskningsdesign for samme rapporterte søvnplage sammenlignes: ett registrerer bare fysiologi, ett måler i tillegg arbeidstid og sosial belastning. Klassen drøfter hvilke variabler som kan testes, og hvorfor rammeverket alene ikke viser årsak.",
+      "contrast": "En snevrere biomedisinsk sykdomsmodell prioriterer spesifikke biologiske mekanismer. Humanistisk psykologi, som kan åpnes herfra, fremhever erfaring og mening; biopsykososial analyse må i tillegg operasjonalisere flere forklaringsnivåer.",
+      "compare_with": "humanistisk_psykologi",
+      "related_phenomena": [
+        "stressrespons"
+      ],
+      "reference_links": [
+        {
+          "title": "George L. Engel (1977) – The Need for a New Medical Model",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/847460/",
+          "supports": "Originalartikkel i Science om hvorfor medisinske forklaringer bør inkludere biologiske, psykologiske og sosiale dimensjoner. Teoretisk ramme, ikke én testet universell årsaksmodell.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "WHO (2021) – Guidance on Community Mental Health Services",
+          "url": "https://www.who.int/publications/i/item/9789240025707",
+          "supports": "Normativ veiledning om personorienterte og rettighetsbaserte psykiske helsetjenester. Underbygger tjeneste- og samfunnskontekst, ikke i seg selv empirisk validering av Engels modell.",
+          "canonical_claim_ids": [
+            "phi-03"
+          ],
+          "canonical_source_ids": [
+            "src-who-guidance"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review"
+    }
+  ]
+}
