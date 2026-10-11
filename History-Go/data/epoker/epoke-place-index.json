@@ -10470,6 +10470,113 @@
               }
             },
             {
+              "place_id": "arbeiderbladet_youngstorget",
+              "name": "Arbeiderbladet / Dagsavisen – Youngstorget",
+              "category": "media",
+              "source_file": "places/media/oslo/places_oslo_media/arbeiderbladet_youngstorget.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_arbeiderbladet_foundation",
+                  "year": 1884,
+                  "title": "Christian Holtermann Knudsen startet Vort Arbeide i 1884.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Første avisavsnitt om Vort Arbeide.",
+                      "url": "https://www.arbark.no/Utstilling/Arbeiderbevegelsens_tidsskrifter_og_aviser/Arbeiderbevegelsens_tidsskrifter_og_aviser.htm",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_foundation",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_arbeiderbladet_facsimile",
+                  "year": 1884,
+                  "title": "Faksimilen viser første nummer av Vort Arbeide, mai 1884, og er hentet fra et historieverks gjengivelse.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Summary og faktisk fil: No. 1, Mai, 1884. Bildedatoen er ikke redaksjonens innflyttingsdato.",
+                      "url": "https://commons.wikimedia.org/wiki/File:Vort_Arbeide_No_1_1884.jpg",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_facsimile",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_arbeiderbladet_social",
+                  "year": 1886,
+                  "title": "Avisen fikk navnet Social-Demokraten i 1886.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Navnelinje og første avisavsnitt.",
+                      "url": "https://www.arbark.no/Utstilling/Arbeiderbevegelsens_tidsskrifter_og_aviser/Arbeiderbevegelsens_tidsskrifter_og_aviser.htm",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_social",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_arbeiderbladet_organ",
+                  "year": 1887,
+                  "title": "Avisen ble Arbeiderpartiets hovedorgan i 1887.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Første avisavsnitt.",
+                      "url": "https://www.arbark.no/Utstilling/Arbeiderbevegelsens_tidsskrifter_og_aviser/Arbeiderbevegelsens_tidsskrifter_og_aviser.htm",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_organ",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_arbeiderbladet_youngstorget_hasle_1988",
+                    "title": "Et nytt avishus med en omstridt flytting",
+                    "year": 1988,
+                    "type": "conflict"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "arbeidermuseet",
               "name": "Arbeidermuseet",
               "category": "historie",
@@ -11684,33 +11791,28 @@
               "source_file": "places/media/oslo/places_oslo_media/dagbladet_akersgata.json",
               "roles": [
                 {
-                  "id": "kultur_og_offentlighet",
-                  "label": "Kultur og offentlighet"
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
                 }
               ],
               "milestones": [
                 {
-                  "id": "story_st_dagbladet_akersgata_liberal_kulturpresse_1869",
+                  "id": "production_claim_dagbladet_foundation",
                   "year": 1869,
-                  "title": "Den radikale avisen i presseaksen",
-                  "consequence": "Dagbladet ble grunnlagt i 1869 som et radikalt opposisjonsorgan og fikk Akersgata som et konkret anker for norsk nyhets-, kultur- og kommentarjournalistikk.",
+                  "title": "Dagbladet ble grunnlagt i 1869 og hadde flere redaksjonsadresser før Akersgata 49.",
+                  "consequence": "",
                   "confidence": "",
                   "sources": [
                     {
-                      "title": "Store norske leksikon: Dagbladet",
-                      "url": "https://snl.no/Dagbladet",
-                      "verifiedAt": ""
-                    },
-                    {
-                      "title": "Oslo byleksikon: Dagbladet",
-                      "url": "https://oslobyleksikon.no/side/Dagbladet",
-                      "verifiedAt": ""
+                      "title": "Bakgrunn og Redaksjonslokaler",
+                      "url": "https://lokalhistoriewiki.no/wiki/Dagbladet",
+                      "verifiedAt": "2026-10-10"
                     }
                   ],
-                  "source_file": "data/runtime/stories-all/part-001.json",
-                  "evidence_type": "canonical_story",
-                  "claim_id": "",
-                  "story_id": "st_dagbladet_akersgata_liberal_kulturpresse_1869",
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_foundation",
+                  "story_id": "",
                   "limitations": []
                 }
               ],
@@ -11721,9 +11823,9 @@
                 "stories": [
                   {
                     "id": "st_dagbladet_akersgata_liberal_kulturpresse_1869",
-                    "title": "Den radikale avisen i presseaksen",
-                    "year": 1869,
-                    "type": "publishing"
+                    "title": "Da nattdesken fikk en nettutgave",
+                    "year": 1995,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -24420,8 +24522,8 @@
               }
             }
           ],
-          "placeCount": 121,
-          "milestoneCount": 476
+          "placeCount": 122,
+          "milestoneCount": 480
         },
         "historie_nasjon_massepolitikk_og_moderne_institusjoner": {
           "places": [
@@ -25131,6 +25233,121 @@
                     "title": "Da broen ble Eventyrbrua",
                     "year": 1937,
                     "type": "turning_point"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "arbeiderbladet_youngstorget",
+              "name": "Arbeiderbladet / Dagsavisen – Youngstorget",
+              "category": "media",
+              "source_file": "places/media/oslo/places_oslo_media/arbeiderbladet_youngstorget.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "konflikt_og_motstand",
+                  "label": "Konflikt og motstand"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_arbeiderbladet_name",
+                  "year": 1923,
+                  "title": "Navnet Arbeiderbladet ble tatt i bruk i 1923.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Navnelinjen.",
+                      "url": "https://www.arbark.no/Utstilling/Arbeiderbevegelsens_tidsskrifter_og_aviser/Arbeiderbevegelsens_tidsskrifter_og_aviser.htm",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_name",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_arbeiderbladet_site",
+                  "year": 1934,
+                  "title": "Arbeiderbladets redaksjon brukte Folketeaterbygningen ved Youngstorget fra 1934 til 1988, med avbrudd under okkupasjonen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Historikk: innflytting, okkupasjon og Grenseveien 50.",
+                      "url": "https://oslobyleksikon.no/side/Dagsavisen",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_site",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_arbeiderbladet_building",
+                  "year": 1934,
+                  "title": "Folketeaterbygningen har fasader mot Youngstorget 2 og Storgata 21/23 og ble tatt i bruk høsten 1934.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Innledning og Historikk.",
+                      "url": "https://oslobyleksikon.no/side/Folketeaterbygningen",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_building",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_arbeiderbladet_opening",
+                  "year": 1935,
+                  "title": "Bygningen ble offisielt innviet 2. april 1935.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Historikk, innvielsen.",
+                      "url": "https://oslobyleksikon.no/side/Folketeaterbygningen",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_opening",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_arbeiderbladet_youngstorget_hasle_1988",
+                    "title": "Et nytt avishus med en omstridt flytting",
+                    "year": 1988,
+                    "type": "conflict"
                   }
                 ]
               }
@@ -32600,7 +32817,7 @@
                       "verifiedAt": ""
                     }
                   ],
-                  "source_file": "data/runtime/stories-all/part-005.json",
+                  "source_file": "data/runtime/stories-all/part-006.json",
                   "evidence_type": "canonical_story",
                   "claim_id": "",
                   "story_id": "st_universitetet_i_oslo_blindern_campus_som_kunnskapsby",
@@ -33577,8 +33794,8 @@
               }
             }
           ],
-          "placeCount": 103,
-          "milestoneCount": 260
+          "placeCount": 104,
+          "milestoneCount": 264
         },
         "historie_krig_okkupasjon_og_etterkrigsoppgjor": {
           "places": [
@@ -34044,6 +34261,117 @@
                     "id": "st_akershus_slott_hvilket_akershus_skulle_bevares",
                     "title": "Hvilket Akershus skulle bevares?",
                     "year": 1905,
+                    "type": "conflict"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "arbeiderbladet_youngstorget",
+              "name": "Arbeiderbladet / Dagsavisen – Youngstorget",
+              "category": "media",
+              "source_file": "places/media/oslo/places_oslo_media/arbeiderbladet_youngstorget.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_arbeiderbladet_stop",
+                  "year": 1940,
+                  "title": "Arbeiderbladet ble stanset i august 1940; redaksjon og trykkeri ble overtatt av Fritt Folk.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Historikk: krigsårene.",
+                      "url": "https://oslobyleksikon.no/side/Dagsavisen",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_stop",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_arbeiderbladet_morning",
+                  "year": 1945,
+                  "title": "Arbeiderbladet ble morgenavis i september 1945.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Historikk: september 1945.",
+                      "url": "https://oslobyleksikon.no/side/Dagsavisen",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_morning",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_arbeiderbladet_resume",
+                  "year": 1945,
+                  "title": "Arbeiderbladet kom ut igjen i mai 1945.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Historikk: etter frigjøringen.",
+                      "url": "https://oslobyleksikon.no/side/Dagsavisen",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_resume",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_arbeiderbladet_photo1947",
+                  "year": 1947,
+                  "title": "Leif Krohn Ørnelunds foto fra 11. oktober 1947 viser Folketeaterbygningen mot Youngstorget.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Summary, Date, Author og Oslo Museum-lenke.",
+                      "url": "https://commons.wikimedia.org/wiki/File:Folketeaterbygningen_1947.jpg",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_photo1947",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_arbeiderbladet_youngstorget_hasle_1988",
+                    "title": "Et nytt avishus med en omstridt flytting",
+                    "year": 1988,
                     "type": "conflict"
                   }
                 ]
@@ -38077,8 +38405,8 @@
               }
             }
           ],
-          "placeCount": 49,
-          "milestoneCount": 121
+          "placeCount": 50,
+          "milestoneCount": 125
         },
         "historie_velferdsstat_kald_krig_og_sosialdemokrati": {
           "places": [
@@ -38616,6 +38944,94 @@
                     "title": "Fra beite ved Alna til parkdrag i Groruddalen",
                     "year": 1958,
                     "type": "environmental"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "arbeiderbladet_youngstorget",
+              "name": "Arbeiderbladet / Dagsavisen – Youngstorget",
+              "category": "media",
+              "source_file": "places/media/oslo/places_oslo_media/arbeiderbladet_youngstorget.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_arbeiderbladet_hirsti",
+                  "year": 1974,
+                  "title": "Reidar Hirsti var redaktør i 1963–1974 og ble avsatt av Arbeiderpartiets sentralstyre i 1974.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Historikk: Hirsti og etterfølgerne.",
+                      "url": "https://snl.no/Dagsavisen",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_hirsti",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_arbeiderbladet_selection",
+                  "year": 1975,
+                  "title": "Arbeiderpartiets landsmøte valgte avisens redaktør frem til 1975.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Første avisavsnitt: redaktørvalg.",
+                      "url": "https://www.arbark.no/Utstilling/Arbeiderbevegelsens_tidsskrifter_og_aviser/Arbeiderbevegelsens_tidsskrifter_og_aviser.htm",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_selection",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_arbeiderbladet_tech1976",
+                  "year": 1976,
+                  "title": "Avisen tok i bruk nytt sats- og trykkutstyr og Berliner-format i 1976.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Historikk: teknisk omlegging.",
+                      "url": "https://oslobyleksikon.no/side/Dagsavisen",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_tech1976",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_arbeiderbladet_youngstorget_hasle_1988",
+                    "title": "Et nytt avishus med en omstridt flytting",
+                    "year": 1988,
+                    "type": "conflict"
                   }
                 ]
               }
@@ -39292,6 +39708,140 @@
                     "title": "Kuppelen som falt i brannen",
                     "year": 1963,
                     "type": "accident"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "dagbladet_akersgata",
+              "name": "Dagbladet – Akersgata 49",
+              "category": "media",
+              "source_file": "places/media/oslo/places_oslo_media/dagbladet_akersgata.json",
+              "roles": [
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_dagbladet_demolition",
+                  "year": 1965,
+                  "title": "Den tidligere gården mot gaten ble revet i 1965.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Nummer 49, rivingen",
+                      "url": "https://oslobyleksikon.no/side/Akersgata",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_demolition",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_site",
+                  "year": 1967,
+                  "title": "Dagbladets redaksjon holdt til i avishuset i Akersgata 49 fra nybygget i 1967 til utflyttingen i 2008.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Redaksjonslokaler, nybygget og perioden 1967–2008",
+                      "url": "https://lokalhistoriewiki.no/wiki/Dagbladet",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_site",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_architects",
+                  "year": 1967,
+                  "title": "Gatepartiet fra 1967 ble tegnet av Thorleif Jensen, Ole Bue og Eiler Prytz.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Nummer 49, arkitektene",
+                      "url": "https://oslobyleksikon.no/side/Akersgata",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_architects",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_front",
+                  "year": 1967,
+                  "title": "Partiet av Dagbladets gård mot Akersgata er fra 1967.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Nummer 49, partiet mot gaten",
+                      "url": "https://oslobyleksikon.no/side/Akersgata",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_front",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_photo1968",
+                  "year": 1968,
+                  "title": "Oslo Museums foto OB.AH0606 viser Dagbladets avishus, fotografert av Sverre Heiberg i februar 1968.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Summary, Description, Date, Source og Author",
+                      "url": "https://commons.wikimedia.org/wiki/File:Akersgata_49_(Dagbladet)_OB.AH0606.jpg",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_photo1968",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_dagbladet_akersgata_liberal_kulturpresse_1869",
+                    "title": "Da nattdesken fikk en nettutgave",
+                    "year": 1995,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -45478,8 +46028,8 @@
               }
             }
           ],
-          "placeCount": 81,
-          "milestoneCount": 208
+          "placeCount": 83,
+          "milestoneCount": 216
         },
         "historie_senmoderne_globalisering_og_markedsvending": {
           "places": [
@@ -46523,6 +47073,245 @@
               }
             },
             {
+              "place_id": "arbeiderbladet_youngstorget",
+              "name": "Arbeiderbladet / Dagsavisen – Youngstorget",
+              "category": "media",
+              "source_file": "places/media/oslo/places_oslo_media/arbeiderbladet_youngstorget.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "konflikt_og_motstand",
+                  "label": "Konflikt og motstand"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_arbeiderbladet_stanghelle",
+                  "year": 1982,
+                  "title": "Harald Stanghelle arbeidet som journalist i Arbeiderbladet i 1982–1991.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Karriere.",
+                      "url": "https://snl.no/Harald_Stanghelle",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_stanghelle",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_arbeiderbladet_opposition",
+                  "year": 1986,
+                  "title": "Tor-Erik Røberg-Larsen forteller i et senere intervju at han som klubbleder i 1986 arbeidet mot planene om å flytte til Hasle.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Avsnittene om 1986 og redaksjonsklubbens motstand.",
+                      "url": "https://www.dagsavisen.no/nyheter/farvel-til-gutta-pa-sporten/5800886",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_opposition",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_arbeiderbladet_owner_view",
+                  "year": 1987,
+                  "title": "Partiets beretning 1987–1988 vurderer flytteprosjektet positivt og oppgir at det holdt budsjett og tidsplan.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "PDF-side 101 / trykt side 98: eiersidens vurdering, ikke uavhengig evaluering.",
+                      "url": "https://www.arbark.no/eldok/DNA1987_1.pdf",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_owner_view",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_arbeiderbladet_move",
+                  "year": 1988,
+                  "title": "Arbeiderbladet flyttet fra Youngstorget til Hasle i 1988.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "PDF-side 101 / trykt side 98: Nytt avishus og ny avisteknikk.",
+                      "url": "https://www.arbark.no/eldok/DNA1987_1.pdf",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_move",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_arbeiderbladet_hasle",
+                  "year": 1988,
+                  "title": "Den nye adressen i 1988 var Grenseveien 50.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Historikk: flytting til Hasle.",
+                      "url": "https://oslobyleksikon.no/side/Dagsavisen",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_hasle",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_arbeiderbladet_youngstorget_hasle_1988",
+                  "year": 1988,
+                  "title": "Et nytt avishus med en omstridt flytting",
+                  "consequence": "Arbeiderbladet flyttet til Hasle i 1988. Partiets samtidige beretning fremhevet gjennomføringen, mens redaksjonsklubbens motstand er dokumentert i et senere intervju.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Arbeiderpartiets beretning 1987–1988, PDF-side 101 / trykt side 98",
+                      "url": "https://www.arbark.no/eldok/DNA1987_1.pdf",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Hanne Mauno – Farvel til gutta på sporten",
+                      "url": "https://www.dagsavisen.no/nyheter/farvel-til-gutta-pa-sporten/5800886",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Oslo byleksikon – Dagsavisen",
+                      "url": "https://oslobyleksikon.no/side/Dagsavisen",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-004.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_arbeiderbladet_youngstorget_hasle_1988",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_arbeiderbladet_tabloid",
+                  "year": 1990,
+                  "title": "Arbeiderbladet gikk over til tabloidformat i 1990, etter utflyttingen fra Youngstorget.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Historikk: formatendring.",
+                      "url": "https://oslobyleksikon.no/side/Dagsavisen",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_tabloid",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_arbeiderbladet_later_address",
+                  "year": 1997,
+                  "title": "Avisen flyttet fra Hasle til Møllergata 39 i 1997.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Historikk: navnebytte og tilbake til sentrum.",
+                      "url": "https://oslobyleksikon.no/side/Dagsavisen",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_later_address",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_arbeiderbladet_later_name",
+                  "year": 1997,
+                  "title": "Navnet Dagsavisen Arbeiderbladet ble brukt i 1997–1998, deretter Dagsavisen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Navnelinjen.",
+                      "url": "https://www.arbark.no/Utstilling/Arbeiderbevegelsens_tidsskrifter_og_aviser/Arbeiderbevegelsens_tidsskrifter_og_aviser.htm",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_later_name",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_arbeiderbladet_photo2006",
+                  "year": 2006,
+                  "title": "Mahlums eksteriørfoto er datert 17. september 2006, etter avisens utflytting.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Summary og Date.",
+                      "url": "https://commons.wikimedia.org/wiki/File:Folketeaterbygningen_Oslo.jpg",
+                      "verifiedAt": "2026-10-11"
+                    }
+                  ],
+                  "source_file": "data/places/production/arbeiderbladet_youngstorget.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_arbeiderbladet_photo2006",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_arbeiderbladet_youngstorget_hasle_1988",
+                    "title": "Et nytt avishus med en omstridt flytting",
+                    "year": 1988,
+                    "type": "conflict"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "beaivvas_coarvematta",
               "name": "Beaivváš – Čoarvemátta",
               "category": "scenekunst",
@@ -47435,6 +48224,392 @@
                 "person_ids": [],
                 "works": [],
                 "stories": []
+              }
+            },
+            {
+              "place_id": "dagbladet_akersgata",
+              "name": "Dagbladet – Akersgata 49",
+              "category": "media",
+              "source_file": "places/media/oslo/places_oslo_media/dagbladet_akersgata.json",
+              "roles": [
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_dagbladet_morning",
+                  "year": 1982,
+                  "title": "Dagbladet gikk over til å komme ut som morgenavis i 1982.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "De siste tiårene, morgenavis fra 1982",
+                      "url": "https://snl.no/Dagbladet",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_morning",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_tabloid",
+                  "year": 1983,
+                  "title": "Dagbladet gikk over til tabloidformat i 1983.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "De siste tiårene, omleggingen i 1983",
+                      "url": "https://snl.no/Dagbladet",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_tabloid",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_tabloid_dispute",
+                  "year": 1983,
+                  "title": "SNL omtaler overgangen til tabloid i 1983 som ledsaget av intern strid.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "De siste tiårene, indre strid ved formatendringen",
+                      "url": "https://snl.no/Dagbladet",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_tabloid_dispute",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_graff",
+                  "year": 1988,
+                  "title": "Finn Graff ble knyttet til Dagbladet som tegner i 1988.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Gullalderen etter andre verdenskrig",
+                      "url": "https://www.dagbladetstiftelsen.no/artikkel/kunsten-i-dagbladet/",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_graff",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_osvold_column",
+                  "year": 1989,
+                  "title": "Osvold var kommentarjournalist fra 1989 og skrev den ukentlige spalten Sidesprang fra 1990.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Journalist-karriere, rollene og Sidesprang",
+                      "url": "https://snl.no/Sissel_Benneche_Osvold",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_osvold_column",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_sunday",
+                  "year": 1990,
+                  "title": "Dagbladet startet søndagsavis i 1990.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "De siste tiårene, søndagsavis",
+                      "url": "https://snl.no/Dagbladet",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_sunday",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_fredag",
+                  "year": 1990,
+                  "title": "Fredagsbilaget Dagbladet Fredag ble lansert i 1990.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "De siste tiårene, bilagene",
+                      "url": "https://snl.no/Dagbladet",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_fredag",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "story_st_dagbladet_akersgata_liberal_kulturpresse_1869",
+                  "year": 1995,
+                  "title": "Da nattdesken fikk en nettutgave",
+                  "consequence": "Dagbladets nettutgave startet 8. mars 1995. To redigerere ved papiravisens desk publiserte et lite nattlig artikkelutvalg før nettet senere fikk egne artikler og bilder.",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Dagbladet – nettutgaven fyller 30 år",
+                      "url": "https://www.dagbladet.no/meninger/akkurat-na-gratulerer-med-dagen/82789679",
+                      "verifiedAt": ""
+                    },
+                    {
+                      "title": "Lokalhistoriewiki – Dagbladets redaksjonslokaler",
+                      "url": "https://lokalhistoriewiki.no/wiki/Dagbladet",
+                      "verifiedAt": ""
+                    }
+                  ],
+                  "source_file": "data/runtime/stories-all/part-001.json",
+                  "evidence_type": "canonical_story",
+                  "claim_id": "",
+                  "story_id": "st_dagbladet_akersgata_liberal_kulturpresse_1869",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_net_date",
+                  "year": 1995,
+                  "title": "Dagbladets nettutgave ble lansert 8. mars 1995 klokken 12.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Brødtekst, startskuddet for internettsatsingen",
+                      "url": "https://www.dagbladet.no/meninger/akkurat-na-gratulerer-med-dagen/82789679",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_net_date",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_hansen",
+                  "year": 1995,
+                  "title": "Frode Hansen begynte i Dagbladet i 1995 som kriminalreporter og var nyhetssjef i 2006–2008.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Karriereavsnittet, første år og nyhetssjef",
+                      "url": "https://snl.no/Frode_Hansen",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_hansen",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_stanghelle",
+                  "year": 1995,
+                  "title": "Harald Stanghelle var sjefredaktør i Dagbladet i 1995–2000.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Biografiavsnittet, sjefredaktørperioden",
+                      "url": "https://www.aftenposten.no/meninger/i/Py5pX/harald-stanghelle",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_stanghelle",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_magasinet",
+                  "year": 1999,
+                  "title": "Lørdagsbilaget Magasinet ble lansert i 1999.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "De siste tiårene, bilagene",
+                      "url": "https://snl.no/Dagbladet",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_magasinet",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_negatives",
+                  "year": 2002,
+                  "title": "Dagbladet overlot negativarkivet for perioden 1950–1970 til Norsk Folkemuseum i 2002.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Innledning, overføringen i 2002",
+                      "url": "https://www.dagbladetstiftelsen.no/artikkel/museums-trio-sikrer-dagbladets-historie/",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_negatives",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_sondag",
+                  "year": 2004,
+                  "title": "Søndagsbilaget Søndag ble lansert i 2004.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "De siste tiårene, bilagene",
+                      "url": "https://snl.no/Dagbladet",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_sondag",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_photo2006",
+                  "year": 2006,
+                  "title": "Mahlums fotografi fra 17. september 2006 viser Dagbladet i Akersgata 49.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Summary og Date",
+                      "url": "https://commons.wikimedia.org/wiki/File:Dagbladet_Akersgata.jpg",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_photo2006",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_move",
+                  "year": 2008,
+                  "title": "Dagbladet flyttet fra Akersgata til Havnelageret i 2008.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Redaksjonslokaler, Havnelageret",
+                      "url": "https://lokalhistoriewiki.no/wiki/Dagbladet",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_move",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_art_walls",
+                  "year": 2008,
+                  "title": "Tegninger i Dagbladets kunstsamling hang i lokalene i Akersgata 49 før flyttingen i 2008.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Avslutningsavsnittet om tegningenes plass i Akersgata 49",
+                      "url": "https://www.dagbladetstiftelsen.no/artikkel/kunsten-i-dagbladet/",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_art_walls",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_reuse",
+                  "year": 2009,
+                  "title": "Cappelen Damm flyttet inn i den tidligere Dagbladet-gården i 2009.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Nummer 49, ny bruk etter Dagbladet",
+                      "url": "https://oslobyleksikon.no/side/Akersgata",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_reuse",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_dagbladet_akersgata_liberal_kulturpresse_1869",
+                    "title": "Da nattdesken fikk en nettutgave",
+                    "year": 1995,
+                    "type": "turning_point"
+                  }
+                ]
               }
             },
             {
@@ -55100,8 +56275,8 @@
               }
             }
           ],
-          "placeCount": 117,
-          "milestoneCount": 263
+          "placeCount": 119,
+          "milestoneCount": 291
         },
         "historie_digital_samtid_kriser_og_ny_offentlighet": {
           "places": [
@@ -57575,6 +58750,56 @@
                     "title": "Da de stille stemmene kom først",
                     "year": 2025,
                     "type": "historical_event"
+                  }
+                ]
+              }
+            },
+            {
+              "place_id": "dagbladet_akersgata",
+              "name": "Dagbladet – Akersgata 49",
+              "category": "media",
+              "source_file": "places/media/oslo/places_oslo_media/dagbladet_akersgata.json",
+              "roles": [
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_dagbladet_archiveplan",
+                  "year": 2019,
+                  "title": "Norsk Folkemuseum, Arkivverket og Nasjonalbiblioteket kom i 2019 fram til en intensjonsavtale om bevaring av Dagbladets arkiv.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Et spleiselag, intensjonsavtalen i 2019",
+                      "url": "https://www.dagbladetstiftelsen.no/artikkel/museums-trio-sikrer-dagbladets-historie/",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_archiveplan",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_dagbladet_akersgata_liberal_kulturpresse_1869",
+                    "title": "Da nattdesken fikk en nettutgave",
+                    "year": 1995,
+                    "type": "turning_point"
                   }
                 ]
               }
@@ -63515,8 +64740,8 @@
               }
             }
           ],
-          "placeCount": 100,
-          "milestoneCount": 227
+          "placeCount": 101,
+          "milestoneCount": 228
         }
       },
       "parallel_tracks": {
@@ -64161,6 +65386,94 @@
                 "person_ids": [],
                 "works": [],
                 "stories": []
+              }
+            },
+            {
+              "place_id": "dagbladet_akersgata",
+              "name": "Dagbladet – Akersgata 49",
+              "category": "media",
+              "source_file": "places/media/oslo/places_oslo_media/dagbladet_akersgata.json",
+              "roles": [
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_dagbladet_photo1968",
+                  "year": 1968,
+                  "title": "Oslo Museums foto OB.AH0606 viser Dagbladets avishus, fotografert av Sverre Heiberg i februar 1968.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Summary, Description, Date, Source og Author",
+                      "url": "https://commons.wikimedia.org/wiki/File:Akersgata_49_(Dagbladet)_OB.AH0606.jpg",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_photo1968",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_negatives",
+                  "year": 2002,
+                  "title": "Dagbladet overlot negativarkivet for perioden 1950–1970 til Norsk Folkemuseum i 2002.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Innledning, overføringen i 2002",
+                      "url": "https://www.dagbladetstiftelsen.no/artikkel/museums-trio-sikrer-dagbladets-historie/",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_negatives",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_archiveplan",
+                  "year": 2019,
+                  "title": "Norsk Folkemuseum, Arkivverket og Nasjonalbiblioteket kom i 2019 fram til en intensjonsavtale om bevaring av Dagbladets arkiv.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Et spleiselag, intensjonsavtalen i 2019",
+                      "url": "https://www.dagbladetstiftelsen.no/artikkel/museums-trio-sikrer-dagbladets-historie/",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_archiveplan",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_dagbladet_akersgata_liberal_kulturpresse_1869",
+                    "title": "Da nattdesken fikk en nettutgave",
+                    "year": 1995,
+                    "type": "turning_point"
+                  }
+                ]
               }
             },
             {
@@ -70692,8 +72005,8 @@
               }
             }
           ],
-          "placeCount": 68,
-          "milestoneCount": 191
+          "placeCount": 69,
+          "milestoneCount": 194
         },
         "historie_migrasjon_minoritet_og_tilhorighet": {
           "places": [
@@ -73363,6 +74676,94 @@
                 "person_ids": [],
                 "works": [],
                 "stories": []
+              }
+            },
+            {
+              "place_id": "dagbladet_akersgata",
+              "name": "Dagbladet – Akersgata 49",
+              "category": "media",
+              "source_file": "places/media/oslo/places_oslo_media/dagbladet_akersgata.json",
+              "roles": [
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "minne_og_historiebruk",
+                  "label": "Minne og historiebruk"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_dagbladet_photo1968",
+                  "year": 1968,
+                  "title": "Oslo Museums foto OB.AH0606 viser Dagbladets avishus, fotografert av Sverre Heiberg i februar 1968.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Summary, Description, Date, Source og Author",
+                      "url": "https://commons.wikimedia.org/wiki/File:Akersgata_49_(Dagbladet)_OB.AH0606.jpg",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_photo1968",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_negatives",
+                  "year": 2002,
+                  "title": "Dagbladet overlot negativarkivet for perioden 1950–1970 til Norsk Folkemuseum i 2002.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Innledning, overføringen i 2002",
+                      "url": "https://www.dagbladetstiftelsen.no/artikkel/museums-trio-sikrer-dagbladets-historie/",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_negatives",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_dagbladet_archiveplan",
+                  "year": 2019,
+                  "title": "Norsk Folkemuseum, Arkivverket og Nasjonalbiblioteket kom i 2019 fram til en intensjonsavtale om bevaring av Dagbladets arkiv.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Et spleiselag, intensjonsavtalen i 2019",
+                      "url": "https://www.dagbladetstiftelsen.no/artikkel/museums-trio-sikrer-dagbladets-historie/",
+                      "verifiedAt": "2026-10-10"
+                    }
+                  ],
+                  "source_file": "data/places/production/dagbladet_akersgata.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_dagbladet_archiveplan",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_dagbladet_akersgata_liberal_kulturpresse_1869",
+                    "title": "Da nattdesken fikk en nettutgave",
+                    "year": 1995,
+                    "type": "turning_point"
+                  }
+                ]
               }
             },
             {
@@ -78927,14 +80328,14 @@
               }
             }
           ],
-          "placeCount": 57,
-          "milestoneCount": 172
+          "placeCount": 58,
+          "milestoneCount": 175
         }
       },
       "oslo_coverage": {
         "contract": "oslo-history-coverage-v1",
-        "canonical_place_count": 586,
-        "dated_evidence_place_count": 248,
+        "canonical_place_count": 587,
+        "dated_evidence_place_count": 249,
         "documented_case_place_count": 2,
         "awaiting_source_backed_history_count": 336,
         "categories": [
@@ -78982,8 +80383,8 @@
           },
           {
             "category": "media",
-            "total": 7,
-            "dated_evidence": 5,
+            "total": 8,
+            "dated_evidence": 6,
             "documented_case": 0,
             "awaiting_source_backed_history": 2
           },
@@ -79246,6 +80647,13 @@
             "name": "Ankerbrua",
             "category": "by",
             "source_file": "places/natur/oslo/places_oslo_natur_akerselvarute/ankerbrua.json",
+            "status": "dated_evidence"
+          },
+          {
+            "place_id": "arbeiderbladet_youngstorget",
+            "name": "Arbeiderbladet / Dagsavisen – Youngstorget",
+            "category": "media",
+            "source_file": "places/media/oslo/places_oslo_media/arbeiderbladet_youngstorget.json",
             "status": "dated_evidence"
           },
           {
@@ -93905,13 +95313,20 @@
         "city_id": "oslo",
         "city_label": "Oslo",
         "source": "canonical_place_fields"
+      },
+      "arbeiderbladet_youngstorget": {
+        "country_id": "no",
+        "country_label": "Norge",
+        "city_id": "oslo",
+        "city_label": "Oslo",
+        "source": "canonical_place_fields"
       }
     },
     "countries": [
       {
         "id": "no",
         "label": "Norge",
-        "place_count": 1352,
+        "place_count": 1353,
         "cities": [
           {
             "id": "asker",
@@ -94146,7 +95561,7 @@
           {
             "id": "oslo",
             "label": "Oslo",
-            "place_count": 586
+            "place_count": 587
           },
           {
             "id": "porsgrunn",
@@ -94293,21 +95708,21 @@
     "unknown_place_ids": []
   },
   "stats": {
-    "canonical_place_count": 1533,
-    "located_place_count": 1533,
-    "city_located_place_count": 955,
+    "canonical_place_count": 1534,
+    "located_place_count": 1534,
+    "city_located_place_count": 956,
     "canonical_claim_count": 315,
     "canonical_source_count": 256,
     "place_evidence_link_count": 325,
     "period_case_count": 9,
     "connected_people_count": 65,
     "connected_work_count": 150,
-    "connected_story_count": 271,
-    "canonical_story_milestone_count": 240,
-    "verified_place_production_milestone_count": 605,
-    "indexed_place_count": 294,
-    "epoch_place_relations": 669,
-    "milestone_count": 1807
+    "connected_story_count": 272,
+    "canonical_story_milestone_count": 241,
+    "verified_place_production_milestone_count": 653,
+    "indexed_place_count": 295,
+    "epoch_place_relations": 677,
+    "milestone_count": 1856
   },
   "warnings": {
     "missing_source_files": [
