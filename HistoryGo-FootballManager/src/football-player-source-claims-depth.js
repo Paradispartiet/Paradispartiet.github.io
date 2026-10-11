@@ -437,6 +437,83 @@ const documented = [
     sourceKind: "press"
   },
 
+  // --- Rosenborg: repeatable performance and individual playing traits ------
+  {
+    playerId: "marius_broholm",
+    clubId: "rosenborg",
+    strengths: ["dribbling", "simple_passing"],
+    claim: "TACTIX' sesongbaserte spilleranalyse for 2025 vurderer Broholms «Passing (elite, 97th percentile) and Dribbling (elite, 94th percentile)» sammenlignet med 62 angripere i Eliteserien. Registreringen gjelder dokumentert drible- og pasningskvalitet, ikke langpasningsspesialisering eller antatt avslutningsevne.",
+    source: "https://tactix.football/player/m-broholm",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "ole_saeter",
+    clubId: "rosenborg",
+    strengths: ["heading"],
+    claim: "Rosenborg beskriver Ole Sæters særpreg ved innhoppet mot Mainz 21.08.2025 som «direkte spill og hodestyrke» og skriver at «Sæters hodestyrke» endret oppgjøret. Den generelle ferdighetsvurderingen støtter heading; ett mål i seg selv gir ikke finishing eller andre attributter.",
+    source: "https://www.rbk.no/nyheter/godt-utgangspunkt-etter-sen-saeter-scoring",
+    sourceKind: "club"
+  },
+
+  // --- Rosenborg: individually described historical playing qualities ------
+  {
+    playerId: "andre_hansen",
+    clubId: "rosenborg",
+    strengths: ["distribution"],
+    claim: "RBK-trener Kåre Ingebrigtsen begrunnet keepervalget i januar 2015 med at André Hansen var «svært god med beina» og «dyktig på frispilling». Dette støtter distribusjon og kontrollert frispilling; redninger og feltarbeid utledes ikke av beskrivelsen.",
+    source: "https://www.bt.no/sport/i/K3yxL7/andre-hansen-det-aa-maake-bort-ballen-har-jeg-ikke-sansen-for",
+    sourceKind: "press"
+  },
+  {
+    playerId: "anthony_annan",
+    clubId: "rosenborg",
+    strengths: ["simple_passing"],
+    claim: "Adresseavisens pasningsanalyse gjengitt i Stavanger Aftenblad i april 2010 viste at Anthony Annan hadde høyest pasningspresisjon på Rosenborg i den undersøkte kampen og foretrakk korte pasninger. Annan sa: «Jeg foretrekker den korte typen og å slå ballen i beina.» Dette underbygger simple_passing, men ikke lange gjennombruddspasninger eller presise taklingsattributter.",
+    source: "https://www.aftenbladet.no/sport/i/qnzxaw/annan-kjenner-seg-ikke-igjen-i-kritikken",
+    sourceKind: "press"
+  },
+  {
+    playerId: "pal_andre_helland",
+    clubId: "rosenborg",
+    strengths: ["set_pieces"],
+    claim: "Bergens Tidende beskrev Pål André Hellands direkte frispark i oppkjøringen 2014 og siterte Hellands formulering: «Frispark i så gode posisjoner skal i mål.» Han fortalte også om en fast frisparkavtale med trener Bård Wiggen og vurderinger av murens plassering. Dokumenterer direkte frisparkteknikk (set_pieces), ikke presisjon på alle former for dødball eller generell avslutningsevne.",
+    source: "https://www.bt.no/sport/i/706wno/varsler-rush-av-frisparkmaal",
+    sourceKind: "press"
+  },
+  {
+    playerId: "sigurd_rushfeldt",
+    clubId: "rosenborg",
+    strengths: ["strength"],
+    claim: "Dagbladet beskrev i juli 1999 Sigurd Rushfeldts spillestil som en spiss som kunne virke anonym før han scoret, og siterte sin tidligere karakteristikk av ham som «kynisk og råsterk målmaskin». «Råsterk» gir et individuelt belegg for fysisk styrke; målproduksjonen gir ikke automatisk finishing, heading eller positioning.",
+    source: "https://www.dagbladet.no/nyheter/rushlefot/65533532",
+    sourceKind: "press"
+  },
+  // --- Rosenborg heritage: individually described wing and fullback skills --
+  {
+    playerId: "mini_jakobsen",
+    clubId: "rosenborg",
+    strengths: ["pace", "dribbling", "off_ball_runs"],
+    claim: "Store norske leksikons spillestilavsnitt beskriver Jahn Ivar «Mini» Jakobsen som «rask, driblesterk» og fremhever evnen til å «beregne løp og rykk» og variere tempo. Dette underbygger hurtighet, dribling og bevegelsestiming uten ball. Lavt tyngdepunkt og målstatistikk er ikke brukt til ekstra styrker.",
+    source: "https://snl.no/Jahn_Ivar_Jakobsen",
+    sourceKind: "encyclopedia"
+  },
+  {
+    playerId: "daniel_braaten",
+    clubId: "rosenborg",
+    strengths: ["pace", "strength", "dribbling"],
+    claim: "Store norske leksikon beskriver Daniel Omoya Braatens spillestil ved «hurtighet, kraftige fysikk og driblestyrke». Disse uttrykkelige individuelle egenskapene bærer pace, strength og dribbling. Posisjon, klubbmeritter og antall scoringer brukes ikke som kilde for nye ferdigheter.",
+    source: "https://snl.no/Daniel_Omoya_Braaten",
+    sourceKind: "encyclopedia"
+  },
+  {
+    playerId: "mikael_lustig",
+    clubId: "rosenborg",
+    strengths: ["crossing"],
+    claim: "RBK-trener Erik Hamrén fremhevet ved signeringen sommeren 2008 Lustigs offensive backspill og at han «slår presise innlegg». Dette er et direkte belegg for crossing, mens det at han kommer raskt frem i angrep ikke alene dokumenterer sprintfart, overlappinger eller presis defensiv posisjonering.",
+    source: "https://www.rbkweb.no/vis/6250",
+    sourceKind: "football_editorial"
+  }
+
 ];
 
 export const SOURCE_DEPTH_DOCUMENTED = Object.freeze(documented.map((entry) => Object.freeze({

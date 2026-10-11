@@ -2026,7 +2026,7 @@ body.hg-app.hg-phone #placeCard #pcDesc{
 }
 
 
-/* PlaceCard landscape hero: status is above the picture, title starts at
+/* PlaceCard landscape hero: status is inside the picture, title starts at
    its top-left and category/epoch sit just below the Merker circle.
    Use scoped selectors to also beat the lazily loaded shortcut stylesheet. */
 #placeCard .pc-text > #pcStatusBar{
@@ -2075,30 +2075,66 @@ body.hg-app.hg-phone #placeCard #pcDesc{
   gap: 5px;
 }
 
+/* Original image header: title across the upper left, the audio and
+   favorite controls on a separate line immediately below it. The real
+   people/badge circles remain on the right directly above their metadata.
+   Grid avoids moving or cloning any interactive DOM nodes. */
 #placeCard .pc-heading-hero .pc-heading-content .pc-title-row{
   order: 0;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 34px 32px minmax(0, 1fr) auto auto;
+  grid-template-rows: auto auto;
+  column-gap: 8px;
+  row-gap: 7px;
+  align-items: start;
   margin: 0;
   flex: 0 0 auto;
 }
 
 #placeCard .pc-heading-hero .pc-heading-content .pc-title-row #pcTitle{
   order: 0;
+  grid-column: 1 / 4;
+  grid-row: 1;
+  min-width: 0;
   overflow-wrap: anywhere;
 }
 
-/* The retired shortcut layout left a 50/58px margin on Merker.
-   Remove it here and bottom-align the round with the title row so the
-   category button can sit immediately under the circle, including on
-   narrow phones where the title wraps to multiple lines. */
+#placeCard .pc-heading-hero .pc-heading-content .pc-title-row > .pc-reader-toggle{
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: start;
+  align-self: start;
+}
+#placeCard .pc-heading-hero .pc-heading-content .pc-title-row > #pcFavorite{
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: start;
+  align-self: start;
+}
+
+/* Keep the original circles at the right of the second row, directly
+   above the matching category and epoch labels. They remain the same live
+   controls and preserve their size and horizontal order. */
+#placeCard .pc-heading-hero .pc-heading-content .pc-title-row > #pcPeopleIcon{
+  grid-column: 4;
+  grid-row: 2;
+  margin-left: 0;
+  align-self: end;
+}
 #placeCard .pc-heading-hero .pc-heading-content .pc-title-row > #pcBadgesIcon{
+  grid-column: 5;
+  grid-row: 2;
   margin-right: 0;
   margin-left: 0;
-  align-self: flex-end;
+  align-self: end;
 }
-#placeCard .pc-heading-hero .pc-heading-content .pc-title-row > #pcPeopleIcon,
-#placeCard .pc-heading-hero .pc-heading-content .pc-title-row > #pcFavorite{
-  align-self: flex-end;
+
+@media (max-width: 520px){
+  #placeCard .pc-heading-hero .pc-heading-content .pc-title-row{
+    grid-template-columns: 30px 32px minmax(0, 1fr) auto auto;
+    column-gap: 6px;
+    row-gap: 6px;
+  }
 }
 
 #placeCard .pc-heading-hero .pc-heading-content #pcMeta{
@@ -2159,5 +2195,91 @@ body.hg-app.hg-phone #placeCard #pcDesc{
   }
   #placeCard .pc-heading-hero .pc-heading-content #pcMeta > *{
     font-size: 11px;
+  }
+}
+
+/* Status stays in the original landscape image beneath category/epoch,
+   but is a small unobtrusive progress label rather than a full-height row. */
+#placeCard .pc-heading-hero .pc-heading-content #pcStatusBar{
+  order:2;
+  flex:0 0 auto;
+  align-self:flex-end;
+  width:auto;
+  max-width:100%;
+  margin:5px 0 0;
+  padding:0;
+  text-align:right;
+}
+#placeCard .pc-heading-hero #pcStatusBar > .pc-progress-status-line{
+  width:auto;
+  max-width:100%;
+  min-height:20px;
+  padding:3px 7px;
+  border-radius:6px;
+  background:rgba(0,0,0,.63);
+  border-color:rgba(255,255,255,.26);
+  backdrop-filter:blur(7px);
+  font:700 10px/1.18 system-ui,sans-serif;
+  letter-spacing:.015em;
+  text-align:left;
+}
+@media (max-width:520px){
+  #placeCard .pc-heading-hero .pc-heading-content #pcStatusBar{
+    margin-top:4px;
+  }
+  #placeCard .pc-heading-hero #pcStatusBar > .pc-progress-status-line{
+    min-height:18px;
+    padding:2px 5px;
+    font-size:9px;
+  }
+}
+
+/* Direct Place Sheet: the image, section navigation and collection surface
+   meet the PlaceCard edge. Padding belongs to readable text sections, not
+   to an extra wrapper/frame around the entire sheet. Micro-places and
+   legacy PlaceCards intentionally retain their current layout. */
+body.hg-app #placeCard.is-unified-place.is-place-sheet-phase1.is-place-sheet-direct{
+  border: 0;
+}
+
+body.hg-app #placeCard.is-unified-place.is-place-sheet-phase1.is-place-sheet-direct .pc-body{
+  scrollbar-gutter: auto;
+  scrollbar-width: none;
+}
+
+body.hg-app #placeCard.is-unified-place.is-place-sheet-phase1.is-place-sheet-direct .pc-body::-webkit-scrollbar{
+  display: none;
+}
+
+body.hg-app #placeCard.is-unified-place.is-place-sheet-phase1.is-place-sheet-direct .pc-sheet-shell{
+  padding: 0 0 8px;
+}
+
+body.hg-app #placeCard.is-unified-place.is-place-sheet-phase1.is-place-sheet-direct .pc-sheet-hero,
+body.hg-app #placeCard.is-unified-place.is-place-sheet-phase1.is-place-sheet-direct .pc-sheet-hero #pcHeaderHero,
+body.hg-app #placeCard.is-unified-place.is-place-sheet-phase1.is-place-sheet-direct.is-original-photo-pinned .pc-sheet-hero{
+  border-radius: 0;
+}
+
+body.hg-app #placeCard.is-unified-place.is-place-sheet-phase1.is-place-sheet-direct .pc-sheet-section-nav{
+  margin: 10px 0 12px;
+}
+
+/* Give paragraphs comfortable line spacing without shrinking the full-width
+   photo, navigation strip or collection/media grid. */
+body.hg-app #placeCard.is-unified-place.is-place-sheet-phase1.is-place-sheet-direct .pc-sheet-shell
+  > :not(.pc-sheet-hero):not(.pc-sheet-section-nav):not(.pc-sheet-hero-media){
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
+@media (max-width: 720px){
+  body.hg-app #placeCard.is-unified-place.is-place-sheet-phase1.is-place-sheet-direct .pc-sheet-shell
+    > :not(.pc-sheet-hero):not(.pc-sheet-section-nav):not(.pc-sheet-hero-media){
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  body.hg-app #placeCard.is-unified-place.is-place-sheet-phase1.is-place-sheet-direct .pc-sheet-section-nav{
+    margin: 8px 0 10px;
   }
 }

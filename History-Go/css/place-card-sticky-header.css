@@ -1,0 +1,44 @@
+/* Pin the actual landscape PlaceCard hero — never a copy.
+   The crop moves only its lower boundary. The title, person/badge circles,
+   category, epoch and progress status keep their original DOM and styles. */
+body.hg-app #placeCard.is-place-sheet-direct.is-original-photo-pinned .pc-sheet-hero {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  height: var(--pc-visible-hero-height);
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #101721;
+  border-radius: 14px 14px 0 0;
+  isolation: isolate;
+}
+
+/* Retain the original image's object-fit geometry while the outer wrapper
+   reveals less from its bottom. Neither icons nor text are resized. */
+body.hg-app #placeCard.is-place-sheet-direct.is-original-photo-pinned .pc-sheet-hero #pcHeaderHero {
+  height: var(--pc-original-hero-height);
+  min-height: var(--pc-original-hero-height);
+  flex: 0 0 auto;
+}
+
+body.hg-app #placeCard.is-place-sheet-direct.is-original-photo-pinned .pc-sheet-hero .pc-heading-content {
+  flex: 0 0 auto;
+  min-height: var(--pc-original-hero-height);
+}
+
+/* Original section navigation now sticks immediately below the real
+   pinned photo. The nav remains the same DOM node under the hero. */
+body.hg-app #placeCard.is-place-sheet-direct.is-original-photo-pinned .pc-sheet-section-nav {
+  top: var(--pc-visible-hero-height);
+}
+
+/* Existing title only. Local luminance is sampled from the actual image. */
+#placeCard .pc-heading-hero.has-image[data-pc-contrast="dark"] #pcTitle {
+  color: #111923 !important;
+  text-shadow: 0 1px 2px rgba(255,255,255,.85), 0 0 9px rgba(255,255,255,.55);
+}
+
+#placeCard .pc-heading-hero.has-image[data-pc-contrast="light"] #pcTitle {
+  color: #fff !important;
+  text-shadow: 0 2px 5px rgba(0,0,0,.96), 0 0 13px rgba(0,0,0,.66);
+}

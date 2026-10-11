@@ -32,6 +32,82 @@
   ],
   "theories": [
     {
+      "id": "diagnostisk_klassifikasjon_historie",
+      "title": "Diagnostisk klassifikasjon – Kraepelin, DSM og ICD",
+      "chapter_id": "fagtradisjoner-teori-og-sinnet",
+      "emne_id": "em_psy_diagnose_klassifikasjon",
+      "founders": "Emil Kraepelin; American Psychiatric Association; Verdens helseorganisasjon",
+      "period": "1899: Emil Kraepelins lærebok utvikler en mer forløpsorientert psykiatrisk klassifikasjon. 1948: WHO overtar revisjonene av ICD. 1952: første amerikanske DSM utgis. 1980: DSM-III går videre mot eksplisitte diagnostiske kriterier. 2019: ICD-11 vedtas; 2022: internasjonal ikrafttredelse; 2024: WHOs kliniske beskrivelser og diagnosekrav (CDDR).",
+      "idea": "Kraepelin undersøkte sykdomsforløp og grupperinger av symptomer, mens DSM og ICD senere standardiserte kliniske betegnelser og kriterier. En klassifikasjon kan gjøre forskning, behandling og statistikk sammenlignbar uten at alle kategorier dermed har skarpe biologiske grenser. Endringene fra DSM-I i 1952 til ICD-11s kliniske manual i 2024 illustrerer hvordan diagnostikk også har en fag- og institusjonshistorie.",
+      "method": "Faghistorikere analyserer klassifikasjonsutgaver, tidsfestede definisjoner, sykejournalers kontekst og publiserte revisjonsbegrunnelser. Klinisk forskning undersøker vurdereres enighet separat fra validiteten av det som vurderes. WHOs kliniske ICD-11-krav gjelder kvalifiserte fagpersoners utredning, ikke et verktøy for raske antakelser om mennesker i en app eller undervisningssituasjon.",
+      "limit": "En diagnosekode beviser ikke én bestemt biologisk årsak eller et naturgitt skille mellom personer. Høy enighet mellom vurderere er ikke det samme som validitet. Et fotografi, en enkelthendelse eller en kort undervisningsøvelse inneholder ikke de opplysningene som kreves for klinisk diagnostikk. Historiske kategoriendringer må dateres før de sammenlignes.",
+      "example": "Undervisningsscenario: En skoleklasse sammenligner innholdsfortegnelser fra to oppdiktede diagnosemanualer fra forskjellige perioder. De undersøker hvordan navn og krav kan endres, uten å diagnostisere noen av personene som omtales i eksemplene.",
+      "example_secondary": "Undervisningsscenario: Et konstruert kasus beskriver få symptomer, men mangler varighet, alvorlighetsgrad og funksjonsopplysninger. Studentene kartlegger hvilken dokumentasjon som mangler og hvorfor selv en plausibel kategori ikke kan fastsettes.",
+      "contrast": "Psykometri studerer blant annet om målinger har validitet og kan tolkes rettferdig. En klinisk klassifikasjon er et system av kategorier og beslutningskrav. Testskårer og diagnostiske kategorier må derfor ikke behandles som samme vitenskapelige objekt.",
+      "compare_with": "psykometri_validitet",
+      "related_phenomena": [],
+      "reference_links": [
+        {
+          "title": "History of nosology and the rise of DSM",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4421901/",
+          "supports": "Faghistorisk oversikt over Kraepelin og utviklingen av psykiatrisk klassifikasjon; ikke evidens for alle gamle diagnoseskillelinjer.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "American Psychiatric Association – DSM History",
+          "url": "https://www.psychiatry.org/psychiatrists/practice/dsm/about-dsm/history-of-the-dsm",
+          "supports": "Primær institusjonskilde til DSM-I i 1952 og senere revisjoner; historikken er skrevet fra utgiverens perspektiv.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "WHO – ICD History",
+          "url": "https://www.who.int/standards/classifications/classification-of-diseases",
+          "supports": "Dokumenterer internasjonal historikk, inkludert ICD-11s vedtak 2019 og ikrafttredelse 2022; gjelder ikke nasjonal innføringsstatus.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "WHO (2024) – Clinical Descriptions and Diagnostic Requirements for ICD-11",
+          "url": "https://www.who.int/publications/b/68103",
+          "supports": "Kanonisk klinisk manual om profesjonell diagnostikk og krav til utredning, ikke grunnlag for appdiagnostikk.",
+          "canonical_claim_ids": [
+            "fti-06",
+            "fti-07"
+          ],
+          "canonical_source_ids": [
+            "src-who-icd11-cddr"
+          ]
+        },
+        {
+          "title": "Standards for Educational and Psychological Testing",
+          "url": "https://www.testingstandards.net/about.html",
+          "supports": "Kanonisk kilde til målevaliditet, rettferdighet og ansvarlig tolkning av tester, men ikke en diagnosemanual.",
+          "canonical_claim_ids": [
+            "fti-03"
+          ],
+          "canonical_source_ids": [
+            "src-testing-standards"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Kraepelin utviklet psykiatrisk klassifikasjon på 1800-tallet. DSM kom i 1952, og WHO vedtok ICD-11 i 2019 og publiserte kliniske diagnosekrav i 2024.",
+        "idea": "En diagnosemanual gir kvalifiserte fagpersoner et felles språk for tilstander og symptomer. Kategoriene og kravene har likevel endret seg med forskning og helsevesenets organisering.",
+        "method": "Diagnosehistorikere undersøker forskjellige manualutgaver og hvordan kategorier er definert. Forskere skiller mellom om vurderere er enige og om kategoriene faktisk er gyldige.",
+        "limit": "En diagnosemanual er ikke en fasit om et menneskes biologi. En kort quiz, et bilde eller en observasjon gir aldri grunnlag for klinisk diagnostikk.",
+        "featured_reference_urls": [
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC4421901/",
+          "https://www.psychiatry.org/psychiatrists/practice/dsm/about-dsm/history-of-the-dsm",
+          "https://www.who.int/standards/classifications/classification-of-diseases",
+          "https://www.who.int/publications/b/68103"
+        ]
+      }
+    },
+    {
       "id": "psykoanalyse",
       "title": "Psykoanalyse",
       "chapter_id": "fagtradisjoner-teori-og-sinnet",
@@ -43,7 +119,7 @@
       "limit": "I forordet til Studien über Hysterie (1895) beskrev Breuer og Freud selv at kasus kom fra privatpraksis, og at etiske hensyn til gjenkjennelse gjorde at de ikke kunne offentliggjøre alle observasjonene de anså som viktige. Dette gir seleksjons- og etterprøvbarhetsbegrensninger. Leichsenring mfl. (2023) fant støtte for moderne psykodynamisk psykoterapi ved utvalgte lidelser hos voksne, men pekte også på gamle/svake forsøk og diagnoseblanding. Behandlingseffekt dokumenterer ikke Freuds originale drømme- og konfliktfortolkninger.",
       "example": "Undervisningsscenario: En student blir nervøs før muntlig prøve. En psykodynamisk tilnærming spør hva situasjonen minner om og hvilke relasjonelle forventninger som aktiveres.",
       "example_secondary": "Undervisningsscenario: En forsker leser en anonymisert historisk kasusbeskrivelse fra tidlig psykoanalyse og skiller pasientens egne utsagn fra analytikerens etterfølgende tolkninger. Gruppen drøfter hvilke påstander som kan etterprøves uavhengig.",
-      "contrast": "Kognitiv psykologi prøver forklaringer om hukommelse og oppmerksomhet i målbare oppgaver. Moderne CBT og psykodynamisk terapi kan begge undersøkes i behandlingsforsøk; sammenligning av utfall er ikke en bekreftelse av hele teorigrunnlaget til noen av dem.",
+      "contrast": "Psykoanalysen undersøker blant annet ubevisste konflikter gjennom kliniske samtaler og fortolkning. Kognitiv psykologi prøver mer avgrensede modeller for hukommelse og oppmerksomhet i målbare oppgaver. Kasusfortolkning og eksperimentelle prediksjoner gir ulike typer belegg; ingen av dem dokumenterer i seg selv en universell forklaring.",
       "compare_with": "kognitiv_psykologi",
       "related_phenomena": [
         "ruminasjon"
@@ -154,7 +230,7 @@
       "limit": "Eksperimentelle læringsprinsipper kan beskrive atferd under bestemte betingelser, men gir ikke alene full informasjon om subjektiv opplevelse, biologiske forutsetninger eller sosial kontekst; generalisering krever undersøkelser.",
       "example": "Undervisningsscenario: Et varsel avbryter lesing. En atferdsanalyse undersøker hva som skjer rett før og etter at telefonen åpnes.",
       "example_secondary": "Undervisningsscenario: I en kontrollert læringsoppgave fjernes en plagsom lyd når en deltaker utfører en bestemt handling. Studentene analyserer om økt handlingsfrekvens viser negativ forsterkning, og hvorfor dette ikke er straff.",
-      "contrast": "Sosial læringsteori legger til at mennesker kan lære ved å observere andre, også uten å utføre handlingen selv.",
+      "contrast": "Operant behaviorisme undersøker hvordan konsekvenser av utførte handlinger endrer sannsynligheten for gjentakelse. Sosial læringsteori undersøker også læring ved å observere andre før en selv har erfart konsekvensen. Et forsterkningsforsøk og et imitasjonsforsøk tester forskjellige, men potensielt forenlige mekanismer.",
       "compare_with": "sosial_laring",
       "related_phenomena": [
         "unngaelsesforsterkning"
@@ -204,7 +280,91 @@
             "src-harvard-skinner"
           ]
         }
-      ]
+      ],
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "John B. Watson presenterte sitt behavioristiske program i 1913. B. F. Skinner videreutviklet operant læring gjennom systematiske atferdsforsøk og utga Science and Human Behavior i 1953.",
+        "idea": "Behaviorismen undersøker sammenhenger mellom situasjoner, handlinger og konsekvenser. Hos Skinner kan forsterkning øke sannsynligheten for en handling; negativ forsterkning er ikke straff.",
+        "method": "Forskere varierer læringsbetingelser under kontrollerte forhold, teller observerbare handlinger og undersøker om effektene gjentas. Funn utenfor laboratoriet må testes separat.",
+        "limit": "Læringsforsøk forklarer ikke alene subjektive opplevelser, biologiske forutsetninger eller sosial kontekst. Atferdsendring under ett oppsett kan ikke generaliseres til enhver person.",
+        "featured_reference_urls": [
+          "https://doi.org/10.1037/h0074428",
+          "https://psychology.fas.harvard.edu/people/b-f-skinner",
+          "https://www.bfskinner.org/publications/books/"
+        ]
+      }
+    },
+    {
+      "id": "globalt_arbeidsrom_bevissthet",
+      "title": "Bevissthet – fra James til globalt arbeidsrom",
+      "chapter_id": "fagtradisjoner-teori-og-sinnet",
+      "emne_id": "em_psy_bevissthet_opplevelse",
+      "founders": "William James; Bernard J. Baars; Stanislas Dehaene og Jean-Pierre Changeux",
+      "period": "1890: William James utgir The Principles of Psychology og beskriver bevisstheten som en strøm av erfaringer. 1988: Bernard Baars utvikler global-workspace-teori som en kognitiv modell for tilgang til informasjon. 2001 og 2011: forskere, blant dem Dehaene og Changeux, undersøker hvordan begrenset informasjon blir bevisst tilgjengelig for rapportering.",
+      "idea": "Begrepet bevissthet rommer både at noe oppleves subjektivt, og at informasjon kan rapporteres og brukes i ulike oppgaver. James beskrev den subjektive erfaringens kontinuitet; Baars' globale arbeidsrom foreslår at informasjon kan bli tilgjengelig for flere ellers spesialiserte prosesser når den vinner tilgang til et felles funksjonelt system. Den nevronale varianten undersøker hvordan slik tilgang kan knyttes til langtrekkende hjerneaktivitet. En modell for bevisst tilgang forklarer ikke nødvendigvis hvorfor erfaring har en subjektiv karakter.",
+      "method": "I eksperimenter med maskering og korte stimuli sammenligner forskere forsøk der den samme informasjonen blir rapporterbar eller forblir uoppdaget. De registrerer respons, nøyaktighet, reaksjonstid og nevrale signaler for å teste hypoteser om bevisst tilgang. Baars' bok fra 1988 formulerte en teori, mens Dehaene og Changeux senere sammenstilte eksperimentelle og nevrofysiologiske funn. Verken selvrapport eller bilde av hjerneaktivitet må forveksles med fullstendig forklaring av subjektiv erfaring.",
+      "limit": "Rapportering krever oppmerksomhet, språk eller handling og kan ikke uten videre likestilles med all bevisst opplevelse. Global-workspace-teori konkurrerer med andre teorier om bevissthet; laboratoriefunn i bestemte oppgaver avgjør ikke hvilken teori som forklarer alle bevissthetstilstander. Fravær av respons eller en enkelt måling er ikke tilstrekkelig grunnlag for å påstå at et menneske mangler erfaring.",
+      "example": "Undervisningsscenario: En forsker viser et ord så kort at noen deltakere kan lese det og andre ikke. Studentene skiller mellom ordet som stimulus, målt prestasjon, deltakernes egen rapport og hvilke konklusjoner som kan trekkes om tilgang til informasjon.",
+      "example_secondary": "Undervisningsscenario: To tenkte laboratorier registrerer henholdsvis knappetrykk og EEG i den samme oppgaven. Klassen undersøker hva hvert mål kan fortelle, hvilke feilkilder de har og hvorfor ingen av dem alene løser spørsmålet om subjektiv opplevelse.",
+      "contrast": "Kognitiv psykologi studerer representasjon, hukommelse og informasjonsbearbeiding også når prosesser ikke rapporteres bevisst. Globalt arbeidsrom stiller et mer spesifikt spørsmål: under hvilke betingelser blir informasjon tilgjengelig for samordnet og rapporterbar bruk? Konkurrerende bevissthetsteorier kan tolke samme nevrofunn forskjellig.",
+      "compare_with": "kognitiv_psykologi",
+      "related_phenomena": [],
+      "reference_links": [
+        {
+          "title": "William James (1890) – The Principles of Psychology, historisk originaltekst",
+          "url": "https://psychclassics.yorku.ca/James/Principles/",
+          "supports": "Historisk grunnlag for James' beskrivelser av subjektiv erfaring og bevissthetsstrøm. Ikke et moderne nevrofysiologisk eksperiment.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Baars (2005) – Global Workspace Theory of Consciousness",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16186014/",
+          "supports": "Baars beskriver teoriframveksten fra sin bok fra 1988 og prediksjoner om bevisst tilgang. En teorioversikt alene beviser ikke universell gyldighet.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Dehaene og Naccache (2001) – Towards a Cognitive Neuroscience of Consciousness",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11164022/",
+          "supports": "Teoretisk og empirisk oversikt over global neuronal workspace og rapporterbar bevisst tilgang, ikke en konklusjon om alle former for opplevelse.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Dehaene og Changeux (2011) – Experimental and Theoretical Approaches to Conscious Processing",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21521609/",
+          "supports": "Oversikt over maskeringsparadigmer, nevrofysiologiske korrelater og konkurrerende tolkninger av bevisst tilgang.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Stanford Encyclopedia – Consciousness, canonical fagverksanker",
+          "url": "https://plato.stanford.edu/entries/consciousness/",
+          "supports": "Kanonisk støtte for skillet mellom perspektiver og fortsatt konkurrerende begrepsrammer; ikke en verifisering av én enkelt teori.",
+          "canonical_claim_ids": [
+            "fti-04",
+            "fti-24"
+          ],
+          "canonical_source_ids": [
+            "src-sep-consciousness"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "William James beskrev erfaringens strøm i 1890. Bernard Baars formulerte en global arbeidsromsmodell i 1988; rundt 2001–2011 undersøkte Dehaene og kolleger hvordan informasjon blir bevisst tilgjengelig.",
+        "idea": "En opplysning kan behandles av hjernen uten at vi kan fortelle om den. Teorien om globalt arbeidsrom forsøker å forklare når informasjon blir tilgjengelig for flere oppgaver og bevisst rapportering.",
+        "method": "I forsøk med svært korte eller maskerte inntrykk sammenligner forskere det deltakere sier de har sett med reaksjoner og hjerneaktivitet. Forskjellene brukes til å teste avgrensede hypoteser.",
+        "limit": "Det vi klarer å rapportere, er ikke nødvendigvis alt vi opplever. Ingen enkelt hjernemåling eller teori gir i dag en allment akseptert full forklaring på bevissthet.",
+        "featured_reference_urls": [
+          "https://psychclassics.yorku.ca/James/Principles/",
+          "https://pubmed.ncbi.nlm.nih.gov/16186014/",
+          "https://pubmed.ncbi.nlm.nih.gov/21521609/",
+          "https://plato.stanford.edu/entries/consciousness/"
+        ]
+      }
     },
     {
       "id": "kognitiv_psykologi",
@@ -218,7 +378,7 @@
       "limit": "At en prosessmodell passer en eksperimentell oppgave, beviser ikke at den er eneste mulige mekanisme eller beskriver hele en persons tenkning. Ulike oppgaver og konkurrerende modeller må prøves.",
       "example": "Undervisningsscenario: To personer husker ulike detaljer fra samme forelesning. Man varierer oppmerksomhetskrav og gjenkalling i en kontrollert oppgave.",
       "example_secondary": "Undervisningsscenario: To forsøksgrupper gjenkaller ord fra den samme listen, men bare én får en distraksjonsoppgave mellom innlæring og test. Studentene skiller observasjonen fra konkurrerende teorier om hukommelse.",
-      "contrast": "Behaviorismen prioriterer observerbar handling og læringsbetingelser; kognitiv teori tester også modeller for intern bearbeiding.",
+      "contrast": "Behaviorismen undersøker sammenhenger mellom observerbare betingelser og handlinger. Kognitiv psykologi prøver i tillegg modeller for mental bearbeiding, blant annet gjennom reaksjonstid og feil i minneoppgaver. Et mønster i slike indirekte mål kan passe flere ulike prosessmodeller og er ikke direkte innsyn i tankene.",
       "compare_with": "behaviorisme",
       "related_phenomena": [
         "arbeidsminne",
@@ -240,7 +400,18 @@
           "canonical_claim_ids": [],
           "canonical_source_ids": []
         }
-      ]
+      ],
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Fra 1950-årene ble mentale prosesser igjen sentrale i eksperimentell psykologi. Ulric Neissers bok Cognitive Psychology fra 1967 bidro til å samle den kognitive forskningstradisjonen.",
+        "idea": "Kognitiv psykologi undersøker hvordan vi oppfatter, husker, bruker språk og løser problemer. Mentale representasjoner og informasjonsbearbeiding er modeller, ikke direkte synlige gjenstander.",
+        "method": "Forskere sammenligner reaksjonstider, hukommelsesoppgaver og oppmerksomhetstester med konkrete prosessmodeller. Forskjellige modeller kan passe de samme dataene.",
+        "limit": "Resultater fra en bestemt oppgave viser ikke at én modell er den eneste mulige forklaringen på tenkning. Funnenes rekkevidde må prøves i andre situasjoner og utvalg.",
+        "featured_reference_urls": [
+          "https://plato.stanford.edu/archives/spr2026/entries/cognitive-science/",
+          "https://jonas.salk.edu/cgi-bin/koha/opac-detail.pl?biblionumber=4239"
+        ]
+      }
     },
     {
       "id": "humanistisk_psykologi",
@@ -254,7 +425,7 @@
       "limit": "Rogers' seks betingelser fra 1957 er en teoretisk påstand om terapeutisk endring, ikke dokumentasjon for at betingelsene alltid er tilstrekkelige. Maslows behovshierarki fra 1943 gir heller ikke en universell, empirisk fastlagt trapp for alle mennesker. Begreper som vekst må operasjonaliseres.",
       "example": "Undervisningsscenario: En elev velger mellom en trygg studieretning og et sterkt faglig engasjement. Spørsmålet er hvordan valget oppleves og begrunnes.",
       "example_secondary": "Undervisningsscenario: To studenter sammenligner Rogers' seks foreslåtte betingelser for terapeutisk endring med Maslows behovsteori. De utleder målbare hypoteser og markerer hva teorienes historiske originaltekster ikke dokumenterer.",
-      "contrast": "Behaviorisme analyserer primært observerbare læringsbetingelser og konsekvenser; humanistiske perspektiver vektlegger selvfortolkning, mening og relasjon. De belyser ulike sider og må undersøkes med ulike metoder.",
+      "contrast": "Behaviorisme undersøker hvordan læringsbetingelser og konsekvenser endrer handlinger. Humanistiske modeller undersøker også subjektiv mening, opplevde valg og relasjoner. Rogers' foreslåtte terapibetingelser og Skinners læringsprinsipper besvarer dermed ulike spørsmål, som må prøves med egnet empiri.",
       "compare_with": "behaviorisme",
       "related_phenomena": [],
       "reference_links": [
@@ -291,7 +462,33 @@
           ]
         }
       ],
-      "source_review_state": "partial_historical_method_review"
+      "source_review_state": "partial_historical_method_review",
+      "related_emne_links": [
+        {
+          "emne_id": "em_psy_motivasjon_behov",
+          "title": "Motivasjon og behov",
+          "why": "Maslows historiske behovsperspektiv er en del av humanistisk psykologi og belyser motivasjon og menneskelig utvikling, men erstatter ikke selvbestemmelsesteori eller nyere effektforskning på skolemotivasjon.",
+          "claim_ids": [
+            "fti-15"
+          ],
+          "source_ids": [
+            "src-apa-humanistic"
+          ]
+        }
+      ],
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Abraham Maslow publiserte sin motivasjonsteori i 1943. Carl Rogers utviklet personsentrert terapi og beskrev seks foreslåtte relasjonsbetingelser for terapeutisk endring i 1957.",
+        "idea": "Den humanistiske tradisjonen undersøker subjektiv erfaring, personlig mening, motivasjon og relasjoner. Maslows behovsteori og Rogers' terapiforståelse er beslektede, men ulike bidrag.",
+        "method": "Begrepsanalyse og kvalitative studier kombineres med undersøkelser av motivasjon og terapeutiske relasjoner. Rogers' betingelser må skilles fra senere behandlingseffektstudier.",
+        "limit": "Behovshierarkiet er ikke en empirisk bekreftet universell trapp, og Rogers' seks betingelser er ikke bevist tilstrekkelige i alle terapiforløp. Vekst og mening må defineres før de måles.",
+        "featured_reference_urls": [
+          "https://dictionary.apa.org/humanistic-perspective",
+          "https://doi.org/10.1037/h0045357",
+          "https://doi.org/10.1037/h0054346",
+          "https://www.apa.org/pubs/books/apa-handbook-humanistic-existential-psychology"
+        ]
+      }
     },
     {
       "id": "femfaktormodellen",
@@ -305,7 +502,7 @@
       "limit": "Trekk er statistiske beskrivelser. En score er ingen diagnose og forklarer ikke alene atferd i en konkret situasjon.",
       "example": "Undervisningsscenario: En forsker sammenligner selvrapporter over tid og kontrollerer målefeil i stedet for å plassere mennesker i typer.",
       "example_secondary": "Undervisningsscenario: En og samme elev skårer ulikt på selvrapport og lærerrapport om planmessighet. Klassen diskuterer målefeil og situasjonsforskjeller, og hvorfor en trekkprofil ikke er en diagnose.",
-      "contrast": "HEXACO-modellen tester en alternativ seksdimensjonal trekkstruktur med ærlighet–ydmykhet-dimensjon. Sosial identitetsteori, som kan åpnes herfra, studerer gruppe- og situasjonseffekter snarere enn stabile individuelle trekk.",
+      "contrast": "Femfaktormodellen beskriver relativt stabile forskjeller langs trekkdimensjoner. Sosial identitetsteori undersøker hvordan gruppetilhørighet og kategorisering kan påvirke vurderinger selv ved like individuelle trekk. HEXACO er en alternativ trekkstruktur; den er ikke en variant av sosial identitetsteori.",
       "compare_with": "sosial_identitet",
       "related_phenomena": [],
       "reference_links": [
@@ -341,7 +538,176 @@
           "canonical_source_ids": []
         }
       ],
-      "source_review_state": "partial_historical_method_review"
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Gjennom trekkforskningen på 1900-tallet utviklet Goldberg, Costa og McCrae statistiske beskrivelser av personlighet. McCrae og John sammenfattet femfaktormodellen i 1992.",
+        "idea": "Femfaktormodellen beskriver fem kontinuerlige trekkdimensjoner. Den grupperer ikke mennesker i fem faste typer, og en skåre forteller ikke hva en person vil gjøre i enhver situasjon.",
+        "method": "Forskerne analyserer mønstre i spørreskjemasvar og personbeskrivelser med faktoranalyse. De undersøker reliabilitet, informanter, språk og gjentakelse i ulike utvalg.",
+        "limit": "En statistisk trekkmodell er verken klinisk diagnose eller full årsaksforklaring. HEXACO-modellen viser dessuten at andre dimensjonsinndelinger kan være faglig relevante.",
+        "featured_reference_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/1635039/",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC6732674/",
+          "https://pubmed.ncbi.nlm.nih.gov/18453460/"
+        ]
+      }
+    },
+    {
+      "id": "psykometri_validitet",
+      "title": "Psykometri – fra intelligensmåling til konstruktvaliditet",
+      "chapter_id": "fagtradisjoner-teori-og-sinnet",
+      "emne_id": "em_psy_psykometri_maling",
+      "founders": "Charles Spearman; Lee J. Cronbach; Paul E. Meehl",
+      "period": "1904: Spearman analyserer sammenhenger mellom prestasjoner og argumenterer for en generell faktor. 1951: Cronbach publiserer koeffisient alfa for testenes interne struktur. 1955: Cronbach og Meehl utdyper konstruktvaliditet. Testing Standards fra 2014 samler krav til testtolkning, rettferdighet og bruk.",
+      "idea": "Psykometri undersøker hvordan egenskaper vi ikke observerer direkte, kan knyttes til svar på oppgaver eller spørreskjemaer. Spearmans arbeid viste hvordan samvariasjon kan studeres statistisk, men en faktor er en modell av mønstre i data, ikke et direkte bilde av en persons verdi eller hele intelligens. Reliabilitet gjelder konsistens i målingen; validitet krever argumenter og evidens for den konkrete tolkningen og bruken av en skåre. Cronbach og Meehl knyttet slike argumenter til teori og et nettverk av forventede sammenhenger.",
+      "method": "Spearman sammenholdt mål på ulike prestasjoner og undersøkte deres korrelasjoner. Cronbach (1951) analyserte sammenhengen mellom testledd og viste hvordan alfa relaterer seg til testens interne struktur; artikkelen er en statistisk metodeutvikling, ikke et eksperiment som validerer alle spørreskjemaer. Cronbach og Meehl (1955) drøftet hva slags empirisk støtte som trengs for å hevde at en test måler et teoretisk konstrukt. Moderne teststandarder krever vurdering av formål, utvalg, feil, rettferdighet og mulige konsekvenser.",
+      "limit": "Høy alfa kan forekomme selv om en skala ikke måler det den påstås å måle; alfa er heller ikke i seg selv et bevis på endimensjonalitet. Spearmans generelle faktor er en modell av samvariasjon og avgjør ikke debatter om læring, kultur, arv eller hvordan evner bør vurderes. Svar fra en kort appøvelse kan ikke brukes som klinisk, skolefaglig eller personrettet diagnose eller rangering.",
+      "example": "Undervisningsscenario: En skole ønsker å bruke et nytt konsentrasjonsskjema ved opptak. Elevene undersøker først om spørsmålene gir stabile skårer, deretter om skåren faktisk sier noe om den aktuelle oppgaven, og til slutt om språk og tilrettelegging kan gjøre bruken urettferdig.",
+      "example_secondary": "Undervisningsscenario: To hypotetiske spørreskjemaer har like høy intern konsistens, men bare det ene har dokumentert sammenheng med det begrepet det skal undersøke. Klassen forklarer hvorfor skårenes stabilitet og testens validitet må vurderes hver for seg.",
+      "contrast": "Femfaktormodellen beskriver et mønster av personlighetsdimensjoner; psykometrisk validitetsarbeid spør om konkrete måleinstrumenter kan bære tolkningene som trekkmodellen forutsetter. En statistisk modell av individuelle forskjeller er ikke det samme som en godkjent test.",
+      "compare_with": "femfaktormodellen",
+      "related_phenomena": [],
+      "reference_links": [
+        {
+          "title": "Spearman (1904) – General Intelligence, Objectively Determined and Measured",
+          "url": "https://www.jstor.org/stable/1412107",
+          "supports": "Originalstudie av samvariasjon og tolkning av en generell faktor. Korrelerte prestasjoner demonstrerer ikke én uttømmende forklaring på menneskelig evne.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Cronbach (1951) – Coefficient Alpha and the Internal Structure of Tests",
+          "url": "https://www.ets.org/research/policy_research_reports/publications/article/1951/dblr.html",
+          "supports": "Original publikasjonsoppføring for metoden alfa og intern teststruktur. Koefﬁsienten alene dokumenterer ikke konstruktvaliditet.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Cronbach og Meehl (1955) – Construct Validity in Psychological Tests",
+          "url": "https://psychclassics.yorku.ca/Cronbach/construct.htm",
+          "supports": "Historisk originaltekst som presiserer konstruktvaliditet som et argument basert på flere typer evidens; ikke ett enkelt akseptkriterium.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Standards for Educational and Psychological Testing (2014) – kanonisk kilde",
+          "url": "https://www.testingstandards.net/about.html",
+          "supports": "Fagverkets standardanker for validitet, rettferdighet, tilgjengelighet og fortolkningsansvar i testing.",
+          "canonical_claim_ids": [
+            "fti-03"
+          ],
+          "canonical_source_ids": [
+            "src-testing-standards"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Spearman undersøkte sammenhenger mellom prestasjoner i 1904. Cronbach videreutviklet målemetoder i 1951, og med Meehl forklarte han i 1955 hvordan validitet må underbygges.",
+        "idea": "En test kan gi stabile svar uten å måle det den påstår. Psykometri handler både om hvordan skårer beregnes og hva de med rimelighet kan brukes til.",
+        "method": "Forskere undersøker samvariasjon mellom oppgaver, konsistens mellom testledd og sammenheng med andre mål. De kontrollerer også om testen fungerer rettferdig for ulike grupper.",
+        "limit": "Høy intern konsistens er ikke det samme som god validitet. En enkelt testskåre forteller ikke hvem et menneske er eller hvilken diagnose vedkommende har.",
+        "featured_reference_urls": [
+          "https://www.jstor.org/stable/1412107",
+          "https://www.ets.org/research/policy_research_reports/publications/article/1951/dblr.html",
+          "https://psychclassics.yorku.ca/Cronbach/construct.htm",
+          "https://www.testingstandards.net/about.html"
+        ]
+      },
+      "related_emne_links": [
+        {
+          "emne_id": "em_psy_forskning_metode",
+          "title": "Forskning og metode",
+          "why": "Forskningsmetode omfatter operasjonalisering og begrunnelse for hva en måling kan bety. Testing Standards-ankeret knytter instrumentets validitet og rettferdighet til forskningsdesign, ikke til alle metoder generelt.",
+          "claim_ids": [
+            "fti-03"
+          ],
+          "source_ids": [
+            "src-testing-standards"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "emosjonsregulering",
+      "title": "Emosjonsregulering – Gross' prosessmodell",
+      "chapter_id": "fagtradisjoner-teori-og-sinnet",
+      "emne_id": "em_psy_folelser_affekt",
+      "founders": "James J. Gross; senere forskning av blant andre Oliver P. John",
+      "period": "1998: Gross publiserer både en eksperimentell sammenligning av revurdering og uttrykkshemming og en oversikt med prosessmodell for emosjonsregulering; 2002: modellen utdypes med kognitive og sosiale konsekvenser.",
+      "idea": "Emosjonsregulering er forsøk på å påvirke hvilke følelser som oppstår, når de oppstår, og hvordan de oppleves og uttrykkes. Gross' prosessmodell skiller mellom å velge eller endre situasjonen, styre oppmerksomheten, endre fortolkningen og regulere responsen etter at følelsen er aktivert. Kognitiv revurdering (reappraisal) og uttrykkshemming (suppression) er to strategier med forskjellige konsekvenser; modellen beskriver mulige prosesser, ikke et krav om å kontrollere alle følelser.",
+      "method": "Gross (1998) lot 120 deltakere se filmklipp som kunne vekke avsky. Deltakerne ble instruert til å revurdere situasjonen, skjule følelsesuttrykket eller se uten særskilt instruksjon. Forskerne registrerte rapportert opplevelse, synlige uttrykk og fysiologiske reaksjoner. Prosessmodellen fra samme år var en teoretisk integrasjon av ulike forskningslinjer. Én kort laboratorieoppgave og en oversiktsartikkel er derfor forskjellige typer belegg.",
+      "limit": "Revurdering reduserte rapportert avsky i laboratorieforsøket; uttrykkshemming reduserte synlige uttrykk, men økte sympatisk aktivering. Dette gjelder avgrensede eksperimentbetingelser og betyr ikke at skjuling alltid er skadelig, eller at revurdering er best ved alle følelsesuttrykk, aldre og kulturer. Nevrale målinger av affekt kan heller ikke brukes til å diagnostisere et individ eller lese en bestemt følelse direkte fra ett hjerneområde.",
+      "example": "Undervisningsscenario: To elever får en krevende tilbakemelding. Den ene forsøker å skjule ansiktsuttrykket; den andre undersøker om kritikken kan forstås som et konkret råd. Klassen skiller mellom synlig atferd, opplevd følelse og mulige endringer i fortolkning.",
+      "example_secondary": "Undervisningsscenario: En forsker vil sammenligne to strategier etter et uventet filmklipp. Studentene lager et enkelt, hypotetisk forsøk med ulike instruksjoner, anonym selvrapportering og observasjon av ansiktsuttrykk, og forklarer hvorfor én registrering ikke avslører hele følelsesforløpet.",
+      "contrast": "Lazarus' teori om stressvurdering undersøker hvordan krav og mestringsmuligheter fortolkes i møte med belastning. Gross' prosessmodell retter oppmerksomheten mot hvor i følelsesforløpet en reguleringsstrategi brukes. Vurdering og regulering kan samvirke, men er ikke samme teoretiske begrep.",
+      "compare_with": "stressvurdering",
+      "related_phenomena": [
+        "affektregulering",
+        "stressrespons"
+      ],
+      "reference_links": [
+        {
+          "title": "Gross (1998) – The Emerging Field of Emotion Regulation",
+          "url": "https://journals.sagepub.com/doi/full/10.1037/1089-2680.2.3.271",
+          "supports": "Historisk oversiktsartikkel som introduserer prosessmodellens fem reguleringspunkter. En teoretisk syntese er ikke i seg selv en universell test av modellen.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Gross (1998) – Antecedent- and Response-Focused Emotion Regulation",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9457784/",
+          "supports": "Originalt laboratorieforsøk med 120 deltakere, filmindusert avsky, selvrapporterte, observerte og fysiologiske mål. Forsøket kan ikke uten videre generaliseres til alle emosjoner.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Gross (2002) – Emotion Regulation: Affective, Cognitive, and Social Consequences",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/12212647/",
+          "supports": "Forskningsoversikt om revurdering og uttrykkshemming og mulige konsekvenser for opplevelse, atferd og sosial fungering; ikke klinisk behandlingseffekt.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Neuroscience – Emotions and the Brain (NCBI Bookshelf)",
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK10917/",
+          "supports": "Kanonisk fagverkskilde for følelser som samspill mellom flere nevrale systemer, subjektiv erfaring og kroppslige responser; ikke spesifikk validering av Gross' modell.",
+          "canonical_claim_ids": [
+            "fti-19"
+          ],
+          "canonical_source_ids": [
+            "src-ncbi-emotions"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "I 1998 undersøkte James Gross revurdering og uttrykkshemming i et laboratorieforsøk og beskrev en prosessmodell for emosjonsregulering. Modellen ble videreutviklet gjennom senere forskning.",
+        "idea": "Vi kan påvirke følelser både før de er fullt utviklet, og etter at de har oppstått. Å endre tolkningen av en situasjon er noe annet enn å forsøke å skjule det man føler.",
+        "method": "I et forsøk så 120 personer et ubehagelig filmklipp. Forskeren sammenlignet det de opplevde, det de viste utad, og kroppslige reaksjoner under ulike instruksjoner.",
+        "limit": "Forsøk med avsky og filmklipp forteller ikke hvilken strategi som passer i alle livssituasjoner. Et synlig rolig ansikt betyr heller ikke nødvendigvis at følelsen er borte.",
+        "featured_reference_urls": [
+          "https://journals.sagepub.com/doi/full/10.1037/1089-2680.2.3.271",
+          "https://pubmed.ncbi.nlm.nih.gov/9457784/",
+          "https://pubmed.ncbi.nlm.nih.gov/12212647/",
+          "https://www.ncbi.nlm.nih.gov/books/NBK10917/"
+        ]
+      },
+      "related_emne_links": [
+        {
+          "emne_id": "em_psy_nevroaffekt_regulering",
+          "title": "Nevroaffekt og regulering",
+          "why": "Modellen skiller mellom emosjonell erfaring, uttrykk og fysiologisk respons; fagverkets flernivåperspektiv viser hvorfor nevrale og kroppslige korrelater ikke alene fastslår årsak eller en bestemt følelse.",
+          "claim_ids": [
+            "fti-19"
+          ],
+          "source_ids": [
+            "src-ncbi-emotions"
+          ]
+        }
+      ]
     },
     {
       "id": "heuristikker",
@@ -355,7 +721,7 @@
       "limit": "Effekter av ankring og innramming avhenger av oppgave, utvalg og beslutningsmiljø. At en gruppestudie finner en systematisk skjevhet, gir ikke grunnlag for å stemple en enkeltpersons meninger som irrasjonelle eller anta at enkle heuristikker alltid er feil.",
       "example": "Undervisningsscenario: To tilfeldig fordelte grupper får to formuleringer av den samme beslutningen, én med vekt på mulige gevinster og én på tap. Forskerne sammenligner svarfordelingene uten å diagnostisere enkeltpersoners dømmekraft.",
       "example_secondary": "Undervisningsscenario: Et annet forsøk varierer en tilfeldig tallverdi før deltakere anslår en ukjent størrelse. Forskerne undersøker ankring separat fra innramming, og sammenligner oppgavene med teorier om adaptive heuristikker.",
-      "contrast": "Økologisk rasjonalitet (Gigerenzer og Gaissmaier) undersøker når enkle heuristikker fungerer godt. Sosial identitetsteori, som kan åpnes herfra, forklarer i stedet hvordan gruppetilhørighet og normer påvirker vurderinger.",
+      "contrast": "Heuristikkforskning undersøker regler som forenkler individuelle vurderinger; økologisk rasjonalitet spør når reglene virker godt i konkrete miljøer. Sosial identitetsteori undersøker hvordan gruppemedlemskap og normer kan påvirke de samme vurderingene. En ankereffekt beviser ikke i seg selv gruppeidentifikasjon.",
       "compare_with": "sosial_identitet",
       "related_phenomena": [
         "bekreftelsesbias",
@@ -412,7 +778,250 @@
             "src-judgment-uncertainty"
           ]
         }
+      ],
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Tversky og Kahneman beskrev sentrale vurderingsheuristikker i 1974 og innrammingseffekter i 1981. Gigerenzer og Gaissmaier sammenfattet et alternativt program om adaptive heuristikker i 2011.",
+        "idea": "Heuristikker er forenklede måter å vurdere og velge på. Noen oppgaver viser systematiske skjevheter; i andre miljøer kan en enkel regel gi gode beslutninger.",
+        "method": "Eksperimenter varierer blant annet ankerverdier og innramming mens svarene sammenlignes med en oppgitt normmodell. Oppgaven og beslutningsmiljøet påvirker funnene.",
+        "limit": "At en gruppe viser en skjevhet i et forsøk, betyr ikke at en enkeltperson tenker irrasjonelt. Ulike heuristikker må vurderes opp mot konkrete krav og tilgjengelig informasjon.",
+        "featured_reference_urls": [
+          "https://doi.org/10.1126/science.185.4157.1124",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC7930832/",
+          "https://pubmed.ncbi.nlm.nih.gov/7455683/",
+          "https://doi.org/10.1146/annurev-psych-120709-145346"
+        ]
+      }
+    },
+    {
+      "id": "arbeidsminne_flerkomponent",
+      "title": "Arbeidsminne – Baddeley og Hitch",
+      "chapter_id": "kognisjon-folelser-og-atferd",
+      "emne_id": "em_psy_kognisjon_tenkning",
+      "founders": "Alan Baddeley og Graham Hitch; senere Alan Baddeley",
+      "period": "1974: Baddeley og Hitch lanserer arbeidsminne som et system for midlertidig lagring og bearbeiding under blant annet resonnering og språklige oppgaver. 2000: Baddeley foreslår en episodisk buffer. 2012: han gjennomgår både multikomponentmodellen og alternative forklaringer.",
+      "idea": "Arbeidsminne betegner prosesser som gjør det mulig å holde begrenset informasjon tilgjengelig mens en løser en oppgave. Baddeley og Hitch skilte mellom en kontrollfunksjon og delsystemer for verbalt og visuelt-romlig materiale. Modellen utviklet seg fra et alternativ til forestillingen om ett passivt korttidslager. Den episodiske bufferen ble senere foreslått for å beskrive midlertidig sammenbinding av informasjon fra flere kilder.",
+      "method": "Baddeley og Hitch (1974) brukte forsøk med samtidige oppgaver for å undersøke om økende minnebelastning påvirket resonnering, språkforståelse og læring på samme måte. Sammenligning av prestasjon under ulike belastninger gir indirekte evidens om delprosesser, ikke direkte observasjon av egne hjerneskuffer. Bufferen fra 2000 var en teoretisk utvidelse som skulle forklare fenomener den eldre modellen håndterte dårlig. Nyere oversikter vurderer konkurrerende modeller og resultatene av ulike oppgavetyper.",
+      "limit": "Multikomponentmodellen er ikke et anatomisk kart over separate, faste hjernedeler. Et lavt resultat i én dual-task-oppgave kan skyldes instruksjoner, forkunnskap, syn, språk eller belastning og sier ikke alene at en person har svak generell hukommelse. Delsystemene og sentral kontroll er teoretiske konstruksjoner med konkurrerende forklaringer; samvariasjon i eksperimentet avgjør ikke modellens alle detaljer.",
+      "example": "Undervisningsscenario: En elev forsøker å følge en muntlig forklaring og samtidig huske en tallrekke. Klassen sammenligner dette med å tegne et enkelt kart under forklaringen og drøfter hvordan oppgavenes ulike informasjonskrav kan konkurrere om ressurser.",
+      "example_secondary": "Undervisningsscenario: I et hypotetisk laboratorieoppsett løser studenter en resonneringsoppgave med og uten en parallell huskeoppgave. Før de tolker tidsbruk og feil, spesifiserer de instruksjoner, rekkefølge, øvingseffekter og hvilken konklusjon dataene faktisk kan støtte.",
+      "contrast": "Hukommelses- og gjenhentingskortet undersøker særlig hvordan kunnskap fester seg og blir hentet fram ved senere testing. Arbeidsminnemodellen undersøker derimot det begrensede rommet for aktiv bearbeiding her og nå. Dårlig prestasjon under delt oppmerksomhet er ikke uten videre et funn om langtidshukommelse.",
+      "compare_with": "hukommelse_gjenhenting",
+      "related_phenomena": [],
+      "reference_links": [
+        {
+          "title": "Baddeley og Hitch (1974) – Working Memory",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0079742108604521",
+          "supports": "Originalkapittel med eksperimenter om samtidige minnekrav, resonnering og språkforståelse; sammendrag tilgjengelig, fulltekst ikke nyverifisert.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Baddeley (2000) – The Episodic Buffer: A New Component of Working Memory?",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11058819/",
+          "supports": "Historisk forslag om fjerde komponent og samordning av informasjon i arbeidshukommelse; en modellutvidelse, ikke endelig bevis.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Baddeley (2012) – Working Memory: Theories, Models, and Controversies",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21961947/",
+          "supports": "Gjennomgang av multikomponentperspektivet og alternative modeller, med begrensninger ved å overføre laboratorieoppgaver til hverdagen.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Attention System of the Human Brain: 20 Years After – kanonisk fagverk",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3413263/",
+          "supports": "Kanonisk grunnlag for samspill mellom oppmerksomhet, kontroll og arbeidsminne, ikke en spesifikk validering av Baddeley–Hitch-modellen.",
+          "canonical_claim_ids": [
+            "kfa-07"
+          ],
+          "canonical_source_ids": [
+            "src-attention-system"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "I 1974 viste Baddeley og Hitch hvordan midlertidig lagring og aktiv bearbeiding kunne undersøkes med samtidige oppgaver. Modellen ble utvidet i 2000.",
+        "idea": "Arbeidsminnet hjelper oss å holde noe i tankene mens vi arbeider med det. Å forstå en setning og samtidig huske tall kan belaste ulike deler av denne kapasiteten.",
+        "method": "Forskere sammenlignet hvordan forsøkspersoner løste resonnerings- og språklige oppgaver med og uten en ekstra minneoppgave. Ulik påvirkning ga grunnlag for en modell med flere funksjoner.",
+        "limit": "Modellens deler er forklaringer på prestasjonsmønstre, ikke fysiske bokser i hjernen. Én test sier ikke noe sikkert om et menneskes samlede evner.",
+        "featured_reference_urls": [
+          "https://www.sciencedirect.com/science/article/pii/S0079742108604521",
+          "https://pubmed.ncbi.nlm.nih.gov/11058819/",
+          "https://pubmed.ncbi.nlm.nih.gov/21961947/",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC3413263/"
+        ]
+      },
+      "related_emne_links": [
+        {
+          "emne_id": "em_psy_oppmerksomhet_fokus",
+          "title": "Oppmerksomhet og fokus",
+          "why": "Et canonical fagverksutsagn knytter kognitiv kontroll, oppmerksomhet og arbeidsminne under bestemte oppgavekrav. Dette er en avgrenset kobling om kontroll og ressurser, ikke likestilling av oppmerksomhet med arbeidsminne.",
+          "claim_ids": [
+            "kfa-07"
+          ],
+          "source_ids": [
+            "src-attention-system"
+          ]
+        }
       ]
+    },
+    {
+      "id": "persepsjon_prediktiv_prosessering",
+      "title": "Persepsjon – Gibson, forventning og prediktiv prosessering",
+      "chapter_id": "kognisjon-folelser-og-atferd",
+      "emne_id": "em_psy_persepsjon_sansing",
+      "founders": "Hermann von Helmholtz; James J. Gibson; moderne prediktiv-prosesseringsforskere, blant andre Andy Clark",
+      "period": "1860-årene: Helmholtz utvikler ideer om ubevisst slutning i persepsjon. 1979: James J. Gibson utgir The Ecological Approach to Visual Perception med vekt på informasjon i miljøet og direkte persepsjon. Fra 2000-tallet: prediktiv prosessering blir en sentral modellfamilie. 2020: Walsh og kolleger gjennomgår både støttende og motstridende nevrofysiologiske studier.",
+      "idea": "Sansene registrerer signaler, men det vi oppfatter, avhenger også av forholdet mellom signalene, tidligere erfaringer, handling og omgivelser. Helmholtz fremhevet tolkning under usikkerhet; Gibson hevdet at miljøets strukturer kan gi direkte informasjon for handling, uten at all opplevelse trenger indre rekonstruksjon. Prediktive modeller foreslår at hjernen sammenholder forventninger med innkommende informasjon og justerer modeller ved avvik. Disse forklaringsrammene er delvis konkurrerende, og prediktiv prosessering er ikke en enkelt bevist lov.",
+      "method": "Persepsjonsforskning bruker blant annet optiske tvetydigheter, kontrollerte visuelle stimuli, oppmerksomhetsmanipulasjon, responsmåling og nevrofysiologiske opptak. Ecological-tilnærmingen undersøker informasjon i faktisk samspill med omgivelsene. Prediktive modeller testes mer spesifikt ved å manipulere forventning og registrere mulige feil- og prediksjonssignaler. Walsh og kolleger (2020) vurderte om nevrofysiologiske data faktisk skiller slike modeller fra feedforward-forklaringer og tilpasning.",
+      "limit": "At forventninger påvirker persepsjon, viser ikke at all persepsjon drives av samme prediktive mekanisme. En respons på et uventet inntrykk kan skyldes flere forhold enn en prediksjonsfeil. Tvetydige figurer og laboratorieoppgaver avklarer heller ikke på egen hånd om en navngitt person vurderer virkeligheten korrekt. Gibsons og Helmholtz' tilnærminger forutsier ulike mekanismer; begge må vurderes med oppgave- og miljøspesifikke data.",
+      "example": "Undervisningsscenario: Et fotografi viser en gjenstand under uvanlig belysning. Elevene sammenligner hvordan kontekst, tidligere erfaringer og lyssetting kan påvirke hvilke former de rapporterer å se, og skiller oppgaveprestasjon fra antakelser om personlige egenskaper.",
+      "example_secondary": "Undervisningsscenario: Studenter planlegger et eksperiment med forventede og uventede lyd- eller lysmønstre. De formulerer på forhånd hva en prediktiv modell forventer, hva en enklere tilpasningsmodell kan forklare, og hvilke målinger som kan skille hypotesene.",
+      "contrast": "Arbeidsminnemodellen undersøker hva som kan holdes og manipuleres under pågående tenkning. Persepsjonsteoriene undersøker hvordan sanseinformasjon brukes til å danne eller hente fram en oppfatning av omgivelsene; et slikt inntrykk trenger ikke være bevisst lagret i arbeidsminnet.",
+      "compare_with": "arbeidsminne_flerkomponent",
+      "related_phenomena": [],
+      "reference_links": [
+        {
+          "title": "Gibson (1979) – The Ecological Approach to Visual Perception, historisk bibliografi",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/6699538/",
+          "supports": "Fagfellevurdert historisk gjennomgang av Gibsons økologiske teori og bok fra 1979, inkludert dens kritikk av representasjonsmodeller. Ikke originalboken i fulltekst.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Walsh mfl. (2020) – Evaluating the Neurophysiological Evidence for Predictive Processing",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7187369/",
+          "supports": "Kanonisk og fagfellevurdert metodekritisk oversikt som drøfter Helmholtz, nevronale prediksjoner og alternative modeller.",
+          "canonical_claim_ids": [
+            "kfa-02"
+          ],
+          "canonical_source_ids": [
+            "src-predictive-perception"
+          ]
+        },
+        {
+          "title": "How Visual Spatial Attention Alters Perception – kanonisk review",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6170011/",
+          "supports": "Dokumenterer hvordan oppmerksomhet i bestemte oppgaver kan påvirke visuell persepsjon, uten å teste en universell inferensmekanisme.",
+          "canonical_claim_ids": [
+            "kfa-01",
+            "kfa-05"
+          ],
+          "canonical_source_ids": [
+            "src-attention-perception"
+          ]
+        },
+        {
+          "title": "Stanford Encyclopedia – Perception and mental representations",
+          "url": "https://plato.stanford.edu/entries/perception-problem/",
+          "supports": "Filosofisk og begrepsmessig bakgrunn for spørsmålet om persepsjon og mentale representasjoner, ikke eksperimentelt bevis.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Helmholtz diskuterte perseptuell fortolkning på 1800-tallet. Gibson utviklet en økologisk tilnærming, kjent fra boken i 1979. Nyere forskere undersøker hvordan forventning kan påvirke sansebearbeiding.",
+        "idea": "Slik vi ser og oppfatter verden, avhenger av sanseinntrykk og situasjonen rundt oss. Forskere er uenige om hvor mye av dette som krever indre slutninger og prediksjoner.",
+        "method": "Eksperimenter varierer forventninger, kontekst og visuelle inntrykk. Forskere må undersøke om resultatene er særegne for prediktive modeller eller også kan forklares på andre måter.",
+        "limit": "At forventninger påvirker oss, beviser ikke én samlet teori om persepsjon. En optisk illusjon sier heller ikke noe om en persons generelle virkelighetsforståelse.",
+        "featured_reference_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/6699538/",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC7187369/",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC6170011/",
+          "https://plato.stanford.edu/entries/perception-problem/"
+        ]
+      }
+    },
+    {
+      "id": "hverdagsattribusjon_og_vaner",
+      "title": "Hverdagspsykologi – Heider, heuristikker og vane",
+      "chapter_id": "kognisjon-folelser-og-atferd",
+      "emne_id": "em_psy_hverdagspsykologi",
+      "founders": "Fritz Heider; Amos Tversky og Daniel Kahneman; Gerd Gigerenzer; forskere på vaner og kontekst",
+      "period": "1958: Fritz Heider utgir The Psychology of Interpersonal Relations og analyserer hverdagslige årsaksforklaringer. 1974: Tversky og Kahneman publiserer Judgment under Uncertainty. Fra 1990-årene videreutvikler blant andre Gigerenzer forskning på heuristikkenes økologiske rasjonalitet. I nyere forskning undersøkes vaner som gjentatt respons på stabile situasjonssignaler.",
+      "idea": "Hverdagspsykologi omfatter hvordan mennesker spontant tolker andres handlinger og utvikler egne rutiner. Heider viste at vi søker årsaker i personen og situasjonen, men slike attribusjoner kan være feil. Tversky og Kahneman viste hvordan raske heuristikker kan lede til skjevheter i bestemte oppgaver; senere forskning fremhever også at enkle regler kan fungere effektivt når de passer miljøet. Vaner er ikke det samme som gjennomtenkte valg: situasjonssignaler kan utløse innlærte handlinger.",
+      "method": "Attribusjonsstudier varierer hva observatører får vite om en persons situasjon og måler forklaringer på handlinger. Beslutningsforskning spesifiserer stimuli, alternativer og relevante normer før en heuristikk vurderes som nyttig eller feilbarlig. Vaneforskning undersøker gjentatt praksis og konteksten som gjør handlinger tilgjengelige. Ingen enkelt kort test viser sikre årsaker eller personlighetstrekk hos én bestemt person.",
+      "limit": "En plausibel forklaring på atferd er ikke nødvendigvis en testet årsakshypotese. En heuristikk er ikke alltid en bias, og en vane er ikke en uforanderlig egenskap. Én forsinkelse eller ett valg gir ikke grunnlag for å kalle noen lat, manipulerende eller impulsiv. Hukommelse, kontekst, alternative valgmuligheter og observerte handlinger må holdes atskilt fra antakelser om motiv.",
+      "example": "Undervisningsscenario: En person kommer sent til et tenkt arrangement. Studentene sammenligner påstanden «hun bryr seg ikke» med hypoteser om reisevei, endret arbeidstid og informasjonen hun fikk, og foreslår hvilke observasjoner som kunne skille forklaringene.",
+      "example_secondary": "Undervisningsscenario: To skolegrupper innfører forskjellige rutiner for sortering av avfall. Klassen undersøker om tilgjengelige beholdere, gjentakelse eller opplysningene om valgene best forklarer atferden, i stedet for å tilskrive gruppene stabile personlige egenskaper.",
+      "contrast": "Heuristikkortet undersøker forenklede regler i vurdering og beslutning. Heiders attribusjonstradisjon spør hvordan vi forklarer handlingers årsaker, mens vaneforskning ser på gjentakelse ved stabile kontekstsignaler. Slutninger om andres motiv og automatiserte vaner krever forskjellige data og forsøksopplegg.",
+      "compare_with": "heuristikker",
+      "related_phenomena": [],
+      "reference_links": [
+        {
+          "title": "Heider (1958) – The Psychology of Interpersonal Relations",
+          "url": "https://books.google.com/books/about/The_Psychology_of_Interpersonal_Relation.html?id=A23uUgziTKAC",
+          "supports": "Originalverk med historiske kapitler om årsaker, handling, intensjon og situasjon; katalogen dokumenterer boken, ikke senere empiriske effekter.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Tversky og Kahneman (1974) – Judgment under Uncertainty",
+          "url": "https://www.science.org/doi/10.1126/science.185.4157.1124",
+          "supports": "Originalartikkel om vurdering under usikkerhet; knyttes bare til heuristiske forklaringer, ikke til alt hverdagsliv.",
+          "canonical_claim_ids": [
+            "kfa-17"
+          ],
+          "canonical_source_ids": [
+            "src-judgment-uncertainty"
+          ]
+        },
+        {
+          "title": "Heuristic Decision Making in Medicine",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3341653/",
+          "supports": "Kanonisk review om heuristikker og økologisk rasjonalitet, som viser at forenkling ikke nødvendigvis innebærer en feil.",
+          "canonical_claim_ids": [
+            "kfa-10"
+          ],
+          "canonical_source_ids": [
+            "src-heuristics"
+          ]
+        },
+        {
+          "title": "A Review and Analysis of Habit in Understanding Behaviour",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4566897/",
+          "supports": "Kanonisk forskning om gjentakelse, kontekst og stimulus–respons; underbygger atferdsanalysen uten personklassifisering.",
+          "canonical_claim_ids": [
+            "kfa-17",
+            "kfa-18"
+          ],
+          "canonical_source_ids": [
+            "src-habit-review"
+          ]
+        },
+        {
+          "title": "Measurement of Individual Differences in Cognitive Biases",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7930832/",
+          "supports": "Metodekritikk om reliabilitet og overgeneralisering fra ett testresultat til stabile individuelle forskjeller.",
+          "canonical_claim_ids": [
+            "kfa-14"
+          ],
+          "canonical_source_ids": [
+            "src-bias-measurement"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Heider undersøkte i 1958 hvordan vi forklarer andres handlinger. Fra 1974 studerte Tversky og Kahneman raske vurderingsregler; nyere forskning har undersøkt økologisk rasjonalitet og vaner.",
+        "idea": "Vi lager raske forklaringer på hvorfor andre gjør som de gjør. Noen ganger glemmer vi situasjonen rundt handlingen, eller bruker en beslutningsregel som passer dårlig til oppgaven.",
+        "method": "Forskere varierer situasjonsinformasjon, beslutningsoppgaver og stabile kontekstsignaler. Gode hypoteser må kunne skilles fra alternative forklaringer med data.",
+        "limit": "En enkel handling avslører ikke skjulte motiv eller personlighet. Rask tenkning kan fungere godt, og vaner påvirkes av miljøet der de læres og gjentas.",
+        "featured_reference_urls": [
+          "https://books.google.com/books/about/The_Psychology_of_Interpersonal_Relation.html?id=A23uUgziTKAC",
+          "https://www.science.org/doi/10.1126/science.185.4157.1124",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC3341653/",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC4566897/"
+        ]
+      }
     },
     {
       "id": "stressvurdering",
@@ -426,7 +1035,7 @@
       "limit": "Vurderingsmodellen erstatter ikke fysiologisk stressforskning og betyr ikke at belastning er «bare en tanke».",
       "example": "Undervisningsscenario: To deltakere får samme krevende oppgave, men ulik informasjon om tilgjengelig støtte.",
       "example_secondary": "Undervisningsscenario: En dagbokstudie følger hvordan den samme personen vurderer krav, støtte og handlemuligheter i ulike studiesituasjoner. Sammenhenger mellom vurdering og rapportert stress tolkes uten automatisk kausal konklusjon.",
-      "contrast": "Fysiologiske modeller måler kroppslige stressprosesser. Resiliensforskning, som kan åpnes herfra, følger dessuten tilpasning og beskyttelsesfaktorer over tid; stressvurdering undersøker situasjonens krav og mestringsmuligheter.",
+      "contrast": "Lazarus og Folkmans stressvurderingsmodell undersøker hvordan krav og mestringsmuligheter fortolkes i en konkret situasjon. Resiliensforskning følger variasjon i støtte og tilpasning gjennom livsforløp. Begge perspektiver må sammenholdes med reelle belastninger; vurdering gir ikke mål på skyld eller personlig styrke.",
       "compare_with": "resiliens",
       "related_phenomena": [
         "stressrespons"
@@ -455,7 +1064,31 @@
           ]
         }
       ],
-      "source_review_state": "partial_historical_method_review"
+      "source_review_state": "partial_historical_method_review",
+      "related_emne_links": [
+        {
+          "emne_id": "em_psy_affektregulering",
+          "title": "Affektregulering",
+          "why": "Kognitiv vurdering og revurdering kan påvirke emosjonelle reaksjoner i bestemte situasjoner. Lazarus' stressmodell forklarer et avgrenset vurderingsperspektiv, ikke hele Gross' emosjonsreguleringsmodell.",
+          "claim_ids": [
+            "kfa-23"
+          ],
+          "source_ids": [
+            "src-reappraisal-review"
+          ]
+        }
+      ],
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Richard Lazarus og Susan Folkman utviklet den transaksjonelle forståelsen av stress særlig på 1960–1980-tallet. Folkman, Lazarus og kolleger undersøkte vurdering og mestring i en studie fra 1986.",
+        "idea": "Stress forstås som et samspill mellom situasjonens krav, hvordan kravene vurderes, og tilgjengelige mestringsmuligheter. Modellen betyr ikke at belastning bare finnes i tankene.",
+        "method": "Dagbøker, intervjuer og spørreskjemaer kartlegger vurderinger, mestringsstrategier og utfall i konkrete situasjoner. Sammenhenger i slike data beviser ikke automatisk årsak.",
+        "limit": "Vurderingsmodellen erstatter ikke fysiologisk stressforskning eller analyser av ytre forhold. Den er ikke et mål på personlig styrke eller skyld ved vedvarende belastning.",
+        "featured_reference_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/3712234/",
+          "https://www.who.int/news-room/questions-and-answers/item/stress"
+        ]
+      }
     },
     {
       "id": "tilknytning",
@@ -469,7 +1102,7 @@
       "limit": "Strange Situation er en forskningsprosedyre, ikke en diagnose eller komplett omsorgsvurdering. Forfatterne skriver i forordet fra 1978 (s. xli) at dette var en standardisert observasjonsprosedyre, ikke et eksperiment med tilfeldig fordelt behandling eller kontrollerte rekkefølgeeffekter. Originalforordets s. xliii–xliv understreker også at prosedyren ikke nødvendigvis passer barn fra andre kulturer eller familier, og at utrygge/motvillige foreldre ikke bør presses til deltakelse. Det samlede bokutvalget på 106 spedbarn må ikke forveksles med N=56 i 1970-artikkelen eller N=23 i sammenligningen mot hjemmeobservasjoner. I 1969-manuskriptets trykte s. 26–27 avviser forfatterne at barn i A/B/C kan rangeres etter én skala for «sterkere» eller «svakere» tilknytning, og framhever behovet for uavhengige replikasjoner, like operasjonelle definisjoner og testing i andre aldre/kulturer. Den senere bokas appendiks I–III er bibliografisk identifisert, men ikke innholdskontrollert eller sammenholdt med NAPS 00762. Det opprinnelige kodematerialet NAPS 00762 er fremdeles ikke lest; en arkivert artikkel eller et manuskript er ikke det samme som dette instruksjonssettet. I Ainsworth og Bell (1970) var utvalget begrenset til 56 hvite middelklassebarn, og enkelte observatør-/skårereliabiliteter bygde på bare 4, 8 eller 14 kasus; høye reliabilitetskorrelasjoner dokumenterer heller ikke automatisk gyldighet på tvers av familier og kulturer. Forfatterne skrev selv på s. 64–65 at korttidsobservasjoner kan villede, og advarte mot for tidlig kvantifisering av «styrken» i tilknytning. Den separate, samtidige kodemanualen (NAPS 00762) er identifisert, men ikke hentet; artikkelen bekrefter derfor ikke en universell diagnoseskår eller en standardisert tilknytningsklassifisering for alle barn. Opie mfl. (2021) fant begrenset gruppestabilitet: trygg/utrygg r = 0,28 (95 % KI 0,21–0,35) og fireveis κ = 0,23 (95 % KI 0,17–0,29), med tegn til publiseringsskjevhet. Dette er ingen sikker enkeltbarnsprognose. Waters' veiledning fra 2002 (s. 1 og 11) tillater at en observasjon ikke klassifiseres hvis opptak/prosedyre er forstyrret eller utilstrekkelig; avgjørelser skal ikke bygge på én enkelt reaksjon. I teksten fra 2002 er gruppe D (desorganisert tilknytning) uttrykkelig en senere tilføyelse, ikke del av Ainsworths opprinnelige A/B/C-system. Dette er en etterfølgende medeiers metodekommentar og utdrag, ikke en rekonstruksjon av den opprinnelige NAPS 00762-manualen eller bevis for individuell diagnose. Bowlby understreket selv (1958, s. 365–366) at den etologiske modellen ennå var et forskningsforslag som måtte etterprøves. Begrepet monotropi var uttrykkelig beskrivende og uten påstått årsaksforklaring (s. 370). Historiske hypoteser om én foretrukket omsorgsperson er ikke dokumentasjon på at barnet bare kan knytte seg til biologisk mor eller at samvær/bosted kan avgjøres fra en enkelt test.",
       "example": "Undervisningsscenario: Forskere analyserer observasjoner fra en standardisert, kort separasjons- og gjenforeningssituasjon, men trekker ingen slutning om enkeltbarnets omsorgshistorie fra én økt.",
       "example_secondary": "Undervisningsscenario: Et metodekurs sammenligner en standardisert Strange Situation-klassifikasjon med en uavhengig oppfølgingsmåling senere i barndommen. Studentene vurderer stabilitet på gruppenivå, publiseringsskjevhet og hvorfor et enkelt barn ikke kan prognostiseres.",
-      "contrast": "Sosial læringsteori forklarer mer direkte hvordan observerte modeller og forventede konsekvenser kan påvirke handling.",
+      "contrast": "Tilknytningsteori undersøker hvordan barn søker nærhet og trygghet ved uro og utvikler forventninger i relasjoner. Sosial læringsteori undersøker blant annet hvordan barn kan lære ved å observere voksnes handlinger. Reaksjoner ved atskillelse og observert imitasjon er ulike data; ingen av dem gir alene en diagnose.",
       "compare_with": "sosial_laring",
       "related_phenomena": [
         "trygghetssokende_atferd"
@@ -624,6 +1257,28 @@
           "source_ids": [
             "src-attachment-early-meta"
           ]
+        },
+        {
+          "emne_id": "em_psy_barn_ungdom",
+          "title": "Barn og ungdom",
+          "why": "Responsiv omsorg og samspill i tidlig utvikling gir et relevant anvendelsesområde for Bowlbys og Ainsworths forskning, men tilknytning alene forklarer ikke utviklingen gjennom hele barne- og ungdomstiden.",
+          "claim_ids": [
+            "uol-02"
+          ],
+          "source_ids": [
+            "src-who-nurturing"
+          ]
+        },
+        {
+          "emne_id": "em_psy_oppvekst_miljo",
+          "title": "Oppvekst og miljø",
+          "why": "Tilknytningsteori belyser betydningen av barnets tidlige samspill med omsorgspersoner som én del av oppvekstmiljøet. Materielle vilkår, skole, samfunn og senere utvikling krever andre forklaringsmodeller.",
+          "claim_ids": [
+            "uol-07"
+          ],
+          "source_ids": [
+            "src-harvard-serve-return"
+          ]
         }
       ]
     },
@@ -639,7 +1294,7 @@
       "limit": "Et laboratoriefunn om imitasjon viser ikke at barn automatisk kopierer observert atferd i andre sammenhenger. Mestringstro avhenger av oppgave, erfaring og kontekst og er ikke et generelt personlighetstrekk.",
       "example": "Undervisningsscenario: En ny elev ser en medelev løse et vanskelig problem før eleven prøver selv.",
       "example_secondary": "Undervisningsscenario: I to undervisningsgrupper demonstrerer en medstudent samme løsningsmetode, men det varierer om forsøksdeltakerne selv utfører oppgaven. Klassen skiller observasjonslæring fra selvrapportert mestringstro.",
-      "contrast": "Operant læring fokuserer på konsekvensene av egne handlinger; sosial læring inkluderer indirekte læring fra andres handlinger.",
+      "contrast": "Operant behaviorisme undersøker endring etter konsekvensene av egen handling. Banduras sosial læringsteori undersøker også modellæring før egen forsterkning; mestringstro er en forventning om å klare en konkret oppgave. Imitasjonsforsøk, forsterkningsforsøk og mål på mestringstro tester forskjellige spørsmål.",
       "compare_with": "behaviorisme",
       "related_phenomena": [
         "laert_hjelpeloshet"
@@ -660,7 +1315,240 @@
           "canonical_source_ids": []
         }
       ],
-      "source_review_state": "partial_historical_method_review"
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Bandura, Ross og Ross undersøkte barns imitasjon av voksne modeller i 1961. I 1977 publiserte Bandura teorien om mestringstro som et selvstendig bidrag.",
+        "idea": "Vi kan lære ved å observere andre uten først selv å bli belønnet. Mestringstro gjelder forventningen om å kunne klare en bestemt oppgave, ikke et generelt trekk ved personligheten.",
+        "method": "Modelleksperimentene undersøkte imitasjon under bestemte laboratoriebetingelser. Mestringstro krever egne oppgavespesifikke målinger; teoriene bygger ikke på samme enkeltforsøk.",
+        "limit": "Barn kopierer ikke automatisk all observert atferd. Forsøksresultater må undersøkes på nytt i andre miljøer, og mestringstro kan variere med oppgave og erfaring.",
+        "featured_reference_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/13864605/",
+          "https://pubmed.ncbi.nlm.nih.gov/847061/"
+        ]
+      }
+    },
+    {
+      "id": "selvbestemmelsesteori",
+      "title": "Selvbestemmelsesteori",
+      "chapter_id": "utvikling-oppvekst-og-laring",
+      "emne_id": "em_psy_skole_motivasjon",
+      "founders": "Edward L. Deci og Richard M. Ryan",
+      "period": "Fra Decis motivasjonseksperimenter i 1971 via videre teoriutvikling i 1980-årene til Deci og Ryans samlede fremstillinger i 2000.",
+      "idea": "Selvbestemmelsesteori skiller mellom hvorvidt en aktivitet er interessant i seg selv, og hvorfor en person gjennomfører en aktivitet av andre grunner. Ytre motivasjon kan være kontrollert eller internalisert og selvbestemt. Autonomi, kompetanse og tilhørighet er sentrale psykologiske behov i teorien.",
+      "method": "Decis forsøk fra 1971 sammenlignet belønningsbetingelser i avgrensede oppgaver. Senere teoriutvikling, spørreskjemastudier og metaanalyser undersøker former for motivasjon, opplevd behovsstøtte og skoleutfall. Samvariasjon i metaanalyser er ikke uten videre kausal virkning i en bestemt klasse.",
+      "limit": "Autonomi betyr opplevd eierskap til handlinger, ikke fravær av lærerstyring eller regler. Teorien sier ikke at alle belønninger er skadelige, eller at alle elever reagerer likt. Både motivasjonsmåling, undervisningsmiljø, utvikling, kontekst og alternative forklaringer må vurderes før resultatene overføres.",
+      "example": "Undervisningsscenario: To elever løser samme matematikkoppgave. Én gjør det for å unngå irettesettelse, den andre fordi faget oppleves viktig for et selvvalgt mål. Klassen drøfter hvorfor begge kan være ytre motivert, men ulikt selvbestemt.",
+      "example_secondary": "Undervisningsscenario: En lærer gir to klasser samme utfordrende oppgave. Den ene klassen får begrunnelse, valgmulighet og konkret mestringsstøtte; den andre bare poeng og straff ved feil. Elevene drøfter hvilke prosesser teorien forutsier, og hvilke observasjoner som faktisk kreves for å undersøke dem.",
+      "contrast": "Banduras teori om mestringstro retter oppmerksomheten mot forventninger om å klare bestemte handlinger og observasjonslæring. Selvbestemmelsesteori undersøker i tillegg kvaliteten på motivasjonen og opplevelsen av autonomi og tilhørighet. Begrepene overlapper, men er ikke identiske.",
+      "compare_with": "sosial_laring",
+      "related_phenomena": [],
+      "reference_links": [
+        {
+          "title": "Deci (1971) – Effects of Externally Mediated Rewards on Intrinsic Motivation",
+          "url": "https://doi.org/10.1037/h0030644",
+          "supports": "Originalstudie med to laboratorieeksperimenter og én feltstudie om belønning og interesse for oppgaver. Funnene gjaldt bestemte betingelser og dokumenterer ikke at all belønning svekker motivasjon.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Deci og Ryan (2000) – The 'What' and 'Why' of Goal Pursuits",
+          "url": "https://doi.org/10.1207/S15327965PLI1104_01",
+          "supports": "Historisk nøkkeltekst om autonomi, kompetanse og tilhørighet samt forskjeller mellom former for ytre regulering. Modellens antakelser er ikke i seg selv kausale bevis for alle skolesituasjoner.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Ryan og Deci (2020) – Intrinsic and Extrinsic Motivation",
+          "url": "https://doi.org/10.1016/j.cedpsych.2020.101860",
+          "supports": "Faglig oversikt som forklarer hvorfor ytre motivasjon kan være mer eller mindre selvbestemt, og hvordan autonomistøtte virker i utdanningskontekster. Teoretisk oversikt, ikke ett enkelt effektforsøk.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Student Motivation and Associated Outcomes – metaanalyse",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33593153/",
+          "supports": "Metaanalyse av studenters ulike motivasjonstyper og tilknytning til prestasjoner, utholdenhet og trivsel. Observasjonelle samvariasjoner mellom utfall må ikke leses som universelle individuelle årsaksforklaringer.",
+          "canonical_claim_ids": [
+            "uol-13"
+          ],
+          "canonical_source_ids": [
+            "src-student-motivation"
+          ]
+        },
+        {
+          "title": "Pathways to Student Motivation – forskningsoversikt",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35330866/",
+          "supports": "Kilde for sammenhenger mellom autonomistøtte, kompetanse, tilhørighet og motivasjon i skole. Begrunnelsen gjelder undervisningskontekst, ikke en generell måling av elevers verdi eller potensial.",
+          "canonical_claim_ids": [
+            "uol-14"
+          ],
+          "canonical_source_ids": [
+            "src-motivation-pathways"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Fra Decis belønningsforsøk i 1971 til Deci og Ryans teori om autonomi, kompetanse og tilhørighet, videreutviklet gjennom skoleforskning på 2000-tallet.",
+        "idea": "Motivasjon handler ikke bare om hvor sterkt man ønsker noe, men også om hvorfor. En elev kan arbeide for en belønning, av frykt for straff, av egen interesse eller fordi læringen oppleves som viktig. Ytre motivasjon kan være mer eller mindre selvbestemt.",
+        "method": "Forskere sammenligner avgrensede undervisningssituasjoner, undersøker elevenes egne motivasjonsbegrunnelser og sammenholder motivasjon med læring, trivsel og utholdenhet. Eksperimenter og metaanalyser svarer på ulike spørsmål.",
+        "limit": "Autonomi er ikke det samme som fravær av regler. Belønning kan virke forskjellig avhengig av hvordan den brukes, og studier viser ikke at en bestemt elev alltid vil reagere på én måte. Motivasjon vurderes sammen med læringsmiljø og oppgave.",
+        "featured_reference_urls": [
+          "https://doi.org/10.1037/h0030644",
+          "https://doi.org/10.1207/S15327965PLI1104_01",
+          "https://doi.org/10.1016/j.cedpsych.2020.101860",
+          "https://pubmed.ncbi.nlm.nih.gov/33593153/"
+        ]
+      }
+    },
+    {
+      "id": "hukommelse_gjenhenting",
+      "title": "Hukommelse, gjenhenting og fordelt øving",
+      "chapter_id": "utvikling-oppvekst-og-laring",
+      "emne_id": "em_psy_laring_hukommelse",
+      "founders": "Hermann Ebbinghaus; Henry L. Roediger III og Jeffrey D. Karpicke; Nicholas J. Cepeda mfl.",
+      "period": "Fra Hermann Ebbinghaus' eksperimentelle hukommelsesstudier i 1885 til systematisk forskning på gjenhenting og fordelt øving i 2000-årene.",
+      "idea": "Hukommelse innebærer innkoding, bevaring og gjenhenting av informasjon. Ebbinghaus viste at hukommelse kunne undersøkes eksperimentelt; nyere forskning viser at aktiv gjenhenting og fordeling av øving over tid kan støtte senere retensjon. At stoffet virker lett å kjenne igjen ved repetert lesing, er ikke det samme som varig læring.",
+      "method": "Ebbinghaus utviklet systematiske hukommelseseksperimenter. Roediger og Karpicke (2006) sammenlignet repetert lesing med gjenhentingsprøver før tester på ulike tidspunkter. Cepeda mfl. (2006) undersøkte fordelt øving i en kvantitativ forskningssyntese. Forsøk, synteser og klasseromsoverføring har ulike evidenskrav.",
+      "limit": "Et godt resultat umiddelbart etter øving betyr ikke at kunnskapen bevares på lang sikt. Effekten av gjenhentingsøving varierer med oppgave, tidligere kunnskap, tilbakemelding og senere måletidspunkt. Fordelt øving har heller ikke ett universelt optimalt intervall. Eksperimenter med tekster eller ord kan ikke uten videre generaliseres til alle ferdigheter eller elevers evner.",
+      "example": "Undervisningsscenario: To elevgrupper arbeider med samme historiske stoff. Den ene leser teksten tre ganger, mens den andre leser én gang og deretter forsøker å hente frem hovedpunktene uten å se på arket. Klassen sammenligner både umiddelbar og senere gjenhenting.",
+      "example_secondary": "Undervisningsscenario: Elever lærer et lite sett ord på et fremmedspråk. Én gruppe øver alt på én dag; den andre fordeler like mye øving over flere dager. Før en utsatt prøve oppgir begge gruppene hvor trygge de føler seg. Forsøksplanen skiller faktisk retensjon fra opplevd mestring og øyeblikkelig prestasjon.",
+      "contrast": "Selvbestemmelsesteori undersøker hvorfor en elev engasjerer seg og opplever eierskap til læringen. Hukommelsesforskning på gjenhenting og fordeling undersøker hvordan informasjon huskes etter øving. Motivasjon og hukommelse påvirker hverandre, men er ulike forklaringsnivåer.",
+      "compare_with": "selvbestemmelsesteori",
+      "related_phenomena": [],
+      "reference_links": [
+        {
+          "title": "Ebbinghaus (1885) – Über das Gedächtnis",
+          "url": "https://www.loc.gov/item/e11000616/",
+          "supports": "Originalutgaven dokumenterer at Ebbinghaus behandlet hukommelse som et eksperimentelt undersøkelsesfelt. Hans historiske forsøksmetoder er ikke en direkte test av moderne klasseromsundervisning.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Roediger og Karpicke (2006) – Test-Enhanced Learning",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16507066/",
+          "supports": "Primærstudie som sammenligner gjenhentingsprøver og ny lesing av læringsstoff med ulike tidsforsinkelser. Den avgrensede eksperimentelle effekten gjelder bestemte materialer og testbetingelser.",
+          "canonical_claim_ids": [
+            "uol-10"
+          ],
+          "canonical_source_ids": [
+            "src-retrieval-practice"
+          ]
+        },
+        {
+          "title": "Cepeda mfl. (2006) – Distributed Practice in Verbal Recall Tasks",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16719566/",
+          "supports": "Kvantitativ syntese av fordelt øving i verbale hukommelsesoppgaver, med betydningen av både tidsrom mellom økter og ønsket bevaringsperiode. Den angir ikke ett optimalt intervall for all kunnskap.",
+          "canonical_claim_ids": [
+            "uol-11"
+          ],
+          "canonical_source_ids": [
+            "src-spacing"
+          ]
+        },
+        {
+          "title": "Karpicke og Roediger (2008) – The Critical Importance of Retrieval for Learning",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18276894/",
+          "supports": "Eksperiment om gjenhentingsøving med fremmedspråklig vokabular og utsatt retensjon. Viser et konkret læringsfunn, men ikke at hver quiz eller test i enhver situasjon gir bedre læring.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "I 1885 undersøkte Hermann Ebbinghaus hukommelse eksperimentelt. Fra 2000-tallet viste blant andre Roediger, Karpicke og Cepeda hvordan aktiv gjenhenting og fordelt øving påvirker det vi husker etter en stund.",
+        "idea": "Det å lese noe flere ganger kan få det til å virke kjent, men varig læring må vurderes senere. Når vi prøver å hente fram kunnskap uten å se svaret, og fordeler øvingen over tid, kan det styrke hukommelsen i mange læringssituasjoner.",
+        "method": "Forskerne sammenligner ulike måter å øve på og tester hva deltakerne husker både rett etter læring og etter et tidsrom. Eksperimentene varierer blant annet hvor mange ganger deltakerne leser, gjenhenter eller sprer øvingen utover.",
+        "limit": "Ingen metode er automatisk best for alle oppgaver. Tidspunktet for senere testing, oppgavens vanskelighet, tilbakemelding og elevenes forkunnskaper påvirker resultatene. Gode prestasjoner under øving er ikke det samme som sikker langtidshukommelse.",
+        "featured_reference_urls": [
+          "https://www.loc.gov/item/e11000616/",
+          "https://pubmed.ncbi.nlm.nih.gov/16507066/",
+          "https://pubmed.ncbi.nlm.nih.gov/16719566/",
+          "https://pubmed.ncbi.nlm.nih.gov/18276894/"
+        ]
+      }
+    },
+    {
+      "id": "identitetsutvikling_erikson_marcia",
+      "title": "Identitetsutvikling – Erikson og Marcia",
+      "chapter_id": "utvikling-oppvekst-og-laring",
+      "emne_id": "em_psy_identitet_selv",
+      "founders": "Erik H. Erikson; James E. Marcia; senere longitudinell identitetsforskning",
+      "period": "1966: Marcia publiserer en intervjubasert undersøkelse av identitetsstatus. 1968: Erikson utgir Identity: Youth and Crisis, som samler arbeider om identitet og psykososial utvikling. Fra 2000-tallet: longitudinelle undersøkelser gir et mer nyansert bilde av stabilitet, utforskning og endring.",
+      "idea": "Erikson gjorde identitet til et sentralt spørsmål i psykososial utvikling og beskrev spenningen mellom identitet og rolleforvirring i ungdomsårene. Marcia forsøkte å undersøke begrepet empirisk gjennom utforskning og forpliktelse på områder som utdanning, yrke og livssyn. Hans fire identitetsstatuser er beskrivelser av mønstre i en bestemt operasjonalisering, ikke permanente bokser mennesker må plasseres i. Senere forskning undersøker identitet som prosess gjennom relasjoner og livshendelser.",
+      "method": "Marcia (1966) brukte individuelle intervjuer med 86 mannlige studenter og grupperte svar etter kriterier knyttet til krise/utforskning og forpliktelse. Han undersøkte forbindelser til oppgaver, målsettinger og holdninger; utvalget gir ikke grunnlag for generelle kjønns-, kultur- eller livsløpslover. Eriksons verk er en teoretisk og historisk syntese, ikke et longitudinelt eksperiment. Nyere oversikter samler oppfølgingsstudier og undersøker både stabile og endrede identitetsprosesser.",
+      "limit": "En identitetsstatus er ingen diagnose, personlighetstype eller livslang etikett. Marcias opprinnelige utvalg var smalt, og opprinnelige mål dekket blant annet yrke og ideologi snarere enn all identitet. Kultur, sosiale roller, relasjoner og livshendelser kan endre forløpet; Eriksons stadietenkning må ikke tolkes som en fast kalender alle må følge.",
+      "example": "Undervisningsscenario: En fiktiv ungdom skifter studieretning etter møter med ulike fagmiljøer. Elevene skiller mellom det å utforske muligheter og det å forplikte seg til et valg, uten å klassifisere personen som moden eller umoden.",
+      "example_secondary": "Undervisningsscenario: To hypotetiske intervjuer viser samme yrkesvalg, men ulike begrunnelser. Studentene undersøker hva de faktisk vet om utforskning og forpliktelse, og hvorfor én samtale ikke kan fastslå en varig identitetsstatus.",
+      "contrast": "Sosial identitetsteori handler om hvordan gruppetilhørighet og mellomgruppeprosesser påvirker selvforståelsen. Eriksons og Marcias identitetsarbeid undersøker i større grad personlig utforskning, forpliktelser og utvikling over tid. De kan belyse samme person på ulike nivåer uten å være identiske.",
+      "compare_with": "sosial_identitet",
+      "related_phenomena": [],
+      "reference_links": [
+        {
+          "title": "Erikson (1968) – Identity: Youth and Crisis",
+          "url": "https://search.worldcat.org/title/Identity-%3A-youth-and-crisis/oclc/204288",
+          "supports": "Bibliografisk dokumentasjon av originalverket om identitet og psykososial utvikling; bokoppføringen dokumenterer ikke empirisk universalitet.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Marcia (1966) – Development and Validation of Ego-Identity Status",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/5939604/",
+          "supports": "Originalstudie fra 1966, med statusmodellen. Utvalgets sammensetning og intervjumetode må vurderes ved generalisering.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Marcia (1966) – Abstract og designinformasjon hos APA",
+          "url": "https://www.tandfonline.com/servlet/linkout?type=Scholix&url=https%3A%2F%2Fdx.doi.org%2F10.1037%252Fh0023281",
+          "supports": "Originalpublikasjonens registrerte abstrakt beskriver 86 mannlige studenter, intervjuer og undersøkte mål. Ikke grunnlag for persondiagnose.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Branje mfl. (2021) – Dynamics of Identity Development in Adolescence",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34820948/",
+          "supports": "Kanonisk fagverkssyntese om modning, stabilitet, endring, relasjoner og livsoverganger, med grenser for individuell prediksjon.",
+          "canonical_claim_ids": [
+            "uol-22",
+            "uol-23",
+            "uol-25"
+          ],
+          "canonical_source_ids": [
+            "src-identity-review"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Erikson beskrev identitetsutvikling i 1968. Marcia hadde i 1966 undersøkt hvordan utforskning og forpliktelse kunne studeres gjennom intervjuer med unge voksne.",
+        "idea": "Identitet handler blant annet om hvilke muligheter vi undersøker, hva vi velger å stå for, og hvordan relasjoner og erfaringer påvirker disse valgene.",
+        "method": "Marcia intervjuet 86 mannlige studenter om spørsmål som yrke og livssyn. Senere forskere har fulgt ungdom over tid for å undersøke både endring og stabilitet.",
+        "limit": "Identitetsstatuser er forskningsbegreper, ikke merkelapper man kan sette på et menneske etter en kort samtale. Utvikling følger ikke én fast aldersplan.",
+        "featured_reference_urls": [
+          "https://search.worldcat.org/title/Identity-%3A-youth-and-crisis/oclc/204288",
+          "https://pubmed.ncbi.nlm.nih.gov/5939604/",
+          "https://www.tandfonline.com/servlet/linkout?type=Scholix&url=https%3A%2F%2Fdx.doi.org%2F10.1037%252Fh0023281",
+          "https://pubmed.ncbi.nlm.nih.gov/34820948/"
+        ]
+      },
+      "related_emne_links": [
+        {
+          "emne_id": "em_psy_livslop_overganger",
+          "title": "Livsløp og overganger",
+          "why": "Longitudinell identitetsforskning undersøker hvordan relasjoner og livshendelser kan påvirke identitetsutvikling over tid. Koblingen gjelder identitetsprosesser ved overganger, ikke en fullstendig livsløpsteori.",
+          "claim_ids": [
+            "uol-25"
+          ],
+          "source_ids": [
+            "src-identity-review"
+          ]
+        }
+      ]
     },
     {
       "id": "sosial_identitet",
@@ -674,7 +1562,7 @@
       "limit": "Gruppeeffekter er kontekstuelle; teori om gruppeprosesser legitimerer ikke stereotypier om enkeltpersoner.",
       "example": "Undervisningsscenario: To tilfeldig fordelte studentgrupper vurderer de samme forslagene under ulike gruppemerker.",
       "example_secondary": "Undervisningsscenario: En klasse får to tilfeldige gruppeetiketter og fordeler poeng mellom anonyme mottakere. Studentene vurderer om fordelingene støtter en minimalgruppeeffekt uten å slutte at virkelig gruppekonflikt alltid har samme årsak.",
-      "contrast": "Realistisk konfliktteori (Sherif) fremhever konkurranse og felles mål som gruppeprosesser; sosial identitet fremhever også kategorisering uten ressurskonflikt. Femfaktormodellen, som kan åpnes herfra, beskriver individuelle trekk på et annet nivå.",
+      "contrast": "Sherifs realistiske konfliktteori undersøker hvordan konkurranse og felles mål påvirker grupper, mens sosial identitetsteori også undersøker kategorisering uten ressurskonflikt. Femfaktormodellen, som sammenlignes her, handler om individuelle trekk og forutsier ikke alene endrede vurderinger etter en gruppeinndeling.",
       "compare_with": "femfaktormodellen",
       "related_phenomena": [
         "sosial_sammenligning"
@@ -706,7 +1594,32 @@
           "canonical_source_ids": []
         }
       ],
-      "source_review_state": "partial_historical_method_review"
+      "source_review_state": "partial_historical_method_review",
+      "related_emne_links": [
+        {
+          "emne_id": "em_psy_fordommer_kategorisering",
+          "title": "Fordommer og kategorisering",
+          "why": "Sosial identitetsteori analyserer hvordan gruppekategorisering og inngruppefavorisering kan påvirke vurderinger. Den gir ikke alene en full forklaring på fordommer, diskriminering eller institusjonell makt.",
+          "claim_ids": [
+            "sns-11"
+          ],
+          "source_ids": [
+            "src-status-ingroup"
+          ]
+        }
+      ],
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Tajfel og kolleger publiserte minimalgruppeeksperimenter i 1971. Tajfel og Turner videreutviklet sosial identitetsteori gjennom 1970-årene, parallelt med andre tradisjoner i konfliktforskning.",
+        "idea": "Sosial kategorisering og identifikasjon kan påvirke hvordan mennesker vurderer egen gruppe og andre grupper. Kategorisering kan virke også uten langvarig konkurranse.",
+        "method": "I minimalgruppeforsøk undersøkes fordelinger mellom tilfeldig sammensatte grupper. Feltundersøkelser må brukes for å prøve om mønstrene gjelder under andre sosiale betingelser.",
+        "limit": "Gruppetilhørighet bestemmer ikke hvordan et bestemt menneske vil handle. Resultater fra konstruerte gruppesituasjoner kan ikke uten videre overføres til reelle konflikter.",
+        "featured_reference_urls": [
+          "https://doi.org/10.1002/ejsp.2420010202",
+          "https://pubmed.ncbi.nlm.nih.gov/32931718/",
+          "https://www.yorku.ca/pclassic/Sherif/chap2.htm"
+        ]
+      }
     },
     {
       "id": "konformitet",
@@ -720,7 +1633,7 @@
       "limit": "Aschs klassiske resultater kan ikke brukes som en fast, universell konformitetsrate. Metaanalyser av Asch-lignende oppgaver finner variasjon mellom land og perioder; gruppefunn beskriver ikke enkeltpersoner.",
       "example": "Undervisningsscenario: En deltaker hører flere andre gi samme åpenbart feilaktige svar før det er egen tur.",
       "example_secondary": "Undervisningsscenario: En replikasjonsøvelse sammenligner svar på en enkel linjeoppgave når flertallet svarer høyt eller anonymt. Studentene undersøker gruppesammensetning og måleopplegg fremfor å beregne en universell lydighetsprosent.",
-      "contrast": "Sosial identitetsteori undersøker hvorfor gruppen betyr noe for selvforståelsen, mens konformitetsstudier måler påvirkning i konkrete situasjoner.",
+      "contrast": "Asch-lignende konformitetsforsøk tester om konkrete svar endres under gruppetrykk, for eksempel når et enstemmig flertall tar feil. Sosial identitetsteori undersøker hvordan identifikasjon med gruppen kan gjøre normene betydningsfulle. Å følge flertallet er ikke automatisk bevis for sterk gruppeidentitet.",
       "compare_with": "sosial_identitet",
       "related_phenomena": [
         "fundamental_attribusjonsfeil"
@@ -764,8 +1677,287 @@
           "source_ids": [
             "src-norm-psychology"
           ]
+        },
+        {
+          "emne_id": "em_psy_normalitet_avvik",
+          "title": "Normalitet og avvik",
+          "why": "Konformitetsstudier viser hvordan sosiale forventninger kan påvirke offentlig uttrykte vurderinger, som ett perspektiv på sosial normalitet. Statistisk normalitet og kliniske diagnoser må undersøkes separat.",
+          "claim_ids": [
+            "sns-13"
+          ],
+          "source_ids": [
+            "src-stigma-framework"
+          ]
+        }
+      ],
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Solomon Asch undersøkte gruppepress i laboratorieforsøk som ble samlet i en større publikasjon i 1956. Bond og Smith sammenfattet 133 Asch-lignende oppgavesett fra 17 land i 1996.",
+        "idea": "Konformitet innebærer at menneskers svar eller valg påvirkes av andre i gruppen. Graden av påvirkning kan variere med situasjon, normer og hvordan oppgaven er utformet.",
+        "method": "I klassiske forsøk sammenlignes svar gitt under gruppetrykk med svar uten samme press. Metaanalyser undersøker variasjon mellom år, land og forskningsoppsett.",
+        "limit": "Det finnes ingen fast konformitetsprosent som gjelder alle mennesker og situasjoner. Asch-forsøk om svarpress må ikke forveksles med alle former for lydighet eller tvang.",
+        "featured_reference_urls": [
+          "https://doi.org/10.1037/h0093718",
+          "https://pubmed.ncbi.nlm.nih.gov/32931718/",
+          "https://doi.org/10.1037/0033-2909.119.1.111"
+        ]
+      }
+    },
+    {
+      "id": "ensomhet_sosial_tilhorighet",
+      "title": "Ensomhet og tilhørighet – Weiss, Baumeister og Leary",
+      "chapter_id": "sosialpsykologi-normalitet-og-stigma",
+      "emne_id": "em_psy_ensomhet_tilhorighet",
+      "founders": "Robert S. Weiss; Roy F. Baumeister; Mark R. Leary; WHO Commission on Social Connection",
+      "period": "1973: Robert Weiss utgir Loneliness: The Experience of Emotional and Social Isolation. 1995: Baumeister og Leary publiserer en omfattende teoretisk og empirisk gjennomgang av behovet for tilhørighet. I 2020-årene viderefører WHO arbeidet med sosial tilknytning, ensomhet og sosial isolasjon som folkehelsetemaer.",
+      "idea": "Robert Weiss skilte mellom emosjonell ensomhet, knyttet til manglende nære relasjoner, og sosial ensomhet, knyttet til utilstrekkelig sosial integrasjon. Baumeister og Leary samlet i 1995 forskning som støtter en bred menneskelig motivasjon for varige, positive relasjoner. WHO skiller subjektiv ensomhet fra sosial isolasjon, som kan beskrives gjennom faktiske sosiale forbindelser. Mange kontakter kan derfor sameksistere med ensomhet, mens selvvalgt alenetid ikke nødvendigvis innebærer ensomhet.",
+      "method": "Weiss kombinerte relasjonell og sosiologisk analyse for å beskrive ulike former for isolasjon. Baumeister og Leary vurderte resultater fra flere forskningsområder i en teoretisk forskningsoversikt, ikke ett eksperiment som beviser en universell lov. Nyere undersøkelser måler subjektiv ensomhet, nettverksstørrelse, sosial støtte og kvaliteten på relasjoner separat. Intervensjonsstudier må undersøke endring i opplevelse i tillegg til ren deltakelse.",
+      "limit": "Antall venner viser ikke alene hvordan et menneske opplever tilhørighet. Sosiale mål påvirkes av kultur, forventninger, spørsmålsformuleringer og tid. Sammenhenger mellom ensomhet og helseutfall kan ikke automatisk tilskrives én årsak, og et møtested kan ikke antas å virke for alle uten evaluering. En persons alenetid, ansiktsuttrykk eller foto gir ikke grunnlag for å fastsette ensomhet.",
+      "example": "Undervisningsscenario: To fiktive studenter har like mange bekjente, men beskriver svært ulik grad av støtte. Klassen skiller antall kontakter fra relasjonell nærhet og egne ønsker, og vurderer hvilke spørsmål som faktisk må stilles før man beskriver ensomhet.",
+      "example_secondary": "Undervisningsscenario: En tenkt kommune åpner et nytt møtested og kaller tiltaket en suksess fordi mange besøker det. Elevene foreslår hvordan faktisk deltakelse, frivillighet, opplevelse av ensomhet og tilhørighet bør måles over tid uten å blande indikatorene.",
+      "contrast": "Sosial identitetsteori undersøker hvordan gruppemedlemskap og sosial sammenligning påvirker selvoppfatning og forhold mellom grupper. Ensomhetsteori spør mer direkte om kvaliteten på forbindelser, nærhet og forskjellen mellom sosial kontakt og subjektiv erfaring. Tilhørighet til en gruppe er ikke automatisk fravær av ensomhet.",
+      "compare_with": "sosial_identitet",
+      "related_phenomena": [],
+      "reference_links": [
+        {
+          "title": "Weiss (1973) – Loneliness, NLM Catalog",
+          "url": "https://www.ncbi.nlm.nih.gov/nlmcatalog/416375",
+          "supports": "Bibliografisk dokumentasjon av originalverket om emosjonell og sosial isolasjon; katalogen er ikke et nytt årsaksstudium.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Baumeister og Leary (1995) – The Need to Belong",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/7777651/",
+          "supports": "Original forskningsoversikt om varige, positive relasjoner som menneskelig motivasjon; en syntese med teoretiske begrensninger.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "WHO – Social Connection",
+          "url": "https://www.who.int/news-room/questions-and-answers/item/social-connection",
+          "supports": "Kanonisk kilde til definisjonene av subjektiv ensomhet, objektiv sosial isolasjon og kvalitativ tilknytning.",
+          "canonical_claim_ids": [
+            "sns-25",
+            "sns-26"
+          ],
+          "canonical_source_ids": [
+            "src-who-social-connection"
+          ]
+        },
+        {
+          "title": "WHO – Commission on Social Connection",
+          "url": "https://www.who.int/publications/b/79027",
+          "supports": "Kanonisk rapport om sosial tilknytning på folkehelsenivå; tiltaksvurderinger er ikke individdiagnoser.",
+          "canonical_claim_ids": [
+            "sns-25",
+            "sns-26",
+            "sns-27"
+          ],
+          "canonical_source_ids": [
+            "src-who-commission"
+          ]
+        },
+        {
+          "title": "Loneliness Interventions – Systematic Review",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12857015/",
+          "supports": "Oversikt over tiltak og måling, med variasjon i effekt og metode; dokumenterer ikke automatisk virkning av ethvert møtested.",
+          "canonical_claim_ids": [
+            "sns-27"
+          ],
+          "canonical_source_ids": [
+            "src-loneliness-interventions"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "I 1973 skilte Robert Weiss mellom former for sosial og emosjonell isolasjon. Baumeister og Leary gjennomgikk i 1995 forskning på menneskers behov for tilhørighet. WHO videreførte perspektivet i folkehelseforskningen.",
+        "idea": "Ensomhet handler om opplevelsen av utilstrekkelig sosial forbindelse. Det er ikke nødvendigvis det samme som å være alene eller å ha få venner.",
+        "method": "Forskere sammenligner hva mennesker selv rapporterer om ensomhet med nettverksstørrelse, støtte og kvaliteten på relasjonene. De er forskjellige mål.",
+        "limit": "Verken en folkemengde, en vennekrets eller synlig alenetid forteller sikkert om noens følelser. Sammenheng mellom relasjoner og helse er ikke bevis for at ett tiltak virker for alle.",
+        "featured_reference_urls": [
+          "https://www.ncbi.nlm.nih.gov/nlmcatalog/416375",
+          "https://pubmed.ncbi.nlm.nih.gov/7777651/",
+          "https://www.who.int/news-room/questions-and-answers/item/social-connection",
+          "https://www.who.int/publications/b/79027"
+        ]
+      }
+    },
+    {
+      "id": "stigma_sosial_merking",
+      "title": "Stigma – Goffman, Link og Phelan",
+      "chapter_id": "sosialpsykologi-normalitet-og-stigma",
+      "emne_id": "em_psy_stigma_offentlighet",
+      "founders": "Erving Goffman; Bruce G. Link og Jo C. Phelan",
+      "period": "1963: Goffman utgir Stigma: Notes on the Management of Spoiled Identity; 2001: Link og Phelan formulerer en modell der merking, stereotyper, atskillelse, statusfall og diskriminering ses i sammenheng med makt.",
+      "idea": "Goffman undersøkte hvordan personer håndterer sosialt miskrediterte identiteter i samhandling med andre. Link og Phelan utvidet analysen: stigma oppstår når merking, stereotype forestillinger, sosial atskillelse, statustap og diskriminering virker sammen under ulik makt. Det er derfor viktig å skille offentlig stigmatisering, egen internalisering og institusjonelle ordninger som stenger mennesker ute.",
+      "method": "Goffmans bok (1963) var en sosiologisk og fortolkende analyse av samhandling og kategorisering, ikke et kontrollert eksperiment. Link og Phelan (2001) gjennomgikk forskning og presiserte en begrepsmodell. Senere oversikter og undersøkelser av strukturelt stigma analyserer særskilt holdninger, diskriminering og regler. Disse datatypene må ikke forveksles, og begrepsmodellen må testes gjennom spesifikke mål og samfunnskontekster.",
+      "limit": "En teoretisk ramme demonstrerer ikke at alle stereotype utsagn fører til faktisk diskriminering, eller at en bestemt person har internalisert et stigma. En diagnose kan åpne for støtte og samtidig utløse negative forestillinger; konteksten er avgjørende. Stigma må ikke brukes som synonym for diagnose, sosialt avvik eller all uenighet, og gruppemønstre kan ikke overføres automatisk til enkeltpersoner.",
+      "example": "Undervisningsscenario: To avisartikler omtaler den samme hjelpeordningen med ulikt ordvalg. Elevene undersøker hvilke kategorier, antakelser og maktforhold som kommer til uttrykk, uten å trekke slutninger om helsetilstanden til menneskene som omtales.",
+      "example_secondary": "Undervisningsscenario: Et offentlig bygg har et elektronisk søknadsskjema som noen besøkende ikke får tilgang til. Gruppen skiller mellom mulig strukturell ekskludering, en ansatts holdning og den enkeltes erfaring, og spør hvilke kilder som kunne dokumentere hver påstand.",
+      "contrast": "Sosial identitetsteori undersøker hvordan gruppetilhørighet og sammenligning mellom grupper kan påvirke vurderinger. Stigmateori analyserer i tillegg sosial miskreditering, statusforskjeller, diskriminering og institusjonell makt. En gruppeskilleprosess er ikke automatisk stigma.",
+      "compare_with": "sosial_identitet",
+      "related_phenomena": [
+        "fundamental_attribusjonsfeil",
+        "sosial_sammenligning"
+      ],
+      "reference_links": [
+        {
+          "title": "Goffman (1963) – Stigma: Notes on the Management of Spoiled Identity",
+          "url": "https://books.google.com/books?id=cfBGAAAAMAAJ",
+          "supports": "Bibliografisk dokumentasjon av originalboken fra 1963 om sosial identitet og håndtering av miskreditering; bokkatalog alene dokumenterer ikke moderne prevalens.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Link og Phelan (2001) – Conceptualizing Stigma",
+          "url": "https://www.annualreviews.org/content/journals/10.1146/annurev.soc.27.1.363",
+          "supports": "Fagfellevurdert teorioversikt som presiserer komponentene i stigma og betydningen av sosial makt; syntese, ikke et enkelt kontrollert forsøk.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Mental Illness Stigma: Concepts, Consequences and Initiatives – World Psychiatry",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6261312/",
+          "supports": "Kanonisk fagverkskilde om stigma, diskriminering og ulike nivåer; brukes til å avgrense teoriens tema, ikke til å tilskrive egenskaper til navngitte personer.",
+          "canonical_claim_ids": [
+            "sns-19"
+          ],
+          "canonical_source_ids": [
+            "src-stigma-framework"
+          ]
+        },
+        {
+          "title": "Structural Stigma and Health Inequalities – Social Science & Medicine",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27977256/",
+          "supports": "Oversikt om hvordan lover, normer og organisering kan inngå i strukturelt stigma. En strukturell sammenheng er ikke dokumentasjon for et bestemt individs intensjon.",
+          "canonical_claim_ids": [
+            "sns-22"
+          ],
+          "canonical_source_ids": [
+            "src-structural-stigma"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "I 1963 beskrev Erving Goffman hvordan stigma virker i sosial samhandling. I 2001 viste Link og Phelan hvordan merking, stereotyper, statustap, diskriminering og makt kan virke sammen.",
+        "idea": "Stigma handler ikke bare om stygge ord eller personlige fordommer. Det kan også påvirke hvem som får muligheter, blir trodd eller møter hindringer i institusjoner.",
+        "method": "Goffman undersøkte samhandling og sosial identitet. Senere forskere analyserte offentlig stigma, selvstigma og samfunnets regler hver for seg for å forstå hvilke mekanismer som virker.",
+        "limit": "En merkelapp er ikke det samme som en diagnose, og ikke alle som blir møtt med fordommer, reagerer likt. Påstander om diskriminering må knyttes til dokumenterte hendelser eller mønstre.",
+        "featured_reference_urls": [
+          "https://books.google.com/books?id=cfBGAAAAMAAJ",
+          "https://www.annualreviews.org/content/journals/10.1146/annurev.soc.27.1.363",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC6261312/",
+          "https://pubmed.ncbi.nlm.nih.gov/27977256/"
+        ]
+      },
+      "related_emne_links": [
+        {
+          "emne_id": "em_psy_diagnose_hverdagsliv",
+          "title": "Diagnose og hverdagsliv",
+          "why": "Fagverket undersøker hvordan diagnosemerkelapper kan påvirke sosiale kategorier, forventninger og tilgang til tjenester; koblingen gjelder stigma rundt merking, ikke en teori om hvorvidt diagnoser i seg selv er gyldige.",
+          "claim_ids": [
+            "sns-19"
+          ],
+          "source_ids": [
+            "src-stigma-framework"
+          ]
         }
       ]
+    },
+    {
+      "id": "kollektiv_krise_flerniva",
+      "title": "Kollektive kriser – fra Lindemann til 22. juli-forskningen",
+      "chapter_id": "traume-krise-resiliens-og-omsorg",
+      "emne_id": "em_psy_kollektiv_krise",
+      "founders": "Erich Lindemann; Stevan E. Hobfoll og medarbeidere; NKVTS-forskere som fulgte Utøya-overlevende",
+      "period": "1944: Erich Lindemann publiserer en klinisk observasjonsstudie av akutt sorg, i den tidlige katastrofe- og kriseforskningens historie. 2007: Hobfoll og en internasjonal forskergruppe sammenfatter prinsipper for psykososial oppfølging etter katastrofer og massevold. 22. juli 2011: terrorangrepene i Oslo og på Utøya. Senere intervjurunder i NKVTS-studiene undersøker hvordan reaksjoner, støtte og tjenestebehov varierer over tid.",
+      "idea": "En kollektiv krise er en felles historisk hendelse, men ikke én felles psykologisk reaksjon. Katastrofer kan ramme fysisk trygghet, familier, arbeid, samfunnstillit og tjenester samtidig. Lindemanns tidlige forskning var en begrenset klinisk observasjonstradisjon; Hobfoll mfl. formulerte senere prinsipper for bred psykososial støtte. NKVTS' gjentatte undersøkelser etter 22. juli viser hvorfor eksponering, sosial støtte, hjelpebehov, erindring og endring over tid må skilles analytisk. Et minnesenter dokumenterer historien, men undersøker ikke besøkendes helse.",
+      "method": "Historisk dokumentanalyse skiller den registrerte hendelsen fra samtidige vurderinger og senere minner. Longitudinelle undersøkelser sammenligner intervju- og måleresultater fra ulike tidspunkter; slike utvalg må beskrives med svarprosent, frafall, måleskala og hvem som faktisk deltok. Hobfoll mfl. (2007) bygde sine fem prinsipper på forskningssyntese og internasjonal ekspertkonsensus, ikke på ett randomisert forsøk som beviser at alle tiltak virker. NKVTS' Utøya-arbeid undersøker gruppemønstre, ikke enkeltpersoners diagnose.",
+      "limit": "Lindemanns observasjoner fra 1944 kan ikke brukes som universell modell for alle traumeforløp. Deltakere fra samme hendelse kan ha svært ulike erfaringer; et gjennomsnitt eller en prosentandel er ikke den enkeltes prognose. Minnesteder, nyhetsarkiver og fortellinger er historisk dokumentasjon, men ikke kliniske målinger. Tilgang til tjenester betyr heller ikke at behov er oppfylt, og fravær av hjelp beviser ikke fravær av belastning.",
+      "example": "Undervisningsscenario: En klasse undersøker hvordan 22. juli-senteret formidler dokumenterte hendelser og hvordan NKVTS forsket på ulike etterreaksjoner. De lager to separate tidslinjer – hendelses- og forskningshistorie – uten å slutte noe om bestemte overlevendes helse.",
+      "example_secondary": "Undervisningsscenario: En tenkt kommune mister skole, kollektivtransport og helsetjeneste etter en katastrofe. Studentene deler årsaksbildet i materielle, sosiale og individuelle nivåer og diskuterer hvorfor ett støtteprogram ikke kan måles bare ved antall deltakere.",
+      "contrast": "Resilienskortet spør hvordan beskyttelsesfaktorer og tilpasning kan undersøkes over tid. Kollektiv kriseforskning spør i tillegg hvordan hendelser forstyrrer tjenester, offentlighet og forskjellige befolkningsgrupper. Robusthet er ikke et moralsk mål på mennesker som er rammet.",
+      "compare_with": "resiliens",
+      "related_phenomena": [],
+      "reference_links": [
+        {
+          "title": "Erich Lindemann (1944) – Symptomatology and Management of Acute Grief",
+          "url": "https://psychiatryonline.org/doi/full/10.1176/ajp.101.2.141",
+          "supports": "Originalpublikasjon fra september 1944 om akutte sorgreaksjoner, lest bibliografisk; historisk klinisk observasjon, ikke moderne representativt kohortforsøk.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Hobfoll mfl. (2007) – Five Essential Elements of Immediate and Mid-Term Mass Trauma Intervention",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18181708/",
+          "supports": "Historisk forskningssyntese av fem prinsipper for psykososial oppfølging etter massetraumer; bygger på ekspertkonsensus, ikke universell effektgaranti.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "WHO – Mental Health in Emergencies",
+          "url": "https://www.who.int/news-room/fact-sheets/detail/mental-health-in-emergencies",
+          "supports": "Kanonisk kilde om krisers samtidige virkninger på samfunn, levekår, psykisk helse og tjenester.",
+          "canonical_claim_ids": [
+            "tkr-13"
+          ],
+          "canonical_source_ids": [
+            "src-who-emergencies"
+          ]
+        },
+        {
+          "title": "NKVTS – Utøya 22. juli, tredje intervjurunde",
+          "url": "https://www.nkvts.no/rapport/opplevelser-og-reaksjoner-hos-de-som-var-pa-utoya-22-juli-2011-en-oppsummering-av-tredje-intervjurunde/",
+          "supports": "Kanonisk norsk longitudinell forskning som belyser variasjon i reaksjoner, støtte og tjenester, uten å diagnostisere navngitte personer.",
+          "canonical_claim_ids": [
+            "tkr-14"
+          ],
+          "canonical_source_ids": [
+            "src-nkvts-utoya3"
+          ]
+        },
+        {
+          "title": "22. juli-senteret – mandat",
+          "url": "https://www.22julisenteret.no/no/om-senteret/mandat",
+          "supports": "Kanonisk mandat for dokumentasjon, minne og undervisning, uttrykkelig adskilt fra psykologisk undersøkelse.",
+          "canonical_claim_ids": [
+            "tkr-15"
+          ],
+          "canonical_source_ids": [
+            "src-22july-mandate"
+          ]
+        },
+        {
+          "title": "Kollektiv traumeforskning – flernivå meta-syntese",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41255188/",
+          "supports": "Kanonisk nyere forskningsoversikt over relasjonelle, individuelle og sosiokulturelle perspektiver, ikke individuelt risikomål.",
+          "canonical_claim_ids": [
+            "tkr-23"
+          ],
+          "canonical_source_ids": [
+            "src-collective-resilience-meta"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Erich Lindemann beskrev akutt sorg i 1944. Hobfoll og kolleger sammenfattet prinsipper for katastrofeoppfølging i 2007. Etter 22. juli 2011 har NKVTS fulgt overlevende i flere intervjurunder.",
+        "idea": "En hendelse kan ramme mange, men mennesker opplever og håndterer den forskjellig. Kriseforskning undersøker både individuelle reaksjoner, sosiale forbindelser og tjenester.",
+        "method": "Forskere studerer kilder fra selve hendelsen og følger ulike grupper over tid. Svarprosent, frafall, sosial kontekst og ulike måter å måle reaksjoner på påvirker resultatene.",
+        "limit": "Felles eksponering innebærer ikke samme diagnose eller fremtid. Et minnesenter formidler historiske hendelser, ikke besøkendes psykiske helsetilstand.",
+        "featured_reference_urls": [
+          "https://psychiatryonline.org/doi/full/10.1176/ajp.101.2.141",
+          "https://pubmed.ncbi.nlm.nih.gov/18181708/",
+          "https://www.nkvts.no/rapport/opplevelser-og-reaksjoner-hos-de-som-var-pa-utoya-22-juli-2011-en-oppsummering-av-tredje-intervjurunde/",
+          "https://www.22julisenteret.no/no/om-senteret/mandat"
+        ]
+      }
     },
     {
       "id": "resiliens",
@@ -779,7 +1971,7 @@
       "limit": "I Kauai-studien var 698 fødselskohorten fra 1955 (mens tiårsanalysen fra 1968 hadde 866 barn fra både 1955 og utvalgte 1956-fødsler), 201 en definert høyrisikogruppe og 72 motstandsdyktige innenfor denne gruppen; 72/698 er ikke studiens 'andel resistente barn'. Werner (1993) oppga voksenoppfølgingsdata for 88 % av den motstandsdyktige høyrisikogruppen, 90 % av tenåringsmødrene og 80 % av høyrisikounge med tidligere alvorlige problemer; dette er gruppespesifikke andeler, ikke komplett kohortoppfølging. Stianalysene er observasjonelle og kan ikke isolere årsakseffekt fra støtte, temperament eller skole. Uten fulltekst av Werner og Smith (1992), appendiks I, kan verken PLS-implementering, modelltilpasning, modellutvalg, håndtering av manglende data eller sti-koeffisienter etterprøves. Werner understreket i 1993 (s. 513–514) at disse utviklingsforløpene ikke var resultater av evaluerte hjelpetiltak, og at kulturelt avhengige oppvekstvilkår begrenser generalisering. Frafall, risiko-/utfallskriterier og mulige konfunderende faktorer må vurderes. Kriteriene for «vellykket voksen tilpasning» omfattet også registrerte lovbrudd, forsømt forsørgelse, rusproblemer og psykiske lidelser som negative utfall (Werner 1993, s. 506). Disse indikatorene har ulik målevaliditet, påvirkes av historiske institusjoner og verdier og kan ikke brukes til å diagnostisere, rangere eller forutsi enkeltpersoners motstandsdyktighet. Forlagsomtalen av 1992-boken oppgir 505 voksne; National Library of Medicines katalogtekst betegner 614 som «fødsler», mens Werners originalartikkel (1993) oppgir 698 fødte barn. Sekundæravhandlinger beskriver 614 som overlevende og 505 som oppfulgte, men dette er ikke bekreftet i originalbokens metodekapittel. En samlet retensjonsprosent eller et antall dødsfall kan derfor ikke fastslås fra disse opplysningene. Werners egen samtidige artikkel (1989, s. 110) rapporterer 545 oppsporede ved en tidligere voksenoppfølging; dette er ikke automatisk det samme som de 505 voksne i 1992-bokens analyser og gir ikke et komplett frafallsregnskap. Zalta mfl. (2021): støtte/PTSD r = −0,27 tverrsnitt og −0,25 longitudinelt hos voksne, med høy heterogenitet; ikke dokumentasjon for barns kausale resiliens.",
       "example": "Undervisningsscenario: En studie følger hvordan skolemiljø og støtte fra voksne samvarierer med utvikling etter en belastende hendelse.",
       "example_secondary": "Undervisningsscenario: I en hypotetisk longitudinell skoleundersøkelse følges både belastningsgrad og tilgjengelig voksenstøtte. Studentene skiller utviklingsutfall fra mål på voksnes selvrapporterte PTSD-symptomer og diskuterer mulige konfunderende faktorer.",
-      "contrast": "Stressvurderingsmodellen undersøker fortolkningen av krav og ressurser; resiliensstudier følger ofte tilpasning over lengre tid.",
+      "contrast": "Stressvurderingsmodellen undersøker krav og handlingsmuligheter i en konkret situasjon. Resiliensstudier følger derimot endring og beskyttelsesfaktorer over mange år. Selv longitudinelle data som viser sammenhenger, kan ikke uten videre dokumentere årsakene til et bestemt menneskes utvikling eller fungere som prognose.",
       "compare_with": "stressvurdering",
       "related_phenomena": [
         "affektregulering"
@@ -936,6 +2128,223 @@
       }
     },
     {
+      "id": "trygghet_tillit_krisehjelp",
+      "title": "Trygghet etter krise – Hobfoll og psykososial førstehjelp",
+      "chapter_id": "traume-krise-resiliens-og-omsorg",
+      "emne_id": "em_psy_trygghet_tillit",
+      "founders": "Stevan E. Hobfoll, Patricia Watson og kolleger; WHO, War Trauma Foundation og World Vision International",
+      "period": "2007: Hobfoll og et internasjonalt ekspertpanel publiserer fem prinsipper for tidlig og mellomlang støtte etter katastrofer. 2011: WHO og samarbeidspartnere publiserer Psychological First Aid: Guide for Field Workers. Etter 22. juli 2011 undersøker norsk forskning også oppsøkende hjelpetilbud, tjenestetilgang og udekkede behov.",
+      "idea": "Trygghet består av flere målbare forhold: reell beskyttelse mot fare, opplevd sikkerhet, tilgjengelig informasjon, hjelp til grunnleggende behov og om tjenester er til å stole på. Hobfoll mfl. drøftet fem prinsipper – trygghet, ro, egen og kollektiv mestringsevne, sosial forbindelse og håp. Psykososial førstehjelp er en human og praktisk støtteform: lytte uten press, avklare konkrete behov og knytte mennesker til relevant hjelp. Den er ikke en bestemt psykoterapi og gir ingen garanti for trygghet eller rask bedring.",
+      "method": "En tjenesteundersøkelse kan skille faktisk fysisk risiko, selvrapportert trygghetsfølelse, opplevelse av forutsigbar informasjon og om hjelp nådde fram. De ulike målene må undersøkes separat. Hobfoll-rammen fra 2007 bygger på gjennomgang og konsensus om generelle prinsipper, ikke en randomisert test av hvert prinsipp. WHOs veileder fra 2011 er normativ praktisk veiledning, mens NKVTS-undersøkelsen etter 22. juli rapporterer konkret oppsøkende kontakt og udekkede behov.",
+      "limit": "Høflig kommunikasjon kan ikke erstatte faktisk sikkerhet eller tilgjengelige tjenester. En person kan føle seg utrygg selv når den observerte risikoen er redusert, eller omvendt. Psykososial førstehjelp skal ikke forveksles med traumeeksponeringsterapi, tvungen debrifing eller personlig diagnostikk. Retningslinjer er ikke bevis for at et bestemt tiltak virket for alle berørte.",
+      "example": "Undervisningsscenario: Et tenkt evakueringssenter har vakter og låste dører, men uklare beskjeder om hvor familier er blitt sendt. Studentene skiller fysisk beskyttelse, faktisk informasjonsflyt og opplevd tillit, og vurderer hvilke data som må innhentes.",
+      "example_secondary": "Undervisningsscenario: En kommune dokumenterer at nesten alle i et oppdiktet beredskapsprogram fikk ett telefonanrop. Klassen lager separate spørsmål om kontakt, praktisk hjelp, videre henvisning og uoppfylte behov, uten å kalle høy kontaktandel et bevis for vellykket oppfølging.",
+      "contrast": "Kollektiv kriseforskning forklarer hvordan hendelser virker på forskjellige nivåer og tidspunkter. Trygghetsperspektivet undersøker mer avgrenset hvilke beskyttelses- og hjelpebetingelser som gjør situasjonen håndterbar, og om tjenestene oppfattes som forutsigbare.",
+      "compare_with": "kollektiv_krise_flerniva",
+      "related_phenomena": [],
+      "reference_links": [
+        {
+          "title": "Hobfoll mfl. (2007) – Five Essential Elements",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18181708/",
+          "supports": "Original fagfellevurdert prinsippoversikt om trygghet, ro, mestring, tilknytning og håp; konsensus og syntese, ikke ett randomisert forsøk.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "WHO mfl. (2011) – Psychological First Aid: Guide for Field Workers",
+          "url": "https://www.who.int/publications/i/item/9789241548205",
+          "supports": "Kanonisk praktisk veileder om lytting uten press, konkrete behov og sosial/praktisk hjelp. Ikke psykoterapi.",
+          "canonical_claim_ids": [
+            "tkr-08"
+          ],
+          "canonical_source_ids": [
+            "src-who-pfa"
+          ]
+        },
+        {
+          "title": "WHO – Mental Health in Emergencies",
+          "url": "https://www.who.int/news-room/fact-sheets/detail/mental-health-in-emergencies",
+          "supports": "Kanonisk krisekontekst for fysisk beskyttelse, praktisk hjelp og lagdelt støtte, ikke individvurdering.",
+          "canonical_claim_ids": [
+            "tkr-07",
+            "tkr-16"
+          ],
+          "canonical_source_ids": [
+            "src-who-emergencies"
+          ]
+        },
+        {
+          "title": "NKVTS – Early Outreach to Survivors of 22 July 2011",
+          "url": "https://www.nkvts.no/english/academic-article/early-outreach-to-survivors-of-the-shootings-in-norway-on-the-22nd-of-july-2011/",
+          "supports": "Kanonisk norsk undersøkelse av reell oppsøkende hjelp og udekkede behov etter krisen; ikke garanti for effektivitet hos alle.",
+          "canonical_claim_ids": [
+            "tkr-09"
+          ],
+          "canonical_source_ids": [
+            "src-nkvts-outreach"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Hobfoll og medarbeidere beskrev fem prinsipper for katastrofestøtte i 2007. WHO publiserte en praktisk veileder for psykososial førstehjelp i 2011.",
+        "idea": "Trygghet handler om fysisk beskyttelse, forståelig informasjon og pålitelig hjelp. Å føle seg trygg og faktisk være beskyttet mot fare er ikke alltid samme sak.",
+        "method": "Forskere sammenligner opplevd trygghet, tilgjengelige tilbud og faktisk tilgang til støtte. En veileder beskriver god praksis, men må skilles fra undersøkelser av virkningen.",
+        "limit": "Psykososial førstehjelp er ikke terapi. En telefon eller et registrert tilbud viser ikke i seg selv at noen fikk den hjelpen de behøvde.",
+        "featured_reference_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/18181708/",
+          "https://www.who.int/publications/i/item/9789241548205",
+          "https://www.who.int/news-room/fact-sheets/detail/mental-health-in-emergencies",
+          "https://www.nkvts.no/english/academic-article/early-outreach-to-survivors-of-the-shootings-in-norway-on-the-22nd-of-july-2011/"
+        ]
+      }
+    },
+    {
+      "id": "vold_belastning_tvangskontroll",
+      "title": "Vold og belastning – tvangskontroll og vedvarende eksponering",
+      "chapter_id": "traume-krise-resiliens-og-omsorg",
+      "emne_id": "em_psy_vold_belastning",
+      "founders": "Evan Stark; forskningsmiljøet ved Nasjonalt kunnskapssenter om vold og traumatisk stress (NKVTS)",
+      "period": "2007: Evan Stark publiserer Coercive Control og systematiserer et mønsterperspektiv på isolasjon, trusler, begrensning av handlefrihet og kontroll i nære relasjoner. I nyere norsk forskning undersøker NKVTS fortsettelsesvold etter samlivsbrudd og hvordan belastning og sikkerhet kan vedvare selv når forholdet formelt er avsluttet.",
+      "idea": "Voldsbelastning kan ikke forstås utelukkende som en samling av enkeltstående fysiske hendelser. Starks begrep tvangskontroll belyser mønstre av trusler, isolasjon, kontroll med ressurser og tap av handlingsrom over tid. Forskning på fortsettelsesvold skiller et formelt brudd fra faktisk opphør av skadelige eller kontrollerende handlinger. Psykologiske virkninger varierer med eksponering, tilgjengelig støtte og materiell sikkerhet. Analysen retter ansvaret mot handlingene og den som utøver vold, ikke mot den utsattes reaksjoner.",
+      "method": "Forskere må kartlegge tidfestede hendelser, mulige gjentakelsesmønstre, trygghetsbetingelser og tilgjengelige tjenester hver for seg. Starks bok fra 2007 er et empirisk og teoretisk arbeid med kasus- og institusjonsanalyse; dens ramme er ikke en automatisk individuell bevisregel. NKVTS undersøker fortsettelsesvold gjennom studier av helse og livskvalitet, mens WHO-kilder setter belastning i en bredere sikkerhets- og tjenestekontekst. Analyser av mulige mønstre krever dokumenterte kilder og vurdering av alternative forklaringer.",
+      "limit": "Begrepet tvangskontroll kan ikke brukes til å erklære at en bestemt navngitt person er voldsutøver, og fravær av én type skade kan ikke brukes som bevis for at annen belastning ikke finnes. Atferd som stillhet, årvåkenhet eller sinne er uspesifikk og kan ikke bevise eksponering, diagnose eller ansvar. Psykisk helseanalyse er heller ingen erstatning for akutt beskyttelse, etterforskning eller juridisk bevisvurdering. Det er ikke grunnlag for å si at alle utsatte har samme reaksjoner eller prognose.",
+      "example": "Undervisningsscenario: To fiktive forskningsreferater om en oppdiktet sak nevner henholdsvis én fysisk hendelse og flere påståtte kontrollerende handlinger over tid. Elevene skiller hva kildene faktisk dokumenterer, hva som fortsatt er omstridt, og hvilke ulike spørsmål helse- og rettssystemet må undersøke.",
+      "example_secondary": "Undervisningsscenario: Et tenkt hjelpetilbud registrerer at en person har flyttet ut, og antar at belastningen er over. Klassen undersøker hvorfor en tjeneste også bør studere faktisk tilgang til informasjon, beskyttelse, bolig og videre hjelp, uten å trekke diagnostiske slutninger.",
+      "contrast": "Stressvurderingsmodellen analyserer hvordan belastning fortolkes og mestres. Mønsterperspektivet på vold analyserer også konkrete handlinger, ansvar, trusler, materiell kontroll og rammer som kan opprettholde fare. Ingen vurdering av mestring kan erstatte dokumentasjon av det som faktisk skjer.",
+      "compare_with": "stressvurdering",
+      "related_phenomena": [],
+      "reference_links": [
+        {
+          "title": "Evan Stark (2007) – Coercive Control",
+          "url": "https://academic.oup.com/book/54159",
+          "supports": "Originalbok fra Oxford University Press om tvangskontroll som mønster av begrenset handlefrihet, isolasjon og trusler. Ikke en individuell bevis- eller diagnoseregel.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "NKVTS – Fortsettelsesvold etter samlivsbrudd",
+          "url": "https://www.nkvts.no/vitenskapelig-artikkel/fortsettelsesvold-etter-samlivsbrudd-konsekvenser-for-modres-helse-og-livskvalitet/",
+          "supports": "Kanonisk nyere norsk studie av belastning og livskvalitet etter formelt brudd, uten generalisering til alle samlivsbrudd.",
+          "canonical_claim_ids": [
+            "tkr-05"
+          ],
+          "canonical_source_ids": [
+            "src-nkvts-continuing-violence"
+          ]
+        },
+        {
+          "title": "WHO – Mental Health in Emergencies",
+          "url": "https://www.who.int/news-room/fact-sheets/detail/mental-health-in-emergencies",
+          "supports": "Kanonisk støtte til hvordan trusler, sosiale forhold og begrensede tjenester kan øke belastning og begrense trygghet.",
+          "canonical_claim_ids": [
+            "tkr-04",
+            "tkr-21"
+          ],
+          "canonical_source_ids": [
+            "src-who-emergencies"
+          ]
+        },
+        {
+          "title": "NKVTS – Traumer og posttraumatisk stresslidelse",
+          "url": "https://www.nkvts.no/tv/traumer-og-posttraumatisk-stresslidelse/",
+          "supports": "Kanonisk kilde om at uspesifikke reaksjoner ikke alene påviser eksponering eller klinisk diagnose.",
+          "canonical_claim_ids": [
+            "tkr-06"
+          ],
+          "canonical_source_ids": [
+            "src-nkvts-trauma"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Evan Stark beskrev tvangskontroll som et mønster av handlinger i boken fra 2007. NKVTS har senere undersøkt helsebelastning ved fortsettelsesvold etter samlivsbrudd.",
+        "idea": "Vold kan innebære gjentatte trusler, isolasjon og begrensning av handlefrihet, ikke bare én fysisk hendelse. Belastning kan fortsette etter et formelt brudd.",
+        "method": "Forskere undersøker dokumenterte hendelser og endringer over tid, samt sikkerhet, levekår og tilgang til hjelp. Kildene må skilles fra antakelser om personers motiv og helsetilstand.",
+        "limit": "Psykologiske reaksjoner beviser ikke at et bestemt overgrep har skjedd. Begrepene erstatter verken juridisk bevisvurdering, individuell diagnostikk eller beskyttelse.",
+        "featured_reference_urls": [
+          "https://academic.oup.com/book/54159",
+          "https://www.nkvts.no/vitenskapelig-artikkel/fortsettelsesvold-etter-samlivsbrudd-konsekvenser-for-modres-helse-og-livskvalitet/",
+          "https://www.who.int/news-room/fact-sheets/detail/mental-health-in-emergencies",
+          "https://www.nkvts.no/tv/traumer-og-posttraumatisk-stresslidelse/"
+        ]
+      }
+    },
+    {
+      "id": "sorg_dobbelprosessmodell",
+      "title": "Sorg – fra fasemodeller til dobbelprosessmodellen",
+      "chapter_id": "traume-krise-resiliens-og-omsorg",
+      "emne_id": "em_psy_sorg_tap",
+      "founders": "Elisabeth Kübler-Ross; Margaret Stroebe og Henk Schut",
+      "period": "1969: Kübler-Ross utgir On Death and Dying, med samtaler med døende pasienter; 1999: Stroebe og Schut publiserer dobbelprosessmodellen for mestring ved tap; 2010: forskerne drøfter senere empiri og videre testing.",
+      "idea": "Sorg er ikke et obligatorisk forløp gjennom faste faser. Kübler-Ross beskrev mulige reaksjoner først og fremst med utgangspunkt i samtaler om døden og store tap; den populære femfaseframstillingen blir misvisende når den brukes som universell kalender. Stroebe og Schuts dobbelprosessmodell beskriver hvordan mennesker kan veksle mellom tapsorienterte aktiviteter, som savn og minner, og gjenoppbyggingsorienterte oppgaver, som nye rutiner og roller.",
+      "method": "Kübler-Ross' bok (1969) sprang ut av kvalitative samtaler og er historisk viktig, men dokumenterer ikke én generell tidslinje for etterlatte. Stroebe og Schut (1999) fremmet en teoretisk modell ved å gjennomgå tidligere sorg- og mestringslitteratur; senere arbeider diskuterte støtte og utfordringer i empirien. Oppfølging over tid, kulturspesifikke studier og differensiering av tapsrelatert sorg og traumereaksjoner er nødvendige for å undersøke modellen.",
+      "limit": "Dobbelprosessmodellen er et rammeverk som ikke kan bevise at alle må veksle på en bestemt måte. Mennesker kan reagere svært forskjellig avhengig av relasjon, kultur og tapsomstendigheter. Vanlig sorg er ikke automatisk en psykisk lidelse; vedvarende alvorlige plager må vurderes klinisk med selvstendig grunnlag. Undervisningsscenarioene skal ikke brukes til å bedømme eller rangere virkelige sørgende.",
+      "example": "Undervisningsscenario: Etter et dødsfall ønsker en person å se gjennom bilder, men må også ordne regninger og nye hverdagsrutiner. Elevene bruker modellen til å beskrive de to typene oppgaver og hvorfor det er normalt at oppmerksomheten flytter seg mellom dem.",
+      "example_secondary": "Undervisningsscenario: En lærer finner en plakat som hevder at alle etterlatte skal gå gjennom fem sorgfaser i fast rekkefølge. Studentene sammenligner påstanden med den historiske boken fra 1969 og forskningen om variasjon, og foreslår en mer presis undervisningstekst.",
+      "contrast": "Resiliensforskning undersøker forskjeller i tilpasning og beskyttende forhold over tid ved belastning. Dobbelprosessmodellen beskriver hvordan hverdagsoppgaver og tapsreaksjoner kan veksle etter et dødsfall. Et velfungerende hverdagsliv er ikke bevis for fravær av sorg.",
+      "compare_with": "resiliens",
+      "related_phenomena": [],
+      "reference_links": [
+        {
+          "title": "Kübler-Ross (1969) – On Death and Dying, historisk bakgrunn",
+          "url": "https://www.ekrfoundation.org/5-stages-of-grief/on-death-and-dying/",
+          "supports": "Historisk omtale av originalverket og intervjuene med døende pasienter; stadiens utbredelse som universell norm er ikke dokumentert av disse intervjuene.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Stroebe og Schut (1999) – Dual Process Model of Coping with Bereavement",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/10848151/",
+          "supports": "Originalpublikasjon av dobbelprosessmodellen: veksling mellom tapsorientering og gjenoppbyggingsorientering. Et teoriforslag, ikke en universell behandlingsprotokoll.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Stroebe og Schut (2010) – Dual Process Model: A Decade On",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21058610/",
+          "supports": "Faglig oppdatering som diskuterer teoriutvikling, empiriske utfordringer og behov for strengere testing.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Grief and Bereavement: A Global Perspective",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37854407/",
+          "supports": "Kanonisk fagverkskilde om kulturell variasjon, sorg og langvarig sorg. Underbygger grenser for generalisering og mellom normal sorg og kliniske tilstander.",
+          "canonical_claim_ids": [
+            "tkr-10"
+          ],
+          "canonical_source_ids": [
+            "src-grief-global-review"
+          ]
+        },
+        {
+          "title": "Stroebe mfl. – Cautioning Health-Care Professionals on Stages of Grief",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5375020/",
+          "supports": "Historisk og metodekritisk analyse av den lineære populære forståelsen av sorgfaser, ikke dokumentasjon for én alternativ faserekke.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "I 1969 ga Elisabeth Kübler-Ross ut On Death and Dying. I 1999 lanserte Margaret Stroebe og Henk Schut dobbelprosessmodellen, som beskriver variasjon og veksling i sorg.",
+        "idea": "Etter et tap kan man både savne den som døde og forsøke å få hverdagen til å fungere. Modellen beskriver hvordan oppmerksomheten kan skifte mellom minner om tapet og nye rutiner.",
+        "method": "Kübler-Ross bygde på samtaler med døende pasienter. Stroebe og Schut gjennomgikk sorgforskning og foreslo en modell som senere må prøves mot studier av forskjellige mennesker over tid.",
+        "limit": "Det finnes ingen obligatoriske fem faser eller bestemt tidstabell for sorg. Verken arbeid, glede eller fravær av tårer forteller alene hvordan en person har det.",
+        "featured_reference_urls": [
+          "https://www.ekrfoundation.org/5-stages-of-grief/on-death-and-dying/",
+          "https://pubmed.ncbi.nlm.nih.gov/10848151/",
+          "https://pubmed.ncbi.nlm.nih.gov/21058610/",
+          "https://pubmed.ncbi.nlm.nih.gov/37854407/"
+        ]
+      }
+    },
+    {
       "id": "kognitiv_terapi",
       "title": "Kognitiv terapi og kognitiv atferdsterapi",
       "chapter_id": "psykisk-helse-institusjoner-og-behandling",
@@ -1038,7 +2447,7 @@
       ],
       "source_review_state": "partial_historical_method_review",
       "teaching_view": {
-        "period": "1960-årene: Aaron Beck utvikler sin kognitive modell for depresjon. Fra 1970-årene undersøkes kognitiv terapi i behandlingsstudier. Senere utvikles flere former for kognitiv atferdsterapi (KAT).",
+        "period": "Aaron Beck publiserte om kognitive mønstre ved depresjon i 1963. Rush, Beck og kolleger sammenlignet kognitiv terapi med legemiddelbehandling i 1977. Beck og medarbeidere samlet metoden i Cognitive Therapy of Depression i 1979; senere metaanalyser undersøkte effekten.",
         "idea": "Kognitiv terapi undersøker hvordan tolkninger, tanker, følelser og handlinger påvirker hverandre. I behandlingen lærer man å utforske uhensiktsmessige tankemønstre og prøve ut andre måter å forstå og håndtere situasjoner på.",
         "method": "Arbeidet foregår typisk gjennom samarbeid om konkrete problemer, refleksjon, øvelser og utprøving mellom samtaler. Effekten undersøkes i kliniske studier og forskningsoversikter, blant annet ved depresjon.",
         "limit": "Kognitiv atferdsterapi har forskningsstøtte ved flere tilstander, men effekten varierer med problem, metode og sammenligningsgruppe. Et positivt behandlingsresultat beviser ikke at endrede tanker er den eneste årsaken til bedring. Tidlige studier hadde metodiske begrensninger.",
@@ -1065,6 +2474,117 @@
       ]
     },
     {
+      "id": "psykiatri_institusjonshistorie",
+      "title": "Psykiatriens institusjonshistorie – Gaustad, Dikemark og Vinderen",
+      "chapter_id": "psykisk-helse-institusjoner-og-behandling",
+      "emne_id": "em_psy_institusjoner_psykiatri",
+      "founders": "Herman Wedel Major; Heinrich Ernst Schirmer; Victor Nordan; senere psykiatere, pasienter og helsemyndigheter",
+      "period": "1848: Norge får sinnssykeloven som regulerer etableringen av asyler. 1855: Gaustad asyl åpner som Norges første formålsbygde psykiatriske sykehus. 1905: Dikemark åpner som kommunalt sykehus for Kristiania. 1926: Universitetets psykiatriske klinikk åpner på Vinderen. Senere endres behandling, rettslige rammer og organisering av hjelpetjenestene.",
+      "idea": "Psykiatrihistorie beskriver både medisinsk behandling, bygninger, administrasjon, pasienters levekår og hvem som får beslutte hva. Historiske asyler ble utviklet i en tid da nye behandlingsidealer og offentlig kontroll var tett forbundet. Gaustad, Dikemark og Vinderen viser hvordan institusjonenes arkitektur og oppgaver endret seg. Moderne rettighets- og lokalsamfunnsbaserte tjenester er en annen organisasjonsmodell, men gir ikke grunnlag for å hevde at alle institusjoner, pasientforløp eller epoker var like. Dette kortet er institusjons- og faghistorisk analyse, ikke en psykologisk personlighetsteori.",
+      "method": "Byggehistorie, lovtekster, arkivmateriale, museale gjenstander og tidsfestede kilder brukes til å undersøke institusjoner i sine historiske sammenhenger. Oslo byleksikon dokumenterer Gaustads åpning i 1855, Dikemark-museet formidler driften fra 1905, og historien til Vinderen er knyttet til universitetsundervisning fra 1926. WHO-veiledning analyseres som en normativ anbefaling for tjenesteorganisering, ikke som empirisk bevis for effekten av enhver reform. Institusjonsarkiver må suppleres med pasientperspektiver og selvstendige studier.",
+      "limit": "En bygning eller en lovtekst viser hva som ble planlagt eller regulert, ikke nødvendigvis hvordan alle pasienter ble behandlet eller opplevde omsorgen. Historiske behandlingsmetoder må ikke presenteres som dagens standard. Lovfestede rettigheter kan beskrives i undervisning uten å avgjøre om tvang var lovlig i en konkret sak. En institusjonshistorisk modell kan ikke brukes til å diagnostisere mennesker eller tilskrive pasientene bestemte erfaringer uten dokumentasjon.",
+      "example": "Undervisningsscenario: En klasse sammenligner en plan fra et historisk asyl med et tenkt kommunalt tjenestetilbud. Elevene undersøker hvordan beliggenhet, adgang, ansvar og pasientmedvirkning kan ha ulike funksjoner, og skiller lovlige idealer fra dokumentert praksis.",
+      "example_secondary": "Undervisningsscenario: To fiktive museumsbeskrivelser fremstiller et historisk sykehus enten bare som behandling eller bare som kontroll. Studentene bruker årstall, plantegninger, kilder om arbeid og behandling og mulige pasientfortellinger til å utforme en mer presis, sammensatt fremstilling.",
+      "contrast": "Den biopsykososiale modellen er et forklaringsrammeverk om samspill mellom biologiske, psykologiske og sosiale forhold. Institusjonshistorie spør i stedet hvilke myndigheter, profesjoner, bygninger og rettsregler som organiserte konkret behandling til ulike tider. Den ene modellen dokumenterer ikke automatisk den andre.",
+      "compare_with": "biopsykososial_modell",
+      "related_phenomena": [],
+      "reference_links": [
+        {
+          "title": "Gaustad sykehus – Oslo byleksikon",
+          "url": "https://oslobyleksikon.no/side/Gaustad_sykehus",
+          "supports": "Tidsfestet institusjonshistorie om planlegging, Herman Wedel Major, Heinrich Ernst Schirmer og åpningen i 1855.",
+          "canonical_claim_ids": [
+            "phi-19"
+          ],
+          "canonical_source_ids": [
+            "src-oslobyleksikon-gaustad"
+          ]
+        },
+        {
+          "title": "Dikemark psykiatriske sykehusmuseum – Oslo universitetssykehus",
+          "url": "https://www.oslo-universitetssykehus.no/steder/dikemark/dikemark-psykiatriske-sykehusmuseum/",
+          "supports": "Institusjonens egen museumsdokumentasjon om sykehusliv fra 1905, arbeid, isolat og behandlingshistorie.",
+          "canonical_claim_ids": [
+            "phi-20"
+          ],
+          "canonical_source_ids": [
+            "src-ous-dikemark"
+          ]
+        },
+        {
+          "title": "Psykiatrisk avdeling, Vinderen – Oslo byleksikon",
+          "url": "https://oslobyleksikon.no/side/Psykiatrisk_avdeling%2C_Vinderen",
+          "supports": "Historisk oversikt om klinikken som åpnet i 1926 og flytting av universitetsundervisning fra Gaustad.",
+          "canonical_claim_ids": [
+            "phi-21"
+          ],
+          "canonical_source_ids": [
+            "src-oslobyleksikon-vinderen"
+          ]
+        },
+        {
+          "title": "WHO (2021) – Guidance on Community Mental Health Services",
+          "url": "https://www.who.int/publications/i/item/9789240025707",
+          "supports": "Normativ veiledning om personorientert, rettighetsbasert og lokalsamfunnsnær organisering. Dokumenterer ikke kausal effekt av en konkret norsk reform.",
+          "canonical_claim_ids": [
+            "phi-25"
+          ],
+          "canonical_source_ids": [
+            "src-who-guidance"
+          ]
+        },
+        {
+          "title": "Psykisk helsevernloven – kanonisk rettskilde",
+          "url": "https://lovdata.no/dokument/NL/lov/1999-07-02-62",
+          "supports": "Gjeldende lovverk som skiller moderne rettssikkerhet og tvangsregulering fra historisk praksis. Ikke individuell juridisk vurdering.",
+          "canonical_claim_ids": [
+            "phi-16"
+          ],
+          "canonical_source_ids": [
+            "src-phvl-2026"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Gaustad sykehus åpnet i 1855, Dikemark i 1905 og Universitetets psykiatriske klinikk på Vinderen i 1926. Bygningene forteller om ulike perioder i norsk psykiatri.",
+        "idea": "Sykehusenes historie handler om mer enn behandling. Arkitektur, lover, pasientliv, fagfolk og organisering påvirket hvem som fikk hjelp og hvordan hjelpen foregikk.",
+        "method": "Historikere leser lover, byggetegninger, sykehusarkiver og museumsmateriale. Slike kilder må sammenholdes med dokumentasjon fra pasienter og tidsfestet behandlingspraksis.",
+        "limit": "En bygning viser ikke alene hvordan mennesker hadde det. Historiske metoder må ikke tas som dagens behandlingsstandard, og ett lovverk beviser ikke hvordan det ble etterlevd.",
+        "featured_reference_urls": [
+          "https://oslobyleksikon.no/side/Gaustad_sykehus",
+          "https://www.oslo-universitetssykehus.no/steder/dikemark/dikemark-psykiatriske-sykehusmuseum/",
+          "https://oslobyleksikon.no/side/Psykiatrisk_avdeling%2C_Vinderen",
+          "https://www.who.int/publications/i/item/9789240025707"
+        ]
+      },
+      "related_emne_links": [
+        {
+          "emne_id": "em_psy_makt_omsorg",
+          "title": "Makt og omsorg",
+          "why": "Historisk analyse av institusjoner må skille behandling, rettslig myndighet, tvangsgrunnlag og kontrollordninger; lovforankringen gir relevant sammenligning med nåtidige rettigheter, uten å avgjøre enkeltsaker.",
+          "claim_ids": [
+            "phi-16"
+          ],
+          "source_ids": [
+            "src-phvl-2026"
+          ]
+        },
+        {
+          "emne_id": "em_psy_omsorg_system",
+          "title": "Omsorg og system",
+          "why": "Overgangen fra sentraliserte institusjoner til lokalsamfunnsnær tjenesteorganisering er et avgrenset systemhistorisk tema; WHO-veiledning begrunner retningen, men fastslår ikke virkningen av ethvert tjenestetiltak.",
+          "claim_ids": [
+            "phi-25"
+          ],
+          "source_ids": [
+            "src-who-guidance"
+          ]
+        }
+      ]
+    },
+    {
       "id": "biopsykososial_modell",
       "title": "Biopsykososial modell",
       "chapter_id": "psykisk-helse-institusjoner-og-behandling",
@@ -1076,7 +2596,7 @@
       "limit": "Engels originalartikkel (1977) foreslår et integrerende forsknings- og klinisk rammeverk, ikke en dokumentert årsaksfordeling mellom biologiske, psykologiske og sosiale faktorer. Hver konkret årsaks- eller behandlingspåstand trenger egne data og avgrenset modelltest.",
       "example": "Undervisningsscenario: En forsker undersøker hvordan søvnmønster, arbeidssituasjon og sosial støtte kan påvirke samme rapporterte problem.",
       "example_secondary": "Undervisningsscenario: To forskningsdesign for samme rapporterte søvnplage sammenlignes: ett registrerer bare fysiologi, ett måler i tillegg arbeidstid og sosial belastning. Klassen drøfter hvilke variabler som kan testes, og hvorfor rammeverket alene ikke viser årsak.",
-      "contrast": "En snevrere biomedisinsk sykdomsmodell prioriterer spesifikke biologiske mekanismer. Humanistisk psykologi, som kan åpnes herfra, fremhever erfaring og mening; biopsykososial analyse må i tillegg operasjonalisere flere forklaringsnivåer.",
+      "contrast": "Humanistisk psykologi vektlegger subjektiv erfaring, autonomi og mening. Engels biopsykososiale modell ber forskere måle spesifikke biologiske, psykologiske og sosiale forhold i sammenheng. Begge utvider en snever sykdomsforståelse, men bredden i et rammeverk beviser ikke kausale virkninger uten egne studier.",
       "compare_with": "humanistisk_psykologi",
       "related_phenomena": [
         "stressrespons"
@@ -1101,7 +2621,331 @@
           ]
         }
       ],
-      "source_review_state": "partial_historical_method_review"
+      "source_review_state": "partial_historical_method_review",
+      "related_emne_links": [
+        {
+          "emne_id": "em_psy_byrom_psykisk_helse",
+          "title": "Byrom og psykisk helse",
+          "why": "Det sosiale nivået i den biopsykososiale modellen åpner for spørsmål om nærmiljø, tjenestetilgang og deltakelse. Koblingen beviser ikke at bestemte byrom forårsaker bestemte psykiske helseutfall.",
+          "claim_ids": [
+            "phi-25"
+          ],
+          "source_ids": [
+            "src-who-guidance"
+          ]
+        },
+        {
+          "emne_id": "em_psy_velferd_psykisk_helse",
+          "title": "Velferd og psykisk helse",
+          "why": "Modellens sosiale dimensjon gjør levekår, velferdstjenester og inkludering relevante i en helhetlig helseanalyse. Den alene dokumenterer ingen bestemt kausal effekt av et velferdstiltak.",
+          "claim_ids": [
+            "phi-03"
+          ],
+          "source_ids": [
+            "src-who-guidance"
+          ]
+        }
+      ],
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "George L. Engel presenterte den biopsykososiale modellen i Science i 1977. WHO ga i 2021 veiledning om mer personorienterte og rettighetsbaserte psykiske helsetjenester.",
+        "idea": "Engels modell ber forskere og behandlere vurdere biologiske, psykologiske og sosiale forhold i sammenheng. Den angir spørsmål som må undersøkes, ikke en ferdig årsaksfordeling.",
+        "method": "En konkret studie må måle tydelig definerte variabler fra flere nivåer og teste bestemte forklaringer. Modellens brede perspektiv er ikke selv et kontrollert effektforsøk.",
+        "limit": "Modellen sier ikke hvor mye hver faktor bidrar i én bestemt situasjon. WHOs tjenesteveiledning kan heller ikke brukes som direkte bevis for at Engels teoretiske modell er empirisk validert.",
+        "featured_reference_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/847460/",
+          "https://www.who.int/publications/i/item/9789240025707"
+        ]
+      }
+    },
+    {
+      "id": "behandling_omsorg_relationshistorie",
+      "title": "Behandling og omsorg – fra pleierelasjon til sammenhengende tjenester",
+      "chapter_id": "psykisk-helse-institusjoner-og-behandling",
+      "emne_id": "em_psy_behandling_omsorg",
+      "founders": "Hildegard E. Peplau; George L. Engel; WHO og norske helsemyndigheter",
+      "period": "1952: Hildegard Peplau publiserer Interpersonal Relations in Nursing og gjør pasient–pleier-samspillet til et faglig spørsmål. 1977: George Engel presenterer den biopsykososiale modellen i Science. 2021: WHO beskriver personorienterte, rettighetsbaserte og lokalsamfunnsnære psykiske helsetjenester. I Norge ble reviderte nasjonale pasientforløp tatt i bruk fra januar 2025.",
+      "idea": "Behandling har gjerne uttrykkelige faglige mål og metoder, mens omsorg også omfatter respekt, praktisk hjelp og kontinuitet. Peplau rettet oppmerksomheten mot relasjoner i sykepleie, ikke mot en bestemt psykoterapimetodes virkning. Engel ville utvide medisinsk forståelse til biologiske, psykologiske og sosiale forhold. Moderne pasientforløp knytter oppfølging til avklart ansvar og overgang mellom tjenester. Et godt registrert forløp viser likevel ikke alene hvordan omsorgen ble opplevd.",
+      "method": "Faghistorie sammenholder Peplaus teori fra 1952, Engels programartikkel fra 1977 og senere tjenesteorganisering. Undersøkelser av reell praksis må kartlegge hvem som ga hvilken hjelp, kontinuitet, samarbeidsbrudd, pasientens erfaring og målbare utfall. WHOs veiledning og norske pasientforløp beskriver anbefalte rammer; de er ikke randomiserte effektstudier av enhver omsorgsform.",
+      "limit": "Sykepleieteori kan ikke behandles som bevist årsak til bedring hos alle pasienter. Behandling og omsorg overlapper, men er ikke utbyttbare, og gode intensjoner dokumenterer ikke kvalitet. Juridiske plikter, faglig praksis og erfart verdighet må vurderes separat. Kortet gir verken individuell behandlingsanbefaling eller vurdering av lovlighet ved tvang.",
+      "example": "Undervisningsscenario: I et tenkt poliklinisk forløp registreres gjennomførte konsultasjoner, men kommunal oppfølging uteblir etter avslutning. Klassen undersøker forskjellen mellom metode, omsorg, ansvarsfordeling og faktisk kontinuitet ved hjelp av hypotetiske forløpsdata.",
+      "example_secondary": "Undervisningsscenario: To oppdiktede sykehusnotater fra ulike tiår beskriver samme pleieoppgave med ulike ord om autoritet og samarbeid. Studentene skiller historiske profesjonsidealer fra data om hvordan pasientene opplevde kontakten.",
+      "contrast": "Institusjonshistorie analyserer bygninger, regelverk, profesjoner og myndighet i psykisk helsehjelp. Behandlings- og omsorgsforskning undersøker i tillegg hvilken hjelp som faktisk ble gitt, kontinuitet og pasientens erfaring. Historiske lovtekster og organisasjonsplaner beviser ikke at et behandlingsforløp fungerte.",
+      "compare_with": "psykiatri_institusjonshistorie",
+      "related_phenomena": [],
+      "reference_links": [
+        {
+          "title": "Peplau (1952) – Interpersonal Relations in Nursing",
+          "url": "https://archive.org/details/interpersonalrel00pepl",
+          "supports": "Bibliografisk registrering av originalutgaven fra 1952; teori om pleierelasjon, ikke dokumentasjon av generell klinisk effekt.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "George L. Engel (1977) – The Need for a New Medical Model",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/847460/",
+          "supports": "Originalartikkel som fremmer biopsykososial forståelse; et teoretisk rammeverk, ikke en universelt validert behandlingsprotokoll.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "WHO (2021) – Guidance on Community Mental Health Services",
+          "url": "https://www.who.int/publications/i/item/9789240025707",
+          "supports": "Normativ rettighets- og tjenesteveiledning, ikke en studie som bekrefter virkning av alle lokale tiltak.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Helsedirektoratet – Psykiske lidelser, voksne",
+          "url": "https://www.helsedirektoratet.no/nasjonale-forlop/psykiske-lidelser-voksne",
+          "supports": "Kanonisk beskrivelse av utredning, behandling og samhandling i nasjonalt pasientforløp; formål og prosess, ikke garantert pasientutfall.",
+          "canonical_claim_ids": [
+            "phi-06"
+          ],
+          "canonical_source_ids": [
+            "src-helsedir-forlop"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Peplau beskrev relasjoner i sykepleien i 1952, og Engel formulerte en bredere medisinsk modell i 1977. WHO anbefalte rettighetsbaserte tjenester i 2021. Norske pasientforløp ble revidert i 2024 og gjeldende fra januar 2025.",
+        "idea": "Behandling gjelder faglige tiltak, mens omsorg også handler om praktisk støtte, verdighet og kontinuitet. De to henger sammen, men er ikke det samme.",
+        "method": "Forsknings- og institusjonshistorie sammenholdes med undersøkelser av pasientforløp, samarbeidsbrudd, opplevelser og utfall. Retningslinjer viser mål, ikke automatisk praksis.",
+        "limit": "Historiske teorier beviser ikke at en bestemt pasient fikk god hjelp. Behandlingseffekt, rettigheter og pasienterfaring trenger ulike kilder.",
+        "featured_reference_urls": [
+          "https://archive.org/details/interpersonalrel00pepl",
+          "https://pubmed.ncbi.nlm.nih.gov/847460/",
+          "https://www.who.int/publications/i/item/9789240025707",
+          "https://www.helsedirektoratet.no/nasjonale-forlop/psykiske-lidelser-voksne"
+        ]
+      }
+    },
+    {
+      "id": "kriseintervensjon_historie",
+      "title": "Kriseintervensjon – fra Lindemann og Caplan til moderne krisetjenester",
+      "chapter_id": "psykisk-helse-institusjoner-og-behandling",
+      "emne_id": "em_psy_krise_intervensjon",
+      "founders": "Erich Lindemann; Gerald Caplan; Stevan E. Hobfoll og kolleger; WHO",
+      "period": "1944: Lindemann beskriver akutte sorgreaksjoner i en klinisk studie. 1964: Gerald Caplan utgir Principles of Preventive Psychiatry og setter krisehjelp inn i forebyggende, samfunnsrettet psykiatri. 2007: Hobfoll mfl. sammenfatter fem prinsipper for støtte etter omfattende traumatiske hendelser. 2011: WHO publiserer en veileder for psykososial førstehjelp. 2021: WHO gir en særskilt veileder for personorienterte krisetjenester.",
+      "idea": "Kriseintervensjon er ikke én behandling eller diagnose. Historisk har feltet beveget seg fra beskrivelser av sorg og psykisk belastning til organisert, situasjonstilpasset hjelp og ansvar mellom tjenester. Lindemanns kliniske materiale, Caplans forebyggende program og senere internasjonale veiledere må skilles fra hverandre. Praktisk støtte, faglig risikovurdering og psykoterapi har ulike oppgaver; en hendelse alene fastslår ikke enkeltmenneskets reaksjon.",
+      "method": "Sammenlign originale publikasjonsår og hvilken type kunnskap kildene gir: klinisk observasjon (Lindemann), faglig program (Caplan), forskningssyntese og ekspertkonsensus (Hobfoll), normativ veiledning (WHO). For å evaluere tjenester trengs særskilte data om sikkerhet, tilgang, samtykke, faktisk hjelp, videre henvisning, frafall og forløp over tid. Deskriptive kontaktveier er ikke individuell triage.",
+      "limit": "Verken krisebegrepet eller et publisert prinsipp er en individuell diagnose eller en regel om hva alle trenger. Standardisert, påtvunget følelsesbearbeiding kan ikke likestilles med psykososial førstehjelp. Kortsiktige kontaktmål dokumenterer ikke langtidsvirkning. WHO-veiledere er normative og erstatter ikke klinisk kompetanse, lokale tjenester eller etterprøvbare effektstudier.",
+      "example": "Undervisningsscenario: En fiktiv kommune viser til 90 prosent gjennomført oppsøkende kontakt etter en hendelse. Elevene undersøker hvilke separate data som trengs om praktisk hjelp, videre oppfølging og uoppfylte behov før tilbudet kan vurderes.",
+      "example_secondary": "Undervisningsscenario: To oppdiktede krisearkiver har hver sin tidslinje, én over hendelsesforløpet og én over hjelpetjenester. Studentene sammenligner dem for å vise hvorfor historisk hendelsesdokumentasjon ikke alene beskriver personlige reaksjoner.",
+      "contrast": "Trygghetskortet undersøker fysisk sikkerhet, opplevd trygghet, informasjon og faktisk støtte etter krise. Kriseintervensjonens historie spør også hvem som har ansvar, og hvordan akutt kontakt følges opp av tjenester over tid. Et prinsipp for trygghet er ikke alene en klinisk protokoll eller bevis for tjenesteeffekt.",
+      "compare_with": "trygghet_tillit_krisehjelp",
+      "related_phenomena": [],
+      "reference_links": [
+        {
+          "title": "Erich Lindemann (1944) – Symptomatology and Management of Acute Grief",
+          "url": "https://psychiatryonline.org/doi/full/10.1176/ajp.101.2.141",
+          "supports": "Originalt historisk observasjonsarbeid om akutt sorg; ikke representativt grunnlag for alle kriseforløp.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Gerald Caplan (1964) – Principles of Preventive Psychiatry",
+          "url": "https://wellcomecollection.org/works/mzxhk64x",
+          "supports": "Bibliotekspost som bekrefter 1964-utgaven og Caplans forebyggende psykiatritradisjon; originalbokens fulle argumentasjon er ikke detaljverifisert.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Hobfoll mfl. (2007) – Five Essential Elements",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18181708/",
+          "supports": "Syntese og ekspertkonsensus om støtte ved massebelastning; ikke randomisert dokumentasjon for ethvert program.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "WHO (2021) – Mental Health Crisis Services",
+          "url": "https://www.who.int/publications/i/item/9789240025721",
+          "supports": "Kanonisk normativ beskrivelse av personorienterte og rettighetsbaserte krisetjenester; ikke individuell triage.",
+          "canonical_claim_ids": [
+            "phi-23"
+          ],
+          "canonical_source_ids": [
+            "src-who-crisis"
+          ]
+        },
+        {
+          "title": "Helsedirektoratet – Psykiske lidelser, voksne",
+          "url": "https://www.helsedirektoratet.no/nasjonale-forlop/psykiske-lidelser-voksne",
+          "supports": "Kanonisk nasjonalt pasientforløp med samhandling og videre oppfølging; normativt systemgrunnlag.",
+          "canonical_claim_ids": [
+            "phi-24"
+          ],
+          "canonical_source_ids": [
+            "src-helsedir-forlop"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Lindemann publiserte om akutt sorg i 1944. Caplan beskrev forebyggende psykiatri i 1964. Hobfoll sammenfattet kriseprinsipper i 2007, og WHO ga krisetjenesteveiledning i 2021.",
+        "idea": "Krisehjelp omfatter både praktisk støtte, faglig vurdering og videre oppfølging. Ingen enkelt metode beskriver alle kriser.",
+        "method": "Feltets historie granskes gjennom kliniske observasjoner, faglige modeller, forskningssynteser og retningslinjer. Tjenestevirkning må undersøkes i egne studier.",
+        "limit": "En krise er ikke en diagnose. Veiledning erstatter ikke helsehjelp, og registrert kontakt dokumenterer ikke i seg selv at behovene ble møtt.",
+        "featured_reference_urls": [
+          "https://psychiatryonline.org/doi/full/10.1176/ajp.101.2.141",
+          "https://wellcomecollection.org/works/mzxhk64x",
+          "https://pubmed.ncbi.nlm.nih.gov/18181708/",
+          "https://www.who.int/publications/i/item/9789240025721"
+        ]
+      }
+    },
+    {
+      "id": "pasientrolle_medvirkning_historie",
+      "title": "Pasientrolle og medvirkning – fra sykerollen til delte beslutninger",
+      "chapter_id": "psykisk-helse-institusjoner-og-behandling",
+      "emne_id": "em_psy_pasientrolle_erfaring",
+      "founders": "Talcott Parsons; Cathy Charles, Amiram Gafni og Tim Whelan; pasient- og brukerbevegelser",
+      "period": "1951: Talcott Parsons beskriver sykdom og legerollen i sosiologiske termer. 1997: Charles, Gafni og Whelan analyserer hva delt beslutningstaking krever i det medisinske møtet. I 1999 videreutvikler de modellen for ulike beslutningssituasjoner. I 2021 gir WHO veiledning om personorienterte og rettighetsbaserte psykiske helsetjenester. Norske pasientrettigheter vektlegger informasjon og medvirkning.",
+      "idea": "Historisk kunne pasienten beskrives først og fremst som mottaker av profesjonens vurderinger. Senere teorier om delt beslutningstaking stiller spørsmål om hvordan kunnskap, alternativer og personens egne mål deles. En pasienterfaring er en viktig kilde til hvordan tilbudet oppleves, mens kontrollert effektforskning svarer på andre spørsmål. En signert plan viser ikke nødvendigvis at medvirkningen var reell.",
+      "method": "Parsons' rolleanalyse og Charles mfl.s begrepsarbeid undersøkes som historiske, normative og sosiologiske modeller. Kvalitative intervjuer kan belyse pasienterfaringer; journal- og planstudier kartlegger dokumenterte beslutningstrinn; spørreskjemaer undersøker mønstre. For å hevde at medvirkning påvirker behandlingsutfall trengs egne design som håndterer seleksjon og andre forklaringer.",
+      "limit": "Parsons' sykerolle beskrev et bestemt samfunns- og profesjonsideal, ikke alle pasienter eller kulturer. Modellen fra 1997 ble utviklet i en medisinsk beslutningskontekst og må ikke uten videre tolkes som en klinisk effektstudie i psykisk helsevern. Opplevd medvirkning, faktisk beslutningsmakt og formelle rettigheter er tre adskilte forhold. Kortet fastsetter ikke samtykkekompetanse eller behov hos enkeltpersoner.",
+      "example": "Undervisningsscenario: I et oppdiktet journalutdrag står «pasienten informert», men ingen alternativer eller personlige mål er dokumentert. Elevene lager spørsmål som kan skille informasjonsoverføring fra delt beslutning, uten å avgjøre behandlingsvalget.",
+      "example_secondary": "Undervisningsscenario: Klassen får to fiktive pasientintervjuer fra samme type tjeneste med ulike erfaringer av å bli hørt. Studentene drøfter utvalg, språk og kontekst før de vurderer om intervjuene kan generaliseres.",
+      "contrast": "Omsorgskortet undersøker tjenestens tiltak, organisering og kontinuitet. Pasientrollekortet spør hvem som får forståelig informasjon og reell innflytelse over beslutninger, også målt fra pasientens perspektiv. Dokumentasjon av en behandlingsplan er ikke nok til å fastslå at medvirkningen var reell.",
+      "compare_with": "behandling_omsorg_relationshistorie",
+      "related_phenomena": [],
+      "reference_links": [
+        {
+          "title": "Talcott Parsons (1951) – Illness and the Role of the Physician",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1939-0025.1951.tb00003.x",
+          "supports": "Historisk publisering av en sosiologisk rolleanalyse, ikke en modell som forklarer alle faktiske pasienterfaringer.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Charles, Gafni og Whelan (1997) – Shared Decision-Making",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0277953696002213",
+          "supports": "Originalt begrepsarbeid om delt beslutning, med opphav i generell medisinsk beslutningskontekst, ikke psykoterapeutisk effektforsøk.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "WHO (2021) – Guidance on Community Mental Health Services",
+          "url": "https://www.who.int/publications/i/item/9789240025707",
+          "supports": "Normativt, rettighetsbasert rammeverk for personorienterte tjenester; ikke bevis for faktisk oppfylt medvirkning.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Helsenorge – Hjelp og behandling ved psykiske problemer",
+          "url": "https://www.helsenorge.no/psykisk-helse/hjelp-og-behandling/",
+          "supports": "Kanonisk norsk pasientinformasjon om informasjon, valgmuligheter og medvirkning; ingen påstand om oppnådd behandlingseffekt.",
+          "canonical_claim_ids": [
+            "phi-10"
+          ],
+          "canonical_source_ids": [
+            "src-helsenorge-hjelp"
+          ]
+        },
+        {
+          "title": "Helsedirektoratet – Medvirkning i behandlingsplan",
+          "url": "https://www.helsedirektoratet.no/statistikk/kvalitetsindikatorer/psykisk-helse-for-voksne/medvirkning-i-egen-behandling-involvering-i-behandlingsplan-psykisk-helsevern-voksne",
+          "supports": "Kanonisk indikator for dokumentert samarbeid om behandlingsplan; ikke direkte mål på pasientopplevd beslutningsmakt.",
+          "canonical_claim_ids": [
+            "phi-12"
+          ],
+          "canonical_source_ids": [
+            "src-helsedir-medvirkning"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Parsons beskrev pasientens rolle i 1951. Charles, Gafni og Whelan utviklet modeller for delt beslutning i 1997 og 1999. WHO fremhevet rettighetsbaserte tjenester i 2021.",
+        "idea": "Pasienten er både rettighetshaver og kilde til kunnskap om eget forløp. Medvirkning innebærer mer enn å få informasjon.",
+        "method": "Forskere sammenholder samtaler, behandlingsplaner og pasientintervjuer. Dokumenterte valg og opplevd deltakelse kan gi ulike svar.",
+        "limit": "Én pasientfortelling representerer ikke alle. En formell plan beviser ikke reell medvirkning, og en begrepsmodell fastslår ikke behandlingseffekt.",
+        "featured_reference_urls": [
+          "https://onlinelibrary.wiley.com/doi/10.1111/j.1939-0025.1951.tb00003.x",
+          "https://www.sciencedirect.com/science/article/pii/S0277953696002213",
+          "https://www.who.int/publications/i/item/9789240025707",
+          "https://www.helsenorge.no/psykisk-helse/hjelp-og-behandling/"
+        ]
+      }
+    },
+    {
+      "id": "terapeutisk_allianse_og_terapirom",
+      "title": "Terapeutisk allianse – Rogers, Bordin og relasjonen i terapirommet",
+      "chapter_id": "psykisk-helse-institusjoner-og-behandling",
+      "emne_id": "em_psy_terapirom_relasyon",
+      "founders": "Carl R. Rogers; Edward S. Bordin; Christoph Flückiger og medarbeidere",
+      "period": "1957: Carl Rogers publiserer en teoretisk artikkel om betingelser for terapeutisk personlighetsendring. 1979: Edward Bordin beskriver arbeidsalliansen gjennom mål, oppgaver og relasjonelt bånd. 2018: Flückiger mfl. publiserer en metaanalyse av 295 uavhengige studier om allianse og behandlingsutfall, både ansikt til ansikt og via internett. Moderne veiledet eBehandling utvider den konkrete rammen for terapeutisk kontakt.",
+      "idea": "Terapeutisk allianse beskriver samarbeid mellom behandler og klient, ikke bare følelsen av god kjemi. Rogers drøftet empati, aksept og terapeutens ekthet; Bordin delte arbeidsalliansen i enighet om mål, oppgaver og bånd. Alliansen kan beskrives av klient, terapeut eller observatør. Rom, digital kontakt, personvern og profesjonell rollefordeling påvirker rammene, men forteller ikke alene hvordan relasjonen oppleves.",
+      "method": "Rogers' artikkel fra 1957 er en teoretisk formulering, ikke en randomisert prøving av seks betingelser. Bordin (1979) gir et begrepsrammeverk. Flückiger mfl. (2018) sammenfattet 295 uavhengige studier med mer enn 30 000 pasienter, og fant en positiv samvariasjon mellom allianse og utfall. Longitudinelle vurderinger og kontroll for tidlig bedring trengs for å utforske tidsrekkefølge. Norske beskrivelser av eBehandling viser en tjenesteform, ikke relasjonskvaliteten til enkeltpersoner.",
+      "limit": "Allianse–utfall-sammenhengen er hovedsakelig korrelasjon og beviser ikke at allianse alene forårsaker bedring. Tidlig bedring kan også påvirke skåren. Ulike målere og behandlingsformer skaper heterogenitet. Verken møbler, videosamtaler eller observasjon uten deltakernes perspektiv kan fastslå kvaliteten i et konkret terapiforhold. Kortet gir ingen evaluering av en navngitt terapeut eller pasient.",
+      "example": "Undervisningsscenario: En oppdiktet samtale viser en klient og terapeut som er enige om målet, men uenige om arbeidsmåten. Elevene bruker Bordins tre komponenter for å beskrive forskjellen uten å trekke konklusjon om behandlingsutfall.",
+      "example_secondary": "Undervisningsscenario: To fiktive digitale terapiforløp har lik møtetid, men ulik tilgang til privat rom og oppfølging mellom timene. Klassen foreslår separate mål for personvern, tilgjengelighet, allianse og effekt i et tenkt studieopplegg.",
+      "contrast": "Kognitiv terapi beskriver bestemte behandlingsmetoder og undersøker virkning i behandlingsstudier. Terapeutisk allianse gjelder samarbeid om mål, oppgaver og relasjon på tvers av terapiretninger. Samvariasjon mellom allianse og resultat beviser ikke at relasjonen forårsaket bedringen; virkningen kan også gå motsatt vei.",
+      "compare_with": "kognitiv_terapi",
+      "related_phenomena": [],
+      "reference_links": [
+        {
+          "title": "Carl Rogers (1957) – Necessary and Sufficient Conditions",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/13416422/",
+          "supports": "Originalpublikasjon for Rogers' formulering av relasjonelle betingelser; teoretisk hypotese, ikke universell klinisk virkningsgaranti.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Edward Bordin (1979) – Working Alliance",
+          "url": "https://doi.org/10.1037/h0085885",
+          "supports": "Original artikkel med mål, oppgaver og bånd som modellkomponenter; ikke i seg selv eksperimentell kausal dokumentasjon.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Flückiger mfl. (2018) – The Alliance in Adult Psychotherapy",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29792475/",
+          "supports": "Metaanalyse av 295 uavhengige studier og mer enn 30 000 pasienter; positiv korrelasjon, med spørsmål om årsaksretning.",
+          "canonical_claim_ids": [],
+          "canonical_source_ids": []
+        },
+        {
+          "title": "Helsenorge – eBehandling",
+          "url": "https://www.helsenorge.no/psykisk-helse/hjelp-og-behandling/ebehandling/",
+          "supports": "Kanonisk informasjon om veiledet internettbehandling med behandleroppfølging; viser format, ikke bestemt allianseeffekt.",
+          "canonical_claim_ids": [
+            "phi-15"
+          ],
+          "canonical_source_ids": [
+            "src-helsenorge-ebehandling"
+          ]
+        },
+        {
+          "title": "Helsedirektoratet – første samtale i nasjonalt pasientforløp",
+          "url": "https://www.helsedirektoratet.no/nasjonale-forlop/psykiske-lidelser-voksne/utredning-i-spesialisthelsetjenesten",
+          "supports": "Kanonisk nasjonal veiledning om forventninger til kommunikasjon og samarbeid; ikke direkte alliansemåling.",
+          "canonical_claim_ids": [
+            "phi-14"
+          ],
+          "canonical_source_ids": [
+            "src-helsedir-utredning"
+          ]
+        }
+      ],
+      "source_review_state": "partial_historical_method_review",
+      "teaching_view": {
+        "editorial_state": "ready_for_educational_use",
+        "period": "Rogers formulerte relasjonelle betingelser i 1957. Bordin beskrev mål, oppgaver og bånd i 1979. Flückiger og kolleger sammenfattet alliansestudier i 2018.",
+        "idea": "Terapeutisk allianse handler om samarbeid om mål og oppgaver og om den relasjonelle forbindelsen mellom klient og behandler.",
+        "method": "Forskere måler allianse fra pasientens, terapeutens og observatørens perspektiv. Flückiger og kollegers metaanalyse fra 2018 fant positiv sammenheng med utfall ved samtaleterapi ansikt til ansikt (r = 0,278). Samvariasjon er ikke bevis for årsak.",
+        "limit": "Samvariasjon er ikke bevis for årsak. Rom, digitalt format og ytre observasjoner kan ikke alene avgjøre hvordan en konkret relasjon oppleves.",
+        "featured_reference_urls": [
+          "https://pubmed.ncbi.nlm.nih.gov/13416422/",
+          "https://doi.org/10.1037/h0085885",
+          "https://pubmed.ncbi.nlm.nih.gov/29792475/",
+          "https://www.helsenorge.no/psykisk-helse/hjelp-og-behandling/ebehandling/"
+        ]
+      }
     }
   ]
 }

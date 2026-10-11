@@ -46,11 +46,12 @@
   <link rel="stylesheet" href="css/overlay.css">
   <link rel="stylesheet" href="css/effects.css">
   <link rel="stylesheet" href="css/map.css">
-  <link rel="stylesheet" href="css/placeCard.css?v=20261010-quiz-black-elegant1">
+  <link rel="stylesheet" href="css/placeCard.css?v=20261012-placecard-full-bleed1">
+  <link rel="stylesheet" href="css/place-card-sticky-header.css?v=20261011-photo-scroll-compact3">
   <link rel="stylesheet" href="css/place-card-reader.css?v=20261010-continuous2">
   <link rel="stylesheet" href="css/place-onsite-surface.css?v=20261009-type-scale1">
   <link rel="stylesheet" href="css/wonderkammer.css">
-  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/footer.css?v=20261012-neon-meet-events1">
   <link rel="stylesheet" href="css/sheets.css">
   <link rel="stylesheet" href="css/historical-routes.css">
   <link rel="stylesheet" href="css/caravan.css">
@@ -89,8 +90,15 @@
   <img class="hg-brand" src="bilder/logo_historygo.PNG" alt="History GO">
    
   <div class="top-actions">
-
-
+    <button id="nearbyExploreToggle"
+            type="button"
+            aria-label="Utforsk"
+            data-hg-i18n-aria-label="ui.static.explore"
+            aria-controls="nearbyListContainer"
+            aria-expanded="false">
+      <span class="nearby-explore-icon" aria-hidden="true">🧭</span>
+      <span class="nearby-explore-label" data-i18n="ui.static.explore">Utforsk</span>
+    </button>
 
     <a id="miniProfile" class="miniProfileTop" href="profile.html" aria-label="Profil" data-hg-i18n-aria-label="ui.attr.profile">
       <span id="miniName" class="mpt-name">Logg inn</span>
@@ -201,15 +209,6 @@
       </div>
     </div>
 
-    <button id="nearbyExploreToggle"
-            type="button"
-            aria-label="Utforsk"
-            data-hg-i18n-aria-label="ui.static.explore"
-            aria-controls="nearbyListContainer"
-            aria-expanded="false">
-      <span class="nearby-explore-icon" aria-hidden="true">🧭</span>
-      <span class="nearby-explore-label" data-i18n="ui.static.explore">Utforsk</span>
-    </button>
   </div>
 
 </header>
@@ -267,12 +266,12 @@
 
   <div class="pc-body">
     <div class="pc-text">
-      <div id="pcStatusBar" class="pc-status-bar" aria-live="polite"></div>
       <div id="pcHeaderHero" class="pc-heading-hero">
         <img id="pcHeaderImage" class="pc-heading-image" alt="" aria-hidden="true">
         <div class="pc-heading-content">
           <div class="pc-title-row"><h2 id="pcTitle"></h2><button id="pcFavorite" class="pc-favorite-btn" type="button" aria-label="Legg til favoritt" title="Legg til favoritt">☆</button></div>
           <div id="pcMeta" class="pc-meta"></div>
+          <div id="pcStatusBar" class="pc-status-bar" aria-live="polite"></div>
         </div>
       </div>
       <p id="pcDesc" class="pc-desc"></p>
@@ -340,12 +339,12 @@
   <footer class="site-footer app-footer" aria-label="Status og spillvalg">
     <div id="pcMini" class="pc-mini" aria-hidden="true"><img id="pcMiniImg" src="" alt=""></div>
     <div class="app-actions" aria-label="Stedshandlinger">
-      <button id="pcInfo" class="pc-action pc-action-text" type="button" aria-label="Mer info" title="Mer info">Mer info</button>
       <button id="pcQuiz" class="pc-action pc-action-primary" type="button" aria-label="Ta quiz" title="Ta quiz">Ta quiz</button>
       <button id="pcVisit" class="pc-action pc-action-visit" type="button" aria-label="Registrer besøk" title="Registrer fysisk besøk">Registrer besøk</button>
       <button id="pcRoute" class="pc-action pc-action-icon" type="button" aria-label="Rute" title="Rute"></button>
       <button id="pcObserve" class="pc-action pc-action-icon" type="button" aria-label="Observer" title="Observer"></button>
       <button id="pcNote" class="pc-action pc-action-icon" type="button" aria-label="Notat" title="Notat"></button>
+      <div id="pcOnSiteFooter" class="pc-onsite-footer" role="group" aria-label="Events og Møtes" hidden></div>
     </div>
   </footer>
 
@@ -379,6 +378,7 @@
     }, { once: true });
   </script>
 
+  <script defer src="js/ui/place-card-sticky-header.js?v=20261011-photo-scroll-compact3"></script>
   <script type="module" src="./js/app.js?v=20261010-front-flip-recovery1"></script>
 </body>
 </html>
