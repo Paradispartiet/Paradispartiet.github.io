@@ -245,6 +245,85 @@ const documented = [
     claim: "«Han har teke stort ansvar, vore ein leiar i laget»",
     source: "https://brattvag-il.no/herrelag/herrelaget/takk-for-no-ulrik"
   },
+  // --- Aalesund 11.10.2026: official club archive and match reports --------
+  {
+    playerId: "herman_ekeberg",
+    placeId: "color_line_stadion",
+    strengths: ["dribbling"],
+    claim: "AaFKs historiske 2002-gjennomgang beskriver at Herman Ekeberg «gjorde skuddfinta til sin egen». Den konkret omtalte ballfinten bærer dribbling; mål og antall kamper gir ingen tilleggsegenskaper.",
+    source: "https://www.aafk.no/historisk-arkiv/nyheter/da-fotballfeberen-brot-ut"
+  },
+  {
+    playerId: "trond_fredriksen",
+    placeId: "color_line_stadion",
+    strengths: ["work_rate"],
+    claim: "AaFKs historiske gjennomgang beskriver at Trond Fredriksen «la alltid ned en formidabel innsats». Kun arbeidsinnsats føres; omtalen av skuddfot tilordnes ikke et spesifikt skuddtoken.",
+    source: "https://www.aafk.no/historisk-arkiv/nyheter/da-fotballfeberen-brot-ut"
+  },
+  {
+    playerId: "pal_stadsnes",
+    placeId: "color_line_stadion",
+    strengths: ["set_pieces"],
+    claim: "AaFK beskriver Pål Stadsnes som særlig farlig på hjørnespark med venstrefoten. Kun dødballferdigheter føres.",
+    source: "https://www.aafk.no/historisk-arkiv/nyheter/da-fotballfeberen-brot-ut"
+  },
+  {
+    playerId: "jorgen_hatlehol",
+    placeId: "color_line_stadion",
+    strengths: ["crossing"],
+    claim: "AaFKs kampreferat fra Strømmen-kampen 11.08.2019 beskriver et knallhardt innlegg fra Jørgen Hatlehol som Pape Habib Gueye headet i mål. Fører crossing, ikke hurtighet eller pasningsregister.",
+    source: "https://www.aafk.no/nyheter/seiersrekka-fortsatte"
+  },
+  {
+    playerId: "holmbert_aron_fridjonsson",
+    placeId: "color_line_stadion",
+    strengths: ["heading"],
+    claim: "AaFKs kampreferat fra treningskampen mot Hødd beskriver at Hólmbert Friðjónsson styrte et innlegg med hodet i lengste hjørne til 2–0. Fører heading fra den dokumenterte handlingen.",
+    source: "https://www.aafk.no/nyheter/malrikt-da-aalesund-slo-hodd"
+  },
+  {
+    playerId: "pape_habib_gueye",
+    placeId: "color_line_stadion",
+    strengths: ["heading"],
+    claim: "AaFKs kampreferat mot Strømmen 11.08.2019 beskriver at Pape Habib Gueye møtte Hatlehols innlegg og dunket ballen i mål med hodet. Kun heading føres.",
+    source: "https://www.aafk.no/nyheter/seiersrekka-fortsatte"
+  },
+  {
+    playerId: "sigurd_haugen",
+    placeId: "color_line_stadion",
+    strengths: ["heading"],
+    claim: "AaFKs referat fra 6–2 mot Grorud 15.09.2021 beskriver at Sigurd Haugen scoret sitt andre mål med hodet etter innlegg fra Isak Dybvik Määttä. Fører bare heading.",
+    source: "https://www.aafk.no/nyheter/storseier_AaFK_Grorud"
+  },
+  {
+    playerId: "kristian_hemmingsen_lonebu",
+    placeId: "color_line_stadion",
+    strengths: ["finishing", "heading"],
+    claim: "AaFKs akademileder Sindre Eid beskriver Kristian Lonebu som «en god avslutter med begge bein og med hodet» ved proffkontrakten i desember 2024. Dette bærer finishing og heading, ikke øvrige kvaliteter fra målstatistikken.",
+    source: "https://www.aafk.no/nyheter/forste-proffkontrakt-for-lokal-spiss"
+  },
+  {
+    playerId: "oddbjorn_lie",
+    placeId: "color_line_stadion",
+    strengths: ["crossing"],
+    claim: "AaFKs Skeid-referat fra 2019 beskriver at Oddbjørn Lie slo et «strøkent innlegg» som Hólmbert Friðjónsson headet i mål. Fører crossing fra konkret innlegg.",
+    source: "https://www.aafk.no/nyheter/islandsk-festkveld"
+  },
+  {
+    playerId: "aron_elis_randarson",
+    placeId: "color_line_stadion",
+    strengths: ["heading"],
+    claim: "AaFKs referat fra Sogndal-kampen 04.05.2019 beskriver at Aron Elís Þrándarson headet Jørgen Hatlehols innlegg i mål til 1–1. Fører kun heading.",
+    source: "https://www.aafk.no/nyheter/for-en-snuoperasjon-sogndal"
+  },
+  {
+    playerId: "markus_karlsbakk",
+    placeId: "color_line_stadion",
+    strengths: ["finishing"],
+    claim: "AaFKs 2.-lagsreferat 25.08.2018 beskriver at Markus Karlsbakk scoret 3–0 med en elegant lobb over keeperen. En konkret kontrollert avslutning dokumenterer finishing, ikke en generell talentvurdering.",
+    source: "https://www.aafk.no/nyheter/atte-seire-pa-rad"
+  },
+
   // --- Sandefjord, 09.10.2026: documented P1 skill -----------------------
   // Source explicitly calls Moen Foss "hurtig". Other descriptive words
   // (e.g. "sterk i hodet") do not justify additional attribute tokens.
@@ -610,7 +689,138 @@ const documented = [
     strengths: ["finishing"],
     claim: "Rosenborgs historiske kampreferat om avslutningen på Tippeligaen 2010 beskriver at Magnus Sylling Olsen kom gjennom fra venstresiden og banket ballen kontant i mål i siste ordinære minutt. Dette er en eksplisitt vellykket avslutning (finishing); ingen egenskap utledes av totalscoring.",
     source: "https://www.rbk.no/nyheter/rbk-ubeseiret-i-2010"
+  },
+  // --- Aalesund, 11.10.2026: independently checked club and match sources ---
+  {
+    playerId: "joakim_austnes",
+    placeId: "color_line_stadion",
+    strengths: ["pace", "dribbling"],
+    claim: "AaFKs omtale 8. juni 2021 kaller Joakim Austnes en fotrapp driblefant og fryktet kantspiller. Det dokumenterer konkret hurtighet og dribling; verken mål eller rolle brukes som indirekte styrkebelegg.",
+    source: "https://www.aafk.no/nyheter/manedens-spiller-i-fotspora-til-jokke"
+  },
+  {
+    playerId: "abderrazak_hamdallah",
+    placeId: "color_line_stadion",
+    strengths: ["heading", "finishing"],
+    claim: "AaFKs historiske Viking-referat (kamp 25. oktober 2013) beskriver en kontrollert heading etter Phillips' innlegg, en senere presis avslutning og et kontant skudd fra 16 meter. Bare heading og finishing føres.",
+    source: "https://www.aafk.no/nyheter/hamed-allahs-store-kveld"
+  },
+  {
+    playerId: "demar_phillips",
+    placeId: "color_line_stadion",
+    strengths: ["crossing"],
+    claim: "AaFKs historiske Viking-referat beskriver Demar Phillips som slo et presist innlegg til Abderrazak Hamdallahs kontrollerte heading 25. oktober 2013. Kun crossing føres fra det konkrete innlegget.",
+    source: "https://www.aafk.no/nyheter/hamed-allahs-store-kveld"
+  },
+  {
+    playerId: "eirik_hoseth",
+    placeId: "color_line_stadion",
+    strengths: ["heading"],
+    claim: "Dagbladets samtidige referat fra Aalesund–Hødd 20. juli 2001 beskriver Eirik Hoseth som headet inn returen etter et reddet skudd fra Paulo dos Santos. Kun heading føres fra den konkrete scoringen.",
+    source: "https://www.dagbladet.no/sport/1-divisjon-20-juli/65740469"
+  },
+  {
+    playerId: "erling_yttis_ytterland",
+    placeId: "color_line_stadion",
+    strengths: ["set_pieces"],
+    claim: "Dagbladets samtidige Aalesund–Hødd-referat 20. juli 2001 beskriver en presis corner fra Erling Ytterland som Tor Hogne Aarøy headet i mål. Dette dokumenterer set_pieces, uten å utlede øvrig pasningskvalitet.",
+    source: "https://www.dagbladet.no/sport/1-divisjon-20-juli/65740469"
+  },
+  {
+    playerId: "amund_skiri",
+    placeId: "color_line_stadion",
+    strengths: ["set_pieces"],
+    claim: "Aftenpostens samtidige Aalesund–Lillestrøm-referat i 2003 beskriver et langt frispark fra Amund Skiri rett i beina på Eirik Hoseth, som avsluttet i mål. Kun set_pieces føres fra den dokumenterte dødballleveransen.",
+    source: "https://www.aftenposten.no/sport/fotball/i/2G9KMy/hoseths-blinkskudd"
+  },
+  {
+    playerId: "bjorn_erik_melland",
+    placeId: "color_line_stadion",
+    strengths: ["heading"],
+    claim: "AaFKs historiske omtale av stadionåpningen mot Odd 16. april 2005 beskriver at Bjørn Erik Melland headet et hjørnespark ut i feltet, før Lasse Olsen senere satte ballen i mål. Kun den konkret utførte headingen registreres, ikke generell duellstyrke.",
+    source: "https://www.aafk.no/historisk-arkiv/nyheter/vare-baner-color-line-stadion"
+  },
+
+  // --- Aalesund, 11.10.2026: contemporary reports / quantified skill evidence ---
+  {
+    playerId: "fredrik_ulvestad",
+    placeId: "color_line_stadion",
+    strengths: ["crossing", "finishing"],
+    claim: "Aftenpostens samtidige Aalesund–Stabæk-referat beskriver et «herlig innlegg» fra Fredrik Ulvestad til Leke James' heading, og at Ulvestad senere løp alene gjennom etter en kontring og satte ballen kontrollert forbi keeper. Fører bare crossing og finishing fra de to konkrete handlingene.",
+    source: "https://www.aftenposten.no/sport/fotball/i/AdRxbM/aalesund-knuste-stabaek"
+  },
+  {
+    playerId: "sander_post",
+    placeId: "color_line_stadion",
+    strengths: ["heading", "finishing"],
+    claim: "Stavanger Aftenblads cupreferat fra Tornado/Måløy–Aalesund 11.05.2011 beskriver at Sander Post stusset Solomon Okoronkwo gjennom til mål og vant flere luftdueller; han satte selv ballen i mål etter å ha blitt spilt gjennom. Fører bare heading og finishing.",
+    source: "https://www.aftenbladet.no/sport/i/XwGmK7/ingen-cupbombe-detonert-i-maaloey"
+  },
+  {
+    playerId: "mikkel_kirkeskov",
+    placeId: "color_line_stadion",
+    strengths: ["tackling", "crossing", "set_pieces"],
+    claim: "VG-lupen foran 2017-sesongen oppgir 84 vunne taklinger og 61 vellykkede innlegg for Mikkel Kirkeskov i 2016, samt to mål scoret direkte på frispark. Dette er konkrete underlag for tackling, crossing og set_pieces, ikke generelle forsvarsegenskaper.",
+    source: "https://www.vg.no/spesial/2017/vglupen/?plassering=12"
+  },
+  {
+    playerId: "daniel_leo_gretarsson",
+    placeId: "color_line_stadion",
+    strengths: ["heading"],
+    claim: "AaFKs samtidige Strømmen-referat 11.08.2019 beskriver at Daníel Leó Grétarsson steg høyest på en corner og nikket inn 1–0. Kun heading føres fra den konkret dokumenterte scoringen.",
+    source: "https://www.aafk.no/nyheter/seiersrekka-fortsatte"
+  },
+  {
+    playerId: "robert_sandnes",
+    placeId: "color_line_stadion",
+    strengths: ["work_rate"],
+    claim: "Aalesunds FKs spillerpresentasjon «Sunnmøres stolthet del 1» 09.04.2018 omtaler Robert Sandnes eksplisitt som «den energiske og hardtarbeidende ålesunderen». Dette støtter bare work_rate, ikke hurtighet eller tekniske egenskaper.",
+    source: "https://www.aafk.no/nyheter/sunnmores-stolthet-del-1"
+  },
+  {
+    playerId: "john_kitolano",
+    placeId: "color_line_stadion",
+    strengths: ["crossing"],
+    claim: "AaFKs referat fra AaFK 2–Florø 12.10.2022 beskriver at Bjørn Martin Kristensen scoret etter innlegg fra John Kitolano i det 53. minutt. Kun det konkret utførte innlegget dokumenterer crossing.",
+    source: "https://www.aafk.no/nyheter/aafk-2-sikret-opprykket"
+  },
+  // --- Aalesund 11.10.2026: official match reports and contemporary press ---
+  {
+    playerId: "tero_mantyla",
+    placeId: "color_line_stadion",
+    strengths: ["heading"],
+    claim: "AaFKs treningskampreferat mot Hødd publisert 27.01.2017 beskriver at Tero Mäntylä var riktig plassert på corner og headet inn 4–0. Bare den dokumenterte headingen tilordnes ham.",
+    source: "https://www.aafk.no/nyheter/knuste-hodd-pa-color-line-stadion"
+  },
+  {
+    playerId: "diego_silva",
+    placeId: "color_line_stadion",
+    strengths: ["dribbling", "crossing"],
+    claim: "Bergens Tidendes samtidige referat fra AaFK–Viking 28.02.2010 beskriver at Diego Silva ved flere anledninger rundlurte Vikings back Christian Landu Landu. Hans innlegg etter 16 minutter skapte en dobbeltsjanse. Kilden dokumenterer dribbling og crossing, ikke en generell spillerkarakter.",
+    source: "https://www.bt.no/sport/i/K3yPQ4/aalesund-naermest-seieren-mot-viking"
+  },
+  {
+    playerId: "david_fallman",
+    placeId: "color_line_stadion",
+    strengths: ["heading"],
+    claim: "AaFKs kampreferat mot Sandnes Ulf 24.10.2021 beskriver at David Fällman møtte David Kristjan Olafssons innlegg og headet inn 2–1 etter 51 minutter. Kun heading føres, ikke andre defensive egenskaper.",
+    source: "https://www.aafk.no/nyheter/holdt-til-uavgjort-av-sandnes-ulf"
+  },
+  {
+    playerId: "edvard_skagestad",
+    placeId: "color_line_stadion",
+    strengths: ["tackling"],
+    claim: "VG Lives samtidige referat fra AaFK–Strømsgodset 2–1 beskriver ved 59 minutter at Edvard Skagestad taklet til seg ballen i duell med Iver Fossum. Kun den konkret dokumenterte taklingen føres.",
+    source: "https://vglive.vg.no/kamp/aalesund-str%C3%B8msgodset/145384/rapport"
+  },
+  {
+    playerId: "henrik_molvaer_melland",
+    placeId: "color_line_stadion",
+    strengths: ["finishing"],
+    claim: "Lyns samtidige kampreferat fra Aalesund–Lyn 22.10.2025 beskriver at Henrik Molvær Melland avsluttet hurtig på returen etter Elias Heggland Myrlids stolpeskudd, og avgjorde kampen 2–1 i det 89. minutt. Kun finishing føres; skuddet beskrives ikke som langskudd.",
+    source: "https://www.lyn1896.no/nyheter/tung-avslutning-pa-color-line--tapte-i-siste-minutt"
   }
+
 ];
 
 export const P1_NEW_DOCUMENTED = Object.freeze(documented.map((entry) => Object.freeze({
