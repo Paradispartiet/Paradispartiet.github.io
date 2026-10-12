@@ -660,5 +660,484 @@
       ],
       "status": "authored scene pack"
     }
+  ],
+  "crossCharacterProduction": [
+    {
+      "id": "sideprosjekt_kryss_med_mira",
+      "prior": "musikk_etter_foresporselen",
+      "role": "naeringsliv_sideprosjektbygger",
+      "characters": [
+        "Mira",
+        "Lea"
+      ],
+      "literaryTracks": [
+        "L11",
+        "L13",
+        "L15",
+        "L17"
+      ],
+      "contemporaryTypes": [
+        "C02",
+        "C03",
+        "C23",
+        "C24"
+      ],
+      "plotLenses": [
+        "P03",
+        "P05"
+      ],
+      "days": [
+        17,
+        18,
+        19
+      ],
+      "mechanism": "Spillerens tidligere avgjørelse om Miras ubekreftede spilleforespørsel endrer Leas programutkast."
+    },
+    {
+      "id": "miljo_kryss_med_lea",
+      "prior": "sideprosjekt_etter_neste_steg",
+      "role": "subkultur_gangster",
+      "characters": [
+        "Lea",
+        "Arvid"
+      ],
+      "literaryTracks": [
+        "L02",
+        "L11",
+        "L15",
+        "L17"
+      ],
+      "contemporaryTypes": [
+        "C04",
+        "C07",
+        "C08",
+        "C24"
+      ],
+      "plotLenses": [
+        "P03",
+        "P06"
+      ],
+      "days": [
+        17,
+        18,
+        19
+      ],
+      "mechanism": "Valget om Leas prosjekt bestemmer hvilken omtale Arvid foreslår og må avklare."
+    },
+    {
+      "id": "musikk_kryss_med_arvid",
+      "prior": "miljo_etter_invitasjonen",
+      "role": "musikk_frilansmusiker",
+      "characters": [
+        "Arvid",
+        "Mira"
+      ],
+      "literaryTracks": [
+        "L11",
+        "L12",
+        "L15",
+        "L17"
+      ],
+      "contemporaryTypes": [
+        "C02",
+        "C07",
+        "C14",
+        "C24"
+      ],
+      "plotLenses": [
+        "P03",
+        "P05"
+      ],
+      "days": [
+        17,
+        18,
+        19
+      ],
+      "mechanism": "Grensen rundt Arvids invitasjon avgjør hva Mira må avklare før hennes navn brukes."
+    },
+    {
+      "id": "miljo_kryss_med_frilans",
+      "prior": "frilans_etter_neste_steg",
+      "role": "subkultur_gangster",
+      "characters": [
+        "Lea",
+        "Arvid"
+      ],
+      "literaryTracks": [
+        "L11",
+        "L12",
+        "L15",
+        "L17"
+      ],
+      "contemporaryTypes": [
+        "C04",
+        "C07",
+        "C14",
+        "C23"
+      ],
+      "plotLenses": [
+        "P03",
+        "P06"
+      ],
+      "days": [
+        17,
+        18,
+        19
+      ],
+      "mechanism": "Et avklart, privat eller pauset frilansspor får ulik betydning når Arvid vil kreditere Lea i offentlig programtekst."
+    },
+    {
+      "id": "musikk_kryss_med_grunder",
+      "prior": "grunder_etter_neste_steg",
+      "role": "musikk_frilansmusiker",
+      "characters": [
+        "Lea",
+        "Mira"
+      ],
+      "literaryTracks": [
+        "L02",
+        "L11",
+        "L13",
+        "L17"
+      ],
+      "contemporaryTypes": [
+        "C02",
+        "C03",
+        "C04",
+        "C24"
+      ],
+      "plotLenses": [
+        "P03",
+        "P05"
+      ],
+      "days": [
+        17,
+        18,
+        19
+      ],
+      "mechanism": "Mira møter tre forskjellige tidligere utfall for Leas idé og må avklare formål, samtykke og lydbruk uten å forutsette prototype eller avtale."
+    }
+  ],
+  "ensembleProduction": [
+    {
+      "id": "miljo_etter_leas_program",
+      "prior": "sideprosjekt_kryss_med_mira",
+      "role": "subkultur_gangster",
+      "characters": [
+        "Mira",
+        "Lea",
+        "Arvid"
+      ],
+      "literaryTracks": [
+        "L11",
+        "L13",
+        "L15",
+        "L17"
+      ],
+      "contemporaryTypes": [
+        "C02",
+        "C07",
+        "C14",
+        "C24"
+      ],
+      "plotLenses": [
+        "P03",
+        "P05"
+      ],
+      "days": [
+        20,
+        21,
+        22
+      ],
+      "mechanism": "Tidligere valg om plakat og presisering styrer Arvids ansvar for utskrifter, Miras omdømme og Leas videre kontakt."
+    },
+    {
+      "id": "musikk_etter_arvids_tekst",
+      "prior": "miljo_kryss_med_lea",
+      "role": "musikk_frilansmusiker",
+      "characters": [
+        "Lea",
+        "Arvid",
+        "Mira"
+      ],
+      "literaryTracks": [
+        "L11",
+        "L12",
+        "L13",
+        "L17"
+      ],
+      "contemporaryTypes": [
+        "C02",
+        "C04",
+        "C09",
+        "C24"
+      ],
+      "plotLenses": [
+        "P04",
+        "P05"
+      ],
+      "days": [
+        20,
+        21,
+        22
+      ],
+      "mechanism": "Mira oppdager motstridende versjoner av Arvids invitasjon og kan snakke direkte med Lea, uten ny forpliktelse."
+    },
+    {
+      "id": "frilans_etter_miras_navn",
+      "prior": "musikk_kryss_med_arvid",
+      "role": "naeringsliv_frilanser",
+      "characters": [
+        "Mira",
+        "Arvid",
+        "Lea"
+      ],
+      "literaryTracks": [
+        "L11",
+        "L12",
+        "L17",
+        "L20"
+      ],
+      "contemporaryTypes": [
+        "C04",
+        "C14",
+        "C23",
+        "C24"
+      ],
+      "plotLenses": [
+        "P03",
+        "P05"
+      ],
+      "days": [
+        20,
+        21,
+        22
+      ],
+      "mechanism": "Lea ønsker å fortelle om feilen i et frilansnotat, men Miras valg og samtykke avgjør om historien kan deles."
+    },
+    {
+      "id": "frilans_etter_arvids_kreditering",
+      "prior": "miljo_kryss_med_frilans",
+      "role": "naeringsliv_frilanser",
+      "characters": [
+        "Lea",
+        "Arvid"
+      ],
+      "literaryTracks": [
+        "L11",
+        "L15",
+        "L17",
+        "L23"
+      ],
+      "contemporaryTypes": [
+        "C04",
+        "C07",
+        "C12",
+        "C24"
+      ],
+      "plotLenses": [
+        "P05",
+        "P06"
+      ],
+      "days": [
+        20,
+        21,
+        22
+      ],
+      "mechanism": "Krediteringen uten avtale gir Lea feilaktige oppgaver i frivilliges kalender; Arvids tidligere retting påvirker hvem som rydder opp."
+    },
+    {
+      "id": "miljo_etter_miras_lyd",
+      "prior": "musikk_kryss_med_grunder",
+      "role": "subkultur_gangster",
+      "characters": [
+        "Lea",
+        "Mira",
+        "Arvid"
+      ],
+      "literaryTracks": [
+        "L11",
+        "L12",
+        "L15",
+        "L17"
+      ],
+      "contemporaryTypes": [
+        "C02",
+        "C07",
+        "C14",
+        "C24"
+      ],
+      "plotLenses": [
+        "P03",
+        "P05"
+      ],
+      "days": [
+        20,
+        21,
+        22
+      ],
+      "mechanism": "Et privat lydutkast omtales som arrangementets demo, og Arvids handlinger påvirker Miras videre tillit uten rettighets- eller bookingantakelser."
+    }
+  ],
+  "relationshipProduction": [
+    {
+      "id": "lea_etter_arvids_ansvar",
+      "prior": "miljo_etter_leas_program",
+      "role": "naeringsliv_sideprosjektbygger",
+      "characters": [
+        "Lea",
+        "Arvid",
+        "Mira"
+      ],
+      "literaryTracks": [
+        "L09",
+        "L11",
+        "L15",
+        "L17"
+      ],
+      "contemporaryTypes": [
+        "C07",
+        "C09",
+        "C12",
+        "C24"
+      ],
+      "plotLenses": [
+        "P03",
+        "P05"
+      ],
+      "days": [
+        23,
+        24,
+        25
+      ],
+      "mechanism": "Dagenes programrettelser endrer tilliten mellom Lea og Arvid. Valg påvirker om hun vil møte ham som venn uten å bli hentet inn som arrangør."
+    },
+    {
+      "id": "mira_etter_samtalen_med_lea",
+      "prior": "musikk_etter_arvids_tekst",
+      "role": "musikk_frilansmusiker",
+      "characters": [
+        "Mira",
+        "Lea",
+        "Arvid"
+      ],
+      "literaryTracks": [
+        "L09",
+        "L10",
+        "L11",
+        "L13"
+      ],
+      "contemporaryTypes": [
+        "C09",
+        "C12",
+        "C18",
+        "C24"
+      ],
+      "plotLenses": [
+        "P03",
+        "P05"
+      ],
+      "days": [
+        23,
+        24,
+        25
+      ],
+      "mechanism": "Tidligere invitasjoner og direkte kontakt avgjør hvilke misforståelser Mira og Lea kan snakke om som venner uten å inngå musikalske avtaler."
+    },
+    {
+      "id": "arvid_etter_leas_notat",
+      "prior": "frilans_etter_miras_navn",
+      "role": "subkultur_gangster",
+      "characters": [
+        "Arvid",
+        "Lea",
+        "Mira"
+      ],
+      "literaryTracks": [
+        "L11",
+        "L12",
+        "L17",
+        "L20"
+      ],
+      "contemporaryTypes": [
+        "C07",
+        "C14",
+        "C23",
+        "C24"
+      ],
+      "plotLenses": [
+        "P03",
+        "P06"
+      ],
+      "days": [
+        23,
+        24,
+        25
+      ],
+      "mechanism": "Leas private eller omskrevne notat får Arvid til å utfordre hvem som eier en hendelses fortelling uten å gi ham tilgang til andres notater."
+    },
+    {
+      "id": "arvid_etter_leas_grense",
+      "prior": "frilans_etter_arvids_kreditering",
+      "role": "subkultur_gangster",
+      "characters": [
+        "Arvid",
+        "Lea"
+      ],
+      "literaryTracks": [
+        "L09",
+        "L11",
+        "L15",
+        "L17"
+      ],
+      "contemporaryTypes": [
+        "C07",
+        "C08",
+        "C09",
+        "C24"
+      ],
+      "plotLenses": [
+        "P03",
+        "P05"
+      ],
+      "days": [
+        23,
+        24,
+        25
+      ],
+      "mechanism": "Arvid møter følgene av falsk kreditering som et sosialt tillitsbrudd, selv om arbeidsansvaret er ryddet opp i."
+    },
+    {
+      "id": "mira_etter_lydfilens_rykte",
+      "prior": "miljo_etter_miras_lyd",
+      "role": "musikk_frilansmusiker",
+      "characters": [
+        "Mira",
+        "Lea",
+        "Arvid"
+      ],
+      "literaryTracks": [
+        "L09",
+        "L11",
+        "L15",
+        "L24"
+      ],
+      "contemporaryTypes": [
+        "C07",
+        "C09",
+        "C18",
+        "C24"
+      ],
+      "plotLenses": [
+        "P03",
+        "P05"
+      ],
+      "days": [
+        23,
+        24,
+        25
+      ],
+      "mechanism": "Et feilaktig delt privat lydklipp får langvarige personlige konsekvenser for Miras trygghet, kreativitet og tillit uten automatisk musikkutgivelse."
+    }
   ]
 }

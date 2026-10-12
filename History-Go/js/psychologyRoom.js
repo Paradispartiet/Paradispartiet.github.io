@@ -222,6 +222,7 @@
         else if (target === "theories") renderTheoryList();
         else if (target === "phenomena") renderPhenomenaList();
         else if (target === "workbench") renderWorkbench();
+        else if (target === "profile") renderProfile();
         else if (target.startsWith("phenomenon:")) {
           const phenomenon = findById(dataCache?.phenomena || [], target.slice(11));
           if (phenomenon) renderPhenomenonDetail(phenomenon);
@@ -305,6 +306,140 @@
     return { saved: true, entry };
   }
 
+  function saveWorkbenchFollowUp(entryId, values = {}) {
+    const fields = ["tried", "outcome", "new_view", "next_step"];
+    const clean = Object.fromEntries(fields.map((field) =>
+      [field, String(values[field] || "").trim().slice(0, 2400)]));
+    if (!clean.tried || !clean.outcome) return { saved: false, reason: "required_fields" };
+  
+    const entries = getWorkbenchEntries();
+    const index = entries.findIndex((entry) => entry.id === entryId);
+    if (index < 0) return { saved: false, reason: "not_found" };
+    const previous = entries[index];
+    const existing = Array.isArray(previous.follow_ups) ? previous.follow_ups : [];
+    const followUp = {
+      id: "psych_followup_" + Date.now() + "_" + (existing.length + 1),
+      created_at: new Date().toISOString(),
+      ...clean
+    };
+    const entry = { ...previous, follow_ups: [...existing, followUp] };
+    entries[index] = entry;
+    try {
+      localStorage.setItem(STORAGE_KEYS.workbench, JSON.stringify(entries));
+    } catch (err) {
+      console.warn("[PsychologyRoom.saveWorkbenchFollowUp]", err);
+      return { saved: false, reason: "storage_failed" };
+    }
+    return { saved: true, entry, followUp };
+  }
+
+  function renderWorkbenchEntry(entryId) {
+    const entry = getWorkbenchEntries().find((item) => item.id === entryId);
+    if (!entry) {
+      renderProfile();
+      window.showToast?.("Refleksjonen finnes ikke lenger på denne enheten");
+      return;
+    }
+    setActiveSection("profile");
+    const originals = [
+      ["situation", "Hva skjedde konkret?"],
+      ["thoughts", "Hva tenkte eller antok jeg?"],
+      ["feelings", "Hvilke følelser la jeg merke til?"],
+      ["body", "Hva merket jeg i kroppen?"],
+      ["actions", "Hva gjorde jeg?"],
+      ["next_step", "Hva ville jeg prøve?"]
+    ];
+    const followUps = Array.isArray(entry.follow_ups) ? entry.follow_ups : [];
+    const originalHtml = originals.map(([key, heading]) =>
+      `<div class="psychology-room-note-field"><h4>${escapeHtml(heading)}</h4><p>${escapeHtml(entry[key] || "Ikke fylt ut")}</p></div>`).join("");
+    const followUpHtml = followUps.map((item, index) =>
+      `<article class="psychology-room-followup-card">
+        <div class="psychology-room-note-meta">Oppfølging ${index + 1} · ${escapeHtml(String(item.created_at || "").slice(0, 10))}</div>
+        <div class="psychology-room-note-field"><h4>Hva prøvde jeg?</h4><p>${escapeHtml(item.tried || "")}</p></div>
+        <div class="psychology-room-note-field"><h4>Hva skjedde?</h4><p>${escapeHtml(item.outcome || "")}</p></div>
+        ${item.new_view ? `<div class="psychology-room-note-field"><h4>Ser jeg annerledes på situasjonen?</h4><p>${escapeHtml(item.new_view)}</p></div>` : ""}
+        ${item.next_step ? `<div class="psychology-room-note-field"><h4>Hva vil jeg prøve videre?</h4><p>${escapeHtml(item.next_step)}</p></div>` : ""}
+      </article>`).join("");
+  
+
+    const linkedPathsHtml = pathsForWorkbench(entry.id).map((path) => {
+      const progress = getPathProgress(path.id);
+      const reflections = readPathReflections()[path.id] || {};
+      const dayHistory = Object.entries(reflections)
+        .filter(([dayNo, item]) => Number(dayNo) >= 1 && Number(dayNo) <= 7 &&
+          typeof item?.reflection === "string" && item.reflection.trim())
+        .sort(([a], [b]) => Number(a) - Number(b))
+        .map(([dayNo, item]) => '<div class="psychology-room-note-field"><h4>Dag ' +
+          escapeHtml(dayNo) + '</h4><p>' + escapeHtml(item.reflection) + '</p></div>').join("");
+      return '<article class="psychology-room-linked-path"><strong>' + escapeHtml(path.title) +
+        '</strong><p class="psychology-room-muted">' +
+        (progress?.completed_at ? 'Fullført' : 'Pågår: ' + (progress?.completed_days?.length || 0) + '/7 dager') +
+        '</p>' + (dayHistory || '<p class="psychology-room-muted">Ingen dagrefleksjoner registrert ennå.</p>') +
+        '<button type="button" class="psychology-room-back" data-psych-open-linked-path="' +
+        escapeHtml(path.id) + '">Åpne 7-dagersløpet</button></article>';
+    }).join("");
+
+    setContent(shell(`${backButton("profile")}
+      <section class="psychology-room-workbench psychology-room-workbench-detail">
+        <div class="psychology-room-eyebrow">TANKEVERKSTED / DIN SITUASJON</div>
+        <h3>Fra refleksjon til erfaring</h3>
+        <p class="psychology-room-muted">Opprinnelig notat · ${escapeHtml(String(entry.created_at || "").slice(0, 10))}</p>
+        <section class="psychology-room-note-section">
+          <h4>Den første refleksjonen</h4>
+          <div class="psychology-room-note-fields">${originalHtml}</div>
+        </section>
+        <section class="psychology-room-note-section">
+          <h4>Oppfølginger (${followUps.length})</h4>
+          ${followUpHtml || '<p class="psychology-room-muted">Ingen oppfølginger ennå. Du kan komme tilbake til samme situasjon flere ganger.</p>'}
+        </section>
+        <section class="psychology-room-note-section">
+          <h4>7-dagersløp knyttet til situasjonen</h4>
+          ${linkedPathsHtml || '<p class="psychology-room-muted">Ingen løp knyttet til denne situasjonen.</p>'}
+          <button type="button" class="psychology-room-primary" data-psych-choose-linked-path="1">Velg et 7-dagersløp</button>
+          <p class="psychology-room-muted">Du velger selv løpet. Daglige refleksjoner vises her når løpet er knyttet til situasjonen, uten å endre originalnotatet.</p>
+        </section>
+        <form id="psychologyRoomWorkbenchFollowUpForm" class="psychology-room-form">
+          <h4>Legg til en oppfølging</h4>
+          <label class="psychology-room-textarea-label"><span>1. Hva prøvde du, eller valgte du å ikke gjøre?</span>
+            <textarea name="tried" rows="3" maxlength="2400" required></textarea>
+          </label>
+          <label class="psychology-room-textarea-label"><span>2. Hva skjedde etterpå?</span>
+            <textarea name="outcome" rows="3" maxlength="2400" required></textarea>
+          </label>
+          <label class="psychology-room-textarea-label"><span>3. Ser du annerledes på situasjonen nå? (valgfritt)</span>
+            <textarea name="new_view" rows="3" maxlength="2400"></textarea>
+          </label>
+          <label class="psychology-room-textarea-label"><span>4. Hva vil du eventuelt prøve videre? (valgfritt)</span>
+            <textarea name="next_step" rows="3" maxlength="2400"></textarea>
+          </label>
+          <p class="psychology-room-privacy">Oppfølgingen lagres sammen med dette notatet bare i denne nettleseren. Den gir ingen skår, diagnose eller Civication-kompetanse.</p>
+          <button class="psychology-room-primary" type="submit">Lagre oppfølging</button>
+        </form>
+      </section>
+    `));
+    bindBack();
+    document.querySelector("[data-psych-choose-linked-path]")?.addEventListener("click", () => renderPathsList(entry.id));
+    document.querySelectorAll("[data-psych-open-linked-path]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const path = findById(dataCache?.paths || [], button.dataset.psychOpenLinkedPath);
+        if (path) renderPathDetail(path);
+      });
+    });
+    document.getElementById("psychologyRoomWorkbenchFollowUpForm")?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = /** @type {HTMLFormElement} */ (event.currentTarget);
+      const values = Object.fromEntries(["tried", "outcome", "new_view", "next_step"]
+        .map((field) => [field, form.elements[field]?.value || ""]));
+      const result = saveWorkbenchFollowUp(entry.id, values);
+      if (!result.saved) {
+        window.showToast?.(result.reason === "required_fields" ? "Fyll ut hva du prøvde og hva som skjedde" : "Oppfølgingen kunne ikke lagres");
+        return;
+      }
+      window.showToast?.("Oppfølgingen er lagret på denne enheten");
+      renderWorkbenchEntry(entry.id);
+    });
+  }
+
   function renderWorkbench() {
     setActiveSection("home");
     const recent = getWorkbenchEntries().slice(-1)[0] || null;
@@ -363,10 +498,22 @@
     return raw && typeof raw === "object" && !Array.isArray(raw) ? raw : {};
   }
 
+  // Course navigation must not announce success if private local data was not saved.
+  function persistPathData(key, value) {
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+      return true;
+    } catch (err) {
+      console.warn("[PsychologyRoom.persistPathData]", key, err);
+      return false;
+    }
+  }
+
   function writePathProgress(progress) {
-    writeJson(STORAGE_KEYS.pathProgress, progress && typeof progress === "object" ? progress : {});
+    if (!persistPathData(STORAGE_KEYS.pathProgress, progress && typeof progress === "object" ? progress : {})) return false;
     window.dispatchEvent(new Event("updateProfile"));
     window.dispatchEvent(new CustomEvent("hg:psychology:path-progress", { detail: { progress: readPathProgress() } }));
+    return true;
   }
 
   function getPathProgress(pathId) {
@@ -379,14 +526,15 @@
       current_day: Number(item.current_day || 1),
       completed_days: Array.isArray(item.completed_days) ? item.completed_days.map(Number).filter(Boolean) : [],
       completed_at: item.completed_at || null,
-      reward_claimed_at: item.reward_claimed_at || null
+      reward_claimed_at: item.reward_claimed_at || null,
+      workbench_entry_id: typeof item.workbench_entry_id === "string" ? item.workbench_entry_id : null
     };
   }
 
   function savePathProgressItem(pathId, item) {
     const progress = readPathProgress();
     progress[pathId] = item;
-    writePathProgress(progress);
+    return writePathProgress(progress);
   }
 
   function readPathReflections() {
@@ -395,8 +543,10 @@
   }
 
   function writePathReflections(reflections) {
-    writeJson(STORAGE_KEYS.pathReflections, reflections && typeof reflections === "object" && !Array.isArray(reflections) ? reflections : {});
+    if (!persistPathData(STORAGE_KEYS.pathReflections,
+      reflections && typeof reflections === "object" && !Array.isArray(reflections) ? reflections : {})) return false;
     window.dispatchEvent(new Event("updateProfile"));
+    return true;
   }
 
   function getDayReflection(pathId, dayNumber) {
@@ -415,11 +565,10 @@
       updated_at: new Date().toISOString()
     };
     reflections[pathId] = { ...pathReflections, [String(Number(dayNumber))]: entry };
-    writePathReflections(reflections);
-    return entry;
+    return writePathReflections(reflections) ? entry : null;
   }
 
-  function startPath(path) {
+  function startPath(path, workbenchEntryId = null) {
     if (!path?.id) return;
     const existing = getPathProgress(path.id);
     if (existing?.started_at) {
@@ -427,22 +576,54 @@
       return;
     }
 
-    savePathProgressItem(path.id, {
+    if (!savePathProgressItem(path.id, {
       path_id: path.id,
       started_at: new Date().toISOString(),
       current_day: 1,
       completed_days: [],
       completed_at: null,
-      reward_claimed_at: null
-    });
+      reward_claimed_at: null,
+      workbench_entry_id: getWorkbenchEntries().some((item) => item.id === workbenchEntryId) ? workbenchEntryId : null
+    })) {
+      window.showToast?.("Løpet kunne ikke lagres på denne enheten");
+      return;
+    }
     window.showToast?.(`Startet: ${path.title}`);
     renderPathDetail(path);
+  }
+
+  // Associations are a deliberate choice; neither linking nor viewing a note
+  // produces an exercise completion, score or Civication event.
+  function linkPathToWorkbench(pathId, entryId) {
+    if (!findById(dataCache?.paths || [], pathId)) return { linked: false, reason: "unknown_path" };
+    if (!getWorkbenchEntries().some((item) => item.id === entryId)) return { linked: false, reason: "not_found" };
+    const progress = getPathProgress(pathId);
+    if (!progress?.started_at || progress.completed_at) return { linked: false, reason: "not_active" };
+    if (progress.workbench_entry_id && progress.workbench_entry_id !== entryId &&
+        getWorkbenchEntries().some((item) => item.id === progress.workbench_entry_id)) {
+      return { linked: false, reason: "already_linked" };
+    }
+    if (!savePathProgressItem(pathId, { ...progress, workbench_entry_id: entryId })) {
+      return { linked: false, reason: "storage_failed" };
+    }
+    return { linked: true, path_id: pathId, workbench_entry_id: entryId };
+  }
+
+  function pathsForWorkbench(entryId) {
+    const progress = readPathProgress();
+    return (dataCache?.paths || []).filter((path) => progress[path.id]?.workbench_entry_id === entryId);
   }
 
   function completePathDay(path, dayNumber, reflectionText = "") {
     if (!path?.id || !Number.isFinite(Number(dayNumber))) return;
 
     const dayNo = Number(dayNumber);
+    const existing = getPathProgress(path.id);
+    if (!existing?.started_at || existing.completed_at || dayNo !== existing.current_day ||
+        !Array.isArray(path.days) || !path.days.some((day) => Number(day.day) === dayNo)) {
+      window.showToast?.("Denne dagen kan ikke fullføres nå");
+      return;
+    }
     const savedReflection = getDayReflection(path.id, dayNo).reflection || "";
     const finalReflection = String(reflectionText || savedReflection || "").trim();
     if (!finalReflection) {
@@ -451,16 +632,10 @@
     }
 
     const now = new Date().toISOString();
-    saveDayReflection(path.id, dayNo, finalReflection);
-
-    const existing = getPathProgress(path.id) || {
-      path_id: path.id,
-      started_at: now,
-      current_day: 1,
-      completed_days: [],
-      completed_at: null,
-      reward_claimed_at: null
-    };
+    if (!saveDayReflection(path.id, dayNo, finalReflection)) {
+      window.showToast?.("Refleksjonen kunne ikke lagres. Dagen er ikke fullført.");
+      return;
+    }
 
     const totalDays = Array.isArray(path.days) ? path.days.length : Number(path.duration_days || 7);
     const completed = new Set(existing.completed_days || []);
@@ -474,6 +649,12 @@
       current_day: isCompleted ? totalDays : Math.min(totalDays, dayNo + 1),
       completed_at: isCompleted ? (existing.completed_at || now) : null
     };
+
+    if (isCompleted && !existing.reward_claimed_at) updated.reward_claimed_at = now;
+    if (!savePathProgressItem(path.id, updated)) {
+      window.showToast?.("Dagens fremdrift kunne ikke lagres. Prøv igjen.");
+      return;
+    }
 
     const dayEntry = {
       id: `psych_path_day_${path.id}_${dayNo}_${Date.now()}`,
@@ -492,8 +673,6 @@
     if (isCompleted && !existing.reward_claimed_at) {
       const reward = path.completion_reward || {};
       const points = Number(reward.insight_points || 0);
-      updated.reward_claimed_at = now;
-
       if (points > 0) {
         const profile = getProfile();
         profile.insight_points += points;
@@ -520,7 +699,6 @@
       window.showToast?.(`Dag ${dayNo} fullført`);
     }
 
-    savePathProgressItem(path.id, updated);
     renderPathDetail(path);
   }
 
@@ -1033,10 +1211,16 @@
     });
   }
 
-  function renderPathsList() {
+  function renderPathsList(workbenchEntryId = null) {
     setActiveSection("practice");
     const paths = dataCache?.paths || [];
-    setContent(shell(`${backButton()}<section class="psychology-room-section"><h3>7-dagersløp</h3><p class="psychology-room-muted">Start et kort selvhjelpsløp, fullfør én dag om gangen og få reward først når hele løpet er fullført.</p></section><section class="psychology-room-list">${paths.map((path) => {
+    const selectedEntry = getWorkbenchEntries().find((item) => item.id === workbenchEntryId);
+    const contextHtml = selectedEntry ?
+      '<section class="psychology-room-path-link"><span class="psychology-room-note-meta">DIN SITUASJON</span><strong>' +
+        escapeHtml(selectedEntry.situation.slice(0, 220)) +
+        '</strong><p>Velg selv hvilket av de seks løpene du ønsker å knytte til denne situasjonen.</p>' +
+        '<button type="button" class="psychology-room-back" data-psych-return-workbench="1">Tilbake til situasjonen</button></section>' : "";
+    setContent(shell(`${backButton()}${contextHtml}<section class="psychology-room-section"><h3>7-dagersløp</h3><p class="psychology-room-muted">Velg et løp som passer temaet du vil arbeide med. Du bestemmer selv om du vil lese fagstoffet og prøve øvelsene. Skriv en kort refleksjon for å fullføre hver dag.</p></section><section class="psychology-room-list">${paths.map((path) => {
       const progress = getPathProgress(path.id);
       const completed = progress?.completed_days?.length || 0;
       const total = Array.isArray(path.days) ? path.days.length : Number(path.duration_days || 7);
@@ -1044,10 +1228,13 @@
       return `<button class="psychology-room-list-item psychology-room-card" type="button" data-path-id="${escapeHtml(path.id)}"><strong>${escapeHtml(path.title)}</strong><span>${escapeHtml(path.description || "")}</span>${renderTags([`${total} dager`, status, ...(path.focus || [])])}</button>`;
     }).join("") || `<p class="psychology-room-muted">Ingen løp funnet.</p>`}</section>`));
     bindBack();
+    document.querySelector("[data-psych-return-workbench]")?.addEventListener("click", () => {
+      if (selectedEntry) renderWorkbenchEntry(selectedEntry.id);
+    });
     document.querySelectorAll("[data-path-id]").forEach((/** @type {HTMLElement} */ button) => {
       button.addEventListener("click", () => {
         const path = findById(paths, button.dataset.pathId);
-        if (path) renderPathDetail(path);
+        if (path) renderPathDetail(path, selectedEntry?.id || null);
       });
     });
   }
@@ -1065,10 +1252,10 @@
     const exercise = findById(dataCache?.exercises || [], day.exercise_id);
     const saved = getDayReflection(path.id, currentDay).reflection || "";
 
-    return `<section class="psychology-room-active-day"><div class="psychology-room-kicker">Dagens steg</div><h4>Dag ${escapeHtml(currentDay)}: ${escapeHtml(day.title || "")}</h4>${day.reflection_prompt ? `<p class="psychology-room-guidance">${escapeHtml(day.reflection_prompt)}</p>` : ""}<ul class="psychology-room-link-list"><li>Fenomen: ${escapeHtml(phenomenon?.title || day.phenomenon_id || "Ikke satt")}</li><li>CBT-verktøy: ${escapeHtml(tool?.title || day.tool_id || "Ikke satt")}</li><li>Øvelse: ${escapeHtml(exercise?.title || day.exercise_id || "Ikke satt")}</li></ul><div class="psychology-room-day-actions">${renderPathDayAction("phenomenon", phenomenon?.title || day.phenomenon_id || "", "Les fenomen", "path-phenomenon-id", phenomenon?.id || "")}${renderPathDayAction("tool", tool?.title || day.tool_id || "", "Les CBT-verktøy", "path-tool-id", tool?.id || "")}${renderPathDayAction("exercise", exercise?.title || day.exercise_id || "", "Gjør øvelse", "path-exercise-id", exercise?.id || "")}</div><div class="psychology-room-day-reflection"><label class="psychology-room-textarea-label">Dagens refleksjon<textarea id="psychologyRoomDayReflection" rows="4" placeholder="Hva la du merke til i dag?">${escapeHtml(saved)}</textarea></label><button class="psychology-room-primary" type="button" data-save-day-reflection="${escapeHtml(currentDay)}">Lagre refleksjon</button></div><button class="psychology-room-primary" type="button" data-complete-path-day="${escapeHtml(currentDay)}">Fullfør dag</button></section>`;
+    return `<section class="psychology-room-active-day"><div class="psychology-room-kicker">Dagens steg</div><h4>Dag ${escapeHtml(currentDay)}: ${escapeHtml(day.title || "")}</h4>${day.reflection_prompt ? `<p class="psychology-room-guidance">${escapeHtml(day.reflection_prompt)}</p>` : ""}<ul class="psychology-room-link-list"><li>Fenomen: ${escapeHtml(phenomenon?.title || day.phenomenon_id || "Ikke satt")}</li><li>Verktøy: ${escapeHtml(tool?.title || day.tool_id || "Ikke satt")}</li><li>Øvelse: ${escapeHtml(exercise?.title || day.exercise_id || "Ikke satt")}</li></ul><div class="psychology-room-day-actions">${renderPathDayAction("phenomenon", phenomenon?.title || day.phenomenon_id || "", "Les fenomen", "path-phenomenon-id", phenomenon?.id || "")}${renderPathDayAction("tool", tool?.title || day.tool_id || "", "Bruk verktøy", "path-tool-id", tool?.id || "")}${renderPathDayAction("exercise", exercise?.title || day.exercise_id || "", "Gjør øvelse", "path-exercise-id", exercise?.id || "")}</div><p class="psychology-room-muted">Fenomen, verktøy og øvelse er frivillige. Refleksjonen er det som fullfører dagen.</p><div class="psychology-room-day-reflection"><label class="psychology-room-textarea-label">Dagens refleksjon<textarea id="psychologyRoomDayReflection" rows="4" placeholder="Hva la du merke til i dag?">${escapeHtml(saved)}</textarea></label><button class="psychology-room-primary" type="button" data-save-day-reflection="${escapeHtml(currentDay)}">Lagre refleksjon</button></div><button class="psychology-room-primary" type="button" data-complete-path-day="${escapeHtml(currentDay)}">Fullfør dag</button></section>`;
   }
 
-  function renderPathDetail(path) {
+  function renderPathDetail(path, workbenchEntryId = null) {
     setActiveSection("practice");
     if (!path?.id) return renderPathsList();
     const progress = getPathProgress(path.id);
@@ -1081,21 +1268,67 @@
     const reward = path.completion_reward || {};
     const activeDay = days.find((day) => Number(day.day || 0) === Number(currentDay)) || days[Math.max(0, Number(currentDay) - 1)] || null;
     const activeDayHtml = isStarted && !isCompleted ? renderActivePathDay(path, activeDay, currentDay) : "";
+    const workbenchEntries = getWorkbenchEntries();
+    const linkedEntry = workbenchEntries.find((item) => item.id === progress?.workbench_entry_id);
+    const candidateEntry = workbenchEntries.find((item) => item.id === workbenchEntryId);
+    const entryOptions = workbenchEntries.slice().reverse().map((item) =>
+      '<option value="' + escapeHtml(item.id) + '">' + escapeHtml(item.situation.slice(0, 110)) + '</option>').join("");
+    const linkContent = linkedEntry ?
+      '<strong>' + escapeHtml(linkedEntry.situation.slice(0, 220)) + '</strong>' +
+      '<p>Dagrefleksjonene vises også i denne situasjonen, uten å endre den opprinnelige beskrivelsen.</p>' +
+      '<button class="psychology-room-back" type="button" data-psych-open-linked-note="' +
+        escapeHtml(linkedEntry.id) + '">Åpne situasjonen</button>' :
+      isCompleted ? '<p>Løpet ble fullført uten en bevart kobling til et Tankeverksted-notat.</p>' :
+      candidateEntry ?
+        '<strong>' + escapeHtml(candidateEntry.situation.slice(0, 220)) + '</strong>' +
+        (isStarted ? '<button class="psychology-room-primary" type="button" data-psych-link-path="' +
+          escapeHtml(candidateEntry.id) + '">Knytt løpet til denne situasjonen</button>' :
+          '<p>Når du starter løpet, knyttes det til denne situasjonen. Du kan følge dagene fra begge steder.</p>') :
+      isStarted && workbenchEntries.length ?
+        '<p>Vil du følge løpet gjennom en tidligere refleksjon? Velg en situasjon selv.</p>' +
+        '<label for="psychologyRoomPathWorkbenchPicker">Situasjon</label>' +
+        '<select id="psychologyRoomPathWorkbenchPicker"><option value="">Velg en situasjon</option>' +
+          entryOptions + '</select>' +
+        '<button class="psychology-room-primary" type="button" data-psych-link-path="">Knytt valgt situasjon</button>' :
+      '<p>Du kan bruke løpet selvstendig eller knytte det til en refleksjon fra Tankeverkstedet senere.</p>';
+    const pathLinkHtml = '<section class="psychology-room-path-link"><h4>Din situasjon</h4>' +
+      linkContent + '</section>';
 
-    setContent(shell(`${backButton("paths")}<article class="psychology-room-detail"><div class="psychology-room-kicker">7-dagersløp</div><h3>${escapeHtml(path.title)}</h3><p>${escapeHtml(path.description || "")}</p>${renderTags([`${total} dager`, ...(path.focus || [])])}<section class="psychology-room-section"><h4>Status</h4><div class="psychology-room-score"><span>Progresjon</span><strong>${escapeHtml(completedDays.size)}/${escapeHtml(total)}</strong></div>${isCompleted ? `<p class="psychology-room-guidance">Løpet er fullført.</p>` : isStarted ? `<p class="psychology-room-guidance">Dagens steg: dag ${escapeHtml(currentDay)}.</p>` : `<p class="psychology-room-muted">Dette løpet er ikke startet ennå.</p>`}${reward.insight_points ? `<p class="psychology-room-muted">Fullføring: ${escapeHtml(reward.insight_points)} innsiktspoeng${reward.badge_hint ? ` · ${escapeHtml(reward.badge_hint)}` : ""}</p>` : ""}</section>${!isStarted ? `<button class="psychology-room-primary" type="button" data-start-path="${escapeHtml(path.id)}">Start løp</button>` : ""}${activeDayHtml}<section class="psychology-room-section"><h4>Dag for dag</h4>${days.length ? days.map((day) => {
+    setContent(shell(`${backButton("paths")}<article class="psychology-room-detail"><div class="psychology-room-kicker">7-dagersløp</div><h3>${escapeHtml(path.title)}</h3><p>${escapeHtml(path.description || "")}</p>${renderTags([`${total} dager`, ...(path.focus || [])])}<section class="psychology-room-section"><h4>Status</h4><div class="psychology-room-score"><span>Progresjon</span><strong>${escapeHtml(completedDays.size)}/${escapeHtml(total)}</strong></div>${isCompleted ? `<p class="psychology-room-guidance">Løpet er fullført.</p>` : isStarted ? `<p class="psychology-room-guidance">Dagens steg: dag ${escapeHtml(currentDay)}.</p>` : `<p class="psychology-room-muted">Dette løpet er ikke startet ennå.</p>`}${reward.insight_points ? `<p class="psychology-room-muted">Fullføring: ${escapeHtml(reward.insight_points)} innsiktspoeng${reward.badge_hint ? ` · ${escapeHtml(reward.badge_hint)}` : ""}</p>` : ""}</section>${!isStarted ? `<button class="psychology-room-primary" type="button" data-start-path="${escapeHtml(path.id)}">Start løp</button>` : ""}${pathLinkHtml}${activeDayHtml}<section class="psychology-room-section"><details class="psychology-room-days-disclosure"><summary>Se hele 7-dagersplanen</summary>${days.length ? days.map((day) => {
       const dayNo = Number(day.day || 0);
       const done = completedDays.has(dayNo);
       const isToday = dayNo === Number(currentDay) && isStarted && !isCompleted;
       return `<article class="psychology-room-day${done ? " is-done" : ""}${isToday ? " is-active" : ""}"><div class="psychology-room-day-head"><strong>Dag ${escapeHtml(dayNo)}: ${escapeHtml(day.title || "")}</strong><span>${done ? "Fullført" : isToday ? "Dagens steg" : ""}</span></div><p>${escapeHtml(day.reflection_prompt || "")}</p><ul class="psychology-room-link-list"><li>Fenomen: ${escapeHtml(titleFor(dataCache?.phenomena || [], day.phenomenon_id) || "Ikke satt")}</li><li>Verktøy: ${escapeHtml(titleFor(dataCache?.tools || [], day.tool_id) || "Ikke satt")}</li><li>Øvelse: ${escapeHtml(titleFor(dataCache?.exercises || [], day.exercise_id) || "Ikke satt")}</li></ul></article>`;
-    }).join("") : `<p class="psychology-room-muted">Ingen dager er satt opp for dette løpet.</p>`}</section>${dataCache?.pathsSafetyNote ? `<p class="psychology-room-safety-note">${escapeHtml(dataCache.pathsSafetyNote)}</p>` : ""}</article>`));
+    }).join("") : `<p class="psychology-room-muted">Ingen dager er satt opp for dette løpet.</p>`}</details></section>${dataCache?.pathsSafetyNote ? `<p class="psychology-room-safety-note">${escapeHtml(dataCache.pathsSafetyNote)}</p>` : ""}</article>`));
 
     bindBack();
-    document.querySelector("[data-start-path]")?.addEventListener("click", () => startPath(path));
+    document.querySelector("[data-start-path]")?.addEventListener("click", () => startPath(path, candidateEntry?.id || null));
+    document.querySelector("[data-psych-open-linked-note]")?.addEventListener("click", () => {
+      if (linkedEntry) renderWorkbenchEntry(linkedEntry.id);
+    });
+    document.querySelector("[data-psych-link-path]")?.addEventListener("click", (event) => {
+      const requestedId = /** @type {HTMLElement} */ (event.currentTarget)?.dataset.psychLinkPath ||
+        /** @type {HTMLSelectElement|null} */ (document.getElementById("psychologyRoomPathWorkbenchPicker"))?.value || "";
+      if (!requestedId) {
+        window.showToast?.("Velg først en situasjon");
+        return;
+      }
+      const result = linkPathToWorkbench(path.id, requestedId);
+      if (!result.linked) {
+        window.showToast?.("Kunne ikke knytte løpet til denne situasjonen");
+        return;
+      }
+      window.showToast?.("Løpet er knyttet til situasjonen");
+      renderPathDetail(path);
+    });
     document.querySelector("[data-save-day-reflection]")?.addEventListener("click", () => {
       const dayNo = Number(/** @type {HTMLElement|null} */ (document.querySelector("[data-save-day-reflection]"))?.dataset.saveDayReflection || currentDay);
       const reflection = String(/** @type {HTMLTextAreaElement|null} */ (document.getElementById("psychologyRoomDayReflection"))?.value || "").trim();
-      saveDayReflection(path.id, dayNo, reflection);
-      window.showToast?.("Dag-refleksjon lagret");
+      if (!saveDayReflection(path.id, dayNo, reflection)) {
+        window.showToast?.("Refleksjonen kunne ikke lagres på denne enheten");
+        return;
+      }
+      window.showToast?.("Dagens refleksjon er lagret");
       renderPathDetail(path);
     });
     document.querySelectorAll("[data-complete-path-day]").forEach((/** @type {HTMLElement} */ button) => {
@@ -1221,16 +1454,24 @@
     const pathEntries = Object.values(pathProgress).filter((item) => item && typeof item === "object");
     const workbenchEntries = getWorkbenchEntries();
     const workbenchHtml = '<section class="psychology-room-section"><div class="psychology-room-section-heading"><h3>Tankeverkstedet mitt</h3></div>' +
-      (workbenchEntries.length ? workbenchEntries.slice(-5).reverse().map((item) =>
-        '<article class="psychology-room-insight"><strong>' + escapeHtml(item.situation) +
-        '</strong>' + (item.next_step ? '<p>Et mulig neste steg: ' + escapeHtml(item.next_step) + '</p>' : '') +
-        '</article>').join("") : '<p class="psychology-room-muted">Ingen situasjoner lagret ennå.</p>') +
+      (workbenchEntries.length ? '<p class="psychology-room-muted">Åpne en tidligere situasjon for å se hele refleksjonen og legge til hva som skjedde etterpå.</p>' +
+        workbenchEntries.slice().reverse().map((item) =>
+          '<button type="button" class="psychology-room-workbench-entry" data-psych-open-workbench="' + escapeHtml(item.id) +
+          '"><span class="psychology-room-note-meta">' + escapeHtml(String(item.created_at || "").slice(0, 10)) +
+          ' · ' + (Array.isArray(item.follow_ups) ? item.follow_ups.length : 0) +
+          ((Array.isArray(item.follow_ups) ? item.follow_ups.length : 0) === 1 ? ' oppfølging' : ' oppfølginger') +
+          '</span><strong>' +
+          escapeHtml(item.situation.slice(0, 180)) + '</strong><span class="psychology-room-workbench-entry-arrow">Åpne refleksjon →</span></button>').join("")
+        : '<p class="psychology-room-muted">Ingen situasjoner lagret ennå.</p>') +
       '<p class="psychology-room-privacy">Disse notatene lagres bare på denne enheten. De brukes ikke til psykologisk vurdering eller Civication-progresjon.</p>' +
       (workbenchEntries.length ? '<button type="button" class="psychology-room-back" data-psych-clear-workbench="1">Slett lagrede tankeverksted-notater</button>' : '') +
       '</section>';
 
     setContent(shell(`${backButton()}${workbenchHtml}<section class="psychology-room-profile-card"><div><span>Innsiktspoeng</span><strong>${profile.insight_points}</strong></div><div><span>Økter</span><strong>${profile.completed_sessions}</strong></div><div><span>Lagrede situasjoner</span><strong>${getWorkbenchEntries().length}</strong></div></section><section class="psychology-room-section"><h3>Screeningprofil</h3>${Object.keys(profile.screening || {}).length ? Object.entries(profile.screening).map(([dimension, score]) => `<div class="psychology-room-score"><span>${escapeHtml(dimension)}</span><strong>${escapeHtml(score)}</strong></div>`).join("") : `<p class="psychology-room-muted">Ingen screeningdata lagret ennå.</p>`}</section><section class="psychology-room-section"><h3>7-dagersløp</h3>${pathEntries.length ? pathEntries.map((item) => { const path = findById(dataCache?.paths || [], item.path_id); const total = path?.days?.length || path?.duration_days || 7; const completed = Array.isArray(item.completed_days) ? item.completed_days.map(Number).filter(Boolean) : []; const done = completed.length; const currentDay = Number(item.current_day || 1); const today = (path?.days || []).find((day) => Number(day.day || 0) === currentDay); const latestReflection = getLatestPathReflection(item.path_id, completed); return `<article class="psychology-room-insight"><strong>${escapeHtml(path?.title || item.path_id)} — ${item.completed_at ? "Fullført" : `Pågår: ${done}/${total} dager`}</strong>${!item.completed_at ? `<p>Dagens steg: dag ${escapeHtml(currentDay)}${today?.title ? ` – ${escapeHtml(today.title)}` : ""}</p>` : `<p>Fullført: ${escapeHtml(done)}/${escapeHtml(total)} dager</p>`}<p>Fullførte dager: ${escapeHtml(done)}/${escapeHtml(total)}</p>${latestReflection ? `<p>Siste refleksjon: ${escapeHtml(latestReflection)}</p>` : ""}</article>`; }).join("") : `<p class="psychology-room-muted">Ingen løp startet ennå.</p>`}</section><section class="psychology-room-section"><h3>Siste refleksjoner / screeningresultater</h3>${Array.isArray(insights) && insights.length ? insights.slice(-7).reverse().map(item => `<article class="psychology-room-insight"><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.reflection || item.result_text || "")}</p></article>`).join("") : `<p class="psychology-room-muted">Ingen refleksjoner lagret ennå.</p>`}</section><section class="psychology-room-section"><h3>Siste screening</h3>${screenings.length ? screenings.slice(-3).reverse().map(item => `<article class="psychology-room-insight"><strong>${escapeHtml(item.result_title || item.title)}</strong><p>${escapeHtml(item.result_text || "")}</p></article>`).join("") : `<p class="psychology-room-muted">Ingen screeningresultater lagret ennå.</p>`}</section>`));
     bindBack();
+    document.querySelectorAll("[data-psych-open-workbench]").forEach((button) => {
+      button.addEventListener("click", () => renderWorkbenchEntry(button.dataset.psychOpenWorkbench));
+    });
     document.querySelector("[data-psych-clear-workbench]")?.addEventListener("click", () => {
       if (typeof window.confirm !== "function" ||
           !window.confirm("Slette alle lagrede tankeverksted-notater på denne enheten?")) return;
@@ -1262,6 +1503,8 @@
     getToolCompletions,
     getWorkbenchEntries,
     saveWorkbench,
+    saveWorkbenchFollowUp,
+    linkPathToWorkbench,
     completeTool,
     storageKeys: STORAGE_KEYS
   };

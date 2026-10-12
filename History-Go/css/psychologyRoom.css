@@ -938,3 +938,88 @@
   .psychology-room-workbench-grid { grid-template-columns: minmax(0, 1fr); }
   .psychology-room-workbench .psychology-room-textarea-label { padding: 13px; }
 }
+
+/* Read and follow up on one saved situation, without replacing the original. */
+.psychology-room-workbench-entry {
+  display: grid;
+  width: 100%;
+  gap: 8px;
+  margin: 10px 0;
+  padding: 15px 17px;
+  text-align: left;
+  background: #1a2530;
+  border: 1px solid rgba(199, 223, 230, .2);
+  border-radius: 14px;
+  color: #f0f3f2;
+}
+.psychology-room-workbench-entry:hover { background: #243641; border-color: #9ceede; }
+.psychology-room-workbench-entry strong { overflow-wrap: anywhere; font-size: 15px; line-height: 1.5; }
+.psychology-room-workbench-entry-arrow { color: #9deeda; font-weight: 700; font-size: 12px; }
+.psychology-room-note-meta { color: #a9d3d0; font-size: 12px; }
+.psychology-room-note-section { display: grid; gap: 14px; min-width: 0; }
+.psychology-room-note-section > h4,
+.psychology-room-workbench-detail form > h4 { margin: 0; font-size: 19px; color: #e8f5f1; }
+.psychology-room-note-fields, .psychology-room-followup-card { display: grid; gap: 10px; }
+.psychology-room-note-field {
+  padding: 13px 15px;
+  border-radius: 12px;
+  background: #1a2933;
+  border: 1px solid rgba(199, 223, 230, .15);
+  min-width: 0;
+}
+.psychology-room-note-field h4 { margin: 0 0 6px; font-size: 12px; color: #9deeda; }
+.psychology-room-note-field p { margin: 0; color: #eef1f1; overflow-wrap: anywhere; white-space: pre-wrap; line-height: 1.6; font-size: 14px; }
+.psychology-room-followup-card {
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid rgba(136, 239, 217, .28);
+  background: #182b33;
+}
+.psychology-room-workbench-detail .psychology-room-form { display: grid; gap: 14px; }
+
+/* An explicit, reversible-in-navigation association between a saved situation
+   and an existing seven-day programme; reflections remain separate records. */
+.psychology-room-path-link, .psychology-room-linked-path {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  padding: 17px;
+  border: 1px solid rgba(136, 239, 217, .27);
+  border-radius: 15px;
+  background: #182b33;
+}
+.psychology-room-path-link h4, .psychology-room-linked-path h4 { margin: 0; color: #a0f2dc; }
+.psychology-room-path-link strong, .psychology-room-linked-path strong {
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+.psychology-room-path-link p, .psychology-room-linked-path p { margin: 0; line-height: 1.6; }
+.psychology-room-path-link select {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px;
+  background: #14222b;
+  border: 1px solid rgba(193, 228, 228, .32);
+  border-radius: 10px;
+  color: #f3f5f4;
+}
+.psychology-room-path-link button, .psychology-room-linked-path button { justify-self: start; max-width: 100%; }
+.psychology-room-panel select:focus-visible { outline: 2px solid #a0f1df; outline-offset: 3px; }
+
+/* 7-day paths: keep the active step in view; let people open the long plan. */
+.psychology-room-days-disclosure { min-width: 0; }
+.psychology-room-days-disclosure > summary {
+  min-height: 44px;
+  box-sizing: border-box;
+  display: list-item;
+  cursor: pointer;
+  padding: 12px 15px;
+  border: 1px solid rgba(136,239,217,.32);
+  border-radius: 12px;
+  background: #1a2d34;
+  color: #c4f6e9;
+  font-weight: 700;
+}
+.psychology-room-days-disclosure[open] > summary { margin-bottom: 12px; }
+.psychology-room-days-disclosure .psychology-room-day { margin-top: 10px; }
