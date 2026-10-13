@@ -49,7 +49,10 @@
    * booter eller spilleren tar en jobb. Ukjent rolle-id feiler fast i
    * Content.loadContent (manifest-oppslag) — ingen stille fallback.
    */
-  let currentRoleId = EXPLICIT_ROLE_ID || DEFAULT_ROLE_ID;
+  // Ved nettleseromstart gjenopptas aktiv lagret rolle før shellen booter.
+  // Ellers ville standardrollen lage et unødvendig bytte på hver reload.
+  const persistedRoleId = /** @type {any} */ (window).CivicationLifestoryState?.load?.()?.rolle;
+  let currentRoleId = EXPLICIT_ROLE_ID || persistedRoleId || DEFAULT_ROLE_ID;
 
   /** @type {any} */ let content = null;
   /** @type {any} */ let baseContent = null;
@@ -57,6 +60,9 @@
   let continuationError = "";
   /** @type {any} */ let state = null;
   /** @type {Promise<void>|null} */ let loading = null;
+  // Jobbresolver og oppstart kan laste innhold samtidig. Siste rolle vinner.
+  let roleLoadSequence = 0;
+  let dayAdvancePending = false;
   /** Siste konsekvenstekst (fortellingsmessig feedback etter et valg). */
   /** @type {{ tekst: string, valgTekst: string, deltas: Array<{ key: string, label: string, delta: number }>, dramatisert: boolean }|null} */ let sisteKonsekvens = null;
 
@@ -124,24 +130,25 @@
   }
 
   /**
-   * Last innhold + Player State for en rolle. Ny state når lagret state
-   * tilhører en annen rolle (én lagringsplass per spiller).
+   * Last riktig rolles fortelling fra den ene Player State-lagringen.
+   * Jobbbytte arkiverer forrige rolletilstand i samme save; retur fortsetter
+   * dens kapitler, relasjoner og valg. Ingen jobb-resolver kobles ut.
    * @param {string} roleId
    */
   async function loadRole(roleId) {
     const Content = /** @type {any} */ (window).CivicationLifestoryContent;
     const State = /** @type {any} */ (window).CivicationLifestoryState;
+    const sequence = ++roleLoadSequence;
     const base = await Content.loadContent(roleId);
-    let saved = State.load();
-    if (!saved || saved.rolle !== roleId) {
-      saved = State.createInitialState(base);
-    }
+    if (sequence !== roleLoadSequence) return;
+    const saved = State.selectRole(State.load(), base);
     // Restore content before reconciliation, even before the shell has booted.
     let restored = base;
     if (saved.fortsettelseId || saved.fortsettelser) {
       const Runner = /** @type {any} */ (window).CivicationLifestoryRunner;
       for (const id of Runner.getContinuationIds(saved)) restored = await Content.loadContinuation(restored, id);
     }
+    if (sequence !== roleLoadSequence) return;
     baseContent = base;
     content = restored;
     state = saved;
@@ -149,6 +156,8 @@
     State.bindPersonTypes?.(state, content, null);
     State.save(state);
     currentRoleId = roleId;
+    ensureCalendarCheckpoint();
+    syncToShellCalendar();
     await refreshPersonTypes();
   }
 
@@ -215,9 +224,74 @@
     }
   }
 
+  // Shell-kalenderen eier døgnskiftet. Fortellingsdag (per rolle) og
+  // arbeidsdager er egne tellere og skal ikke manipuleres av denne broen.
+  function getShellDay() {
+    const day = Number(/** @type {any} */ (window).CivicationCalendar?.getClock?.()?.dayIndex);
+    return Number.isInteger(day) && day > 0 ? day : null;
+  }
+
+  function ensureCalendarCheckpoint() {
+    const day = getShellDay();
+    if (!state || day === null) return null;
+    if (!Number.isInteger(state.kalenderDag) || state.kalenderDag < 1) {
+      // Eldre lagring kobles til den dagen kalenderen faktisk viser nå.
+      // Ingen tidligere historie spilles om igjen eller hoppes over.
+      state.kalenderDag = day;
+      /** @type {any} */ (window).CivicationLifestoryState.save(state);
+    }
+    return day;
+  }
+
+  function syncToShellCalendar() {
+    const day = ensureCalendarCheckpoint();
+    if (!state || !content || day === null || day <= state.kalenderDag || !state.dagFerdig) return false;
+    const Runner = /** @type {any} */ (window).CivicationLifestoryRunner;
+    const Endings = /** @type {any} */ (window).CivicationLifestoryEndings;
+    // Ved kapittelslutt åpnes neste kapittel gjennom sin eksisterende port.
+    // Å hoppe rett videre her ville omgått merker/livsposisjoner.
+    if (Endings?.isFinalDay?.(state, content)) return false;
+    try {
+      Runner.startNextDay(state, content);
+      state.kalenderDag += 1;
+      sisteKonsekvens = null;
+      continuationError = "";
+      /** @type {any} */ (window).CivicationLifestoryState.save(state);
+      window.dispatchEvent(new Event("civi:lifestoryChanged"));
+      render();
+      return true;
+    } catch (error) {
+      console.error("[CivicationLifestoryUI] kunne ikke synkronisere døgnskiftet", error);
+      return false;
+    }
+  }
+
+  // Start ikke ny Civication-dag via Min dag før shellens innboks, jobb,
+  // ukesoppsummering og day_end er ferdige. DayProgression utfører selve
+  // kalenderovergangen og dens konsekvenser nøyaktig én gang.
+  async function ensureShellDayAdvanced() {
+    const currentDay = ensureCalendarCheckpoint();
+    if (currentDay === null) return true; // isolert Min dag uten shell
+    if (currentDay > state.kalenderDag) return true;
+    const Calendar = /** @type {any} */ (window).CivicationCalendar;
+    const Progression = /** @type {any} */ (window).CivicationDayProgression;
+    if (Calendar?.getPhase?.() !== "day_end" || !Progression?.advancePhaseIfReady) {
+      continuationError = "Fullfør dagens jobb, meldinger og kveld i Civication før neste dag.";
+      return false;
+    }
+    const result = await Progression.advancePhaseIfReady();
+    if (!result?.advanced || getShellDay() <= currentDay) {
+      continuationError = "Dagslutt har utestående handlinger i Civication.";
+      return false;
+    }
+    continuationError = "";
+    return true;
+  }
+
   // Skallet booter etter Min dag (shell-loaderen injiserer resolver +
   // CivicationState); jobbaksept dispatcher updateProfile.
-  window.addEventListener("civi:booted", () => { maybeAdoptShellRole(); refreshPersonTypes(); render(); });
+  window.addEventListener("civi:booted", () => { ensureCalendarCheckpoint(); syncToShellCalendar(); maybeAdoptShellRole(); refreshPersonTypes(); render(); });
+  window.addEventListener("civi:dayPhaseChanged", () => { syncToShellCalendar(); });
   // updateProfile: jobbtilbud kan ha endret rollen, og HG_Lifestyle kan ha
   // telt nye tags (stamp-chipen) — re-render henter begge. render() er ren
   // lesing, så dette kan aldri starte en event-løkke.
@@ -267,24 +341,35 @@
     render();
   }
 
-  function onNextDay() {
-    const Runner = /** @type {any} */ (window).CivicationLifestoryRunner;
-    const State = /** @type {any} */ (window).CivicationLifestoryState;
+  async function onNextDay() {
+    if (dayAdvancePending || !state || !state.dagFerdig) return;
+    dayAdvancePending = true;
+    const previousState = state;
     try {
-      Runner.startNextDay(state, content);
-      sisteKonsekvens = null;
-      State.save(state);
-      window.dispatchEvent(new Event("civi:lifestoryChanged"));
+      if (getShellDay() === null) {
+        // Min dag fungerer fremdeles uavhengig på sider uten Civication-shell.
+        /** @type {any} */ (window).CivicationLifestoryRunner.startNextDay(state, content);
+        sisteKonsekvens = null;
+        /** @type {any} */ (window).CivicationLifestoryState.save(state);
+        window.dispatchEvent(new Event("civi:lifestoryChanged"));
+      } else if (await ensureShellDayAdvanced() && state === previousState) {
+        // Den kanoniske kalenderen ruller først. Event-lytteren kan allerede
+        // ha synkronisert fortellingsdagen; i så fall gjør vi ingenting mer.
+        syncToShellCalendar();
+      }
     } catch (error) {
       console.error("[CivicationLifestoryUI] neste dag feilet", error);
+    } finally {
+      dayAdvancePending = false;
+      render();
     }
-    render();
   }
 
   function onRestart() {
     const State = /** @type {any} */ (window).CivicationLifestoryState;
     content = baseContent;
     state = State.createInitialState(baseContent);
+    ensureCalendarCheckpoint();
     continuationError = "";
     sisteKonsekvens = null;
     State.save(state);
@@ -306,10 +391,13 @@
     continuationError = "";
     render();
     try {
+      // Kapittelstart bruker samme shell-døgnskifte som Start neste dag.
+      if (getShellDay() !== null && !await ensureShellDayAdvanced()) return;
       const merged = await Content.loadContinuation(previousContent, id);
       if (state !== previousState || content !== previousContent) return;
       const advanced = JSON.parse(JSON.stringify(state));
       Runner.startContinuation(advanced, previousContent, merged, id, Endings.resolveEnding(state, previousContent));
+      if (getShellDay() !== null) advanced.kalenderDag += 1;
       State.save(advanced);
       content = merged;
       state = advanced;
@@ -345,7 +433,7 @@
     const m = state.meters;
     const items = [
       ["Rolle", content.role.navn], ["Dag", state.dag], ["Fase", view.dagFerdig ? "Dagen er over" : (view.fase ? view.fase.navn : state.fase)],
-      ["Psyke", m.psyke], ["Energi", m.energi], ["Penger", m.penger + " PC"]
+      ["Psyke", m.psyke], ["Energi", m.energi], ["Fortellingsøkonomi", m.penger]
     ];
     const stamp = lifestyleStamp();
     if (stamp) items.push(["Livsstil", (stamp.icon ? stamp.icon + " " : "") + stamp.name]);
@@ -615,7 +703,7 @@
       ["phase", view.dagFerdig ? "Dagen er over" : (view.fase ? view.fase.navn : state.fase)],
       ["meter", "Psyke " + m.psyke],
       ["meter", "Energi " + m.energi],
-      ["pc", m.penger + " PC"]
+      ["meter", "Fortellingsøkonomi " + m.penger]
     ];
     header.textContent = "";
     chips.map(function (chip) {
@@ -674,6 +762,8 @@
     try {
       bindDelegation(panel);
       await ensureLoaded();
+      ensureCalendarCheckpoint();
+      syncToShellCalendar();
       render();
       // Første scene er oppe — vekk lyttere (kartmarkør, dashboard) som
       // trenger scenens sted/fase uten å måtte polle.
@@ -725,5 +815,11 @@
     return (content.role.symposium.rollebroer || []).find((b) => b.role_scope === selected) || null;
   }
 
-  window.CivicationLifestoryUI = { render, refresh: render, getCurrentSceneInfo, getRoleSuggestion };
+  // DayProgression leser denne for å hindre at maildagen ruller forbi
+  // fortellingens uferdige valg. Ingen kalender-/jobbstate skrives her.
+  function getDaySyncState() {
+    return state && getPanel() ? { dagFerdig: !!state.dagFerdig, rolle: state.rolle, kalenderDag: state.kalenderDag || null } : null;
+  }
+
+  window.CivicationLifestoryUI = { render, refresh: render, getCurrentSceneInfo, getRoleSuggestion, getDaySyncState };
 })();

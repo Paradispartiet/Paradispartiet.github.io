@@ -3686,6 +3686,10 @@
         "tests/civication-history-life-career-split.test.js",
         "tests/civication-naeringsliv-avdelingsleder-role-world-rollout.test.js",
         "tests/civication-naeringsliv-life-career-split.test.js",
+        "tests/civication-npc-daily-answer-integration.test.js",
+        "tests/civication-npc-role-bridge.test.js",
+        "tests/civication-npc-role-history-persistence.test.js",
+        "tests/civication-npc-stein-role-story.test.js",
         "tests/civication-psykologi-klinikkleder-prerequisites.test.js",
         "tests/civication-religion-fagledelse-prerequisites.test.js",
         "tests/civication-religion-fagledelse-role-world-rollout.test.js",
@@ -3960,6 +3964,7 @@
         "tests/civication-formann-second-week-praksisfortellinger.test.js",
         "tests/civication-inbox-channels.test.js",
         "tests/civication-lifestory-ekspeditor.test.js",
+        "tests/civication-lifestory-job-role-persistence.test.js",
         "tests/civication-lifestory-shell-role-bridge.test.js",
         "tests/civication-mail-loop.test.js",
         "tests/civication-naeringsliv-life-career-split.test.js",
@@ -3968,7 +3973,8 @@
         "tests/civication-private-phase-profile-bridge.test.js",
         "tests/civication-psykologi-miljoarbeid-playability.test.js",
         "tests/civication-renholder-role-package.test.js",
-        "tests/civication-role-world-contract.test.js"
+        "tests/civication-role-world-contract.test.js",
+        "tests/civication-shared-actor-role-contract.test.js"
       ],
       "already_reference_or_pilot": true
     },
@@ -4086,6 +4092,9 @@
         "tests/civication-inbox-channels.test.js",
         "tests/civication-job-eligibility.test.js",
         "tests/civication-naeringsliv-life-career-split.test.js",
+        "tests/civication-npc-daily-answer-integration.test.js",
+        "tests/civication-npc-stein-role-story.test.js",
+        "tests/civication-npc-workday-distribution.test.js",
         "tests/civication-praksisfortellinger-cross-role.test.js",
         "tests/civication-renholder-role-package.test.js"
       ],
@@ -4422,6 +4431,9 @@
         "tests/civication-formann-two-week-flow.test.js",
         "tests/civication-naeringsliv-life-career-split.test.js",
         "tests/civication-natur-miljoledelse-role-world-rollout.test.js",
+        "tests/civication-npc-role-bridge.test.js",
+        "tests/civication-npc-role-history-persistence.test.js",
+        "tests/civication-npc-stein-role-story.test.js",
         "tests/civication-praksisfortellinger-cross-role.test.js",
         "tests/civication-renholder-role-package.test.js"
       ],
@@ -4661,6 +4673,10 @@
         "tests/civication-mellomleder-second-week-praksisfortellinger.test.js",
         "tests/civication-mellomleder-two-week-flow.test.js",
         "tests/civication-naeringsliv-life-career-split.test.js",
+        "tests/civication-npc-role-bridge.test.js",
+        "tests/civication-npc-role-history-persistence.test.js",
+        "tests/civication-npc-stein-role-story.test.js",
+        "tests/civication-npc-workday-distribution.test.js",
         "tests/civication-renholder-role-package.test.js",
         "tests/civication-scene-pipeline-ignored-source-duplicates.test.js"
       ],
@@ -4859,7 +4875,7 @@
             "data/Civication/workGrammars/naeringsliv/renholder.json",
             "tests/civication-badge-career-contract.test.js",
             "tests/civication-career-gameplay-matrix.test.js",
-            "tests/civication-lifestory-endings.test.js"
+            "tests/civication-lifestory-day-sync.test.js"
           ],
           "rationale": "Role-specific tests and authored source paths exist; rollout must add strict scene-registry parity and source provenance for new realism scenes."
         }
@@ -4881,7 +4897,9 @@
         "data/Civication/workGrammars/naeringsliv/renholder.json",
         "tests/civication-badge-career-contract.test.js",
         "tests/civication-career-gameplay-matrix.test.js",
+        "tests/civication-lifestory-day-sync.test.js",
         "tests/civication-lifestory-endings.test.js",
+        "tests/civication-lifestory-job-role-persistence.test.js",
         "tests/civication-lifestory-place-marker.test.js",
         "tests/civication-lifestory-renholder.test.js",
         "tests/civication-lifestory-shell-role-bridge.test.js",

@@ -643,6 +643,195 @@ const documented = [
     claim: "Aftenposten beskrev Jan-Derek Sørensen i november 2005 som en særpreget vingtype med «Ekstremt hurtige spillere med god innleggsfot» som sjelden kombinasjon. Det belegger pace og crossing, men vurderingen er fra spillerens Lyn-periode og ikke en påstand om en konkret Rosenborg-kamp.",
     source: "https://www.aftenposten.no/norge/i/JQn74/landslagsaktuell-uten-aa-vite-det-selv",
     sourceKind: "press"
+  },
+  // --- Rosenborg: individual 2005/06 assessments and historical defenders ---
+  {
+    playerId: "lars_hirschfeld",
+    clubId: "rosenborg",
+    strengths: ["reflexes"],
+    claim: "Adresseavisens sportsredaksjon oppsummerte Lars Hirschfelds 2006-sesong med at han «Prater mye, sprer trygghet og er reaksjonssterk». Reaksjonsstyrken belegger reflexes. Den samme vurderingen sier at han «Kan bli bedre i feltarbeidet», så command_of_area tilføres ikke på grunnlag av generell trygghet.",
+    source: "https://www.bt.no/sport/i/AdP3Vx/rbk-importene-er-boersvinnerne",
+    sourceKind: "press"
+  },
+  {
+    playerId: "miika_koppinen",
+    clubId: "rosenborg",
+    strengths: ["duels"],
+    claim: "Adresseavisens 2006-evaluering beskriver Miika Koppinen med «Finnen har vært god i duellspillet, og vært tidvis suveren i luftrommet». Dette dokumenterer duels; den samme kilden omtaler pasningsspillet som ujevnt, så det legges ikke til pasningsstyrker.",
+    source: "https://www.bt.no/sport/i/AdP3Vx/rbk-importene-er-boersvinnerne",
+    sourceKind: "press"
+  },
+  {
+    playerId: "bjorn_tore_kvarme",
+    clubId: "rosenborg",
+    strengths: ["duels"],
+    claim: "Rosenborg-trener Per Joar Hansen beskrev Bjørn Tore Kvarme ved tilbakekomsten i januar 2005 som «en veldig god duellspiller og spesielt godt en-mot-en». Dette dokumenterer defensive duels. Kildens defensive en-mot-en er ikke offensiv one_vs_one i attributtkatalogen.",
+    source: "https://www.bt.no/sport/i/wPO885/hoftun-faar-konkurranse",
+    sourceKind: "press"
+  },
+  {
+    playerId: "holmar_orn_eyjolfsson",
+    clubId: "rosenborg",
+    strengths: ["duels"],
+    claim: "Erik Hoftun beskrev Hólmar Örn Eyjólfsson ved Rosenborg-signeringen i 2014: «Han er en veldig duellsterk stopper». RBKweb gjengir også at han ikke var superhurtig og kunne utvikle pasningsspillet. Derfor legges duels til, ikke pace eller simple_passing.",
+    source: "https://www.rbkweb.no/spiller/eyjolfsson",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "oyvind_storflor",
+    clubId: "rosenborg",
+    strengths: ["one_vs_one"],
+    claim: "Adresseavisens vurdering av Rosenborg-vingen Øyvind Storflor etter 2006-sesongen sier «God én mot én, men bør score langt flere mål». Her gjelder det offensivt én-mot-én-spill og belegger one_vs_one; omtalen gir ikke grunnlag for finishing.",
+    source: "https://www.bt.no/sport/i/AdP3Vx/rbk-importene-er-boersvinnerne",
+    sourceKind: "press"
+  },
+  // --- Rosenborg: two documented centre-backs, with source-era limits ---------
+  {
+    playerId: "alejandro_lago",
+    clubId: "rosenborg",
+    strengths: ["duels", "positioning"],
+    claim: "Rosenborgs daværende sportslige leder Erik Hoftun sa i juni 2008 at Alejandro Lago var «en utrolig duellsterk stopper» og «smart i plasseringene». Dette dokumenterer duels og positioning. Hoftun presiserte samtidig at Lago ikke var særlig rask, så pace tilføres ikke. Uttalelsen om defensivt en-mot-en-spill gir heller ikke det offensive one_vs_one-attributtet.",
+    source: "https://www.bt.no/sport/i/MR1gV5/vil-forlenge-med-lago",
+    sourceKind: "press"
+  },
+  {
+    playerId: "even_hovland",
+    clubId: "rosenborg",
+    strengths: ["pace", "strength"],
+    claim: "Molde-trener Ole Gunnar Solskjær vurderte Even Hovland etter en kamp mot Rosenborg i oktober 2013: «Han viste fart og styrke, var rolig med ballen og god i lufta.» Dette gir konkret belegg for pace og strength. Vurderingen gjelder Hovlands Molde-periode før Rosenborg-overgangen; øvrige ferdigheter utledes ikke automatisk av ros for én kamp.",
+    source: "https://www.aftenbladet.no/sport/i/BJ7e1w/even-var-helt-fantastisk",
+    sourceKind: "press"
+  },
+  // --- Rosenborg: bounded individual qualities from later assessments --------
+  {
+    playerId: "erlend_dahl_reitan",
+    clubId: "rosenborg",
+    strengths: ["pace"],
+    claim: "Rabona vurderte Erlend Dahl Reitan i Starts klubbguide før 2026-sesongen etter over 200 Rosenborg-kamper: «Reitan bidrar med hurtighet og erfaring, og har sin styrke defensivt.» Hurtighet dokumenterer pace, men den generelle defensive karakteristikken gir ikke et spesifikt taklings- eller posisjoneringsattributt. Vurderingen gjelder Start i 2026, ikke et særskilt Rosenborg-år.",
+    source: "https://rabonapod.no/2026/03/13/rabonas-klubbguide-2026-start/",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "vegar_eggen_hedenstad",
+    clubId: "rosenborg",
+    strengths: ["set_pieces"],
+    claim: "RBKwebs historiske spillerbiografi sier om Vegar Eggen Hedenstads Rosenborg-periode 2017–2020 at han «bidro også framover med mål og farlige dødballer». Dette er direkte belegg for set_pieces, men generelle utsagn om å være en god kombinasjonsspiller er ikke nok til å anta særskilt pasningspresisjon eller dribling.",
+    source: "https://www.rbkweb.no/spiller/hedenstad",
+    sourceKind: "football_editorial"
+  },
+  // --- Rosenborg: individual central-midfield and wide-play qualities --------
+  {
+    playerId: "borek_dockal",
+    clubId: "rosenborg",
+    strengths: ["crossing", "decisions"],
+    claim: "Rosenborg-speider Stig Torbjørnsen beskrev Bořek Dočkal ved signeringen i 2011: «Han har først og fremst en veldig god innleggsfot» og «er klok i valgene han gjør på banen», gjengitt i RBKwebs spillerbiografi. Det belegger crossing og decisions. Utsagn om generell pasningskvalitet blir ikke utvidet til passing_range uten særskilt belegg for lange pasninger.",
+    source: "https://www.rbkweb.no/spiller/dockal",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "anders_konradsen",
+    clubId: "rosenborg",
+    strengths: ["work_rate", "ball_carrying"],
+    claim: "Rosenborg-trener Kåre Ingebrigtsen beskrev Anders Konradsen ved overgangen i 2015 som «en hardtarbeidende spiller» med «godt driv med ball», gjengitt i RBKwebs biografi. Det støtter work_rate og ball_carrying. «Kvikk i steget» gjelder ikke nødvendigvis toppfarten pace og er derfor ikke brukt som fartsvurdering.",
+    source: "https://www.rbkweb.no/spiller/konradsen",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "marius_lundemo",
+    clubId: "rosenborg",
+    strengths: ["vision", "work_rate"],
+    claim: "Rosenborg-trener Kåre Ingebrigtsen vurderte Marius Lundemo ved signeringen før 2017 som en spiller med «bra overblikk» og «en arbeidssom herremann», gjengitt i RBKwebs spillerbiografi. Overblikk og arbeidsinnsats gir konkret grunnlag for vision og work_rate; generell «god fot» gir ikke i seg selv passing_range eller set_pieces.",
+    source: "https://www.rbkweb.no/spiller/lundemo",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "anders_trondsen",
+    clubId: "rosenborg",
+    strengths: ["pace"],
+    claim: "Anders Trondsen uttalte selv under Rosenborg-perioden i 2020 at han hadde «bra potensial der, både med pasningsfot, hurtighet og som førsteforsvarer» om venstrebackrollen, gjengitt av Adresseavisen/Aftenposten. Hurtighet gir konkret grunnlag for pace; den brede betegnelsen pasningsfot spesifiserer ikke crossing, passing_range eller set_pieces.",
+    source: "https://www.aftenposten.no/sport/fotball/i/g7o9nJ/aapenhjertig-rbk-profil-jeg-passer-ikke-inn-i-spillestilen",
+    sourceKind: "press"
+  },
+  // --- Rosenborg: named pre-transfer assessments of two creative midfielders --
+  {
+    playerId: "fredrik_midtsjo",
+    clubId: "rosenborg",
+    strengths: ["game_reading"],
+    claim: "Rosenborgs sportslige leder Erik Hoftun beskrev Fredrik Midtsjø i september 2009: «Han er veldig fotballklok. Han er flink til å orientere seg i forkant», gjengitt av RBKwebs 2mas med henvisning til Bladets intervju «Vi har trua på Fredrik». Beskrivelsen av fotballklokskap og orientering i forkant gir belegg for game_reading. Den dokumenterer ikke særskilt anticipation, som krever posisjonering før ballen kommer. «Bra pasningsfot» er for lite spesifikt til automatisk å gi passing_range eller set_pieces. Kilden beskriver ungdomsperioden, ikke en bestemt senere førstelagskamp.",
+    source: "https://www.rbkweb.no/forum/viewtopic.php?t=5540&start=0",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "john_chibuike",
+    clubId: "rosenborg",
+    strengths: ["chance_creation"],
+    claim: "Rosenborgs talentspeider Stig Torbjørnsen beskrev John Chibuike før signeringen fra Häcken i 2011 slik: «Han er kreativ og har en god pasningsfot. I tillegg scorer han mål og skaper mange sjanser.» «Skaper mange sjanser» belegger chance_creation. Ett utsagn om «ganske tungt skudd» gir ikke automatisk long_shots, som særskilt krever dokumentert skudd fra distanse. Evalueringen gjelder Häcken før Rosenborg-perioden.",
+    source: "https://www.rbkweb.no/vis/8371",
+    sourceKind: "football_editorial"
+  },
+  // --- Rosenborg: named individual assessments before arrival, 2006 ---
+  {
+    playerId: "didier_konan_ya",
+    clubId: "rosenborg",
+    strengths: ["finishing"],
+    attributeValues: { finishing: 15 },
+    attributeSources: { finishing: {
+      period: "Rosenborg 2006–2009",
+      evidenceUrl: "https://www.rbkweb.no/spiller/konan",
+      comparisonUrl: "https://fifaindex.com/players/179589-didier-ya-konan/fifa14",
+      rationale: "Egen 1–20-kalibrering fra Tørums beskrivelse. FIFA 14 gjelder Hannover-perioden, ikke 2007."
+    } },
+    claim: "Ved Rosenborgs kjøp av Didier Ya Konan fra ASEC i desember 2006 beskrev trener Knut Tørum ham som en offensiv midtbanespiller med «god pasningsfot og gode avslutningsferdigheter», gjengitt i RBKwebs spillerbiografi. Den konkrete vurderingen av avslutninger belegger finishing; den generelle omtalen av pasningsfot og bevegelighet gir ikke i seg selv spesifikk passing_range, set_pieces eller off_ball_runs. Vurderingen gjelder ankomsten til RBK, ikke en bestemt senere kamp.",
+    source: "https://www.rbkweb.no/spiller/konan",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "yssouf_kone",
+    clubId: "rosenborg",
+    strengths: ["pace"],
+    claim: "Ved prøvespillet på Gran Canaria i januar 2006 beskrev Rosenborg-trener Per-Mathias Høgmo Yssouf Koné som «hurtig», gjengitt i RBKwebs spillerbiografi. Dette er direkte belegg for pace. Han ble også omtalt som god i lufta og med gode skuddbein, men de brede formuleringene tilordnes ikke egne heading- eller finishing-tokens uten mer presis dokumentasjon. Vurderingen gjelder prøvespillet før overgangen til RBK.",
+    source: "https://www.rbkweb.no/spiller/kone",
+    sourceKind: "football_editorial"
+  },
+  // Historisk spillresearch sammenholdt med samtidige trener- og klubbkilder.
+  // Tallene er selvstendige 1–20-vurderinger, ikke kopierte FIFA-/FM-ratings.
+  {
+    playerId: "peter_ankersen",
+    clubId: "rosenborg",
+    strengths: ["pace"],
+    attributeValues: { pace: 16 },
+    attributeSources: { pace: {
+      period: "Rosenborg 2012",
+      evidenceUrl: "https://www.rbkweb.no/spiller/ankersen",
+      comparisonUrl: "https://fifaindex.com/players/208564-peter-ankersen/fifa16",
+      rationale: "Erik Hoftun beskrev backen som hurtig og fotrapp i 2012; FIFA 16 er senere kryssjekk."
+    } },
+    claim: "Erik Hoftun beskrev Peter Ankersen ved overgangen til Rosenborg våren 2012 som «bra fart» og «fotrapp», gjengitt av RBKweb. Dette gir belegg for pace; spillerposisjon alene er ikke brukt som ferdighetsbevis. Historisk FIFA 16 er bare sammenligningsgrunnlag fra hans senere karriere.",
+    source: "https://www.rbkweb.no/spiller/ankersen",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "nicklas_bendtner",
+    clubId: "rosenborg",
+    strengths: ["strength", "heading"],
+    attributeValues: { strength: 17, heading: 17 },
+    attributeSources: {
+      strength: {
+        period: "Rosenborg 2018",
+        evidenceUrl: "https://www.rbk.no/nyheter/rosenborg-knuste-molde",
+        comparisonUrl: "https://fifaindex.com/players/167706-nicklas-bendtner/fifa18",
+        rationale: "Klubbens kampomtale beskriver Bendtner som knallsterk; FIFA 18 er samtidig kontroll."
+      },
+      heading: {
+        period: "Rosenborg 2018",
+        evidenceUrl: "https://www.rbk.no/nyheter/rosenborg-knuste-molde",
+        comparisonUrl: "https://fifaindex.com/players/167706-nicklas-bendtner/fifa18",
+        rationale: "RBKs samtidige beskrivelse av hodeduell og luftspill, kryssjekket mot FIFA 18."
+      }
+    },
+    claim: "Rosenborg beskrev Nicklas Bendtner som «knallsterk» og fortalte konkret hvordan han overvant oppasseren i hodeduell mot Molde 8. april 2018. Det belegger styrke og hodespill, ikke fart eller arbeidskapasitet. FIFA 18 brukes kun som historisk sammenligning.",
+    source: "https://www.rbk.no/nyheter/rosenborg-knuste-molde",
+    sourceKind: "club"
   }
 
 ];
@@ -662,7 +851,14 @@ export function applySourceDepthClaimsToPlayer(player) {
   const record = BY_ID.get(player?.id);
   if (!record) return player;
   if (Array.isArray(player.strengths) && player.strengths.length > 0) return player;
-  return { ...player, strengths: [...record.strengths] };
+  return {
+    ...player,
+    strengths: [...record.strengths],
+    ...(record.attributeValues ? {
+      attributeValues: { ...(player.attributeValues || {}), ...record.attributeValues },
+      attributeSources: { ...(player.attributeSources || {}), ...record.attributeSources }
+    } : {})
+  };
 }
 
 export function applySourceDepthClaims(players) {
