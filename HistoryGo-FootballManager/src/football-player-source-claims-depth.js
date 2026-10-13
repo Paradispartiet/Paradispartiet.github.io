@@ -553,6 +553,96 @@ const documented = [
     claim: "Knut Espen Svegaarden beskriver Rosenborg-backen Mikael Dorsin i Rabonas 2000-tallslag som «vrien å passere, fysisk meget sterk». Dette gir direkte belegg for fysisk styrke. Uttrykket «vrien å passere» gjelder defensivt backspill, mens attributtet one_vs_one i katalogen gjelder offensiv dribling, og er derfor ikke brukt.",
     source: "https://rabonapod.no/2025/07/23/tiarslagene-2000-tallet/",
     sourceKind: "football_editorial"
+  },
+  // --- Rosenborg: documented keeper, fullback and forward qualities --------
+  {
+    playerId: "daniel_orlund",
+    clubId: "rosenborg",
+    strengths: ["command_of_area", "shot_stopping"],
+    claim: "Rosenborgs keepertrener Jørn Jamtfall beskrev Daniel Örlunds dokumenterte styrker til Aftenposten i oktober 2010: «Trenger vi at han er god i feltet, er han det. Men han er også god på strek.» Direkte belegg for feltarbeid og skuddredninger på streken, ikke for refleksfart eller distribusjon.",
+    source: "https://www.aftenposten.no/sport/fotball/i/6jB0Mz/orlund-sprer-trygghet-i-rbk-rekkene",
+    sourceKind: "press"
+  },
+  {
+    playerId: "vegard_heggem",
+    clubId: "rosenborg",
+    strengths: ["pace"],
+    claim: "Vegard Heggem fortalte NTB/Dagbladet i oktober 1998, om rollen på høyrekanten etter Rosenborg: «Jobben min blir å bruke farten og få til innlegg eller gjennombrudd». Utsagnet beskriver hans egen hurtighet og støtter pace; en plan om innlegg er ikke i seg selv dokumentasjon på crossing.",
+    source: "https://www.dagbladet.no/sport/heggem-husker-ikke/65483720",
+    sourceKind: "press"
+  },
+  {
+    playerId: "jorgen_skjelvik",
+    clubId: "rosenborg",
+    strengths: ["pace"],
+    claim: "Rosenborg-trener Kåre Ingebrigtsen begrunnet cupfinaleuttaket i november 2015 med at «Jørgen har også ekstrem fart», særlig nyttig mot mulige kontringer. Det er direkte belegg for pace, men ingen presis påstand om pasningsteknikk, spenst eller defensive duellferdigheter.",
+    source: "https://www.bt.no/sport/i/naQbXn/rosenborg-overrasker-med-laguttaket-i-cupfinalen",
+    sourceKind: "press"
+  },
+  {
+    playerId: "ole_christer_basma",
+    clubId: "rosenborg",
+    strengths: ["pace"],
+    claim: "Knut Espen Svegaardens historiske 2000-tallsvurdering beskriver Christer Basmas individuelle backegenskap: «Hurtigheten var Basmas styrke». Dette dokumenterer pace for Ole Christer Basmas eksisterende Lerkendal-profil, ikke Stabæk-katalogens separate christer_basma-identitet.",
+    source: "https://rabonapod.no/2025/07/23/tiarslagene-2000-tallet/",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "thorstein_helstad",
+    clubId: "rosenborg",
+    strengths: ["pace"],
+    claim: "Knut Espen Svegaarden skrev om Thorstein Helstad i Rabonas historiske tiårslag: «Han måtte utnytte det som var hans store styrke: Farten.» Kilden dokumenterer pace; betegnelsen målscorer og klubbens resultater gir ikke automatisk finishing eller positioning.",
+    source: "https://rabonapod.no/2025/07/23/tiarslagene-2000-tallet/",
+    sourceKind: "football_editorial"
+  },
+  // --- Rosenborg: source-described historical goalkeeping and field skills ---
+  {
+    playerId: "jorn_jamtfall",
+    clubId: "rosenborg",
+    strengths: ["distribution"],
+    claim: "Dagbladets Rosenborg-spilleranalyse foran Juventus-kampen i desember 1998 beskriver Jørn Jamtfalls igangsettinger med «presise og raske utkast». Det dokumenterer keeperens distribution, ikke reflexes eller shot_stopping som artikkelen ikke vurderer.",
+    source: "https://www.dagbladet.no/sport/11-grunner-til-seier/65493302",
+    sourceKind: "press"
+  },
+  {
+    playerId: "bjorn_otto_bragstad",
+    clubId: "rosenborg",
+    strengths: ["duels"],
+    claim: "Dagbladets individuelle Champions League-vurdering i desember 1998 beskriver Bjørn Otto Bragstad som «Meget god som førsteforsvarer, sterk både langs bakken og i lufta». Dette underbygger defensive duels. Den samme omtalen advarer om hurtige angripere i bakrom, og gir derfor ikke grunnlag for pace.",
+    source: "https://www.dagbladet.no/sport/11-grunner-til-seier/65493302",
+    sourceKind: "press"
+  },
+  {
+    playerId: "kris_stadsgaard",
+    clubId: "rosenborg",
+    strengths: ["pace"],
+    claim: "Erik Hoftun karakteriserte Rosenborgs nye midtstopper Kris Stadsgaard i 2008 som «en hurtig, klok og ballsikker midtstopper». RBKwebs senere biografi forklarer også at hurtigheten lot RBK stå med større bakrom. pace er direkte dokumentert; klok og ballsikker er for generelle alene til å tilordne særskilte pasnings- eller beslutningsattributter.",
+    source: "https://www.rbkweb.no/spiller/stadsgaard",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "cristian_gamboa",
+    clubId: "rosenborg",
+    strengths: ["pace"],
+    claim: "Rosenborgs Erik Hoftun beskrev Cristian Gamboa ved klubbens leieavtale i 2012 som en back med «ekstrem hurtighet, offensiv innstilling og en god fot», gjengitt i RBKwebs spillerbiografi. Dette belegger pace. Offensiv innstilling og god fot blir ikke tolket som crossing eller dribbling uten mer presis kilde.",
+    source: "https://www.rbkweb.no/spiller/gamboa",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "stale_stensaas",
+    clubId: "rosenborg",
+    strengths: ["crossing"],
+    claim: "Aftenpostens landslagsvurdering av Ståle Stensaas i april 2004 beskriver Rosenborg-backen som «Tryggere defensivt enn John Arne Riise, og med minst like god innleggsfot». Dette underbygger crossing, men en sammenlignende generell defensiv vurdering gir ikke grunnlag for defensive_reading eller tackling.",
+    source: "https://www.aftenposten.no/norge/i/Mn59o/slik-blir-laget",
+    sourceKind: "press"
+  },
+  {
+    playerId: "jan_derek_sorensen",
+    clubId: "rosenborg",
+    strengths: ["pace", "crossing"],
+    claim: "Aftenposten beskrev Jan-Derek Sørensen i november 2005 som en særpreget vingtype med «Ekstremt hurtige spillere med god innleggsfot» som sjelden kombinasjon. Det belegger pace og crossing, men vurderingen er fra spillerens Lyn-periode og ikke en påstand om en konkret Rosenborg-kamp.",
+    source: "https://www.aftenposten.no/norge/i/JQn74/landslagsaktuell-uten-aa-vite-det-selv",
+    sourceKind: "press"
   }
 
 ];
