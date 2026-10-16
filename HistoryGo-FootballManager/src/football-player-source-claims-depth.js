@@ -13,6 +13,83 @@
 export const SOURCE_DEPTH_CLAIMS_VERSION = "historygo-football-manager.source-depth-claims.v1";
 
 const documented = [
+  // Rosenborg 1960: Adresseavisens samtidige individuelle kampvurdering,
+  // bevart i klubbens offisielle statistikkarkiv.
+  {
+    playerId: "olav_wang",
+    clubId: "rosenborg",
+    strengths: ["stamina"],
+    claim: "Adresseavisen: «Med sin rutine, kondisjon og teknikk laget han et sidehalfspill av høy klasse». Bare kondisjon registreres som dokumentert styrke.",
+    source: "https://statistikk.rbk.no/kamp/1572/sandefjord-rosenborg",
+    sourceKind: "press"
+  },
+
+  // Rosenborg: dokumenterte historiske ferdigheter fra klubbens egne arkiver.
+  {
+    playerId: "birger_tingstad",
+    clubId: "rosenborg",
+    strengths: ["set_pieces"],
+    claim: "«Birger Tingstad sendte et av sine spesial-frispark helt oppe i hjørnet.»",
+    source: "https://www.rbk.no/nyheter/62-ar-siden-62",
+    sourceKind: "club"
+  },
+  {
+    playerId: "kjell_hvidsand",
+    clubId: "rosenborg",
+    strengths: ["pace","tackling"],
+    claim: "«Som spiller var Kjell det vi må kalle en moderne back, offensiv og hurtig. Ikke minst var han taklingssterk»",
+    source: "https://statistikk.rbk.no/spiller/250-kjell-hvidsand",
+    sourceKind: "club"
+  },
+  {
+    playerId: "tor_kleveland",
+    clubId: "rosenborg",
+    strengths: ["pace"],
+    claim: "«Da Odd kom på besøk til serieleder RBK i niende runde hadde den kjappe venstrevingen ennå ikke skåret i serien.»",
+    source: "https://www.rbk.no/nyheter/bedre-enn-originalen",
+    sourceKind: "club"
+  },
+  {
+    playerId: "eldar_hansen",
+    clubId: "rosenborg",
+    strengths: ["dribbling"],
+    claim: "«Ti minutter ut i andre omgang driblet Eldar Hansen halve Sarpsborg-laget»",
+    source: "https://www.rbk.no/om-rbk/historie/fra-odd-til-nordens-stolthet/sesongen-1964",
+    sourceKind: "club"
+  },
+  // Rosenborg 2026-10-16: dokumenterte ferdighetsbeskrivelser fra eldre og nyere kilder.
+  {
+    playerId: "einar_jorum",
+    clubId: "rosenborg",
+    strengths: ["heading","simple_passing"],
+    claim: "Sportsmandens kampvurdering: «Med frapperende sterkt hodespill, gode skudd og godt innsiktede pasninger.»",
+    source: "https://jarlesvifstatistikk.bravesites.com/historikk",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "abdou_razack_traore",
+    clubId: "rosenborg",
+    strengths: ["pace","strength"],
+    claim: "José Mourinho nevner Traoré blant tre Rosenborg-angripere og beskriver gruppen: «De virker sterke, teknisk dyktige og hurtige.»",
+    source: "https://www.aftenposten.no/sport/fotball/i/y3gdRa/mourinhos-verden",
+    sourceKind: "press"
+  },
+  {
+    playerId: "trond_egil_soltvedt",
+    clubId: "rosenborg",
+    strengths: ["work_rate","tackling","first_touch"],
+    claim: "11v11: «He is a hard-working midfield player who is strong in the tackle and has good ball-control skills.»",
+    source: "https://www.11v11.com/players/trond-egil-soltvedt-450/",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "torbjorn_lysaker_heggem",
+    clubId: "rosenborg",
+    strengths: ["simple_passing"],
+    claim: "Carlos Corberán: «He is a player who is capable of taking responsibility for the ball, playing out from the back and managing the ball well with both feet.»",
+    source: "https://www.wba.co.uk/news/albion-complete-torbjorn-heggem-transfer",
+    sourceKind: "club"
+  },
   {
     playerId: "ivar_johannes_jakobsen_unhjem",
     clubId: "junkeren",
