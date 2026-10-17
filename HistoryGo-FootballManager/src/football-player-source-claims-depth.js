@@ -13,6 +13,531 @@
 export const SOURCE_DEPTH_CLAIMS_VERSION = "historygo-football-manager.source-depth-claims.v1";
 
 const documented = [
+  // FK Haugesund: kildebelagte individuelle spillestilprofiler, fortsettelse 2026-10-17.
+  {
+    playerId: "joakim_vage_nilsen",
+    clubId: "haugesund",
+    strengths: ["game_reading"],
+    claim: "Aftenpostens individuelle talentvurdering i 2010 omtaler Våge Nilsen som «Offensiv og trygg venstreback med en god venstrefot» og med «Godt blikk for spillet». Bare det uttrykkelige spilleblikket gir game_reading; venstrefot alene gir ingen spesifikk pasningsstyrke.",
+    source: "https://www.aftenbladet.no/sport/i/kaqnQv/tenaaringsboomen",
+    sourceKind: "press"
+  },
+  {
+    playerId: "trygve_nygaard",
+    clubId: "haugesund",
+    strengths: ["work_rate"],
+    claim: "FKH-trener Jostein Grindhaug om Nygaard i 2013: «Også har han en voldsom drive i seg. Det er aldri noe sutring. Han kommer på trening, og gjør jobben sin» og «I gjenvinningsspillet var han viktig». Arbeidsinnsatsen registreres, men ikke et spesifikt taklings- eller pasningstoken.",
+    source: "https://www.aftenbladet.no/sport/i/EW4Po3/dette-er-trygve-nygaards-karrierehoeydepunkt",
+    sourceKind: "press"
+  },
+  {
+    playerId: "roope_riski",
+    clubId: "haugesund",
+    strengths: ["finishing","positioning"],
+    claim: "Yles intervju med Riski fra Ilves-perioden i 2026 beskriver ham som «yksi parhaista maalintekijöistä» og «suomalaisittain poikkeuksellisen hyvä maalintekijä». Riski sier om egen avslutningsutvikling at treningsrepetisjoner har skapt «luontaista valmiutta sijoittua oikein». Dette dokumenterer avslutning og posisjonering, ikke tallrating eller FKH-spesifikk form.",
+    source: "https://yle.fi/a/74-20217176",
+    sourceKind: "press"
+  },
+  {
+    playerId: "thore_pedersen",
+    clubId: "haugesund",
+    strengths: ["work_rate","stamina","combination_play"],
+    claim: "Pedersen om egen spillestil ved overgangen fra Haugesund til Brann i 2023: «Jeg er energisk og spiller med mye vilje og løpskraft. Jeg er god til å holde på ballen, og en god kombinasjonsspiller». Arbeidsinnsats, løpskapasitet og kombinasjonsspill registreres direkte, ikke dribling eller numerisk rating.",
+    source: "https://www.brann.no/nyheter/pedersen-har-signert-for-brann",
+    sourceKind: "club"
+  },
+  {
+    playerId: "liban_abdi",
+    clubId: "haugesund",
+    strengths: ["pace"],
+    claim: "Liban Abdi sier selv i samtidig Karmøynytt-intervju i april 2017 under Haugesund-perioden: «Jeg har trent bra i vinter og føler meg veldig kjapp». Hurtighet føres, mens artikkelens dribleoverskrift ikke alene brukes som et generelt dribletoken.",
+    source: "https://www.karmoynytt.no/abdi-driblet-til-den-store-gullmedalje/s/25-161-26399",
+    sourceKind: "press"
+  },
+  {
+    playerId: "haris_hajradinovi",
+    clubId: "haugesund",
+    strengths: ["chance_creation"],
+    claim: "Flashscores tilbakeblikk på Süper Lig 2024/25 fremhever Hajradinović med «the most chances created (94), and the most through balls (22)» og beskriver ham som en fremtredende offensiv bidragsyter for Kasımpaşa. Bare eksplisitt dokumentert sjanseskaping registreres; det gjelder senere karriere, ikke en gitt FKH-kamp.",
+    source: "https://www.flashscoreusa.com/news/soccer-super-lig-turkish-super-lig-weekly-victor-osimhen-and-galatasaray-dominate-the-team-of-the-season/SMW1e3Sa/",
+    sourceKind: "press"
+  },
+  {
+    playerId: "filip_kiss",
+    clubId: "haugesund",
+    strengths: ["tackling"],
+    claim: "VG-lupens 2017-vurdering dokumenterer 97 taklinger for FK Haugesund i 2016-sesongen, 68 vunnet («nest best i klassen»). Dette er et direkte, individuelt mål på utførte vellykkede taklinger, ikke en antakelse fra ankerrolle, kort eller kampmengde; ingen tallrating føres.",
+    source: "https://www.vg.no/spesial/2017/vglupen/?plassering=10",
+    sourceKind: "press"
+  },
+
+  // FK Haugesund: individuelt dokumentert spillerbolk 2026-10-17.
+  {
+    playerId: "bala_garba",
+    clubId: "haugesund",
+    strengths: ["pace","flair"],
+    claim: "Torgeir Katlas historiske FKH-spillerkåring fra 2015 beskriver Garba som «Rask, uforutsigbar». Dette dokumenterer fart og uforutsigbart spill; målstatistikken brukes ikke som belegg for avslutningsevne.",
+    source: "https://www.aftenposten.no/sport/fotball/i/GGPrdx/de-ti-beste-i-haugesunds-historie",
+    sourceKind: "press"
+  },
+  {
+    playerId: "nikola_ur_i",
+    clubId: "haugesund",
+    strengths: ["work_rate","finishing"],
+    claim: "Historisk FKH-spillervurdering av Đurđić: «Han jaget og løp på alt» og omtaler uttrykkelig hans «Arbeidsmoralen og målteften». Arbeidsinnsats og avslutningsevne føres, ikke rating fra scoringstall.",
+    source: "https://www.aftenposten.no/sport/fotball/i/GGPrdx/de-ti-beste-i-haugesunds-historie",
+    sourceKind: "press"
+  },
+  {
+    playerId: "fredrik_pallesen_knudsen",
+    clubId: "haugesund",
+    strengths: ["duels"],
+    claim: "Branns offisielle spillerprofil kaller Fredrik Pallesen Knudsen en «duellsterk ung midtstopper». Beskrivelsen gjelder spillerens tidlige karriere; kilden bekrefter individuell duellstyrke, ikke høydebasert antagelse.",
+    source: "https://www.brann.no/lag/fredrik-pallesen-knudsen",
+    sourceKind: "club"
+  },
+  {
+    playerId: "morten_konradsen",
+    clubId: "haugesund",
+    strengths: ["stamina"],
+    claim: "Morten Konradsen sier selv ved overgangen til FKH i 2023: «Jeg er en offensiv og løpssterk spiller». Kun dokumentert løpskapasitet registreres som stamina, ikke mål/tempo fra midtbaneposisjonen.",
+    source: "https://www.fkh.no/nyheter/morten-konradsen-til-fk-haugesund",
+    sourceKind: "club"
+  },
+  {
+    playerId: "maic_sema",
+    clubId: "haugesund",
+    strengths: ["pace","game_reading"],
+    claim: "Sportstatistik.nus individuelle omtale beskriver Maic Sema med «snabbhet och spelförståelse». Dette underbygger fart og spilleforståelse, uten antakelser om avslutningsevne eller dribling.",
+    source: "https://sportstatistik.nu/fotboll/spelare/maic-sema",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "samuel_kari_fridjonsson",
+    clubId: "haugesund",
+    strengths: ["vision","simple_passing","passing_range","stamina"],
+    claim: "Viking-trener Bjarne Berntsen beskriver Friðjónsson i 2019 med «godt overblikk», god på «både korte og lange pasninger» og «veldig bra løpskraft». Disse fire ferdighetene gjelder spillerens tidligere Viking-periode; ikke utledet fra rollevalg.",
+    source: "https://www.vikingfotball.no/nyheter/-han-har-vaert-veldig-bra",
+    sourceKind: "club"
+  },
+  {
+    playerId: "sory_ibrahim_diarra",
+    clubId: "haugesund",
+    strengths: ["strength","pace","finishing"],
+    claim: "FKHs sportssjef Eirik Opedal beskrev Diarra ved signeringen i februar 2023 som en spiller med «solid fysikk, fin fart og gode avslutteregenskaper». Tre direkte egenskaper dokumenteres, uten å utlede hodespill fra høyde.",
+    source: "https://www.aftenposten.no/sport/fotball/i/BWkg2E/haugesund-henter-spiller-fra-mali",
+    sourceKind: "press"
+  },
+  {
+    playerId: "frederik_gytkjaer",
+    clubId: "haugesund",
+    strengths: ["movement"],
+    claim: "VG-lupens individuelle FKH-profil i 2017 beskriver Frederik Gytkjær som «Mer bevegelig enn storebror». Kun dokumentert bevegelighet føres; scoringsstatistikk gir ikke automatisk finishing.",
+    source: "https://www.vg.no/spesial/2017/vglupen/?plassering=10",
+    sourceKind: "press"
+  },
+  {
+    playerId: "kristoffer_haraldseid",
+    clubId: "haugesund",
+    strengths: ["set_pieces"],
+    claim: "VG-lupen 2017 dokumenterer at Haraldseids begge seriemål i 2016 kom direkte på frispark; Nettavisens kampreferat sier «skrude han ballen inn i krysset» om frisparkmålet mot Brann. Dette underbygger dødballteknikk, ikke generell skuddstyrke.",
+    source: "https://www.nettavisen.no/sport/fotball/snudde-kampen-mot-brann/s/12-95-3423256201",
+    sourceKind: "press"
+  },
+  {
+    playerId: "sondre_liseth",
+    clubId: "haugesund",
+    strengths: ["heading"],
+    claim: "NTBs samtidige kvalifiseringsreferat fra Haugesund–Moss i 2024 beskriver Liseth som møtte et presist innlegg og «stanget ballen i nettet». Det er konkret belegg for hodespill i situasjonen, ikke en tallvurdering av generell avslutningsevne.",
+    source: "https://www.dagsavisen.no/sport/fkh-beholdt-plassen-i-eliteserien-tounekti-knuste-drommene-til-moss/5663055",
+    sourceKind: "press"
+  },
+
+  // Strømsgodset: ytterligere elleve individuelt kildebelagte profiler, 2026-10-17.
+  {
+    playerId: "thomas_grogaard",
+    clubId: "stromsgodset",
+    strengths: ["pace","stamina"],
+    claim: "Ved signeringen sier Godsets sportssjef Jostein Flo om Thomas Grøgaard: «Han er rask, løpssterk og er god på ball.» Bare direkte støttet fart og løpskapasitet føres, ikke et spesifikt pasningstoken.",
+    source: "https://www.godset.no/nyheter/grogaard-er-klar-for-godset",
+    sourceKind: "club"
+  },
+  {
+    playerId: "johan_hove",
+    clubId: "stromsgodset",
+    strengths: ["stamina","finishing","determination"],
+    claim: "Nettavisens jury beskriver Godset-spiller Johan Hove i 2020 med «enorm løpskapasitet, vinnervilje og gode avslutningsegenskaper». De tre uttrykkelige kvalitetsordene gir tre tilsvarende styrketoken.",
+    source: "https://www.nettavisen.no/sport/disse-vinner-nettavisen-prisen-2020/s/12-95-3424064452",
+    sourceKind: "press"
+  },
+  {
+    playerId: "thomas_lehne_olsen",
+    clubId: "stromsgodset",
+    strengths: ["pace","strength"],
+    claim: "Tidligere U-landslagstrener Bård Flovik karakteriserer Thomas Lehne Olsen i desember 2015, ved utgangen av Godset-perioden, som «en ganske hurtig og kraftfull spiller som har målscoreregenskaper». Bare hurtighet og fysisk kraft registreres.",
+    source: "https://www.aftenposten.no/sport/fotball/i/pLMr0W/han-kan-bli-kobras-erstatter",
+    sourceKind: "press"
+  },
+  {
+    playerId: "sondre_fosnaess_hanssen",
+    clubId: "stromsgodset",
+    strengths: ["pace","strength"],
+    claim: "Hødd-trener Marius Bøe beskriver Sondre Fosnæss Hanssen ved overgangen etter Strømsgodset med «Hurtig, kraft og ballsikker». Direkte kildebelegg for fart og fysisk kraft, ikke en bestemt pasningstype.",
+    source: "https://www.hodd.no/nyheiter/spelar-med-nesten-40-eliteserie-kampar-klar-for-hodd",
+    sourceKind: "club"
+  },
+  {
+    playerId: "jorgen_horn",
+    clubId: "stromsgodset",
+    strengths: ["duels","heading","game_reading"],
+    claim: "Nettavisens profil av U21-landslagsspiller Jørgen Horn: «Duellsterk, god på hodet og leser spillet på en god måte». Kilden beskriver Horn i Vålerenga-tiden; egenskapene følger spilleren, ikke en bestemt Godset-kamp.",
+    source: "https://www.nettavisen.no/14-mann-for-norge/s/12-95-1292915",
+    sourceKind: "press"
+  },
+  {
+    playerId: "martin_ronning_ovenstad",
+    clubId: "stromsgodset",
+    strengths: ["combination_play"],
+    claim: "Kråkevingenes 2023-tabelltips omtaler tidligere Godset-spiller Martin Rønning Ovenstad som «En slepen teknikker som er kombinasjonssterk». Bare direkte kombinasjonsspill tas inn.",
+    source: "https://www.kraakevingen.no/tabelltips-2023/",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "morten_saetra",
+    clubId: "stromsgodset",
+    strengths: ["shot_stopping"],
+    claim: "Strømsgodsets 2023-rapport fra Team SIF-kampen mot Stjørdals-Blink beskriver «gjentatte redninger fra en meget god Morten Sætra». Dette dokumenterer keeperens redningsarbeid; ingen numerisk kvalitet utledes.",
+    source: "https://www.godset.no/utvikling/nyheter/team-sif-med-sterkt-bortepoeng",
+    sourceKind: "club"
+  },
+  {
+    playerId: "odd_johnsen",
+    clubId: "stromsgodset",
+    strengths: ["finishing"],
+    claim: "Fotballskribentens historiske spilleromtale av Odd Johnsen, som spilte for blant annet Mjøndalen, Brann og Strømsgodset, lyder «Teknisk og målfarlig». Bare avslutningsevne registreres fra den eksplisitte målfarlig-beskrivelsen.",
+    source: "https://www.aftenbladet.no/sport/i/MRR3v0/paa-dette-droemmelaget-faar-landslagssjef-hoegmo-plass-som-spiller",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "adam_larsen_kwarasey",
+    clubId: "stromsgodset",
+    strengths: ["command_of_area","shot_stopping"],
+    claim: "Samtidig 2011-vurdering av Godset-keeper Adam Larsen Kwarasey omtaler ham som «God i feltet og voldsomt god på strek». Konkret beskrivelser av feltbeherskelse og skuddredninger, ikke reflekser eller distribusjon.",
+    source: "https://norsktoppfotball.blogspot.com/2011/10/keeperne-i-tippeligaen.html",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "flamur_kastrati",
+    clubId: "stromsgodset",
+    strengths: ["pace"],
+    claim: "Samtidig Fædrelandsvennen-referat fra Strømsgodset–Sandnes Ulf 2014 omtaler Flamur Kastrati som «Lynvingen». Dette beskriver hurtighet; pasningen som mislyktes i samme situasjon gis ingen kvalitet.",
+    source: "https://www.fvn.no/sport/i/WLnmAk/droemmescoring-senket-sandnes-ulf",
+    sourceKind: "press"
+  },
+  {
+    playerId: "bassel_jradi",
+    clubId: "stromsgodset",
+    strengths: ["chance_creation"],
+    claim: "Strømsgodsets referat etter 3–1-tapet mot RBK 2017 sier at Bassel Jradi «hadde regien bak det meste offensivt» mot slutten. Den konkrete kampvurderingen dokumenterer sjanseskaping i denne kampen, ikke et generelt ratingtall.",
+    source: "https://www.godset.no/nyheter/tap-mot-rosenborg",
+    sourceKind: "club"
+  },
+
+  // Strømsgodset: samlet kildedokumentert spillerbolk 2026-10-17.
+  {
+    playerId: "viljar_myhra",
+    clubId: "stromsgodset",
+    strengths: ["shot_stopping","reflexes","positioning"],
+    claim: "Lars Tjærnås i intervju etter overgangen fra Godset: «en god shotstopper», med «god positionering» og «hurtige reflekser». Dette er keeperens individuelle kvaliteter; ingen tallverdi.",
+    source: "https://obstemmer.dk/interview-viljar-myhra-er-en-god-og-stabil-maalmand/",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "lars_jorgen_salvesen",
+    clubId: "stromsgodset",
+    strengths: ["heading","duels"],
+    claim: "Strømsgodsets referat fra Mjøndalen 2019: «en sterk Salvesen» vant duellen bak i feltet og «headet ballen i en bue» i mål. Konkrete demonstrasjoner av hodespill og duellspill, ikke numerisk score.",
+    source: "https://www.godset.no/nyheter/uavgjort-i-aelv-classico",
+    sourceKind: "club"
+  },
+  {
+    playerId: "marko_farji",
+    clubId: "stromsgodset",
+    strengths: ["crossing"],
+    claim: "Godsets kampreferater i mai 2025 beskriver flere presise innlegg fra Farji: «igjen etter innlegg fra Marko Farjis høyrefot» og innlegg til mål mot Kristiansund. Den gjentatte presise innleggsleveransen dokumenterer crossing.",
+    source: "https://www.godset.no/nyheter/storseier-i-treningskampen",
+    sourceKind: "club"
+  },
+  {
+    playerId: "logi_tomasson",
+    clubId: "stromsgodset",
+    strengths: ["crossing"],
+    claim: "Godsets referat mot RB Linense 2024 beskriver flere vellykkede innlegg fra Logi Tómasson: «Logi slo et godt innlegg» og «Logi Tómasson fant denne gangen Herman Stengel». Flere konkrete innlegg underbygger crossing.",
+    source: "https://www.godset.no/nyheter/linense-godset",
+    sourceKind: "club"
+  },
+  {
+    playerId: "marcus_pedersen",
+    clubId: "stromsgodset",
+    strengths: ["pace","strength","work_rate","hold_up_play"],
+    claim: "Martin Andresens spillerbeskrivelse fra 2012, etter Godset-oppholdet: «rask og sterk, gjennombruddshissig, bevegelig» og «jobber han godt for laget og er sterk feilvendt». Dokumenterer fart, fysikk, arbeidsinnsats og feilvendt spill.",
+    source: "https://www.aftenposten.no/sport/fotball/i/kJpJKj/marcus-pedersen-klar-for-vaalerenga",
+    sourceKind: "press"
+  },
+  {
+    playerId: "adama_diomande",
+    clubId: "stromsgodset",
+    strengths: ["work_rate","duels","pace"],
+    claim: "Stabæk-kaptein Morten Skjønsberg beskriver tidligere Godset-spiller Diomande i 2015: «Arbeidsinnsatsen hans er enorm», «en god duellspiller» og «han er hurtig». Kilden gjelder senere Stabæk-periode.",
+    source: "https://www.aftenposten.no/sport/fotball/i/Opy8el/stabaek-stjernen-kan-vrake-norge-bestemmer-meg-ikke-foer-hoegmo-ringer",
+    sourceKind: "press"
+  },
+  {
+    playerId: "kristoffer_tokstad",
+    clubId: "stromsgodset",
+    strengths: ["pace","stamina"],
+    claim: "Aftenpostens 2014-spillervurdering beskriver Tokstad med «best løpskapasitet, en kombinasjon av hurtighet og utholdenhet som er sjelden». Ferdighetsbeskrivelsen er fra før Godset-perioden.",
+    source: "https://www.aftenposten.no/sport/fotball/i/EWzy33/sorry-sarpsborg-dere-rykker-ned",
+    sourceKind: "press"
+  },
+  {
+    playerId: "tobias_gulliksen",
+    clubId: "stromsgodset",
+    strengths: ["chance_creation"],
+    claim: "Godsets toppspillerutvikler Kjetil Lundebakken beskrev unggutten Gulliksen: «god på små flater» og «kreativ i siste tredjedel». Konkret kildebelegg for kreativ sjanseskaping, ikke automatisk driblerating.",
+    source: "https://www.godset.no/nyheter/lofter-opp-lokale-unggutter",
+    sourceKind: "club"
+  },
+  {
+    playerId: "muhamed_keita",
+    clubId: "stromsgodset",
+    strengths: ["dribbling","game_reading"],
+    claim: "Godset-trener Bjørn Petter Ingebretsen sier i 2019 om Keita: «en som kan gå av motstandere og skape ubalanse på egenhånd» og «veldig fotballsmart». Dette underbygger dribling og spilleforståelse.",
+    source: "https://www.godset.no/nyheter/velkommen-hjem-keita",
+    sourceKind: "club"
+  },
+  {
+    playerId: "gustav_wikheim",
+    clubId: "stromsgodset",
+    strengths: ["pace","one_vs_one"],
+    claim: "Djurgårdens offisielle spillerprofil omtaler den tidligere Godset-vingen som «kvickfotade Gustav som gillar att utmana ute på kanten». Hurtige føtter og offensive én-mot-én-utfordringer dokumenteres i senere karriereperiode.",
+    source: "https://frontend-stage.dif.se/spelare/herrar/2020-2029/gustav-wikheim",
+    sourceKind: "club"
+  },
+  {
+    playerId: "mostafa_mos_abdellaoue",
+    clubId: "stromsgodset",
+    strengths: ["work_rate","off_ball_runs","finishing"],
+    claim: "Dagbladets U21-spilleroversikt om Mostafa Abdellaoue: «Hardtarbeidende spiller», «Spilleklok i forhold til bevegelser» og «Goalgetter med hurtig avslutningsteknikk». Vurderingen gjelder en tidligere Tromsø-periode.",
+    source: "https://www.dagbladet.no/sport/disse-skal-ta-norge-til-vm-i-2014/63513121",
+    sourceKind: "press"
+  },
+  {
+    playerId: "jon_knudsen",
+    clubId: "stromsgodset",
+    strengths: ["composure","distribution"],
+    claim: "Aftenpostens keepervurdering av Jon Knudsen fra Stabæk-perioden: «Mest av alt trygg og kald, gjør veldig sjelden tabber. Viktig og god som igangsetter.» Bare ro under press og igangsetting registreres.",
+    source: "https://www.aftenposten.no/sport/fotball/i/naLjR5/best-paa-papiret",
+    sourceKind: "press"
+  },
+  {
+    playerId: "jarl_andre_storbaek",
+    clubId: "stromsgodset",
+    strengths: ["set_pieces"],
+    claim: "Aftenpostens samtidige kampreferat fra 2007 omtaler Storbæks frisparksmål: «Jarl-André Storbæk ... kan sende frispark i vinkelen». Dette dokumenterer et konkret teknisk dødballspark fra Vålerenga-perioden, ikke tallrating.",
+    source: "https://www.aftenbladet.no/sport/i/ngkgbd/laquogullet-ska-hemraquo",
+    sourceKind: "press"
+  },
+  {
+    playerId: "fredrik_nordkvelle",
+    clubId: "stromsgodset",
+    strengths: ["stamina","long_shots"],
+    claim: "Aftenpostens spilleromtale før Brann-overgangen i 2011: «Nordkvelle er ekstremt løpssterk og er alltid i bevegelse» og «et godt skuddbein». Underbygger utholdenhet og skuddfot, men langskuddskategorien tolkes snevert.",
+    source: "https://www.aftenposten.no/sport/meninger/i/dOvLeX/doddo-blogg-paa-tide-at-haugen-faar-starte",
+    sourceKind: "press"
+  },
+  {
+    playerId: "lasse_olsen",
+    clubId: "stromsgodset",
+    strengths: ["pace"],
+    claim: "Strømsgodsets offisielle klubbhistorie omtaler signeringen i 1997: «Lasse Olsen – lynrask ving fra Gjelleråsen». Dette beskriver individuell hurtighet.",
+    source: "https://www.godset.no/om-klubben/historien-om-stromsgodset",
+    sourceKind: "club"
+  },
+  {
+    playerId: "rune_elvis_hagen",
+    clubId: "stromsgodset",
+    strengths: ["dribbling"],
+    claim: "Strømsgodsets offisielle klubbhistorie beskriver 1997-laget og «Rune Hagen - driblesterk ving fra Veme». Dette gir direkte belegg for dribling.",
+    source: "https://www.godset.no/om-klubben/historien-om-stromsgodset",
+    sourceKind: "club"
+  },
+  {
+    playerId: "lars_saetra",
+    clubId: "stromsgodset",
+    strengths: ["ball_carrying"],
+    claim: "Aftenpostens rangering av tenåringstalenter beskriver Godset-stopper Lars Sætra som en «offensiv, drivende og spillende midtstoppertype, som er god til å føre ballen oppover banen». Underbygger ballføring, ikke kun posisjon.",
+    source: "https://www.aftenbladet.no/sport/i/kaqnQv/tenaaringsboomen",
+    sourceKind: "press"
+  },
+  {
+    playerId: "mounir_hamoud",
+    clubId: "stromsgodset",
+    strengths: ["pace"],
+    claim: "Aftenpostens 2005-omtale av Lyns vingalternativer beskriver «så raske folk som Mounir Hamoud og Ezekiel Bala». Kun individuell hurtighet for Hamoud registreres, ikke øvrige ferdigheter.",
+    source: "https://www.aftenposten.no/sport/fotball/i/mRMWjp/derek-skal-frem-som-spiss",
+    sourceKind: "press"
+  },
+
+  // Strømsgodset og FK Haugesund: samlet individuelt kildepass 2026-10-17.
+  {
+    playerId: "thorodd_presberg",
+    clubId: "stromsgodset",
+    strengths: ["composure"],
+    claim: "Strømsgodsets historikk beskriver Presberg som «kald som is» før det avgjørende straffesparket mot Skeid i 1970. I cupfinalen mot Lyn viste han ifølge klubben «ingen nerver». Begge hendelsene dokumenterer ro under press, ikke en tallrating.",
+    source: "https://www.godset.no/om-klubben/historien-om-stromsgodset",
+    sourceKind: "club"
+  },
+  {
+    playerId: "iver_fossum",
+    clubId: "stromsgodset",
+    strengths: ["game_reading"],
+    claim: "Aftenpostens kampanalyse omtaler Fossum direkte: «Iver Fossum har situasjonsforståelse og ballfølelse over gjennomsnittet». Situasjonsforståelse dokumenterer spillelesning; det registreres ingen skudd- eller pasningsstyrke fra scoringsepisoden.",
+    source: "https://www.aftenposten.no/sport/meninger/i/qLJavw/godset-henger-etter",
+    sourceKind: "press"
+  },
+  {
+    playerId: "moses_mawa",
+    clubId: "stromsgodset",
+    strengths: ["work_rate"],
+    claim: "KFUMs historiske spilleromtale fra tiden før Strømsgodset sier om Mawa at han «har satt en høy standard for hvordan en Kåffa-spiss skal løpe for laget». Dette beskriver arbeidsinnsats og bevegelse for laget, ikke avslutningsferdighet.",
+    source: "https://www.kaaffa.no/nyheter/tidenes-50-beste-kfum-spillere",
+    sourceKind: "club"
+  },
+  {
+    playerId: "ola_kamara",
+    clubId: "stromsgodset",
+    strengths: ["work_rate","heading","off_ball_runs"],
+    claim: "Samtidig scoutingvurdering av Kamara i Strømsgodset kaller ham «hardtarbeidende», sier «solid hodespill» og beskriver «Smarte bevegelser» som frigjør ham fra oppasseren i innleggssituasjoner. Bare arbeidsinnsats, hodespill og løp uten ball registreres; ingen numerisk verdi.",
+    source: "https://www.scan-scout.com/2013/09/30/scouting-report-ola-kamara-stromsgodset/",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "frode_olsen",
+    clubId: "stromsgodset",
+    strengths: ["reflexes"],
+    claim: "Store norske leksikon omtaler Frode Olsen som «en reaksjonssterk målvakt». Dette dokumenterer reflekser. Leksikonet nevner også defensive én-mot-én-situasjoner, men dette oversettes ikke til offensivt one_vs_one-token.",
+    source: "https://snl.no/Frode_Olsen_-_fotballspiller",
+    sourceKind: "encyclopedia"
+  },
+  {
+    playerId: "ibrahima_wadji",
+    clubId: "haugesund",
+    strengths: ["pace","work_rate"],
+    claim: "FK Haugesund skriver at Wadji bruker «hurtighet» og siterer daværende trener Eirik Horneland: «Han er en steinhard løpsmaskin med en smittende energi». Hurtighet og arbeidskapasitet er direkte beskrevet, ikke utledet fra antall mål.",
+    source: "https://www.fkh.no/nyheter/wadji-signerte-for-fkh",
+    sourceKind: "club"
+  },
+  {
+    playerId: "alexander_stolas",
+    clubId: "haugesund",
+    strengths: ["set_pieces"],
+    claim: "FK Haugesund omtaler Alexander Stølås som «landets beste frisparkskytter» i klubbens egen nyhetssak om hans venstrefot. Dette dokumenterer dødballferdighet; ingen egen tallrating settes.",
+    source: "https://www.fkh.no/nyheter/alex-i-alle-kanaler",
+    sourceKind: "club"
+  },
+  {
+    playerId: "mikkel_desler",
+    clubId: "haugesund",
+    strengths: ["stamina"],
+    claim: "Ved signeringen beskrev FK Haugesund-trener Jostein Grindhaug Desler som en spiller med «veldig fin frekvens og motor». Samtidig omtale beskriver ham som «løpssterke backen». Samlet belegg for løpskapasitet/utholdenhet; ingen sprintfart utledes.",
+    source: "https://www.fkh.no/nyheter/desler-har-signert",
+    sourceKind: "club"
+  },
+  {
+    playerId: "martin_bjornbak",
+    clubId: "haugesund",
+    strengths: ["duels"],
+    claim: "Haugesunds Avis-journalisten Terje Flateby beskriver Bjørnbak i en spilleromtale gjengitt i Bergens Tidende: «Duellsterk stopper.» Dette gir direkte belegg for duellspill, ikke tallfestet forsvarsrating.",
+    source: "https://www.bt.no/sport/i/JoQAm7/se-opp-for-disse-talentene",
+    sourceKind: "press"
+  },
+  {
+    playerId: "christian_grindheim",
+    clubId: "haugesund",
+    strengths: ["work_rate","stamina"],
+    claim: "Store norske leksikon om Grindheims spillestil: «en hardtarbeidende midtbanespiller med stor løpskapasitet». Dette dokumenterer arbeidsinnsats og utholdenhet, ikke pasnings- eller skuddferdigheter.",
+    source: "https://snl.no/Christian_Grindheim",
+    sourceKind: "encyclopedia"
+  },
+  {
+    playerId: "sondre_tronstad",
+    clubId: "haugesund",
+    strengths: ["work_rate","simple_passing","game_reading"],
+    claim: "Tveit IL beskriver Tronstads senere Championship-periode slik: «Med sin arbeidskapasitet, pasningssikkerhet og kloke fotballhode». Dette underbygger arbeidsinnsats, presise enkle pasninger og spilleforståelse; kilden gjelder Blackburn-tiden, ikke en bestemt Haugesund-kamp.",
+    source: "https://tveitil.no/klubben/sondre-tronstad-tveit-gutten-som-kan-rykke-opp-til-premier-league",
+    sourceKind: "club"
+  },
+
+  // Rosenborg: Erling Næss forteller selv om dribling og konkrete finter i RBK-tiden.
+  {
+    playerId: "erling_naess",
+    clubId: "rosenborg",
+    strengths: ["dribbling"],
+    claim: "Næss: «Jeg driblet dermed helt til jeg mistet ballen eller scoret! Derfor ble jeg naturlig nok skikkelig god til å drible.» Han forteller også om da han «fintet» Trygve Bornø i en RBK–Skeid-kamp. Bare dribling registreres.",
+    source: "https://www.rbkweb.no/vis/18105",
+    sourceKind: "football_editorial"
+  },
+
+  // Rosenborg: seks kildebelagte historiske ferdighetsprofiler, samlet dataleveranse.
+  {
+    playerId: "harald_petersen",
+    clubId: "rosenborg",
+    strengths: ["work_rate","leadership"],
+    claim: "Adresseavisen om Petersen i 1937: «spilte meget energisk» og «dirigerte laget på en utmerket måte». Konkrete arbeids- og lederegenskaper, ikke slutning fra fem scoringer.",
+    source: "https://www.rbk.no/nyheter/forste-gang-forbi-2.runde",
+    sourceKind: "club"
+  },
+  {
+    playerId: "tore_lindseth",
+    clubId: "rosenborg",
+    strengths: ["pace","dribbling"],
+    claim: "Historisk spillervurdering omtaler Lindseth som «den raske driblevingen fra Kvarvingsdalen». Bare fart og dribling registreres.",
+    source: "https://stabbursloftet.substack.com/p/tidenes-beste-i-den-gule-trya",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "oystein_wormdal",
+    clubId: "rosenborg",
+    strengths: ["ball_carrying"],
+    claim: "Adresseavisens historiske RBK-jury: «Han var god til å ta med seg ballen fra eget forsvar og til angrep».",
+    source: "https://www.aftenposten.no/sport/fotball/i/4qbxjV/juryens-favoritt-oeystein-wormdahl",
+    sourceKind: "press"
+  },
+  {
+    playerId: "erling_meirik",
+    clubId: "rosenborg",
+    strengths: ["pace"],
+    claim: "Adresseavisens RBK-omtale: «Han var i tillegg hurtig, noe han brukte aktivt ved å være med i angrepsspillet».",
+    source: "https://www.aftenposten.no/sport/fotball/i/4qbxjV/juryens-favoritt-oeystein-wormdahl",
+    sourceKind: "press"
+  },
+  {
+    playerId: "terje_morkved",
+    clubId: "rosenborg",
+    strengths: ["pace"],
+    claim: "Historisk RBK-spilleromtale beskriver Terje Mørkved som «lynkjapp». Skuddkraft alene brukes ikke til å utlede presisjon eller langskudd.",
+    source: "https://www.aftenposten.no/sport/fotball/i/Qo5aRA/maal-etter-maal",
+    sourceKind: "press"
+  },
+  {
+    playerId: "harald_gulbrandsen",
+    clubId: "rosenborg",
+    strengths: ["game_reading","positioning"],
+    claim: "Rosenborgs minneord sier: «klokskap og plasseringsevne som få». Dette dokumenterer spilleforståelse og posisjonering, ikke hurtighet.",
+    source: "https://www.rbk.no/nyheter/minneord-om-harald-gulbrandsen",
+    sourceKind: "club"
+  },
   // Rosenborg 1960: Adresseavisens samtidige individuelle kampvurdering,
   // bevart i klubbens offisielle statistikkarkiv.
   {
