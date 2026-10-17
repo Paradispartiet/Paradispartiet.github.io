@@ -13,6 +13,114 @@
 export const SOURCE_DEPTH_CLAIMS_VERSION = "historygo-football-manager.source-depth-claims.v1";
 
 const documented = [
+  // Molde 2026-10-17: individuelt kildebelagte styrker etter katalogpass for 58 tilknytninger.
+  {
+    playerId: "mohamed_elyounoussi",
+    clubId: "molde",
+    strengths: ["dribbling","one_vs_one","composure","finishing"],
+    claim: "FourFourTwo beskriver Mohamed Elyounoussi: «Able to skip past opponents with ease, he thrives in one-on-one situations» og «his composure makes him a clinical finisher». Direkte belegg for dribling, utfordringer én mot én, ro og avslutninger; ikke basert på FIFA/FC-rating.",
+    source: "https://www.fourfourtwo.com/features/mohamed-elyounoussi-pizza-loving-forward-leicester-are-eyeing-mahrezs-replacement",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "ola_brynhildsen",
+    clubId: "molde",
+    strengths: ["pace","finishing","chance_creation"],
+    claim: "Molde-trener Erling Moe ved signering i 2020 beskriver Brynhildsen som «målscorer, sjanseskaper og hurtig». Tre eksplisitte ferdighetsbeskrivelser; kilden gjelder forventet spillestil ved overgang fra Stabæk, ikke en bestemt kamp.",
+    source: "https://www.moldefk.no/nyheter/ola-brynhildsen-klar-for-molde-fk-fra-1.juli",
+    sourceKind: "club"
+  },
+  {
+    playerId: "david_datro_fofana",
+    clubId: "molde",
+    strengths: ["pace","strength","hold_up_play"],
+    claim: "Chelsea ved overgangen fra Molde i 2023: «combination of pace, skill and strength» og «especially adept at holding up the ball and retaining possession under pressure». Bare fart, fysikk og feilvendt ballholding føres; ingen antatt avslutningsrating fra scoringstall.",
+    source: "https://www.chelseafc.com/en/news/article/david-datro-fofana-completes-move-to-chelsea",
+    sourceKind: "club"
+  },
+  {
+    playerId: "knut_olav_rindaroy",
+    clubId: "molde",
+    strengths: ["pace"],
+    claim: "Leo Beenhakker sitert i Moldes offisielle historikk i oktober 2009: «Han er hurtig og åpenbart ballsikker». Hurtighet registreres. «Ballsikker» uten teknisk spesifikasjon gir ikke et påfunnet pasningstoken.",
+    source: "https://www.moldefk.no/om-klubben/var-historie/2000-2010/2009-manedsvis/2009-oktober",
+    sourceKind: "club"
+  },
+  {
+    playerId: "pape_pate_diouf",
+    clubId: "molde",
+    strengths: ["pace","strength","finishing"],
+    claim: "Molde-manager Ole Gunnar Solskjær om Diouf ved returen i 2012: «Med Pape får vi målteft og gjennombruddshissighet. Han er hurtig og sterk». Kildebelegg for avslutningsevne, fart og fysikk; ingen numerisk score utledes.",
+    source: "https://www.aftenbladet.no/sport/i/bK3gll/solskjaer-diouf-har-en-raaskap-som-er-sjelden",
+    sourceKind: "press"
+  },
+  {
+    playerId: "martin_linnes",
+    clubId: "molde",
+    strengths: ["crossing"],
+    claim: "Samtidig kampreferat fra Molde–Aalesund i 2015: «Linnes satte fart på høyresiden og slo et fantastisk innlegg inn foran mål». Dokumenterer et konkret godt innlegg til Elyounoussis avgjørende heading; hurtighet fra én løpssituasjon føres ikke.",
+    source: "https://www.aftenbladet.no/sport/i/e8WQ3K/moi-kronet-droemmeuka-med-aa-bli-matchvinner",
+    sourceKind: "press"
+  },
+  {
+    playerId: "rob_friend",
+    clubId: "molde",
+    strengths: ["heading"],
+    claim: "Aftenbladets samtidige kampreferat mot Rosenborg 17. september 2005 beskriver konkret Molde-spiller Rob Friend som «scoret med en fantastisk heading». Kun hodespill, ikke generell målteft fra målstatistikk.",
+    source: "https://www.aftenbladet.no/sport/i/EW4nkl/spillerne-maa-gaa-i-seg-selv",
+    sourceKind: "press"
+  },
+  {
+    playerId: "baye_djiby_fall",
+    clubId: "molde",
+    strengths: ["heading"],
+    claim: "Dagbladets kampreferat Vålerenga–Molde beskriver at Baye Djiby Fall «headet ballen tilbake mot første stolpe» og scoret. Dette dokumenterer ett presist hodestøt; det legges ikke inn øvrige udokumenterte ferdigheter.",
+    source: "https://www.dagbladet.no/sport/malet-mitt-skulle-vaert-annullert/65068186",
+    sourceKind: "press"
+  },
+
+  // FKH, Haugar og Djerv: historiske individuelt kildebelagte styrker 2026-10-17.
+  {
+    playerId: "henrik_kildentoft",
+    clubId: "haugesund",
+    strengths: ["aggression","bravery"],
+    claim: "Brøndbys jubileumsbok «Vores klub! Fodbold i 1964–2004» beskriver Henrik Kildentoft som «Kompromisløs i defensiven, aggressiv, elegant og god med bolden». Det direkte belegg gjelder aggressiv og kompromissløs forsvarsspillestil fra Brøndby-perioden, før FKH. Ikke en påstand om spesifikk taklingsstyrke.",
+    source: "https://www.yumpu.com/da/document/view/18526684/vores-klub-fodbold-i-1964-2004-brondbycom",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "milan_koji",
+    clubId: "haugesund",
+    strengths: ["heading","simple_passing"],
+    claim: "Canadian National Soccer League History beskriver Kojić før overgangen til FKH: «Milan further developed his passing ability and skill in the air to become a dangerous two-way player.» Registrerer generelt pasningsspill og spill i luften, ikke heading utledet fra kroppshøyde eller målstatistikk.",
+    source: "https://thecnsl.com/2026/03/17/milan-kojic/",
+    sourceKind: "football_editorial"
+  },
+  {
+    playerId: "dean_mooney",
+    clubId: "haugesund",
+    strengths: ["heading"],
+    claim: "Vikings offisielle historie om cupfinalen i 1979 beskriver konkret at «Dean Mooney med discohåret headet ballen i vinkelen» for Haugar. Registrerer bare dokumentert hodespill fra en spesifikk situasjon, ikke generell avslutningsrating.",
+    source: "https://www.vikingfotball.no/nyheter/da-viking-tok-gull-gull-og-gull",
+    sourceKind: "club"
+  },
+  {
+    playerId: "juska_savolainen",
+    clubId: "haugesund",
+    strengths: ["crossing"],
+    claim: "VG Lives samtidige kampreferat fra Strømsgodset–FKH beskriver Savolainens offensive innlegg: «Savolainen slår godt inn fra venstre, og Sørum header like utenfor!» Dokumenterer en god innleggsleveranse i FKH-perioden, ikke at alle dødballer er gode.",
+    source: "https://vglive.vg.no/fotball/str%C3%B8msgodset-haugesund/590600/rapport",
+    sourceKind: "press"
+  },
+  {
+    playerId: "du_an_cvetinovi",
+    clubId: "haugesund",
+    strengths: ["duels"],
+    claim: "FootyStats' målte data for Cvetinović i serbisk SuperLiga 2025/26: «Aerial Duels Won 33», med 93. persentil i spillerutvalget. Dette er konkret målt styrke i luftdueller i en langt senere karriereperiode, ikke en konklusjon fra posisjon eller målpoeng; ingen numerisk rating settes.",
+    source: "https://footystats.org/players/serbia/dusan-cvetinovic",
+    sourceKind: "football_editorial"
+  },
+
   // FK Haugesund: kildebelagte individuelle spillestilprofiler, fortsettelse 2026-10-17.
   {
     playerId: "joakim_vage_nilsen",
