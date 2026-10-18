@@ -17,6 +17,7 @@
  *   image?: string,
  *   frontImage?: string,
  *   cardImage?: string,
+ *   imageComposition?: { portraitPosition?: string, heroPosition?: string },
  *   quizCardImage?: string,
  *   quizCard?: string,
  *   quiz_card_image?: string,
@@ -843,7 +844,10 @@ const PLACE_CARD_QUIZ_CARD_MANIFEST_PATHS = Object.freeze([
   "data/quizcards/historie/manifest.json",
   "data/quizcards/litteratur/manifest.json",
   "data/quizcards/scenekunst/manifest.json",
-  "data/quizcards/media/manifest.json"
+  "data/quizcards/media/manifest.json",
+  "data/quizcards/natur/manifest.json",
+  "data/quizcards/musikk/manifest.json",
+  "data/quizcards/subkultur/manifest.json"
 ]);
 const PLACE_CARD_QUIZ_CARD_FALLBACK_COLLECTIONS = Object.freeze([
   "by/topp10_by_kort_batch1.json",
@@ -887,8 +891,8 @@ function loadPlaceCardQuizCollections() {
 
   const loader = window.DataHub?.loadQuizCardsCollection;
   if (typeof loader !== "function") {
-    placeCardQuizCollectionsPromise = Promise.resolve([]);
-    return placeCardQuizCollectionsPromise;
+    // Do not cache an empty collection forever if PlaceCard opens before DataHub is ready.
+    return Promise.resolve([]);
   }
 
   placeCardQuizCollectionsPromise = loadPlaceCardQuizCollectionPaths()
@@ -1524,6 +1528,16 @@ if (!card) return;
       headerHeroEl.classList.add("has-image");
     }
   }
+  // The editor chooses focal points per surface. Never carry one place's
+  // inline position into the next place when a player switches cards.
+  const imageComposition = /** @type {{ portraitPosition?: string, heroPosition?: string }} */ (place.imageComposition || {});
+  const mediaPosition = (position) => {
+    const parts = String(position || "").trim().match(/^(\d{1,3})%\s+(\d{1,3})%$/);
+    return parts && Number(parts[1]) <= 100 && Number(parts[2]) <= 100
+      ? `${parts[1]}% ${parts[2]}%` : "50% 50%";
+  };
+  if (frontImgEl) frontImgEl.style.objectPosition = mediaPosition(imageComposition.portraitPosition);
+  if (headerImgEl) headerImgEl.style.objectPosition = mediaPosition(imageComposition.heroPosition);
   setPlaceCardImgSrcStable(frontImgEl, place.frontImage || place.cardImage || place.image || "");
   setPlaceCardQuizImage(frontCardFlipEl, quizCardImgEl, place);
   const quizStart = performance.now();
