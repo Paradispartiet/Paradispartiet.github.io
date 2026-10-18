@@ -19,6 +19,20 @@
       "type": "privatliv",
       "konflikt": "En rettelse får først sosial virkning når mottakeren har fått og forstått den.",
       "startDag": 14
+    },
+    {
+      "id": "wave_c_c23",
+      "tittel": "Å rette uten å kreve tilgivelse",
+      "type": "privatliv",
+      "konflikt": "En bekreftet rettelse kan fortsatt koste tillit; avsenderen eier ikke andres reaksjon.",
+      "startDag": 15
+    },
+    {
+      "id": "wave_d_c23",
+      "tittel": "Tillit etter rettelsen",
+      "type": "privatliv",
+      "konflikt": "Egne valg får konkrete, dokumenterbare følger uten å skape fiktive avtaler eller vedtak.",
+      "startDag": 16
     }
   ],
   "scenes": [
@@ -626,6 +640,366 @@
           }
         }
       ]
+    },
+    {
+      "id": "wave_c_c23_rettelsen_koster",
+      "threadId": "wave_c_c23",
+      "dag": 15,
+      "fase": "ettermiddag",
+      "visningstype": "melding",
+      "stedId": "hjem",
+      "tilgjengelighet": "start",
+      "prioritet": 5,
+      "tittel": "Rettelsen er forstått, men ikke glemt",
+      "tekst": "Begge mottakerne har nå bekreftet at de forstår rettelsen. Den ene sier likevel at den første feilaktige formuleringen gjorde et viktig møte vanskelig. Prosjektbyggeren spør om dere skal skrive at saken er løst. Feilinformasjonen er korrigert; virkningen på tilliten kan dere ikke erklære borte.",
+      "conditions": {
+        "flagg": {
+          "wa_b_c23_utfall": "avklart_med_kostnad"
+        }
+      },
+      "valg": [
+        {
+          "id": "erkjenn_kostnaden",
+          "tekst": "Skriv at rettelsen er mottatt, men at tillitsbruddet ikke kan avskrives",
+          "konsekvensTekst": "Dere dokumenterer hva begge har forstått og hva den ene opplever som tap. Dere lover ikke at relasjonen er reparert.",
+          "effekter": {
+            "flagg": {
+              "wa_c_c23_etterspill": "kostnad_erkjent"
+            }
+          }
+        },
+        {
+          "id": "behold_ansvaret",
+          "tekst": "Be Lea beholde saken åpen for eventuell videre dialog, uten å kreve svar",
+          "konsekvensTekst": "Prosjektbyggeren noterer et mulig nytt kontaktpunkt, men sender ingen ny henvendelse uten grunn. Bekreftet rettelse står fast; tilgivelse er ikke krevd.",
+          "effekter": {
+            "flagg": {
+              "wa_c_c23_etterspill": "dialog_aapen"
+            }
+          }
+        }
+      ],
+      "avsender": "lea"
+    },
+    {
+      "id": "wave_c_c23_malen_etter_feilen",
+      "threadId": "wave_c_c23",
+      "dag": 15,
+      "fase": "ettermiddag",
+      "visningstype": "melding",
+      "stedId": "hjem",
+      "tilgjengelighet": "start",
+      "prioritet": 5,
+      "tittel": "Malen som kom for sent",
+      "tekst": "Prosjektbyggeren har nå satt «Utkast – ingen levering avtalt» øverst i den nye prosjektmalen. Den ene mottakeren har tidligere bekreftet at rettelsen er forstått, men forteller at tid likevel ble brukt på den gamle teksten. Prosjektbyggeren spør om den nye malen betyr at feilen er ferdig håndtert. En bedre arbeidsrutine kan forebygge nye misforståelser, men ikke fjerne konsekvensen av den gamle.",
+      "conditions": {
+        "flagg": {
+          "wa_b_c23_utfall": "avklart_ny_praksis"
+        }
+      },
+      "valg": [
+        {
+          "id": "skill_ny_praksis",
+          "tekst": "Skill den nye rutinen fra mottakerens allerede brukte tid",
+          "konsekvensTekst": "Prosjektbyggeren fører to separate punkter: ny mal tatt i bruk og tidligere feil rettet. Hun hevder ikke at mottakeren har fått tida tilbake eller at tilliten er gjenopprettet.",
+          "effekter": {
+            "flagg": {
+              "wa_c_c23_etterspill": "ny_praksis_med_forbehold"
+            }
+          }
+        },
+        {
+          "id": "be_om_evaluering",
+          "tekst": "Be Lea evaluere om malen blir brukt neste gang, uten å love utfallet nå",
+          "konsekvensTekst": "Prosjektbyggeren noterer at den nye malen skal kontrolleres ved neste utsending. Ingen ny skisse er sendt ennå, og det er ikke dokumentert at rutinen fungerer i praksis.",
+          "effekter": {
+            "flagg": {
+              "wa_c_c23_etterspill": "evaluering_foreslaatt"
+            }
+          }
+        }
+      ],
+      "avsender": "lea"
+    },
+    {
+      "id": "wave_c_c23_venter_pa_status",
+      "threadId": "wave_c_c23",
+      "dag": 15,
+      "fase": "ettermiddag",
+      "visningstype": "melding",
+      "stedId": "hjem",
+      "tilgjengelighet": "start",
+      "prioritet": 5,
+      "tittel": "Et spørsmål uten svar",
+      "tekst": "Du sendte ett avgrenset spørsmål om begge mottakerne har forstått rettelsen. Det står fortsatt som sendt i tråden, uten svar. Du har ikke tilgang til mottakernes egne samtaler, og Prosjektbyggeren har ikke gitt deg ny dokumentasjon. Å vente er ubehagelig, men du kan ikke fylle hullet med et antatt ja.",
+      "conditions": {
+        "flagg": {
+          "wa_b_c23_utfall": "status_forespurt"
+        }
+      },
+      "valg": [
+        {
+          "id": "marker_ubekreftet",
+          "tekst": "Marker oppfølgingen som sendt, men ikke bekreftet",
+          "konsekvensTekst": "Du fører en nøktern status: spørsmål sendt, avklaring ikke dokumentert. Du lar mottakernes forståelse stå som ukjent.",
+          "effekter": {
+            "flagg": {
+              "wa_c_c23_etterspill": "svar_mangler"
+            }
+          }
+        },
+        {
+          "id": "la_ansvaret_ligge",
+          "tekst": "La Lea eie videre oppfølging, uten å purre igjen i dag",
+          "konsekvensTekst": "Du avgrenser din egen rolle. Prosjektbyggeren har ansvaret for kommunikasjonen videre, men du påstår ikke at noen ny bekreftelse er kommet.",
+          "effekter": {
+            "flagg": {
+              "wa_c_c23_etterspill": "ansvar_avgrenset"
+            }
+          }
+        }
+      ],
+      "avsender": "lea"
+    },
+    {
+      "id": "wave_d_c23_rettelsen_koster_erkjenn_kostnaden",
+      "threadId": "wave_d_c23",
+      "dag": 16,
+      "fase": "ettermiddag",
+      "visningstype": "melding",
+      "stedId": "hjem",
+      "tilgjengelighet": "start",
+      "prioritet": 4,
+      "tittel": "En unnskyldning får ikke tiden tilbake",
+      "tekst": "Neste dag forteller Lea at mottakeren har lest erkjennelsen. Vedkommende vil ikke bruke mer tid på en ny samtale nå. Det er et svar, ikke en forsoning.",
+      "valg": [
+        {
+          "id": "forankre",
+          "tekst": "Respekter at mottakeren ikke ønsker ny dialog",
+          "konsekvensTekst": "Du og Lea lar være å kreve mer svar. Den tidligere merkostnaden forsvinner ikke.",
+          "effekter": {
+            "flagg": {
+              "wa_d_c23_status": "grense_respektert"
+            }
+          }
+        },
+        {
+          "id": "avgrense",
+          "tekst": "Be Lea oppbevare rettelsen sammen med opprinnelig melding",
+          "konsekvensTekst": "Dokumentasjonen blir sporbar. Arkivering er ikke det samme som gjenopprettet tillit.",
+          "effekter": {
+            "flagg": {
+              "wa_d_c23_status": "spor_bevart"
+            }
+          }
+        }
+      ],
+      "conditions": {
+        "flagg": {
+          "wa_c_c23_etterspill": "kostnad_erkjent"
+        }
+      },
+      "avsender": "lea"
+    },
+    {
+      "id": "wave_d_c23_rettelsen_koster_behold_ansvaret",
+      "threadId": "wave_d_c23",
+      "dag": 16,
+      "fase": "ettermiddag",
+      "visningstype": "melding",
+      "stedId": "hjem",
+      "tilgjengelighet": "start",
+      "prioritet": 4,
+      "tittel": "Åpen dialog uten purring",
+      "tekst": "Lea har beholdt kontaktmuligheten åpen, men mottakeren har ikke sendt mer. Du vet ikke om vedkommende vil svare senere.",
+      "valg": [
+        {
+          "id": "forankre",
+          "tekst": "Foreslå å vente uten ny purring",
+          "konsekvensTekst": "Du lar mottakeren styre om samtalen fortsetter. Stillhet registreres ikke som samtykke.",
+          "effekter": {
+            "flagg": {
+              "wa_d_c23_status": "purring_utsatt"
+            }
+          }
+        },
+        {
+          "id": "avgrense",
+          "tekst": "Oppsummer hva dere faktisk har rettet",
+          "konsekvensTekst": "Dere legger fakta i eget notat. Notatet gir ikke et nytt bekreftet svar fra mottakeren.",
+          "effekter": {
+            "flagg": {
+              "wa_d_c23_status": "rettelse_oppsummert"
+            }
+          }
+        }
+      ],
+      "conditions": {
+        "flagg": {
+          "wa_c_c23_etterspill": "dialog_aapen"
+        }
+      },
+      "avsender": "lea"
+    },
+    {
+      "id": "wave_d_c23_malen_etter_feilen_skill_ny_praksis",
+      "threadId": "wave_d_c23",
+      "dag": 16,
+      "fase": "ettermiddag",
+      "visningstype": "melding",
+      "stedId": "hjem",
+      "tilgjengelighet": "start",
+      "prioritet": 4,
+      "tittel": "Ny mal, gammel regning",
+      "tekst": "Lea viser den nye malen til en samarbeidspartner. Samarbeidspartneren sier at formuleringen er tydeligere, men vet ikke om den ville hindret den første feilen.",
+      "valg": [
+        {
+          "id": "forankre",
+          "tekst": "Beskriv malen som forebyggende forsøk",
+          "konsekvensTekst": "Du fremhever at rutinen kan prøves, ikke at fortiden er reparert.",
+          "effekter": {
+            "flagg": {
+              "wa_d_c23_status": "forebygging_uten_garanti"
+            }
+          }
+        },
+        {
+          "id": "avgrense",
+          "tekst": "Be Lea registrere når malen faktisk brukes",
+          "konsekvensTekst": "Dere lager et felt for bruk, men har ennå ikke dokumentert et nytt tilfelle.",
+          "effekter": {
+            "flagg": {
+              "wa_d_c23_status": "bruk_ikke_dokumentert"
+            }
+          }
+        }
+      ],
+      "conditions": {
+        "flagg": {
+          "wa_c_c23_etterspill": "ny_praksis_med_forbehold"
+        }
+      },
+      "avsender": "lea"
+    },
+    {
+      "id": "wave_d_c23_malen_etter_feilen_be_om_evaluering",
+      "threadId": "wave_d_c23",
+      "dag": 16,
+      "fase": "ettermiddag",
+      "visningstype": "melding",
+      "stedId": "hjem",
+      "tilgjengelighet": "start",
+      "prioritet": 4,
+      "tittel": "Evalueringen har en eier",
+      "tekst": "Lea aksepterer å evaluere malen ved neste prosjektmelding. Ingen slik melding er sendt ennå. Du kan hjelpe med kriteriene uten å rapportere et oppdiktet resultat.",
+      "valg": [
+        {
+          "id": "forankre",
+          "tekst": "Avtal hvilke tegn som vil vise om malen fungerer",
+          "konsekvensTekst": "Dere velger konkrete vurderingspunkter. Evalueringen er planlagt, ikke gjennomført.",
+          "effekter": {
+            "flagg": {
+              "wa_d_c23_status": "kriterier_valgt"
+            }
+          }
+        },
+        {
+          "id": "avgrense",
+          "tekst": "La Lea eie vurderingen og be om resultat senere",
+          "konsekvensTekst": "Lea har ansvar for sin egen prosess. Du har verken målt eller godkjent den.",
+          "effekter": {
+            "flagg": {
+              "wa_d_c23_status": "evaluering_overlatt"
+            }
+          }
+        }
+      ],
+      "conditions": {
+        "flagg": {
+          "wa_c_c23_etterspill": "evaluering_foreslaatt"
+        }
+      },
+      "avsender": "lea"
+    },
+    {
+      "id": "wave_d_c23_venter_pa_status_marker_ubekreftet",
+      "threadId": "wave_d_c23",
+      "dag": 16,
+      "fase": "ettermiddag",
+      "visningstype": "melding",
+      "stedId": "hjem",
+      "tilgjengelighet": "start",
+      "prioritet": 4,
+      "tittel": "Sendt er fremdeles ikke besvart",
+      "tekst": "Påfølgende dag står spørsmålet fortsatt som sendt. Lea spør om dere skal markere begge mottakere som informert. Det finnes ennå ingen kvittering fra dem.",
+      "valg": [
+        {
+          "id": "forankre",
+          "tekst": "Behold status «sendt, ikke bekreftet»",
+          "konsekvensTekst": "Du hindrer at et ubekreftet spørsmål blir til dokumentert forståelse.",
+          "effekter": {
+            "flagg": {
+              "wa_d_c23_status": "uten_bekreftelse"
+            }
+          }
+        },
+        {
+          "id": "avgrense",
+          "tekst": "Foreslå at Lea kontrollerer egne sendelogger",
+          "konsekvensTekst": "Hun kan undersøke loggene, men du registrerer ikke nye svar før de finnes.",
+          "effekter": {
+            "flagg": {
+              "wa_d_c23_status": "loggkontroll_foreslaatt"
+            }
+          }
+        }
+      ],
+      "conditions": {
+        "flagg": {
+          "wa_c_c23_etterspill": "svar_mangler"
+        }
+      },
+      "avsender": "lea"
+    },
+    {
+      "id": "wave_d_c23_venter_pa_status_la_ansvaret_ligge",
+      "threadId": "wave_d_c23",
+      "dag": 16,
+      "fase": "ettermiddag",
+      "visningstype": "melding",
+      "stedId": "hjem",
+      "tilgjengelighet": "start",
+      "prioritet": 4,
+      "tittel": "Et ansvar som fortsatt ligger hos Lea",
+      "tekst": "Lea sier hun vil håndtere eventuell videre oppfølging. Du mottar ingen kopi av nye svar. At du har gitt ansvaret videre, er ikke bevis for at mottakerne er orientert.",
+      "valg": [
+        {
+          "id": "forankre",
+          "tekst": "Noter at du ikke lenger har innsyn",
+          "konsekvensTekst": "Du beskriver grensen for egen kunnskap. Rettelsens mottaksstatus forblir uavklart for deg.",
+          "effekter": {
+            "flagg": {
+              "wa_d_c23_status": "innsyn_avgrenset"
+            }
+          }
+        },
+        {
+          "id": "avgrense",
+          "tekst": "Tilby en faktasjekk hvis Lea ber om det senere",
+          "konsekvensTekst": "Tilbudet er betinget. Du tar ikke over utsending eller erklærer saken avsluttet.",
+          "effekter": {
+            "flagg": {
+              "wa_d_c23_status": "faktasjekk_betinget"
+            }
+          }
+        }
+      ],
+      "conditions": {
+        "flagg": {
+          "wa_c_c23_etterspill": "ansvar_avgrenset"
+        }
+      },
+      "avsender": "lea"
     }
   ],
   "moter": [],
