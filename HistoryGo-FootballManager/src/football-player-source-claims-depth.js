@@ -13,6 +13,178 @@
 export const SOURCE_DEPTH_CLAIMS_VERSION = "historygo-football-manager.source-depth-claims.v1";
 
 const documented = [
+  // Strømsgodset 2026-10-19: lagkamerat beskriver konkret lederrolle.
+  {
+    "playerId": "ulf_camitz",
+    "clubId": "stromsgodset",
+    "strengths": [
+      "leadership"
+    ],
+    "claim": "I Strømsgodsets intervju «Blå Legender: Arne Gustavsen» beskriver lagkamerat Gustavsen samholdet i 1987 og forteller at spillerne «tilbrakte veldig mye tid sammen også utenfor treningene, ofte hjemme hos Ulf Camitz, som nok var et naturlig midtpunkt». Samme klubbhistorie identifiserer Camitz som lagkaptein da han ble med videre i kriseperioden. Samlet dokumenterer dette en konkret ledende og samlende rolle i spillergruppen (leadership), ikke ferdigheter utledet fra kamptall, scoringer eller generell kapteinsstatus alene.",
+    "source": "https://www.godset.no/nyheter/bla-legender-arne-gustavsen",
+    "sourceKind": "club"
+  },
+
+  // Strømsgodset 2026-10-19: individuell handling i dokumentert cupfinale.
+  {
+    "playerId": "finn_aksel_olsen",
+    "clubId": "stromsgodset",
+    "strengths": [
+      "runs_behind"
+    ],
+    "claim": "Strømsgodsets detaljert beskrevne cupfinale fra 21. oktober 1973 sier: «Thorodd tverrvendte og sendte Finn Aksel Olsen igjennom, og i en løpeduell inne i RBK feltet falt Finn Aksel»; gjennombruddsløpet skaffet lagets avgjørende straffespark. Dette gir et konkret, navngitt eksempel på løp bak forsvarslinjen (runs_behind), men én episode gir ikke grunnlag for pace, dribbling eller numerisk ferdighetsrating.",
+    "source": "https://www.godset.no/nyheter/50-ar-siden-i-dag-den-tredje-kongepokalen",
+    "sourceKind": "club"
+  },
+
+  // Strømsgodset 2026-10-19: originale spillerbeskrivelser bevart via Web Archive.
+  {
+    "playerId": "erik_eriksen",
+    "clubId": "stromsgodset",
+    "strengths": [
+      "bravery"
+    ],
+    "claim": "Strømsgodsets historiske spillerprofil om Erik J. Eriksen beskriver ham som «knallhard» venstreback, og presiserer at om «han fikk skuldra ut av ledd» ble skulderen satt på plass før «han spilte videre». Det er eksplisitt belegg for bravery gjennom oppofrende, uredd spill; senere temperament som trener tolkes ikke som en spillerferdighet. Arkivet bruker mellominitial J. om samme 1960-/70-tallsspiller som katalogen kaller Erik Eriksen.",
+    "source": "https://web.archive.org/web/20171004140200/http://www.godsetmedia.no/spillere/erik-j.-eriksen/id/5",
+    "sourceKind": "club"
+  },
+  {
+    "playerId": "svein_dahl_andersen",
+    "clubId": "stromsgodset",
+    "strengths": [
+      "pace"
+    ],
+    "claim": "Strømsgodsets arkiverte individuelle spillerprofil beskriver Svein Dahl Andersen som «en enormt frisk og rask venstre back». Ordet «rask» dokumenterer pace i Godset-perioden. «Frisk» brukes ikke til å utlede stamina eller natural_fitness, og dagens naturlige posisjonsregistrering blir stående uendret.",
+    "source": "https://web.archive.org/web/20170218063131/http://www.godsetmedia.no/spillere/svein-dahl-andersen/id/51",
+    "sourceKind": "club"
+  },
+
+  // Strømsgodset 2026-10-19: individuelt dokumenterte egenskaper fra klubbarkiv og spilleruttalelser.
+  {
+    "playerId": "bismark_adjei_boateng",
+    "clubId": "stromsgodset",
+    "strengths": [
+      "strength",
+      "stamina",
+      "vision"
+    ],
+    "claim": "Colorado Rapids' sportsdirektør Pádraig Smith beskrev Bismark «Nana» Adjei-Boateng etter Godset-perioden som «a powerful player with the drive and energy to be effective box to box» og med «great technique and vision». Dette belegger fysisk styrke, kapasitet til boks-til-boks-løp og spilleforståelse, men ingen rating. Kilden navngir Bismark og Nana som samme person; den separate legacy-ID-en nana_boateng beholdes uendret i påvente av sikker save-migrering.",
+    "source": "https://www.coloradorapids.com/news/rapids-acquire-ghanaian-midfielder-bismark-nana-adjei-boateng-manchester-city",
+    "sourceKind": "club"
+  },
+  {
+    "playerId": "halvor_storskogen",
+    "clubId": "stromsgodset",
+    "strengths": [
+      "finishing"
+    ],
+    "claim": "GodsetUnionens historiske portrett av Odd Johnsen omtaler samspillet med «en annen måltyv» og identifiserer denne eksplisitt i påfølgende sitat: «Samspillet med Halvor Storskogen var det beste som har skjedd SIF siden Steinar Pettersen og Thorodd Presberg herjet på 70-tallet». Omtalen av Storskogen som måltyv gir individuelt belegg for avslutninger/målteft, uten å tallfeste nivå fra målstatistikk.",
+    "source": "https://www.godsetunionen.com/odd-johnsen/",
+    "sourceKind": "football_editorial"
+  },
+  {
+    "playerId": "frode_johannessen",
+    "clubId": "stromsgodset",
+    "strengths": [
+      "strength"
+    ],
+    "claim": "Strømsgodsets egen historiske gjennomgang «De 10 store kampene» omtaler Frode Johannessen som «stopperkjempen Frode Johannessen» ved omtalen av opprykkslaget i 1987. Dette er en eksplisitt beskrivelse av kraftfull fysisk forsvarstilstedeværelse, ført avgrenset som fysisk styrke; den gir ikke belegg for konkrete taklinger, tempo eller pasningsferdigheter.",
+    "source": "https://www.godset.no/nyheter/de-10-store-kampene",
+    "sourceKind": "club"
+  },
+
+  // Strømsgodset 2026-10-19: klubbens uttrykkelige spillertypebeskrivelse.
+  {
+    "playerId": "kai_arild_lund",
+    "clubId": "stromsgodset",
+    "strengths": [
+      "finishing"
+    ],
+    "claim": "Strømsgodsets artikkel «Mål nummer 1600 på Marienlyst!» omtaler Kai Arild Lund som «vår notoriske goalgetter fra tidlig 80-tall». Den individualiserte spillertypebeskrivelsen underbygger målteft/avslutninger (finishing). De 50 registrerte hjemmemålene brukes som historisk kontekst, ikke som numerisk rating eller belegg for andre ferdigheter.",
+    "source": "https://www.godset.no/nyheter/mal-nummer-1600-pa-marienlyst",
+    "sourceKind": "club"
+  },
+
+  // Strømsgodset 2026-10-19: individuelt beskrevet spillerstil fra andre karriereperioder.
+  {
+    "playerId": "martin_wiig",
+    "clubId": "sarpsborg08",
+    "strengths": [
+      "runs_behind",
+      "finishing"
+    ],
+    "claim": "FFKsupporters 2010-gjennomgang av Sarpsborg 08 beskriver Martin Wiig som «den kloke bakromsspissen og avslutteren». Det dokumenterer eksplisitt bakromsløp og avslutninger fra hans Sarpsborg-periode, ikke automatisk hurtighet eller en tallrating. Påstanden gjelder spillerens kildebelagte Sarpsborg-tilknytning og legges bare på den eksisterende flerklubbprofilen; den utledede Godset-tilknytningen blir stående uavklart.",
+    "source": "https://ffksupporter.net/nyheter/1904-4-plass-sarpsborg-08/",
+    "sourceKind": "football_editorial"
+  },
+  {
+    "playerId": "vegard_hansen",
+    "clubId": "stromsgodset",
+    "strengths": [
+      "determination"
+    ],
+    "claim": "I Dagsavisens portrett fra 2015 siterer Vegard Hansen om tiden som Strømsgodset-spiller: «Jeg var kaptein i Strømsgodset og hadde noen ålreite sesonger på begynnelsen av 90-tallet» og «Men jeg ville mer enn de andre». Han sier også «Men mentalt er jeg sterk». Dette underbygger determination som personlig vinnervilje, ikke fysisk styrke, duellspill eller pasningsevne.",
+    "source": "https://www.dagsavisen.no/nyheter/fotballhue/8501073",
+    "sourceKind": "press"
+  },
+
+  // Strømsgodset 2026-10-18: fire individuelle presse- og spilleromtaler, også fra senere/tidligere klubber.
+  {
+    "playerId": "andre_hanssen",
+    "clubId": "stromsgodset",
+    "strengths": [
+      "stamina",
+      "duels"
+    ],
+    "claim": "Aftenpostens samtidige overgangsoversikt fra 2005 omtaler André Hanssen ved navn som «løpssterk og god i duellspillet». Dette dokumenterer utholdenhet og duellspill fra Heerenveen-perioden, før hans senere Strømsgodset-opphold; ingen styrker utledes fra posisjon eller antall kamper.",
+    "source": "https://www.aftenposten.no/sport/fotball/i/MR5nWo/brann-jakter-islandsk-spiss",
+    "sourceKind": "press"
+  },
+  {
+    "playerId": "fritjof_wilborn",
+    "clubId": "stromsgodset",
+    "strengths": [
+      "pace"
+    ],
+    "claim": "Dagbladets portrett av Fritjof (Frithjof) Wilborn forteller at Aftenposten kalte ham «hjemmelagets svar på Carl Lewis: Frithjof Wilborn» i Godset-perioden, og beskriver hans senere Brann-karriere med «Frithjof var så rask at han løp fra ballen». Begge beskriver eksplisitt løpshurtighet; den enkeltstående headingen i Brann-perioden føres ikke som en generell styrke.",
+    "source": "https://www.dagbladet.no/magasinet/fritt-wilt/66309468",
+    "sourceKind": "press"
+  },
+  {
+    "playerId": "kenneth_widemann_karlsen",
+    "clubId": "stromsgodset",
+    "strengths": [
+      "heading"
+    ],
+    "claim": "Dagbladets/NTBs kamprapport fra Strømsgodset–Viking i 1999 fremhever luftstyrken til midtstopper Kenneth Karlsen direkte: «Han var omtrent like god i lufta som Flo var på den andre siden av banen». Det gir en individuell hodespillpåstand fra Godset-perioden, ikke en generell defensiv posisjonsmal.",
+    "source": "https://www.dagbladet.no/sport/bare-flo-scorer-for-godset/65523432",
+    "sourceKind": "press"
+  },
+  {
+    "playerId": "kenneth_nysaether",
+    "clubId": "stromsgodset",
+    "strengths": [
+      "strength"
+    ],
+    "claim": "Tidligere lagkamerat Stian Davidsens personlige tilbakeblikk på Skjetten-spillere omtaler «Midtstopper: Kenneth Nysæther» og beskriver ham med «Masse rutine, sterk og trygg». Den eksplisitte «sterk»-beskrivelsen underbygger fysisk styrke fra hans senere Skjetten-periode; rollebytte og trygghet oversettes ikke til nye Godset-posisjoner eller udokumenterte ferdigheter.",
+    "source": "https://www.lokalfotballen.blog/2017/11/07/mitt-favorittlag-stian-davidsen-alt-handler-om-skjetten/",
+    "sourceKind": "football_editorial"
+  },
+
+  // Strømsgodset 2026-10-18: individuelt klubbminne med navngitte ferdigheter.
+  {
+    "playerId": "johnny_vidar_pedersen",
+    "clubId": "stromsgodset",
+    "strengths": [
+      "game_reading",
+      "long_shots",
+      "work_rate"
+    ],
+    "claim": "Strømsgodsets minneord om Johnny Vidar Pedersen fra 5. august 2020 beskriver ham som en spiller med «god forståelse, god teknikk og et godt skudd», og at han «jobbet hardt og alltid ga sitt ytterste for klubben». Klubben forteller dessuten konkret om semifinalemålet mot HamKam i 1969: «et stjernetreff fra 20 meter i vinkelen». Spilleforståelse, langskudd og arbeidsinnsats er dermed individuelt kildebelagt; generell teknikk oversettes ikke til et uspesifisert ferdighetstoken.",
+    "source": "https://www.godset.no/nyheter/johnny-vidar-pedersen-er-dod",
+    "sourceKind": "club"
+  },
+
   // Strømsgodset 2026-10-18: fem nye individuelle kildeprofiler etter PR #422.
   {
     "playerId": "havard_beckstrom",
