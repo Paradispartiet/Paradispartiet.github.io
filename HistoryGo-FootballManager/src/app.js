@@ -1,3 +1,4 @@
+import { migrateSavedPlayerIdentityStorage, normalizePlayablePlayerCatalog } from "./football-player-identity.js";
 import { FOOTBALL_POSITIONS } from "./football-fit-engine.js";
 import {
   buildSelectedSquadPlayerIds,
@@ -6471,6 +6472,8 @@ function leagueOpponentProfile(opponent) {
     displayName: opponent.name,
     strength: opponent.strength,
     homeAway: opponent.homeAway,
+    round: opponent.round,
+    matchId: opponent.matchId || opponent.fixtureId || null,
     ground: opponent.ground,
     tacticalIdentity: opponent.tacticalIdentity,
     archetypeName: clubProfile?.styleName || base.archetypeName || null,
@@ -6616,6 +6619,8 @@ function getMiniSeasonNextOpponent() {
         displayName: playoffOpponent.name,
         strength: playoffOpponent.strength,
         homeAway: playoffOpponent.homeAway,
+        round: playoffOpponent.round || null,
+        matchId: playoffOpponent.matchId || null,
         ground: playoffOpponent.ground,
         archetypeName: playoffProfile?.styleName || playoffBase.archetypeName || null,
         isClubProfile: Boolean(playoffProfile),
@@ -6645,6 +6650,8 @@ function getMiniSeasonNextOpponent() {
       // Klubbens egen styrke gjelder — profilen leverer stilen, ikke nivået.
       strength: opponent.strength,
       homeAway: opponent.homeAway,
+      round: opponent.round,
+      matchId: opponent.matchId || null,
       ground: opponent.ground,
       tacticalIdentity: opponent.tacticalIdentity,
       // Kampbriefen leser `archetypeName`; for en klubb er det spillestilen
@@ -17476,7 +17483,7 @@ async function loadStartupData() {
     loadJson(DATA_PATHS.scenarios).catch(() => null)
   ]);
 
-  state.players = playersData.players || [];
+  state.players = normalizePlayablePlayerCatalog(playersData.players || []);
   state.scenarios = normalizeScenarios(scenariosData);
   state.tournamentDefinitions = Array.isArray(tournamentsData?.tournaments) ? tournamentsData.tournaments : [];
   state.tournamentNations = Array.isArray(tournamentsData?.nations) ? tournamentsData.nations : [];
@@ -17775,6 +17782,8 @@ async function init() {
   const managerEngineReady = preloadManagerEngine();
 
   try {
+    // Repair historical IDs before any league save or mode session is hydrated.
+    migrateSavedPlayerIdentityStorage(localStorage);
     await loadStartupData();
     await hydratePersistedUiState();
     runStartupValidation();
