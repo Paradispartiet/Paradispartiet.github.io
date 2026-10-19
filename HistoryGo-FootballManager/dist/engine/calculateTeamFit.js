@@ -74,9 +74,65 @@ function buildAssignmentResults(lineup, formation, tactic, players, roles) {
 function isCompleteAssignment(assignment) {
     return assignment.isComplete && assignment.player !== null && assignment.role !== null && assignment.fit !== null;
 }
-// ---------------------------------------------------------------------------
-// Metrikk-kalkulatorer (port)
-// ---------------------------------------------------------------------------
+const SOURCED_TEAM_SKILLS = Object.freeze({
+    balanceScore: [
+        { roles: ["balancing_six", "holding_midfielder"], skills: ["positioning", "game_reading", "interceptions", "defensive_reading"] }
+    ],
+    widthScore: [
+        { roles: ["wide_dribbler", "inverted_winger"], skills: ["dribbling", "one_vs_one", "pace"] },
+        { roles: ["wingback", "overlapping_fullback"], skills: ["crossing", "overlapping_runs", "stamina"] }
+    ],
+    depthScore: [
+        { roles: ["channel_runner", "advanced_forward", "pressing_forward"], skills: ["runs_behind", "off_ball_runs", "pace", "acceleration"] }
+    ],
+    buildUpScore: [
+        { roles: ["deep_playmaker", "regista", "holding_midfielder"], skills: ["passing_range", "vision", "tempo_control", "simple_passing", "game_reading"] },
+        { roles: ["ball_playing_centre_back", "libero"], skills: ["passing_range", "composure", "simple_passing", "game_reading"] },
+        { roles: ["sweeperkeeper"], skills: ["distribution", "composure"] }
+    ],
+    pressScore: [
+        { roles: ["pressing_forward", "pressing_midfielder", "box_to_box"], skills: ["pressing", "work_rate", "stamina", "anticipation"] }
+    ],
+    restDefenseScore: [
+        { positions: ["CB"], tacticalTags: ["high_line"], skills: ["pace", "acceleration", "game_reading", "defensive_reading"] },
+        { roles: ["balancing_six", "holding_midfielder"], skills: ["positioning", "interceptions", "defensive_reading"] }
+    ]
+});
+function sourcedTeamSkillTendencies(assignments, tactic) {
+    const result = {};
+    for (const [metric, rules] of Object.entries(SOURCED_TEAM_SKILLS)) {
+        let points = 0;
+        const players = [];
+        for (const assignment of assignments) {
+            const { player, role, slot } = assignment;
+            const provenance = player?.attributes?.provenance;
+            const strengths = new Set(Array.isArray(player?.strengths) ? player.strengths : []);
+            if (!provenance || strengths.size === 0)
+                continue;
+            const match = new Set();
+            for (const rule of rules) {
+                if (rule.roles && !rule.roles.includes(role?.id))
+                    continue;
+                if (rule.positions && !rule.positions.includes(slot?.position))
+                    continue;
+                if (rule.tacticalTags && !rule.tacticalTags.some((tag) => (tactic?.tags || []).includes(tag)))
+                    continue;
+                rule.skills.forEach((skill) => {
+                    if (strengths.has(skill) && provenance[skill] === "belagt")
+                        match.add(skill);
+                });
+            }
+            if (match.size > 0) {
+                // Maks to relevante ferdigheter per spiller, totalt maks seks
+                // poeng i en lagdimensjon. Rolle-/formasjonsbalansen dominerer.
+                points += Math.min(2, match.size) * 2;
+                players.push(player.name || player.id);
+            }
+        }
+        result[metric] = { bonus: Math.min(6, points), players: [...new Set(players)] };
+    }
+    return result;
+}
 function calculateBalanceScore(assignments) {
     let score = 62;
     if (hasAnyRole(assignments, ["balancing_six", "holding_midfielder"])) {
@@ -192,7 +248,7 @@ function calculateRestDefenseScore(assignments, tactic) {
 // Rapport (port)
 // ---------------------------------------------------------------------------
 function buildTeamReport(input) {
-    const { assignmentResults, metrics, tactic, duplicatePlayers, relationships, formation, historicalFormationFit } = input;
+    const { assignmentResults, metrics, tactic, duplicatePlayers, relationships, formation, historicalFormationFit, sourcedSkillTendencies } = input;
     const tags = tactic.tags ?? [];
     const strengths = [];
     const issues = [];
@@ -242,6 +298,23 @@ function buildTeamReport(input) {
     if (relationships.partnershipContinuity.bonus > 0) {
         strengths.push(`Samspillskontinuitet: ${relationships.partnershipContinuity.establishedPairs} etablerte spillerpar gir +${relationships.partnershipContinuity.bonus} relasjonspoeng.`);
     }
+    // Kun kildebekreftet topp fra den virkelige elleveren, direkte i den
+    // eksisterende lagrapporten. Ingen nye UI- eller ratingsystemer.
+    const sourcedLabels = {
+        buildUpScore: "oppbyggingsspillet",
+        restDefenseScore: "restforsvaret",
+        pressScore: "pressarbeidet",
+        depthScore: "bakromstrusselen",
+        widthScore: "breddespillet",
+        balanceScore: "balansen"
+    };
+    Object.entries(sourcedSkillTendencies || {})
+        .filter(([, item]) => item.bonus > 0)
+        .sort((a, b) => b[1].bonus - a[1].bonus || a[0].localeCompare(b[0]))
+        .slice(0, 2)
+        .forEach(([metric, item]) => {
+        strengths.push(`Individuelle, kildebelagte styrker hos ${item.players.slice(0, 2).join(" og ")} støtter ${sourcedLabels[metric]}.`);
+    });
     duplicatePlayers.forEach((player) => {
         issues.push(`${player.name} er brukt flere steder i samme ellever. Hver spiller bør bare brukes én gang.`);
     });
@@ -292,17 +365,18 @@ export function calculateTeamFit(input) {
     const roleFits = completeAssignments.map((assignment) => assignment.fit.roleFit);
     const tacticFits = completeAssignments.map((assignment) => assignment.fit.tacticFit);
     const misusePenalties = completeAssignments.map((assignment) => assignment.fit.misusePenalty);
+    const sourcedSkillTendencies = sourcedTeamSkillTendencies(completeAssignments, tactic);
     const baseMetrics = {
         individualFitAverage: average(individualScores),
         roleFitAverage: average(roleFits),
         tacticFitAverage: average(tacticFits),
         misuseAverage: average(misusePenalties),
-        balanceScore: calculateBalanceScore(completeAssignments),
-        widthScore: calculateWidthScore(completeAssignments, tactic),
-        depthScore: calculateDepthScore(completeAssignments, tactic),
-        buildUpScore: calculateBuildUpScore(completeAssignments, tactic),
-        pressScore: calculatePressScore(completeAssignments, tactic),
-        restDefenseScore: calculateRestDefenseScore(completeAssignments, tactic),
+        balanceScore: clamp(calculateBalanceScore(completeAssignments) + (sourcedSkillTendencies.balanceScore?.bonus ?? 0)),
+        widthScore: clamp(calculateWidthScore(completeAssignments, tactic) + (sourcedSkillTendencies.widthScore?.bonus ?? 0)),
+        depthScore: clamp(calculateDepthScore(completeAssignments, tactic) + (sourcedSkillTendencies.depthScore?.bonus ?? 0)),
+        buildUpScore: clamp(calculateBuildUpScore(completeAssignments, tactic) + (sourcedSkillTendencies.buildUpScore?.bonus ?? 0)),
+        pressScore: clamp(calculatePressScore(completeAssignments, tactic) + (sourcedSkillTendencies.pressScore?.bonus ?? 0)),
+        restDefenseScore: clamp(calculateRestDefenseScore(completeAssignments, tactic) + (sourcedSkillTendencies.restDefenseScore?.bonus ?? 0)),
         relationshipScore: relationships.relationshipScore,
         duplicatePenalty: duplicatePlayers.length * 12,
     };
@@ -348,6 +422,7 @@ export function calculateTeamFit(input) {
         totalSlots: formation.slots.length,
         metrics,
         baseMetrics,
+        sourcedSkillTendencies,
         preBadgeMetrics,
         badgeEffects,
         relationships,
@@ -364,6 +439,7 @@ export function calculateTeamFit(input) {
             relationships,
             formation,
             historicalFormationFit,
+            sourcedSkillTendencies,
         }),
     };
 }
