@@ -3824,6 +3824,49 @@
               }
             },
             {
+              "place_id": "sentrum_scene",
+              "name": "Sentrum Scene",
+              "category": "musikk",
+              "source_file": "places/musikk/oslo/places_musikk/sentrum_scene.json",
+              "roles": [
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_sentrum_scene_popup_02",
+                  "year": 1206,
+                  "title": "Kinoen hadde 1206 plasser, inkludert balkongen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Sceneweb, Sentrum Scene: 1940–1988 kino, 1945 gjenåpning, konferansesenter 1992, konsertscene 2005",
+                      "url": "https://sceneweb.no/nb/venue/37610/Sentrum_Scene",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/sentrum_scene.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_sentrum_scene_popup_02",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
+              }
+            },
+            {
               "place_id": "tanum_kirke",
               "name": "Tanum kirke",
               "category": "religion",
@@ -4203,8 +4246,8 @@
               }
             }
           ],
-          "placeCount": 23,
-          "milestoneCount": 78
+          "placeCount": 24,
+          "milestoneCount": 79
         },
         "historie_tidlig_moderne_stat_handel_og_reformasjon": {
           "places": [
@@ -6251,6 +6294,10 @@
                 {
                   "id": "kultur_og_offentlighet",
                   "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
                 }
               ],
               "milestones": [
@@ -6316,6 +6363,82 @@
                   "evidence_type": "canonical_story",
                   "claim_id": "",
                   "story_id": "st_glads_molle_fra_filler_til_papir",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_glads_molle_desc_01",
+                  "year": 1736,
+                  "title": "Fredet papirmølle fra 1736 og Norges eldste bevarte fabrikkbygning i tre.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Glads mølle: oppført 1736; Norges eldste bevarte fabrikkbygning i tre",
+                      "url": "https://magasin.oslo.kommune.no/byplan/sagene-et-unikt-omrade",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/glads_molle.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_glads_molle_desc_01",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_glads_molle_popup_01",
+                  "year": 1736,
+                  "title": "Glads mølle i Sandakerveien 10A ble oppført i 1736 som Nedre Papirmølle av handelshuset Collett & Leuch og kjøpmann Iver Elieson.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Glads mølle: 1736 og byggherrer",
+                      "url": "https://oslobyleksikon.no/side/Glads_m%C3%B8lle",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/glads_molle.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_glads_molle_popup_01",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_glads_molle_popup_03",
+                  "year": 1748,
+                  "title": "Mølla ble drevet sammen med Bentse Brug fra 1748 til 1798.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Bentse Brug og Nedre Papirmølle: felles drift 1748–1798",
+                      "url": "https://oslobyleksikon.no/side/Bentse_Brug",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/glads_molle.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_glads_molle_popup_03",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_glads_molle_popup_04",
+                  "year": 1798,
+                  "title": "Fredrik Glad overtok i 1798, og bygningen fikk siden navn etter ham.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Fredrik Glad overtok mølla i 1798",
+                      "url": "https://oslobyleksikon.no/side/Glads_m%C3%B8lle",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/glads_molle.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_glads_molle_popup_04",
+                  "story_id": "",
                   "limitations": []
                 }
               ],
@@ -9461,7 +9584,7 @@
             }
           ],
           "placeCount": 51,
-          "milestoneCount": 145
+          "milestoneCount": 149
         },
         "historie_revolusjoner_industri_og_demokratisering": {
           "places": [
@@ -14035,6 +14158,25 @@
                   "claim_id": "",
                   "story_id": "st_glads_molle_papirmollen_som_ble_kraftstasjon",
                   "limitations": []
+                },
+                {
+                  "id": "production_claim_glads_molle_popup_06",
+                  "year": 1880,
+                  "title": "Fra 1880 inngikk Glads mølle i Hjula Væverier, som anla kraftstasjon i underetasjen og overførte energi til fabrikken på motsatt side av elva.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Fra 1880 kraftstasjon for Hjula Væverier",
+                      "url": "https://oslobyleksikon.no/side/Glads_m%C3%B8lle",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/glads_molle.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_glads_molle_popup_06",
+                  "story_id": "",
+                  "limitations": []
                 }
               ],
               "period_cases": [],
@@ -15242,6 +15384,49 @@
                     "type": "medieval"
                   }
                 ]
+              }
+            },
+            {
+              "place_id": "john_dee",
+              "name": "John Dee",
+              "category": "musikk",
+              "source_file": "places/musikk/oslo/places_musikk/john_dee.json",
+              "roles": [
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_john_dee_07",
+                  "year": 1861,
+                  "title": "Det opprinnelige offentlige badet på stedet ble oppført i 1861 og ble erstattet av et nytt badeanlegg på 1900-tallet.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon: Torggata bad, 1861, 1925–1932, okkupasjon og nedlegging 1980",
+                      "url": "https://oslobyleksikon.no/side/Torggata_bad",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/john_dee.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_john_dee_07",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
               }
             },
             {
@@ -19764,6 +19949,45 @@
               }
             },
             {
+              "place_id": "rockefeller",
+              "name": "Rockefeller Music Hall",
+              "category": "musikk",
+              "source_file": "places/musikk/oslo/places_musikk/rockefeller.json",
+              "roles": [
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_rockefeller_05",
+                  "year": 1861,
+                  "title": "Thorvald Meyer fikk den opprinnelige bade- og vaskeanstalten oppført i 1861.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon: Torggata bad, 1861, 1925–1932, okkupasjon og nedlegging 1980",
+                      "url": "https://oslobyleksikon.no/side/Torggata_bad",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/rockefeller.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_rockefeller_05",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
+              }
+            },
+            {
               "place_id": "rodelokka",
               "name": "Rodeløkka",
               "category": "by",
@@ -23579,6 +23803,10 @@
                   "label": "Arbeid og økonomi"
                 },
                 {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
                   "id": "makt_og_styring",
                   "label": "Makt og styring"
                 }
@@ -23667,6 +23895,25 @@
                   "limitations": []
                 },
                 {
+                  "id": "production_claim_vulkan_industriomrade_05",
+                  "year": 1873,
+                  "title": "Industribedriften Vulkan Jernstøberi og mekaniske Verksted ble grunnlagt i 1873 av Halvor Hoaas.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Vulkan Jernstøberi: eiere, industri, broer og nedleggelse",
+                      "url": "https://oslobyleksikon.no/side/Vulkan_Jernst%C3%B8beri_og_mekaniske_Verksted",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/vulkan_industriomrade.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_vulkan_industriomrade_05",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
                   "id": "chrono_vulkan_03",
                   "year": 1873,
                   "title": "Vulkan grunnlegges",
@@ -23687,6 +23934,44 @@
                   "source_file": "data/leksikon/places/oslo/natur/leksikon_oslo_natur_batch1.json",
                   "evidence_type": "leksikon_chronology",
                   "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_vulkan_industriomrade_02",
+                  "year": 1873,
+                  "title": "Vulkan Jernstøberi og mekaniske Verksted ble etablert av Halvor Hoaas i 1873 og utviklet senere en omfattende produksjon av jernvarer og brokonstruksjoner.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Vulkan Jernstøberi: eiere, industri, broer og nedleggelse",
+                      "url": "https://oslobyleksikon.no/side/Vulkan_Jernst%C3%B8beri_og_mekaniske_Verksted",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/vulkan_industriomrade.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_vulkan_industriomrade_02",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_vulkan_industriomrade_10",
+                  "year": 1874,
+                  "title": "Jernbaneingeniøren Ferdinand Ludvig Vibe ble medeier i 1874 og eneeier i 1876.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Vulkan Jernstøberi: eiere, industri, broer og nedleggelse",
+                      "url": "https://oslobyleksikon.no/side/Vulkan_Jernst%C3%B8beri_og_mekaniske_Verksted",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/vulkan_industriomrade.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_vulkan_industriomrade_10",
                   "story_id": "",
                   "limitations": []
                 },
@@ -23729,6 +24014,63 @@
                   "limitations": []
                 },
                 {
+                  "id": "production_claim_vulkan_industriomrade_07",
+                  "year": 1879,
+                  "title": "Bedriften utvidet senere arealet til tomten til sagbruket Bagaas Brug, som ble nedlagt i 1879.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Vulkan Jernstøberi: eiere, industri, broer og nedleggelse",
+                      "url": "https://oslobyleksikon.no/side/Vulkan_Jernst%C3%B8beri_og_mekaniske_Verksted",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/vulkan_industriomrade.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_vulkan_industriomrade_07",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_vulkan_industriomrade_12",
+                  "year": 1883,
+                  "title": "Vibe etablerte også et skipsverft i 1883, men dette gikk konkurs året etter og rammet Vulkan økonomisk.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Vulkan Jernstøberi: eiere, industri, broer og nedleggelse",
+                      "url": "https://oslobyleksikon.no/side/Vulkan_Jernst%C3%B8beri_og_mekaniske_Verksted",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/vulkan_industriomrade.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_vulkan_industriomrade_12",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_vulkan_industriomrade_13",
+                  "year": 1884,
+                  "title": "Ingeniøren Axel Ingvald Spone Amundsen kom inn som bestyrer og medeier etter konkursen i 1884.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Vulkan Jernstøberi: eiere, industri, broer og nedleggelse",
+                      "url": "https://oslobyleksikon.no/side/Vulkan_Jernst%C3%B8beri_og_mekaniske_Verksted",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/vulkan_industriomrade.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_vulkan_industriomrade_13",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
                   "id": "chrono_vulkan_06",
                   "year": 1884,
                   "title": "Konkurs og ny fase",
@@ -23749,6 +24091,25 @@
                   "source_file": "data/leksikon/places/oslo/natur/leksikon_oslo_natur_batch1.json",
                   "evidence_type": "leksikon_chronology",
                   "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_vulkan_industriomrade_16",
+                  "year": 1886,
+                  "title": "I 1886 leverte Vulkan broer til NSB og Statens Veivesen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Vulkan Jernstøberi: eiere, industri, broer og nedleggelse",
+                      "url": "https://oslobyleksikon.no/side/Vulkan_Jernst%C3%B8beri_og_mekaniske_Verksted",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/vulkan_industriomrade.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_vulkan_industriomrade_16",
                   "story_id": "",
                   "limitations": []
                 },
@@ -23792,6 +24153,25 @@
                   "source_file": "data/leksikon/places/oslo/natur/leksikon_oslo_natur_batch1.json",
                   "evidence_type": "leksikon_chronology",
                   "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_vulkan_industriomrade_29",
+                  "year": 1900,
+                  "title": "Hovedbygningene som er bevart fra Vulkan-bedriftens tid, ble oppført etter 1900 og må skilles fra bedriftens stiftelsesår i 1873.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Vulkanområdets historiske tomte- og ombrukshistorie",
+                      "url": "https://vulkanoslo.no/om-vulkan/",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/vulkan_industriomrade.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_vulkan_industriomrade_29",
                   "story_id": "",
                   "limitations": []
                 }
@@ -25404,8 +25784,8 @@
               }
             }
           ],
-          "placeCount": 127,
-          "milestoneCount": 515
+          "placeCount": 129,
+          "milestoneCount": 526
         },
         "historie_nasjon_massepolitikk_og_moderne_institusjoner": {
           "places": [
@@ -26527,6 +26907,72 @@
                     "type": "turning_point"
                   }
                 ]
+              }
+            },
+            {
+              "place_id": "blaa",
+              "name": "Blå",
+              "category": "musikk",
+              "source_file": "places/musikk/oslo/places_musikk/blaa.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_blaa_06",
+                  "year": 1913,
+                  "title": "Lokalet ligger i en fabrikkbygning oppført for Nordisk Tekstil A/S i 1913, tegnet av arkitekt Petter Thane.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon: bygg, etablering, arrangører og musikkhistorie",
+                      "url": "https://oslobyleksikon.no/side/Bl%C3%A5",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/blaa.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_blaa_06",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_blaa_02",
+                  "year": 1913,
+                  "title": "Martin Revheim og Kjell Einar Karlsen tok initiativet, og lokalet ligger i en tidligere tekstilfabrikkbygning fra 1913.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon: bygg, etablering, arrangører og musikkhistorie",
+                      "url": "https://oslobyleksikon.no/side/Bl%C3%A5",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/blaa.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_blaa_02",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
               }
             },
             {
@@ -32083,6 +32529,49 @@
               }
             },
             {
+              "place_id": "rockefeller",
+              "name": "Rockefeller Music Hall",
+              "category": "musikk",
+              "source_file": "places/musikk/oslo/places_musikk/rockefeller.json",
+              "roles": [
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_rockefeller_07",
+                  "year": 1925,
+                  "title": "Den gamle badeanstalten ble revet, og en ny bygning i nyklassisistisk stil åpnet etappevis fra 1925 til 1932.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon: Torggata bad, 1861, 1925–1932, okkupasjon og nedlegging 1980",
+                      "url": "https://oslobyleksikon.no/side/Torggata_bad",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/rockefeller.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_rockefeller_07",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
+              }
+            },
+            {
               "place_id": "radhusplassen",
               "name": "Rådhusplassen",
               "category": "by",
@@ -34828,6 +35317,25 @@
                   "claim_id": "",
                   "story_id": "",
                   "limitations": []
+                },
+                {
+                  "id": "production_claim_vulkan_industriomrade_18",
+                  "year": 1908,
+                  "title": "Gamle Broverksted ble oppført i 1908 og fikk en utvidelse i 1936.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Gamle Broverksted og rehabiliteringen til Mathallen i 2012",
+                      "url": "https://www.lpo.no/prosjekter/mathallen",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/vulkan_industriomrade.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_vulkan_industriomrade_18",
+                  "story_id": "",
+                  "limitations": []
                 }
               ],
               "period_cases": [],
@@ -35204,8 +35712,8 @@
               }
             }
           ],
-          "placeCount": 111,
-          "milestoneCount": 282
+          "placeCount": 113,
+          "milestoneCount": 286
         },
         "historie_krig_okkupasjon_og_etterkrigsoppgjor": {
           "places": [
@@ -38745,6 +39253,53 @@
               }
             },
             {
+              "place_id": "rockefeller",
+              "name": "Rockefeller Music Hall",
+              "category": "musikk",
+              "source_file": "places/musikk/oslo/places_musikk/rockefeller.json",
+              "roles": [
+                {
+                  "id": "konflikt_og_motstand",
+                  "label": "Konflikt og motstand"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_rockefeller_08",
+                  "year": 1941,
+                  "title": "Under okkupasjonen var badet beslaglagt av tyske myndigheter fra september 1941 til frigjøringen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon: Torggata bad, 1861, 1925–1932, okkupasjon og nedlegging 1980",
+                      "url": "https://oslobyleksikon.no/side/Torggata_bad",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/rockefeller.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_rockefeller_08",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
+              }
+            },
+            {
               "place_id": "ruth_maier_minne",
               "name": "Ruth Maier-minnesmerke",
               "category": "litteratur",
@@ -38806,6 +39361,87 @@
                     "type": "wartime"
                   }
                 ]
+              }
+            },
+            {
+              "place_id": "sentrum_scene",
+              "name": "Sentrum Scene",
+              "category": "musikk",
+              "source_file": "places/musikk/oslo/places_musikk/sentrum_scene.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_sentrum_scene_popup_03",
+                  "year": 1940,
+                  "title": "Filmen Ninotschka med Greta Garbo var planlagt ved åpningen i 1940.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Sceneweb, Sentrum Scene: 1940–1988 kino, 1945 gjenåpning, konferansesenter 1992, konsertscene 2005",
+                      "url": "https://sceneweb.no/nb/venue/37610/Sentrum_Scene",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/sentrum_scene.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_sentrum_scene_popup_03",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_sentrum_scene_desc_01",
+                  "year": 1940,
+                  "title": "Sentrum Scene på Arbeidersamfunnets plass 1 er en konsertscene i lokalene til den tidligere Sentrum kino fra 1940.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Sceneweb, Sentrum Scene: 1940–1988 kino, 1945 gjenåpning, konferansesenter 1992, konsertscene 2005",
+                      "url": "https://sceneweb.no/nb/venue/37610/Sentrum_Scene",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/sentrum_scene.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_sentrum_scene_desc_01",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_sentrum_scene_popup_05",
+                  "year": 1945,
+                  "title": "Kinodriften kom i gang igjen 26. desember 1945.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Sceneweb, Sentrum Scene: 1940–1988 kino, 1945 gjenåpning, konferansesenter 1992, konsertscene 2005",
+                      "url": "https://sceneweb.no/nb/venue/37610/Sentrum_Scene",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/sentrum_scene.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_sentrum_scene_popup_05",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
               }
             },
             {
@@ -40024,8 +40660,8 @@
               }
             }
           ],
-          "placeCount": 54,
-          "milestoneCount": 131
+          "placeCount": 56,
+          "milestoneCount": 135
         },
         "historie_velferdsstat_kald_krig_og_sosialdemokrati": {
           "places": [
@@ -47414,6 +48050,44 @@
                   "limitations": []
                 },
                 {
+                  "id": "production_claim_vaterland_historisk_elvelop_popup_08",
+                  "year": 1959,
+                  "title": "Saneringen av Vaterland begynte i 1959, og store deler av den eldre bebyggelsen forsvant.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Saneringen av Vaterland begynte 1959",
+                      "url": "https://oslobyleksikon.no/side/Vaterland",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/vaterland_historisk_elvelop.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_vaterland_historisk_elvelop_popup_08",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_vaterland_historisk_elvelop_popup_09",
+                  "year": 1964,
+                  "title": "Akerselvas nedre løp, fra Vaterlands bru til Bjørvika, ble lagt i tunnel i årene 1964–1969.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Akerselva fra Vaterlands bru til Bjørvika i tunnel 1964–1969",
+                      "url": "https://snl.no/Akerselva",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/vaterland_historisk_elvelop.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_vaterland_historisk_elvelop_popup_09",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
                   "id": "story_st_vaterland_da_elva_forsvant_under_byen",
                   "year": 1964,
                   "title": "Da elva forsvant under byen",
@@ -47468,6 +48142,25 @@
                   "source_file": "data/leksikon/places/oslo/historie/leksikon_oslo_historie_batch2.json",
                   "evidence_type": "leksikon_chronology",
                   "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_vaterland_historisk_elvelop_desc_01",
+                  "year": 1964,
+                  "title": "Historisk åpent elveløp fra Vaterlands bru mot Bjørvika, lagt i tunnel i årene 1964–1969.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Nedre Akerselva ble lagt i tunnel 1964–1969",
+                      "url": "https://snl.no/Akerselva",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/vaterland_historisk_elvelop.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_vaterland_historisk_elvelop_desc_01",
                   "story_id": "",
                   "limitations": []
                 },
@@ -47556,9 +48249,32 @@
                 {
                   "id": "arbeid_og_okonomi",
                   "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
                 }
               ],
               "milestones": [
+                {
+                  "id": "production_claim_vulkan_industriomrade_03",
+                  "year": 1968,
+                  "title": "Etter at jernstøperiet ble nedlagt i 1968, er deler av industribebyggelsen gjenbrukt til blant annet Mathallen, kulturbygg, undervisning og nye byrom.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Vulkans industrihistorie, gjenbruk og nye byfunksjoner",
+                      "url": "https://snl.no/Vulkan_Jernst%C3%B8beri_og_mekaniske_Verksted",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/vulkan_industriomrade.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_vulkan_industriomrade_03",
+                  "story_id": "",
+                  "limitations": []
+                },
                 {
                   "id": "chrono_vulkan_11",
                   "year": 1968,
@@ -47580,6 +48296,25 @@
                   "source_file": "data/leksikon/places/oslo/natur/leksikon_oslo_natur_batch1.json",
                   "evidence_type": "leksikon_chronology",
                   "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_vulkan_industriomrade_20",
+                  "year": 1968,
+                  "title": "Jernstøperiet ble nedlagt i 1968, og den gjenværende industrivirksomheten ble flyttet til Furuset.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Vulkan Jernstøberi: eiere, industri, broer og nedleggelse",
+                      "url": "https://oslobyleksikon.no/side/Vulkan_Jernst%C3%B8beri_og_mekaniske_Verksted",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/vulkan_industriomrade.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_vulkan_industriomrade_20",
                   "story_id": "",
                   "limitations": []
                 }
@@ -48092,7 +48827,7 @@
             }
           ],
           "placeCount": 89,
-          "milestoneCount": 228
+          "milestoneCount": 233
         },
         "historie_senmoderne_globalisering_og_markedsvending": {
           "places": [
@@ -49987,6 +50722,205 @@
                     "type": "music"
                   }
                 ]
+              }
+            },
+            {
+              "place_id": "blaa",
+              "name": "Blå",
+              "category": "musikk",
+              "source_file": "places/musikk/oslo/places_musikk/blaa.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_blaa_07",
+                  "year": 1982,
+                  "title": "Bygningen ble renovert i 1982, flere år før musikklubben ble etablert.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon: bygg, etablering, arrangører og musikkhistorie",
+                      "url": "https://oslobyleksikon.no/side/Bl%C3%A5",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/blaa.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_blaa_07",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_blaa_11",
+                  "year": 1996,
+                  "title": "Da Oslo Jazzhus mistet sin posisjon i 1996, begynte Revheim og Karlsen arbeidet med et nytt spillested for moderne musikk.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Dagbladet 4. mai 2000: oppstart, åpning og konsertvirksomhet",
+                      "url": "https://www.dagbladet.no/kultur/det-bla-eventyret-ved-akerselva/65599295",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/blaa.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_blaa_11",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_blaa_01",
+                  "year": 1998,
+                  "title": "Blå i Brenneriveien 9C åpnet 28. februar 1998 som jazzklubb og konsertscene ved Akerselva.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon: bygg, etablering, arrangører og musikkhistorie",
+                      "url": "https://oslobyleksikon.no/side/Bl%C3%A5",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/blaa.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_blaa_01",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_blaa_27",
+                  "year": 1998,
+                  "title": "Blås programhistorie kan følges som en utvikling fra jazzinitiativet i 1998 til et bredere konsert- og klubbmiljø i Brenneriveien.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon: bygg, etablering, arrangører og musikkhistorie",
+                      "url": "https://oslobyleksikon.no/side/Bl%C3%A5",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/blaa.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_blaa_27",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_blaa_05",
+                  "year": 1998,
+                  "title": "Konsertstedet åpnet 28. februar 1998 på initiativ fra Martin Revheim og Kjell Einar Karlsen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon: bygg, etablering, arrangører og musikkhistorie",
+                      "url": "https://oslobyleksikon.no/side/Bl%C3%A5",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/blaa.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_blaa_05",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_blaa_14",
+                  "year": 1999,
+                  "title": "I 1999 ble det registrert 267 arrangementer ved Blå i den samme gjennomgangen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Dagbladet 4. mai 2000: oppstart, åpning og konsertvirksomhet",
+                      "url": "https://www.dagbladet.no/kultur/det-bla-eventyret-ved-akerselva/65599295",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/blaa.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_blaa_14",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_blaa_15",
+                  "year": 2000,
+                  "title": "Da Dagbladet besøkte klubben i 2000, beskrev avisen rundt 35 medarbeidere og en årlig omsetning på om lag sju millioner kroner.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Dagbladet 4. mai 2000: oppstart, åpning og konsertvirksomhet",
+                      "url": "https://www.dagbladet.no/kultur/det-bla-eventyret-ved-akerselva/65599295",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/blaa.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_blaa_15",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_blaa_24",
+                  "year": 2002,
+                  "title": "Blant registrerte arrangementer er musikk- og scenearbeid i 2002, 2003 og 2004.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Scenewebs katalog over spillested, stiftere og forestillinger",
+                      "url": "https://sceneweb.no/nb/venue/12977/Bl%C3%A5",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/blaa.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_blaa_24",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_blaa_18",
+                  "year": 2005,
+                  "title": "Samarbeidet mellom organisasjonene opphørte ved årsskiftet 2005–2006 etter uenighet om driften.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Dagsavisen 28. oktober 2006: opprinnelig driftsdeling og endring",
+                      "url": "https://www.dagsavisen.no/kultur/bla/4804252",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/blaa.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_blaa_18",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
               }
             },
             {
@@ -52671,6 +53605,106 @@
                   "source_file": "data/leksikon/places/oslo/by/leksikon_helsfyr.json",
                   "evidence_type": "leksikon_chronology",
                   "claim_id": "",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
+              }
+            },
+            {
+              "place_id": "john_dee",
+              "name": "John Dee",
+              "category": "musikk",
+              "source_file": "places/musikk/oslo/places_musikk/john_dee.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_john_dee_08",
+                  "year": 1980,
+                  "title": "Badet ble nedlagt i 1980, før den tidligere bassenghallen fikk ny bruk som konsertlokale.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon: Rockefeller fra 1986, tidligere basseng og konserttradisjoner",
+                      "url": "https://oslobyleksikon.no/side/Rockefeller",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/john_dee.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_john_dee_08",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_john_dee_05",
+                  "year": 1997,
+                  "title": "En samarbeidspartner innen arrangement og servering daterer åpningen mer presist til oktober 1997.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Flyt Catering: samarbeidspartner; oktober 1997 og lokalene i Rockefeller-komplekset",
+                      "url": "https://flytcatering.no/selskapslokaler/rockefeller-john-dee",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/john_dee.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_john_dee_05",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_john_dee_01",
+                  "year": 1997,
+                  "title": "John Dee ble etablert i 1997 som en mindre konsert- og klubbscene i kjelleren under Rockefeller i Oslo.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Arrangørens booking/utleieside: 1997, kjeller, 500 stående, 200 sittende og Mariboes gate",
+                      "url": "https://www.rockefeller.no/booking-utleie-johndee",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/john_dee.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_john_dee_01",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_john_dee_04",
+                  "year": 1997,
+                  "title": "John Dee åpnet som klubb- og konsertscene i 1997, elleve år etter Rockefeller Music Hall.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Arrangørens booking/utleieside: 1997, kjeller, 500 stående, 200 sittende og Mariboes gate",
+                      "url": "https://www.rockefeller.no/booking-utleie-johndee",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/john_dee.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_john_dee_04",
                   "story_id": "",
                   "limitations": []
                 }
@@ -56128,6 +57162,182 @@
               }
             },
             {
+              "place_id": "rockefeller",
+              "name": "Rockefeller Music Hall",
+              "category": "musikk",
+              "source_file": "places/musikk/oslo/places_musikk/rockefeller.json",
+              "roles": [
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_rockefeller_02",
+                  "year": 1980,
+                  "title": "Det kommunale badet ble nedlagt i 1980, og konsertstedet fikk publikumsinngang fra Mariboes gate 5B.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon: Rockefeller fra 1986, tidligere basseng og konserttradisjoner",
+                      "url": "https://oslobyleksikon.no/side/Rockefeller",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/rockefeller.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_rockefeller_02",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_rockefeller_09",
+                  "year": 1980,
+                  "title": "Det kommunale badet ble nedlagt i 1980.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon: Torggata bad, 1861, 1925–1932, okkupasjon og nedlegging 1980",
+                      "url": "https://oslobyleksikon.no/side/Torggata_bad",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/rockefeller.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_rockefeller_09",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_rockefeller_11",
+                  "year": 1983,
+                  "title": "Bygningskomplekset ble ombygd i perioden 1983–1988, og konsertarenaen fikk en ny inngang fra Mariboes gate.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon: Torggata bad, 1861, 1925–1932, okkupasjon og nedlegging 1980",
+                      "url": "https://oslobyleksikon.no/side/Torggata_bad",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/rockefeller.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_rockefeller_11",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_rockefeller_10",
+                  "year": 1986,
+                  "title": "Rockefeller Music Hall åpnet i 1986 i det gamle bassengrommet i Torggata bad.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon: Rockefeller fra 1986, tidligere basseng og konserttradisjoner",
+                      "url": "https://oslobyleksikon.no/side/Rockefeller",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/rockefeller.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_rockefeller_10",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_rockefeller_01",
+                  "year": 1986,
+                  "title": "Rockefeller Music Hall åpnet i 1986 i det tidligere svømmebassenget i Torggata bad, Torggata 16 i Oslo.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon: Rockefeller fra 1986, tidligere basseng og konserttradisjoner",
+                      "url": "https://oslobyleksikon.no/side/Rockefeller",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/rockefeller.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_rockefeller_01",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_rockefeller_20",
+                  "year": 1992,
+                  "title": "Byleksikonet trekker fram Young Neils sine gjentatte julekonserter med Neil Young-låter fra 1992.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon: Rockefeller fra 1986, tidligere basseng og konserttradisjoner",
+                      "url": "https://oslobyleksikon.no/side/Rockefeller",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/rockefeller.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_rockefeller_20",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_rockefeller_21",
+                  "year": 1995,
+                  "title": "Det omtaler også Penthouse Playboys sine juleshow med gjesteartister fra 1995.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Oslo byleksikon: Rockefeller fra 1986, tidligere basseng og konserttradisjoner",
+                      "url": "https://oslobyleksikon.no/side/Rockefeller",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/rockefeller.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_rockefeller_21",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_rockefeller_15",
+                  "year": 1997,
+                  "title": "I 1997 ble konsertmiljøet utvidet med den mindre scenen John Dee i kjelleren under Rockefeller.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Auditorium AS: Om oss; etableringsår, driftsmiljø, publikumskapasitet og publikumsinnganger",
+                      "url": "https://www.rockefeller.no/om-oss",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/rockefeller.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_rockefeller_15",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
+              }
+            },
+            {
               "place_id": "rodelokka",
               "name": "Rodeløkka",
               "category": "by",
@@ -56844,6 +58054,140 @@
                     "type": "turning_point"
                   }
                 ]
+              }
+            },
+            {
+              "place_id": "sentrum_scene",
+              "name": "Sentrum Scene",
+              "category": "musikk",
+              "source_file": "places/musikk/oslo/places_musikk/sentrum_scene.json",
+              "roles": [
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_sentrum_scene_popup_06",
+                  "year": 1988,
+                  "title": "Sentrum kino fortsatte fram til 1988.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Sceneweb, Sentrum Scene: 1940–1988 kino, 1945 gjenåpning, konferansesenter 1992, konsertscene 2005",
+                      "url": "https://sceneweb.no/nb/venue/37610/Sentrum_Scene",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/sentrum_scene.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_sentrum_scene_popup_06",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_sentrum_scene_popup_07",
+                  "year": 1992,
+                  "title": "Høsten 1992 åpnet lokalene igjen som konferansesenter.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Sceneweb, Sentrum Scene: 1940–1988 kino, 1945 gjenåpning, konferansesenter 1992, konsertscene 2005",
+                      "url": "https://sceneweb.no/nb/venue/37610/Sentrum_Scene",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/sentrum_scene.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_sentrum_scene_popup_07",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_sentrum_scene_desc_02",
+                  "year": 1992,
+                  "title": "Salen ble konferansesenter i 1992 og konsertscene i 2005, før Auditorium AS overtok driften i 2006.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Sceneweb, Sentrum Scene: 1940–1988 kino, 1945 gjenåpning, konferansesenter 1992, konsertscene 2005 / Rockefeller Booking / Utleie Sentrum Scene: kapasitet, funksjonalistisk uttrykk og Auditorium-overtakelse 2006",
+                      "url": "https://sceneweb.no/nb/venue/37610/Sentrum_Scene",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/sentrum_scene.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_sentrum_scene_desc_02",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_sentrum_scene_popup_11",
+                  "year": 1992,
+                  "title": "Året 1992 beskriver konferansebruken, ikke starten på konsertscenen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Sceneweb: gjenåpning til konferansesenter 1992; konsertscene 2005",
+                      "url": "https://sceneweb.no/nb/venue/37610/Sentrum_Scene",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/sentrum_scene.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_sentrum_scene_popup_11",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_sentrum_scene_popup_08",
+                  "year": 2005,
+                  "title": "Sceneweb daterer overgangen til konsertscene til 2005.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Sceneweb, Sentrum Scene: 1940–1988 kino, 1945 gjenåpning, konferansesenter 1992, konsertscene 2005",
+                      "url": "https://sceneweb.no/nb/venue/37610/Sentrum_Scene",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/sentrum_scene.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_sentrum_scene_popup_08",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_sentrum_scene_popup_09",
+                  "year": 2006,
+                  "title": "Auditorium AS overtok Sentrum Scene i 2006.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Rockefeller Booking / Utleie Sentrum Scene: kapasitet, funksjonalistisk uttrykk og Auditorium-overtakelse 2006",
+                      "url": "https://www.rockefeller.no/booking-utleie-sentrumscene",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/sentrum_scene.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_sentrum_scene_popup_09",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
               }
             },
             {
@@ -58223,6 +59567,89 @@
               }
             },
             {
+              "place_id": "vaterland_historisk_elvelop",
+              "name": "Vaterland – historisk elveløp",
+              "category": "historie",
+              "source_file": "places/natur/oslo/places_oslo_natur_akerselvarute/vaterland_historisk_elvelop.json",
+              "roles": [
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_vaterland_historisk_elvelop_popup_07",
+                  "year": 1989,
+                  "title": "Elvegata og Elvegangene ble bortregulert i 1989.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Elvegata og Elvegangene bortregulert 1989",
+                      "url": "https://oslobyleksikon.no/side/Elvegata",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/vaterland_historisk_elvelop.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_vaterland_historisk_elvelop_popup_07",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [
+                  {
+                    "id": "vaterlands_bru_1654",
+                    "title": "Vaterlands bru",
+                    "type": "bro og innfartsåre"
+                  },
+                  {
+                    "id": "vaterlandselva_apent_lop",
+                    "title": "Vaterlandselva",
+                    "type": "historisk elverom"
+                  },
+                  {
+                    "id": "elvegata_og_elvegangene",
+                    "title": "Elvegata og Elvegangene",
+                    "type": "historisk gatenett"
+                  },
+                  {
+                    "id": "peter_andreas_blix_elvegata_1895",
+                    "title": "Gårdsplass i Elvegata",
+                    "type": "maleri"
+                  },
+                  {
+                    "id": "ruth_raabe_elvegata_1931",
+                    "title": "Elvegata fra Lilletorget",
+                    "type": "fotografi"
+                  },
+                  {
+                    "id": "akerselva_tunnel_1964_1969",
+                    "title": "Akerselva i tunnel",
+                    "type": "vanninfrastruktur"
+                  }
+                ],
+                "stories": [
+                  {
+                    "id": "st_vaterland_elvegata_ved_vannet",
+                    "title": "Gaten som fulgte elva",
+                    "year": 1895,
+                    "type": "lost_riverfront_and_everyday_city"
+                  },
+                  {
+                    "id": "st_vaterland_da_elva_forsvant_under_byen",
+                    "title": "Da elva forsvant under byen",
+                    "year": 1964,
+                    "type": "river_culvert_and_urban_transformation"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "vaterlandsparken",
               "name": "Vaterlandsparken",
               "category": "by",
@@ -59357,8 +60784,8 @@
               }
             }
           ],
-          "placeCount": 131,
-          "milestoneCount": 326
+          "placeCount": 136,
+          "milestoneCount": 354
         },
         "historie_digital_samtid_kriser_og_ny_offentlighet": {
           "places": [
@@ -66047,6 +67474,163 @@
               }
             },
             {
+              "place_id": "salt",
+              "name": "SALT",
+              "category": "musikk",
+              "source_file": "places/musikk/oslo/places_musikk/salt.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                },
+                {
+                  "id": "kultur_og_offentlighet",
+                  "label": "Kultur og offentlighet"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_salt_02",
+                  "year": 2016,
+                  "title": "I 2016 flyttet prosjektet til Oslo og utviklet en kulturarena med inspirasjon fra kystens tradisjonelle fiskehjeller.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "SALT, egen historikk: Sandhornøy 2014, Oslo 2016, kunstnerpris 2021 og Árdna 2024",
+                      "url": "https://www.salted.no/",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/salt.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_salt_02",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_salt_09",
+                  "year": 2016,
+                  "title": "SALT flyttet til Oslo i 2016.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "SALT, egen historikk: Sandhornøy 2014, Oslo 2016, kunstnerpris 2021 og Árdna 2024",
+                      "url": "https://www.salted.no/",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/salt.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_salt_09",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_salt_16",
+                  "year": 2017,
+                  "title": "Etter flyttingen presenterte SALT lydverk knyttet til arktiske natur- og kulturforestillinger fra februar til desember 2017.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "SALT, Kunstprosjekter: Sandhornøy-installasjoner og senere lyd- og kunstprogram",
+                      "url": "https://www.salted.no/art",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/salt.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_salt_16",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_salt_17",
+                  "year": 2018,
+                  "title": "SALT viste også utvalgte arbeider fra kunstprosjektet Dark Ecology i perioden 2018–2019.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "SALT, Kunstprosjekter: Sandhornøy-installasjoner og senere lyd- og kunstprogram",
+                      "url": "https://www.salted.no/art",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/salt.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_salt_17",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_salt_19",
+                  "year": 2021,
+                  "title": "I 2021 mottok SALT Oslo bys kunstnerpris.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "SALT, Om SALT: fiskehjell, flyttbare strukturer, tverrkunstnerisk virksomhet og kulturpris",
+                      "url": "https://www.salted.no/about/",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/salt.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_salt_19",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_salt_03",
+                  "year": 2021,
+                  "title": "SALT bruker flyttbare konstruksjoner til kunst, konserter, debatt og badstukultur, og fikk Oslo bys kunstnerpris i 2021.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "SALT, Om SALT: fiskehjell, flyttbare strukturer, tverrkunstnerisk virksomhet og kulturpris",
+                      "url": "https://www.salted.no/about/",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/salt.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_salt_03",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_salt_21",
+                  "year": 2024,
+                  "title": "SALT oppgir at badstuen Árdna fikk en internasjonal utmerkelse som kulturbadstue i 2024.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "SALT, egen historikk: Sandhornøy 2014, Oslo 2016, kunstnerpris 2021 og Árdna 2024",
+                      "url": "https://www.salted.no/",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/salt.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_salt_21",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
+              }
+            },
+            {
               "place_id": "skulptursonen_ovre_slottsgate",
               "name": "Skulptursonen i Øvre Slottsgate",
               "category": "kunst",
@@ -68023,6 +69607,25 @@
                   "claim_id": "",
                   "story_id": "",
                   "limitations": []
+                },
+                {
+                  "id": "production_claim_vulkan_industriomrade_25",
+                  "year": 2012,
+                  "title": "Mathallen åpnet i bygningen 2. oktober 2012.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Gamle Broverksted og rehabiliteringen til Mathallen i 2012",
+                      "url": "https://www.lpo.no/prosjekter/mathallen",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/vulkan_industriomrade.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_vulkan_industriomrade_25",
+                  "story_id": "",
+                  "limitations": []
                 }
               ],
               "period_cases": [],
@@ -68270,8 +69873,8 @@
               }
             }
           ],
-          "placeCount": 105,
-          "milestoneCount": 246
+          "placeCount": 106,
+          "milestoneCount": 254
         }
       },
       "parallel_tracks": {
@@ -70153,6 +71756,109 @@
                 "person_ids": [],
                 "works": [],
                 "stories": []
+              }
+            },
+            {
+              "place_id": "glads_molle",
+              "name": "Glads mølle",
+              "category": "historie",
+              "source_file": "places/natur/oslo/places_oslo_natur_akerselvarute/glads_molle.json",
+              "roles": [
+                {
+                  "id": "arbeid_og_okonomi",
+                  "label": "Arbeid og økonomi"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_glads_molle_popup_01",
+                  "year": 1736,
+                  "title": "Glads mølle i Sandakerveien 10A ble oppført i 1736 som Nedre Papirmølle av handelshuset Collett & Leuch og kjøpmann Iver Elieson.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Glads mølle: 1736 og byggherrer",
+                      "url": "https://oslobyleksikon.no/side/Glads_m%C3%B8lle",
+                      "verifiedAt": "2026-10-20"
+                    }
+                  ],
+                  "source_file": "data/places/production/glads_molle.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_glads_molle_popup_01",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [
+                  {
+                    "id": "glads_molle_nedre_papirmolle_1736",
+                    "title": "Nedre Papirmølle",
+                    "type": "industribygning"
+                  },
+                  {
+                    "id": "glads_molle_handlaget_papir",
+                    "title": "Håndlaget papir av tekstilfiller",
+                    "type": "produksjon"
+                  },
+                  {
+                    "id": "glads_molle_bentse_brug_samdrift",
+                    "title": "Samdriften med Bentse Brug",
+                    "type": "driftsorganisering"
+                  },
+                  {
+                    "id": "glads_molle_fredrik_glad_1798",
+                    "title": "Fredrik Glads overtakelse",
+                    "type": "eierskifte"
+                  },
+                  {
+                    "id": "glads_molle_papirdrift_opphor",
+                    "title": "Slutten på papirmølledriften",
+                    "type": "produksjonsskifte"
+                  },
+                  {
+                    "id": "glads_molle_hjula_kraftstasjon_1880",
+                    "title": "Hjula Væveriers kraftstasjon",
+                    "type": "kraftanlegg"
+                  },
+                  {
+                    "id": "glads_molle_grammofonplater",
+                    "title": "Grammofonplateproduksjon",
+                    "type": "industriproduksjon"
+                  },
+                  {
+                    "id": "glads_molle_stenersen_trykkeri_1958",
+                    "title": "F. J. Stenersens trykkeri",
+                    "type": "trykkerivirksomhet"
+                  },
+                  {
+                    "id": "glads_molle_fredning_1967",
+                    "title": "Fredningen av Glads mølle",
+                    "type": "kulturminnevedtak"
+                  },
+                  {
+                    "id": "glads_molle_restaurering_1992",
+                    "title": "Restaureringen",
+                    "type": "bygningsvern"
+                  }
+                ],
+                "stories": [
+                  {
+                    "id": "st_glads_molle_fra_filler_til_papir",
+                    "title": "Fra filler til papir",
+                    "year": 1736,
+                    "type": "industrial_history"
+                  },
+                  {
+                    "id": "st_glads_molle_papirmollen_som_ble_kraftstasjon",
+                    "title": "Fabrikken som overlevde ved å skifte jobb",
+                    "year": 1880,
+                    "type": "turning_point"
+                  }
+                ]
               }
             },
             {
@@ -75708,8 +77414,8 @@
               }
             }
           ],
-          "placeCount": 71,
-          "milestoneCount": 200
+          "placeCount": 72,
+          "milestoneCount": 201
         },
         "historie_migrasjon_minoritet_og_tilhorighet": {
           "places": [
@@ -84193,9 +85899,9 @@
       "oslo_coverage": {
         "contract": "oslo-history-coverage-v1",
         "canonical_place_count": 587,
-        "dated_evidence_place_count": 259,
+        "dated_evidence_place_count": 264,
         "documented_case_place_count": 2,
-        "awaiting_source_backed_history_count": 326,
+        "awaiting_source_backed_history_count": 321,
         "categories": [
           {
             "category": "by",
@@ -84249,9 +85955,9 @@
           {
             "category": "musikk",
             "total": 11,
-            "dated_evidence": 3,
+            "dated_evidence": 8,
             "documented_case": 0,
-            "awaiting_source_backed_history": 8
+            "awaiting_source_backed_history": 3
           },
           {
             "category": "naeringsliv",
@@ -84680,7 +86386,7 @@
             "name": "Blå",
             "category": "musikk",
             "source_file": "places/musikk/oslo/places_musikk/blaa.json",
-            "status": "awaiting_source_backed_history"
+            "status": "dated_evidence"
           },
           {
             "place_id": "bla_skilt_anna_rogstad_henrichsens_gate_3",
@@ -86066,7 +87772,7 @@
             "name": "John Dee",
             "category": "musikk",
             "source_file": "places/musikk/oslo/places_musikk/john_dee.json",
-            "status": "awaiting_source_backed_history"
+            "status": "dated_evidence"
           },
           {
             "place_id": "jordal_amfi",
@@ -87326,7 +89032,7 @@
             "name": "Rockefeller Music Hall",
             "category": "musikk",
             "source_file": "places/musikk/oslo/places_musikk/rockefeller.json",
-            "status": "awaiting_source_backed_history"
+            "status": "dated_evidence"
           },
           {
             "place_id": "rodelokka",
@@ -87431,7 +89137,7 @@
             "name": "SALT",
             "category": "musikk",
             "source_file": "places/musikk/oslo/places_musikk/salt.json",
-            "status": "awaiting_source_backed_history"
+            "status": "dated_evidence"
           },
           {
             "place_id": "salt_oslo",
@@ -87466,7 +89172,7 @@
             "name": "Sentrum Scene",
             "category": "musikk",
             "source_file": "places/musikk/oslo/places_musikk/sentrum_scene.json",
-            "status": "awaiting_source_backed_history"
+            "status": "dated_evidence"
           },
           {
             "place_id": "sigrid_undset_statue",
@@ -99577,10 +101283,10 @@
     "connected_work_count": 150,
     "connected_story_count": 272,
     "canonical_story_milestone_count": 241,
-    "verified_place_production_milestone_count": 779,
-    "indexed_place_count": 305,
-    "epoch_place_relations": 715,
-    "milestone_count": 1982
+    "verified_place_production_milestone_count": 844,
+    "indexed_place_count": 310,
+    "epoch_place_relations": 728,
+    "milestone_count": 2047
   },
   "warnings": {
     "missing_source_files": [

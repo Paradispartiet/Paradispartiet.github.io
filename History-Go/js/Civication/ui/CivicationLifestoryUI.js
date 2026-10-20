@@ -32,22 +32,19 @@
    * DEV-/TESTVERKTØY — ikke produktflate. Roller velges aldri av spilleren;
    * de fortjenes gjennom quiz (se startkontrakten i civication-life-story-
    * system.md). ?lifestoryRole=<id> tvinger en rolle for utvikling/innholds-
-   * arbeid/tester og persisteres; ellers localStorage. Null i normal drift —
-   * da følger Min dag skall-jobben (se maybeAdoptShellRole).
+   * arbeid/tester kun for gjeldende URL/lasting. En testrolle må aldri
+   * bli en permanent overstyring av spillerens ekte jobb ved senere besøk.
    * @returns {string|null}
    */
   function resolveExplicitRoleId() {
+    let fromUrl = null;
     try {
-      const fromUrl = new URLSearchParams(window.location.search || "").get("lifestoryRole");
-      if (fromUrl && fromUrl.trim()) {
-        const roleId = fromUrl.trim();
-        try { window.localStorage?.setItem(ROLE_STORAGE_KEY, roleId); } catch { /* uten lagring gjelder valget bare denne lasten */ }
-        return roleId;
-      }
-      const stored = window.localStorage?.getItem(ROLE_STORAGE_KEY);
-      if (stored && stored.trim()) return stored.trim();
-    } catch { /* blokkert lagring/URL => ingen eksplisitt rolle */ }
-    return null;
+      fromUrl = new URLSearchParams(window.location.search || "").get("lifestoryRole");
+    } catch { /* blokkert URL => følg skall-jobben */ }
+    // Tidligere testlenker skrev et permanent override. Fjern bare den
+    // utdaterte testnøkkelen; selve Life Story-lagringen forblir urørt.
+    try { window.localStorage?.removeItem(ROLE_STORAGE_KEY); } catch { /* blokkert lagring */ }
+    return fromUrl && fromUrl.trim() ? fromUrl.trim() : null;
   }
 
   const EXPLICIT_ROLE_ID = resolveExplicitRoleId();
@@ -189,6 +186,7 @@
       await bridge.load();
       if (state !== currentState || content !== currentContent) return;
       const State = /** @type {any} */ (window).CivicationLifestoryState;
+      syncSharedPrivateState(State.load());
       State.bindPersonTypes(state, content, bridge);
       State.save(state);
       render();
@@ -313,6 +311,7 @@
     // Å hoppe rett videre her ville omgått merker/livsposisjoner.
     if (Endings?.isFinalDay?.(state, content) && !Runner.hasPendingPrivateScenes?.(state, content)) return false;
     try {
+      syncSharedPrivateState(window.CivicationLifestoryState?.load?.());
       Runner.startNextDay(state, content);
       state.kalenderDag += 1;
       sisteKonsekvens = null;
@@ -379,12 +378,26 @@
   // telt nye tags (stamp-chipen) — re-render henter begge. render() er ren
   // lesing, så dette kan aldri starte en event-løkke.
   window.addEventListener("updateProfile", () => { maybeAdoptShellRole(); refreshPersonTypes(); render(); });
-  window.addEventListener("civi:waveAPrivateStoryChanged", () => {
-    const stored = window.CivicationLifestoryState?.load?.();
-    if (stored && state?.rolle === stored.rolle) {
-      state.rolleTilstander = stored.rolleTilstander || {};
-      state.rolleBytter = stored.rolleBytter || [];
+  // The inactive-role mail handler persists shared private consequences. An
+  // already mounted Min dag view must import those facts before its next save.
+  // Keep the active job's own meters, work scenes and role-specific flags.
+  function syncSharedPrivateState(stored) {
+    if (!stored || !state || stored.rolle !== state.rolle) return;
+    state.rolleTilstander = stored.rolleTilstander || {};
+    state.rolleBytter = stored.rolleBytter || [];
+    if (stored.privatHistorie) state.privatHistorie = stored.privatHistorie;
+    state.tidligereValg ||= {};
+    for (const [key, value] of Object.entries(stored.tidligereValg || {})) {
+      if (/^wa_(?:[bcde]_)?c0[15]_/.test(key)) state.tidligereValg[key] = value;
     }
+    state.relasjoner ||= {};
+    for (const key of ["venn", "familie"]) {
+      if (typeof stored.relasjoner?.[key] === "number") state.relasjoner[key] = stored.relasjoner[key];
+    }
+  }
+
+  window.addEventListener("civi:waveAPrivateStoryChanged", () => {
+    syncSharedPrivateState(window.CivicationLifestoryState?.load?.());
     render();
   });
 
@@ -399,8 +412,11 @@
     const State = /** @type {any} */ (window).CivicationLifestoryState;
     // The shell may have adopted another job while a previous scene's
     // button is still in the DOM. Never overwrite that newer role save.
-    const persistedRole = State.load()?.rolle;
-    if (persistedRole && persistedRole !== state?.rolle) return false;
+    const persisted = State.load();
+    if (persisted?.rolle && persisted.rolle !== state?.rolle) return false;
+    // Refresh shared facts before running an ordinary work choice, including
+    // when the private-story event occurred while this view was not listening.
+    syncSharedPrivateState(persisted);
     try {
       const scene = content.scenes.find((s) => s.id === sceneId);
       const valg = scene ? (scene.valg || []).find((c) => c.id === choiceId) : null;
@@ -458,6 +474,7 @@
     try {
       if (getShellDay() === null) {
         // Min dag fungerer fremdeles uavhengig på sider uten Civication-shell.
+        syncSharedPrivateState(window.CivicationLifestoryState?.load?.());
         /** @type {any} */ (window).CivicationLifestoryRunner.startNextDay(state, content);
         sisteKonsekvens = null;
         /** @type {any} */ (window).CivicationLifestoryState.save(state);
@@ -1100,6 +1117,7 @@
       }
       if (target.closest("[data-lifestory-advance]")) {
         if (!shellStoryUnavailable()) {
+          syncSharedPrivateState(window.CivicationLifestoryState?.load?.());
           prepareStoryDay();
           window.CivicationLifestoryState.save(state);
           window.dispatchEvent(new Event("civi:lifestoryChanged"));
