@@ -13,6 +13,17 @@
 export const SOURCE_DEPTH_CLAIMS_VERSION = "historygo-football-manager.source-depth-claims.v1";
 
 const documented = [
+  // Viking: individual goalkeeper organisation sourced from contemporary 2009 appraisal.
+  {
+    "playerId": "thomas_myhre",
+    "clubId": "viking",
+    "strengths": [
+      "leadership"
+    ],
+    "claim": "Aftenpostens sammenligning av eliteseriekeeperne i mars 2009 omtaler Myhres Viking-periode og konkluderer: «Sannsynligvis den keeperen i eliteserien som er best til å dirigere forsvaret». Dette er eksplisitt individuell organisering og lederskap på banen, ikke en refleks- eller feltarbeidsrating fra meritter.",
+    "source": "https://www.aftenposten.no/sport/fotball/i/K36v1X/her-er-den-beste-keeperen",
+    "sourceKind": "press"
+  },
   // Strømsgodset 2026-10-19: lagkamerat beskriver konkret lederrolle.
   {
     "playerId": "ulf_camitz",
@@ -3038,6 +3049,18 @@ const documented = [
     ],
     "claim": "I Dagbladets cupfinaleomtale forteller Odd-trener Arne Sandstø at Holtan gjennom året hadde «forhindret desto fler» sjanser med sin aktive keeperstil og at han «avverger flere muligheter mot slutten». Avisen beskriver en serie praktredninger. Samlet trener- og kampvurdering støtter skuddredninger, ikke en automatisk reflexes-rating eller udokumentert distribusjon.",
     "source": "https://www.dagbladet.no/sport/holtan-reddet-odd/65656703",
+    "sourceKind": "press"
+  },
+  // Viking 2026-10-20: dokumentert høyt press og arbeidsinnsats i 2015.
+  {
+    "playerId": "veton_berisha",
+    "clubId": "viking",
+    "strengths": [
+      "pressing",
+      "work_rate"
+    ],
+    "claim": "Aftenpostens fotballkommentar fra 2015 omtaler Veton Berisha som «ekstremt pigg» og «enda mer aggressiv og løpsvillig», og fremhever at han «gikk foran på i press og arbeidsinnsats» i Viking-perioden. Dette gir direkte individuelt belegg for pressing og work_rate; målstatistikken brukes ikke til å tildele finishing.",
+    "source": "https://www.aftenposten.no/sport/meninger/i/e8zajO/viking-spillerne-fortjener-mye-skryt",
     "sourceKind": "press"
   },
 ];

@@ -152,7 +152,13 @@
     const answeredIds = getAnsweredMailIds();
     const openItems = getInboxItems().filter((item) => isOpenActionableInboxItem(item, answeredIds));
     if (!phase) return openItems;
-    return openItems.filter((item) => inboxItemBlocksPhase(item, phase));
+    // A delivered daily mail is also mirrored into MailEngine.getInbox.
+    // It is one pending decision, not two separate items blocking this phase.
+    const phaseRuntimeIds = new Set(getPhaseItems(phase)
+      .filter(isOpenRow)
+      .flatMap((row) => [row?.event?.id, row?.id].map(norm).filter(Boolean)));
+    return openItems.filter((item) => inboxItemBlocksPhase(item, phase)
+      && !phaseRuntimeIds.has(norm(inboxEventOf(item)?.id || item?.id)));
   }
 
   function getCurrentPhase() {
@@ -373,10 +379,24 @@
     return !!inspect().canAdvance;
   }
 
+  // Only one transition may own the calendar while the next mail queue is
+  // being delivered. The async wrapper also unlocks on early return/failure.
+  let phaseAdvanceInFlight = false;
+
   /**
    * @returns {Promise<DayProgAdvanceResult>}
    */
   async function advancePhaseIfReady() {
+    if (phaseAdvanceInFlight) return { advanced: false, reason: "advance_in_flight" };
+    phaseAdvanceInFlight = true;
+    try {
+      return await advancePhaseOnce();
+    } finally {
+      phaseAdvanceInFlight = false;
+    }
+  }
+
+  async function advancePhaseOnce() {
     const state = inspect();
     const canAdvanceToNextPhase = state.canAdvance;
     const canResetAtDayEnd = state.reason === "at_last_phase"
