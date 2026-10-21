@@ -17,6 +17,7 @@ import { createSeasonSceneModel, renderSeasonCommand, renderSeasonLeagueOverview
 import { createOfficeSceneModel, renderOfficeCommand } from "./ui/manager-office-presentation.js";
 import { createManagerTrainingSceneModel, renderManagerTrainingCommand } from "./ui/manager-training-presentation.js";
 import { getTacticalKnowledgeForTactic } from "./football-tactical-knowledge.js";
+import { TACTICAL_SEQUENCES } from "./football-tactical-sequences.js";
 import { calculateTeamFit } from "./football-team-fit-engine.js";
 import {
   normalizePlayerPartnerships,
@@ -6544,6 +6545,7 @@ function getOpponentAnalysisContext() {
     currentPlanReady: Boolean(currentFixture && isOpponentAnalysisPlanForFixture(savedPlan, currentFixture.fixtureId)),
     formation: getFormation(),
     tactic: getTactic(),
+    teamFit: getTeamFit(),
     trainingLabel: getWeeklyTrainingChoiceLabel()
   };
 }
@@ -11267,6 +11269,40 @@ function appendMatchPlanSwitcher(card, session) {
   lead.textContent = `${currentPlan?.intent ? currentPlan.intent + " " : ""}${matchupNote} Et bytte koster omstilling – laget må finne formen på nytt.`.trim();
   wrap.append(lead);
 
+  // Explain the actual football: four linked moves, opponent counter, our reply.
+  // This is a scenario, never a claim that all four moves occurred in the match.
+  const tacticalStory = TACTICAL_SEQUENCES.find((chain) => chain.tacticId === currentId);
+  if (tacticalStory) {
+    const story = document.createElement("details");
+    story.className = "match-plan-interaction";
+    const storyTitle = document.createElement("summary");
+    storyTitle.textContent = `Spill → motspill · ${tacticalStory.title}`;
+    const actions = document.createElement("ol");
+    tacticalStory.moves.forEach((move) => {
+      const item = document.createElement("li");
+      item.textContent = move;
+      actions.append(item);
+    });
+    const counter = document.createElement("p");
+    counter.textContent = `Deres mulige motgrep: ${tacticalStory.counter}.`;
+    const response = document.createElement("p");
+    response.textContent = `Vårt svar: ${tacticalStory.response}.`;
+    const live = session.planMatchup?.sequences?.find((entry) => entry.id === currentId);
+    const status = document.createElement("p");
+    status.className = "muted-text";
+    status.textContent = !live
+      ? "Denne kjeden er et mulig kampmønster, ikke en garantert fordel."
+      : live.status === "advantage"
+        ? "Rollene og formasjonen støtter kjeden mot denne motstanderen."
+        : live.status === "countered"
+          ? "Motstanderen har en dokumentert struktur som kan nøytralisere kjeden."
+          : live.status === "unknown_counter"
+            ? "Kjeden har rolledekning, men vi har ikke kartlagt motstanderens mulige motgrep."
+            : "Dagens rolle- og formasjonsdekning er utilstrekkelig for denne kjeden.";
+    story.append(storyTitle, status, actions, counter, response);
+    wrap.append(story);
+  }
+
   const changes = Array.isArray(session.planChanges) ? session.planChanges : [];
   if (changes.length) {
     const log = document.createElement("ul");
@@ -11289,7 +11325,8 @@ function appendMatchPlanSwitcher(card, session) {
   const ranked = rankPlansForSituation(plans, {
     currentPlan,
     gameState: gameState.state,
-    opponent: session.opponent
+    opponent: session.opponent,
+    tacticalProfile: session.teamFitSnapshot?.tacticalProfile
   });
 
   ranked.forEach((entry) => {
@@ -11312,6 +11349,10 @@ function appendMatchPlanSwitcher(card, session) {
       bits.push(entry.distance >= 55 ? "stor omstilling" : entry.distance >= 25 ? "merkbar omstilling" : "liten omstilling");
     }
     if (entry.matchupVerdict !== "nøytral") bits.push(`${entry.matchupVerdict} mot dem`);
+    if (entry.sequenceStatus === "advantage") bits.push("4-trekkskjede mulig");
+    else if (entry.sequenceStatus === "countered") bits.push("deres motgrep dekker kjeden");
+    else if (entry.sequenceStatus === "unknown_counter") bits.push("motgrepet er ikke kartlagt");
+    else if (entry.sequenceStatus === "unsupported") bits.push("mangler rolledekning");
     meta.textContent = bits.join(" · ");
 
     button.append(name, intent, meta);

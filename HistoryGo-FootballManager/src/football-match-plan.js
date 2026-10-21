@@ -1,3 +1,5 @@
+import { evaluateTacticalSequences } from "./football-tactical-sequences.js";
+
 // HG Football Manager — Match Plan v1
 //
 // Kampplanen er STRATEGI, ikke en rangering. Ingen plan er best i seg selv: den
@@ -200,11 +202,11 @@ export function calculateSwitchCost({ fromPlan, toPlan, coachSnapshot, eventsRem
 // Hvor godt passer planen akkurat nå? Kampbildet og motstanderen i ett tall
 // (-100..100). Dette er grunnlaget for å belønne en FORBEDRING: spiller du
 // dårlig og bytter til noe som faktisk passer bedre, skal det lønne seg.
-export function scorePlanNow(plan, { gameState = "level", opponent } = {}) {
+export function scorePlanNow(plan, { gameState = "level", opponent, tacticalProfile } = {}) {
   const normalized = normalizeMatchPlan(plan);
   if (!normalized) return 0;
   const stateFit = evaluatePlanForGameState(normalized, gameState);
-  const matchup = evaluatePlanVsOpponent(normalized, opponent);
+  const matchup = evaluatePlanVsOpponent(normalized, opponent, { tacticalProfile });
   // Kampbildet veier tyngst: en plan for feil bilde er feil plan, uansett hvor
   // fin den ser ut mot motstanderens stil.
   return clamp(num(stateFit?.fits ? 45 : -45) + num(matchup?.edge) * 18, -100, 100);
@@ -233,7 +235,15 @@ export function evaluatePlanForGameState(plan, gameState) {
 // Planen mot motstanderens stil. Bruker de samme styleTraits som de historiske
 // motstanderprofilene allerede bærer — ingen ny motstanderdata.
 // ----------------------------------------------------------------------------
-export function evaluatePlanVsOpponent(plan, opponent) {
+// En kampplan får først uttelling når lagets FAKTISKE rolle-, ferdighets- og
+// formasjonsbidrag kan utføre den. Uten snapshot brukes den gamle, nøytrale
+// forhåndsvurderingen (legacy-saves og ren forhåndsvisning).
+function hasTacticalSupport(profile, key, minimum) {
+  if (!profile || !Number.isFinite(profile[key])) return true;
+  return profile[key] >= minimum;
+}
+
+export function evaluatePlanVsOpponent(plan, opponent, { tacticalProfile } = {}) {
   const normalized = normalizeMatchPlan(plan);
   if (!normalized) return null;
   const traits = isObject(opponent?.styleTraits) ? opponent.styleTraits : {};
@@ -244,6 +254,7 @@ export function evaluatePlanVsOpponent(plan, opponent) {
   const transitionThreat = num(traits.transitionThreat, 50);
 
   const notes = [];
+  const opportunities = [];
   let edge = 0;
 
   const planPress = axisValue(normalized, "pressing");
@@ -251,34 +262,163 @@ export function evaluatePlanVsOpponent(plan, opponent) {
   const planTempo = axisValue(normalized, "tempo");
   const planWidth = axisValue(normalized, "width");
 
-  // Press mot kort oppbygging er den klassiske gevinsten.
+  // The same engine that determines xG keeps the evidence for its advantage.
+  // Missing metrics are unknown, not evidence that the player is weak.
+  const recordOpportunity = (id, label, metric) => {
+    const value = tacticalProfile?.[metric];
+    const metricValue = Number.isFinite(value) ? value : null;
+    opportunities.push({
+      id, label, metric, metricValue, threshold: 60,
+      readiness: metricValue === null ? "unknown" : metricValue >= 60 ? "ready" : "gap"
+    });
+  };
+
+  // Utsatte motstandere er ikke nok: egne roller må gjennomføre planen.
+  // Profilmetrikkene bygges allerede av dokumenterte spillerferdigheter,
+  // relasjoner og formasjon. Ingen nye eller gjettede individuelle egenskaper.
   if (planPress >= 70 && shortBuildUp >= 60) {
-    edge += 1;
-    notes.push("Presset treffer oppbyggingen deres.");
+    recordOpportunity("press_build_up", "Høyt press mot kort oppbygging", "pressScore");
+    if (hasTacticalSupport(tacticalProfile, "pressScore", 60)) {
+      edge += 1;
+      notes.push("Presset treffer oppbyggingen deres.");
+    } else {
+      notes.push("Kort oppbygging kan presses, men dine pressroller og samspill gir ikke nok samlet press ennå.");
+    }
   }
-  // Høy egen linje mot et lag som lever på omstilling er dyrt.
   if (planLine >= 75 && transitionThreat >= 65) {
     edge -= 1;
     notes.push("Den høye linja gir dem akkurat rommet de vil ha.");
   }
-  // Fart i rommet mot en høy motstanderlinje.
   if (planTempo >= 55 && highLine >= 65) {
-    edge += 1;
-    notes.push("Farten treffer bakrommet bak den høye linja deres.");
+    recordOpportunity("runs_behind", "Dybdeløp mot høy forsvarslinje", "depthScore");
+    if (hasTacticalSupport(tacticalProfile, "depthScore", 60)) {
+      edge += 1;
+      notes.push("Dybderollene treffer bakrommet bak den høye linja deres.");
+    } else {
+      notes.push("De gir bakrom, men dine angriperroller skaper ikke nok dybdetrussel til å utnytte det.");
+    }
   }
-  // Bredde mot en kompakt blokk trekker dem fra hverandre.
   if (planWidth >= 70 && compactness >= 65) {
-    edge += 1;
-    notes.push("Bredden strekker den kompakte blokka deres.");
+    recordOpportunity("stretch_compact", "Bredde mot kompakt forsvar", "widthScore");
+    if (hasTacticalSupport(tacticalProfile, "widthScore", 60)) {
+      edge += 1;
+      notes.push("Kant- og backrollene strekker den kompakte blokka deres.");
+    } else {
+      notes.push("Den kompakte blokka kan strekkes, men lagets faktiske bredderoller gir for lite bredde.");
+    }
   }
-  // Rolig oppbygging mot et aggressivt press inviterer trøbbel.
   if (planPress <= 30 && axisValue(normalized, "buildUp") <= 30 && pressIntensity >= 70) {
     edge -= 1;
     notes.push("Den rolige oppbyggingen blir presset ned i eget område.");
   }
 
+  // Sammensatte taktiske mønstre: ikke tre isolerte motsetningspar.
+  // En samhandling kan kreve 2, 3 eller 4 samtidige LAG-egenskaper,
+  // og ett dokumentert motgrep kan nøytralisere den samlede fordelen.
+  // Samme lagmetrikker kommer fra faktisk rolle-, formasjons- og spillerfit.
+  const patterns = [
+    {
+      id: "coordinated_press_chain",
+      opportunityId: "press_build_up",
+      label: "Fireleddet pressfelle",
+      factors: [
+        { metric: "pressScore", minimum: 65, label: "Førstepress fra angrepet" },
+        { metric: "balanceScore", minimum: 60, label: "Midtbane som stenger neste pasning" },
+        { metric: "restDefenseScore", minimum: 60, label: "Sikring bak presset" },
+        { metric: "depthScore", minimum: 58, label: "Dybdeledd som binder motstanderen" }
+      ],
+      counter: { metric: "pressResistance", minimum: 85,
+        label: "Pressresistens: én fri tredjemann spiller forbi hele pressfellen" },
+      answer: "Bryt presset med sikret oppbygging eller velg et mindre aggressivt pressmønster."
+    },
+    {
+      id: "deep_run_support_chain",
+      opportunityId: "runs_behind",
+      label: "Dybdeløp med pasningsstøtte",
+      factors: [
+        { metric: "depthScore", minimum: 65, label: "Løp bak forsvarslinjen" },
+        { metric: "buildUpScore", minimum: 60, label: "Pasningsledd som finner løpet" },
+        { metric: "balanceScore", minimum: 58, label: "Andreball og sentral sikring" }
+      ],
+      counter: { metric: "pressIntensity", minimum: 85,
+        label: "Aggressivt motpress på pasningsleggeren bryter hele løpskombinasjonen" },
+      answer: "Flytt pasningsstarten eller skap rommet med sideskift før dybdeløpet."
+    },
+    {
+      id: "wide_overload_chain",
+      opportunityId: "stretch_compact",
+      label: "Breddeovertall med sikring",
+      factors: [
+        { metric: "widthScore", minimum: 65, label: "Kant og back gir bredde" },
+        { metric: "buildUpScore", minimum: 60, label: "Pasningsstøtte som vender spillet" },
+        { metric: "balanceScore", minimum: 58, label: "Sentralt ledd som sikrer ved balltap" }
+      ],
+      counter: { metric: "defensiveStructure", minimum: 82,
+        label: "Solid sidesikring fjerner rommet selv om bredden er riktig" },
+      answer: "Angrip motsatt halvrom når blokken har flyttet seg mot ballside."
+    }
+  ];
+  const combinations = [];
+  for (const pattern of patterns) {
+    const primary = opportunities.find((item) => item.id === pattern.opportunityId);
+    if (!primary) continue;
+    const factors = pattern.factors.map(({ metric, minimum, label }) => {
+      const raw = tacticalProfile?.[metric];
+      const value = Number.isFinite(raw) ? raw : null;
+      return { metric, label, value, minimum,
+        status: value === null ? "unknown" : value >= minimum ? "ready" : "gap" };
+    });
+    const allReady = factors.every((factor) => factor.status === "ready");
+    const unknown = factors.some((factor) => factor.status === "unknown");
+    const responseValue = pattern.counter.metric === "pressResistance"
+      ? opponent?.pressResistance
+      : traits[pattern.counter.metric] ?? opponent?.[pattern.counter.metric];
+    const responseKnown = Number.isFinite(responseValue);
+    const counterActive = responseKnown && responseValue >= pattern.counter.minimum;
+    // No speculative benefit from unknown or unsourced player abilities.
+    // Bonus is deliberately capped below the existing primary advantage.
+    if (allReady && responseKnown && !counterActive) {
+      edge += 0.5;
+      notes.push(pattern.label + ": alle ledd har dekning og virker sammen.");
+    }
+    if (allReady && !responseKnown) {
+      notes.push(pattern.label + ": laget har dekning, men motstanderens motgrep er ikke undersøkt.");
+    }
+    // A single counter blocks the baseline advantage as well as the
+    // multi-factor synergy, but never creates a fake player weakness.
+    if (counterActive && primary.readiness === "ready") {
+      edge -= 1;
+      notes.push(pattern.counter.label + ". Motstanderens ene grep bryter den samlede fordelen.");
+    }
+    const status = unknown ? "unknown"
+      : allReady && !responseKnown ? "unknown_counter"
+      : counterActive ? "countered"
+      : allReady ? "ready"
+      : "partial";
+    combinations.push({
+      id: pattern.id, label: pattern.label, opportunityId: pattern.opportunityId,
+      factors, status, readyCount: factors.filter((factor) => factor.status === "ready").length,
+      counter: { label: pattern.counter.label, metric: pattern.counter.metric,
+        value: responseKnown ? responseValue : null, minimum: pattern.counter.minimum,
+        status: responseKnown ? counterActive ? "active" : "inactive" : "unknown" },
+      answer: pattern.answer
+    });
+  }
+
+  // In addition to the three generic evidence combinations, all 18 plans
+  // have one authored four-action scenario, a countermove and a reply.
+  // These are possibilities, not a literal four-pass event simulator.
+  const sequences = evaluateTacticalSequences(normalized.id, opponent, tacticalProfile);
+  const sequenceEdge = Math.min(1, sequences.reduce((sum, sequence) => sum + sequence.edgeDelta, 0));
+  edge += sequenceEdge;
+  sequences.forEach((sequence) => {
+    if (sequence.status === "advantage") notes.push(`Spillkjede: ${sequence.title}. Laget har dekning for bevegelsene.`);
+    else if (sequence.status === "countered") notes.push(`Motspill: ${sequence.counter}. Ditt mulige svar: ${sequence.response}.`);
+    else if (sequence.status === "unknown_counter") notes.push(`Spillkjeden ${sequence.title} har rolledekning, men motstanderens mulige motgrep er ikke undersøkt.`);
+    else notes.push(`Spillkjeden ${sequence.title} trenger bedre faktisk rolle- og formasjonsdekning.`);
+  });
   const verdict = edge > 0 ? "gunstig" : edge < 0 ? "risikabel" : "nøytral";
-  return { edge, verdict, notes };
+  return { edge, verdict, notes, opportunities, combinations, sequences };
 }
 
 // ----------------------------------------------------------------------------
@@ -299,14 +439,15 @@ export function createPlanChange({ fromPlan, toPlan, session, opponent, eventsRe
     eventsRemaining
   });
   const stateFit = evaluatePlanForGameState(to, gameState.state);
-  const matchup = evaluatePlanVsOpponent(to, opponent || session?.opponent);
+  const tacticalProfile = session?.teamFitSnapshot?.tacticalProfile;
+  const matchup = evaluatePlanVsOpponent(to, opponent || session?.opponent, { tacticalProfile });
 
   // Effektene: omstillingen koster klarhet og legger på risiko. Men det som
   // faktisk belønnes er FORBEDRINGEN — hvor mye bedre den nye planen passer
   // bildet og motstanderen enn den du forlot. Å bytte fra noe som virker til
   // noe som ikke virker skal svi, selv om den nye planen «ser riktig ut».
   const edge = num(matchup?.edge);
-  const context = { gameState: gameState.state, opponent: opponent || session?.opponent };
+  const context = { gameState: gameState.state, opponent: opponent || session?.opponent, tacticalProfile };
   const scoreBefore = from ? scorePlanNow(from, context) : 0;
   const scoreAfter = scorePlanNow(to, context);
   const improvement = round2((scoreAfter - scoreBefore) / 100);
@@ -364,19 +505,21 @@ export function createPlanChange({ fromPlan, toPlan, session, opponent, eventsRe
 
 // Sorter planene slik manageren skal lese dem: de som passer bildet først,
 // deretter de som er nærmest dagens plan (minst omstilling).
-export function rankPlansForSituation(plans, { currentPlan, gameState = "level", opponent } = {}) {
+export function rankPlansForSituation(plans, { currentPlan, gameState = "level", opponent, tacticalProfile } = {}) {
   return asArray(plans)
     .map((plan) => normalizeMatchPlan(plan))
     .filter(Boolean)
     .map((plan) => {
       const stateFit = evaluatePlanForGameState(plan, gameState);
-      const matchup = evaluatePlanVsOpponent(plan, opponent);
+      const matchup = evaluatePlanVsOpponent(plan, opponent, { tacticalProfile });
       const distance = currentPlan ? planDistance(currentPlan, plan) : 0;
       return {
         plan,
         fitsGameState: Boolean(stateFit?.fits),
         matchupEdge: num(matchup?.edge),
         matchupVerdict: matchup?.verdict || "nøytral",
+        sequenceStatus: matchup?.sequences?.[0]?.status || null,
+        sequenceTitle: matchup?.sequences?.[0]?.title || null,
         distance,
         isCurrent: Boolean(currentPlan && normalizeMatchPlan(currentPlan)?.id === plan.id),
         note: stateFit?.note || ""

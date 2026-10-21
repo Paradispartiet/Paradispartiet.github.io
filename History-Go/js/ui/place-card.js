@@ -17,7 +17,7 @@
  *   image?: string,
  *   frontImage?: string,
  *   cardImage?: string,
- *   imageComposition?: { portraitPosition?: string, heroPosition?: string },
+ *   imageComposition?: { portraitPosition?: string, heroPosition?: string, portraitFit?: string },
  *   quizCardImage?: string,
  *   quizCard?: string,
  *   quiz_card_image?: string,
@@ -821,6 +821,22 @@ function setPlaceCardQuizImage(card, quizImgEl, place) {
   }
 
   if (!quizCardImage || !quizImgEl) {
+    // Place-open progressively hydrates and can reopen the same PlaceCard
+    // while the user is viewing its data-rendered QuizCard. The absence of a
+    // legacy *image* is not evidence that a rendered quiz back is unavailable.
+    const renderedBack = document.getElementById("pcQuizCardContent");
+    const placeId = String(place?.id || "").trim();
+    const hasCurrentRenderedBack = Boolean(
+      placeId && renderedBack?.dataset.placeId === placeId &&
+      !renderedBack.hidden && renderedBack.querySelector(".pc-rendered-quiz-card")
+    );
+    if (hasCurrentRenderedBack) {
+      card.classList.add("has-quiz-card");
+      card.setAttribute("aria-label", card.classList.contains("is-flipped")
+        ? tUI("ui.place.showFrontImage", "Vis frontbilde")
+        : tUI("ui.attr.showQuizCard", "Vis quizkort"));
+      return;
+    }
     card.classList.remove("has-quiz-card", "is-flipped");
     card.setAttribute("aria-label", tUI("ui.place.quizCardMissing", "Quizkort mangler"));
     if (quizImgEl) {
@@ -1050,6 +1066,7 @@ async function setPlaceCardQuizBack(card, quizImgEl, quizContentEl, place) {
   if (cardData) {
     if (quizContentEl) {
       quizContentEl.innerHTML = renderPlaceCardQuizData(cardData);
+      quizContentEl.dataset.placeId = requestedPlaceId;
       quizContentEl.hidden = false;
     }
     if (quizImgEl) {
@@ -1065,6 +1082,7 @@ async function setPlaceCardQuizBack(card, quizImgEl, quizContentEl, place) {
   // Fallback: eksisterende bildebaserte quizkort
   if (quizContentEl) {
     quizContentEl.innerHTML = "";
+    delete quizContentEl.dataset.placeId;
     quizContentEl.hidden = true;
   }
   if (quizImgEl) {
@@ -1531,13 +1549,17 @@ if (!card) return;
   }
   // The editor chooses focal points per surface. Never carry one place's
   // inline position into the next place when a player switches cards.
-  const imageComposition = /** @type {{ portraitPosition?: string, heroPosition?: string }} */ (place.imageComposition || {});
+  const imageComposition = /** @type {{ portraitPosition?: string, heroPosition?: string, portraitFit?: string }} */ (place.imageComposition || {});
   const mediaPosition = (position) => {
     const parts = String(position || "").trim().match(/^(\d{1,3})%\s+(\d{1,3})%$/);
     return parts && Number(parts[1]) <= 100 && Number(parts[2]) <= 100
       ? `${parts[1]}% ${parts[2]}%` : "50% 50%";
   };
-  if (frontImgEl) frontImgEl.style.objectPosition = mediaPosition(imageComposition.portraitPosition);
+  if (frontImgEl) {
+    frontImgEl.style.objectPosition = mediaPosition(imageComposition.portraitPosition);
+    // Only opt-in portrait crops use cover. Reset when switching places.
+    frontImgEl.style.objectFit = imageComposition.portraitFit === "cover" ? "cover" : "";
+  }
   if (headerImgEl) headerImgEl.style.objectPosition = mediaPosition(imageComposition.heroPosition);
   setPlaceCardImgSrcStable(frontImgEl, place.frontImage || place.cardImage || place.image || "");
   setPlaceCardQuizImage(frontCardFlipEl, quizCardImgEl, place);

@@ -7,11 +7,11 @@
 export const P1_SOURCE_CLAIMS_VERSION = "historygo-football-manager.p1-source-claims.v1";
 
 export const P1_HERITAGES = Object.freeze([
-  { key: "valerenga", placeId: "intility_arena", expectedExclusive: 66, generation: "existing", expectedDocumented: 13, expectedPartial: 5, expectedThin: 48, sourcePass: "Valerenga_66_eksklusive_spillerprofiler_dokumenterte_kvaliteter_HGFM_v1.md" },
-  { key: "brann", placeId: "brann_stadion", expectedExclusive: 47, generation: "existing", expectedDocumented: 35, expectedPartial: 2, expectedThin: 10, sourcePass: "SK_Brann_47_eksklusive_spillerprofiler_dokumenterte_kvaliteter_HGFM_v1.md" },
+  { key: "valerenga", placeId: "intility_arena", expectedExclusive: 66, generation: "existing", expectedDocumented: 16, expectedPartial: 5, expectedThin: 45, sourcePass: "Valerenga_66_eksklusive_spillerprofiler_dokumenterte_kvaliteter_HGFM_v1.md" },
+  { key: "brann", placeId: "brann_stadion", expectedExclusive: 47, generation: "existing", expectedDocumented: 40, expectedPartial: 2, expectedThin: 5, sourcePass: "SK_Brann_47_eksklusive_spillerprofiler_dokumenterte_kvaliteter_HGFM_v1.md" },
   { key: "bodo_glimt", placeId: "aspmyra_stadion", expectedExclusive: 47, generation: "existing", expectedDocumented: 16, expectedPartial: 3, expectedThin: 28, sourcePass: "Bodo_Glimt_47_eksklusive_spillerprofiler_dokumenterte_kvaliteter_HGFM_v1.md" },
   { key: "viking", placeId: "lyse_arena", expectedExclusive: 51, generation: "existing", expectedDocumented: 21, expectedPartial: 2, expectedThin: 28, sourcePass: "Viking_FK_51_eksklusive_spillerprofiler_dokumenterte_kvaliteter_HGFM_v1.md" },
-  { key: "lillestrom", placeId: "araasen_stadion", expectedExclusive: 24, generation: "existing", expectedDocumented: 21, expectedPartial: 3, expectedThin: 0, sourcePass: "Lillestrom_SK_24_eksklusive_spillerprofiler_dokumenterte_kvaliteter_HGFM_v1.md" },
+  { key: "lillestrom", placeId: "araasen_stadion", expectedExclusive: 24, generation: "existing", expectedDocumented: 22, expectedPartial: 2, expectedThin: 0, sourcePass: "Lillestrom_SK_24_eksklusive_spillerprofiler_dokumenterte_kvaliteter_HGFM_v1.md" },
 
   { key: "fredrikstad", placeId: "fredrikstad_stadion", expectedExclusive: 70, generation: "new" },
   { key: "skeid", placeId: "nordre_asen", expectedExclusive: 70, generation: "new" },
@@ -1443,6 +1443,98 @@ export const P1_NEW_PARTIAL = Object.freeze([
 ].map((entry) => Object.freeze({ ...entry, strengths: Object.freeze([...entry.strengths]) })));
 
 const existingSupplements = [
+  // Vålerenga 2026-10-21: individually described playing strengths; one source
+  // describes a later club period and is therefore explicitly era-qualified.
+  {
+    playerId: "andre_muri",
+    placeId: "intility_arena",
+    strengths: ["heading", "positioning"],
+    evidenceKind: "direct_appraisal",
+    playingStyle: "Luftsterk Vålerenga-stopper med god plasseringsevne ved innlegg, slik fotballekspert Lars Tjærnås vurderte ham i 2011.",
+    claim: "Lars Tjærnås' individuelle vurdering etter de første tre serierundene i april 2011 trekker frem André Muri som en særlig solid midtstopper som dominerer luftduellene og plasserer seg riktig ved innlegg. Dette gir et avgrenset grunnlag for heading og positioning i Vålerenga-perioden. Beskrivelsen av at han har forbedret ferdighetene med ball brukes ikke til å finne på pasningspresisjon, fart eller tallratinger.",
+    source: "https://www.aftenposten.no/sport/meninger/i/wPRdMG/tjaernaas-blogg-droemmelag-uten-prica"
+  },
+  {
+    playerId: "fegor_ogude",
+    placeId: "intility_arena",
+    strengths: ["strength", "duels"],
+    evidenceKind: "direct_appraisal",
+    playingStyle: "Fysisk meget sterk og kompromissløs midtbanespiller, spesielt fremhevet for direkte nærkamper i Vålerenga i 2011.",
+    claim: "Fotballekspert Lars Tjærnås beskrev Fegor Ogude i en spillerfaglig Vålerenga-vurdering 11. april 2011 som meget fysisk sterk og blant ligaens beste i nærkampspillet. Strength og duels er direkte begrunnet i denne samtidige analysen. Vurderingen dokumenterer ikke generelt tackling-presisjon, utholdenhet, pasningskvalitet, mentale tall eller statistisk målt prestasjonsnivå.",
+    source: "https://www.aftenposten.no/sport/meninger/i/wPRdMG/tjaernaas-blogg-droemmelag-uten-prica",
+    supportingSources: ["https://www.nettavisen.no/13-fegor-ogude/s/12-95-2973623"]
+  },
+  {
+    playerId: "aki_riihilahti",
+    placeId: "intility_arena",
+    strengths: ["work_rate", "tackling"],
+    evidenceKind: "historical_appraisal",
+    playingStyle: "Hardtarbeidende, taklingssterk defensiv midtbanespiller slik han senere ble beskrevet fra Crystal Palace-perioden.",
+    claim: "Reuters' retrospektive portrett publisert 13. mai 2017 beskriver Aki Riihilahtis innsats i Crystal Palace fra 2001 som løpssterk og markant taklingssterk. Dette dokumenterer work_rate og tackling for den samme spilleren, men gjelder uttrykkelig Crystal Palace-perioden etter Vålerenga-oppholdet i 1999–2000. Kilden gir ingen epokespesifikke Vålerenga-ratinger, pasningstoken eller grunnlag for å påstå at de senere kvalitetene er direkte observert i Oslo.",
+    source: "https://indianexpress.com/article/sports/football/crystal-palace-will-beat-hull-to-survive-says-former-player-aki-riihilahti-4654473/lite/",
+    supportingSources: ["https://www.cpfc.co.uk/news/features/palace-in-europe-former-selhurst-star-on-why-he-pushed-for-conference-league/"]
+  },
+
+  // Alexander Nagelsett Olsen: published retrospective cites individual technical/dribbling skill.
+  // This is secondary historical evidence, not a direct inspection of the printed books.
+  {
+    playerId: "alexander_nagelsett_olsen",
+    placeId: "brann_stadion",
+    strengths: ["dribbling"],
+    evidenceKind: "historical_appraisal",
+    playingStyle: "Teknisk senterhalf fra Branns 1920-tallslag, særlig omtalt for dribleferdighetene sine.",
+    claim: "Biografisk oppsummering omtaler Alexander Olsen som en driblekunstner og fremragende tekniker, med kildehenvisninger til Gunnar Hagen Hartvedts Brann-historie (1985, s. 50–52), Reidar Kvammen (1949, s. 111) og Per Jorsett (Dagbladet, 1997). Dette er etterprøvbart sekundærbelegg for dribbling, men ikke dokumentasjon for fart, pasningsrekkevidde, taklinger eller øvrige tokens. De opprinnelige trykte verkene er ikke kontrollert direkte.",
+    source: "https://www.wikisida.no/index.php?title=Alexander_Olsen",
+    supportingSources: ["https://snl.no/Alexander_Nagelsett_Olsen"]
+  },
+  // Brann 2026-10-21: teammate's career retrospective, distinct from match statistics.
+  {
+    "playerId": "frode_larsen",
+    "placeId": "brann_stadion",
+    "strengths": ["dribbling", "chance_creation"],
+    "evidenceKind": "historical_appraisal",
+    "playingStyle": "Dribleorientert høyrekant med markert repertoar én mot én og evne til å tilrettelegge sjanser for medspillere i Brann-årene.",
+    "claim": "I Bergens Tidendes minneartikkel fra 21. juni 2017 beskriver tidligere lagkamerat Bjørn Dahl Frode Larsen som en driblesterk høyreflankspiller med usedvanlig driblerepertoar, og som en svært god tilrettelegger. Dette gir individuelt belegg for dribbling og chance_creation på tvers av Brann-karrieren, men dokumenterer ikke spesifikt pace, finishing, crossing eller defensiv duellstyrke. Kilden er en retrospektiv lagkameratvurdering, ikke måledata.",
+    "source": "https://www.bt.no/sport/i/kJRvPL/brann-legenden-frode-larsen-er-doed",
+    "supportingSources": ["https://www.brann.no/nyheter/skal-hedre-avdode-frode-larsen"]
+  },
+  // Brann 2026-10-21: narrow source-based goalkeeping and wingback characterizations.
+  {
+    "playerId": "sigurd_wathne",
+    "placeId": "brann_stadion",
+    "strengths": [
+      "agility"
+    ],
+    "evidenceKind": "historical_appraisal",
+    "playingStyle": "Tidlig Brann-målvakt beskrevet som «slangemenneske» i historisk sportsomtale, med særlig bevegelighet.",
+    "claim": "Aftenpostens retrospektive artikkel 29. desember 2018 bruker «slangemenneske» om Sigurd Wathne og viser til en omtale av landslagsmålvakten fra sportsjournalist Westergaard i 1919. Metaforen gir et avgrenset historisk holdepunkt for kroppslig bevegelighet (agility), men dokumenterer ikke automatisk reaction reflexes, shot_stopping, aerial reach eller ballfordeling. Dette er en historisk tolkning av samtidens karakteristikk, ikke en målt ferdighet.",
+    "source": "https://www.aftenposten.no/sport/fotball/i/jd3w20/branns-slangemenneske-ble-truffet-av-hitlers-bomber"
+  },
+  {
+    "playerId": "hans_brandtun",
+    "placeId": "brann_stadion",
+    "strengths": [
+      "wide_support"
+    ],
+    "evidenceKind": "historical_appraisal",
+    "playingStyle": "Høyreback og vingback med dokumentert spill både offensivt og defensivt på kanten i Brann-perioden.",
+    "claim": "Branns egen historiske spillerprofil oppgir Hans Brandtun som høyreback og beskriver ham eksplisitt som «Vingback med både offensive og defensive kvaliteter». Dette gir et presist belegg for den taktiske wide_support-profilen, altså bidrag på kant i begge spillfaser. Kilden angir verken fart, innleggspresisjon, taklingsstyrke eller spesifikke overlappende løp, og slike tokens legges derfor ikke til.",
+    "source": "https://historie.brann.no/spillere/hans-brandtun"
+  },
+
+  // Brann 2026-10-21: period-verified captaincy in 1985 and 1988; leadership only.
+  {
+    "playerId": "arne_moller",
+    "placeId": "brann_stadion",
+    "strengths": [
+      "leadership"
+    ],
+    "evidenceKind": "historical_appraisal",
+    "playingStyle": "Branns lagkaptein og ledende midtbanespiller, konkret dokumentert i 1985.",
+    "claim": "Aftenpostens samtidige 1985-reportasje betegner Arne Møller uttrykkelig som Branns kaptein og beskriver at han gikk i bresjen i nedrykkskampen mot Mjøndalen. Dette gir et avgrenset samtidig belegg for leadership i 1985-sesongen, men er ikke dokumentasjon på kapteinsrollen i andre sesonger eller på tekniske styrker som passing_range, vision og game_reading.",
+    "source": "https://www.aftenposten.no/norge/i/0EqkG/hvem-tror-du-brann-tapte-for-forrige-gang-de-rykket-ned-fra-toppserien"
+  },
+
   // 2026-10-21: three source-bounded Brann-era historical profiles.
   {
     "playerId": "jan_knudsen",
@@ -1594,6 +1686,19 @@ const existingSupplements = [
     "playingStyle": "Pasningssikker midtbanespiller etter en historisk og uttrykkelig anekdotisk Brann-omtale.",
     "claim": "Bergens Tidende 20. juni 2018 omtaler Atle Hellesø med den retrospektive og uttrykkelig anekdotiske formuleringen «Noen sier han aldri slo en pasning feil». Dette er et historisk vitnesbyrd om pasningssikkerhet, ikke målbar feilprosent eller dokumentasjon for lange pasninger, spilleforståelse eller tempoledelse. Derfor tilføres bare simple_passing uten konstruert tallrating.",
     "source": "https://www.bt.no/nyheter/lokalt/i/wEQ31d/en-gudbenaadet-spiller"
+  },
+
+  // Lillestrøm 1989: direct testimony from fellow defender Bård Bjerkeland,
+  // not leadership inferred solely from Dyrstad's captaincy.
+  {
+    playerId: "ole_dyrstad",
+    placeId: "araasen_stadion",
+    strengths: ["leadership"],
+    evidenceKind: "historical_appraisal",
+    playingStyle: "Ansvarstagende og samlende forsvarsspiller på Lillestrøms seriemesterlag i 1989.",
+    claim: "I Lillestrøms God fugl-intervju 1. desember 2017 omtaler tidligere medspiller Bård Bjerkeland at laget hadde ledere som tok tak og trekker særskilt frem Ole Dyrstad. Bjerkeland omtaler ham også som undervurdert og svært klok. Lagkameratens konkrete vurdering fra felles LSK-periode gir et begrenset belegg for leadership; kapteinsbindet bekrefter konteksten, men er ikke beviset alene. Utsagnet er ikke tilstrekkelig til å tildele game_reading, tackling, heading eller numeriske ratinger.",
+    source: "https://www.lsk.no/nyheter/bard-bjerkeland-jeg-fikk-kjeft-av-kjerrringa-til-mini",
+    supportingSources: ["https://www.lsk.no/nyheter/lehne-og-dyrstad-kommer-vorspiel-pa-lillestrom-torv-for-klassikeren-mot-rbk"]
   },
 
   // 2026-10-20: Three further source-backed exclusive Lillestrøm profiles; no positional inference.
@@ -2409,6 +2514,124 @@ export function getP1NewSourceRecord(player) {
   };
 }
 
+
+/**
+ * Source-backed, runtime-only position corrections for canonical P1 heritage.
+ * The large frozen raw player catalog is not rewritten in this production pass.
+ * No position description is converted into an undocumented strength token.
+ */
+export const P1_EXISTING_ROLE_CORRECTIONS = Object.freeze([
+  {
+    "playerId": "leif_amundsen",
+    "placeId": "brann_stadion",
+    "naturalPositions": [
+      "LW"
+    ],
+    "usablePositions": [],
+    "poorFits": [
+      "CB",
+      "DM",
+      "GK"
+    ],
+    "archetypeIds": [],
+    "archetypes": [
+      "wide_support"
+    ],
+    "needs": [
+      "wide_space",
+      "support_from_midfield"
+    ],
+    "preferredRoles": [
+      "outside_forward"
+    ],
+    "likesTactics": [
+      "wide_attack"
+    ],
+    "dislikesTactics": [
+      "narrow_shape"
+    ],
+    "warningWhenMisused": "Amundsen var ytre venstre i Brann gjennom hele karrieren; bruk ham som klassisk venstreving, ikke midtstopper.",
+    "claim": "Branns offisielle spillerprofil sier uttrykkelig at Leif Amundsen spilte ving gjennom hele karrieren, som ytre venstre med draktnummer 11. Den kanoniske katalogens CB/DM og duel_stopper-profil er derfor uriktig. Ingen spesifikke ferdighetstoken dokumenteres av kilden.",
+    "source": "https://historie.brann.no/spillere/leif-amundsen/"
+  },
+  {
+    "playerId": "hans_brandtun",
+    "placeId": "brann_stadion",
+    "naturalPositions": [
+      "RB"
+    ],
+    "usablePositions": [
+      "WB"
+    ],
+    "poorFits": [
+      "CB",
+      "ST",
+      "GK"
+    ],
+    "archetypeIds": [],
+    "archetypes": [
+      "wide_support",
+      "defensive_balance"
+    ],
+    "needs": [
+      "wide_lane",
+      "cover_from_midfield"
+    ],
+    "preferredRoles": [
+      "wing_back",
+      "traditional_full_back"
+    ],
+    "likesTactics": [
+      "wide_attack",
+      "defensive_balance"
+    ],
+    "dislikesTactics": [
+      "narrow_shape",
+      "no_cover"
+    ],
+    "warningWhenMisused": "Brandtun var høyreback og vingback i Brann med offensive og defensive oppgaver, ikke en ren midtstopper.",
+    "claim": "Branns offisielle spillerprofil klassifiserer Hans Brandtun som høyreback og beskriver ham som vingback med både offensive og defensive kvaliteter. Den kanoniske katalogens CB/DM/duel_stopper-profil er derfor uriktig. Kilden navngir ingen spesifikke ferdighetstoken som dribbling eller tackling.",
+    "source": "https://historie.brann.no/spillere/hans-brandtun"
+  },
+  {
+    "playerId": "jan_erik_osland",
+    "placeId": "brann_stadion",
+    "naturalPositions": [
+      "ST"
+    ],
+    "usablePositions": [],
+    "poorFits": [
+      "GK",
+      "CB",
+      "DM"
+    ],
+    "archetypeIds": [],
+    "archetypes": [
+      "club_professional"
+    ],
+    "needs": [],
+    "preferredRoles": [],
+    "likesTactics": [],
+    "dislikesTactics": [],
+    "warningWhenMisused": "Jan Erik Osland var angriper i Brann ifølge klubbens historikk, ikke sentral midtbanespiller.",
+    "claim": "Branns offisielle spillerprofil klassifiserer Jan Erik Osland som «Angriper», og klubbens historiske spillerstaller for 1967, 1970, 1972 og 1975 plasserer ham i angrepet. Katalogens CM/DM/AM-klassifisering og midtbanespillmaker-mal er dermed uriktig. Spillets ST er her teknisk generell angrepsfamilie; kilden skiller ikke mellom sentral spiss og kantangriper. Ingen spesifikke ferdighetsstyrker kan utledes av stillingen eller antall mål.",
+    "source": "https://historie.brann.no/spillere/jan-erik-osland/"
+  }
+].map((entry) => Object.freeze({ ...entry })));
+
+const EXISTING_ROLE_CORRECTION_BY_ID = new Map(
+  P1_EXISTING_ROLE_CORRECTIONS.map((entry) => [entry.playerId, entry])
+);
+export const P1_ROLE_FIELDS = Object.freeze(["naturalPositions","usablePositions","poorFits","archetypeIds","archetypes","needs","preferredRoles","likesTactics","dislikesTactics","warningWhenMisused"]);
+
+export function applyP1RoleCorrectionsToPlayer(player) {
+  const correction = player && EXISTING_ROLE_CORRECTION_BY_ID.get(player.id);
+  if (!correction || getP1HeritageForPlayer(player)?.placeId !== correction.placeId) return player;
+  return { ...player, ...Object.fromEntries(P1_ROLE_FIELDS.map((field) => [
+    field, Array.isArray(correction[field]) ? [...correction[field]] : correction[field]
+  ])) };
+}
+
 export function applyP1SourceClaimsToPlayer(player) {
   const heritage = getP1HeritageForPlayer(player);
   if (!heritage) return player;
@@ -2416,11 +2639,12 @@ export function applyP1SourceClaimsToPlayer(player) {
     const record = getP1NewSourceRecord(player);
     return { ...player, strengths: [...record.strengths] };
   }
+  const alignedPlayer = applyP1RoleCorrectionsToPlayer(player);
   const supplement = EXISTING_SUPPLEMENT_BY_ID.get(player.id);
   if (supplement && supplement.placeId === heritage.placeId) {
-    return { ...player, strengths: [...supplement.strengths] };
+    return { ...alignedPlayer, strengths: [...supplement.strengths] };
   }
-  return player;
+  return alignedPlayer;
 }
 
 export function applyP1SourceClaims(players) {

@@ -41,13 +41,27 @@
     try {
       fromUrl = new URLSearchParams(window.location.search || "").get("lifestoryRole");
     } catch { /* blokkert URL => følg skall-jobben */ }
-    // Tidligere testlenker skrev et permanent override. Fjern bare den
-    // utdaterte testnøkkelen; selve Life Story-lagringen forblir urørt.
-    try { window.localStorage?.removeItem(ROLE_STORAGE_KEY); } catch { /* blokkert lagring */ }
     return fromUrl && fromUrl.trim() ? fromUrl.trim() : null;
   }
 
   const EXPLICIT_ROLE_ID = resolveExplicitRoleId();
+
+  // Den gamle testrollen var en lokal nøkkel som også ble kopiert til
+  // kontoens skylagring. Fjern den ETTER at sky-backupen er gjenopprettet,
+  // ellers kan bootstrap legge nøkkelen tilbake ved neste innlogging.
+  // Dette berører aldri faktisk jobb eller lagret Life Story-progresjon.
+  let legacyRoleRetirement = null;
+  function retireLegacyRoleOverride() {
+    if (!legacyRoleRetirement) legacyRoleRetirement = (async () => {
+      await window.CivicationCloudSave?.ready;
+      try {
+        if (window.localStorage?.getItem(ROLE_STORAGE_KEY) === null) return;
+        window.localStorage.removeItem(ROLE_STORAGE_KEY);
+        window.CivicationCloudSave?.schedule?.();
+      } catch { /* blokkert lagring: la øvrig spillstart fortsette */ }
+    })();
+    return legacyRoleRetirement;
+  }
 
   /**
    * Rollen Min dag spiller akkurat nå. Starter som eksplisitt valg eller
@@ -142,7 +156,7 @@
    * @param {string} roleId
    */
   async function loadRole(roleId, stillCurrent = () => true) {
-    await window.CivicationCloudSave?.ready;
+    await retireLegacyRoleOverride();
     const Content = /** @type {any} */ (window).CivicationLifestoryContent;
     const State = /** @type {any} */ (window).CivicationLifestoryState;
     const sequence = ++roleLoadSequence;
@@ -196,7 +210,7 @@
   }
 
   async function ensureLoaded() {
-    await window.CivicationCloudSave?.ready;
+    await retireLegacyRoleOverride();
     if (content && state) return;
     if (!loading) {
       if (!EXPLICIT_ROLE_ID) currentRoleId = window.CivicationLifestoryState?.load?.()?.rolle || currentRoleId;
@@ -339,7 +353,7 @@
     // Without an active job there is no workday queue to drive the calendar.
     // Only skip genuinely empty phases: pending private messages, queued mail
     // and other phase blockers are still owned by DayProgression.inspect().
-    // The player must answer those in the normal Next Action UI first.
+    // The player must answer those in the unified inbox first.
     if (!window.CivicationState?.getActivePosition?.() && Progression?.inspect && Progression?.advancePhaseIfReady) {
       const maxEmptyPhases = Array.isArray(Calendar?.DAY_PHASES) ? Calendar.DAY_PHASES.length : 8;
       for (let i = 0; i < maxEmptyPhases && Calendar?.getPhase?.() !== "day_end"; i++) {
@@ -605,9 +619,11 @@
     ];
     const stamp = lifestyleStamp();
     if (stamp) items.push(["Livsstil", (stamp.icon ? stamp.icon + " " : "") + stamp.name]);
+    const capacity = window.CivicationLifestoryRunner?.capacityWarning?.(state) || "";
     return "<div class=\"civi-lifestory-status\" aria-label=\"Statuslinje\">" + items.map(([label, value]) =>
       "<span class=\"civi-lifestory-status-chip\"><small>" + escapeHtml(label) + "</small><strong>" + escapeHtml(value) + "</strong></span>"
-    ).join("") + "</div>";
+    ).join("") + "</div>" + (capacity
+      ? '<p class="muted" role="status" data-lifestory-capacity-warning>' + escapeHtml(capacity) + '</p>' : "");
   }
 
   /**
@@ -693,6 +709,20 @@
     return thread ? thread.tittel : threadId;
   }
 
+  // A chapter can only open through the current Life Story gates. Read the
+  // real History Go merit counter; do not award points or choose a life role.
+  /**
+   * @param {string} badgeId
+   * @returns {number}
+   */
+  function chapterBadgePoints(badgeId) {
+    try {
+      const merits = JSON.parse(window.localStorage?.getItem("merits_by_category") || "{}");
+      const points = Number(merits?.[badgeId]?.points || 0);
+      return Number.isFinite(points) ? Math.max(0, points) : 0;
+    } catch { return 0; }
+  }
+
   /**
    * @param {any} view
    * @returns {string}
@@ -743,21 +773,51 @@
     const continuationHtml = next
       ? '<button class="civi-btn primary" type="button" data-lifestory-continue="' + escapeHtml(next.id) + '"' + (continuing ? ' disabled' : '') + '>' + (continuing ? "Åpner fortsettelsen …" : escapeHtml(next.navn)) + '</button>'
       : "";
+    const chosenLifePosition = sisteDag && !next ? getRoleSuggestion() : null;
+    const pendingPrivate = !!Runner.hasPendingPrivateScenes?.(state, content);
+    // Private Life Stories remain playable without a badge. The History Go
+    // guide is optional and must also appear when private stories continue.
+    const offerExploration = sisteDag && !next;
+    const required = Number(chosenLifePosition?.threshold);
+    const hasPointGate = Number.isFinite(required) && required > 0 && !!chosenLifePosition?.badge_id;
+    const earned = hasPointGate ? chapterBadgePoints(chosenLifePosition.badge_id) : 0;
+    const needsMerits = hasPointGate && earned < required;
+    const nextChapterHint = !offerExploration ? "" :
+      '<section class="civi-lifestory-next-chapter" role="status" aria-label="Veien videre">'
+      + '<h4>Veien videre</h4>'
+      + (chosenLifePosition
+        ? '<p>Privatlivet kan fortsette uansett jobbstatus. Du har vist interesse for <strong>' + escapeHtml(chosenLifePosition.navn) + '</strong>. Vil du åpne dette ekstra historiekapittelet, kreves riktig opptjening og et frivillig valg av livsposisjon.</p>'
+          + (needsMerits ? '<p>Du har ' + escapeHtml(earned) + ' av ' + escapeHtml(required) + ' poeng i ' + escapeHtml(chosenLifePosition.badge_id) + '. Ta quizer i History Go for å bygge kunnskap.</p>'
+            : hasPointGate ? '<p>Du har nok poeng. Åpne livsposisjonene og velg ' + escapeHtml(chosenLifePosition.navn) + ' for å låse opp neste kapittel.</p>'
+              : '<p>Undersøk hvilke krav som gjelder for livsposisjonen før du fortsetter.</p>')
+        : '<p>Du kan fortsette privatlivet uten jobb eller livsposisjon. Utforsk History Go når du vil for å bygge kunnskap, utvide samlingen og finne nye muligheter i livsverdenen.</p>')
+      + '<div class="civi-lifestory-actions">'
+      + '<button class="civi-btn primary" type="button" data-lifestory-study>Utforsk History Go</button>'
+      + '<button class="civi-btn" type="button" data-lifestory-life-profile>Se livsposisjoner</button>'
+      + '</div></section>';
     // A pending mail needs a reachable player action in Min dag, even when
     // there is no active job or visible top-action card.
     const pendingDayAction = window.CivicationNextActionSelector?.getCurrent?.();
-    const pendingDayActionHtml = pendingDayAction && !pendingDayAction.canStartNewDay
+    const needsInboxFirst = !!pendingDayAction && !pendingDayAction.canStartNewDay;
+    const pendingDayActionHtml = needsInboxFirst
       ? '<button class="civi-btn" type="button" data-lifestory-next-action>Åpne innboksen</button>'
       : "";
+    const blockedDayNote = needsInboxFirst
+      ? '<p class="muted" role="status">Du har fortsatt en melding eller oppgave i dag. Åpne innboksen og fullfør den før du starter neste dag.</p>'
+      : "";
+    const nextDayDisabled = needsInboxFirst ? ' disabled title="Fullfør dagens meldinger først"' : '';
     const handlingsHtml = sisteDag
       ? "<div class=\"civi-lifestory-actions\">"
         + continuationHtml
-        + (Runner.hasPendingPrivateScenes?.(state, content) ? '<button class="civi-btn primary" type="button" data-lifestory-next-day>Fortsett privatlivet</button>' : "")
+        + nextChapterHint
+        + (Runner.hasPendingPrivateScenes?.(state, content) ? '<button class="civi-btn primary" type="button" data-lifestory-next-day' + nextDayDisabled + '>Fortsett privatlivet</button>' : "")
+        + blockedDayNote
         + pendingDayActionHtml
         + "</div>"
       : "<div class=\"civi-lifestory-actions\">"
         + continuationHtml
-        + "<button class=\"civi-btn primary\" type=\"button\" data-lifestory-next-day>Start neste dag</button>"
+        + '<button class="civi-btn primary" type="button" data-lifestory-next-day' + nextDayDisabled + '>Start neste dag</button>'
+        + blockedDayNote
         + pendingDayActionHtml
         + "</div>";
     return ""
@@ -1123,6 +1183,15 @@
           window.dispatchEvent(new Event("civi:lifestoryChanged"));
           render();
         }
+        return;
+      }
+      if (target.closest("[data-lifestory-study]")) {
+        const suggestion = getRoleSuggestion();
+        // A chosen profile without an explicit point threshold and the
+        // open exploratory route both carry a valid guidance card. Completion
+        // is never faked: the History Go toast only marks numeric goals done.
+        window.CivicationHistoryGoDeepLink?.startLifePositionGuidance?.(suggestion);
+        window.CivicationLifestoryActions?.perform?.({ type: "gaa_til_byen" });
         return;
       }
       if (target.closest("[data-lifestory-next-day]")) { onNextDay(); return; }

@@ -13,6 +13,47 @@
 export const SOURCE_DEPTH_CLAIMS_VERSION = "historygo-football-manager.source-depth-claims.v1";
 
 const documented = [
+  // Molde 2016: contemporary teammate evaluation; no ratings from historical reputation.
+  {
+    playerId: "eidur_gudjohnsen",
+    clubId: "molde",
+    strengths: ["hold_up_play", "positioning", "final_pass"],
+    claim: "I intervju 5. mars 2016 om Molde-perioden beskriver spisskollega Fredrik Gulbrandsen Gudjohnsen som «flink til å holde på ballen, finne posisjoner og spille gjennom andre». Det dokumenterer ballskjerming/hold_up_play, evnen til å finne gode posisjoner og gjennomspill/final_pass. Kilden omtaler også lavere tempo og kondisjon, så verken pace, stamina, finishing eller numeriske kvalitetsverdier tilføres.",
+    source: "https://www.bt.no/sport/i/2G8AxB/spisskollegaen-gudjohnsen-er-en-glimrende-signering",
+    sourceKind: "press"
+  },
+  // Odd: three remaining sourced profiles restored from the earlier ten-player PR.
+  {
+    "playerId": "tommy_svindal_larsen",
+    "clubId": "odd",
+    "strengths": [
+      "first_touch"
+    ],
+    "claim": "Odds digitale museum gjengir VGs historiske vurdering av Svindal Larsen med ordene «Ballen satt limt. Kunne dominere en kamp fra start til mål». Ballkontroll/first_touch registreres; kampdominans gir ikke egen ubegrunnet totalferdighet.",
+    "source": "https://statistikk.odd.no/spillere/69773a56-bb59-4c49-a29f-a125541e2b41",
+    "sourceKind": "football_editorial"
+  },
+  {
+    "playerId": "bengt_saeternes",
+    "clubId": "odd",
+    "strengths": [
+      "strength",
+      "finishing"
+    ],
+    "claim": "Odds digitale museum gjengir Telemarksavisens retrospektiv om Sæternes: han var «en fryktet motstander – både på grunn av målteften og ikke minst en voldsom fysikk». Fysisk styrke og avslutningsevne har dermed eksplisitt individuelt belegg, uavhengig av karrierens målstatistikk.",
+    "source": "https://statistikk.odd.no/spillere/c3e04934-c565-4f63-8f70-858a6c20a757",
+    "sourceKind": "press"
+  },
+  {
+    "playerId": "odin_bjortuft",
+    "clubId": "odd",
+    "strengths": [
+      "duels"
+    ],
+    "claim": "Vardens kampvurderinger fra 2022 fremhever Bjørtuft i gjentatte kamper: «Knalltøff i duellspillet» mot Lillestrøm og «God i duellspillet» mot Vålerenga. To separate navngitte vurderinger gir avgrenset belegg for dueller, ikke fart, posisjonering eller pasningsstyring.",
+    "source": "https://statistikk.odd.no/kamper/9a7223f7-a662-42d4-b2ad-2b7c4fbabedd/678aeb4a-9420-472b-a07b-efe1cf627098",
+    "sourceKind": "press"
+  },
   // Viking: individual goalkeeper organisation sourced from contemporary 2009 appraisal.
   {
     "playerId": "thomas_myhre",
@@ -1694,9 +1735,10 @@ const documented = [
   {
     playerId: "birger_tingstad",
     clubId: "rosenborg",
-    strengths: ["set_pieces"],
-    claim: "«Birger Tingstad sendte et av sine spesial-frispark helt oppe i hjørnet.»",
-    source: "https://www.rbk.no/nyheter/62-ar-siden-62",
+    strengths: ["set_pieces", "vision", "game_reading"],
+    claim: "Rosenborgs historiske omtale dokumenterer dødballstyrke: «Birger Tingstad sendte et av sine spesial-frispark helt oppe i hjørnet.» Klubbens spillerbiografi beskriver dessuten hans «utsøkte blikk og forståelse for spillet»; dette begrunner vision og game_reading, ikke andre tekniske attributter.",
+    source: "https://statistikk.rbk.no/spiller/253-birger-tingstad",
+    supportingSources: ["https://www.rbk.no/nyheter/62-ar-siden-62"],
     sourceKind: "club"
   },
   {
@@ -1751,9 +1793,10 @@ const documented = [
   {
     playerId: "torbjorn_lysaker_heggem",
     clubId: "rosenborg",
-    strengths: ["simple_passing"],
-    claim: "Carlos Corberán: «He is a player who is capable of taking responsibility for the ball, playing out from the back and managing the ball well with both feet.»",
+    strengths: ["simple_passing", "one_vs_one"],
+    claim: "Carlos Corberán beskriver ballbehandling og oppspill som «managing the ball well with both feet». Landslagstrener Ståle Solbakken omtaler Heggems forsvarsspill i 2024: «har klart seg veldig bra en mot en i Championship». Sistnevnte er et særskilt belegg fra West Bromwich-perioden etter Rosenborg, ikke en direkte vurdering av Rosenborg-spill eller en numerisk rating.",
     source: "https://www.wba.co.uk/news/albion-complete-torbjorn-heggem-transfer",
+    supportingSources: ["https://www.dagbladet.no/sport/odegaard-ikke-med/82014184"],
     sourceKind: "club"
   },
   {
