@@ -8,7 +8,7 @@ export const P1_SOURCE_CLAIMS_VERSION = "historygo-football-manager.p1-source-cl
 
 export const P1_HERITAGES = Object.freeze([
   { key: "valerenga", placeId: "intility_arena", expectedExclusive: 66, generation: "existing", expectedDocumented: 13, expectedPartial: 5, expectedThin: 48, sourcePass: "Valerenga_66_eksklusive_spillerprofiler_dokumenterte_kvaliteter_HGFM_v1.md" },
-  { key: "brann", placeId: "brann_stadion", expectedExclusive: 47, generation: "existing", expectedDocumented: 23, expectedPartial: 2, expectedThin: 22, sourcePass: "SK_Brann_47_eksklusive_spillerprofiler_dokumenterte_kvaliteter_HGFM_v1.md" },
+  { key: "brann", placeId: "brann_stadion", expectedExclusive: 47, generation: "existing", expectedDocumented: 35, expectedPartial: 2, expectedThin: 10, sourcePass: "SK_Brann_47_eksklusive_spillerprofiler_dokumenterte_kvaliteter_HGFM_v1.md" },
   { key: "bodo_glimt", placeId: "aspmyra_stadion", expectedExclusive: 47, generation: "existing", expectedDocumented: 16, expectedPartial: 3, expectedThin: 28, sourcePass: "Bodo_Glimt_47_eksklusive_spillerprofiler_dokumenterte_kvaliteter_HGFM_v1.md" },
   { key: "viking", placeId: "lyse_arena", expectedExclusive: 51, generation: "existing", expectedDocumented: 21, expectedPartial: 2, expectedThin: 28, sourcePass: "Viking_FK_51_eksklusive_spillerprofiler_dokumenterte_kvaliteter_HGFM_v1.md" },
   { key: "lillestrom", placeId: "araasen_stadion", expectedExclusive: 24, generation: "existing", expectedDocumented: 21, expectedPartial: 3, expectedThin: 0, sourcePass: "Lillestrom_SK_24_eksklusive_spillerprofiler_dokumenterte_kvaliteter_HGFM_v1.md" },
@@ -1443,6 +1443,159 @@ export const P1_NEW_PARTIAL = Object.freeze([
 ].map((entry) => Object.freeze({ ...entry, strengths: Object.freeze([...entry.strengths]) })));
 
 const existingSupplements = [
+  // 2026-10-21: three source-bounded Brann-era historical profiles.
+  {
+    "playerId": "jan_knudsen",
+    "placeId": "brann_stadion",
+    "strengths": [
+      "shot_stopping"
+    ],
+    "evidenceKind": "historical_appraisal",
+    "playingStyle": "Brann-keeper som gjennom 1970-årene gjentatte ganger reddet laget med godt keeperspill.",
+    "claim": "I Aftenpostens retrospektive portrett av Jan Knudsen fra 22. desember 2018 beskriver Anders Pamer ham som Branns glimrende keeper fra 1970-tallet og omtaler at han reddet Brann mange ganger. Dette er en generalisert vurdering av keeperspillet over tid, ikke en enkelt redning i én kamp. Kun shot_stopping registreres; artikkelen dokumenterer ikke spesifikt reflexes, distribution eller command_of_area.",
+    "source": "https://www.aftenposten.no/sport/fotball/i/Vbxdv4/jan-knudsen-reddet-brann-mange-ganger-men-det-var-ingen-som-kunne-redde-ham"
+  },
+  {
+    "playerId": "neil_macleod",
+    "placeId": "brann_stadion",
+    "strengths": [
+      "leadership"
+    ],
+    "evidenceKind": "historical_appraisal",
+    "playingStyle": "Langvarig Brann-kaptein og lederskikkelse på midtbanen i slutten av 1970-årene og begynnelsen av 1980-årene.",
+    "claim": "Aftenpostens historiske vurdering av Brann-kapteiner fra 2015 rangerer Neil MacLeod som nummer syv blant klubbens fremtredende kapteiner. Branns egen 1982-beretning identifiserer ham samtidig som kaptein i cupfinalen. Kombinasjonen av en særskilt retrospektiv vurdering av hans kapteinsinnsats og dokumentert kapteinsrolle støtter leadership i Brann-perioden, ikke pasninger, finishing eller andre tekniske tokens.",
+    "source": "https://www.aftenposten.no/sport/meninger/i/AdGWX5/martin-paa-kaptein-toppen"
+  },
+  {
+    "playerId": "kjell_rune_pedersen",
+    "placeId": "brann_stadion",
+    "strengths": [
+      "leadership"
+    ],
+    "evidenceKind": "historical_appraisal",
+    "playingStyle": "Sentral midtbaneorganisator i Branns opprykks- og cupvinnersesong 1982.",
+    "claim": "Branns offisielle sesonghistorikk, som bygger på Atle Nielsens jubileumsbok fra 2008, omtaler den tilbakevendte Kjell Rune Pedersen uttrykkelig som «midtbanegeneral» i 1982. Den individualiserte lederrollen gir et smalt belegg for leadership i akkurat denne Brann-sesongen, men ikke for passing_range, game_reading eller tempo_control; kamptall og mål brukes ikke som kvalitetsbevis.",
+    "source": "https://historie.brann.no/sesonger/1982/"
+  },
+
+  // 2026-10-21: deliberately narrow historical profiles, distinct source eras.
+  {
+    "playerId": "odd_oppedal",
+    "placeId": "brann_stadion",
+    "strengths": [
+      "leadership"
+    ],
+    "evidenceKind": "historical_appraisal",
+    "playingStyle": "Samlende og respektert leder på Branns midtbane i seriegullårene; ferdighetsbeskrivelsen skilles fra generelt teknikk-skryt.",
+    "claim": "Bergens Tidendes minneartikkel 30. mai 2018 siterer tidligere Brann-spiller Helge Karlsen, som beskriver Odd Oppedal som kaptein på klubbens stjernelag, og tidligere Brann-formann Harald Andersen, som husker ham som et «samlingspunkt på banen». Til sammen gir disse uavhengige historiske vurderingene belegg for leadership i Brann-perioden rundt 1961/62 og 1963. Den omtalte eminente teknikken gir ikke automatisk first_touch, dribbling eller passing_range; fravær av fart brukes ikke som numerisk minusverdi.",
+    "source": "https://www.bt.no/sport/i/kJEmBa/brann-legende-odd-oppedal-er-doed"
+  },
+  {
+    "playerId": "jan_halvor_halvorsen",
+    "placeId": "brann_stadion",
+    "strengths": [
+      "duels"
+    ],
+    "evidenceKind": "historical_appraisal",
+    "playingStyle": "Fysisk robust og effektiv i direkte forsvarsdueller, beskrevet konkret fra senere AGF-periode.",
+    "claim": "AGF Legendernes historiske spillerportrett beskriver Jan Halvor Halvorsen som en solid norsk forsvarsklippe og forteller at de to tekniske B 1903-angriperne Michael og Martin Johansen hadde svært vanskelig for å komme forbi ham i den danske cupfinalen 1992. Dette gir et begrenset, eksplisitt epokemerket belegg for duels hos spilleren i AGF-perioden 1992–94, etter Brann-oppholdet. Kilden viser hans tidligere to sesonger i Brann, men den tilskrives ikke Brann-perioden og støtter ikke automatisk tackling, pace eller heading.",
+    "source": "https://agflegenderne.dk/jan-halvor-halvorsen/"
+  },
+
+  // 2026-10-21: teammate-based source appraisal (Brann 2004) for Roy Wassberg.
+  {
+    "playerId": "roy_wassberg",
+    "placeId": "brann_stadion",
+    "strengths": [
+      "game_reading",
+      "composure",
+      "leadership"
+    ],
+    "evidenceKind": "historical_appraisal",
+    "playingStyle": "Rolig, spilleklok og samlende Brann-veteran. Lagkamerater fremhevet evnen til å lese spillet fremfor å måtte takle og hans ledende støtte til yngre spillere.",
+    "claim": "I supporterbladet Den 12. mann 3/2004, s. 31, vurderer yngre Brann-lagkamerater Erlend Storesund og Arve Walde Roy Wassbergs spill i Brann-perioden 1989–1993 og 1998–2004. De beskriver «en helt spesiell ro på banen», at han «sjelden [behøver] takle» fordi han er «så god til å lese spillet», og at han oppmuntret, ga råd og var en «typisk lederskikkelse». Dette er direkte personlig belegg for game_reading, composure og leadership. Omtalen brukes ikke til tackling, pace eller konstruerte tallratinger.",
+    "source": "https://www.fanzine.no/filer/pdf/d12m0304.pdf"
+  },
+
+  // 2026-10-21: three historically supported Brann player styles; no aggregate ratings.
+  {
+    "playerId": "bjarni_sigurdsson",
+    "placeId": "brann_stadion",
+    "strengths": [
+      "shot_stopping",
+      "command_of_area"
+    ],
+    "evidenceKind": "historical_appraisal",
+    "playingStyle": "Sterk på streken og trygg i feltarbeidet, ifølge en historisk vurdering av Brann-perioden.",
+    "claim": "Aftenpostens historiske førsteellever over islendinger i norsk fotball (1. september 2011) beskriver Bjarni Sigurðsson som Brann-keeper med gode ferdigheter på streken og trygghet i feltet, og med få tabber. Dette gir individuell, Brann-periodebasert dekning for shot_stopping og command_of_area. Det gis ikke reflexes eller distribution fra landskamper eller prisomtale.",
+    "source": "https://www.aftenposten.no/sport/fotball/i/MRPX15/norges-favorittgjester"
+  },
+  {
+    "playerId": "roger_helland",
+    "placeId": "brann_stadion",
+    "strengths": [
+      "work_rate",
+      "teamwork"
+    ],
+    "evidenceKind": "historical_appraisal",
+    "playingStyle": "Arbeidsvillig og lagorientert forsvarsspiller, særskilt omtalt i supporterintervju med spilleren.",
+    "claim": "I supporterbladet Den 12. mann 3/2008, s. 34–35, beskriver Daniel Nygård Roger Hellands Brann-år 1993–1999 som kjennetegnet av innsats og arbeidsvilje samt lojalitet mot lagkameratene. Dette gir periodetydelig belegg for work_rate og teamwork, ikke duellstyrke, heading eller numeriske ferdighetsverdier. Branns eget spillerarkiv understøtter hans lagorienterte rolle.",
+    "source": "https://www.fanzine.no/filer/pdf/d12m0308.pdf",
+    "supportingSources": [
+      "https://historie.brann.no/spillere/roger-helland/"
+    ]
+  },
+  {
+    "playerId": "bjorn_tronstad",
+    "placeId": "brann_stadion",
+    "strengths": [
+      "finishing"
+    ],
+    "evidenceKind": "historical_appraisal",
+    "playingStyle": "Målfarlig Brann-angriper gjennom flere sesonger på 1970-tallet, dokumentert i klubbhistorien.",
+    "claim": "Branns historiske spillerportrett sier uttrykkelig at Bjørn Tronstad fra 1974 utviklet seg til en fast og «målfarlig angriper» over påfølgende sesonger. Det dokumenterer målteft/finishing som varig individuelt særpreg. Oppgitte mål per kamp, enkeltscoringer og Bill Elliotts generelle ros blir ikke brukt til å utlede ekstra tokens eller tallrating.",
+    "source": "https://historie.brann.no/spillere/bjoern-tronstad/"
+  },
+
+  // 2026-10-20: contemporary Brann season appraisal (2010), same source-first pass.
+  {
+    "playerId": "zsolt_korcsmar",
+    "placeId": "brann_stadion",
+    "strengths": [
+      "duels"
+    ],
+    "evidenceKind": "direct_appraisal",
+    "playingStyle": "Duellsterk midtstopper i Branns 2010-sesong, beskrevet av samtidige sportsjournalister.",
+    "claim": "Aftenpostens sesongvise spillerkarakterbok fra 2010 vurderer Zsolt Korcsmár etter ni Brann-kamper, omtaler ham som bestemann i Brann-forsvaret etter låneovergangen og sier eksplisitt at han var «sterk i duellspillet». Dette gir begrenset, periodeavgrenset individuelt belegg for duels. Artikkelen nevner samtidig utfordringer med tempo; den brukes ikke til å tildele fart, markering, heading, stabilitet eller tallrating.",
+    "source": "https://www.aftenposten.no/sport/fotball/i/70q5b9/branns-karakterbok"
+  },
+  // 2026-10-20: two carefully delimited historical Brann skill profiles.
+  {
+    "playerId": "tore_nordtvedt",
+    "placeId": "brann_stadion",
+    "strengths": [
+      "overlapping_runs",
+      "crossing",
+      "stamina",
+      "marking"
+    ],
+    "evidenceKind": "historical_appraisal",
+    "playingStyle": "Offensiv og utholdende høyreback med gjentatte løp fremover, presise innlegg og tett oppfølging av motspiller på returløp.",
+    "claim": "Branns historiske spillerprofil beskriver Tore Nordtvedts Brann-periode 1963–1979: nærmest hver gang Brann vant ballen, løp han frem langs høyresiden og slo presise innlegg. Klubben fremhever også kondisjon, rask retur til forsvarsposisjon og at han fulgte motstandervingen tett og utrettelig. Dette støtter overlapping_runs, crossing, stamina og marking. Kamptall, antatte taklingsferdigheter og numeriske ratinger brukes ikke som belegg.",
+    "source": "https://historie.brann.no/spillere/tore-nordtvedt"
+  },
+  {
+    "playerId": "atle_helleso",
+    "placeId": "brann_stadion",
+    "strengths": [
+      "simple_passing"
+    ],
+    "evidenceKind": "historical_appraisal",
+    "playingStyle": "Pasningssikker midtbanespiller etter en historisk og uttrykkelig anekdotisk Brann-omtale.",
+    "claim": "Bergens Tidende 20. juni 2018 omtaler Atle Hellesø med den retrospektive og uttrykkelig anekdotiske formuleringen «Noen sier han aldri slo en pasning feil». Dette er et historisk vitnesbyrd om pasningssikkerhet, ikke målbar feilprosent eller dokumentasjon for lange pasninger, spilleforståelse eller tempoledelse. Derfor tilføres bare simple_passing uten konstruert tallrating.",
+    "source": "https://www.bt.no/nyheter/lokalt/i/wEQ31d/en-gudbenaadet-spiller"
+  },
+
   // 2026-10-20: Three further source-backed exclusive Lillestrøm profiles; no positional inference.
   {
     "playerId": "frank_gronlund",

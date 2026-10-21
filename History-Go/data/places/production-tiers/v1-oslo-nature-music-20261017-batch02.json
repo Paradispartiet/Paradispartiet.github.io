@@ -41,12 +41,65 @@
       "quizcard_collection": "data/quizcards/natur/topp10_natur_alna_v1_batch01.json",
       "content_level": "v1_candidate",
       "source_question_reuse": true,
-      "historical_text_status": "draft_source_packet_on_hold_exact_place_photo_missing",
-      "photo_status": "held_exact_place_photo_source_missing",
-      "frontImage_status": "not_rechecked",
-      "runtime_binding_status": "not_verified_in_app",
+      "historical_text_status": "source_verified_v4_2_packet_and_canonical_text_produced",
+      "photo_status": "contextual_smalvollveien_photo_cc_by_sa_3_not_exact_river_photo",
+      "frontImage_status": "exact_place_river_portrait_not_available",
+      "runtime_binding_status": "place_open_image_payload_synced_not_browser_verified",
       "v3_complete": false,
-      "historical_text_draft_branch": "content/alna-smalvoll-prose-needs-place-photo-20261020"
+      "historical_text_draft_branch": "content/alna-smalvoll-prose-needs-place-photo-20261020",
+      "historical_text_packet": "data/places/production/alna_smalvoll.json",
+      "historical_text_reviewed_at": "2026-10-20",
+      "historical_text_claims": 19,
+      "quiz_candidates_not_published": 10,
+      "photo_source": "https://commons.wikimedia.org/wiki/File:Smalvollveien_(mars_2016).jpg",
+      "photo_license": "CC BY-SA 3.0",
+      "photo_author": "Kjetil Ree",
+      "photo_rights_verified_at": "2026-10-21",
+      "photo_scope_note": "Smalvollveien road context only; accurate photograph of Alna meanders at this location still missing",
+      "photo_research_20261021": {
+        "researched_at": "2026-10-21",
+        "accepted_context_photo": "https://commons.wikimedia.org/wiki/File:Smalvollveien_(mars_2016).jpg",
+        "exact_meander_photo_status": "awaiting_verified_reuse_license_and_precise_site_match",
+        "candidates": [
+          {
+            "source": "NIVA, Alna – kunnskapssammenstilling og mulighetsstudie (2020)",
+            "url": "https://www.miljodirektoratet.no/globalassets/publikasjoner/m1781/m1781.pdf",
+            "reference": "Side 71, fotografier fra Breivoll–Smalvoll, inkludert meandrende elv",
+            "credit": "Marianne Gjørv",
+            "depicts": "right_area_and_meandering_river",
+            "reuse_rights": "not_verified_for_republication",
+            "decision": "research_only_do_not_copy"
+          },
+          {
+            "source": "Alnaelva Fotoblog, bilder merket Smalvollen (2010–2011)",
+            "url": "https://alnaelva.blogspot.com/2010/12/?m=0",
+            "reference": "Fotograf oppgitt som Lars Åsmund, flere Smalvollen-motiver",
+            "credit": "Lars Åsmund",
+            "depicts": "Smalvollen",
+            "reuse_rights": "no_clear_reuse_license_found",
+            "decision": "research_only_do_not_copy"
+          },
+          {
+            "source": "Oslo byarkiv / Widerøes Flyveselskap AS",
+            "url": "https://oslobilder.no/BAR/A-20027/Ua/0008/132",
+            "reference": "A-20027/Ua/0008/132, flyfoto fra 1956 med Smalvollen, Ole Deviks vei og jernbanen",
+            "credit": "Widerøes Flyveselskap / Tveit Hansen",
+            "depicts": "historical_area_context_not_confirmed_meander_portrait",
+            "reuse_rights": "generic_CC_3_0_notice_variant_and_image_asset_not_verified",
+            "decision": "research_only_do_not_copy"
+          },
+          {
+            "source": "Wikimedia Commons, Alnaelva Alnabru",
+            "url": "https://commons.wikimedia.org/wiki/File:Alnaelva_Alnabru.jpg",
+            "reference": "Commons river category; photograph geographically marked as Alnabru, not verified at Smalvoll meander",
+            "credit": "attribution_not_individually_verified",
+            "depicts": "nearby_river_context_only",
+            "reuse_rights": "file_specific_license_not_verified",
+            "decision": "research_only_do_not_replace_precise_place_photo"
+          }
+        ],
+        "editorial_rule": "Do not present a nearby river or road as the meander at Smalvoll; retain current correctly captioned contextual photo until an exact-site photograph has proven reuse rights. No requests to rights holders are necessary."
+      }
     },
     {
       "place_id": "svartdalen",
@@ -538,5 +591,16 @@
     "v1_promotions": 0,
     "vFerdig_promotions": 0,
     "generated_epoch_index_sync": "regenerated_and_checked"
+  },
+  "historical_text_revision_20261020_smalvoll": {
+    "place": "alna_smalvoll",
+    "source_claims": 19,
+    "quiz_candidates_not_published": 10,
+    "photo_hold": "No site-exact photograph with verified reuse rights",
+    "v1_promotions": 0,
+    "vFerdig_promotions": 0,
+    "existing_quiz_cards_preserved": true,
+    "contextPhotoAdded": "Smalvollveien photo, CC BY-SA 3.0, licensed Wikimedia Commons source; does not depict the specific river bend",
+    "exactRiverPhotoHold": true
   }
 }
