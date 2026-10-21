@@ -240,7 +240,7 @@
   }
 
   function shellStoryUnavailable() {
-    return !!shellStory && shellStory.status !== "ready";
+    return !!shellStory && !["ready", "private-only"].includes(shellStory.status);
   }
 
   async function maybeAdoptShellRole() {
@@ -251,7 +251,7 @@
     // og en tidlig updateProfile skal ikke låse sjekken for godt.
     const active = /** @type {any} */ (window).CivicationState?.getActivePosition?.();
     const adoptKey = activePositionKey();
-    if (adoptKey === lastAdoptKey && ["ready", "unavailable"].includes(shellStory?.status)) return;
+    if (adoptKey === lastAdoptKey && ["ready", "private-only", "unavailable"].includes(shellStory?.status)) return;
     const title = String(active?.title || "jobben din");
     shellStory = { status: "loading", title };
     render();
@@ -266,9 +266,23 @@
       const mapped = active ? await Content.resolveRoleIdForActivePosition(active) : DEFAULT_ROLE_ID;
       const stillCurrent = () => activePositionKey() === adoptKey;
       if (!stillCurrent()) { adoptAgain = true; return; }
-      if (mapped && (mapped !== currentRoleId || !state || !content)) await loadRole(mapped, stillCurrent);
+      if (mapped) {
+        // Restore the whole authored work pack when employment changes back
+        // from a job with no dedicated story, even if the role ID is unchanged.
+        if (mapped !== currentRoleId || !state || !content || content.personalOnly) {
+          await loadRole(mapped, stillCurrent);
+        }
+      } else {
+        // An earned formal job never turns into unemployment simply because
+        // its work-specific storytelling has not been authored yet.
+        // Show shared private scenes (and established C01/C05 relationships),
+        // never stale NAV or employer mail from the prior role.
+        if (!state || !content) await loadRole(currentRoleId, stillCurrent);
+        if (!stillCurrent()) { adoptAgain = true; return; }
+        content = await Content.makePersonalOnlyContent(content);
+      }
       if (!stillCurrent()) { adoptAgain = true; return; }
-      shellStory = { status: mapped ? "ready" : "unavailable", title };
+      shellStory = { status: mapped ? "ready" : "private-only", title };
       lastAdoptKey = adoptKey;
       syncToShellCalendar();
       window.dispatchEvent(new Event("civi:lifestoryChanged"));
@@ -387,7 +401,19 @@
   window.addEventListener("civi:lifePositionChanged", refreshDayEvent);
 
   function refreshDayEvent() {
-    if (shellStory?.status === "unavailable") render();
+    if (shellStory?.status === "unavailable") { render(); return; }
+    // A day-end inbox action can become pending after Min dag was first
+    // rendered. Refresh only the finished-day summary so the real "Åpne
+    // innboksen" button and next-day disabled state stay synchronized, without
+    // re-running the Wave A inbox projection or replacing an active story.
+    if (!state?.dagFerdig || !content) return;
+    const summary = getPanel()?.querySelector(".civi-lifestory-summary");
+    const Runner = /** @type {any} */ (window).CivicationLifestoryRunner;
+    if (!summary || !Runner?.getView) return;
+    const view = Runner.getView(state, content);
+    if (!view?.dagFerdig) return;
+    const html = renderSummaryHtml(view);
+    if (summary.outerHTML !== html) summary.outerHTML = html;
   }
   // updateProfile: jobbtilbud kan ha endret rollen, og HG_Lifestyle kan ha
   // telt nye tags (stamp-chipen) — re-render henter begge. render() er ren
@@ -1191,7 +1217,14 @@
     const continuationRole = content.role.symposium?.rollebroer?.find((b) => b.role_scope === content.fortsettelse?.role_scope)?.navn || "kapittelets rolle";
 
     renderHeaderStatus(view);
-    panel.innerHTML = renderStatusHtml(view)
+    const personalBanner = shellStory?.status === "private-only"
+      ? '<section class="civi-lifestory-personal-mode" data-lifestory-personal-only>'
+        + '<h3>Privatlivet ditt fortsetter</h3>'
+        + '<p>' + escapeHtml(shellStory.title)
+        + ' har ennå ingen egen jobbfortelling her. Dine private historier og relasjoner fortsetter; '
+        + 'arbeidsoppgaver og meldinger finner du i innboksen.</p></section>'
+      : "";
+    panel.innerHTML = personalBanner + renderStatusHtml(view)
       + renderKonsekvensHtml()
       + (Runner.isContinuationPaused?.(state, content)
         ? '<section data-lifestory-paused><h3>Historien er satt på pause</h3><p>Velg ' + escapeHtml(continuationRole) + ' som hovedrolle i livsprofilen for å fortsette der du slapp.</p><button type="button" data-lifestory-life-profile>Åpne livsprofilen</button></section>'

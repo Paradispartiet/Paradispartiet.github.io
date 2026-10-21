@@ -4,6 +4,11 @@ import { evaluateTrainingDecisionSupport } from "./football-training-week.js";
 import { buildMatchExplanation } from "./football-match-explanation-engine.js";
 import { evaluateHistoricalOpponentMatchup } from "./football-historical-opponent-profiles.js";
 import { annotatePeriodTacticalChances } from "./football-tactical-match-moments.js";
+import { resolveHighPressBuildUp, annotateHighPressBuildUpChances, highPressPhaseRoll } from "./football-matchday-high-press-v6.js";
+import { resolveTurnoverTransition } from "./football-matchday-turnover-v6.js";
+import { resolveCompactBlockAttack, annotateCompactBlockChances } from "./football-matchday-compact-block-v6.js";
+import { resolveOwnPressAgainstOpponent, annotateOwnPressChances } from "./football-matchday-own-press-v6.js";
+import { resolveGameControlPhase, annotateGameControlChances } from "./football-matchday-control-v6.js";
 import {
   applyOpponentAdjustment,
   createPlanChange,
@@ -1788,6 +1793,15 @@ export function createMatchdaySession({ teamFit, formation, tactic, activeClassi
 
   return {
     version: 2,
+    // Explicit opt-in for NEW matches. Existing in-progress saves keep their
+    // original v6 build-up model until their match is completed.
+    causalTransitionsVersion: 1,
+    // Activate causal compact-block actions only for newly started matches.
+    causalCompactBlockVersion: 1,
+    // Only new matches opt in to pre-chance pressing/escape sequences.
+    causalPressingVersion: 1,
+    // Four remaining plans opt in only on new match sessions.
+    causalGameControlVersion: 1,
     sourcedSubstitutionVersion: 2,
     sourcedSubstitutionBaseline,
     id: `matchday-session-${Date.now()}`,
@@ -2135,10 +2149,55 @@ export function advanceMatchClock(session) {
   const played = asArray(session.timeline).length;
   if (played >= totalSegments) return session;
 
+  // v6 resolves the high-press/build-up chain BEFORE producing chances.
+  // While v6 owns this situation, remove the old static plan-edge projection
+  // for this period; otherwise the same tactical advantage is paid twice.
+  // Sessions without sufficient role/opponent evidence retain the v5 path.
+  const buildUpPhase = resolveHighPressBuildUp(session, { rng: () => highPressPhaseRoll(session, played) });
+  // Mutually exclusive phase per period: opponent press vs compact low block.
+  // Existing saves never acquire the new low-block model on restore.
+  const compactPhase = !buildUpPhase
+    ? resolveCompactBlockAttack(session, { rng: () => highPressPhaseRoll(session, played + ":compact-block") })
+    : null;
+  // Different plan ids: attacking phases and defensive press are exclusive.
+  // A known escape and our actual pressing unit decide BEFORE any shot roll.
+  const pressingPhase = !buildUpPhase && !compactPhase
+    ? resolveOwnPressAgainstOpponent(session, {
+        pressureRoll: () => highPressPhaseRoll(session, played + ":own-pressure"),
+        protectionRoll: () => highPressPhaseRoll(session, played + ":press-protection")
+      })
+    : null;
+  // Four previously unsupported plans are resolved using their OWN linked
+  // defensive-control/release chain; earlier v6 phases take priority.
+  const controlPhase = !buildUpPhase && !compactPhase && !pressingPhase
+    ? resolveGameControlPhase(session, {
+        rng: () => highPressPhaseRoll(session, played + ":game-control")
+      })
+    : null;
+  const transition = resolveTurnoverTransition(session, buildUpPhase, {
+    firstPassRoll: () => highPressPhaseRoll(session, played + ":forward-pass"),
+    coverRoll: () => highPressPhaseRoll(session, played + ":rest-defence")
+  });
+  // The terminal outcome REPLACES the preliminary risk from the build-up
+  // loss; it is never added on top. A completed build-up has no transition.
+  const phase = transition ? {
+    ...buildUpPhase, transition, xgDeltaAgainst: transition.xgDeltaAgainst
+  } : buildUpPhase || compactPhase || pressingPhase || controlPhase;
   const rate = currentExpectedGoalRate(session);
   const share = 1 / totalSegments;
-  const segmentXgFor = clampRange(round2(rate.for * share), 0, 3);
-  const segmentXgAgainst = clampRange(round2(rate.against * share), 0, 3);
+  const staticEdge = num(session.planMatchup?.edge);
+  const neutralRateFor = phase ? rate.for - staticEdge * 0.09 : rate.for;
+  const neutralRateAgainst = phase ? rate.against + staticEdge * 0.06 : rate.against;
+  const baselineForPhase = clampRange(round2(neutralRateFor * share), 0, 3);
+  const baselineAgainstPhase = clampRange(round2(neutralRateAgainst * share), 0, 3);
+  const segmentXgFor = clampRange(round2(baselineForPhase + (phase?.xgDeltaFor || 0)), 0, 3);
+  const segmentXgAgainst = clampRange(round2(baselineAgainstPhase + (phase?.xgDeltaAgainst || 0)), 0, 3);
+  // Report actual post-clamp contributions; this is attribution, not new xG.
+  const tacticalPhase = phase ? {
+    ...phase,
+    xgDeltaFor: round2(segmentXgFor - baselineForPhase),
+    xgDeltaAgainst: round2(segmentXgAgainst - baselineAgainstPhase)
+  } : null;
 
   // Disclose the REAL contribution already included in the rate, without
   // adding it again. Compare with the SAME rate with only the matchup-edge
@@ -2148,7 +2207,7 @@ export function advanceMatchClock(session) {
   const matchupEdge = num(session.planMatchup?.edge);
   const baselineFor = clampRange(round2((rate.for - matchupEdge * 0.09) * share), 0, 3);
   const baselineAgainst = clampRange(round2((rate.against + matchupEdge * 0.06) * share), 0, 3);
-  const tacticalXg = session.planMatchup && Number.isFinite(session.planMatchup.edge)
+  const tacticalXg = !phase && session.planMatchup && Number.isFinite(session.planMatchup.edge)
     ? {
         planId: session.activePlanSnapshot?.id || session.selectedTacticId || null,
         planName: session.activePlanSnapshot?.name || "",
@@ -2166,10 +2225,19 @@ export function advanceMatchClock(session) {
   // Nå ser manageren de samme tallene som fotball: hvem som kom til, når, og
   // hva som skjedde.
   const range = segmentRange(played, totalSegments);
-  const chances = annotatePeriodTacticalChances(session, [
+  const generatedChances = [
     ...buildChances(segmentXgFor, { ...range, side: "for" }),
     ...buildChances(segmentXgAgainst, { ...range, side: "against" })
-  ].sort((a, b) => a.minute - b.minute || (a.side === "for" ? -1 : 1)));
+  ].sort((a, b) => a.minute - b.minute || (a.side === "for" ? -1 : 1));
+  const chances = tacticalPhase?.situation === "compact_block_vs_attack"
+    ? annotateCompactBlockChances(generatedChances, tacticalPhase)
+    : tacticalPhase?.situation === "our_press_vs_opponent_build_up"
+      ? annotateOwnPressChances(generatedChances, tacticalPhase)
+      : tacticalPhase?.situation === "game_control_and_release"
+        ? annotateGameControlChances(generatedChances, tacticalPhase)
+        : tacticalPhase
+          ? annotateHighPressBuildUpChances(generatedChances, tacticalPhase)
+          : annotatePeriodTacticalChances(session, generatedChances);
 
   const goalsFor = chances.filter((c) => c.side === "for" && c.scored).length;
   const goalsAgainst = chances.filter((c) => c.side === "against" && c.scored).length;
@@ -2237,6 +2305,10 @@ export function advanceMatchClock(session) {
         scoreAfter: { ...score },
         expectedGoals: { for: segmentXgFor, against: segmentXgAgainst },
         ...(tacticalXg ? { tacticalXg } : {}),
+        ...(tacticalPhase ? {
+          tacticalPhase,
+          baselineExpectedGoals: { for: baselineForPhase, against: baselineAgainstPhase }
+        } : {}),
         note
       }
     ]

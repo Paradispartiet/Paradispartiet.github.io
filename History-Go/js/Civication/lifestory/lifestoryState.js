@@ -76,6 +76,17 @@
   // private-history snapshot; neither job role owns these actions.
   const PRIVATE_FLAG = /^(?:wa_(?:[bcde]_)?c0[15]_|life21_)/;
   const PRIVATE_SCENE = /^(?:wave_[abcde]_c0[15]_|wave_e_life21_)/;
+  // These threads belong to the shared personal pack, across every career.
+  // Their real archived scene choices remain personal even on old saves that
+  // predate the incremental private-history record.
+  const PRIVATE_LIFE_THREADS = new Set([
+    "daarlig_soevn", "stram_oekonomi", "venter_paa_svar", "tviler_paa_jobben",
+    "kroppen_og_kreftene", "folk_rundt_deg", "lysten_til_aa_laere",
+    "byen_og_deg", "natten_og_soevnen", "dine_egne_timer", "uka_videre",
+    "wave_e_c01", "wave_e_c05", "wave_e_life21"
+  ]);
+  const isPrivateEntry = entry => PRIVATE_SCENE.test(entry?.sceneId || "")
+    || PRIVATE_LIFE_THREADS.has(entry?.threadId);
   function emptyPrivateStory() { return { flagg: {}, flaggDager: {}, spilteScener: [], arkiv: [], relasjoner: {} }; }
   function capturePrivateStory(state) {
     const story = emptyPrivateStory();
@@ -85,13 +96,16 @@
       Object.assign(story.flagg, previous.flagg || {});
       Object.assign(story.flaggDager, previous.flaggDager || {});
       Object.assign(story.relasjoner, previous.relasjoner || {});
-      for (const id of previous.spilteScener || []) if (PRIVATE_SCENE.test(id) && !story.spilteScener.includes(id)) story.spilteScener.push(id);
-      for (const e of previous.arkiv || []) if (PRIVATE_SCENE.test(e.sceneId || "") && !story.arkiv.some(x => x.sceneId === e.sceneId)) story.arkiv.push(e);
+      // The private mirror is curated by the runner; preserve every entry,
+      // including older first-week personal scenes without a Wave prefix.
+      for (const id of previous.spilteScener || []) if (!story.spilteScener.includes(id)) story.spilteScener.push(id);
+      for (const e of previous.arkiv || []) if (!story.arkiv.some(x => x.sceneId === e.sceneId)) story.arkiv.push(e);
       for (const [key,value] of Object.entries(source.tidligereValg || {})) if (PRIVATE_FLAG.test(key)) story.flagg[key] = value;
       for (const id of source.spilteScener || []) if (PRIVATE_SCENE.test(id) && !story.spilteScener.includes(id)) story.spilteScener.push(id);
       for (const e of source.arkiv || []) {
-        if (!PRIVATE_SCENE.test(e.sceneId || "")) continue;
+        if (!isPrivateEntry(e)) continue;
         if (!story.arkiv.some(x => x.sceneId === e.sceneId)) story.arkiv.push(e);
+        if (!story.spilteScener.includes(e.sceneId)) story.spilteScener.push(e.sceneId);
         // En lagret, faktisk Wave D-hendelse er et tidsanker. Ikke utled
         // dato fra et flagg uten den tilhørende hendelsen.
         const match = /^wave_d_(c0[15])_/.exec(e.sceneId);
@@ -108,6 +122,30 @@
     state.privatHistorie = story;
     return story;
   }
+  // One newly played Wave E private action is already canonical in state.arkiv.
+  // Append that action incrementally rather than re-scanning every historical
+  // role snapshot on every scene (a quadratic cost in long playthroughs).
+  function recordPrivateScene(state, entry) {
+    if (!isPrivateEntry(entry)) return;
+    const story = state.privatHistorie ||= emptyPrivateStory();
+    story.flagg ||= {};
+    story.flaggDager ||= {};
+    story.spilteScener ||= [];
+    story.arkiv ||= [];
+    story.relasjoner ||= {};
+    for (const [key, value] of Object.entries(state.tidligereValg || {})) {
+      if (PRIVATE_FLAG.test(key)) story.flagg[key] = value;
+    }
+    if (!story.spilteScener.includes(entry.sceneId)) story.spilteScener.push(entry.sceneId);
+    if (!story.arkiv.some(row => row.sceneId === entry.sceneId)) {
+      story.arkiv.push(JSON.parse(JSON.stringify(entry)));
+    }
+    for (const key of ["venn", "familie"]) {
+      if (typeof state.relasjoner?.[key] === "number") story.relasjoner[key] = state.relasjoner[key];
+    }
+    return story;
+  }
+
   function hydratePrivateStory(state, story) {
     state.privatHistorie = JSON.parse(JSON.stringify(story));
     state.tidligereValg ||= {};
@@ -422,7 +460,7 @@
     return text;
   }
 
-  const api = { STORAGE_KEY, VERSION, CLAMPED_METERS, THREAD_STATUSES, createInitialState, selectRole, reconcileContent, applyEffects, capturePrivateStory, hydratePrivateStory, snapshotThreadStatus, save, load, reset, bindPersonTypes, lockScenePeople, presentText, sceneMentionsPerson };
+  const api = { STORAGE_KEY, VERSION, CLAMPED_METERS, THREAD_STATUSES, createInitialState, selectRole, reconcileContent, applyEffects, capturePrivateStory, recordPrivateScene, hydratePrivateStory, snapshotThreadStatus, save, load, reset, bindPersonTypes, lockScenePeople, presentText, sceneMentionsPerson };
   /** @type {any} */ (globalScope).CivicationLifestoryState = api;
   if (typeof module !== "undefined" && module.exports) module.exports = api;
 })(typeof window !== "undefined" ? window : globalThis);
