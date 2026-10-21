@@ -177,6 +177,7 @@
     prepareStoryDay();
     State.bindPersonTypes?.(state, content, null);
     State.save(state);
+    syncQueuedSkills();
     currentRoleId = roleId;
     sisteKonsekvens = null;
     continuationError = "";
@@ -378,7 +379,7 @@
 
   // Skallet booter etter Min dag (shell-loaderen injiserer resolver +
   // CivicationState); jobbaksept dispatcher updateProfile.
-  window.addEventListener("civi:booted", () => { ensureCalendarCheckpoint(); syncToShellCalendar(); maybeAdoptShellRole(); refreshPersonTypes(); render(); });
+  window.addEventListener("civi:booted", () => { syncQueuedSkills(); ensureCalendarCheckpoint(); syncToShellCalendar(); maybeAdoptShellRole(); refreshPersonTypes(); render(); });
   window.addEventListener("civi:dayPhaseChanged", () => { syncToShellCalendar(); refreshDayEvent(); });
   // A role without a Life Story package still lives in the canonical day
   // program. Its preview follows that program; it never answers or advances it.
@@ -407,6 +408,20 @@
     state.relasjoner ||= {};
     for (const key of ["venn", "familie"]) {
       if (typeof stored.relasjoner?.[key] === "number") state.relasjoner[key] = stored.relasjoner[key];
+    }
+  }
+
+  function syncQueuedSkills() {
+    const State = /** @type {any} */ (window).CivicationLifestoryState;
+    const Skills = /** @type {any} */ (window).CivicationSkills;
+    if (!State?.load || !State?.save || !Skills?.flushQueued) return;
+    const persisted = State.load();
+    if (!persisted) return;
+    const result = Skills.flushQueued(persisted, (updated) => State.save(updated));
+    if (result.cleared && state?.rolle === persisted.rolle) {
+      // Keep the UI's next choice save from restoring already-flushed entries.
+      state.pendingSkillsPracticesV1 = persisted.pendingSkillsPracticesV1 || [];
+      state.rolleTilstander = persisted.rolleTilstander || {};
     }
   }
 
@@ -450,6 +465,25 @@
       }
       State.save(state);
       accepted = true;
+      // Skills are credited only for a successfully played and saved authored
+      // Life Story choice, with the concrete effect flag as evidence.
+      // The scene ID is stable across reloads and role changes: a replay cannot
+      // mint more Skills even if the same private scene reappears.
+      const practice = valg?.skills_practice;
+      if (practice && valg?.effekter?.flagg?.[practice.evidence_flag] === true &&
+          !(/** @type {any} */ (window).CIVICATION_TEST_MODE) &&
+          !(/** @type {any} */ (window).OPEN_MODE) &&
+          !window.CivicationState?.isTestMode?.()) {
+        /** @type {any} */ (window).CivicationSkills?.applyOrQueue?.({
+          source: "life_story_choice",
+          event_id: "lifestory:" + sceneId,
+          choice_id: choiceId,
+          skill_id: practice.skill_id,
+          activity_type: practice.activity_type,
+          evidence_flag: practice.evidence_flag,
+          delta: practice.delta
+        }, state, (updated) => State.save(updated));
+      }
       if (WAVE_A_SCENE_ID.test(sceneId)) {
         window.CivicationWaveAInboxBridge?.afterChoice?.(state.rolle, sceneId, choiceId);
       }
@@ -634,16 +668,25 @@
     const thread = content.threads.find((t) => t.id === scene.threadId);
     const ts = state.threadState[scene.threadId];
     const representative = state.personRepresentanter?.[scene.avsender];
-    const valgHtml = (scene.valg || []).map((valg) =>
-      "<button class=\"civi-lifestory-choice\" type=\"button\" data-lifestory-scene=\"" + escapeHtml(scene.id) + "\""
-      + " data-lifestory-choice=\"" + escapeHtml(valg.id) + "\">"
-      + "<span>" + escapeHtml(valg.tekst) + "</span>"
-      + (valg.tone ? "<small>" + escapeHtml(valg.tone) + "</small>" : "")
-      + (/** @type {any} */ (valg).handling ? "<small class=\"civi-lifestory-action-hint\">→ "
-        + escapeHtml(/** @type {any} */ (window).CivicationLifestoryActions?.HANDLING_LABELS?.[/** @type {any} */ (valg).handling.type] || "utfører handlingen")
-        + "</small>" : "")
-      + "</button>"
-    ).join("");
+    const Runner = /** @type {any} */ (window).CivicationLifestoryRunner;
+    const valgHtml = (scene.valg || []).map((valg) => {
+      const required = valg.skills_requirement;
+      const status = Runner.getChoiceAvailability(valg);
+      const detail = !required ? "" : status.available
+        ? "Skills: " + status.label + " " + status.score + " / 100 – tilgjengelig"
+        : "Krever " + status.label + " " + status.required + " / 100. Du har "
+          + (status.measured ? status.score + " / 100" : "ikke målt Skills");
+      return "<button class=\"civi-lifestory-choice\" type=\"button\" data-lifestory-scene=\"" + escapeHtml(scene.id) + "\""
+        + " data-lifestory-choice=\"" + escapeHtml(valg.id) + "\""
+        + (status.available ? "" : " disabled aria-disabled=\"true\"") + ">"
+        + "<span>" + escapeHtml(valg.tekst) + "</span>"
+        + (valg.tone ? "<small>" + escapeHtml(valg.tone) + "</small>" : "")
+        + (required ? "<small class=\"civi-lifestory-skill-hint\">" + escapeHtml(detail) + "</small>" : "")
+        + (/** @type {any} */ (valg).handling ? "<small class=\"civi-lifestory-action-hint\">→ "
+          + escapeHtml(/** @type {any} */ (window).CivicationLifestoryActions?.HANDLING_LABELS?.[/** @type {any} */ (valg).handling.type] || "utfører handlingen")
+          + "</small>" : "")
+        + "</button>";
+    }).join("");
     return ""
       + "<article class=\"civi-lifestory-scene\" aria-label=\"Nå-scene\">"
       + "<div class=\"civi-lifestory-kicker\"><span>NÅ</span><span>" + escapeHtml(viewPhaseName(scene.fase)) + "</span><span>" + escapeHtml(scene.visningstype) + "</span>" + (scene.avsender ? "<span>Fra " + escapeHtml(personNavn(scene.avsender)) + "</span>" : "") + "</div>"
@@ -760,7 +803,8 @@
     const sisteDag = !!(Endings && Endings.isFinalDay(state, content));
     const ending = sisteDag ? Endings.resolveEnding(state, content) : null;
     const authoredEnding = ending && (content.role.endings || []).find(e => e.id === ending.id);
-    const endingHtml = ending
+    const onOriginalFinalDay = !content.role.symposium || state.dag === content.role.symposium.sisteDag;
+    const endingHtml = ending && onOriginalFinalDay
       ? "<section class=\"civi-lifestory-ending\" aria-label=\"Ukas slutt\">"
         + "<div class=\"civi-lifestory-section-label\">" + (content.fortsettelse ? "Kapittelet er avsluttet" : "Slutten på uka") + "</div>"
         + "<h3>" + escapeHtml(ending.navn) + "</h3>"
@@ -777,7 +821,19 @@
     const pendingPrivate = !!Runner.hasPendingPrivateScenes?.(state, content);
     // Private Life Stories remain playable without a badge. The History Go
     // guide is optional and must also appear when private stories continue.
-    const offerExploration = sisteDag && !next;
+    // Show the first-week invitation once, then save the next milestone for
+    // the real final private day. Repeating week-one endings on days 8–20
+    // made the player's growing life feel like the same mail every morning.
+    const offerExploration = sisteDag && !next && (!pendingPrivate || onOriginalFinalDay);
+    const threeWeekDirection = state.livsdag >= 21 &&
+      state.arkiv?.some(entry => /^wave_e_life21_d21_/.test(entry.sceneId) && entry.livsdag >= 21)
+      ? state.tidligereValg?.life21_direction || state.privatHistorie?.flagg?.life21_direction
+      : null;
+    const threeWeekLabels = {
+      skaper: "Skaper", narmiljobygger: "Nærmiljøbygger",
+      relasjonsbygger: "Relasjonsbygger", hverdagsbygger: "Hverdagsbygger",
+      utforsker: "Utforsker"
+    };
     const required = Number(chosenLifePosition?.threshold);
     const hasPointGate = Number.isFinite(required) && required > 0 && !!chosenLifePosition?.badge_id;
     const earned = hasPointGate ? chapterBadgePoints(chosenLifePosition.badge_id) : 0;
@@ -785,7 +841,11 @@
     const nextChapterHint = !offerExploration ? "" :
       '<section class="civi-lifestory-next-chapter" role="status" aria-label="Veien videre">'
       + '<h4>Veien videre</h4>'
-      + (chosenLifePosition
+      + (threeWeekDirection && threeWeekLabels[threeWeekDirection]
+        ? '<p>Tre uker med konkrete valg har gjort <strong>' + escapeHtml(threeWeekLabels[threeWeekDirection])
+          + '</strong> til en mulig livsretning. Du velger selv om den skal være aktiv i livsprofilen. '
+          + 'Du kan samtidig søke jobb og takke ja til et reelt jobbtilbud.</p>'
+        : chosenLifePosition
         ? '<p>Privatlivet kan fortsette uansett jobbstatus. Du har vist interesse for <strong>' + escapeHtml(chosenLifePosition.navn) + '</strong>. Vil du åpne dette ekstra historiekapittelet, kreves riktig opptjening og et frivillig valg av livsposisjon.</p>'
           + (needsMerits ? '<p>Du har ' + escapeHtml(earned) + ' av ' + escapeHtml(required) + ' poeng i ' + escapeHtml(chosenLifePosition.badge_id) + '. Ta quizer i History Go for å bygge kunnskap.</p>'
             : hasPointGate ? '<p>Du har nok poeng. Åpne livsposisjonene og velg ' + escapeHtml(chosenLifePosition.navn) + ' for å låse opp neste kapittel.</p>'

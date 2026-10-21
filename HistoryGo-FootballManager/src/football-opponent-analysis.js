@@ -1,4 +1,5 @@
 import { evaluatePlanVsOpponent } from "./football-match-plan.js";
+import { TACTICAL_SEQUENCES, TACTICAL_PRINCIPLE_SOURCES, evaluateTacticalSequences } from "./football-tactical-sequences.js";
 
 // Motstanderforberedelse v1
 //
@@ -100,6 +101,161 @@ export function buildOpponentTacticalOpportunities({ opponent, tactic, teamFit }
   });
 }
 
+
+// Scouting explains the SAME one tactical chain as the live xG calculation.
+// Every catalogued plan has four interacting moves and a possible opponent
+// countermove. Modelling a response is not proof that the opponent uses it.
+// Match real selected roles to existing formation/team metrics; these roles
+// are not claims about a player's unverified historical abilities.
+const SEQUENCE_METRIC_ROLES = Object.freeze({
+  pressScore: ["pressing_forward","pressing_midfielder","box_to_box"],
+  depthScore: ["channel_runner","advanced_forward","pressing_forward","wide_dribbler"],
+  widthScore: ["wide_dribbler","inverted_winger","wingback","overlapping_fullback"],
+  balanceScore: ["balancing_six","holding_midfielder","deep_playmaker","regista"],
+  restDefenseScore: ["balancing_six","holding_midfielder","support_fullback","duel_centre_back","stopper"],
+  buildUpScore: ["deep_playmaker","regista","holding_midfielder","ball_playing_centre_back","libero","sweeperkeeper"]
+});
+
+const SEQUENCE_METRIC_LABELS = Object.freeze({
+  pressScore: "Press og timing",
+  depthScore: "Dybdeløp og romtrussel",
+  widthScore: "Bredde fra kant og back",
+  balanceScore: "Sentral balanse",
+  restDefenseScore: "Restforsvar og sikring",
+  buildUpScore: "Oppbygging og pasningsstøtte"
+});
+
+export function buildOpponentTacticalSequences({ opponent, tactic, teamFit, responseTeamFit = null, tactics } = {}) {
+  const catalogPattern = TACTICAL_SEQUENCES.find((pattern) => pattern.tacticId === tactic?.id);
+  if (!catalogPattern) return [];
+  const matchup = opponent?.styleTraits
+    ? evaluatePlanVsOpponent(tactic, opponent, { tacticalProfile: teamFit?.metrics })
+    : null;
+  const result = asArray(matchup?.sequences).find((pattern) => pattern.id === catalogPattern.tacticId);
+  const rosterKnown = teamFit && Number.isFinite(Number(teamFit.completeCount))
+    && Number.isFinite(Number(teamFit.totalSlots));
+  const incomplete = rosterKnown && Number(teamFit.completeCount) < Number(teamFit.totalSlots);
+  const checks = Object.entries(catalogPattern.requires).map(([metric, minimum]) => {
+    const raw = teamFit?.metrics?.[metric];
+    const value = typeof raw === "number" && Number.isFinite(raw) ? raw : null;
+    const provenance = teamFit?.sourcedSkillTendencies?.[metric];
+    const supportingRoles = asArray(teamFit?.assignments)
+      .filter((assignment) => assignment?.isComplete &&
+        SEQUENCE_METRIC_ROLES[metric]?.includes(assignment.role?.id))
+      .map((assignment) => ({
+        player: assignment.player?.name || assignment.player?.id || "",
+        role: assignment.role?.name || assignment.role?.id || ""
+      })).filter((entry) => entry.player && entry.role);
+    return {
+      metric, label: SEQUENCE_METRIC_LABELS[metric] || metric,
+      minimum, value,
+      status: value === null ? "unknown" : value >= minimum ? "ready" : "gap",
+      supportingRoles,
+      documentedPlayers: [...new Set(asArray(provenance?.players).filter((v) => typeof v === "string" && v.trim()))]
+    };
+  });
+  const triggerValue = opponent?.styleTraits?.[catalogPattern.opponentCondition.trait]
+    ?? opponent?.[catalogPattern.opponentCondition.trait];
+  const triggerKnown = typeof triggerValue === "number" && Number.isFinite(triggerValue);
+  // A partially observed opponent is not the same as an opponent with no
+  // exploitable weakness. Similarly, an unknown team metric is not a
+  // demonstrated deficiency in the players or formation.
+  const status = incomplete ? "incomplete"
+    : !opponent?.styleTraits || !triggerKnown ? "unknown_opponent"
+    : !teamFit?.metrics || checks.some((check) => check.status === "unknown") ? "unknown_team"
+    : !result ? "not_exposed"
+    : result.status;
+  // Candidate only. Selecting a new tactic remains a conscious manager action;
+  // no counter-counter bonus is created by naming this option.
+  const nextPlan = asArray(tactics).find((plan) =>
+    plan?.id === catalogPattern.responsePlanId) || null;
+  const nextPattern = TACTICAL_SEQUENCES.find((pattern) =>
+    pattern.tacticId === nextPlan?.id) || null;
+  // A source-backed suggestion is not a guarantee. Use the team's REAL
+  // role/formation fit recalculated for the proposed plan, when provided by
+  // the app. Legacy contexts without it remain explicitly provisional.
+  const previewFit = responseTeamFit || teamFit;
+  const responseChecks = Object.entries(nextPattern?.requires || {}).map(([metric, minimum]) => {
+    const raw = previewFit?.metrics?.[metric];
+    const value = typeof raw === "number" && Number.isFinite(raw) ? raw : null;
+    return { metric, label: SEQUENCE_METRIC_LABELS[metric] || metric,
+      minimum, value, status: value === null ? "unknown" : value >= minimum ? "ready" : "gap" };
+  });
+  const responseEvaluation = nextPlan && opponent?.styleTraits && previewFit?.metrics
+    ? evaluateTacticalSequences(nextPlan.id, opponent, previewFit.metrics)[0] || null
+    : null;
+  const responseTriggerTrait = nextPattern?.opponentCondition?.trait;
+  const responseTrigger = opponent?.styleTraits?.[responseTriggerTrait] ?? opponent?.[responseTriggerTrait];
+  const responseStatus = !nextPlan || !nextPattern ? "unavailable"
+    : incomplete ? "incomplete"
+    : !opponent?.styleTraits || !Number.isFinite(responseTrigger) ? "unknown_opponent"
+    : !previewFit?.metrics || responseChecks.some((check) => check.status === "unknown") ? "unknown_team"
+    : responseEvaluation?.status || "not_exposed";
+  const responsePreview = {
+    status: responseStatus,
+    basis: responseTeamFit ? "proposed_plan" : "current_plan",
+    requirements: responseChecks,
+    metCount: responseChecks.filter((check) => check.status === "ready").length,
+    requiredCount: responseChecks.length,
+    risk: asArray(nextPlan?.risks)[0] || "",
+    responsePattern: nextPattern?.title || "",
+    // Recomputed preview still does not include an in-match switch cost,
+    // future player condition or late tactical adaptations.
+    explanation: {
+      advantage: responseTeamFit
+        ? "Dagens ellever har dekning når rolle- og formasjonsbidrag beregnes med den foreslåtte planen. Omstillingskostnad kommer i tillegg."
+        : "Foreløpig dekning med dagens kampplan. Den foreslåtte taktikken må beregnes på nytt før valg.",
+      unsupported: "Dagens ellever mangler minst ett nødvendig lagledd for alternativet.",
+      countered: "Motstanderen har også et motgrep mot det foreslåtte alternativet.",
+      unknown_counter: "Rollene kan støtte alternativet, men motstanderens motgrep er ikke kartlagt.",
+      not_exposed: "Den kjente motstanderprofilen viser ikke svakheten dette alternativet søker.",
+      incomplete: "Elleveren er ikke komplett. Ingen taktisk anbefaling kan konkluderes.",
+      unknown_team: "Lagets taktiske dekning er ukjent. Vurder roller og formasjon først.",
+      unknown_opponent: "Motstanderens taktiske trekk er utilstrekkelig kartlagt.",
+      unavailable: "Det foreslåtte alternativet finnes ikke i aktiv kampplankatalog."
+    }[responseStatus]
+  };
+  return [{
+    id: catalogPattern.tacticId, title: catalogPattern.title,
+    responsePlanId: catalogPattern.responsePlanId,
+    responsePlanName: nextPlan?.name || null,
+    responsePreview,
+    moves: catalogPattern.moves.slice(),
+    mechanism: catalogPattern.mechanism,
+    counterLogic: catalogPattern.counterLogic,
+    failureMode: catalogPattern.failureMode,
+    observation: catalogPattern.observation,
+    phase: catalogPattern.phase,
+    principleSourceIds: catalogPattern.principleSourceIds.slice(),
+    principleSources: catalogPattern.principleSourceIds
+      .map(id => TACTICAL_PRINCIPLE_SOURCES[id])
+      .filter(Boolean),
+    counter: catalogPattern.counter, response: catalogPattern.response,
+    // Current simulated opponent movement, if one occurred during the match.
+    // No claim that historical opponents exhibited this exact movement.
+    liveExchange: result?.liveExchange || null,
+    trigger: {
+      trait: catalogPattern.opponentCondition.trait,
+      value: triggerKnown ? triggerValue : null,
+      minimum: catalogPattern.opponentCondition.min
+    },
+    checks, status, edgeDelta: status === "advantage" ? 1 : 0,
+    risk: asArray(tactic?.risks)[0] || "",
+    // Every user-facing verdict refers to the evaluated current formation/XI.
+    // 'Not exposed' and 'unknown opponent' must not imply poor player skill.
+    explanation: {
+      advantage: "Motstanderen gir et relevant rom; alle nødvendige lagledd støtter mønsteret.",
+      countered: "Motstanderen har et modellert motgrep som stopper denne spillkjeden.",
+      unsupported: "Minst ett nødvendig ledd i egen rolle- eller formasjonsdekning mangler.",
+      unknown_counter: "Mulig sårbarhet finnes, men motstanderens motgrep er ikke kartlagt.",
+      unknown_team: "Minst én nødvendig lagdimensjon er ikke målt. Ukjent er ikke en svakhet hos spilleren.",
+      incomplete: "Elleveren er ikke komplett; vurderingen må kontrolleres igjen etter laguttak.",
+      not_exposed: "Denne motstanderprofilen gir ikke grunnlag for å aktivere mønsteret.",
+      unknown_opponent: "Motstanderen mangler tilstrekkelig taktisk profil for denne vurderingen."
+    }[status]
+  }];
+}
+
 function text(value, fallback = "") {
   const normalized = String(value ?? "").trim();
   return normalized || fallback;
@@ -164,7 +320,7 @@ function signalsForFocus(opponent, matchup, focusId) {
   ]).slice(0, 5);
 }
 
-export function createOpponentAnalysisWorkspace({ fixture = null, formation = null, tactic = null, teamFit = null, trainingLabel = "Ikke valgt" } = {}) {
+export function createOpponentAnalysisWorkspace({ fixture = null, formation = null, tactic = null, teamFit = null, responseTeamFit = null, tactics = [], trainingLabel = "Ikke valgt" } = {}) {
   const opponent = fixture?.opponent || null;
   if (!fixture?.fixtureId || !opponent?.id) {
     return {
@@ -210,6 +366,7 @@ export function createOpponentAnalysisWorkspace({ fixture = null, formation = nu
     },
     matchup,
     tacticalOpportunities: buildOpponentTacticalOpportunities({ opponent, tactic, teamFit }),
+    tacticalSequences: buildOpponentTacticalSequences({ opponent, tactic, teamFit, responseTeamFit, tactics }),
     focuses
   };
 }

@@ -5237,6 +5237,45 @@
               }
             },
             {
+              "place_id": "bogstadvannet",
+              "name": "Bogstadvannet",
+              "category": "natur",
+              "source_file": "places/natur/oslo/places_natur/bogstadvannet.json",
+              "roles": [
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_bogstadvannet_peder_anker",
+                  "year": 1773,
+                  "title": "Peder Anker knyttet godsets trelastvirksomhet til sagdrift ved Lysaker i 1773.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Tømmerfløting, roing over vannet og Peder Ankers sagdrift",
+                      "url": "https://lokalhistoriewiki.no/Lysakervassdraget",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/bogstadvannet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_bogstadvannet_peder_anker",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
+              }
+            },
+            {
               "place_id": "botanisk_hage",
               "name": "Botanisk hage",
               "category": "vitenskap",
@@ -8527,6 +8566,45 @@
               }
             },
             {
+              "place_id": "skraperudtjern",
+              "name": "Skraperudtjern",
+              "category": "natur",
+              "source_file": "places/natur/oslo/places_oslo_natur_ljanselva_rute/skraperudtjern.json",
+              "roles": [
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_skraperudtjern_privilege",
+                  "year": 1688,
+                  "title": "Den kongelige begrensningen på sagdrift i 1688 knyttes til privilegier for Rustadsaga.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Side 2, Rustadsaga og vannfallet",
+                      "url": "https://www.osloelveforum.org/wp-content/uploads/2023/05/LJA-foss.pdf",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/skraperudtjern.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_skraperudtjern_privilege",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
+              }
+            },
+            {
               "place_id": "storgata",
               "name": "Storgata",
               "category": "by",
@@ -9667,8 +9745,8 @@
               }
             }
           ],
-          "placeCount": 52,
-          "milestoneCount": 152
+          "placeCount": 54,
+          "milestoneCount": 154
         },
         "historie_revolusjoner_industri_og_demokratisering": {
           "places": [
@@ -16401,6 +16479,113 @@
               }
             },
             {
+              "place_id": "ljanselva",
+              "name": "Ljanselva",
+              "category": "natur",
+              "source_file": "places/natur/oslo/places_oslo_natur_hovedsteder/ljanselva.json",
+              "roles": [
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_ljanselva_powderfounder",
+                  "year": 1855,
+                  "title": "Tollef Olsen var den første eieren av Liadalens Krudtværk som startet i 1855.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Innledning, etablering og eiere",
+                      "url": "https://lokalhistoriewiki.no/wiki/Kruttverket_i_Liadalen_(Oslo)",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/ljanselva.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ljanselva_powderfounder",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_ljanselva_viaduct",
+                  "year": 1876,
+                  "title": "Jernbanebroen over Liadalen ble bygget i 1876.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Avsnitt om Ljansbroen og 1876",
+                      "url": "https://lokalhistoriewiki.no/wiki/Kruttverket_i_Liadalen_(Oslo)",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/ljanselva.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ljanselva_viaduct",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_ljanselva_explosion",
+                  "year": 1884,
+                  "title": "En kraftig eksplosjon ødela kruttverket i Liadalen i 1884; det ble ikke gjenreist.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Drift og nedleggelse",
+                      "url": "https://lokalhistoriewiki.no/wiki/Kruttverket_i_Liadalen_(Oslo)",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/ljanselva.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ljanselva_explosion",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_ljanselva_victims",
+                  "year": 1884,
+                  "title": "To nattevakter døde i eksplosjonen ved kruttverket i 1884.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Drift og nedleggelse",
+                      "url": "https://lokalhistoriewiki.no/wiki/Kruttverket_i_Liadalen_(Oslo)",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/ljanselva.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ljanselva_victims",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_ljanselva_marka_fjord_korridor_1977",
+                    "title": "Vassdraget som går fra marka mot fjorden",
+                    "year": 1977,
+                    "type": "environmental"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "maridalsvannet",
               "name": "Maridalsvannet",
               "category": "natur",
@@ -18474,6 +18659,87 @@
                     "type": "urban_water_transformation"
                   }
                 ]
+              }
+            },
+            {
+              "place_id": "noklevann",
+              "name": "Nøklevann",
+              "category": "natur",
+              "source_file": "places/natur/oslo/places_oslo_natur_hovedsteder/noklevann.json",
+              "roles": [
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_noklevann_sar_1856",
+                  "year": 1856,
+                  "title": "Thomas Heftye lot bygge sperrestue på Sarabråten i 1856.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Avsnitt om Thomas Joh. Heftyes sommersted",
+                      "url": "https://oslobyleksikon.no/side/Sarabr%C3%A5ten",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/noklevann.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_noklevann_sar_1856",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_noklevann_purchase",
+                  "year": 1897,
+                  "title": "Aker kommune kjøpte Nøklevann og Lutvann i 1897 for å sikre vannforsyningen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Avsnitt om kjøpet i 1897",
+                      "url": "https://oslobyleksikon.no/side/N%C3%B8klevann",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/noklevann.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_noklevann_purchase",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_noklevann_dam",
+                  "year": 1899,
+                  "title": "Nøklevannsdammen ved Rustadsaga ble bygd fra 1899 til 1902 og innsjøen regulert.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Avsnitt om Nøklevannsdammen 1899–1902",
+                      "url": "https://oslobyleksikon.no/side/Vannforsyningen",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/noklevann.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_noklevann_dam",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
               }
             },
             {
@@ -26189,8 +26455,8 @@
               }
             }
           ],
-          "placeCount": 130,
-          "milestoneCount": 540
+          "placeCount": 132,
+          "milestoneCount": 547
         },
         "historie_nasjon_massepolitikk_og_moderne_institusjoner": {
           "places": [
@@ -27532,6 +27798,68 @@
                   "source_file": "data/places/production/bla_skilt_vebjorn_tandberg_kongens_gate_15.json",
                   "evidence_type": "verified_place_production_claim",
                   "claim_id": "claim_bla_skilt_vebjorn_tandberg_kongens_gate_15_context",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
+              }
+            },
+            {
+              "place_id": "bogstadvannet",
+              "name": "Bogstadvannet",
+              "category": "natur",
+              "source_file": "places/natur/oslo/places_natur/bogstadvannet.json",
+              "roles": [
+                {
+                  "id": "hverdagsliv_og_velferd",
+                  "label": "Hverdagsliv og velferd"
+                },
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_bogstadvannet_dam1913",
+                  "year": 1913,
+                  "title": "En ny steindemning ble reist i 1913 ved utløpet, etter eldre demningsanlegg.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Historikk om Osdammen, Ossaga, isdrift og golf/camping",
+                      "url": "https://lokalhistoriewiki.no/Bogstadvannet",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/bogstadvannet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_bogstadvannet_dam1913",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_bogstadvannet_golf1924",
+                  "year": 1924,
+                  "title": "Golfbanen ble åpnet i 1924 og ble en del av fritidslandskapet sør for innsjøen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Beliggenhet, utløp, dybde og rekreasjon",
+                      "url": "https://snl.no/Bogstadvannet",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/bogstadvannet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_bogstadvannet_golf1924",
                   "story_id": "",
                   "limitations": []
                 }
@@ -36255,8 +36583,8 @@
               }
             }
           ],
-          "placeCount": 116,
-          "milestoneCount": 289
+          "placeCount": 117,
+          "milestoneCount": 291
         },
         "historie_krig_okkupasjon_og_etterkrigsoppgjor": {
           "places": [
@@ -46625,6 +46953,45 @@
               }
             },
             {
+              "place_id": "noklevann",
+              "name": "Nøklevann",
+              "category": "natur",
+              "source_file": "places/natur/oslo/places_oslo_natur_hovedsteder/noklevann.json",
+              "roles": [
+                {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_noklevann_sar_end",
+                  "year": 1971,
+                  "title": "Flere bygninger ved Sarabråten ble revet gjennom 1900-tallet, og det siste huset brant 1971.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Avsnitt om eierskifte 1911, rivninger og brann 1971",
+                      "url": "https://oslobyleksikon.no/side/Sarabr%C3%A5ten",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/noklevann.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_noklevann_sar_end",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
+              }
+            },
+            {
               "place_id": "frysjadammen",
               "name": "Oset slusebru – damanlegget ved Maridalsoset",
               "category": "historie",
@@ -47809,6 +48176,45 @@
                     "type": "turning_point"
                   }
                 ]
+              }
+            },
+            {
+              "place_id": "skraperudtjern",
+              "name": "Skraperudtjern",
+              "category": "natur",
+              "source_file": "places/natur/oslo/places_oslo_natur_ljanselva_rute/skraperudtjern.json",
+              "roles": [
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_skraperudtjern_sawend",
+                  "year": 1954,
+                  "title": "Sagbruksvirksomheten fortsatte i modernisert form til 1954.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Plassene på veien ned mot Skullerudstua",
+                      "url": "https://www.ostensjo-hist.no/rundt_vannet/RV-artikler-pdf/rv10_a3.html",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/skraperudtjern.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_skraperudtjern_sawend",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
               }
             },
             {
@@ -49604,6 +50010,71 @@
               }
             },
             {
+              "place_id": "ostensjovannet",
+              "name": "Østensjøvannet",
+              "category": "natur",
+              "source_file": "places/natur/oslo/places_oslo_natur_hovedsteder/ostensjovannet.json",
+              "roles": [
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_ostensjovannet_islands1960",
+                  "year": 1960,
+                  "title": "Fra 1960 til 1965 ble kanaler gravd i myrområdene sør for Østensjøvannet, og øyer ble dannet som raste- og hekkeområder for vannfugler.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Innledning, historisk kanalgraving 1960–65",
+                      "url": "https://www.statsforvalteren.no/siteassets/fm-oslo-og-viken/miljo-og-klima/rapporter/miljovernavdelingen-i-oslo-og-viken-rapportserie/2024-05-problemkartlegging-av-ostensjovannet.pdf",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/ostensjovannet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ostensjovannet_islands1960",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_ostensjovannet_care1979",
+                  "year": 1979,
+                  "title": "I 1979 var en tidlig skjøtselsplan klar. Senere ble vern og bruk diskutert flere ganger.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Historical reserve campaign chronology",
+                      "url": "https://www.ostensjovannet.no/vernets-historie",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/ostensjovannet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ostensjovannet_care1979",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_ostensjovannet_vatmark_naturarkiv_1992",
+                    "title": "Innsjøen som lagrer fugl, vann og randsoner",
+                    "year": 1992,
+                    "type": "environmental"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "ovre_foss",
               "name": "Øvre Foss – Hjula Veveri",
               "category": "naeringsliv",
@@ -49734,8 +50205,8 @@
               }
             }
           ],
-          "placeCount": 94,
-          "milestoneCount": 244
+          "placeCount": 97,
+          "milestoneCount": 248
         },
         "historie_senmoderne_globalisering_og_markedsvending": {
           "places": [
@@ -57283,6 +57754,45 @@
               }
             },
             {
+              "place_id": "noklevann",
+              "name": "Nøklevann",
+              "category": "natur",
+              "source_file": "places/natur/oslo/places_oslo_natur_hovedsteder/noklevann.json",
+              "roles": [
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_noklevann_release1983",
+                  "year": 1983,
+                  "title": "Nøklevann ble tatt ut av drikkevannsforsyningen i 1983, og restriksjonene ble opphevet.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Avsnitt om 1983 og senere badebruk",
+                      "url": "https://oslobyleksikon.no/side/N%C3%B8klevann",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/noklevann.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_noklevann_release1983",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
+              }
+            },
+            {
               "place_id": "olaf_ryes_plass",
               "name": "Olaf Ryes plass",
               "category": "by",
@@ -59290,6 +59800,64 @@
                   "source_file": "data/places/production/sentrum_scene.json",
                   "evidence_type": "verified_place_production_claim",
                   "claim_id": "claim_sentrum_scene_popup_09",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": []
+              }
+            },
+            {
+              "place_id": "skraperudtjern",
+              "name": "Skraperudtjern",
+              "category": "natur",
+              "source_file": "places/natur/oslo/places_oslo_natur_ljanselva_rute/skraperudtjern.json",
+              "roles": [
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_skraperudtjern_hytte",
+                  "year": 1982,
+                  "title": "Østensjø lokalhistoriske bilder omtaler en hytte eid av Nordstrand Jeger- og Fiskerforening, oppført i 1982.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Bildepostens tekstmetadata",
+                      "url": "https://ostensjo-hist.no/omeka/items/show/58668",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/skraperudtjern.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_skraperudtjern_hytte",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_skraperudtjern_restriction",
+                  "year": 1983,
+                  "title": "Frigivelsen av Nøklevann i 1983 endret bruken av de nærliggende vannene.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Stedstekst om beliggenhet, historie, sagflis og badeplass",
+                      "url": "https://oslobyleksikon.no/side/Skraperudtjern",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/skraperudtjern.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_skraperudtjern_restriction",
                   "story_id": "",
                   "limitations": []
                 }
@@ -61845,11 +62413,57 @@
               "source_file": "places/natur/oslo/places_oslo_natur_hovedsteder/ostensjovannet.json",
               "roles": [
                 {
+                  "id": "by_og_infrastruktur",
+                  "label": "By og infrastruktur"
+                },
+                {
+                  "id": "makt_og_styring",
+                  "label": "Makt og styring"
+                },
+                {
                   "id": "stedshistorisk_spor",
                   "label": "Stedshistorisk spor"
                 }
               ],
               "milestones": [
+                {
+                  "id": "production_claim_ostensjovannet_friends1988",
+                  "year": 1983,
+                  "title": "Vennegruppen startet i 1983 og ble formelt organisert i 1988 etter nye byggeplaner.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Historical reserve campaign chronology",
+                      "url": "https://www.ostensjovannet.no/vernets-historie",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/ostensjovannet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ostensjovannet_friends1988",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_ostensjovannet_area539",
+                  "year": 1992,
+                  "title": "1992-forskriften oppga 539 dekar, hvorav 209 dekar land. Dette er omfanget ved opprettelsen.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Historical 1992 reserve regulation, introduction and §§I–III",
+                      "url": "https://lovdata.no/dokument/LF/forskrift/1992-10-02-754",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/ostensjovannet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ostensjovannet_area539",
+                  "story_id": "",
+                  "limitations": []
+                },
                 {
                   "id": "story_st_ostensjovannet_vatmark_naturarkiv_1992",
                   "year": 1992,
@@ -61878,6 +62492,63 @@
                   "claim_id": "",
                   "story_id": "st_ostensjovannet_vatmark_naturarkiv_1992",
                   "limitations": []
+                },
+                {
+                  "id": "production_claim_ostensjovannet_reserve1992",
+                  "year": 1992,
+                  "title": "Vernet av innsjøen og Bogerudmyra som naturreservat ble vedtatt 2. oktober 1992.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Historical 1992 reserve regulation, introduction and §§I–III",
+                      "url": "https://lovdata.no/dokument/LF/forskrift/1992-10-02-754",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/ostensjovannet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ostensjovannet_reserve1992",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_ostensjovannet_protection",
+                  "year": 1992,
+                  "title": "Vernet fra 2. oktober 1992 skulle bevare våtmarksvegetasjon, fugleliv og annet tilknyttet dyreliv.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Verneforskriften 1992 §III, verneformålet",
+                      "url": "https://lovdata.no/dokument/LF/forskrift/1992-10-02-754",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/ostensjovannet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ostensjovannet_protection",
+                  "story_id": "",
+                  "limitations": []
+                },
+                {
+                  "id": "production_claim_ostensjovannet_park2002",
+                  "year": 2002,
+                  "title": "Miljøparkvedtaket fra 2002 skulle ivareta det bredere landskapet rundt den fredede våtmarka.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Miljøpark reguleringsplan, gjeldende plan vedtatt i 2002",
+                      "url": "https://www.oslo.kommune.no/slik-bygger-vi-oslo/reguleringsplan-ostensjoomradet-miljopark/",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/ostensjovannet.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ostensjovannet_park2002",
+                  "story_id": "",
+                  "limitations": []
                 }
               ],
               "period_cases": [],
@@ -61895,8 +62566,8 @@
               }
             }
           ],
-          "placeCount": 138,
-          "milestoneCount": 361
+          "placeCount": 140,
+          "milestoneCount": 369
         },
         "historie_digital_samtid_kriser_og_ny_offentlighet": {
           "places": [
@@ -67176,6 +67847,52 @@
               }
             },
             {
+              "place_id": "ljanselva",
+              "name": "Ljanselva",
+              "category": "natur",
+              "source_file": "places/natur/oslo/places_oslo_natur_hovedsteder/ljanselva.json",
+              "roles": [
+                {
+                  "id": "stedshistorisk_spor",
+                  "label": "Stedshistorisk spor"
+                }
+              ],
+              "milestones": [
+                {
+                  "id": "production_claim_ljanselva_listing",
+                  "year": 2014,
+                  "title": "Ljabru og nedre Ljabrubakken ble fredet 30. mai 2014.",
+                  "consequence": "",
+                  "confidence": "",
+                  "sources": [
+                    {
+                      "title": "Fredningsår",
+                      "url": "https://riksantikvaren.no/fredninger/ljabru-og-nedre-del-av-ljabrubakken-i-oslo-fredet/",
+                      "verifiedAt": "2026-10-21"
+                    }
+                  ],
+                  "source_file": "data/places/production/ljanselva.json",
+                  "evidence_type": "verified_place_production_claim",
+                  "claim_id": "claim_ljanselva_listing",
+                  "story_id": "",
+                  "limitations": []
+                }
+              ],
+              "period_cases": [],
+              "connections": {
+                "person_ids": [],
+                "works": [],
+                "stories": [
+                  {
+                    "id": "st_ljanselva_marka_fjord_korridor_1977",
+                    "title": "Vassdraget som går fra marka mot fjorden",
+                    "year": 1977,
+                    "type": "environmental"
+                  }
+                ]
+              }
+            },
+            {
               "place_id": "middelalder_oslo",
               "name": "Middelalderparken",
               "category": "historie",
@@ -71144,8 +71861,8 @@
               }
             }
           ],
-          "placeCount": 107,
-          "milestoneCount": 261
+          "placeCount": 108,
+          "milestoneCount": 262
         }
       },
       "parallel_tracks": {
@@ -87316,9 +88033,9 @@
       "oslo_coverage": {
         "contract": "oslo-history-coverage-v1",
         "canonical_place_count": 587,
-        "dated_evidence_place_count": 265,
+        "dated_evidence_place_count": 268,
         "documented_case_place_count": 2,
-        "awaiting_source_backed_history_count": 320,
+        "awaiting_source_backed_history_count": 317,
         "categories": [
           {
             "category": "by",
@@ -87386,9 +88103,9 @@
           {
             "category": "natur",
             "total": 80,
-            "dated_evidence": 21,
+            "dated_evidence": 24,
             "documented_case": 0,
-            "awaiting_source_backed_history": 59
+            "awaiting_source_backed_history": 56
           },
           {
             "category": "politikk",
@@ -88013,7 +88730,7 @@
             "name": "Bogstadvannet",
             "category": "natur",
             "source_file": "places/natur/oslo/places_natur/bogstadvannet.json",
-            "status": "awaiting_source_backed_history"
+            "status": "dated_evidence"
           },
           {
             "place_id": "bogstadveien",
@@ -90106,7 +90823,7 @@
             "name": "Nøklevann",
             "category": "natur",
             "source_file": "places/natur/oslo/places_oslo_natur_hovedsteder/noklevann.json",
-            "status": "awaiting_source_backed_history"
+            "status": "dated_evidence"
           },
           {
             "place_id": "noklevann_ljanselva_start",
@@ -90645,7 +91362,7 @@
             "name": "Skraperudtjern",
             "category": "natur",
             "source_file": "places/natur/oslo/places_oslo_natur_ljanselva_rute/skraperudtjern.json",
-            "status": "awaiting_source_backed_history"
+            "status": "dated_evidence"
           },
           {
             "place_id": "skulptursonen_ovre_slottsgate",
@@ -102700,10 +103417,10 @@
     "connected_work_count": 150,
     "connected_story_count": 272,
     "canonical_story_milestone_count": 241,
-    "verified_place_production_milestone_count": 889,
-    "indexed_place_count": 311,
-    "epoch_place_relations": 741,
-    "milestone_count": 2092
+    "verified_place_production_milestone_count": 913,
+    "indexed_place_count": 314,
+    "epoch_place_relations": 752,
+    "milestone_count": 2116
   },
   "warnings": {
     "missing_source_files": [

@@ -3963,9 +3963,9 @@ function getCoachContext() {
   });
 }
 
-function getTeamFit() {
+function getTeamFit(tacticOverride = null) {
   const formation = getFormation();
-  const tactic = getTactic();
+  const tactic = tacticOverride || getTactic();
 
   if (!formation || !tactic) {
     return null;
@@ -4572,7 +4572,9 @@ function chooseMatchdayDecision(optionId) {
   });
   session = state.matchday.session;
 
+  const tacticalPossession = resolution.tacticalPossession;
   session.decisions.push({
+    tacticalPossession,
     eventId: event.id,
     eventTitle: event.title,
     optionId: option.id,
@@ -4605,6 +4607,16 @@ function chooseMatchdayDecision(optionId) {
         }
       : null
   });
+
+  // Narrative only: the decision's xG was already counted by the engine.
+  if (tacticalPossession) {
+    state.matchday.session = logMatchMoment(session, {
+      type: "tactical-possession",
+      side: tacticalPossession.side,
+      detail: tacticalPossession.summary
+    });
+    session = state.matchday.session;
+  }
 
   if (eventIndex + 1 < session.events.length) {
     session.phase = `event_${eventIndex + 2}`;
@@ -6536,6 +6548,14 @@ function getOpponentAnalysisContext() {
   const fixtures = getOpponentAnalysisFixtures();
   const savedPlan = normalizeOpponentAnalysisPlan(state.opponentAnalysisPlan);
   const currentFixture = fixtures[0] || null;
+  const tactic = getTactic();
+  // Use the same authoritative formation/XI engine for the proposed response,
+  // not the current tactic's metrics. Pure read-only scouting preview.
+  const responseId = TACTICAL_SEQUENCES.find((entry) =>
+    entry.tacticId === tactic?.id)?.responsePlanId;
+  const responseTactic = currentFixture && responseId
+    ? (state.tactics || []).find((entry) => entry.id === responseId) : null;
+  const responseTeamFit = responseTactic ? getTeamFit(responseTactic) : null;
   return {
     mode: state.gameStartState?.selectedMode || state.modeEnvelope?.activeMode || null,
     week: Number(state.clubWeekState?.week) || 1,
@@ -6544,8 +6564,10 @@ function getOpponentAnalysisContext() {
     savedPlan,
     currentPlanReady: Boolean(currentFixture && isOpponentAnalysisPlanForFixture(savedPlan, currentFixture.fixtureId)),
     formation: getFormation(),
-    tactic: getTactic(),
+    tactic,
     teamFit: getTeamFit(),
+    responseTeamFit,
+    tactics: state.tactics || [],
     trainingLabel: getWeeklyTrainingChoiceLabel()
   };
 }
@@ -6561,6 +6583,7 @@ function saveOpponentAnalysisPlanFromClubRoom(plan) {
     fixture,
     formation: context.formation,
     tactic: context.tactic,
+    tactics: context.tactics,
     trainingLabel: context.trainingLabel
   });
   const canonical = createOpponentAnalysisPlan({
@@ -10452,6 +10475,39 @@ function appendTrainingObservationPrompt(parent, hypothesis, event) {
 
 // Tatt managergrep med tone-farget konsekvens, brukt både underveis og i
 // sluttrapporten.
+// Four-step possession/transition chain from the scored manager choice.
+// This display is not a second match simulation and does not add xG.
+function appendTacticalPossessionLog(parent, decisions, heading, { latestOnly = false } = {}) {
+  const chains = Array.isArray(decisions)
+    ? decisions.map((decision) => decision?.tacticalPossession).filter(Boolean)
+    : [];
+  if (!chains.length) return;
+  appendMatchdaySubheading(parent, heading);
+  const selected = latestOnly ? chains.slice(-1) : chains;
+  selected.forEach((chain) => {
+    const details = document.createElement("details");
+    details.className = "matchday-tactical-possession";
+    const summary = document.createElement("summary");
+    summary.textContent = chain.outcome === "successful"
+      ? "Simulert overgang: grepet lykkes" : "Simulert overgang: motspillet lykkes";
+    const list = document.createElement("ol");
+    chain.steps.forEach((step) => {
+      const item = document.createElement("li");
+      item.textContent = step.action;
+      list.append(item);
+    });
+    const explanation = document.createElement("p");
+    explanation.className = "muted-text";
+    const signed = (value) => value > 0 ? "+" + value.toFixed(2) : value.toFixed(2);
+    const xg = chain.existingXgEffect;
+    explanation.textContent = "Eksisterende effekt fra managergrepet: " +
+      "xG " + signed(xg.for) + " for / " + signed(xg.against) + " mot. " +
+      "Dette legges ikke til en gang til. Ingen enkeltpasning eller avslutning er fysisk sporet.";
+    details.append(summary, list, explanation);
+    parent.append(details);
+  });
+}
+
 function appendMatchdayDecisionLog(parent, decisions, heading) {
   if (!Array.isArray(decisions) || decisions.length === 0) {
     return;
@@ -10785,6 +10841,7 @@ function renderMatchdaySessionEvent(container, session, eventIndex) {
 
   // Tidligere grep med kort konsekvens.
   appendMatchdayDecisionLog(card, session.decisions, "Grep så langt");
+  appendTacticalPossessionLog(card, session.decisions, "Siste simulerte spillsekvens", { latestOnly: true });
 
   const event = session.events[eventIndex];
 
@@ -11126,6 +11183,45 @@ function appendMatchFlow(parent, session) {
     ? `Basert på sjanser og mål som er avdekket til ${snapshot.minute}. minutt.`
     : "Kampbildet formes når sjanser og mål avdekkes.";
   panel.append(head, zones, hint);
+
+  // Never reveal a period's xG before the live clock reaches its end.
+  // Attribution is read ONLY from the already-played period snapshots;
+  // later plan switches cannot rewrite the earlier contribution.
+  const displayedMinute = session?.outcome || session?.phase === "resolved"
+    ? 90 : Number(session?.liveMinute) || 0;
+  const completed = (Array.isArray(session?.timeline) ? session.timeline : [])
+    .filter((period) => period?.tacticalXg && period?.range?.to <= displayedMinute);
+  if (completed.length) {
+    const total = (key) => completed.reduce((sum, period) =>
+      sum + (Number(period.tacticalXg[key]) || 0), 0);
+    const shown = (number) => {
+      const rounded = Math.round(number * 100) / 100;
+      const sign = rounded > 0 ? "+" : rounded < 0 ? "−" : "";
+      return sign + Math.abs(rounded).toLocaleString("nb-NO", {
+        minimumFractionDigits: 2, maximumFractionDigits: 2
+      });
+    };
+    const ledger = document.createElement("details");
+    ledger.className = "match-flow-tactical-xg";
+    const title = document.createElement("summary");
+    title.textContent = "Kampplanens målbare xG-bidrag";
+    const totals = document.createElement("p");
+    totals.textContent = `${shown(total("addedFor"))} xG for · ${shown(-total("preventedAgainst"))} xG imot`;
+    const breakdown = document.createElement("ol");
+    completed.forEach((period) => {
+      const attribution = period.tacticalXg;
+      const item = document.createElement("li");
+      item.textContent = `${period.range.from}–${period.range.to}': ` +
+        `${attribution.planName || attribution.planId || "Kampplan"} · ` +
+        `${shown(attribution.addedFor)} for / ${shown(-attribution.preventedAgainst)} imot`;
+      breakdown.append(item);
+    });
+    const note = document.createElement("small");
+    note.textContent = "Dette er xG-effekt som allerede inngår i kampmotoren, ikke en ekstra bonus. Omfatter hele kampplan-matchupen, ikke bare taktiske sekvenser.";
+    ledger.append(title, totals, breakdown, note);
+    panel.append(ledger);
+  }
+
   parent.append(panel);
 }
 
@@ -11232,6 +11328,27 @@ function appendMatchMinuteLog(parent, session) {
     }
 
     item.append(minute, body);
+    // Tactical traces are attached to an already played chance. They never
+    // create additional attempts/goals, and remain explicitly simulated.
+    if (entry.tacticalMoment && (entry.type === "goal" || entry.type === "chance")) {
+      const moment = entry.tacticalMoment;
+      const trace = document.createElement("details");
+      trace.className = "matchday-tactical-moment";
+      const head = document.createElement("summary");
+      head.textContent = `Spill og motspill: ${moment.label} (modellert)`;
+      const explanation = document.createElement("p");
+      explanation.textContent = `${moment.description} ${moment.cause}`.trim();
+      const actions = document.createElement("ol");
+      (Array.isArray(moment.steps) ? moment.steps : []).forEach((step) => {
+        const move = document.createElement("li");
+        move.textContent = `${step.action}${step.outcome === "blocked" ? " – stanset" : ""}`;
+        actions.append(move);
+      });
+      const caution = document.createElement("small");
+      caution.textContent = "Koblet til denne eksisterende sjansen, uten ekstra mål eller xG. Ikke faktisk spillertracking.";
+      trace.append(head, explanation, actions, caution);
+      item.append(trace);
+    }
     list.append(item);
   });
   wrap.append(list);
@@ -11251,7 +11368,6 @@ function appendMatchPlanSwitcher(card, session) {
   const wrap = document.createElement("details");
   wrap.className = "match-plan-switcher";
   wrap.open = Boolean(state.matchPlanSwitcherOpen);
-  wrap.addEventListener("toggle", () => { state.matchPlanSwitcherOpen = wrap.open; });
 
   const summary = document.createElement("summary");
   const standing = gameState.scoreKnown
@@ -11295,11 +11411,45 @@ function appendMatchPlanSwitcher(card, session) {
       : live.status === "advantage"
         ? "Rollene og formasjonen støtter kjeden mot denne motstanderen."
         : live.status === "countered"
-          ? "Motstanderen har en dokumentert struktur som kan nøytralisere kjeden."
+          ? "Motstanderens kartlagte eller modellerte motgrep kan bryte spillkjeden."
           : live.status === "unknown_counter"
             ? "Kjeden har rolledekning, men vi har ikke kartlagt motstanderens mulige motgrep."
             : "Dagens rolle- og formasjonsdekning er utilstrekkelig for denne kjeden.";
     story.append(storyTitle, status, actions, counter, response);
+    // Use the existing authoritative live-match matchup. A simulated
+    // countermove is not historical tracking and these are possible actions,
+    // not fabricated completed passes or duels.
+    const exchange = live?.liveExchange;
+    if (exchange) {
+      const explanation = document.createElement("section");
+      explanation.className = "match-plan-live-exchange";
+      explanation.dataset.exchangeStatus = exchange.status;
+      const title = document.createElement("h5");
+      title.textContent = "Motstanderens modellerte justering";
+      const cause = document.createElement("p");
+      cause.textContent = exchange.cause;
+      const steps = document.createElement("ol");
+      steps.className = "match-plan-live-exchange-steps";
+      exchange.steps.forEach((step) => {
+        const item = document.createElement("li");
+        item.dataset.stepStatus = step.result;
+        item.textContent = step.action + (step.result === "blocked"
+          ? " – avskåret av motspillet" : " – mulig");
+        steps.append(item);
+      });
+      explanation.append(title, cause, steps);
+      if (exchange.failureConsequence) {
+        const risk = document.createElement("p");
+        risk.textContent = "Hvis forsøket mislykkes: " + exchange.failureConsequence;
+        explanation.append(risk);
+      }
+      const cue = document.createElement("p");
+      cue.textContent = "Se etter: " + exchange.managerObservation;
+      const caution = document.createElement("small");
+      caution.textContent = "Dette er en simulert spillkjede, ikke observerte hendelser eller garantert xG.";
+      explanation.append(cue, caution);
+      story.append(explanation);
+    }
     wrap.append(story);
   }
 
@@ -11322,14 +11472,41 @@ function appendMatchPlanSwitcher(card, session) {
 
   const list = document.createElement("div");
   list.className = "match-plan-options";
-  const ranked = rankPlansForSituation(plans, {
-    currentPlan,
-    gameState: gameState.state,
-    opponent: session.opponent,
-    tacticalProfile: session.teamFitSnapshot?.tacticalProfile
-  });
+  // Only compute 18 real alternative fits when the manager OPENS the
+  // selector. Preview each option via the SAME PURE matchday switch function,
+  // including real substitutions and sourced contributions from PR #479.
+  // The previously active plan's role profile must NEVER decide another plan.
+  const populatePlanOptions = () => {
+    list.replaceChildren();
+    const currentTeamFit = currentPlan ? getTeamFit(currentPlan) : null;
+    const tacticalProfilesByPlan = {};
+    if (currentTeamFit?.metrics && session.teamFitSnapshot?.tacticalProfile) {
+      plans.forEach((candidate) => {
+        if (candidate.id === currentId) {
+          tacticalProfilesByPlan[candidate.id] = session.teamFitSnapshot.tacticalProfile;
+          return;
+        }
+        const nextTeamFit = getTeamFit(candidate);
+        if (!nextTeamFit?.metrics) return;
+        // Dry run: creates a new session; never saves, changes selection,
+        // logs real decisions or rewrites previously played periods.
+        const preview = applyMatchPlanChange(session, candidate, {
+          opponent: session.opponent, currentTeamFit, nextTeamFit,
+          currentPlanData: currentPlan, players: state.players, roles: state.roles
+        });
+        tacticalProfilesByPlan[candidate.id] =
+          preview.teamFitSnapshot?.tacticalProfile || session.teamFitSnapshot.tacticalProfile;
+      });
+    }
+    const ranked = rankPlansForSituation(plans, {
+      currentPlan,
+      gameState: gameState.state,
+      opponent: session.opponent,
+      tacticalProfile: session.teamFitSnapshot?.tacticalProfile,
+      tacticalProfilesByPlan
+    });
 
-  ranked.forEach((entry) => {
+    ranked.forEach((entry) => {
     const button = document.createElement("button");
     button.type = "button";
     button.className = `match-plan-option${entry.isCurrent ? " is-current" : ""}${entry.fitsGameState ? " is-fitting" : ""}`;
@@ -11360,7 +11537,13 @@ function appendMatchPlanSwitcher(card, session) {
       button.addEventListener("click", () => switchMatchPlanDuringMatch(entry.plan.id));
     }
     list.append(button);
+    });
+  };
+  wrap.addEventListener("toggle", () => {
+    state.matchPlanSwitcherOpen = wrap.open;
+    if (wrap.open) populatePlanOptions();
   });
+  if (wrap.open) populatePlanOptions();
   wrap.append(list);
   card.append(wrap);
 }
@@ -11525,7 +11708,18 @@ function switchMatchPlanDuringMatch(planId) {
   if (!session || session.phase === "resolved") return;
   const plan = (Array.isArray(state.tactics) ? state.tactics : []).find((item) => item.id === planId);
   if (!plan) return;
-  const next = applyMatchPlanChange(session, plan, { opponent: session.opponent });
+  // Compare exactly the same XI and roles under the old and proposed tactic.
+  // This prevents the next match period from using the old plan's press,
+  // width, depth, build-up, balance and rest-defence scores.
+  const currentTeamFit = getTeamFit();
+  const nextTeamFit = getTeamFit(plan);
+  const currentPlanId = session.activePlanSnapshot?.id ||
+    session.tacticSnapshot?.id || session.selectedTacticId;
+  const currentPlanData = state.tactics.find((item) => item.id === currentPlanId) || null;
+  const next = applyMatchPlanChange(session, plan, {
+    opponent: session.opponent, currentTeamFit, nextTeamFit, currentPlanData,
+    players: state.players, roles: state.roles
+  });
   if (next === session) return;
   state.matchday.session = next;
   // Kampplanen utenfor kampen følger med, slik at neste kamp starter der du
@@ -11677,6 +11871,7 @@ function renderMatchdayReport(container, lastMatch) {
 
   // Managergrep med konsekvens (v0.2).
   appendMatchdayDecisionLog(body, report.decisions, "Managergrep i kampen");
+  appendTacticalPossessionLog(body, lastMatch?.decisions, "Gjenvinning, balltap og kontringer");
   appendMatchPlanChangeLog(body, lastMatch);
   appendSubstitutionLog(body, lastMatch);
   appendOpponentAdjustmentLog(body, lastMatch);

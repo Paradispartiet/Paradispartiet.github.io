@@ -17,6 +17,7 @@
           "id": "sjekk_plakatene",
           "tekst": "Gå en runde og sjekk hylleplakatene mot kassa før åpning",
           "tone": "grundig",
+          "skills_practice": {"skill_id":"practical_mastery","activity_type":"verify_store_prices","evidence_flag":"sjekket_priser_foer_aapning","delta":2},
           "effekter": {
             "meters": {
               "integritet": 4,
@@ -106,6 +107,12 @@
           "id": "rett_synlig",
           "tekst": "Stopp kort, sjekk plakaten, og rett feilen synlig — butikken har gjort feil",
           "tone": "faglig",
+          "skills_practice": {
+            "skill_id": "practical_mastery",
+            "activity_type": "correct_till_price",
+            "evidence_flag": "rettet_feilen_synlig",
+            "delta": 2
+          },
           "effekter": {
             "relasjoner": {
               "stamkunde": 5,
@@ -168,6 +175,34 @@
             }
           },
           "konsekvensTekst": "Amir er tilbake på tjue sekunder med plakaten i hånda. Køen merket knapt noe. Du merket at du trengte ham."
+        },
+        {
+          "id": "rett_og_logg_avvik",
+          "tekst": "Rett kundens pris og meld det konkrete avviket til Lene, så feilen ikke gjentas",
+          "tone": "grundig oppfølging",
+          "skills_requirement": {
+            "skill_id": "practical_mastery",
+            "min_score": 2
+          },
+          "effekter": {
+            "relasjoner": {
+              "stamkunde": 6,
+              "butikksjef": 4
+            },
+            "meters": {
+              "integritet": 5,
+              "energi": -3
+            },
+            "flagg": {
+              "meldte_prisavvik_til_lene": true
+            },
+            "threads": {
+              "prisfeilen_i_koen": {
+                "status": "completed"
+              }
+            }
+          },
+          "konsekvensTekst": "Du gir kunden kampanjeprisen 39, kontrollerer plakaten og sender Lene et presist avviksnotat. Hun tar ansvaret for å rette systemet. Kunden slipper å forklare feilen på nytt."
         }
       ]
     },
@@ -187,6 +222,7 @@
           "id": "hjelp_kort",
           "tekst": "Hjelp kort og tydelig — tretti sekunder nå sparer ti minutter senere",
           "tone": "raus",
+          "skills_practice": {"skill_id":"communication","activity_type":"demonstrate_colleague_method","evidence_flag":"hjalp_ny_kollega","delta":2},
           "effekter": {
             "relasjoner": {
               "ny_kollega": 7
@@ -270,6 +306,7 @@
           "id": "aerlig_om_lageret",
           "tekst": "Vær ærlig: systemet sier to, hylla sier null — tilby å bestille med navn på",
           "tone": "ærlig",
+          "skills_practice": {"skill_id":"social_awareness","activity_type":"explain_stock_to_customer","evidence_flag":"aerlig_om_lageret","delta":1},
           "effekter": {
             "relasjoner": {
               "stamkunde": 6
@@ -313,6 +350,7 @@
           "id": "sjekk_selv",
           "tekst": "Be henne vente to minutter og sjekk lageret selv",
           "tone": "grundig",
+          "skills_practice": {"skill_id":"practical_mastery","activity_type":"inspect_warehouse_stock","evidence_flag":"sjekket_lageret_selv","delta":2},
           "effekter": {
             "relasjoner": {
               "stamkunde": 3
@@ -350,6 +388,7 @@
           "id": "hold_regelen",
           "tekst": "Forklar regelen rolig — og pek på det du faktisk KAN gjøre",
           "tone": "profesjonell",
+          "skills_practice": {"skill_id":"communication","activity_type":"explain_returns_policy","evidence_flag":"holdt_regelen","delta":1},
           "effekter": {
             "relasjoner": {
               "butikksjef": 4
@@ -396,6 +435,7 @@
           "id": "hent_lene",
           "tekst": "Hent Lene — dette er over fullmakten din",
           "tone": "korrekt",
+          "skills_practice": {"skill_id":"wisdom_judgement","activity_type":"escalate_authority_limit","evidence_flag":"hentet_sjefen","delta":1},
           "effekter": {
             "relasjoner": {
               "butikksjef": 2
@@ -433,6 +473,7 @@
           "id": "full_lukking",
           "tekst": "Slipp kunden inn — og gjør full lukking etterpå, uansett hvor sent det blir",
           "tone": "pliktoppfyllende",
+          "skills_practice": {"skill_id":"agency","activity_type":"complete_shop_closing","evidence_flag":"ryddet_for_neste_skift","delta":2},
           "effekter": {
             "relasjoner": {
               "stamkunde": 3
@@ -456,6 +497,7 @@
           "id": "laas_presis",
           "tekst": "Pek beklagende på klokka, lås presis og gjør lukkingen skikkelig",
           "tone": "grensesettende",
+          "skills_practice": {"skill_id":"practical_mastery","activity_type":"complete_on_time_closing","evidence_flag":"laaste_presis","delta":1},
           "effekter": {
             "relasjoner": {
               "stamkunde": -3
@@ -717,6 +759,7 @@
           "id": "laer_bort_metoden",
           "tekst": "Ta fem minutter og lær bort hele grepet, ikke bare svaret",
           "tone": "raus",
+          "skills_practice": {"skill_id":"communication","activity_type":"teach_work_method","evidence_flag":"laerte_bort_metoden","delta":2},
           "effekter": {
             "relasjoner": {
               "ny_kollega": 6,

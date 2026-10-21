@@ -3,6 +3,7 @@ import { applySubstitution, aggregateSourcedMetricBonuses, createBenchSnapshot, 
 import { evaluateTrainingDecisionSupport } from "./football-training-week.js";
 import { buildMatchExplanation } from "./football-match-explanation-engine.js";
 import { evaluateHistoricalOpponentMatchup } from "./football-historical-opponent-profiles.js";
+import { annotatePeriodTacticalChances } from "./football-tactical-match-moments.js";
 import {
   applyOpponentAdjustment,
   createPlanChange,
@@ -11,6 +12,7 @@ import {
   readGameState
 } from "./football-match-plan.js";
 import { buildTacticalKnowledgeFeedback } from "./football-tactical-knowledge.js";
+import { resolveTacticalPossession, summarizeTacticalPossessions } from "./football-matchday-tactical-possession.js";
 
 // HG Football Manager — Matchday Engine (v1)
 //
@@ -1667,6 +1669,11 @@ export function resolveMatchdayDecision({ event, option, tacticalProfile, matchE
     tone,
     effects,
     feedback,
+    // The authoritative engine owns tactical decisions AND their linked
+    // possession account, so UI and headless simulations cannot disagree.
+    tacticalPossession: resolveTacticalPossession({
+      event, decision: { optionId: option.id, tone, effects }
+    }),
     metKeys: met.map((check) => check.key),
     failedKeys: failed.map((check) => check.key),
     coachSoftened,
@@ -1796,6 +1803,9 @@ export function createMatchdaySession({ teamFit, formation, tactic, activeClassi
       ? {
           id: tactic.id || null,
           name: tactic.name || "",
+          family: tactic.family || "",
+          intent: tactic.intent || "",
+          gameStates: asArray(tactic.gameStates).slice(),
           pressing: tactic.pressing || "",
           tempo: tactic.tempo || "",
           width: tactic.width || "",
@@ -1875,33 +1885,138 @@ export function createMatchdaySession({ teamFit, formation, tactic, activeClassi
   };
 }
 
+// One shared tactical-profile projection for a REAL midmatch change and its
+// read-only manager preview. Delta carries forward training and substitutions
+// already present in session snapshot, without overwriting played periods.
+// Unknown input => unchanged snapshot; never invent individual skills.
+export function projectMatchPlanTacticalProfile(tacticalProfile, currentTeamFit, nextTeamFit) {
+  if (!tacticalProfile || !currentTeamFit?.metrics || !nextTeamFit?.metrics) {
+    return tacticalProfile;
+  }
+  const shifted = { ...tacticalProfile };
+  const keys = ["balanceScore", "widthScore", "depthScore",
+    "buildUpScore", "pressScore", "restDefenseScore"];
+  keys.forEach((key) => {
+    const before = currentTeamFit.metrics[key];
+    const after = nextTeamFit.metrics[key];
+    if (Number.isFinite(before) && Number.isFinite(after) &&
+        Number.isFinite(tacticalProfile[key])) {
+      shifted[key] = clamp(tacticalProfile[key] + after - before);
+    }
+  });
+  return shifted;
+}
+
 // Bytt kampplan midt i kampen. Returnerer en NY sesjon (motoren muterer ikke),
 // eller den samme sesjonen når byttet ikke gir mening (ferdig kamp, samme plan).
-export function applyMatchPlanChange(session, nextPlan, { opponent } = {}) {
+export function applyMatchPlanChange(session, nextPlan, { opponent, currentTeamFit, nextTeamFit, currentPlanData, players, roles } = {}) {
   if (!session || typeof session !== "object") return session;
   if (session.phase === "resolved") return session;
 
-  const currentPlan = session.activePlanSnapshot || session.tacticSnapshot || null;
+  const storedPlan = session.activePlanSnapshot || session.tacticSnapshot || null;
+  // Resolve the complete canonical plan when available. Older saved matches
+  // stored only the tactical axes and NOT gameStates, which falsely made every
+  // old plan look unfit and gifted 0.9 "improvement" at the next switch.
+  const currentPlan = currentPlanData?.id === storedPlan?.id ? currentPlanData : storedPlan;
   const eventIndex = getSessionEventIndex(session);
   const totalEvents = asArray(session.events).length;
   const eventsRemaining = eventIndex === null
     ? totalEvents
     : Math.max(0, totalEvents - (eventIndex + 1));
 
+  // Recalculate the SIX live tactical dimensions for the same selected XI
+  // and roles under the new tactic. The delta preserves prior training
+  // improvements and substitutions in the active match snapshot and changes
+  // only upcoming periods. Without both inputs (old saves/test callers),
+  // preserve the original snapshot instead of inventing a team rating.
+  const previousProfile = session.teamFitSnapshot?.tacticalProfile;
+  let nextTacticalProfile = projectMatchPlanTacticalProfile(
+    previousProfile, currentTeamFit, nextTeamFit
+  );
+
+  // After a tactical switch the substitution baseline MUST describe the new
+  // tactical profile, not kick-off's original plan. Otherwise any later
+  // substitution restores the old pressing/width/rest-defence values.
+  // When real roster records are available, rebuild source-confirmed player
+  // contributions and bench fit for the NEW plan. No guessed attributes.
+  let updatedLineup = session.lineupSnapshot;
+  let updatedBench = session.benchSnapshot;
+  let updatedBaseline = session.sourcedSubstitutionBaseline;
+  if (nextTacticalProfile !== previousProfile
+      && session.sourcedSubstitutionVersion === 2
+      && session.sourcedSubstitutionBaseline) {
+    const allPlayers = Array.isArray(players) ? players : [];
+    const allRoles = Array.isArray(roles) ? roles : [];
+    const playerById = new Map(allPlayers.filter((p) => p?.id).map((p) => [p.id, p]));
+    const roleById = new Map(allRoles.filter((r) => r?.id).map((r) => [r.id, r]));
+    const currentEntries = asArray(session.lineupSnapshot);
+    const canRecompute = currentEntries.length > 0 && allPlayers.length > 0 && allRoles.length > 0
+      && currentEntries.every((entry) => playerById.has(entry.playerId)
+        && roleById.has(entry.roleId) && entry.slotId && entry.position);
+    if (canRecompute) {
+      const assignments = currentEntries.map((entry) => ({
+        player: playerById.get(entry.playerId),
+        role: roleById.get(entry.roleId),
+        slot: { slotId: entry.slotId, position: entry.position }
+      }));
+      const previousBonuses = aggregateSourcedMetricBonuses(currentEntries);
+      updatedLineup = currentEntries.map((entry, i) => ({
+        ...entry,
+        sourcedMetricBonuses: sourcedMetricBonusesForAssignment(assignments[i], nextPlan)
+      }));
+      const activeBonuses = aggregateSourcedMetricBonuses(updatedLineup);
+      const newBenchPlayers = asArray(session.benchSnapshot)
+        .map((entry) => playerById.get(entry.playerId)).filter(Boolean);
+      if (newBenchPlayers.length === asArray(session.benchSnapshot).length) {
+        updatedBench = createBenchSnapshot({
+          benchPlayers: newBenchPlayers, teamFit: { assignments }, tactic: nextPlan, roles: allRoles
+        });
+      }
+      // The full-XI teamFit delta already contains its sourced contribution.
+      // Replace just that part with contributions from players who are
+      // ACTUALLY on the pitch (which may include earlier substitutes).
+      const adjusted = { ...nextTacticalProfile };
+      for (const key of Object.keys(activeBonuses)) {
+        const oldXI = currentTeamFit?.sourcedSkillTendencies?.[key]?.bonus;
+        const newXI = nextTeamFit?.sourcedSkillTendencies?.[key]?.bonus;
+        if (Number.isFinite(oldXI) && Number.isFinite(newXI)) {
+          const correction = (activeBonuses[key] - previousBonuses[key]) - (newXI - oldXI);
+          adjusted[key] = clamp(adjusted[key] + correction);
+        }
+      }
+      nextTacticalProfile = adjusted;
+    }
+    updatedBaseline = {
+      tacticalProfile: { ...nextTacticalProfile },
+      bonuses: aggregateSourcedMetricBonuses(updatedLineup)
+    };
+  }
   const change = createPlanChange({
     fromPlan: currentPlan,
     toPlan: nextPlan,
     session,
     opponent: opponent || session.opponent,
-    eventsRemaining
+    eventsRemaining,
+    nextTacticalProfile
   });
   if (!change) return session;
 
   const next = { ...session };
   next.planChanges = [...asArray(session.planChanges), { ...change, atPhase: session.phase }];
   next.selectedTacticId = nextPlan?.id || next.selectedTacticId;
+  if (updatedBaseline !== session.sourcedSubstitutionBaseline) {
+    next.lineupSnapshot = updatedLineup;
+    next.benchSnapshot = updatedBench;
+    next.sourcedSubstitutionBaseline = updatedBaseline;
+  }
+  if (nextTacticalProfile !== previousProfile) {
+    next.teamFitSnapshot = {
+      ...session.teamFitSnapshot,
+      tacticalProfile: nextTacticalProfile
+    };
+  }
   next.planMatchup = evaluatePlanVsOpponent(nextPlan, next.opponent, {
-    tacticalProfile: next.teamFitSnapshot?.tacticalProfile
+    tacticalProfile: nextTacticalProfile
   });
   next.minuteLog = logMatchMoment(next, {
     type: "plan",
@@ -1913,6 +2028,7 @@ export function applyMatchPlanChange(session, nextPlan, { opponent } = {}) {
     name: nextPlan?.name || "",
     family: nextPlan?.family || "",
     intent: nextPlan?.intent || "",
+    gameStates: asArray(nextPlan?.gameStates).slice(),
     pressing: nextPlan?.pressing || "",
     tempo: nextPlan?.tempo || "",
     width: nextPlan?.width || "",
@@ -2024,15 +2140,36 @@ export function advanceMatchClock(session) {
   const segmentXgFor = clampRange(round2(rate.for * share), 0, 3);
   const segmentXgAgainst = clampRange(round2(rate.against * share), 0, 3);
 
+  // Disclose the REAL contribution already included in the rate, without
+  // adding it again. Compare with the SAME rate with only the matchup-edge
+  // component removed; apply the SAME rounding and caps for an honest
+  // per-period attribution. This is the WHOLE plan matchup, not just the
+  // newer sequence heuristic. Preserve each historical period on switching.
+  const matchupEdge = num(session.planMatchup?.edge);
+  const baselineFor = clampRange(round2((rate.for - matchupEdge * 0.09) * share), 0, 3);
+  const baselineAgainst = clampRange(round2((rate.against + matchupEdge * 0.06) * share), 0, 3);
+  const tacticalXg = session.planMatchup && Number.isFinite(session.planMatchup.edge)
+    ? {
+        planId: session.activePlanSnapshot?.id || session.selectedTacticId || null,
+        planName: session.activePlanSnapshot?.name || "",
+        edge: matchupEdge,
+        addedFor: round2(segmentXgFor - baselineFor),
+        preventedAgainst: round2(baselineAgainst - segmentXgAgainst),
+        // Honest provenance: edge also includes ordinary plan style factors.
+        sequenceStatus: session.planMatchup.sequences?.[0]?.status || null,
+        basis: "existing_plan_matchup"
+      }
+    : null;
+
   // Minutt for minutt: xG-en blir til enkeltsjanser, og MÅLENE FALLER UT AV
   // SJANSENE. Før ble målene rullet direkte fra xG, og «kampen» var fire tall.
   // Nå ser manageren de samme tallene som fotball: hvem som kom til, når, og
   // hva som skjedde.
   const range = segmentRange(played, totalSegments);
-  const chances = [
+  const chances = annotatePeriodTacticalChances(session, [
     ...buildChances(segmentXgFor, { ...range, side: "for" }),
     ...buildChances(segmentXgAgainst, { ...range, side: "against" })
-  ].sort((a, b) => a.minute - b.minute || (a.side === "for" ? -1 : 1));
+  ].sort((a, b) => a.minute - b.minute || (a.side === "for" ? -1 : 1)));
 
   const goalsFor = chances.filter((c) => c.side === "for" && c.scored).length;
   const goalsAgainst = chances.filter((c) => c.side === "against" && c.scored).length;
@@ -2063,6 +2200,8 @@ export function advanceMatchClock(session) {
       type: chance.scored ? "goal" : "chance",
       quality: chance.quality,
       detail: chance.detail,
+      // Tied to THIS actual simulated chance; never a second scoring event.
+      ...(chance.tacticalMoment ? { tacticalMoment: chance.tacticalMoment } : {}),
       scorer: credit?.scorer?.name || null,
       assist: credit?.assist?.name || null,
       scoreAfter: { ...running }
@@ -2097,6 +2236,7 @@ export function advanceMatchClock(session) {
         chances: chances.length,
         scoreAfter: { ...score },
         expectedGoals: { for: segmentXgFor, against: segmentXgAgainst },
+        ...(tacticalXg ? { tacticalXg } : {}),
         note
       }
     ]
@@ -2635,6 +2775,9 @@ export function finalizeMatchdaySession(session) {
     keyFactors: keyFactors.slice(0, 4),
     analysis: analysis.slice(0, 6),
     decisions: decisions.map((decision) => ({ ...decision })),
+    // Already-derived chains for simulated possession/transition decisions.
+    // Never enter the xG or goal calculation twice.
+    tacticalPossessionSummary: summarizeTacticalPossessions(decisions),
     // Planbyttene står for seg i rapporten: manageren skal kunne lese hva
     // omstillingen faktisk kostet og ga.
     planChanges: planChanges.map((change) => ({ ...change })),

@@ -1,4 +1,5 @@
 import { evaluateTacticalSequences } from "./football-tactical-sequences.js";
+import { behaviourForOpponentAdjustment } from "./football-live-tactical-exchange.js";
 
 // HG Football Manager — Match Plan v1
 //
@@ -416,6 +417,10 @@ export function evaluatePlanVsOpponent(plan, opponent, { tacticalProfile } = {})
     else if (sequence.status === "countered") notes.push(`Motspill: ${sequence.counter}. Ditt mulige svar: ${sequence.response}.`);
     else if (sequence.status === "unknown_counter") notes.push(`Spillkjeden ${sequence.title} har rolledekning, men motstanderens mulige motgrep er ikke undersøkt.`);
     else notes.push(`Spillkjeden ${sequence.title} trenger bedre faktisk rolle- og formasjonsdekning.`);
+    if (sequence.liveExchange) {
+      notes.push(`Dynamisk motspill: ${sequence.liveExchange.cause}`);
+      if (sequence.liveExchange.failureConsequence) notes.push(sequence.liveExchange.failureConsequence);
+    }
   });
   const verdict = edge > 0 ? "gunstig" : edge < 0 ? "risikabel" : "nøytral";
   return { edge, verdict, notes, opportunities, combinations, sequences };
@@ -425,7 +430,7 @@ export function evaluatePlanVsOpponent(plan, opponent, { tacticalProfile } = {})
 // Selve byttet. Returnerer effektene i SAMME form som en managerbeslutning, så
 // finalizeMatchdaySession kan summere dem uten særtilfeller.
 // ----------------------------------------------------------------------------
-export function createPlanChange({ fromPlan, toPlan, session, opponent, eventsRemaining = 0 } = {}) {
+export function createPlanChange({ fromPlan, toPlan, session, opponent, eventsRemaining = 0, nextTacticalProfile } = {}) {
   const from = normalizeMatchPlan(fromPlan);
   const to = normalizeMatchPlan(toPlan);
   if (!to || !to.id) return null;
@@ -440,7 +445,8 @@ export function createPlanChange({ fromPlan, toPlan, session, opponent, eventsRe
   });
   const stateFit = evaluatePlanForGameState(to, gameState.state);
   const tacticalProfile = session?.teamFitSnapshot?.tacticalProfile;
-  const matchup = evaluatePlanVsOpponent(to, opponent || session?.opponent, { tacticalProfile });
+  const afterProfile = nextTacticalProfile || tacticalProfile;
+  const matchup = evaluatePlanVsOpponent(to, opponent || session?.opponent, { tacticalProfile: afterProfile });
 
   // Effektene: omstillingen koster klarhet og legger på risiko. Men det som
   // faktisk belønnes er FORBEDRINGEN — hvor mye bedre den nye planen passer
@@ -449,7 +455,10 @@ export function createPlanChange({ fromPlan, toPlan, session, opponent, eventsRe
   const edge = num(matchup?.edge);
   const context = { gameState: gameState.state, opponent: opponent || session?.opponent, tacticalProfile };
   const scoreBefore = from ? scorePlanNow(from, context) : 0;
-  const scoreAfter = scorePlanNow(to, context);
+  // A tactical switch changes the team's role-and-formation compatibility.
+  // Judge the old plan with its old XI profile and the new plan with its new
+  // tactical fit, not the identical (stale) profile for both.
+  const scoreAfter = scorePlanNow(to, { ...context, tacticalProfile: afterProfile });
   const improvement = round2((scoreAfter - scoreBefore) / 100);
 
   // En redning i en kamp som glipper er verdt mer enn en finjustering når alt
@@ -505,13 +514,15 @@ export function createPlanChange({ fromPlan, toPlan, session, opponent, eventsRe
 
 // Sorter planene slik manageren skal lese dem: de som passer bildet først,
 // deretter de som er nærmest dagens plan (minst omstilling).
-export function rankPlansForSituation(plans, { currentPlan, gameState = "level", opponent, tacticalProfile } = {}) {
+export function rankPlansForSituation(plans, { currentPlan, gameState = "level", opponent, tacticalProfile, tacticalProfilesByPlan } = {}) {
   return asArray(plans)
     .map((plan) => normalizeMatchPlan(plan))
     .filter(Boolean)
     .map((plan) => {
       const stateFit = evaluatePlanForGameState(plan, gameState);
-      const matchup = evaluatePlanVsOpponent(plan, opponent, { tacticalProfile });
+      const candidateProfile = Object.prototype.hasOwnProperty.call(tacticalProfilesByPlan || {}, plan.id)
+        ? tacticalProfilesByPlan[plan.id] : tacticalProfile;
+      const matchup = evaluatePlanVsOpponent(plan, opponent, { tacticalProfile: candidateProfile });
       const distance = currentPlan ? planDistance(currentPlan, plan) : 0;
       return {
         plan,
@@ -580,6 +591,10 @@ export function applyOpponentAdjustment(opponent, adjustment) {
   return {
     ...opponent,
     styleTraits: shifted,
+    // Dynamic behaviour is tied to an EXPLICIT in-match reaction, not a
+    // guessed historical opponent observation. A different reaction replaces
+    // the previous lane/spacing/cover model.
+    tacticalBehaviour: behaviourForOpponentAdjustment(adjustment.id, { ...opponent, styleTraits: shifted }) || opponent.tacticalBehaviour || null,
     adjustmentId: adjustment.id,
     adjustmentLabel: adjustment.label
   };

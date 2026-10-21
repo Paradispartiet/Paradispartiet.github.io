@@ -428,6 +428,8 @@ function appendOpponentAnalysisWorkshop(body) {
       formation: context.formation,
       tactic: context.tactic,
       teamFit: context.teamFit,
+      responseTeamFit: context.responseTeamFit,
+      tactics: context.tactics,
       trainingLabel: context.trainingLabel
     });
     const saved = context.savedPlan?.fixtureId === fixture.fixtureId ? context.savedPlan : null;
@@ -451,6 +453,141 @@ function appendOpponentAnalysisWorkshop(body) {
     });
     brief.append(profile);
     dynamic.append(brief);
+
+    // Four connected actions → opponent counter → manager response. This is
+    // the already running tactical-sequence engine, never a separate UI rating.
+    const chain = workspace.tacticalSequences?.[0];
+    if (chain) {
+      const scene = node("section", "opponent-analysis-sequence");
+      scene.dataset.sequenceId = chain.id;
+      scene.dataset.sequenceStatus = chain.status;
+      scene.append(
+        node("h4", "", "Spill · motspill · nytt svar"),
+        node("strong", "opponent-analysis-sequence-title", chain.title),
+        node("p", "opponent-analysis-sequence-verdict", chain.explanation),
+        node("p", "opponent-analysis-sequence-method",
+          "Taktisk modell, ikke en fasit: fire handlinger gir ikke fire bonuser. Vurderingen bruker valgte roller og eksisterende lagmetrikker.")
+      );
+      scene.append(
+        node("h5", "", "Hvorfor denne spillemåten virker"),
+        node("p", "opponent-analysis-sequence-mechanism", chain.mechanism || ""),
+        node("h5", "", "Hvor motspillet bryter den"),
+        node("p", "opponent-analysis-sequence-counter-logic", chain.counterLogic || ""),
+        node("p", "opponent-analysis-sequence-failure", "Risiko: " + (chain.failureMode || "")),
+        node("p", "opponent-analysis-sequence-observation", "Se etter: " + (chain.observation || ""))
+      );
+      if (chain.principleSources?.length) {
+        const citations = node("section", "opponent-analysis-sequence-sources");
+        citations.append(node("h5", "", "Faglig grunnlag (FIFA / England Football)"));
+        const links = node("ul", "opponent-analysis-source-links");
+        chain.principleSources.forEach((source) => {
+          const item = node("li", "");
+          const link = document.createElement("a");
+          link.href = source.url;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.textContent = source.title;
+          item.append(link);
+          links.append(item);
+        });
+        citations.append(links, node("small", "",
+          "Kildene beskriver prinsippene; poenggrenser og kampresultater er spillmodellens egne vurderinger."));
+        scene.append(citations);
+      }
+      const actions = node("ol", "opponent-analysis-sequence-moves");
+      chain.moves.forEach((move) => actions.append(node("li", "", move)));
+      scene.append(actions);
+      if (chain.liveExchange) {
+        const exchange = chain.liveExchange;
+        const resolution = node("section", "opponent-analysis-live-exchange");
+        resolution.dataset.exchangeStatus = exchange.status;
+        resolution.append(
+          node("h5", "", "Motstanderens siste taktiske tilpasning"),
+          node("p", "", exchange.cause),
+          node("small", "", "Deterministisk kampsimulering – ikke historiske posisjonsdata.")
+        );
+        const actionsNow = node("ol", "opponent-analysis-live-exchange-steps");
+        exchange.steps.forEach((step) => {
+          const item = node("li", "", step.action +
+            (step.result === "blocked" ? " – avskåret" : " – mulig"));
+          item.dataset.stepStatus = step.result;
+          actionsNow.append(item);
+        });
+        resolution.append(actionsNow);
+        if (exchange.failureConsequence) {
+          resolution.append(node("p", "", "Ved mislykket forsøk: " + exchange.failureConsequence));
+        }
+        resolution.append(node("p", "", "Observer: " + exchange.managerObservation));
+        scene.append(resolution);
+      }
+      const factors = node("ul", "opponent-analysis-sequence-requirements");
+      chain.checks.forEach((factor) => {
+        const li = node("li", "opponent-analysis-sequence-factor");
+        li.dataset.factorStatus = factor.status;
+        const scoreLabel = factor.value === null
+          ? "ukjent laggrunnlag"
+          : factor.value + " / krav " + factor.minimum;
+        li.append(
+          node("strong", "", factor.label),
+          node("small", "", scoreLabel),
+          node("small", "",
+            factor.supportingRoles.length
+              ? "Valgte roller: " + factor.supportingRoles.slice(0, 3)
+                .map((entry) => entry.player + " – " + entry.role).join(" · ")
+              : "Ingen identifiserte nøkkelroller. Lagmetrikken omfatter også øvrig formasjon og samspill."),
+          node("small", "",
+            factor.documentedPlayers.length
+              ? "Kildebelagte bidrag: " + factor.documentedPlayers.slice(0, 3).join(", ")
+              : "Ingen direkte kildebelagte spillerbidrag dokumentert her")
+        );
+        factors.append(li);
+      });
+      scene.append(
+        node("h5", "", "Hva må laget vårt ha?"),
+        factors,
+        node("h5", "", "Motstanderens mulige svar"),
+        node("p", "opponent-analysis-sequence-counter", chain.counter),
+        node("h5", "", "Hva kan vi gjøre deretter?"),
+        node("p", "opponent-analysis-sequence-response", chain.response)
+      );
+      if (chain.status === "countered" && chain.responsePlanName) {
+        scene.append(node("p", "opponent-analysis-response-plan",
+          "Mulig alternativ å undersøke: " + chain.responsePlanName +
+          ". Ikke automatisk bedre – vurder valgt ellever, formasjon og omstillingskostnad."));
+        const preview = chain.responsePreview;
+        if (preview) {
+          const assessment = node("section", "opponent-analysis-response-preview");
+          assessment.dataset.responseStatus = preview.status;
+          assessment.append(
+            node("strong", "", "Forhåndssjekk av motsvaret"),
+            node("p", "", preview.explanation)
+          );
+          const required = node("ul", "opponent-analysis-response-requirements");
+          preview.requirements.forEach((check) => {
+            const item = node("li", "");
+            item.dataset.requirementStatus = check.status;
+            item.textContent = check.label + ": " +
+              (check.value === null ? "ukjent" : check.value + " / krav " + check.minimum);
+            required.append(item);
+          });
+          assessment.append(required);
+          if (preview.risk) assessment.append(node("small", "", "Risiko ved alternativet: " + preview.risk));
+          assessment.append(node("small", "",
+            preview.basis === "proposed_plan"
+              ? "Rolle- og formasjonsdekningen er beregnet for den foreslåtte kampplanen. Et kampbytte har fortsatt omstillingskostnad."
+              : "Foreløpig vurdering med den nåværende kampplanen. Før bytte må både lagfit og omstillingskostnad beregnes på nytt."));
+          scene.append(assessment);
+        }
+        const explore = node("button", "opponent-analysis-response-action",
+          "Vurder " + chain.responsePlanName + " i Lag · Oppstilling");
+        explore.type = "button";
+        explore.dataset.responsePlanId = chain.responsePlanId;
+        explore.addEventListener("click", () => openOpponentAnalysisTarget("tactics"));
+        scene.append(explore);
+      }
+      if (chain.risk) scene.append(node("p", "opponent-analysis-sequence-risk", "Risiko ved egen plan: " + chain.risk));
+      dynamic.append(scene);
+    }
 
     // Show the actual xG-matching conditions beside the manager's scouting
     // choices. No extra tactic score, and unproven skills remain unknown.

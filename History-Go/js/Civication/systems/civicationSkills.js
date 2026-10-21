@@ -47,6 +47,27 @@
     };
   }
 
+  // Skills unlock better *optional* decisions. They never grant job authority,
+  // a Life Position, or an inferred score for a player with no practice.
+  function checkRequirement(requirement, canonicalState) {
+    if (!requirement) return { available: true, required: 0, score: null, measured: false, label: "" };
+    const req = record(requirement);
+    const definition = DEFINITIONS.find(function (skill) { return skill.id === req.skill_id; });
+    const required = Number(req.min_score);
+    const model = getViewModel(canonicalState === undefined
+      ? (root?.CivicationState?.getState?.() || {}) : canonicalState);
+    const skill = model.skills.find(function (entry) { return entry.id === req.skill_id; });
+    const valid = !!definition && Number.isInteger(required) && required >= 1 && required <= 100;
+    const available = valid && !!skill?.measured && skill.score >= required;
+    return {
+      available: available,
+      measured: !!skill?.measured,
+      score: skill?.measured ? skill.score : null,
+      required: valid ? required : 0,
+      label: definition?.label || "Ukjent Skill"
+    };
+  }
+
   function practicePatch(state, practice) {
     const data = record(practice);
     const eventId = String(data.event_id || "").trim();
@@ -54,8 +75,10 @@
     const activityType = String(data.activity_type || "").trim();
     const skillId = String(data.skill_id || "").trim();
     const source = String(data.source || "").trim();
+    const evidenceFlag = String(data.evidence_flag || "").trim();
     const delta = Number(data.delta);
     if (!ALLOWED_SOURCES.has(source) || !eventId || !choiceId || !activityType ||
+        (source === "life_story_choice" && !/^[a-z][a-z0-9_]{1,99}$/.test(evidenceFlag)) ||
         !SKILL_IDS.has(skillId) || !Number.isInteger(delta) || delta < 1 || delta > 3 ||
         eventId.length > 240 || choiceId.length > 240 || activityType.length > 100) {
       return { applied: false, reason: "unverified_practice" };
@@ -83,7 +106,7 @@
       scores: scores,
       applied_event_ids: {
         ...processed,
-        [eventId]: { skill_id: skillId, choice_id: choiceId, source: source, activity_type: activityType }
+        [eventId]: { skill_id: skillId, choice_id: choiceId, source: source, activity_type: activityType, evidence_flag: evidenceFlag || null }
       },
       last_practice_by_skill: {
         ...record(original.last_practice_by_skill),
@@ -111,6 +134,74 @@
       render();
     }
     return result;
+  }
+
+  // The Life Story UI can accept a choice before the dynamically loaded
+  // CivicationState exists. Persist an outbox on its existing story save;
+  // never mint Skills in a second storage engine.
+  const PENDING_FIELD = "pendingSkillsPracticesV1";
+
+  function applyOrQueue(practice, storyState, persistStory) {
+    const result = applyPractice(practice);
+    if (result.reason !== "state_unavailable") return result;
+
+    // Reject malformed activity metadata before writing anything to the outbox.
+    const validation = practicePatch({}, practice);
+    if (!validation.applied) return validation;
+    if (!storyState || typeof storyState !== "object" || typeof persistStory !== "function") {
+      return result;
+    }
+    const eventId = String(practice.event_id);
+    const pending = Array.isArray(storyState[PENDING_FIELD]) ? storyState[PENDING_FIELD] : [];
+    if (!pending.some(function (entry) { return entry?.event_id === eventId; })) {
+      storyState[PENDING_FIELD] = pending.concat([{
+        source: practice.source,
+        event_id: eventId,
+        choice_id: practice.choice_id,
+        skill_id: practice.skill_id,
+        activity_type: practice.activity_type,
+        evidence_flag: practice.evidence_flag,
+        delta: practice.delta
+      }]);
+      persistStory(storyState);
+    }
+    return { applied: false, reason: "queued_until_state_ready" };
+  }
+
+  function flushQueued(storyState, persistStory) {
+    const api = root.CivicationState;
+    if (!storyState || typeof storyState !== "object" ||
+        typeof persistStory !== "function" ||
+        !api || typeof api.getState !== "function" || typeof api.setState !== "function" ||
+        root.CIVICATION_TEST_MODE || root.OPEN_MODE || api.isTestMode?.()) {
+      return { applied: 0, cleared: 0, reason: "state_unavailable" };
+    }
+    const inactive = record(storyState.rolleTilstander);
+    const slots = [storyState].concat(Object.values(inactive).filter(function (value) {
+      return value && typeof value === "object" && !Array.isArray(value);
+    }));
+    let applied = 0;
+    let cleared = 0;
+    for (const slot of slots) {
+      const pending = Array.isArray(slot[PENDING_FIELD]) ? slot[PENDING_FIELD] : [];
+      if (!pending.length) continue;
+      const keep = [];
+      for (const practice of pending) {
+        const result = applyPractice(practice);
+        if (result.applied) {
+          applied++;
+          cleared++;
+        } else if (result.reason === "already_counted" || result.reason === "unverified_practice") {
+          // Already applied or invalid: do not leave an infinitely replaying item.
+          cleared++;
+        } else {
+          keep.push(practice);
+        }
+      }
+      slot[PENDING_FIELD] = keep;
+    }
+    if (cleared) persistStory(storyState);
+    return { applied, cleared, reason: cleared ? "flushed" : "empty" };
   }
 
   function render() {
@@ -173,5 +264,5 @@
     return true;
   }
 
-    root.CivicationSkills = { STATE_FIELD, VERSION, DEFINITIONS, getViewModel, practicePatch, applyPractice, render };
+    root.CivicationSkills = { STATE_FIELD, VERSION, DEFINITIONS, PENDING_FIELD, getViewModel, checkRequirement, practicePatch, applyPractice, applyOrQueue, flushQueued, render };
 })(typeof window === "object" ? window : null);
