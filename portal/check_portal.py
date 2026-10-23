@@ -7,6 +7,12 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 HTML = (ROOT / "portal" / "index.html").read_text(encoding="utf-8")
 WORKFLOW = (ROOT / ".github" / "workflows" / "sync-production-sites.yml").read_text(encoding="utf-8")
+ROOT_HTML = (ROOT / "index.html").read_text(encoding="utf-8")
+assert ROOT_HTML == HTML, "Public root index.html must match portal/index.html"
+assert (ROOT / ".nojekyll").exists(), "Root .nojekyll required for branch-based Pages deployment"
+assert "Paradispartiet production host" not in ROOT_HTML, "README must not become homepage"
+assert "History-Go-2" not in ROOT_HTML, "Do not expose removed History GO 2 project"
+
 
 EXPECTED_REPOS = {
     "Paradispartiet", "Teorien-om-lyset", "EchoNet", "History-Go",
@@ -49,6 +55,8 @@ assert found == EXPECTED_REPOS, f"Missing: {EXPECTED_REPOS-found}; unexpected: {
 for published_url in ("/History-Go/", "/HG_Film_Producer/", "/HistoryGo-FootballManager/"):
     assert published_url in parser.hrefs, f"Missing live app link: {published_url}"
 assert 'cp portal/index.html _site-root/index.html' in WORKFLOW
+assert 'cp portal/index.html index.html' in WORKFLOW
+assert 'git add -A HG_Film_Producer HistoryGo-FootballManager History-Go index.html .nojekyll' in WORKFLOW
 assert "'portal/**'" in WORKFLOW
 for directory in ("History-Go", "HG_Film_Producer", "HistoryGo-FootballManager"):
     assert f"cp -a {directory} _site-root/" in WORKFLOW
