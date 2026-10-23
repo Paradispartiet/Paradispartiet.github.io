@@ -180,7 +180,11 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A HG_Film_Producer HistoryGo-FootballManager History-Go
+          # GitHub Pages also publishes directly from the root of main.
+          # Keep its index identical to the source portal, not the README fallback.
+          cp portal/index.html index.html
+          touch .nojekyll
+          git add -A HG_Film_Producer HistoryGo-FootballManager History-Go index.html .nojekyll
           if ! git diff --cached --quiet; then
             git commit -m "deploy: sync public production sites [skip ci]"
             git push origin HEAD:main
