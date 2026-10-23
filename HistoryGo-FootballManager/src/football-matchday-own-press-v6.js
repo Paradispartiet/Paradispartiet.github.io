@@ -205,32 +205,200 @@ function defensiveReplyForPressExit(route, lineup, profile, outcome, targetFlank
 // The timing result only GATES the existing <=0.03 coordination bonus: it
 // cannot penalise generic rest defence, alter initial pressure or add xG.
 // Missing / untrusted timing data preserves the previous baseline exactly.
-function specialistRecoveryWindow(route, playerIds, timing) {
+// Each route has four named post-break attack decisions. Durations are
+// explicitly authored and start AFTER the first press has been beaten. The
+// scenario does not assert that these were observed movements or GPS points.
+const PRESS_EXIT_TIMED_ACTIONS = Object.freeze({
+  third_man: Object.freeze(["receive", "layoff", "third_runner", "through_pass"]),
+  switch_play: Object.freeze(["receive", "release", "switch_pass", "wide_attack"]),
+  direct: Object.freeze(["receive", "direct_ball", "first_touch", "support_run"])
+});
+
+// Resolve authored action durations and each specialist's independent
+// recognition + repositioning delays, anchored to an optional named cue.
+// No time is inferred from ratings,
+// nominal formations, historical players, or a generic 'fast' tactic tag.
+// Optional discrete geometry is an AUTHORED scenario calculation, not
+// observed tracking or a movement speed derived from a player's skill score.
+// The pitch size must be explicit; coordinates use metres from a shared
+// defending-team viewpoint (x across the width, y along the length).
+function authoredCoverMove(response, sequence) {
+  const withSeconds = Object.prototype.hasOwnProperty.call(response, "coverMoveSeconds");
+  const withGeometry = Object.prototype.hasOwnProperty.call(response, "coverMovement");
+  // Both modes supplied (or neither) is ambiguous and cannot earn cover.
+  if (withSeconds === withGeometry) return null;
+  if (withSeconds) return finite(response.coverMoveSeconds) &&
+    response.coverMoveSeconds >= 0 && response.coverMoveSeconds <= 20
+    ? { seconds: response.coverMoveSeconds, model: "authored_move_seconds" } : null;
+  const pitch = sequence.pitchDimensionsMeters;
+  const movement = response.coverMovement;
+  if (!pitch || typeof pitch !== "object" || Array.isArray(pitch) ||
+    !finite(pitch.widthMeters) || pitch.widthMeters < 45 || pitch.widthMeters > 90 ||
+    !finite(pitch.lengthMeters) || pitch.lengthMeters < 90 || pitch.lengthMeters > 120 ||
+    !movement || typeof movement !== "object" || Array.isArray(movement) ||
+    movement.basis !== "authored_pitch_geometry" ||
+    !finite(movement.averageSpeedMetersPerSecond) ||
+    movement.averageSpeedMetersPerSecond < 0.5 ||
+    movement.averageSpeedMetersPerSecond > 10) return null;
+  const validPoint = point => point && typeof point === "object" &&
+    !Array.isArray(point) && finite(point.x) && finite(point.y) &&
+    point.x >= 0 && point.x <= pitch.widthMeters &&
+    point.y >= 0 && point.y <= pitch.lengthMeters;
+  if (!validPoint(movement.startMeters) || !validPoint(movement.coverMeters))
+    return null;
+  const dx = movement.coverMeters.x - movement.startMeters.x;
+  const dy = movement.coverMeters.y - movement.startMeters.y;
+  const distanceMeters = Math.hypot(dx, dy);
+  const seconds = distanceMeters / movement.averageSpeedMetersPerSecond;
+  return finite(seconds) && seconds <= 20
+    ? { seconds, model: "authored_pitch_geometry" } : null;
+}
+
+// Optional *route-specific* lane contract. These fractions are EXPLICIT game
+// zoning conventions (central half / outer quarter / defending half), not
+// inferred tracking coordinates or evidence that a real player occupied them.
+// A scenario with such a contract must assign all route specialists geometry
+// inside the SAME defended channel. Older scenarios remain fully compatible.
+function authoredLaneCheck(route, sequence, playerIds, targetFlank) {
+  const lane = sequence.spatialLane;
+  if (lane == null) return "not_provided";
+  const pitch = sequence.pitchDimensionsMeters;
+  const expectedChannel = PRESS_EXIT_DEFENCES[route]?.target;
+  if (!lane || typeof lane !== "object" || Array.isArray(lane) ||
+    lane.basis !== "authored_route_lane" || lane.route !== route ||
+    lane.channel !== expectedChannel ||
+    lane.coordinateFrame !== "defending_goal_y0_right_xmax" ||
+    !pitch || !finite(pitch.widthMeters) || !finite(pitch.lengthMeters))
+    return "invalid";
+  const side = lane.targetFlank;
+  if (route === "switch_play") {
+    if (!["left", "right"].includes(side) || side !== targetFlank) return "invalid";
+  } else if (Object.prototype.hasOwnProperty.call(lane, "targetFlank"))
+    return "invalid";
+  // Invalid or missing movement evidence cannot claim a known positional
+  // error. Only a VALID authored endpoint in the wrong defensive lane
+  // produces a genuine tactical failure rather than a neutral fallback.
+  const moves = playerIds.map(id =>
+    sequence.defenderResponsesByPlayerId?.[id]?.coverMovement);
+  if (moves.some((move, i) =>
+    move?.basis !== "authored_pitch_geometry" ||
+    !authoredCoverMove(sequence.defenderResponsesByPlayerId[playerIds[i]], sequence)))
+    return "invalid";
+  const isAligned = point => {
+    if (route === "third_man")
+      return point.x >= pitch.widthMeters * 0.25 &&
+        point.x <= pitch.widthMeters * 0.75;
+    if (route === "switch_play")
+      return side === "left"
+        ? point.x <= pitch.widthMeters * 0.25
+        : point.x >= pitch.widthMeters * 0.75;
+    return route === "direct" && point.y <= pitch.lengthMeters * 0.5;
+  };
+  return moves.every(move => isAligned(move.coverMeters))
+    ? "aligned" : "wrong_corridor";
+}
+
+function recoveryFromAuthoredActions(route, playerIds, sequence, lineup, targetFlank) {
+  const expected = PRESS_EXIT_TIMED_ACTIONS[route];
+  if (!expected || sequence?.route !== route ||
+    !Array.isArray(sequence.actions) || sequence.actions.length !== expected.length ||
+    !sequence.actions.every((entry, index) =>
+      entry?.id === expected[index] && finite(entry.durationSeconds) &&
+      entry.durationSeconds > 0 && entry.durationSeconds <= 20)) return null;
+  const attackWindowSeconds = sequence.actions.reduce(
+    (total, entry) => total + entry.durationSeconds, 0);
+  if (attackWindowSeconds > 20) return null;
+  const responses = sequence.defenderResponsesByPlayerId;
+  if (!responses || typeof responses !== "object" || Array.isArray(responses) ||
+    !Array.isArray(playerIds) || playerIds.length === 0) return null;
+  const laneStatus = authoredLaneCheck(route, sequence, playerIds, targetFlank);
+  if (laneStatus === "invalid") return null;
+  const defenderArrivalSecondsByPlayerId = {};
+  const movementModels = new Set();
+  for (const id of playerIds) {
+    const response = Object.prototype.hasOwnProperty.call(responses, id)
+      ? responses[id] : null;
+    if (!response || typeof response !== "object" || Array.isArray(response) ||
+      !finite(response.recognitionDelaySeconds) ||
+      response.recognitionDelaySeconds < 0 || response.recognitionDelaySeconds > 20)
+      return null;
+    const travel = authoredCoverMove(response, sequence);
+    if (!travel) return null;
+    movementModels.add(travel.model);
+    // Recognition starts when the defender sees a named attacking cue.
+    // No cue means the first action, preserving old scenario behaviour.
+    const hasCue = Object.prototype.hasOwnProperty.call(response, "triggerActionId");
+    const hasSourcedCue = Object.prototype.hasOwnProperty.call(response, "sourcedCue");
+    if (hasCue && hasSourcedCue) return null;
+    let cueId = hasCue ? response.triggerActionId : expected[0];
+    if (hasSourcedCue) {
+      const cue = response.sourcedCue;
+      const validSkill = ["anticipation", "game_reading", "defensive_reading"]
+        .includes(cue?.skill);
+      if (!cue || typeof cue !== "object" || Array.isArray(cue) ||
+        !validSkill || !expected.includes(cue.earlyActionId) ||
+        !expected.includes(cue.defaultActionId) ||
+        expected.indexOf(cue.earlyActionId) > expected.indexOf(cue.defaultActionId))
+        return null;
+      const player = Array.isArray(lineup)
+        ? lineup.find(entry => entry?.playerId === id) : null;
+      const sourceConfirmed = Array.isArray(player?.sourcedRecoverySkills) &&
+        player.sourcedRecoverySkills.includes(cue.skill);
+      cueId = sourceConfirmed ? cue.earlyActionId : cue.defaultActionId;
+    }
+    const cueIndex = expected.indexOf(cueId);
+    if (cueIndex < 0) return null;
+    const elapsedBeforeCue = sequence.actions.slice(0, cueIndex)
+      .reduce((sum, action) => sum + action.durationSeconds, 0);
+    const arrival = elapsedBeforeCue + response.recognitionDelaySeconds +
+      travel.seconds;
+    if (arrival > 20) return null;
+    defenderArrivalSecondsByPlayerId[id] = arrival;
+  }
+  return { basis: "authored_scenario", route, attackWindowSeconds,
+    defenderArrivalSecondsByPlayerId,
+    movementModel: movementModels.size === 1 ? [...movementModels][0] :
+      "mixed_authored_responses",
+    spatialLane: sequence.spatialLane?.channel || null,
+    laneStatus };
+}
+
+// Recovery timing is OPTIONAL scenario input, never inferred from fitness,
+// player fit or coordinates. A late specialist gates only an ALREADY earned
+// route-specific coordination term; there is no new xG, time bonus or penalty.
+function specialistRecoveryWindow(route, playerIds, timing, lineup, targetFlank) {
   const neutral = { status: "not_provided", basis: null,
-    attackWindowSeconds: null, latestRecoverySeconds: null, marginSeconds: null };
+    attackWindowSeconds: null, latestRecoverySeconds: null, marginSeconds: null,
+    movementModel: null, spatialLane: null };
   if (timing == null) return neutral;
   const invalid = { ...neutral, status: "invalid_or_incomplete" };
-  if (!timing || typeof timing !== "object" || Array.isArray(timing) ||
-    timing.basis !== "authored_scenario" || timing.route !== route ||
-    !finite(timing.attackWindowSeconds) ||
-    timing.attackWindowSeconds <= 0 || timing.attackWindowSeconds > 20 ||
-    !timing.defenderArrivalSecondsByPlayerId ||
-    typeof timing.defenderArrivalSecondsByPlayerId !== "object" ||
-    Array.isArray(timing.defenderArrivalSecondsByPlayerId) ||
+  if (!timing || typeof timing !== "object" || Array.isArray(timing)) return invalid;
+  const isSequence = timing.basis === "authored_action_sequence";
+  const derived = isSequence
+    ? recoveryFromAuthoredActions(route, playerIds, timing, lineup, targetFlank) : timing;
+  if (!derived || derived.basis !== "authored_scenario" ||
+    derived.route !== route || !finite(derived.attackWindowSeconds) ||
+    derived.attackWindowSeconds <= 0 || derived.attackWindowSeconds > 20 ||
+    !derived.defenderArrivalSecondsByPlayerId ||
+    typeof derived.defenderArrivalSecondsByPlayerId !== "object" ||
+    Array.isArray(derived.defenderArrivalSecondsByPlayerId) ||
     !Array.isArray(playerIds) || playerIds.length === 0) return invalid;
   const arrival = playerIds.map(id =>
-    Object.prototype.hasOwnProperty.call(timing.defenderArrivalSecondsByPlayerId, id)
-      ? timing.defenderArrivalSecondsByPlayerId[id] : null);
+    Object.prototype.hasOwnProperty.call(derived.defenderArrivalSecondsByPlayerId, id)
+      ? derived.defenderArrivalSecondsByPlayerId[id] : null);
   if (!arrival.every(time => finite(time) && time >= 0 && time <= 20))
     return invalid;
   const latest = Math.max(...arrival);
-  const margin = timing.attackWindowSeconds - latest;
+  const margin = derived.attackWindowSeconds - latest;
   return {
-    status: margin >= 0 ? "in_time" : "late",
-    basis: "authored_scenario",
-    attackWindowSeconds: timing.attackWindowSeconds,
-    latestRecoverySeconds: latest,
-    marginSeconds: Math.round(margin * 1000) / 1000
+    status: isSequence && derived.laneStatus === "wrong_corridor"
+      ? "wrong_corridor" : margin >= 0 ? "in_time" : "late",
+    basis: isSequence ? "authored_action_sequence" : "authored_scenario",
+    attackWindowSeconds: Math.round(derived.attackWindowSeconds * 1000) / 1000,
+    latestRecoverySeconds: Math.round(latest * 1000) / 1000,
+    marginSeconds: Math.round(margin * 1000) / 1000,
+    movementModel: isSequence ? derived.movementModel : null,
+    spatialLane: isSequence ? derived.spatialLane : null
   };
 }
 
@@ -260,10 +428,11 @@ function routeCoverEvidence(opponentRoute, escapeEvidence, lineup, profile, targ
   const weakestCoverFit = Math.min(...scores);
   // Missing authored timing never changes existing gameplay. Fully evidenced
   // late coordination forfeits ONLY the specialist term already earned.
-  const timing = specialistRecoveryWindow(opponentRoute, ids, timingInput);
+  const timing = specialistRecoveryWindow(opponentRoute, ids, timingInput, lineup, targetFlank);
   const specialistAdjustment = clamp((weakestCoverFit - 60) * 0.0015, 0, 0.03);
   return {
-    adjustment: timing.status === "late" ? 0 : specialistAdjustment,
+    adjustment: ["late", "wrong_corridor"].includes(timing.status)
+      ? 0 : specialistAdjustment,
     weakestCoverFit,
     timing
   };
@@ -377,7 +546,10 @@ export function resolveOwnPressAgainstOpponent(session, {
   // Rest defence is evaluated only if the opponent gets beyond the press.
   const cover = routeCoverEvidence(counter, escapeEvidence,
     session.lineupSnapshot, profile, targetFlank,
-    opponent?.tacticalBehaviour?.pressEscapeTiming);
+    // Explicit aggregate timing retains precedence for older fixtures/saves.
+    // A four-action in-match sequence is an alternate, never an extra modifier.
+    opponent?.tacticalBehaviour?.pressEscapeTiming ??
+      opponent?.tacticalBehaviour?.pressEscapeActionSequence);
   const containment = clamp(
     0.48 + (restDefense - 65) * 0.005 +
       (balance - 65) * 0.002 +
