@@ -14,14 +14,7 @@ assert "Paradispartiet production host" not in ROOT_HTML, "README must not becom
 assert "History-Go-2" not in ROOT_HTML, "Do not expose removed History GO 2 project"
 
 
-EXPECTED_REPOS = {
-    "Paradispartiet", "Teorien-om-lyset", "EchoNet", "History-Go",
-    "Paradisavisa", "AHA-EchoNet", "HG",
-    "HistoryGo-FootballManager", "HG_Film_Producer", "Kunstakademiet",
-    "Skrivekunstakademiet", "fysen", "fysen-preview",
-    "Paradispartiet.github.io", "HG_Film_Producer-preview",
-    "HistoryGo-FootballManager-preview", "History-Go-preview",
-}
+EXPECTED_REPOS = {"AHA-EchoNet", "fysen", "Teorien-om-lyset"}
 
 class PortalParser(HTMLParser):
     def __init__(self):
@@ -43,9 +36,18 @@ class PortalParser(HTMLParser):
 
 parser = PortalParser()
 parser.feed(HTML)
-assert parser.cards == 11, f"Expected 11 project cards, got {parser.cards}"
+assert parser.cards == 8, f"Expected 8 project cards, got {parser.cards}"
 assert parser.featured == 3, f"Expected 3 featured games, got {parser.featured}"
 assert "History GO 2" not in HTML and "History-Go-2" not in HTML, "Archived History GO 2 must be hidden from the portal"
+for removed in ("EchoNet", "Skrivekunstakademiet", "Kunstakademiet"):
+    assert f'<span class="project-title">{removed}</span>' not in HTML, f"Unbuilt or redundant project still visible: {removed}"
+assert '<span class="project-title">AHA EchoNet</span>' in HTML
+assert '<details class="archive">' not in HTML, "Technical archive section must be hidden"
+assert 'class="archive-link"' not in HTML, "Technical repository links must be hidden"
+assert 'class="source-link"' not in HTML, "Code shortcut links do not belong in the compact launcher"
+assert '>GitHub ↗</a>' not in HTML, "Do not expose technical navigation in app header"
+assert '8 prosjekter' in HTML, "Initial project count must be eight"
+
 assert 'id="project-catalog"' in HTML
 assert 'class="project-grid"' in HTML
 assert 'data-filter="spill"' in HTML
@@ -62,4 +64,4 @@ for directory in ("History-Go", "HG_Film_Producer", "HistoryGo-FootballManager")
     assert f"cp -a {directory} _site-root/" in WORKFLOW
 assert "cat > _site-root/index.html" not in WORKFLOW
 assert 'id="project-search"' in HTML and 'aria-pressed="true"' in HTML
-print("Portal check passed: 11 compact project tiles, 17 distinct repositories, no History GO 2, 3 live app links.")
+print("Portal check passed: 8 active project tiles, no unbuilt projects or technical archives, 3 live app links.")

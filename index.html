@@ -48,26 +48,26 @@ h1{font-size:clamp(1.8rem,4vw,2.15rem);line-height:1.15;letter-spacing:-.055em;m
 .project-link{min-height:172px;display:flex;flex-direction:column;align-items:flex-start;padding:18px;text-decoration:none;border-radius:17px}
 .app-icon{height:57px;width:57px;border-radius:16px;display:grid;place-items:center;font-weight:770;letter-spacing:-.06em;font-size:1.1rem;margin-bottom:15px;color:#fff;box-shadow:inset 0 1px 0 #ffffff24}
 .icon-history{background:#247663}.icon-film{background:#554f84}.icon-football{background:#3e6b93}
-.icon-fysen{background:#d57748}.icon-aha{background:#404f8f}.icon-echonet{background:#548d91}
+.icon-fysen{background:#d57748}.icon-aha{background:#404f8f}
 .icon-news{background:#af5d43}.icon-party{background:#303e66}.icon-light{background:#a88643}
-.icon-art{background:#915f79}.icon-writing{background:#506b94}
+
 .project-title{font-weight:750;font-size:.98rem;letter-spacing:-.02em;line-height:1.23;overflow-wrap:anywhere}
 .project-status{font-size:.77rem;color:var(--subtle);margin-top:5px;line-height:1.35}
 .project-status.live{color:#23604a}
-.source-link{position:absolute;top:14px;right:15px;width:29px;height:29px;border-radius:8px;display:grid;place-items:center;text-decoration:none;color:#8694a6;font-weight:650}
-.source-link:hover{background:#eef3f8;color:#33475e}
+
+
 .empty{background:#fff;border:1px dashed var(--line);border-radius:12px;padding:20px;font-size:.94rem;color:var(--subtle)}
-.archive{border-top:1px solid var(--line);margin-top:27px;padding-top:22px}
-.archive summary{list-style:none;display:inline-flex;align-items:center;gap:7px;cursor:pointer;font-size:.85rem;color:#66768b;font-weight:640;padding:9px 0}
-.archive summary::-webkit-details-marker{display:none}
-.archive summary:after{content:"⌄";font-size:1.15rem;line-height:1}
+
+
+
+
 .archive[open] summary:after{transform:rotate(180deg)}
-.archive-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:10px}
-.archive-link{display:flex;justify-content:space-between;gap:10px;min-width:0;font-size:.83rem;text-decoration:none;overflow-wrap:anywhere;background:#fff;border:1px solid var(--line);border-radius:10px;padding:13px}
+
+
 .archive-link:hover{border-color:#b9cbdc}
 .footer{color:#8190a0;font-size:.78rem;text-align:center;margin-top:27px}
-@media(max-width:900px){.project-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.archive-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:670px){.shell{width:min(100% - 28px,1100px)}main{padding:24px 0 36px}.heading{margin-bottom:19px}.controls{display:block}.search-field{display:block;margin-bottom:10px}.filters{width:100%;gap:6px}.filter{font-size:.83rem;padding:7px 12px;min-height:37px}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.project-link{min-height:157px;padding:14px}.app-icon{width:52px;height:52px;border-radius:14px;margin-bottom:13px}.project-title{font-size:.92rem}.project-status{font-size:.74rem}.source-link{top:11px;right:9px}.archive-list{grid-template-columns:1fr}}
+@media(max-width:900px){.project-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:670px){.shell{width:min(100% - 28px,1100px)}main{padding:24px 0 36px}.heading{margin-bottom:19px}.controls{display:block}.search-field{display:block;margin-bottom:10px}.filters{width:100%;gap:6px}.filter{font-size:.83rem;padding:7px 12px;min-height:37px}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.project-link{min-height:157px;padding:14px}.app-icon{width:52px;height:52px;border-radius:14px;margin-bottom:13px}.project-title{font-size:.92rem}.project-status{font-size:.74rem}}
 @media(max-width:340px){.project-grid{grid-template-columns:1fr}.project-link{min-height:110px;display:grid;grid-template-columns:53px 1fr;column-gap:14px;align-content:center}.app-icon{grid-row:span 2;margin:0}.project-title{align-self:end}.project-status{align-self:start}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style>
@@ -75,10 +75,10 @@ h1{font-size:clamp(1.8rem,4vw,2.15rem);line-height:1.15;letter-spacing:-.055em;m
 <body>
 <header class="topbar"><div class="shell topbar-inner">
 <a href="/" class="brand"><span class="logo" aria-hidden="true">✦</span>Paradispartiet</a>
-<a class="top-link" href="https://github.com/Paradispartiet" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+
 </div></header>
 <main class="shell">
-<div class="heading"><div><h1>Prosjekter</h1><p class="subtitle">Spill, apper og idéer – samlet.</p></div><span id="results-count" class="count" role="status" aria-live="polite">11 prosjekter</span></div>
+<div class="heading"><div><h1>Prosjekter</h1><p class="subtitle">Spill, apper og idéer – samlet.</p></div><span id="results-count" class="count" role="status" aria-live="polite">8 prosjekter</span></div>
 <div class="controls">
 <label class="search-field"><span class="visually-hidden">Søk i prosjekter</span><input id="project-search" type="search" placeholder="Søk prosjekter" autocomplete="off"></label>
 <div class="filters" role="group" aria-label="Filtrer prosjekter">
@@ -94,19 +94,19 @@ h1{font-size:clamp(1.8rem,4vw,2.15rem);line-height:1.15;letter-spacing:-.055em;m
  <span class="app-icon icon-history" aria-hidden="true">HG</span>
  <span class="project-title">History GO</span>
  <span class="project-status live">Åpne app</span>
- </a><a class="source-link" href="https://github.com/Paradispartiet/History-Go" target="_blank" rel="noopener noreferrer" aria-label="Kildekode for History GO" title="Kildekode på GitHub">↗</a></article>
+ </a></article>
 <article class="project-card featured" data-category="spill" data-search="film producer filmverket · film producer film · kreativitet publisert">
  <a class="project-link" href="/HG_Film_Producer/"  aria-label="Film Producer – Åpne app">
  <span class="app-icon icon-film" aria-hidden="true">FP</span>
  <span class="project-title">Film Producer</span>
  <span class="project-status live">Åpne app</span>
- </a><a class="source-link" href="https://github.com/Paradispartiet/HG_Film_Producer" target="_blank" rel="noopener noreferrer" aria-label="Kildekode for Filmverket · Film Producer" title="Kildekode på GitHub">↗</a></article>
+ </a></article>
 <article class="project-card featured" data-category="spill" data-search="football manager football manager fotball · strategi publisert">
  <a class="project-link" href="/HistoryGo-FootballManager/"  aria-label="Football Manager – Åpne app">
  <span class="app-icon icon-football" aria-hidden="true">FM</span>
  <span class="project-title">Football Manager</span>
  <span class="project-status live">Åpne app</span>
- </a><a class="source-link" href="https://github.com/Paradispartiet/HistoryGo-FootballManager" target="_blank" rel="noopener noreferrer" aria-label="Kildekode for Football Manager" title="Kildekode på GitHub">↗</a></article>
+ </a></article>
 <article class="project-card" data-category="teknologi" data-search="fysen fysen mat · søk under utvikling">
  <a class="project-link" href="https://github.com/Paradispartiet/fysen" target="_blank" rel="noopener noreferrer" aria-label="Fysen – Utvikles">
  <span class="app-icon icon-fysen" aria-hidden="true">F</span>
@@ -119,49 +119,29 @@ h1{font-size:clamp(1.8rem,4vw,2.15rem);line-height:1.15;letter-spacing:-.055em;m
  <span class="project-title">AHA EchoNet</span>
  <span class="project-status">Utvikles</span>
  </a></article>
-<article class="project-card" data-category="teknologi" data-search="echonet echonet prototype · samtaler prototype">
- <a class="project-link" href="https://github.com/Paradispartiet/EchoNet" target="_blank" rel="noopener noreferrer" aria-label="EchoNet – Prototype">
- <span class="app-icon icon-echonet" aria-hidden="true">E</span>
- <span class="project-title">EchoNet</span>
- <span class="project-status">Prototype</span>
- </a></article>
+
 <article class="project-card" data-category="kultur" data-search="paradisavisa paradisavisa journalistikk · samfunn nettavis">
  <a class="project-link" href="https://paradispartiet.github.io/Paradisavisa/" target="_blank" rel="noopener noreferrer" aria-label="Paradisavisa – Nettavis">
  <span class="app-icon icon-news" aria-hidden="true">PA</span>
  <span class="project-title">Paradisavisa</span>
  <span class="project-status">Nettavis</span>
- </a><a class="source-link" href="https://github.com/Paradispartiet/Paradisavisa" target="_blank" rel="noopener noreferrer" aria-label="Kildekode for Paradisavisa" title="Kildekode på GitHub">↗</a></article>
+ </a></article>
 <article class="project-card" data-category="ideer" data-search="paradispartiet paradispartiet ideer · samfunn nettsted">
  <a class="project-link" href="https://paradispartiet.github.io/Paradispartiet/" target="_blank" rel="noopener noreferrer" aria-label="Paradispartiet – Nettsted">
  <span class="app-icon icon-party" aria-hidden="true">P</span>
  <span class="project-title">Paradispartiet</span>
  <span class="project-status">Nettsted</span>
- </a><a class="source-link" href="https://github.com/Paradispartiet/Paradispartiet" target="_blank" rel="noopener noreferrer" aria-label="Kildekode for Paradispartiet" title="Kildekode på GitHub">↗</a></article>
+ </a></article>
 <article class="project-card" data-category="ideer" data-search="teorien om lyset teorien om lyset filosofi · tekst tekstprosjekt">
  <a class="project-link" href="https://github.com/Paradispartiet/Teorien-om-lyset" target="_blank" rel="noopener noreferrer" aria-label="Teorien om lyset – Tekstprosjekt">
  <span class="app-icon icon-light" aria-hidden="true">✳</span>
  <span class="project-title">Teorien om lyset</span>
  <span class="project-status">Tekstprosjekt</span>
  </a></article>
-<article class="project-card" data-category="kultur" data-search="kunstakademiet kunstakademiet kunst · skaping tidlig fase">
- <a class="project-link" href="https://github.com/Paradispartiet/Kunstakademiet" target="_blank" rel="noopener noreferrer" aria-label="Kunstakademiet – Tidlig fase">
- <span class="app-icon icon-art" aria-hidden="true">KA</span>
- <span class="project-title">Kunstakademiet</span>
- <span class="project-status">Tidlig fase</span>
- </a></article>
-<article class="project-card" data-category="kultur" data-search="skrivekunstakademiet skrivekunstakademiet skriving · læring planlagt">
- <a class="project-link" href="https://github.com/Paradispartiet/Skrivekunstakademiet" target="_blank" rel="noopener noreferrer" aria-label="Skrivekunstakademiet – Planlagt">
- <span class="app-icon icon-writing" aria-hidden="true">SK</span>
- <span class="project-title">Skrivekunstakademiet</span>
- <span class="project-status">Planlagt</span>
- </a></article>
+
+
 </div><p id="no-results" class="empty" hidden>Ingen prosjekter passer søket.</p></section>
-<details class="archive"><summary>Tekniske arkiver (6)</summary><div class="archive-list"><a class="archive-link" href="https://github.com/Paradispartiet/Paradispartiet.github.io" target="_blank" rel="noopener noreferrer">Paradispartiet.github.io <span aria-hidden="true">↗</span></a>
-<a class="archive-link" href="https://github.com/Paradispartiet/HG_Film_Producer-preview" target="_blank" rel="noopener noreferrer">HG_Film_Producer-preview <span aria-hidden="true">↗</span></a>
-<a class="archive-link" href="https://github.com/Paradispartiet/HistoryGo-FootballManager-preview" target="_blank" rel="noopener noreferrer">HistoryGo-FootballManager-preview <span aria-hidden="true">↗</span></a>
-<a class="archive-link" href="https://github.com/Paradispartiet/History-Go-preview" target="_blank" rel="noopener noreferrer">History-Go-preview <span aria-hidden="true">↗</span></a>
-<a class="archive-link" href="https://github.com/Paradispartiet/fysen-preview" target="_blank" rel="noopener noreferrer">fysen-preview <span aria-hidden="true">↗</span></a>
-<a class="archive-link" href="https://github.com/Paradispartiet/HG" target="_blank" rel="noopener noreferrer">HG <span aria-hidden="true">↗</span></a></div></details>
+
 <p class="footer">Paradispartiet · Prosjektoversikt</p>
 </main>
 <script>
