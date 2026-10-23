@@ -1,0 +1,20 @@
+name: Check project portal
+
+on:
+  pull_request:
+    paths:
+      - 'portal/**'
+      - '.github/workflows/sync-production-sites.yml'
+      - '.github/workflows/check-project-portal.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  portal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate project catalog and production site paths
+        run: python3 portal/check_portal.py

@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - .github/workflows/sync-production-sites.yml
+      - 'portal/**'
 
 permissions:
   contents: write
@@ -196,9 +197,8 @@ jobs:
           cp -a HG_Film_Producer _site-root/
           cp -a HistoryGo-FootballManager _site-root/
           cp -a History-Go _site-root/
-          cat > _site-root/index.html <<'EOF'
-          <!doctype html><html lang="no"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Paradispartiet</title></head><body><main><h1>Paradispartiet</h1><ul><li><a href="/HG_Film_Producer/">Film Producer</a></li><li><a href="/HistoryGo-FootballManager/">Football Manager</a></li><li><a href="/History-Go/">History Go</a></li></ul></main></body></html>
-          EOF
+          test -f portal/index.html
+          cp portal/index.html _site-root/index.html
           touch _site-root/.nojekyll
 
       - name: Configure existing Pages site
