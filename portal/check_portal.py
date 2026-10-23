@@ -10,7 +10,7 @@ WORKFLOW = (ROOT / ".github" / "workflows" / "sync-production-sites.yml").read_t
 
 EXPECTED_REPOS = {
     "Paradispartiet", "Teorien-om-lyset", "EchoNet", "History-Go",
-    "Paradisavisa", "History-Go-2", "AHA-EchoNet", "HG",
+    "Paradisavisa", "AHA-EchoNet", "HG",
     "HistoryGo-FootballManager", "HG_Film_Producer", "Kunstakademiet",
     "Skrivekunstakademiet", "fysen", "fysen-preview",
     "Paradispartiet.github.io", "HG_Film_Producer-preview",
@@ -32,13 +32,17 @@ class PortalParser(HTMLParser):
                 assert "noopener" in data.get("rel", ""), "External link must use rel=noopener"
         if tag == "article" and "project-card" in data.get("class", "").split():
             self.cards += 1
-            if "is-featured" in data.get("class", "").split():
+            if "featured" in data.get("class", "").split():
                 self.featured += 1
 
 parser = PortalParser()
 parser.feed(HTML)
-assert parser.cards == 12, f"Expected 12 project cards, got {parser.cards}"
+assert parser.cards == 11, f"Expected 11 project cards, got {parser.cards}"
 assert parser.featured == 3, f"Expected 3 featured games, got {parser.featured}"
+assert "History GO 2" not in HTML and "History-Go-2" not in HTML, "Archived History GO 2 must be hidden from the portal"
+assert 'id="project-catalog"' in HTML
+assert 'class="project-grid"' in HTML
+assert 'data-filter="spill"' in HTML
 found = {match.group(1) for link in parser.hrefs
          if (match := re.fullmatch(r"https://github.com/Paradispartiet/([\w.-]+)", link))}
 assert found == EXPECTED_REPOS, f"Missing: {EXPECTED_REPOS-found}; unexpected: {found-EXPECTED_REPOS}"
@@ -50,4 +54,4 @@ for directory in ("History-Go", "HG_Film_Producer", "HistoryGo-FootballManager")
     assert f"cp -a {directory} _site-root/" in WORKFLOW
 assert "cat > _site-root/index.html" not in WORKFLOW
 assert 'id="project-search"' in HTML and 'aria-pressed="true"' in HTML
-print("Portal check passed: 12 project cards, 18 distinct repositories, 3 app links, Pages workflow intact.")
+print("Portal check passed: 11 compact project tiles, 17 distinct repositories, no History GO 2, 3 live app links.")

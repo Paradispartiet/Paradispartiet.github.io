@@ -1,9 +1,11 @@
 # Prosjektportalen
 
-Denne mappen inneholder kildeforsiden for https://paradispartiet.github.io/.
+Forsiden på https://paradispartiet.github.io/ er en kompakt, mobiltilpasset prosjektvelger.
 
-- `index.html`: statisk, mobiltilpasset portefølje med tilgjengelig kategorifilter og søk. Alle 18 nåværende offentlige GitHub-arkiver er representert, men bare tre verifiserte produserte spill vises som publiserte apper.
-- `check_portal.py`: enkel integritetstest for katalogen, GitHub-lenkene og de tre app-rutene.
-- `.github/workflows/sync-production-sites.yml`: kopierer `portal/index.html` til `_site-root/index.html` ved publisering og bygger/oppdaterer de tre appene uforandret i egne mapper.
+- `portal/index.html` viser 11 prosjektfliser med ikon, navn og kort status. Tre publiserte spill åpner sine eksisterende produksjonsruter.
+- Prosjekter uten verifisert publisert app åpner sine GitHub-repositories. Søk og kategorifiltre fungerer lokalt i nettleseren.
+- Seks tekniske arkiver finnes i en sammenleggbar seksjon. `History-Go-2` er med vilje **ikke vist i portalen**; repositoryet slettes eller endres ikke.
+- `portal/check_portal.py` kontrollerer 11 fliser, 17 listede GitHub-repositories, aktive app-ruter og publiseringsoppsettet.
+- `.github/workflows/sync-production-sites.yml` kopierer portalens `index.html` til Pages-roten. De tre spillene ligger fortsatt i egne uendrede mapper.
 
-Prosjekter som bare har kildekode eller er under utvikling, åpner GitHub-arkivet i stedet for å love at en offentlig app finnes. Forhåndsvisninger er skilt fra produksjon. Nye prosjekter må legges til i portalen og i `EXPECTED_REPOS` før de blir synlige.
+Hold tekst og forsidestruktur kort og app-preget. Ikke legg til store hero-seksjoner, lange beskrivelser eller teknisk status på prosjektkortene.
