@@ -882,7 +882,7 @@ function selectVerifiedWeakFlank(lineup, profile) {
 // defending XI create an attacking route. Each candidate uses the existing
 // single cover gate; unknown evidence or near-ties yield no inferred route.
 const VERIFIED_OUTLETS = new Set(["third_man", "switch_play", "direct"]);
-function selectVerifiedWeakOutlet(shape, lineup, profile) {
+function selectVerifiedWeakOutlet(shape, lineup, profile, includeDefenderEvidence = false, managerCounter = null) {
   const candidates = shape?.pressEscapeCandidateRoutes;
   if (shape?.pressEscape !== "supported" ||
     shape?.pressEscapeRoutePolicy !== "weakest_verified_cover" ||
@@ -907,21 +907,172 @@ function selectVerifiedWeakOutlet(shape, lineup, profile) {
     verified.push({
       route, targetFlank: target,
       roleReadiness: reply.roleReadiness,
-      coverAdjustment: round3(cover.adjustment)
+      coverAdjustment: round3(cover.adjustment),
+      // v7.3 snapshots exactly the defender evidence used for this candidate.
+      // Earlier v7.2 sessions keep their original payload.
+      ...(includeDefenderEvidence ? {
+        defenders: reply.evidence.supportingPlayerIds.map(playerId => {
+          const player = lineup.find(entry => entry.playerId === playerId);
+          return {
+            playerId, position: player.position, roleId: player.roleId,
+            matchScore: player.matchScore
+          };
+        })
+      } : {})
     });
   }
+  // v7.4: manager may redistribute an ALREADY EARNED specialist cover term
+  // from one documented route to another. No new defensive skill is created:
+  // the donor loses exactly what the prioritised route gains. The transfer
+  // requires positively verified roles in both corridors and a route the
+  // manager explicitly named after an actual executed press escape.
+  let adjusted = verified;
+  let redistribution = null;
+  const focus = managerCounter?.route &&
+    verified.find(item => item.route === managerCounter.route);
+  if (focus?.roleReadiness === "supported_by_roles" &&
+    includeDefenderEvidence) {
+    const donor = [...verified]
+      .filter(item => item.route !== focus.route &&
+        item.roleReadiness === "supported_by_roles")
+      .sort((a, b) => b.coverAdjustment - a.coverAdjustment ||
+        a.route.localeCompare(b.route))[0];
+    const transferred = donor ? round3(Math.min(0.017,
+      0.03 - focus.coverAdjustment, donor.coverAdjustment)) : 0;
+    if (transferred >= 0.001) {
+      adjusted = verified.map(item => item.route === focus.route
+        ? { ...item, coverAdjustment: round3(item.coverAdjustment + transferred) }
+        : item.route === donor.route
+          ? { ...item, coverAdjustment: round3(item.coverAdjustment - transferred) }
+          : item);
+      redistribution = {
+        status: "redistributed", prioritisedRoute: focus.route,
+        exposedRoute: donor.route, transfer: transferred,
+        sourceSegment: managerCounter.sourceSegment,
+        basis: "manager_reallocation_of_existing_verified_cover"
+      };
+    }
+  }
+
   // Least protected FIRST, with a 0.008 probability-point separation
   // between the two weakest lanes. This is an explicit model threshold,
   // never observed opponent intelligence. Identical / near-tied routes
   // remain unknown rather than being selected by array order.
-  const sorted = [...verified].sort((a, b) =>
+  const sorted = [...adjusted].sort((a, b) =>
     a.coverAdjustment - b.coverAdjustment || a.route.localeCompare(b.route));
   if (sorted[1].coverAdjustment - sorted[0].coverAdjustment < 0.008) return null;
   return {
     route: sorted[0].route,
     flankChoice: sorted[0].route === "switch_play" ? flank : null,
-    candidates: verified,
+    candidates: adjusted, redistribution,
     basis: "authored_available_routes_and_verified_defensive_roles"
+  };
+}
+
+
+
+// Only an already PLAYED, unsuccessful press can inform a new tactical
+// manager instruction. Recovered balls do not expose a route, and older
+// matches without verified individual snapshots cannot unlock this choice.
+export function getManagerPressCounterOptions(session) {
+  if (session?.causalManagerPressCounterVersion !== 1 ||
+    session?.causalOpponentSequenceVersion !== 1 ||
+    session?.causalOpponentRouteAdaptationVersion !== 1 ||
+    !/^event_\d+$/.test(session?.phase || "")) return null;
+  const behaviour = session.opponent?.tacticalBehaviour;
+  const known = behaviour?.pressEscapeCandidateRoutes;
+  if (behaviour?.pressEscape !== "supported" ||
+    behaviour.pressEscapeRoutePolicy !== "weakest_verified_cover" ||
+    !Array.isArray(known) || known.length < 2 ||
+    known.length > 3 || new Set(known).size !== known.length ||
+    known.some(route => !VERIFIED_OUTLETS.has(route)) ||
+    Object.prototype.hasOwnProperty.call(behaviour, "pressEscapeRoute") ||
+    Object.prototype.hasOwnProperty.call(behaviour, "pressEscapeTargetFlank") ||
+    behaviour.pressEscapeTiming != null ||
+    behaviour.pressEscapeActionSequence != null) return null;
+  const last = (Array.isArray(session.timeline) ? session.timeline : [])
+    .at(-1);
+  const phase = last?.tacticalPhase;
+  const adaptation = phase?.evidence?.opponentRouteAdaptation;
+  if (!Number.isInteger(last?.segment) ||
+    phase?.situation !== "our_press_vs_opponent_build_up" ||
+    phase.status === "regain" || adaptation?.status !== "selected" ||
+    !known.includes(adaptation.selectedRoute) ||
+    !Array.isArray(adaptation.candidates) ||
+    adaptation.candidates.length !== known.length ||
+    !known.every(route => adaptation.candidates.some(item => item.route === route)) ||
+    !adaptation.candidates.every(item =>
+      Array.isArray(item.defenders) && item.defenders.length > 0 &&
+      item.defenders.every(defender => defender?.playerId &&
+        Number.isFinite(defender.matchScore)))) return null;
+  if (session.managerPressCounter?.sourceSegment === last.segment) return null;
+  return {
+    sourceSegment: last.segment, observedRoute: adaptation.selectedRoute,
+    routes: adaptation.candidates
+      .filter(item => item.roleReadiness === "supported_by_roles" &&
+        Number.isFinite(item.coverAdjustment) &&
+        item.coverAdjustment < 0.03 &&
+        adaptation.candidates.some(donor =>
+          donor.route !== item.route &&
+          donor.roleReadiness === "supported_by_roles" &&
+          Number.isFinite(donor.coverAdjustment) &&
+          donor.coverAdjustment > 0))
+      .map(item => item.route)
+  };
+}
+
+// v7.3 compares ACTUALLY PLAYED press escapes across stored match phases.
+// This is an explanation of the already-calculated v7.2 choice, not a
+// second probability adjustment, fabricated opponent route or new xG event.
+// Only earlier v7.3 phases with the exact player-evidence snapshot qualify.
+function opponentPhaseContinuity(session, choice, outcome) {
+  const timeline = Array.isArray(session.timeline) ? session.timeline : [];
+  const phaseNumber = timeline.length + 1;
+  if (outcome === "regain") return {
+    status: "press_regained", phaseNumber, currentRoute: choice.route,
+    basis: "simulated_route_not_executed"
+  };
+  const previous = [...timeline].reverse().find(entry => {
+    const phase = entry?.tacticalPhase;
+    const saved = phase?.evidence?.opponentRouteAdaptation;
+    return phase?.situation === "our_press_vs_opponent_build_up" &&
+      phase.status !== "regain" && saved?.status === "selected" &&
+      Array.isArray(saved.candidates) &&
+      saved.candidates.every(candidate => Array.isArray(candidate.defenders));
+  });
+  if (!previous) return {
+    status: "first_executed_route", phaseNumber,
+    currentRoute: choice.route,
+    basis: "authored_routes_and_current_verified_defenders"
+  };
+  const prior = previous.tacticalPhase.evidence.opponentRouteAdaptation;
+  const coverChanges = choice.candidates.flatMap(candidate => {
+    const before = prior.candidates.find(item => item.route === candidate.route);
+    if (!before) return [];
+    const defendersChanged = JSON.stringify(before.defenders) !==
+      JSON.stringify(candidate.defenders);
+    const adjustmentChanged = before.coverAdjustment !== candidate.coverAdjustment;
+    if (!defendersChanged && !adjustmentChanged) return [];
+    return [{
+      route: candidate.route,
+      previousAdjustment: before.coverAdjustment,
+      currentAdjustment: candidate.coverAdjustment,
+      defendersChanged,
+      ...(defendersChanged ? {
+        previousDefenders: before.defenders,
+        currentDefenders: candidate.defenders
+      } : {})
+    }];
+  });
+  return {
+    status: prior.selectedRoute === choice.route ? "held_route" : "switched_route",
+    phaseNumber,
+    previousPhaseNumber: previous.segment + 1,
+    previousRoute: prior.selectedRoute,
+    currentRoute: choice.route,
+    coverChanges,
+    // These snapshots show correlations, never claim measured opponent intent.
+    basis: "simulated_phase_comparison_of_verified_cover"
   };
 }
 
@@ -959,7 +1110,10 @@ export function resolveOwnPressAgainstOpponent(session, {
     !Object.prototype.hasOwnProperty.call(shape, "pressEscapeTargetFlank") &&
     shape.pressEscapeTiming == null && shape.pressEscapeActionSequence == null;
   const routeChoice = routePolicyRequested
-    ? selectVerifiedWeakOutlet(shape, session.lineupSnapshot, profile) : null;
+    ? selectVerifiedWeakOutlet(shape, session.lineupSnapshot, profile,
+        session.causalOpponentSequenceVersion === 1,
+        session.causalManagerPressCounterVersion === 1
+          ? session.managerPressCounter : null) : null;
   const counter = routeChoice?.route || shape?.pressEscapeRoute;
   // Both a known authored outlet and simulated live pressEscape describe
   // one documented route through the press. "isolated" is stronger direct
@@ -997,12 +1151,20 @@ export function resolveOwnPressAgainstOpponent(session, {
   if (!finite(pressResult)) return null;
   const regained = clamp(pressResult, 0, 0.999999999) < pressProbability;
   // Rest defence is evaluated only if the opponent gets beyond the press.
-  const cover = routeCoverEvidence(counter, escapeEvidence,
+  const baseCover = routeCoverEvidence(counter, escapeEvidence,
     session.lineupSnapshot, profile, targetFlank,
     // Explicit aggregate timing retains precedence for older fixtures/saves.
     // A four-action in-match sequence is an alternate, never an extra modifier.
     opponent?.tacticalBehaviour?.pressEscapeTiming ??
       opponent?.tacticalBehaviour?.pressEscapeActionSequence);
+  // One single existing specialist cover gate. Its redistributed amount is
+  // taken from the OTHER candidate, never stacked onto this outcome.
+  const selectedCover = routeChoice?.redistribution
+    ? routeChoice.candidates.find(candidate => candidate.route === counter)
+    : null;
+  const cover = selectedCover
+    ? { ...baseCover, adjustment: selectedCover.coverAdjustment }
+    : baseCover;
   const containment = clamp(
     0.48 + (restDefense - 65) * 0.005 +
       (balance - 65) * 0.002 +
@@ -1016,10 +1178,17 @@ export function resolveOwnPressAgainstOpponent(session, {
   const outcome = regained ? "regain" : contained ? "contained" : "escaped";
   const originalCounterplay = counterplayForPressExit(counter, escapeEvidence,
     outcome, session.lineupSnapshot, profile, cover, targetFlank, adaptiveChoice);
+  const phaseContinuity = routeChoice &&
+    session.causalOpponentSequenceVersion === 1
+    ? opponentPhaseContinuity(session, routeChoice, outcome) : null;
   const routeAdaptation = routeChoice ? {
     status: "selected", selectedRoute: routeChoice.route,
     candidates: routeChoice.candidates,
-    basis: routeChoice.basis
+    basis: routeChoice.basis,
+    ...(routeChoice.redistribution ? {
+      managerCounter: routeChoice.redistribution
+    } : {}),
+    ...(phaseContinuity ? { sequence: phaseContinuity } : {})
   } : routePolicyRequested
     ? { status: "insufficient_or_conflicting_evidence" } : null;
   const counterplay = originalCounterplay && routeChoice ? {
@@ -1063,6 +1232,16 @@ export function resolveOwnPressAgainstOpponent(session, {
           (counter === "third_man" ? "tredjemann sentralt" :
             counter === "switch_play" ? "sideskift" : "direkte utspill") +
           " mot vår svakere dokumenterte sikring."
+        : "") +
+      (phaseContinuity?.status === "switched_route" && !regained
+        ? " Fra forrige dokumenterte pressfase har motstanderen skiftet utvei."
+        : "") +
+      (routeChoice?.redistribution && !regained
+        ? " Manageren har omfordelt kjent sikring til " +
+          (routeChoice.redistribution.prioritisedRoute === "third_man"
+            ? "tredjemann" : routeChoice.redistribution.prioritisedRoute === "switch_play"
+              ? "sideskift" : "direkte utspill") +
+          ", på bekostning av dekning i en annen kjent korridor."
         : ""),
     steps, counterplay,
     evidence: {
