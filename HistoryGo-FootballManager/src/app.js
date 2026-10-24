@@ -15,6 +15,7 @@ import { compactPlayerName, describeTacticalFit } from "./ui/manager-lineup-pres
 import { createMatchdaySceneModel, renderManagerMatchdayCommand } from "./ui/manager-matchday-presentation.js";
 import { createSeasonSceneModel, renderSeasonCommand, renderSeasonLeagueOverview } from "./ui/manager-season-presentation.js";
 import { createOfficeSceneModel, renderOfficeCommand } from "./ui/manager-office-presentation.js";
+import { renderManagerStaffRoster } from "./ui/manager-staff-workspace-v1.js";
 import { createManagerTrainingSceneModel, renderManagerTrainingCommand } from "./ui/manager-training-presentation.js";
 import { createContextualTrainingSessions, summarizeTrainingReadiness } from "./football-training-session-guidance.js";
 import { getTacticalKnowledgeForTactic } from "./football-tactical-knowledge.js";
@@ -658,6 +659,8 @@ const elements = {
   firstTimeOpponent: document.querySelector("#firstTimeOpponent"),
   firstTimeAssistant: document.querySelector("#firstTimeAssistant"),
   modeChoiceCards: Array.from(document.querySelectorAll("[data-start-mode]")),
+  continueSavedGame: document.querySelector("#continueSavedGame"),
+  welcomeResumeSummary: document.querySelector("#welcomeResumeSummary"),
   scenarioList: document.querySelector("#scenarioList"),
   trainingChoiceGate: document.querySelector("#trainingChoiceGate"),
   trainingChoiceStatus: document.querySelector("#trainingChoiceStatus"),
@@ -5498,11 +5501,39 @@ function saveOnboarded() {
   try { localStorage.setItem(ONBOARDED_KEY, state.onboarded ? "1" : "0"); } catch (_) { /* privat modus */ }
 }
 
-// Onboarding v2: egen startskjerm styres uavhengig av spillflaten. Den vises til
-// spilleren har valgt modus (`onboarded`), og igjen når «Bytt modus» åpner den.
+// Startskjermen leser kun den eksisterende, hydrerte manager-saven.
+// En tom mode-envelope fra førstegangsstart er ikke et lagret spill.
+function renderWelcomeResume() {
+  const button = elements.continueSavedGame;
+  const summary = elements.welcomeResumeSummary;
+  if (!button || !summary) return;
+  const mode = state.modeEnvelope?.activeMode || state.gameStartState?.selectedMode;
+  const canResume = ["league", "national", "scenario", "training"].includes(mode)
+    && (state.onboarded || Boolean(getSavedClubName()) || Boolean(state.gameStartState?.activeLeagueSaveId));
+  button.disabled = !canResume;
+  if (!canResume) {
+    summary.textContent = "Ingen lagring funnet på denne enheten.";
+    return;
+  }
+  const labels = {
+    league: "Ligaspill",
+    national: "Landslagssjef",
+    scenario: "Scenarioer",
+    training: "Fotballvitenskap"
+  };
+  const detail = mode === "league" ? getSavedClubName()
+    : mode === "national" ? getNationalTeamNationality()
+    : "";
+  summary.textContent = [labels[mode], detail].filter(Boolean).join(" · ");
+}
+
+// Onboarding v2: egen startskjerm vises for nye spillere og ved «Bytt modus».
+// Spillere med en eksisterende save fortsetter automatisk ved normal omlasting,
+// og kan åpne startskjermen igjen fra Innstillinger.
 function renderOnboardingScreen() {
   const screen = elements.onboardingScreen;
   if (!screen) return;
+  renderWelcomeResume();
   screen.hidden = state.onboarded && !state.modeChooserOpen;
   document.body.classList.toggle("is-onboarding", !screen.hidden);
   // Startskjermen åpner alltid på modusvalget; klubb-steget vises kun når
@@ -9736,8 +9767,8 @@ function renderAdminRoom() {
 
   if (elements.adminStaffNote) {
     elements.adminStaffNote.textContent = staffCount > 0
-      ? "Staben støtter treningsuka og kampdagen."
-      : "Ingen stab engasjert ennå — stab hentes inn via History Go-progresjon.";
+      ? "Engasjer flere ved behov. Ansatte er samlet under «Engasjerte medarbeidere»."
+      : "Trykk Engasjer på en kandidat for å bygge opp støtteapparatet.";
   }
 }
 
@@ -11345,9 +11376,29 @@ function appendMatchMinuteLog(parent, session) {
         move.textContent = `${step.action}${step.outcome === "blocked" ? " – stanset" : ""}`;
         actions.append(move);
       });
+      // The existing minute-log disclosure is the tactical event view.
+      // Show only the compact, sourced engine explanation; do not turn a
+      // missing scenario or a legacy save into a claimed defensive error.
+      const cover = moment.counterplay?.defensiveReply?.coverTimingExplanation;
+      const kinds = ["in_time", "late_task", "late_handoff",
+        "late_recovery", "wrong_corridor", "unknown"];
+      const coverNote = document.createElement("div");
+      if (cover && kinds.includes(cover.kind) &&
+        typeof cover.label === "string" &&
+        typeof cover.description === "string") {
+        coverNote.className = "matchday-defensive-cover";
+        coverNote.dataset.kind = cover.kind;
+        const coverTitle = document.createElement("strong");
+        coverTitle.textContent = `Sikring: ${cover.label}`;
+        const coverDescription = document.createElement("p");
+        coverDescription.textContent = cover.description;
+        coverNote.append(coverTitle, coverDescription);
+      }
       const caution = document.createElement("small");
       caution.textContent = "Koblet til denne eksisterende sjansen, uten ekstra mål eller xG. Ikke faktisk spillertracking.";
-      trace.append(head, explanation, actions, caution);
+      trace.append(head, explanation, actions);
+      if (coverNote.childElementCount) trace.append(coverNote);
+      trace.append(caution);
       item.append(trace);
     }
     list.append(item);
@@ -15853,32 +15904,43 @@ function renderPlaceReports() {
   });
 }
 
-// Ett stab-kort: navn, type, hva de kan ansettes som, viktigste ekspertise,
-// og prototype-notat når isPlaceholder er satt.
+// Kortene viser forståelige roller og ett tydelig ansettelsesvalg.
+// Den eksisterende hireStaff()-motoren er fortsatt eneste kilde for lagring.
+const STAFF_TYPE_DISPLAY = Object.freeze({
+  assistant_coach: "Assistenttrener",
+  coach: "Trener",
+  training_coach: "Trener",
+  physical_coach: "Fysisk trener",
+  physio: "Fysioterapeut",
+  physiotherapist: "Fysioterapeut",
+  goalkeeper_coach: "Keepertrener",
+  goalkeeper_trainer: "Keepertrener",
+  former_goalkeeper_goalkeeper_coach: "Keepertrener",
+  head_coach: "Hovedtrener",
+  scout: "Speider",
+  doctor: "Lege"
+});
+
+function staffTypeDisplay(type) {
+  const key = String(type || "").trim();
+  return STAFF_TYPE_DISPLAY[key] || (key ? key.replaceAll("_", " ").replace(/^./, (letter) => letter.toUpperCase()) : "Medarbeider");
+}
+
 function createStaffCard(member) {
   const card = createUnlockCard();
+  card.classList.add("staff-person-card");
   appendUnlockTitle(card, member.name || member.id);
-  appendUnlockMeta(card, `Type: ${member.staffType || "ukjent"}`);
-
-  const canBeHiredAs = Array.isArray(member.canBeHiredAs) ? member.canBeHiredAs : [];
-  if (canBeHiredAs.length) {
-    appendUnlockMeta(card, `Kan ansettes som: ${canBeHiredAs.join(", ")}`);
-  }
-
-  const expertiseIds = Array.isArray(member.expertiseIds) ? member.expertiseIds : [];
-  if (expertiseIds.length) {
-    appendUnlockMeta(card, `Ekspertise: ${expertiseIds.slice(0, 4).join(", ")}`);
-  }
-
+  const types = [member.staffType, ...(Array.isArray(member.canBeHiredAs) ? member.canBeHiredAs : [])]
+    .filter(Boolean).map(staffTypeDisplay);
+  const roles = [...new Set(types)];
+  appendUnlockMeta(card, roles.length ? roles.join(" · ") : "Medarbeider");
   if (member.isPlaceholder) {
     const note = document.createElement("p");
     note.className = "staff-placeholder-note";
-    note.textContent = "Prototypeprofil – krever research.";
+    note.textContent = "Foreløpig profil";
     card.append(note);
   }
-
   appendStaffAction(card, member);
-
   return card;
 }
 
@@ -15920,15 +15982,23 @@ function renderStaffUnlocks() {
     const ul = document.createElement("ul");
     [...identity.strengths, ...identity.gaps].slice(0, 3).forEach((text) => { const li = document.createElement("li"); li.textContent = text; ul.append(li); });
     box.append(ul);
-    identityHost.prepend(box);
+    // Details requires its summary first: keep the assessment inside the fold,
+    // rather than showing a floating panel above the summary on mobile.
+    const summary = identityHost.querySelector(":scope > summary");
+    if (summary) summary.after(box);
+    else identityHost.prepend(box);
   }
 
   const availableList = elements.availableStaffList;
   if (availableList) {
     availableList.innerHTML = "";
-    const available = getUnlockedStaff();
+    const hiredIds = new Set(getHiredStaff().map((member) => String(member.id)));
+    const available = getUnlockedStaff()
+      .filter((member) => !hiredIds.has(String(member.id)))
+      .sort((a, b) => Number(b.starterStaff === true) - Number(a.starterStaff === true)
+        || String(a.name || a.id).localeCompare(String(b.name || b.id), "nb"));
     if (!available.length) {
-      renderUnlockEmpty(availableList, "Ingen tilgjengelig stab ennå. Besøk flere steder.");
+      renderUnlockEmpty(availableList, "Ingen ledige kandidater nå. Engasjerte medarbeidere vises nedenfor.");
     } else {
       available.forEach((member) => availableList.append(createStaffCard(member)));
     }
@@ -16758,6 +16828,8 @@ function renderApp() {
   renderUnlockedPlayers();
   renderPlaceReports();
   renderStaffUnlocks();
+  // Oppdater også rollekapasiteten i samme render som Engasjer-knappen.
+  renderManagerStaffRoster();
   renderExpertiseUnlocks();
   renderTrainingPrograms();
   renderHgTrainingWeek();
@@ -17455,6 +17527,25 @@ function bindGameModeControls() {
     if (!elements.firstTimeAssistant) return;
     elements.firstTimeAssistant.textContent = assistantByStartMode[mode] || assistantByStartMode.league;
   }
+
+  elements.continueSavedGame?.addEventListener("click", () => {
+    const mode = state.modeEnvelope?.activeMode || state.gameStartState?.selectedMode;
+    if (!["league", "national", "scenario", "training"].includes(mode)
+      || !(state.onboarded || getSavedClubName() || state.gameStartState?.activeLeagueSaveId)) return;
+    // Eldre saves kan mangle onboarding-flagget; ved gjenopptakelse markeres
+    // bare dette flagget, uten å endre dataene for sesongen.
+    state.onboarded = true;
+    saveOnboarded();
+    // Fortsett er bare en navigasjon: ikke kall selectGameMode(), reset eller
+    // opprett en ny sesjon. Den hydrerte saven forblir urørt.
+    state.modeChooserOpen = false;
+    showOnboardingModeStep();
+    if (mode === "scenario") activateTab("scenarios");
+    else if (mode === "training") activateTab("hgfmLibrary");
+    else if (mode === "national") activateTab("dashboard");
+    else activateTab("calendar");
+    renderApp();
+  });
 
   elements.modeChoiceCards.forEach((card) => {
     card.addEventListener("mouseenter", () => setStartModeAssistant(card.dataset.startMode));

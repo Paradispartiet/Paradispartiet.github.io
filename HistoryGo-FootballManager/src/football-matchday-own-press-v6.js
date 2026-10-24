@@ -321,6 +321,48 @@ function authoredLaneCheck(route, sequence, playerIds, targetFlank) {
     ? "aligned" : "wrong_corridor";
 }
 
+// v7: modest causal sensitivity to independently sourced PLAYER strengths.
+// These are explicit GAME calibration factors, not measured running speeds.
+// They shorten only the supplied, authored action timings; missing skills
+// leave those timings untouched. Never invent a sequence from team ratings.
+// One task's total saving is bounded to 0.25 seconds, with no xG multiplier.
+function sourcedDefensiveTaskTiming(playerId, lineup, recognitionSeconds, moveSeconds, taskId = null) {
+  const player = Array.isArray(lineup)
+    ? lineup.find(entry => entry?.playerId === playerId) : null;
+  const sourced = Array.isArray(player?.sourcedDefensiveReactionSkills)
+    ? player.sourcedDefensiveReactionSkills : [];
+  const valid = new Set(["pace", "positioning", "anticipation", "game_reading",
+    "defensive_reading", "marking", "tackling"]);
+  const skills = [...new Set(sourced.filter(skill => valid.has(skill)))];
+  const recognition = skills.some(skill =>
+    ["anticipation", "game_reading", "defensive_reading"].includes(skill))
+    ? recognitionSeconds * 0.75 : recognitionSeconds;
+  let move = moveSeconds * (skills.includes("pace") ? 0.80 : 1) *
+    (skills.includes("positioning") ? 0.90 : 1);
+  // A documented defensive strength helps with the actual contest, not an
+  // unrelated covering run or a positional assignment.
+  if (taskId && ["challenge_first_touch", "follow_third_runner",
+    "protect_support_run"].includes(taskId) &&
+    skills.some(skill => ["marking", "tackling"].includes(skill)))
+    move *= 0.92;
+  const saving = recognitionSeconds + moveSeconds - recognition - move;
+  const scale = saving > 0.25 ? 0.25 / saving : 1;
+  const result = {
+    recognitionSeconds: recognitionSeconds - (recognitionSeconds - recognition) * scale,
+    moveSeconds: moveSeconds - (moveSeconds - move) * scale,
+    secondsSaved: Math.round(Math.min(0.25, saving) * 1000) / 1000,
+    // Report only traits that had a relevant effect on this task.
+    skills: [
+      ...skills.filter(skill => ["anticipation", "game_reading",
+        "defensive_reading"].includes(skill) && recognitionSeconds > 0),
+      ...skills.filter(skill => ["pace", "positioning"].includes(skill) && moveSeconds > 0),
+      ...skills.filter(skill => ["marking", "tackling"].includes(skill) && moveSeconds > 0 &&
+        ["challenge_first_touch", "follow_third_runner", "protect_support_run"].includes(taskId))
+    ]
+  };
+  return result;
+}
+
 function recoveryFromAuthoredActions(route, playerIds, sequence, lineup, targetFlank) {
   const expected = PRESS_EXIT_TIMED_ACTIONS[route];
   if (!expected || sequence?.route !== route ||
@@ -339,6 +381,7 @@ function recoveryFromAuthoredActions(route, playerIds, sequence, lineup, targetF
   const defenderArrivalSecondsByPlayerId = {};
   const defenderDeadlineSecondsByPlayerId = {};
   const defenderTransitionStages = [];
+  const defenderSkillTiming = [];
   let defenderCoverHandoff = null;
   let usesIndividualDeadline = false;
   const movementModels = new Set();
@@ -387,9 +430,15 @@ function recoveryFromAuthoredActions(route, playerIds, sequence, lineup, targetF
           .reduce((sum, action) => sum + action.durationSeconds, 0);
         const deadlineSeconds = sequence.actions.slice(0, deadlineIndex)
           .reduce((sum, action) => sum + action.durationSeconds, 0);
+        const skillTiming = sourcedDefensiveTaskTiming(id, lineup,
+          stage.recognitionDelaySeconds, move.seconds, stage.taskId);
+        if (skillTiming.secondsSaved > 0) defenderSkillTiming.push({
+          defenderId: id, taskId: stage.taskId, skills: skillTiming.skills,
+          secondsSaved: skillTiming.secondsSaved
+        });
         const movementStartSeconds = Math.max(cueSeconds, previousCompletion) +
-          stage.recognitionDelaySeconds;
-        const completionSeconds = movementStartSeconds + move.seconds;
+          skillTiming.recognitionSeconds;
+        const completionSeconds = movementStartSeconds + skillTiming.moveSeconds;
         if (completionSeconds > 20) return null;
         defenderTransitionStages.push({
           defenderId: id, taskId: stage.taskId,
@@ -439,8 +488,14 @@ function recoveryFromAuthoredActions(route, playerIds, sequence, lineup, targetF
     if (cueIndex < 0) return null;
     const elapsedBeforeCue = sequence.actions.slice(0, cueIndex)
       .reduce((sum, action) => sum + action.durationSeconds, 0);
-    const arrival = elapsedBeforeCue + response.recognitionDelaySeconds +
-      travel.seconds;
+    const skillTiming = sourcedDefensiveTaskTiming(id, lineup,
+      response.recognitionDelaySeconds, travel.seconds);
+    if (skillTiming.secondsSaved > 0) defenderSkillTiming.push({
+      defenderId: id, taskId: null, skills: skillTiming.skills,
+      secondsSaved: skillTiming.secondsSaved
+    });
+    const arrival = elapsedBeforeCue + skillTiming.recognitionSeconds +
+      skillTiming.moveSeconds;
     if (arrival > 20) return null;
     defenderArrivalSecondsByPlayerId[id] = arrival;
     // A specialist may have to seal a pass or runner BEFORE the next
@@ -500,6 +555,7 @@ function recoveryFromAuthoredActions(route, playerIds, sequence, lineup, targetF
     defenderArrivalSecondsByPlayerId,
     ...(usesIndividualDeadline ? { defenderDeadlineSecondsByPlayerId } : {}),
     ...(defenderTransitionStages.length ? { defenderTransitionStages } : {}),
+    ...(defenderSkillTiming.length ? { defenderSkillTiming } : {}),
     ...(defenderCoverHandoff ? { defenderCoverHandoff } : {}),
     movementModel: movementModels.size === 1 ? [...movementModels][0] :
       "mixed_authored_responses",
@@ -573,6 +629,9 @@ function specialistRecoveryWindow(route, playerIds, timing, lineup, targetFlank)
     marginSeconds: Math.round(margin * 1000) / 1000,
     movementModel: isSequence ? derived.movementModel : null,
     spatialLane: isSequence ? derived.spatialLane : null,
+    ...(isSequence && derived.defenderSkillTiming?.length ? {
+      defenderSkillTiming: derived.defenderSkillTiming
+    } : {}),
     ...(actionDeadlines ? {
       deadlineModel: "per_defender_action_start",
       criticalDefenderId: critical.defenderId,
@@ -650,7 +709,61 @@ function routeCoverEvidence(opponentRoute, escapeEvidence, lineup, profile, targ
   };
 }
 
-function counterplayForPressExit(opponentRoute, escapeEvidence, outcome, lineup, profile, cover, targetFlank) {
+// The tactical replay can explain the decisive COVER failure without
+// pretending to have live tracking data. Explanations are descriptive only:
+// the probability and the single terminal xG result remain unchanged.
+const DEFENSIVE_TASK_LABELS = Object.freeze({
+  screen_layoff: "skjermingen av avlegget",
+  follow_third_runner: "følgingen av tredjemann",
+  drop_for_through_pass: "fallet mot gjennomspillet",
+  delay_release: "forsinkelsen av vendingen",
+  shift_to_far_side: "forskyvningen mot motsatt side",
+  hold_wide_channel: "sikringen av ytterkorridoren",
+  drop_behind_press: "fallet bak pressleddet",
+  challenge_first_touch: "presset mot førsteberøringen",
+  protect_support_run: "sikringen av støtteløpet"
+});
+
+function explainDefensiveCoverTiming(timing) {
+  if (!timing || timing.status === "not_applicable" ||
+    timing.status === "not_provided") return {
+    kind: "unknown", label: "Sikring uten tidsmåling",
+    description: "Ingen dokumenterte individuelle sikringstider er tilgjengelige."
+  };
+  if (timing.status === "invalid_or_incomplete") return {
+    kind: "unknown", label: "Uavklart sikringsforløp",
+    description: "Sikringsdataene er ufullstendige eller motstridende. Det er ikke påvist en defensiv tidsfeil."
+  };
+  if (timing.status === "wrong_corridor") return {
+    kind: "wrong_corridor", label: "Feil sikringsrom",
+    description: "Forsvaret rekker frem, men sikrer ikke den dokumenterte angrepskorridoren."
+  };
+  if (timing.status === "in_time") return {
+    kind: "in_time", label: "Sikringen er på plass",
+    description: (timing.coverHandoff
+      ? "Sikringsbyttet og de nødvendige defensive handlingene ble fullført innen fristene."
+      : "De defensive handlingene ble fullført innen fristene.") +
+      (timing.defenderSkillTiming?.length
+        ? " Kildebelagte spilleregenskaper forkortet reaksjons- eller forflytningstiden i simuleringen."
+        : "")
+  };
+  if (timing.status === "late" && timing.criticalHandoff) return {
+    kind: "late_handoff", label: "For sent sikringsbytte",
+    description: "Avløseren nådde sikringskorridoren etter at første forsvarer startet sin neste oppgave."
+  };
+  if (timing.status === "late" && timing.criticalTaskId) return {
+    kind: "late_task", label: "For sen defensiv handling",
+    description: "Forsvaret kom for sent med " +
+      (DEFENSIVE_TASK_LABELS[timing.criticalTaskId] || "den nødvendige sikringsoppgaven") +
+      "."
+  };
+  return {
+    kind: "late_recovery", label: "For sen sikring",
+    description: "En nødvendig forsvarer nådde ikke sikringsrommet innen sin dokumenterte frist."
+  };
+}
+
+function counterplayForPressExit(opponentRoute, escapeEvidence, outcome, lineup, profile, cover, targetFlank, adaptiveChoice = null) {
   // An explicit observation of isolation overrides an older authored route.
   // A generic 'supported' observation with no named route must not invent one.
   if (escapeEvidence !== "supported" ||
@@ -662,7 +775,16 @@ function counterplayForPressExit(opponentRoute, escapeEvidence, outcome, lineup,
       .map(player => player.playerId) : [];
   return {
     pathwayId: opponentRoute, label: pathway.label,
-    documentedTargetFlank: targetFlank,
+    documentedTargetFlank: adaptiveChoice ? null : targetFlank,
+    ...(adaptiveChoice ? {
+      simulatedTargetFlank: targetFlank,
+      opponentAdaptation: {
+        policy: "weakest_verified_flank",
+        selectedFlank: targetFlank,
+        reason: adaptiveChoice.reason,
+        basis: adaptiveChoice.basis
+      }
+    } : {}),
     exposedChannel: pathway.exposedChannel,
     basis: "simulated_tactical_hypothesis_v6",
     status: outcome === "regain" ? "prevented" :
@@ -678,9 +800,14 @@ function counterplayForPressExit(opponentRoute, escapeEvidence, outcome, lineup,
     advancedFullbacks,
     defensiveReply: {
       ...defensiveReplyForPressExit(opponentRoute, lineup, profile, outcome, targetFlank),
+      ...(adaptiveChoice ? { evidence: {
+        ...defensiveReplyForPressExit(opponentRoute, lineup, profile, outcome, targetFlank).evidence,
+        documentedTargetFlank: null, simulatedTargetFlank: targetFlank
+      } } : {}),
       containmentAdjustment: round3(cover.adjustment),
       weakestCoverFit: cover.weakestCoverFit,
-      coverTiming: cover.timing
+      coverTiming: cover.timing,
+      coverTimingExplanation: explainDefensiveCoverTiming(cover.timing)
     },
     containedCause: pathway.containedCause,
     escapedCause: pathway.escapedCause
@@ -704,6 +831,98 @@ function distinctSupport(lineup, groups) {
     selected.push(player);
   }
   return selected;
+}
+
+
+// v7.1 opponent choice: a KNOWN wide-escape route may select the weaker
+// VERIFIED defensive flank. The opt-in describes a simulated tactical
+// decision, not historical scouting or hidden positional tracking.
+// We require both backs and their role fits, so missing data is not treated
+// as proof of a defensive weakness. Tied or near-equal fits are neutral.
+function selectVerifiedWeakFlank(lineup, profile) {
+  if (!Array.isArray(lineup) || !finite(profile?.balanceScore) ||
+    !finite(profile?.restDefenseScore)) return null;
+  const known = lineup.filter(player => player?.playerId &&
+    player.matchFitKnown === true && finite(player.matchScore) &&
+    typeof player.roleId === "string" && player.roleId.length);
+  if (known.length < 10) return null;
+  const back = position => {
+    const candidates = lineup.filter(player => player?.position === position);
+    if (candidates.length !== 1) return null;
+    const p = candidates[0];
+    return p?.playerId && p.matchFitKnown === true &&
+      finite(p.matchScore) && p.matchScore >= 0 && p.matchScore <= 100 &&
+      typeof p.roleId === "string" && p.roleId.length ? p : null;
+  };
+  const left = back("LB");
+  const right = back("RB");
+  if (!left || !right || left.playerId === right.playerId) return null;
+  const leftCovered = left.roleId === "support_fullback";
+  const rightCovered = right.roleId === "support_fullback";
+  // No evidence of ANY supported wide cover: do not rank two unknown gaps.
+  if (!leftCovered && !rightCovered) return null;
+  if (leftCovered !== rightCovered) return {
+    flank: leftCovered ? "right" : "left",
+    reason: "verified_role_coverage_gap",
+    basis: "known_formation_roles_and_fit"
+  };
+  // A 5-point game-model threshold avoids arbitrary switches on tiny fit
+  // differences. Ratings remain role-match evidence, not measured speed.
+  if (Math.abs(left.matchScore - right.matchScore) < 5) return null;
+  return {
+    flank: left.matchScore < right.matchScore ? "left" : "right",
+    reason: "weaker_documented_role_fit",
+    basis: "known_formation_roles_and_fit"
+  };
+}
+
+
+// v7.2: an opponent may CHOOSE only among explicitly supplied, independently
+// verified available outlets. Neither generic possession ratings nor the
+// defending XI create an attacking route. Each candidate uses the existing
+// single cover gate; unknown evidence or near-ties yield no inferred route.
+const VERIFIED_OUTLETS = new Set(["third_man", "switch_play", "direct"]);
+function selectVerifiedWeakOutlet(shape, lineup, profile) {
+  const candidates = shape?.pressEscapeCandidateRoutes;
+  if (shape?.pressEscape !== "supported" ||
+    shape?.pressEscapeRoutePolicy !== "weakest_verified_cover" ||
+    !Array.isArray(candidates) || candidates.length < 2 || candidates.length > 3 ||
+    candidates.some(route => !VERIFIED_OUTLETS.has(route)) ||
+    new Set(candidates).size !== candidates.length ||
+    !Array.isArray(lineup)) return null;
+
+  const flank = candidates.includes("switch_play")
+    ? selectVerifiedWeakFlank(lineup, profile) : null;
+  // A wide target with unknown left/right cover cannot be fairly compared
+  // against centrally named outlets.
+  if (candidates.includes("switch_play") && !flank) return null;
+  const verified = [];
+  for (const route of candidates) {
+    const target = route === "switch_play" ? flank.flank : null;
+    const reply = defensiveReplyForPressExit(
+      route, lineup, profile, "preflight", target);
+    if (!reply || reply.roleReadiness === "unknown") return null;
+    const cover = routeCoverEvidence(
+      route, "supported", lineup, profile, target, null);
+    verified.push({
+      route, targetFlank: target,
+      roleReadiness: reply.roleReadiness,
+      coverAdjustment: round3(cover.adjustment)
+    });
+  }
+  // Least protected FIRST, with a 0.008 probability-point separation
+  // between the two weakest lanes. This is an explicit model threshold,
+  // never observed opponent intelligence. Identical / near-tied routes
+  // remain unknown rather than being selected by array order.
+  const sorted = [...verified].sort((a, b) =>
+    a.coverAdjustment - b.coverAdjustment || a.route.localeCompare(b.route));
+  if (sorted[1].coverAdjustment - sorted[0].coverAdjustment < 0.008) return null;
+  return {
+    route: sorted[0].route,
+    flankChoice: sorted[0].route === "switch_play" ? flank : null,
+    candidates: verified,
+    basis: "authored_available_routes_and_verified_defensive_roles"
+  };
 }
 
 export function resolveOwnPressAgainstOpponent(session, {
@@ -733,7 +952,15 @@ export function resolveOwnPressAgainstOpponent(session, {
 
   const avgFit = players.reduce((sum, p) => sum + p.matchScore, 0) / players.length;
   const weakestFit = Math.min(...players.map(p => p.matchScore));
-  const counter = opponent?.tacticalBehaviour?.pressEscapeRoute;
+  const shape = opponent?.tacticalBehaviour;
+  const routePolicyRequested = session.causalOpponentRouteAdaptationVersion === 1 &&
+    shape?.pressEscapeRoutePolicy === "weakest_verified_cover" &&
+    !Object.prototype.hasOwnProperty.call(shape, "pressEscapeRoute") &&
+    !Object.prototype.hasOwnProperty.call(shape, "pressEscapeTargetFlank") &&
+    shape.pressEscapeTiming == null && shape.pressEscapeActionSequence == null;
+  const routeChoice = routePolicyRequested
+    ? selectVerifiedWeakOutlet(shape, session.lineupSnapshot, profile) : null;
+  const counter = routeChoice?.route || shape?.pressEscapeRoute;
   // Both a known authored outlet and simulated live pressEscape describe
   // one documented route through the press. "isolated" is stronger direct
   // evidence than an older route label; unknown data awards no free bypass.
@@ -741,8 +968,22 @@ export function resolveOwnPressAgainstOpponent(session, {
   // Input convention: target flank is expressed from OUR defending viewpoint.
   // No guess from a route label or lineup when the destination is unknown.
   const targetFlankInput = opponent?.tacticalBehaviour?.pressEscapeTargetFlank;
-  const targetFlank = counter === "switch_play" && escapeEvidence === "supported" &&
-    ["left", "right"].includes(targetFlankInput) ? targetFlankInput : null;
+  const explicitlyTargeted = counter === "switch_play" &&
+    escapeEvidence === "supported" && ["left", "right"].includes(targetFlankInput);
+  const hasAuthoredTarget = Object.prototype.hasOwnProperty.call(
+    opponent?.tacticalBehaviour || {}, "pressEscapeTargetFlank");
+  const adaptationRequested = counter === "switch_play" &&
+    escapeEvidence === "supported" && !hasAuthoredTarget &&
+    opponent?.tacticalBehaviour?.pressEscapeTargetPolicy === "weakest_verified_flank";
+  // An authored timeline or historic timing window must never be silently
+  // remapped to a different channel. Authors must explicitly target it.
+  const canAdapt = adaptationRequested &&
+    opponent?.tacticalBehaviour?.pressEscapeTiming == null &&
+    opponent?.tacticalBehaviour?.pressEscapeActionSequence == null;
+  const adaptiveChoice = routeChoice?.flankChoice ||
+    (canAdapt ? selectVerifiedWeakFlank(session.lineupSnapshot, profile) : null);
+  const targetFlank = explicitlyTargeted ? targetFlankInput :
+    adaptiveChoice?.flank || null;
   const documentedEscape = escapeEvidence === "supported";
   const pressProbability = clamp(
     0.53 + (avgFit - 65) * 0.004 +
@@ -773,8 +1014,17 @@ export function resolveOwnPressAgainstOpponent(session, {
   if (!regained && !finite(protection)) return null;
   const contained = !regained && clamp(protection, 0, 0.999999999) < containment;
   const outcome = regained ? "regain" : contained ? "contained" : "escaped";
-  const counterplay = counterplayForPressExit(counter, escapeEvidence,
-    outcome, session.lineupSnapshot, profile, cover, targetFlank);
+  const originalCounterplay = counterplayForPressExit(counter, escapeEvidence,
+    outcome, session.lineupSnapshot, profile, cover, targetFlank, adaptiveChoice);
+  const routeAdaptation = routeChoice ? {
+    status: "selected", selectedRoute: routeChoice.route,
+    candidates: routeChoice.candidates,
+    basis: routeChoice.basis
+  } : routePolicyRequested
+    ? { status: "insufficient_or_conflicting_evidence" } : null;
+  const counterplay = originalCounterplay && routeChoice ? {
+    ...originalCounterplay, opponentRouteAdaptation: routeAdaptation
+  } : originalCounterplay;
   const chanceSide = regained ? "for" : outcome === "escaped" ? "against" : null;
   const steps = config.steps.map((action, i) => ({
     action,
@@ -796,19 +1046,37 @@ export function resolveOwnPressAgainstOpponent(session, {
     xgDeltaAgainst: regained ? -0.01 : contained ? 0.02 :
       restDefense >= 70 ? 0.06 : 0.12,
     cause: regained ? config.regain :
-      contained
+      (contained
         ? counterplay?.containedCause ||
           "Motstanderen spiller seg ut av første press, men restforsvaret stanser overgangen."
         : counterplay?.escapedCause ||
           (documentedEscape
             ? "Motstanderen bruker dokumentert utvei fra presset; bakre sikring blir utfordret."
-            : "Første pressledd brytes og restforsvaret rekker ikke å stenge neste rom."),
+            : "Første pressledd brytes og restforsvaret rekker ikke å stenge neste rom.")) +
+      (adaptiveChoice && !regained
+        ? " Motstanderen valgte vår " +
+          (targetFlank === "left" ? "venstre" : "høyre") +
+          " kant ut fra kjent forsvarsrolle og rollepassform."
+        : "") +
+      (routeChoice && !regained
+        ? " Blant kjente utveier valgte motstanderen " +
+          (counter === "third_man" ? "tredjemann sentralt" :
+            counter === "switch_play" ? "sideskift" : "direkte utspill") +
+          " mot vår svakere dokumenterte sikring."
+        : ""),
     steps, counterplay,
     evidence: {
       opponentTrigger: config.opponentMetric, opponentValue: scenario,
       pressResistance: resistance, transitionThreat: threat,
-      opponentEscapeRoute: counter || "unknown",
-      documentedTargetFlank: targetFlank,
+      opponentEscapeRoute: shape?.pressEscapeRoute || "unknown",
+      ...(routePolicyRequested ? { opponentRouteAdaptation: routeAdaptation } : {}),
+      documentedTargetFlank: adaptiveChoice ? null : targetFlank,
+      ...(adaptationRequested ? {
+        opponentFlankAdaptation: adaptiveChoice
+          ? { status: "selected", selectedFlank: adaptiveChoice.flank,
+              reason: adaptiveChoice.reason, basis: adaptiveChoice.basis }
+          : { status: "insufficient_or_conflicting_evidence" }
+      } : {}),
       opponentEscapeEvidence: escapeEvidence || "unknown",
       resolvedEscapePathway: counterplay?.pathwayId || "unknown",
       routeCoverFitFloor: cover.weakestCoverFit,

@@ -1,4 +1,4 @@
-import { createLineupSnapshot, attributeGoal, createMatchPlayerStats, sourcedRecoverySkillsForPlayer } from "./football-player-stats.js";
+import { createLineupSnapshot, attributeGoal, createMatchPlayerStats, sourcedRecoverySkillsForPlayer, sourcedDefensiveReactionSkillsForPlayer } from "./football-player-stats.js";
 import { applySubstitution, aggregateSourcedMetricBonuses, createBenchSnapshot, playedPlayersFor, sourcedMetricBonusesForAssignment } from "./football-substitutions.js";
 import { evaluateTrainingDecisionSupport } from "./football-training-week.js";
 import { buildMatchExplanation } from "./football-match-explanation-engine.js";
@@ -1800,6 +1800,12 @@ export function createMatchdaySession({ teamFit, formation, tactic, activeClassi
     causalCompactBlockVersion: 1,
     // Only new matches opt in to pre-chance pressing/escape sequences.
     causalPressingVersion: 1,
+    // v7.1: new matches can adapt a KNOWN switch-play route after an
+    // evidenced opponent reaction; existing saves retain their prior logic.
+    causalOpponentFlankAdaptationVersion: 1,
+    // v7.2: prefer a VERIFIED weak outlet only when multiple routes
+    // were explicitly authored, never from missing scouting evidence.
+    causalOpponentRouteAdaptationVersion: 1,
     // Four remaining plans opt in only on new match sessions.
     causalGameControlVersion: 1,
     sourcedSubstitutionVersion: 2,
@@ -1977,6 +1983,7 @@ export function applyMatchPlanChange(session, nextPlan, { opponent, currentTeamF
       updatedLineup = currentEntries.map((entry, i) => ({
         ...entry,
         sourcedRecoverySkills: sourcedRecoverySkillsForPlayer(assignments[i].player),
+        sourcedDefensiveReactionSkills: sourcedDefensiveReactionSkillsForPlayer(assignments[i].player),
         sourcedMetricBonuses: sourcedMetricBonusesForAssignment(assignments[i], nextPlan)
       }));
       const activeBonuses = aggregateSourcedMetricBonuses(updatedLineup);
@@ -2393,7 +2400,46 @@ export function applyOpponentAdaptation(session) {
   const adjustment = deriveOpponentAdjustment(readGameState(session), { alreadyAdjusted: done });
   if (!adjustment) return session;
 
-  const opponent = applyOpponentAdjustment(session.opponent, adjustment);
+  const adjustedOpponent = applyOpponentAdjustment(session.opponent, adjustment);
+  const priorBehaviour = session.opponent?.tacticalBehaviour;
+  // Preserve an already-authored SWITCH route only if the NEW opponent
+  // adjustment confirms an available press escape. No route is invented
+  // from generic possession scores, and old in-progress saves are unchanged.
+  const sourceConfirmed = session.causalOpponentFlankAdaptationVersion === 1 &&
+    priorBehaviour?.pressEscapeRoute === "switch_play" &&
+    adjustedOpponent?.tacticalBehaviour?.pressEscape === "supported" &&
+    !Object.prototype.hasOwnProperty.call(priorBehaviour, "pressEscapeTargetFlank") &&
+    priorBehaviour.pressEscapeTiming == null &&
+    priorBehaviour.pressEscapeActionSequence == null;
+  const flankAdaptedOpponent = sourceConfirmed ? {
+    ...adjustedOpponent,
+    tacticalBehaviour: {
+      ...adjustedOpponent.tacticalBehaviour,
+      pressEscapeRoute: "switch_play",
+      pressEscapeTargetPolicy: "weakest_verified_flank"
+    }
+  } : adjustedOpponent;
+  // v7.2 keeps an authored LIST of alternate available outlets across a
+  // legitimate opponent adjustment, but only when the new behaviour proves
+  // an escape is supported. No route is fabricated from possession strength.
+  // An older in-progress match without the opt-in flag is unchanged.
+  const knownAlternatives = session.causalOpponentRouteAdaptationVersion === 1 &&
+    priorBehaviour?.pressEscapeRoutePolicy === "weakest_verified_cover" &&
+    !Object.prototype.hasOwnProperty.call(priorBehaviour, "pressEscapeRoute") &&
+    !Object.prototype.hasOwnProperty.call(priorBehaviour, "pressEscapeTargetFlank") &&
+    priorBehaviour.pressEscapeTiming == null &&
+    priorBehaviour.pressEscapeActionSequence == null &&
+    Array.isArray(priorBehaviour.pressEscapeCandidateRoutes) &&
+    priorBehaviour.pressEscapeCandidateRoutes.length >= 2 &&
+    adjustedOpponent?.tacticalBehaviour?.pressEscape === "supported";
+  const opponent = knownAlternatives ? {
+    ...flankAdaptedOpponent,
+    tacticalBehaviour: {
+      ...flankAdaptedOpponent.tacticalBehaviour,
+      pressEscapeCandidateRoutes: [...priorBehaviour.pressEscapeCandidateRoutes],
+      pressEscapeRoutePolicy: "weakest_verified_cover"
+    }
+  } : flankAdaptedOpponent;
   const activePlan = session.activePlanSnapshot || session.tacticSnapshot || null;
 
   const adapted = {
