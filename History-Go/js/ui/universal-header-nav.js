@@ -152,10 +152,20 @@
   home.append(logo);
 
   function mountControls() {
-    if (home.parentElement !== host || (!link.hidden && host.firstElementChild !== link)) {
+    // The main index already has the large History GO welcome logo. Only
+    // subpages need this separate small logo as a direct return to the map.
+    if (isMapRoot) {
       home.remove();
-      host.prepend(home);
+      if (!link.hidden && host.firstElementChild !== link) host.prepend(link);
+      return;
+    }
+    // The small home logo precedes the back arrow in visual and keyboard order.
+    if (home.parentElement !== host || host.firstElementChild !== home
+        || (!link.hidden && host.children[1] !== link)) {
+      link.remove();
+      home.remove();
       if (!link.hidden) host.prepend(link);
+      host.prepend(home);
     }
   }
 
