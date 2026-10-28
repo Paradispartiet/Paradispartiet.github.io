@@ -201,6 +201,10 @@ jobs:
           cp -a HG_Film_Producer _site-root/
           cp -a HistoryGo-FootballManager _site-root/
           cp -a History-Go _site-root/
+          # The project overview uses its own brand/logo assets.
+          cp -a assets _site-root/
+          test -f _site-root/assets/project-logos/fysen.svg
+          test -f _site-root/assets/project-logos/filmverket.svg
           test -f portal/index.html
           cp portal/index.html _site-root/index.html
           touch _site-root/.nojekyll
