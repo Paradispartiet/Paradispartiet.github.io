@@ -46,10 +46,14 @@ h1{font-size:clamp(1.8rem,4vw,2.15rem);line-height:1.15;letter-spacing:-.055em;m
 .project-card{position:relative;min-width:0;background:#fff;border:1px solid var(--line);border-radius:17px;transition:box-shadow .18s,border-color .18s}
 .project-card:hover{border-color:#c8d5e1;box-shadow:0 6px 22px #1c37500e}
 .project-link{min-height:172px;display:flex;flex-direction:column;align-items:flex-start;padding:18px;text-decoration:none;border-radius:17px}
-.app-icon{height:57px;width:57px;border-radius:16px;display:grid;place-items:center;font-weight:770;letter-spacing:-.06em;font-size:1.1rem;margin-bottom:15px;color:#fff;box-shadow:inset 0 1px 0 #ffffff24}
-.icon-history{background:#247663}.icon-film{background:#554f84}.icon-football{background:#3e6b93}
-.icon-fysen{background:#d57748}.icon-aha{background:#404f8f}
-.icon-news{background:#af5d43}.icon-party{background:#303e66}.icon-light{background:#a88643}
+.app-icon{height:57px;width:57px;flex:0 0 57px;border-radius:16px;display:grid;place-items:center;position:relative;overflow:hidden;font-weight:770;letter-spacing:-.06em;font-size:1.1rem;margin-bottom:15px;color:#fff;background:#e9eef1}
+.app-icon img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+.app-icon-fallback{display:none}
+.app-icon.logo-failed img{display:none}
+.app-icon.logo-failed .app-icon-fallback{display:block}
+.icon-history{background:#e8f0ed}.icon-film{background:#0b0d10}.icon-football{background:#112b23}
+.icon-fysen{background:#070807}.icon-aha{background:#161715}
+.icon-news{background:#f7f0ed}.icon-party{background:#f7df37}.icon-light{background:#a88643}
 
 .project-title{font-weight:750;font-size:.98rem;letter-spacing:-.02em;line-height:1.23;overflow-wrap:anywhere}
 .project-status{font-size:.77rem;color:var(--subtle);margin-top:5px;line-height:1.35}
@@ -67,7 +71,7 @@ h1{font-size:clamp(1.8rem,4vw,2.15rem);line-height:1.15;letter-spacing:-.055em;m
 .archive-link:hover{border-color:#b9cbdc}
 .footer{color:#8190a0;font-size:.78rem;text-align:center;margin-top:27px}
 @media(max-width:900px){.project-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:670px){.shell{width:min(100% - 28px,1100px)}main{padding:24px 0 36px}.heading{margin-bottom:19px}.controls{display:block}.search-field{display:block;margin-bottom:10px}.filters{width:100%;gap:6px}.filter{font-size:.83rem;padding:7px 12px;min-height:37px}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.project-link{min-height:157px;padding:14px}.app-icon{width:52px;height:52px;border-radius:14px;margin-bottom:13px}.project-title{font-size:.92rem}.project-status{font-size:.74rem}}
+@media(max-width:670px){.shell{width:min(100% - 28px,1100px)}main{padding:24px 0 36px}.heading{margin-bottom:19px}.controls{display:block}.search-field{display:block;margin-bottom:10px}.filters{width:100%;gap:6px}.filter{font-size:.83rem;padding:7px 12px;min-height:37px}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.project-link{min-height:157px;padding:14px}.app-icon{width:52px;height:52px;flex-basis:52px;border-radius:14px;margin-bottom:13px}.project-title{font-size:.92rem}.project-status{font-size:.74rem}}
 @media(max-width:340px){.project-grid{grid-template-columns:1fr}.project-link{min-height:110px;display:grid;grid-template-columns:53px 1fr;column-gap:14px;align-content:center}.app-icon{grid-row:span 2;margin:0}.project-title{align-self:end}.project-status{align-self:start}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style>
@@ -91,44 +95,44 @@ h1{font-size:clamp(1.8rem,4vw,2.15rem);line-height:1.15;letter-spacing:-.055em;m
 <section aria-label="Alle prosjekter"><div class="project-grid" id="project-catalog">
 <article class="project-card featured" data-category="spill" data-search="history go history go historie · utforskning publisert">
  <a class="project-link" href="/History-Go/"  aria-label="History GO – Åpne app">
- <span class="app-icon icon-history" aria-hidden="true">HG</span>
+ <span class="app-icon icon-history" aria-hidden="true"><img src="/History-Go/bilder/logo_historygo.PNG" alt="" loading="lazy"><span class="app-icon-fallback">HG</span></span>
  <span class="project-title">History GO</span>
  <span class="project-status live">Åpne app</span>
  </a></article>
 <article class="project-card featured" data-category="spill" data-search="film producer filmverket · film producer film · kreativitet publisert">
  <a class="project-link" href="/HG_Film_Producer/"  aria-label="Film Producer – Åpne app">
- <span class="app-icon icon-film" aria-hidden="true">FP</span>
+ <span class="app-icon icon-film" aria-hidden="true"><img src="assets/project-logos/filmverket.svg" alt="" loading="lazy"><span class="app-icon-fallback">FV</span></span>
  <span class="project-title">Film Producer</span>
  <span class="project-status live">Åpne app</span>
  </a></article>
 <article class="project-card featured" data-category="spill" data-search="football manager football manager fotball · strategi publisert">
  <a class="project-link" href="/HistoryGo-FootballManager/"  aria-label="Football Manager – Åpne app">
- <span class="app-icon icon-football" aria-hidden="true">FM</span>
+ <span class="app-icon icon-football" aria-hidden="true"><img src="assets/project-logos/football-manager.svg" alt="" loading="lazy"><span class="app-icon-fallback">HGFM</span></span>
  <span class="project-title">Football Manager</span>
  <span class="project-status live">Åpne app</span>
  </a></article>
 <article class="project-card" data-category="teknologi" data-search="fysen fysen mat · søk under utvikling">
  <a class="project-link" href="https://github.com/Paradispartiet/fysen" target="_blank" rel="noopener noreferrer" aria-label="Fysen – Utvikles">
- <span class="app-icon icon-fysen" aria-hidden="true">F</span>
+ <span class="app-icon icon-fysen" aria-hidden="true"><img src="assets/project-logos/fysen.svg" alt="" loading="lazy"><span class="app-icon-fallback">F</span></span>
  <span class="project-title">Fysen</span>
  <span class="project-status">Utvikles</span>
  </a></article>
 <article class="project-card" data-category="teknologi" data-search="aha echonet aha echonet ai · personlig teknologi utvikles">
  <a class="project-link" href="https://github.com/Paradispartiet/AHA-EchoNet" target="_blank" rel="noopener noreferrer" aria-label="AHA EchoNet – Utvikles">
- <span class="app-icon icon-aha" aria-hidden="true">A</span>
+ <span class="app-icon icon-aha" aria-hidden="true"><img src="assets/project-logos/aha.svg" alt="" loading="lazy"><span class="app-icon-fallback">AHA</span></span>
  <span class="project-title">AHA EchoNet</span>
  <span class="project-status">Utvikles</span>
  </a></article>
 
 <article class="project-card" data-category="kultur" data-search="paradisavisa paradisavisa journalistikk · samfunn nettavis">
  <a class="project-link" href="https://paradispartiet.github.io/Paradisavisa/" target="_blank" rel="noopener noreferrer" aria-label="Paradisavisa – Nettavis">
- <span class="app-icon icon-news" aria-hidden="true">PA</span>
+ <span class="app-icon icon-news" aria-hidden="true"><img src="https://raw.githubusercontent.com/Paradispartiet/Paradisavisa/main/favicon.PNG" alt="" loading="lazy"><span class="app-icon-fallback">PA</span></span>
  <span class="project-title">Paradisavisa</span>
  <span class="project-status">Nettavis</span>
  </a></article>
 <article class="project-card" data-category="ideer" data-search="paradispartiet paradispartiet ideer · samfunn nettsted">
  <a class="project-link" href="https://paradispartiet.github.io/Paradispartiet/" target="_blank" rel="noopener noreferrer" aria-label="Paradispartiet – Nettsted">
- <span class="app-icon icon-party" aria-hidden="true">P</span>
+ <span class="app-icon icon-party" aria-hidden="true"><img src="assets/project-logos/paradispartiet.svg" alt="" loading="lazy"><span class="app-icon-fallback">P</span></span>
  <span class="project-title">Paradispartiet</span>
  <span class="project-status">Nettsted</span>
  </a></article>
@@ -147,6 +151,10 @@ h1{font-size:clamp(1.8rem,4vw,2.15rem);line-height:1.15;letter-spacing:-.055em;m
 <script>
 (function(){
 const cards=[...document.querySelectorAll('#project-catalog .project-card')];
+document.querySelectorAll('.app-icon img').forEach(img=>{
+  img.addEventListener('error',()=>img.closest('.app-icon')?.classList.add('logo-failed'),{once:true});
+  if(img.complete && img.naturalWidth===0) img.closest('.app-icon')?.classList.add('logo-failed');
+});
 const buttons=[...document.querySelectorAll('.filter')];
 const search=document.getElementById('project-search');
 const count=document.getElementById('results-count');
