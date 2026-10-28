@@ -9,6 +9,10 @@ HTML = (ROOT / "portal" / "index.html").read_text(encoding="utf-8")
 WORKFLOW = (ROOT / ".github" / "workflows" / "sync-production-sites.yml").read_text(encoding="utf-8")
 ROOT_HTML = (ROOT / "index.html").read_text(encoding="utf-8")
 assert ROOT_HTML == HTML, "Public root index.html must match portal/index.html"
+assert "color-scheme:dark" in HTML and "--bg:#08090b" in HTML, "Project portal must use its dark universe theme"
+assert "cp -a assets _site-root/" in WORKFLOW, "Project logo assets must be included in Pages artifact"
+for logo in ("aha.svg", "filmverket.svg", "football-manager.svg", "fysen.svg", "paradispartiet.svg"):
+    assert (ROOT / "assets" / "project-logos" / logo).is_file(), f"Missing project logo asset: {logo}"
 assert (ROOT / ".nojekyll").exists(), "Root .nojekyll required for branch-based Pages deployment"
 assert "Paradispartiet production host" not in ROOT_HTML, "README must not become homepage"
 assert "History-Go-2" not in ROOT_HTML, "Do not expose removed History GO 2 project"
