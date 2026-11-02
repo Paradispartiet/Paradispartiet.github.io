@@ -5,6 +5,105 @@
 (function () {
   "use strict";
   const images = Object.freeze({
+    emne_flora_perleblomst: Object.freeze({
+      scientificName: "Muscari spp.",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/28_perleblomst_v1.webp",
+      gitBlobSha: "1bc873a3e3a30d552e2e77d25f21319c5a1ce93b",
+      reviewedAt: "2026-11-02",
+      stage: "vårblomstring",
+      taxonomicScope: "genus-representative",
+      evidence: "data/natur/flora/illustration-quality-perleblomst-20261102.json"
+    }),
+    emne_flora_penstorkenebb: Object.freeze({
+      scientificName: "Geranium robertianum",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/27_stankstorkenebb_v1.webp",
+      gitBlobSha: "a057aae517028ebb753b97f76eb11a44bb83ed50",
+      reviewedAt: "2026-11-02",
+      stage: "blomstring og fruktsetting",
+      evidence: "data/natur/flora/illustration-quality-stankstorkenebb-20261102.json"
+    }),
+    emne_flora_ormehode: Object.freeze({
+      scientificName: "Echium vulgare",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/26_ormehode_v1.webp",
+      gitBlobSha: "7f83fcce4e1ba246dea7c73a1d31bc2589b8bc08",
+      reviewedAt: "2026-11-02",
+      stage: "sommerblomstring",
+      evidence: "data/natur/flora/illustration-quality-ormehode-20261102.json"
+    }),
+    emne_flora_meldestokk: Object.freeze({
+      scientificName: "Chenopodium album",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/25_meldestokk_v1.webp",
+      gitBlobSha: "bbbb6dd2f5149629016ddb138f8fdc6806a00875",
+      reviewedAt: "2026-11-02",
+      stage: "blomstring og frøsetting",
+      evidence: "data/natur/flora/illustration-quality-meldestokk-20261102.json"
+    }),
+    emne_flora_markjordbaer: Object.freeze({
+      scientificName: "Fragaria vesca",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/24_markjordbaer_v1.webp",
+      gitBlobSha: "c08bbd0f1b98b6c10c6755e0915e4844e43caae8",
+      reviewedAt: "2026-11-02",
+      stage: "blomstring og fruktsetting",
+      evidence: "data/natur/flora/illustration-quality-markjordbaer-20261102.json"
+    }),
+    emne_flora_lungeurt: Object.freeze({
+      scientificName: "Pulmonaria spp.",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/23_lungeurt_v1.webp",
+      gitBlobSha: "747b129ec71ed52ff69f51bdac8843f741c093a0",
+      reviewedAt: "2026-11-02",
+      stage: "vårblomstring",
+      taxonomicScope: "genus-representative",
+      evidence: "data/natur/flora/illustration-quality-lungeurt-20261102.json"
+    }),
+    emne_flora_kusymre_marianokleblom: Object.freeze({
+      scientificName: "Primula vulgaris",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/21_kusymre_v1.webp",
+      gitBlobSha: "10a493cfb508782d0660afcf33596ff9aaf77889",
+      reviewedAt: "2026-11-02",
+      stage: "vårblomstring",
+      evidence: "data/natur/flora/illustration-quality-kusymre-20261102.json"
+    }),
+    emne_flora_marianokleblom: Object.freeze({
+      scientificName: "Primula veris",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/22_marianokleblom_v1.webp",
+      gitBlobSha: "337836c6e473e66c1e1e00e6163047f5ff8ff0c7",
+      reviewedAt: "2026-11-02",
+      stage: "vårblomstring",
+      evidence: "data/natur/flora/illustration-quality-marianokleblom-20261102.json"
+    }),
+
+    emne_flora_krypveronika: Object.freeze({
+      scientificName: "Veronica filiformis",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/20_krypveronika_v1.webp",
+      gitBlobSha: "85110ad6d12e4ef371726d4f9ff999f4abfe814e",
+      reviewedAt: "2026-11-02",
+      stage: "vårblomstring",
+      evidence: "data/natur/flora/illustration-quality-krypveronika-20261102.json"
+    }),
+    emne_flora_krypsoleie: Object.freeze({
+      scientificName: "Ranunculus repens",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/19_krypsoleie_v1.webp",
+      gitBlobSha: "3eb62d0fe328cd08854bd6529c03f8955c82af29",
+      reviewedAt: "2026-11-02",
+      stage: "sommerblomstring",
+      evidence: "data/natur/flora/illustration-quality-krypsoleie-20261102.json"
+    }),
+    emne_flora_kattefot: Object.freeze({
+      scientificName: "Antennaria dioica",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/18_kattefot_v1.webp",
+      gitBlobSha: "e28389f70fcfc55beacf7a22d4b64bbaed2a9178",
+      reviewedAt: "2026-11-02",
+      stage: "hunnplante i blomstring",
+      evidence: "data/natur/flora/illustration-quality-kattefot-20261102.json"
+    }),
+    emne_flora_jordreve: Object.freeze({
+      scientificName: "Glechoma hederacea",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/17_jordreve_v1.webp",
+      gitBlobSha: "c63341e153213897a685ce9c8693841ceee771f8",
+      reviewedAt: "2026-11-02",
+      stage: "vårblomstring",
+      evidence: "data/natur/flora/illustration-quality-jordreve-20261102.json"
+    }),
     emne_flora_hvitmaure: Object.freeze({
       scientificName: "Galium boreale",
       src: "bilder/natur/flora/illustrasjonskandidater/b09/16_hvitmaure_v1.webp",
@@ -315,6 +414,8 @@
     })
 
   });
-  const get = id => images[String(id)] || null;
+  // One scientific species appears twice in the public catalog; reuse the same approved artwork.
+  const aliases = Object.freeze({ emne_flora_knoppurt: "emne_flora_engknoppurt" });
+  const get = id => images[aliases[String(id)] || String(id)] || null;
   window.HG_NATURE_FLORA_APPROVED = Object.freeze({get,has:id=>Boolean(get(id)),count:Object.keys(images).length});
 })();
