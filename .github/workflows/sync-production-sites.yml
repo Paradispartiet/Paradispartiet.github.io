@@ -259,9 +259,19 @@ jobs:
           check 'https://paradispartiet.github.io/HG_Film_Producer/source-sha.txt' "$FILM_SHA"
           check 'https://paradispartiet.github.io/HistoryGo-FootballManager/source-sha.txt' "$FOOTBALL_SHA"
           check 'https://paradispartiet.github.io/History-Go/source-sha.txt' "$HISTORY_SHA"
-          # Catch accidental loss of the Free Fysen route in the Pages artifact.
-          if ! curl --fail --silent --show-error --location --max-time 20 \
-            'https://paradispartiet.github.io/fysen/' | grep -q 'Gratis arkivversjon'; then
+          # Verify Fysen's public archive entrypoint after Pages propagation.
+          fysen_live=false
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent --show-error --location --max-time 20 \
+              "https://paradispartiet.github.io/fysen/?verify=${GITHUB_RUN_ID}-${attempt}" \
+              --output "$RUNNER_TEMP/fysen-live.html" 2>/dev/null \
+              && grep -q 'Gratis arkivversjon' "$RUNNER_TEMP/fysen-live.html"; then
+              fysen_live=true
+              break
+            fi
+            sleep 5
+          done
+          if [[ "$fysen_live" != true ]]; then
             echo 'Fysen Free archive page missing from published Pages site' >&2
             exit 1
           fi
