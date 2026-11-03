@@ -18,6 +18,7 @@
     .search-box input{min-width:0;flex:1;border:0;background:transparent;color:var(--text);padding:13px 9px;font-size:17px;outline:none}.search-box input::placeholder{color:#9fb4ab}
     .search-box button{background:var(--accent);border:0;border-radius:10px;padding:12px 21px;color:#16251f;font-weight:800}
     .quick{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:16px}.quick span{color:var(--muted);font-size:13px;margin-right:4px}.quick button{border:1px solid var(--border);background:var(--panel);color:var(--text);border-radius:99px;padding:5px 13px;font-size:13px}
+    .filters{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:13px 0 2px}.filters label{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}.filters select{min-width:125px;border:1px solid var(--border);border-radius:9px;background:var(--panel);color:var(--text);padding:9px 11px;font:inherit;font-size:14px}.filters select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     .meta{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:30px 0 14px;color:var(--muted);font-size:13px;flex-wrap:wrap}.meta strong{color:var(--text)}
     .results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-bottom:48px}
     .dish{min-width:0;background:linear-gradient(130deg,var(--panel),var(--panel2));border:1px solid var(--border);border-radius:14px;padding:17px;display:flex;flex-direction:column;gap:8px}
@@ -45,6 +46,10 @@
       <input id="query" type="search" name="q" autocomplete="off" placeholder="Søk etter pizza, ramen, bacalao …" aria-label="Navn på retten" minlength="2" maxlength="80">
       <button type="submit">Finn retten</button>
     </form>
+    <div class="filters" role="group" aria-label="Filtrer og sorter søkeresultater">
+      <label for="sort-order">Sorter <select id="sort-order" aria-label="Sorter søkeresultater"><option value="relevance">Relevans</option><option value="price-asc">Billigst først</option><option value="price-desc">Dyrest først</option></select></label>
+      <label for="max-price">Makspris <select id="max-price" aria-label="Makspris per rett"><option value="any">Alle priser</option><option value="150">150 kr</option><option value="250">250 kr</option><option value="400">400 kr</option><option value="600">600 kr</option></select></label>
+    </div>
     <nav class="quick" aria-label="Eksempelsøk"><span>Prøv:</span><button type="button" data-q="burger">Burger</button><button type="button" data-q="pizza">Pizza</button><button type="button" data-q="sushi">Sushi</button><button type="button" data-q="ramen">Ramen</button><button type="button" data-q="taco">Taco</button></nav>
     <div class="meta"><span id="status" role="status" aria-live="polite">Laster og kontrollerer restaurantmenyene …</span><span id="coverage"></span></div>
     <section class="results" id="results" aria-label="Søkeresultater"></section>
@@ -56,6 +61,7 @@
     const BASE = "https://raw.githubusercontent.com/Paradispartiet/fysen/fysen-free-public-index/";
     const $ = id => document.getElementById(id);
     const input = $("query"), status = $("status"), results = $("results"), coverage = $("coverage");
+    const sortOrder = $("sort-order"), maxPrice = $("max-price");
     let archive = null, dateFormat = new Intl.DateTimeFormat("nb-NO", {day:"numeric",month:"short",year:"numeric"});
     const normalize = str => String(str || "").toLowerCase().replace(/æ/g,"ae").replace(/ø/g,"o").replace(/å/g,"a").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").replace(/\s+/g," ").trim();
     function el(tag, cls, text) {const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=text;return node;}
@@ -75,12 +81,16 @@
       if (updateUrl) {
         const u=new URL(location.href);
         if(query.trim())u.searchParams.set("q",query.trim());else u.searchParams.delete("q");
+        if(sortOrder.value!=="relevance")u.searchParams.set("sort",sortOrder.value);else u.searchParams.delete("sort");
+        if(maxPrice.value!=="any")u.searchParams.set("maxPrice",maxPrice.value);else u.searchParams.delete("maxPrice");
         history.replaceState(null,"",u.toString());
       }
       if(q.length<2){status.textContent="Skriv minst to bokstaver for å finne en rett.";results.replaceChildren();return;}
       const words=q.split(" ").filter(Boolean);
+      const ceiling=maxPrice.value==="any"?Infinity:Number(maxPrice.value)*100;
       const hits=[];
       for(const item of archive.items){
+        if(ceiling!==Infinity&&(typeof item[3]!=="number"||item[3]>ceiling))continue;
         const name=normalize(item[2] || item[1]);
         let score=0;
         if(name===q)score=110;
@@ -91,7 +101,16 @@
         else if(normalize(item[6]).includes(q))score=17;
         if(score>0)hits.push({score,item});
       }
-      hits.sort((a,b)=>b.score-a.score || a.item[1].localeCompare(b.item[1],"nb"));
+      hits.sort((a,b)=>{
+        if(sortOrder.value!=="relevance"){
+          const ap=a.item[3],bp=b.item[3];
+          if(ap===null||ap===undefined)return bp===null||bp===undefined?b.score-a.score:1;
+          if(bp===null||bp===undefined)return -1;
+          const diff=sortOrder.value==="price-asc"?ap-bp:bp-ap;
+          if(diff!==0)return diff;
+        }
+        return b.score-a.score || a.item[1].localeCompare(b.item[1],"nb");
+      });
       const shown=hits.slice(0,40);
       status.textContent=hits.length ? "Fant "+hits.length.toLocaleString("nb-NO")+" retter. Viser de "+shown.length+" beste treffene." : "Ingen treff i det lagrede menyarkivet.";
       const frag=document.createDocumentFragment();
@@ -112,6 +131,8 @@
       results.replaceChildren(frag);
     }
     $("form").addEventListener("submit",e=>{e.preventDefault();search(input.value);});
+    sortOrder.addEventListener("change",()=>search(input.value));
+    maxPrice.addEventListener("change",()=>search(input.value));
     document.querySelectorAll("button[data-q]").forEach(btn=>btn.addEventListener("click",()=>{input.value=btn.dataset.q;search(input.value);}));
     let debounce;input.addEventListener("input",()=>{clearTimeout(debounce);debounce=setTimeout(()=>search(input.value),220);});
     async function load(){
@@ -135,7 +156,12 @@
           $("archive-notice").textContent="Gratis arkivversjon. Menyarkivet startet 2. november 2026. "+refreshed.toLocaleString("nb-NO")+" kilder er kontrollert på nytt etter dette. Se kontrolltid per rett; sjekk alltid dagens pris hos restauranten.";
         }
         coverage.textContent=manifest.restaurants.toLocaleString("nb-NO")+" restauranter · "+manifest.dishes.toLocaleString("nb-NO")+" retter";
-        const q=new URL(location.href).searchParams.get("q")||"";
+        const params=new URL(location.href).searchParams;
+        const q=params.get("q")||"";
+        const requestedSort=params.get("sort");
+        if(["relevance","price-asc","price-desc"].includes(requestedSort))sortOrder.value=requestedSort;
+        const requestedPrice=params.get("maxPrice");
+        if(["any","150","250","400","600"].includes(requestedPrice))maxPrice.value=requestedPrice;
         input.value=q;
         search(q,false);
       } catch(e) {
