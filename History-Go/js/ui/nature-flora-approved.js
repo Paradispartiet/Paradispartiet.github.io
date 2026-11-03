@@ -5,6 +5,40 @@
 (function () {
   "use strict";
   const images = Object.freeze({
+    emne_flora_vassarve: Object.freeze({
+      scientificName: "Stellaria media",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/46_vassarve_v1.webp",
+      gitBlobSha: "54069d8d04a4c9a27e03f1f6733785ac1b7efee6",
+      reviewedAt: "2026-11-03",
+      stage: "var_og_forsommerblomstring",
+      evidence: "data/natur/flora/illustration-quality-vassarve-20261103.json"
+    }),
+    emne_flora_tyskhonsetarm: Object.freeze({
+      scientificName: "Stellaria pallida",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/45_tysk_honsetarm_v1.webp",
+      gitBlobSha: "293651ec74359a58d1cf1c23a4b3c53fa7133b92",
+      reviewedAt: "2026-11-03",
+      stage: "var_og_forsommerblomstring",
+      evidence: "data/natur/flora/illustration-quality-tyskhonsetarm-20261103.json"
+    }),
+    emne_flora_tveskjeggveronika: Object.freeze({
+      scientificName: "Veronica chamaedrys",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/44_tveskjeggveronika_v1.webp",
+      gitBlobSha: "f722f50caf8ebd23a0bb51b20d98a3bc00ae6367",
+      reviewedAt: "2026-11-03",
+      stage: "var_og_forsommerblomstring",
+      evidence: "data/natur/flora/illustration-quality-tveskjeggveronika-20261103.json"
+    }),
+
+    emne_flora_timian: Object.freeze({
+      scientificName: "Thymus serpyllum",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/43_timian_v1.webp",
+      gitBlobSha: "8afe4243f368358688ff53ef77261a1f63bc0a1e",
+      reviewedAt: "2026-11-03",
+      stage: "sommerblomstring",
+      evidence: "data/natur/flora/illustration-quality-timian-20261103.json"
+    }),
+
     emne_flora_taklok: Object.freeze({
       scientificName: "Sempervivum spp.",
       src: "bilder/natur/flora/illustrasjonskandidater/b09/42_taklok_v1.webp",
@@ -528,7 +562,7 @@
 
   });
   // One scientific species appears twice in the public catalog; reuse the same approved artwork.
-  const aliases = Object.freeze({ emne_flora_knoppurt: "emne_flora_engknoppurt" });
+  const aliases = Object.freeze({ emne_flora_knoppurt: "emne_flora_engknoppurt", emne_flora_tysk_honsetarm: "emne_flora_tyskhonsetarm" });
   const get = id => images[aliases[String(id)] || String(id)] || null;
   window.HG_NATURE_FLORA_APPROVED = Object.freeze({get,has:id=>Boolean(get(id)),count:Object.keys(images).length});
 })();
