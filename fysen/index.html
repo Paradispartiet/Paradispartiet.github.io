@@ -112,7 +112,8 @@
         return b.score-a.score || a.item[1].localeCompare(b.item[1],"nb");
       });
       const shown=hits.slice(0,40);
-      status.textContent=hits.length ? "Fant "+hits.length.toLocaleString("nb-NO")+" retter. Viser de "+shown.length+" beste treffene." : "Ingen treff i det lagrede menyarkivet.";
+      const budgetSuffix=Number.isFinite(ceiling)?" (maks "+(ceiling/100)+" kr)":"";
+      status.textContent=hits.length ? "Fant "+hits.length.toLocaleString("nb-NO")+" retter"+budgetSuffix+". Viser de "+shown.length+" beste treffene." : "Ingen treff i menyarkivet"+budgetSuffix+".";
       const frag=document.createDocumentFragment();
       if(!hits.length){frag.append(el("div","empty","Prøv en annen rett eller et kortere søkeord. Dataene er et arkiv og ikke en live menyoversikt."));}
       for(const {item} of shown){
