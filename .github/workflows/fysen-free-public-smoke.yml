@@ -67,17 +67,23 @@ jobs:
             echo 'Chrome not present on GitHub runner: browser proof unavailable' >&2
             exit 1
           fi
+          default_ok=false
           for attempt in 1 2 3; do
             timeout 55s "$CHROME" --headless --no-sandbox --disable-dev-shm-usage \
               --disable-gpu --disable-extensions --virtual-time-budget=15000 \
               --dump-dom "https://paradispartiet.github.io/fysen/?q=pizza&smoke=$attempt" \
               > /tmp/fysen-dom.txt 2>/tmp/fysen-browser.txt || true
             if grep -q 'class="dish"' /tmp/fysen-dom.txt && grep -q 'Fant ' /tmp/fysen-dom.txt; then
+              default_ok=true
               echo 'Fysen rendered pizza results in headless Chrome, no Supabase API needed.'
-              exit 0
+              break
             fi
             sleep 5
           done
+          if [[ "$default_ok" != true ]]; then
+            echo 'Default pizza search did not render results' >&2
+            exit 1
+          fi
           # Verify the new shareable URL filter executes in Chromium, not just static HTML.
           timeout 55s "$CHROME" --headless --no-sandbox --disable-dev-shm-usage \
             --disable-gpu --disable-extensions --virtual-time-budget=15000 \
