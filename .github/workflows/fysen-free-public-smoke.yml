@@ -50,6 +50,7 @@ jobs:
           assert len(data["items"])>=45000, "Public menu coverage unexpectedly collapsed"
           assert len(data["sources"])==manifest["sources"]==973
           assert "archive-notice" in html and "encodeURIComponent(manifest.sha256)" in html
+          assert 'id="sort-order"' in html and 'id="max-price"' in html, "Filter controls missing"
           pizza=[it for it in data["items"] if "pizza" in str(it[1]).lower() or "pizza" in str(it[2]).lower()]
           assert pizza, "No usable pizza result in public index"
           for it in pizza[:20]:
@@ -66,17 +67,33 @@ jobs:
             echo 'Chrome not present on GitHub runner: browser proof unavailable' >&2
             exit 1
           fi
+          default_ok=false
           for attempt in 1 2 3; do
             timeout 55s "$CHROME" --headless --no-sandbox --disable-dev-shm-usage \
               --disable-gpu --disable-extensions --virtual-time-budget=15000 \
               --dump-dom "https://paradispartiet.github.io/fysen/?q=pizza&smoke=$attempt" \
               > /tmp/fysen-dom.txt 2>/tmp/fysen-browser.txt || true
             if grep -q 'class="dish"' /tmp/fysen-dom.txt && grep -q 'Fant ' /tmp/fysen-dom.txt; then
+              default_ok=true
               echo 'Fysen rendered pizza results in headless Chrome, no Supabase API needed.'
-              exit 0
+              break
             fi
             sleep 5
           done
+          if [[ "$default_ok" != true ]]; then
+            echo 'Default pizza search did not render results' >&2
+            exit 1
+          fi
+          # Verify the new shareable URL filter executes in Chromium, not just static HTML.
+          timeout 55s "$CHROME" --headless --no-sandbox --disable-dev-shm-usage \
+            --disable-gpu --disable-extensions --virtual-time-budget=15000 \
+            --dump-dom "https://paradispartiet.github.io/fysen/?q=pizza&sort=price-asc&maxPrice=250" \
+            > /tmp/fysen-filtered-dom.txt 2>/tmp/fysen-filtered-browser.txt || true
+          if grep -q 'class="dish"' /tmp/fysen-filtered-dom.txt && \
+             grep -q 'maks 250 kr' /tmp/fysen-filtered-dom.txt; then
+            echo 'Fysen rendered filtered max-price pizza results in headless Chrome.'
+            exit 0
+          fi
           echo "Browser did not render results; last DOM status:" >&2
           grep -E 'id="status"|Gratis arkivversjon|Menydatabasen kan ikke lastes' /tmp/fysen-dom.txt | head -c 550 || true
           exit 1
