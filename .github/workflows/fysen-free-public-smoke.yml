@@ -3,7 +3,9 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [".github/workflows/fysen-free-public-smoke.yml"]
+    paths:
+      - ".github/workflows/fysen-free-public-smoke.yml"
+      - "fysen/index.html"
 permissions:
   contents: read
 jobs:
@@ -45,6 +47,7 @@ jobs:
           assert len(data["restaurants"])==manifest["restaurants"]==973
           assert len(data["items"])==manifest["dishes"]==47628
           assert len(data["sources"])==manifest["sources"]==973
+          assert "archive-notice" in html and "encodeURIComponent(manifest.sha256)" in html
           pizza=[it for it in data["items"] if "pizza" in str(it[1]).lower() or "pizza" in str(it[2]).lower()]
           assert pizza, "No usable pizza result in public index"
           for it in pizza[:20]:
