@@ -45,7 +45,9 @@ jobs:
           assert data["version"]==1 and manifest["version"]==1
           assert data["archiveDate"]=="2026-11-02"
           assert len(data["restaurants"])==manifest["restaurants"]==973
-          assert len(data["items"])==manifest["dishes"]==47628
+          # The Free index refreshes dish counts incrementally; never pin it to the original archive count.
+          assert len(data["items"])==manifest["dishes"], "Live index and manifest dish counts differ"
+          assert len(data["items"])>=45000, "Public menu coverage unexpectedly collapsed"
           assert len(data["sources"])==manifest["sources"]==973
           assert "archive-notice" in html and "encodeURIComponent(manifest.sha256)" in html
           pizza=[it for it in data["items"] if "pizza" in str(it[1]).lower() or "pizza" in str(it[2]).lower()]
@@ -53,7 +55,7 @@ jobs:
           for it in pizza[:20]:
               assert 0<=it[0]<len(data["sources"]),"Broken source reference in pizza results"
               assert 0<=data["sources"][it[0]][0]<len(data["restaurants"]),"Broken restaurant reference"
-          print("Public Fysen /fysen/ HTTP 200, index checksum and CORS OK, 973 restaurants, 47,628 dishes, pizza search has matches.")
+          print("Public Fysen /fysen/ HTTP 200, index checksum and CORS OK, %d restaurants, %d dishes, %d refreshed sources; pizza search has matches." % (len(data["restaurants"]), len(data["items"]), len(manifest.get("refreshedSourceIndices",[]))))
           PY
       - name: Verify browser actually renders pizza result
         shell: bash
