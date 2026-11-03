@@ -18,7 +18,7 @@ assert "Paradispartiet production host" not in ROOT_HTML, "README must not becom
 assert "History-Go-2" not in ROOT_HTML, "Do not expose removed History GO 2 project"
 
 
-EXPECTED_REPOS = {"AHA-EchoNet", "fysen", "Teorien-om-lyset"}
+EXPECTED_REPOS = {"AHA-EchoNet", "Teorien-om-lyset"}
 
 class PortalParser(HTMLParser):
     def __init__(self):
@@ -58,8 +58,11 @@ assert 'data-filter="spill"' in HTML
 found = {match.group(1) for link in parser.hrefs
          if (match := re.fullmatch(r"https://github.com/Paradispartiet/([\w.-]+)", link))}
 assert found == EXPECTED_REPOS, f"Missing: {EXPECTED_REPOS-found}; unexpected: {found-EXPECTED_REPOS}"
-for published_url in ("/History-Go/", "/HG_Film_Producer/", "/HistoryGo-FootballManager/"):
+for published_url in ("/History-Go/", "/HG_Film_Producer/", "/HistoryGo-FootballManager/", "/fysen/"):
     assert published_url in parser.hrefs, f"Missing live app link: {published_url}"
+assert (ROOT / "fysen" / "index.html").is_file(), "Fysen Free app entrypoint must exist"
+assert "Gratis arkivversjon" in (ROOT / "fysen" / "index.html").read_text(encoding="utf-8"), "Fysen Free app must show its archive warning"
+assert "cp -a fysen _site-root/" in WORKFLOW, "Fysen Free app must be included in Pages artifact"
 assert 'cp portal/index.html _site-root/index.html' in WORKFLOW
 assert 'cp portal/index.html index.html' in WORKFLOW
 assert 'git add -A HG_Film_Producer HistoryGo-FootballManager History-Go index.html .nojekyll' in WORKFLOW
@@ -68,4 +71,4 @@ for directory in ("History-Go", "HG_Film_Producer", "HistoryGo-FootballManager")
     assert f"cp -a {directory} _site-root/" in WORKFLOW
 assert "cat > _site-root/index.html" not in WORKFLOW
 assert 'id="project-search"' in HTML and 'aria-pressed="true"' in HTML
-print("Portal check passed: 8 active project tiles, no unbuilt projects or technical archives, 3 live app links.")
+print("Portal check passed: 8 active project tiles, no unbuilt projects or technical archives, 4 live app links.")
