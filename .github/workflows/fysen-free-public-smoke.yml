@@ -1,0 +1,77 @@
+name: Fysen Free public search smoke
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/fysen-free-public-smoke.yml"]
+permissions:
+  contents: read
+jobs:
+  free-search:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Verify live route and public index
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import gzip, hashlib, json, time, urllib.error, urllib.request
+          page="https://paradispartiet.github.io/fysen/"
+          base="https://raw.githubusercontent.com/Paradispartiet/fysen/fysen-free-public-index/"
+          req_headers={"User-Agent":"Fysen-Free-Site-Smoke/1.0","Accept":"text/html,*/*"}
+          for attempt in range(20):
+              try:
+                  req=urllib.request.Request(page+"?smoke="+str(attempt),headers=req_headers)
+                  with urllib.request.urlopen(req,timeout=20) as r:
+                      assert r.status==200, "Public page not HTTP 200"
+                      html=r.read(300_000).decode("utf-8")
+                  if "Gratis arkivversjon" in html and "id=\"query\"" in html and "index.json.gz" in html:
+                      break
+              except (urllib.error.URLError,AssertionError,TimeoutError):
+                  pass
+              if attempt==19: raise RuntimeError("Fysen /fysen/ page not live after 20 attempts")
+              time.sleep(15)
+          with urllib.request.urlopen(urllib.request.Request(base+"manifest.json",headers=req_headers),timeout=30) as r:
+              manifest=json.load(r)
+          with urllib.request.urlopen(urllib.request.Request(base+"index.json.gz",headers=req_headers),timeout=50) as r:
+              index_bytes=r.read()
+              cors=r.headers.get("Access-Control-Allow-Origin","")
+          assert cors=="*" or "paradispartiet.github.io" in cors, "Browser cross-origin archive fetch would be blocked"
+          assert hashlib.sha256(index_bytes).hexdigest()==manifest["sha256"],"Published index checksum mismatch"
+          data=json.loads(gzip.decompress(index_bytes))
+          assert data["version"]==1 and manifest["version"]==1
+          assert data["archiveDate"]=="2026-11-02"
+          assert len(data["restaurants"])==manifest["restaurants"]==973
+          assert len(data["items"])==manifest["dishes"]==47628
+          assert len(data["sources"])==manifest["sources"]==973
+          pizza=[it for it in data["items"] if "pizza" in str(it[1]).lower() or "pizza" in str(it[2]).lower()]
+          assert pizza, "No usable pizza result in public index"
+          for it in pizza[:20]:
+              assert 0<=it[0]<len(data["sources"]),"Broken source reference in pizza results"
+              assert 0<=data["sources"][it[0]][0]<len(data["restaurants"]),"Broken restaurant reference"
+          print("Public Fysen /fysen/ HTTP 200, index checksum and CORS OK, 973 restaurants, 47,628 dishes, pizza search has matches.")
+          PY
+      - name: Verify browser actually renders pizza result
+        shell: bash
+        run: |
+          set -euo pipefail
+          CHROME="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || true)"
+          if [[ -z "$CHROME" ]]; then
+            echo 'Chrome not present on GitHub runner: browser proof unavailable' >&2
+            exit 1
+          fi
+          for attempt in 1 2 3; do
+            timeout 55s "$CHROME" --headless --no-sandbox --disable-dev-shm-usage \
+              --disable-gpu --disable-extensions --virtual-time-budget=15000 \
+              --dump-dom "https://paradispartiet.github.io/fysen/?q=pizza&smoke=$attempt" \
+              > /tmp/fysen-dom.txt 2>/tmp/fysen-browser.txt || true
+            if grep -q 'class="dish"' /tmp/fysen-dom.txt && grep -q 'Fant ' /tmp/fysen-dom.txt; then
+              echo 'Fysen rendered pizza results in headless Chrome, no Supabase API needed.'
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "Browser did not render results; last DOM status:" >&2
+          grep -E 'id="status"|Gratis arkivversjon|Menydatabasen kan ikke lastes' /tmp/fysen-dom.txt | head -c 550 || true
+          exit 1
