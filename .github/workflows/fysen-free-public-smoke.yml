@@ -28,11 +28,13 @@ jobs:
                   with urllib.request.urlopen(req,timeout=20) as r:
                       assert r.status==200, "Public page not HTTP 200"
                       html=r.read(300_000).decode("utf-8")
-                  if "Gratis arkivversjon" in html and "id=\"query\"" in html and "index.json.gz" in html:
+                  if ("Gratis arkivversjon" in html and "id=\"query\"" in html and
+                      "index.json.gz" in html and 'id="sort-order"' in html and
+                      'id="max-price"' in html):
                       break
               except (urllib.error.URLError,AssertionError,TimeoutError):
                   pass
-              if attempt==19: raise RuntimeError("Fysen /fysen/ page not live after 20 attempts")
+              if attempt==19: raise RuntimeError("Fysen /fysen/ page with current search filters not live after 20 attempts")
               time.sleep(15)
           with urllib.request.urlopen(urllib.request.Request(base+"manifest.json",headers=req_headers),timeout=30) as r:
               manifest=json.load(r)
