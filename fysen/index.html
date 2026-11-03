@@ -40,7 +40,7 @@
       <h1>Hva har du lyst til å spise?</h1>
       <p class="lead">Søk i de sist verifiserte menyene fra hundrevis av restauranter i Oslo. Se retter, priser og kilde – uten innlogging.</p>
     </section>
-    <aside class="alert"><strong>Gratis arkivversjon.</strong> Dataene ble verifisert senest 2. november 2026. Fysen oppdaterer foreløpig ikke menyene automatisk. Sjekk derfor aktuell pris og tilgjengelighet hos restauranten før du drar.</aside>
+    <aside class="alert" id="archive-notice"><strong>Gratis arkivversjon.</strong> Grunnlaget er fra 2. november 2026. Vi kontrollerer utvalgte menyer på nytt, men dette er ikke sanntidsdata. Se kontrolltid per rett og sjekk dagens pris hos restauranten.</aside>
     <form id="form" class="search-box" role="search">
       <input id="query" type="search" name="q" autocomplete="off" placeholder="Søk etter pizza, ramen, bacalao …" aria-label="Navn på retten" minlength="2" maxlength="80">
       <button type="submit">Finn retten</button>
@@ -120,7 +120,7 @@
         if(!manifestResp.ok)throw new Error("Manifest unavailable");
         const manifest=await manifestResp.json();
         if(manifest.version!==1 || manifest.archiveDate!=="2026-11-02")throw new Error("Manifest mismatch");
-        const contentResp=await fetch(BASE+"index.json.gz?v=20261103",{cache:"no-store"});
+        const contentResp=await fetch(BASE+"index.json.gz?sha="+encodeURIComponent(manifest.sha256),{cache:"no-store"});
         if(!contentResp.ok)throw new Error("Index unavailable");
         const bytes=await contentResp.arrayBuffer();
         const hash=Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256",bytes))).map(n=>n.toString(16).padStart(2,"0")).join("");
@@ -130,6 +130,10 @@
         const data=await new Response(stream).json();
         if(data.version!==1 || data.restaurants.length!==manifest.restaurants || data.items.length!==manifest.dishes)throw new Error("Data mismatch");
         archive=data;
+        const refreshed=Array.isArray(manifest.refreshedSourceIndices)?manifest.refreshedSourceIndices.length:0;
+        if(refreshed>0){
+          $("archive-notice").textContent="Gratis arkivversjon. Menyarkivet startet 2. november 2026. "+refreshed.toLocaleString("nb-NO")+" kilder er kontrollert på nytt etter dette. Se kontrolltid per rett; sjekk alltid dagens pris hos restauranten.";
+        }
         coverage.textContent=manifest.restaurants.toLocaleString("nb-NO")+" restauranter · "+manifest.dishes.toLocaleString("nb-NO")+" retter";
         const q=new URL(location.href).searchParams.get("q")||"";
         input.value=q;
