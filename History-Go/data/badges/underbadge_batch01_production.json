@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created": "2026-10-31",
-  "status": "seven_scenekunst_nine_film_active_remaining_film_pending",
+  "status": "seven_scenekunst_twelve_film_active_complete",
   "disclaimer": "All seven Scenekunst underbadges are mapped to approved separate WebPs. Older v1 prototypes remain in the repository only as historical rejected candidates. By and Film & TV underbadges remain unactivated.",
   "parentProtection": "Do not alter any existing main badge or approved subbadge images.",
   "style": {
@@ -1298,40 +1298,177 @@
           "motif": "Lyskasterrigg, klapperbrett og mikrofonarm over settgulv",
           "avoid": "Unngå en ren filmplakat",
           "productionPriority": 2,
-          "status": "planned",
-          "selectedImage": null,
+          "status": "integrated",
+          "selectedImage": "bilder/merker/film_tv/undermerker/film_og_tv_produksjon-brodert-v1.webp",
           "proposedFile": "bilder/merker/film_tv/undermerker/film_og_tv_produksjon-brodert-v1.webp",
           "quality": {
-            "visualApproved": false,
-            "technicalApproved": false
+            "visualApproved": true,
+            "technicalApproved": true
+          },
+          "width": 1024,
+          "height": 1024,
+          "bytes": 472622,
+          "sha256": "3b0680272984508d700055361a53129d603514ce0ae65e08d47e6cc3a7938301",
+          "productionBrief": {
+            "version": "v1",
+            "status": "fulfilled_v1_active",
+            "topLabel": "FILM- OG TV-PRODUKSJON",
+            "bottomLabel": "FILM & TV",
+            "palette": {
+              "primary": "#C2188B",
+              "secondary": "#E7F8FF"
+            },
+            "illustration": "Rundt, realistisk brodert filmsett med kamera på stativ, scenelys/lyskaster, klapperbrett, regi-stol og monitor. Magentafarget tykk satin-sydd kant, dypt burgunder filtfelt, kremhvitt hevet broderi øverst og mindre FILM & TV nederst.",
+            "avoid": [
+              "flat_vector_icon",
+              "film_poster",
+              "protected_film_logos",
+              "copied_film_stills",
+              "gold_as_main_border"
+            ],
+            "requirements": [
+              "one_individual_round_badge",
+              "1024x1024_alpha_webp",
+              "verified_sha256",
+              "64px_preview_review",
+              "preserve_existing_badges"
+            ],
+            "selectedImage": "bilder/merker/film_tv/undermerker/film_og_tv_produksjon-brodert-v1.webp",
+            "visualApproved": true,
+            "technicalApproved": true,
+            "sha256": "3b0680272984508d700055361a53129d603514ce0ae65e08d47e6cc3a7938301",
+            "bytes": 472622,
+            "width": 1024,
+            "height": 1024,
+            "alpha": true
+          },
+          "visualReview": {
+            "date": "2026-11-03",
+            "result": "approved",
+            "reviewedAtSizes": [
+              1024,
+              64
+            ],
+            "note": "Kontrollert mot Filmklassikere og de korrigerte Filmfestivaler/Filminnspillingssteder v3. Rund broderikant, tydelig opphøyd overskrift, understilt FILM & TV og lesbart sentralmotiv i liten størrelse."
           }
         },
         {
           "id": "arkiv_og_kanon",
           "label": "Arkiv og filmkanon",
-          "motif": "To filmruller i arkiveske med etikettfelt uten tekst",
-          "avoid": "Ikke bruk arkivlogoer",
+          "motif": "Arkivhyller, filmrull, filmbeholdere og historisk fjernsyn, vist som detaljert realistisk broderi",
+          "avoid": "Ingen beskyttede arkiv- eller TV-logoer; ingen flate vektorikoner",
           "productionPriority": 2,
-          "status": "planned",
-          "selectedImage": null,
+          "status": "integrated",
+          "selectedImage": "bilder/merker/film_tv/undermerker/arkiv_og_kanon-brodert-v1.webp",
           "proposedFile": "bilder/merker/film_tv/undermerker/arkiv_og_kanon-brodert-v1.webp",
           "quality": {
-            "visualApproved": false,
-            "technicalApproved": false
+            "visualApproved": true,
+            "technicalApproved": true
+          },
+          "width": 1024,
+          "height": 1024,
+          "bytes": 587992,
+          "sha256": "c7d0699c85ae42de9bc94c73bf670e324637d22838f5273a4558c2d57a7ab5f2",
+          "productionBrief": {
+            "version": "v1",
+            "status": "fulfilled_v1_active",
+            "topLabel": "ARKIV OG FILMKANON",
+            "bottomLabel": "FILM & TV",
+            "palette": {
+              "primary": "#C2188B",
+              "secondary": "#E7F8FF"
+            },
+            "illustration": "Rundt, detaljert brodert arkivmotiv med filmrull, filmbeholdere, bokhyller, historisk TV-skjerm og filmstripe. Tykk magentasatin-kant, hevet kremhvit øvre bue og mindre FILM & TV nederst.",
+            "avoid": [
+              "flat_vector_icon",
+              "protected_archive_logos",
+              "copyrighted_film_stills",
+              "gold_main_border"
+            ],
+            "requirements": [
+              "one_original_round_badge",
+              "1024x1024_alpha_webp",
+              "sha256_verified",
+              "64px_visual_review",
+              "preserve_prior_ten_badges"
+            ],
+            "selectedImage": "bilder/merker/film_tv/undermerker/arkiv_og_kanon-brodert-v1.webp",
+            "visualApproved": true,
+            "technicalApproved": true,
+            "sha256": "c7d0699c85ae42de9bc94c73bf670e324637d22838f5273a4558c2d57a7ab5f2",
+            "bytes": 587992,
+            "width": 1024,
+            "height": 1024,
+            "alpha": true
+          },
+          "visualReview": {
+            "date": "2026-11-03",
+            "result": "approved",
+            "reviewedAtSizes": [
+              1024,
+              64
+            ],
+            "note": "Kontrollert mot Filmklassikere og Film- og TV-produksjon: rundt brodert merke, magentakant, synlig trådstruktur og begge tekstbuer; sentralmotivet kan skilles ved 64px."
           }
         },
         {
           "id": "visningssteder",
           "label": "Visningssteder",
-          "motif": "Kinosal med projektorlys mot lerret og synlige seterader",
-          "avoid": "Ikke bruk et generisk fjernsyn",
+          "motif": "Kinosal med realistisk brodert filmprojektor, synlig gyllen lyskjegle mot kinolerret, burgunderrøde seterader og scenetepper",
+          "avoid": "Ingen generisk TV, flate ikoner, beskyttede logoer eller filmstills",
           "productionPriority": 2,
-          "status": "planned",
-          "selectedImage": null,
+          "status": "integrated",
+          "selectedImage": "bilder/merker/film_tv/undermerker/visningssteder-brodert-v1.webp",
           "proposedFile": "bilder/merker/film_tv/undermerker/visningssteder-brodert-v1.webp",
           "quality": {
-            "visualApproved": false,
-            "technicalApproved": false
+            "visualApproved": true,
+            "technicalApproved": true
+          },
+          "width": 1024,
+          "height": 1024,
+          "bytes": 577588,
+          "sha256": "abb3129cccd305b3c4e338c09a6299320cbd2a988a81cae103631a9086ac4618",
+          "productionBrief": {
+            "version": "v1",
+            "status": "fulfilled_v1_active",
+            "topLabel": "VISNINGSSTEDER",
+            "bottomLabel": "FILM & TV",
+            "palette": {
+              "primary": "#C2188B",
+              "secondary": "#E7F8FF"
+            },
+            "illustration": "Individuelt rundt brodert kinomerke med sølvfarget historisk filmprojektor på stativ, synlig lyskjegle, filmlerret med fiktiv filmnedtelling og flere burgunderrøde seterader, broderte røde scenetepper og tykk magentasatin-kant. Hevet kremhvit tittel i øvre innerbue og mindre FILM & TV på nedre indre bånd.",
+            "avoid": [
+              "flat_vector_icon",
+              "generic_television",
+              "copyrighted_film_still",
+              "protected_cinema_logo",
+              "generic_gold_border"
+            ],
+            "requirements": [
+              "one_original_round_badge",
+              "1024x1024_alpha_webp",
+              "verified_sha256",
+              "64px_visual_review",
+              "preserve_prior_eleven_badges"
+            ],
+            "selectedImage": "bilder/merker/film_tv/undermerker/visningssteder-brodert-v1.webp",
+            "visualApproved": true,
+            "technicalApproved": true,
+            "sha256": "abb3129cccd305b3c4e338c09a6299320cbd2a988a81cae103631a9086ac4618",
+            "bytes": 577588,
+            "width": 1024,
+            "height": 1024,
+            "alpha": true
+          },
+          "visualReview": {
+            "date": "2026-11-03",
+            "result": "approved",
+            "reviewedAtSizes": [
+              1024,
+              64
+            ],
+            "note": "Sammenlignet med Filmklassikere og de korrigerte v3-merkene. Rund tykk magentasatin-søm, realistisk løftet trådtekstur og lesbare øvre/nedre tekstbuer. Projektor, lyskjegle og røde seterader forblir gjenkjennelige ved 64px."
           }
         }
       ]
