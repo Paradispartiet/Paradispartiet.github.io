@@ -201,6 +201,11 @@ jobs:
           cp -a HG_Film_Producer _site-root/
           cp -a HistoryGo-FootballManager _site-root/
           cp -a History-Go _site-root/
+          # Fysen's verified, database-independent Free archive must be deployed
+          # alongside the other apps, not merely kept in the repository.
+          test -f fysen/index.html
+          cp -a fysen _site-root/
+          test -f _site-root/fysen/index.html
           # The project overview uses its own brand/logo assets.
           cp -a assets _site-root/
           test -f _site-root/assets/project-logos/fysen.svg
@@ -254,6 +259,12 @@ jobs:
           check 'https://paradispartiet.github.io/HG_Film_Producer/source-sha.txt' "$FILM_SHA"
           check 'https://paradispartiet.github.io/HistoryGo-FootballManager/source-sha.txt' "$FOOTBALL_SHA"
           check 'https://paradispartiet.github.io/History-Go/source-sha.txt' "$HISTORY_SHA"
+          # Catch accidental loss of the Free Fysen route in the Pages artifact.
+          if ! curl --fail --silent --show-error --location --max-time 20 \
+            'https://paradispartiet.github.io/fysen/' | grep -q 'Gratis arkivversjon'; then
+            echo 'Fysen Free archive page missing from published Pages site' >&2
+            exit 1
+          fi
           printf 'status=success\nrun_id=%s\nfilm=%s\nfootball=%s\nhistory=%s\n' "$GITHUB_RUN_ID" "$FILM_SHA" "$FOOTBALL_SHA" "$HISTORY_SHA" > /tmp/status
           encoded="$(base64 -w0 /tmp/status)"
           current="$(gh api "repos/${GITHUB_REPOSITORY}/contents/.production-sync-status.txt?ref=main" --jq .sha 2>/dev/null || true)"
