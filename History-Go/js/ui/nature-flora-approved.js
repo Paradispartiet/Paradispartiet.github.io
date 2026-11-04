@@ -5,6 +5,46 @@
 (function () {
   "use strict";
   const images = Object.freeze({
+    emne_flora_varkaal: Object.freeze({
+      scientificName: "Ficaria verna",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/51_varkaal_v1.webp",
+      gitBlobSha: "0e1778c94ab078fdf8408e93048338a2a0580c22",
+      reviewedAt: "2026-11-04",
+      stage: "var_og_forsommerblomstring",
+      evidence: "data/natur/flora/illustration-quality-varkaal-20261104.json"
+    }),
+    emne_flora_varerteknapp: Object.freeze({
+      scientificName: "Lathyrus vernus",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/50_varerteknapp_v1.webp",
+      gitBlobSha: "4f5a386eb138d1ff6f6aacb8e8798a6ff73d3256",
+      reviewedAt: "2026-11-04",
+      stage: "var_og_forsommerblomstring",
+      evidence: "data/natur/flora/illustration-quality-varerteknapp-20261104.json"
+    }),
+    emne_flora_vararve: Object.freeze({
+      scientificName: "Draba verna",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/49_vararve_v1.webp",
+      gitBlobSha: "6194f3d09af4bf90efa038ff7534a56b5a1d24ca",
+      reviewedAt: "2026-11-04",
+      stage: "var_og_forsommerblomstring",
+      evidence: "data/natur/flora/illustration-quality-vararve-20261104.json"
+    }),
+    emne_flora_villkarse: Object.freeze({
+      scientificName: "Cardamine hirsuta",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/48_villkarse_v1.webp",
+      gitBlobSha: "fc13c33ad601be3209de7a9724f5ab3192b344cf",
+      reviewedAt: "2026-11-04",
+      stage: "var_og_forsommerblomstring",
+      evidence: "data/natur/flora/illustration-quality-villkarse-20261104.json"
+    }),
+    emne_flora_veihaukeskjegg: Object.freeze({
+      scientificName: "Crepis tectorum",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/47_veihaukeskjegg_v1.webp",
+      gitBlobSha: "4c005ceb93577864ab2d70b087518d73d3ef7e59",
+      reviewedAt: "2026-11-04",
+      stage: "sommerblomstring",
+      evidence: "data/natur/flora/illustration-quality-veihaukeskjegg-20261103.json"
+    }),
     emne_flora_vassarve: Object.freeze({
       scientificName: "Stellaria media",
       src: "bilder/natur/flora/illustrasjonskandidater/b09/46_vassarve_v1.webp",
