@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1414">
+  <meta name="description" content="Fysen: søk blant sist verifiserte restaurantmenyer i Oslo. Se retter, priser og kilder.">
+  <title>Fysen – finn retten du har lyst på</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0b1414;--panel:#152221;--panel2:#1a2b29;--border:#37504a;--text:#f7f8f1;--muted:#b7c9c3;--accent:#d9f29f;--gold:#e9c987}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 0%,#1d3530 0%,#0b1414 62%);color:var(--text);font:16px/1.55 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
+    a{color:inherit}button,input{font:inherit}button{cursor:pointer}main{width:min(960px,calc(100% - 32px));margin:auto}
+    .header{display:flex;justify-content:space-between;align-items:center;padding:24px 0 8px;gap:14px}.brand{color:var(--text);font-weight:900;letter-spacing:.025em;font-size:25px;text-decoration:none}.brand-mark{color:var(--accent)}
+    .home{color:var(--muted);font-size:13px;text-decoration:none}.home:hover{text-decoration:underline}
+    .header-actions{display:flex;align-items:center;gap:14px}.menu{position:relative;font-size:13px}.menu>summary{list-style:none;cursor:pointer;border:1px solid var(--border);background:var(--panel);border-radius:9px;padding:7px 10px;color:var(--text);font-weight:700}.menu>summary::-webkit-details-marker{display:none}.menu>summary:focus-visible,.menu-about>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+    .menu-panel{position:absolute;top:calc(100% + 7px);right:0;z-index:10;width:min(340px,calc(100vw - 32px));background:var(--panel);border:1px solid var(--border);border-radius:12px;box-shadow:0 16px 35px #0008;padding:13px}.menu-about>summary{cursor:pointer;color:var(--text);font-weight:700;padding:4px 2px}.about-content{color:var(--muted);font-size:13px;line-height:1.55}.about-content p{margin:12px 2px}.about-content a{color:var(--accent)}
+    .hero{padding:42px 0 23px}.eyebrow{color:var(--accent);font-size:12px;text-transform:uppercase;letter-spacing:.14em;font-weight:800}.hero h1{font-size:clamp(31px,6vw,57px);line-height:1.08;letter-spacing:-.055em;margin:12px 0 14px;max-width:680px}.lead{max-width:670px;color:var(--muted);font-size:clamp(16px,2.5vw,19px);margin:0}
+    .search-box{background:var(--panel);border:1px solid var(--border);padding:11px;display:flex;gap:9px;border-radius:16px;box-shadow:0 14px 34px #0004}.search-box:focus-within{outline:2px solid #d9f29f77;outline-offset:2px}
+    .search-box input{min-width:0;flex:1;border:0;background:transparent;color:var(--text);padding:13px 9px;font-size:17px;outline:none}.search-box input::placeholder{color:#9fb4ab}
+    .search-box button{background:var(--accent);border:0;border-radius:10px;padding:12px 21px;color:#16251f;font-weight:800}
+    .quick{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:16px}.quick span{color:var(--muted);font-size:13px;margin-right:4px}.quick button{border:1px solid var(--border);background:var(--panel);color:var(--text);border-radius:99px;padding:5px 13px;font-size:13px}
+    .filters{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:13px 0 2px}.filters label{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}.filters select{min-width:125px;border:1px solid var(--border);border-radius:9px;background:var(--panel);color:var(--text);padding:9px 11px;font:inherit;font-size:14px}.filters select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+    .meta{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:30px 0 14px;color:var(--muted);font-size:13px;flex-wrap:wrap}.meta strong{color:var(--text)}
+    .results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-bottom:48px}
+    .dish{min-width:0;background:linear-gradient(130deg,var(--panel),var(--panel2));border:1px solid var(--border);border-radius:14px;padding:17px;display:flex;flex-direction:column;gap:8px}
+    .dish-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.dish h2{font-size:17px;line-height:1.3;font-weight:750;margin:0;letter-spacing:-.025em;overflow-wrap:anywhere}
+    .price{color:var(--accent);font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:15px}
+    .restaurant{color:var(--text);font-size:14px;font-weight:700}.detail{color:var(--muted);font-size:13px;margin:0;overflow-wrap:anywhere}
+    .dish-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:auto;padding-top:10px;border-top:1px solid #35534a;font-size:12px;color:var(--muted)}
+    .source{color:var(--accent);text-decoration:none;font-weight:800}.source:hover{text-decoration:underline}
+    .empty{grid-column:1/-1;border:1px dashed var(--border);border-radius:14px;padding:25px;color:var(--muted);background:#13201e}
+    footer{padding:20px 0 35px;border-top:1px solid var(--border);color:var(--muted);font-size:12px}
+    footer a{color:var(--accent)}
+    @media(max-width:700px){.header{padding-top:13px}.hero{padding-top:28px}.results{grid-template-columns:1fr}.search-box{padding:7px}.search-box button{padding:11px 14px}.dish{padding:16px}}
+  </style>
+</head>
+<body>
+  <main>
+    <header class="header">
+      <a class="brand" href="./" aria-label="Fysen hjem">FYSEN<span class="brand-mark">.</span></a>
+      <div class="header-actions">
+        <a class="home" href="../">Tilbake til appene</a>
+        <details class="menu">
+          <summary>Meny</summary>
+          <div class="menu-panel">
+            <details class="menu-about">
+              <summary>Om</summary>
+              <div class="about-content">
+                <p id="archive-notice">Gratis arkivversjon. Menyarkivet startet 2. november 2026. Menyene er sist verifisert på ulike tidspunkter og er ikke sanntidsdata. Se kontrolltid per rett, og sjekk dagens pris hos restauranten.</p>
+                <p>Fysen er under utvikling. Vi deler ikke personlige søkedata.</p>
+                <p><a href="https://github.com/Paradispartiet/fysen">Prosjektinformasjon</a></p>
+              </div>
+            </details>
+          </div>
+        </details>
+      </div>
+    </header>
+    <section class="hero">
+      <div class="eyebrow">Finn retten, finn restauranten</div>
+      <h1>Hva har du lyst til å spise?</h1>
+      <p class="lead">Søk i de sist verifiserte menyene fra hundrevis av restauranter i Oslo. Se retter, priser og kilde – uten innlogging.</p>
+    </section>
+    <form id="form" class="search-box" role="search">
+      <input id="query" type="search" name="q" autocomplete="off" placeholder="Søk etter pizza, ramen, bacalao …" aria-label="Navn på retten" minlength="2" maxlength="80">
+      <button type="submit">Finn retten</button>
+    </form>
+    <div class="filters" role="group" aria-label="Filtrer og sorter søkeresultater">
+      <label for="sort-order">Sorter <select id="sort-order" aria-label="Sorter søkeresultater"><option value="relevance">Relevans</option><option value="price-asc">Billigst først</option><option value="price-desc">Dyrest først</option></select></label>
+      <label for="max-price">Makspris <select id="max-price" aria-label="Makspris per rett"><option value="any">Alle priser</option><option value="150">150 kr</option><option value="250">250 kr</option><option value="400">400 kr</option><option value="600">600 kr</option></select></label>
+    </div>
+    <nav class="quick" aria-label="Eksempelsøk"><span>Prøv:</span><button type="button" data-q="burger">Burger</button><button type="button" data-q="pizza">Pizza</button><button type="button" data-q="sushi">Sushi</button><button type="button" data-q="ramen">Ramen</button><button type="button" data-q="taco">Taco</button></nav>
+    <div class="meta"><span id="status" role="status" aria-live="polite">Laster og kontrollerer restaurantmenyene …</span><span id="coverage"></span></div>
+    <section class="results" id="results" aria-label="Søkeresultater"></section>
+  </main>
+  <script>
+  (() => {
+    "use strict";
+    const BASE = "https://raw.githubusercontent.com/Paradispartiet/fysen/fysen-free-public-index/";
+    const $ = id => document.getElementById(id);
+    const input = $("query"), status = $("status"), results = $("results"), coverage = $("coverage");
+    const sortOrder = $("sort-order"), maxPrice = $("max-price");
+    let archive = null, dateFormat = new Intl.DateTimeFormat("nb-NO", {day:"numeric",month:"short",year:"numeric"});
+    const normalize = str => String(str || "").toLowerCase().replace(/æ/g,"ae").replace(/ø/g,"o").replace(/å/g,"a").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").replace(/\s+/g," ").trim();
+    function el(tag, cls, text) {const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=text;return node;}
+    function safeUrl(value) {try {const u = new URL(value);return u.protocol === "https:" || u.protocol === "http:" ? u.href : null;}catch{return null;}}
+    function formatPrice(item) {
+      const price=item[3], kind=item[4], max=item[5];
+      if (price === null || price === undefined) return "Pris ikke oppgitt";
+      const p=(price/100).toLocaleString("nb-NO",{maximumFractionDigits:2});
+      if (kind==="from") return "Fra " + p + " kr";
+      if (kind==="multiple" && max && max!==price) return p + "–" + (max/100).toLocaleString("nb-NO") + " kr";
+      return p + " kr";
+    }
+    function showEmpty(message) {results.replaceChildren(el("div","empty",message));}
+    function search(query, updateUrl=true) {
+      if (!archive) return;
+      const q=normalize(query);
+      if (updateUrl) {
+        const u=new URL(location.href);
+        if(query.trim())u.searchParams.set("q",query.trim());else u.searchParams.delete("q");
+        if(sortOrder.value!=="relevance")u.searchParams.set("sort",sortOrder.value);else u.searchParams.delete("sort");
+        if(maxPrice.value!=="any")u.searchParams.set("maxPrice",maxPrice.value);else u.searchParams.delete("maxPrice");
+        history.replaceState(null,"",u.toString());
+      }
+      if(q.length<2){status.textContent="Skriv minst to bokstaver for å finne en rett.";results.replaceChildren();return;}
+      const words=q.split(" ").filter(Boolean);
+      const ceiling=maxPrice.value==="any"?Infinity:Number(maxPrice.value)*100;
+      const hits=[];
+      for(const item of archive.items){
+        if(ceiling!==Infinity&&(typeof item[3]!=="number"||item[3]>ceiling))continue;
+        const name=normalize(item[2] || item[1]);
+        let score=0;
+        if(name===q)score=110;
+        else if(name.startsWith(q))score=95;
+        else if(name.includes(" "+q))score=78;
+        else if(name.includes(q))score=67;
+        else if(words.every(w=>name.includes(w)))score=47;
+        else if(normalize(item[6]).includes(q))score=17;
+        if(score>0)hits.push({score,item});
+      }
+      hits.sort((a,b)=>{
+        if(sortOrder.value!=="relevance"){
+          const ap=a.item[3],bp=b.item[3];
+          if(ap===null||ap===undefined)return bp===null||bp===undefined?b.score-a.score:1;
+          if(bp===null||bp===undefined)return -1;
+          const diff=sortOrder.value==="price-asc"?ap-bp:bp-ap;
+          if(diff!==0)return diff;
+        }
+        return b.score-a.score || a.item[1].localeCompare(b.item[1],"nb");
+      });
+      const shown=hits.slice(0,40);
+      const budgetSuffix=Number.isFinite(ceiling)?" (maks "+(ceiling/100)+" kr)":"";
+      status.textContent=hits.length ? "Fant "+hits.length.toLocaleString("nb-NO")+" retter"+budgetSuffix+". Viser de "+shown.length+" beste treffene." : "Ingen treff i menyarkivet"+budgetSuffix+".";
+      const frag=document.createDocumentFragment();
+      if(!hits.length){frag.append(el("div","empty","Prøv en annen rett eller et kortere søkeord. Dataene er et arkiv og ikke en live menyoversikt."));}
+      for(const {item} of shown){
+        const source=archive.sources[item[0]],restaurant=archive.restaurants[source[0]];
+        const card=el("article","dish"),head=el("div","dish-top"),title=el("h2","",item[1]),price=el("div","price",formatPrice(item));
+        head.append(title,price);card.append(head);
+        card.append(el("div","restaurant",restaurant[0]));
+        if(item[6])card.append(el("p","detail",item[6]));
+        if(restaurant[2])card.append(el("p","detail",restaurant[2]));
+        const foot=el("div","dish-foot");
+        foot.append(el("span","", "Meny: "+dateFormat.format(new Date(source[2]))));
+        const target=safeUrl(source[1]) || safeUrl(restaurant[4]);
+        if(target){const a=el("a","source","Se kilde");a.href=target;a.target="_blank";a.rel="noopener noreferrer";foot.append(a);}
+        card.append(foot);frag.append(card);
+      }
+      results.replaceChildren(frag);
+    }
+    $("form").addEventListener("submit",e=>{e.preventDefault();search(input.value);});
+    sortOrder.addEventListener("change",()=>search(input.value));
+    maxPrice.addEventListener("change",()=>search(input.value));
+    document.querySelectorAll("button[data-q]").forEach(btn=>btn.addEventListener("click",()=>{input.value=btn.dataset.q;search(input.value);}));
+    let debounce;input.addEventListener("input",()=>{clearTimeout(debounce);debounce=setTimeout(()=>search(input.value),220);});
+    async function load(){
+      try {
+        const manifestResp=await fetch(BASE+"manifest.json?v=20261103",{cache:"no-store"});
+        if(!manifestResp.ok)throw new Error("Manifest unavailable");
+        const manifest=await manifestResp.json();
+        if(manifest.version!==1 || manifest.archiveDate!=="2026-11-02")throw new Error("Manifest mismatch");
+        const contentResp=await fetch(BASE+"index.json.gz?sha="+encodeURIComponent(manifest.sha256),{cache:"no-store"});
+        if(!contentResp.ok)throw new Error("Index unavailable");
+        const bytes=await contentResp.arrayBuffer();
+        const hash=Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256",bytes))).map(n=>n.toString(16).padStart(2,"0")).join("");
+        if(hash!==manifest.sha256)throw new Error("Checksum failed");
+        if(!("DecompressionStream" in window))throw new Error("Browser does not support gzip");
+        const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
+        const data=await new Response(stream).json();
+        if(data.version!==1 || data.restaurants.length!==manifest.restaurants || data.items.length!==manifest.dishes)throw new Error("Data mismatch");
+        archive=data;
+        const refreshed=Array.isArray(manifest.refreshedSourceIndices)?manifest.refreshedSourceIndices.length:0;
+        if(refreshed>0){
+          $("archive-notice").textContent="Gratis arkivversjon. Menyarkivet startet 2. november 2026. "+refreshed.toLocaleString("nb-NO")+" kilder er kontrollert på nytt etter dette. Se kontrolltid per rett; sjekk alltid dagens pris hos restauranten.";
+        }
+        coverage.textContent=manifest.restaurants.toLocaleString("nb-NO")+" restauranter · "+manifest.dishes.toLocaleString("nb-NO")+" retter";
+        const params=new URL(location.href).searchParams;
+        const q=params.get("q")||"";
+        const requestedSort=params.get("sort");
+        if(["relevance","price-asc","price-desc"].includes(requestedSort))sortOrder.value=requestedSort;
+        const requestedPrice=params.get("maxPrice");
+        if(["any","150","250","400","600"].includes(requestedPrice))maxPrice.value=requestedPrice;
+        input.value=q;
+        search(q,false);
+      } catch(e) {
+        status.textContent="Menydatabasen kan ikke lastes akkurat nå.";
+        showEmpty("Menysøket er midlertidig utilgjengelig. Prøv igjen senere.");
+      }
+    }
+    load();
+  })();
+  </script>
+</body>
+</html>

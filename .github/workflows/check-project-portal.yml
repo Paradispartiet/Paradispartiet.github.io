@@ -18,3 +18,18 @@ jobs:
       - uses: actions/checkout@v4
       - name: Validate project catalog and production site paths
         run: python3 portal/check_portal.py
+      - name: Check full Fysen production homepage includes Matlyst
+        run: |
+          python3 - <<'PY'
+          from urllib.request import Request, urlopen
+
+          request = Request(
+              "https://fysen.vercel.app/",
+              headers={"User-Agent": "FysenFullAppCheck/1.0", "Accept": "text/html,*/*"},
+          )
+          with urlopen(request, timeout=30) as response:
+              html = response.read(500_000).decode("utf-8")
+              assert response.status == 200, "Full Fysen Vercel app is unavailable"
+          assert "Matlyst" in html, "Full Fysen page is missing Matlyst"
+          print("Full Fysen production page is accessible and contains Matlyst.")
+          PY
