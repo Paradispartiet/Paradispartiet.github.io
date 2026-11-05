@@ -58,7 +58,7 @@ assert 'data-filter="spill"' in HTML
 found = {match.group(1) for link in parser.hrefs
          if (match := re.fullmatch(r"https://github.com/Paradispartiet/([\w.-]+)", link))}
 assert found == EXPECTED_REPOS, f"Missing: {EXPECTED_REPOS-found}; unexpected: {found-EXPECTED_REPOS}"
-for published_url in ("/History-Go/", "/HG_Film_Producer/", "/HistoryGo-FootballManager/", "/fysen/"):
+for published_url in ("/History-Go/", "/HG_Film_Producer/", "/HistoryGo-FootballManager/", "https://fysen.vercel.app/"):
     assert published_url in parser.hrefs, f"Missing live app link: {published_url}"
 assert (ROOT / "fysen" / "index.html").is_file(), "Fysen launch entrypoint must exist"
 fysen_html = (ROOT / "fysen" / "index.html").read_text(encoding="utf-8")
