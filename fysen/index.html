@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b1414">
-  <meta name="description" content="Fysen: gratis søk blant sist verifiserte restaurantmenyer i Oslo. Les tidspunkt og sjekk aktuelle priser med restauranten.">
+  <meta name="description" content="Fysen: søk blant sist verifiserte restaurantmenyer i Oslo. Se retter, priser og kilder.">
   <title>Fysen – finn retten du har lyst på</title>
   <style>
     :root{color-scheme:dark;--bg:#0b1414;--panel:#152221;--panel2:#1a2b29;--border:#37504a;--text:#f7f8f1;--muted:#b7c9c3;--accent:#d9f29f;--gold:#e9c987}
@@ -12,8 +12,9 @@
     a{color:inherit}button,input{font:inherit}button{cursor:pointer}main{width:min(960px,calc(100% - 32px));margin:auto}
     .header{display:flex;justify-content:space-between;align-items:center;padding:24px 0 8px;gap:14px}.brand{color:var(--text);font-weight:900;letter-spacing:.025em;font-size:25px;text-decoration:none}.brand-mark{color:var(--accent)}
     .home{color:var(--muted);font-size:13px;text-decoration:none}.home:hover{text-decoration:underline}
+    .header-actions{display:flex;align-items:center;gap:14px}.menu{position:relative;font-size:13px}.menu>summary{list-style:none;cursor:pointer;border:1px solid var(--border);background:var(--panel);border-radius:9px;padding:7px 10px;color:var(--text);font-weight:700}.menu>summary::-webkit-details-marker{display:none}.menu>summary:focus-visible,.menu-about>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+    .menu-panel{position:absolute;top:calc(100% + 7px);right:0;z-index:10;width:min(340px,calc(100vw - 32px));background:var(--panel);border:1px solid var(--border);border-radius:12px;box-shadow:0 16px 35px #0008;padding:13px}.menu-about>summary{cursor:pointer;color:var(--text);font-weight:700;padding:4px 2px}.about-content{color:var(--muted);font-size:13px;line-height:1.55}.about-content p{margin:12px 2px}.about-content a{color:var(--accent)}
     .hero{padding:42px 0 23px}.eyebrow{color:var(--accent);font-size:12px;text-transform:uppercase;letter-spacing:.14em;font-weight:800}.hero h1{font-size:clamp(31px,6vw,57px);line-height:1.08;letter-spacing:-.055em;margin:12px 0 14px;max-width:680px}.lead{max-width:670px;color:var(--muted);font-size:clamp(16px,2.5vw,19px);margin:0}
-    .alert{margin:26px 0 26px;padding:15px 18px;border:1px solid #806a49;background:#362e20;border-radius:12px;color:#f6dfae;font-size:13px}
     .search-box{background:var(--panel);border:1px solid var(--border);padding:11px;display:flex;gap:9px;border-radius:16px;box-shadow:0 14px 34px #0004}.search-box:focus-within{outline:2px solid #d9f29f77;outline-offset:2px}
     .search-box input{min-width:0;flex:1;border:0;background:transparent;color:var(--text);padding:13px 9px;font-size:17px;outline:none}.search-box input::placeholder{color:#9fb4ab}
     .search-box button{background:var(--accent);border:0;border-radius:10px;padding:12px 21px;color:#16251f;font-weight:800}
@@ -30,18 +31,35 @@
     .empty{grid-column:1/-1;border:1px dashed var(--border);border-radius:14px;padding:25px;color:var(--muted);background:#13201e}
     footer{padding:20px 0 35px;border-top:1px solid var(--border);color:var(--muted);font-size:12px}
     footer a{color:var(--accent)}
-    @media(max-width:700px){.header{padding-top:13px}.hero{padding-top:28px}.results{grid-template-columns:1fr}.search-box{padding:7px}.search-box button{padding:11px 14px}.alert{line-height:1.55}.dish{padding:16px}}
+    @media(max-width:700px){.header{padding-top:13px}.hero{padding-top:28px}.results{grid-template-columns:1fr}.search-box{padding:7px}.search-box button{padding:11px 14px}.dish{padding:16px}}
   </style>
 </head>
 <body>
   <main>
-    <header class="header"><a class="brand" href="./" aria-label="Fysen hjem">FYSEN<span class="brand-mark">.</span></a><a class="home" href="../">Tilbake til appene</a></header>
+    <header class="header">
+      <a class="brand" href="./" aria-label="Fysen hjem">FYSEN<span class="brand-mark">.</span></a>
+      <div class="header-actions">
+        <a class="home" href="../">Tilbake til appene</a>
+        <details class="menu">
+          <summary>Meny</summary>
+          <div class="menu-panel">
+            <details class="menu-about">
+              <summary>Om</summary>
+              <div class="about-content">
+                <p id="archive-notice">Gratis arkivversjon. Menyarkivet startet 2. november 2026. Menyene er sist verifisert på ulike tidspunkter og er ikke sanntidsdata. Se kontrolltid per rett, og sjekk dagens pris hos restauranten.</p>
+                <p>Fysen er under utvikling. Vi deler ikke personlige søkedata.</p>
+                <p><a href="https://github.com/Paradispartiet/fysen">Prosjektinformasjon</a></p>
+              </div>
+            </details>
+          </div>
+        </details>
+      </div>
+    </header>
     <section class="hero">
       <div class="eyebrow">Finn retten, finn restauranten</div>
       <h1>Hva har du lyst til å spise?</h1>
       <p class="lead">Søk i de sist verifiserte menyene fra hundrevis av restauranter i Oslo. Se retter, priser og kilde – uten innlogging.</p>
     </section>
-    <aside class="alert" id="archive-notice"><strong>Gratis arkivversjon.</strong> Grunnlaget er fra 2. november 2026. Vi kontrollerer utvalgte menyer på nytt, men dette er ikke sanntidsdata. Se kontrolltid per rett og sjekk dagens pris hos restauranten.</aside>
     <form id="form" class="search-box" role="search">
       <input id="query" type="search" name="q" autocomplete="off" placeholder="Søk etter pizza, ramen, bacalao …" aria-label="Navn på retten" minlength="2" maxlength="80">
       <button type="submit">Finn retten</button>
@@ -53,7 +71,6 @@
     <nav class="quick" aria-label="Eksempelsøk"><span>Prøv:</span><button type="button" data-q="burger">Burger</button><button type="button" data-q="pizza">Pizza</button><button type="button" data-q="sushi">Sushi</button><button type="button" data-q="ramen">Ramen</button><button type="button" data-q="taco">Taco</button></nav>
     <div class="meta"><span id="status" role="status" aria-live="polite">Laster og kontrollerer restaurantmenyene …</span><span id="coverage"></span></div>
     <section class="results" id="results" aria-label="Søkeresultater"></section>
-    <footer>Fysen er under utvikling. Denne gratis visningen bruker et verifisert menyarkiv og deler ikke personlige søkedata. <a href="https://github.com/Paradispartiet/fysen">Prosjektinformasjon</a></footer>
   </main>
   <script>
   (() => {
@@ -167,7 +184,7 @@
         search(q,false);
       } catch(e) {
         status.textContent="Menydatabasen kan ikke lastes akkurat nå.";
-        showEmpty("Den gratis arkivvisningen er midlertidig utilgjengelig. Prøv igjen senere.");
+        showEmpty("Menysøket er midlertidig utilgjengelig. Prøv igjen senere.");
       }
     }
     load();
