@@ -1,4 +1,4 @@
-name: Fysen Free public search smoke
+name: Fysen full-app launcher and archive fallback smoke
 on:
   workflow_dispatch:
   push:
@@ -6,20 +6,45 @@ on:
     paths:
       - ".github/workflows/fysen-free-public-smoke.yml"
       - "fysen/index.html"
+      - "fysen/arkiv/index.html"
 permissions:
   contents: read
 jobs:
-  free-search:
+  public-fysen:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Verify live route and public index
+      - name: Verify full Fysen app entrypoint and Matlyst
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import time, urllib.request
+          headers={"User-Agent":"FysenPublicEntrypointCheck/1.0","Accept":"text/html,*/*"}
+          launcher="https://paradispartiet.github.io/fysen/"
+          for attempt in range(20):
+              try:
+                  req=urllib.request.Request(launcher+"?check="+str(attempt),headers=headers)
+                  with urllib.request.urlopen(req,timeout=25) as response:
+                      html=response.read(100_000).decode("utf-8")
+                  assert 'http-equiv="refresh"' in html and 'https://fysen.vercel.app/' in html
+                  break
+              except Exception:
+                  if attempt==19: raise
+                  time.sleep(10)
+          with urllib.request.urlopen(urllib.request.Request("https://fysen.vercel.app/",headers=headers),timeout=30) as response:
+              home=response.read(350_000).decode("utf-8")
+              assert response.status == 200
+          assert "Matlyst" in home, "Full Fysen production app is missing Matlyst"
+          print("Fysen launcher points to the full Vercel app, and Matlyst is present.")
+          PY
+      - name: Verify archive fallback route and public index
         shell: bash
         run: |
           set -euo pipefail
           python3 - <<'PY'
           import gzip, hashlib, json, time, urllib.error, urllib.request
-          page="https://paradispartiet.github.io/fysen/"
+          page="https://paradispartiet.github.io/fysen/arkiv/"
           base="https://raw.githubusercontent.com/Paradispartiet/fysen/fysen-free-public-index/"
           req_headers={"User-Agent":"Fysen-Free-Site-Smoke/1.0","Accept":"text/html,*/*"}
           for attempt in range(20):
@@ -34,7 +59,7 @@ jobs:
                       break
               except (urllib.error.URLError,AssertionError,TimeoutError):
                   pass
-              if attempt==19: raise RuntimeError("Fysen /fysen/ page with current search filters not live after 20 attempts")
+              if attempt==19: raise RuntimeError("Fysen /fysen/arkiv/ fallback page with search filters not live after 20 attempts")
               time.sleep(15)
           with urllib.request.urlopen(urllib.request.Request(base+"manifest.json",headers=req_headers),timeout=30) as r:
               manifest=json.load(r)
@@ -58,7 +83,7 @@ jobs:
           for it in pizza[:20]:
               assert 0<=it[0]<len(data["sources"]),"Broken source reference in pizza results"
               assert 0<=data["sources"][it[0]][0]<len(data["restaurants"]),"Broken restaurant reference"
-          print("Public Fysen /fysen/ HTTP 200, index checksum and CORS OK, %d restaurants, %d dishes, %d refreshed sources; pizza search has matches." % (len(data["restaurants"]), len(data["items"]), len(manifest.get("refreshedSourceIndices",[]))))
+          print("Public Fysen /fysen/arkiv/ fallback HTTP 200, index checksum and CORS OK, %d restaurants, %d dishes, %d refreshed sources; pizza search has matches." % (len(data["restaurants"]), len(data["items"]), len(manifest.get("refreshedSourceIndices",[]))))
           PY
       - name: Verify browser actually renders pizza result
         shell: bash
@@ -73,7 +98,7 @@ jobs:
           for attempt in 1 2 3; do
             timeout 55s "$CHROME" --headless --no-sandbox --disable-dev-shm-usage \
               --disable-gpu --disable-extensions --virtual-time-budget=15000 \
-              --dump-dom "https://paradispartiet.github.io/fysen/?q=pizza&smoke=$attempt" \
+              --dump-dom "https://paradispartiet.github.io/fysen/arkiv/?q=pizza&smoke=$attempt" \
               > /tmp/fysen-dom.txt 2>/tmp/fysen-browser.txt || true
             if grep -q 'class="dish"' /tmp/fysen-dom.txt && grep -q 'Fant ' /tmp/fysen-dom.txt; then
               default_ok=true
@@ -89,7 +114,7 @@ jobs:
           # Verify the new shareable URL filter executes in Chromium, not just static HTML.
           timeout 55s "$CHROME" --headless --no-sandbox --disable-dev-shm-usage \
             --disable-gpu --disable-extensions --virtual-time-budget=15000 \
-            --dump-dom "https://paradispartiet.github.io/fysen/?q=pizza&sort=price-asc&maxPrice=250" \
+            --dump-dom "https://paradispartiet.github.io/fysen/arkiv/?q=pizza&sort=price-asc&maxPrice=250" \
             > /tmp/fysen-filtered-dom.txt 2>/tmp/fysen-filtered-browser.txt || true
           if grep -q 'class="dish"' /tmp/fysen-filtered-dom.txt && \
              grep -q 'maks 250 kr' /tmp/fysen-filtered-dom.txt; then
