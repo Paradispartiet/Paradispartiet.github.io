@@ -61,7 +61,11 @@ assert found == EXPECTED_REPOS, f"Missing: {EXPECTED_REPOS-found}; unexpected: {
 for published_url in ("/History-Go/", "/HG_Film_Producer/", "/HistoryGo-FootballManager/", "/fysen/"):
     assert published_url in parser.hrefs, f"Missing live app link: {published_url}"
 assert (ROOT / "fysen" / "index.html").is_file(), "Fysen Free app entrypoint must exist"
-assert "Gratis arkivversjon" in (ROOT / "fysen" / "index.html").read_text(encoding="utf-8"), "Fysen Free app must show its archive warning"
+fysen_html = (ROOT / "fysen" / "index.html").read_text(encoding="utf-8")
+assert "Gratis menyarkiv" not in HTML, "Fysen tile should not advertise a free archive"
+assert re.search(r'<details class="menu-about">.*?<summary>Om</summary>.*?id="archive-notice".*?</details>', fysen_html, re.S), "Archive details must be under Meny > Om"
+assert "Gratis arkivversjon" in fysen_html, "About section must retain the archive disclosure"
+assert '<aside class="alert"' not in fysen_html, "Do not display archive notice on the landing screen"
 assert "cp -a fysen _site-root/" in WORKFLOW, "Fysen Free app must be included in Pages artifact"
 assert 'cp portal/index.html _site-root/index.html' in WORKFLOW
 assert 'cp portal/index.html index.html' in WORKFLOW
