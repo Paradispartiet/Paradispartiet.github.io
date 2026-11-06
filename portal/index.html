@@ -24,7 +24,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
 .topbar{background:var(--surface);border-bottom:1px solid var(--line)}
 .topbar-inner{display:flex;justify-content:space-between;align-items:center;min-height:65px;gap:12px}
 .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:750;letter-spacing:-.03em}
-.logo{display:grid;place-items:center;width:34px;height:34px;border:1px solid #343b41;border-radius:10px;background:#1b2025;color:#f6d44b;font-weight:800}
+.logo{display:grid;place-items:center;width:38px;height:38px;background:transparent;border:0}
+.logo img{display:block;width:100%;height:100%;object-fit:contain}
 .top-link{border:1px solid var(--line);border-radius:10px;padding:8px 12px;text-decoration:none;font-size:.87rem;font-weight:620}
 .top-link:hover{background:var(--surface-raised)}
 main{padding:32px 0 40px}
@@ -45,7 +46,7 @@ h1{font-size:clamp(1.8rem,4vw,2.15rem);line-height:1.15;letter-spacing:-.055em;m
 .project-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
 .project-card{position:relative;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:17px;transition:box-shadow .18s,border-color .18s,background .18s}
 .project-card:hover{border-color:#555e65;background:var(--surface-raised);box-shadow:0 10px 30px #0005}
-.project-link{min-height:172px;display:flex;flex-direction:column;align-items:flex-start;padding:18px;text-decoration:none;border-radius:17px}
+.project-link{min-height:205px;display:flex;flex-direction:column;align-items:flex-start;padding:18px;text-decoration:none;border-radius:17px}
 .app-icon{height:57px;width:57px;flex:0 0 57px;border-radius:16px;display:grid;place-items:center;position:relative;overflow:hidden;font-weight:770;letter-spacing:-.06em;font-size:1.1rem;margin-bottom:15px;color:#fff;background:#1a2025}
 .app-icon img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
 .app-icon-fallback{display:none}
@@ -53,8 +54,10 @@ h1{font-size:clamp(1.8rem,4vw,2.15rem);line-height:1.15;letter-spacing:-.055em;m
 .app-icon.logo-failed .app-icon-fallback{display:block}
 .icon-history{background:#142921}.icon-film{background:#0b0d10}.icon-football{background:#112b23}
 .icon-fysen{background:#070807}.icon-aha{background:#161715}
-.icon-news{background:#242321}.icon-party{background:#f7df37;color:#161616}.icon-light{background:#947634}
+.icon-nature{background:#09271b}.icon-news{background:#242321}.icon-party{background:#f7df37;color:#161616}.icon-light{background:#947634}
 
+.project-description{display:block;font-size:.78rem;line-height:1.4;color:#a9b3bc;margin-top:9px;max-width:34ch;overflow-wrap:break-word}
+.app-icon:not(.icon-history){background:transparent;border-radius:0;overflow:visible}
 .project-title{font-weight:750;font-size:.98rem;letter-spacing:-.02em;line-height:1.23;overflow-wrap:anywhere}
 .project-status{font-size:.77rem;color:var(--subtle);margin-top:5px;line-height:1.35}
 .project-status.live{color:#8ee0b2}
@@ -71,18 +74,18 @@ h1{font-size:clamp(1.8rem,4vw,2.15rem);line-height:1.15;letter-spacing:-.055em;m
 .archive-link:hover{border-color:#69747e}
 .footer{color:#96a3ae;font-size:.78rem;text-align:center;margin-top:27px}
 @media(max-width:900px){.project-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:670px){.shell{width:min(100% - 28px,1100px)}main{padding:24px 0 36px}.heading{margin-bottom:19px}.controls{display:block}.search-field{display:block;margin-bottom:10px}.filters{width:100%;gap:6px}.filter{font-size:.83rem;padding:7px 12px;min-height:37px}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.project-link{min-height:157px;padding:14px}.app-icon{width:52px;height:52px;flex-basis:52px;border-radius:14px;margin-bottom:13px}.project-title{font-size:.92rem}.project-status{font-size:.74rem}}
-@media(max-width:340px){.project-grid{grid-template-columns:1fr}.project-link{min-height:110px;display:grid;grid-template-columns:53px 1fr;column-gap:14px;align-content:center}.app-icon{grid-row:span 2;margin:0}.project-title{align-self:end}.project-status{align-self:start}}
+@media(max-width:670px){.shell{width:min(100% - 28px,1100px)}main{padding:24px 0 36px}.heading{margin-bottom:19px}.controls{display:block}.search-field{display:block;margin-bottom:10px}.filters{width:100%;gap:6px}.filter{font-size:.83rem;padding:7px 12px;min-height:37px}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.project-link{min-height:200px;padding:14px}.app-icon{width:52px;height:52px;flex-basis:52px;border-radius:14px;margin-bottom:13px}.project-title{font-size:.92rem}.project-status{font-size:.74rem}.project-description{font-size:.735rem;line-height:1.35;margin-top:7px}}
+@media(max-width:340px){.project-grid{grid-template-columns:1fr}.project-link{min-height:138px;display:grid;grid-template-columns:53px 1fr;column-gap:14px;align-content:center}.app-icon{grid-row:span 3;margin:0}.project-description{grid-column:2}.project-title{align-self:end}.project-status{align-self:start}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
 <header class="topbar"><div class="shell topbar-inner">
-<a href="/" class="brand"><span class="logo" aria-hidden="true">✦</span>Paradispartiet</a>
+<a href="/" class="brand"><span class="logo" aria-hidden="true"><img src="assets/project-logos/v2/paradispartiet.webp" alt=""></span>Paradispartiet</a>
 
 </div></header>
 <main class="shell">
-<div class="heading"><div><h1>Prosjekter</h1><p class="subtitle">Spill, apper og idéer – samlet.</p></div><span id="results-count" class="count" role="status" aria-live="polite">8 prosjekter</span></div>
+<div class="heading"><div><h1>Prosjekter</h1><p class="subtitle">Spill, apper og idéer – samlet.</p></div><span id="results-count" class="count" role="status" aria-live="polite">9 prosjekter</span></div>
 <div class="controls">
 <label class="search-field"><span class="visually-hidden">Søk i prosjekter</span><input id="project-search" type="search" placeholder="Søk prosjekter" autocomplete="off"></label>
 <div class="filters" role="group" aria-label="Filtrer prosjekter">
@@ -98,49 +101,64 @@ h1{font-size:clamp(1.8rem,4vw,2.15rem);line-height:1.15;letter-spacing:-.055em;m
  <span class="app-icon icon-history" aria-hidden="true"><img src="/History-Go/bilder/logo_historygo.PNG" alt="" loading="lazy"><span class="app-icon-fallback">HG</span></span>
  <span class="project-title">History GO</span>
  <span class="project-status live">Åpne app</span>
+ <span class="project-description">Oppdag historiske steder, samle merker og test kunnskapen i quiz.</span>
  </a></article>
 <article class="project-card featured" data-category="spill" data-search="film producer filmverket · film producer film · kreativitet publisert">
  <a class="project-link" href="/HG_Film_Producer/"  aria-label="Film Producer – Åpne app">
- <span class="app-icon icon-film" aria-hidden="true"><img src="assets/project-logos/filmverket.svg" alt="" loading="lazy"><span class="app-icon-fallback">FV</span></span>
+ <span class="app-icon icon-film" aria-hidden="true"><img src="assets/project-logos/v2/film-producer.webp" alt="" loading="lazy"><span class="app-icon-fallback">FV</span></span>
  <span class="project-title">Film Producer</span>
  <span class="project-status live">Åpne app</span>
+ <span class="project-description">Lag film, styr produksjonen og utvikle prosjekter fra idé til premiere.</span>
  </a></article>
 <article class="project-card featured" data-category="spill" data-search="football manager football manager fotball · strategi publisert">
  <a class="project-link" href="/HistoryGo-FootballManager/"  aria-label="Football Manager – Åpne app">
- <span class="app-icon icon-football" aria-hidden="true"><img src="assets/project-logos/football-manager.svg" alt="" loading="lazy"><span class="app-icon-fallback">HGFM</span></span>
+ <span class="app-icon icon-football" aria-hidden="true"><img src="assets/project-logos/v2/football-manager.webp" alt="" loading="lazy"><span class="app-icon-fallback">HGFM</span></span>
  <span class="project-title">Football Manager</span>
  <span class="project-status live">Åpne app</span>
+ <span class="project-description">Led en fotballklubb med taktikk, trening, kamper og sesonger.</span>
  </a></article>
 <article class="project-card" data-category="teknologi" data-search="fysen mat restaurant retter søk meny">
  <a class="project-link" href="https://fysen.vercel.app/" aria-label="Fysen – Åpne app">
- <span class="app-icon icon-fysen" aria-hidden="true"><img src="assets/project-logos/fysen.svg" alt="" loading="lazy"><span class="app-icon-fallback">F</span></span>
+ <span class="app-icon icon-fysen" aria-hidden="true"><img src="assets/project-logos/v2/fysen.webp" alt="" loading="lazy"><span class="app-icon-fallback">F</span></span>
  <span class="project-title">Fysen</span>
  <span class="project-status live">Åpne app</span>
+ <span class="project-description">Finn matretter og menyer som passer det du har lyst på.</span>
  </a></article>
+<article class="project-card" data-category="kultur" data-search="finn natur finn flora fauna natur planter dyr arter oppdag utforskning under utvikling">
+ <div class="project-link" aria-label="Finn Natur – Under utvikling">
+ <span class="app-icon icon-nature" aria-hidden="true"><img src="assets/project-logos/v2/finn-natur.webp" alt="" loading="lazy"><span class="app-icon-fallback">FN</span></span>
+ <span class="project-title">Finn Natur</span>
+ <span class="project-status">Under utvikling</span>
+ <span class="project-description">Oppdag planter, dyr og naturen rundt deg.</span>
+ </div></article>
 <article class="project-card" data-category="teknologi" data-search="aha echonet aha echonet ai · personlig teknologi utvikles">
- <a class="project-link" href="https://github.com/Paradispartiet/AHA-EchoNet" target="_blank" rel="noopener noreferrer" aria-label="AHA EchoNet – Utvikles">
- <span class="app-icon icon-aha" aria-hidden="true"><img src="assets/project-logos/aha.svg" alt="" loading="lazy"><span class="app-icon-fallback">AHA</span></span>
+ <a class="project-link" href="https://paradispartiet.github.io/AHA-EchoNet/" aria-label="AHA EchoNet – Åpne app (under utvikling)">
+ <span class="app-icon icon-aha" aria-hidden="true"><img src="assets/project-logos/v2/aha-echonet.webp" alt="" loading="lazy"><span class="app-icon-fallback">AHA</span></span>
  <span class="project-title">AHA EchoNet</span>
  <span class="project-status">Utvikles</span>
+ <span class="project-description">Din personlige innsiktsmotor for samtaler og kunnskapsarbeid.</span>
  </a></article>
 
 <article class="project-card" data-category="kultur" data-search="paradisavisa paradisavisa journalistikk · samfunn nettavis">
  <a class="project-link" href="https://paradispartiet.github.io/Paradisavisa/" target="_blank" rel="noopener noreferrer" aria-label="Paradisavisa – Nettavis">
- <span class="app-icon icon-news" aria-hidden="true"><img src="https://raw.githubusercontent.com/Paradispartiet/Paradisavisa/main/favicon.PNG" alt="" loading="lazy"><span class="app-icon-fallback">PA</span></span>
+ <span class="app-icon icon-news" aria-hidden="true"><img src="assets/project-logos/v2/paradisavisa.webp" alt="" loading="lazy"><span class="app-icon-fallback">PA</span></span>
  <span class="project-title">Paradisavisa</span>
  <span class="project-status">Nettavis</span>
+ <span class="project-description">Nyheter, kultur, sport, kommentarer og åpen debatt.</span>
  </a></article>
 <article class="project-card" data-category="ideer" data-search="paradispartiet paradispartiet ideer · samfunn nettsted">
  <a class="project-link" href="https://paradispartiet.github.io/Paradispartiet/" target="_blank" rel="noopener noreferrer" aria-label="Paradispartiet – Nettsted">
- <span class="app-icon icon-party" aria-hidden="true"><img src="assets/project-logos/paradispartiet.svg" alt="" loading="lazy"><span class="app-icon-fallback">P</span></span>
+ <span class="app-icon icon-party" aria-hidden="true"><img src="assets/project-logos/v2/paradispartiet.webp" alt="" loading="lazy"><span class="app-icon-fallback">P</span></span>
  <span class="project-title">Paradispartiet</span>
  <span class="project-status">Nettsted</span>
+ <span class="project-description">Idéer og politikk for trygghet, frihet og fellesskap.</span>
  </a></article>
 <article class="project-card" data-category="ideer" data-search="teorien om lyset teorien om lyset filosofi · tekst tekstprosjekt">
  <a class="project-link" href="https://github.com/Paradispartiet/Teorien-om-lyset" target="_blank" rel="noopener noreferrer" aria-label="Teorien om lyset – Tekstprosjekt">
- <span class="app-icon icon-light" aria-hidden="true">✳</span>
+ <span class="app-icon icon-light" aria-hidden="true"><img src="assets/project-logos/v2/teorien-om-lyset.webp" alt="" loading="lazy"><span class="app-icon-fallback">TL</span></span>
  <span class="project-title">Teorien om lyset</span>
  <span class="project-status">Tekstprosjekt</span>
+ <span class="project-description">Filosofiske tekster om lys, bevissthet og samfunn.</span>
  </a></article>
 
 
