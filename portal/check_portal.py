@@ -50,6 +50,19 @@ assert "History GO 2" not in HTML and "History-Go-2" not in HTML, "Archived Hist
 for removed in ("EchoNet", "Skrivekunstakademiet", "Kunstakademiet"):
     assert f'<span class="project-title">{removed}</span>' not in HTML, f"Unbuilt or redundant project still visible: {removed}"
 assert '<span class="project-title">AHA EchoNet</span>' in HTML
+
+# Alle fire prosjektkort åpner sin egen publiserte nettside når logoen
+# eller resten av kortflaten trykkes. De må aldri sende til GitHub-koden.
+SITE_CARDS = {
+    "AHA EchoNet": "https://paradispartiet.github.io/AHA-EchoNet/",
+    "Paradispartiet": "https://paradispartiet.github.io/Paradispartiet/",
+    "Paradisavisa": "https://paradispartiet.github.io/Paradisavisa/",
+    "Teorien om lyset": "https://paradispartiet.github.io/Teorien-om-lyset/",
+}
+for title, url in SITE_CARDS.items():
+    pattern = rf'<article class="project-card[^"]*"[^>]*>\s*<a class="project-link" href="{re.escape(url)}"[^>]*>\s*<span class="app-icon [^"]+"[^>]*><img src="assets/project-logos/v2/[^"]+"[^>]*>.*?<span class="project-title">{re.escape(title)}</span>'
+    assert re.search(pattern, HTML, re.S), f"{title}: icon and card must link to its own live website"
+
 assert 'https://paradispartiet.github.io/AHA-EchoNet/' in parser.hrefs, "AHA card must link to app, not code"
 assert "https://paradispartiet.github.io/Teorien-om-lyset/" in parser.hrefs, "Teorien om lyset must link to published book, not source code"
 assert '<img src="/History-Go/bilder/logo_historygo.PNG"' in HTML, "HistoryGo logo remains unchanged"
