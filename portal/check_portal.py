@@ -100,5 +100,8 @@ assert "'portal/**'" in WORKFLOW
 for directory in ("History-Go", "HG_Film_Producer", "HistoryGo-FootballManager"):
     assert f'test -f "$dir/index.html"' in WORKFLOW, "All apps must remain in the branch root"
 assert "cat > _site-root/index.html" not in WORKFLOW
-assert 'id="project-search"' in HTML, "Search field should remain available"
-print("Portal check passed: 8 projects, no Finn Natur card, no tabs, branch-only Pages deploy.")
+assert 'id="project-search"' not in HTML, "Project search must be removed"
+assert 'Søk prosjekter' not in HTML and 'Søk i prosjekter' not in HTML, "Search UI should not be visible"
+assert 'data-search=' not in HTML and 'class="search-field"' not in HTML, "Unused search plumbing must be removed"
+assert 'id="no-results"' not in HTML and "search.addEventListener" not in HTML, "Search logic must be removed"
+print("Portal check passed: 8 projects, no Finn Natur, search, or category tabs.")
