@@ -10,7 +10,9 @@ WORKFLOW = (ROOT / ".github" / "workflows" / "sync-production-sites.yml").read_t
 ROOT_HTML = (ROOT / "index.html").read_text(encoding="utf-8")
 assert ROOT_HTML == HTML, "Public root index.html must match portal/index.html"
 assert "color-scheme:dark" in HTML and "--bg:#08090b" in HTML, "Project portal must use its dark universe theme"
-assert "cp -a assets _site-root/" in WORKFLOW, "Project logo assets must be included in Pages artifact"
+assert "Validate root for branch-based GitHub Pages" in WORKFLOW, "Publishing must use only main branch Pages"
+assert "actions/deploy-pages@" not in WORKFLOW and "upload-pages-artifact@" not in WORKFLOW, "Duplicate Pages publisher must be disabled"
+assert "pages: write" not in WORKFLOW, "Production sync should not deploy Pages directly"
 for logo in ("film-producer", "football-manager", "fysen", "aha-echonet", "paradisavisa", "paradispartiet", "teorien-om-lyset", "finn-natur"):
     assert (ROOT / "assets" / "project-logos" / "v2" / f"{logo}.webp").is_file(), f"Missing new logo: {logo}"
 for logo in ("aha.svg", "filmverket.svg", "football-manager.svg", "fysen.svg", "paradispartiet.svg"):
@@ -75,13 +77,13 @@ assert 'href="https://fysen.vercel.app/"' in fysen_html, "Provide a no-JavaScrip
 assert "Gratis arkivversjon" not in fysen_html, "The full-app launcher must not show the archive notice"
 assert "Gratis arkivversjon" in archive_html, "Preserve the independent archive fallback"
 assert re.search(r'<details class="menu-about">.*?<summary>Om</summary>.*?id="archive-notice".*?</details>', archive_html, re.S), "Fallback archive warning must remain under Meny > Om"
-assert "cp -a fysen _site-root/" in WORKFLOW, "Fysen Free app must be included in Pages artifact"
-assert 'cp portal/index.html _site-root/index.html' in WORKFLOW
+assert "test -f fysen/index.html" in WORKFLOW, "Fysen launcher must remain in branch-based Pages root"
+assert "cmp portal/index.html index.html" in WORKFLOW, "Root must match the source before branch publishing"
 assert 'cp portal/index.html index.html' in WORKFLOW
 assert 'git add -A HG_Film_Producer HistoryGo-FootballManager History-Go index.html .nojekyll' in WORKFLOW
 assert "'portal/**'" in WORKFLOW
 for directory in ("History-Go", "HG_Film_Producer", "HistoryGo-FootballManager"):
-    assert f"cp -a {directory} _site-root/" in WORKFLOW
+    assert f'test -f "$dir/index.html"' in WORKFLOW, "All apps must remain in the branch root"
 assert "cat > _site-root/index.html" not in WORKFLOW
 assert 'id="project-search"' in HTML, "Search field should remain available"
-print("Portal check passed: 9 projects, no category tabs, search and app links preserved.")
+print("Portal check passed: 9 projects, no tabs, assets preserved, branch-only Pages deploy.")
