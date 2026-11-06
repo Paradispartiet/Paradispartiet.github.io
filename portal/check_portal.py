@@ -11,6 +11,8 @@ ROOT_HTML = (ROOT / "index.html").read_text(encoding="utf-8")
 assert ROOT_HTML == HTML, "Public root index.html must match portal/index.html"
 assert "color-scheme:dark" in HTML and "--bg:#08090b" in HTML, "Project portal must use its dark universe theme"
 assert "cp -a assets _site-root/" in WORKFLOW, "Project logo assets must be included in Pages artifact"
+for logo in ("film-producer", "football-manager", "fysen", "aha-echonet", "paradisavisa", "paradispartiet", "teorien-om-lyset", "finn-natur"):
+    assert (ROOT / "assets" / "project-logos" / "v2" / f"{logo}.webp").is_file(), f"Missing new logo: {logo}"
 for logo in ("aha.svg", "filmverket.svg", "football-manager.svg", "fysen.svg", "paradispartiet.svg"):
     assert (ROOT / "assets" / "project-logos" / logo).is_file(), f"Missing project logo asset: {logo}"
 assert (ROOT / ".nojekyll").exists(), "Root .nojekyll required for branch-based Pages deployment"
@@ -18,7 +20,7 @@ assert "Paradispartiet production host" not in ROOT_HTML, "README must not becom
 assert "History-Go-2" not in ROOT_HTML, "Do not expose removed History GO 2 project"
 
 
-EXPECTED_REPOS = {"AHA-EchoNet", "Teorien-om-lyset"}
+EXPECTED_REPOS = {"Teorien-om-lyset"}
 
 class PortalParser(HTMLParser):
     def __init__(self):
@@ -40,17 +42,20 @@ class PortalParser(HTMLParser):
 
 parser = PortalParser()
 parser.feed(HTML)
-assert parser.cards == 8, f"Expected 8 project cards, got {parser.cards}"
+assert parser.cards == 9, f"Expected 9 project cards, got {parser.cards}"
 assert parser.featured == 3, f"Expected 3 featured games, got {parser.featured}"
 assert "History GO 2" not in HTML and "History-Go-2" not in HTML, "Archived History GO 2 must be hidden from the portal"
 for removed in ("EchoNet", "Skrivekunstakademiet", "Kunstakademiet"):
     assert f'<span class="project-title">{removed}</span>' not in HTML, f"Unbuilt or redundant project still visible: {removed}"
 assert '<span class="project-title">AHA EchoNet</span>' in HTML
+assert 'https://paradispartiet.github.io/AHA-EchoNet/' in parser.hrefs, "AHA card must link to app, not code"
+assert '<img src="/History-Go/bilder/logo_historygo.PNG"' in HTML, "HistoryGo logo remains unchanged"
+assert HTML.count('class="project-description"') == 9, "Every card needs a short description"
 assert '<details class="archive">' not in HTML, "Technical archive section must be hidden"
 assert 'class="archive-link"' not in HTML, "Technical repository links must be hidden"
 assert 'class="source-link"' not in HTML, "Code shortcut links do not belong in the compact launcher"
 assert '>GitHub ↗</a>' not in HTML, "Do not expose technical navigation in app header"
-assert '8 prosjekter' in HTML, "Initial project count must be eight"
+assert '9 prosjekter' in HTML, "Initial project count must be nine"
 
 assert 'id="project-catalog"' in HTML
 assert 'class="project-grid"' in HTML
@@ -79,4 +84,4 @@ for directory in ("History-Go", "HG_Film_Producer", "HistoryGo-FootballManager")
     assert f"cp -a {directory} _site-root/" in WORKFLOW
 assert "cat > _site-root/index.html" not in WORKFLOW
 assert 'id="project-search"' in HTML and 'aria-pressed="true"' in HTML
-print("Portal check passed: 8 active project tiles, no unbuilt projects or technical archives, 4 live app links.")
+print("Portal check passed: 9 project tiles, updated logos, descriptions and direct AHA app link.")
