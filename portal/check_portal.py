@@ -59,7 +59,7 @@ assert '9 prosjekter' in HTML, "Initial project count must be nine"
 
 assert 'id="project-catalog"' in HTML
 assert 'class="project-grid"' in HTML
-assert 'data-filter="spill"' in HTML
+assert 'class="filters"' not in HTML and 'data-filter="' not in HTML, "Category tabs should not be displayed"
 found = {match.group(1) for link in parser.hrefs
          if (match := re.fullmatch(r"https://github.com/Paradispartiet/([\w.-]+)", link))}
 assert found == EXPECTED_REPOS, f"Missing: {EXPECTED_REPOS-found}; unexpected: {found-EXPECTED_REPOS}"
@@ -83,5 +83,5 @@ assert "'portal/**'" in WORKFLOW
 for directory in ("History-Go", "HG_Film_Producer", "HistoryGo-FootballManager"):
     assert f"cp -a {directory} _site-root/" in WORKFLOW
 assert "cat > _site-root/index.html" not in WORKFLOW
-assert 'id="project-search"' in HTML and 'aria-pressed="true"' in HTML
-print("Portal check passed: 9 project tiles, updated logos, descriptions and direct AHA app link.")
+assert 'id="project-search"' in HTML, "Search field should remain available"
+print("Portal check passed: 9 projects, no category tabs, search and app links preserved.")

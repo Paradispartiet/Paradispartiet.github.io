@@ -33,16 +33,11 @@ main{padding:32px 0 40px}
 h1{font-size:clamp(1.8rem,4vw,2.15rem);line-height:1.15;letter-spacing:-.055em;margin:0 0 5px}
 .subtitle{color:var(--subtle);font-size:.92rem;margin:0}
 .count{color:var(--subtle);font-size:.81rem;white-space:nowrap;margin-bottom:3px}
-.controls{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-bottom:22px}
-.search-field{position:relative;flex:0 0 225px;order:2}
+.controls{display:flex;justify-content:flex-end;margin-bottom:22px}
+.search-field{position:relative;width:min(100%,260px)}
 .search-field:before{content:"⌕";position:absolute;left:13px;top:50%;transform:translateY(-55%);font-size:1.35rem;color:#a7b1bb;pointer-events:none}
 .search-field input{width:100%;min-height:43px;border:1px solid var(--line);border-radius:11px;background:var(--surface);color:var(--text);padding:10px 12px 10px 39px;caret-color:var(--accent)}
 .search-field input::placeholder{color:#a4aeb8}
-.filters{order:1;display:flex;gap:7px;overflow-x:auto;scrollbar-width:none}
-.filters::-webkit-scrollbar{display:none}
-.filter{flex:0 0 auto;border:1px solid var(--line);background:var(--surface);color:#ced5dc;border-radius:100px;min-height:41px;padding:8px 15px;font-size:.87rem;font-weight:650}
-.filter:hover{background:#22272c;border-color:#434c55}
-.filter[aria-pressed="true"]{border-color:#6b5b32;background:#333022;color:#fff3ca}
 .project-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
 .project-card{position:relative;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:17px;transition:box-shadow .18s,border-color .18s,background .18s}
 .project-card:hover{border-color:#555e65;background:var(--surface-raised);box-shadow:0 10px 30px #0005}
@@ -74,7 +69,7 @@ h1{font-size:clamp(1.8rem,4vw,2.15rem);line-height:1.15;letter-spacing:-.055em;m
 .archive-link:hover{border-color:#69747e}
 .footer{color:#96a3ae;font-size:.78rem;text-align:center;margin-top:27px}
 @media(max-width:900px){.project-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:670px){.shell{width:min(100% - 28px,1100px)}main{padding:24px 0 36px}.heading{margin-bottom:19px}.controls{display:block}.search-field{display:block;margin-bottom:10px}.filters{width:100%;gap:6px}.filter{font-size:.83rem;padding:7px 12px;min-height:37px}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.project-link{min-height:200px;padding:14px}.app-icon{width:52px;height:52px;flex-basis:52px;border-radius:14px;margin-bottom:13px}.project-title{font-size:.92rem}.project-status{font-size:.74rem}.project-description{font-size:.735rem;line-height:1.35;margin-top:7px}}
+@media(max-width:670px){.shell{width:min(100% - 28px,1100px)}main{padding:24px 0 36px}.heading{margin-bottom:19px}.controls{display:block}.search-field{display:block;width:100%}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.project-link{min-height:200px;padding:14px}.app-icon{width:52px;height:52px;flex-basis:52px;border-radius:14px;margin-bottom:13px}.project-title{font-size:.92rem}.project-status{font-size:.74rem}.project-description{font-size:.735rem;line-height:1.35;margin-top:7px}}
 @media(max-width:340px){.project-grid{grid-template-columns:1fr}.project-link{min-height:138px;display:grid;grid-template-columns:53px 1fr;column-gap:14px;align-content:center}.app-icon{grid-row:span 3;margin:0}.project-description{grid-column:2}.project-title{align-self:end}.project-status{align-self:start}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 </style>
@@ -88,13 +83,7 @@ h1{font-size:clamp(1.8rem,4vw,2.15rem);line-height:1.15;letter-spacing:-.055em;m
 <div class="heading"><div><h1>Prosjekter</h1><p class="subtitle">Spill, apper og idéer – samlet.</p></div><span id="results-count" class="count" role="status" aria-live="polite">9 prosjekter</span></div>
 <div class="controls">
 <label class="search-field"><span class="visually-hidden">Søk i prosjekter</span><input id="project-search" type="search" placeholder="Søk prosjekter" autocomplete="off"></label>
-<div class="filters" role="group" aria-label="Filtrer prosjekter">
-<button class="filter" type="button" data-filter="alle" aria-pressed="true">Alle</button>
-<button class="filter" type="button" data-filter="spill" aria-pressed="false">Spill</button>
-<button class="filter" type="button" data-filter="teknologi" aria-pressed="false">Teknologi</button>
-<button class="filter" type="button" data-filter="kultur" aria-pressed="false">Kultur</button>
-<button class="filter" type="button" data-filter="ideer" aria-pressed="false">Ideer</button>
-</div></div>
+</div>
 <section aria-label="Alle prosjekter"><div class="project-grid" id="project-catalog">
 <article class="project-card featured" data-category="spill" data-search="history go history go historie · utforskning publisert">
  <a class="project-link" href="/History-Go/"  aria-label="History GO – Åpne app">
@@ -173,19 +162,16 @@ document.querySelectorAll('.app-icon img').forEach(img=>{
   img.addEventListener('error',()=>img.closest('.app-icon')?.classList.add('logo-failed'),{once:true});
   if(img.complete && img.naturalWidth===0) img.closest('.app-icon')?.classList.add('logo-failed');
 });
-const buttons=[...document.querySelectorAll('.filter')];
 const search=document.getElementById('project-search');
 const count=document.getElementById('results-count');
 const empty=document.getElementById('no-results');
-let category='alle';
 const norm=s=>String(s).toLocaleLowerCase('nb').normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
 function render(){
  let visible=0;const term=norm(search.value);
- for(const card of cards){const match=(category==='alle'||card.dataset.category===category)&&(!term||norm(card.dataset.search).includes(term));card.hidden=!match;if(match)visible++}
+ for(const card of cards){const match=!term||norm(card.dataset.search).includes(term);card.hidden=!match;if(match)visible++}
  count.textContent=visible+' av '+cards.length;
  empty.hidden=visible>0;
 }
-for(const button of buttons){button.addEventListener('click',()=>{category=button.dataset.filter;buttons.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));render()})}
 search.addEventListener('input',render);render();
 })();
 </script>
