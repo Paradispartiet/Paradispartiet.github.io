@@ -44,8 +44,9 @@ class PortalParser(HTMLParser):
 
 parser = PortalParser()
 parser.feed(HTML)
-assert parser.cards == 9, f"Expected 9 project cards, got {parser.cards}"
+assert parser.cards == 8, f"Expected 8 project cards, got {parser.cards}"
 assert parser.featured == 3, f"Expected 3 featured games, got {parser.featured}"
+assert '<span class="project-title">Finn Natur</span>' not in HTML, "Finn Natur must not appear in the public catalog"
 assert "History GO 2" not in HTML and "History-Go-2" not in HTML, "Archived History GO 2 must be hidden from the portal"
 for removed in ("EchoNet", "Skrivekunstakademiet", "Kunstakademiet"):
     assert f'<span class="project-title">{removed}</span>' not in HTML, f"Unbuilt or redundant project still visible: {removed}"
@@ -66,12 +67,12 @@ for title, url in SITE_CARDS.items():
 assert 'https://paradispartiet.github.io/AHA-EchoNet/' in parser.hrefs, "AHA card must link to app, not code"
 assert "https://paradispartiet.github.io/Teorien-om-lyset/" in parser.hrefs, "Teorien om lyset must link to published book, not source code"
 assert '<img src="/History-Go/bilder/logo_historygo.PNG"' in HTML, "HistoryGo logo remains unchanged"
-assert HTML.count('class="project-description"') == 9, "Every card needs a short description"
+assert HTML.count('class="project-description"') == 8, "Every card needs a short description"
 assert '<details class="archive">' not in HTML, "Technical archive section must be hidden"
 assert 'class="archive-link"' not in HTML, "Technical repository links must be hidden"
 assert 'class="source-link"' not in HTML, "Code shortcut links do not belong in the compact launcher"
 assert '>GitHub ↗</a>' not in HTML, "Do not expose technical navigation in app header"
-assert '9 prosjekter' in HTML, "Initial project count must be nine"
+assert '8 prosjekter' in HTML, "Initial project count must be eight"
 
 assert 'id="project-catalog"' in HTML
 assert 'class="project-grid"' in HTML
@@ -100,4 +101,4 @@ for directory in ("History-Go", "HG_Film_Producer", "HistoryGo-FootballManager")
     assert f'test -f "$dir/index.html"' in WORKFLOW, "All apps must remain in the branch root"
 assert "cat > _site-root/index.html" not in WORKFLOW
 assert 'id="project-search"' in HTML, "Search field should remain available"
-print("Portal check passed: 9 projects, no tabs, assets preserved, branch-only Pages deploy.")
+print("Portal check passed: 8 projects, no Finn Natur card, no tabs, branch-only Pages deploy.")
