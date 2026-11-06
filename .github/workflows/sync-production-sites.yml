@@ -17,7 +17,8 @@ permissions:
 
 concurrency:
   group: public-production-sync
-  cancel-in-progress: true
+  # En ny periodisk synk skal ikke avbryte pågående publisering eller live-verifisering.
+  cancel-in-progress: false
 
 jobs:
   build:
