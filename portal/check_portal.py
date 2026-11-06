@@ -72,7 +72,10 @@ assert '<details class="archive">' not in HTML, "Technical archive section must 
 assert 'class="archive-link"' not in HTML, "Technical repository links must be hidden"
 assert 'class="source-link"' not in HTML, "Code shortcut links do not belong in the compact launcher"
 assert '>GitHub ↗</a>' not in HTML, "Do not expose technical navigation in app header"
-assert '8 prosjekter' in HTML, "Initial project count must be eight"
+assert '<div class="heading">' not in HTML, "Page heading must be removed"
+assert '<h1>Prosjekter</h1>' not in HTML and 'Spill, apper og idéer – samlet.' not in HTML and '8 prosjekter' not in HTML, "Page heading, subtitle and counter must not be shown"
+assert 'Åpne app' not in HTML, "No redundant Open app labels should remain"
+assert HTML.count('class="project-status"') == 4, "Keep only four descriptive project-status labels"
 
 assert 'id="project-catalog"' in HTML
 assert 'class="project-grid"' in HTML
@@ -104,4 +107,4 @@ assert 'id="project-search"' not in HTML, "Project search must be removed"
 assert 'Søk prosjekter' not in HTML and 'Søk i prosjekter' not in HTML, "Search UI should not be visible"
 assert 'data-search=' not in HTML and 'class="search-field"' not in HTML, "Unused search plumbing must be removed"
 assert 'id="no-results"' not in HTML and "search.addEventListener" not in HTML, "Search logic must be removed"
-print("Portal check passed: 8 projects, no Finn Natur, search, or category tabs.")
+print("Portal check passed: 8 clickable cards, no heading, redundant Open app labels, search or category tabs.")
