@@ -22,7 +22,7 @@ assert "Paradispartiet production host" not in ROOT_HTML, "README must not becom
 assert "History-Go-2" not in ROOT_HTML, "Do not expose removed History GO 2 project"
 
 
-EXPECTED_REPOS = {"Teorien-om-lyset"}
+EXPECTED_REPOS = set()  # Prosjektkort skal åpne tjenester, ikke kildekode
 
 class PortalParser(HTMLParser):
     def __init__(self):
@@ -51,6 +51,7 @@ for removed in ("EchoNet", "Skrivekunstakademiet", "Kunstakademiet"):
     assert f'<span class="project-title">{removed}</span>' not in HTML, f"Unbuilt or redundant project still visible: {removed}"
 assert '<span class="project-title">AHA EchoNet</span>' in HTML
 assert 'https://paradispartiet.github.io/AHA-EchoNet/' in parser.hrefs, "AHA card must link to app, not code"
+assert "https://paradispartiet.github.io/Teorien-om-lyset/" in parser.hrefs, "Teorien om lyset must link to published book, not source code"
 assert '<img src="/History-Go/bilder/logo_historygo.PNG"' in HTML, "HistoryGo logo remains unchanged"
 assert HTML.count('class="project-description"') == 9, "Every card needs a short description"
 assert '<details class="archive">' not in HTML, "Technical archive section must be hidden"
