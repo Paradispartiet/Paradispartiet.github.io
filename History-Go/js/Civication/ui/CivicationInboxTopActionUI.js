@@ -4679,9 +4679,53 @@
     });
   }
 
+  function rememberLillebekkFocus(host) {
+    const active = document.activeElement;
+    const panel = active?.closest?.(".civi-lillebekk-dossier details[open]");
+    if (!panel) return "";
+    for (const attr of LILLEBEKK_PANEL_ATTRIBUTES) {
+      if (panel.hasAttribute(attr)) return attr;
+    }
+    return "";
+  }
+  function restoreLillebekkFocus(host, attr) {
+    if (!attr) return;
+    // The previous control was removed by innerHTML. Focus an existing,
+    // visible summary instead of leaving keyboard focus on the page body.
+    const panel = host.querySelector(".civi-lillebekk-dossier details[" + attr + "]");
+    if (!panel?.open) return;
+    const summary = panel.querySelector("summary");
+    if (typeof summary?.focus === "function") summary.focus({ preventScroll: true });
+  }
+
+  let deferredInboxRefresh = false;
+  const inboxFocusHosts = new WeakSet();
+
+  function editingLillebekkInput() {
+    const active = document.activeElement;
+    const formField = /^(TEXTAREA|INPUT|SELECT)$/i.test(String(active?.tagName || ""));
+    return formField && !!rememberLillebekkFocus(document.getElementById("civiInbox"));
+  }
+
+  function installDeferredInboxRefresh(host) {
+    if (typeof host?.addEventListener !== "function" || inboxFocusHosts.has(host)) return;
+    inboxFocusHosts.add(host);
+    // Delegate on the stable inbox container; the form fields are recreated
+    // after explicit journal saves. Focusout bubbles when editing ends.
+    host.addEventListener("focusout", function () {
+      if (!deferredInboxRefresh) return;
+      window.setTimeout(function replayDeferredInboxRefresh() {
+        // Another editable field may have gained focus; preserve both drafts.
+        // When the last field loses focus, replay the latest mailbox state.
+        if (deferredInboxRefresh && !editingLillebekkInput()) renderInboxSections();
+      }, 0);
+    });
+  }
+
   function renderInboxSections() {
     const host = document.getElementById("civiInbox");
     if (!host) return false;
+    installDeferredInboxRefresh(host);
 
     const split = splitInboxByMessageChannel();
     const job = split.job || [];
@@ -4721,6 +4765,9 @@
     `;
 
     const openLillebekkPanels = rememberOpenLillebekkPanels(host);
+    const activeLillebekkPanel = rememberLillebekkFocus(host);
+    const previousScrollTop = openLillebekkPanels.length && Number.isFinite(host.scrollTop)
+      ? host.scrollTop : null;
     host.innerHTML = markup;
     // The current phase's action may be queued and not yet in MailEngine.getInbox.
     // Render that same action above the message history, in the existing inbox.
@@ -4728,6 +4775,9 @@
 
     wireInboxResponses(host);
     restoreOpenLillebekkPanels(host, openLillebekkPanels);
+    restoreLillebekkFocus(host, activeLillebekkPanel);
+    if (previousScrollTop !== null) host.scrollTop = previousScrollTop;
+    deferredInboxRefresh = false;
     return true;
   }
 
@@ -4745,10 +4795,21 @@
     window.setTimeout(refreshTopAction, 260);
   }
 
+  function refreshInboxWithoutInterruptingDraft() {
+    // Background inbox events must not replace actively edited Lillebekk
+    // forms. Defer (don't drop) the refresh until the final focusout.
+    // Explicit save/decision handlers still render immediately on submit.
+    if (editingLillebekkInput()) {
+      deferredInboxRefresh = true;
+      return false;
+    }
+    return renderInboxSections();
+  }
+
   function scheduleInboxSectionsRefresh() {
-    window.setTimeout(renderInboxSections, 0);
-    window.setTimeout(renderInboxSections, 80);
-    window.setTimeout(renderInboxSections, 260);
+    window.setTimeout(refreshInboxWithoutInterruptingDraft, 0);
+    window.setTimeout(refreshInboxWithoutInterruptingDraft, 80);
+    window.setTimeout(refreshInboxWithoutInterruptingDraft, 260);
   }
 
   function wrapMiniRefresh() {

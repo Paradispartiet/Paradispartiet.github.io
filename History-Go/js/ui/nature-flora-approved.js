@@ -5,6 +5,46 @@
 (function () {
   "use strict";
   const images = Object.freeze({
+    emne_flora_platanlonn: Object.freeze({
+      scientificName: "Acer pseudoplatanus",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/80_platanlonn_v1.webp",
+      gitBlobSha: "a9a52def2f4bfc226da05087c4805d2b5a5f8cbc",
+      reviewedAt: "2026-11-10",
+      stage: "pedagogisk_kombinert_blomstring_og_vingefrukter",
+      evidence: "data/natur/flora/illustration-quality-platanlonn-20261110.json"
+    }),
+    emne_flora_sibirsk_ertebusk: Object.freeze({
+      scientificName: "Caragana arborescens",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/79_sibirsk_ertebusk_v1.webp",
+      gitBlobSha: "dea018f7c4b396527db9b037d17bf44aae866e57",
+      reviewedAt: "2026-11-10",
+      stage: "varblomstring_og_sommerbelger_pedagogisk",
+      evidence: "data/natur/flora/illustration-quality-sibirsk-ertebusk-20261110.json"
+    }),
+    emne_flora_russekaal: Object.freeze({
+      scientificName: "Bunias orientalis",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/78_russekaal_v1.webp",
+      gitBlobSha: "610c7ba75478978a5a3cfdcb4f29f655fa555087",
+      reviewedAt: "2026-11-10",
+      stage: "sommerblomstring_gule_korsblomster_og_frukt",
+      evidence: "data/natur/flora/illustration-quality-russekaal-20261110.json"
+    }),
+    emne_flora_hagegullregn: Object.freeze({
+      scientificName: "Laburnum anagyroides",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/77_hagegullregn_v1.webp",
+      gitBlobSha: "2c076dea8598603ed37c66fd1e24904166b8387b",
+      reviewedAt: "2026-11-10",
+      stage: "varblomstring_hengende_gule_blomster_og_belger",
+      evidence: "data/natur/flora/illustration-quality-hagegullregn-20261110.json"
+    }),
+    emne_flora_buskmure: Object.freeze({
+      scientificName: "Dasiphora fruticosa",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/76_buskmure_v1.webp",
+      gitBlobSha: "d6f7dcbe2eda238ea05a9e614e893d4a6c3f38d3",
+      reviewedAt: "2026-11-10",
+      stage: "sommerblomstring_gule_fembladige_blomster",
+      evidence: "data/natur/flora/illustration-quality-buskmure-20261110.json"
+    }),
     emne_flora_syrin: Object.freeze({
       scientificName: "Syringa vulgaris",
       src: "bilder/natur/flora/illustrasjonskandidater/b09/75_syrin_v1.webp",
@@ -794,7 +834,7 @@
 
   });
   // One scientific species appears twice in the public catalog; reuse the same approved artwork.
-  const aliases = Object.freeze({ emne_kratt_syrin: "emne_flora_syrin", emne_kratt_mispel: "emne_flora_mispel", emne_kratt_spirea: "emne_flora_spirea", emne_kratt_berberis: "emne_flora_berberis", emne_kratt_mahonia: "emne_flora_mahonia", emne_kratt_snobaer: "emne_flora_snobaer", emne_flora_knoppurt: "emne_flora_engknoppurt", emne_flora_tysk_honsetarm: "emne_flora_tyskhonsetarm" });
+  const aliases = Object.freeze({ emne_ved_platanlonn: "emne_flora_platanlonn", emne_kratt_syrin: "emne_flora_syrin", emne_kratt_mispel: "emne_flora_mispel", emne_kratt_spirea: "emne_flora_spirea", emne_kratt_berberis: "emne_flora_berberis", emne_kratt_mahonia: "emne_flora_mahonia", emne_kratt_snobaer: "emne_flora_snobaer", emne_flora_knoppurt: "emne_flora_engknoppurt", emne_flora_tysk_honsetarm: "emne_flora_tyskhonsetarm" });
   const get = id => images[aliases[String(id)] || String(id)] || null;
   window.HG_NATURE_FLORA_APPROVED = Object.freeze({get,has:id=>Boolean(get(id)),count:Object.keys(images).length});
 })();

@@ -4698,7 +4698,23 @@ function chooseMatchdayDecision(optionId) {
   // (gate-sikkert — kampdag→oppsummering krever nettopp en spilt kamp). Selve
   // uke-rullen skjer fortsatt via «Til managerkontoret».
   if (matchJustFinished) {
-    syncClubWeekPhaseToProgress().catch(console.error);
+    const completedMatchId = state.matchday.lastMatch?.id;
+    syncClubWeekPhaseToProgress().then(() => {
+      requestAnimationFrame(() => {
+        // Wait for the canonical review render. Do not steal focus if the
+        // manager has already opened another tab or started another match.
+        if (state.matchday?.session || state.matchday?.lastMatch?.id !== completedMatchId
+          || document.querySelector('[data-tab-section="kamp"]')?.hidden !== false) return;
+        const heading = elements.matchdayCommand?.querySelector(".matchday-post-match-hero-copy h3");
+        if (!heading) return;
+        heading.tabIndex = -1;
+        heading.focus({ preventScroll: true });
+        heading.scrollIntoView({
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+          block: "center"
+        });
+      });
+    }).catch(console.error);
   }
 }
 
@@ -10407,8 +10423,15 @@ async function handleManagerMatchdayPrimaryAction(target) {
   if (target === "live") {
     const liveCard = elements.matchdayResult?.querySelector(".matchday-result-card:last-of-type");
     if (!liveCard) return;
-    liveCard.scrollIntoView({ behavior: "smooth", block: "start" });
-    requestAnimationFrame(() => liveCard.querySelector("button:not([disabled])")?.focus({ preventScroll: true }));
+    // Once playback has reached the decision, skip the growing minute log
+    // and focus an actual choice rather than a playback-speed button.
+    const choice = liveCard.querySelector(".matchday-event-card .matchday-decision-button:not([disabled])");
+    const destination = choice || liveCard;
+    destination.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      block: choice ? "center" : "start"
+    });
+    requestAnimationFrame(() => (choice || liveCard.querySelector("button:not([disabled])"))?.focus({ preventScroll: true }));
     return;
   }
   openManagerMatchdayTarget(target);
@@ -10468,6 +10491,9 @@ function renderMatchdayGate(container, teamFit) {
     trainingLabel: getWeeklyTrainingChoiceLabel(),
     lastSignal: getLastInboxSignalText(),
     opponentThreat: opponent?.style || opponent?.archetypeName || "",
+    primaryAction: session && getSessionEventIndex(session) !== null
+      && Number(session.liveMinute) >= currentPeriodEndMinute(session)
+      ? "Velg managergrep" : null,
     readiness,
     session,
     lastMatch,
@@ -10876,6 +10902,29 @@ function renderMatchdaySessionEvent(container, session, eventIndex) {
   liveView.className = "matchday-live-view";
   appendMatchScoreboard(liveView, session);
   card.append(liveView);
+
+  // Show only the latest recorded choice here. The full review stays folded
+  // below the current event, and no verdict is inferred for older saves.
+  const latestDecision = Array.isArray(session.decisions) ? session.decisions.at(-1) : null;
+  if (typeof latestDecision?.optionLabel === "string" && latestDecision.optionLabel.trim()) {
+    const tone = ["positive", "neutral", "negative"].includes(latestDecision.tone)
+      ? latestDecision.tone : "neutral";
+    const latest = document.createElement("aside");
+    latest.className = `matchday-latest-decision matchday-decision-entry is-${tone}`;
+    latest.setAttribute("aria-label", "Siste managergrep");
+    appendMatchdayMeta(latest, "Siste managergrep");
+    const choice = document.createElement("strong");
+    choice.className = "matchday-decision-title";
+    choice.textContent = latestDecision.optionLabel;
+    latest.append(choice);
+    if (typeof latestDecision.feedback === "string" && latestDecision.feedback.trim()) {
+      const feedback = document.createElement("p");
+      feedback.className = "matchday-decision-feedback";
+      feedback.textContent = latestDecision.feedback;
+      latest.append(feedback);
+    }
+    card.append(latest);
+  }
 
   const event = session.events[eventIndex];
 
