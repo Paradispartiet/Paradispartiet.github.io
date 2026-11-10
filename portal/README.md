@@ -11,3 +11,5 @@ Tekniske GitHub-arkiver, forhåndsvisningsrepositorier og kildekodesnarveier vis
 `portal/index.html` og rotens `index.html` skal alltid være identiske. De tre publiserte spillenes adresser beholdes, og `.github/workflows/sync-production-sites.yml` synkroniserer begge inngangssidene ved senere produksjonsoppdateringer.
 
 `portal/check_portal.py` kontrollerer antall prosjektfliser, innhold som ikke skal vises, og bevaring av app-rutene. Nye prosjekter tas først inn i portalen når de er klare for å vises.
+
+<!-- Produktionssynk forespurt 2026-11-10: History-Go PR #7135, source main a7ce57c5612933f0bd06fa0691032dbf3cec3127. -->
