@@ -453,3 +453,139 @@
 .matchday-depth .data-inline-list-item {
   color: #f3f6fb;
 }
+
+
+/* Fase 3 · Kampdag på stående 320–430px: status ved siden av kampen,
+   ikke under overskriften; viktige kort og kamphandlingen forblir synlige. */
+@media (max-width: 430px) and (orientation: portrait) {
+  .matchday-scene {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .matchday-scene-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 8px;
+  }
+
+  .matchday-scene-head > div:first-child {
+    min-width: 0;
+  }
+
+  .matchday-scene-head h2 {
+    margin-top: 2px;
+    font-size: 1.4rem;
+    line-height: 1.1;
+  }
+
+  .matchday-scene-status {
+    justify-self: end;
+    max-width: 7rem;
+    min-height: 44px;
+    padding: 6px 8px;
+    border-radius: 10px;
+    font-size: .67rem;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
+  .matchday-stage-rail {
+    gap: 4px;
+  }
+
+  .matchday-stage {
+    gap: 3px;
+    padding: 8px 3px;
+  }
+
+  .matchday-stage strong {
+    font-size: .65rem;
+  }
+
+  .matchday-scene-versus {
+    gap: 5px;
+  }
+
+  .matchday-scene-versus .matchday-scene-team,
+  .matchday-scene-versus .matchday-scene-marker {
+    min-height: 4.5rem;
+    padding: 7px;
+  }
+
+  .matchday-scene-marker {
+    min-width: 0;
+    padding-inline: 3px !important;
+  }
+
+  .matchday-scene-status-grid {
+    gap: 6px;
+  }
+
+  .matchday-scene-status-card {
+    min-height: 64px;
+    padding: 8px;
+  }
+
+  .matchday-scene-priority {
+    padding: 10px;
+  }
+
+  .matchday-scene-action {
+    min-height: 44px;
+  }
+}
+
+
+/* After the final whistle the report comes first. Previous preparation data
+   remains available in a single disclosure rather than four competing cards. */
+.matchday-scene[data-phase="report"] .matchday-scene-support {
+  min-width: 0;
+  border: 1px solid rgba(151, 192, 255, 0.34);
+  border-radius: 0.75rem;
+  background: rgba(37, 70, 119, 0.12);
+}
+
+.matchday-scene-support > summary {
+  /* Keep the native disclosure triangle visible on Safari and Chromium. */
+  display: list-item;
+  min-height: 44px;
+  padding: 0.75rem 0.9rem;
+  color: #f0f5ff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.matchday-scene-support > summary:focus-visible,
+.matchday-scene-decision-jump:focus-visible {
+  outline: 2px solid #c1f7d7;
+  outline-offset: 2px;
+}
+
+.matchday-scene-support-body {
+  display: grid;
+  gap: 0.65rem;
+  min-width: 0;
+  padding: 0 0.75rem 0.75rem;
+}
+
+.matchday-scene-decision-jump {
+  grid-column: 1 / -1;
+  justify-self: start;
+  min-height: 44px;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(151, 192, 255, 0.75);
+  border-radius: 0.5rem;
+  background: rgba(30, 75, 131, 0.35);
+  color: #fff;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.matchday-scene-decision-jump:hover {
+  background: rgba(38, 94, 165, 0.55);
+}
