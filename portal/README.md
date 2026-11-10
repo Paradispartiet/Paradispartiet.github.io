@@ -12,4 +12,4 @@ Tekniske GitHub-arkiver, forhåndsvisningsrepositorier og kildekodesnarveier vis
 
 `portal/check_portal.py` kontrollerer antall prosjektfliser, innhold som ikke skal vises, og bevaring av app-rutene. Nye prosjekter tas først inn i portalen når de er klare for å vises.
 
-<!-- Produktionssynk forespurt 2026-11-10: History-Go PR #7135, source main a7ce57c5612933f0bd06fa0691032dbf3cec3127. -->
+<!-- Produktionssynk forespurt 2026-11-10: History-Go PR #7182, source main 6114ad5fabd82a82224368eebf77c75e7564f292. -->
