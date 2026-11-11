@@ -14,3 +14,4 @@ Tekniske GitHub-arkiver, forhåndsvisningsrepositorier og kildekodesnarveier vis
 
 <!-- Produktionssynk forespurt 2026-11-10: History-Go PR #7182, source main 6114ad5fabd82a82224368eebf77c75e7564f292. -->
 <!-- Emergency production sync 2026-11-11: History-Go hotfix PR #7191, main db8733afc779394f32af31e393e28cbbf476dfa3. -->
+<!-- Production sync 2026-11-11: History-Go PR #7193 clickthrough fix, commit 02ebad1ad08d23ef4b5356aecb613fb255fca8c6. -->
