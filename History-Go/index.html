@@ -9,6 +9,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
   <title>History Go</title>
+  <script>
+    if (new URLSearchParams(location.search).get("hgTapTrace") === "1") {
+      const trace = document.createElement("script");
+      trace.src = "js/debug/tap-trace.js?v=20261111-1";
+      trace.async = false;
+      document.head.appendChild(trace);
+    }
+  </script>
 
   <script src="js/config.js?v=20261023-map-controls-cleanup2"></script>
 
@@ -52,6 +60,7 @@
   <link rel="stylesheet" href="css/overlay.css">
   <link rel="stylesheet" href="css/effects.css">
   <link rel="stylesheet" href="css/map.css?v=20261028-badges-readable-close5">
+  <link rel="stylesheet" href="css/home-favorite-map-picker.css?v=20261111-safe-map1">
   <link rel="stylesheet" href="css/placeCard.css?v=20261102-visible-layout6">
   <link rel="stylesheet" href="css/place-card-sticky-header.css?v=20261102-half-crop2">
   <link rel="stylesheet" href="css/place-card-reader.css?v=20261010-continuous2">
@@ -471,6 +480,6 @@
   <script defer src="js/ui/place-card-sticky-header.js?v=20261102-half-crop2"></script>
   <script defer src="js/ui/place-card-round-gallery.js?v=20261103-editorial1"></script>
   <script defer src="js/ui/nearby-explore-guide.js?v=20261106-1"></script>
-  <script type="module" src="./js/app.js?v=20261111-map-clickthrough1"></script>
+  <script type="module" src="./js/app.js?v=20261111-safe-map1"></script>
 </body>
 </html>
