@@ -5,6 +5,46 @@
 (function () {
   "use strict";
   const images = Object.freeze({
+    emne_flora_rynkesurbaer: Object.freeze({
+      scientificName: "Aronia melanocarpa",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/94_svartsurbaer_v1.webp",
+      gitBlobSha: "3059a859aea76264001162d81a29e5257192aa12",
+      reviewedAt: "2026-11-12",
+      stage: "varblomstring_svartfrukt_og_rod_hostfarge_sammenstilling",
+      evidence: "data/natur/flora/illustration-quality-svartsurbaer-20261112.json"
+    }),
+    emne_flora_amerikahagtorn: Object.freeze({
+      scientificName: "Crataegus spp.",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/93_hagtorn_v1.webp",
+      gitBlobSha: "fd7c6eae8e1c7a4e6faadbb9568ad6c554b30300",
+      reviewedAt: "2026-11-12",
+      stage: "varblomstring_og_rod_hostfrukt_sammenstilling",
+      evidence: "data/natur/flora/illustration-quality-hagtorn-20261112.json"
+    }),
+    emne_flora_blankmispel: Object.freeze({
+      scientificName: "Cotoneaster lucidus",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/92_blankmispel_v1.webp",
+      gitBlobSha: "d7404ca56aa5a2cd106ba921efe7c079c1937bcd",
+      reviewedAt: "2026-11-12",
+      stage: "varblomstring_og_morke_hostfrukter_sammenstilling",
+      evidence: "data/natur/flora/illustration-quality-blankmispel-20261112.json"
+    }),
+    emne_flora_hostberberis: Object.freeze({
+      scientificName: "Berberis thunbergii",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/91_hostberberis_v1.webp",
+      gitBlobSha: "12d5fcb95e1a73249a7226f74603b914b4bc7b9b",
+      reviewedAt: "2026-11-12",
+      stage: "varblomstring_og_hostfarge_med_rode_bar_pedagogisk_sammenstilling",
+      evidence: "data/natur/flora/illustration-quality-hostberberis-20261112.json"
+    }),
+    emne_flora_kirsebaerlaurbaer: Object.freeze({
+      scientificName: "Prunus laurocerasus",
+      src: "bilder/natur/flora/illustrasjonskandidater/b09/90_kirsebaerlaurbaer_v1.webp",
+      gitBlobSha: "098124b91e5ef0557b5b3bcea8dfe38e157179ce",
+      reviewedAt: "2026-11-11",
+      stage: "varblomstring_og_sensommerfrukt_sammenstilt",
+      evidence: "data/natur/flora/illustration-quality-kirsebaerlaurbaer-20261111.json"
+    }),
     emne_flora_legepestrot: Object.freeze({
       scientificName: "Petasites hybridus",
       src: "bilder/natur/flora/illustrasjonskandidater/b09/89_legepestrot_v1.webp",
