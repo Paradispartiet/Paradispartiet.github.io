@@ -2,6 +2,22 @@
 (function () {
  "use strict";
  const images=Object.freeze({
+  emne_fauna_graamaake:Object.freeze({
+   scientificName:"Larus argentatus",
+   src:"bilder/natur/fauna/godkjent/09_graamaake_v1.webp",
+   gitBlobSha:"775189e54b00b13a6859670401da027ebb766cc9",
+   reviewedAt:"2026-11-13",
+   stage:"adult_perched_and_flying_summer_pink_legs_red_gonys_spot",
+   evidence:"data/natur/fauna/illustration-quality-graamaake-20261113.json"
+  }),
+  emne_fauna_stokkand:Object.freeze({
+   scientificName:"Anas platyrhynchos",
+   src:"bilder/natur/fauna/godkjent/08_stokkand_v1.webp",
+   gitBlobSha:"b16e4e48f6264a0a318f2b20128bc8d2e559505c",
+   reviewedAt:"2026-11-13",
+   stage:"adult_breeding_male_and_female_woodland_pond_both_blue_specula",
+   evidence:"data/natur/fauna/illustration-quality-stokkand-20261113.json"
+  }),
   emne_fauna_ringdue:Object.freeze({
    scientificName:"Columba palumbus",
    src:"bilder/natur/fauna/godkjent/07_ringdue_v1.webp",
