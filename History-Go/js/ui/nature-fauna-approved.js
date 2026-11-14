@@ -2,6 +2,38 @@
 (function () {
  "use strict";
  const images=Object.freeze({
+  emne_fauna_sothone:Object.freeze({
+   scientificName:"Fulica atra",
+   src:"bilder/natur/fauna/godkjent/14_sothone_v1.webp",
+   gitBlobSha:"b9bffe1eaed401a4e21fbe959f50464ac95bca57",
+   reviewedAt:"2026-11-14",
+   stage:"adult_black_head_slate_body_white_frontal_shield_bill_red_iris_lobed_toes",
+   evidence:"data/natur/fauna/illustration-quality-sothone-20261114.json"
+  }),
+  emne_fauna_toppand:Object.freeze({
+   scientificName:"Aythya fuligula",
+   src:"bilder/natur/fauna/godkjent/13_toppand_v1.webp",
+   gitBlobSha:"9069d83c932b0ae316f03b367b7f3ce95a1788b1",
+   reviewedAt:"2026-11-14",
+   stage:"adult_male_black_white_flanks_long_crest_female_brown_short_crest_yellow_eyes",
+   evidence:"data/natur/fauna/illustration-quality-toppand-20261114.json"
+  }),
+  emne_fauna_graagas:Object.freeze({
+   scientificName:"Anser anser",
+   src:"bilder/natur/fauna/godkjent/12_graagaas_v1.webp",
+   gitBlobSha:"63289e4f9134a0b0e959b52c59a543e85476f556",
+   reviewedAt:"2026-11-14",
+   stage:"adult_standing_and_in_flight_grey_brown_plumage_orange_bill_pink_legs",
+   evidence:"data/natur/fauna/illustration-quality-graagaas-20261114.json"
+  }),
+  emne_fauna_knoppsvane:Object.freeze({
+   scientificName:"Cygnus olor",
+   src:"bilder/natur/fauna/godkjent/11_knoppsvane_v1.webp",
+   gitBlobSha:"dc1692279b0c32f955dadd3a33a48faaf3615f9e",
+   reviewedAt:"2026-11-13",
+   stage:"adult_white_s_curved_neck_orange_bill_black_knob_and_grey_cygnet",
+   evidence:"data/natur/fauna/illustration-quality-knoppsvane-20261113.json"
+  }),
   emne_fauna_fiskemaake:Object.freeze({
    scientificName:"Larus canus",
    src:"bilder/natur/fauna/godkjent/10_fiskemaake_v1.webp",
