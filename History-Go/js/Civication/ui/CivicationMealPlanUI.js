@@ -117,7 +117,88 @@
       for (const item of shopping) create("li", item.name + ": " + item.quantity + " " + item.unit, list);
     }
     create("p", "Mengdene er veiledende. Ingen priser eller butikklager er verifisert, og varer du har hjemme er ikke trukket fra.", details).className = "muted";
-    create("p", "Valgene lagres privat i denne nettleseren. Butikkforslag langs ruter kommer som egen integrasjon.", host).className = "muted";
+    const routeInfo = create("details", null, host);
+    routeInfo.style.marginTop = "14px";
+    create("summary", "Mat langs min arbeidsrute", routeInfo);
+    const statusText = {
+      not_initialized: "Rutesystemet er ikke klart.",
+      invalid_game_day: "Spillets dagsplan er ikke klar.",
+      invalid_time: "Klokkeslett kunne ikke leses.",
+      weekly_menu_not_selected: "Velg en ukesmeny for den aktuelle spilluken.",
+      active_job_required: "Velg en jobb for å planlegge mat langs arbeidsruten.",
+      verified_commute_required: "Registrer hjem og arbeidsadresse og beregn en veirute i Karriere.",
+      verified_venues_required: "Ukesmeny og veirute er klare. Bekreftede Fysen-restauranter og butikker er ikke koblet til ennå.",
+      no_verified_offers: "Ingen dokumenterte mattilbud passer denne ruten og måltidstiden.",
+      opted_out: "Matforslag langs ruten er deaktivert."
+    };
+    let routeResult = { status: "not_initialized" };
+    try {
+      routeResult = window.CivicationMealRouteBridge?.build?.({ now: new Date(), places: [] }) || routeResult;
+    } catch (_) { routeResult = { status: "not_initialized" }; }
+    const status = create("p", statusText[routeResult.status] || "Ingen dokumenterte tilbud tilgjengelige.", routeInfo);
+    status.className = "muted";
+    status.setAttribute("role", "status");
+    create("p", "Ingen posisjon spores eller sendes for å vise denne statusen. Restaurant- og butikktilbud må verifiseres før de kan vises.", routeInfo).className = "muted";
+
+    // Deliberate city-only menu discovery: archive entries are NEVER shown
+    // as real-time route deals, open-now claims or current menu prices.
+    const finder = create("form", null, routeInfo);
+    finder.style.cssText = "display:flex;flex-wrap:wrap;gap:8px;align-items:end;margin:12px 0";
+    const searchLabel = create("label", "Søk i Fysens menyarkiv (Oslo)", finder);
+    searchLabel.style.cssText = "display:flex;flex-direction:column;gap:4px;flex:1;min-width:150px";
+    const query = create("input", null, searchLabel);
+    query.type = "search";
+    query.placeholder = "For eksempel pasta eller laks";
+    query.setAttribute("autocomplete", "off");
+    query.maxLength = 80;
+    query.style.cssText = "width:100%;box-sizing:border-box;padding:8px";
+    const searchButton = create("button", "Finn retter", finder);
+    searchButton.type = "submit";
+    searchButton.className = "btn";
+    const finderStatus = create("p", "Søket sender bare rettens navn og Oslo til Fysen – aldri hjem eller arbeidsadresse.", routeInfo);
+    finderStatus.className = "muted";
+    finderStatus.setAttribute("role", "status");
+    const found = create("ul", null, routeInfo);
+    found.style.cssText = "list-style:none;padding:0;margin:0;display:grid;gap:8px";
+    finder.addEventListener("submit", async event => {
+      event.preventDefault();
+      const api = window.CivicationFysenPublicMenus;
+      if (!api) { finderStatus.textContent = "Fysen-søket er ikke tilgjengelig."; return; }
+      searchButton.disabled = true;
+      found.replaceChildren();
+      finderStatus.textContent = "Søker i Fysens offentlige menyarkiv …";
+      try {
+        const data = await api.search(query.value);
+        if (data.status !== "archive_results") {
+          const reasons = {
+            invalid_query: "Skriv minst to tegn.",
+            unavailable: "Menyarkivet er utilgjengelig akkurat nå.",
+            unverified_response: "Menyarkivets svar kunne ikke verifiseres.",
+            no_archive_results: "Fant ingen dokumenterte arkivoppføringer for denne retten."
+          };
+          finderStatus.textContent = reasons[data.status] || "Ingen verifiserte arkivtreff.";
+          return;
+        }
+        finderStatus.textContent = data.items.length +
+          " arkivtreff. Dette er historiske menyer, ikke dokumentasjon på at restauranten er åpen eller ligger langs ruten.";
+        for (const item of data.items) {
+          const entry = create("li", null, found);
+          entry.style.cssText = "border:1px solid rgba(128,128,128,.2);border-radius:8px;padding:8px";
+          create("strong", item.name + " – " + item.restaurant, entry);
+          create("div", item.address, entry).className = "muted";
+          const link = create("a", "Se dokumentert menykilde (" +
+            item.observedAt.slice(0, 10) + ")", entry);
+          link.href = item.sourceUrl;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+        }
+      } catch (_) {
+        finderStatus.textContent = "Søket kunne ikke gjennomføres.";
+      } finally {
+        searchButton.disabled = false;
+      }
+    });
+    create("p", "Valgene og handlelisten lagres privat i denne nettleseren.", host).className = "muted";
   }
   window.CivicationMealPlanUI = Object.freeze({ render });
   // The calendar is initialized by the asynchronous Civication shell loader.
