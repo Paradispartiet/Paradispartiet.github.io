@@ -2,6 +2,86 @@
 (function () {
  "use strict";
  const images=Object.freeze({
+  emne_fauna_steinhumle:Object.freeze({
+   scientificName:"Bombus lapidarius",
+   src:"bilder/natur/fauna/godkjent/52_steinhumle_v1.webp",
+   gitBlobSha:"5a7c66a5c7b840ea99d5fff12a08ea4ba4eed641",
+   reviewedAt:"2026-11-25",
+   stage:"female_black_body_red_orange_tail_veined_wings_on_purple_flower",
+   evidence:"data/natur/fauna/illustration-quality-steinhumle-20261125.json"
+  }),
+  emne_fauna_aakerhumle:Object.freeze({
+   scientificName:"Bombus pascuorum",
+   src:"bilder/natur/fauna/godkjent/51_aakerhumle_v1.webp",
+   gitBlobSha:"7b34b77d690f2445df25b4061364fae3ee93be43",
+   reviewedAt:"2026-11-25",
+   stage:"ginger_thorax_mixed_black_and_tawny_abdominal_hairs_veined_wings_on_purple_flower",
+   evidence:"data/natur/fauna/illustration-quality-aakerhumle-20261125.json"
+  }),
+  emne_fauna_jordhumle:Object.freeze({
+   scientificName:"Bombus terrestris",
+   src:"bilder/natur/fauna/godkjent/50_jordhumle_v1.webp",
+   gitBlobSha:"b940c2faa365ae0aa1af22e43c890c3f06519357",
+   reviewedAt:"2026-11-25",
+   stage:"queen_black_fur_two_yellow_bands_buff_tail_on_red_clover",
+   evidence:"data/natur/fauna/illustration-quality-jordhumle-20261125.json"
+  }),
+  emne_fauna_honningbie:Object.freeze({
+   scientificName:"Apis mellifera",
+   src:"bilder/natur/fauna/godkjent/49_honningbie_v1.webp",
+   gitBlobSha:"b96980829e614f3c5f9a410ce7cf31c9e89df4ac",
+   reviewedAt:"2026-11-25",
+   stage:"worker_hairy_thorax_banded_abdomen_veined_wings_pollen_basket_on_white_clover",
+   evidence:"data/natur/fauna/illustration-quality-honningbie-20261125.json"
+  }),
+  emne_fauna_ekorn:Object.freeze({
+   scientificName:"Sciurus vulgaris",
+   src:"bilder/natur/fauna/godkjent/48_ekorn_v1.webp",
+   gitBlobSha:"4d581507a74152f6ed0bbec26b738ccef4bff417",
+   reviewedAt:"2026-11-25",
+   stage:"red_brown_fur_pale_underside_ear_tufts_bushy_tail_holding_hazelnut",
+   evidence:"data/natur/fauna/illustration-quality-ekorn-20261125.json"
+  }),
+  emne_fauna_aerfugl:Object.freeze({
+   scientificName:"Somateria mollissima",
+   src:"bilder/natur/fauna/godkjent/47_aerfugl_v1.webp",
+   gitBlobSha:"3b75c618cce8d5a7258e7ca6510e146a3f184fef",
+   reviewedAt:"2026-11-25",
+   stage:"adult_male_breeding_black_white_plumage_green_nape_pinkish_breast_wedge_bill_webbed_feet_on_coastal_rock",
+   evidence:"data/natur/fauna/illustration-quality-aerfugl-20261125.json"
+  }),
+  emne_fauna_fossekall:Object.freeze({
+   scientificName:"Cinclus cinclus",
+   src:"bilder/natur/fauna/godkjent/46_fossekall_v1.webp",
+   gitBlobSha:"bb8eb8f2b59a02d469f0531195f29651198d3a8b",
+   reviewedAt:"2026-11-25",
+   stage:"adult_white_throat_breast_brown_head_dark_slate_brown_wings_short_tail_on_mossy_river_stone",
+   evidence:"data/natur/fauna/illustration-quality-fossekall-20261125.json"
+  }),
+  emne_fauna_munk:Object.freeze({
+   scientificName:"Sylvia atricapilla",
+   src:"bilder/natur/fauna/godkjent/45_munk_v1.webp",
+   gitBlobSha:"4d5b3d2ef13a225dcecc23edd7237c656ce68253",
+   reviewedAt:"2026-11-25",
+   stage:"adult_male_black_cap_grey_face_pale_grey_underparts_grey_brown_upperparts_slender_bill_perched",
+   evidence:"data/natur/fauna/illustration-quality-munk-20261125.json"
+  }),
+  emne_fauna_kattugle:Object.freeze({
+   scientificName:"Strix aluco",
+   src:"bilder/natur/fauna/godkjent/44_kattugle_v1.webp",
+   gitBlobSha:"c2b0f8cc47cb87ab19920a5ddfee167f16f68024",
+   reviewedAt:"2026-11-25",
+   stage:"adult_rufous_brown_round_head_no_ear_tufts_dark_eyes_facial_disc_streaked_underparts_perched",
+   evidence:"data/natur/fauna/illustration-quality-kattugle-20261125.json"
+  }),
+  emne_fauna_dvergspett:Object.freeze({
+   scientificName:"Dryobates minor",
+   src:"bilder/natur/fauna/godkjent/43_dvergspett_v1.webp",
+   gitBlobSha:"6aa86d927215a864ce0d32ddbec31337b48f8062",
+   reviewedAt:"2026-11-25",
+   stage:"adult_male_red_crown_black_white_barred_wings_streaked_pale_underparts_no_red_vent_lichen_branch",
+   evidence:"data/natur/fauna/illustration-quality-dvergspett-20261125.json"
+  }),
   emne_fauna_hvitryggspett:Object.freeze({
    scientificName:"Dendrocopos leucotos",
    src:"bilder/natur/fauna/godkjent/42_hvitryggspett_v1.webp",

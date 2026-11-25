@@ -621,6 +621,53 @@ const documented = [
     "sourceKind": "club"
   },
   {
+    "playerId": "joachim_thomassen",
+    "clubId": "fredrikstad",
+    "strengths": ["game_reading", "stamina"],
+    "claim": "G19-landslagssjef Øivind Nilsen beskriver Thomassen med «god spilleforståelse, stor løpskapasitet og god teknikk» i spillerbiografien hos FFKsupporter.",
+    "source": "https://ffksupporter.net/spillere/joachim_thomassen/",
+    "sourceKind": "press"
+  },
+  {
+    "playerId": "mads_nielsen",
+    "clubId": "fredrikstad",
+    "strengths": ["leadership"],
+    "claim": "Fredrikstad-trener Bjørn Johansen begrunner videreføringen av kapteinteamet med spillernes lederegenskaper og omtaler Nielsen og Mæland som «viktige ledere» for treningskulturen.",
+    "source": "https://www.fredrikstadfk.no/nyheter/arets-kapteinteam",
+    "sourceKind": "club"
+  },
+  {
+    "playerId": "haitam_aleesami",
+    "clubId": "fredrikstad",
+    "strengths": ["pace", "dribbling"],
+    "claim": "IFK Göteborg-trener Jörgen Lennartsson beskriver Aleesami som «molto rapido, abile nel dribbling» ved overgangen til Palermo. Fotbollskanalens intervju med Göteborgs speider støtter hurtigheten han viste allerede før overgangen fra Fredrikstad.",
+    "source": "https://www.ilovepalermocalcio.com/all-goteborg-aleesami-giocatore-dalle-grandi-potenzialita-felice-per-lui-vi-parlo-delle-sue-caratteristiche/",
+    "sourceKind": "press"
+  },
+  {
+    "playerId": "sondre_sorlokk",
+    "clubId": "fredrikstad",
+    "strengths": [
+      "pace",
+      "finishing",
+      "heading"
+    ],
+    "claim": "Joacim Heier fremhever Sørløkks fart og sier at han er «en god avslutter med begge bein og på hodet».",
+    "source": "https://www.fredrikstadfk.no/nyheter/sondre-sorlokk-til-ffk",
+    "sourceKind": "club"
+  },
+  {
+    "playerId": "henrik_kjelsrud_johansen",
+    "clubId": "fredrikstad",
+    "strengths": [
+      "work_rate",
+      "heading"
+    ],
+    "claim": "Kjetil Rekdal beskriver Kjelsrud Johansen som en «hardtarbeidende og hodesterk spiss» ved signeringen for Vålerenga, etter spillerens første periode i Fredrikstad.",
+    "source": "https://www.aftenbladet.no/sport/i/yvL96R/odd-spiss-klar-for-vaalerenga",
+    "sourceKind": "press"
+  },
+  {
     "playerId": "morten_bjorlo",
     "clubId": "fredrikstad",
     "strengths": [

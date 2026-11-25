@@ -990,6 +990,70 @@ const documented = [
     source: "https://ffksupporter.net/nyheter/1911-1-plass-fredrikstad-fk/"
   },
   {
+    playerId: "patrik_gerrbrand",
+    placeId: "fredrikstad_stadion",
+    evidenceKind: "direct_appraisal",
+    playingStyle: "Pasningsdyktig stopper med god spilleforståelse og fart til stopper å være.",
+    strengths: ["game_reading", "simple_passing", "pace"],
+    claim: "I FFKsupporters spillerbiografi beskriver Gerrbrand selv spilleforståelse, pasningsspill og relativ fart som styrkene sine på stopperplass.",
+    source: "https://ffksupporter.net/spillere/patrik_gerrbrand/"
+  },
+  {
+    playerId: "espen_engebretsen",
+    placeId: "fredrikstad_stadion",
+    evidenceKind: "historical_appraisal",
+    playingStyle: "Midtbanespiller og kaptein som samlet laget over flere sesonger.",
+    strengths: ["leadership"],
+    claim: "FFKsupporters spillerbiografi beskriver Engebretsens langvarige kapteinsrolle og betydningen han hadde som samlingspunkt for spillere og trener.",
+    source: "https://ffksupporter.net/spillere/espen_engebretsen/"
+  },
+  {
+    playerId: "mihaly_toth",
+    placeId: "fredrikstad_stadion",
+    evidenceKind: "editorial_appraisal",
+    playingStyle: "Møtende spiss som holder i ballen og involverer kantene.",
+    strengths: ["hold_up_play", "combination_play"],
+    claim: "FFKsupporters sesongvurdering fra 2007 beskriver Tóth som en møtende spiss som holder godt på ballen, flikker videre og involverer kantspillerne.",
+    source: "https://ffksupporter.net/nyheter/1176-det-aarnaer-sae-i-fredrikstad/"
+  },
+  {
+    playerId: "ludvig_begby",
+    placeId: "fredrikstad_stadion",
+    evidenceKind: "direct_appraisal",
+    playingStyle: "Løpssterk venstreback som kan bli med framover ofte.",
+    strengths: ["stamina"],
+    claim: "Fredrikstad beskriver Begby som løpssterk og forklarer hvorfor han passer i Per-Mathias Høgmos opplegg med offensive backer som blir med framover ofte.",
+    source: "https://www.fredrikstadfk.no/nyheter/begby-forlenger-med-2-nye-ar"
+  },
+  {
+    playerId: "brandur_hendriksson",
+    placeId: "fredrikstad_stadion",
+    evidenceKind: "direct_appraisal",
+    playingStyle: "Kreativ, sjanseskapende midtbanespiller med presis høyrefot.",
+    strengths: ["vision"],
+    claim: "Fredrikstads Joacim Heier beskriver Hendriksson som en kreativ og skapende midtbanespiller med presis høyrefot som ofte bidrar med målgivende pasninger.",
+    source: "https://www.fredrikstadfk.no/nyheter/brandur-hendriksson-er-klar-for-ffk"
+  },
+  {
+    playerId: "stian_stray_molde",
+    placeId: "fredrikstad_stadion",
+    evidenceKind: "direct_appraisal",
+    playingStyle: "Venstreback med presis venstrefot og godt pasningsspill.",
+    strengths: ["simple_passing"],
+    claim: "Fredrikstad fremhever Stray Moldes presise venstrefot og gode pasningsspill i klubbens signeringsomtale.",
+    source: "https://www.fredrikstadfk.no/nyheter/stian-stray-molde-klar-for-ffk"
+  },
+  {
+    playerId: "havar_jenssen",
+    placeId: "fredrikstad_stadion",
+    evidenceKind: "period_appraisal",
+    playingStyle: "Keeper med raske reflekser ved avslutninger fra kort hold.",
+    strengths: ["reflexes"],
+    claim: "Fredrikstads tilbakeblikk på Jenssens første 127 kamper fremhever reaksjonsevnen hans over flere sesonger. Klubbens referat mot Raufoss viser en konkret reaksjonsredning fra kloss hold.",
+    source: "https://www.fredrikstadfk.no/nyheter/flest-kamper-av-dagens-ffkere",
+    supportingSources: ["https://www.fredrikstadfk.no/nyheter/utrolig-havar-jenssen-sikret-uavgjort"]
+  },
+  {
     playerId: "maxwell_woledzi",
     placeId: "fredrikstad_stadion",
     evidenceKind: "period_appraisal",
