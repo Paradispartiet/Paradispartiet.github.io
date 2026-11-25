@@ -990,6 +990,37 @@ const documented = [
     source: "https://ffksupporter.net/nyheter/1911-1-plass-fredrikstad-fk/"
   },
   {
+    playerId: "maxwell_woledzi",
+    placeId: "fredrikstad_stadion",
+    evidenceKind: "period_appraisal",
+    playingStyle: "Rask stopper som dekker store rom og fører ballen inn i midtbaneleddet.",
+    strengths: ["pace", "stamina", "dribbling"],
+    claim: "Nashville SCs gjennomgang av Woledzis to hele Fredrikstad-sesonger fremhever farten, løpskapasiteten og evnen til å føre ballen fram fra venstre stopperplass.",
+    source: "https://www.nashvillesc.com/news/maxwell-woledzi"
+  },
+  {
+    playerId: "julius_magnusson",
+    placeId: "fredrikstad_stadion",
+    evidenceKind: "direct_appraisal",
+    playingStyle: "Defensiv midtbanespiller som leder verbalt og legger ned mye arbeid for laget.",
+    strengths: ["leadership", "work_rate"],
+    claim: "Joacim Heier beskriver Magnússon som en verbal leder med naturlig autoritet og fremhever arbeidsinnsatsen hans for laget.",
+    source: "https://www.fredrikstadfk.no/nyheter/magnusson-klar-for-ffk"
+  },
+  {
+    playerId: "daniel_eid",
+    placeId: "fredrikstad_stadion",
+    evidenceKind: "period_appraisal",
+    playingStyle: "Høyreback som skaper sjanser med innlegg.",
+    strengths: ["crossing"],
+    claim: "Fredrikstads kampreferater fra flere kamper i 2025 og 2026 dokumenterer presise innlegg fra Eid som skaper avslutninger i feltet.",
+    source: "https://www.fredrikstadfk.no/nyheter/tre-scoringer-og-tre-poeng-i-hjemmepremieren",
+    supportingSources: [
+      "https://www.fredrikstadfk.no/nyheter/overtidsscoring-sikret-poeng",
+      "https://www.fredrikstadfk.no/nyheter/poengdeling-pa-briskeby"
+    ]
+  },
+  {
     playerId: "marius_johnsen",
     placeId: "sor_arena",
     evidenceKind: "editorial_appraisal",
