@@ -2,6 +2,46 @@
 (function () {
  "use strict";
  const images=Object.freeze({
+  emne_fauna_trehumle:Object.freeze({
+   scientificName:"Bombus hypnorum",
+   src:"bilder/natur/fauna/godkjent/57_trehumle_v1.webp",
+   gitBlobSha:"5112097150a1e2e0c211deac374c337713276718",
+   reviewedAt:"2026-11-26",
+   stage:"ginger_brown_thorax_black_abdomen_white_tail_isolated_black_background",
+   evidence:"data/natur/fauna/illustration-quality-trehumle-20261126.json"
+  }),
+  emne_fauna_enghumle:Object.freeze({
+   scientificName:"Bombus sylvarum",
+   src:"bilder/natur/fauna/godkjent/56_enghumle_v1.webp",
+   gitBlobSha:"abeb7ac603325a3b41b18df8416ae62c39c49981",
+   reviewedAt:"2026-11-26",
+   stage:"pale_form_dark_thoracic_band_banded_abdomen_orange_red_tail_isolated_black_background",
+   evidence:"data/natur/fauna/illustration-quality-enghumle-20261126.json"
+  }),
+  emne_fauna_markhumle:Object.freeze({
+   scientificName:"Bombus pratorum",
+   src:"bilder/natur/fauna/godkjent/55_markhumle_v1.webp",
+   gitBlobSha:"49128d5ec6ec6bc05696dd8a671f20b0ca4b2c84",
+   reviewedAt:"2026-11-26",
+   stage:"female_two_yellow_bands_small_orange_red_tail_isolated_no_flower_black_background",
+   evidence:"data/natur/fauna/illustration-quality-markhumle-20261126.json"
+  }),
+  emne_fauna_lys_jordhumle:Object.freeze({
+   scientificName:"Bombus lucorum-komplekset",
+   src:"bilder/natur/fauna/godkjent/54_lys_jordhumle_v1.webp",
+   gitBlobSha:"360a3c6dc42c00896485f593502e308fc83ce20c",
+   reviewedAt:"2026-11-26",
+   stage:"female_two_lemon_yellow_bands_pure_white_tail_short_face_on_purple_thistle_black_background",
+   evidence:"data/natur/fauna/illustration-quality-lys-jordhumle-20261126.json"
+  }),
+  emne_fauna_hagehumle:Object.freeze({
+   scientificName:"Bombus hortorum",
+   src:"bilder/natur/fauna/godkjent/53_hagehumle_v1.webp",
+   gitBlobSha:"d969c6df5282dc2d40d4249cda47ca742e89fdc5",
+   reviewedAt:"2026-11-26",
+   stage:"three_yellow_bands_white_tail_long_face_and_tongue_on_purple_tubular_flower",
+   evidence:"data/natur/fauna/illustration-quality-hagehumle-20261126.json"
+  }),
   emne_fauna_steinhumle:Object.freeze({
    scientificName:"Bombus lapidarius",
    src:"bilder/natur/fauna/godkjent/52_steinhumle_v1.webp",

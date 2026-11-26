@@ -9,7 +9,7 @@ import { resolveTurnoverTransition } from "./football-matchday-turnover-v6.js";
 import { resolveCompactBlockAttack, annotateCompactBlockChances } from "./football-matchday-compact-block-v6.js";
 import { resolveOwnPressAgainstOpponent, annotateOwnPressChances, getManagerPressCounterOptions } from "./football-matchday-own-press-v6.js";
 import { resolveGameControlPhase, annotateGameControlChances } from "./football-matchday-control-v6.js";
-import { resolveAuthoredSequencePeriod, annotateAuthoredSequenceChances } from "./football-matchday-sequence-v8.js";
+import { resolveAuthoredSequencePeriod, annotateAuthoredSequenceChances, resolveOpponentRunSequence, resolveOpponentSwitchCrossSequence, annotateOpponentRunChances, resolveOpponentZonalShift, annotateOpponentZonalShiftChances } from "./football-matchday-sequence-v8.js";
 import {
   applyOpponentAdjustment,
   createPlanChange,
@@ -1829,6 +1829,10 @@ export function createMatchdaySession({ teamFit, formation, tactic, activeClassi
     // the central rebound release or route it through known wide support.
     // Older saved matches keep the original central-release calculation.
     causalSecondBallCounterpressVersion: 1,
+    // New matches may lose a newly won ball to a sourced immediate counterpress.
+    causalRegainCounterpressVersion: 1,
+    // Only completed collective press phases affect subsequent press effort.
+    causalOpponentPressWorkloadVersion: 1,
     // v7.9: explicitly authored terminal third-man/box continuations
     // replace only the existing v7.5 route-specific xG price. Old saves,
     // missing role evidence and other routes retain previous behaviour.
@@ -1837,6 +1841,15 @@ export function createMatchdaySession({ teamFit, formation, tactic, activeClassi
     // sequence as a directional period event, when specialised v6 phases do
     // not apply. Old saved matches keep their scalar matchup projection.
     causalDirectionalSequenceVersion: 1,
+    // Only new matches can resolve a sourced opponent off-ball run pattern.
+    causalOpponentRunVersion: 1,
+    // New matches can resolve a sourced switch-to-cross attack pattern.
+    causalOpponentSwitchCrossVersion: 1,
+    causalOpponentZonalShiftVersion: 1,
+    // New matches can release a counterattack after a sourced cross exposure.
+    causalOpponentCrossRecoveryVersion: 1,
+    // In-match fatigue uses the current match clock and existing freshness model.
+    causalOpponentRunFatigueVersion: 1,
     // Four remaining plans opt in only on new match sessions.
     causalGameControlVersion: 1,
     sourcedSubstitutionVersion: 2,
@@ -1889,7 +1902,8 @@ export function createMatchdaySession({ teamFit, formation, tactic, activeClassi
     // Benken, med hvor godt hver spiller ville passet på hver av de elleve
     // plassene. Regnet én gang her, slik at et innbytte kan vurderes uten at
     // sesjonen må bære roller og taktikk videre.
-    benchSnapshot: createBenchSnapshot({ benchPlayers, teamFit, tactic, roles }),
+    benchSnapshot: createBenchSnapshot({ benchPlayers, teamFit, tactic, roles,
+      freshnessByPlayerId: conditionByPlayerId || {} }),
     substitutions: [],
     playedPlayers: [],
     strengthSnapshot: {
@@ -2022,7 +2036,12 @@ export function applyMatchPlanChange(session, nextPlan, { opponent, currentTeamF
         .map((entry) => playerById.get(entry.playerId)).filter(Boolean);
       if (newBenchPlayers.length === asArray(session.benchSnapshot).length) {
         updatedBench = createBenchSnapshot({
-          benchPlayers: newBenchPlayers, teamFit: { assignments }, tactic: nextPlan, roles: allRoles
+          benchPlayers: newBenchPlayers, teamFit: { assignments }, tactic: nextPlan, roles: allRoles,
+          ...(session.causalOpponentRunFatigueVersion === 1 ? {
+            freshnessByPlayerId: Object.fromEntries(asArray(session.benchSnapshot)
+              .filter(entry => Number.isFinite(entry.startFreshness))
+              .map(entry => [entry.playerId, entry.startFreshness]))
+          } : {})
         });
       }
       // The full-XI teamFit delta already contains its sourced contribution.
@@ -2248,10 +2267,21 @@ export function advanceMatchClock(session) {
   const authoredSequencePhase = !buildUpPhase && !compactPhase &&
     !pressingPhase && !controlPhase && !ineligibleReactivePlan(session)
     ? resolveAuthoredSequencePeriod(session) : null;
+  // Opponent off-ball patterns are a fallback, never added to another phase.
+  const opponentRunPhase = !buildUpPhase && !compactPhase && !pressingPhase &&
+    !controlPhase && !authoredSequencePhase && !ineligibleReactivePlan(session)
+    ? resolveOpponentRunSequence(session, {
+        minute: segmentRange(played, totalSegments).from - 1,
+        rng: () => highPressPhaseRoll(session, played + ":opponent-runs")
+      }) || resolveOpponentSwitchCrossSequence(session, {
+        rng: () => highPressPhaseRoll(session, played + ":opponent-switch-cross")
+      }) || resolveOpponentZonalShift(session, {
+        rng: () => highPressPhaseRoll(session, played + ":opponent-zonal-shift")
+      }) : null;
   const phase = transition ? {
     ...buildUpPhase, transition, xgDeltaAgainst: transition.xgDeltaAgainst
   } : buildUpPhase || compactPhase || pressingPhase || controlPhase ||
-    authoredSequencePhase;
+    authoredSequencePhase || opponentRunPhase;
   const rate = currentExpectedGoalRate(session);
   const share = 1 / totalSegments;
   const staticEdge = periodPlanMatchupEdge(session);
@@ -2303,6 +2333,10 @@ export function advanceMatchClock(session) {
     ? annotateCompactBlockChances(generatedChances, tacticalPhase)
     : tacticalPhase?.situation === "our_press_vs_opponent_build_up"
       ? annotateOwnPressChances(generatedChances, tacticalPhase)
+      : tacticalPhase?.situation === "opponent_zonal_shift"
+        ? annotateOpponentZonalShiftChances(generatedChances, tacticalPhase)
+      : ["opponent_coordinated_runs", "opponent_switch_cross"].includes(tacticalPhase?.situation)
+        ? annotateOpponentRunChances(generatedChances, tacticalPhase)
       : tacticalPhase?.situation === "authored_four_step_sequence"
         ? annotateAuthoredSequenceChances(generatedChances, tacticalPhase)
         : tacticalPhase?.situation === "game_control_and_release"

@@ -990,6 +990,45 @@ const documented = [
     source: "https://ffksupporter.net/nyheter/1911-1-plass-fredrikstad-fk/"
   },
   {
+    playerId: "jan_erik_olsen",
+    placeId: "fredrikstad_stadion",
+    evidenceKind: "period_appraisal",
+    playingStyle: "Keeper som viste sterk skuddstopping både for Fredrikstad og Kvik.",
+    strengths: ["shot_stopping"],
+    claim: "Demokraten 1. oktober 1984, side 18, beskriver to gode skuddredninger for Fredrikstad. Halden Arbeiderblad 27. april 1987, side 21, fremhever to redninger fra kort hold for Kvik. Referatene dokumenterer samme ferdighet i to ulike kamper.",
+    source: "https://www.nb.no/items/a24f98bad9e67d9d797a6d51922ea3de",
+    supportingSources: ["https://www.nb.no/items/d99ce7eb3c0687de09ada431625fe40e"]
+  },
+  {
+    playerId: "lars_sorlie",
+    placeId: "fredrikstad_stadion",
+    evidenceKind: "period_appraisal",
+    playingStyle: "Forsvarsspiller med stor arbeidsinnsats.",
+    strengths: ["work_rate"],
+    claim: "Sarpen 13. oktober 1982, side 8, omtaler innsatsen på backplass mot Jugoslavia U som typisk for Sørlie. Demokraten 27. september 1982, side 16, vurderer ham som FFK-spilleren som trolig løp mest mot Mjøndalen.",
+    source: "https://www.nb.no/items/2a6593ea16b62cc50450fd593b7d2eed",
+    supportingSources: ["https://www.nb.no/items/882ae9f7d27ca1a3404fe469a0edefef"]
+  },
+  {
+    playerId: "jan_erik_audsen",
+    placeId: "fredrikstad_stadion",
+    evidenceKind: "editorial_appraisal",
+    playingStyle: "Spiller med målteft som også bidro defensivt.",
+    strengths: ["finishing"],
+    claim: "Fredriksstad Blad 11. august 1981, side 7, fremhever Audsens uvanlige målteft i en individuell vurdering av formen hans etter kampen mot Start.",
+    source: "https://www.nb.no/items/50d17c880081c0f74bb00acff64eb962"
+  },
+  {
+    playerId: "simen_rafn",
+    placeId: "fredrikstad_stadion",
+    evidenceKind: "direct_appraisal",
+    playingStyle: "Hurtig, hardtarbeidende høyreback som også kan spille på kanten.",
+    strengths: ["pace", "work_rate"],
+    claim: "Ved signeringen for Lillestrøm fremhevet Arne Erlandsen farten til Rafn og viste til prestasjonene hans i Fredrikstad i 2015. Rafn beskrev seg selv som hurtig og hardtarbeidende.",
+    source: "https://www.lsk.no/nyheter/simen-rafn-signerte-for-lsk",
+    supportingSources: ["https://ffksupporter.net/spillere/bors/4634/"]
+  },
+  {
     playerId: "patrik_gerrbrand",
     placeId: "fredrikstad_stadion",
     evidenceKind: "direct_appraisal",

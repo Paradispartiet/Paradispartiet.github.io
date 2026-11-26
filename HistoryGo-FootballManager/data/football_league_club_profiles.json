@@ -8,20 +8,21 @@
       "styleName": "Godfoten",
       "tacticalSchool": "Trønderfotball · Eggens samhandlingslære",
       "era": "1988–2002",
-      "style": "Offensivt 4-3-3 der kantene bryter gjennom og alt hviler på relasjoner",
-      "historicalNote": "Etter Nils Arne Eggens møte med Rinus Michels ble Rosenborg synonymt med 4-3-3. Kantspillerne er de som bryter gjennom, backene går høyt og hurtig, og godfotteorien sier at laget er mer enn summen av spillerne: du blir god av å gjøre andre gode. Angrepene kommer fort og med mange spillere.",
-      "inPossessionShape": "4-3-3 med høye backer og brede kanter",
+      "style": "Offensivt, gjennombruddshissig 4-3-3 med hurtige kombinasjoner og samordnede løp uten ball",
+      "historicalNote": "Etter møtet med Rinus Michels rendyrket Nils Arne Eggen en offensiv 4-3-3. Godfotfilosofien bygger på at spillernes komplementære ferdigheter og innøvde samhandling gjør hverandre gode. Møtende midtspiss, motsatte løp fra gjennombruddsspissene, indreløpere i fart og offensive backer skaper gjennombrudd. Førstebevegelsen utløser andre- og tredjebevegelser; flere spillere angriper boksen samtidig. Lengre oppspill mot Milans press i desember 1996 var en situasjonsbestemt tilpasning innenfor denne filosofien, ikke lagets faste oppspillsrute.",
+      "inPossessionShape": "4-3-3 med offensive backer, brede gjennombruddsspisser og løpssterke indreløpere",
       "outOfPossessionShape": "4-5-1 som gjenvinner høyt",
       "defensiveBlock": "Middels til høy blokk",
-      "buildUpStyle": "Korte pasninger gjennom midtbanetrekanten, tidlig ut på kant",
-      "attackingStyle": "Bredde, innlegg og mange spillere inn i boksen",
+      "buildUpStyle": "Fremoverrettet frispilling og tidlig gjennombrudd via midtbanetrekanten eller kant; direkte utspill som kampavhengig alternativ",
+      "attackingStyle": "Motsatte bevegelser, løp i bakrom, overlapp, andre- og tredjebevegelser og mange spillere i boksen",
       "tempo": "Høyt",
       "riskLevel": "medium",
       "baseStyleId": "possession_opponent",
       "matchupStyles": [
         "possession_positional",
         "wide_overload",
-        "high_press"
+        "high_press",
+        "fast_runners_in_behind"
       ],
       "pressResistance": 70,
       "defensiveStructure": 58,
@@ -39,8 +40,8 @@
         "intensity": 66
       },
       "strengths": [
-        "kantene holder banen bred og trekker forsvaret fra hverandre",
-        "samhandlingen gjør at tredjemann alltid er tilgjengelig"
+        "samordnede løp uten ball skaper rom og pasningsalternativer",
+        "møtende spiss og gjennombruddsspisser kombinerer med indreløpere og offensive backer"
       ],
       "weaknesses": [
         "høye backer gir rom bak sidene",
@@ -67,27 +68,71 @@
         "Vinner du ballen når backene er oppe, ligger rommet der."
       ],
       "styleBasis": "tradisjon",
-      "shortLabel": "godfoten · bredt 4-3-3"
+      "tacticalBehaviour": {
+        "pressCoordination": "collective",
+        "passingLaneCover": "central",
+        "attackingRunPattern": "coordinated_433_breakthrough"
+      },
+      "tacticalBehaviourEvidence": {
+        "era": "1994–1999",
+        "scope": "Historisk stilmodell basert på Eggens spillepostulater fra 1994–1999, ikke målt pasningsdekning ved avspark. Senere analyse fra 2017 er kun støtte for kontinuitet. Angrepsidentiteten bygger på Eggens postulater; Milan 1996 dokumenterer en alternativ kampplan.",
+        "interpretation": "Eggens forsvarspostulater støtter kollektivt press og sentral dekning. Angrepspostulatene prioriterer gjennombrudd og samordnede første-, andre- og tredjebevegelser; Carlsens begrensede kamputvalg underbygger aktiv løping uten ball, uten å gi grunnlag for nye ferdighetstall. Rekdal skiller Eggens mer gjennombrudds- og kontringsorienterte fotball fra Glimts mer ballbesittende stil. Direkte oppspill mot Milan 1996 beholdes som dokumentert alternativ, men aktiveres ikke som fast liga-utspill. En konkret situasjonsstyrt rutevalgmodell må dokumenteres og testes separat.",
+        "sources": [
+          {
+            "title": "Nils Arne Eggen og fokus på fotballferdigheter",
+            "publisher": "Fotballtreneren",
+            "url": "https://fotballtreneren.no/2022/08/10/nils-arne-eggen-og-fokus-pa-fotballferdigheter/",
+            "locator": "Rosenborg-postulatene: forsvar generelt, motstander angriper sentralt og midtspissens rolle; gjengir Godfoten (Eggen 1999, s. 256–262). Angrep mot etablert forsvar, innlegg, fysiske ferdigheter og analysen av løp i bakrom og andrebevegelser."
+          },
+          {
+            "title": "Analysen: Deila gjør lurt i å kaste filosofien mot Rosenborg",
+            "publisher": "Eurosport",
+            "url": "https://www.eurosport.no/fotball/eliteserien/2017/analysen_sto6180797/story.shtml",
+            "locator": "Må omstille tidlig – toppress med spiss og kanter, kompakte bakre ledd og vern av mellomrommet i 2017."
+          },
+          {
+            "title": "Pauseprat: Da Rosenborg slo ut AC Milan",
+            "publisher": "Boks te boks / Tarjei Smågesjø",
+            "url": "https://smgesj.substack.com/p/pauseprat-da-rosenborg-slo-ut-ac",
+            "locator": "25.07.2025, avsnittet om Eggens forklaring etter borteseieren: lengre pasninger over Milans press."
+          },
+          {
+            "title": "Rosenborg 1995: Masse mål, faglige debatter, pragmatisk stil og tidenes beste lag?",
+            "publisher": "Boks te boks / Tarjei Smågesjø",
+            "url": "https://smgesj.substack.com/p/rosenborg-1995",
+            "locator": "09.02.2026, Taktikken: lange oppspill mot Soltvedt og fra Stensaas mot Løken. Supplerende eksempel fra samme forfatter, ikke uavhengig bekreftelse eller dokumentasjon av samme pressfase."
+          },
+          {
+            "title": "Peker på forskjeller mellom Knutsens og Eggens 4-3-3: – Ingen blåkopi",
+            "publisher": "Eurosport",
+            "url": "https://www.eurosport.no/fotball/eliteserien/2020/peker-pa-forskjeller-mellom-knutsens-og-eggens-4-3-3-ingen-blakopi_sto8545226/story.shtml",
+            "locator": "Kjetil Rekdals sammenligning av ballbesittelse, kontringer, vending og frispilling med stopper."
+          }
+        ]
+      },
+      "shortLabel": "godfoten · offensivt 4-3-3 og gjennombruddsløp"
     },
     {
       "clubId": "brann",
       "styleName": "Fotballrepublikken",
       "tacticalSchool": "Høyt press i 4-3-3 med Stadion i ryggen",
-      "era": "1961–1963 · og pressutgaven fra 2022",
-      "style": "Intenst 4-3-3 som presser høyt, tvinger deg langt og går rett fram når ballen vinnes",
-      "historicalNote": "Storhetstiden var seriegullene i 1961/62 og 1963 under Oddvar Hansen, båret av Roald «Kniksen» Jensen foran 15 000 på Stadion — Brann har alltid vært klubben der publikum og enkeltspilleren avgjør. Den moderne utgaven har satt system på det samme trykket: aggressivt høypress i 4-3-3, backene sendt høyt opp i pressleddet, og en klar plan om å tvinge motstanderen til å slå langt i midten, der Brann har tre sterke sentrale å møte ballen med.",
-      "inPossessionShape": "4-3-3 med høye backer",
+      "era": "1961–1963 · Horneland 2022–2024",
+      "style": "Intensiv 4-3-3 med høyt press, ballnære overtall, variert oppbygging og rask gjenvinning",
+      "historicalNote": "Storhetstiden var seriegullene i 1961/62 og 1963 under Oddvar Hansen, båret av Roald «Kniksen» Jensen foran 15 000 på Stadion — Brann har alltid vært klubben der publikum og enkeltspilleren avgjør. Den moderne utgaven har satt system på det samme trykket: aggressivt høypress i 4-3-3, backene sendt høyt opp i pressleddet, og en klar plan om å tvinge motstanderen til å slå langt i midten, der Brann har tre sterke sentrale å møte ballen med. Under Horneland i 2022–2024 var Brann også et ballspillende lag. Oppbyggingen kunne skifte fra fire til tre bak, med sekseren som forbindelsesledd og en back høyt i bredden. Ballnære overtall gjorde både korte kombinasjoner og umiddelbart gjenvinningspress mulig.",
+      "inPossessionShape": "4-3-3 med asymmetrisk bakre treer i frispillingen og ballnære overtall",
       "outOfPossessionShape": "4-3-3 som presser høyt og mannsorientert",
       "defensiveBlock": "Høy blokk",
-      "buildUpStyle": "Kort bakfra, men uten tålmodighet — fort vertikalt",
-      "attackingStyle": "Vertikale angrep rett etter gjenvinning",
+      "buildUpStyle": "Kort via stopperne og sekseren, med bred back; også lengre oppspill mot kant og støtte til andreball",
+      "attackingStyle": "Hurtige kombinasjoner gjennom midten, breddeovertall og vertikale angrep etter gjenvinning",
       "tempo": "Svært høyt",
       "riskLevel": "high",
       "baseStyleId": "high_press_opponent",
       "matchupStyles": [
         "high_press",
         "aggressive_man_press",
-        "fast_transition"
+        "fast_transition",
+        "build_from_back",
+        "wide_overload"
       ],
       "pressResistance": 56,
       "defensiveStructure": 52,
@@ -106,7 +151,8 @@
       },
       "strengths": [
         "presset starter hos spissen og slutter hos backen — hele laget er med",
-        "gjenvinner høyt og er i boksen din før du rekker å stå"
+        "gjenvinner høyt og er i boksen din før du rekker å stå",
+        "ballnære overtall gir korte støtteavstander både med ball og ved balltap"
       ],
       "weaknesses": [
         "rommet bak den høye linja er alltid åpent",
@@ -133,20 +179,50 @@
         "Kommer du gjennom presset én gang, ligger halve banen åpen."
       ],
       "styleBasis": "tradisjon",
-      "shortLabel": "høyt press og vertikale angrep"
+      "tacticalBehaviour": {
+        "pressCoordination": "collective",
+        "passingLaneCover": "central",
+        "counterpressAfterLoss": "ball_near_collective"
+      },
+      "tacticalBehaviourEvidence": {
+        "era": "2024",
+        "scope": "Historisk stilmodell for høyt press mot motstanderens oppbygging, ikke observert avspark eller påstand om dagens tropp. Angrepsidentiteten gjelder Hornelands første Brann-periode 2022–2024.",
+        "interpretation": "Kantene presser smalt, spissen dekker ankeret, og midtbanen og bakre ledd flytter samlet for å begrense sentrale pasningslinjer. Spillet modellerer dette som kollektivt press og sentral dekning; sannsynligheten er en spillmodell, ikke kampstatistikk. Mot Sandefjord 16. mai 2024 ble en bakre treer og sekseren brukt i frispillingen; Sandefjords kompakte press begrenset den sentrale ruten. Riley Roberts beskriver i tillegg lange utspark mot kant, ballnære overtall og raskt gjenvinningspress. Dette støtter eksisterende build_from_back og wide_overload-tokens, men ikke et fast vellykket utspill mot høyt press eller spesifikk sentral skjerming etter en tapt andreball. Ingen nye pressEscape- eller secondBallCounterpress-felt tilordnes.",
+        "sources": [
+          {
+            "title": "16. Mai-feber i Bergen by – En taktisk analyse av Brann",
+            "publisher": "Studentradioen i Bergen",
+            "url": "https://srib.no/2024/06/12/16-mai-feber-i-bergen-by-en-taktisk-analyse-av-brann/",
+            "locator": "Brann med ball i laget og Brann i presspillet – Sandefjord 16. mai 2024"
+          },
+          {
+            "title": "Eirik Horneland Tactics At SK Brann – What Young Coaches Can Learn From His Pressing Principles",
+            "publisher": "Total Football Analysis",
+            "url": "https://totalfootballanalysis.com/article/eirik-horneland-brann-pressing-2024-tactical-analysis-tactics",
+            "locator": "Figure 11 – press mot stopper, spiss dekker anker, sekser dekker sentrale pasninger"
+          },
+          {
+            "title": "Eirik Horneland — The most exciting manager you’ve never heard of.",
+            "publisher": "Riley Roberts / Medium",
+            "url": "https://medium.com/@robertsriley18/eirik-horneland-the-most-exciting-manager-youve-never-heard-of-22c38a51d842",
+            "locator": "Build-up; In possession; Counter-pressing – direkte utspill mot kant, støtte rundt andreball, ballnære overtall mot Rosenborg og gjenvinning."
+          }
+        ]
+      },
+      "shortLabel": "høyt press · ballnære overtall og vertikalt spill"
     },
     {
       "clubId": "valerenga",
       "styleName": "Bohemene",
-      "tacticalSchool": "Offensivt spill båret av personligheter",
-      "era": "1965–1984",
-      "style": "Offensivt og dynamisk — midtbanen dras med i angrepene og trykket på motstanderen er konstant",
-      "historicalNote": "Vålerenga fikk kallenavnet «Bohemene» for de fargerike spillertypene og den offensive spillestilen: farlige angrep og konstant press på motstanderen. Angrepet går gjennom midtbanen, ikke utenom den, og hurtig ballsirkulasjon skal skape rommene. Klubben er tuftet på Oslos østkant, og viljen er aldri langt unna — men tradisjonen er offensiv fotball, ikke kynisk fotball.",
-      "inPossessionShape": "4-4-2 der begge indreløpere går med i angrepet",
-      "outOfPossessionShape": "4-4-2 med to spisser som setter trykket",
-      "defensiveBlock": "Middels til høy blokk",
-      "buildUpStyle": "Hurtig ballsirkulasjon gjennom midtbanen",
-      "attackingStyle": "Mange spillere framover, løp i bakrom og individuelle avgjørelser",
+      "tacticalSchool": "Bohemtradisjon og Bengtssons organiserte 4-4-2",
+      "era": "1965 · 1980–1981 · Bengtsson 1983–1984",
+      "style": "Teknisk og kreativ bohemtradisjon; i 1983–1984 mer strukturert soneforsvar, press på ballfører og innøvde oppspill",
+      "historicalNote": "Bohemene tok seriegull i 1965 med Anton Ploderer som trener. Leif Eriksen ledet et fornyet lag til cupgull i 1980 og seriegull i 1981. Gunder Bengtsson vant serien i 1983 og 1984 med en annerledes filosofi: soneforsvar, press, sikring og sideforskyvning, samt innøvde oppspill og bevegelser. Klubbens 4-4-2 er dokumentert i seriepremieren mot Viking 1. mai 1983, ikke som fast formasjon for hele bohemperioden. De eldre numeriske spillverdiene og matchup-tokens er foreløpig beholdt som eksisterende spillmodell, ikke historiske målinger av Bengtssons lag.",
+      "inPossessionShape": "4-4-2 under Bengtsson i dokumentert kamp i 1983; tidligere bohemers formasjon ikke fastslått",
+      "outOfPossessionShape": "Bengtssons soneforsvar med press, sikring og sideforskyvning; eksakt presshøyde ikke fastslått",
+      "defensiveBlock": "Organisert soneforsvar (1983–1984); blokkens høyde ikke dokumentert",
+      "buildUpStyle": "Bengtsson: innøvde oppspill og lengre pasninger; tidligere bohemer: improvisasjon",
+      "attackingStyle": "Innøvde bevegelser og timing under Bengtsson, teknisk kreativitet i bohemperioden",
       "tempo": "Høyt",
       "riskLevel": "high",
       "baseStyleId": "high_press_opponent",
@@ -171,35 +247,68 @@
         "intensity": 76
       },
       "strengths": [
-        "to spisser setter trykket og en midtbane som følger med opp",
-        "enkeltspillere som avgjør uten at systemet må gjøre jobben først"
+        "teknisk kreativitet og samspill i bohemperioden",
+        "organisert press, sikring og sideforskyvning under Bengtsson"
       ],
       "weaknesses": [
-        "mange framover betyr få igjen",
-        "strukturen er underordnet initiativet"
+        "Bengtsson påpekte for store avstander i seriepremieren 1983; ikke en målt generell svakhet",
+        "tidligere bohemlag kunne variere betydelig i prestasjon"
       ],
       "vulnerableZones": [
-        "restforsvaret når indreløperne er høye",
-        "siderommene bak backene"
+        "mulige rom mellom leddene hvis laget strekkes; situasjonsbetinget"
       ],
       "dangerZones": [
-        "mellomrommet foran stopperne dine",
-        "bakrommet på hurtige vendinger"
+        "innøvde oppspill og bevegelser; ingen fast angrepskorridor dokumentert"
       ],
       "keyBattles": [
-        "din sekser mot deres to indreløpere",
-        "ditt restforsvar mot omstillingene"
+        "ballfører mot press og sikring",
+        "vår evne til å spille gjennom eller rundt soneforsvaret"
       ],
       "pressurePoints": [
-        "vinn ballen når midtbanen deres er høy",
-        "flytt spillet dit spissene nettopp jaget fra"
+        "undersøk avstanden mellom leddene",
+        "unngå å anta at organisert soneforsvar alltid gir samme pasningsrom"
       ],
       "managerHints": [
-        "Tør du holde ballen, gir de deg rommet bakover.",
-        "Stopper du ballsirkulasjonen deres, stopper hele laget."
+        "Flytt ballen for å utfordre sideforskyvningen.",
+        "Se etter rom mellom leddene når laget strekkes; ikke anta en fast svak flanke."
       ],
       "styleBasis": "tradisjon",
-      "shortLabel": "bohemene · offensivt trykk"
+      "shortLabel": "bohemtradisjon · organisert soneforsvar",
+      "tacticalBehaviour": {
+        "pressCoordination": "collective",
+        "defensivePattern": "zonal_pressure_cover_shift"
+      },
+      "tacticalBehaviourEvidence": {
+        "era": "1983–1984",
+        "scope": "Bengtssons organiserte soneforsvar, ikke bohemlaget i 1965, presshøyde ved avspark, bestemt pasningskorridor eller moderne VIF.",
+        "interpretation": "Klubbhistorien beskriver innøvd press på ballfører, sikring og sideforskyvning; dette støtter kollektiv koordinasjon, ikke fast sentral eller bred pasningsdekning. Aftenpostens samtidige kampreferat oppgir 4-4-2 mot Viking 1. mai 1983 og gjengir Bengtssons kommentar om for store avstander i den kampen. Retrospektiv omtale beskriver lengre pasninger, men ikke et bestemt direkte utspill mot høypress. Ingen pressEscapeRoute, passingLaneCover, presshøyde eller nye tall utledes. Eksisterende matchup-tokens og numeriske traits er eldre spillmodellantakelser, ikke bekreftet av kildene.",
+        "sources": [
+          {
+            "title": "Dette er Vålerenga!",
+            "publisher": "Vålerenga Fotball",
+            "url": "https://www.vif-fotball.no/historie/var-stolte-histore",
+            "locator": "1980–1985 Vålerengas gullalder: Eriksen og Bengtssons press, sikring, sideforskyvning og faste oppspill."
+          },
+          {
+            "title": "Vår stolte historie: Dette er Vålerenga!",
+            "publisher": "Vålerenga Fotball",
+            "url": "https://www.vif-fotball.no/om-klubben/var-stolte-histore-ny",
+            "locator": "Bohemperioden, seriegullet 1965 under Anton Ploderer."
+          },
+          {
+            "title": "«Detta ække Vålenga»",
+            "publisher": "Aftenposten",
+            "url": "https://www.aftenposten.no/oslo/i/opAB0/detta-aekke-vaalenga",
+            "locator": "Kontrasten mellom bohemenes improvisasjon og Bengtssons rette linjer, flate firere og lengre pasninger."
+          },
+          {
+            "title": "Målles kamp som huskes / Fornøyd med «premiéren»",
+            "publisher": "Aftenposten, 2. mai 1983",
+            "url": "https://img6.custompublish.com/getfile.php/1999983.1276.recyxxxsdd/Aftenposten%2B02.05.1983.pdf?return=www.sjaanjo.no",
+            "locator": "Sportsbilaget, Viking–Vålerengen 0–0, lagoppstilling 4-4-2 og trenerens kommentar. Tilgjengelig som maskinlest avisarkiv; sidebildet kunne ikke kontrolleres."
+          }
+        ]
+      }
     },
     {
       "clubId": "molde",
@@ -207,7 +316,7 @@
       "tacticalSchool": "Moderne ballbesittelse med halvrom og høye backer",
       "era": "2011–",
       "style": "Organisert ballbesittelse som venter på øyeblikket og går fort når det kommer",
-      "historicalNote": "Molde er den mest gjennomorganiserte klubben i norsk toppfotball i moderne tid: lite risiko tidlig, middels blokk med variert presshøyde, og et angrepsspill der kantene går innover og backene høyt og bredt slik at halvrommene åpner seg. Tålmodig med ballen, presis i sonene, brutalt rask når åpningen kommer.",
+      "historicalNote": "Molde er den mest gjennomorganiserte klubben i norsk toppfotball i moderne tid: lite risiko tidlig, middels blokk med variert presshøyde, og et angrepsspill der kantene går innover og backene høyt og bredt slik at halvrommene åpner seg. Tålmodig med ballen, presis i sonene, brutalt rask når åpningen kommer. Formasjonsbeskrivelsen representerer den tidligere fasen med fire forsvarere; Erling Moe la om til tre midtstoppere i 2022. Den dokumenterte spillvendingen mot press er hentet fra denne senere fasen.",
       "inPossessionShape": "4-3-3 som blir 4-2-2-2 — kanter innover, backer høyt og bredt",
       "outOfPossessionShape": "4-1-4-1 i middels blokk",
       "defensiveBlock": "Middels blokk med variert presshøyde",
@@ -265,7 +374,29 @@
         "En lav og tålmodig blokk er ubehagelig for dem."
       ],
       "styleBasis": "tradisjon",
-      "shortLabel": "kontrollert ballbesittelse i halvrommene"
+      "shortLabel": "kontrollert ballbesittelse i halvrommene",
+      "tacticalBehaviour": {
+        "pressEscapeRoute": "switch_play"
+      },
+      "tacticalBehaviourEvidence": {
+        "era": "2022",
+        "scope": "Cupfinalen mot Bodø/Glimt 1. mai 2022, i Moldes periode med tre midtstoppere. Modell av tilgjengelig spillvending i oppbygging mot konsentrert press, ikke en fast rute i alle kamper eller etter hvert balltap.",
+        "interpretation": "Molde holdt ballen på en side, brukte en dyp støttepasning og vendte mot en bred vingback. I finalen ble Linnes frigjort på høyresiden før han fant Eikrem. Motoren modellerer spillvending, uten å fastsette flanke, timing eller avslutning. Kilden beskriver det smale presset; presshøyde er ikke målt.",
+        "sources": [
+          {
+            "title": "Sommer med taktikk: Molde-fotball!",
+            "publisher": "Tarjei Smågesjø",
+            "url": "https://smgesj.substack.com/p/sommer-med-taktikk-molde-fotball",
+            "locator": "Cupfinalen 2022, avsnittene om Glimts smale 4-3-3-press og vending mot vingback."
+          },
+          {
+            "title": "Her er suverene Moldes gullformel: – Det var mange som stusset",
+            "publisher": "Aftenposten / VG",
+            "url": "https://www.aftenposten.no/sport/i/zEElR5/her-er-suverene-moldes-gullformel-det-var-mange-som-stusset",
+            "locator": "Trenerintervju 2022: overgang fra fire til tre midtstoppere og cupfinale i 3-5-2."
+          }
+        ]
+      }
     },
     {
       "clubId": "viking",
@@ -331,6 +462,28 @@
         "De venter på ditt ene feilsteg — hold restforsvaret."
       ],
       "styleBasis": "tradisjon",
+      "tacticalBehaviour": {
+        "highPressEscapeRoute": "direct"
+      },
+      "tacticalBehaviourEvidence": {
+        "era": "2023",
+        "scope": "Viking–Rosenborg 2–0 i NM, mars 2023. Modell av direkte utspill mot høyt press, ikke generell påstand om alle Viking-lag eller en fast oppspillsstrategi.",
+        "interpretation": "Viking brukte lave backer og pasninger bak for å lokke fram presset, før keeper eller stopper slo mot spissen. Kantene og indreløperne posisjonerte seg for å vinne andreballen. Dette støtter et direkte utspill i høypressfasen, ikke økt kort oppbyggingsspill eller oppdiktet timing. Ingen påstand om spesifikk avslutning eller fast suksessrate.",
+        "sources": [
+          {
+            "title": "Taktisk analyse: Viking – Rosenborg 2-0",
+            "publisher": "Fotballdykket / Anders Romsøy Johansson",
+            "url": "https://fotballdykket.wordpress.com/2023/03/15/taktisk-analyse-viking-rosenborg-2-0/",
+            "locator": "Kontrollerte kaoset: lav backposisjon, direkte utspill mot D’Agostino og strukturen rundt andreballen."
+          },
+          {
+            "title": "Viking FK Tactics 2023/2024 – The Key Tactical Points That See Them Top Of The Eliteserien",
+            "publisher": "Total Football Analysis / Alejandro Paz",
+            "url": "https://totalfootballanalysis.com/article/viking-fk-the-key-tactical-points-that-see-them-top-of-the-eliteserien-scout-report-tactical-analysis",
+            "locator": "Dynamics to occupy half-spaces: automatismer mot høyt press; ikke belegg for at direkte utspill er eneste rute."
+          }
+        ]
+      },
       "shortLabel": "korte avstander, direkte når ballen vinnes"
     },
     {
@@ -529,6 +682,33 @@
         "De vil at du skal prøve gjennom midten. Ikke gjør det.",
         "Har du ikke kanter som tør, får du ballen uten å komme noen vei."
       ],
+      "tacticalBehaviour": {
+        "pressEscape": "supported",
+        "pressEscapeCandidateRoutes": [
+          "third_man",
+          "switch_play"
+        ],
+        "pressEscapeRoutePolicy": "weakest_verified_cover"
+      },
+      "tacticalBehaviourEvidence": {
+        "era": "2024",
+        "scope": "Kjetil Knutsens oppbyggingsprinsipper i 2020–2024-profilen. Kildene beskriver tilgjengelige utveier i oppbygging, ikke en målt rutevalgpolicy eller et bestemt mønster etter hvert balltap.",
+        "interpretation": "Indreløpere brukes som mellomledd for å finne sekseren bak første pressledd; motsatt back brukes til å vende spillet ut av trange rom. Begge rutene inngår som tilgjengelige modellerte valg. Motorens eksisterende weakest_verified_cover-policy er en spillhypotese, ikke dokumentert scouting av motstanderen eller historisk valgfrekvens. Ukjent eller tilnærmet lik forsvarsdekning gir ingen navngitt utvei. Ingen bestemt flanke, timing, avslutning eller direkte utspill er lagt til.",
+        "sources": [
+          {
+            "title": "Kjetil Knutsen – Bodø/Glimt – Tactical Analysis",
+            "publisher": "The Football Analyst",
+            "url": "https://the-footballanalyst.com/kjetil-knutsen-bodo-glimt-tactical-analysis/",
+            "locator": "Finding the Number-Six; The Far-Side Fullback; Finding the Pockets. Tredjemannskombinasjoner bak første pressledd og vending til motsatt back."
+          },
+          {
+            "title": "Kjetil Knutsen’s FK Bodø/Glimt build-up play",
+            "publisher": "Diego Puig – Football Analysis & Coaching",
+            "url": "https://diegopuigcoach.com/en-tactical-analysis/",
+            "locator": "Analysis 02, Build-up structure; Key behaviours; Progression and risks. Udattert støtte for begge oppbyggingsruter."
+          }
+        ]
+      },
       "shortLabel": "ballbesittelse og rotasjoner, smal blokk uten ball"
     },
     {
@@ -1129,24 +1309,68 @@
       "clubId": "stromsgodset",
       "styleName": "Godset-fotball",
       "styleBasis": "tradisjon",
-      "tacticalSchool": "Eggen-skolen i Drammen",
-      "era": "1970 · og 2013",
-      "style": "Offensivt 4-3-3 i høyt tempo — angrip med mange, alltid framover",
-      "historicalNote": "Begge seriegullene tilhører samme skole. Nils Arne Eggen selv sto for 1970-gullet; Ronny Deila, som tok 2013-gullet, har sagt at det meste han kan om fotball kom fra Eggen og Rosenborgs storhetstid. Godset er den andre greina på godfot-treet: samme offensive 4-3-3, men spilt i høyere tempo og med yngre bein.",
-      "inPossessionShape": "4-3-3 med brede kanter og høye backer",
-      "outOfPossessionShape": "4-5-1 som gjenvinner høyt",
-      "defensiveBlock": "Høy blokk",
-      "buildUpStyle": "Enkelt ut, så framover",
-      "attackingStyle": "Hurtige omstillinger",
+      "tacticalSchool": "Deilas offensive, relasjonelle fotball",
+      "era": "1970 · Deila 2008–2014 (stilmodell 2011–2014)",
+      "style": "Fremoverrettet kombinasjonsspill i høyt tempo, hurtige vendinger og tidlige innlegg med mange løp inn i boksen",
+      "historicalNote": "Strømsgodset vant serie og cup under Einar Larsen i 1970. Ronny Deila ledet klubben til cupgull i 2010 og seriegull i 2013. Den moderne stilmodellen bygger på Deilas offensive fotball, med hurtig lengderetning, få berøringer, spillvendinger og kollektiv gjenvinning. 4-3-3 var utgangspunkt, med variasjoner til 4-2-3-1 og defensivt 4-1-4-1.",
+      "inPossessionShape": "4-3-3 / 4-2-3-1 med bredde og sentral vendingsspiller",
+      "outOfPossessionShape": "4-3-3 eller 4-1-4-1, med variabel presshøyde",
+      "defensiveBlock": "Variabel blokk, perioder med høyt press",
+      "buildUpStyle": "Fremoverrettet kombinasjonsspill og hurtig spillvending fra midtbanen",
+      "attackingStyle": "Sentralt vendingsledd frigjør kant, tidlig innlegg og samtidige boksløp; også hurtige omstillinger",
       "tempo": "Høyt",
       "riskLevel": "high",
       "baseStyleId": "high_press_opponent",
       "matchupStyles": [
         "wide_overload",
         "high_press",
-        "fast_runners_in_behind"
+        "fast_runners_in_behind",
+        "switching_play"
       ],
-      "shortLabel": "offensivt 4-3-3 i høyt tempo",
+      "tacticalBehaviour": {
+        "pressCoordination": "collective",
+        "passingLaneCover": "central",
+        "attackingRunPattern": "central_switch_early_cross",
+        "crossRecoveryExposure": "committed_box_runs"
+      },
+      "tacticalBehaviourEvidence": {
+        "era": "2011–2014",
+        "scope": "Historisk stilmodell for Deilas Strømsgodset i den aktive høypressfasen, ikke målt dekning ved avspark, konstant presshøyde eller påstand om dagens tropp. Angrepsdelen bygger på analyse av 2013-lagets scoringer og en samtidig analyse fra 2011.",
+        "interpretation": "Samtidig analyse beskriver samlet press med varierende presshøyde og gjenvinning høyt i banen. Tidligere analysesjef Jørn Kvamme og Jonas Moen Rye beskriver senere Deilas prinsipp om å lede motstanderens spill utenfor den sentrale blokken. Samlet begrunner dette kollektivt press med sentral dekning som en spillmodell, uten å anta samme pressmønster i alle kampsituasjoner. Jacobsen definerer tredjespiller som tredje siste spiller på ballen før mål, ikke nødvendigvis en klassisk tredjemannskombinasjon. Studien beskriver hurtige vendinger fra midtbanen mot kant og tidlige innlegg; Riisnæs beskriver fire til fem spillere inn i boksen ved innlegg, med økt kontringsrisiko. Dette begrunner switching_play i formasjonsberegningen, men ikke et bestemt utspill mot høyt press, en bestemt flanke eller en målt suksessrate.",
+        "sources": [
+          {
+            "title": "Hvorfor leder Tromsø og Strømsgodset Tippeligaen?",
+            "publisher": "Fotballanalyse / Harald Riisnæs",
+            "url": "https://fotballanalyse.wordpress.com/2011/05/31/hvorfor-leder-tromso-og-stromsgodset-tippeligaen/",
+            "locator": "Strømsgodset og Oppsummering: variabel presshøyde, samlet press og høy gjenvinning."
+          },
+          {
+            "title": "Analysen: Deila gjør lurt i å kaste filosofien mot Rosenborg",
+            "publisher": "Eurosport",
+            "url": "https://www.eurosport.no/fotball/eliteserien/2017/analysen_sto6180797/story.shtml",
+            "locator": "Viktig å være mentalt påskrudd: tilbakeblikk på Strømsgodsets prinsipp om å lede spillet utenfor sentral blokk."
+          },
+          {
+            "title": "Hva skjer før scoring",
+            "publisher": "Per Inge Jacobsen / NFF, UEFA A-lisens 2013/2014",
+            "url": "https://www.fotball.no/globalassets/trener/uefa-a-oppgaver/uefa-a-2014-oppgave-per-inge-jacobsen.pdf",
+            "locator": "Kapittel 5.4, side 21, figur 6; vendingsspilleren, kant og tidlig innlegg."
+          },
+          {
+            "title": "Ronny Deila – 50!",
+            "publisher": "Strømsgodset",
+            "url": "https://www.godset.no/nyheter/ronny-deila--50",
+            "locator": "Klubbens tilbakeblikk på fremoverrettet spill, høy intensitet og gullåret."
+          },
+          {
+            "title": "50 år siden seriegullet",
+            "publisher": "Strømsgodset",
+            "url": "https://www.godset.no/nyheter/50-ar-siden-seriegullet",
+            "locator": "Einar Larsen var trener i 1970."
+          }
+        ]
+      },
+      "shortLabel": "hurtig spillvending · tidlig innlegg og boksløp",
       "pressResistance": 69,
       "defensiveStructure": 55,
       "transitionThreat": 72,
@@ -1163,12 +1387,12 @@
         "intensity": 75
       },
       "strengths": [
-        "vinner du førsteballen i boksen, dør angrepene deres",
-        "stilen er tydelig: offensivt 4-3-3 i høyt tempo"
+        "hurtig spillvending setter opp kantspillere til innlegg",
+        "flere samtidige løp inn i boksen og kollektiv gjenvinning"
       ],
       "weaknesses": [
-        "midten når begge kanter er høye",
-        "bakrommet bak den høye linja"
+        "risiko for kontring når flere spillere angriper boksen",
+        "bakrommet når presset er høyt"
       ],
       "vulnerableZones": [
         "midten når begge kanter er høye",
@@ -1187,8 +1411,8 @@
         "finn den frie mannen bak første pressledd"
       ],
       "managerHints": [
-        "Vinner du førsteballen i boksen, dør angrepene deres.",
-        "Står du høyt, har de akkurat spillerne til å straffe det."
+        "Sikre motsatt kant før Godsets vendingsspiller mottar ballen.",
+        "Hold dekning i boksen, men vær klar til å angripe rommet etter et brutt innlegg."
       ]
     },
     {
@@ -1461,22 +1685,21 @@
       "styleBasis": "tradisjon",
       "tacticalSchool": "Cuplag i en liten by",
       "era": "2012",
-      "style": "Kompakt og disiplinert, med én plan: overleve til kampen kan vinnes i én situasjon",
-      "historicalNote": "Cupgullet i 2012 er klubbens storhetstid og hele identiteten: Hødd slo seg gjennom mot større klubber ved å være vanskeligere å slå enn troppen tilsa, og ta den ene sjansen som kom.",
-      "inPossessionShape": "5-3-2 med to spisser i bakrom",
-      "outOfPossessionShape": "5-3-2 i lav blokk",
-      "defensiveBlock": "Lav blokk",
-      "buildUpStyle": "Enkelt ut, så framover",
-      "attackingStyle": "Hurtige omstillinger",
+      "style": "Offensivt utgangspunkt, men i cupfinalen en kompakt, fleksibel lav blokk som stenger rom",
+      "historicalNote": "Cupgullet i 2012 er klubbens storhetstid. Lars Arne Nilsen beskrev en offensiv spillfilosofi, og Hødd stod høyt mot Haugesund og Brann. I finalen mot Tromsø åpnet de i 4-2-3-1/4-4-1-1, før de senket laget og flyttet Sandal ned i en midtbanefemmer. Ligamodellens lave blokk er inspirert av denne konkrete finalefasen, ikke en påstand om fast spillestil i hele 2012.",
+      "inPossessionShape": "4-2-3-1 med Sandal i mellomrom og Sellin i bakrom",
+      "outOfPossessionShape": "4-4-1-1 som i cupfinalen ble til en lav 4-5-1",
+      "defensiveBlock": "Lav blokk i den modellerte cupfinalefasen",
+      "buildUpStyle": "Forsøker å holde ballen i laget, også etter gjenvinning",
+      "attackingStyle": "Kombinasjoner gjennom mellomrom og mulige overganger",
       "tempo": "Jevnt",
       "riskLevel": "low",
       "baseStyleId": "low_block_opponent",
       "matchupStyles": [
         "deep_low_block",
-        "compact_532",
         "direct_counter"
       ],
-      "shortLabel": "lav blokk og én sjanse",
+      "shortLabel": "kompakt lav blokk fra cupfinalen",
       "pressResistance": 59,
       "defensiveStructure": 90,
       "transitionThreat": 74,
@@ -1493,33 +1716,62 @@
         "intensity": 63
       },
       "strengths": [
-        "du får ballen. Spørsmålet er om du har bredde nok til å bruke den",
-        "stilen er tydelig: kompakt og disiplinert, med én plan: overleve til kampen kan vinnes i én situasjon"
+        "midtbanefemmeren forskyver samlet for å stoppe overtall på kant",
+        "to sentrale midtbanespillere skjermer rom foran stopperne"
       ],
       "weaknesses": [
-        "utsiden av blokken",
-        "siderommene utenfor de tre stopperne"
+        "hurtig variasjon av angrepsside før blokken rekker å forskyve",
+        "farlige balltap på egen halvdel"
       ],
       "vulnerableZones": [
-        "utsiden av blokken",
-        "sonen foran blokken når de ikke har ballen"
+        "rom som oppstår på motsatt side ved rask vending",
+        "egen halvdel ved balltap i oppbyggingen"
       ],
       "dangerZones": [
-        "egen boks på dødball",
-        "bakrommet ditt i det de vinner ballen"
+        "mellomrommet når Sandal får vende opp",
+        "bakrommet når Sellin kan true"
       ],
       "keyBattles": [
-        "din bredde mot deres smale blokk",
-        "ditt restforsvar mot omstillingene"
+        "dine breddeangrep mot deres forskyvning",
+        "ditt oppspill mot deres sentrale skjerming"
       ],
       "pressurePoints": [
-        "bruk hele banens bredde",
-        "dra vingbacken ut og angrip rommet han forlot"
+        "varier angrepsside før blokken rekker å flytte seg",
+        "press ballfører etter at Hødd vinner ballen"
       ],
       "managerHints": [
-        "Du får ballen. Spørsmålet er om du har bredde nok til å bruke den.",
-        "Ett uforsiktig balltap høyt oppe, og kampen er borte."
-      ]
+        "Ikke gjenta samme kantangrep når blokken har tilpasset seg. Veksle angrepsside.",
+        "Sikre oppbyggingen og vær klar til gjenvinning."
+      ],
+      "tacticalBehaviour": {
+        "wideCover": "collective",
+        "centralCover": "collective"
+      },
+      "tacticalBehaviourEvidence": {
+        "era": "2012",
+        "scope": "Modell av den lave forsvarsfasen i cupfinalen 25. november 2012; ikke hele kampen eller hele sesongen.",
+        "interpretation": "Sandal gikk ned til venstre for Aursnes og Nilsen, slik at Aursnes kunne forskyve mot høyre, Nilsen skjerme sentralt og Klock tette rommet mot Latifu. Dette støtter kollektiv bredde- og sentraldekning i den lave blokken. Innleggs- og boksdekning forblir ukjent; analysen beskriver også utligning etter innlegg. Modellens eksisterende tall er beholdt som spillheuristikk.",
+        "sources": [
+          {
+            "title": "Hødd 1-1 Tromsø: Nilsen justerte egen høyreside og vant på straffer",
+            "publisher": "Fotballanalyse / Harald Riisnæs",
+            "url": "https://fotballanalyse.wordpress.com/2012/11/25/hodd-1-1-tromso-nilsen-justerte-egen-hoyreside-og-vant-pa-straffer/",
+            "locator": "Lars Arne Nilsen med mottrekk; Konklusjon"
+          },
+          {
+            "title": "Slik forklarer han cupsuksessen",
+            "publisher": "Stavanger Aftenblad / Sunnmørsposten",
+            "url": "https://www.aftenbladet.no/sport/i/0EeVbA/slik-forklarer-han-cupsuksessen",
+            "locator": "Trenerintervju 29. september 2012: offensiv filosofi og høyt press mot Brann og Haugesund"
+          },
+          {
+            "title": "Hødd vant cupfinalen",
+            "publisher": "Stavanger Aftenblad",
+            "url": "https://www.aftenbladet.no/sport/i/21RBQl/hoedd-vant-cupfinalen",
+            "locator": "Kampreferat: kompakt, hardtarbeidende forsvar"
+          }
+        ]
+      }
     },
     {
       "clubId": "haugesund",
@@ -1806,6 +2058,22 @@
         "build_from_back",
         "narrow_442"
       ],
+      "tacticalBehaviour": {
+        "centralCover": "collective"
+      },
+      "tacticalBehaviourEvidence": {
+        "era": "2026",
+        "scope": "Spillmodell av Åsanes lave forsvarsfase før pause mot Kongsvinger, dokumentert 1. juni 2026. Én kamp, ikke en målt sesongtendens eller fast formasjon.",
+        "interpretation": "Kampreferatet beskriver et kompakt lag som i perioder lå lavt og begrenset sentrale åpninger. Dette støtter kollektiv sentraldekning i den modellerte fasen, men ikke bredde- eller boksdekning. Forsvaret holdt ikke hele kampen; Kongsvinger vant 3–1.",
+        "sources": [
+          {
+            "title": "Ledet til pause, men måtte reise tomhendt hjem",
+            "publisher": "Åsane Fotball",
+            "url": "https://www.asanefotball.no/nyheter/ledet-til-pause-men-matte-reise-tomhendt-hjem",
+            "locator": "Publisert 01.06.2026, avsnittene Rossi sendte Åsane foran og Kongsvinger slo tilbake."
+          }
+        ]
+      },
       "shortLabel": "tålmodig blokk, kort oppbygging",
       "pressResistance": 74,
       "defensiveStructure": 83,
