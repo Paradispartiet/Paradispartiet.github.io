@@ -1,4 +1,4 @@
-import { createLineupSnapshot, attributeGoal, createMatchPlayerStats, sourcedRecoverySkillsForPlayer, sourcedDefensiveReactionSkillsForPlayer } from "./football-player-stats.js";
+import { createLineupSnapshot, attributeGoal, createMatchPlayerStats, sourcedRecoverySkillsForPlayer, sourcedDefensiveReactionSkillsForPlayer, sourcedCreativeSkillsForPlayer } from "./football-player-stats.js";
 import { applySubstitution, aggregateSourcedMetricBonuses, createBenchSnapshot, playedPlayersFor, sourcedMetricBonusesForAssignment } from "./football-substitutions.js";
 import { evaluateTrainingDecisionSupport } from "./football-training-week.js";
 import { buildMatchExplanation } from "./football-match-explanation-engine.js";
@@ -9,7 +9,7 @@ import { resolveTurnoverTransition } from "./football-matchday-turnover-v6.js";
 import { resolveCompactBlockAttack, annotateCompactBlockChances } from "./football-matchday-compact-block-v6.js";
 import { resolveOwnPressAgainstOpponent, annotateOwnPressChances, getManagerPressCounterOptions } from "./football-matchday-own-press-v6.js";
 import { resolveGameControlPhase, annotateGameControlChances } from "./football-matchday-control-v6.js";
-import { resolveAuthoredSequencePeriod, annotateAuthoredSequenceChances, resolveOpponentRunSequence, resolveOpponentSwitchCrossSequence, annotateOpponentRunChances, resolveOpponentZonalShift, annotateOpponentZonalShiftChances } from "./football-matchday-sequence-v8.js";
+import { resolveAuthoredSequencePeriod, annotateAuthoredSequenceChances, resolveOpponentRunSequence, resolveOpponentSwitchCrossSequence, annotateOpponentRunChances, resolveOpponentZonalShift, annotateOpponentZonalShiftChances, resolveOpponentRehearsedOutlet, annotateOpponentRehearsedOutletChances, resolveOpponentDirectSecondBall, annotateOpponentDirectSecondBallChances, resolveOpponentSetPiece, annotateOpponentSetPieceChances, annotateOpponentCreativeAttackChances, resolveOpponentFullbackOverlap, annotateOpponentFullbackOverlapChances, annotateOpponentShortCombinationChances } from "./football-matchday-sequence-v8.js";
 import {
   applyOpponentAdjustment,
   createPlanChange,
@@ -1482,8 +1482,24 @@ export function generateMatchdayEvents({ formation, tacticalProfile, opponent, o
   // Historiske stil-motstandere har egne id-er; de peker på en generisk
   // stil-familie via baseStyleId for å gjenbruke hendelsesbiblioteket.
   const opponentStyle = opponent?.baseStyleId || opponent?.id;
-  const opponentEvent = (opponent?.homeAway === "away" && OPPONENT_AWAY_EVENTS[opponentStyle])
+  const defaultOpponentEvent = (opponent?.homeAway === "away" && OPPONENT_AWAY_EVENTS[opponentStyle])
     || OPPONENT_EVENTS[opponent?.id] || OPPONENT_EVENTS[opponentStyle] || null;
+  // A documented set-piece focus can replace, not add to, the normal
+  // opponent scenario. Fixture selection is a game assumption, not a rate
+  // of historical corners/free kicks; no extra events or historical formation.
+  const useSetPieceAlternative = hasFixtureContext &&
+    opponent?.tacticalBehaviour?.setPiecePattern === "historical_set_piece_focus" &&
+    stableVariationScore(variationKey + ":set-piece-focus") < 0.5;
+  const alternativeSetPiece = opponent?.homeAway === "away"
+    ? OPPONENT_AWAY_EVENTS.physical_set_piece_opponent
+    : OPPONENT_EVENTS.physical_set_piece_opponent;
+  const opponentEvent = useSetPieceAlternative
+    ? { ...alternativeSetPiece,
+        ...(opponent?.homeAway !== "away" ? {
+          title:"Dødball mot boksen",
+          text:"Motstanderen får en dødball nær boksen. Sikre første kontakt og rommet etter en eventuell klarering."
+        } : {}) }
+    : defaultOpponentEvent;
 
   const picked = [familyPicked[0], opponentEvent, familyPicked[1]].filter(Boolean).slice(0, 3);
 
@@ -1846,6 +1862,14 @@ export function createMatchdaySession({ teamFit, formation, tactic, activeClassi
     // New matches can resolve a sourced switch-to-cross attack pattern.
     causalOpponentSwitchCrossVersion: 1,
     causalOpponentZonalShiftVersion: 1,
+    causalOpponentRehearsedOutletVersion: 1,
+    causalOpponentDirectSecondBallVersion: 1,
+    causalOpponentSetPieceVersion: 1,
+    causalSourcedCreativeBreakthroughVersion: 1,
+    causalOpponentCreativeAlternativeVersion: 1,
+    causalOpponentFullbackOverlapVersion: 1,
+    causalOpponentShortCombinationVersion: 1,
+    causalOpponentAttackAdaptationVersion: 1,
     // New matches can release a counterattack after a sourced cross exposure.
     causalOpponentCrossRecoveryVersion: 1,
     // In-match fatigue uses the current match clock and existing freshness model.
@@ -2029,6 +2053,7 @@ export function applyMatchPlanChange(session, nextPlan, { opponent, currentTeamF
         ...entry,
         sourcedRecoverySkills: sourcedRecoverySkillsForPlayer(assignments[i].player),
         sourcedDefensiveReactionSkills: sourcedDefensiveReactionSkillsForPlayer(assignments[i].player),
+        sourcedCreativeSkills: sourcedCreativeSkillsForPlayer(assignments[i].player),
         sourcedMetricBonuses: sourcedMetricBonusesForAssignment(assignments[i], nextPlan)
       }));
       const activeBonuses = aggregateSourcedMetricBonuses(updatedLineup);
@@ -2233,15 +2258,17 @@ export function advanceMatchClock(session) {
   // While v6 owns this situation, remove the old static plan-edge projection
   // for this period; otherwise the same tactical advantage is paid twice.
   // Sessions without sufficient role/opponent evidence retain the v5 path.
-  const buildUpPhase = resolveHighPressBuildUp(session, { rng: () => highPressPhaseRoll(session, played) });
+  // A scheduled, sourced dead-ball scenario owns this period before open-play phases.
+  const setPiecePhase = resolveOpponentSetPiece(session, { rng: () => highPressPhaseRoll(session, played + ":opponent-set-piece") });
+  const buildUpPhase = !setPiecePhase ? resolveHighPressBuildUp(session, { rng: () => highPressPhaseRoll(session, played) }) : null;
   // Mutually exclusive phase per period: opponent press vs compact low block.
   // Existing saves never acquire the new low-block model on restore.
-  const compactPhase = !buildUpPhase
+  const compactPhase = !setPiecePhase && !buildUpPhase
     ? resolveCompactBlockAttack(session, { rng: () => highPressPhaseRoll(session, played + ":compact-block") })
     : null;
   // Different plan ids: attacking phases and defensive press are exclusive.
   // A known escape and our actual pressing unit decide BEFORE any shot roll.
-  const pressingPhase = !buildUpPhase && !compactPhase
+  const pressingPhase = !setPiecePhase && !buildUpPhase && !compactPhase
     ? resolveOwnPressAgainstOpponent(session, {
         pressureRoll: () => highPressPhaseRoll(session, played + ":own-pressure"),
         protectionRoll: () => highPressPhaseRoll(session, played + ":press-protection")
@@ -2249,7 +2276,7 @@ export function advanceMatchClock(session) {
     : null;
   // Four previously unsupported plans are resolved using their OWN linked
   // defensive-control/release chain; earlier v6 phases take priority.
-  const controlPhase = !buildUpPhase && !compactPhase && !pressingPhase
+  const controlPhase = !setPiecePhase && !buildUpPhase && !compactPhase && !pressingPhase
     ? resolveGameControlPhase(session, {
         rng: () => highPressPhaseRoll(session, played + ":game-control")
       })
@@ -2264,11 +2291,11 @@ export function advanceMatchClock(session) {
   // An executed specialist phase owns all xG attribution. If none fires,
   // use the canonical authored chain only when XI and counter evidence exist.
   // Unknown / unsupported patterns retain the prior neutral/fallback path.
-  const authoredSequencePhase = !buildUpPhase && !compactPhase &&
+  const authoredSequencePhase = !setPiecePhase && !buildUpPhase && !compactPhase &&
     !pressingPhase && !controlPhase && !ineligibleReactivePlan(session)
     ? resolveAuthoredSequencePeriod(session) : null;
   // Opponent off-ball patterns are a fallback, never added to another phase.
-  const opponentRunPhase = !buildUpPhase && !compactPhase && !pressingPhase &&
+  const opponentRunPhase = !setPiecePhase && !buildUpPhase && !compactPhase && !pressingPhase &&
     !controlPhase && !authoredSequencePhase && !ineligibleReactivePlan(session)
     ? resolveOpponentRunSequence(session, {
         minute: segmentRange(played, totalSegments).from - 1,
@@ -2277,10 +2304,16 @@ export function advanceMatchClock(session) {
         rng: () => highPressPhaseRoll(session, played + ":opponent-switch-cross")
       }) || resolveOpponentZonalShift(session, {
         rng: () => highPressPhaseRoll(session, played + ":opponent-zonal-shift")
+      }) || resolveOpponentRehearsedOutlet(session, {
+        rng: () => highPressPhaseRoll(session, played + ":opponent-rehearsed-outlet")
+      }) || resolveOpponentFullbackOverlap(session, {
+        rng: () => highPressPhaseRoll(session, played + ":opponent-fullback-overlap")
+      }) || resolveOpponentDirectSecondBall(session, {
+        rng: () => highPressPhaseRoll(session, played + ":opponent-direct-second-ball")
       }) : null;
   const phase = transition ? {
     ...buildUpPhase, transition, xgDeltaAgainst: transition.xgDeltaAgainst
-  } : buildUpPhase || compactPhase || pressingPhase || controlPhase ||
+  } : setPiecePhase || buildUpPhase || compactPhase || pressingPhase || controlPhase ||
     authoredSequencePhase || opponentRunPhase;
   const rate = currentExpectedGoalRate(session);
   const share = 1 / totalSegments;
@@ -2333,6 +2366,18 @@ export function advanceMatchClock(session) {
     ? annotateCompactBlockChances(generatedChances, tacticalPhase)
     : tacticalPhase?.situation === "our_press_vs_opponent_build_up"
       ? annotateOwnPressChances(generatedChances, tacticalPhase)
+      : tacticalPhase?.situation === "opponent_set_piece"
+        ? annotateOpponentSetPieceChances(generatedChances, tacticalPhase)
+      : tacticalPhase?.situation === "opponent_short_combination"
+        ? annotateOpponentShortCombinationChances(generatedChances, tacticalPhase)
+      : tacticalPhase?.situation === "opponent_fullback_overlap"
+        ? annotateOpponentFullbackOverlapChances(generatedChances, tacticalPhase)
+      : tacticalPhase?.situation === "opponent_creative_attack"
+        ? annotateOpponentCreativeAttackChances(generatedChances, tacticalPhase)
+      : tacticalPhase?.situation === "opponent_direct_second_ball"
+        ? annotateOpponentDirectSecondBallChances(generatedChances, tacticalPhase)
+      : tacticalPhase?.situation === "opponent_rehearsed_outlet"
+        ? annotateOpponentRehearsedOutletChances(generatedChances, tacticalPhase)
       : tacticalPhase?.situation === "opponent_zonal_shift"
         ? annotateOpponentZonalShiftChances(generatedChances, tacticalPhase)
       : ["opponent_coordinated_runs", "opponent_switch_cross"].includes(tacticalPhase?.situation)
@@ -2502,13 +2547,54 @@ export function applyMatchPressCounter(session, route) {
 // Dette er det som gjør at kampen må LESES på nytt i stedet for å velges riktig
 // én gang. Justeringen er deterministisk og forklart, ikke skjult intelligens.
 // Returnerer samme sesjon når bildet ikke gir grunn til å justere.
+// React to two consecutive observed-in-game failures of the same route.
+// This is a gameplay policy, not historical evidence of Knapp's decision rule.
+// No new formation, positional assignments, or opponent player identities.
+function flexibleAttackPatterns(session) {
+  const b=session?.opponent?.tacticalBehaviour;
+  return session?.causalOpponentAttackAdaptationVersion===1 &&
+    session.causalOpponentFullbackOverlapVersion===1 &&
+    session.causalOpponentShortCombinationVersion===1 &&
+    b?.attackingRunPattern==="rehearsed_fullback_overlap" &&
+    b.shortCombinationPattern==="rehearsed_short_pass_support";
+}
+
+function deriveFlexibleAttackAdjustment(session,done){
+  if(!flexibleAttackPatterns(session)||done.includes("vary_attack_route"))return null;
+  const timeline=asArray(session.timeline);
+  if(timeline.length<2||timeline.length>=asArray(session.events).length+1)return null;
+  const recent=timeline.slice(-2).map(period=>period?.tacticalPhase);
+  const blockedOverlap=recent.every(p=>p?.route==="rehearsed_fullback_overlap"&&
+    ["overlap_contained","box_contained"].includes(p.status)&&p.evidence?.eventCount===1);
+  const blockedShort=recent.every(p=>p?.route==="rehearsed_short_pass_support"&&
+    ["support_pass_contained","third_man_contained"].includes(p.status)&&p.evidence?.eventCount===1);
+  if(!blockedOverlap&&!blockedShort)return null;
+  return {id:"vary_attack_route",
+    label:blockedOverlap?"De søker mer gjennom midten":"De søker mer rundt kantene",
+    note:blockedOverlap?"To overlappingsangrep ble avverget. Motstanderen prioriterer nå kortpasningsalternativet.":
+      "To kortpasningsangrep ble avverget. Motstanderen prioriterer nå overlapping.",
+    routePreference:blockedOverlap?"short_combination":"fullback_overlap",
+    observedPeriods:timeline.length,traitShift:{}};
+}
+
 export function applyOpponentAdaptation(session) {
   if (!session || typeof session !== "object") return session;
   if (session.phase === "resolved") return session;
 
   const done = asArray(session.opponentAdjustments).map((entry) => entry.id);
-  const adjustment = deriveOpponentAdjustment(readGameState(session), { alreadyAdjusted: done });
+  const adjustment = deriveOpponentAdjustment(readGameState(session), { alreadyAdjusted: done }) ||
+    deriveFlexibleAttackAdjustment(session,done);
   if (!adjustment) return session;
+
+  // Route variation changes only priority. Existing numerical traits and
+  // defensive behaviour remain unchanged. No extra decision/xG modifier.
+  if(adjustment.id==="vary_attack_route"){
+    const varied={...session,opponentAttackRoutePreference:adjustment.routePreference,
+      opponentAdjustments:[...asArray(session.opponentAdjustments),
+        {id:adjustment.id,label:adjustment.label,note:adjustment.note,atPhase:session.phase,
+          routePreference:adjustment.routePreference,observedPeriods:adjustment.observedPeriods}]};
+    return logMatchMoment(varied,{type:"opponent",side:"against",detail:adjustment.label});
+  }
 
   const adjustedOpponent = applyOpponentAdjustment(session.opponent, adjustment);
   const priorBehaviour = session.opponent?.tacticalBehaviour;
@@ -2542,7 +2628,7 @@ export function applyOpponentAdaptation(session) {
     Array.isArray(priorBehaviour.pressEscapeCandidateRoutes) &&
     priorBehaviour.pressEscapeCandidateRoutes.length >= 2 &&
     adjustedOpponent?.tacticalBehaviour?.pressEscape === "supported";
-  const opponent = knownAlternatives ? {
+  const routeAdaptedOpponent = knownAlternatives ? {
     ...flankAdaptedOpponent,
     tacticalBehaviour: {
       ...flankAdaptedOpponent.tacticalBehaviour,
@@ -2550,6 +2636,17 @@ export function applyOpponentAdaptation(session) {
       pressEscapeRoutePolicy: "weakest_verified_cover"
     }
   } : flankAdaptedOpponent;
+  // Dynamic defence/press behaviour replaces stale defensive evidence. A
+  // documented repertoire of attack patterns remains available, separately.
+  const opponent=flexibleAttackPatterns(session)?{
+    ...routeAdaptedOpponent,tacticalBehaviour:{
+      ...routeAdaptedOpponent.tacticalBehaviour,
+      attackingRunPattern:priorBehaviour.attackingRunPattern,
+      shortCombinationPattern:priorBehaviour.shortCombinationPattern,
+      ...(priorBehaviour.setPiecePattern==="historical_set_piece_focus"
+        ?{setPiecePattern:priorBehaviour.setPiecePattern}:{})
+    }
+  }:routeAdaptedOpponent;
   const activePlan = session.activePlanSnapshot || session.tacticSnapshot || null;
 
   const adapted = {
