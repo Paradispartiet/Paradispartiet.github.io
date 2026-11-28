@@ -2,6 +2,39 @@
 (function () {
  "use strict";
  const images=Object.freeze({
+  emne_fauna_metallbie:Object.freeze({
+   scientificName:"Halictus spp. / Lasioglossum spp.",
+   depictedScientificName:"Lasioglossum morio",
+   depictedName:"Metalljordbie",
+   exampleLabel:"Bildet viser metalljordbie (Lasioglossum morio), én av flere arter av jordbier og båndbier.",
+   src:"bilder/natur/fauna/godkjent/61_metallbie_v1.webp",
+   gitBlobSha:"7f5c0c320fb56694d0410b327c4b356fda3ae7c5",
+   reviewedAt:"2026-11-28",
+   stage:"female_metallic_sweat_bee_example_subtle_bronze_green_head_thorax_dark_abdomen_black_background",
+   evidence:"data/natur/fauna/illustration-quality-metallbie-20261128.json"
+  }),
+  emne_fauna_bladskjaererbie:Object.freeze({
+   scientificName:"Megachile spp.",
+   depictedScientificName:"Megachile centuncularis",
+   depictedName:"Rosebladskjærerbie",
+   exampleLabel:"Bildet viser rosebladskjærerbie (Megachile centuncularis), én av flere bladskjærerbiearter.",
+   src:"bilder/natur/fauna/godkjent/60_bladskjaererbie_v1.webp",
+   gitBlobSha:"0dc4638b300eb0d2a1c77b4eb1295c9ce22f4f95",
+   reviewedAt:"2026-11-27",
+   stage:"female_leafcutter_example_pale_abdominal_hair_bands_orange_ventral_scopa_black_background",
+   evidence:"data/natur/fauna/illustration-quality-bladskjaererbie-20261127.json"
+  }),
+  emne_fauna_sandbie:Object.freeze({
+   scientificName:"Andrena spp.",
+   depictedScientificName:"Andrena fulva",
+   depictedName:"Flammesandbie",
+   exampleLabel:"Bildet viser flammesandbie (Andrena fulva), én av flere sandbiearter.",
+   src:"bilder/natur/fauna/godkjent/59_sandbie_v1.webp",
+   gitBlobSha:"c31b4dd4c3279497ec35cc02c58ecd5ca9128595",
+   reviewedAt:"2026-11-27",
+   stage:"female_tawny_mining_bee_example_red_dorsal_hair_black_head_sides_legs_isolated_black_background",
+   evidence:"data/natur/fauna/illustration-quality-sandbie-20261127.json"
+  }),
   emne_fauna_murerbie:Object.freeze({
    scientificName:"Osmia spp.",
    depictedScientificName:"Osmia bicornis",
