@@ -2,6 +2,52 @@
 (function () {
  "use strict";
  const images=Object.freeze({
+  emne_fauna_graveveps:Object.freeze({
+   scientificName:"Sphecidae-typen",
+   depictedScientificName:"Ammophila sabulosa",
+   depictedName:"Nattflylarvegraver",
+   exampleLabel:"Bildet viser nattflylarvegraver (Ammophila sabulosa), én av flere gravevepsarter.",
+   src:"bilder/natur/fauna/godkjent/66_graveveps_v1.webp",
+   gitBlobSha:"1cb335e6ea12d03146a9f764ff9d5787a2b65d7a",
+   reviewedAt:"2026-11-28",
+   stage:"female_ammophila_example_long_thread_waist_red_black_abdomen_isolated_black_background",
+   evidence:"data/natur/fauna/illustration-quality-graveveps-20261128.json"
+  }),
+  emne_fauna_murveps:Object.freeze({
+   scientificName:"Ancistrocerus-gruppen",
+   depictedScientificName:"Ancistrocerus parietinus",
+   depictedName:"Veggmurerveps",
+   exampleLabel:"Bildet viser veggmurerveps (Ancistrocerus parietinus), én av flere murervepsarter.",
+   src:"bilder/natur/fauna/godkjent/65_murveps_v1.webp",
+   gitBlobSha:"8d74116d5f831831c233d4e50e035f5f876f0eaa",
+   reviewedAt:"2026-11-28",
+   stage:"female_wall_mason_wasp_example_dark_face_yellow_abdominal_bands_isolated_black_background",
+   evidence:"data/natur/fauna/illustration-quality-murveps-20261128.json"
+  }),
+  emne_fauna_roedveps:Object.freeze({
+   scientificName:"Vespula rufa",
+   src:"bilder/natur/fauna/godkjent/64_roedveps_v1.webp",
+   gitBlobSha:"92c2ebb46f5f3095e96cd66e9e20acc7459f6653",
+   reviewedAt:"2026-11-28",
+   stage:"female_worker_red_first_two_abdominal_segments_anchor_face_isolated_black_background",
+   evidence:"data/natur/fauna/illustration-quality-roedveps-20261128.json"
+  }),
+  emne_fauna_tysk_veps:Object.freeze({
+   scientificName:"Vespula germanica",
+   src:"bilder/natur/fauna/godkjent/63_tyskveps_v1.webp",
+   gitBlobSha:"b272a9a79904c162facc627c15e2425283277d57",
+   reviewedAt:"2026-11-28",
+   stage:"female_worker_three_separate_face_marks_yellow_black_isolated_black_background",
+   evidence:"data/natur/fauna/illustration-quality-tyskveps-20261128.json"
+  }),
+  emne_fauna_vanlig_veps:Object.freeze({
+   scientificName:"Vespula vulgaris",
+   src:"bilder/natur/fauna/godkjent/62_jordveps_v1.webp",
+   gitBlobSha:"91a51eab6b6621a2c2be319ef56dffee01f9a711",
+   reviewedAt:"2026-11-28",
+   stage:"female_worker_yellow_black_anchor_face_short_cheeks_isolated_black_background",
+   evidence:"data/natur/fauna/illustration-quality-jordveps-20261128.json"
+  }),
   emne_fauna_metallbie:Object.freeze({
    scientificName:"Halictus spp. / Lasioglossum spp.",
    depictedScientificName:"Lasioglossum morio",
